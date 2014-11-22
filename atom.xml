@@ -4,7 +4,7 @@
   <subtitle><![CDATA[GitHub Pages＋CMSでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-11-22T12:07:31.236Z</updated>
+  <updated>2014-11-22T12:57:16.817Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,11 +15,29 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Hexoでテーマを変更したら、元に戻せなくなった]]></title>
+    <link href="http://pagent.github.io/2014/11/22/hexo-theme/"/>
+    <id>http://pagent.github.io/2014/11/22/hexo-theme/</id>
+    <published>2014-11-22T12:22:39.000Z</published>
+    <updated>2014-11-22T12:53:10.000Z</updated>
+    <content type="html"><![CDATA[<p>Hexoにはいろいろテーマがあるようで有難い。（なぜか中国人が作ったテーマが多い。）<br>元々入っていたデフォルトのテーマは「Landscape」だったので、とりあえずそれとは別のOfficial Themes、「Phase」と「Light」を試してみた。<br>試したはいいが、「Light」を入れてから元のテーマに戻そうとしたら戻せなくなってしまった。<br>「Light」が崩れたようなスタイルから変更出来ない。  </p>
+<p><code>hexo h</code>をしてみたら、<code>clean</code>（Remove generated files and the cache）というコマンドオプションがあったので、<code>hexo clean</code>してみた。  </p>
+<p>書いてある通り/publicフォルダ自体も消えてしまったが、その後<code>hexo g</code>したらテーマも無事直った。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Hexoにはいろいろテーマがあるようで有難い。（なぜか中国人が作ったテーマが多い。）<br>元々入っていたデフォルトのテーマは「Landscape」だったので、とりあえずそれとは別のOfficial Themes、「Phase」と「Light」を試してみた。<br>試したは]]>
+    </summary>
+    
+      <category term="Hexo" scheme="http://pagent.github.io/categories/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[サイトジェネレーターをOctopressからHexoに変更]]></title>
     <link href="http://pagent.github.io/2014/11/22/octopress-hexo/"/>
     <id>http://pagent.github.io/2014/11/22/octopress-hexo/</id>
     <published>2014-11-22T11:21:26.000Z</published>
-    <updated>2014-11-22T12:06:26.000Z</updated>
+    <updated>2014-11-22T12:34:58.000Z</updated>
     <content type="html"><![CDATA[<p>Github Pagesのブログに使っている静的サイトジェネレーターをOctopressからHexoに変更してみた。  </p>
 <p>Octopressの/source/_posts内の記事ソースをそのままHexoの/source/_postsにコピーしたら、generateした時にパーマリンクが<code>http://.../2014/10/24/2014-10-24-xubuntu-blank-menu/</code>のように日付けが重複してしまった。<br>Hexoはデフォルトでは、新しく記事を作った時には日付けがつかず、生成する時に日付けを付加するようになっているらしい。  </p>
 <p>_config.ymlの  </p>
@@ -31,7 +49,9 @@
 <p>Octopressでは記事が/blogディレクトリ下に配置されるパーマリンクを使っていたが、今後はHexoのデフォルトの通りルート下に:year/:month/:day/:title/というパーマリンクを使うことにした。この方がシンプルで好みだし。<br>Githubでは.htaccessファイルを使ったリダイレクトが使用不可のようなので、以前の記事がリンク切れになるのは仕方がない。  </p>
 <p>あと、下記記事を参考に、FeedとSitemapのプラグインを入れた。<br>プラグインの導入はとても簡単だった。<br><a href="http://liginc.co.jp/web/programming/server/104594" target="_blank" rel="external">所要時間3分!? Github PagesとHEXOで爆速ブログ構築してみよう！ | 株式会社LIG</a>  </p>
 <p>Feedを導入すると、ヘッダー右上のアイコンでatom.xmlのページは表示出来たが、ブラウザのアドレスバーの端にフィードアイコンが表示されていない。  </p>
-<p>/themes/landscape/layout/_partial/head.ejsの26行目、<code>link rel=&quot;alternative&quot;</code>を<code>link rel=&quot;alternate&quot;</code>に変更したら、アドレスバーにフィードアイコンが表示された。</p>
+<p>/themes/landscape/layout/_partial/head.ejsの26行目、<code>link rel=&quot;alternative&quot;</code>を<code>link rel=&quot;alternate&quot;</code>に変更したら、アドレスバーにフィードアイコンが表示された。  </p>
+<p>Githubへのdeployも、_config.ymlの<code># Deployment</code>の項目に記載するだけですんなりdeploy出来た。<br>generateも早いし、コマンドも<br><code>hexo generate</code>→<code>hexo g</code><br><code>hexo server</code>→<code>hexo s</code><br><code>hexo deploy</code>→<code>hexo d</code><br>で良いようだし、なかなか便利。  </p>
+<p>ーー<br><code>hexo new</code>も<code>hexo n</code>でいいみたいだ。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Github Pagesのブログに使っている静的サイトジェネレーターをOctopressからHexoに変更してみた。  </p>
@@ -535,29 +555,6 @@ sudo apt-<span class="built_in">get</span> install nemo
     </summary>
     
       <category term="Octopress" scheme="http://pagent.github.io/categories/Octopress/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[畑一面のコスモスはなぜ？]]></title>
-    <link href="http://pagent.github.io/2014/10/25/cosmos/"/>
-    <id>http://pagent.github.io/2014/10/25/cosmos/</id>
-    <published>2014-10-25T06:41:22.000Z</published>
-    <updated>2014-10-26T07:24:43.000Z</updated>
-    <content type="html"><![CDATA[<p>秋になって処々で秋桜（コスモス）が美しく咲いている。  </p>
-<p>区画一面にコスモスが咲きほこる畑もあちこち見かける。<br>あれはどういう理由からなのだろう。  </p>
-<p>おそらく種を蒔いておられるのだと思うが、生花として採取販売している様子もない。<br>見る人の目を楽しませるために、わざわざやってくれているのだろうか。<br>雑草除けくらいにはなるのだろうか。  </p>
-<p>なんにせよ、見る方としてはとても有難い。</p>
-<p><a href="/images/a0960_005150_r.jpg" target="_self"><img src="/images/a0960_005150_r.jpg" alt="コスモス" width="480" height="360"></a></p>
-<p>（写真はこちらのサイトからお借りしました。 <a href="http://www.ashinari.com/2013/11/03-383567.php" target="_blank" rel="external">写真素材 足成：コスモス畑　ⅱ</a>）</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>秋になって処々で秋桜（コスモス）が美しく咲いている。  </p>
-<p>区画一面にコスモスが咲きほこる畑もあちこち見かける。<br>あれはどういう理由からなのだろう。  </p>
-<p>おそらく種を蒔いておられるのだと思うが、生花として採取販売している様子もない。<br>見]]>
-    </summary>
-    
-      <category term="未分類" scheme="http://pagent.github.io/categories/%E6%9C%AA%E5%88%86%E9%A1%9E/"/>
     
   </entry>
   

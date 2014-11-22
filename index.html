@@ -67,6 +67,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-hexo-theme" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/22/hexo-theme/" class="article-date">
+  <time datetime="2014-11-22T12:22:39.000Z" itemprop="datePublished">11月 22 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/22/hexo-theme/">Hexoでテーマを変更したら、元に戻せなくなった</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Hexoにはいろいろテーマがあるようで有難い。（なぜか中国人が作ったテーマが多い。）<br>元々入っていたデフォルトのテーマは「Landscape」だったので、とりあえずそれとは別のOfficial Themes、「Phase」と「Light」を試してみた。<br>試したはいいが、「Light」を入れてから元のテーマに戻そうとしたら戻せなくなってしまった。<br>「Light」が崩れたようなスタイルから変更出来ない。  </p>
+<p><code>hexo h</code>をしてみたら、<code>clean</code>（Remove generated files and the cache）というコマンドオプションがあったので、<code>hexo clean</code>してみた。  </p>
+<p>書いてある通り/publicフォルダ自体も消えてしまったが、その後<code>hexo g</code>したらテーマも無事直った。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/22/hexo-theme/" data-id="p1zp32xwfy7nt7s2" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/22/hexo-theme/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-octopress-hexo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/11/22/octopress-hexo/" class="article-date">
@@ -104,12 +149,16 @@
 <p>Octopressでは記事が/blogディレクトリ下に配置されるパーマリンクを使っていたが、今後はHexoのデフォルトの通りルート下に:year/:month/:day/:title/というパーマリンクを使うことにした。この方がシンプルで好みだし。<br>Githubでは.htaccessファイルを使ったリダイレクトが使用不可のようなので、以前の記事がリンク切れになるのは仕方がない。  </p>
 <p>あと、下記記事を参考に、FeedとSitemapのプラグインを入れた。<br>プラグインの導入はとても簡単だった。<br><a href="http://liginc.co.jp/web/programming/server/104594" target="_blank" rel="external">所要時間3分!? Github PagesとHEXOで爆速ブログ構築してみよう！ | 株式会社LIG</a>  </p>
 <p>Feedを導入すると、ヘッダー右上のアイコンでatom.xmlのページは表示出来たが、ブラウザのアドレスバーの端にフィードアイコンが表示されていない。  </p>
-<p>/themes/landscape/layout/_partial/head.ejsの26行目、<code>link rel=&quot;alternative&quot;</code>を<code>link rel=&quot;alternate&quot;</code>に変更したら、アドレスバーにフィードアイコンが表示された。</p>
+<p>/themes/landscape/layout/_partial/head.ejsの26行目、<code>link rel=&quot;alternative&quot;</code>を<code>link rel=&quot;alternate&quot;</code>に変更したら、アドレスバーにフィードアイコンが表示された。  </p>
+<p>Githubへのdeployも、_config.ymlの<code># Deployment</code>の項目に記載するだけですんなりdeploy出来た。<br>generateも早いし、コマンドも<br><code>hexo generate</code>→<code>hexo g</code><br><code>hexo server</code>→<code>hexo s</code><br><code>hexo deploy</code>→<code>hexo d</code><br>で良いようだし、なかなか便利。  </p>
+<p>ーー<br><code>hexo new</code>も<code>hexo n</code>でいいみたいだ。</p>
 
       
     </div>
     <footer class="article-footer">
       <a data-url="http://pagent.github.io/2014/11/22/octopress-hexo/" data-id="cavmr4p3qazs8irl" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/22/octopress-hexo/#disqus_thread" class="article-comment-link">Comments</a>
       
       
     </footer>
@@ -168,6 +217,8 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
     <footer class="article-footer">
       <a data-url="http://pagent.github.io/2014/11/21/hexo-xubuntu/" data-id="uis439cdwmtk9vph" class="article-share-link">Share</a>
       
+        <a href="http://pagent.github.io/2014/11/21/hexo-xubuntu/#disqus_thread" class="article-comment-link">Comments</a>
+      
       
     </footer>
   </div>
@@ -222,6 +273,8 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
     <footer class="article-footer">
       <a data-url="http://pagent.github.io/2014/11/21/hello-world/" data-id="cgy3bsdrla4zwz4j" class="article-share-link">Share</a>
       
+        <a href="http://pagent.github.io/2014/11/21/hello-world/#disqus_thread" class="article-comment-link">Comments</a>
+      
       
     </footer>
   </div>
@@ -274,82 +327,7 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
     <footer class="article-footer">
       <a data-url="http://pagent.github.io/2014/11/20/octopress-deploy-rejected/" data-id="9x8fmgmtoxnxwl18" class="article-share-link">Share</a>
       
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-install-libv8" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/11/19/install-libv8/" class="article-date">
-  <time datetime="2014-11-19T09:02:45.000Z" itemprop="datePublished">11月 19 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Octopress/">Octopress</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/19/install-libv8/">Installing libv8で止まる</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>OctopressのフォルダをDropboxに置くことにしたので、古いネットブックにインストールしたXubuntuからOctopressを使えるかどうか試してみた。<br>rake previewしようとしたら、エラーになってしまった。<br>Octopressを使う環境が整っていないので当然といえば当然。  </p>
-<p>環境を整えるにあたり、bundle installで行き詰まってしまった。<br>途中    </p>
-<pre><code><span class="title">Installing</span> libv8 (<span class="number">3.16.14.7</span>) 
-</code></pre><p>の表示のところで動かない。<br>フリーズしたのかと思ったが検索したところ、libv8のインストールには時間が掛かるらしい。<br>確かにCPUの使用率も100%で、頑張ってはいるようだ。  </p>
-<p>非力なマシンのせいか結局30分くらい掛かったろうか。<br>もう一度パスワード入力を求められ、その後またtherubyracer (0.12.1)のところで少し時間が掛かったが、ようやくYour bundle is complete!<br>Octopressを使えるようになった。  </p>
-<p>ーー<br>使えるようになったと思ったら、deployが出来ない。  </p>
-<pre><code>$ rake deploy
-cp -r source/images/.gitkeeper <span class="keyword">public</span>/images/.gitkeeper
-<span class="preprocessor">## Deploying branch to Github Pages </span>
-<span class="preprocessor">## Pulling any updates from Github Pages </span>
-cd _deploy
-cd -
-rm -rf _deploy/assets
-rm -rf _deploy/atom.xml
-rm -rf _deploy/blog
-rm -rf _deploy/favicon.png
-rm -rf _deploy/images
-rm -rf _deploy/index.html
-rm -rf _deploy/javascripts
-rm -rf _deploy/posts
-rm -rf _deploy/robots.txt
-rm -rf _deploy/sitemap.xml
-rm -rf _deploy/stylesheets
-
-<span class="preprocessor">## Copying public to _deploy</span>
-cp -r <span class="keyword">public</span>/. _deploy
-cd _deploy
-
-<span class="preprocessor">## Committing: Site updated at 2014-11-19 11:02:25 UTC</span>
-sh: <span class="number">1</span>: git: not found
-
-<span class="preprocessor">## Pushing generated _deploy website</span>
-
-<span class="preprocessor">## Github Pages deploy complete</span>
-cd -
-</code></pre><p>拒否はされてないみたいだが、記事を投稿出来ない。<br>どこに問題があるのか、よく分からない。<br>generateもやたら遅いし、ちょっとしんどいかな。  </p>
-<p>ーー<br>gitがインストールされてない？</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/19/install-libv8/" data-id="ucnoaltw8xxihvug" class="article-share-link">Share</a>
+        <a href="http://pagent.github.io/2014/11/20/octopress-deploy-rejected/#disqus_thread" class="article-comment-link">Comments</a>
       
       
     </footer>
@@ -375,6 +353,10 @@ cd -
       <ul>
         
           <li>
+            <a href="/2014/11/22/hexo-theme/">Hexoでテーマを変更したら、元に戻せなくなった</a>
+          </li>
+        
+          <li>
             <a href="/2014/11/22/octopress-hexo/">サイトジェネレーターをOctopressからHexoに変更</a>
           </li>
         
@@ -390,10 +372,6 @@ cd -
             <a href="/2014/11/20/octopress-deploy-rejected/">2台目のPCのOctopressでdeploy出来ない</a>
           </li>
         
-          <li>
-            <a href="/2014/11/19/install-libv8/">Installing libv8で止まる</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -403,7 +381,7 @@ cd -
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net-Linux/">Net Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net-Linux/">Net Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -412,7 +390,7 @@ cd -
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
     </div>
   </div>
 
@@ -438,6 +416,18 @@ cd -
   
 </nav>
     
+<script>
+  var disqus_shortname = 'pagents';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
