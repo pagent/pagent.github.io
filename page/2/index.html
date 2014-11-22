@@ -67,10 +67,64 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-octopress-deploy-rejected" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/20/octopress-deploy-rejected/" class="article-date">
+  <time datetime="2014-11-20T10:11:54.000Z" itemprop="datePublished">2014年11月20日</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Octopress/">Octopress</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/20/octopress-deploy-rejected/">2台目のPCのOctopressでdeploy出来ない</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>DropboxでOctopressのフォルダを同期し、2台目のPCでもrake new_postやrake generateは出来るようになったが、rake deployが出来ない。<br>gitが入ってなかったので<code>sudo apt-get install git</code>し、<code>rake setup_github_pages</code>でセットアップしたが、  </p>
+<pre><code><span class="input"><span class="prompt">! [rejected]        master -&gt;</span> master (non-fast-forward)</span>
+</code></pre><p>とエラーになる。<br>SSHの公開鍵も設定したのだが。  </p>
+<p>検索したところ、Octopressで突然deploy出来なくなった時には、Rakefileを編集するという対処法があるらしい。<br><a href="http://qiita.com/takuma7/items/2d6f6e786eb6c0afbefb" target="_blank" rel="external">Octopressでrake deployした際にrejectedされた場合の対処 - Qiita</a>  </p>
+<p>どうやら強制的にdeployするものらしい。  </p>
+<p>上記記事の通り、Rakefileの268行目の<code>#</code>の前に<code>+</code>を付けて  </p>
+<pre><code><span class="constant">Bundler</span>.with_clean_env { system <span class="string">"git push origin +<span class="subst">#{deploy_branch}</span>"</span> }
+</code></pre><p>にすると、deploy出来た。  </p>
+<p>元記事によると、deploy出来るようになった後は、Rakefileの編集を元に戻しておいた方がいいらしい。<br><a href="http://stackoverflow.com/questions/17609453/rake-gen-deploy-rejected-in-octopress" target="_blank" rel="external">rake gen_deploy rejected in Octopress - Stack Overflow</a>  </p>
+<p>いったんdeploy出来るようになったら、その後はRakefileを元に戻してもdeploy出来る。  </p>
+<p>記事ではoctopress/_deployディレクトリで<code>git pull origin master</code>というコマンドを使う回答もあった。<br>機会があれば今度試してみようと思う。  </p>
+<p>gitがなんなのかよく分からないが、FTPでアップロードしていた時に較べるとブログの更新も楽だし、スマートな感じがする。<br>でもほんと、gitってよく分からない。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/20/octopress-deploy-rejected/" data-id="f2fb29fryk6e2e4k" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/20/octopress-deploy-rejected/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-install-libv8" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/11/19/install-libv8/" class="article-date">
-  <time datetime="2014-11-19T09:02:45.000Z" itemprop="datePublished">11月 19 2014</time>
+  <time datetime="2014-11-19T09:02:45.000Z" itemprop="datePublished">2014年11月19日</time>
 </a>
     
   <div class="article-category">
@@ -134,7 +188,7 @@ cd -
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/19/install-libv8/" data-id="2h74cegay8danfaw" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/19/install-libv8/" data-id="b4xgoi1t5y6chbx6" class="article-share-link">Share</a>
       
         <a href="http://pagent.github.io/2014/11/19/install-libv8/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -149,7 +203,7 @@ cd -
     <article id="post-debian-wheezy-nemo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/11/18/debian-wheezy-nemo/" class="article-date">
-  <time datetime="2014-11-18T00:51:22.000Z" itemprop="datePublished">11月 18 2014</time>
+  <time datetime="2014-11-18T00:51:22.000Z" itemprop="datePublished">2014年11月18日</time>
 </a>
     
   <div class="article-category">
@@ -187,7 +241,7 @@ sudo apt-<span class="built_in">get</span> install nemo
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/18/debian-wheezy-nemo/" data-id="6ehqk685sf3qj5rc" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/18/debian-wheezy-nemo/" data-id="rfz0tym8j3x5ojpu" class="article-share-link">Share</a>
       
         <a href="http://pagent.github.io/2014/11/18/debian-wheezy-nemo/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -202,7 +256,7 @@ sudo apt-<span class="built_in">get</span> install nemo
     <article id="post-xubuntu-ar9285" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/11/13/xubuntu-ar9285/" class="article-date">
-  <time datetime="2014-11-13T08:33:12.000Z" itemprop="datePublished">11月 13 2014</time>
+  <time datetime="2014-11-13T08:33:12.000Z" itemprop="datePublished">2014年11月13日</time>
 </a>
     
   <div class="article-category">
@@ -236,7 +290,7 @@ sudo apt-<span class="built_in">get</span> install nemo
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/13/xubuntu-ar9285/" data-id="mc5ogc2jj5vclusd" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/13/xubuntu-ar9285/" data-id="k7ael8jusj8bi84j" class="article-share-link">Share</a>
       
         <a href="http://pagent.github.io/2014/11/13/xubuntu-ar9285/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -251,7 +305,7 @@ sudo apt-<span class="built_in">get</span> install nemo
     <article id="post-xubuntu-install-option" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/11/11/xubuntu-install-option/" class="article-date">
-  <time datetime="2014-11-11T09:39:48.000Z" itemprop="datePublished">11月 11 2014</time>
+  <time datetime="2014-11-11T09:39:48.000Z" itemprop="datePublished">2014年11月11日</time>
 </a>
     
   <div class="article-category">
@@ -286,54 +340,9 @@ sudo apt-<span class="built_in">get</span> install nemo
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/11/xubuntu-install-option/" data-id="y5r25xnq1jjutd5i" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/11/xubuntu-install-option/" data-id="kugtgv1j1cjbecw7" class="article-share-link">Share</a>
       
         <a href="http://pagent.github.io/2014/11/11/xubuntu-install-option/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-yonifuru" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/11/06/yonifuru/" class="article-date">
-  <time datetime="2014-11-06T08:59:22.000Z" itemprop="datePublished">11月 6 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/短歌/">短歌</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/06/yonifuru/">いたづらにわがみ世にふる</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>花の色はうつりにけりな  </p>
-<p>いたづらにわがみ世にふる　ながめせしまに  </p>
-<p>（古今和歌集　小野小町）</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/06/yonifuru/" data-id="cp3w2sl1npd3vd1f" class="article-share-link">Share</a>
-      
-        <a href="http://pagent.github.io/2014/11/06/yonifuru/#disqus_thread" class="article-comment-link">Comments</a>
       
       
     </footer>
@@ -354,9 +363,13 @@ sudo apt-<span class="built_in">get</span> install nemo
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recents</h3>
+    <h3 class="widget-title">最近の記事</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2014/11/23/hexo-archve-category/">Hexoのアーカイブ、カテゴリーページを全文表示からリスト表示に</a>
+          </li>
         
           <li>
             <a href="/2014/11/22/hexo-theme/">Hexoのテーマを変更したら、元に戻せなくなった</a>
@@ -374,10 +387,6 @@ sudo apt-<span class="built_in">get</span> install nemo
             <a href="/2014/11/21/hello-world/">Hello World</a>
           </li>
         
-          <li>
-            <a href="/2014/11/20/octopress-deploy-rejected/">2台目のPCのOctopressでdeploy出来ない</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -385,21 +394,34 @@ sudo apt-<span class="built_in">get</span> install nemo
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
+    <h3 class="widget-title">カテゴリー</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net-Linux/">Net Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net-Linux/">Net Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">月別アーカイブ</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
     </div>
   </div>
 
+  
+    <script type="text/javascript" src="http://pagent.org/a/ra_git/script.php"></script><noscript><p><img src="http://pagent.org/a/ra_git/track.php" alt="" width="1" height="1" /></p></noscript>
+  
+    <script type="text/javascript">
+<!--
+var acCODE;
+acCODE = "<img width='0' height='0' src='http://a.pagent.org/xeno_git/xenoLogger.php?" + 
+"PID="+ escape(document.location.href)+ "&" + 
+"PTITLE=" +escape(document.title)+ "&" + 
+"PPID=" +escape(document.referrer)+ "' ";
+// -->
+</script>
+<script type="text/javascript" src="http://a.pagent.org/xeno_git/xenoLogger.js"></script>
   
 </aside>
         
