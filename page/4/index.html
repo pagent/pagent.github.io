@@ -67,6 +67,57 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-unknown-media-type" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/31/unknown-media-type/" class="article-date">
+  <time datetime="2014-10-30T21:04:55.000Z" itemprop="datePublished">10月 31 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/31/unknown-media-type/">「Unknown media type in type &#39;all/all&#39;」等が表示される</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近Octopressを使っている時やXubuntuの更新の際、端末上に「Unknown media type in type ‘all/all’」というような警告が数行表示されることが続いていた。<br>検索してみると、どうやらKDEのバグらしい。<br><a href="https://bugs.launchpad.net/ubuntu/+source/shared-mime-info/+bug/289592" target="_blank" rel="external">Bug #289592 “Unknown media types in /usr/share/mime/packages/kde…” : Bugs : “shared-mime-info” package : Ubuntu</a><br>確かに、KDEのアプリケーションをいくつかインストールしてからこの症状が起こっているように思う。  </p>
+<p>修正するには</p>
+<blockquote>
+<p>$ sudo rm /usr/share/mime/packages/kde.xml<br>$ sudo update-mime-database /usr/share/mime</p>
+</blockquote>
+<p>とすれば良いようだ。<br>だが、なんのためのファイルか知らないが、いきなりkde.xmlを削除するのも気が引けるので、  </p>
+<pre><code>$ sudo mv <span class="regexp">/usr/</span>share<span class="regexp">/mime/</span>packages<span class="regexp">/kde.xml /</span>usr<span class="regexp">/share/mim</span>e<span class="regexp">/packages/</span>kde.xml.bak
+</code></pre><p>とリネームしてから</p>
+<pre><code>$ sudo <span class="operator"><span class="keyword">update</span>-mime-<span class="keyword">database</span> /usr/<span class="keyword">share</span>/mime</span>
+</code></pre><p>としてみた。  </p>
+<p>今のところ「Unknown media type in type …」は出てないし、特に不具合も無いようだ。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/10/31/unknown-media-type/" data-id="ej5x6fv9xxj7lg5y" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-kana" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/10/28/kana/" class="article-date">
@@ -247,55 +298,6 @@
 
 
   
-    <article id="post-doropbox" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/10/24/doropbox/" class="article-date">
-  <time datetime="2014-10-24T10:43:57.000Z" itemprop="datePublished">10月 24 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Net-Linux/">Net Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/10/24/doropbox/">Dropbox。いいような、そうでもないような</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Xubuntuで間違ってhomeディレクトリを削除してしまい、過去記事のmarkdownファイルもろともOctopressのsourceを消失させてしまうという失敗をしてしまった。<br>ここはOctopressの作業フォルダをDropboxに置いておいた方がよいかと思いやってみた。  </p>
-<p>いちおう動作はしてdeployも出来るが、どこから出てきたか下層にあるはずのフォルダやファイルが勝手に作られていたりする。  </p>
-<p>通信状況が良くないのか、使い勝手がいまいち。<br>Dropboxはあくまでバックアップ用にすることにした。  </p>
-<p>Octopressの作業フォルダは、Xubuntuで共有しているWindowsのDドライブに置き、homeディレクトリにはそこへのリンクを置いているので前よりは安全だろう。  </p>
-<p>DドライブはXubuntu起動時に自分が所有者としてマウントされるよう、/etc/fstabで下記に設定している。  </p>
-<pre><code><span class="variable">umask=</span><span class="number">002</span>,<span class="variable">uid=</span><span class="number">1000</span>,<span class="variable">gid=</span><span class="number">1000</span> <span class="number">0</span>       <span class="number">0</span>
-</code></pre><p>dumpとpassを0にしたのは何か理由があってのことだったと思うが、思い出せない。  </p>
-<p>とにかくこれで、Xubuntuでおかしなことをしてしまっても、Dドライブをいじらない限りは大丈夫なはず。  </p>
-<p>ーー<br>（追記）<br>使い方がよく分かってなかっただけで、やっぱりDropbox便利かも。<br>他のPCと作業を同期出来るし。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/10/24/doropbox/" data-id="x3ljkpbk9w8gc165" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -310,6 +312,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2014/11/22/octopress-hexo/">サイトジェネレーターをOctopressからHexoに変更</a>
+          </li>
         
           <li>
             <a href="/2014/11/21/hexo-xubuntu/">Xubuntuに静的サイトジェネレーターHexoを入れてみた</a>
@@ -327,10 +333,6 @@
             <a href="/2014/11/19/install-libv8/">Installing libv8で止まる</a>
           </li>
         
-          <li>
-            <a href="/2014/11/18/debian-wheezy-nemo/">Debian WheezyにNemoをインストール</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -340,7 +342,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net-Linux/">Net Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net-Linux/">Net Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -349,7 +351,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
     </div>
   </div>
 

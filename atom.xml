@@ -4,7 +4,7 @@
   <subtitle><![CDATA[GitHub Pages＋CMSでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-11-22T10:55:04.159Z</updated>
+  <updated>2014-11-22T12:07:31.236Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,34 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[サイトジェネレーターをOctopressからHexoに変更]]></title>
+    <link href="http://pagent.github.io/2014/11/22/octopress-hexo/"/>
+    <id>http://pagent.github.io/2014/11/22/octopress-hexo/</id>
+    <published>2014-11-22T11:21:26.000Z</published>
+    <updated>2014-11-22T12:06:26.000Z</updated>
+    <content type="html"><![CDATA[<p>Github Pagesのブログに使っている静的サイトジェネレーターをOctopressからHexoに変更してみた。  </p>
+<p>Octopressの/source/_posts内の記事ソースをそのままHexoの/source/_postsにコピーしたら、generateした時にパーマリンクが<code>http://.../2014/10/24/2014-10-24-xubuntu-blank-menu/</code>のように日付けが重複してしまった。<br>Hexoはデフォルトでは、新しく記事を作った時には日付けがつかず、生成する時に日付けを付加するようになっているらしい。  </p>
+<p>_config.ymlの  </p>
+<pre><code><span class="comment"># Writing</span>
+<span class="symbol">new_post_name:</span> <span class="symbol">:title</span>.md <span class="comment"># File name of new posts</span>
+</code></pre><p>のところを  </p>
+<pre><code><span class="symbol">new_post_name:</span> <span class="symbol">:year-</span><span class="symbol">:month-</span><span class="symbol">:day-</span><span class="symbol">:title</span>.md
+</code></pre><p>に変更したら良いようだ。<br><a href="http://hexo.io/docs/migration.html" target="_blank" rel="external">Migration | Hexo</a>  </p>
+<p>Octopressでは記事が/blogディレクトリ下に配置されるパーマリンクを使っていたが、今後はHexoのデフォルトの通りルート下に:year/:month/:day/:title/というパーマリンクを使うことにした。この方がシンプルで好みだし。<br>Githubでは.htaccessファイルを使ったリダイレクトが使用不可のようなので、以前の記事がリンク切れになるのは仕方がない。  </p>
+<p>あと、下記記事を参考に、FeedとSitemapのプラグインを入れた。<br>プラグインの導入はとても簡単だった。<br><a href="http://liginc.co.jp/web/programming/server/104594" target="_blank" rel="external">所要時間3分!? Github PagesとHEXOで爆速ブログ構築してみよう！ | 株式会社LIG</a>  </p>
+<p>Feedを導入すると、ヘッダー右上のアイコンでatom.xmlのページは表示出来たが、ブラウザのアドレスバーの端にフィードアイコンが表示されていない。  </p>
+<p>/themes/landscape/layout/_partial/head.ejsの26行目、<code>link rel=&quot;alternative&quot;</code>を<code>link rel=&quot;alternate&quot;</code>に変更したら、アドレスバーにフィードアイコンが表示された。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Github Pagesのブログに使っている静的サイトジェネレーターをOctopressからHexoに変更してみた。  </p>
+<p>Octopressの/source/_posts内の記事ソースをそのままHexoの/source/_postsにコピーしたら、genera]]>
+    </summary>
+    
+      <category term="Hexo" scheme="http://pagent.github.io/categories/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Xubuntuに静的サイトジェネレーターHexoを入れてみた]]></title>
@@ -530,30 +558,6 @@ sudo apt-<span class="built_in">get</span> install nemo
     </summary>
     
       <category term="未分類" scheme="http://pagent.github.io/categories/%E6%9C%AA%E5%88%86%E9%A1%9E/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Dropbox。いいような、そうでもないような]]></title>
-    <link href="http://pagent.github.io/2014/10/24/doropbox/"/>
-    <id>http://pagent.github.io/2014/10/24/doropbox/</id>
-    <published>2014-10-24T10:43:57.000Z</published>
-    <updated>2014-11-19T06:07:28.000Z</updated>
-    <content type="html"><![CDATA[<p>Xubuntuで間違ってhomeディレクトリを削除してしまい、過去記事のmarkdownファイルもろともOctopressのsourceを消失させてしまうという失敗をしてしまった。<br>ここはOctopressの作業フォルダをDropboxに置いておいた方がよいかと思いやってみた。  </p>
-<p>いちおう動作はしてdeployも出来るが、どこから出てきたか下層にあるはずのフォルダやファイルが勝手に作られていたりする。  </p>
-<p>通信状況が良くないのか、使い勝手がいまいち。<br>Dropboxはあくまでバックアップ用にすることにした。  </p>
-<p>Octopressの作業フォルダは、Xubuntuで共有しているWindowsのDドライブに置き、homeディレクトリにはそこへのリンクを置いているので前よりは安全だろう。  </p>
-<p>DドライブはXubuntu起動時に自分が所有者としてマウントされるよう、/etc/fstabで下記に設定している。  </p>
-<pre><code><span class="variable">umask=</span><span class="number">002</span>,<span class="variable">uid=</span><span class="number">1000</span>,<span class="variable">gid=</span><span class="number">1000</span> <span class="number">0</span>       <span class="number">0</span>
-</code></pre><p>dumpとpassを0にしたのは何か理由があってのことだったと思うが、思い出せない。  </p>
-<p>とにかくこれで、Xubuntuでおかしなことをしてしまっても、Dドライブをいじらない限りは大丈夫なはず。  </p>
-<p>ーー<br>（追記）<br>使い方がよく分かってなかっただけで、やっぱりDropbox便利かも。<br>他のPCと作業を同期出来るし。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Xubuntuで間違ってhomeディレクトリを削除してしまい、過去記事のmarkdownファイルもろともOctopressのsourceを消失させてしまうという失敗をしてしまった。<br>ここはOctopressの作業フォルダをDropboxに置いておいた方がよいかと思いや]]>
-    </summary>
-    
-      <category term="Net Linux" scheme="http://pagent.github.io/categories/Net-Linux/"/>
     
   </entry>
   

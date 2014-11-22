@@ -67,6 +67,58 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-octopress-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/22/octopress-hexo/" class="article-date">
+  <time datetime="2014-11-22T11:21:26.000Z" itemprop="datePublished">11月 22 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/22/octopress-hexo/">サイトジェネレーターをOctopressからHexoに変更</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Github Pagesのブログに使っている静的サイトジェネレーターをOctopressからHexoに変更してみた。  </p>
+<p>Octopressの/source/_posts内の記事ソースをそのままHexoの/source/_postsにコピーしたら、generateした時にパーマリンクが<code>http://.../2014/10/24/2014-10-24-xubuntu-blank-menu/</code>のように日付けが重複してしまった。<br>Hexoはデフォルトでは、新しく記事を作った時には日付けがつかず、生成する時に日付けを付加するようになっているらしい。  </p>
+<p>_config.ymlの  </p>
+<pre><code><span class="comment"># Writing</span>
+<span class="symbol">new_post_name:</span> <span class="symbol">:title</span>.md <span class="comment"># File name of new posts</span>
+</code></pre><p>のところを  </p>
+<pre><code><span class="symbol">new_post_name:</span> <span class="symbol">:year-</span><span class="symbol">:month-</span><span class="symbol">:day-</span><span class="symbol">:title</span>.md
+</code></pre><p>に変更したら良いようだ。<br><a href="http://hexo.io/docs/migration.html" target="_blank" rel="external">Migration | Hexo</a>  </p>
+<p>Octopressでは記事が/blogディレクトリ下に配置されるパーマリンクを使っていたが、今後はHexoのデフォルトの通りルート下に:year/:month/:day/:title/というパーマリンクを使うことにした。この方がシンプルで好みだし。<br>Githubでは.htaccessファイルを使ったリダイレクトが使用不可のようなので、以前の記事がリンク切れになるのは仕方がない。  </p>
+<p>あと、下記記事を参考に、FeedとSitemapのプラグインを入れた。<br>プラグインの導入はとても簡単だった。<br><a href="http://liginc.co.jp/web/programming/server/104594" target="_blank" rel="external">所要時間3分!? Github PagesとHEXOで爆速ブログ構築してみよう！ | 株式会社LIG</a>  </p>
+<p>Feedを導入すると、ヘッダー右上のアイコンでatom.xmlのページは表示出来たが、ブラウザのアドレスバーの端にフィードアイコンが表示されていない。  </p>
+<p>/themes/landscape/layout/_partial/head.ejsの26行目、<code>link rel=&quot;alternative&quot;</code>を<code>link rel=&quot;alternate&quot;</code>に変更したら、アドレスバーにフィードアイコンが表示された。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/22/octopress-hexo/" data-id="cavmr4p3qazs8irl" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hexo-xubuntu" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/11/21/hexo-xubuntu/" class="article-date">
@@ -307,57 +359,6 @@ cd -
 
 
   
-    <article id="post-debian-wheezy-nemo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/11/18/debian-wheezy-nemo/" class="article-date">
-  <time datetime="2014-11-18T00:51:22.000Z" itemprop="datePublished">11月 18 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/18/debian-wheezy-nemo/">Debian WheezyにNemoをインストール</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>ネットブックLaVie LightにDebian Wheezyをインストールした。  </p>
-<p>ウィンドウマネージャはXfceが好みなので、debian-7.7.0-i386-netinst.isoでインストールする際、”Advanced options” 、”Alternate desktop environments”でXfceを選択した。  </p>
-<p>簡単に管理者権限でファイルやフォルダを操作したいので、XfceデフォルトのファイルマネージャーThunarのアクションに「rootで開く」を追加し、gksuもインストールした。<br>だがrootで開こうとしても、認証画面は表示されるものの、フォルダやファイルを管理者権限で開くことが出来ない。<br>レポジトリにNemoが無かったので、PCManFMもインストールしてみたが、なぜかrootで開くメニューが無い。  </p>
-<p>検索して、Ubuntu 12.04 Preciseのレポジトリを追加することで、Nemoをインストール出来た。  </p>
-<pre><code><span class="keyword">echo</span> <span class="string">"deb http://ppa.launchpad.net/noobslab/mint/ubuntu precise main"</span> | sudo tee -<span class="keyword">a</span> /etc/apt/sources.<span class="keyword">list</span>  
-sudo apt-key adv --keyserver keyserver.ubuntu.<span class="keyword">com</span> --recv-<span class="built_in">keys</span> F59EAE4D  
-sudo apt-<span class="built_in">get</span> <span class="keyword">update</span>  
-sudo apt-<span class="built_in">get</span> install nemo  
-</code></pre><p><a href="http://www.techlw.com/2013/12/install-nemo-file-manager-with.html" target="_blank" rel="external">Install Nemo file Manager with Extensions in Debian 7 Wheezy and its derivatives | Technology Linux World</a>  </p>
-<p>Ubuntu 14.04 Trustyのレポジトリを入れた方が、Nemoのバージョンが新しくて良いかと思いやってみたが、「壊れたパッケージを修復出来ない」とかでNemoをインストール出来なかった。  </p>
-<p>それと、Nemoを使うとデスクトップ右クリックでアプリケーションメニューを表示するのが出来なくなってしまう。<br>これでは少々不便なので、普段はThunarを使った方が良いかもしれない。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/18/debian-wheezy-nemo/" data-id="81co8ki8lxqfbx7l" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -372,6 +373,10 @@ sudo apt-<span class="built_in">get</span> install nemo
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2014/11/22/octopress-hexo/">サイトジェネレーターをOctopressからHexoに変更</a>
+          </li>
         
           <li>
             <a href="/2014/11/21/hexo-xubuntu/">Xubuntuに静的サイトジェネレーターHexoを入れてみた</a>
@@ -389,10 +394,6 @@ sudo apt-<span class="built_in">get</span> install nemo
             <a href="/2014/11/19/install-libv8/">Installing libv8で止まる</a>
           </li>
         
-          <li>
-            <a href="/2014/11/18/debian-wheezy-nemo/">Debian WheezyにNemoをインストール</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -402,7 +403,7 @@ sudo apt-<span class="built_in">get</span> install nemo
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net-Linux/">Net Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net-Linux/">Net Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -411,7 +412,7 @@ sudo apt-<span class="built_in">get</span> install nemo
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
     </div>
   </div>
 
