@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[Pagent]]></title>
-  <subtitle><![CDATA[GitHub Pages＋CMSでブログ]]></subtitle>
+  <subtitle><![CDATA[GitHub Pages＋静的サイトジェネレーターでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-11-22T23:11:04.148Z</updated>
+  <updated>2014-11-23T01:07:19.309Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,41 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Hexoの新規記事テンプレートを変更]]></title>
+    <link href="http://pagent.github.io/2014/11/23/hexo-post-layout/"/>
+    <id>http://pagent.github.io/2014/11/23/hexo-post-layout/</id>
+    <published>2014-11-22T23:20:38.000Z</published>
+    <updated>2014-11-23T01:06:34.000Z</updated>
+    <content type="html"><![CDATA[<p>Hexoで新規記事を作ると、初期状態ではtitle、date、tagsの項目しか無いが、categoriesも使いたいので変更。<br>/scaffolds/post.mdに項目を追加するだけで出来た。<br>（<code>---</code>より上部の部分は「Front Matter」というらしい。）  </p>
+<p>またOctopressに戻ることもあるかもしれないので、Octopressの書式に倣ってlayout、commentsも加えた。  </p>
+<pre><code><span class="bullet">---
+</span>layout: post
+title: Hexoの新規記事テンプレートを変更
+date: Sun Nov 23 2014 08:20:38 GMT+0900 (JST)
+comments: true
+tags: 
+<span class="header">categories: 
+---</span>
+</code></pre><p><code>hexo n test</code>すると下記内容のファイルが生成された。  </p>
+<pre><code>layout: post
+title: test
+comments: true
+date: 2014-11-23 09:15:51
+tags:
+<span class="header">categories:
+---</span>
+</code></pre><p>Octopressでは<code>comments: true</code>が無いとDisqusが表示されない。<br>Hexoではcommentsの項目が無くてもDisqusは表示されるが、<code>comments: false</code>にするとDisqusの表示は消える。<br>記事によってコメント禁止にする時に便利かもしれない。  </p>
+<p>/scaffolds/post.mdで上部にも<code>---</code>を加えたが、生成ファイルでは下部にしか<code>---</code>が無い。<br>これだとOctopressでは記事をちゃんとgenerate出来ないようだが、上部に<code>---</code>を付ける方法が分からない。<br>もしまたOctopressに戻ることがあったら、手作業するしかなさそうだ。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Hexoで新規記事を作ると、初期状態ではtitle、date、tagsの項目しか無いが、categoriesも使いたいので変更。<br>/scaffolds/post.mdに項目を追加するだけで出来た。<br>（<code>---</code>より上部の部分は「Front ]]>
+    </summary>
+    
+      <category term="Hexo" scheme="http://pagent.github.io/categories/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Hexoのアーカイブ、カテゴリーページを全文表示からリスト表示に]]></title>
@@ -548,23 +583,6 @@ sudo apt-<span class="built_in">get</span> install nemo
     </summary>
     
       <category term="ことば" scheme="http://pagent.github.io/categories/%E3%81%93%E3%81%A8%E3%81%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[OctopressのsourceはBitBucketに置くことにした]]></title>
-    <link href="http://pagent.github.io/2014/10/28/octopress-source-bitbucket/"/>
-    <id>http://pagent.github.io/2014/10/28/octopress-source-bitbucket/</id>
-    <published>2014-10-28T00:28:36.000Z</published>
-    <updated>2014-10-28T00:41:50.000Z</updated>
-    <content type="html"><![CDATA[<p>OctopressをDropboxに置いて作業するのはしっくりこなかったが、BitBucketのプライベートレポジトリにOctopressのsourceをバックアップしておけるようなので、やってみた。<br><a href="http://blog.withweb.info/blog/2012/10/04/octopress/" target="_blank" rel="external">Octopressでブログしよう - withweb</a>  </p>
-<p>BitBucketでアカウントを作り参照記事の通り設定したら、_postsを含むsourceを<code>git push</code>出来るようになった。<br>あまりあちこちにアカウントを作るのは気が進まなかったが、これでローカルPCになにかあってもブログの復旧が容易という安心感がある。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>OctopressをDropboxに置いて作業するのはしっくりこなかったが、BitBucketのプライベートレポジトリにOctopressのsourceをバックアップしておけるようなので、やってみた。<br><a href="http://blog.withweb.info]]>
-    </summary>
-    
-      <category term="Octopress" scheme="http://pagent.github.io/categories/Octopress/"/>
     
   </entry>
   

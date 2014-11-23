@@ -39,7 +39,7 @@
       </h1>
       
         <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">GitHub Pages＋CMSでブログ</a>
+          <a href="/" id="subtitle">GitHub Pages＋静的サイトジェネレーターでブログ</a>
         </h2>
       
     </div>
@@ -66,6 +66,74 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-irq-problem" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/01/irq-problem/" class="article-date">
+  <time datetime="2014-11-01T06:45:55.000Z" itemprop="datePublished">2014年11月1日</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/01/irq-problem/">「disabling IRQ #9」でXubuntuが起動できない</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="環境">環境</h4>
+<p>ハード：NECのネットブックLaVie Light BL300/T<br>OS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  </p>
+<h4 id="現状と対応">現状と対応</h4>
+<p>Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出来なかったため、いったんXubuntu13.04をインストールしてから14.04.1にアップグレードしたネットブック。<br>アップグレード中にもdisabling IRQで起動できなくなり、/etc/default/grubでGRUB_DEFAULT=”Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.8.0-19-generic”にして、デフォルトの起動カーネルを3.8.0-19にしていた。  </p>
+<p>このままでも使えるが、ソフトウェアの更新がしょっちゅうカーネルを更新するよう言ってくるし、カーネル3.13で起動できないかやってみた。  </p>
+<p>まず起動時にOS選択画面が出なかったが、他に起動できるOSがない場合grub2はOS選択画面をスキップしてしまうためらしい。<br><a href="http://www.serendip.ws/archives/3534" target="_blank" rel="external">Grub2 で起動時に選択リストを表示させる : Serendip - Webデザイン・プログラミング</a>  </p>
+<p>上記記事の通り</p>
+<pre><code><span class="comment">#GRUB_HIDDEN_TIMEOUT=0</span>
+<span class="variable">GRUB_HIDDEN_TIMEOUT_QUIET=</span><span class="constant">false</span>
+</code></pre><p>にしたらOS選択画面が出た。  </p>
+<p>試してみる起動オプションは下記記事を参考にさせて頂いた。<br><a href="http://kiddushin.jugem.jp/?eid=264" target="_blank" rel="external">Disabling IRQ (起動には成功の巻) | おもしろきこともなき世をおもしろく</a>  </p>
+<p>OS選択画面の「Advanced options for Ubuntu」で「Ubuntu, with Linux 3.13.0-39-generic」を選択し「e」キーでオプション編集画面へ。<br>linux /boot/vmlinuz-3.13.0-39…で始まる行の最後quiet nosplashのあとに半角スペースに続けてオプションを追加、「F10」キーで起動。<br>（参考記事：<a href="https://wiki.ubuntulinux.jp/UbuntuTips/Others/BootOptions#A.2BMKQw8zC5MMgw.2FDDrbggwfzC3MLkwxjDgMG6Nd1LVMKow1zC3MOcw8zCSTgBmQnaEMGtZCWb0MFkwizBrMG8-" target="_blank" rel="external">UbuntuTips/Others/BootOptions - Ubuntu Japanese Wiki</a>）  </p>
+<h4 id="結果">結果</h4>
+<p>acpi=off<br>起動は出来るが、画面が横に引き伸ばされてしまい、モニタの設定でも他の解像度を選べず。<br>シャットダウン時には「System halted」のスプラッシュ画面で止まってしまう。    </p>
+<p>pci=noacpi<br>良好。<br>問題なく使えそう。  </p>
+<p>acpi=noirq<br>一瞬起動できるかと思ったが画面が真っ暗のまま。  </p>
+<p>irqpoll<br>上に同じく真っ暗。  </p>
+<p>上記とは別にpci=routeirqというオプションも見かけたのでやってみたが、これは「disabling IRQ #9」で起動できず。  </p>
+<p>pci=noacpiを起動オプションに加えることにしたので、/etc/default/grubで</p>
+<pre><code><span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"quiet nosplash pci=noacpi"</span>
+</code></pre><p>とし、<code>sudo update-grub</code>した。  </p>
+<p>ーー<br>（追記）<br>最初から「pci=noacpi」のオプションを付けてXubuntu14.04.1をインストールすることも可能だった。<br><a href="http://pagent.github.io/blog/2014/11/11/xubuntu-install-option/" target="_blank" rel="external">起動オプションを付けてXubuntu14.04.1をインストール - Pagent</a>  </p>
+<p>この場合grubの記述は</p>
+<pre><code><span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"quiet splash"</span>
+<span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"pci=noacpi"</span>
+</code></pre><p>となっていた。<br>スペース区切りで一行で書いても、改行してあらたにオプションを記述してもどちらでもいいようだ。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/01/irq-problem/" data-id="2hnrn12d6q5xlczd" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/01/irq-problem/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-firefox-closed-tabs" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -260,50 +328,6 @@
 
 
   
-    <article id="post-octopress-source-bitbucket" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/10/28/octopress-source-bitbucket/" class="article-date">
-  <time datetime="2014-10-28T00:28:36.000Z" itemprop="datePublished">2014年10月28日</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Octopress/">Octopress</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/10/28/octopress-source-bitbucket/">OctopressのsourceはBitBucketに置くことにした</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>OctopressをDropboxに置いて作業するのはしっくりこなかったが、BitBucketのプライベートレポジトリにOctopressのsourceをバックアップしておけるようなので、やってみた。<br><a href="http://blog.withweb.info/blog/2012/10/04/octopress/" target="_blank" rel="external">Octopressでブログしよう - withweb</a>  </p>
-<p>BitBucketでアカウントを作り参照記事の通り設定したら、_postsを含むsourceを<code>git push</code>出来るようになった。<br>あまりあちこちにアカウントを作るのは気が進まなかったが、これでローカルPCになにかあってもブログの復旧が容易という安心感がある。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/10/28/octopress-source-bitbucket/" data-id="3tv6cwndhpydy5c1" class="article-share-link">Share</a>
-      
-        <a href="http://pagent.github.io/2014/10/28/octopress-source-bitbucket/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -318,6 +342,10 @@
     <h3 class="widget-title">最近の記事</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2014/11/23/hexo-post-layout/">Hexoの新規記事テンプレートを変更</a>
+          </li>
         
           <li>
             <a href="/2014/11/23/hexo-archve-category/">Hexoのアーカイブ、カテゴリーページを全文表示からリスト表示に</a>
@@ -335,10 +363,6 @@
             <a href="/2014/11/21/hexo-xubuntu/">Xubuntuに静的サイトジェネレーターHexoを入れてみた</a>
           </li>
         
-          <li>
-            <a href="/2014/11/21/hello-world/">Hello World</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -348,7 +372,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">カテゴリー</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net-Linux/">Net Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net-Linux/">Net Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -357,7 +381,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">月別アーカイブ</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
     </div>
   </div>
 

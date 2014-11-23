@@ -39,7 +39,7 @@
       </h1>
       
         <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">GitHub Pages＋CMSでブログ</a>
+          <a href="/" id="subtitle">GitHub Pages＋静的サイトジェネレーターでブログ</a>
         </h2>
       
     </div>
@@ -66,6 +66,68 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-category-no-downcase" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/24/category-no-downcase/" class="article-date">
+  <time datetime="2014-10-24T00:16:56.000Z" itemprop="datePublished">2014年10月24日</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Octopress/">Octopress</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/24/category-no-downcase/">Octopressのカテゴリ表示が小文字になっていた</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>カテゴリ名を「Octopress」と先頭の「O」を大文字にしているのが、なぜか記事下部でもサイドバーでも「octopress」と小文字で表示されていた。<br>Jekyllのバージョンアップでカテゴリ名の先頭文字を小文字に統一することになったらしい。<br><a href="http://rcmdnk.github.io/blog/2014/07/10/blog-octopress-ruby/" target="_blank" rel="external">Jekyll 1.X or 2.X (+ Octopress)でのCategoryの取り扱い - rcmdnk’s blog</a>  </p>
+<p>参照記事の通り、post.rb（Xubuntu14.04.1では/var/lib/gems/1.9.1/gems/jekyll-2.4.0/lib/jekyllにあった）をoctopress/plugins内にコピーして編集したが、previewの際</p>
+<blockquote>
+<p>warning: already initialized constant MATCHER</p>
+<p>warning: already initialized constant EXCERPT_ATTRIBUTES_FOR_LIQUID</p>
+<p>warning: already initialized constant ATTRIBUTES_FOR_LIQUID</p>
+</blockquote>
+<p>と警告が出る。<br>コピーしてきたpost.rbの内容は、他の部分を削除してカテゴリー名に関する部分だけにした方が良いらしい。  </p>
+<p>大文字小文字は自分で好きに決めたいので、downcaseをcapitalizeにするのではなく<code>.map {|c| c.to_s.downcase}</code>の部分を省略した。  </p>
+<pre><code><span class="class"><span class="keyword">module</span> <span class="title">Jekyll</span></span>
+  <span class="class"><span class="keyword">class</span> <span class="title">Post</span></span>
+    <span class="function"><span class="keyword">def</span> </span>populate_categories
+      categories_from_data = <span class="constant">Utils</span>.pluralized_array_from_hash(data, <span class="string">'category'</span>, <span class="string">'categories'</span>)
+      <span class="keyword">self</span>.categories = (
+        <span class="constant">Array</span>(categories) + categories_from_data
+      ).flatten.uniq
+    <span class="keyword">end</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</code></pre><p>大文字小文字を好きに決められるようになった。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/10/24/category-no-downcase/" data-id="kou0r6oi04h5txv8" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/10/24/category-no-downcase/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-octopress-customize" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -306,6 +368,10 @@
       <ul>
         
           <li>
+            <a href="/2014/11/23/hexo-post-layout/">Hexoの新規記事テンプレートを変更</a>
+          </li>
+        
+          <li>
             <a href="/2014/11/23/hexo-archve-category/">Hexoのアーカイブ、カテゴリーページを全文表示からリスト表示に</a>
           </li>
         
@@ -321,10 +387,6 @@
             <a href="/2014/11/21/hexo-xubuntu/">Xubuntuに静的サイトジェネレーターHexoを入れてみた</a>
           </li>
         
-          <li>
-            <a href="/2014/11/21/hello-world/">Hello World</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -334,7 +396,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">カテゴリー</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net-Linux/">Net Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net-Linux/">Net Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -343,7 +405,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">月別アーカイブ</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
     </div>
   </div>
 
