@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2014/10/24/doropbox/</loc>
+    <lastmod>2014-11-23T03:21:56.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2014/11/23/hexo-post-layout/</loc>
     <lastmod>2014-11-23T03:17:20.000Z</lastmod>
   </url>
@@ -49,11 +54,6 @@
   <url>
     <loc>http://pagent.github.io/2014/11/20/octopress-deploy-rejected/</loc>
     <lastmod>2014-11-20T11:19:07.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2014/10/24/doropbox/</loc>
-    <lastmod>2014-11-19T06:07:28.000Z</lastmod>
   </url>
   
   <url>
