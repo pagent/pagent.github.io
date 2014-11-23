@@ -4,7 +4,7 @@
   <subtitle><![CDATA[GitHub Pages＋静的サイトジェネレーターでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-11-23T04:28:39.491Z</updated>
+  <updated>2014-11-23T09:45:17.006Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -107,7 +107,7 @@ tag: <span class="number">1</span>
     <link href="http://pagent.github.io/2014/11/22/octopress-hexo/"/>
     <id>http://pagent.github.io/2014/11/22/octopress-hexo/</id>
     <published>2014-11-22T11:21:26.000Z</published>
-    <updated>2014-11-23T03:29:46.000Z</updated>
+    <updated>2014-11-23T09:39:13.000Z</updated>
     <content type="html"><![CDATA[<p>Github Pagesのブログに使っている静的サイトジェネレーターをOctopressからHexoに変更してみた。  </p>
 <p>Octopressの/source/_posts内の記事ソースをそのままHexoの/source/_postsにコピーしたら、generateした時にパーマリンクが<code>http://.../2014/10/24/2014-10-24-xubuntu-blank-menu/</code>のように日付けが重複してしまった。<br>Hexoはデフォルトでは、新しく記事を作った時には日付けがつかず、生成する時に日付けを付加するようになっているらしい。  </p>
 <p>_config.ymlの  </p>
@@ -121,7 +121,7 @@ tag: <span class="number">1</span>
 <p>Feedを導入すると、ヘッダー右上のアイコンでatom.xmlのページは表示出来たが、ブラウザのアドレスバーの端にフィードアイコンが表示されていない。  </p>
 <p>/themes/landscape/layout/_partial/head.ejsの26行目、<code>link rel=&quot;alternative&quot;</code>を<code>link rel=&quot;alternate&quot;</code>に変更したら、アドレスバーにフィードアイコンが表示された。  </p>
 <p>心配だったGithubへのdeployも、_config.ymlの<code># Deployment</code>の項目に記載するだけですんなりdeploy出来た。  </p>
-<p>記事数が増えるに従い動作がもっさりして来たOctopressに較べ、generateが断然早くて軽快。<br>コマンドも<br><code>hexo generate</code>→<code>hexo g</code><br><code>hexo server</code>→<code>hexo s</code><br><code>hexo deploy</code>→<code>hexo d</code><br>で良いようだし、なかなか便利。  </p>
+<p>記事数が増えるに従い（増えたといっても、ほんの20数記事だが）、動作がもっさりして来たOctopressに較べ、generateが断然早くて軽快。<br>コマンドも<br><code>hexo generate</code>→<code>hexo g</code><br><code>hexo server</code>→<code>hexo s</code><br><code>hexo deploy</code>→<code>hexo d</code><br>で良いようだし、なかなか便利。  </p>
 <p>ーー<br><code>hexo new</code>も<code>hexo n</code>でいいみたいで、<code>hexo deploy -g</code>は<code>hexo d -g</code>で良いようだ。</p>
 ]]></content>
     <summary type="html">
@@ -280,10 +280,10 @@ cd -
     <link href="http://pagent.github.io/2014/11/18/debian-wheezy-nemo/"/>
     <id>http://pagent.github.io/2014/11/18/debian-wheezy-nemo/</id>
     <published>2014-11-18T00:51:22.000Z</published>
-    <updated>2014-11-23T03:13:08.000Z</updated>
+    <updated>2014-11-23T05:37:19.000Z</updated>
     <content type="html"><![CDATA[<p>ネットブックLaVie LightにDebian Wheezyをインストールした。  </p>
 <p>ウィンドウマネージャはXfceが好みなので、debian-7.7.0-i386-netinst.isoでインストールする際、”Advanced options” 、”Alternate desktop environments”でXfceを選択した。  </p>
-<p>簡単に管理者権限でファイルやフォルダを操作したいので、XfceデフォルトのファイルマネージャーThunarのアクションに「rootで開く」を追加し、gksuもインストールした。<br>だがrootで開こうとしても、認証画面は表示されるものの、フォルダやファイルを管理者権限で開くことが出来ない。<br>代わりにNemoをインストールしようとしたら、レポジトリにNemoが無かった。PCManFMも確かrootで開くメニューがあったのでインストールしてみたが、なぜかrootで開くメニューが無い。  </p>
+<p>ファイルやフォルダを簡単に管理者権限で操作したいので、XfceデフォルトのファイルマネージャーThunarのアクションに「rootで開く」を追加し、gksuもインストールした。<br>だがrootで開こうとしても、認証画面は表示されるものの、フォルダやファイルを管理者権限で開くことが出来ない。<br>代わりにNemoをインストールしようとしたら、レポジトリにNemoが無かった。PCManFMも確かrootで開くメニューがあったのでインストールしてみたが、なぜかrootで開くメニューが無い。  </p>
 <p>困ってしまったが、Ubuntu 12.04 Preciseのレポジトリを追加することで、Nemoをインストール出来た。  </p>
 <pre><code><span class="keyword">echo</span> <span class="string">"deb http://ppa.launchpad.net/noobslab/mint/ubuntu precise main"</span> | sudo tee -<span class="keyword">a</span> /etc/apt/sources.<span class="keyword">list</span>  
 sudo apt-key adv --keyserver keyserver.ubuntu.<span class="keyword">com</span> --recv-<span class="built_in">keys</span> F59EAE4D  
