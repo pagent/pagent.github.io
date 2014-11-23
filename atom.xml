@@ -4,7 +4,7 @@
   <subtitle><![CDATA[GitHub Pages＋静的サイトジェネレーターでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-11-23T01:07:19.309Z</updated>
+  <updated>2014-11-23T01:20:33.525Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,17 +15,17 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[Hexoの新規記事テンプレートを変更]]></title>
+    <title><![CDATA[Hexoの新規記事レイアウトを変更]]></title>
     <link href="http://pagent.github.io/2014/11/23/hexo-post-layout/"/>
     <id>http://pagent.github.io/2014/11/23/hexo-post-layout/</id>
     <published>2014-11-22T23:20:38.000Z</published>
-    <updated>2014-11-23T01:06:34.000Z</updated>
+    <updated>2014-11-23T01:19:54.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoで新規記事を作ると、初期状態ではtitle、date、tagsの項目しか無いが、categoriesも使いたいので変更。<br>/scaffolds/post.mdに項目を追加するだけで出来た。<br>（<code>---</code>より上部の部分は「Front Matter」というらしい。）  </p>
 <p>またOctopressに戻ることもあるかもしれないので、Octopressの書式に倣ってlayout、commentsも加えた。  </p>
 <pre><code><span class="bullet">---
 </span>layout: post
-title: Hexoの新規記事テンプレートを変更
-date: Sun Nov 23 2014 08:20:38 GMT+0900 (JST)
+title: ｛｛ title ｝｝   ## ｛｛  ｝｝は実際には半角英数
+date: ｛｛ date ｝｝
 comments: true
 tags: 
 <span class="header">categories: 
