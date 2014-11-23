@@ -67,14 +67,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-category-no-downcase" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-irq-problem" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/10/24/category-no-downcase/" class="article-date">
-  <time datetime="2014-10-24T00:16:56.000Z" itemprop="datePublished">2014年10月24日</time>
+    <a href="/2014/11/01/irq-problem/" class="article-date">
+  <time datetime="2014-11-01T06:45:55.000Z" itemprop="datePublished">2014年11月1日</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Octopress/">Octopress</a>
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
   </div>
 
   </div>
@@ -85,7 +85,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/10/24/category-no-downcase/">Octopressのカテゴリ表示が小文字になっていた</a>
+      <a class="article-title" href="/2014/11/01/irq-problem/">「disabling IRQ #9」でXubuntuが起動できない</a>
     </h1>
   
 
@@ -93,33 +93,39 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>カテゴリ名を「Octopress」と先頭の「O」を大文字にしているのが、なぜか記事下部でもサイドバーでも「octopress」と小文字で表示されていた。<br>Jekyllのバージョンアップでカテゴリ名の先頭文字を小文字に統一することになったらしい。<br><a href="http://rcmdnk.github.io/blog/2014/07/10/blog-octopress-ruby/" target="_blank" rel="external">Jekyll 1.X or 2.X (+ Octopress)でのCategoryの取り扱い - rcmdnk’s blog</a>  </p>
-<p>参照記事の通り、post.rb（Xubuntu14.04.1では/var/lib/gems/1.9.1/gems/jekyll-2.4.0/lib/jekyllにあった）をoctopress/plugins内にコピーして編集したが、previewの際</p>
-<blockquote>
-<p>warning: already initialized constant MATCHER</p>
-<p>warning: already initialized constant EXCERPT_ATTRIBUTES_FOR_LIQUID</p>
-<p>warning: already initialized constant ATTRIBUTES_FOR_LIQUID</p>
-</blockquote>
-<p>と警告が出る。<br>コピーしてきたpost.rbの内容は、他の部分を削除してカテゴリー名に関する部分だけにした方が良いらしい。  </p>
-<p>大文字小文字は自分で好きに決めたいので、downcaseをcapitalizeにするのではなく<code>.map {|c| c.to_s.downcase}</code>の部分を省略した。  </p>
-<pre><code><span class="class"><span class="keyword">module</span> <span class="title">Jekyll</span></span>
-  <span class="class"><span class="keyword">class</span> <span class="title">Post</span></span>
-    <span class="function"><span class="keyword">def</span> </span>populate_categories
-      categories_from_data = <span class="constant">Utils</span>.pluralized_array_from_hash(data, <span class="string">'category'</span>, <span class="string">'categories'</span>)
-      <span class="keyword">self</span>.categories = (
-        <span class="constant">Array</span>(categories) + categories_from_data
-      ).flatten.uniq
-    <span class="keyword">end</span>
-  <span class="keyword">end</span>
-<span class="keyword">end</span>
-</code></pre><p>大文字小文字を好きに決められるようになった。</p>
+        <h4 id="環境">環境</h4>
+<p>ハード：NECのネットブックLaVie Light BL300/T<br>OS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  </p>
+<h4 id="現状と対応">現状と対応</h4>
+<p>Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出来なかったため、いったんXubuntu13.04をインストールしてから14.04.1にアップグレードしたネットブック。<br>アップグレード中にもdisabling IRQで起動できなくなり、/etc/default/grubでGRUB_DEFAULT=”Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.8.0-19-generic”にして、デフォルトの起動カーネルを3.8.0-19にしていた。  </p>
+<p>このままでも使えるが、ソフトウェアの更新がしょっちゅうカーネルを更新するよう言ってくるし、カーネル3.13で起動できないかやってみた。  </p>
+<p>まず起動時にOS選択画面が出なかったが、他に起動できるOSがない場合grub2はOS選択画面をスキップしてしまうためらしい。<br><a href="http://www.serendip.ws/archives/3534" target="_blank" rel="external">Grub2 で起動時に選択リストを表示させる : Serendip - Webデザイン・プログラミング</a>  </p>
+<p>上記記事の通り</p>
+<pre><code><span class="comment">#GRUB_HIDDEN_TIMEOUT=0</span>
+<span class="variable">GRUB_HIDDEN_TIMEOUT_QUIET=</span><span class="constant">false</span>
+</code></pre><p>にしたらOS選択画面が出た。  </p>
+<p>試してみる起動オプションは下記記事を参考にさせて頂いた。<br><a href="http://kiddushin.jugem.jp/?eid=264" target="_blank" rel="external">Disabling IRQ (起動には成功の巻) | おもしろきこともなき世をおもしろく</a>  </p>
+<p>OS選択画面の「Advanced options for Ubuntu」で「Ubuntu, with Linux 3.13.0-39-generic」を選択し「e」キーでオプション編集画面へ。<br>linux /boot/vmlinuz-3.13.0-39…で始まる行の最後quiet nosplashのあとに半角スペースに続けてオプションを追加、「F10」キーで起動。<br>（参考記事：<a href="https://wiki.ubuntulinux.jp/UbuntuTips/Others/BootOptions#A.2BMKQw8zC5MMgw.2FDDrbggwfzC3MLkwxjDgMG6Nd1LVMKow1zC3MOcw8zCSTgBmQnaEMGtZCWb0MFkwizBrMG8-" target="_blank" rel="external">UbuntuTips/Others/BootOptions - Ubuntu Japanese Wiki</a>）  </p>
+<h4 id="結果">結果</h4>
+<p>acpi=off<br>起動は出来るが、画面が横に引き伸ばされてしまい、モニタの設定でも他の解像度を選べず。<br>シャットダウン時には「System halted」のスプラッシュ画面で止まってしまう。    </p>
+<p>pci=noacpi<br>良好。<br>問題なく使えそう。  </p>
+<p>acpi=noirq<br>一瞬起動できるかと思ったが画面が真っ暗のまま。  </p>
+<p>irqpoll<br>上に同じく真っ暗。  </p>
+<p>上記とは別にpci=routeirqというオプションも見かけたのでやってみたが、これは「disabling IRQ #9」で起動できず。  </p>
+<p>pci=noacpiを起動オプションに加えることにしたので、/etc/default/grubで</p>
+<pre><code><span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"quiet nosplash pci=noacpi"</span>
+</code></pre><p>とし、<code>sudo update-grub</code>した。  </p>
+<p>ーー<br>（追記）<br>最初から「pci=noacpi」のオプションを付けてXubuntu14.04.1をインストールすることも可能だった。<br><a href="http://pagent.github.io/blog/2014/11/11/xubuntu-install-option/" target="_blank" rel="external">起動オプションを付けてXubuntu14.04.1をインストール - Pagent</a>  </p>
+<p>この場合grubの記述は</p>
+<pre><code><span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"quiet splash"</span>
+<span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"pci=noacpi"</span>
+</code></pre><p>となっていた。<br>スペース区切りで一行で書いても、改行してあらたにオプションを記述してもどちらでもいいようだ。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/10/24/category-no-downcase/" data-id="hk4jw86m2t64whss" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/01/irq-problem/" data-id="san4gbi8vvgng0a3" class="article-share-link">Share</a>
       
-        <a href="http://pagent.github.io/2014/10/24/category-no-downcase/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://pagent.github.io/2014/11/01/irq-problem/#disqus_thread" class="article-comment-link">Comments</a>
       
       
     </footer>
@@ -129,14 +135,14 @@
 
 
   
-    <article id="post-octopress-customize" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-firefox-closed-tabs" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/10/23/octopress-customize/" class="article-date">
-  <time datetime="2014-10-23T09:30:20.000Z" itemprop="datePublished">2014年10月23日</time>
+    <a href="/2014/11/01/firefox-closed-tabs/" class="article-date">
+  <time datetime="2014-11-01T01:02:58.000Z" itemprop="datePublished">2014年11月1日</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Octopress/">Octopress</a>
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
   </div>
 
   </div>
@@ -147,7 +153,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/10/23/octopress-customize/">Octopressのカスタマイズ</a>
+      <a class="article-title" href="/2014/11/01/firefox-closed-tabs/">Firefoxで「閉じたタブを元に戻す」「最近閉じたタブ」がクリック出来ない</a>
     </h1>
   
 
@@ -155,55 +161,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>ブログをリニューアルするにあたって、またOctopressを少しカスタマイズした。  </p>
-<p>以前と同じく、<a href="http://tantant.jp/blog/Octopress/configuring-octopress/#paragraph07" target="_blank" rel="external">Octopressの初期設定時に気にしておきたい9箇所 – tantant</a>と<a href="http://rcmdnk.github.io/blog/2013/10/01/blog-octopress/" target="_blank" rel="external">月間アーカイブ for Octopress – rcmdnk’s blog</a>の通り、カテゴリ別アーカイブと月別アーカイブを追加した。  </p>
-<p>テーマは<a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes" target="_blank" rel="external">3rd Party Octopress Themes · imathis/octopress Wiki</a>で探してみたが、やっぱりデフォルトの方がよいかと思い、sass/custom/_styles.scssを下記に編集したのみ。  </p>
-<pre><code><span class="comment">// This File is imported last, and will override other styles in the cascade</span>
-<span class="comment">// Add styles here to make changes without digging in too much</span>
-
-<span class="tag">body</span> &gt; <span class="tag">header</span> {
-    <span class="attribute">padding-top</span><span class="value">: <span class="number">1.3em</span>;</span>
-    <span class="attribute">padding-bottom</span><span class="value">: <span class="number">1.1em</span>;</span>
-}
-
-<span class="tag">body</span> &gt; <span class="tag">header</span> <span class="tag">h1</span> {
-    <span class="attribute">font-size</span><span class="value">: <span class="number">2.0em</span>;</span>
-    <span class="attribute">font-family</span><span class="value">: <span class="string">"PT Serif"</span>,<span class="string">"Georgia"</span>,<span class="string">"Helvetica Neue"</span>,Arial,sans-serif;</span>
-}
-
-<span class="tag">body</span> &gt; <span class="tag">header</span> <span class="tag">h2</span> {
-    <span class="attribute">font-size</span><span class="value">: <span class="number">0.9em</span>;</span>
-    <span class="attribute">color</span><span class="value">: <span class="hexcolor">#AAA</span>;</span>
-}
-
-<span class="class">.entry-title</span> {
-    <span class="attribute">font-size</span><span class="value">: <span class="number">1.5em</span> <span class="important">!important</span>;</span>
-}
-
-<span class="tag">h2</span>, <span class="tag">section</span> <span class="tag">h1</span> {
-    <span class="attribute">font-size</span><span class="value">: <span class="number">1.2em</span>;</span>
-}
-
-<span class="id">#blog-archives</span> <span class="tag">article</span> <span class="tag">h1</span> <span class="tag">a</span> {
-    <span class="attribute">font-size</span><span class="value">: <span class="number">1.0em</span> <span class="important">!important</span>;</span>
-}
-
-<span class="tag">p</span> {
-    <span class="attribute">font-size</span><span class="value">:  <span class="number">92%</span>;</span>
-}
-
-<span class="tag">article</span> <span class="tag">blockquote</span> {
-    <span class="attribute">font-size</span><span class="value">:  <span class="number">105%</span>;</span>
-}
-</code></pre><p>日付け表記は英語式ではなく日本語式がよかったので、<code>_config.yml</code>で<code>date_format: &quot;%Y年%-m月%-d日&quot;</code><br>としたが、なぜかデフォルトのテーマでは反映されず。<br>source/_includes/post/date.htmlをoctostrap3の<a href="https://github.com/kAworu/octostrap3/blob/master/source/_includes/post/date.html" target="_blank" rel="external">date.html</a>と入れ替えたら反映された。<br>よく分からないが、デフォルトテーマのdate.htmlの記述に問題があるらしい。  </p>
-<p>あと、記事タイトルやカテゴリー名に漢字を使うと中国語読みみたいになってしまうが、これはたぶんOctopressがベースとしているJekyllの仕様なのだろう。<br>WordPressのようにスラッグを指定出きれば良いのだが、やり方が分からないのでこの辺は我慢しないとしょうが無いようだ。</p>
+        <p>いつの間にかXubuntu14.04.1のFirefoxで「閉じたタブを元に戻す」「最近閉じたタブ」が灰色になっていて選択出来なくなっていた。<br>Tab Mix Plusを無効化したら「閉じたタブを元に戻す」をクリックは出来るが、タブが戻らず機能しない。<br>プライベートウィンドウでも駄目。  </p>
+<p>Firefoxのバージョンが33.0に更新されてからだろうかと、synapticから「バージョンの強制」で28.0にダウングレードしてみたが、やはり駄目。  </p>
+<p>他のXubuntuPCを見てみると、そちらではちゃんと「閉じたタブを元に戻す」「最近閉じたタブ」が機能している。  </p>
+<p>Firefoxをインストールし直してみるしかなさそうなのでプロファイルも削除しておいた方が良いだろうかとプロファイルの保存場所を調べていたら、Firefoxにはリセット機能というのがあるようだった。<br><a href="https://support.mozilla.org/ja/kb/reset-firefox-easily-fix-most-problems" target="_blank" rel="external">Firefox をリセットするには | Firefox ヘルプ</a>  </p>
+<p>結局このリセットで復旧できた。  </p>
+<p>Firefoxをリセットしてもブックマークなどは残るが、アドオンは消去されてしまうので、「Firefox Sync」を利用した方が便利だと思う。<br>あとTab Mix Plusなど各種アドオンの設定もエクスポート出来るものは予めエクスポートしておいた方が良い。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/10/23/octopress-customize/" data-id="4pwi9wkzg6od2ddp" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/01/firefox-closed-tabs/" data-id="rkerntpefe0pwbx5" class="article-share-link">Share</a>
       
-        <a href="http://pagent.github.io/2014/10/23/octopress-customize/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://pagent.github.io/2014/11/01/firefox-closed-tabs/#disqus_thread" class="article-comment-link">Comments</a>
       
       
     </footer>
@@ -213,14 +183,14 @@
 
 
   
-    <article id="post-site-renewal" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-fcitx" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/10/23/site-renewal/" class="article-date">
-  <time datetime="2014-10-23T08:35:40.000Z" itemprop="datePublished">2014年10月23日</time>
+    <a href="/2014/10/31/fcitx/" class="article-date">
+  <time datetime="2014-10-31T05:40:11.000Z" itemprop="datePublished">2014年10月31日</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/blog/">blog</a>
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
   </div>
 
   </div>
@@ -231,7 +201,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/10/23/site-renewal/">独自ドメインが面倒</a>
+      <a class="article-title" href="/2014/10/31/fcitx/">ibus1.5のプロパティパネルがうっとおしいのでfcitxにした</a>
     </h1>
   
 
@@ -239,110 +209,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>deployのやり方が分からずFTPでのアップロードだったが、独自ドメインでもOctopressを使ってブログを書いていた。<br>先日、PCのhomeディレクトリを移動する際に誤ってhomeディレクトリをすべて削除してしまい、結局Linux（Xubuntu）を再インストールした。  </p>
-<p>独自ドメインの方にもブログ自体は残っているが、更新するためにはかつての記事をOctopressのsource内に取り込む必要が有りそう。<br>htmlファイルを一つ一つmarkdown形式に復元するのは骨が折れそうなので、かつての記事は諦めることにして、今度はレンタルサーバーではなくGithubを使って新しく始めることにした。<br>Githubでも独自ドメインを使えるようだがそれはせず、.github.ioのサブドメインを使わせてもらうことにした。  </p>
-<p>独自ドメインは自分のドメインということで自由度は高いが、いろいろ出来過ぎて逆に面倒になってしまった。<br>持ち家（独自ドメイン）の自由さというのは確かに魅力的だが、自分のようなずぼらな人間には借家・間借りの気楽さの方が向いているのかもしれない。 </p>
-<p>どちらにしても大したことは書いていなかったので、全データ消失しても大差ないのだが。</p>
+        <p>ibus1.5ではプロパティパネルがちょろちょろ出てきて邪魔になるし、通知領域のMozcのアイコンは「あ」のままだしで使い勝手が悪いので、ibusはやめてfcitxにした。  </p>
+<p>前にfcitxを入れたときは、Mozcで辞書登録したコマンドの記号やスペースが全角に変換されてしまうので断念したが、今回はちゃんと半角で出力してくれた。<br>前回はXubuntu12.04からアップグレードしたXubuntu14.04.1という環境が悪かったのだろうか。  </p>
+<p>通知領域のアイコンで入力状態が確認出来て、プロパティパネルに煩わされることがなくなったので、快適になった。  </p>
+<p>「Zenkakuhankaku」キーでのトグル式の入力切り替えは嫌なので、fcitxの全体の設定＞拡張オプション＞ホットキーでオン・オフにそれぞれ別のキーを割り当てたが、当初、「入力メソッドをオンに」と「入力メソッドをオフに」に設定したキーが逆に反映されてしまっていた。<br>入力メソッドの項目の並びを「キーボード - 日本語」を上、「Mozc」を下（初期入力状態を半角）にしたら、ちゃんと「入力メソッドをオンに」に設定した「Hiraganakatakana」キーでMozcがオン、「オフに」設定した「Muhenkan」キーでMozcがオフになった。  </p>
+<p>fcitxのスキンが他にないか検索したら、Linux Mintユーザーの方がMint向けのスキンをフォーラムで公開しておられた。<br><a href="http://forums.linuxmint-jp.net/viewtopic.php?t=1200" target="_blank" rel="external">Linux Mint Japan 日本語フォーラム • トピック - Fcitx のミントスキン</a>  </p>
+<p>「mint-dark」は落ち着いた色合いで、Mintじゃなくてもいい感じだ。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/10/23/site-renewal/" data-id="62m27e3tvi7cwbu2" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/10/31/fcitx/" data-id="xhzadbqnnmy1cbhx" class="article-share-link">Share</a>
       
-        <a href="http://pagent.github.io/2014/10/23/site-renewal/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-io" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/10/23/io/" class="article-date">
-  <time datetime="2014-10-23T01:23:23.000Z" itemprop="datePublished">2014年10月23日</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Net/">Net</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/10/23/io/">Githubへのdeployエラーとインド洋のイギリス領（.io）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>OctopressブログをGithubのレポジトリにdeployしようとしても、エラーになってなかなか上手くいかなかった。  </p>
-<p>どうやら、参考にしたサイトの説明通りレポジトリ名を（username）.github.comにしたのが原因だった様子。<br>新しく（username）.github.ioでレポジトリを作りなおしたら、すんなりdeploy出来た。<br>Githubがレポジトリを.github.comから.github.ioに移行したのが関係しているのだろうか。  </p>
-<p>.ioというのは見慣れないドメインだったが、最近はIT分野で好まれているのだとか。</p>
-<blockquote>
-<p>.ioは国別コードトップレベルドメイン（ccTLD）の一つで、イギリス領インド洋地域(Indian Ocean Territory)に割り当てられている。</p>
-<p>入出力のI/O（Input/Output）やI/Oポートを表すとして、ウェブアプリケーションを始めとするコンピュータサイエンスの分野では近年.ioドメインが好まれている。2013年4月にGitHubはプロジェクトページの全ドメインを「github.io」に移行した。</p>
-</blockquote>
-<p>イギリスという国がいまだにインド洋に領有地（植民地）を持っている、ということに驚いた。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/10/23/io/" data-id="4splpeyebmeam8bk" class="article-share-link">Share</a>
-      
-        <a href="http://pagent.github.io/2014/10/23/io/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/10/21/test/" class="article-date">
-  <time datetime="2014-10-21T05:22:41.000Z" itemprop="datePublished">2014年10月21日</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/未分類/">未分類</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/10/21/test/">テスト投稿</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>テスト投稿</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/10/21/test/" data-id="fpl5yrxtbeoqbitp" class="article-share-link">Share</a>
-      
-        <a href="http://pagent.github.io/2014/10/21/test/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://pagent.github.io/2014/10/31/fcitx/#disqus_thread" class="article-comment-link">Comments</a>
       
       
     </footer>
@@ -354,7 +233,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span>
+      <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
     </nav>
   
 </section>

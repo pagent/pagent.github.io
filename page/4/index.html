@@ -67,10 +67,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-irq-problem" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-xubuntu-ar9285" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/11/01/irq-problem/" class="article-date">
-  <time datetime="2014-11-01T06:45:55.000Z" itemprop="datePublished">2014年11月1日</time>
+    <a href="/2014/11/13/xubuntu-ar9285/" class="article-date">
+  <time datetime="2014-11-13T08:33:12.000Z" itemprop="datePublished">2014年11月13日</time>
 </a>
     
   <div class="article-category">
@@ -85,7 +85,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/01/irq-problem/">「disabling IRQ #9」でXubuntuが起動できない</a>
+      <a class="article-title" href="/2014/11/13/xubuntu-ar9285/">Xubuntu 14.04.1で無線LAN(Atheros AR9285)が安定しない</a>
     </h1>
   
 
@@ -93,39 +93,70 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="環境">環境</h4>
-<p>ハード：NECのネットブックLaVie Light BL300/T<br>OS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  </p>
-<h4 id="現状と対応">現状と対応</h4>
-<p>Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出来なかったため、いったんXubuntu13.04をインストールしてから14.04.1にアップグレードしたネットブック。<br>アップグレード中にもdisabling IRQで起動できなくなり、/etc/default/grubでGRUB_DEFAULT=”Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.8.0-19-generic”にして、デフォルトの起動カーネルを3.8.0-19にしていた。  </p>
-<p>このままでも使えるが、ソフトウェアの更新がしょっちゅうカーネルを更新するよう言ってくるし、カーネル3.13で起動できないかやってみた。  </p>
-<p>まず起動時にOS選択画面が出なかったが、他に起動できるOSがない場合grub2はOS選択画面をスキップしてしまうためらしい。<br><a href="http://www.serendip.ws/archives/3534" target="_blank" rel="external">Grub2 で起動時に選択リストを表示させる : Serendip - Webデザイン・プログラミング</a>  </p>
-<p>上記記事の通り</p>
-<pre><code><span class="comment">#GRUB_HIDDEN_TIMEOUT=0</span>
-<span class="variable">GRUB_HIDDEN_TIMEOUT_QUIET=</span><span class="constant">false</span>
-</code></pre><p>にしたらOS選択画面が出た。  </p>
-<p>試してみる起動オプションは下記記事を参考にさせて頂いた。<br><a href="http://kiddushin.jugem.jp/?eid=264" target="_blank" rel="external">Disabling IRQ (起動には成功の巻) | おもしろきこともなき世をおもしろく</a>  </p>
-<p>OS選択画面の「Advanced options for Ubuntu」で「Ubuntu, with Linux 3.13.0-39-generic」を選択し「e」キーでオプション編集画面へ。<br>linux /boot/vmlinuz-3.13.0-39…で始まる行の最後quiet nosplashのあとに半角スペースに続けてオプションを追加、「F10」キーで起動。<br>（参考記事：<a href="https://wiki.ubuntulinux.jp/UbuntuTips/Others/BootOptions#A.2BMKQw8zC5MMgw.2FDDrbggwfzC3MLkwxjDgMG6Nd1LVMKow1zC3MOcw8zCSTgBmQnaEMGtZCWb0MFkwizBrMG8-" target="_blank" rel="external">UbuntuTips/Others/BootOptions - Ubuntu Japanese Wiki</a>）  </p>
-<h4 id="結果">結果</h4>
-<p>acpi=off<br>起動は出来るが、画面が横に引き伸ばされてしまい、モニタの設定でも他の解像度を選べず。<br>シャットダウン時には「System halted」のスプラッシュ画面で止まってしまう。    </p>
-<p>pci=noacpi<br>良好。<br>問題なく使えそう。  </p>
-<p>acpi=noirq<br>一瞬起動できるかと思ったが画面が真っ暗のまま。  </p>
-<p>irqpoll<br>上に同じく真っ暗。  </p>
-<p>上記とは別にpci=routeirqというオプションも見かけたのでやってみたが、これは「disabling IRQ #9」で起動できず。  </p>
-<p>pci=noacpiを起動オプションに加えることにしたので、/etc/default/grubで</p>
-<pre><code><span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"quiet nosplash pci=noacpi"</span>
-</code></pre><p>とし、<code>sudo update-grub</code>した。  </p>
-<p>ーー<br>（追記）<br>最初から「pci=noacpi」のオプションを付けてXubuntu14.04.1をインストールすることも可能だった。<br><a href="http://pagent.github.io/blog/2014/11/11/xubuntu-install-option/" target="_blank" rel="external">起動オプションを付けてXubuntu14.04.1をインストール - Pagent</a>  </p>
-<p>この場合grubの記述は</p>
+        <p>Xubuntu 14.04.1をインストールしたネットブックLaVie Light BL300/T。<br>有線でのネット接続は問題無いが、無線LANがとても不安定。<br>頻回に接続が切れて認証を要求されるし、接続も異様に遅い。<br>Xubuntu 12.04では問題なく使えていたのに。  </p>
+<p>どうも無線LANアダプターAtheros製AR9285とドライバーath9kの相性の問題もあるらしい。<br><a href="http://blog.livedoor.jp/furikku9310/archives/52298627.html" target="_blank" rel="external">ノートPCの無線LANデバイスにて : フレイドフォートonBlog</a>  </p>
+<p>/etc/modprobe.d内にath9k.confというファイルを作りそこに<code>options ath9k nohwcrypt=1</code>と記載したり、ath9kをロードし直したりしてみたが改善しない。<br>NdisWrapperでWindows Xp用のドライバーを使えば良いかと思いやってみたが、これも満足に動作しない。  </p>
+<p>Xubuntu 14.04.1にLinux 3.2や3.8カーネルをコンパイルしてインストールすれば良いのかもしれないが、自分の力量を超えているので断念。<br>結局Xubuntu 12.04をインストールしそれを14.04.1にアップグレード、起動カーネルをLinux 3.2にすることで無線LANも安定した。  </p>
+<pre><code><span class="constant">GRUB_DEFAULT</span>=<span class="string">"Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.2.0-58-generic"</span>
+</code></pre><p>古いPCでもLinuxは利用出来ると言われるが、Linuxも新しい機器への対応を進める一方、古いPCは切り捨てられていくのだろう。Ubuntuがそうなのかもしれないが。<br>使い勝手はUbuntu派生ディストリに劣るかもしれないが、今度Debian+Xfceも試してみようと思う。  </p>
+<p>ーー<br>（追記）<br>lshwコマンドで見たところ、Xubuntu 12.04（Linux 3.2カーネル）でもAR9285に使われているドライバーはath9kだった。<br>なぜXubuntu 14.04.1の場合は無線が安定しないのだろう？<br>「disabling IRQ #9」回避のため、起動オプションに「pci=noacpi」を付けていたからだろうか。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/13/xubuntu-ar9285/" data-id="nxykgihr6es3ockp" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/13/xubuntu-ar9285/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-xubuntu-install-option" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/11/xubuntu-install-option/" class="article-date">
+  <time datetime="2014-11-11T09:39:48.000Z" itemprop="datePublished">2014年11月11日</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/11/xubuntu-install-option/">起動オプションを付けてXubuntu14.04.1をインストール</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>NECのネットブックLaVie Light BL300/TにXubuntu14.04.1を再インストールした。<br>以前もXubuntu14.04.1をインストールしたがその時は<code>disabling IRQ #9</code>でインストールDVDを起動出来ず、いったんXubuntu13.04をインストールしてから、その後Xubuntu14.04.1にアップグレードしていた。<br>だが、起動オプションに<code>pci=noacpi</code>を加えれば、Linuxカーネル3.13.0-39でも起動出来るようだったので、起動オプションを付けてXubuntu14.04.1をインストールした。  </p>
+<p>Xubuntu14.04.1のインストールDVDを入れ、起動後「shift」キーを押し続けてオプションを表示。言語を日本語にした後「F6」キーで「その他のオプション」を表示。<br><code>acpi=off</code>、<code>noapic</code>、<code>nolapic</code>、<code>edd=on</code>、<code>nodmraid</code>、<code>nomodeset</code>等の起動オプションが選択出来るが、なにも選ばず「ESC」キーで選択画面を終了。（<code>acpi=off</code>では解像度が800×600に固定されてしまい、他のオプションでは<code>disabling IRQ #9</code>でインストールDVDを起動出来ない。）<br>下部に「起動オプション」の欄があり、キーボードで任意にオプションを入力出来るので、<code>quiet splash --</code>に続けて<code>pci=noacpi</code>と入力し「ENTER」で起動。<br>問題なくXubuntu14.04.1をインストール出来た。  </p>
+<p>インストール後再起動すると、/etc/default/grubの</p>
 <pre><code><span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"quiet splash"</span>
-<span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"pci=noacpi"</span>
-</code></pre><p>となっていた。<br>スペース区切りで一行で書いても、改行してあらたにオプションを記述してもどちらでもいいようだ。</p>
+</code></pre><p>の下にちゃんと</p>
+<pre><code><span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"pci=noacpi"</span>
+</code></pre><p>の記載が加わっている。</p>
+<p>Xubuntuの前にLubuntu14.04.1も試してみたが、確かにXubuntuに較べて動作はやや軽いような気はした。<br>だがLubuntuソフトウェアセンターというのが検索も出来ず使いづらいし、お気に入りアプリケーションの登録も不便だったりと、カスタマイズの自由度の低さからLubuntuは断念した。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/01/irq-problem/" data-id="0qfs11nrn122p0vz" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/11/xubuntu-install-option/" data-id="7c6jyrzpgulc6jp0" class="article-share-link">Share</a>
       
-        <a href="http://pagent.github.io/2014/11/01/irq-problem/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://pagent.github.io/2014/11/11/xubuntu-install-option/#disqus_thread" class="article-comment-link">Comments</a>
       
       
     </footer>
@@ -135,14 +166,14 @@
 
 
   
-    <article id="post-firefox-closed-tabs" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-yonifuru" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/11/01/firefox-closed-tabs/" class="article-date">
-  <time datetime="2014-11-01T01:02:58.000Z" itemprop="datePublished">2014年11月1日</time>
+    <a href="/2014/11/06/yonifuru/" class="article-date">
+  <time datetime="2014-11-06T08:59:22.000Z" itemprop="datePublished">2014年11月6日</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+    <a class="article-category-link" href="/categories/短歌/">短歌</a>
   </div>
 
   </div>
@@ -153,7 +184,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/01/firefox-closed-tabs/">Firefoxで「閉じたタブを元に戻す」「最近閉じたタブ」がクリック出来ない</a>
+      <a class="article-title" href="/2014/11/06/yonifuru/">いたづらにわがみ世にふる</a>
     </h1>
   
 
@@ -161,164 +192,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>いつの間にかXubuntu14.04.1のFirefoxで「閉じたタブを元に戻す」「最近閉じたタブ」が灰色になっていて選択出来なくなっていた。<br>Tab Mix Plusを無効化したら「閉じたタブを元に戻す」をクリックは出来るが、タブが戻らず機能しない。<br>プライベートウィンドウでも駄目。  </p>
-<p>Firefoxのバージョンが33.0に更新されてからだろうかと、synapticから「バージョンの強制」で28.0にダウングレードしてみたが、やはり駄目。  </p>
-<p>他のXubuntuPCを見てみると、そちらではちゃんと「閉じたタブを元に戻す」「最近閉じたタブ」が機能している。  </p>
-<p>Firefoxをインストールし直してみるしかなさそうなのでプロファイルも削除しておいた方が良いだろうかとプロファイルの保存場所を調べていたら、Firefoxにはリセット機能というのがあるようだった。<br><a href="https://support.mozilla.org/ja/kb/reset-firefox-easily-fix-most-problems" target="_blank" rel="external">Firefox をリセットするには | Firefox ヘルプ</a>  </p>
-<p>結局このリセットで復旧できた。  </p>
-<p>Firefoxをリセットしてもブックマークなどは残るが、アドオンは消去されてしまうので、「Firefox Sync」を利用した方が便利だと思う。<br>あとTab Mix Plusなど各種アドオンの設定もエクスポート出来るものは予めエクスポートしておいた方が良い。</p>
+        <p>花の色はうつりにけりな  </p>
+<p>いたづらにわがみ世にふる　ながめせしまに  </p>
+<p>（古今和歌集　小野小町）</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/01/firefox-closed-tabs/" data-id="7hg3imhc683lt0mn" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/06/yonifuru/" data-id="xetb871nu52kckw3" class="article-share-link">Share</a>
       
-        <a href="http://pagent.github.io/2014/11/01/firefox-closed-tabs/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-fcitx" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/10/31/fcitx/" class="article-date">
-  <time datetime="2014-10-31T05:40:11.000Z" itemprop="datePublished">2014年10月31日</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/10/31/fcitx/">ibus1.5のプロパティパネルがうっとおしいのでfcitxにした</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>ibus1.5ではプロパティパネルがちょろちょろ出てきて邪魔になるし、通知領域のMozcのアイコンは「あ」のままだしで使い勝手が悪いので、ibusはやめてfcitxにした。  </p>
-<p>前にfcitxを入れたときは、Mozcで辞書登録したコマンドの記号やスペースが全角に変換されてしまうので断念したが、今回はちゃんと半角で出力してくれた。<br>前回はXubuntu12.04からアップグレードしたXubuntu14.04.1という環境が悪かったのだろうか。  </p>
-<p>通知領域のアイコンで入力状態が確認出来て、プロパティパネルに煩わされることがなくなったので、快適になった。  </p>
-<p>「Zenkakuhankaku」キーでのトグル式の入力切り替えは嫌なので、fcitxの全体の設定＞拡張オプション＞ホットキーでオン・オフにそれぞれ別のキーを割り当てたが、当初、「入力メソッドをオンに」と「入力メソッドをオフに」に設定したキーが逆に反映されてしまっていた。<br>入力メソッドの項目の並びを「キーボード - 日本語」を上、「Mozc」を下（初期入力状態を半角）にしたら、ちゃんと「入力メソッドをオンに」に設定した「Hiraganakatakana」キーでMozcがオン、「オフに」設定した「Muhenkan」キーでMozcがオフになった。  </p>
-<p>fcitxのスキンが他にないか検索したら、Linux Mintユーザーの方がMint向けのスキンをフォーラムで公開しておられた。<br><a href="http://forums.linuxmint-jp.net/viewtopic.php?t=1200" target="_blank" rel="external">Linux Mint Japan 日本語フォーラム • トピック - Fcitx のミントスキン</a>  </p>
-<p>「mint-dark」は落ち着いた色合いで、Mintじゃなくてもいい感じだ。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/10/31/fcitx/" data-id="a5j4gts4c5visqpo" class="article-share-link">Share</a>
-      
-        <a href="http://pagent.github.io/2014/10/31/fcitx/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-unknown-media-type" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/10/31/unknown-media-type/" class="article-date">
-  <time datetime="2014-10-30T21:04:55.000Z" itemprop="datePublished">2014年10月31日</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/10/31/unknown-media-type/">「Unknown media type in type &#39;all/all&#39;」等が表示される</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近Octopressを使っている時やXubuntuの更新の際、端末上に「Unknown media type in type ‘all/all’」というような警告が数行表示されることが続いていた。<br>検索してみると、どうやらKDEのバグらしい。<br><a href="https://bugs.launchpad.net/ubuntu/+source/shared-mime-info/+bug/289592" target="_blank" rel="external">Bug #289592 “Unknown media types in /usr/share/mime/packages/kde…” : Bugs : “shared-mime-info” package : Ubuntu</a><br>確かに、KDEのアプリケーションをいくつかインストールしてからこの症状が起こっているように思う。  </p>
-<p>修正するには</p>
-<blockquote>
-<p>$ sudo rm /usr/share/mime/packages/kde.xml<br>$ sudo update-mime-database /usr/share/mime</p>
-</blockquote>
-<p>とすれば良いようだ。<br>だが、なんのためのファイルか知らないが、いきなりkde.xmlを削除するのも気が引けるので、  </p>
-<pre><code>$ sudo mv <span class="regexp">/usr/</span>share<span class="regexp">/mime/</span>packages<span class="regexp">/kde.xml /</span>usr<span class="regexp">/share/mim</span>e<span class="regexp">/packages/</span>kde.xml.bak
-</code></pre><p>とリネームしてから</p>
-<pre><code>$ sudo <span class="operator"><span class="keyword">update</span>-mime-<span class="keyword">database</span> /usr/<span class="keyword">share</span>/mime</span>
-</code></pre><p>としてみた。  </p>
-<p>今のところ「Unknown media type in type …」は出てないし、特に不具合も無いようだ。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/10/31/unknown-media-type/" data-id="8nhcoug1o4b77m25" class="article-share-link">Share</a>
-      
-        <a href="http://pagent.github.io/2014/10/31/unknown-media-type/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-kana" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/10/28/kana/" class="article-date">
-  <time datetime="2014-10-28T09:01:20.000Z" itemprop="datePublished">2014年10月28日</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/ことば/">ことば</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/10/28/kana/">現代仮名遣い</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>ときどき現代仮名遣いに違和感を感じる。<br>例えば、「〜さえ」には「え」より「へ」を使った方が良いのではないかと。  </p>
-<p>でも実際「〜さへ」と書いてみると、これもしっくり来ない。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/10/28/kana/" data-id="5p67ryyqlqd6rywo" class="article-share-link">Share</a>
-      
-        <a href="http://pagent.github.io/2014/10/28/kana/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://pagent.github.io/2014/11/06/yonifuru/#disqus_thread" class="article-comment-link">Comments</a>
       
       
     </footer>
@@ -330,7 +213,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
     </nav>
   
 </section>
