@@ -67,6 +67,90 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-octopress-customize" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/23/octopress-customize/" class="article-date">
+  <time datetime="2014-10-23T09:30:20.000Z" itemprop="datePublished">2014年10月23日</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Octopress/">Octopress</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/23/octopress-customize/">Octopressのカスタマイズ</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ブログをリニューアルするにあたって、またOctopressを少しカスタマイズした。  </p>
+<p>以前と同じく、<a href="http://tantant.jp/blog/Octopress/configuring-octopress/#paragraph07" target="_blank" rel="external">Octopressの初期設定時に気にしておきたい9箇所 – tantant</a>と<a href="http://rcmdnk.github.io/blog/2013/10/01/blog-octopress/" target="_blank" rel="external">月間アーカイブ for Octopress – rcmdnk’s blog</a>の通り、カテゴリ別アーカイブと月別アーカイブを追加した。  </p>
+<p>テーマは<a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes" target="_blank" rel="external">3rd Party Octopress Themes · imathis/octopress Wiki</a>で探してみたが、やっぱりデフォルトの方がよいかと思い、sass/custom/_styles.scssを下記に編集したのみ。  </p>
+<pre><code><span class="comment">// This File is imported last, and will override other styles in the cascade</span>
+<span class="comment">// Add styles here to make changes without digging in too much</span>
+
+<span class="tag">body</span> &gt; <span class="tag">header</span> {
+    <span class="attribute">padding-top</span><span class="value">: <span class="number">1.3em</span>;</span>
+    <span class="attribute">padding-bottom</span><span class="value">: <span class="number">1.1em</span>;</span>
+}
+
+<span class="tag">body</span> &gt; <span class="tag">header</span> <span class="tag">h1</span> {
+    <span class="attribute">font-size</span><span class="value">: <span class="number">2.0em</span>;</span>
+    <span class="attribute">font-family</span><span class="value">: <span class="string">"PT Serif"</span>,<span class="string">"Georgia"</span>,<span class="string">"Helvetica Neue"</span>,Arial,sans-serif;</span>
+}
+
+<span class="tag">body</span> &gt; <span class="tag">header</span> <span class="tag">h2</span> {
+    <span class="attribute">font-size</span><span class="value">: <span class="number">0.9em</span>;</span>
+    <span class="attribute">color</span><span class="value">: <span class="hexcolor">#AAA</span>;</span>
+}
+
+<span class="class">.entry-title</span> {
+    <span class="attribute">font-size</span><span class="value">: <span class="number">1.5em</span> <span class="important">!important</span>;</span>
+}
+
+<span class="tag">h2</span>, <span class="tag">section</span> <span class="tag">h1</span> {
+    <span class="attribute">font-size</span><span class="value">: <span class="number">1.2em</span>;</span>
+}
+
+<span class="id">#blog-archives</span> <span class="tag">article</span> <span class="tag">h1</span> <span class="tag">a</span> {
+    <span class="attribute">font-size</span><span class="value">: <span class="number">1.0em</span> <span class="important">!important</span>;</span>
+}
+
+<span class="tag">p</span> {
+    <span class="attribute">font-size</span><span class="value">:  <span class="number">92%</span>;</span>
+}
+
+<span class="tag">article</span> <span class="tag">blockquote</span> {
+    <span class="attribute">font-size</span><span class="value">:  <span class="number">105%</span>;</span>
+}
+</code></pre><p>日付け表記は英語式ではなく日本語式がよかったので、<code>_config.yml</code>で<code>date_format: &quot;%Y年%-m月%-d日&quot;</code><br>としたが、なぜかデフォルトのテーマでは反映されず。<br>source/_includes/post/date.htmlをoctostrap3の<a href="https://github.com/kAworu/octostrap3/blob/master/source/_includes/post/date.html" target="_blank" rel="external">date.html</a>と入れ替えたら反映された。<br>よく分からないが、デフォルトテーマのdate.htmlの記述に問題があるらしい。  </p>
+<p>あと、記事タイトルやカテゴリー名に漢字を使うと中国語読みみたいになってしまうが、これはたぶんOctopressがベースとしているJekyllの仕様なのだろう。<br>WordPressのようにスラッグを指定出きれば良いのだが、やり方が分からないのでこの辺は我慢しないとしょうが無いようだ。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/10/23/octopress-customize/" data-id="yjt6xrhv6zj22j54" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/10/23/octopress-customize/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-site-renewal" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/10/23/site-renewal/" class="article-date">
@@ -163,52 +247,9 @@
 
 
   
-    <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/10/21/test/" class="article-date">
-  <time datetime="2014-10-21T05:22:41.000Z" itemprop="datePublished">2014年10月21日</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/未分類/">未分類</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/10/21/test/">テスト投稿</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>テスト投稿</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/10/21/test/" data-id="z2sf6bl55bt15z86" class="article-share-link">Share</a>
-      
-        <a href="http://pagent.github.io/2014/10/21/test/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/9/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span>
+      <a class="extend prev" rel="prev" href="/page/9/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/11/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -220,6 +261,10 @@
     <h3 class="widget-title">最近の記事</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2014/11/24/hexo-windows/">WindowsでHexoを使う（1）</a>
+          </li>
         
           <li>
             <a href="/2014/11/23/hexo-post-template/">Hexoの新規記事テンプレートを変更</a>
@@ -237,10 +282,6 @@
             <a href="/2014/11/22/octopress-hexo/">サイトジェネレーターをOctopressからHexoに変更</a>
           </li>
         
-          <li>
-            <a href="/2014/11/21/hexo-xubuntu/">Xubuntuに静的サイトジェネレーターHexoを入れてみた</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -250,7 +291,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">カテゴリー</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -259,7 +300,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">月別アーカイブ</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">17</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
     </div>
   </div>
 

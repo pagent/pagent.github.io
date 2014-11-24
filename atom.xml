@@ -4,7 +4,7 @@
   <subtitle><![CDATA[GitHub Pages＋静的サイトジェネレーターでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-11-24T09:15:55.304Z</updated>
+  <updated>2014-11-24T11:25:24.359Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,60 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[WindowsでHexoを使う（1）]]></title>
+    <link href="http://pagent.github.io/2014/11/24/hexo-windows/"/>
+    <id>http://pagent.github.io/2014/11/24/hexo-windows/</id>
+    <published>2014-11-24T09:32:37.000Z</published>
+    <updated>2014-11-24T11:15:30.000Z</updated>
+    <content type="html"><![CDATA[<p>以前、静的サイトジェネレーターnanocをWindowsにインストールしたが、なんとかインストールは出来たものの、compile（generate）してhtmlファイルを生成する際、エラーになり使えなかった。<br>最近使い始めたHexoは、nanocやOctopressと違い、rubyではなくNode.jsで動いているそうなので、Windowsで使えるか試してみた。  </p>
+<p>結果、Windowsで実用可能だった。</p>
+<h3 id="Node-jsのインストール">Node.jsのインストール</h3>
+<p>Node.jsは下記からWindows用インストーラー付きのWindows Installer (.msi)をダウンロードし、デフォルトの設定のままインストールした。<br><a href="http://nodejs.org/download/" target="_blank" rel="external">http://nodejs.org/download/</a><br>バージョンはXubuntuに入れたのと同じv0.10.33だった。  </p>
+<h3 id="msysgitのインストール">msysgitのインストール</h3>
+<p>Windowsでgitを使うため<a href="http://msysgit.github.io/" target="_blank" rel="external">msysgit</a>をインストールした。<br>インストールオプションは下記サイトを参考にさせて頂いた。<br><a href="http://d.hatena.ne.jp/xyk/20130920/1379659991" target="_blank" rel="external">Windows に msysgit をインストールして git 環境を作る - xykの日記</a>  </p>
+<p>「Select Components」ではすべてのチェックを外した。<br>「Adjusting your PATH environment」は上から2番目の「Run Git from the Windows Command Prompt」。<br>「Configuring the line ending conversions」は上から2番目の「Checkout as-is, commit Unix-style line endings」でインストールしたが、実際Hexoでdeployする際  </p>
+<pre><code>warning: LF will be replaced <span class="keyword">by</span> <span class="constant">CRLF</span> <span class="operator">in</span> css/style.css.
+The <span class="built_in">file</span> will have its original <span class="built_in">line</span> endings <span class="operator">in</span> your working <span class="built_in">directory</span>.
+warning: LF will be replaced <span class="keyword">by</span> <span class="constant">CRLF</span> <span class="operator">in</span> fancybox/helpers/jquery.fancybox-buttons.css.
+The <span class="built_in">file</span> will have its original <span class="built_in">line</span> endings <span class="operator">in</span> your working <span class="built_in">directory</span>.
+warning: LF will be replaced <span class="keyword">by</span> <span class="constant">CRLF</span> <span class="operator">in</span> fancybox/helpers/jquery.fancybox-buttons.js.
+The <span class="built_in">file</span> will have its original <span class="built_in">line</span> endings <span class="operator">in</span> your working <span class="built_in">directory</span>.
+...
+</code></pre><p>と、改行コードを変更するという警告が大量に吐出されたので、結局上から3番目のオプション「Checkout as-is, commit as-is」にした。<br>後からC:\Users\（ユーザー名）.gitconfigで変更可能。  </p>
+<h3 id="Hexoのインストール">Hexoのインストール</h3>
+<p>コマンドプロンプトを開き</p>
+<pre><code>&gt;npm <span class="keyword">install</span> hexo -g
+</code></pre><p>でインストール。<br>Linuxの時と同様  </p>
+<pre><code>npm WARN <span class="keyword">optional</span> dep failed, continuing fsevents@<span class="number">0.2</span>.<span class="number">0</span>
+</code></pre><p>という警告が出たが、インストール完了。  </p>
+<p>Hexoの作業フォルダを作るため、任意のフォルダを選択した状態で「SHIFT」キーを押しながら右クリック。<br>「コマンド ウィンドウをここで開く」でコマンドウィンドウを立ち上げ  </p>
+<pre><code>&gt;hexo init hexo-win
+&gt;<span class="built_in">cd</span> hexo-win
+&gt;npm install
+
+&gt;hexo g
+&gt;hexo s
+</code></pre><p>ローカルホストに無事、新規ブログが立ち上がった。  </p>
+<p>2回目の<code>hexo g</code>からは、なぜか  </p>
+<pre><code>[delete] Deleted: archives\<span class="number">2014</span>\<span class="number">11</span>\index.html
+[delete] Deleted: archives\index.html
+<span class="keyword">...</span>
+
+[create] Generated: archives/index.html (124ms)
+[create] Generated: archives/<span class="number">2014</span>/index.html (63ms)
+<span class="keyword">...</span>
+</code></pre><p>と、一旦すべてのファイルを削除してからまたファイルを生成したというメッセージが表示される。<br>あまり気持ち良くはないが、実用上問題は無さそう。  </p>
+<p>この後、deployで躓いたが、それは次項に記載。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>以前、静的サイトジェネレーターnanocをWindowsにインストールしたが、なんとかインストールは出来たものの、compile（generate）してhtmlファイルを生成する際、エラーになり使えなかった。<br>最近使い始めたHexoは、nanocやOctopressと]]>
+    </summary>
+    
+      <category term="Hexo" scheme="http://pagent.github.io/categories/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Hexoの新規記事テンプレートを変更]]></title>
@@ -565,25 +619,6 @@ sudo apt-<span class="built_in">get</span> install nemo
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/categories/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[現代仮名遣い]]></title>
-    <link href="http://pagent.github.io/2014/10/28/kana/"/>
-    <id>http://pagent.github.io/2014/10/28/kana/</id>
-    <published>2014-10-28T09:01:20.000Z</published>
-    <updated>2014-10-28T09:07:31.000Z</updated>
-    <content type="html"><![CDATA[<p>ときどき現代仮名遣いに違和感を感じる。<br>例えば、「〜さえ」には「え」より「へ」を使った方が良いのではないかと。  </p>
-<p>でも実際「〜さへ」と書いてみると、これもしっくり来ない。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>ときどき現代仮名遣いに違和感を感じる。<br>例えば、「〜さえ」には「え」より「へ」を使った方が良いのではないかと。  </p>
-<p>でも実際「〜さへ」と書いてみると、これもしっくり来ない。</p>
-]]>
-    </summary>
-    
-      <category term="ことば" scheme="http://pagent.github.io/categories/%E3%81%93%E3%81%A8%E3%81%B0/"/>
     
   </entry>
   

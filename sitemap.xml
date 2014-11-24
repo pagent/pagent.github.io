@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2014/11/24/hexo-windows/</loc>
+    <lastmod>2014-11-24T11:15:30.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2014/11/22/octopress-hexo/</loc>
     <lastmod>2014-11-23T09:39:13.000Z</lastmod>
   </url>
