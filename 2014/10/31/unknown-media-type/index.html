@@ -5,15 +5,15 @@
   
   <title>「Unknown media type in type &#39;all/all&#39;」等が表示される | Pagent</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近Octopressを使っている時やXubuntuの更新の際、端末上に「Unknown media type in type ‘all/all’」というような警告が数行表示されることが続いていた。検索してみると、どうやらKDEのバグらしい。Bug #289592 “Unknown media types in /usr/share/mime/packages/kde…” : Bugs : “sh">
+  <meta name="description" content="最近Octopressを使っている時やXubuntuの更新の際、端末上に「Unknown media type in type ‘all/all’」というような警告が数行表示されることが続いていた。検索してみると、どうやらKDEのバグらしい。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「Unknown media type in type 'all/all'」等が表示される">
 <meta property="og:url" content="http://pagent.github.io/2014/10/31/unknown-media-type/">
 <meta property="og:site_name" content="Pagent">
-<meta property="og:description" content="最近Octopressを使っている時やXubuntuの更新の際、端末上に「Unknown media type in type ‘all/all’」というような警告が数行表示されることが続いていた。検索してみると、どうやらKDEのバグらしい。Bug #289592 “Unknown media types in /usr/share/mime/packages/kde…” : Bugs : “sh">
+<meta property="og:description" content="最近Octopressを使っている時やXubuntuの更新の際、端末上に「Unknown media type in type ‘all/all’」というような警告が数行表示されることが続いていた。検索してみると、どうやらKDEのバグらしい。">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「Unknown media type in type 'all/all'」等が表示される">
-<meta name="twitter:description" content="最近Octopressを使っている時やXubuntuの更新の際、端末上に「Unknown media type in type ‘all/all’」というような警告が数行表示されることが続いていた。検索してみると、どうやらKDEのバグらしい。Bug #289592 “Unknown media types in /usr/share/mime/packages/kde…” : Bugs : “sh">
+<meta name="twitter:description" content="最近Octopressを使っている時やXubuntuの更新の際、端末上に「Unknown media type in type ‘all/all’」というような警告が数行表示されることが続いていた。検索してみると、どうやらKDEのバグらしい。">
 
   
     <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
@@ -91,7 +91,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近Octopressを使っている時やXubuntuの更新の際、端末上に「Unknown media type in type ‘all/all’」というような警告が数行表示されることが続いていた。<br>検索してみると、どうやらKDEのバグらしい。<br><a href="https://bugs.launchpad.net/ubuntu/+source/shared-mime-info/+bug/289592" target="_blank" rel="external">Bug #289592 “Unknown media types in /usr/share/mime/packages/kde…” : Bugs : “shared-mime-info” package : Ubuntu</a><br>確かに、KDEのアプリケーションをいくつかインストールしてからこの症状が起こっているように思う。  </p>
+        <p>最近Octopressを使っている時やXubuntuの更新の際、端末上に「Unknown media type in type ‘all/all’」というような警告が数行表示されることが続いていた。<br>検索してみると、どうやらKDEのバグらしい。  <a id="more"></a><br><a href="https://bugs.launchpad.net/ubuntu/+source/shared-mime-info/+bug/289592" target="_blank" rel="external">Bug #289592 “Unknown media types in /usr/share/mime/packages/kde…” : Bugs : “shared-mime-info” package : Ubuntu</a><br>確かに、KDEのアプリケーションをいくつかインストールしてからこの症状が起こっているように思う。  </p>
 <p>修正するには</p>
 <blockquote>
 <p>$ sudo rm /usr/share/mime/packages/kde.xml<br>$ sudo update-mime-database /usr/share/mime</p>

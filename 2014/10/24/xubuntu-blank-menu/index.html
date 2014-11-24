@@ -5,15 +5,15 @@
   
   <title>Xubuntuでメニューが表示されず真っ白 | Pagent</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="これまで12.04からアップグレードしたXubuntu14.04.1を使っていたので気づかなかったが、14.04.1ではメニュー編集ツールの「メイン・メニュー」が無くなっていて、「メニューエディタ」（MenuLibre）しか入っていない。自分でメニューを追加する際、MenuLibreはどうも使い方がよく分からない。かつての「メイン・メニュー」はalacarteというそうで、sudo apt-get">
+  <meta name="description" content="これまで12.04からアップグレードしたXubuntu14.04.1を使っていたので気づかなかったが、14.04.1ではメニュー編集ツールの「メイン・メニュー」が無くなっていて、「メニューエディタ」（MenuLibre）しか入っていない。自分でメニューを追加する際、">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Xubuntuでメニューが表示されず真っ白">
 <meta property="og:url" content="http://pagent.github.io/2014/10/24/xubuntu-blank-menu/">
 <meta property="og:site_name" content="Pagent">
-<meta property="og:description" content="これまで12.04からアップグレードしたXubuntu14.04.1を使っていたので気づかなかったが、14.04.1ではメニュー編集ツールの「メイン・メニュー」が無くなっていて、「メニューエディタ」（MenuLibre）しか入っていない。自分でメニューを追加する際、MenuLibreはどうも使い方がよく分からない。かつての「メイン・メニュー」はalacarteというそうで、sudo apt-get">
+<meta property="og:description" content="これまで12.04からアップグレードしたXubuntu14.04.1を使っていたので気づかなかったが、14.04.1ではメニュー編集ツールの「メイン・メニュー」が無くなっていて、「メニューエディタ」（MenuLibre）しか入っていない。自分でメニューを追加する際、">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Xubuntuでメニューが表示されず真っ白">
-<meta name="twitter:description" content="これまで12.04からアップグレードしたXubuntu14.04.1を使っていたので気づかなかったが、14.04.1ではメニュー編集ツールの「メイン・メニュー」が無くなっていて、「メニューエディタ」（MenuLibre）しか入っていない。自分でメニューを追加する際、MenuLibreはどうも使い方がよく分からない。かつての「メイン・メニュー」はalacarteというそうで、sudo apt-get">
+<meta name="twitter:description" content="これまで12.04からアップグレードしたXubuntu14.04.1を使っていたので気づかなかったが、14.04.1ではメニュー編集ツールの「メイン・メニュー」が無くなっていて、「メニューエディタ」（MenuLibre）しか入っていない。自分でメニューを追加する際、">
 
   
     <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
@@ -91,7 +91,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>これまで12.04からアップグレードしたXubuntu14.04.1を使っていたので気づかなかったが、14.04.1ではメニュー編集ツールの「メイン・メニュー」が無くなっていて、「メニューエディタ」（MenuLibre）しか入っていない。<br>自分でメニューを追加する際、MenuLibreはどうも使い方がよく分からない。<br>かつての「メイン・メニュー」はalacarteというそうで、<code>sudo apt-get install alacarte</code>でこれを導入した。  </p>
+        <p>これまで12.04からアップグレードしたXubuntu14.04.1を使っていたので気づかなかったが、14.04.1ではメニュー編集ツールの「メイン・メニュー」が無くなっていて、「メニューエディタ」（MenuLibre）しか入っていない。<br>自分でメニューを追加する際、<a id="more"></a>MenuLibreはどうも使い方がよく分からない。<br>かつての「メイン・メニュー」はalacarteというそうで、<code>sudo apt-get install alacarte</code>でこれを導入した。  </p>
 <p>導入したまでは良かったのだが、alacarteで新規メニューを追加していたら突然トラブルが発生して、メニューがすべて消えてしまった。<br>Whisker Menuは真っ白の状態で、デスクトップ上右クリックのアプリケーションでも短い横棒が表示されるのみで、アプリケーションがなにも表示されない。<br>MenuLibreとalacarteを同時に立ち上げていたのが悪かったのだろうか。<br>ログインし直してみても変わらず困ってしまった。  </p>
 <p>ユーザー固有のメニューファイルは~/.config/menus（/home/ユーザー名/.config/menus）にあるらしいのでmenusを見てみたら、真っ白でなにも書かれていない。<br>どうりでメニューになにも表示されないわけだ。  </p>
 <p>menusがどんな内容だったかは思い出せなかったが、新規にユーザーを追加してそのmenusファイルを流用すれば良いのではないかと思い、やってみたらこれで無事に復帰できた。  </p>

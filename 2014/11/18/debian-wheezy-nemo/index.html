@@ -7,19 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="ネットブックLaVie LightにDebian Wheezyをインストールした。  
 ウィンドウマネージャはXfceが好みなので、debian-7.7.0-i386-netinst.isoでインストールする際、”Advanced options” 、”Alternate desktop environments”でXfceを選択した。  
-ファイルやフォルダを簡単に管理者権限で操作したいので、X">
+ファイルやフォルダを簡単に管理者権限で操作したいので、">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Debian WheezyにNemoをインストール">
 <meta property="og:url" content="http://pagent.github.io/2014/11/18/debian-wheezy-nemo/">
 <meta property="og:site_name" content="Pagent">
 <meta property="og:description" content="ネットブックLaVie LightにDebian Wheezyをインストールした。  
 ウィンドウマネージャはXfceが好みなので、debian-7.7.0-i386-netinst.isoでインストールする際、”Advanced options” 、”Alternate desktop environments”でXfceを選択した。  
-ファイルやフォルダを簡単に管理者権限で操作したいので、X">
+ファイルやフォルダを簡単に管理者権限で操作したいので、">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Debian WheezyにNemoをインストール">
 <meta name="twitter:description" content="ネットブックLaVie LightにDebian Wheezyをインストールした。  
 ウィンドウマネージャはXfceが好みなので、debian-7.7.0-i386-netinst.isoでインストールする際、”Advanced options” 、”Alternate desktop environments”でXfceを選択した。  
-ファイルやフォルダを簡単に管理者権限で操作したいので、X">
+ファイルやフォルダを簡単に管理者権限で操作したいので、">
 
   
     <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
@@ -99,7 +99,7 @@
       
         <p>ネットブックLaVie LightにDebian Wheezyをインストールした。  </p>
 <p>ウィンドウマネージャはXfceが好みなので、debian-7.7.0-i386-netinst.isoでインストールする際、”Advanced options” 、”Alternate desktop environments”でXfceを選択した。  </p>
-<p>ファイルやフォルダを簡単に管理者権限で操作したいので、XfceデフォルトのファイルマネージャーThunarのアクションに「rootで開く」を追加し、gksuもインストールした。<br>だがrootで開こうとしても、認証画面は表示されるものの、フォルダやファイルを管理者権限で開くことが出来ない。<br>代わりにNemoをインストールしようとしたら、レポジトリにNemoが無かった。PCManFMも確かrootで開くメニューがあったのでインストールしてみたが、なぜかrootで開くメニューが無い。  </p>
+<p>ファイルやフォルダを簡単に管理者権限で操作したいので、<a id="more"></a>XfceデフォルトのファイルマネージャーThunarのアクションに「rootで開く」を追加し、gksuもインストールした。<br>だがrootで開こうとしても、認証画面は表示されるものの、フォルダやファイルを管理者権限で開くことが出来ない。<br>代わりにNemoをインストールしようとしたら、レポジトリにNemoが無かった。PCManFMも確かrootで開くメニューがあったのでインストールしてみたが、なぜかrootで開くメニューが無い。  </p>
 <p>困ってしまったが、Ubuntu 12.04 Preciseのレポジトリを追加することで、Nemoをインストール出来た。  </p>
 <pre><code><span class="keyword">echo</span> <span class="string">"deb http://ppa.launchpad.net/noobslab/mint/ubuntu precise main"</span> | sudo tee -<span class="keyword">a</span> /etc/apt/sources.<span class="keyword">list</span>  
 sudo apt-key adv --keyserver keyserver.ubuntu.<span class="keyword">com</span> --recv-<span class="built_in">keys</span> F59EAE4D  

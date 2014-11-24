@@ -5,18 +5,15 @@
   
   <title>2台目のPCのOctopressでdeploy出来ない | Pagent</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="DropboxでOctopressのフォルダを同期し、2台目のPCでもrake new_postやrake generateは出来るようになったが、rake deployが出来ない。gitが入ってなかったのでsudo apt-get install gitし、rake setup_github_pagesでセットアップしたが、  
-! [rejected]        master -&gt;">
+  <meta name="description" content="DropboxでOctopressのフォルダを同期し、2台目のPCでもrake new_postやrake generateは出来るようになったが、rake deployが出来ない。gitが入ってなかったのでsudo apt-get install gitし、rake setup_github_pagesでセットアップしたが、">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2台目のPCのOctopressでdeploy出来ない">
 <meta property="og:url" content="http://pagent.github.io/2014/11/20/octopress-deploy-rejected/">
 <meta property="og:site_name" content="Pagent">
-<meta property="og:description" content="DropboxでOctopressのフォルダを同期し、2台目のPCでもrake new_postやrake generateは出来るようになったが、rake deployが出来ない。gitが入ってなかったのでsudo apt-get install gitし、rake setup_github_pagesでセットアップしたが、  
-! [rejected]        master -&gt;">
+<meta property="og:description" content="DropboxでOctopressのフォルダを同期し、2台目のPCでもrake new_postやrake generateは出来るようになったが、rake deployが出来ない。gitが入ってなかったのでsudo apt-get install gitし、rake setup_github_pagesでセットアップしたが、">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2台目のPCのOctopressでdeploy出来ない">
-<meta name="twitter:description" content="DropboxでOctopressのフォルダを同期し、2台目のPCでもrake new_postやrake generateは出来るようになったが、rake deployが出来ない。gitが入ってなかったのでsudo apt-get install gitし、rake setup_github_pagesでセットアップしたが、  
-! [rejected]        master -&gt;">
+<meta name="twitter:description" content="DropboxでOctopressのフォルダを同期し、2台目のPCでもrake new_postやrake generateは出来るようになったが、rake deployが出来ない。gitが入ってなかったのでsudo apt-get install gitし、rake setup_github_pagesでセットアップしたが、">
 
   
     <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
@@ -94,7 +91,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>DropboxでOctopressのフォルダを同期し、2台目のPCでもrake new_postやrake generateは出来るようになったが、rake deployが出来ない。<br>gitが入ってなかったので<code>sudo apt-get install git</code>し、<code>rake setup_github_pages</code>でセットアップしたが、  </p>
+        <p>DropboxでOctopressのフォルダを同期し、2台目のPCでもrake new_postやrake generateは出来るようになったが、rake deployが出来ない。<br>gitが入ってなかったので<code>sudo apt-get install git</code>し、<code>rake setup_github_pages</code>でセットアップしたが、  <a id="more"></a></p>
 <pre><code><span class="input"><span class="prompt">! [rejected]        master -&gt;</span> master (non-fast-forward)</span>
 </code></pre><p>とエラーになる。<br>SSHの公開鍵も設定したのだが。  </p>
 <p>検索したところ、Octopressで突然deploy出来なくなった時には、Rakefileを編集するという対処法があるらしい。<br><a href="http://qiita.com/takuma7/items/2d6f6e786eb6c0afbefb" target="_blank" rel="external">Octopressでrake deployした際にrejectedされた場合の対処 - Qiita</a>  </p>

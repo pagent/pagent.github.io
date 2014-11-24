@@ -8,7 +8,7 @@
   <meta name="description" content="環境
 ハード：NECのネットブックLaVie Light BL300/TOS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  
 現状と対応
-Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出">
+Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したら">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「disabling IRQ #9」でXubuntuが起動できない">
 <meta property="og:url" content="http://pagent.github.io/2014/11/01/irq-problem/">
@@ -16,13 +16,13 @@ Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でイン�
 <meta property="og:description" content="環境
 ハード：NECのネットブックLaVie Light BL300/TOS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  
 現状と対応
-Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出">
+Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したら">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「disabling IRQ #9」でXubuntuが起動できない">
 <meta name="twitter:description" content="環境
 ハード：NECのネットブックLaVie Light BL300/TOS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  
 現状と対応
-Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出">
+Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したら">
 
   
     <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
@@ -103,7 +103,7 @@ Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でイン�
         <h4 id="環境">環境</h4>
 <p>ハード：NECのネットブックLaVie Light BL300/T<br>OS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  </p>
 <h4 id="現状と対応">現状と対応</h4>
-<p>Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出来なかったため、いったんXubuntu13.04をインストールしてから14.04.1にアップグレードしたネットブック。<br>アップグレード中にもdisabling IRQで起動できなくなり、/etc/default/grubでGRUB_DEFAULT=”Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.8.0-19-generic”にして、デフォルトの起動カーネルを3.8.0-19にしていた。  </p>
+<p>Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したら<a id="more"></a>インストールは出来たものの、解像度が800×600以外に選択出来なかった。<br>そのため、いったんXubuntu13.04をインストールしてから14.04.1にアップグレードしていた。<br>アップグレード中にもdisabling IRQで起動できなくなり、/etc/default/grubでGRUB_DEFAULT=”Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.8.0-19-generic”にして、デフォルトの起動カーネルを3.8.0-19にしていた。  </p>
 <p>このままでも使えるが、ソフトウェアの更新がしょっちゅうカーネルを更新するよう言ってくるし、カーネル3.13で起動できないかやってみた。  </p>
 <p>まず起動時にOS選択画面が出なかったが、他に起動できるOSがない場合grub2はOS選択画面をスキップしてしまうためらしい。<br><a href="http://www.serendip.ws/archives/3534" target="_blank" rel="external">Grub2 で起動時に選択リストを表示させる : Serendip - Webデザイン・プログラミング</a>  </p>
 <p>上記記事の通り</p>

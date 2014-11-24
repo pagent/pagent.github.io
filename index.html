@@ -98,17 +98,12 @@
 
   git config --global <span class="literal">user</span>.email <span class="string">"you@example.com"</span>
   git config --global <span class="literal">user</span>.name <span class="string">"Your Name"</span>
-</code></pre><p>と言われてしまった。  </p>
-<p>メールアドレスとGithubユーザー名を設定してdeployしようとしたが、  </p>
-<pre><code>Permission denied (publickey).
-fatal: Could <span class="operator">not</span> <span class="built_in">read</span> <span class="built_in">from</span> remote repository.
-
-Please make sure you have <span class="operator">the</span> correct access rights
-<span class="operator">and</span> <span class="operator">the</span> repository exists.
-</code></pre><p>とrejectされる。  </p>
-<p>SSHキーの設定が必要のようなので、Linuxで設定したSSH公開鍵を<code>C:\Users\（ユーザー名）\.ssh</code>にコピペしたが、やはりrejectされる。<br>秘密鍵もコピペしたら、ようやくdeploy出来た。<br>これで無事WindowsでもHexoを使えるようになった。  </p>
-<p>Hexoにはローカルホストで使う管理画面プラグインもあるようなので、もう少し導入が簡単になればWindowsユーザーにも「静的サイトジェネレーター」が広まる可能性がありそうだ。</p>
-
+</code></pre><p>と言われてしまった。<br>
+        
+          <p class="article-more-link">
+            <a href="/2014/11/24/hexo-windows-deploy/#more">続きを読む</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -150,47 +145,12 @@ Please make sure you have <span class="operator">the</span> correct access right
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>以前、静的サイトジェネレーターnanocをWindowsにインストールしたが、なんとかインストールは出来たものの、compile（generate）してhtmlファイルを生成する際、エラーになり使えなかった。<br>最近使い始めたHexoは、nanocやOctopressと違い、rubyではなくNode.jsで動いているそうなので、Windowsで使えるか試してみた。  </p>
-<p>結果、Windowsで実用可能だった。</p>
-<h3 id="Node-jsのインストール">Node.jsのインストール</h3>
-<p>Node.jsは下記からWindows用インストーラー付きのWindows Installer (.msi)をダウンロードし、デフォルトの設定のままインストールした。<br><a href="http://nodejs.org/download/" target="_blank" rel="external">http://nodejs.org/download/</a><br>バージョンはXubuntuに入れたのと同じv0.10.33だった。  </p>
-<h3 id="msysgitのインストール">msysgitのインストール</h3>
-<p>Windowsでgitを使うため<a href="http://msysgit.github.io/" target="_blank" rel="external">msysgit</a>をインストールした。<br>インストールオプションは下記サイトを参考にさせて頂いた。<br><a href="http://d.hatena.ne.jp/xyk/20130920/1379659991" target="_blank" rel="external">Windows に msysgit をインストールして git 環境を作る - xykの日記</a>  </p>
-<p>「Select Components」ではすべてのチェックを外した。<br>「Adjusting your PATH environment」は上から2番目の「Run Git from the Windows Command Prompt」。<br>「Configuring the line ending conversions」は上から2番目の「Checkout as-is, commit Unix-style line endings」でインストールした。<br>だが、実際Hexoでdeployする際、  </p>
-<pre><code>warning: LF will be replaced <span class="keyword">by</span> <span class="constant">CRLF</span> <span class="operator">in</span> css/style.css.
-The <span class="built_in">file</span> will have its original <span class="built_in">line</span> endings <span class="operator">in</span> your working <span class="built_in">directory</span>.
-warning: LF will be replaced <span class="keyword">by</span> <span class="constant">CRLF</span> <span class="operator">in</span> fancybox/helpers/jquery.fancybox-buttons.css.
-The <span class="built_in">file</span> will have its original <span class="built_in">line</span> endings <span class="operator">in</span> your working <span class="built_in">directory</span>.
-warning: LF will be replaced <span class="keyword">by</span> <span class="constant">CRLF</span> <span class="operator">in</span> fancybox/helpers/jquery.fancybox-buttons.js.
-The <span class="built_in">file</span> will have its original <span class="built_in">line</span> endings <span class="operator">in</span> your working <span class="built_in">directory</span>.
-...
-</code></pre><p>と、改行コードが変更されるという警告が大量に表示されたので、結局上から3番目のオプション「Checkout as-is, commit as-is」（autocrlf = false）にした。<br>後から<code>C:\Users\（ユーザー名）\.gitconfig</code>で変更可能。  </p>
-<h3 id="Hexoのインストール">Hexoのインストール</h3>
-<p>コマンドプロンプトを開き、</p>
-<pre><code>&gt;npm <span class="keyword">install</span> hexo -g
-</code></pre><p>でインストール。</p>
-<p>Linuxの時と同様、  </p>
-<pre><code>npm WARN <span class="keyword">optional</span> dep failed, continuing fsevents@<span class="number">0.2</span>.<span class="number">0</span>
-</code></pre><p>という警告が出たが、インストール完了。  </p>
-<p>Hexoの作業フォルダを作るため、任意のフォルダを選択した状態で「SHIFT」キーを押しながら右クリック。<br>「コマンド ウィンドウをここで開く」でコマンドウィンドウを立ち上げ、  </p>
-<pre><code>&gt;hexo init hexo-win
-&gt;<span class="built_in">cd</span> hexo-win
-&gt;npm install
-
-&gt;hexo g
-&gt;hexo s
-</code></pre><p>ローカルホストに無事、新規ブログが立ち上がった。  </p>
-<p>2回目の<code>hexo g</code>からは、なぜか  </p>
-<pre><code>[delete] Deleted: archives\<span class="number">2014</span>\<span class="number">11</span>\index.html
-[delete] Deleted: archives\index.html
-<span class="keyword">...</span>
-
-[create] Generated: archives/index.html (124ms)
-[create] Generated: archives/<span class="number">2014</span>/index.html (63ms)
-<span class="keyword">...</span>
-</code></pre><p>と、一旦すべてのファイルを削除してからまたファイルを生成したというメッセージが表示される。<br>あまり気持ち良くはないが、実用上問題は無さそう。  </p>
-<p>この後deployで少し躓いてしまったが、WindowsでHexoを使うことが出来た。</p>
-
+        <p>以前、静的サイトジェネレーターnanocをWindowsにインストールしたが、なんとかインストールは出来たものの、compile（generate）してhtmlファイルを生成する際、エラーになり使えなかった。<br>最近使い始めたHexoは、nanocやOctopressと違い、rubyではなくNode.jsで動いているそうなので、Windowsで使えるかもしれないと思い、
+        
+          <p class="article-more-link">
+            <a href="/2014/11/24/hexo-windows/#more">続きを読む</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -232,27 +192,12 @@ The <span class="built_in">file</span> will have its original <span class="built
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Hexoで新規記事を作ると、初期状態ではtitle、date、tagsの項目しか無いが、categoriesも使いたいので変更。<br>/scaffolds/post.mdに項目を追加するだけで出来た。<br>（<code>---</code>で区画された部分は「Front Matter」というらしい。）  </p>
-<p>またOctopressに戻ることもあるかもしれないので、Octopressの書式に倣ってlayout、commentsも加えた。  </p>
-<pre><code><span class="bullet">---
-</span>layout: post
-title: ｛｛ title ｝｝      ## ｛｛  ｝｝は実際には半角英数
-date: ｛｛ date ｝｝
-comments: true
-tags: 
-<span class="header">categories: 
----</span>
-</code></pre><p><code>hexo n test</code>すると下記内容のファイルが生成された。  </p>
-<pre><code>layout: post
-title: test
-comments: true
-date: 2014-11-23 09:15:51
-tags:
-<span class="header">categories:
----</span>
-</code></pre><p>Octopressでは<code>comments: true</code>が無いとDisqusが表示されない。<br>Hexoではcommentsの項目が無くてもDisqusは表示されるが、<code>comments: false</code>にするとその記事だけDisqusの表示は消える。<br>記事によってコメント禁止にする時に便利かもしれない。  </p>
-<p>/scaffolds/post.mdで上部にも<code>---</code>を加えたが、生成ファイルでは下部にしか<code>---</code>が無い。<br>これだとOctopressでは記事をちゃんとgenerate出来ないようだが、上部に<code>---</code>を付ける方法が分からない。<br>もしまたOctopressに戻ることがあったら、手作業するしかなさそうだ。</p>
-
+        <p>Hexoで新規記事を作ると、初期状態ではtitle、date、tagsの項目しか無いが、categoriesも使いたいので変更。<br>/scaffolds/post.mdに項目を追加するだけで出来た。<br>（<code>---</code>で区画された部分は「Front Matter」と言うらしい。）  
+        
+          <p class="article-more-link">
+            <a href="/2014/11/23/hexo-post-template/#more">続きを読む</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
@@ -268,9 +213,348 @@ tags:
 
 
   
+    <article id="post-hexo-archve-category" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/23/hexo-archve-category/" class="article-date">
+  <time datetime="2014-11-22T22:54:43.000Z" itemprop="datePublished">2014年11月23日</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/23/hexo-archve-category/">Hexoのアーカイブ、カテゴリーページを全文表示からリスト表示に</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>HexoのArchivesや各カテゴリーのページはデフォルトでは記事全文を表示するようになっている。<br>リスト表示の方が一覧を俯瞰出来て便利なので好みなのだが、カスタマイズの仕方が
+        
+          <p class="article-more-link">
+            <a href="/2014/11/23/hexo-archve-category/#more">続きを読む</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/23/hexo-archve-category/" data-id="8n38gnja8mdoxhzs" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/23/hexo-archve-category/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hexo-theme" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/22/hexo-theme/" class="article-date">
+  <time datetime="2014-11-22T12:22:39.000Z" itemprop="datePublished">2014年11月22日</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/22/hexo-theme/">Hexoのテーマを変更したら、元に戻せなくなった</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Hexoにはいろいろテーマがあるようで有難い。（なぜか中国人が作ったテーマが多い。）<br>元々入っていたデフォルトのテーマは「Landscape」だったので、とりあえずそれとは別のOfficial Themes、「Phase」と「Light」を試してみた。  
+        
+          <p class="article-more-link">
+            <a href="/2014/11/22/hexo-theme/#more">続きを読む</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/22/hexo-theme/" data-id="v8adjjolxr1kbt63" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/22/hexo-theme/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-octopress-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/22/octopress-hexo/" class="article-date">
+  <time datetime="2014-11-22T11:21:26.000Z" itemprop="datePublished">2014年11月22日</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/22/octopress-hexo/">サイトジェネレーターをOctopressからHexoに変更</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Github Pagesのブログに使っている静的サイトジェネレーターをOctopressからHexoに変更してみた。  </p>
+<p>Octopressの/source/_posts内の記事ソースをそのままHexoの/source/_postsにコピーしたら、generateした時にパーマリンクが<code>http://.../2014/10/24/2014-10-24-xubuntu-blank-menu/</code>のように日付けが重複してしまった。  
+        
+          <p class="article-more-link">
+            <a href="/2014/11/22/octopress-hexo/#more">続きを読む</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/22/octopress-hexo/" data-id="n60kjmahyvjihf4l" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/22/octopress-hexo/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hexo-xubuntu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/21/hexo-xubuntu/" class="article-date">
+  <time datetime="2014-11-21T04:56:19.000Z" itemprop="datePublished">2014年11月21日</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/21/hexo-xubuntu/">Xubuntuに静的サイトジェネレーターHexoを入れてみた</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Octopressでブログを書いていて、さして不満はないのだが、別の静的サイトジェネレーターに「Hexo」というのがあるのを知った。<br>Octopressに較べ、テーマも豊富に用意あり、日本語のURLやカテゴリー名にも対応して
+        
+          <p class="article-more-link">
+            <a href="/2014/11/21/hexo-xubuntu/#more">続きを読む</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/21/hexo-xubuntu/" data-id="g1ztzu3y7vker8nx" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/21/hexo-xubuntu/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/21/hello-world/" class="article-date">
+  <time datetime="2014-11-21T03:07:13.000Z" itemprop="datePublished">2014年11月21日</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/21/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick_Start">Quick Start</h2>
+<h3 id="Create_a_new_post">Create a new post</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server">Run server</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files">Generate static files</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/21/hello-world/" data-id="ewmgnvidoxm2i92c" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/21/hello-world/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-octopress-deploy-rejected" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/20/octopress-deploy-rejected/" class="article-date">
+  <time datetime="2014-11-20T10:11:54.000Z" itemprop="datePublished">2014年11月20日</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Octopress/">Octopress</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/20/octopress-deploy-rejected/">2台目のPCのOctopressでdeploy出来ない</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>DropboxでOctopressのフォルダを同期し、2台目のPCでもrake new_postやrake generateは出来るようになったが、rake deployが出来ない。<br>gitが入ってなかったので<code>sudo apt-get install git</code>し、<code>rake setup_github_pages</code>でセットアップしたが、  
+        
+          <p class="article-more-link">
+            <a href="/2014/11/20/octopress-deploy-rejected/#more">続きを読む</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/20/octopress-deploy-rejected/" data-id="yrtudaysw2zqgxve" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/20/octopress-deploy-rejected/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-install-libv8" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/19/install-libv8/" class="article-date">
+  <time datetime="2014-11-19T09:02:45.000Z" itemprop="datePublished">2014年11月19日</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Octopress/">Octopress</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/19/install-libv8/">Installing libv8で止まる</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>OctopressのフォルダをDropboxに置くことにしたので、古いネットブックにインストールしたXubuntuからOctopressを使えるかどうか試してみた。<br>だがrake previewしようとしたら、エラーになってしまった。  
+        
+          <p class="article-more-link">
+            <a href="/2014/11/19/install-libv8/#more">続きを読む</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/19/install-libv8/" data-id="aqp4brovt5ryyhgg" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/19/install-libv8/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 </section>

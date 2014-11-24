@@ -4,7 +4,7 @@
   <subtitle><![CDATA[GitHub Pages＋静的サイトジェネレーターでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-11-24T13:29:15.319Z</updated>
+  <updated>2014-11-24T17:01:44.934Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,14 +19,13 @@
     <link href="http://pagent.github.io/2014/11/24/hexo-windows-deploy/"/>
     <id>http://pagent.github.io/2014/11/24/hexo-windows-deploy/</id>
     <published>2014-11-24T11:31:27.000Z</published>
-    <updated>2014-11-24T12:15:06.000Z</updated>
+    <updated>2014-11-24T16:09:37.000Z</updated>
     <content type="html"><![CDATA[<p>Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来るかと思ったが、  </p>
 <pre><code>Run
 
   git config --global <span class="literal">user</span>.email <span class="string">"you@example.com"</span>
   git config --global <span class="literal">user</span>.name <span class="string">"Your Name"</span>
-</code></pre><p>と言われてしまった。  </p>
-<p>メールアドレスとGithubユーザー名を設定してdeployしようとしたが、  </p>
+</code></pre><p>と言われてしまった。<br><a id="more"></a><br>メールアドレスとGithubユーザー名を設定してdeployしようとしたが、  </p>
 <pre><code>Permission denied (publickey).
 fatal: Could <span class="operator">not</span> <span class="built_in">read</span> <span class="built_in">from</span> remote repository.
 
@@ -40,7 +39,10 @@ Please make sure you have <span class="operator">the</span> correct access right
     <![CDATA[<p>Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来るかと思ったが、  </p>
 <pre><code>Run
 
-  git config --global <span class="literal">user</]]>
+  git config --global <span class="literal">user</span>.email <span class="string">"you@example.com"</span>
+  git config --global <span class="literal">user</span>.name <span class="string">"Your Name"</span>
+</code></pre><p>と言われてしまった。<br>]]>
+    
     </summary>
     
       <category term="Hexo" scheme="http://pagent.github.io/categories/Hexo/"/>
@@ -52,8 +54,8 @@ Please make sure you have <span class="operator">the</span> correct access right
     <link href="http://pagent.github.io/2014/11/24/hexo-windows/"/>
     <id>http://pagent.github.io/2014/11/24/hexo-windows/</id>
     <published>2014-11-24T09:32:37.000Z</published>
-    <updated>2014-11-24T13:28:29.000Z</updated>
-    <content type="html"><![CDATA[<p>以前、静的サイトジェネレーターnanocをWindowsにインストールしたが、なんとかインストールは出来たものの、compile（generate）してhtmlファイルを生成する際、エラーになり使えなかった。<br>最近使い始めたHexoは、nanocやOctopressと違い、rubyではなくNode.jsで動いているそうなので、Windowsで使えるか試してみた。  </p>
+    <updated>2014-11-24T16:56:37.000Z</updated>
+    <content type="html"><![CDATA[<p>以前、静的サイトジェネレーターnanocをWindowsにインストールしたが、なんとかインストールは出来たものの、compile（generate）してhtmlファイルを生成する際、エラーになり使えなかった。<br>最近使い始めたHexoは、nanocやOctopressと違い、rubyではなくNode.jsで動いているそうなので、Windowsで使えるかもしれないと思い、<a id="more"></a>試してみた。  </p>
 <p>結果、Windowsで実用可能だった。</p>
 <h3 id="Node-jsのインストール">Node.jsのインストール</h3>
 <p>Node.jsは下記からWindows用インストーラー付きのWindows Installer (.msi)をダウンロードし、デフォルトの設定のままインストールした。<br><a href="http://nodejs.org/download/" target="_blank" rel="external">http://nodejs.org/download/</a><br>バージョンはXubuntuに入れたのと同じv0.10.33だった。  </p>
@@ -95,7 +97,8 @@ The <span class="built_in">file</span> will have its original <span class="built
 <p>この後deployで少し躓いてしまったが、WindowsでHexoを使うことが出来た。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>以前、静的サイトジェネレーターnanocをWindowsにインストールしたが、なんとかインストールは出来たものの、compile（generate）してhtmlファイルを生成する際、エラーになり使えなかった。<br>最近使い始めたHexoは、nanocやOctopressと]]>
+    <![CDATA[<p>以前、静的サイトジェネレーターnanocをWindowsにインストールしたが、なんとかインストールは出来たものの、compile（generate）してhtmlファイルを生成する際、エラーになり使えなかった。<br>最近使い始めたHexoは、nanocやOctopressと違い、rubyではなくNode.jsで動いているそうなので、Windowsで使えるかもしれないと思い、]]>
+    
     </summary>
     
       <category term="Hexo" scheme="http://pagent.github.io/categories/Hexo/"/>
@@ -107,8 +110,8 @@ The <span class="built_in">file</span> will have its original <span class="built
     <link href="http://pagent.github.io/2014/11/23/hexo-post-template/"/>
     <id>http://pagent.github.io/2014/11/23/hexo-post-template/</id>
     <published>2014-11-22T23:20:38.000Z</published>
-    <updated>2014-11-23T04:26:25.000Z</updated>
-    <content type="html"><![CDATA[<p>Hexoで新規記事を作ると、初期状態ではtitle、date、tagsの項目しか無いが、categoriesも使いたいので変更。<br>/scaffolds/post.mdに項目を追加するだけで出来た。<br>（<code>---</code>で区画された部分は「Front Matter」というらしい。）  </p>
+    <updated>2014-11-24T16:55:41.000Z</updated>
+    <content type="html"><![CDATA[<p>Hexoで新規記事を作ると、初期状態ではtitle、date、tagsの項目しか無いが、categoriesも使いたいので変更。<br>/scaffolds/post.mdに項目を追加するだけで出来た。<br>（<code>---</code>で区画された部分は「Front Matter」と言うらしい。）  <a id="more"></a></p>
 <p>またOctopressに戻ることもあるかもしれないので、Octopressの書式に倣ってlayout、commentsも加えた。  </p>
 <pre><code><span class="bullet">---
 </span>layout: post
@@ -130,7 +133,8 @@ tags:
 <p>/scaffolds/post.mdで上部にも<code>---</code>を加えたが、生成ファイルでは下部にしか<code>---</code>が無い。<br>これだとOctopressでは記事をちゃんとgenerate出来ないようだが、上部に<code>---</code>を付ける方法が分からない。<br>もしまたOctopressに戻ることがあったら、手作業するしかなさそうだ。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Hexoで新規記事を作ると、初期状態ではtitle、date、tagsの項目しか無いが、categoriesも使いたいので変更。<br>/scaffolds/post.mdに項目を追加するだけで出来た。<br>（<code>---</code>で区画された部分は「Front]]>
+    <![CDATA[<p>Hexoで新規記事を作ると、初期状態ではtitle、date、tagsの項目しか無いが、categoriesも使いたいので変更。<br>/scaffolds/post.mdに項目を追加するだけで出来た。<br>（<code>---</code>で区画された部分は「Front Matter」と言うらしい。）  ]]>
+    
     </summary>
     
       <category term="Hexo" scheme="http://pagent.github.io/categories/Hexo/"/>
@@ -142,8 +146,8 @@ tags:
     <link href="http://pagent.github.io/2014/11/23/hexo-archve-category/"/>
     <id>http://pagent.github.io/2014/11/23/hexo-archve-category/</id>
     <published>2014-11-22T22:54:43.000Z</published>
-    <updated>2014-11-22T23:10:44.000Z</updated>
-    <content type="html"><![CDATA[<p>HexoのArchivesや各カテゴリーのページはデフォルトでは記事全文を表示するようになっている。<br>リスト表示の方が一覧を俯瞰出来て便利なので好みなのだが、カスタマイズの仕方がなかなか分からなかった。  </p>
+    <updated>2014-11-24T16:57:54.000Z</updated>
+    <content type="html"><![CDATA[<p>HexoのArchivesや各カテゴリーのページはデフォルトでは記事全文を表示するようになっている。<br>リスト表示の方が一覧を俯瞰出来て便利なので好みなのだが、カスタマイズの仕方が<a id="more"></a>なかなか分からなかった。  </p>
 <p>結局は_config.ymlのArchivesの項目で  </p>
 <pre><code><span class="preprocessor"># Archives</span>
 <span class="preprocessor">## 2: Enable pagination</span>
@@ -163,8 +167,8 @@ tag: <span class="number">1</span>
 </code></pre><p>簡単にリスト表示（タイル形式）になった。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>HexoのArchivesや各カテゴリーのページはデフォルトでは記事全文を表示するようになっている。<br>リスト表示の方が一覧を俯瞰出来て便利なので好みなのだが、カスタマイズの仕方がなかなか分からなかった。  </p>
-<p>結局は_config.ymlのArchives]]>
+    <![CDATA[<p>HexoのArchivesや各カテゴリーのページはデフォルトでは記事全文を表示するようになっている。<br>リスト表示の方が一覧を俯瞰出来て便利なので好みなのだが、カスタマイズの仕方が]]>
+    
     </summary>
     
       <category term="Hexo" scheme="http://pagent.github.io/categories/Hexo/"/>
@@ -176,14 +180,15 @@ tag: <span class="number">1</span>
     <link href="http://pagent.github.io/2014/11/22/hexo-theme/"/>
     <id>http://pagent.github.io/2014/11/22/hexo-theme/</id>
     <published>2014-11-22T12:22:39.000Z</published>
-    <updated>2014-11-22T17:42:10.000Z</updated>
-    <content type="html"><![CDATA[<p>Hexoにはいろいろテーマがあるようで有難い。（なぜか中国人が作ったテーマが多い。）<br>元々入っていたデフォルトのテーマは「Landscape」だったので、とりあえずそれとは別のOfficial Themes、「Phase」と「Light」を試してみた。<br>試したはいいが、「Light」を入れてから元のテーマに戻そうとしたら戻せなくなってしまった。<br>「Light」が崩れたようなスタイルから変更出来ない。  </p>
+    <updated>2014-11-24T16:59:14.000Z</updated>
+    <content type="html"><![CDATA[<p>Hexoにはいろいろテーマがあるようで有難い。（なぜか中国人が作ったテーマが多い。）<br>元々入っていたデフォルトのテーマは「Landscape」だったので、とりあえずそれとは別のOfficial Themes、「Phase」と「Light」を試してみた。  <a id="more"></a><br>試したはいいが、「Light」を入れてから元のテーマに戻そうとしたら戻せなくなってしまった。<br>「Light」が崩れたようなスタイルから変更出来ない。  </p>
 <p><code>hexo h</code>をしてみたら、<code>clean</code>（Remove generated files and the cache）というコマンドオプションがあったので、<code>hexo clean</code>してみた。<br>書いてある通り/publicフォルダ自体も消えてしまったが、その後<code>hexo g</code>したらテーマも無事直った。  </p>
 <p>消したのに、カウント数が(0)のまま表示されているカテゴリやタグも、<code>hexo clean</code>で直るようだ。  </p>
 <p>ーー<br>テーマのCSSをカスタマイズする際にも、ローカルでの確認では問題ないが、いざdeployすると反映されていないようだ。<br>この時もいったん<code>hexo clean</code>すると良いようだ。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Hexoにはいろいろテーマがあるようで有難い。（なぜか中国人が作ったテーマが多い。）<br>元々入っていたデフォルトのテーマは「Landscape」だったので、とりあえずそれとは別のOfficial Themes、「Phase」と「Light」を試してみた。<br>試したは]]>
+    <![CDATA[<p>Hexoにはいろいろテーマがあるようで有難い。（なぜか中国人が作ったテーマが多い。）<br>元々入っていたデフォルトのテーマは「Landscape」だったので、とりあえずそれとは別のOfficial Themes、「Phase」と「Light」を試してみた。  ]]>
+    
     </summary>
     
       <category term="Hexo" scheme="http://pagent.github.io/categories/Hexo/"/>
@@ -195,9 +200,9 @@ tag: <span class="number">1</span>
     <link href="http://pagent.github.io/2014/11/22/octopress-hexo/"/>
     <id>http://pagent.github.io/2014/11/22/octopress-hexo/</id>
     <published>2014-11-22T11:21:26.000Z</published>
-    <updated>2014-11-23T09:39:13.000Z</updated>
+    <updated>2014-11-24T16:58:38.000Z</updated>
     <content type="html"><![CDATA[<p>Github Pagesのブログに使っている静的サイトジェネレーターをOctopressからHexoに変更してみた。  </p>
-<p>Octopressの/source/_posts内の記事ソースをそのままHexoの/source/_postsにコピーしたら、generateした時にパーマリンクが<code>http://.../2014/10/24/2014-10-24-xubuntu-blank-menu/</code>のように日付けが重複してしまった。<br>Hexoはデフォルトでは、新しく記事を作った時には日付けがつかず、生成する時に日付けを付加するようになっているらしい。  </p>
+<p>Octopressの/source/_posts内の記事ソースをそのままHexoの/source/_postsにコピーしたら、generateした時にパーマリンクが<code>http://.../2014/10/24/2014-10-24-xubuntu-blank-menu/</code>のように日付けが重複してしまった。  <a id="more"></a><br>Hexoはデフォルトでは、新しく記事を作った時には日付けがつかず、生成する時に日付けを付加するようになっているらしい。  </p>
 <p>_config.ymlの  </p>
 <pre><code><span class="comment"># Writing</span>
 <span class="symbol">new_post_name:</span> <span class="symbol">:title</span>.md <span class="comment"># File name of new posts</span>
@@ -214,7 +219,8 @@ tag: <span class="number">1</span>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Github Pagesのブログに使っている静的サイトジェネレーターをOctopressからHexoに変更してみた。  </p>
-<p>Octopressの/source/_posts内の記事ソースをそのままHexoの/source/_postsにコピーしたら、genera]]>
+<p>Octopressの/source/_posts内の記事ソースをそのままHexoの/source/_postsにコピーしたら、generateした時にパーマリンクが<code>http://.../2014/10/24/2014-10-24-xubuntu-blank-menu/</code>のように日付けが重複してしまった。  ]]>
+    
     </summary>
     
       <category term="Hexo" scheme="http://pagent.github.io/categories/Hexo/"/>
@@ -226,8 +232,8 @@ tag: <span class="number">1</span>
     <link href="http://pagent.github.io/2014/11/21/hexo-xubuntu/"/>
     <id>http://pagent.github.io/2014/11/21/hexo-xubuntu/</id>
     <published>2014-11-21T04:56:19.000Z</published>
-    <updated>2014-11-22T06:09:18.000Z</updated>
-    <content type="html"><![CDATA[<p>Octopressでブログを書いていて、さして不満はないのだが、別の静的サイトジェネレーターに「Hexo」というのがあるのを知った。<br>Octopressに較べ、テーマも豊富に用意あり、日本語のURLやカテゴリー名にも対応しているようだったので、入れてみた。<br>rubyではなく、Node.jsというのを使うらしい。  </p>
+    <updated>2014-11-24T16:46:39.000Z</updated>
+    <content type="html"><![CDATA[<p>Octopressでブログを書いていて、さして不満はないのだが、別の静的サイトジェネレーターに「Hexo」というのがあるのを知った。<br>Octopressに較べ、テーマも豊富に用意あり、日本語のURLやカテゴリー名にも対応して<a id="more"></a>いるようだったので、入れてみた。<br>rubyではなく、Node.jsというのを使うらしい。  </p>
 <p>導入には下記サイトなどを参考にさせて頂いた。<br><a href="http://tech.admax.ninja/2014/09/11/environment-of-hexo/" target="_blank" rel="external">【Node.js】Hexoでブログを書くための環境構築 | AdMax Tech Blog</a>  </p>
 <p>概ね上記サイトの通りに進めたらいいようだったが、Xubuntu14.04の環境では若干うまく行かないところがあった。  </p>
 <p>nodeにパスを通す際、~/.bash_profileというファイルが見つからなかったので、~/.profileに  </p>
@@ -246,7 +252,8 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
 <p>しばらく試用してみて良ささそうだったら、Octopressから乗り換えるかもしれない。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Octopressでブログを書いていて、さして不満はないのだが、別の静的サイトジェネレーターに「Hexo」というのがあるのを知った。<br>Octopressに較べ、テーマも豊富に用意あり、日本語のURLやカテゴリー名にも対応しているようだったので、入れてみた。<br>ru]]>
+    <![CDATA[<p>Octopressでブログを書いていて、さして不満はないのだが、別の静的サイトジェネレーターに「Hexo」というのがあるのを知った。<br>Octopressに較べ、テーマも豊富に用意あり、日本語のURLやカテゴリー名にも対応して]]>
+    
     </summary>
     
       <category term="Hexo" scheme="http://pagent.github.io/categories/Hexo/"/>
@@ -289,8 +296,8 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
     <link href="http://pagent.github.io/2014/11/20/octopress-deploy-rejected/"/>
     <id>http://pagent.github.io/2014/11/20/octopress-deploy-rejected/</id>
     <published>2014-11-20T10:11:54.000Z</published>
-    <updated>2014-11-20T11:19:07.000Z</updated>
-    <content type="html"><![CDATA[<p>DropboxでOctopressのフォルダを同期し、2台目のPCでもrake new_postやrake generateは出来るようになったが、rake deployが出来ない。<br>gitが入ってなかったので<code>sudo apt-get install git</code>し、<code>rake setup_github_pages</code>でセットアップしたが、  </p>
+    <updated>2014-11-24T17:00:15.000Z</updated>
+    <content type="html"><![CDATA[<p>DropboxでOctopressのフォルダを同期し、2台目のPCでもrake new_postやrake generateは出来るようになったが、rake deployが出来ない。<br>gitが入ってなかったので<code>sudo apt-get install git</code>し、<code>rake setup_github_pages</code>でセットアップしたが、  <a id="more"></a></p>
 <pre><code><span class="input"><span class="prompt">! [rejected]        master -&gt;</span> master (non-fast-forward)</span>
 </code></pre><p>とエラーになる。<br>SSHの公開鍵も設定したのだが。  </p>
 <p>検索したところ、Octopressで突然deploy出来なくなった時には、Rakefileを編集するという対処法があるらしい。<br><a href="http://qiita.com/takuma7/items/2d6f6e786eb6c0afbefb" target="_blank" rel="external">Octopressでrake deployした際にrejectedされた場合の対処 - Qiita</a>  </p>
@@ -304,7 +311,8 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
 <p>gitがなんなのかよく分からないが、FTPでアップロードしていた時に較べるとブログの更新も楽だし、スマートな感じがする。<br>でもほんと、gitってよく分からない。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>DropboxでOctopressのフォルダを同期し、2台目のPCでもrake new_postやrake generateは出来るようになったが、rake deployが出来ない。<br>gitが入ってなかったので<code>sudo apt-get install gi]]>
+    <![CDATA[<p>DropboxでOctopressのフォルダを同期し、2台目のPCでもrake new_postやrake generateは出来るようになったが、rake deployが出来ない。<br>gitが入ってなかったので<code>sudo apt-get install git</code>し、<code>rake setup_github_pages</code>でセットアップしたが、  ]]>
+    
     </summary>
     
       <category term="Octopress" scheme="http://pagent.github.io/categories/Octopress/"/>
@@ -316,8 +324,8 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
     <link href="http://pagent.github.io/2014/11/19/install-libv8/"/>
     <id>http://pagent.github.io/2014/11/19/install-libv8/</id>
     <published>2014-11-19T09:02:45.000Z</published>
-    <updated>2014-11-21T10:06:51.000Z</updated>
-    <content type="html"><![CDATA[<p>OctopressのフォルダをDropboxに置くことにしたので、古いネットブックにインストールしたXubuntuからOctopressを使えるかどうか試してみた。<br>rake previewしようとしたら、エラーになってしまった。<br>Octopressを使う環境が整っていないので当然といえば当然。  </p>
+    <updated>2014-11-24T17:00:44.000Z</updated>
+    <content type="html"><![CDATA[<p>OctopressのフォルダをDropboxに置くことにしたので、古いネットブックにインストールしたXubuntuからOctopressを使えるかどうか試してみた。<br>だがrake previewしようとしたら、エラーになってしまった。  <a id="more"></a><br>Octopressを使う環境が整っていないので当然といえば当然。  </p>
 <p>環境を整えるにあたり、bundle installで行き詰まってしまった。<br>途中    </p>
 <pre><code><span class="title">Installing</span> libv8 (<span class="number">3.16.14.7</span>) 
 </code></pre><p>の表示のところで動かない。<br>フリーズしたのかと思ったが検索したところ、libv8のインストールには時間が掛かるらしい。<br>確かにCPUの使用率も100%で、頑張ってはいるようだ。  </p>
@@ -356,7 +364,8 @@ cd -
 <p>ーー<br>gitがインストールされてない？</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>OctopressのフォルダをDropboxに置くことにしたので、古いネットブックにインストールしたXubuntuからOctopressを使えるかどうか試してみた。<br>rake previewしようとしたら、エラーになってしまった。<br>Octopressを使う環境が]]>
+    <![CDATA[<p>OctopressのフォルダをDropboxに置くことにしたので、古いネットブックにインストールしたXubuntuからOctopressを使えるかどうか試してみた。<br>だがrake previewしようとしたら、エラーになってしまった。  ]]>
+    
     </summary>
     
       <category term="Octopress" scheme="http://pagent.github.io/categories/Octopress/"/>
@@ -368,10 +377,10 @@ cd -
     <link href="http://pagent.github.io/2014/11/18/debian-wheezy-nemo/"/>
     <id>http://pagent.github.io/2014/11/18/debian-wheezy-nemo/</id>
     <published>2014-11-18T00:51:22.000Z</published>
-    <updated>2014-11-23T05:37:19.000Z</updated>
+    <updated>2014-11-24T16:44:55.000Z</updated>
     <content type="html"><![CDATA[<p>ネットブックLaVie LightにDebian Wheezyをインストールした。  </p>
 <p>ウィンドウマネージャはXfceが好みなので、debian-7.7.0-i386-netinst.isoでインストールする際、”Advanced options” 、”Alternate desktop environments”でXfceを選択した。  </p>
-<p>ファイルやフォルダを簡単に管理者権限で操作したいので、XfceデフォルトのファイルマネージャーThunarのアクションに「rootで開く」を追加し、gksuもインストールした。<br>だがrootで開こうとしても、認証画面は表示されるものの、フォルダやファイルを管理者権限で開くことが出来ない。<br>代わりにNemoをインストールしようとしたら、レポジトリにNemoが無かった。PCManFMも確かrootで開くメニューがあったのでインストールしてみたが、なぜかrootで開くメニューが無い。  </p>
+<p>ファイルやフォルダを簡単に管理者権限で操作したいので、<a id="more"></a>XfceデフォルトのファイルマネージャーThunarのアクションに「rootで開く」を追加し、gksuもインストールした。<br>だがrootで開こうとしても、認証画面は表示されるものの、フォルダやファイルを管理者権限で開くことが出来ない。<br>代わりにNemoをインストールしようとしたら、レポジトリにNemoが無かった。PCManFMも確かrootで開くメニューがあったのでインストールしてみたが、なぜかrootで開くメニューが無い。  </p>
 <p>困ってしまったが、Ubuntu 12.04 Preciseのレポジトリを追加することで、Nemoをインストール出来た。  </p>
 <pre><code><span class="keyword">echo</span> <span class="string">"deb http://ppa.launchpad.net/noobslab/mint/ubuntu precise main"</span> | sudo tee -<span class="keyword">a</span> /etc/apt/sources.<span class="keyword">list</span>  
 sudo apt-key adv --keyserver keyserver.ubuntu.<span class="keyword">com</span> --recv-<span class="built_in">keys</span> F59EAE4D  
@@ -383,7 +392,9 @@ sudo apt-<span class="built_in">get</span> install nemo
 ]]></content>
     <summary type="html">
     <![CDATA[<p>ネットブックLaVie LightにDebian Wheezyをインストールした。  </p>
-<p>ウィンドウマネージャはXfceが好みなので、debian-7.7.0-i386-netinst.isoでインストールする際、”Advanced options” 、”Alt]]>
+<p>ウィンドウマネージャはXfceが好みなので、debian-7.7.0-i386-netinst.isoでインストールする際、”Advanced options” 、”Alternate desktop environments”でXfceを選択した。  </p>
+<p>ファイルやフォルダを簡単に管理者権限で操作したいので、]]>
+    
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/categories/Linux/"/>
@@ -395,9 +406,9 @@ sudo apt-<span class="built_in">get</span> install nemo
     <link href="http://pagent.github.io/2014/11/13/xubuntu-ar9285/"/>
     <id>http://pagent.github.io/2014/11/13/xubuntu-ar9285/</id>
     <published>2014-11-13T08:33:12.000Z</published>
-    <updated>2014-11-24T12:54:42.000Z</updated>
-    <content type="html"><![CDATA[<p>Xubuntu 14.04.1をインストールしたネットブックLaVie Light BL300/T。<br>有線でのネット接続は問題無いが、無線LANがとても不安定。<br>頻回に接続が切れて認証を要求されるし、接続も異様に遅い。<br>Xubuntu 12.04では問題なく使えていたのに。  </p>
-<p>どうも無線LANアダプターAtheros製AR9285とドライバーath9kの相性の問題もあるらしい。<br><a href="http://blog.livedoor.jp/furikku9310/archives/52298627.html" target="_blank" rel="external">ノートPCの無線LANデバイスにて : フレイドフォートonBlog</a>  </p>
+    <updated>2014-11-24T16:44:36.000Z</updated>
+    <content type="html"><![CDATA[<p>Xubuntu 14.04.1をインストールしたネットブックLaVie Light BL300/T。<br>有線でのネット接続は問題無いが、無線LANがとても不安定。<br>頻回に接続が切れて認証を要求されるし、接続も異様に遅い。<br>Xubuntu 12.04では問題なく使えていたのだが。  </p>
+<p>どうも無線LANアダプターAtheros製AR9285とドライバーath9kの<a id="more"></a>相性の問題もあるらしい。<br><a href="http://blog.livedoor.jp/furikku9310/archives/52298627.html" target="_blank" rel="external">ノートPCの無線LANデバイスにて : フレイドフォートonBlog</a>  </p>
 <p>/etc/modprobe.d内にath9k.confというファイルを作りそこに<code>options ath9k nohwcrypt=1</code>と記載したり、ath9kをロードし直したりしてみたが改善しない。<br>NdisWrapperでWindows Xp用のドライバーを使えば良いかと思いやってみたが、これも満足に動作しない。  </p>
 <p>Xubuntu 14.04.1にLinux 3.2や3.8カーネルをコンパイルしてインストールすれば良いのかもしれないが、自分の力量を超えているので断念。<br>（カーネルのコンパイルをしなくても、Ubuntu 12.04 Preciseのレポジトリを追加してLinux 3.2カーネルをインストールすれば良かったのかもしれない。<a href="/2014/11/18/debian-wheezy-nemo/">Debian WheezyにNemoをインストール</a>）  </p>
 <p>結局Xubuntu 12.04をインストールしそれを14.04.1にアップグレード、起動カーネルをLinux 3.2にすることで無線LANも安定した。  </p>
@@ -406,7 +417,9 @@ sudo apt-<span class="built_in">get</span> install nemo
 <p>ーー<br>（追記）<br>lshwコマンドで見たところ、Xubuntu 12.04（Linux 3.2カーネル）でもAR9285に使われているドライバーはath9kだった。<br>なぜXubuntu 14.04.1の場合は無線が安定しないのだろう？<br>「disabling IRQ #9」回避のため、起動オプションに「pci=noacpi」を付けていたからだろうか。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Xubuntu 14.04.1をインストールしたネットブックLaVie Light BL300/T。<br>有線でのネット接続は問題無いが、無線LANがとても不安定。<br>頻回に接続が切れて認証を要求されるし、接続も異様に遅い。<br>Xubuntu 12.04では問題な]]>
+    <![CDATA[<p>Xubuntu 14.04.1をインストールしたネットブックLaVie Light BL300/T。<br>有線でのネット接続は問題無いが、無線LANがとても不安定。<br>頻回に接続が切れて認証を要求されるし、接続も異様に遅い。<br>Xubuntu 12.04では問題なく使えていたのだが。  </p>
+<p>どうも無線LANアダプターAtheros製AR9285とドライバーath9kの]]>
+    
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/categories/Linux/"/>
@@ -418,8 +431,8 @@ sudo apt-<span class="built_in">get</span> install nemo
     <link href="http://pagent.github.io/2014/11/11/xubuntu-install-option/"/>
     <id>http://pagent.github.io/2014/11/11/xubuntu-install-option/</id>
     <published>2014-11-11T09:39:48.000Z</published>
-    <updated>2014-11-11T11:32:58.000Z</updated>
-    <content type="html"><![CDATA[<p>NECのネットブックLaVie Light BL300/TにXubuntu14.04.1を再インストールした。<br>以前もXubuntu14.04.1をインストールしたがその時は<code>disabling IRQ #9</code>でインストールDVDを起動出来ず、いったんXubuntu13.04をインストールしてから、その後Xubuntu14.04.1にアップグレードしていた。<br>だが、起動オプションに<code>pci=noacpi</code>を加えれば、Linuxカーネル3.13.0-39でも起動出来るようだったので、起動オプションを付けてXubuntu14.04.1をインストールした。  </p>
+    <updated>2014-11-24T16:43:38.000Z</updated>
+    <content type="html"><![CDATA[<p>NECのネットブックLaVie Light BL300/TにXubuntu14.04.1を再インストールした。<br>以前もXubuntu14.04.1をインストールしたがその時は<code>disabling IRQ #9</code>でインストールDVDを起動出来ず、<a id="more"></a>いったんXubuntu13.04をインストールしてから、その後Xubuntu14.04.1にアップグレードしていた。<br>だが、起動オプションに<code>pci=noacpi</code>を加えれば、Linuxカーネル3.13.0-39でも起動出来るようだったので、起動オプションを付けてXubuntu14.04.1をインストールした。  </p>
 <p>Xubuntu14.04.1のインストールDVDを入れ、起動後「shift」キーを押し続けてオプションを表示。言語を日本語にした後「F6」キーで「その他のオプション」を表示。<br><code>acpi=off</code>、<code>noapic</code>、<code>nolapic</code>、<code>edd=on</code>、<code>nodmraid</code>、<code>nomodeset</code>等の起動オプションが選択出来るが、なにも選ばず「ESC」キーで選択画面を終了。（<code>acpi=off</code>では解像度が800×600に固定されてしまい、他のオプションでは<code>disabling IRQ #9</code>でインストールDVDを起動出来ない。）<br>下部に「起動オプション」の欄があり、キーボードで任意にオプションを入力出来るので、<code>quiet splash --</code>に続けて<code>pci=noacpi</code>と入力し「ENTER」で起動。<br>問題なくXubuntu14.04.1をインストール出来た。  </p>
 <p>インストール後再起動すると、/etc/default/grubの</p>
 <pre><code><span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"quiet splash"</span>
@@ -429,7 +442,8 @@ sudo apt-<span class="built_in">get</span> install nemo
 <p>Xubuntuの前にLubuntu14.04.1も試してみたが、確かにXubuntuに較べて動作はやや軽いような気はした。<br>だがLubuntuソフトウェアセンターというのが検索も出来ず使いづらいし、お気に入りアプリケーションの登録も不便だったりと、カスタマイズの自由度の低さからLubuntuは断念した。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>NECのネットブックLaVie Light BL300/TにXubuntu14.04.1を再インストールした。<br>以前もXubuntu14.04.1をインストールしたがその時は<code>disabling IRQ #9</code>でインストールDVDを起動出来ず、い]]>
+    <![CDATA[<p>NECのネットブックLaVie Light BL300/TにXubuntu14.04.1を再インストールした。<br>以前もXubuntu14.04.1をインストールしたがその時は<code>disabling IRQ #9</code>でインストールDVDを起動出来ず、]]>
+    
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/categories/Linux/"/>
@@ -462,15 +476,16 @@ sudo apt-<span class="built_in">get</span> install nemo
     <link href="http://pagent.github.io/2014/11/05/firefox-complete-theme/"/>
     <id>http://pagent.github.io/2014/11/05/firefox-complete-theme/</id>
     <published>2014-11-05T09:13:55.000Z</published>
-    <updated>2014-11-16T21:21:49.000Z</updated>
-    <content type="html"><![CDATA[<p>ウェブ閲覧をしていて、画面があまり白いと目が疲れる。<br>モニターの輝度を調節したり、FirefoxのアドオンStylishでページのスタイルを強制的に変えることである程度対処は出来るが、Firefoxのブックマークや履歴などサイドバーの背景も少し暗くしたいところ。  </p>
+    <updated>2014-11-24T16:43:04.000Z</updated>
+    <content type="html"><![CDATA[<p>ウェブ閲覧をしていて、画面があまり白いと目が疲れる。<br>モニターの輝度を調節したり、FirefoxのアドオンStylishでページのスタイルを強制的に変えることである程度対処は出来るが、Firefoxのブックマークや履歴など<a id="more"></a>サイドバーの背景も少し暗くしたいところ。  </p>
 <p>以前はStylishを使ったり、プロファイルフォルダ内のuserChrome.cssに記述を追加するといった方法でFirefoxのメニューまわりの見た目をカスタマイズ出来たようなのだが、どのバージョンからかブックマーク欄の背景の変更が効かなくなっている。  </p>
 <p>Firefoxのテーマで「完全テーマ」というのを使えばその辺も変更出来るようなので、いくつか試してみた。  </p>
 <p>darkやmidnightと名前に付いている完全テーマは確かにブックマークの背景を黒くしてくれるのだが、真っ黒は真っ黒でかえって見づらい。<br>MX3というテーマを入れたら、うっすら灰色になっていい感じになった。  </p>
 <p>ーー<br>（追記）<br>「MX4」もさらにシンプルでいいかも。  </p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>ウェブ閲覧をしていて、画面があまり白いと目が疲れる。<br>モニターの輝度を調節したり、FirefoxのアドオンStylishでページのスタイルを強制的に変えることである程度対処は出来るが、Firefoxのブックマークや履歴などサイドバーの背景も少し暗くしたいところ。  <]]>
+    <![CDATA[<p>ウェブ閲覧をしていて、画面があまり白いと目が疲れる。<br>モニターの輝度を調節したり、FirefoxのアドオンStylishでページのスタイルを強制的に変えることである程度対処は出来るが、Firefoxのブックマークや履歴など]]>
+    
     </summary>
     
       <category term="ブラウザ" scheme="http://pagent.github.io/categories/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
@@ -482,9 +497,9 @@ sudo apt-<span class="built_in">get</span> install nemo
     <link href="http://pagent.github.io/2014/11/03/gyao-background-color/"/>
     <id>http://pagent.github.io/2014/11/03/gyao-background-color/</id>
     <published>2014-11-03T07:29:59.000Z</published>
-    <updated>2014-11-04T11:51:38.000Z</updated>
+    <updated>2014-11-24T16:31:48.000Z</updated>
     <content type="html"><![CDATA[<p>Gyaoで動画を観るとき背景が白くてまぶしいので、FirefoxのアドオンStylishで背景を黒くした。  </p>
-<p>Stylishに下記スタイルを適当な名前で追加するだけ。</p>
+<p>Stylishに下記スタイルを適当な名前で追加するだけ。<a id="more"></a></p>
 <pre><code><span class="at_rule">@<span class="keyword">namespace</span> <span class="function">url</span>(http://www.w3.org/<span class="number">1999</span>/xhtml)</span>;
 <span class="at_rule">@<span class="keyword">-moz-document</span> <span class="function">domain</span>(<span class="string">"gyao.yahoo.co.jp"</span>)
 ,<span class="function">domain</span>(<span class="string">"youtube.com"</span>) 
@@ -509,8 +524,8 @@ sudo apt-<span class="built_in">get</span> install nemo
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Gyaoで動画を観るとき背景が白くてまぶしいので、FirefoxのアドオンStylishで背景を黒くした。  </p>
-<p>Stylishに下記スタイルを適当な名前で追加するだけ。</p>
-<pre><code><span class="at_rule">@<span c]]>
+<p>Stylishに下記スタイルを適当な名前で追加するだけ。]]>
+    
     </summary>
     
       <category term="ブラウザ" scheme="http://pagent.github.io/categories/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
@@ -522,10 +537,10 @@ sudo apt-<span class="built_in">get</span> install nemo
     <link href="http://pagent.github.io/2014/11/02/xbacklight/"/>
     <id>http://pagent.github.io/2014/11/02/xbacklight/</id>
     <published>2014-11-02T09:55:00.000Z</published>
-    <updated>2014-11-02T23:41:25.000Z</updated>
+    <updated>2014-11-24T16:42:10.000Z</updated>
     <content type="html"><![CDATA[<p>Xubuntu起動時のモニター輝度を少し下げてみた。  </p>
 <p>やり方は、/etc/default/grubで設定する方法、/etc/rc.localで設定する方法、xbacklightを使う方法などがあるようだ。<br><a href="https://sites.google.com/site/tetsuroweb/home/software/ubuntu/tips/display-brightness" target="_blank" rel="external">起動時の画面輝度を調整する (Ubuntu 12.04 - 14.04) - 哲朗web</a>  </p>
-<p>最初、/etc/rc.localで設定する方法を試してみた。<br>現在の輝度を変更するコマンドは<code>&gt;</code>の表示のまま止まってしまうので、</p>
+<p>まず、<a id="more"></a>/etc/rc.localで設定する方法を試してみた。<br>現在の輝度を変更するコマンドは<code>&gt;</code>の表示のまま止まってしまうので、</p>
 <pre><code><span class="input"><span class="prompt">$ sudo -i
 
 # echo 6 &gt;</span> /sys/<span class="class"><span class="keyword">class</span>/<span class="title">backlight</span>/<span class="title">acpi_video0</span>/<span class="title">brightness</span></span></span>
@@ -537,7 +552,9 @@ sudo apt-<span class="built_in">get</span> install nemo
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Xubuntu起動時のモニター輝度を少し下げてみた。  </p>
-<p>やり方は、/etc/default/grubで設定する方法、/etc/rc.localで設定する方法、xbacklightを使う方法などがあるようだ。<br><a href="https://sites]]>
+<p>やり方は、/etc/default/grubで設定する方法、/etc/rc.localで設定する方法、xbacklightを使う方法などがあるようだ。<br><a href="https://sites.google.com/site/tetsuroweb/home/software/ubuntu/tips/display-brightness" target="_blank" rel="external">起動時の画面輝度を調整する (Ubuntu 12.04 - 14.04) - 哲朗web</a>  </p>
+<p>まず、]]>
+    
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/categories/Linux/"/>
@@ -549,11 +566,11 @@ sudo apt-<span class="built_in">get</span> install nemo
     <link href="http://pagent.github.io/2014/11/01/irq-problem/"/>
     <id>http://pagent.github.io/2014/11/01/irq-problem/</id>
     <published>2014-11-01T06:45:55.000Z</published>
-    <updated>2014-11-13T09:26:59.000Z</updated>
+    <updated>2014-11-24T16:41:52.000Z</updated>
     <content type="html"><![CDATA[<h4 id="環境">環境</h4>
 <p>ハード：NECのネットブックLaVie Light BL300/T<br>OS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  </p>
 <h4 id="現状と対応">現状と対応</h4>
-<p>Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出来なかったため、いったんXubuntu13.04をインストールしてから14.04.1にアップグレードしたネットブック。<br>アップグレード中にもdisabling IRQで起動できなくなり、/etc/default/grubでGRUB_DEFAULT=”Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.8.0-19-generic”にして、デフォルトの起動カーネルを3.8.0-19にしていた。  </p>
+<p>Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したら<a id="more"></a>インストールは出来たものの、解像度が800×600以外に選択出来なかった。<br>そのため、いったんXubuntu13.04をインストールしてから14.04.1にアップグレードしていた。<br>アップグレード中にもdisabling IRQで起動できなくなり、/etc/default/grubでGRUB_DEFAULT=”Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.8.0-19-generic”にして、デフォルトの起動カーネルを3.8.0-19にしていた。  </p>
 <p>このままでも使えるが、ソフトウェアの更新がしょっちゅうカーネルを更新するよう言ってくるし、カーネル3.13で起動できないかやってみた。  </p>
 <p>まず起動時にOS選択画面が出なかったが、他に起動できるOSがない場合grub2はOS選択画面をスキップしてしまうためらしい。<br><a href="http://www.serendip.ws/archives/3534" target="_blank" rel="external">Grub2 で起動時に選択リストを表示させる : Serendip - Webデザイン・プログラミング</a>  </p>
 <p>上記記事の通り</p>
@@ -581,7 +598,8 @@ sudo apt-<span class="built_in">get</span> install nemo
     <![CDATA[<h4 id="環境">環境</h4>
 <p>ハード：NECのネットブックLaVie Light BL300/T<br>OS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  </p>
 <h4 id="現状と対応">現状と対応</h4>
-<p>Xubu]]>
+<p>Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したら]]>
+    
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/categories/Linux/"/>
@@ -593,8 +611,8 @@ sudo apt-<span class="built_in">get</span> install nemo
     <link href="http://pagent.github.io/2014/11/01/firefox-closed-tabs/"/>
     <id>http://pagent.github.io/2014/11/01/firefox-closed-tabs/</id>
     <published>2014-11-01T01:02:58.000Z</published>
-    <updated>2014-11-01T02:14:10.000Z</updated>
-    <content type="html"><![CDATA[<p>いつの間にかXubuntu14.04.1のFirefoxで「閉じたタブを元に戻す」「最近閉じたタブ」が灰色になっていて選択出来なくなっていた。<br>Tab Mix Plusを無効化したら「閉じたタブを元に戻す」をクリックは出来るが、タブが戻らず機能しない。<br>プライベートウィンドウでも駄目。  </p>
+    <updated>2014-11-24T16:36:03.000Z</updated>
+    <content type="html"><![CDATA[<p>いつの間にかXubuntu14.04.1のFirefoxで「閉じたタブを元に戻す」「最近閉じたタブ」が灰色になっていて選択出来なくなっていた。<br>Tab Mix Plusを無効化したら「閉じたタブを元に戻す」をクリックは出来るが、タブが戻らず機能しない。  <a id="more"></a><br>プライベートウィンドウでも駄目。  </p>
 <p>Firefoxのバージョンが33.0に更新されてからだろうかと、synapticから「バージョンの強制」で28.0にダウングレードしてみたが、やはり駄目。  </p>
 <p>他のXubuntuPCを見てみると、そちらではちゃんと「閉じたタブを元に戻す」「最近閉じたタブ」が機能している。  </p>
 <p>Firefoxをインストールし直してみるしかなさそうなのでプロファイルも削除しておいた方が良いだろうかとプロファイルの保存場所を調べていたら、Firefoxにはリセット機能というのがあるようだった。<br><a href="https://support.mozilla.org/ja/kb/reset-firefox-easily-fix-most-problems" target="_blank" rel="external">Firefox をリセットするには | Firefox ヘルプ</a>  </p>
@@ -602,7 +620,8 @@ sudo apt-<span class="built_in">get</span> install nemo
 <p>Firefoxをリセットしてもブックマークなどは残るが、アドオンは消去されてしまうので、「Firefox Sync」を利用した方が便利だと思う。<br>あとTab Mix Plusなど各種アドオンの設定もエクスポート出来るものは予めエクスポートしておいた方が良い。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>いつの間にかXubuntu14.04.1のFirefoxで「閉じたタブを元に戻す」「最近閉じたタブ」が灰色になっていて選択出来なくなっていた。<br>Tab Mix Plusを無効化したら「閉じたタブを元に戻す」をクリックは出来るが、タブが戻らず機能しない。<br>プライベ]]>
+    <![CDATA[<p>いつの間にかXubuntu14.04.1のFirefoxで「閉じたタブを元に戻す」「最近閉じたタブ」が灰色になっていて選択出来なくなっていた。<br>Tab Mix Plusを無効化したら「閉じたタブを元に戻す」をクリックは出来るが、タブが戻らず機能しない。  ]]>
+    
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/categories/Linux/"/>
@@ -614,9 +633,9 @@ sudo apt-<span class="built_in">get</span> install nemo
     <link href="http://pagent.github.io/2014/10/31/fcitx/"/>
     <id>http://pagent.github.io/2014/10/31/fcitx/</id>
     <published>2014-10-31T05:40:11.000Z</published>
-    <updated>2014-10-31T10:04:56.000Z</updated>
+    <updated>2014-11-24T16:36:41.000Z</updated>
     <content type="html"><![CDATA[<p>ibus1.5ではプロパティパネルがちょろちょろ出てきて邪魔になるし、通知領域のMozcのアイコンは「あ」のままだしで使い勝手が悪いので、ibusはやめてfcitxにした。  </p>
-<p>前にfcitxを入れたときは、Mozcで辞書登録したコマンドの記号やスペースが全角に変換されてしまうので断念したが、今回はちゃんと半角で出力してくれた。<br>前回はXubuntu12.04からアップグレードしたXubuntu14.04.1という環境が悪かったのだろうか。  </p>
+<p>前にfcitxを入れたときは、<a id="more"></a>Mozcで辞書登録したコマンドの記号やスペースが全角に変換されてしまうので断念したが、今回はちゃんと半角で出力してくれた。<br>前回はXubuntu12.04からアップグレードしたXubuntu14.04.1という環境が悪かったのだろうか。  </p>
 <p>通知領域のアイコンで入力状態が確認出来て、プロパティパネルに煩わされることがなくなったので、快適になった。  </p>
 <p>「Zenkakuhankaku」キーでのトグル式の入力切り替えは嫌なので、fcitxの全体の設定＞拡張オプション＞ホットキーでオン・オフにそれぞれ別のキーを割り当てたが、当初、「入力メソッドをオンに」と「入力メソッドをオフに」に設定したキーが逆に反映されてしまっていた。<br>入力メソッドの項目の並びを「キーボード - 日本語」を上、「Mozc」を下（初期入力状態を半角）にしたら、ちゃんと「入力メソッドをオンに」に設定した「Hiraganakatakana」キーでMozcがオン、「オフに」設定した「Muhenkan」キーでMozcがオフになった。  </p>
 <p>fcitxのスキンが他にないか検索したら、Linux Mintユーザーの方がMint向けのスキンをフォーラムで公開しておられた。<br><a href="http://forums.linuxmint-jp.net/viewtopic.php?t=1200" target="_blank" rel="external">Linux Mint Japan 日本語フォーラム • トピック - Fcitx のミントスキン</a>  </p>
@@ -624,7 +643,8 @@ sudo apt-<span class="built_in">get</span> install nemo
 ]]></content>
     <summary type="html">
     <![CDATA[<p>ibus1.5ではプロパティパネルがちょろちょろ出てきて邪魔になるし、通知領域のMozcのアイコンは「あ」のままだしで使い勝手が悪いので、ibusはやめてfcitxにした。  </p>
-<p>前にfcitxを入れたときは、Mozcで辞書登録したコマンドの記号やスペースが全角]]>
+<p>前にfcitxを入れたときは、]]>
+    
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/categories/Linux/"/>

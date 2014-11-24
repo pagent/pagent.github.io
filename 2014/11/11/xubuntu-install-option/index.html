@@ -5,15 +5,15 @@
   
   <title>起動オプションを付けてXubuntu14.04.1をインストール | Pagent</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="NECのネットブックLaVie Light BL300/TにXubuntu14.04.1を再インストールした。以前もXubuntu14.04.1をインストールしたがその時はdisabling IRQ #9でインストールDVDを起動出来ず、いったんXubuntu13.04をインストールしてから、その後Xubuntu14.04.1にアップグレードしていた。だが、起動オプションにpci=noacpiを加">
+  <meta name="description" content="NECのネットブックLaVie Light BL300/TにXubuntu14.04.1を再インストールした。以前もXubuntu14.04.1をインストールしたがその時はdisabling IRQ #9でインストールDVDを起動出来ず、">
 <meta property="og:type" content="article">
 <meta property="og:title" content="起動オプションを付けてXubuntu14.04.1をインストール">
 <meta property="og:url" content="http://pagent.github.io/2014/11/11/xubuntu-install-option/">
 <meta property="og:site_name" content="Pagent">
-<meta property="og:description" content="NECのネットブックLaVie Light BL300/TにXubuntu14.04.1を再インストールした。以前もXubuntu14.04.1をインストールしたがその時はdisabling IRQ #9でインストールDVDを起動出来ず、いったんXubuntu13.04をインストールしてから、その後Xubuntu14.04.1にアップグレードしていた。だが、起動オプションにpci=noacpiを加">
+<meta property="og:description" content="NECのネットブックLaVie Light BL300/TにXubuntu14.04.1を再インストールした。以前もXubuntu14.04.1をインストールしたがその時はdisabling IRQ #9でインストールDVDを起動出来ず、">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="起動オプションを付けてXubuntu14.04.1をインストール">
-<meta name="twitter:description" content="NECのネットブックLaVie Light BL300/TにXubuntu14.04.1を再インストールした。以前もXubuntu14.04.1をインストールしたがその時はdisabling IRQ #9でインストールDVDを起動出来ず、いったんXubuntu13.04をインストールしてから、その後Xubuntu14.04.1にアップグレードしていた。だが、起動オプションにpci=noacpiを加">
+<meta name="twitter:description" content="NECのネットブックLaVie Light BL300/TにXubuntu14.04.1を再インストールした。以前もXubuntu14.04.1をインストールしたがその時はdisabling IRQ #9でインストールDVDを起動出来ず、">
 
   
     <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
@@ -91,7 +91,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>NECのネットブックLaVie Light BL300/TにXubuntu14.04.1を再インストールした。<br>以前もXubuntu14.04.1をインストールしたがその時は<code>disabling IRQ #9</code>でインストールDVDを起動出来ず、いったんXubuntu13.04をインストールしてから、その後Xubuntu14.04.1にアップグレードしていた。<br>だが、起動オプションに<code>pci=noacpi</code>を加えれば、Linuxカーネル3.13.0-39でも起動出来るようだったので、起動オプションを付けてXubuntu14.04.1をインストールした。  </p>
+        <p>NECのネットブックLaVie Light BL300/TにXubuntu14.04.1を再インストールした。<br>以前もXubuntu14.04.1をインストールしたがその時は<code>disabling IRQ #9</code>でインストールDVDを起動出来ず、<a id="more"></a>いったんXubuntu13.04をインストールしてから、その後Xubuntu14.04.1にアップグレードしていた。<br>だが、起動オプションに<code>pci=noacpi</code>を加えれば、Linuxカーネル3.13.0-39でも起動出来るようだったので、起動オプションを付けてXubuntu14.04.1をインストールした。  </p>
 <p>Xubuntu14.04.1のインストールDVDを入れ、起動後「shift」キーを押し続けてオプションを表示。言語を日本語にした後「F6」キーで「その他のオプション」を表示。<br><code>acpi=off</code>、<code>noapic</code>、<code>nolapic</code>、<code>edd=on</code>、<code>nodmraid</code>、<code>nomodeset</code>等の起動オプションが選択出来るが、なにも選ばず「ESC」キーで選択画面を終了。（<code>acpi=off</code>では解像度が800×600に固定されてしまい、他のオプションでは<code>disabling IRQ #9</code>でインストールDVDを起動出来ない。）<br>下部に「起動オプション」の欄があり、キーボードで任意にオプションを入力出来るので、<code>quiet splash --</code>に続けて<code>pci=noacpi</code>と入力し「ENTER」で起動。<br>問題なくXubuntu14.04.1をインストール出来た。  </p>
 <p>インストール後再起動すると、/etc/default/grubの</p>
 <pre><code><span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"quiet splash"</span>

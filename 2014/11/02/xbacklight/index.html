@@ -7,19 +7,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Xubuntu起動時のモニター輝度を少し下げてみた。  
 やり方は、/etc/default/grubで設定する方法、/etc/rc.localで設定する方法、xbacklightを使う方法などがあるようだ。起動時の画面輝度を調整する (Ubuntu 12.04 - 14.04) - 哲朗web  
-最初、/etc/rc.localで設定する方法を試してみた。現在の輝度を変更するコマンドは&gt;">
+まず、">
 <meta property="og:type" content="article">
 <meta property="og:title" content="xbacklightでモニター輝度を設定・調節">
 <meta property="og:url" content="http://pagent.github.io/2014/11/02/xbacklight/">
 <meta property="og:site_name" content="Pagent">
 <meta property="og:description" content="Xubuntu起動時のモニター輝度を少し下げてみた。  
 やり方は、/etc/default/grubで設定する方法、/etc/rc.localで設定する方法、xbacklightを使う方法などがあるようだ。起動時の画面輝度を調整する (Ubuntu 12.04 - 14.04) - 哲朗web  
-最初、/etc/rc.localで設定する方法を試してみた。現在の輝度を変更するコマンドは&gt;">
+まず、">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="xbacklightでモニター輝度を設定・調節">
 <meta name="twitter:description" content="Xubuntu起動時のモニター輝度を少し下げてみた。  
 やり方は、/etc/default/grubで設定する方法、/etc/rc.localで設定する方法、xbacklightを使う方法などがあるようだ。起動時の画面輝度を調整する (Ubuntu 12.04 - 14.04) - 哲朗web  
-最初、/etc/rc.localで設定する方法を試してみた。現在の輝度を変更するコマンドは&gt;">
+まず、">
 
   
     <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
@@ -99,7 +99,7 @@
       
         <p>Xubuntu起動時のモニター輝度を少し下げてみた。  </p>
 <p>やり方は、/etc/default/grubで設定する方法、/etc/rc.localで設定する方法、xbacklightを使う方法などがあるようだ。<br><a href="https://sites.google.com/site/tetsuroweb/home/software/ubuntu/tips/display-brightness" target="_blank" rel="external">起動時の画面輝度を調整する (Ubuntu 12.04 - 14.04) - 哲朗web</a>  </p>
-<p>最初、/etc/rc.localで設定する方法を試してみた。<br>現在の輝度を変更するコマンドは<code>&gt;</code>の表示のまま止まってしまうので、</p>
+<p>まず、<a id="more"></a>/etc/rc.localで設定する方法を試してみた。<br>現在の輝度を変更するコマンドは<code>&gt;</code>の表示のまま止まってしまうので、</p>
 <pre><code><span class="input"><span class="prompt">$ sudo -i
 
 # echo 6 &gt;</span> /sys/<span class="class"><span class="keyword">class</span>/<span class="title">backlight</span>/<span class="title">acpi_video0</span>/<span class="title">brightness</span></span></span>

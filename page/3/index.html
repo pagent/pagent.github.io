@@ -67,14 +67,14 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-hexo-xubuntu" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-unknown-media-type" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/11/21/hexo-xubuntu/" class="article-date">
-  <time datetime="2014-11-21T04:56:19.000Z" itemprop="datePublished">2014年11月21日</time>
+    <a href="/2014/10/31/unknown-media-type/" class="article-date">
+  <time datetime="2014-10-30T21:04:55.000Z" itemprop="datePublished">2014年10月31日</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
   </div>
 
   </div>
@@ -85,7 +85,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/21/hexo-xubuntu/">Xubuntuに静的サイトジェネレーターHexoを入れてみた</a>
+      <a class="article-title" href="/2014/10/31/unknown-media-type/">「Unknown media type in type &#39;all/all&#39;」等が表示される</a>
     </h1>
   
 
@@ -93,30 +93,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Octopressでブログを書いていて、さして不満はないのだが、別の静的サイトジェネレーターに「Hexo」というのがあるのを知った。<br>Octopressに較べ、テーマも豊富に用意あり、日本語のURLやカテゴリー名にも対応しているようだったので、入れてみた。<br>rubyではなく、Node.jsというのを使うらしい。  </p>
-<p>導入には下記サイトなどを参考にさせて頂いた。<br><a href="http://tech.admax.ninja/2014/09/11/environment-of-hexo/" target="_blank" rel="external">【Node.js】Hexoでブログを書くための環境構築 | AdMax Tech Blog</a>  </p>
-<p>概ね上記サイトの通りに進めたらいいようだったが、Xubuntu14.04の環境では若干うまく行かないところがあった。  </p>
-<p>nodeにパスを通す際、~/.bash_profileというファイルが見つからなかったので、~/.profileに  </p>
-<pre><code><span class="keyword">if</span> <span class="string">[[ -s ~/.nvm/nvm.sh ]]</span>;
-<span class="keyword">then</span> source ~/.nvm/nvm.sh
-fi
-</code></pre><p>を追記したが、これでは駄目なようで、ターミナルを起動する度にnvmというコマンドが見つからないと言われる。  </p>
-<p>どうやら~/.bashrcに追記しないと駄目なようだった。<br><a href="http://d.hatena.ne.jp/white_chi/20111101/1320097898" target="_blank" rel="external">Ubuntu11.10で、nvmからnode.jsをインストールする - ホワイトぼーど</a>  </p>
-<p>Hexoをインストールするところで  </p>
-<pre><code>npm WARN <span class="keyword">optional</span> dep failed, continuing fsevents@<span class="number">0.2</span>.<span class="number">0</span>
-</code></pre><p>と言われたが、問題なく使えるようだ。<br>途中うまく行かないので、下記サイトを参考に  </p>
-<pre><code>curl -sL http<span class="variable">s:</span>//<span class="keyword">deb</span>.nodesource.<span class="keyword">com</span>/setup | sudo bash -
-
-sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</span> nodejs
-</code></pre><p>とやったりしたが、果たしてこれが必要な操作だったのかどうかは不明。<br><a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager" target="_blank" rel="external">Installing Node.js via package manager · joyent/node Wiki</a>  </p>
-<p>しばらく試用してみて良ささそうだったら、Octopressから乗り換えるかもしれない。</p>
-
+        <p>最近Octopressを使っている時やXubuntuの更新の際、端末上に「Unknown media type in type ‘all/all’」というような警告が数行表示されることが続いていた。<br>検索してみると、どうやらKDEのバグらしい。  
+        
+          <p class="article-more-link">
+            <a href="/2014/10/31/unknown-media-type/#more">続きを読む</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/21/hexo-xubuntu/" data-id="g1ztzu3y7vker8nx" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/10/31/unknown-media-type/" data-id="9i21mv5ln26f0ozl" class="article-share-link">Share</a>
       
-        <a href="http://pagent.github.io/2014/11/21/hexo-xubuntu/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://pagent.github.io/2014/10/31/unknown-media-type/#disqus_thread" class="article-comment-link">Comments</a>
       
       
     </footer>
@@ -126,12 +114,16 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
 
 
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-kana" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/11/21/hello-world/" class="article-date">
-  <time datetime="2014-11-21T03:07:13.000Z" itemprop="datePublished">2014年11月21日</time>
+    <a href="/2014/10/28/kana/" class="article-date">
+  <time datetime="2014-10-28T09:01:20.000Z" itemprop="datePublished">2014年10月28日</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ことば/">ことば</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -140,7 +132,7 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/21/hello-world/">Hello World</a>
+      <a class="article-title" href="/2014/10/28/kana/">現代仮名遣い</a>
     </h1>
   
 
@@ -148,31 +140,15 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>ときどき現代仮名遣いに違和感を感じる。<br>例えば、「〜さえ」には「え」より「へ」を使った方が良いのではないかと。  </p>
+<p>でも実際「〜さへ」と書いてみると、これもしっくり来ない。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/21/hello-world/" data-id="ewmgnvidoxm2i92c" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/10/28/kana/" data-id="lftefgvc4vksnne6" class="article-share-link">Share</a>
       
-        <a href="http://pagent.github.io/2014/11/21/hello-world/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://pagent.github.io/2014/10/28/kana/#disqus_thread" class="article-comment-link">Comments</a>
       
       
     </footer>
@@ -182,10 +158,10 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
 
 
   
-    <article id="post-octopress-deploy-rejected" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-octopress-source-bitbucket" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/11/20/octopress-deploy-rejected/" class="article-date">
-  <time datetime="2014-11-20T10:11:54.000Z" itemprop="datePublished">2014年11月20日</time>
+    <a href="/2014/10/28/octopress-source-bitbucket/" class="article-date">
+  <time datetime="2014-10-28T00:28:36.000Z" itemprop="datePublished">2014年10月28日</time>
 </a>
     
   <div class="article-category">
@@ -200,7 +176,7 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/20/octopress-deploy-rejected/">2台目のPCのOctopressでdeploy出来ない</a>
+      <a class="article-title" href="/2014/10/28/octopress-source-bitbucket/">OctopressのsourceはBitBucketに置くことにした</a>
     </h1>
   
 
@@ -208,25 +184,349 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>DropboxでOctopressのフォルダを同期し、2台目のPCでもrake new_postやrake generateは出来るようになったが、rake deployが出来ない。<br>gitが入ってなかったので<code>sudo apt-get install git</code>し、<code>rake setup_github_pages</code>でセットアップしたが、  </p>
-<pre><code><span class="input"><span class="prompt">! [rejected]        master -&gt;</span> master (non-fast-forward)</span>
-</code></pre><p>とエラーになる。<br>SSHの公開鍵も設定したのだが。  </p>
-<p>検索したところ、Octopressで突然deploy出来なくなった時には、Rakefileを編集するという対処法があるらしい。<br><a href="http://qiita.com/takuma7/items/2d6f6e786eb6c0afbefb" target="_blank" rel="external">Octopressでrake deployした際にrejectedされた場合の対処 - Qiita</a>  </p>
-<p>どうやら強制的にdeployするものらしい。  </p>
-<p>上記記事の通り、Rakefileの268行目の<code>#</code>の前に<code>+</code>を付けて  </p>
-<pre><code><span class="constant">Bundler</span>.with_clean_env { system <span class="string">"git push origin +<span class="subst">#{deploy_branch}</span>"</span> }
-</code></pre><p>にすると、deploy出来た。  </p>
-<p>元記事によると、deploy出来るようになった後は、Rakefileの編集を元に戻しておいた方がいいらしい。<br><a href="http://stackoverflow.com/questions/17609453/rake-gen-deploy-rejected-in-octopress" target="_blank" rel="external">rake gen_deploy rejected in Octopress - Stack Overflow</a>  </p>
-<p>いったんdeploy出来るようになったら、その後はRakefileを元に戻してもdeploy出来る。  </p>
-<p>記事ではoctopress/_deployディレクトリで<code>git pull origin master</code>というコマンドを使う回答もあった。<br>機会があれば今度試してみようと思う。  </p>
-<p>gitがなんなのかよく分からないが、FTPでアップロードしていた時に較べるとブログの更新も楽だし、スマートな感じがする。<br>でもほんと、gitってよく分からない。</p>
+        <p>OctopressをDropboxに置いて作業するのはしっくりこなかったが、BitBucketのプライベートレポジトリにOctopressのsourceをバックアップしておけるようなので、やってみた。<br><a href="http://blog.withweb.info/blog/2012/10/04/octopress/" target="_blank" rel="external">Octopressでブログしよう - withweb</a>  </p>
+<p>BitBucketでアカウントを作り参照記事の通り設定したら、_postsを含むsourceを<code>git push</code>出来るようになった。<br>あまりあちこちにアカウントを作るのは気が進まなかったが、これでローカルPCになにかあってもブログの復旧が容易という安心感がある。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/20/octopress-deploy-rejected/" data-id="yrtudaysw2zqgxve" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/10/28/octopress-source-bitbucket/" data-id="t1rreqzr1ji3c71p" class="article-share-link">Share</a>
       
-        <a href="http://pagent.github.io/2014/11/20/octopress-deploy-rejected/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://pagent.github.io/2014/10/28/octopress-source-bitbucket/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-octopress-github-images" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/26/octopress-github-images/" class="article-date">
+  <time datetime="2014-10-25T21:20:07.000Z" itemprop="datePublished">2014年10月26日</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Octopress/">Octopress</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/26/octopress-github-images/">Octopress＋GitHubブログで画像の挿入</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Octopressブログに画像を挿入するには、/source/images下に画像ファイルをコピーし、<a href="http://octopress.org/docs/plugins/image-tag/" target="_blank" rel="external">Image Tag - Octopress</a>に従って記事中にタグを記載すればよいらしい。  </p>
+<pre><code>{(半角の<span class="variable">%)</span> img /images/a0960_005150_r.jpg <span class="number">480</span> <span class="number">360</span> コスモス <span class="variable">%}</span>
+</code></pre><p>だが、クリックで元画像を
+        
+          <p class="article-more-link">
+            <a href="/2014/10/26/octopress-github-images/#more">続きを読む</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/10/26/octopress-github-images/" data-id="worcda3cg5oue3c4" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/10/26/octopress-github-images/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-cosmos" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/25/cosmos/" class="article-date">
+  <time datetime="2014-10-25T06:41:22.000Z" itemprop="datePublished">2014年10月25日</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/未分類/">未分類</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/25/cosmos/">畑一面のコスモスはなぜ？</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>秋になって処々で秋桜（コスモス）が美しく咲いている。  </p>
+<p>区画一面にコスモスが咲きほこる畑もあちこち見かける。<br>あれはどういう理由からなのだろう。  
+        
+          <p class="article-more-link">
+            <a href="/2014/10/25/cosmos/#more">続きを読む</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/10/25/cosmos/" data-id="dntx0mgythhmuu4p" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/10/25/cosmos/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-doropbox" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/24/doropbox/" class="article-date">
+  <time datetime="2014-10-24T10:43:57.000Z" itemprop="datePublished">2014年10月24日</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Net/">Net</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/24/doropbox/">Dropbox。やっぱり便利だね</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Xubuntuで間違ってhomeディレクトリを削除してしまい、過去記事のmarkdownファイルもろともOctopressのsourceを消失させてしまうという失敗をしてしまった。<br>ここはOctopressの作業フォルダをDropboxに置いておいた方がよいかと思い
+        
+          <p class="article-more-link">
+            <a href="/2014/10/24/doropbox/#more">続きを読む</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/10/24/doropbox/" data-id="cbhxrfmz643en4bp" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/10/24/doropbox/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-xubuntu-blank-menu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/24/xubuntu-blank-menu/" class="article-date">
+  <time datetime="2014-10-24T09:54:42.000Z" itemprop="datePublished">2014年10月24日</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/24/xubuntu-blank-menu/">Xubuntuでメニューが表示されず真っ白</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>これまで12.04からアップグレードしたXubuntu14.04.1を使っていたので気づかなかったが、14.04.1ではメニュー編集ツールの「メイン・メニュー」が無くなっていて、「メニューエディタ」（MenuLibre）しか入っていない。<br>自分でメニューを追加する際、
+        
+          <p class="article-more-link">
+            <a href="/2014/10/24/xubuntu-blank-menu/#more">続きを読む</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/10/24/xubuntu-blank-menu/" data-id="eylzo87yzfzxsrg1" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/10/24/xubuntu-blank-menu/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-category-no-downcase" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/24/category-no-downcase/" class="article-date">
+  <time datetime="2014-10-24T00:16:56.000Z" itemprop="datePublished">2014年10月24日</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Octopress/">Octopress</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/24/category-no-downcase/">Octopressのカテゴリ表示が小文字になっていた</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>カテゴリ名を「Octopress」と先頭の「O」を大文字にしているのが、なぜか記事下部でもサイドバーでも「octopress」と小文字で表示されていた。<br>Jekyllのバージョンアップでカテゴリ名の先頭文字を小文字に統一することになったらしい。  
+        
+          <p class="article-more-link">
+            <a href="/2014/10/24/category-no-downcase/#more">続きを読む</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/10/24/category-no-downcase/" data-id="enl1xnx03a2gej41" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/10/24/category-no-downcase/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-octopress-customize" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/23/octopress-customize/" class="article-date">
+  <time datetime="2014-10-23T09:30:20.000Z" itemprop="datePublished">2014年10月23日</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Octopress/">Octopress</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/23/octopress-customize/">Octopressのカスタマイズ</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ブログをリニューアルするにあたって、またOctopressを少しカスタマイズした。  </p>
+<p>以前と同じく、<a href="http://tantant.jp/blog/Octopress/configuring-octopress/#paragraph07" target="_blank" rel="external">Octopressの初期設定時に気にしておきたい9箇所 – tantant</a>と<a href="http://rcmdnk.github.io/blog/2013/10/01/blog-octopress/" target="_blank" rel="external">月間アーカイブ for Octopress – rcmdnk’s blog</a>の通り、カテゴリ別アーカイブと月別アーカイブを追加した。  </p>
+<p>テーマは
+        
+          <p class="article-more-link">
+            <a href="/2014/10/23/octopress-customize/#more">続きを読む</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/10/23/octopress-customize/" data-id="yjt6xrhv6zj22j54" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/10/23/octopress-customize/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-site-renewal" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/23/site-renewal/" class="article-date">
+  <time datetime="2014-10-23T08:35:40.000Z" itemprop="datePublished">2014年10月23日</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/blog/">blog</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/23/site-renewal/">独自ドメインが面倒</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>deployのやり方が分からずFTPでのアップロードだったが、独自ドメインでもOctopressを使ってブログを書いていた。<br>先日、PCのhomeディレクトリを移動する際に誤ってhomeディレクトリをすべて削除してしまい、結局
+        
+          <p class="article-more-link">
+            <a href="/2014/10/23/site-renewal/#more">続きを読む</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/10/23/site-renewal/" data-id="0dmspsxymcypd7mf" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/10/23/site-renewal/#disqus_thread" class="article-comment-link">Comments</a>
       
       
     </footer>
@@ -238,7 +538,7 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 </section>
