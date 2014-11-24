@@ -156,7 +156,7 @@ Please make sure you have <span class="operator">the</span> correct access right
 <p>Node.jsは下記からWindows用インストーラー付きのWindows Installer (.msi)をダウンロードし、デフォルトの設定のままインストールした。<br><a href="http://nodejs.org/download/" target="_blank" rel="external">http://nodejs.org/download/</a><br>バージョンはXubuntuに入れたのと同じv0.10.33だった。  </p>
 <h3 id="msysgitのインストール">msysgitのインストール</h3>
 <p>Windowsでgitを使うため<a href="http://msysgit.github.io/" target="_blank" rel="external">msysgit</a>をインストールした。<br>インストールオプションは下記サイトを参考にさせて頂いた。<br><a href="http://d.hatena.ne.jp/xyk/20130920/1379659991" target="_blank" rel="external">Windows に msysgit をインストールして git 環境を作る - xykの日記</a>  </p>
-<p>「Select Components」ではすべてのチェックを外した。<br>「Adjusting your PATH environment」は上から2番目の「Run Git from the Windows Command Prompt」。<br>「Configuring the line ending conversions」は上から2番目の「Checkout as-is, commit Unix-style line endings」でインストールしたが、実際Hexoでdeployする際、  </p>
+<p>「Select Components」ではすべてのチェックを外した。<br>「Adjusting your PATH environment」は上から2番目の「Run Git from the Windows Command Prompt」。<br>「Configuring the line ending conversions」は上から2番目の「Checkout as-is, commit Unix-style line endings」でインストールした。<br>だが、実際Hexoでdeployする際、  </p>
 <pre><code>warning: LF will be replaced <span class="keyword">by</span> <span class="constant">CRLF</span> <span class="operator">in</span> css/style.css.
 The <span class="built_in">file</span> will have its original <span class="built_in">line</span> endings <span class="operator">in</span> your working <span class="built_in">directory</span>.
 warning: LF will be replaced <span class="keyword">by</span> <span class="constant">CRLF</span> <span class="operator">in</span> fancybox/helpers/jquery.fancybox-buttons.css.
@@ -164,7 +164,7 @@ The <span class="built_in">file</span> will have its original <span class="built
 warning: LF will be replaced <span class="keyword">by</span> <span class="constant">CRLF</span> <span class="operator">in</span> fancybox/helpers/jquery.fancybox-buttons.js.
 The <span class="built_in">file</span> will have its original <span class="built_in">line</span> endings <span class="operator">in</span> your working <span class="built_in">directory</span>.
 ...
-</code></pre><p>と、改行コードを変更するという警告が大量に吐出されたので、結局上から3番目のオプション「Checkout as-is, commit as-is」にした。<br>後から<code>C:\Users\（ユーザー名）\.gitconfig</code>で変更可能。  </p>
+</code></pre><p>と、改行コードが変更されるという警告が大量に表示されたので、結局上から3番目のオプション「Checkout as-is, commit as-is」（autocrlf = false）にした。<br>後から<code>C:\Users\（ユーザー名）\.gitconfig</code>で変更可能。  </p>
 <h3 id="Hexoのインストール">Hexoのインストール</h3>
 <p>コマンドプロンプトを開き、</p>
 <pre><code>&gt;npm <span class="keyword">install</span> hexo -g
