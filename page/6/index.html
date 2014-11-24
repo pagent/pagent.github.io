@@ -67,6 +67,71 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-gyao-background-color" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/03/gyao-background-color/" class="article-date">
+  <time datetime="2014-11-03T07:29:59.000Z" itemprop="datePublished">2014年11月3日</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ブラウザ/">ブラウザ</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/03/gyao-background-color/">FirefoxのアドオンStylishでGyaoの背景色を黒くする</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Gyaoで動画を観るとき背景が白くてまぶしいので、FirefoxのアドオンStylishで背景を黒くした。  </p>
+<p>Stylishに下記スタイルを適当な名前で追加するだけ。</p>
+<pre><code><span class="at_rule">@<span class="keyword">namespace</span> <span class="function">url</span>(http://www.w3.org/<span class="number">1999</span>/xhtml)</span>;
+<span class="at_rule">@<span class="keyword">-moz-document</span> <span class="function">domain</span>(<span class="string">"gyao.yahoo.co.jp"</span>)
+,<span class="function">domain</span>(<span class="string">"youtube.com"</span>) 
+</span>{
+
+<span class="tag">body</span> <span class="rules">{
+    <span class="rule"><span class="attribute">background-color</span>:<span class="value"><span class="hexcolor">#000</span></span></span>;
+<span class="rule">}</span></span>
+<span class="id">#playerModule</span> <span class="rules">{
+    <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#080808</span></span></span>;
+<span class="rule">}</span></span>
+<span class="class">.wrapperText</span> <span class="tag">h1</span> <span class="rules">{
+    <span class="rule"><span class="attribute">color</span>:<span class="value"><span class="hexcolor">#BBB</span></span></span>;
+<span class="rule">}</span></span>
+}
+</code></pre><p>YouTubeの背景はそれ程まぶしいと感じたことは無かったが、いちおうYouTubeのドメインも加えた。<br>ずいぶんと目にやさしくなった。</p>
+<p>Stylishは対象のドメインを指定してスタイルを変えられるので、なにかと重宝している。  </p>
+<p>ーー<br>（追記）<br>下記記事で紹介されているStylishのスタイル、Midnight Surfing - Global Dark Styleというのが、ページをとてもきれいに黒くしてくれる。<br><a href="http://www.xmisao.com/2014/08/08/dark-firefox.html" target="_blank" rel="external">Firefoxを徹底的に黒くする テーマ / Stylish / Vimperator — ぺけみさお</a>  </p>
+<p>ただ、導入するとすべてのページが黒くなってしまうので、GyaoとYouTubeのドメインだけを指定した。<br>本当はツールバーやサイドバーなどFirefox自体の見た目も黒くなるはずらしいが、Firefox自体までは黒くならない。<br>最近のFirefoxのバージョンでは難しいようだ。  </p>
+<p>というわけで、自分で書いた上記のスタイルはお蔵行きとなった。  </p>
+<p>（追記2）<br>Solarized Dark Everywhereというスタイルも黒板っぽい色で落ち着く。<br>目が疲れた時のウェブ閲覧に良さそうだ。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/03/gyao-background-color/" data-id="ju4k2dj9b29xaw5x" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/03/gyao-background-color/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-xbacklight" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/11/02/xbacklight/" class="article-date">
@@ -188,54 +253,6 @@
 
 
   
-    <article id="post-firefox-closed-tabs" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/11/01/firefox-closed-tabs/" class="article-date">
-  <time datetime="2014-11-01T01:02:58.000Z" itemprop="datePublished">2014年11月1日</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/01/firefox-closed-tabs/">Firefoxで「閉じたタブを元に戻す」「最近閉じたタブ」がクリック出来ない</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>いつの間にかXubuntu14.04.1のFirefoxで「閉じたタブを元に戻す」「最近閉じたタブ」が灰色になっていて選択出来なくなっていた。<br>Tab Mix Plusを無効化したら「閉じたタブを元に戻す」をクリックは出来るが、タブが戻らず機能しない。<br>プライベートウィンドウでも駄目。  </p>
-<p>Firefoxのバージョンが33.0に更新されてからだろうかと、synapticから「バージョンの強制」で28.0にダウングレードしてみたが、やはり駄目。  </p>
-<p>他のXubuntuPCを見てみると、そちらではちゃんと「閉じたタブを元に戻す」「最近閉じたタブ」が機能している。  </p>
-<p>Firefoxをインストールし直してみるしかなさそうなのでプロファイルも削除しておいた方が良いだろうかとプロファイルの保存場所を調べていたら、Firefoxにはリセット機能というのがあるようだった。<br><a href="https://support.mozilla.org/ja/kb/reset-firefox-easily-fix-most-problems" target="_blank" rel="external">Firefox をリセットするには | Firefox ヘルプ</a>  </p>
-<p>結局このリセットで復旧できた。  </p>
-<p>Firefoxをリセットしてもブックマークなどは残るが、アドオンは消去されてしまうので、「Firefox Sync」を利用した方が便利だと思う。<br>あとTab Mix Plusなど各種アドオンの設定もエクスポート出来るものは予めエクスポートしておいた方が良い。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/01/firefox-closed-tabs/" data-id="rkerntpefe0pwbx5" class="article-share-link">Share</a>
-      
-        <a href="http://pagent.github.io/2014/11/01/firefox-closed-tabs/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/5/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/7/">Next &raquo;</a>
@@ -252,7 +269,11 @@
       <ul>
         
           <li>
-            <a href="/2014/11/24/hexo-windows/">WindowsでHexoを使う（1）</a>
+            <a href="/2014/11/24/hexo-windows-deploy/">WindowsでHexoを使う（deploy）</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11/24/hexo-windows/">WindowsでHexoを使う（インストール）</a>
           </li>
         
           <li>
@@ -267,10 +288,6 @@
             <a href="/2014/11/22/hexo-theme/">Hexoのテーマを変更したら、元に戻せなくなった</a>
           </li>
         
-          <li>
-            <a href="/2014/11/22/octopress-hexo/">サイトジェネレーターをOctopressからHexoに変更</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -280,7 +297,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">カテゴリー</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -289,7 +306,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">月別アーカイブ</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
     </div>
   </div>
 

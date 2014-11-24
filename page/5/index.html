@@ -67,6 +67,56 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-xubuntu-install-option" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/11/xubuntu-install-option/" class="article-date">
+  <time datetime="2014-11-11T09:39:48.000Z" itemprop="datePublished">2014年11月11日</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/11/xubuntu-install-option/">起動オプションを付けてXubuntu14.04.1をインストール</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>NECのネットブックLaVie Light BL300/TにXubuntu14.04.1を再インストールした。<br>以前もXubuntu14.04.1をインストールしたがその時は<code>disabling IRQ #9</code>でインストールDVDを起動出来ず、いったんXubuntu13.04をインストールしてから、その後Xubuntu14.04.1にアップグレードしていた。<br>だが、起動オプションに<code>pci=noacpi</code>を加えれば、Linuxカーネル3.13.0-39でも起動出来るようだったので、起動オプションを付けてXubuntu14.04.1をインストールした。  </p>
+<p>Xubuntu14.04.1のインストールDVDを入れ、起動後「shift」キーを押し続けてオプションを表示。言語を日本語にした後「F6」キーで「その他のオプション」を表示。<br><code>acpi=off</code>、<code>noapic</code>、<code>nolapic</code>、<code>edd=on</code>、<code>nodmraid</code>、<code>nomodeset</code>等の起動オプションが選択出来るが、なにも選ばず「ESC」キーで選択画面を終了。（<code>acpi=off</code>では解像度が800×600に固定されてしまい、他のオプションでは<code>disabling IRQ #9</code>でインストールDVDを起動出来ない。）<br>下部に「起動オプション」の欄があり、キーボードで任意にオプションを入力出来るので、<code>quiet splash --</code>に続けて<code>pci=noacpi</code>と入力し「ENTER」で起動。<br>問題なくXubuntu14.04.1をインストール出来た。  </p>
+<p>インストール後再起動すると、/etc/default/grubの</p>
+<pre><code><span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"quiet splash"</span>
+</code></pre><p>の下にちゃんと</p>
+<pre><code><span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"pci=noacpi"</span>
+</code></pre><p>の記載が加わっている。</p>
+<p>Xubuntuの前にLubuntu14.04.1も試してみたが、確かにXubuntuに較べて動作はやや軽いような気はした。<br>だがLubuntuソフトウェアセンターというのが検索も出来ず使いづらいし、お気に入りアプリケーションの登録も不便だったりと、カスタマイズの自由度の低さからLubuntuは断念した。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/11/xubuntu-install-option/" data-id="7c6jyrzpgulc6jp0" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/11/xubuntu-install-option/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-yonifuru" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/11/06/yonifuru/" class="article-date">
@@ -159,71 +209,6 @@
 
 
   
-    <article id="post-gyao-background-color" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/11/03/gyao-background-color/" class="article-date">
-  <time datetime="2014-11-03T07:29:59.000Z" itemprop="datePublished">2014年11月3日</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/ブラウザ/">ブラウザ</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/03/gyao-background-color/">FirefoxのアドオンStylishでGyaoの背景色を黒くする</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Gyaoで動画を観るとき背景が白くてまぶしいので、FirefoxのアドオンStylishで背景を黒くした。  </p>
-<p>Stylishに下記スタイルを適当な名前で追加するだけ。</p>
-<pre><code><span class="at_rule">@<span class="keyword">namespace</span> <span class="function">url</span>(http://www.w3.org/<span class="number">1999</span>/xhtml)</span>;
-<span class="at_rule">@<span class="keyword">-moz-document</span> <span class="function">domain</span>(<span class="string">"gyao.yahoo.co.jp"</span>)
-,<span class="function">domain</span>(<span class="string">"youtube.com"</span>) 
-</span>{
-
-<span class="tag">body</span> <span class="rules">{
-    <span class="rule"><span class="attribute">background-color</span>:<span class="value"><span class="hexcolor">#000</span></span></span>;
-<span class="rule">}</span></span>
-<span class="id">#playerModule</span> <span class="rules">{
-    <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#080808</span></span></span>;
-<span class="rule">}</span></span>
-<span class="class">.wrapperText</span> <span class="tag">h1</span> <span class="rules">{
-    <span class="rule"><span class="attribute">color</span>:<span class="value"><span class="hexcolor">#BBB</span></span></span>;
-<span class="rule">}</span></span>
-}
-</code></pre><p>YouTubeの背景はそれ程まぶしいと感じたことは無かったが、いちおうYouTubeのドメインも加えた。<br>ずいぶんと目にやさしくなった。</p>
-<p>Stylishは対象のドメインを指定してスタイルを変えられるので、なにかと重宝している。  </p>
-<p>ーー<br>（追記）<br>下記記事で紹介されているStylishのスタイル、Midnight Surfing - Global Dark Styleというのが、ページをとてもきれいに黒くしてくれる。<br><a href="http://www.xmisao.com/2014/08/08/dark-firefox.html" target="_blank" rel="external">Firefoxを徹底的に黒くする テーマ / Stylish / Vimperator — ぺけみさお</a>  </p>
-<p>ただ、導入するとすべてのページが黒くなってしまうので、GyaoとYouTubeのドメインだけを指定した。<br>本当はツールバーやサイドバーなどFirefox自体の見た目も黒くなるはずらしいが、Firefox自体までは黒くならない。<br>最近のFirefoxのバージョンでは難しいようだ。  </p>
-<p>というわけで、自分で書いた上記のスタイルはお蔵行きとなった。  </p>
-<p>（追記2）<br>Solarized Dark Everywhereというスタイルも黒板っぽい色で落ち着く。<br>目が疲れた時のウェブ閲覧に良さそうだ。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/03/gyao-background-color/" data-id="ju4k2dj9b29xaw5x" class="article-share-link">Share</a>
-      
-        <a href="http://pagent.github.io/2014/11/03/gyao-background-color/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
@@ -240,7 +225,11 @@
       <ul>
         
           <li>
-            <a href="/2014/11/24/hexo-windows/">WindowsでHexoを使う（1）</a>
+            <a href="/2014/11/24/hexo-windows-deploy/">WindowsでHexoを使う（deploy）</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11/24/hexo-windows/">WindowsでHexoを使う（インストール）</a>
           </li>
         
           <li>
@@ -255,10 +244,6 @@
             <a href="/2014/11/22/hexo-theme/">Hexoのテーマを変更したら、元に戻せなくなった</a>
           </li>
         
-          <li>
-            <a href="/2014/11/22/octopress-hexo/">サイトジェネレーターをOctopressからHexoに変更</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -268,7 +253,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">カテゴリー</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -277,7 +262,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">月別アーカイブ</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
     </div>
   </div>
 

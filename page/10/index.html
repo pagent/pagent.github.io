@@ -67,6 +67,68 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-category-no-downcase" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/24/category-no-downcase/" class="article-date">
+  <time datetime="2014-10-24T00:16:56.000Z" itemprop="datePublished">2014年10月24日</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Octopress/">Octopress</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/24/category-no-downcase/">Octopressのカテゴリ表示が小文字になっていた</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>カテゴリ名を「Octopress」と先頭の「O」を大文字にしているのが、なぜか記事下部でもサイドバーでも「octopress」と小文字で表示されていた。<br>Jekyllのバージョンアップでカテゴリ名の先頭文字を小文字に統一することになったらしい。<br><a href="http://rcmdnk.github.io/blog/2014/07/10/blog-octopress-ruby/" target="_blank" rel="external">Jekyll 1.X or 2.X (+ Octopress)でのCategoryの取り扱い - rcmdnk’s blog</a>  </p>
+<p>参照記事の通り、post.rb（Xubuntu14.04.1では/var/lib/gems/1.9.1/gems/jekyll-2.4.0/lib/jekyllにあった）をoctopress/plugins内にコピーして編集したが、previewの際</p>
+<blockquote>
+<p>warning: already initialized constant MATCHER</p>
+<p>warning: already initialized constant EXCERPT_ATTRIBUTES_FOR_LIQUID</p>
+<p>warning: already initialized constant ATTRIBUTES_FOR_LIQUID</p>
+</blockquote>
+<p>と警告が出る。<br>コピーしてきたpost.rbの内容は、他の部分を削除してカテゴリー名に関する部分だけにした方が良いらしい。  </p>
+<p>大文字小文字は自分で好きに決めたいので、downcaseをcapitalizeにするのではなく<code>.map {|c| c.to_s.downcase}</code>の部分を省略した。  </p>
+<pre><code><span class="class"><span class="keyword">module</span> <span class="title">Jekyll</span></span>
+  <span class="class"><span class="keyword">class</span> <span class="title">Post</span></span>
+    <span class="function"><span class="keyword">def</span> </span>populate_categories
+      categories_from_data = <span class="constant">Utils</span>.pluralized_array_from_hash(data, <span class="string">'category'</span>, <span class="string">'categories'</span>)
+      <span class="keyword">self</span>.categories = (
+        <span class="constant">Array</span>(categories) + categories_from_data
+      ).flatten.uniq
+    <span class="keyword">end</span>
+  <span class="keyword">end</span>
+<span class="keyword">end</span>
+</code></pre><p>大文字小文字を好きに決められるようになった。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/10/24/category-no-downcase/" data-id="enl1xnx03a2gej41" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/10/24/category-no-downcase/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-octopress-customize" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/10/23/octopress-customize/" class="article-date">
@@ -197,56 +259,6 @@
 
 
   
-    <article id="post-io" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/10/23/io/" class="article-date">
-  <time datetime="2014-10-23T01:23:23.000Z" itemprop="datePublished">2014年10月23日</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Net/">Net</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/10/23/io/">Githubへのdeployエラーとインド洋のイギリス領（.io）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>OctopressブログをGithubのレポジトリにdeployしようとしても、エラーになってなかなか上手くいかなかった。  </p>
-<p>どうやら、参考にしたサイトの説明通りレポジトリ名を（username）.github.comにしたのが原因だった様子。<br>新しく（username）.github.ioでレポジトリを作りなおしたら、すんなりdeploy出来た。<br>Githubがレポジトリを.github.comから.github.ioに移行したのが関係しているのだろうか。  </p>
-<p>.ioというのは見慣れないドメインだったが、最近はIT分野で好まれているのだとか。</p>
-<blockquote>
-<p>.ioは国別コードトップレベルドメイン（ccTLD）の一つで、イギリス領インド洋地域(Indian Ocean Territory)に割り当てられている。</p>
-<p>入出力のI/O（Input/Output）やI/Oポートを表すとして、ウェブアプリケーションを始めとするコンピュータサイエンスの分野では近年.ioドメインが好まれている。2013年4月にGitHubはプロジェクトページの全ドメインを「github.io」に移行した。</p>
-</blockquote>
-<p>イギリスという国がいまだにインド洋に領有地（植民地）を持っている、ということに驚いた。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/10/23/io/" data-id="c9xwjc71inrebojt" class="article-share-link">Share</a>
-      
-        <a href="http://pagent.github.io/2014/10/23/io/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/9/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/11/">Next &raquo;</a>
@@ -263,7 +275,11 @@
       <ul>
         
           <li>
-            <a href="/2014/11/24/hexo-windows/">WindowsでHexoを使う（1）</a>
+            <a href="/2014/11/24/hexo-windows-deploy/">WindowsでHexoを使う（deploy）</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11/24/hexo-windows/">WindowsでHexoを使う（インストール）</a>
           </li>
         
           <li>
@@ -278,10 +294,6 @@
             <a href="/2014/11/22/hexo-theme/">Hexoのテーマを変更したら、元に戻せなくなった</a>
           </li>
         
-          <li>
-            <a href="/2014/11/22/octopress-hexo/">サイトジェネレーターをOctopressからHexoに変更</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -291,7 +303,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">カテゴリー</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -300,7 +312,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">月別アーカイブ</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
     </div>
   </div>
 

@@ -4,7 +4,7 @@
   <subtitle><![CDATA[GitHub Pages＋静的サイトジェネレーターでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-11-24T11:25:24.359Z</updated>
+  <updated>2014-11-24T12:21:47.458Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,18 +15,51 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[WindowsでHexoを使う（1）]]></title>
+    <title><![CDATA[WindowsでHexoを使う（deploy）]]></title>
+    <link href="http://pagent.github.io/2014/11/24/hexo-windows-deploy/"/>
+    <id>http://pagent.github.io/2014/11/24/hexo-windows-deploy/</id>
+    <published>2014-11-24T11:31:27.000Z</published>
+    <updated>2014-11-24T12:15:06.000Z</updated>
+    <content type="html"><![CDATA[<p>Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来るかと思ったが、  </p>
+<pre><code>Run
+
+  git config --global <span class="literal">user</span>.email <span class="string">"you@example.com"</span>
+  git config --global <span class="literal">user</span>.name <span class="string">"Your Name"</span>
+</code></pre><p>と言われてしまった。  </p>
+<p>メールアドレスとGithubユーザー名を設定してdeployしようとしたが、  </p>
+<pre><code>Permission denied (publickey).
+fatal: Could <span class="operator">not</span> <span class="built_in">read</span> <span class="built_in">from</span> remote repository.
+
+Please make sure you have <span class="operator">the</span> correct access rights
+<span class="operator">and</span> <span class="operator">the</span> repository exists.
+</code></pre><p>とrejectされる。  </p>
+<p>SSHキーの設定が必要のようなので、Linuxで設定したSSH公開鍵を<code>C:\Users\（ユーザー名）\.ssh</code>にコピペしたが、やはりrejectされる。<br>秘密鍵もコピペしたら、ようやくdeploy出来た。<br>これで無事WindowsでもHexoを使えるようになった。  </p>
+<p>Hexoにはローカルホストで使う管理画面プラグインもあるようなので、もう少し導入が簡単になればWindowsユーザーにも「静的サイトジェネレーター」が広まる可能性がありそうだ。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来るかと思ったが、  </p>
+<pre><code>Run
+
+  git config --global <span class="literal">user</]]>
+    </summary>
+    
+      <category term="Hexo" scheme="http://pagent.github.io/categories/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[WindowsでHexoを使う（インストール）]]></title>
     <link href="http://pagent.github.io/2014/11/24/hexo-windows/"/>
     <id>http://pagent.github.io/2014/11/24/hexo-windows/</id>
     <published>2014-11-24T09:32:37.000Z</published>
-    <updated>2014-11-24T11:15:30.000Z</updated>
+    <updated>2014-11-24T12:20:33.000Z</updated>
     <content type="html"><![CDATA[<p>以前、静的サイトジェネレーターnanocをWindowsにインストールしたが、なんとかインストールは出来たものの、compile（generate）してhtmlファイルを生成する際、エラーになり使えなかった。<br>最近使い始めたHexoは、nanocやOctopressと違い、rubyではなくNode.jsで動いているそうなので、Windowsで使えるか試してみた。  </p>
 <p>結果、Windowsで実用可能だった。</p>
 <h3 id="Node-jsのインストール">Node.jsのインストール</h3>
 <p>Node.jsは下記からWindows用インストーラー付きのWindows Installer (.msi)をダウンロードし、デフォルトの設定のままインストールした。<br><a href="http://nodejs.org/download/" target="_blank" rel="external">http://nodejs.org/download/</a><br>バージョンはXubuntuに入れたのと同じv0.10.33だった。  </p>
 <h3 id="msysgitのインストール">msysgitのインストール</h3>
 <p>Windowsでgitを使うため<a href="http://msysgit.github.io/" target="_blank" rel="external">msysgit</a>をインストールした。<br>インストールオプションは下記サイトを参考にさせて頂いた。<br><a href="http://d.hatena.ne.jp/xyk/20130920/1379659991" target="_blank" rel="external">Windows に msysgit をインストールして git 環境を作る - xykの日記</a>  </p>
-<p>「Select Components」ではすべてのチェックを外した。<br>「Adjusting your PATH environment」は上から2番目の「Run Git from the Windows Command Prompt」。<br>「Configuring the line ending conversions」は上から2番目の「Checkout as-is, commit Unix-style line endings」でインストールしたが、実際Hexoでdeployする際  </p>
+<p>「Select Components」ではすべてのチェックを外した。<br>「Adjusting your PATH environment」は上から2番目の「Run Git from the Windows Command Prompt」。<br>「Configuring the line ending conversions」は上から2番目の「Checkout as-is, commit Unix-style line endings」でインストールしたが、実際Hexoでdeployする際、  </p>
 <pre><code>warning: LF will be replaced <span class="keyword">by</span> <span class="constant">CRLF</span> <span class="operator">in</span> css/style.css.
 The <span class="built_in">file</span> will have its original <span class="built_in">line</span> endings <span class="operator">in</span> your working <span class="built_in">directory</span>.
 warning: LF will be replaced <span class="keyword">by</span> <span class="constant">CRLF</span> <span class="operator">in</span> fancybox/helpers/jquery.fancybox-buttons.css.
@@ -34,14 +67,15 @@ The <span class="built_in">file</span> will have its original <span class="built
 warning: LF will be replaced <span class="keyword">by</span> <span class="constant">CRLF</span> <span class="operator">in</span> fancybox/helpers/jquery.fancybox-buttons.js.
 The <span class="built_in">file</span> will have its original <span class="built_in">line</span> endings <span class="operator">in</span> your working <span class="built_in">directory</span>.
 ...
-</code></pre><p>と、改行コードを変更するという警告が大量に吐出されたので、結局上から3番目のオプション「Checkout as-is, commit as-is」にした。<br>後からC:\Users\（ユーザー名）.gitconfigで変更可能。  </p>
+</code></pre><p>と、改行コードを変更するという警告が大量に吐出されたので、結局上から3番目のオプション「Checkout as-is, commit as-is」にした。<br>後から<code>C:\Users\（ユーザー名）\.gitconfig</code>で変更可能。  </p>
 <h3 id="Hexoのインストール">Hexoのインストール</h3>
-<p>コマンドプロンプトを開き</p>
+<p>コマンドプロンプトを開き、</p>
 <pre><code>&gt;npm <span class="keyword">install</span> hexo -g
-</code></pre><p>でインストール。<br>Linuxの時と同様  </p>
+</code></pre><p>でインストール。</p>
+<p>Linuxの時と同様、  </p>
 <pre><code>npm WARN <span class="keyword">optional</span> dep failed, continuing fsevents@<span class="number">0.2</span>.<span class="number">0</span>
 </code></pre><p>という警告が出たが、インストール完了。  </p>
-<p>Hexoの作業フォルダを作るため、任意のフォルダを選択した状態で「SHIFT」キーを押しながら右クリック。<br>「コマンド ウィンドウをここで開く」でコマンドウィンドウを立ち上げ  </p>
+<p>Hexoの作業フォルダを作るため、任意のフォルダを選択した状態で「SHIFT」キーを押しながら右クリック。<br>「コマンド ウィンドウをここで開く」でコマンドウィンドウを立ち上げ、  </p>
 <pre><code>&gt;hexo init hexo-win
 &gt;<span class="built_in">cd</span> hexo-win
 &gt;npm install
@@ -58,7 +92,7 @@ The <span class="built_in">file</span> will have its original <span class="built
 [create] Generated: archives/<span class="number">2014</span>/index.html (63ms)
 <span class="keyword">...</span>
 </code></pre><p>と、一旦すべてのファイルを削除してからまたファイルを生成したというメッセージが表示される。<br>あまり気持ち良くはないが、実用上問題は無さそう。  </p>
-<p>この後、deployで躓いたが、それは次項に記載。</p>
+<p>この後deployで少し躓いてしまったが、WindowsでHexoを使うことが出来た。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>以前、静的サイトジェネレーターnanocをWindowsにインストールしたが、なんとかインストールは出来たものの、compile（generate）してhtmlファイルを生成する際、エラーになり使えなかった。<br>最近使い始めたHexoは、nanocやOctopressと]]>
@@ -590,32 +624,6 @@ sudo apt-<span class="built_in">get</span> install nemo
     <summary type="html">
     <![CDATA[<p>ibus1.5ではプロパティパネルがちょろちょろ出てきて邪魔になるし、通知領域のMozcのアイコンは「あ」のままだしで使い勝手が悪いので、ibusはやめてfcitxにした。  </p>
 <p>前にfcitxを入れたときは、Mozcで辞書登録したコマンドの記号やスペースが全角]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/categories/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[「Unknown media type in type 'all/all'」等が表示される]]></title>
-    <link href="http://pagent.github.io/2014/10/31/unknown-media-type/"/>
-    <id>http://pagent.github.io/2014/10/31/unknown-media-type/</id>
-    <published>2014-10-30T21:04:55.000Z</published>
-    <updated>2014-11-03T21:16:56.000Z</updated>
-    <content type="html"><![CDATA[<p>最近Octopressを使っている時やXubuntuの更新の際、端末上に「Unknown media type in type ‘all/all’」というような警告が数行表示されることが続いていた。<br>検索してみると、どうやらKDEのバグらしい。<br><a href="https://bugs.launchpad.net/ubuntu/+source/shared-mime-info/+bug/289592" target="_blank" rel="external">Bug #289592 “Unknown media types in /usr/share/mime/packages/kde…” : Bugs : “shared-mime-info” package : Ubuntu</a><br>確かに、KDEのアプリケーションをいくつかインストールしてからこの症状が起こっているように思う。  </p>
-<p>修正するには</p>
-<blockquote>
-<p>$ sudo rm /usr/share/mime/packages/kde.xml<br>$ sudo update-mime-database /usr/share/mime</p>
-</blockquote>
-<p>とすれば良いようだ。<br>だが、なんのためのファイルか知らないが、いきなりkde.xmlを削除するのも気が引けるので、  </p>
-<pre><code>$ sudo mv <span class="regexp">/usr/</span>share<span class="regexp">/mime/</span>packages<span class="regexp">/kde.xml /</span>usr<span class="regexp">/share/mim</span>e<span class="regexp">/packages/</span>kde.xml.bak
-</code></pre><p>とリネームしてから</p>
-<pre><code>$ sudo <span class="operator"><span class="keyword">update</span>-mime-<span class="keyword">database</span> /usr/<span class="keyword">share</span>/mime</span>
-</code></pre><p>としてみた。  </p>
-<p>今のところ「Unknown media type in type …」は出てないし、特に不具合も無いようだ。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>最近Octopressを使っている時やXubuntuの更新の際、端末上に「Unknown media type in type ‘all/all’」というような警告が数行表示されることが続いていた。<br>検索してみると、どうやらKDEのバグらしい。<br><a href=]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/categories/Linux/"/>

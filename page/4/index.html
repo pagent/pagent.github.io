@@ -67,6 +67,85 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-install-libv8" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/19/install-libv8/" class="article-date">
+  <time datetime="2014-11-19T09:02:45.000Z" itemprop="datePublished">2014年11月19日</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Octopress/">Octopress</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/19/install-libv8/">Installing libv8で止まる</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>OctopressのフォルダをDropboxに置くことにしたので、古いネットブックにインストールしたXubuntuからOctopressを使えるかどうか試してみた。<br>rake previewしようとしたら、エラーになってしまった。<br>Octopressを使う環境が整っていないので当然といえば当然。  </p>
+<p>環境を整えるにあたり、bundle installで行き詰まってしまった。<br>途中    </p>
+<pre><code><span class="title">Installing</span> libv8 (<span class="number">3.16.14.7</span>) 
+</code></pre><p>の表示のところで動かない。<br>フリーズしたのかと思ったが検索したところ、libv8のインストールには時間が掛かるらしい。<br>確かにCPUの使用率も100%で、頑張ってはいるようだ。  </p>
+<p>非力なマシンのせいか結局30分くらい掛かったろうか。<br>もう一度パスワード入力を求められ、その後またtherubyracer (0.12.1)のところで少し時間が掛かったが、ようやくYour bundle is complete!<br>Octopressを使えるようになった。  </p>
+<p>ーー<br>使えるようになったと思ったら、deployが出来ない。  </p>
+<pre><code>$ rake deploy
+cp -r source/images/.gitkeeper <span class="keyword">public</span>/images/.gitkeeper
+<span class="preprocessor">## Deploying branch to Github Pages </span>
+<span class="preprocessor">## Pulling any updates from Github Pages </span>
+cd _deploy
+cd -
+rm -rf _deploy/assets
+rm -rf _deploy/atom.xml
+rm -rf _deploy/blog
+rm -rf _deploy/favicon.png
+rm -rf _deploy/images
+rm -rf _deploy/index.html
+rm -rf _deploy/javascripts
+rm -rf _deploy/posts
+rm -rf _deploy/robots.txt
+rm -rf _deploy/sitemap.xml
+rm -rf _deploy/stylesheets
+
+<span class="preprocessor">## Copying public to _deploy</span>
+cp -r <span class="keyword">public</span>/. _deploy
+cd _deploy
+
+<span class="preprocessor">## Committing: Site updated at 2014-11-19 11:02:25 UTC</span>
+sh: <span class="number">1</span>: git: not found
+
+<span class="preprocessor">## Pushing generated _deploy website</span>
+
+<span class="preprocessor">## Github Pages deploy complete</span>
+cd -
+</code></pre><p>拒否はされてないみたいだが、記事を投稿出来ない。<br>どこに問題があるのか、よく分からない。<br>generateもやたら遅いし、ちょっとしんどいかな。  </p>
+<p>ーー<br>gitがインストールされてない？</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/19/install-libv8/" data-id="aqp4brovt5ryyhgg" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/19/install-libv8/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-debian-wheezy-nemo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/11/18/debian-wheezy-nemo/" class="article-date">
@@ -169,56 +248,6 @@ sudo apt-<span class="built_in">get</span> install nemo
 
 
   
-    <article id="post-xubuntu-install-option" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/11/11/xubuntu-install-option/" class="article-date">
-  <time datetime="2014-11-11T09:39:48.000Z" itemprop="datePublished">2014年11月11日</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/11/xubuntu-install-option/">起動オプションを付けてXubuntu14.04.1をインストール</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>NECのネットブックLaVie Light BL300/TにXubuntu14.04.1を再インストールした。<br>以前もXubuntu14.04.1をインストールしたがその時は<code>disabling IRQ #9</code>でインストールDVDを起動出来ず、いったんXubuntu13.04をインストールしてから、その後Xubuntu14.04.1にアップグレードしていた。<br>だが、起動オプションに<code>pci=noacpi</code>を加えれば、Linuxカーネル3.13.0-39でも起動出来るようだったので、起動オプションを付けてXubuntu14.04.1をインストールした。  </p>
-<p>Xubuntu14.04.1のインストールDVDを入れ、起動後「shift」キーを押し続けてオプションを表示。言語を日本語にした後「F6」キーで「その他のオプション」を表示。<br><code>acpi=off</code>、<code>noapic</code>、<code>nolapic</code>、<code>edd=on</code>、<code>nodmraid</code>、<code>nomodeset</code>等の起動オプションが選択出来るが、なにも選ばず「ESC」キーで選択画面を終了。（<code>acpi=off</code>では解像度が800×600に固定されてしまい、他のオプションでは<code>disabling IRQ #9</code>でインストールDVDを起動出来ない。）<br>下部に「起動オプション」の欄があり、キーボードで任意にオプションを入力出来るので、<code>quiet splash --</code>に続けて<code>pci=noacpi</code>と入力し「ENTER」で起動。<br>問題なくXubuntu14.04.1をインストール出来た。  </p>
-<p>インストール後再起動すると、/etc/default/grubの</p>
-<pre><code><span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"quiet splash"</span>
-</code></pre><p>の下にちゃんと</p>
-<pre><code><span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"pci=noacpi"</span>
-</code></pre><p>の記載が加わっている。</p>
-<p>Xubuntuの前にLubuntu14.04.1も試してみたが、確かにXubuntuに較べて動作はやや軽いような気はした。<br>だがLubuntuソフトウェアセンターというのが検索も出来ず使いづらいし、お気に入りアプリケーションの登録も不便だったりと、カスタマイズの自由度の低さからLubuntuは断念した。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/11/xubuntu-install-option/" data-id="7c6jyrzpgulc6jp0" class="article-share-link">Share</a>
-      
-        <a href="http://pagent.github.io/2014/11/11/xubuntu-install-option/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -235,7 +264,11 @@ sudo apt-<span class="built_in">get</span> install nemo
       <ul>
         
           <li>
-            <a href="/2014/11/24/hexo-windows/">WindowsでHexoを使う（1）</a>
+            <a href="/2014/11/24/hexo-windows-deploy/">WindowsでHexoを使う（deploy）</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11/24/hexo-windows/">WindowsでHexoを使う（インストール）</a>
           </li>
         
           <li>
@@ -250,10 +283,6 @@ sudo apt-<span class="built_in">get</span> install nemo
             <a href="/2014/11/22/hexo-theme/">Hexoのテーマを変更したら、元に戻せなくなった</a>
           </li>
         
-          <li>
-            <a href="/2014/11/22/octopress-hexo/">サイトジェネレーターをOctopressからHexoに変更</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -263,7 +292,7 @@ sudo apt-<span class="built_in">get</span> install nemo
   <div class="widget-wrap">
     <h3 class="widget-title">カテゴリー</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -272,7 +301,7 @@ sudo apt-<span class="built_in">get</span> install nemo
   <div class="widget-wrap">
     <h3 class="widget-title">月別アーカイブ</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
     </div>
   </div>
 

@@ -67,6 +67,65 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-hexo-xubuntu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/21/hexo-xubuntu/" class="article-date">
+  <time datetime="2014-11-21T04:56:19.000Z" itemprop="datePublished">2014年11月21日</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/21/hexo-xubuntu/">Xubuntuに静的サイトジェネレーターHexoを入れてみた</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Octopressでブログを書いていて、さして不満はないのだが、別の静的サイトジェネレーターに「Hexo」というのがあるのを知った。<br>Octopressに較べ、テーマも豊富に用意あり、日本語のURLやカテゴリー名にも対応しているようだったので、入れてみた。<br>rubyではなく、Node.jsというのを使うらしい。  </p>
+<p>導入には下記サイトなどを参考にさせて頂いた。<br><a href="http://tech.admax.ninja/2014/09/11/environment-of-hexo/" target="_blank" rel="external">【Node.js】Hexoでブログを書くための環境構築 | AdMax Tech Blog</a>  </p>
+<p>概ね上記サイトの通りに進めたらいいようだったが、Xubuntu14.04の環境では若干うまく行かないところがあった。  </p>
+<p>nodeにパスを通す際、~/.bash_profileというファイルが見つからなかったので、~/.profileに  </p>
+<pre><code><span class="keyword">if</span> <span class="string">[[ -s ~/.nvm/nvm.sh ]]</span>;
+<span class="keyword">then</span> source ~/.nvm/nvm.sh
+fi
+</code></pre><p>を追記したが、これでは駄目なようで、ターミナルを起動する度にnvmというコマンドが見つからないと言われる。  </p>
+<p>どうやら~/.bashrcに追記しないと駄目なようだった。<br><a href="http://d.hatena.ne.jp/white_chi/20111101/1320097898" target="_blank" rel="external">Ubuntu11.10で、nvmからnode.jsをインストールする - ホワイトぼーど</a>  </p>
+<p>Hexoをインストールするところで  </p>
+<pre><code>npm WARN <span class="keyword">optional</span> dep failed, continuing fsevents@<span class="number">0.2</span>.<span class="number">0</span>
+</code></pre><p>と言われたが、問題なく使えるようだ。<br>途中うまく行かないので、下記サイトを参考に  </p>
+<pre><code>curl -sL http<span class="variable">s:</span>//<span class="keyword">deb</span>.nodesource.<span class="keyword">com</span>/setup | sudo bash -
+
+sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</span> nodejs
+</code></pre><p>とやったりしたが、果たしてこれが必要な操作だったのかどうかは不明。<br><a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager" target="_blank" rel="external">Installing Node.js via package manager · joyent/node Wiki</a>  </p>
+<p>しばらく試用してみて良ささそうだったら、Octopressから乗り換えるかもしれない。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/21/hexo-xubuntu/" data-id="g1ztzu3y7vker8nx" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/21/hexo-xubuntu/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/11/21/hello-world/" class="article-date">
@@ -177,85 +236,6 @@
 
 
   
-    <article id="post-install-libv8" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/11/19/install-libv8/" class="article-date">
-  <time datetime="2014-11-19T09:02:45.000Z" itemprop="datePublished">2014年11月19日</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Octopress/">Octopress</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/19/install-libv8/">Installing libv8で止まる</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>OctopressのフォルダをDropboxに置くことにしたので、古いネットブックにインストールしたXubuntuからOctopressを使えるかどうか試してみた。<br>rake previewしようとしたら、エラーになってしまった。<br>Octopressを使う環境が整っていないので当然といえば当然。  </p>
-<p>環境を整えるにあたり、bundle installで行き詰まってしまった。<br>途中    </p>
-<pre><code><span class="title">Installing</span> libv8 (<span class="number">3.16.14.7</span>) 
-</code></pre><p>の表示のところで動かない。<br>フリーズしたのかと思ったが検索したところ、libv8のインストールには時間が掛かるらしい。<br>確かにCPUの使用率も100%で、頑張ってはいるようだ。  </p>
-<p>非力なマシンのせいか結局30分くらい掛かったろうか。<br>もう一度パスワード入力を求められ、その後またtherubyracer (0.12.1)のところで少し時間が掛かったが、ようやくYour bundle is complete!<br>Octopressを使えるようになった。  </p>
-<p>ーー<br>使えるようになったと思ったら、deployが出来ない。  </p>
-<pre><code>$ rake deploy
-cp -r source/images/.gitkeeper <span class="keyword">public</span>/images/.gitkeeper
-<span class="preprocessor">## Deploying branch to Github Pages </span>
-<span class="preprocessor">## Pulling any updates from Github Pages </span>
-cd _deploy
-cd -
-rm -rf _deploy/assets
-rm -rf _deploy/atom.xml
-rm -rf _deploy/blog
-rm -rf _deploy/favicon.png
-rm -rf _deploy/images
-rm -rf _deploy/index.html
-rm -rf _deploy/javascripts
-rm -rf _deploy/posts
-rm -rf _deploy/robots.txt
-rm -rf _deploy/sitemap.xml
-rm -rf _deploy/stylesheets
-
-<span class="preprocessor">## Copying public to _deploy</span>
-cp -r <span class="keyword">public</span>/. _deploy
-cd _deploy
-
-<span class="preprocessor">## Committing: Site updated at 2014-11-19 11:02:25 UTC</span>
-sh: <span class="number">1</span>: git: not found
-
-<span class="preprocessor">## Pushing generated _deploy website</span>
-
-<span class="preprocessor">## Github Pages deploy complete</span>
-cd -
-</code></pre><p>拒否はされてないみたいだが、記事を投稿出来ない。<br>どこに問題があるのか、よく分からない。<br>generateもやたら遅いし、ちょっとしんどいかな。  </p>
-<p>ーー<br>gitがインストールされてない？</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/19/install-libv8/" data-id="aqp4brovt5ryyhgg" class="article-share-link">Share</a>
-      
-        <a href="http://pagent.github.io/2014/11/19/install-libv8/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -272,7 +252,11 @@ cd -
       <ul>
         
           <li>
-            <a href="/2014/11/24/hexo-windows/">WindowsでHexoを使う（1）</a>
+            <a href="/2014/11/24/hexo-windows-deploy/">WindowsでHexoを使う（deploy）</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11/24/hexo-windows/">WindowsでHexoを使う（インストール）</a>
           </li>
         
           <li>
@@ -287,10 +271,6 @@ cd -
             <a href="/2014/11/22/hexo-theme/">Hexoのテーマを変更したら、元に戻せなくなった</a>
           </li>
         
-          <li>
-            <a href="/2014/11/22/octopress-hexo/">サイトジェネレーターをOctopressからHexoに変更</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -300,7 +280,7 @@ cd -
   <div class="widget-wrap">
     <h3 class="widget-title">カテゴリー</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -309,7 +289,7 @@ cd -
   <div class="widget-wrap">
     <h3 class="widget-title">月別アーカイブ</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
     </div>
   </div>
 

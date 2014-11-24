@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>WindowsでHexoを使う（1） | Pagent</title>
+  <title>WindowsでHexoを使う（インストール） | Pagent</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="以前、静的サイトジェネレーターnanocをWindowsにインストールしたが、なんとかインストールは出来たものの、compile（generate）してhtmlファイルを生成する際、エラーになり使えなかった。最近使い始めたHexoは、nanocやOctopressと違い、rubyではなくNode.jsで動いているそうなので、Windowsで使えるか試してみた。  
 結果、Windowsで実用可能だ">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WindowsでHexoを使う（1）">
+<meta property="og:title" content="WindowsでHexoを使う（インストール）">
 <meta property="og:url" content="http://pagent.github.io/2014/11/24/hexo-windows/">
 <meta property="og:site_name" content="Pagent">
 <meta property="og:description" content="以前、静的サイトジェネレーターnanocをWindowsにインストールしたが、なんとかインストールは出来たものの、compile（generate）してhtmlファイルを生成する際、エラーになり使えなかった。最近使い始めたHexoは、nanocやOctopressと違い、rubyではなくNode.jsで動いているそうなので、Windowsで使えるか試してみた。  
 結果、Windowsで実用可能だ">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="WindowsでHexoを使う（1）">
+<meta name="twitter:title" content="WindowsでHexoを使う（インストール）">
 <meta name="twitter:description" content="以前、静的サイトジェネレーターnanocをWindowsにインストールしたが、なんとかインストールは出来たものの、compile（generate）してhtmlファイルを生成する際、エラーになり使えなかった。最近使い始めたHexoは、nanocやOctopressと違い、rubyではなくNode.jsで動いているそうなので、Windowsで使えるか試してみた。  
 結果、Windowsで実用可能だ">
 
@@ -86,7 +86,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      WindowsでHexoを使う（1）
+      WindowsでHexoを使う（インストール）
     </h1>
   
 
@@ -100,7 +100,7 @@
 <p>Node.jsは下記からWindows用インストーラー付きのWindows Installer (.msi)をダウンロードし、デフォルトの設定のままインストールした。<br><a href="http://nodejs.org/download/" target="_blank" rel="external">http://nodejs.org/download/</a><br>バージョンはXubuntuに入れたのと同じv0.10.33だった。  </p>
 <h3 id="msysgitのインストール">msysgitのインストール</h3>
 <p>Windowsでgitを使うため<a href="http://msysgit.github.io/" target="_blank" rel="external">msysgit</a>をインストールした。<br>インストールオプションは下記サイトを参考にさせて頂いた。<br><a href="http://d.hatena.ne.jp/xyk/20130920/1379659991" target="_blank" rel="external">Windows に msysgit をインストールして git 環境を作る - xykの日記</a>  </p>
-<p>「Select Components」ではすべてのチェックを外した。<br>「Adjusting your PATH environment」は上から2番目の「Run Git from the Windows Command Prompt」。<br>「Configuring the line ending conversions」は上から2番目の「Checkout as-is, commit Unix-style line endings」でインストールしたが、実際Hexoでdeployする際  </p>
+<p>「Select Components」ではすべてのチェックを外した。<br>「Adjusting your PATH environment」は上から2番目の「Run Git from the Windows Command Prompt」。<br>「Configuring the line ending conversions」は上から2番目の「Checkout as-is, commit Unix-style line endings」でインストールしたが、実際Hexoでdeployする際、  </p>
 <pre><code>warning: LF will be replaced <span class="keyword">by</span> <span class="constant">CRLF</span> <span class="operator">in</span> css/style.css.
 The <span class="built_in">file</span> will have its original <span class="built_in">line</span> endings <span class="operator">in</span> your working <span class="built_in">directory</span>.
 warning: LF will be replaced <span class="keyword">by</span> <span class="constant">CRLF</span> <span class="operator">in</span> fancybox/helpers/jquery.fancybox-buttons.css.
@@ -108,14 +108,15 @@ The <span class="built_in">file</span> will have its original <span class="built
 warning: LF will be replaced <span class="keyword">by</span> <span class="constant">CRLF</span> <span class="operator">in</span> fancybox/helpers/jquery.fancybox-buttons.js.
 The <span class="built_in">file</span> will have its original <span class="built_in">line</span> endings <span class="operator">in</span> your working <span class="built_in">directory</span>.
 ...
-</code></pre><p>と、改行コードを変更するという警告が大量に吐出されたので、結局上から3番目のオプション「Checkout as-is, commit as-is」にした。<br>後からC:\Users\（ユーザー名）.gitconfigで変更可能。  </p>
+</code></pre><p>と、改行コードを変更するという警告が大量に吐出されたので、結局上から3番目のオプション「Checkout as-is, commit as-is」にした。<br>後から<code>C:\Users\（ユーザー名）\.gitconfig</code>で変更可能。  </p>
 <h3 id="Hexoのインストール">Hexoのインストール</h3>
-<p>コマンドプロンプトを開き</p>
+<p>コマンドプロンプトを開き、</p>
 <pre><code>&gt;npm <span class="keyword">install</span> hexo -g
-</code></pre><p>でインストール。<br>Linuxの時と同様  </p>
+</code></pre><p>でインストール。</p>
+<p>Linuxの時と同様、  </p>
 <pre><code>npm WARN <span class="keyword">optional</span> dep failed, continuing fsevents@<span class="number">0.2</span>.<span class="number">0</span>
 </code></pre><p>という警告が出たが、インストール完了。  </p>
-<p>Hexoの作業フォルダを作るため、任意のフォルダを選択した状態で「SHIFT」キーを押しながら右クリック。<br>「コマンド ウィンドウをここで開く」でコマンドウィンドウを立ち上げ  </p>
+<p>Hexoの作業フォルダを作るため、任意のフォルダを選択した状態で「SHIFT」キーを押しながら右クリック。<br>「コマンド ウィンドウをここで開く」でコマンドウィンドウを立ち上げ、  </p>
 <pre><code>&gt;hexo init hexo-win
 &gt;<span class="built_in">cd</span> hexo-win
 &gt;npm install
@@ -132,7 +133,7 @@ The <span class="built_in">file</span> will have its original <span class="built
 [create] Generated: archives/<span class="number">2014</span>/index.html (63ms)
 <span class="keyword">...</span>
 </code></pre><p>と、一旦すべてのファイルを削除してからまたファイルを生成したというメッセージが表示される。<br>あまり気持ち良くはないが、実用上問題は無さそう。  </p>
-<p>この後、deployで躓いたが、それは次項に記載。</p>
+<p>この後deployで少し躓いてしまったが、WindowsでHexoを使うことが出来た。</p>
 
       
     </div>
@@ -147,6 +148,15 @@ The <span class="built_in">file</span> will have its original <span class="built
   
     
 <nav id="article-nav">
+  
+    <a href="/2014/11/24/hexo-windows-deploy/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          WindowsでHexoを使う（deploy）
+        
+      </div>
+    </a>
   
   
     <a href="/2014/11/23/hexo-post-template/" id="article-nav-older" class="article-nav-link-wrap">
@@ -176,7 +186,11 @@ The <span class="built_in">file</span> will have its original <span class="built
       <ul>
         
           <li>
-            <a href="/2014/11/24/hexo-windows/">WindowsでHexoを使う（1）</a>
+            <a href="/2014/11/24/hexo-windows-deploy/">WindowsでHexoを使う（deploy）</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11/24/hexo-windows/">WindowsでHexoを使う（インストール）</a>
           </li>
         
           <li>
@@ -191,10 +205,6 @@ The <span class="built_in">file</span> will have its original <span class="built
             <a href="/2014/11/22/hexo-theme/">Hexoのテーマを変更したら、元に戻せなくなった</a>
           </li>
         
-          <li>
-            <a href="/2014/11/22/octopress-hexo/">サイトジェネレーターをOctopressからHexoに変更</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -204,7 +214,7 @@ The <span class="built_in">file</span> will have its original <span class="built
   <div class="widget-wrap">
     <h3 class="widget-title">カテゴリー</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -213,7 +223,7 @@ The <span class="built_in">file</span> will have its original <span class="built
   <div class="widget-wrap">
     <h3 class="widget-title">月別アーカイブ</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
     </div>
   </div>
 

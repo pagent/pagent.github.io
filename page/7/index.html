@@ -67,6 +67,54 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-firefox-closed-tabs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/01/firefox-closed-tabs/" class="article-date">
+  <time datetime="2014-11-01T01:02:58.000Z" itemprop="datePublished">2014年11月1日</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Linux/">Linux</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/01/firefox-closed-tabs/">Firefoxで「閉じたタブを元に戻す」「最近閉じたタブ」がクリック出来ない</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>いつの間にかXubuntu14.04.1のFirefoxで「閉じたタブを元に戻す」「最近閉じたタブ」が灰色になっていて選択出来なくなっていた。<br>Tab Mix Plusを無効化したら「閉じたタブを元に戻す」をクリックは出来るが、タブが戻らず機能しない。<br>プライベートウィンドウでも駄目。  </p>
+<p>Firefoxのバージョンが33.0に更新されてからだろうかと、synapticから「バージョンの強制」で28.0にダウングレードしてみたが、やはり駄目。  </p>
+<p>他のXubuntuPCを見てみると、そちらではちゃんと「閉じたタブを元に戻す」「最近閉じたタブ」が機能している。  </p>
+<p>Firefoxをインストールし直してみるしかなさそうなのでプロファイルも削除しておいた方が良いだろうかとプロファイルの保存場所を調べていたら、Firefoxにはリセット機能というのがあるようだった。<br><a href="https://support.mozilla.org/ja/kb/reset-firefox-easily-fix-most-problems" target="_blank" rel="external">Firefox をリセットするには | Firefox ヘルプ</a>  </p>
+<p>結局このリセットで復旧できた。  </p>
+<p>Firefoxをリセットしてもブックマークなどは残るが、アドオンは消去されてしまうので、「Firefox Sync」を利用した方が便利だと思う。<br>あとTab Mix Plusなど各種アドオンの設定もエクスポート出来るものは予めエクスポートしておいた方が良い。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/01/firefox-closed-tabs/" data-id="rkerntpefe0pwbx5" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/01/firefox-closed-tabs/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-fcitx" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/10/31/fcitx/" class="article-date">
@@ -168,50 +216,6 @@
 
 
   
-    <article id="post-kana" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/10/28/kana/" class="article-date">
-  <time datetime="2014-10-28T09:01:20.000Z" itemprop="datePublished">2014年10月28日</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/ことば/">ことば</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/10/28/kana/">現代仮名遣い</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>ときどき現代仮名遣いに違和感を感じる。<br>例えば、「〜さえ」には「え」より「へ」を使った方が良いのではないかと。  </p>
-<p>でも実際「〜さへ」と書いてみると、これもしっくり来ない。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/10/28/kana/" data-id="lftefgvc4vksnne6" class="article-share-link">Share</a>
-      
-        <a href="http://pagent.github.io/2014/10/28/kana/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
@@ -228,7 +232,11 @@
       <ul>
         
           <li>
-            <a href="/2014/11/24/hexo-windows/">WindowsでHexoを使う（1）</a>
+            <a href="/2014/11/24/hexo-windows-deploy/">WindowsでHexoを使う（deploy）</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11/24/hexo-windows/">WindowsでHexoを使う（インストール）</a>
           </li>
         
           <li>
@@ -243,10 +251,6 @@
             <a href="/2014/11/22/hexo-theme/">Hexoのテーマを変更したら、元に戻せなくなった</a>
           </li>
         
-          <li>
-            <a href="/2014/11/22/octopress-hexo/">サイトジェネレーターをOctopressからHexoに変更</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -256,7 +260,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">カテゴリー</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -265,7 +269,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">月別アーカイブ</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
     </div>
   </div>
 

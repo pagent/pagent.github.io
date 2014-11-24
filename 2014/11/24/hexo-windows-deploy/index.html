@@ -3,23 +3,35 @@
 <head>
   <meta charset="utf-8">
   
-  <title>いたづらにわがみ世にふる | Pagent</title>
+  <title>WindowsでHexoを使う（deploy） | Pagent</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="花の色はうつりにけりな  
-いたづらにわがみ世にふる　ながめせしまに  
-（古今和歌集　小野小町）">
+  <meta name="description" content="Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来るかと思ったが、  
+Run
+
+  git config --global user.email 'you@example.com'
+  git config --global user.name 'Your Name'
+と言われてしまった。  
+メールアドレスとGithubユーザー名を">
 <meta property="og:type" content="article">
-<meta property="og:title" content="いたづらにわがみ世にふる">
-<meta property="og:url" content="http://pagent.github.io/2014/11/06/yonifuru/">
+<meta property="og:title" content="WindowsでHexoを使う（deploy）">
+<meta property="og:url" content="http://pagent.github.io/2014/11/24/hexo-windows-deploy/">
 <meta property="og:site_name" content="Pagent">
-<meta property="og:description" content="花の色はうつりにけりな  
-いたづらにわがみ世にふる　ながめせしまに  
-（古今和歌集　小野小町）">
+<meta property="og:description" content="Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来るかと思ったが、  
+Run
+
+  git config --global user.email 'you@example.com'
+  git config --global user.name 'Your Name'
+と言われてしまった。  
+メールアドレスとGithubユーザー名を">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="いたづらにわがみ世にふる">
-<meta name="twitter:description" content="花の色はうつりにけりな  
-いたづらにわがみ世にふる　ながめせしまに  
-（古今和歌集　小野小町）">
+<meta name="twitter:title" content="WindowsでHexoを使う（deploy）">
+<meta name="twitter:description" content="Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来るかと思ったが、  
+Run
+
+  git config --global user.email 'you@example.com'
+  git config --global user.name 'Your Name'
+と言われてしまった。  
+メールアドレスとGithubユーザー名を">
 
   
     <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
@@ -71,14 +83,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-yonifuru" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-hexo-windows-deploy" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/11/06/yonifuru/" class="article-date">
-  <time datetime="2014-11-06T08:59:22.000Z" itemprop="datePublished">2014年11月6日</time>
+    <a href="/2014/11/24/hexo-windows-deploy/" class="article-date">
+  <time datetime="2014-11-24T11:31:27.000Z" itemprop="datePublished">2014年11月24日</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/短歌/">短歌</a>
+    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
   </div>
 
   </div>
@@ -89,7 +101,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      いたづらにわがみ世にふる
+      WindowsでHexoを使う（deploy）
     </h1>
   
 
@@ -97,16 +109,28 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>花の色はうつりにけりな  </p>
-<p>いたづらにわがみ世にふる　ながめせしまに  </p>
-<p>（古今和歌集　小野小町）</p>
+        <p>Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来るかと思ったが、  </p>
+<pre><code>Run
+
+  git config --global <span class="literal">user</span>.email <span class="string">"you@example.com"</span>
+  git config --global <span class="literal">user</span>.name <span class="string">"Your Name"</span>
+</code></pre><p>と言われてしまった。  </p>
+<p>メールアドレスとGithubユーザー名を設定してdeployしようとしたが、  </p>
+<pre><code>Permission denied (publickey).
+fatal: Could <span class="operator">not</span> <span class="built_in">read</span> <span class="built_in">from</span> remote repository.
+
+Please make sure you have <span class="operator">the</span> correct access rights
+<span class="operator">and</span> <span class="operator">the</span> repository exists.
+</code></pre><p>とrejectされる。  </p>
+<p>SSHキーの設定が必要のようなので、Linuxで設定したSSH公開鍵を<code>C:\Users\（ユーザー名）\.ssh</code>にコピペしたが、やはりrejectされる。<br>秘密鍵もコピペしたら、ようやくdeploy出来た。<br>これで無事WindowsでもHexoを使えるようになった。  </p>
+<p>Hexoにはローカルホストで使う管理画面プラグインもあるようなので、もう少し導入が簡単になればWindowsユーザーにも「静的サイトジェネレーター」が広まる可能性がありそうだ。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/06/yonifuru/" data-id="xetb871nu52kckw3" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/24/hexo-windows-deploy/" data-id="sfcn6rlk07wghbzp" class="article-share-link">Share</a>
       
-        <a href="http://pagent.github.io/2014/11/06/yonifuru/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://pagent.github.io/2014/11/24/hexo-windows-deploy/#disqus_thread" class="article-comment-link">Comments</a>
       
       
     </footer>
@@ -115,19 +139,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/11/11/xubuntu-install-option/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          起動オプションを付けてXubuntu14.04.1をインストール
-        
-      </div>
-    </a>
   
-  
-    <a href="/2014/11/05/firefox-complete-theme/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2014/11/24/hexo-windows/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Firefoxの完全テーマ「MX3」を入れてみた</div>
+      <div class="article-nav-title">WindowsでHexoを使う（インストール）</div>
     </a>
   
 </nav>
@@ -231,7 +246,7 @@ acCODE = "<img width='0' height='0' src='http://a.pagent.org/xeno_git/xenoLogger
 <script>
   var disqus_shortname = 'pagents';
   
-  var disqus_url = 'http://pagent.github.io/2014/11/06/yonifuru/';
+  var disqus_url = 'http://pagent.github.io/2014/11/24/hexo-windows-deploy/';
   
   (function(){
     var dsq = document.createElement('script');
