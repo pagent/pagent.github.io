@@ -3,26 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>「disabling IRQ | Pagent</title>
+  <title>Hexo→Octopress変換スクリプト「Hexo to Octopress Converter」 | Pagent</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="環境
-ハード：NECのネットブックLaVie Light BL300/TOS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  
-現状と対応
-Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出">
+  <meta name="description" content="HexoからOctopressに記事ソースを変換するrubyスクリプト「Hexo to Octopress Converter」を試してみた。  
+「Download ZIP」からzipファイルをダウンロードし展開。converterファイルを作業したい場所に移し、端末から操作。  
+$ ./converter &lt;hexo_posts_dir&gt; &lt;octopress_posts_">
 <meta property="og:type" content="article">
-<meta property="og:title" content="「disabling IRQ">
-<meta property="og:url" content="http://pagent.github.io/2014/11/01/irq-problem/">
+<meta property="og:title" content="Hexo→Octopress変換スクリプト「Hexo to Octopress Converter」">
+<meta property="og:url" content="http://pagent.github.io/2014/11/25/Hexo-to-Octopress-Converter/">
 <meta property="og:site_name" content="Pagent">
-<meta property="og:description" content="環境
-ハード：NECのネットブックLaVie Light BL300/TOS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  
-現状と対応
-Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出">
+<meta property="og:description" content="HexoからOctopressに記事ソースを変換するrubyスクリプト「Hexo to Octopress Converter」を試してみた。  
+「Download ZIP」からzipファイルをダウンロードし展開。converterファイルを作業したい場所に移し、端末から操作。  
+$ ./converter &lt;hexo_posts_dir&gt; &lt;octopress_posts_">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="「disabling IRQ">
-<meta name="twitter:description" content="環境
-ハード：NECのネットブックLaVie Light BL300/TOS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  
-現状と対応
-Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出">
+<meta name="twitter:title" content="Hexo→Octopress変換スクリプト「Hexo to Octopress Converter」">
+<meta name="twitter:description" content="HexoからOctopressに記事ソースを変換するrubyスクリプト「Hexo to Octopress Converter」を試してみた。  
+「Download ZIP」からzipファイルをダウンロードし展開。converterファイルを作業したい場所に移し、端末から操作。  
+$ ./converter &lt;hexo_posts_dir&gt; &lt;octopress_posts_">
 
   
     <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
@@ -74,10 +71,10 @@ Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でイン�
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-irq-problem" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Hexo-to-Octopress-Converter" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/11/01/irq-problem/" class="article-date">
-  <time datetime="2014-11-01T06:45:55.000Z" itemprop="datePublished">2014年11月1日</time>
+    <a href="/2014/11/25/Hexo-to-Octopress-Converter/" class="article-date">
+  <time datetime="2014-11-25T11:59:04.000Z" itemprop="datePublished">2014年11月25日</time>
 </a>
     
   </div>
@@ -88,7 +85,7 @@ Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でイン�
         
   
     <h1 class="article-title" itemprop="name">
-      「disabling IRQ
+      Hexo→Octopress変換スクリプト「Hexo to Octopress Converter」
     </h1>
   
 
@@ -96,42 +93,33 @@ Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でイン�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="環境">環境</h4>
-<p>ハード：NECのネットブックLaVie Light BL300/T<br>OS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  </p>
-<h4 id="現状と対応">現状と対応</h4>
-<p>Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出来なかった。<br>そのため、いったんXubuntu13.04をインストールしてから14.04.1にアップグレードしていた。<br>アップグレード中にもdisabling IRQで起動できなくなり、/etc/default/grubでGRUB_DEFAULT=”Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.8.0-19-generic”にして、デフォルトの起動カーネルを3.8.0-19にしていた。  <a id="more"></a></p>
-<p>このままでも使えるが、ソフトウェアの更新がしょっちゅうカーネルを更新するよう言ってくるし、カーネル3.13で起動できないかやってみた。  </p>
-<p>まず起動時にOS選択画面が出なかったが、他に起動できるOSがない場合grub2はOS選択画面をスキップしてしまうためらしい。<br><a href="http://www.serendip.ws/archives/3534" target="_blank" rel="external">Grub2 で起動時に選択リストを表示させる : Serendip - Webデザイン・プログラミング</a>  </p>
-<p>上記記事の通り</p>
-<pre><code><span class="comment">#GRUB_HIDDEN_TIMEOUT=0</span>
-<span class="variable">GRUB_HIDDEN_TIMEOUT_QUIET=</span><span class="constant">false</span>
-</code></pre><p>にしたらOS選択画面が出た。  </p>
-<p>試してみる起動オプションは下記記事を参考にさせて頂いた。<br><a href="http://kiddushin.jugem.jp/?eid=264" target="_blank" rel="external">Disabling IRQ (起動には成功の巻) | おもしろきこともなき世をおもしろく</a>  </p>
-<p>OS選択画面の「Advanced options for Ubuntu」で「Ubuntu, with Linux 3.13.0-39-generic」を選択し「e」キーでオプション編集画面へ。<br>linux /boot/vmlinuz-3.13.0-39…で始まる行の最後quiet nosplashのあとに半角スペースに続けてオプションを追加、「F10」キーで起動。<br>（参考記事：<a href="https://wiki.ubuntulinux.jp/UbuntuTips/Others/BootOptions#A.2BMKQw8zC5MMgw.2FDDrbggwfzC3MLkwxjDgMG6Nd1LVMKow1zC3MOcw8zCSTgBmQnaEMGtZCWb0MFkwizBrMG8-" target="_blank" rel="external">UbuntuTips/Others/BootOptions - Ubuntu Japanese Wiki</a>）  </p>
-<h4 id="結果">結果</h4>
-<p>acpi=off<br>起動は出来るが、画面が横に引き伸ばされてしまい、モニタの設定でも他の解像度を選べず。<br>シャットダウン時には「System halted」のスプラッシュ画面で止まってしまう。    </p>
-<p>pci=noacpi<br>良好。<br>問題なく使えそう。  </p>
-<p>acpi=noirq<br>一瞬起動できるかと思ったが画面が真っ暗のまま。  </p>
-<p>irqpoll<br>上に同じく真っ暗。  </p>
-<p>上記とは別にpci=routeirqというオプションも見かけたのでやってみたが、これは「disabling IRQ #9」で起動できず。  </p>
-<p>pci=noacpiを起動オプションに加えることにしたので、/etc/default/grubで</p>
-<pre><code><span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"quiet nosplash pci=noacpi"</span>
-</code></pre><p>とし、<code>sudo update-grub</code>した。  </p>
-<p>ーー<br>（追記）<br>最初から「pci=noacpi」のオプションを付けてXubuntu14.04.1をインストールすることも可能だった。<br><a href="http://pagent.github.io/blog/2014/11/11/xubuntu-install-option/" target="_blank" rel="external">起動オプションを付けてXubuntu14.04.1をインストール - Pagent</a>  </p>
-<p>この場合grubの記述は</p>
-<pre><code><span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"quiet splash"</span>
-<span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"pci=noacpi"</span>
-</code></pre><p>となっていた。<br>スペース区切りで一行で書いても、改行してあらたにオプションを記述してもどちらでもいいようだ。</p>
+        <p>HexoからOctopressに記事ソースを変換するrubyスクリプト<a href="https://github.com/ciffel/Hexo-to-Octopress-Converter" target="_blank" rel="external">「Hexo to Octopress Converter」</a>を試してみた。  </p>
+<p>「Download ZIP」からzipファイルをダウンロードし展開。converterファイルを作業したい場所に移し、端末から操作。  </p>
+<pre><code><span class="input"><span class="prompt">$ ./converter &lt;hexo_posts_dir&gt;</span> &lt;octopress_posts_dir&gt;</span>
+</code></pre><p>で変換出来る。<br><code>&lt;octopress_posts_dir&gt;</code>は適当に作ったフォルダでも可。  <a id="more"></a></p>
+<p>OctopressからHexoに移行するためのHexo用プラグイン「hexo-migrator-octopress」についての記事にも書いたが、HexoのソースのFront Matter上部にOctopressのように<code>---</code>があると<code>tags:</code>が<code>categories:</code>に変換されない。<br>OctopressからHexo用に変換したソースの場合は、上部の<code>---</code>を削除しておく。  </p>
+<p>また<code>title:</code>の項目で記事タイトルが「”」で挟まれている場合、さらに「”」で挟まれ<code>title: &quot;&quot;（記事タイトル）&quot;&quot;</code>のようになってしまう。<br>これではOctopressでgenerateする際エラーになってしまうので、これも削除し、  </p>
+<pre><code>title:
+date:
+<span class="header">tags:
+---</span>
+</code></pre><p>のような形にしておく必要がある。<br><a href="/2014/11/25/hexo-migrator-octopress/">Octopress→Hexo移行のプラグイン「hexo-migrator-octopress」を試してみた </a>  </p>
+<p>変換出力されるのは拡張子が.mdのものだけで、.markdownのもの（Octopressのソースをコピペで取り込んだような場合）は変換出力されず無視される。  </p>
+<p>変換後はファイル名の頭に日付けが付加される。<br>Octopress式に日付けをつけたファイル名でHexoを運用している場合は、日付けが2重になってしまう。  </p>
+<p>converterファイルをエディタで開き、41行目  </p>
+<p>  file_name = “#{prefix}-#{base_name}”<br>の<code>#{prefix}-</code>を削除し、  </p>
+<p>  file_name = “#{base_name}”<br>にしておくと、日付けが付加されない。  </p>
+<p>ーー<br>しかし、HexoはOctopressと細かいところが違っており、ややこしい。<br>記事ソースの形式くらい合わせられなかったものだろうか。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/01/irq-problem/" data-id="9a9l3iqgz5dpouzl" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/25/Hexo-to-Octopress-Converter/" data-id="b1u7cbijg4ih09hb" class="article-share-link">Share</a>
       
-        <a href="http://pagent.github.io/2014/11/01/irq-problem/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://pagent.github.io/2014/11/25/Hexo-to-Octopress-Converter/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Octopress/">Octopress</a></li></ul>
 
     </footer>
   </div>
@@ -139,19 +127,10 @@ Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でイン�
     
 <nav id="article-nav">
   
-    <a href="/2014/11/02/xbacklight/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          xbacklightでモニター輝度を設定・調節
-        
-      </div>
-    </a>
   
-  
-    <a href="/2014/11/01/firefox-closed-tabs/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2014/11/25/hexo-migrator-octopress/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Firefoxで「閉じたタブを元に戻す」「最近閉じたタブ」がクリック出来ない</div>
+      <div class="article-nav-title">Octopress→Hexo移行のプラグイン「hexo-migrator-octopress」を試してみた</div>
     </a>
   
 </nav>
@@ -266,7 +245,7 @@ acCODE = "<img width='0' height='0' src='http://a.pagent.org/xeno_git/xenoLogger
 <script>
   var disqus_shortname = 'pagents';
   
-  var disqus_url = 'http://pagent.github.io/2014/11/01/irq-problem/';
+  var disqus_url = 'http://pagent.github.io/2014/11/25/Hexo-to-Octopress-Converter/';
   
   (function(){
     var dsq = document.createElement('script');
