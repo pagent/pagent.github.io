@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2014/10/23/io/</loc>
+    <lastmod>2014-11-25T11:44:09.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2014/11/25/hexo-migrator-octopress/</loc>
     <lastmod>2014-11-25T11:12:38.000Z</lastmod>
   </url>
@@ -119,11 +124,6 @@
   <url>
     <loc>http://pagent.github.io/2014/10/23/octopress-customize/</loc>
     <lastmod>2014-11-25T08:11:20.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2014/10/23/io/</loc>
-    <lastmod>2014-11-25T08:11:10.000Z</lastmod>
   </url>
   
   <url>
