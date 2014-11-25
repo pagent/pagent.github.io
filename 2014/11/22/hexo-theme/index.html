@@ -5,15 +5,15 @@
   
   <title>Hexoのテーマを変更したら、元に戻せなくなった | Pagent</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hexoにはいろいろテーマがあるようで有難い。（なぜか中国人が作ったテーマが多い。）元々入っていたデフォルトのテーマは「Landscape」だったので、とりあえずそれとは別のOfficial Themes、「Phase」と「Light」を試してみた。">
+  <meta name="description" content="Hexoにはいろいろテーマがあるようで有難い。（なぜか中国人が作ったテーマが多い。）元々入っていたデフォルトのテーマは「Landscape」だったので、とりあえずそれとは別のOfficial Themes、「Phase」と「Light」を試してみた。試したはいいが、「Light」を入れてから元のテーマに戻そうとしたら戻せなくなってしまった。「Light」が崩れたようなスタイルから変更出来ない。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexoのテーマを変更したら、元に戻せなくなった">
 <meta property="og:url" content="http://pagent.github.io/2014/11/22/hexo-theme/">
 <meta property="og:site_name" content="Pagent">
-<meta property="og:description" content="Hexoにはいろいろテーマがあるようで有難い。（なぜか中国人が作ったテーマが多い。）元々入っていたデフォルトのテーマは「Landscape」だったので、とりあえずそれとは別のOfficial Themes、「Phase」と「Light」を試してみた。">
+<meta property="og:description" content="Hexoにはいろいろテーマがあるようで有難い。（なぜか中国人が作ったテーマが多い。）元々入っていたデフォルトのテーマは「Landscape」だったので、とりあえずそれとは別のOfficial Themes、「Phase」と「Light」を試してみた。試したはいいが、「Light」を入れてから元のテーマに戻そうとしたら戻せなくなってしまった。「Light」が崩れたようなスタイルから変更出来ない。">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexoのテーマを変更したら、元に戻せなくなった">
-<meta name="twitter:description" content="Hexoにはいろいろテーマがあるようで有難い。（なぜか中国人が作ったテーマが多い。）元々入っていたデフォルトのテーマは「Landscape」だったので、とりあえずそれとは別のOfficial Themes、「Phase」と「Light」を試してみた。">
+<meta name="twitter:description" content="Hexoにはいろいろテーマがあるようで有難い。（なぜか中国人が作ったテーマが多い。）元々入っていたデフォルトのテーマは「Landscape」だったので、とりあえずそれとは別のOfficial Themes、「Phase」と「Light」を試してみた。試したはいいが、「Light」を入れてから元のテーマに戻そうとしたら戻せなくなってしまった。「Light」が崩れたようなスタイルから変更出来ない。">
 
   
     <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
@@ -71,10 +71,6 @@
   <time datetime="2014-11-22T12:22:39.000Z" itemprop="datePublished">2014年11月22日</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -91,19 +87,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Hexoにはいろいろテーマがあるようで有難い。（なぜか中国人が作ったテーマが多い。）<br>元々入っていたデフォルトのテーマは「Landscape」だったので、とりあえずそれとは別のOfficial Themes、「Phase」と「Light」を試してみた。  <a id="more"></a><br>試したはいいが、「Light」を入れてから元のテーマに戻そうとしたら戻せなくなってしまった。<br>「Light」が崩れたようなスタイルから変更出来ない。  </p>
-<p><code>hexo h</code>をしてみたら、<code>clean</code>（Remove generated files and the cache）というコマンドオプションがあったので、<code>hexo clean</code>してみた。<br>書いてある通り/publicフォルダ自体も消えてしまったが、その後<code>hexo g</code>したらテーマも無事直った。  </p>
+        <p>Hexoにはいろいろテーマがあるようで有難い。（なぜか中国人が作ったテーマが多い。）<br>元々入っていたデフォルトのテーマは「Landscape」だったので、とりあえずそれとは別のOfficial Themes、「Phase」と「Light」を試してみた。<br>試したはいいが、「Light」を入れてから元のテーマに戻そうとしたら戻せなくなってしまった。<br>「Light」が崩れたようなスタイルから変更出来ない。<br><a id="more"></a><br><code>hexo h</code>でヘルプを見ると、<code>clean</code>（Remove generated files and the cache）というコマンドオプションがあったので、<code>hexo clean</code>をしてみた。<br>書いてある通り/publicフォルダ自体も消えてしまったが、その後<code>hexo g</code>したらテーマも無事直った。  </p>
 <p>消したのに、カウント数が(0)のまま表示されているカテゴリやタグも、<code>hexo clean</code>で直るようだ。  </p>
 <p>ーー<br>テーマのCSSをカスタマイズする際にも、ローカルでの確認では問題ないが、いざdeployすると反映されていないようだ。<br>この時もいったん<code>hexo clean</code>すると良いようだ。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/22/hexo-theme/" data-id="v8adjjolxr1kbt63" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/22/hexo-theme/" data-id="caehuivadh8fkntt" class="article-share-link">Share</a>
       
         <a href="http://pagent.github.io/2014/11/22/hexo-theme/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
     </footer>
   </div>
   
@@ -147,6 +144,10 @@
       <ul>
         
           <li>
+            <a href="/2014/11/25/hexo-migrator-octopress/">Octopress→Hexo移行のプラグイン「hexo-migrator-octopress」を試してみた</a>
+          </li>
+        
+          <li>
             <a href="/2014/11/24/hexo-windows-deploy/">WindowsでHexoを使う（deploy）</a>
           </li>
         
@@ -162,10 +163,6 @@
             <a href="/2014/11/23/hexo-archve-category/">Hexoのアーカイブ、カテゴリーページを全文表示からリスト表示に</a>
           </li>
         
-          <li>
-            <a href="/2014/11/22/hexo-theme/">Hexoのテーマを変更したら、元に戻せなくなった</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -175,7 +172,25 @@
   <div class="widget-wrap">
     <h3 class="widget-title">カテゴリー</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Net/">Net</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Octopress/">Octopress</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ことば/">ことば</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ブラウザ/">ブラウザ</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/未分類/">未分類</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/短歌/">短歌</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/風景/">風景</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Hexo/" style="font-size: 17.50px;">Hexo</a><a href="/tags/Linux/" style="font-size: 20.00px;">Linux</a><a href="/tags/Net/" style="font-size: 12.50px;">Net</a><a href="/tags/Octopress/" style="font-size: 15.00px;">Octopress</a><a href="/tags/blog/" style="font-size: 10.00px;">blog</a><a href="/tags/ことば/" style="font-size: 10.00px;">ことば</a><a href="/tags/ブラウザ/" style="font-size: 12.50px;">ブラウザ</a><a href="/tags/未分類/" style="font-size: 10.00px;">未分類</a><a href="/tags/短歌/" style="font-size: 10.00px;">短歌</a><a href="/tags/風景/" style="font-size: 10.00px;">風景</a>
     </div>
   </div>
 
@@ -184,7 +199,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">月別アーカイブ</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
     </div>
   </div>
 

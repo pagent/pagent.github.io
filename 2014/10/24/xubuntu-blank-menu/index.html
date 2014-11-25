@@ -5,15 +5,15 @@
   
   <title>Xubuntuでメニューが表示されず真っ白 | Pagent</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="これまで12.04からアップグレードしたXubuntu14.04.1を使っていたので気づかなかったが、14.04.1ではメニュー編集ツールの「メイン・メニュー」が無くなっていて、「メニューエディタ」（MenuLibre）しか入っていない。自分でメニューを追加する際、">
+  <meta name="description" content="これまで12.04からアップグレードしたXubuntu14.04.1を使っていたので気づかなかったが、14.04.1ではメニュー編集ツールの「メイン・メニュー」が無くなっていて、「メニューエディタ」（MenuLibre）しか入っていない。自分でメニューを追加する際、MenuLibreはどうも使い方がよく分からない。かつての「メイン・メニュー」はalacarteというそうで、sudo apt-get">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Xubuntuでメニューが表示されず真っ白">
 <meta property="og:url" content="http://pagent.github.io/2014/10/24/xubuntu-blank-menu/">
 <meta property="og:site_name" content="Pagent">
-<meta property="og:description" content="これまで12.04からアップグレードしたXubuntu14.04.1を使っていたので気づかなかったが、14.04.1ではメニュー編集ツールの「メイン・メニュー」が無くなっていて、「メニューエディタ」（MenuLibre）しか入っていない。自分でメニューを追加する際、">
+<meta property="og:description" content="これまで12.04からアップグレードしたXubuntu14.04.1を使っていたので気づかなかったが、14.04.1ではメニュー編集ツールの「メイン・メニュー」が無くなっていて、「メニューエディタ」（MenuLibre）しか入っていない。自分でメニューを追加する際、MenuLibreはどうも使い方がよく分からない。かつての「メイン・メニュー」はalacarteというそうで、sudo apt-get">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Xubuntuでメニューが表示されず真っ白">
-<meta name="twitter:description" content="これまで12.04からアップグレードしたXubuntu14.04.1を使っていたので気づかなかったが、14.04.1ではメニュー編集ツールの「メイン・メニュー」が無くなっていて、「メニューエディタ」（MenuLibre）しか入っていない。自分でメニューを追加する際、">
+<meta name="twitter:description" content="これまで12.04からアップグレードしたXubuntu14.04.1を使っていたので気づかなかったが、14.04.1ではメニュー編集ツールの「メイン・メニュー」が無くなっていて、「メニューエディタ」（MenuLibre）しか入っていない。自分でメニューを追加する際、MenuLibreはどうも使い方がよく分からない。かつての「メイン・メニュー」はalacarteというそうで、sudo apt-get">
 
   
     <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
@@ -71,10 +71,6 @@
   <time datetime="2014-10-24T09:54:42.000Z" itemprop="datePublished">2014年10月24日</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -91,8 +87,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>これまで12.04からアップグレードしたXubuntu14.04.1を使っていたので気づかなかったが、14.04.1ではメニュー編集ツールの「メイン・メニュー」が無くなっていて、「メニューエディタ」（MenuLibre）しか入っていない。<br>自分でメニューを追加する際、<a id="more"></a>MenuLibreはどうも使い方がよく分からない。<br>かつての「メイン・メニュー」はalacarteというそうで、<code>sudo apt-get install alacarte</code>でこれを導入した。  </p>
-<p>導入したまでは良かったのだが、alacarteで新規メニューを追加していたら突然トラブルが発生して、メニューがすべて消えてしまった。<br>Whisker Menuは真っ白の状態で、デスクトップ上右クリックのアプリケーションでも短い横棒が表示されるのみで、アプリケーションがなにも表示されない。<br>MenuLibreとalacarteを同時に立ち上げていたのが悪かったのだろうか。<br>ログインし直してみても変わらず困ってしまった。  </p>
+        <p>これまで12.04からアップグレードしたXubuntu14.04.1を使っていたので気づかなかったが、14.04.1ではメニュー編集ツールの「メイン・メニュー」が無くなっていて、「メニューエディタ」（MenuLibre）しか入っていない。<br>自分でメニューを追加する際、MenuLibreはどうも使い方がよく分からない。<br>かつての「メイン・メニュー」はalacarteというそうで、<code>sudo apt-get install alacarte</code>でこれを導入した。<br><a id="more"></a><br>導入したまでは良かったのだが、alacarteで新規メニューを追加していたら突然トラブルが発生して、メニューがすべて消えてしまった。<br>Whisker Menuは真っ白の状態で、デスクトップ上右クリックのアプリケーションでも短い横棒が表示されるのみで、アプリケーションがなにも表示されない。<br>MenuLibreとalacarteを同時に立ち上げていたのが悪かったのだろうか。<br>ログインし直してみても変わらず困ってしまった。  </p>
 <p>ユーザー固有のメニューファイルは~/.config/menus（/home/ユーザー名/.config/menus）にあるらしいのでmenusを見てみたら、真っ白でなにも書かれていない。<br>どうりでメニューになにも表示されないわけだ。  </p>
 <p>menusがどんな内容だったかは思い出せなかったが、新規にユーザーを追加してそのmenusファイルを流用すれば良いのではないかと思い、やってみたらこれで無事に復帰できた。  </p>
 <p>コマンドは忘れたが端末で新規ユーザーを追加した。<br>この時新規ユーザーのhomeディレクトリも作成する形で追加したんだったと思う。<br>何にせよ、またクリーンインストールするはめにならずに済んで良かった。  </p>
@@ -101,11 +96,13 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/10/24/xubuntu-blank-menu/" data-id="eylzo87yzfzxsrg1" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/10/24/xubuntu-blank-menu/" data-id="gonpybhkv6rvisu8" class="article-share-link">Share</a>
       
         <a href="http://pagent.github.io/2014/10/24/xubuntu-blank-menu/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
     </footer>
   </div>
   
@@ -149,6 +146,10 @@
       <ul>
         
           <li>
+            <a href="/2014/11/25/hexo-migrator-octopress/">Octopress→Hexo移行のプラグイン「hexo-migrator-octopress」を試してみた</a>
+          </li>
+        
+          <li>
             <a href="/2014/11/24/hexo-windows-deploy/">WindowsでHexoを使う（deploy）</a>
           </li>
         
@@ -164,10 +165,6 @@
             <a href="/2014/11/23/hexo-archve-category/">Hexoのアーカイブ、カテゴリーページを全文表示からリスト表示に</a>
           </li>
         
-          <li>
-            <a href="/2014/11/22/hexo-theme/">Hexoのテーマを変更したら、元に戻せなくなった</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -177,7 +174,25 @@
   <div class="widget-wrap">
     <h3 class="widget-title">カテゴリー</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Net/">Net</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Octopress/">Octopress</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ことば/">ことば</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ブラウザ/">ブラウザ</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/未分類/">未分類</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/短歌/">短歌</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/風景/">風景</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Hexo/" style="font-size: 17.50px;">Hexo</a><a href="/tags/Linux/" style="font-size: 20.00px;">Linux</a><a href="/tags/Net/" style="font-size: 12.50px;">Net</a><a href="/tags/Octopress/" style="font-size: 15.00px;">Octopress</a><a href="/tags/blog/" style="font-size: 10.00px;">blog</a><a href="/tags/ことば/" style="font-size: 10.00px;">ことば</a><a href="/tags/ブラウザ/" style="font-size: 12.50px;">ブラウザ</a><a href="/tags/未分類/" style="font-size: 10.00px;">未分類</a><a href="/tags/短歌/" style="font-size: 10.00px;">短歌</a><a href="/tags/風景/" style="font-size: 10.00px;">風景</a>
     </div>
   </div>
 
@@ -186,7 +201,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">月別アーカイブ</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
     </div>
   </div>
 

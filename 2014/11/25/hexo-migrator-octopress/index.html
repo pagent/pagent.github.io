@@ -3,17 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Xubuntuに静的サイトジェネレーターHexoを入れてみた | Pagent</title>
+  <title>Octopress→Hexo移行のプラグイン「hexo-migrator-octopress」を試してみた | Pagent</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Octopressでブログを書いていて、さして不満はないのだが、別の静的サイトジェネレーターに「Hexo」というのがあるのを知った。Octopressに較べ、テーマも豊富に用意あり、日本語のURLやカテゴリー名にも対応しているようだったので、入れてみた。rubyではなく、Node.jsというのを使うらしい。">
+  <meta name="description" content="OctopressとHexoでは記事ソースのファイルの形式やFront Matter（---で区切られた、title、dateなどの部分）が微妙に異なる。OctopressのcategoriesはHexoではtagsに相当したり。  
+Octopressの記事ソースをHexoに取り込む「hexo-migrator-octopress」というHexo用プラグインがあったので、試してみた。（Hexoの">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Xubuntuに静的サイトジェネレーターHexoを入れてみた">
-<meta property="og:url" content="http://pagent.github.io/2014/11/21/hexo-xubuntu/">
+<meta property="og:title" content="Octopress→Hexo移行のプラグイン「hexo-migrator-octopress」を試してみた">
+<meta property="og:url" content="http://pagent.github.io/2014/11/25/hexo-migrator-octopress/">
 <meta property="og:site_name" content="Pagent">
-<meta property="og:description" content="Octopressでブログを書いていて、さして不満はないのだが、別の静的サイトジェネレーターに「Hexo」というのがあるのを知った。Octopressに較べ、テーマも豊富に用意あり、日本語のURLやカテゴリー名にも対応しているようだったので、入れてみた。rubyではなく、Node.jsというのを使うらしい。">
+<meta property="og:description" content="OctopressとHexoでは記事ソースのファイルの形式やFront Matter（---で区切られた、title、dateなどの部分）が微妙に異なる。OctopressのcategoriesはHexoではtagsに相当したり。  
+Octopressの記事ソースをHexoに取り込む「hexo-migrator-octopress」というHexo用プラグインがあったので、試してみた。（Hexoの">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Xubuntuに静的サイトジェネレーターHexoを入れてみた">
-<meta name="twitter:description" content="Octopressでブログを書いていて、さして不満はないのだが、別の静的サイトジェネレーターに「Hexo」というのがあるのを知った。Octopressに較べ、テーマも豊富に用意あり、日本語のURLやカテゴリー名にも対応しているようだったので、入れてみた。rubyではなく、Node.jsというのを使うらしい。">
+<meta name="twitter:title" content="Octopress→Hexo移行のプラグイン「hexo-migrator-octopress」を試してみた">
+<meta name="twitter:description" content="OctopressとHexoでは記事ソースのファイルの形式やFront Matter（---で区切られた、title、dateなどの部分）が微妙に異なる。OctopressのcategoriesはHexoではtagsに相当したり。  
+Octopressの記事ソースをHexoに取り込む「hexo-migrator-octopress」というHexo用プラグインがあったので、試してみた。（Hexoの">
 
   
     <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
@@ -65,10 +68,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hexo-xubuntu" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-hexo-migrator-octopress" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/11/21/hexo-xubuntu/" class="article-date">
-  <time datetime="2014-11-21T04:56:19.000Z" itemprop="datePublished">2014年11月21日</time>
+    <a href="/2014/11/25/hexo-migrator-octopress/" class="article-date">
+  <time datetime="2014-11-25T09:20:00.000Z" itemprop="datePublished">2014年11月25日</time>
 </a>
     
   </div>
@@ -79,7 +82,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Xubuntuに静的サイトジェネレーターHexoを入れてみた
+      Octopress→Hexo移行のプラグイン「hexo-migrator-octopress」を試してみた
     </h1>
   
 
@@ -87,32 +90,72 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Octopressでブログを書いていて、さして不満はないのだが、別の静的サイトジェネレーターに「Hexo」というのがあるのを知った。<br>Octopressに較べ、テーマも豊富に用意あり、日本語のURLやカテゴリー名にも対応しているようだったので、入れてみた。<br>rubyではなく、Node.jsというのを使うらしい。<br><a id="more"></a><br>導入には下記サイトなどを参考にさせて頂いた。<br><a href="http://tech.admax.ninja/2014/09/11/environment-of-hexo/" target="_blank" rel="external">【Node.js】Hexoでブログを書くための環境構築 | AdMax Tech Blog</a>  </p>
-<p>概ね上記サイトの通りに進めたらいいようだったが、Xubuntu14.04の環境では若干うまく行かないところがあった。  </p>
-<p>nodeにパスを通す際、~/.bash_profileというファイルが見つからなかったので、~/.profileに  </p>
-<pre><code><span class="keyword">if</span> <span class="string">[[ -s ~/.nvm/nvm.sh ]]</span>;
-<span class="keyword">then</span> source ~/.nvm/nvm.sh
-fi
-</code></pre><p>を追記したが、これでは駄目なようで、ターミナルを起動する度にnvmというコマンドが見つからないと言われる。  </p>
-<p>どうやら~/.bashrcに追記しないと駄目なようだった。<br><a href="http://d.hatena.ne.jp/white_chi/20111101/1320097898" target="_blank" rel="external">Ubuntu11.10で、nvmからnode.jsをインストールする - ホワイトぼーど</a>  </p>
-<p>Hexoをインストールするところで  </p>
-<pre><code>npm WARN <span class="keyword">optional</span> dep failed, continuing fsevents@<span class="number">0.2</span>.<span class="number">0</span>
-</code></pre><p>と言われたが、問題なく使えるようだ。<br>途中うまく行かないので、下記サイトを参考に  </p>
-<pre><code>curl -sL http<span class="variable">s:</span>//<span class="keyword">deb</span>.nodesource.<span class="keyword">com</span>/setup | sudo bash -
-
-sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</span> nodejs
-</code></pre><p>とやったりしたが、果たしてこれが必要な操作だったのかどうかは不明。<br><a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager" target="_blank" rel="external">Installing Node.js via package manager · joyent/node Wiki</a>  </p>
-<p>しばらく試用してみて良ささそうだったら、Octopressから乗り換えるかもしれない。</p>
+        <p>OctopressとHexoでは記事ソースのファイルの形式やFront Matter（<code>---</code>で区切られた、title、dateなどの部分）が微妙に異なる。<br>OctopressのcategoriesはHexoではtagsに相当したり。  </p>
+<p>Octopressの記事ソースをHexoに取り込む<a href="https://github.com/sailxjx/hexo-migrator-octopress" target="_blank" rel="external">「hexo-migrator-octopress」</a>というHexo用プラグインがあったので、試してみた。<br>（Hexoの記事ソースをOctopress用に変換するスクリプト「Hexo to Octopress Converter」とは逆向き。）<br><a id="more"></a><br>デスクトップ上にhexo-test（Hexoフォルダ）とoctopress-test（Octopressフォルダ）を作った。  </p>
+<p>hexo-testで端末を開き、プラグインをインストール。  </p>
+<pre><code><span class="variable">$ </span>npm install hexo-migrator-octopress
+</code></pre><p>コマンド<code>hexo migrate octopress &lt;source&gt;</code>で記事ソースが変換され、Hexoに取り込まれる。（<code>&lt;source&gt;</code>はOctopressフォルダへのパス）<br>今回のテスト環境では</p>
+<pre><code><span class="variable">$ </span>hexo migrate octopress ~<span class="regexp">/Desktop/octopress</span>-test
+</code></pre><p>/octopress-test/source/_posts/2014-10-25-cosmos.markdownが/hexo-test/source/_posts/cosmos.mdとして取り込まれた。<br>（Hexoのデフォルト設定に従い、日付けが削除さるようだ。）  </p>
+<p>Front MatterはOctopressの  </p>
+<pre><code><span class="bullet">---
+</span>layout: post
+title: "畑一面のコスモスはなぜ？"
+date: 2014-10-25 15:41:22 +0900
+comments: true
+categories:
+<span class="bullet">- </span>未分類
+<span class="header">- 写真
+---</span>
+</code></pre><p>から  </p>
+<pre><code><span class="bullet">---
+</span>layout: post
+title: "畑一面のコスモスはなぜ？"
+date: 2014-10-25 15:41:22 +0900
+comments: true
+tags:
+<span class="bullet">- </span>未分類
+<span class="header">- 写真
+---</span>
+</code></pre><p>に変換されたが、変更は<code>categories:</code>が<code>tags:</code>になっただけのようだ。  </p>
+<p>この状態でもHexoで使えるのだが、これを「Hexo to Octopress Converter」でOctopress用に再変換すると  </p>
+<pre><code><span class="bullet">---
+</span>layout: post
+<span class="header">comments: true
+---</span>
+layout: post
+title: "畑一面のコスモスはなぜ？"
+date: 2014-10-25 15:41:22 +0900
+comments: true
+tags:
+<span class="bullet">- </span>未分類
+<span class="header">- 写真
+---</span>
+</code></pre><p>となってしまい、<code>tags:</code>が<code>categories:</code>に変換されない。  </p>
+<p>上部の<code>---</code>を削除しておくと<code>categories:</code>に変換はされたが、タイトルの部分が<code>title: &quot;&quot;畑一面のコスモスはなぜ？&quot;&quot;</code>と「”」が重複しまい、rake generateでエラーになる。  </p>
+<p>結局、Octopress用に再変換する場合には、「hexo-migrator-octopress」でHexo用に変換したものを手作業で  </p>
+<pre><code>title: 畑一面のコスモスはなぜ？
+date: 2014-10-25 15:41:22 +0900
+tags:
+<span class="bullet">- </span>未分類
+<span class="header">- 写真
+---</span>
+</code></pre><p>のように変更しておく必要がありそうだ。<br>それにOctopressでcategoriesとtagsを両方使っていた場合は変換後<code>tags:</code>が重複してしまう。  </p>
+<p>それから、Hexoの新規記事ソースはデフォルトでは日付けがつかないが、_config.ymlの<code>new_post_name:</code>で日付けをつけることが出来る。<br>日付けがあった方が同じタイトルの記事を複数書けたり、過去記事編集の際に探し易かったりと、なにかと都合が良い。  </p>
+<p>Octopressの方のファイル拡張子が.markdownではなく.mdなら「Hexo to Octopress Converter」で変換しても日付けが削除されないので、前もって.mdに変えておいた方が良いかもしれない。<br>拡張子が.mdでも<code>tags:</code>は<code>categories:</code>に変換される。  </p>
+<p>拡張子の一括変換は/_postsディレクトリで  </p>
+<pre><code>$ <span class="built_in">rename</span> <span class="string">'s/.markdown/.md/'</span> *.markdown
+</code></pre><p>とするか、ファイルマネージャーThunarを使えば簡単のようだ。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/21/hexo-xubuntu/" data-id="knafsxi8ej9a0agi" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/25/hexo-migrator-octopress/" data-id="dkf55dtd1mjpbbw4" class="article-share-link">Share</a>
       
-        <a href="http://pagent.github.io/2014/11/21/hexo-xubuntu/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://pagent.github.io/2014/11/25/hexo-migrator-octopress/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Octopress/">Octopress</a></li></ul>
 
     </footer>
   </div>
@@ -120,19 +163,10 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
     
 <nav id="article-nav">
   
-    <a href="/2014/11/22/octopress-hexo/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          サイトジェネレーターをOctopressからHexoに変更
-        
-      </div>
-    </a>
   
-  
-    <a href="/2014/11/21/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2014/11/24/hexo-windows-deploy/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
+      <div class="article-nav-title">WindowsでHexoを使う（deploy）</div>
     </a>
   
 </nav>
@@ -254,7 +288,7 @@ acCODE = "<img width='0' height='0' src='http://a.pagent.org/xeno_git/xenoLogger
 <script>
   var disqus_shortname = 'pagents';
   
-  var disqus_url = 'http://pagent.github.io/2014/11/21/hexo-xubuntu/';
+  var disqus_url = 'http://pagent.github.io/2014/11/25/hexo-migrator-octopress/';
   
   (function(){
     var dsq = document.createElement('script');

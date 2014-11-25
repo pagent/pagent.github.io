@@ -6,17 +6,17 @@
   <title>Xubuntu 14.04.1で無線LAN(Atheros AR9285)が安定しない | Pagent</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Xubuntu 14.04.1をインストールしたネットブックLaVie Light BL300/T。有線でのネット接続は問題無いが、無線LANがとても不安定。頻回に接続が切れて認証を要求されるし、接続も異様に遅い。Xubuntu 12.04では問題なく使えていたのだが。  
-どうも無線LANアダプターAtheros製AR9285とドライバーath9kの">
+どうも無線LANアダプターAtheros製AR9285とドライバーath9kの相性の問題もあるらしい。ノートPCの無線LAN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Xubuntu 14.04.1で無線LAN(Atheros AR9285)が安定しない">
 <meta property="og:url" content="http://pagent.github.io/2014/11/13/xubuntu-ar9285/">
 <meta property="og:site_name" content="Pagent">
 <meta property="og:description" content="Xubuntu 14.04.1をインストールしたネットブックLaVie Light BL300/T。有線でのネット接続は問題無いが、無線LANがとても不安定。頻回に接続が切れて認証を要求されるし、接続も異様に遅い。Xubuntu 12.04では問題なく使えていたのだが。  
-どうも無線LANアダプターAtheros製AR9285とドライバーath9kの">
+どうも無線LANアダプターAtheros製AR9285とドライバーath9kの相性の問題もあるらしい。ノートPCの無線LAN">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Xubuntu 14.04.1で無線LAN(Atheros AR9285)が安定しない">
 <meta name="twitter:description" content="Xubuntu 14.04.1をインストールしたネットブックLaVie Light BL300/T。有線でのネット接続は問題無いが、無線LANがとても不安定。頻回に接続が切れて認証を要求されるし、接続も異様に遅い。Xubuntu 12.04では問題なく使えていたのだが。  
-どうも無線LANアダプターAtheros製AR9285とドライバーath9kの">
+どうも無線LANアダプターAtheros製AR9285とドライバーath9kの相性の問題もあるらしい。ノートPCの無線LAN">
 
   
     <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
@@ -74,10 +74,6 @@
   <time datetime="2014-11-13T08:33:12.000Z" itemprop="datePublished">2014年11月13日</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -95,8 +91,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Xubuntu 14.04.1をインストールしたネットブックLaVie Light BL300/T。<br>有線でのネット接続は問題無いが、無線LANがとても不安定。<br>頻回に接続が切れて認証を要求されるし、接続も異様に遅い。<br>Xubuntu 12.04では問題なく使えていたのだが。  </p>
-<p>どうも無線LANアダプターAtheros製AR9285とドライバーath9kの<a id="more"></a>相性の問題もあるらしい。<br><a href="http://blog.livedoor.jp/furikku9310/archives/52298627.html" target="_blank" rel="external">ノートPCの無線LANデバイスにて : フレイドフォートonBlog</a>  </p>
-<p>/etc/modprobe.d内にath9k.confというファイルを作りそこに<code>options ath9k nohwcrypt=1</code>と記載したり、ath9kをロードし直したりしてみたが改善しない。<br>NdisWrapperでWindows Xp用のドライバーを使えば良いかと思いやってみたが、これも満足に動作しない。  </p>
+<p>どうも無線LANアダプターAtheros製AR9285とドライバーath9kの相性の問題もあるらしい。<br><a href="http://blog.livedoor.jp/furikku9310/archives/52298627.html" target="_blank" rel="external">ノートPCの無線LANデバイスにて : フレイドフォートonBlog</a><br><a id="more"></a><br>/etc/modprobe.d内にath9k.confというファイルを作りそこに<code>options ath9k nohwcrypt=1</code>と記載したり、ath9kをロードし直したりしてみたが改善しない。<br>NdisWrapperでWindows Xp用のドライバーを使えば良いかと思いやってみたが、これも満足に動作しない。  </p>
 <p>Xubuntu 14.04.1にLinux 3.2や3.8カーネルをコンパイルしてインストールすれば良いのかもしれないが、自分の力量を超えているので断念。<br>（カーネルのコンパイルをしなくても、Ubuntu 12.04 Preciseのレポジトリを追加してLinux 3.2カーネルをインストールすれば良かったのかもしれない。<a href="/2014/11/18/debian-wheezy-nemo/">Debian WheezyにNemoをインストール</a>）  </p>
 <p>結局Xubuntu 12.04をインストールしそれを14.04.1にアップグレード、起動カーネルをLinux 3.2にすることで無線LANも安定した。  </p>
 <pre><code><span class="constant">GRUB_DEFAULT</span>=<span class="string">"Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.2.0-58-generic"</span>
@@ -106,11 +101,13 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/13/xubuntu-ar9285/" data-id="nxykgihr6es3ockp" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/13/xubuntu-ar9285/" data-id="s3ujbyfpo7x8iuyv" class="article-share-link">Share</a>
       
         <a href="http://pagent.github.io/2014/11/13/xubuntu-ar9285/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
     </footer>
   </div>
   
@@ -154,6 +151,10 @@
       <ul>
         
           <li>
+            <a href="/2014/11/25/hexo-migrator-octopress/">Octopress→Hexo移行のプラグイン「hexo-migrator-octopress」を試してみた</a>
+          </li>
+        
+          <li>
             <a href="/2014/11/24/hexo-windows-deploy/">WindowsでHexoを使う（deploy）</a>
           </li>
         
@@ -169,10 +170,6 @@
             <a href="/2014/11/23/hexo-archve-category/">Hexoのアーカイブ、カテゴリーページを全文表示からリスト表示に</a>
           </li>
         
-          <li>
-            <a href="/2014/11/22/hexo-theme/">Hexoのテーマを変更したら、元に戻せなくなった</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -182,7 +179,25 @@
   <div class="widget-wrap">
     <h3 class="widget-title">カテゴリー</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Net/">Net</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Octopress/">Octopress</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ことば/">ことば</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ブラウザ/">ブラウザ</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/未分類/">未分類</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/短歌/">短歌</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/風景/">風景</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Hexo/" style="font-size: 17.50px;">Hexo</a><a href="/tags/Linux/" style="font-size: 20.00px;">Linux</a><a href="/tags/Net/" style="font-size: 12.50px;">Net</a><a href="/tags/Octopress/" style="font-size: 15.00px;">Octopress</a><a href="/tags/blog/" style="font-size: 10.00px;">blog</a><a href="/tags/ことば/" style="font-size: 10.00px;">ことば</a><a href="/tags/ブラウザ/" style="font-size: 12.50px;">ブラウザ</a><a href="/tags/未分類/" style="font-size: 10.00px;">未分類</a><a href="/tags/短歌/" style="font-size: 10.00px;">短歌</a><a href="/tags/風景/" style="font-size: 10.00px;">風景</a>
     </div>
   </div>
 
@@ -191,7 +206,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">月別アーカイブ</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
     </div>
   </div>
 

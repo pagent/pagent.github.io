@@ -3,26 +3,26 @@
 <head>
   <meta charset="utf-8">
   
-  <title>「disabling IRQ #9」でXubuntuが起動できない | Pagent</title>
+  <title>「disabling IRQ | Pagent</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="環境
 ハード：NECのネットブックLaVie Light BL300/TOS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  
 現状と対応
-Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したら">
+Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出">
 <meta property="og:type" content="article">
-<meta property="og:title" content="「disabling IRQ #9」でXubuntuが起動できない">
+<meta property="og:title" content="「disabling IRQ">
 <meta property="og:url" content="http://pagent.github.io/2014/11/01/irq-problem/">
 <meta property="og:site_name" content="Pagent">
 <meta property="og:description" content="環境
 ハード：NECのネットブックLaVie Light BL300/TOS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  
 現状と対応
-Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したら">
+Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="「disabling IRQ #9」でXubuntuが起動できない">
+<meta name="twitter:title" content="「disabling IRQ">
 <meta name="twitter:description" content="環境
 ハード：NECのネットブックLaVie Light BL300/TOS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  
 現状と対応
-Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したら">
+Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出">
 
   
     <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
@@ -80,10 +80,6 @@ Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でイン�
   <time datetime="2014-11-01T06:45:55.000Z" itemprop="datePublished">2014年11月1日</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Linux/">Linux</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -92,7 +88,7 @@ Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でイン�
         
   
     <h1 class="article-title" itemprop="name">
-      「disabling IRQ #9」でXubuntuが起動できない
+      「disabling IRQ
     </h1>
   
 
@@ -103,8 +99,7 @@ Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でイン�
         <h4 id="環境">環境</h4>
 <p>ハード：NECのネットブックLaVie Light BL300/T<br>OS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  </p>
 <h4 id="現状と対応">現状と対応</h4>
-<p>Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したら<a id="more"></a>インストールは出来たものの、解像度が800×600以外に選択出来なかった。<br>そのため、いったんXubuntu13.04をインストールしてから14.04.1にアップグレードしていた。<br>アップグレード中にもdisabling IRQで起動できなくなり、/etc/default/grubでGRUB_DEFAULT=”Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.8.0-19-generic”にして、デフォルトの起動カーネルを3.8.0-19にしていた。  </p>
-<p>このままでも使えるが、ソフトウェアの更新がしょっちゅうカーネルを更新するよう言ってくるし、カーネル3.13で起動できないかやってみた。  </p>
+<p>Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出来なかった。<br>そのため、いったんXubuntu13.04をインストールしてから14.04.1にアップグレードしていた。<br>アップグレード中にもdisabling IRQで起動できなくなり、/etc/default/grubでGRUB_DEFAULT=”Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.8.0-19-generic”にして、デフォルトの起動カーネルを3.8.0-19にしていた。<br><a id="more"></a><br>このままでも使えるが、ソフトウェアの更新がしょっちゅうカーネルを更新するよう言ってくるし、カーネル3.13で起動できないかやってみた。  </p>
 <p>まず起動時にOS選択画面が出なかったが、他に起動できるOSがない場合grub2はOS選択画面をスキップしてしまうためらしい。<br><a href="http://www.serendip.ws/archives/3534" target="_blank" rel="external">Grub2 で起動時に選択リストを表示させる : Serendip - Webデザイン・プログラミング</a>  </p>
 <p>上記記事の通り</p>
 <pre><code><span class="comment">#GRUB_HIDDEN_TIMEOUT=0</span>
@@ -130,11 +125,13 @@ Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でイン�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/01/irq-problem/" data-id="san4gbi8vvgng0a3" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/01/irq-problem/" data-id="n923k9rkd05o7mh1" class="article-share-link">Share</a>
       
         <a href="http://pagent.github.io/2014/11/01/irq-problem/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
     </footer>
   </div>
   
@@ -178,6 +175,10 @@ Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でイン�
       <ul>
         
           <li>
+            <a href="/2014/11/25/hexo-migrator-octopress/">Octopress→Hexo移行のプラグイン「hexo-migrator-octopress」を試してみた</a>
+          </li>
+        
+          <li>
             <a href="/2014/11/24/hexo-windows-deploy/">WindowsでHexoを使う（deploy）</a>
           </li>
         
@@ -193,10 +194,6 @@ Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でイン�
             <a href="/2014/11/23/hexo-archve-category/">Hexoのアーカイブ、カテゴリーページを全文表示からリスト表示に</a>
           </li>
         
-          <li>
-            <a href="/2014/11/22/hexo-theme/">Hexoのテーマを変更したら、元に戻せなくなった</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -206,7 +203,25 @@ Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でイン�
   <div class="widget-wrap">
     <h3 class="widget-title">カテゴリー</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Net/">Net</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Octopress/">Octopress</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ことば/">ことば</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ブラウザ/">ブラウザ</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/未分類/">未分類</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/短歌/">短歌</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/風景/">風景</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Hexo/" style="font-size: 17.50px;">Hexo</a><a href="/tags/Linux/" style="font-size: 20.00px;">Linux</a><a href="/tags/Net/" style="font-size: 12.50px;">Net</a><a href="/tags/Octopress/" style="font-size: 15.00px;">Octopress</a><a href="/tags/blog/" style="font-size: 10.00px;">blog</a><a href="/tags/ことば/" style="font-size: 10.00px;">ことば</a><a href="/tags/ブラウザ/" style="font-size: 12.50px;">ブラウザ</a><a href="/tags/未分類/" style="font-size: 10.00px;">未分類</a><a href="/tags/短歌/" style="font-size: 10.00px;">短歌</a><a href="/tags/風景/" style="font-size: 10.00px;">風景</a>
     </div>
   </div>
 
@@ -215,7 +230,7 @@ Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でイン�
   <div class="widget-wrap">
     <h3 class="widget-title">月別アーカイブ</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
     </div>
   </div>
 

@@ -74,10 +74,6 @@ Stylishに下記スタイルを適当な名前で追加するだけ。">
   <time datetime="2014-11-03T07:29:59.000Z" itemprop="datePublished">2014年11月3日</time>
 </a>
     
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/ブラウザ/">ブラウザ</a>
-  </div>
-
   </div>
   <div class="article-inner">
     
@@ -95,13 +91,8 @@ Stylishに下記スタイルを適当な名前で追加するだけ。">
     <div class="article-entry" itemprop="articleBody">
       
         <p>Gyaoで動画を観るとき背景が白くてまぶしいので、FirefoxのアドオンStylishで背景を黒くした。  </p>
-<p>Stylishに下記スタイルを適当な名前で追加するだけ。<a id="more"></a></p>
-<pre><code><span class="at_rule">@<span class="keyword">namespace</span> <span class="function">url</span>(http://www.w3.org/<span class="number">1999</span>/xhtml)</span>;
-<span class="at_rule">@<span class="keyword">-moz-document</span> <span class="function">domain</span>(<span class="string">"gyao.yahoo.co.jp"</span>)
-,<span class="function">domain</span>(<span class="string">"youtube.com"</span>) 
-</span>{
-
-<span class="tag">body</span> <span class="rules">{
+<p>Stylishに下記スタイルを適当な名前で追加するだけ。<br><a id="more"></a><br>    @namespace url(<a href="http://www.w3.org/1999/xhtml" target="_blank" rel="external">http://www.w3.org/1999/xhtml</a>);<br>    @-moz-document domain(“gyao.yahoo.co.jp”)<br>    ,domain(“youtube.com”)<br>    {</p>
+<pre><code><span class="tag">body</span> <span class="rules">{
     <span class="rule"><span class="attribute">background-color</span>:<span class="value"><span class="hexcolor">#000</span></span></span>;
 <span class="rule">}</span></span>
 <span class="id">#playerModule</span> <span class="rules">{
@@ -121,11 +112,13 @@ Stylishに下記スタイルを適当な名前で追加するだけ。">
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/03/gyao-background-color/" data-id="ju4k2dj9b29xaw5x" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/03/gyao-background-color/" data-id="3n9czow7g5wefuh2" class="article-share-link">Share</a>
       
         <a href="http://pagent.github.io/2014/11/03/gyao-background-color/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ブラウザ/">ブラウザ</a></li></ul>
+
     </footer>
   </div>
   
@@ -169,6 +162,10 @@ Stylishに下記スタイルを適当な名前で追加するだけ。">
       <ul>
         
           <li>
+            <a href="/2014/11/25/hexo-migrator-octopress/">Octopress→Hexo移行のプラグイン「hexo-migrator-octopress」を試してみた</a>
+          </li>
+        
+          <li>
             <a href="/2014/11/24/hexo-windows-deploy/">WindowsでHexoを使う（deploy）</a>
           </li>
         
@@ -184,10 +181,6 @@ Stylishに下記スタイルを適当な名前で追加するだけ。">
             <a href="/2014/11/23/hexo-archve-category/">Hexoのアーカイブ、カテゴリーページを全文表示からリスト表示に</a>
           </li>
         
-          <li>
-            <a href="/2014/11/22/hexo-theme/">Hexoのテーマを変更したら、元に戻せなくなった</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -197,7 +190,25 @@ Stylishに下記スタイルを適当な名前で追加するだけ。">
   <div class="widget-wrap">
     <h3 class="widget-title">カテゴリー</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Net/">Net</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Octopress/">Octopress</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ことば/">ことば</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ブラウザ/">ブラウザ</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/未分類/">未分類</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/短歌/">短歌</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Net/">Net</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Octopress/">Octopress</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ことば/">ことば</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ブラウザ/">ブラウザ</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/未分類/">未分類</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/短歌/">短歌</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/風景/">風景</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Hexo/" style="font-size: 17.50px;">Hexo</a><a href="/tags/Linux/" style="font-size: 20.00px;">Linux</a><a href="/tags/Net/" style="font-size: 12.50px;">Net</a><a href="/tags/Octopress/" style="font-size: 15.00px;">Octopress</a><a href="/tags/blog/" style="font-size: 10.00px;">blog</a><a href="/tags/ことば/" style="font-size: 10.00px;">ことば</a><a href="/tags/ブラウザ/" style="font-size: 12.50px;">ブラウザ</a><a href="/tags/未分類/" style="font-size: 10.00px;">未分類</a><a href="/tags/短歌/" style="font-size: 10.00px;">短歌</a><a href="/tags/風景/" style="font-size: 10.00px;">風景</a>
     </div>
   </div>
 
@@ -206,7 +217,7 @@ Stylishに下記スタイルを適当な名前で追加するだけ。">
   <div class="widget-wrap">
     <h3 class="widget-title">月別アーカイブ</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
     </div>
   </div>
 
