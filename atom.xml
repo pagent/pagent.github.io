@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[Pagent]]></title>
-  <subtitle><![CDATA[GitHub Pages＋静的サイトジェネレーターでブログ]]></subtitle>
+  <subtitle><![CDATA[Gitレポジトリと静的サイトジェネレーターでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-11-26T12:07:32.578Z</updated>
+  <updated>2014-11-26T12:37:47.423Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
