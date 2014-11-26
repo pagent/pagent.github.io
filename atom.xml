@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Gitレポジトリと静的サイトジェネレーターでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-11-26T12:37:47.423Z</updated>
+  <updated>2014-11-26T12:56:43.229Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[Hexoで新規記事作成時、タイトルの大文字アルファベットを小文字のファイル名に]]></title>
+    <title><![CDATA[Hexo新規記事作成時のタイトル大文字アルファベットを小文字のファイル名に]]></title>
     <link href="http://pagent.github.io/2014/11/26/filename-case/"/>
     <id>http://pagent.github.io/2014/11/26/filename-case/</id>
     <published>2014-11-26T09:50:31.000Z</published>
-    <updated>2014-11-26T10:53:57.000Z</updated>
+    <updated>2014-11-26T12:52:34.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoのデフォルト設定で新規記事を作成する際、記事タイトルに大文字アルファベットを使うと、そのままファイル名としてソースが作成される。</p>
 <pre><code>$ hexo new New-Post
 [info] File created at /<span class="keyword">...</span>/<span class="keyword">source</span>/_posts/<span class="number">2014</span>-<span class="number">11</span>-<span class="number">26</span>-New-Post.md
