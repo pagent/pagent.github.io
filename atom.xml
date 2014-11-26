@@ -4,7 +4,7 @@
   <subtitle><![CDATA[GitHub Pages＋静的サイトジェネレーターでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-11-26T09:00:02.333Z</updated>
+  <updated>2014-11-26T12:01:27.397Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,35 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Hexoで新規記事作成時、タイトルの大文字アルファベットを小文字のファイル名に]]></title>
+    <link href="http://pagent.github.io/2014/11/26/filename-case/"/>
+    <id>http://pagent.github.io/2014/11/26/filename-case/</id>
+    <published>2014-11-26T09:50:31.000Z</published>
+    <updated>2014-11-26T10:53:57.000Z</updated>
+    <content type="html"><![CDATA[<p>Hexoのデフォルト設定で新規記事を作成する際、記事タイトルに大文字アルファベットを使うと、そのままファイル名としてソースが作成される。</p>
+<pre><code>$ hexo new New-Post
+[info] File created at /<span class="keyword">...</span>/<span class="keyword">source</span>/_posts/<span class="number">2014</span>-<span class="number">11</span>-<span class="number">26</span>-New-Post.md
+</code></pre><p>URLに大文字アルファベットが入ってしまう。  </p>
+<p>URLに大文字は使いたくないので、Octopressのように大文字→小文字でファイル出力して欲しい。  </p>
+<p>_config.ymlのWritingの項目<code>filename_case:</code>の値をデフォルトの「0」から「1」に変更することで設定出来た。  </p>
+<pre><code>$ hexo new New-Post
+[info] File created at /<span class="keyword">...</span>/<span class="keyword">source</span>/_posts/<span class="number">2014</span>-<span class="number">11</span>-<span class="number">26</span>-new-post.md
+</code></pre><p>filename_case: 0（そのまま出力。New-Post→New-Post）  </p>
+<p>filename_case: 1（大文字を小文字に変換。New-Post→new-post.md）  </p>
+<p>filename_case: 2（すべて大文字に変換。New-Post→NEW-POST.md）  </p>
+<p>ーー<br>（追記）<br>出来たと思ったら、generateした際にtagsまでがすべて小文字になってしまった。<br>これでは困るので、<code>filename_case: 0</code>に戻した。<br>当面、大文字のファイル名は手作業で小文字にするしかなさそうだ。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Hexoのデフォルト設定で新規記事を作成する際、記事タイトルに大文字アルファベットを使うと、そのままファイル名としてソースが作成される。</p>
+<pre><code>$ hexo new New-Post
+[info] File created at /<span cla]]>
+    </summary>
+    
+      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[HexoのソースをBitbucketに置く]]></title>
@@ -476,7 +505,7 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
     <link href="http://pagent.github.io/2014/11/20/octopress-deploy-rejected/"/>
     <id>http://pagent.github.io/2014/11/20/octopress-deploy-rejected/</id>
     <published>2014-11-20T10:11:54.000Z</published>
-    <updated>2014-11-25T13:17:31.000Z</updated>
+    <updated>2014-11-26T09:19:07.000Z</updated>
     <content type="html"><![CDATA[<p>DropboxでOctopressのフォルダを同期し、2台目のPCでもrake new_postやrake generateは出来るようになったが、rake deployが出来ない。<br>gitが入ってなかったので<code>sudo apt-get install git</code>し、<code>rake setup_github_pages</code>でセットアップしたが、  </p>
 <pre><code><span class="input"><span class="prompt">! [rejected]        master -&gt;</span> master (non-fast-forward)</span>
 </code></pre><p>とエラーになる。<br>SSHの公開鍵も設定したのだが。  <a id="more"></a></p>
@@ -498,6 +527,8 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
     </summary>
     
       <category term="Octopress" scheme="http://pagent.github.io/tags/Octopress/"/>
+    
+      <category term="Git" scheme="http://pagent.github.io/tags/Git/"/>
     
   </entry>
   
@@ -734,51 +765,6 @@ sudo apt-<span class="built_in">get</span> install nemo
     <![CDATA[<p>Xubuntu起動時のモニター輝度を少し下げてみた。  </p>
 <p>やり方は、/etc/default/grubで設定する方法、/etc/rc.localで設定する方法、xbacklightを使う方法などがあるようだ。<br><a href="https://sites.google.com/site/tetsuroweb/home/software/ubuntu/tips/display-brightness" target="_blank" rel="external">起動時の画面輝度を調整する (Ubuntu 12.04 - 14.04) - 哲朗web</a>  </p>
 <p>まず、/etc/rc.localで設定する方法を試してみた。  ]]>
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[「disabling IRQ]]></title>
-    <link href="http://pagent.github.io/2014/11/01/irq-problem/"/>
-    <id>http://pagent.github.io/2014/11/01/irq-problem/</id>
-    <published>2014-11-01T06:45:55.000Z</published>
-    <updated>2014-11-25T13:16:04.000Z</updated>
-    <content type="html"><![CDATA[<h4 id="環境">環境</h4>
-<p>ハード：NECのネットブックLaVie Light BL300/T<br>OS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  </p>
-<h4 id="現状と対応">現状と対応</h4>
-<p>Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出来なかった。<br>そのため、いったんXubuntu13.04をインストールしてから14.04.1にアップグレードしていた。<br>アップグレード中にもdisabling IRQで起動できなくなり、/etc/default/grubでGRUB_DEFAULT=”Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.8.0-19-generic”にして、デフォルトの起動カーネルを3.8.0-19にしていた。  <a id="more"></a></p>
-<p>このままでも使えるが、ソフトウェアの更新がしょっちゅうカーネルを更新するよう言ってくるし、カーネル3.13で起動できないかやってみた。  </p>
-<p>まず起動時にOS選択画面が出なかったが、他に起動できるOSがない場合grub2はOS選択画面をスキップしてしまうためらしい。<br><a href="http://www.serendip.ws/archives/3534" target="_blank" rel="external">Grub2 で起動時に選択リストを表示させる : Serendip - Webデザイン・プログラミング</a>  </p>
-<p>上記記事の通り</p>
-<pre><code><span class="comment">#GRUB_HIDDEN_TIMEOUT=0</span>
-<span class="variable">GRUB_HIDDEN_TIMEOUT_QUIET=</span><span class="constant">false</span>
-</code></pre><p>にしたらOS選択画面が出た。  </p>
-<p>試してみる起動オプションは下記記事を参考にさせて頂いた。<br><a href="http://kiddushin.jugem.jp/?eid=264" target="_blank" rel="external">Disabling IRQ (起動には成功の巻) | おもしろきこともなき世をおもしろく</a>  </p>
-<p>OS選択画面の「Advanced options for Ubuntu」で「Ubuntu, with Linux 3.13.0-39-generic」を選択し「e」キーでオプション編集画面へ。<br>linux /boot/vmlinuz-3.13.0-39…で始まる行の最後quiet nosplashのあとに半角スペースに続けてオプションを追加、「F10」キーで起動。<br>（参考記事：<a href="https://wiki.ubuntulinux.jp/UbuntuTips/Others/BootOptions#A.2BMKQw8zC5MMgw.2FDDrbggwfzC3MLkwxjDgMG6Nd1LVMKow1zC3MOcw8zCSTgBmQnaEMGtZCWb0MFkwizBrMG8-" target="_blank" rel="external">UbuntuTips/Others/BootOptions - Ubuntu Japanese Wiki</a>）  </p>
-<h4 id="結果">結果</h4>
-<p>acpi=off<br>起動は出来るが、画面が横に引き伸ばされてしまい、モニタの設定でも他の解像度を選べず。<br>シャットダウン時には「System halted」のスプラッシュ画面で止まってしまう。    </p>
-<p>pci=noacpi<br>良好。<br>問題なく使えそう。  </p>
-<p>acpi=noirq<br>一瞬起動できるかと思ったが画面が真っ暗のまま。  </p>
-<p>irqpoll<br>上に同じく真っ暗。  </p>
-<p>上記とは別にpci=routeirqというオプションも見かけたのでやってみたが、これは「disabling IRQ #9」で起動できず。  </p>
-<p>pci=noacpiを起動オプションに加えることにしたので、/etc/default/grubで</p>
-<pre><code><span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"quiet nosplash pci=noacpi"</span>
-</code></pre><p>とし、<code>sudo update-grub</code>した。  </p>
-<p>ーー<br>（追記）<br>最初から「pci=noacpi」のオプションを付けてXubuntu14.04.1をインストールすることも可能だった。<br><a href="http://pagent.github.io/blog/2014/11/11/xubuntu-install-option/" target="_blank" rel="external">起動オプションを付けてXubuntu14.04.1をインストール - Pagent</a>  </p>
-<p>この場合grubの記述は</p>
-<pre><code><span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"quiet splash"</span>
-<span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"pci=noacpi"</span>
-</code></pre><p>となっていた。<br>スペース区切りで一行で書いても、改行してあらたにオプションを記述してもどちらでもいいようだ。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h4 id="環境">環境</h4>
-<p>ハード：NECのネットブックLaVie Light BL300/T<br>OS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  </p>
-<h4 id="現状と対応">現状と対応</h4>
-<p>Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出来なかった。<br>そのため、いったんXubuntu13.04をインストールしてから14.04.1にアップグレードしていた。<br>アップグレード中にもdisabling IRQで起動できなくなり、/etc/default/grubでGRUB_DEFAULT=”Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.8.0-19-generic”にして、デフォルトの起動カーネルを3.8.0-19にしていた。  ]]>
     
     </summary>
     

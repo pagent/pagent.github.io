@@ -51,6 +51,8 @@
         
           <a class="main-nav-link" href="/archives">Archives</a>
         
+          <a class="main-nav-link" href="/hello-world">Hello World</a>
+        
       </nav>
       <nav id="sub-nav">
         
@@ -67,10 +69,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-hexo-windows-deploy" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-hexo-xubuntu" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/11/24/hexo-windows-deploy/" class="article-date">
-  <time datetime="2014-11-24T11:31:27.000Z" itemprop="datePublished">2014年11月24日</time>
+    <a href="/2014/11/21/hexo-xubuntu/" class="article-date">
+  <time datetime="2014-11-21T04:56:19.000Z" itemprop="datePublished">2014年11月21日</time>
 </a>
     
   </div>
@@ -81,7 +83,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/24/hexo-windows-deploy/">WindowsでHexoを使う（deploy）</a>
+      <a class="article-title" href="/2014/11/21/hexo-xubuntu/">Xubuntuに静的サイトジェネレーターHexoを入れてみた</a>
     </h1>
   
 
@@ -89,23 +91,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来るかと思ったが、  </p>
-<pre><code>Run
-
-  git config --global <span class="literal">user</span>.email <span class="string">"you@example.com"</span>
-  git config --global <span class="literal">user</span>.name <span class="string">"Your Name"</span>
-</code></pre><p>と言われてしまった。  
+        <p>Octopressでブログを書いていて、さして不満はないのだが、別の静的サイトジェネレーターに「Hexo」というのがあるのを知った。<br>Octopressに較べ、テーマも豊富に用意あり、日本語のURLやカテゴリー名にも対応しているようだったので、入れてみた。<br>rubyではなく、Node.jsというのを使うらしい。  
         
           <p class="article-more-link">
-            <a href="/2014/11/24/hexo-windows-deploy/#more">続きを読む</a>
+            <a href="/2014/11/21/hexo-xubuntu/#more">続きを読む</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/24/hexo-windows-deploy/" data-id="6ejgdcheehkrjbui" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/21/hexo-xubuntu/" data-id="tr3ag24owytx4h9x" class="article-share-link">Share</a>
       
-        <a href="http://pagent.github.io/2014/11/24/hexo-windows-deploy/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://pagent.github.io/2014/11/21/hexo-xubuntu/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -117,10 +114,10 @@
 
 
   
-    <article id="post-hexo-windows" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-octopress-deploy-rejected" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/11/24/hexo-windows/" class="article-date">
-  <time datetime="2014-11-24T09:32:37.000Z" itemprop="datePublished">2014年11月24日</time>
+    <a href="/2014/11/20/octopress-deploy-rejected/" class="article-date">
+  <time datetime="2014-11-20T10:11:54.000Z" itemprop="datePublished">2014年11月20日</time>
 </a>
     
   </div>
@@ -131,7 +128,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/24/hexo-windows/">WindowsでHexoを使う（インストール）</a>
+      <a class="article-title" href="/2014/11/20/octopress-deploy-rejected/">2台目のPCのOctopressでdeploy出来ない</a>
     </h1>
   
 
@@ -139,21 +136,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>以前、静的サイトジェネレーターnanocをWindowsにインストールしたが、なんとかインストールは出来たものの、compile（generate）してhtmlファイルを生成する際、エラーになり使えなかった。<br>最近使い始めたHexoは、nanocやOctopressと違い、rubyではなくNode.jsで動いているそうなので、Windowsで使えるかもしれないと思い、試してみた。  
+        <p>DropboxでOctopressのフォルダを同期し、2台目のPCでもrake new_postやrake generateは出来るようになったが、rake deployが出来ない。<br>gitが入ってなかったので<code>sudo apt-get install git</code>し、<code>rake setup_github_pages</code>でセットアップしたが、  </p>
+<pre><code><span class="input"><span class="prompt">! [rejected]        master -&gt;</span> master (non-fast-forward)</span>
+</code></pre><p>とエラーになる。<br>SSHの公開鍵も設定したのだが。  
         
           <p class="article-more-link">
-            <a href="/2014/11/24/hexo-windows/#more">続きを読む</a>
+            <a href="/2014/11/20/octopress-deploy-rejected/#more">続きを読む</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/24/hexo-windows/" data-id="gzk8njd43ulwi3hj" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/20/octopress-deploy-rejected/" data-id="72c5uhgl9sv87h1d" class="article-share-link">Share</a>
       
-        <a href="http://pagent.github.io/2014/11/24/hexo-windows/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://pagent.github.io/2014/11/20/octopress-deploy-rejected/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Octopress/">Octopress</a></li></ul>
 
     </footer>
   </div>
@@ -162,10 +161,10 @@
 
 
   
-    <article id="post-hexo-post-template" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-install-libv8" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/11/23/hexo-post-template/" class="article-date">
-  <time datetime="2014-11-22T23:20:38.000Z" itemprop="datePublished">2014年11月23日</time>
+    <a href="/2014/11/19/install-libv8/" class="article-date">
+  <time datetime="2014-11-19T09:02:45.000Z" itemprop="datePublished">2014年11月19日</time>
 </a>
     
   </div>
@@ -176,7 +175,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/23/hexo-post-template/">Hexoの新規記事テンプレートを変更</a>
+      <a class="article-title" href="/2014/11/19/install-libv8/">Installing libv8で止まる</a>
     </h1>
   
 
@@ -184,21 +183,339 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Hexoで新規記事を作ると、初期状態ではtitle、date、tagsの項目しか無いが、categoriesも使いたいので変更。<br>/scaffolds/post.mdに項目を追加するだけで出来た。<br>（<code>---</code>で区画された部分は「Front Matter」と言うらしい。）  
+        <p>OctopressのフォルダをDropboxに置くことにしたので、古いネットブックにインストールしたXubuntuからOctopressを使えるかどうか試してみた。<br>だがrake previewしようとしたら、エラーになってしまった。<br>Octopressを使う環境が整っていないので当然といえば当然。  
         
           <p class="article-more-link">
-            <a href="/2014/11/23/hexo-post-template/#more">続きを読む</a>
+            <a href="/2014/11/19/install-libv8/#more">続きを読む</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/23/hexo-post-template/" data-id="umhc146ogqqnw8uw" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/19/install-libv8/" data-id="jq1ee8iyotljou87" class="article-share-link">Share</a>
       
-        <a href="http://pagent.github.io/2014/11/23/hexo-post-template/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://pagent.github.io/2014/11/19/install-libv8/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Octopress/">Octopress</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-debian-wheezy-nemo" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/18/debian-wheezy-nemo/" class="article-date">
+  <time datetime="2014-11-18T00:51:22.000Z" itemprop="datePublished">2014年11月18日</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/18/debian-wheezy-nemo/">Debian WheezyにNemoをインストール</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ネットブックLaVie LightにDebian Wheezyをインストールした。<br>ウィンドウマネージャはXfceが好みなので、debian-7.7.0-i386-netinst.isoでインストールする際、”Advanced options” 、”Alternate desktop environments”でXfceを選択した。  </p>
+<p>ファイルやフォルダを簡単に管理者権限で操作したいので、XfceデフォルトのファイルマネージャーThunarのアクションに「rootで開く」を追加し、gksuもインストールした。<br>だがrootで開こうとしても、認証画面は表示されるものの、フォルダやファイルを管理者権限で開くことが出来ない。  
+        
+          <p class="article-more-link">
+            <a href="/2014/11/18/debian-wheezy-nemo/#more">続きを読む</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/18/debian-wheezy-nemo/" data-id="4vi0tfltw64npqjh" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/18/debian-wheezy-nemo/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-xubuntu-ar9285" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/13/xubuntu-ar9285/" class="article-date">
+  <time datetime="2014-11-13T08:33:12.000Z" itemprop="datePublished">2014年11月13日</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/13/xubuntu-ar9285/">Xubuntu 14.04.1で無線LAN(Atheros AR9285)が安定しない</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Xubuntu 14.04.1をインストールしたネットブックLaVie Light BL300/T。<br>有線でのネット接続は問題無いが、無線LANがとても不安定。<br>頻回に接続が切れて認証を要求されるし、接続も異様に遅い。<br>Xubuntu 12.04では問題なく使えていたのだが。  </p>
+<p>どうも無線LANアダプターAtheros製AR9285とドライバーath9kの相性の問題もあるらしい。<br><a href="http://blog.livedoor.jp/furikku9310/archives/52298627.html" target="_blank" rel="external">ノートPCの無線LANデバイスにて : フレイドフォートonBlog</a>  
+        
+          <p class="article-more-link">
+            <a href="/2014/11/13/xubuntu-ar9285/#more">続きを読む</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/13/xubuntu-ar9285/" data-id="2x15ngohbst8z4bs" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/13/xubuntu-ar9285/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-xubuntu-install-option" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/11/xubuntu-install-option/" class="article-date">
+  <time datetime="2014-11-11T09:39:48.000Z" itemprop="datePublished">2014年11月11日</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/11/xubuntu-install-option/">起動オプションを付けてXubuntu14.04.1をインストール</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>NECのネットブックLaVie Light BL300/TにXubuntu14.04.1を再インストールした。<br>以前もXubuntu14.04.1をインストールしたがその時は<code>disabling IRQ #9</code>でインストールDVDを起動出来ず、いったんXubuntu13.04をインストールしてから、その後Xubuntu14.04.1にアップグレードしていた。<br>だが、起動オプションに<code>pci=noacpi</code>を加えれば、Linuxカーネル3.13.0-39でも起動出来るようだったので、起動オプションを付けてXubuntu14.04.1をインストールした。  
+        
+          <p class="article-more-link">
+            <a href="/2014/11/11/xubuntu-install-option/#more">続きを読む</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/11/xubuntu-install-option/" data-id="dkydtchjtceo7pvh" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/11/xubuntu-install-option/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-yonifuru" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/06/yonifuru/" class="article-date">
+  <time datetime="2014-11-06T08:59:22.000Z" itemprop="datePublished">2014年11月6日</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/06/yonifuru/">いたづらにわがみ世にふる</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>花の色はうつりにけりな  </p>
+<p>いたづらにわがみ世にふる　ながめせしまに  </p>
+<p>（古今和歌集　小野小町）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/06/yonifuru/" data-id="jy2exf63gi8eje8d" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/06/yonifuru/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/短歌/">短歌</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-firefox-complete-theme" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/05/firefox-complete-theme/" class="article-date">
+  <time datetime="2014-11-05T09:13:55.000Z" itemprop="datePublished">2014年11月5日</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/05/firefox-complete-theme/">Firefoxの完全テーマ「MX3」を入れてみた</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ウェブ閲覧をしていて、画面があまり白いと目が疲れる。<br>モニターの輝度を調節したり、FirefoxのアドオンStylishでページのスタイルを強制的に変えることである程度対処は出来るが、Firefoxのブックマークや履歴などサイドバーの背景も少し暗くしたいところ。  
+        
+          <p class="article-more-link">
+            <a href="/2014/11/05/firefox-complete-theme/#more">続きを読む</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/05/firefox-complete-theme/" data-id="n3x1mpbjd08jdhsi" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/05/firefox-complete-theme/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ブラウザ/">ブラウザ</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-gyao-background-color" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/03/gyao-background-color/" class="article-date">
+  <time datetime="2014-11-03T07:29:59.000Z" itemprop="datePublished">2014年11月3日</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/03/gyao-background-color/">FirefoxのアドオンStylishでGyaoの背景色を黒くする</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Gyaoで動画を観るとき背景が白くてまぶしいので、FirefoxのアドオンStylishで背景を黒くした。  </p>
+<p>Stylishに下記スタイルを適当な名前で追加するだけ。
+        
+          <p class="article-more-link">
+            <a href="/2014/11/03/gyao-background-color/#more">続きを読む</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/03/gyao-background-color/" data-id="rojdrxxww0vzg65y" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/03/gyao-background-color/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ブラウザ/">ブラウザ</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-xbacklight" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/02/xbacklight/" class="article-date">
+  <time datetime="2014-11-02T09:55:00.000Z" itemprop="datePublished">2014年11月2日</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/02/xbacklight/">xbacklightでモニター輝度を設定・調節</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Xubuntu起動時のモニター輝度を少し下げてみた。  </p>
+<p>やり方は、/etc/default/grubで設定する方法、/etc/rc.localで設定する方法、xbacklightを使う方法などがあるようだ。<br><a href="https://sites.google.com/site/tetsuroweb/home/software/ubuntu/tips/display-brightness" target="_blank" rel="external">起動時の画面輝度を調整する (Ubuntu 12.04 - 14.04) - 哲朗web</a>  </p>
+<p>まず、/etc/rc.localで設定する方法を試してみた。  
+        
+          <p class="article-more-link">
+            <a href="/2014/11/02/xbacklight/#more">続きを読む</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/02/xbacklight/" data-id="astat4marj6pz8wu" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/02/xbacklight/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
 
     </footer>
   </div>
@@ -209,7 +526,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -221,6 +538,10 @@
     <h3 class="widget-title">最近の記事</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2014/11/26/filename-case/">Hexoで新規記事作成時、タイトルの大文字アルファベットを小文字のファイル名に</a>
+          </li>
         
           <li>
             <a href="/2014/11/26/hexo-bitbucket/">HexoのソースをBitbucketに置く</a>
@@ -238,10 +559,6 @@
             <a href="/2014/11/24/hexo-windows-deploy/">WindowsでHexoを使う（deploy）</a>
           </li>
         
-          <li>
-            <a href="/2014/11/24/hexo-windows/">WindowsでHexoを使う（インストール）</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -253,7 +570,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Net/">Net</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Octopress/">Octopress</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ことば/">ことば</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ブラウザ/">ブラウザ</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/未分類/">未分類</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/短歌/">短歌</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/風景/">風景</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">11</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Net/">Net</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Octopress/">Octopress</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ことば/">ことば</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ブラウザ/">ブラウザ</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/未分類/">未分類</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/短歌/">短歌</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/風景/">風景</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -262,7 +579,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Git/" style="font-size: 10.00px;">Git</a><a href="/tags/Hexo/" style="font-size: 20.00px;">Hexo</a><a href="/tags/Linux/" style="font-size: 17.50px;">Linux</a><a href="/tags/Net/" style="font-size: 12.50px;">Net</a><a href="/tags/Octopress/" style="font-size: 15.00px;">Octopress</a><a href="/tags/blog/" style="font-size: 10.00px;">blog</a><a href="/tags/ことば/" style="font-size: 10.00px;">ことば</a><a href="/tags/ブラウザ/" style="font-size: 12.50px;">ブラウザ</a><a href="/tags/未分類/" style="font-size: 10.00px;">未分類</a><a href="/tags/短歌/" style="font-size: 10.00px;">短歌</a><a href="/tags/風景/" style="font-size: 10.00px;">風景</a>
+      <a href="/tags/Git/" style="font-size: 14.00px;">Git</a><a href="/tags/Hexo/" style="font-size: 20.00px;">Hexo</a><a href="/tags/Linux/" style="font-size: 18.00px;">Linux</a><a href="/tags/Net/" style="font-size: 12.00px;">Net</a><a href="/tags/Octopress/" style="font-size: 16.00px;">Octopress</a><a href="/tags/blog/" style="font-size: 10.00px;">blog</a><a href="/tags/ことば/" style="font-size: 10.00px;">ことば</a><a href="/tags/ブラウザ/" style="font-size: 12.00px;">ブラウザ</a><a href="/tags/未分類/" style="font-size: 10.00px;">未分類</a><a href="/tags/短歌/" style="font-size: 10.00px;">短歌</a><a href="/tags/風景/" style="font-size: 10.00px;">風景</a>
     </div>
   </div>
 
@@ -271,7 +588,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">月別アーカイブ</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
     </div>
   </div>
 
@@ -307,6 +624,8 @@ acCODE = "<img width='0' height='0' src='http://a.pagent.org/xeno_git/xenoLogger
     <a href="/" class="mobile-nav-link">Home</a>
   
     <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/hello-world" class="mobile-nav-link">Hello World</a>
   
 </nav>
     

@@ -3,20 +3,29 @@
 <head>
   <meta charset="utf-8">
   
-  <title>現代仮名遣い | Pagent</title>
+  <title>Hexoで新規記事作成時、タイトルの大文字アルファベットを小文字のファイル名に | Pagent</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ときどき現代仮名遣いに違和感を感じる。例えば、「〜さえ」には「え」より「へ」を使った方が良いのではないかと。  
-でも実際「〜さへ」と書いてみると、これもしっくり来ない。">
+  <meta name="description" content="Hexoのデフォルト設定で新規記事を作成する際、記事タイトルに大文字アルファベットを使うと、そのままファイル名としてソースが作成される。
+$ hexo new New-Post
+[info] File created at /.../source/_posts/2014-11-26-New-Post.md
+URLに大文字アルファベットが入ってしまう。  
+URLに大文字は使いたくないので、Octo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="現代仮名遣い">
-<meta property="og:url" content="http://pagent.github.io/2014/10/28/kana/">
+<meta property="og:title" content="Hexoで新規記事作成時、タイトルの大文字アルファベットを小文字のファイル名に">
+<meta property="og:url" content="http://pagent.github.io/2014/11/26/filename-case/">
 <meta property="og:site_name" content="Pagent">
-<meta property="og:description" content="ときどき現代仮名遣いに違和感を感じる。例えば、「〜さえ」には「え」より「へ」を使った方が良いのではないかと。  
-でも実際「〜さへ」と書いてみると、これもしっくり来ない。">
+<meta property="og:description" content="Hexoのデフォルト設定で新規記事を作成する際、記事タイトルに大文字アルファベットを使うと、そのままファイル名としてソースが作成される。
+$ hexo new New-Post
+[info] File created at /.../source/_posts/2014-11-26-New-Post.md
+URLに大文字アルファベットが入ってしまう。  
+URLに大文字は使いたくないので、Octo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="現代仮名遣い">
-<meta name="twitter:description" content="ときどき現代仮名遣いに違和感を感じる。例えば、「〜さえ」には「え」より「へ」を使った方が良いのではないかと。  
-でも実際「〜さへ」と書いてみると、これもしっくり来ない。">
+<meta name="twitter:title" content="Hexoで新規記事作成時、タイトルの大文字アルファベットを小文字のファイル名に">
+<meta name="twitter:description" content="Hexoのデフォルト設定で新規記事を作成する際、記事タイトルに大文字アルファベットを使うと、そのままファイル名としてソースが作成される。
+$ hexo new New-Post
+[info] File created at /.../source/_posts/2014-11-26-New-Post.md
+URLに大文字アルファベットが入ってしまう。  
+URLに大文字は使いたくないので、Octo">
 
   
     <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
@@ -70,10 +79,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-kana" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-filename-case" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/10/28/kana/" class="article-date">
-  <time datetime="2014-10-28T09:01:20.000Z" itemprop="datePublished">2014年10月28日</time>
+    <a href="/2014/11/26/filename-case/" class="article-date">
+  <time datetime="2014-11-26T09:50:31.000Z" itemprop="datePublished">2014年11月26日</time>
 </a>
     
   </div>
@@ -84,7 +93,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      現代仮名遣い
+      Hexoで新規記事作成時、タイトルの大文字アルファベットを小文字のファイル名に
     </h1>
   
 
@@ -92,18 +101,28 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>ときどき現代仮名遣いに違和感を感じる。<br>例えば、「〜さえ」には「え」より「へ」を使った方が良いのではないかと。  </p>
-<p>でも実際「〜さへ」と書いてみると、これもしっくり来ない。</p>
+        <p>Hexoのデフォルト設定で新規記事を作成する際、記事タイトルに大文字アルファベットを使うと、そのままファイル名としてソースが作成される。</p>
+<pre><code>$ hexo new New-Post
+[info] File created at /<span class="keyword">...</span>/<span class="keyword">source</span>/_posts/<span class="number">2014</span>-<span class="number">11</span>-<span class="number">26</span>-New-Post.md
+</code></pre><p>URLに大文字アルファベットが入ってしまう。  </p>
+<p>URLに大文字は使いたくないので、Octopressのように大文字→小文字でファイル出力して欲しい。  </p>
+<p>_config.ymlのWritingの項目<code>filename_case:</code>の値をデフォルトの「0」から「1」に変更することで設定出来た。  </p>
+<pre><code>$ hexo new New-Post
+[info] File created at /<span class="keyword">...</span>/<span class="keyword">source</span>/_posts/<span class="number">2014</span>-<span class="number">11</span>-<span class="number">26</span>-new-post.md
+</code></pre><p>filename_case: 0（そのまま出力。New-Post→New-Post）  </p>
+<p>filename_case: 1（大文字を小文字に変換。New-Post→new-post.md）  </p>
+<p>filename_case: 2（すべて大文字に変換。New-Post→NEW-POST.md）  </p>
+<p>ーー<br>（追記）<br>出来たと思ったら、generateした際にtagsまでがすべて小文字になってしまった。<br>これでは困るので、<code>filename_case: 0</code>に戻した。<br>当面、大文字のファイル名は手作業で小文字にするしかなさそうだ。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/10/28/kana/" data-id="bb88nj14vr2asclj" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/26/filename-case/" data-id="dudm10dx5t9xpqg3" class="article-share-link">Share</a>
       
-        <a href="http://pagent.github.io/2014/10/28/kana/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://pagent.github.io/2014/11/26/filename-case/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ことば/">ことば</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
 
     </footer>
   </div>
@@ -111,19 +130,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/10/31/unknown-media-type/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          「Unknown media type in type &#39;all/all&#39;」等が表示される
-        
-      </div>
-    </a>
   
-  
-    <a href="/2014/10/28/octopress-source-bitbucket/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2014/11/26/hexo-bitbucket/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">OctopressのsourceはBitBucketに置くことにした</div>
+      <div class="article-nav-title">HexoのソースをBitbucketに置く</div>
     </a>
   
 </nav>
@@ -240,7 +250,7 @@ acCODE = "<img width='0' height='0' src='http://a.pagent.org/xeno_git/xenoLogger
 <script>
   var disqus_shortname = 'pagents';
   
-  var disqus_url = 'http://pagent.github.io/2014/10/28/kana/';
+  var disqus_url = 'http://pagent.github.io/2014/11/26/filename-case/';
   
   (function(){
     var dsq = document.createElement('script');
