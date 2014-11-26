@@ -96,7 +96,8 @@ $ ./converter &lt;hexo_posts_dir&gt; &lt;octopress_posts_">
         <p>HexoからOctopressに記事ソースを変換するrubyスクリプト<a href="https://github.com/ciffel/Hexo-to-Octopress-Converter" target="_blank" rel="external">「Hexo to Octopress Converter」</a>を試してみた。  </p>
 <p>「Download ZIP」からzipファイルをダウンロードし展開。converterファイルを作業したい場所に移し、端末から操作。  </p>
 <pre><code><span class="input"><span class="prompt">$ ./converter &lt;hexo_posts_dir&gt;</span> &lt;octopress_posts_dir&gt;</span>
-</code></pre><p>で変換出来る。<br><code>&lt;octopress_posts_dir&gt;</code>は適当に作ったフォルダでも可。  <a id="more"></a><br>変換が終了すると、Octopressのフォルダに日付けが付加されて出力される。（拡張子は.mdのまま。）<br>出力されたファイルのFront Matter部分は<code>tags:</code>が<code>categories:</code>に変換されており、また上部の<code>---</code>と<code>layout: post</code>、<code>comments: true</code>が追加される。  </p>
+</code></pre><p>で変換出来る。<br><code>&lt;octopress_posts_dir&gt;</code>は適当に作ったフォルダでも可。  <a id="more"></a></p>
+<p>変換が終了すると、ファイル名に日付けが付加されたものがOctopressのフォルダに出力される。（拡張子は.mdのまま。）<br>出力されたファイルのFront Matter部分は<code>tags:</code>が<code>categories:</code>に変換されており、また上部の<code>---</code>および<code>layout: post</code>、<code>comments: true</code>が追加される。  </p>
 <p>だが、Octopressのソースを「hexo-migrator-octopress」などでHexoに取り込んでいた場合は、Front Matter上部に既に<code>---</code>が<br>ついている。<br>この状態からだと<code>tags:</code>が<code>categories:</code>に変換されないので、上部の<code>---</code>を消しておく必要がある。  </p>
 <p>また<code>title:</code>の項目で記事タイトルが「”」で挟まれていると、さらに「”」で挟まれ<code>title: &quot;&quot;（記事タイトル）&quot;&quot;</code>のようになってしまう。<br>これではOctopressでgenerateする際エラーになってしまうので、これも削除し、  </p>
 <pre><code>title:
@@ -105,11 +106,11 @@ date:
 ---</span>
 </code></pre><p>のような形にしておく必要がある。<br><a href="/2014/11/25/hexo-migrator-octopress/">Octopress→Hexo移行のプラグイン「hexo-migrator-octopress」を試してみた </a>  </p>
 <p>なお、変換出力されるのは拡張子が.mdのものだけで、.markdownのもの（Octopressのソースをコピペで取り込んだような場合）は変換出力されず無視される。  </p>
-<p>変換後はファイル名の頭に日付けが付加される。<br>Octopress式に日付けをつけたファイル名でHexoを運用している場合は、日付けが2重になってしまう。  </p>
-<p>converterファイルをエディタで開き、41行目  </p>
+<p>変換後のファイル名には日付けが付加されるので、Hexoの運用をOctopress式に日付けをつけたファイル名で行っている場合は、日付けが2重になってしまう。  </p>
+<p>この場合はconverterファイルをエディタで開き、41行目  </p>
 <p>  file_name = “#{prefix}-#{base_name}”<br>の<code>#{prefix}-</code>を削除し、  </p>
 <p>  file_name = “#{base_name}”<br>にしておくと、日付けが付加されない。  </p>
-<p>ーー<br>しかし、HexoはOctopressと細かいところが違っており、ややこしい。<br>記事ソースの形式くらい合わせられなかったものだろうか。</p>
+<p>ーー<br>HexoもOctopressも、共にmarkdown形式のファイルをhtmlに変換するという点では同じなのだが、細かいところが微妙に違っていて少し不便。<br>記事ソースの形式くらいは合わせられなかったものだろうか。</p>
 
       
     </div>
