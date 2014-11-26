@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/index.html</loc>
+    <lastmod>2014-11-26T14:42:41.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2014/11/26/hexo-bitbucket/</loc>
     <lastmod>2014-11-26T13:08:13.000Z</lastmod>
   </url>
@@ -9,11 +14,6 @@
   <url>
     <loc>http://pagent.github.io/2014/11/26/filename-case/</loc>
     <lastmod>2014-11-26T12:52:34.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/index.html</loc>
-    <lastmod>2014-11-26T12:07:11.000Z</lastmod>
   </url>
   
   <url>

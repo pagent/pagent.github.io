@@ -93,75 +93,75 @@ Bitbucketにソースを置いたらpushするのはそれほど時間は掛か�
         <p>Hexoの作業フォルダはWindows領域のDropboxフォルダに置き、他のPCとも同期をとっている。<br>これでソースを消失してしまう危険はかなり低いと思うが、Dropboxと同期する際、結構時間がかかってしまう。<br>普段はDropboxを起動しておらず時々立ち上げる、という形をとっているせいもあるかもしれない。  </p>
 <p>Bitbucketにソースを置いたらpushするのはそれほど時間は掛からないだろうし、過去の履歴も残ってくれてやはり便利だろうと思い、HexoのソースをBitbucketに置くことにした。  </p>
 <p>OctopressのソースをBitbucketに置いた時と同様、Bitbucketにhexoという名前のリポジトリを作り、  </p>
-<pre><code>$ git remote <span class="built_in">add</span> bitbucket git@bitbucket.<span class="built_in">or</span><span class="variable">g:</span>ユーザー名/hexo.git
-$ git push -<span class="keyword">u</span> bitbucket <span class="keyword">source</span>
+<pre><code>$ git remote add bitbucket git@bitbucket.org:ユーザー名/hexo.git
+$ git push -u bitbucket source
 </code></pre><p>とやったが、エラーになる。  </p>
 <p>新規リポジトリを作成後に表示されたRepository setupの指示に倣い、  </p>
-<pre><code><span class="variable">$ </span>git init
-<span class="variable">$ </span>git remote add bitbucket git<span class="variable">@bitbucket</span>.<span class="symbol">org:</span>ユーザー名/hexo.git
-<span class="variable">$ </span>echo <span class="string">"ユーザー名"</span> &gt;&gt; contributors.txt
-<span class="variable">$ </span>git add contributors.txt
-<span class="variable">$ </span>git commit -m <span class="string">'Initial commit with contributors'</span>
-<span class="variable">$ </span>git push -u bitbucket source
+<pre><code>$ git init
+$ git remote add bitbucket git@bitbucket.org:ユーザー名/hexo.git
+$ echo &quot;ユーザー名&quot; &gt;&gt; contributors.txt
+$ git add contributors.txt
+$ git commit -m &#39;Initial commit with contributors&#39;
+$ git push -u bitbucket source
 </code></pre><p>としても、やはり  </p>
-<pre><code><span class="keyword">error</span>: src refspec source <span class="keyword">does</span> <span class="keyword">not</span> match any.
-<span class="keyword">error</span>: failed <span class="keyword">to</span> push <span class="keyword">some</span> refs <span class="keyword">to</span> 'git@bitbucket.org:ユーザー名/hexo.git'
+<pre><code>error: src refspec source does not match any.
+error: failed to push some refs to &#39;git@bitbucket.org:ユーザー名/hexo.git&#39;
 </code></pre><p>とエラーになる。  </p>
 <p>pushするbranchをsourceではなく、masterにしてみた。  </p>
-<pre><code>$ git push -<span class="keyword">u</span> bitbucket master
-Counting object<span class="variable">s:</span> <span class="number">3</span>, done.
-Writing object<span class="variable">s:</span> <span class="number">100</span>% (<span class="number">3</span>/<span class="number">3</span>), <span class="number">239</span> bytes | <span class="number">0</span> bytes/<span class="keyword">s</span>, done.
-Total <span class="number">3</span> (delta <span class="number">0</span>), reused <span class="number">0</span> (delta <span class="number">0</span>)
-To git@bitbucket.<span class="built_in">or</span><span class="variable">g:</span>ユーザー名/hexo.git
- * [<span class="keyword">new</span> branch]      master -&gt; master
-Branch master <span class="keyword">set</span> <span class="keyword">up</span> <span class="keyword">to</span> track remote branch master from bitbucket.
+<pre><code>$ git push -u bitbucket master
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 239 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@bitbucket.org:ユーザー名/hexo.git
+ * [new branch]      master -&gt; master
+Branch master set up to track remote branch master from bitbucket.
 </code></pre><p>上手く行ったようだ。  </p>
 <p>だが、その後も  </p>
 <pre><code>$ git add .
-warning: You ran 'git add' with neither '-A (<span class="comment">--all)' or '--ignore-removal',</span>
-whose behaviour will <span class="operator"><span class="keyword">change</span> <span class="keyword">in</span> Git <span class="number">2.0</span> <span class="keyword">with</span> respect <span class="keyword">to</span> paths you removed.
-Paths <span class="keyword">like</span> <span class="string">'contributors.txt'</span> that <span class="keyword">are</span>
-removed <span class="keyword">from</span> your working tree <span class="keyword">are</span> ignored <span class="keyword">with</span> this <span class="keyword">version</span> <span class="keyword">of</span> Git.
+warning: You ran &#39;git add&#39; with neither &#39;-A (--all)&#39; or &#39;--ignore-removal&#39;,
+whose behaviour will change in Git 2.0 with respect to paths you removed.
+Paths like &#39;contributors.txt&#39; that are
+removed from your working tree are ignored with this version of Git.
 
-* <span class="string">'git add --ignore-removal &lt;pathspec&gt;'</span>, which <span class="keyword">is</span> the <span class="keyword">current</span> <span class="keyword">default</span>,
-  ignores paths you removed <span class="keyword">from</span> your working tree.
+* &#39;git add --ignore-removal &lt;pathspec&gt;&#39;, which is the current default,
+  ignores paths you removed from your working tree.
 
-* <span class="string">'git add --all &lt;pathspec&gt;'</span> will let you also record the removals.
+* &#39;git add --all &lt;pathspec&gt;&#39; will let you also record the removals.
 
-Run <span class="string">'git status'</span> <span class="keyword">to</span> <span class="keyword">check</span> the paths you removed <span class="keyword">from</span> your working tree.</span>
+Run &#39;git status&#39; to check the paths you removed from your working tree.
 </code></pre><p>と言われたり、  </p>
 <pre><code>$ git push
-warning: push.<span class="keyword">default</span> <span class="keyword">is</span> unset; its implicit value <span class="keyword">is</span> changing <span class="keyword">in</span>
-Git <span class="number">2.0</span> from <span class="attribute">'matching</span>' <span class="keyword">to</span> <span class="attribute">'simple</span>'. <span class="keyword">To</span> squelch this message
-<span class="keyword">and</span> maintain the current behavior <span class="keyword">after</span> the <span class="keyword">default</span> changes, <span class="keyword">use</span>:
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from &#39;matching&#39; to &#39;simple&#39;. To squelch this message
+and maintain the current behavior after the default changes, use:
 
-  git config <span class="comment">--global push.default matching</span>
+  git config --global push.default matching
 
-<span class="keyword">To</span> squelch this message <span class="keyword">and</span> adopt the <span class="keyword">new</span> behavior now, <span class="keyword">use</span>:
+To squelch this message and adopt the new behavior now, use:
 
-  git config <span class="comment">--global push.default simple</span>
+  git config --global push.default simple
 
-<span class="keyword">When</span> push.<span class="keyword">default</span> <span class="keyword">is</span> set <span class="keyword">to</span> <span class="attribute">'matching</span>', git will push local branches
-<span class="keyword">to</span> the remote branches that already exist <span class="keyword">with</span> the same name.
+When push.default is set to &#39;matching&#39;, git will push local branches
+to the remote branches that already exist with the same name.
 
-<span class="keyword">In</span> Git <span class="number">2.0</span>, Git will <span class="keyword">default</span> <span class="keyword">to</span> the more conservative <span class="attribute">'simple</span>'
-behavior, which only pushes the current branch <span class="keyword">to</span> the corresponding
-remote branch that <span class="attribute">'git</span> pull' uses <span class="keyword">to</span> update the current branch.
+In Git 2.0, Git will default to the more conservative &#39;simple&#39;
+behavior, which only pushes the current branch to the corresponding
+remote branch that &#39;git pull&#39; uses to update the current branch.
 
-See <span class="attribute">'git</span> help config' <span class="keyword">and</span> search <span class="keyword">for</span> <span class="attribute">'push</span>.<span class="keyword">default</span>' <span class="keyword">for</span> further information.
-(the <span class="attribute">'simple</span>' mode was introduced <span class="keyword">in</span> Git <span class="number">1.7</span><span class="number">.11</span>. <span class="keyword">Use</span> the similar mode
-<span class="attribute">'current</span>' instead <span class="keyword">of</span> <span class="attribute">'simple</span>' <span class="keyword">if</span> you sometimes <span class="keyword">use</span> older versions <span class="keyword">of</span> Git)
+See &#39;git help config&#39; and search for &#39;push.default&#39; for further information.
+(the &#39;simple&#39; mode was introduced in Git 1.7.11. Use the similar mode
+&#39;current&#39; instead of &#39;simple&#39; if you sometimes use older versions of Git)
 </code></pre><p>と言われたり。  </p>
 <p><code>git add .</code>は使われなくなったので<code>git add -A</code>にしないといけないということか？<br><code>git add .</code>でもすんなり通る時もあるのは、状況の違いからだろうか。<br>（追記：そう言えば、Initial commitの時に作成されたcontributors.txtという中身が自分のユーザー名だけのファイルを、レポジトリとHexoの作業フォルダ両方から手動で削除したんだった。<br>これのせいだったのかもしれない。）</p>
 <p>push.defaultもmatchingにした。  </p>
-<pre><code>  $ git config --<span class="keyword">global</span> push.<span class="keyword">default</span> <span class="keyword">matching</span>
+<pre><code>  $ git config --global push.default matching
 </code></pre><p>これでようやくpush出来るようになった。  </p>
 <p>gitの仕組みがいまいちよく分からない。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/26/hexo-bitbucket/" data-id="vcd5346s8jovymko" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/26/hexo-bitbucket/" data-id="n6apo5bwuv35rz5a" class="article-share-link">Share</a>
       
         <a href="http://pagent.github.io/2014/11/26/hexo-bitbucket/#disqus_thread" class="article-comment-link">Comments</a>
       

@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Gitレポジトリと静的サイトジェネレーターでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-11-26T14:37:17.799Z</updated>
+  <updated>2014-11-26T14:48:12.914Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -22,12 +22,12 @@
     <updated>2014-11-26T12:52:34.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoのデフォルト設定で新規記事を作成する際、記事タイトルに大文字アルファベットを使うと、そのままファイル名としてソースが作成される。</p>
 <pre><code>$ hexo new New-Post
-[info] File created at /<span class="keyword">...</span>/<span class="keyword">source</span>/_posts/<span class="number">2014</span>-<span class="number">11</span>-<span class="number">26</span>-New-Post.md
+[info] File created at /.../source/_posts/2014-11-26-New-Post.md
 </code></pre><p>URLに大文字アルファベットが入ってしまう。  </p>
 <p>URLに大文字は使いたくないので、Octopressのように大文字→小文字でファイル出力して欲しい。  </p>
 <p>_config.ymlのWritingの項目<code>filename_case:</code>の値をデフォルトの「0」から「1」に変更することで設定出来た。  </p>
 <pre><code>$ hexo new New-Post
-[info] File created at /<span class="keyword">...</span>/<span class="keyword">source</span>/_posts/<span class="number">2014</span>-<span class="number">11</span>-<span class="number">26</span>-new-post.md
+[info] File created at /.../source/_posts/2014-11-26-new-post.md
 </code></pre><p>filename_case: 0（そのまま出力。New-Post→New-Post）  </p>
 <p>filename_case: 1（大文字を小文字に変換。New-Post→new-post.md）  </p>
 <p>filename_case: 2（すべて大文字に変換。New-Post→NEW-POST.md）  </p>
@@ -36,7 +36,7 @@
     <summary type="html">
     <![CDATA[<p>Hexoのデフォルト設定で新規記事を作成する際、記事タイトルに大文字アルファベットを使うと、そのままファイル名としてソースが作成される。</p>
 <pre><code>$ hexo new New-Post
-[info] File created at /<span cla]]>
+[info] File created at /.../sourc]]>
     </summary>
     
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
@@ -52,68 +52,68 @@
     <content type="html"><![CDATA[<p>Hexoの作業フォルダはWindows領域のDropboxフォルダに置き、他のPCとも同期をとっている。<br>これでソースを消失してしまう危険はかなり低いと思うが、Dropboxと同期する際、結構時間がかかってしまう。<br>普段はDropboxを起動しておらず時々立ち上げる、という形をとっているせいもあるかもしれない。  </p>
 <p>Bitbucketにソースを置いたらpushするのはそれほど時間は掛からないだろうし、過去の履歴も残ってくれてやはり便利だろうと思い、HexoのソースをBitbucketに置くことにした。  </p>
 <p>OctopressのソースをBitbucketに置いた時と同様、Bitbucketにhexoという名前のリポジトリを作り、  </p>
-<pre><code>$ git remote <span class="built_in">add</span> bitbucket git@bitbucket.<span class="built_in">or</span><span class="variable">g:</span>ユーザー名/hexo.git
-$ git push -<span class="keyword">u</span> bitbucket <span class="keyword">source</span>
+<pre><code>$ git remote add bitbucket git@bitbucket.org:ユーザー名/hexo.git
+$ git push -u bitbucket source
 </code></pre><p>とやったが、エラーになる。  </p>
 <p>新規リポジトリを作成後に表示されたRepository setupの指示に倣い、  </p>
-<pre><code><span class="variable">$ </span>git init
-<span class="variable">$ </span>git remote add bitbucket git<span class="variable">@bitbucket</span>.<span class="symbol">org:</span>ユーザー名/hexo.git
-<span class="variable">$ </span>echo <span class="string">"ユーザー名"</span> &gt;&gt; contributors.txt
-<span class="variable">$ </span>git add contributors.txt
-<span class="variable">$ </span>git commit -m <span class="string">'Initial commit with contributors'</span>
-<span class="variable">$ </span>git push -u bitbucket source
+<pre><code>$ git init
+$ git remote add bitbucket git@bitbucket.org:ユーザー名/hexo.git
+$ echo &quot;ユーザー名&quot; &gt;&gt; contributors.txt
+$ git add contributors.txt
+$ git commit -m &#39;Initial commit with contributors&#39;
+$ git push -u bitbucket source
 </code></pre><p>としても、やはり  </p>
-<pre><code><span class="keyword">error</span>: src refspec source <span class="keyword">does</span> <span class="keyword">not</span> match any.
-<span class="keyword">error</span>: failed <span class="keyword">to</span> push <span class="keyword">some</span> refs <span class="keyword">to</span> 'git@bitbucket.org:ユーザー名/hexo.git'
+<pre><code>error: src refspec source does not match any.
+error: failed to push some refs to &#39;git@bitbucket.org:ユーザー名/hexo.git&#39;
 </code></pre><p>とエラーになる。  </p>
 <p>pushするbranchをsourceではなく、masterにしてみた。  </p>
-<pre><code>$ git push -<span class="keyword">u</span> bitbucket master
-Counting object<span class="variable">s:</span> <span class="number">3</span>, done.
-Writing object<span class="variable">s:</span> <span class="number">100</span>% (<span class="number">3</span>/<span class="number">3</span>), <span class="number">239</span> bytes | <span class="number">0</span> bytes/<span class="keyword">s</span>, done.
-Total <span class="number">3</span> (delta <span class="number">0</span>), reused <span class="number">0</span> (delta <span class="number">0</span>)
-To git@bitbucket.<span class="built_in">or</span><span class="variable">g:</span>ユーザー名/hexo.git
- * [<span class="keyword">new</span> branch]      master -&gt; master
-Branch master <span class="keyword">set</span> <span class="keyword">up</span> <span class="keyword">to</span> track remote branch master from bitbucket.
+<pre><code>$ git push -u bitbucket master
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 239 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@bitbucket.org:ユーザー名/hexo.git
+ * [new branch]      master -&gt; master
+Branch master set up to track remote branch master from bitbucket.
 </code></pre><p>上手く行ったようだ。  </p>
 <p>だが、その後も  </p>
 <pre><code>$ git add .
-warning: You ran 'git add' with neither '-A (<span class="comment">--all)' or '--ignore-removal',</span>
-whose behaviour will <span class="operator"><span class="keyword">change</span> <span class="keyword">in</span> Git <span class="number">2.0</span> <span class="keyword">with</span> respect <span class="keyword">to</span> paths you removed.
-Paths <span class="keyword">like</span> <span class="string">'contributors.txt'</span> that <span class="keyword">are</span>
-removed <span class="keyword">from</span> your working tree <span class="keyword">are</span> ignored <span class="keyword">with</span> this <span class="keyword">version</span> <span class="keyword">of</span> Git.
+warning: You ran &#39;git add&#39; with neither &#39;-A (--all)&#39; or &#39;--ignore-removal&#39;,
+whose behaviour will change in Git 2.0 with respect to paths you removed.
+Paths like &#39;contributors.txt&#39; that are
+removed from your working tree are ignored with this version of Git.
 
-* <span class="string">'git add --ignore-removal &lt;pathspec&gt;'</span>, which <span class="keyword">is</span> the <span class="keyword">current</span> <span class="keyword">default</span>,
-  ignores paths you removed <span class="keyword">from</span> your working tree.
+* &#39;git add --ignore-removal &lt;pathspec&gt;&#39;, which is the current default,
+  ignores paths you removed from your working tree.
 
-* <span class="string">'git add --all &lt;pathspec&gt;'</span> will let you also record the removals.
+* &#39;git add --all &lt;pathspec&gt;&#39; will let you also record the removals.
 
-Run <span class="string">'git status'</span> <span class="keyword">to</span> <span class="keyword">check</span> the paths you removed <span class="keyword">from</span> your working tree.</span>
+Run &#39;git status&#39; to check the paths you removed from your working tree.
 </code></pre><p>と言われたり、  </p>
 <pre><code>$ git push
-warning: push.<span class="keyword">default</span> <span class="keyword">is</span> unset; its implicit value <span class="keyword">is</span> changing <span class="keyword">in</span>
-Git <span class="number">2.0</span> from <span class="attribute">'matching</span>' <span class="keyword">to</span> <span class="attribute">'simple</span>'. <span class="keyword">To</span> squelch this message
-<span class="keyword">and</span> maintain the current behavior <span class="keyword">after</span> the <span class="keyword">default</span> changes, <span class="keyword">use</span>:
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from &#39;matching&#39; to &#39;simple&#39;. To squelch this message
+and maintain the current behavior after the default changes, use:
 
-  git config <span class="comment">--global push.default matching</span>
+  git config --global push.default matching
 
-<span class="keyword">To</span> squelch this message <span class="keyword">and</span> adopt the <span class="keyword">new</span> behavior now, <span class="keyword">use</span>:
+To squelch this message and adopt the new behavior now, use:
 
-  git config <span class="comment">--global push.default simple</span>
+  git config --global push.default simple
 
-<span class="keyword">When</span> push.<span class="keyword">default</span> <span class="keyword">is</span> set <span class="keyword">to</span> <span class="attribute">'matching</span>', git will push local branches
-<span class="keyword">to</span> the remote branches that already exist <span class="keyword">with</span> the same name.
+When push.default is set to &#39;matching&#39;, git will push local branches
+to the remote branches that already exist with the same name.
 
-<span class="keyword">In</span> Git <span class="number">2.0</span>, Git will <span class="keyword">default</span> <span class="keyword">to</span> the more conservative <span class="attribute">'simple</span>'
-behavior, which only pushes the current branch <span class="keyword">to</span> the corresponding
-remote branch that <span class="attribute">'git</span> pull' uses <span class="keyword">to</span> update the current branch.
+In Git 2.0, Git will default to the more conservative &#39;simple&#39;
+behavior, which only pushes the current branch to the corresponding
+remote branch that &#39;git pull&#39; uses to update the current branch.
 
-See <span class="attribute">'git</span> help config' <span class="keyword">and</span> search <span class="keyword">for</span> <span class="attribute">'push</span>.<span class="keyword">default</span>' <span class="keyword">for</span> further information.
-(the <span class="attribute">'simple</span>' mode was introduced <span class="keyword">in</span> Git <span class="number">1.7</span><span class="number">.11</span>. <span class="keyword">Use</span> the similar mode
-<span class="attribute">'current</span>' instead <span class="keyword">of</span> <span class="attribute">'simple</span>' <span class="keyword">if</span> you sometimes <span class="keyword">use</span> older versions <span class="keyword">of</span> Git)
+See &#39;git help config&#39; and search for &#39;push.default&#39; for further information.
+(the &#39;simple&#39; mode was introduced in Git 1.7.11. Use the similar mode
+&#39;current&#39; instead of &#39;simple&#39; if you sometimes use older versions of Git)
 </code></pre><p>と言われたり。  </p>
 <p><code>git add .</code>は使われなくなったので<code>git add -A</code>にしないといけないということか？<br><code>git add .</code>でもすんなり通る時もあるのは、状況の違いからだろうか。<br>（追記：そう言えば、Initial commitの時に作成されたcontributors.txtという中身が自分のユーザー名だけのファイルを、レポジトリとHexoの作業フォルダ両方から手動で削除したんだった。<br>これのせいだったのかもしれない。）</p>
 <p>push.defaultもmatchingにした。  </p>
-<pre><code>  $ git config --<span class="keyword">global</span> push.<span class="keyword">default</span> <span class="keyword">matching</span>
+<pre><code>  $ git config --global push.default matching
 </code></pre><p>これでようやくpush出来るようになった。  </p>
 <p>gitの仕組みがいまいちよく分からない。</p>
 ]]></content>
@@ -135,15 +135,15 @@ See <span class="attribute">'git</span> help config' <span class="keyword">and</
     <updated>2014-11-26T06:58:08.000Z</updated>
     <content type="html"><![CDATA[<p>HexoからOctopressに記事ソースを変換するrubyスクリプト<a href="https://github.com/ciffel/Hexo-to-Octopress-Converter" target="_blank" rel="external">「Hexo to Octopress Converter」</a>を試してみた。  </p>
 <p>「Download ZIP」からzipファイルをダウンロードし展開。converterファイルを作業したい場所に移し、端末から操作。  </p>
-<pre><code><span class="input"><span class="prompt">$ ./converter &lt;hexo_posts_dir&gt;</span> &lt;octopress_posts_dir&gt;</span>
+<pre><code>$ ./converter &lt;hexo_posts_dir&gt; &lt;octopress_posts_dir&gt;
 </code></pre><p>で変換出来る。<br><code>&lt;octopress_posts_dir&gt;</code>は適当に作ったフォルダでも可。  <a id="more"></a></p>
 <p>変換が終了すると、ファイル名に日付けが付加されたものがOctopressのフォルダに出力される。（拡張子は.mdのまま。）<br>出力されたファイルのFront Matter部分は<code>tags:</code>が<code>categories:</code>に変換されており、また上部の<code>---</code>および<code>layout: post</code>、<code>comments: true</code>が追加される。  </p>
 <p>だが、Octopressのソースを「hexo-migrator-octopress」などでHexoに取り込んでいた場合は、Front Matter上部に既に<code>---</code>が<br>ついている。<br>この状態からだと<code>tags:</code>が<code>categories:</code>に変換されないので、上部の<code>---</code>を消しておく必要がある。  </p>
 <p>また<code>title:</code>の項目で記事タイトルが「”」で挟まれていると、さらに「”」で挟まれ<code>title: &quot;&quot;（記事タイトル）&quot;&quot;</code>のようになってしまう。<br>これではOctopressでgenerateする際エラーになってしまうので、これも削除し、  </p>
 <pre><code>title:
 date:
-<span class="header">tags:
----</span>
+tags:
+---
 </code></pre><p>のような形にしておく必要がある。<br><a href="/2014/11/25/hexo-migrator-octopress/">Octopress→Hexo移行のプラグイン「hexo-migrator-octopress」を試してみた </a>  </p>
 <p>なお、変換出力されるのは拡張子が.mdのものだけで、.markdownのもの（Octopressのソースをコピペで取り込んだような場合）は変換出力されず無視される。  </p>
 <p>変換後のファイル名には日付けが付加されるので、Hexoの運用をOctopress式に日付けをつけたファイル名で行っている場合は、日付けが2重になってしまう。  </p>
@@ -156,7 +156,7 @@ date:
     <summary type="html">
     <![CDATA[<p>HexoからOctopressに記事ソースを変換するrubyスクリプト<a href="https://github.com/ciffel/Hexo-to-Octopress-Converter" target="_blank" rel="external">「Hexo to Octopress Converter」</a>を試してみた。  </p>
 <p>「Download ZIP」からzipファイルをダウンロードし展開。converterファイルを作業したい場所に移し、端末から操作。  </p>
-<pre><code><span class="input"><span class="prompt">$ ./converter &lt;hexo_posts_dir&gt;</span> &lt;octopress_posts_dir&gt;</span>
+<pre><code>$ ./converter &lt;hexo_posts_dir&gt; &lt;octopress_posts_dir&gt;
 </code></pre><p>で変換出来る。<br><code>&lt;octopress_posts_dir&gt;</code>は適当に作ったフォルダでも可。  ]]>
     
     </summary>
@@ -177,58 +177,58 @@ date:
 <p>Octopressの記事ソースをHexoに取り込む<a href="https://github.com/sailxjx/hexo-migrator-octopress" target="_blank" rel="external">「hexo-migrator-octopress」</a>というHexo用プラグインがあったので、試してみた。<br>（Hexoの記事ソースをOctopress用に変換するスクリプト「Hexo to Octopress Converter」とは逆向き。）  <a id="more"></a></p>
 <p>デスクトップ上にhexo-test（Hexoフォルダ）とoctopress-test（Octopressフォルダ）を作った。  </p>
 <p>hexo-testで端末を開き、プラグインをインストール。  </p>
-<pre><code><span class="variable">$ </span>npm install hexo-migrator-octopress
+<pre><code>$ npm install hexo-migrator-octopress
 </code></pre><p>コマンド<code>hexo migrate octopress &lt;source&gt;</code>で記事ソースが変換され、Hexoに取り込まれる。（<code>&lt;source&gt;</code>はOctopressフォルダへのパス）<br>今回のテスト環境では</p>
-<pre><code><span class="variable">$ </span>hexo migrate octopress ~<span class="regexp">/Desktop/octopress</span>-test
+<pre><code>$ hexo migrate octopress ~/Desktop/octopress-test
 </code></pre><p>/octopress-test/source/_posts/2014-10-25-cosmos.markdownが/hexo-test/source/_posts/cosmos.mdとして取り込まれた。<br>（Hexoのデフォルト設定に従い、日付けが削除さるようだ。）  </p>
 <p>Front MatterはOctopressの  </p>
-<pre><code><span class="bullet">---
-</span>layout: post
-title: "畑一面のコスモスはなぜ？"
+<pre><code>---
+layout: post
+title: &quot;畑一面のコスモスはなぜ？&quot;
 date: 2014-10-25 15:41:22 +0900
 comments: true
 categories:
-<span class="bullet">- </span>未分類
-<span class="header">- 写真
----</span>
+- 未分類
+- 写真
+---
 </code></pre><p>から  </p>
-<pre><code><span class="bullet">---
-</span>layout: post
-title: "畑一面のコスモスはなぜ？"
+<pre><code>---
+layout: post
+title: &quot;畑一面のコスモスはなぜ？&quot;
 date: 2014-10-25 15:41:22 +0900
 comments: true
 tags:
-<span class="bullet">- </span>未分類
-<span class="header">- 写真
----</span>
+- 未分類
+- 写真
+---
 </code></pre><p>に変換されたが、変更は<code>categories:</code>が<code>tags:</code>になっただけのようだ。  </p>
 <p>この状態でもHexoで使えるのだが、これを「Hexo to Octopress Converter」でOctopress用に再変換すると  </p>
-<pre><code><span class="bullet">---
-</span>layout: post
-<span class="header">comments: true
----</span>
+<pre><code>---
 layout: post
-title: "畑一面のコスモスはなぜ？"
+comments: true
+---
+layout: post
+title: &quot;畑一面のコスモスはなぜ？&quot;
 date: 2014-10-25 15:41:22 +0900
 comments: true
 tags:
-<span class="bullet">- </span>未分類
-<span class="header">- 写真
----</span>
+- 未分類
+- 写真
+---
 </code></pre><p>となってしまい、<code>tags:</code>が<code>categories:</code>に変換されない。  </p>
 <p>上部の<code>---</code>を削除しておくと<code>categories:</code>に変換はされたが、タイトルの部分が<code>title: &quot;&quot;畑一面のコスモスはなぜ？&quot;&quot;</code>と「”」が重複しまい、rake generateでエラーになる。  </p>
 <p>結局、Octopress用に再変換する場合には、「hexo-migrator-octopress」でHexo用に変換したものを手作業で  </p>
 <pre><code>title: 畑一面のコスモスはなぜ？
 date: 2014-10-25 15:41:22 +0900
 tags:
-<span class="bullet">- </span>未分類
-<span class="header">- 写真
----</span>
+- 未分類
+- 写真
+---
 </code></pre><p>のように変更しておく必要がありそうだ。<br>それにOctopressでcategoriesとtagsを両方使っていた場合は変換後<code>tags:</code>が重複してしまう。  </p>
 <p>それから、Hexoの新規記事ソースはデフォルトでは日付けがつかないが、_config.ymlの<code>new_post_name:</code>で日付けをつけることが出来る。<br>日付けがあった方が同じタイトルの記事を複数書けたり、過去記事編集の際に探し易かったりと、なにかと都合が良い。  </p>
 <p>Octopressの方のファイル拡張子が.markdownではなく.mdなら「Hexo to Octopress Converter」で変換しても日付けが削除されないので、前もって.mdに変えておいた方が良いかもしれない。<br>拡張子が.mdでも<code>tags:</code>は<code>categories:</code>に変換される。  </p>
 <p>拡張子の一括変換は/_postsディレクトリで  </p>
-<pre><code>$ <span class="built_in">rename</span> <span class="string">'s/.markdown/.md/'</span> *.markdown
+<pre><code>$ rename &#39;s/.markdown/.md/&#39; *.markdown
 </code></pre><p>とするか、ファイルマネージャーThunarを使えば簡単のようだ。  </p>
 <p>ーー<br>（関連記事）<br><a href="/2014/11/25/Hexo-to-Octopress-Converter/">Hexo→Octopress変換スクリプト「Hexo to Octopress Converter」</a></p>
 ]]></content>
@@ -253,15 +253,15 @@ tags:
     <content type="html"><![CDATA[<p>Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来るかと思ったが、  </p>
 <pre><code>Run
 
-  git config --global <span class="literal">user</span>.email <span class="string">"you@example.com"</span>
-  git config --global <span class="literal">user</span>.name <span class="string">"Your Name"</span>
+  git config --global user.email &quot;you@example.com&quot;
+  git config --global user.name &quot;Your Name&quot;
 </code></pre><p>と言われてしまった。  <a id="more"></a></p>
 <p>メールアドレスとGithubユーザー名を設定してdeployしようとしたが、  </p>
 <pre><code>Permission denied (publickey).
-fatal: Could <span class="operator">not</span> <span class="built_in">read</span> <span class="built_in">from</span> remote repository.
+fatal: Could not read from remote repository.
 
-Please make sure you have <span class="operator">the</span> correct access rights
-<span class="operator">and</span> <span class="operator">the</span> repository exists.
+Please make sure you have the correct access rights
+and the repository exists.
 </code></pre><p>とrejectされる。  </p>
 <p>SSHキーの設定が必要のようなので、Linuxで設定したSSH公開鍵を<code>C:\Users\（ユーザー名）\.ssh</code>にコピペしたが、やはりrejectされる。<br>秘密鍵もコピペしたら、ようやくdeploy出来た。<br>これで無事WindowsでもHexoを使えるようになった。  </p>
 <p>Hexoにはローカルホストで使う管理画面プラグインもあるようなので、もう少し導入が簡単になればWindowsユーザーにも「静的サイトジェネレーター」が広まる可能性がありそうだ。</p>
@@ -270,8 +270,8 @@ Please make sure you have <span class="operator">the</span> correct access right
     <![CDATA[<p>Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来るかと思ったが、  </p>
 <pre><code>Run
 
-  git config --global <span class="literal">user</span>.email <span class="string">"you@example.com"</span>
-  git config --global <span class="literal">user</span>.name <span class="string">"Your Name"</span>
+  git config --global user.email &quot;you@example.com&quot;
+  git config --global user.name &quot;Your Name&quot;
 </code></pre><p>と言われてしまった。  ]]>
     
     </summary>
@@ -293,37 +293,37 @@ Please make sure you have <span class="operator">the</span> correct access right
 <h3 id="msysgitのインストール">msysgitのインストール</h3>
 <p>Windowsでgitを使うため<a href="http://msysgit.github.io/" target="_blank" rel="external">msysgit</a>をインストールした。<br>インストールオプションは下記サイトを参考にさせて頂いた。<br><a href="http://d.hatena.ne.jp/xyk/20130920/1379659991" target="_blank" rel="external">Windows に msysgit をインストールして git 環境を作る - xykの日記</a>  </p>
 <p>「Select Components」ではすべてのチェックを外した。<br>「Adjusting your PATH environment」は上から2番目の「Run Git from the Windows Command Prompt」。<br>「Configuring the line ending conversions」は上から2番目の「Checkout as-is, commit Unix-style line endings」でインストールした。<br>だが、実際Hexoでdeployする際、  </p>
-<pre><code>warning: LF will be replaced <span class="keyword">by</span> <span class="constant">CRLF</span> <span class="operator">in</span> css/style.css.
-The <span class="built_in">file</span> will have its original <span class="built_in">line</span> endings <span class="operator">in</span> your working <span class="built_in">directory</span>.
-warning: LF will be replaced <span class="keyword">by</span> <span class="constant">CRLF</span> <span class="operator">in</span> fancybox/helpers/jquery.fancybox-buttons.css.
-The <span class="built_in">file</span> will have its original <span class="built_in">line</span> endings <span class="operator">in</span> your working <span class="built_in">directory</span>.
-warning: LF will be replaced <span class="keyword">by</span> <span class="constant">CRLF</span> <span class="operator">in</span> fancybox/helpers/jquery.fancybox-buttons.js.
-The <span class="built_in">file</span> will have its original <span class="built_in">line</span> endings <span class="operator">in</span> your working <span class="built_in">directory</span>.
+<pre><code>warning: LF will be replaced by CRLF in css/style.css.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in fancybox/helpers/jquery.fancybox-buttons.css.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in fancybox/helpers/jquery.fancybox-buttons.js.
+The file will have its original line endings in your working directory.
 ...
 </code></pre><p>と、改行コードが変更されるという警告が大量に表示されたので、結局上から3番目のオプション「Checkout as-is, commit as-is」（autocrlf = false）にした。<br>後から<code>C:\Users\（ユーザー名）\.gitconfig</code>で変更可能。  </p>
 <h3 id="Hexoのインストール">Hexoのインストール</h3>
 <p>コマンドプロンプトを開き、</p>
-<pre><code>&gt;npm <span class="keyword">install</span> hexo -g
+<pre><code>&gt;npm install hexo -g
 </code></pre><p>でインストール。</p>
 <p>Linuxの時と同様、  </p>
-<pre><code>npm WARN <span class="keyword">optional</span> dep failed, continuing fsevents@<span class="number">0.2</span>.<span class="number">0</span>
+<pre><code>npm WARN optional dep failed, continuing fsevents@0.2.0
 </code></pre><p>という警告が出たが、インストール完了。  </p>
 <p>Hexoの作業フォルダを作るため、任意のフォルダを選択した状態で「SHIFT」キーを押しながら右クリック。<br>「コマンド ウィンドウをここで開く」でコマンドウィンドウを立ち上げ、  </p>
 <pre><code>&gt;hexo init hexo-win
-&gt;<span class="built_in">cd</span> hexo-win
+&gt;cd hexo-win
 &gt;npm install
 
 &gt;hexo g
 &gt;hexo s
 </code></pre><p>ローカルホストに無事、新規ブログが立ち上がった。  </p>
 <p>2回目の<code>hexo g</code>からは、なぜか  </p>
-<pre><code>[delete] Deleted: archives\<span class="number">2014</span>\<span class="number">11</span>\index.html
+<pre><code>[delete] Deleted: archives\2014\11\index.html
 [delete] Deleted: archives\index.html
-<span class="keyword">...</span>
+...
 
 [create] Generated: archives/index.html (124ms)
-[create] Generated: archives/<span class="number">2014</span>/index.html (63ms)
-<span class="keyword">...</span>
+[create] Generated: archives/2014/index.html (63ms)
+...
 </code></pre><p>と、一旦すべてのファイルを削除してからまたファイルを生成したというメッセージが表示される。<br>あまり気持ち良くはないが、実用上問題は無さそう。  </p>
 <p>この後deployで少し躓いてしまったが、WindowsでHexoを使うことが出来た。</p>
 ]]></content>
@@ -344,22 +344,22 @@ The <span class="built_in">file</span> will have its original <span class="built
     <updated>2014-11-25T13:18:52.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoで新規記事を作ると、初期状態ではtitle、date、tagsの項目しか無いが、categoriesも使いたいので変更。<br>/scaffolds/post.mdに項目を追加するだけで出来た。<br>（<code>---</code>で区画された部分は「Front Matter」と言うらしい。）  <a id="more"></a></p>
 <p>またOctopressに戻ることもあるかもしれないので、Octopressの書式に倣ってlayout、commentsも加えた。  </p>
-<pre><code><span class="bullet">---
-</span>layout: post
+<pre><code>---
+layout: post
 title: ｛｛ title ｝｝      ## ｛｛  ｝｝は実際には半角英数
 date: ｛｛ date ｝｝
 comments: true
 tags: 
-<span class="header">categories: 
----</span>
+categories: 
+---
 </code></pre><p><code>hexo n test</code>すると下記内容のファイルが生成された。  </p>
 <pre><code>layout: post
 title: test
 comments: true
 date: 2014-11-23 09:15:51
 tags:
-<span class="header">categories:
----</span>
+categories:
+---
 </code></pre><p>Octopressでは<code>comments: true</code>が無いとDisqusが表示されない。<br>Hexoではcommentsの項目が無くてもDisqusは表示されるが、<code>comments: false</code>にするとその記事だけDisqusの表示は消える。<br>記事によってコメント禁止にする時に便利かもしれない。  </p>
 <p>/scaffolds/post.mdで上部にも<code>---</code>を加えたが、生成ファイルでは下部にしか<code>---</code>が無い。<br>これだとOctopressでは記事をちゃんとgenerate出来ないようだが、上部に<code>---</code>を付ける方法が分からない。<br>もしまたOctopressに戻ることがあったら、手作業するしかなさそうだ。  </p>
 <p>ーー<br>（追記）<br>Hexoの/source/_posts内の記事ソースをOctopress形式のFront Matterに変換出力するスクリプトが公開されていた。<br><a href="https://github.com/ciffel/Hexo-to-Octopress-Converter" target="_blank" rel="external">ciffel/Hexo-to-Octopress-Converter</a>  </p>
@@ -367,8 +367,8 @@ tags:
 <p>なので/scaffolds/post.mdは元の記載に戻した。  </p>
 <pre><code>title: Hexoの新規記事テンプレートを変更
 date: Sun Nov 23 2014 08:20:38 GMT+0900 (JST)
-<span class="header">tags:
----</span>
+tags:
+---
 </code></pre><p>OctopressからHexoへの移行には下記プラグインが対応していて、これを使うとOctopressのソースの<code>categories:</code>が<code>tags:</code>に変換される。<br><a href="https://github.com/sailxjx/hexo-migrator-octopress" target="_blank" rel="external">hexo-migrator-octopress</a>  </p>
 <p>骨折り損だったが、Hexoでコメント禁止にしたい時は<code>comments: false</code>を加えれば良いというのが分かったのが収穫だった。<br>早めに気がついて良かった。</p>
 ]]></content>
@@ -389,21 +389,21 @@ date: Sun Nov 23 2014 08:20:38 GMT+0900 (JST)
     <updated>2014-11-25T13:18:41.000Z</updated>
     <content type="html"><![CDATA[<p>HexoのArchivesや各カテゴリーのページはデフォルトでは記事全文を表示するようになっている。<br>リスト表示の方が一覧を俯瞰出来て便利なので好みなのだが、カスタマイズの仕方がなかなか分からなかった。  </p>
 <p>結局は_config.ymlのArchivesの項目で  <a id="more"></a></p>
-<pre><code><span class="preprocessor"># Archives</span>
-<span class="preprocessor">## 2: Enable pagination</span>
-<span class="preprocessor">## 1: Disable pagination</span>
-<span class="preprocessor">## 0: Fully Disable</span>
-archive: <span class="number">2</span>
-category: <span class="number">2</span>
-tag: <span class="number">2</span>
+<pre><code># Archives
+## 2: Enable pagination
+## 1: Disable pagination
+## 0: Fully Disable
+archive: 2
+category: 2
+tag: 2
 </code></pre><p>となっているところの値を、2から1に変更。  </p>
-<pre><code><span class="preprocessor"># Archives</span>
-<span class="preprocessor">## 2: Enable pagination</span>
-<span class="preprocessor">## 1: Disable pagination</span>
-<span class="preprocessor">## 0: Fully Disable</span>
-archive: <span class="number">1</span>
-category: <span class="number">1</span>
-tag: <span class="number">1</span>
+<pre><code># Archives
+## 2: Enable pagination
+## 1: Disable pagination
+## 0: Fully Disable
+archive: 1
+category: 1
+tag: 1
 </code></pre><p>簡単にリスト表示（タイル形式）になった。</p>
 ]]></content>
     <summary type="html">
@@ -445,10 +445,10 @@ tag: <span class="number">1</span>
     <content type="html"><![CDATA[<p>Github Pagesのブログに使っている静的サイトジェネレーターをOctopressからHexoに変更してみた。  </p>
 <p>Octopressの/source/_posts内の記事ソースをそのままHexoの/source/_postsにコピーしたら、generateした時にパーマリンクが<code>http://.../2014/10/24/2014-10-24-xubuntu-blank-menu/</code>のように日付けが重複してしまった。<br>Hexoはデフォルトでは、新しく記事を作った時には日付けがつかず、生成する時に日付けを付加するようになっているらしい。  <a id="more"></a></p>
 <p>_config.ymlの  </p>
-<pre><code><span class="comment"># Writing</span>
-<span class="symbol">new_post_name:</span> <span class="symbol">:title</span>.md <span class="comment"># File name of new posts</span>
+<pre><code># Writing
+new_post_name: :title.md # File name of new posts
 </code></pre><p>のところを  </p>
-<pre><code><span class="symbol">new_post_name:</span> <span class="symbol">:year-</span><span class="symbol">:month-</span><span class="symbol">:day-</span><span class="symbol">:title</span>.md
+<pre><code>new_post_name: :year-:month-:day-:title.md
 </code></pre><p>に変更したら良いようだ。<br><a href="http://hexo.io/docs/migration.html" target="_blank" rel="external">Migration | Hexo</a>  </p>
 <p>Octopressでは記事が/blogディレクトリ下に配置されるパーマリンクを使っていたが、今後はHexoのデフォルトの通りルート下に:year/:month/:day/:title/というパーマリンクを使うことにした。この方がシンプルで好みだし。<br>Githubでは.htaccessファイルを使ったリダイレクトが使用不可のようなので、以前の記事がリンク切れになるのは仕方がない。  </p>
 <p>あと、下記記事を参考に、FeedとSitemapのプラグインを入れた。<br>プラグインの導入はとても簡単だった。<br><a href="http://liginc.co.jp/web/programming/server/104594" target="_blank" rel="external">所要時間3分!? Github PagesとHEXOで爆速ブログ構築してみよう！ | 株式会社LIG</a>  </p>
@@ -478,17 +478,17 @@ tag: <span class="number">1</span>
 <p>導入には下記サイトなどを参考にさせて頂いた。<br><a href="http://tech.admax.ninja/2014/09/11/environment-of-hexo/" target="_blank" rel="external">【Node.js】Hexoでブログを書くための環境構築 | AdMax Tech Blog</a>  </p>
 <p>概ね上記サイトの通りに進めたらいいようだったが、Xubuntu14.04の環境では若干うまく行かないところがあった。  </p>
 <p>nodeにパスを通す際、~/.bash_profileというファイルが見つからなかったので、~/.profileに  </p>
-<pre><code><span class="keyword">if</span> <span class="string">[[ -s ~/.nvm/nvm.sh ]]</span>;
-<span class="keyword">then</span> source ~/.nvm/nvm.sh
+<pre><code>if [[ -s ~/.nvm/nvm.sh ]];
+then source ~/.nvm/nvm.sh
 fi
 </code></pre><p>を追記したが、これでは駄目なようで、ターミナルを起動する度にnvmというコマンドが見つからないと言われる。  </p>
 <p>どうやら~/.bashrcに追記しないと駄目なようだった。<br><a href="http://d.hatena.ne.jp/white_chi/20111101/1320097898" target="_blank" rel="external">Ubuntu11.10で、nvmからnode.jsをインストールする - ホワイトぼーど</a>  </p>
 <p>Hexoをインストールするところで  </p>
-<pre><code>npm WARN <span class="keyword">optional</span> dep failed, continuing fsevents@<span class="number">0.2</span>.<span class="number">0</span>
+<pre><code>npm WARN optional dep failed, continuing fsevents@0.2.0
 </code></pre><p>と言われたが、問題なく使えるようだ。<br>途中うまく行かないので、下記サイトを参考に  </p>
-<pre><code>curl -sL http<span class="variable">s:</span>//<span class="keyword">deb</span>.nodesource.<span class="keyword">com</span>/setup | sudo bash -
+<pre><code>curl -sL https://deb.nodesource.com/setup | sudo bash -
 
-sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</span> nodejs
+sudo apt-get install -y nodejs
 </code></pre><p>とやったりしたが、果たしてこれが必要な操作だったのかどうかは不明。<br><a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager" target="_blank" rel="external">Installing Node.js via package manager · joyent/node Wiki</a>  </p>
 <p>しばらく試用してみて良ささそうだったら、Octopressから乗り換えるかもしれない。</p>
 ]]></content>
@@ -508,12 +508,12 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
     <published>2014-11-20T10:11:54.000Z</published>
     <updated>2014-11-26T09:19:07.000Z</updated>
     <content type="html"><![CDATA[<p>DropboxでOctopressのフォルダを同期し、2台目のPCでもrake new_postやrake generateは出来るようになったが、rake deployが出来ない。<br>gitが入ってなかったので<code>sudo apt-get install git</code>し、<code>rake setup_github_pages</code>でセットアップしたが、  </p>
-<pre><code><span class="input"><span class="prompt">! [rejected]        master -&gt;</span> master (non-fast-forward)</span>
+<pre><code>! [rejected]        master -&gt; master (non-fast-forward)
 </code></pre><p>とエラーになる。<br>SSHの公開鍵も設定したのだが。  <a id="more"></a></p>
 <p>検索したところ、Octopressで突然deploy出来なくなった時には、Rakefileを編集するという対処法があるらしい。<br><a href="http://qiita.com/takuma7/items/2d6f6e786eb6c0afbefb" target="_blank" rel="external">Octopressでrake deployした際にrejectedされた場合の対処 - Qiita</a>  </p>
 <p>どうやら強制的にdeployするものらしい。  </p>
 <p>上記記事の通り、Rakefileの268行目の<code>#</code>の前に<code>+</code>を付けて  </p>
-<pre><code><span class="constant">Bundler</span>.with_clean_env { system <span class="string">"git push origin +<span class="subst">#{deploy_branch}</span>"</span> }
+<pre><code>Bundler.with_clean_env { system &quot;git push origin +#{deploy_branch}&quot; }
 </code></pre><p>にすると、deploy出来た。  </p>
 <p>元記事によると、deploy出来るようになった後は、Rakefileの編集を元に戻しておいた方がいいらしい。<br><a href="http://stackoverflow.com/questions/17609453/rake-gen-deploy-rejected-in-octopress" target="_blank" rel="external">rake gen_deploy rejected in Octopress - Stack Overflow</a>  </p>
 <p>いったんdeploy出来るようになったら、その後はRakefileを元に戻してもdeploy出来る。  </p>
@@ -522,7 +522,7 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
 ]]></content>
     <summary type="html">
     <![CDATA[<p>DropboxでOctopressのフォルダを同期し、2台目のPCでもrake new_postやrake generateは出来るようになったが、rake deployが出来ない。<br>gitが入ってなかったので<code>sudo apt-get install git</code>し、<code>rake setup_github_pages</code>でセットアップしたが、  </p>
-<pre><code><span class="input"><span class="prompt">! [rejected]        master -&gt;</span> master (non-fast-forward)</span>
+<pre><code>! [rejected]        master -&gt; master (non-fast-forward)
 </code></pre><p>とエラーになる。<br>SSHの公開鍵も設定したのだが。  ]]>
     
     </summary>
@@ -541,14 +541,14 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
     <updated>2014-11-25T13:17:20.000Z</updated>
     <content type="html"><![CDATA[<p>OctopressのフォルダをDropboxに置くことにしたので、古いネットブックにインストールしたXubuntuからOctopressを使えるかどうか試してみた。<br>だがrake previewしようとしたら、エラーになってしまった。<br>Octopressを使う環境が整っていないので当然といえば当然。  <a id="more"></a></p>
 <p>環境を整えるにあたり、bundle installで行き詰まってしまった。<br>途中    </p>
-<pre><code><span class="title">Installing</span> libv8 (<span class="number">3.16.14.7</span>) 
+<pre><code>Installing libv8 (3.16.14.7) 
 </code></pre><p>の表示のところで動かない。<br>フリーズしたのかと思ったが検索したところ、libv8のインストールには時間が掛かるらしい。<br>確かにCPUの使用率も100%で、頑張ってはいるようだ。  </p>
 <p>非力なマシンのせいか結局30分くらい掛かったろうか。<br>もう一度パスワード入力を求められ、その後またtherubyracer (0.12.1)のところで少し時間が掛かったが、ようやくYour bundle is complete!<br>Octopressを使えるようになった。  </p>
 <p>ーー<br>使えるようになったと思ったら、deployが出来ない。  </p>
 <pre><code>$ rake deploy
-cp -r source/images/.gitkeeper <span class="keyword">public</span>/images/.gitkeeper
-<span class="preprocessor">## Deploying branch to Github Pages </span>
-<span class="preprocessor">## Pulling any updates from Github Pages </span>
+cp -r source/images/.gitkeeper public/images/.gitkeeper
+## Deploying branch to Github Pages 
+## Pulling any updates from Github Pages 
 cd _deploy
 cd -
 rm -rf _deploy/assets
@@ -563,16 +563,16 @@ rm -rf _deploy/robots.txt
 rm -rf _deploy/sitemap.xml
 rm -rf _deploy/stylesheets
 
-<span class="preprocessor">## Copying public to _deploy</span>
-cp -r <span class="keyword">public</span>/. _deploy
+## Copying public to _deploy
+cp -r public/. _deploy
 cd _deploy
 
-<span class="preprocessor">## Committing: Site updated at 2014-11-19 11:02:25 UTC</span>
-sh: <span class="number">1</span>: git: not found
+## Committing: Site updated at 2014-11-19 11:02:25 UTC
+sh: 1: git: not found
 
-<span class="preprocessor">## Pushing generated _deploy website</span>
+## Pushing generated _deploy website
 
-<span class="preprocessor">## Github Pages deploy complete</span>
+## Github Pages deploy complete
 cd -
 </code></pre><p>拒否はされてないみたいだが、記事を投稿出来ない。<br>どこに問題があるのか、よく分からない。<br>generateもやたら遅いし、ちょっとしんどいかな。  </p>
 <p>ーー<br>gitがインストールされてない？</p>
@@ -595,10 +595,10 @@ cd -
     <content type="html"><![CDATA[<p>ネットブックLaVie LightにDebian Wheezyをインストールした。<br>ウィンドウマネージャはXfceが好みなので、debian-7.7.0-i386-netinst.isoでインストールする際、”Advanced options” 、”Alternate desktop environments”でXfceを選択した。  </p>
 <p>ファイルやフォルダを簡単に管理者権限で操作したいので、XfceデフォルトのファイルマネージャーThunarのアクションに「rootで開く」を追加し、gksuもインストールした。<br>だがrootで開こうとしても、認証画面は表示されるものの、フォルダやファイルを管理者権限で開くことが出来ない。  <a id="more"></a></p>
 <p>代わりにNemoをインストールしようとしたら、レポジトリにNemoが無かった。PCManFMも確かrootで開くメニューがあったのでインストールしてみたが、なぜかrootで開くメニューが無い。<br>困ってしまったが、Ubuntu 12.04 Preciseのレポジトリを追加することで、Nemoをインストール出来た。  </p>
-<pre><code><span class="keyword">echo</span> <span class="string">"deb http://ppa.launchpad.net/noobslab/mint/ubuntu precise main"</span> | sudo tee -<span class="keyword">a</span> /etc/apt/sources.<span class="keyword">list</span>  
-sudo apt-key adv --keyserver keyserver.ubuntu.<span class="keyword">com</span> --recv-<span class="built_in">keys</span> F59EAE4D  
-sudo apt-<span class="built_in">get</span> <span class="keyword">update</span>  
-sudo apt-<span class="built_in">get</span> install nemo  
+<pre><code>echo &quot;deb http://ppa.launchpad.net/noobslab/mint/ubuntu precise main&quot; | sudo tee -a /etc/apt/sources.list  
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F59EAE4D  
+sudo apt-get update  
+sudo apt-get install nemo  
 </code></pre><p><a href="http://www.techlw.com/2013/12/install-nemo-file-manager-with.html" target="_blank" rel="external">Install Nemo file Manager with Extensions in Debian 7 Wheezy and its derivatives | Technology Linux World</a>  </p>
 <p>Ubuntu 14.04 Trustyのレポジトリを入れた方が、Nemoのバージョンが新しくて良いかと思いやってみたが、「壊れたパッケージを修復出来ない」とかでNemoをインストール出来なかった。  </p>
 <p>それと、Nemoを起動すると、デスクトップ上の右クリックでアプリケーションメニューを表示するのが出来なくなってしまう。<br>これでは少々不便なので、普段はThunarを使った方が良いかもしれない。</p>
@@ -624,7 +624,7 @@ sudo apt-<span class="built_in">get</span> install nemo
 <p>/etc/modprobe.d内にath9k.confというファイルを作りそこに<code>options ath9k nohwcrypt=1</code>と記載したり、ath9kをロードし直したりしてみたが改善しない。<br>NdisWrapperでWindows Xp用のドライバーを使えば良いかと思いやってみたが、これも満足に動作しない。  </p>
 <p>Xubuntu 14.04.1にLinux 3.2や3.8カーネルをコンパイルしてインストールすれば良いのかもしれないが、自分の力量を超えているので断念。<br>（カーネルのコンパイルをしなくても、Ubuntu 12.04 Preciseのレポジトリを追加してLinux 3.2カーネルをインストールすれば良かったのかもしれない。<a href="/2014/11/18/debian-wheezy-nemo/">Debian WheezyにNemoをインストール</a>）  </p>
 <p>結局Xubuntu 12.04をインストールしそれを14.04.1にアップグレード、起動カーネルをLinux 3.2にすることで無線LANも安定した。  </p>
-<pre><code><span class="constant">GRUB_DEFAULT</span>=<span class="string">"Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.2.0-58-generic"</span>
+<pre><code>GRUB_DEFAULT=&quot;Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.2.0-58-generic&quot;
 </code></pre><p>古いPCでもLinuxは利用出来ると言われるが、Linuxも新しい機器への対応を進める一方、古いPCは切り捨てられていくのだろうか。<br>使い勝手はUbuntu派生ディストリに劣るかもしれないが、今度Debian+Xfceも試してみようと思う。  </p>
 <p>ーー<br>（追記）<br>lshwコマンドで見たところ、Xubuntu 12.04（Linux 3.2カーネル）でもAR9285に使われているドライバーはath9kだった。<br>なぜXubuntu 14.04.1の場合は無線が安定しないのだろう？<br>「disabling IRQ #9」回避のため、起動オプションに「pci=noacpi」を付けていたからだろうか。</p>
 ]]></content>
@@ -647,9 +647,9 @@ sudo apt-<span class="built_in">get</span> install nemo
     <content type="html"><![CDATA[<p>NECのネットブックLaVie Light BL300/TにXubuntu14.04.1を再インストールした。<br>以前もXubuntu14.04.1をインストールしたがその時は<code>disabling IRQ #9</code>でインストールDVDを起動出来ず、いったんXubuntu13.04をインストールしてから、その後Xubuntu14.04.1にアップグレードしていた。<br>だが、起動オプションに<code>pci=noacpi</code>を加えれば、Linuxカーネル3.13.0-39でも起動出来るようだったので、起動オプションを付けてXubuntu14.04.1をインストールした。  <a id="more"></a></p>
 <p>Xubuntu14.04.1のインストールDVDを入れ、起動後「shift」キーを押し続けてオプションを表示。言語を日本語にした後「F6」キーで「その他のオプション」を表示。<br><code>acpi=off</code>、<code>noapic</code>、<code>nolapic</code>、<code>edd=on</code>、<code>nodmraid</code>、<code>nomodeset</code>等の起動オプションが選択出来るが、なにも選ばず「ESC」キーで選択画面を終了。（<code>acpi=off</code>では解像度が800×600に固定されてしまい、他のオプションでは<code>disabling IRQ #9</code>でインストールDVDを起動出来ない。）<br>下部に「起動オプション」の欄があり、キーボードで任意にオプションを入力出来るので、<code>quiet splash --</code>に続けて<code>pci=noacpi</code>と入力し「ENTER」で起動。<br>問題なくXubuntu14.04.1をインストール出来た。  </p>
 <p>インストール後再起動すると、/etc/default/grubの</p>
-<pre><code><span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"quiet splash"</span>
+<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;
 </code></pre><p>の下にちゃんと</p>
-<pre><code><span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"pci=noacpi"</span>
+<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
 </code></pre><p>の記載が加わっている。</p>
 <p>Xubuntuの前にLubuntu14.04.1も試してみたが、確かにXubuntuに較べて動作はやや軽いような気はした。<br>だがLubuntuソフトウェアセンターというのが検索も出来ず使いづらいし、お気に入りアプリケーションの登録も不便だったりと、カスタマイズの自由度の低さからLubuntuは断念した。</p>
 ]]></content>
@@ -712,20 +712,20 @@ sudo apt-<span class="built_in">get</span> install nemo
     <updated>2014-11-25T13:16:22.000Z</updated>
     <content type="html"><![CDATA[<p>Gyaoで動画を観るとき背景が白くてまぶしいので、FirefoxのアドオンStylishで背景を黒くした。  </p>
 <p>Stylishに下記スタイルを適当な名前で追加するだけ。<a id="more"></a></p>
-<pre><code><span class="at_rule">@<span class="keyword">namespace</span> <span class="function">url</span>(http://www.w3.org/<span class="number">1999</span>/xhtml)</span>;
-<span class="at_rule">@<span class="keyword">-moz-document</span> <span class="function">domain</span>(<span class="string">"gyao.yahoo.co.jp"</span>)
-,<span class="function">domain</span>(<span class="string">"youtube.com"</span>) 
-</span>{
+<pre><code>@namespace url(http://www.w3.org/1999/xhtml);
+@-moz-document domain(&quot;gyao.yahoo.co.jp&quot;)
+,domain(&quot;youtube.com&quot;) 
+{
 
-<span class="tag">body</span> <span class="rules">{
-    <span class="rule"><span class="attribute">background-color</span>:<span class="value"><span class="hexcolor">#000</span></span></span>;
-<span class="rule">}</span></span>
-<span class="id">#playerModule</span> <span class="rules">{
-    <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#080808</span></span></span>;
-<span class="rule">}</span></span>
-<span class="class">.wrapperText</span> <span class="tag">h1</span> <span class="rules">{
-    <span class="rule"><span class="attribute">color</span>:<span class="value"><span class="hexcolor">#BBB</span></span></span>;
-<span class="rule">}</span></span>
+body {
+    background-color:#000;
+}
+#playerModule {
+    border: 1px solid #080808;
+}
+.wrapperText h1 {
+    color:#BBB;
+}
 }
 </code></pre><p>YouTubeの背景はそれ程まぶしいと感じたことは無かったが、いちおうYouTubeのドメインも加えた。<br>ずいぶんと目にやさしくなった。</p>
 <p>Stylishは対象のドメインを指定してスタイルを変えられるので、なにかと重宝している。  </p>
@@ -753,9 +753,9 @@ sudo apt-<span class="built_in">get</span> install nemo
     <content type="html"><![CDATA[<p>Xubuntu起動時のモニター輝度を少し下げてみた。  </p>
 <p>やり方は、/etc/default/grubで設定する方法、/etc/rc.localで設定する方法、xbacklightを使う方法などがあるようだ。<br><a href="https://sites.google.com/site/tetsuroweb/home/software/ubuntu/tips/display-brightness" target="_blank" rel="external">起動時の画面輝度を調整する (Ubuntu 12.04 - 14.04) - 哲朗web</a>  </p>
 <p>まず、/etc/rc.localで設定する方法を試してみた。  <a id="more"></a><br>現在の輝度を変更するコマンドは<code>&gt;</code>の表示のまま止まってしまうので、</p>
-<pre><code><span class="input"><span class="prompt">$ sudo -i
+<pre><code>$ sudo -i
 
-# echo 6 &gt;</span> /sys/<span class="class"><span class="keyword">class</span>/<span class="title">backlight</span>/<span class="title">acpi_video0</span>/<span class="title">brightness</span></span></span>
+# echo 6 &gt; /sys/class/backlight/acpi_video0/brightness
 </code></pre><p>としないといけなかったが、それ以外は参照記事に記載してある通りの方法で、起動時のモニター輝度を変更できた。  </p>
 <p>これで十分だったのだが、試しにxbacklightを入れてみたら、これがかなり便利な代物だった。<br><a href="http://x1japan.wordpress.com/2013/08/23/linux-keep-brightness-setting/" target="_blank" rel="external">目に優しい、LinuxMintやubuntuでモニター輝度を起動時に落とす設定。 | Woishin Journal</a>  </p>
 <p>自動開始アプリケーションに<code>xbacklight -set 80</code>のようにコマンドを登録しておけば反映されるし、変更したい時も簡単に変更できる。  </p>

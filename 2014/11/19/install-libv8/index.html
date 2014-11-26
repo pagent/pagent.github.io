@@ -89,14 +89,14 @@
       
         <p>OctopressのフォルダをDropboxに置くことにしたので、古いネットブックにインストールしたXubuntuからOctopressを使えるかどうか試してみた。<br>だがrake previewしようとしたら、エラーになってしまった。<br>Octopressを使う環境が整っていないので当然といえば当然。  <a id="more"></a></p>
 <p>環境を整えるにあたり、bundle installで行き詰まってしまった。<br>途中    </p>
-<pre><code><span class="title">Installing</span> libv8 (<span class="number">3.16.14.7</span>) 
+<pre><code>Installing libv8 (3.16.14.7) 
 </code></pre><p>の表示のところで動かない。<br>フリーズしたのかと思ったが検索したところ、libv8のインストールには時間が掛かるらしい。<br>確かにCPUの使用率も100%で、頑張ってはいるようだ。  </p>
 <p>非力なマシンのせいか結局30分くらい掛かったろうか。<br>もう一度パスワード入力を求められ、その後またtherubyracer (0.12.1)のところで少し時間が掛かったが、ようやくYour bundle is complete!<br>Octopressを使えるようになった。  </p>
 <p>ーー<br>使えるようになったと思ったら、deployが出来ない。  </p>
 <pre><code>$ rake deploy
-cp -r source/images/.gitkeeper <span class="keyword">public</span>/images/.gitkeeper
-<span class="preprocessor">## Deploying branch to Github Pages </span>
-<span class="preprocessor">## Pulling any updates from Github Pages </span>
+cp -r source/images/.gitkeeper public/images/.gitkeeper
+## Deploying branch to Github Pages 
+## Pulling any updates from Github Pages 
 cd _deploy
 cd -
 rm -rf _deploy/assets
@@ -111,16 +111,16 @@ rm -rf _deploy/robots.txt
 rm -rf _deploy/sitemap.xml
 rm -rf _deploy/stylesheets
 
-<span class="preprocessor">## Copying public to _deploy</span>
-cp -r <span class="keyword">public</span>/. _deploy
+## Copying public to _deploy
+cp -r public/. _deploy
 cd _deploy
 
-<span class="preprocessor">## Committing: Site updated at 2014-11-19 11:02:25 UTC</span>
-sh: <span class="number">1</span>: git: not found
+## Committing: Site updated at 2014-11-19 11:02:25 UTC
+sh: 1: git: not found
 
-<span class="preprocessor">## Pushing generated _deploy website</span>
+## Pushing generated _deploy website
 
-<span class="preprocessor">## Github Pages deploy complete</span>
+## Github Pages deploy complete
 cd -
 </code></pre><p>拒否はされてないみたいだが、記事を投稿出来ない。<br>どこに問題があるのか、よく分からない。<br>generateもやたら遅いし、ちょっとしんどいかな。  </p>
 <p>ーー<br>gitがインストールされてない？</p>
@@ -128,7 +128,7 @@ cd -
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/19/install-libv8/" data-id="z2e1ug51zykj1kd2" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/19/install-libv8/" data-id="yo5nxq679smmhkbz" class="article-share-link">Share</a>
       
         <a href="http://pagent.github.io/2014/11/19/install-libv8/#disqus_thread" class="article-comment-link">Comments</a>
       

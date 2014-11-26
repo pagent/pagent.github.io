@@ -91,24 +91,24 @@
 <p>導入には下記サイトなどを参考にさせて頂いた。<br><a href="http://tech.admax.ninja/2014/09/11/environment-of-hexo/" target="_blank" rel="external">【Node.js】Hexoでブログを書くための環境構築 | AdMax Tech Blog</a>  </p>
 <p>概ね上記サイトの通りに進めたらいいようだったが、Xubuntu14.04の環境では若干うまく行かないところがあった。  </p>
 <p>nodeにパスを通す際、~/.bash_profileというファイルが見つからなかったので、~/.profileに  </p>
-<pre><code><span class="keyword">if</span> <span class="string">[[ -s ~/.nvm/nvm.sh ]]</span>;
-<span class="keyword">then</span> source ~/.nvm/nvm.sh
+<pre><code>if [[ -s ~/.nvm/nvm.sh ]];
+then source ~/.nvm/nvm.sh
 fi
 </code></pre><p>を追記したが、これでは駄目なようで、ターミナルを起動する度にnvmというコマンドが見つからないと言われる。  </p>
 <p>どうやら~/.bashrcに追記しないと駄目なようだった。<br><a href="http://d.hatena.ne.jp/white_chi/20111101/1320097898" target="_blank" rel="external">Ubuntu11.10で、nvmからnode.jsをインストールする - ホワイトぼーど</a>  </p>
 <p>Hexoをインストールするところで  </p>
-<pre><code>npm WARN <span class="keyword">optional</span> dep failed, continuing fsevents@<span class="number">0.2</span>.<span class="number">0</span>
+<pre><code>npm WARN optional dep failed, continuing fsevents@0.2.0
 </code></pre><p>と言われたが、問題なく使えるようだ。<br>途中うまく行かないので、下記サイトを参考に  </p>
-<pre><code>curl -sL http<span class="variable">s:</span>//<span class="keyword">deb</span>.nodesource.<span class="keyword">com</span>/setup | sudo bash -
+<pre><code>curl -sL https://deb.nodesource.com/setup | sudo bash -
 
-sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</span> nodejs
+sudo apt-get install -y nodejs
 </code></pre><p>とやったりしたが、果たしてこれが必要な操作だったのかどうかは不明。<br><a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager" target="_blank" rel="external">Installing Node.js via package manager · joyent/node Wiki</a>  </p>
 <p>しばらく試用してみて良ささそうだったら、Octopressから乗り換えるかもしれない。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/21/hexo-xubuntu/" data-id="9kv6u36ilpfchbez" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/21/hexo-xubuntu/" data-id="q376btzcdnoweuon" class="article-share-link">Share</a>
       
         <a href="http://pagent.github.io/2014/11/21/hexo-xubuntu/#disqus_thread" class="article-comment-link">Comments</a>
       

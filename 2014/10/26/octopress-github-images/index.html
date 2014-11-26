@@ -97,20 +97,20 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Octopressブログに画像を挿入するには、/source/images下に画像ファイルをコピーし、<a href="http://octopress.org/docs/plugins/image-tag/" target="_blank" rel="external">Image Tag - Octopress</a>に従って記事中にタグを記載すればよいらしい。  </p>
-<pre><code>{(半角の<span class="variable">%)</span> img /images/a0960_005150_r.jpg <span class="number">480</span> <span class="number">360</span> コスモス <span class="variable">%}</span>
+<pre><code>{(半角の%) img /images/a0960_005150_r.jpg 480 360 コスモス %}
 </code></pre><p>だが、クリックで元画像を表示するという風には出来ないようだ。  </p>
 <p>元画像をポップアップで表示するプラグインも公開されているが、そこまで凝らなくてもよいと思ったので、画像に関してはhtmlタグを使うことにした。  <a id="more"></a></p>
-<pre><code>&lt;img <span class="variable">src=</span><span class="string">"/images/a0960_005150_r.jpg"</span> <span class="variable">onclick=</span><span class="string">"location.href = '/images/a0960_005150_r.jpg'; return false;"</span> <span class="variable">style=</span><span class="string">"cursor:pointer;"</span> <span class="variable">border=</span><span class="string">"0"</span> <span class="variable">width=</span><span class="string">"480"</span> <span class="variable">height=</span><span class="string">"360"</span> <span class="variable">alt=</span><span class="string">"コスモス"</span>&gt;
+<pre><code>&lt;img src=&quot;/images/a0960_005150_r.jpg&quot; onclick=&quot;location.href = &#39;/images/a0960_005150_r.jpg&#39;; return false;&quot; style=&quot;cursor:pointer;&quot; border=&quot;0&quot; width=&quot;480&quot; height=&quot;360&quot; alt=&quot;コスモス&quot;&gt;
 </code></pre><p>元画像を別ウィンドウで開きたい時は下記で良いようだ。</p>
-<pre><code>&lt;img <span class="variable">src=</span><span class="string">"/images/a0960_005150_r.jpg"</span> <span class="variable">onclick=</span><span class="string">"window.open('/images/a0960_005150_r.jpg'); return false;"</span> <span class="variable">style=</span><span class="string">"cursor:pointer;"</span> <span class="variable">border=</span><span class="string">"0"</span> <span class="variable">width=</span><span class="string">"480"</span> <span class="variable">height=</span><span class="string">"360"</span> <span class="variable">alt=</span><span class="string">"コスモス"</span>&gt;
+<pre><code>&lt;img src=&quot;/images/a0960_005150_r.jpg&quot; onclick=&quot;window.open(&#39;/images/a0960_005150_r.jpg&#39;); return false;&quot; style=&quot;cursor:pointer;&quot; border=&quot;0&quot; width=&quot;480&quot; height=&quot;360&quot; alt=&quot;コスモス&quot;&gt;
 </code></pre><p>ーー<br>（追記）<br>下記のような馴染みの表記の方が良いような気もする。</p>
-<pre><code>&lt;a <span class="variable">href=</span><span class="string">"/images/a0960_005150_r.jpg"</span> <span class="variable">target=</span>_blank&gt;&lt;img <span class="variable">src=</span><span class="string">"/images/a0960_005150_r.jpg"</span> <span class="variable">alt=</span><span class="string">"コスモス"</span> <span class="variable">width=</span><span class="string">"480"</span> <span class="variable">height=</span><span class="string">"360"</span>&gt;&lt;/a&gt;
+<pre><code>&lt;a href=&quot;/images/a0960_005150_r.jpg&quot; target=_blank&gt;&lt;img src=&quot;/images/a0960_005150_r.jpg&quot; alt=&quot;コスモス&quot; width=&quot;480&quot; height=&quot;360&quot;&gt;&lt;/a&gt;
 </code></pre><p>それと、imgにはalt属性は必ず指定した方が良く、指定するほどの内容ではない場合にも<code>alt=&quot;&quot;</code>と空欄で入れておいた方が良いのだとか。<br><a href="http://www.mozilla.gr.jp/standards/webtips0024.html" target="_blank" rel="external">img要素でalt属性の内容がポップアップしない - Web標準普及プロジェクト</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/10/26/octopress-github-images/" data-id="zpimw2vh84aii9mt" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/10/26/octopress-github-images/" data-id="p9dq8pjcqjsujq1y" class="article-share-link">Share</a>
       
         <a href="http://pagent.github.io/2014/10/26/octopress-github-images/#disqus_thread" class="article-comment-link">Comments</a>
       
