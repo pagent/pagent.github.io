@@ -4,7 +4,7 @@
   <subtitle><![CDATA[GitHub Pages＋静的サイトジェネレーターでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-11-26T08:48:25.465Z</updated>
+  <updated>2014-11-26T08:52:23.179Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2014/11/26/hexo-bitbucket/"/>
     <id>http://pagent.github.io/2014/11/26/hexo-bitbucket/</id>
     <published>2014-11-26T07:47:16.000Z</published>
-    <updated>2014-11-26T08:43:21.000Z</updated>
+    <updated>2014-11-26T08:51:38.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoの作業フォルダはWindows領域のDropboxフォルダに置き、他のPCとも同期をとっている。<br>これでソースを消失してしまう危険はかなり低いと思うが、Dropboxと同期する際、結構時間がかかってしまう。<br>Bitbucketにソースを置いたらpushするのはそれほど時間は掛からないだろうし、過去の履歴も残ってくれてやはり便利だろうと思い、HexoのソースをBitbucketに置くことにした。  </p>
 <p>OctopressのソースをBitbucketに置いた時と同様、Bitbucketにhexoという名前のリポジトリを作り、  </p>
 <pre><code>$ git remote <span class="built_in">add</span> bitbucket git@bitbucket.<span class="built_in">or</span><span class="variable">g:</span>ユーザー名/hexo.git
@@ -81,7 +81,7 @@ See <span class="attribute">'git</span> help config' <span class="keyword">and</
 (the <span class="attribute">'simple</span>' mode was introduced <span class="keyword">in</span> Git <span class="number">1.7</span><span class="number">.11</span>. <span class="keyword">Use</span> the similar mode
 <span class="attribute">'current</span>' instead <span class="keyword">of</span> <span class="attribute">'simple</span>' <span class="keyword">if</span> you sometimes <span class="keyword">use</span> older versions <span class="keyword">of</span> Git)
 </code></pre><p>と言われたり。  </p>
-<p><code>git add .</code>は使われなくなったので<code>git add -A</code>にしないといけないということか？  </p>
+<p><code>git add .</code>は使われなくなったので<code>git add -A</code>にしないといけないということか？<br><code>git add .</code>でもすんなり通る時もあるのは、状況の違いからだろうか。</p>
 <p>push.defaultもmatchingにした。  </p>
 <pre><code>  $ git config --<span class="keyword">global</span> push.<span class="keyword">default</span> <span class="keyword">matching</span>
 </code></pre><p>これでようやくpush出来るようになった。  </p>
