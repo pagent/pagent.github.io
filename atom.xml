@@ -4,7 +4,7 @@
   <subtitle><![CDATA[GitHub Pages＋静的サイトジェネレーターでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-11-26T06:56:36.015Z</updated>
+  <updated>2014-11-26T08:43:53.998Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,11 +15,94 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[HexoのソースをBitbucketに置く]]></title>
+    <link href="http://pagent.github.io/2014/11/26/hexo-bitbucket/"/>
+    <id>http://pagent.github.io/2014/11/26/hexo-bitbucket/</id>
+    <published>2014-11-26T07:47:16.000Z</published>
+    <updated>2014-11-26T08:43:21.000Z</updated>
+    <content type="html"><![CDATA[<p>Hexoの作業フォルダはWindows領域のDropboxフォルダに置き、他のPCとも同期をとっている。<br>これでソースを消失してしまう危険はかなり低いと思うが、Dropboxと同期する際、結構時間がかかってしまう。<br>Bitbucketにソースを置いたらpushするのはそれほど時間は掛からないだろうし、過去の履歴も残ってくれてやはり便利だろうと思い、HexoのソースをBitbucketに置くことにした。  </p>
+<p>OctopressのソースをBitbucketに置いた時と同様、Bitbucketにhexoという名前のリポジトリを作り、  </p>
+<pre><code>$ git remote <span class="built_in">add</span> bitbucket git@bitbucket.<span class="built_in">or</span><span class="variable">g:</span>ユーザー名/hexo.git
+$ git push -<span class="keyword">u</span> bitbucket <span class="keyword">source</span>
+</code></pre><p>とやったが、エラーになる。  </p>
+<p>新規リポジトリを作成後に表示されたRepository setupの指示に倣い、  </p>
+<pre><code><span class="variable">$ </span>git init
+<span class="variable">$ </span>git remote add bitbucket git<span class="variable">@bitbucket</span>.<span class="symbol">org:</span>ユーザー名/hexo.git
+<span class="variable">$ </span>echo <span class="string">"ユーザー名"</span> &gt;&gt; contributors.txt
+<span class="variable">$ </span>git add contributors.txt
+<span class="variable">$ </span>git commit -m <span class="string">'Initial commit with contributors'</span>
+<span class="variable">$ </span>git push -u bitbucket source
+</code></pre><p>としても、やはり  </p>
+<pre><code><span class="keyword">error</span>: src refspec source <span class="keyword">does</span> <span class="keyword">not</span> match any.
+<span class="keyword">error</span>: failed <span class="keyword">to</span> push <span class="keyword">some</span> refs <span class="keyword">to</span> 'git@bitbucket.org:ユーザー名/hexo.git'
+</code></pre><p>とエラーになる。  </p>
+<p>pushするbranchをsourceではなく、masterにしてみた。  </p>
+<pre><code>$ git push -<span class="keyword">u</span> bitbucket master
+Counting object<span class="variable">s:</span> <span class="number">3</span>, done.
+Writing object<span class="variable">s:</span> <span class="number">100</span>% (<span class="number">3</span>/<span class="number">3</span>), <span class="number">239</span> bytes | <span class="number">0</span> bytes/<span class="keyword">s</span>, done.
+Total <span class="number">3</span> (delta <span class="number">0</span>), reused <span class="number">0</span> (delta <span class="number">0</span>)
+To git@bitbucket.<span class="built_in">or</span><span class="variable">g:</span>ユーザー名/hexo.git
+ * [<span class="keyword">new</span> branch]      master -&gt; master
+Branch master <span class="keyword">set</span> <span class="keyword">up</span> <span class="keyword">to</span> track remote branch master from bitbucket.
+</code></pre><p>上手く行ったようだ。  </p>
+<p>だが、その後も  </p>
+<pre><code>$ git add .
+warning: You ran 'git add' with neither '-A (<span class="comment">--all)' or '--ignore-removal',</span>
+whose behaviour will <span class="operator"><span class="keyword">change</span> <span class="keyword">in</span> Git <span class="number">2.0</span> <span class="keyword">with</span> respect <span class="keyword">to</span> paths you removed.
+Paths <span class="keyword">like</span> <span class="string">'contributors.txt'</span> that <span class="keyword">are</span>
+removed <span class="keyword">from</span> your working tree <span class="keyword">are</span> ignored <span class="keyword">with</span> this <span class="keyword">version</span> <span class="keyword">of</span> Git.
+
+* <span class="string">'git add --ignore-removal &lt;pathspec&gt;'</span>, which <span class="keyword">is</span> the <span class="keyword">current</span> <span class="keyword">default</span>,
+  ignores paths you removed <span class="keyword">from</span> your working tree.
+
+* <span class="string">'git add --all &lt;pathspec&gt;'</span> will let you also record the removals.
+
+Run <span class="string">'git status'</span> <span class="keyword">to</span> <span class="keyword">check</span> the paths you removed <span class="keyword">from</span> your working tree.</span>
+</code></pre><p>と言われたり、  </p>
+<pre><code>$ git push
+warning: push.<span class="keyword">default</span> <span class="keyword">is</span> unset; its implicit value <span class="keyword">is</span> changing <span class="keyword">in</span>
+Git <span class="number">2.0</span> from <span class="attribute">'matching</span>' <span class="keyword">to</span> <span class="attribute">'simple</span>'. <span class="keyword">To</span> squelch this message
+<span class="keyword">and</span> maintain the current behavior <span class="keyword">after</span> the <span class="keyword">default</span> changes, <span class="keyword">use</span>:
+
+  git config <span class="comment">--global push.default matching</span>
+
+<span class="keyword">To</span> squelch this message <span class="keyword">and</span> adopt the <span class="keyword">new</span> behavior now, <span class="keyword">use</span>:
+
+  git config <span class="comment">--global push.default simple</span>
+
+<span class="keyword">When</span> push.<span class="keyword">default</span> <span class="keyword">is</span> set <span class="keyword">to</span> <span class="attribute">'matching</span>', git will push local branches
+<span class="keyword">to</span> the remote branches that already exist <span class="keyword">with</span> the same name.
+
+<span class="keyword">In</span> Git <span class="number">2.0</span>, Git will <span class="keyword">default</span> <span class="keyword">to</span> the more conservative <span class="attribute">'simple</span>'
+behavior, which only pushes the current branch <span class="keyword">to</span> the corresponding
+remote branch that <span class="attribute">'git</span> pull' uses <span class="keyword">to</span> update the current branch.
+
+See <span class="attribute">'git</span> help config' <span class="keyword">and</span> search <span class="keyword">for</span> <span class="attribute">'push</span>.<span class="keyword">default</span>' <span class="keyword">for</span> further information.
+(the <span class="attribute">'simple</span>' mode was introduced <span class="keyword">in</span> Git <span class="number">1.7</span><span class="number">.11</span>. <span class="keyword">Use</span> the similar mode
+<span class="attribute">'current</span>' instead <span class="keyword">of</span> <span class="attribute">'simple</span>' <span class="keyword">if</span> you sometimes <span class="keyword">use</span> older versions <span class="keyword">of</span> Git)
+</code></pre><p>と言われたり。  </p>
+<p><code>git add .</code>は使われなくなったので<code>git add -A</code>にしないといけないということか？  </p>
+<p>push.defaultもmatchingにした。  </p>
+<pre><code>  $ git config --<span class="keyword">global</span> push.<span class="keyword">default</span> <span class="keyword">matching</span>
+</code></pre><p>これでようやくpush出来るようになった。  </p>
+<p>gitの仕組みがいまいちよく分からない。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Hexoの作業フォルダはWindows領域のDropboxフォルダに置き、他のPCとも同期をとっている。<br>これでソースを消失してしまう危険はかなり低いと思うが、Dropboxと同期する際、結構時間がかかってしまう。<br>Bitbucketにソースを置いたらpushす]]>
+    </summary>
+    
+      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
+    
+      <category term="Git" scheme="http://pagent.github.io/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Hexo→Octopress変換スクリプト「Hexo to Octopress Converter」]]></title>
     <link href="http://pagent.github.io/2014/11/25/hexo-to-octopress-converter/"/>
     <id>http://pagent.github.io/2014/11/25/hexo-to-octopress-converter/</id>
     <published>2014-11-25T11:59:04.000Z</published>
-    <updated>2014-11-26T06:55:49.000Z</updated>
+    <updated>2014-11-26T06:58:08.000Z</updated>
     <content type="html"><![CDATA[<p>HexoからOctopressに記事ソースを変換するrubyスクリプト<a href="https://github.com/ciffel/Hexo-to-Octopress-Converter" target="_blank" rel="external">「Hexo to Octopress Converter」</a>を試してみた。  </p>
 <p>「Download ZIP」からzipファイルをダウンロードし展開。converterファイルを作業したい場所に移し、端末から操作。  </p>
 <pre><code><span class="input"><span class="prompt">$ ./converter &lt;hexo_posts_dir&gt;</span> &lt;octopress_posts_dir&gt;</span>
@@ -37,7 +120,7 @@ date:
 <p>この場合はconverterファイルをエディタで開き、41行目  </p>
 <p>  file_name = “#{prefix}-#{base_name}”<br>の<code>#{prefix}-</code>を削除し、  </p>
 <p>  file_name = “#{base_name}”<br>にしておくと、日付けが付加されない。  </p>
-<p>それから、Hexoは漢字、ひらがな含め日本語のURLやtagsを使用可能だが、Octopressはデフォルトの状態では日本語を使用できない。<br>HexoからOctopressに移行する際にはこの点も注意が必要。</p>
+<p>それから、Hexoは漢字、ひらがな含め日本語のURLやtagsを使用可能だが、Octopressはデフォルトの状態では日本語を使用できない。<br>HexoからOctopressに移行する際には、この点も注意が必要。</p>
 <p>ーー<br>HexoもOctopressも、共にmarkdown形式のファイルをhtmlに変換するという点では同じなのだが、細かいところが微妙に違っていて少し不便。<br>記事ソースの形式くらいは合わせられなかったものだろうか。</p>
 ]]></content>
     <summary type="html">
@@ -696,27 +779,6 @@ sudo apt-<span class="built_in">get</span> install nemo
 <p>ハード：NECのネットブックLaVie Light BL300/T<br>OS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  </p>
 <h4 id="現状と対応">現状と対応</h4>
 <p>Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出来なかった。<br>そのため、いったんXubuntu13.04をインストールしてから14.04.1にアップグレードしていた。<br>アップグレード中にもdisabling IRQで起動できなくなり、/etc/default/grubでGRUB_DEFAULT=”Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.8.0-19-generic”にして、デフォルトの起動カーネルを3.8.0-19にしていた。  ]]>
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Firefoxで「閉じたタブを元に戻す」「最近閉じたタブ」がクリック出来ない]]></title>
-    <link href="http://pagent.github.io/2014/11/01/firefox-closed-tabs/"/>
-    <id>http://pagent.github.io/2014/11/01/firefox-closed-tabs/</id>
-    <published>2014-11-01T01:02:58.000Z</published>
-    <updated>2014-11-25T13:15:50.000Z</updated>
-    <content type="html"><![CDATA[<p>いつの間にかXubuntu14.04.1のFirefoxで「閉じたタブを元に戻す」「最近閉じたタブ」が灰色になっていて選択出来なくなっていた。<br>Tab Mix Plusを無効化したら「閉じたタブを元に戻す」をクリックは出来るが、タブが戻らず機能しない。<br>プライベートウィンドウでも駄目。  <a id="more"></a></p>
-<p>Firefoxのバージョンが33.0に更新されてからかと、synapticから「バージョンの強制」で28.0にダウングレードしてみたが、やはり駄目。<br>他のXubuntuPCを見てみると、そちらではちゃんと「閉じたタブを元に戻す」「最近閉じたタブ」が機能している。  </p>
-<p>Firefoxをインストールし直してみるしかなさそうなのでプロファイルも削除しておいた方が良いだろうかとプロファイルの保存場所を調べていたら、Firefoxにはリセット機能というのがあるようだった。<br><a href="https://support.mozilla.org/ja/kb/reset-firefox-easily-fix-most-problems" target="_blank" rel="external">Firefox をリセットするには | Firefox ヘルプ</a>  </p>
-<p>結局このリセットで復旧できた。  </p>
-<p>Firefoxをリセットしてもブックマークなどは残るが、アドオンは消去されてしまうので、「Firefox Sync」を利用した方が便利だと思う。<br>あとTab Mix Plusなど各種アドオンの設定もエクスポート出来るものは予めエクスポートしておいた方が良い。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>いつの間にかXubuntu14.04.1のFirefoxで「閉じたタブを元に戻す」「最近閉じたタブ」が灰色になっていて選択出来なくなっていた。<br>Tab Mix Plusを無効化したら「閉じたタブを元に戻す」をクリックは出来るが、タブが戻らず機能しない。<br>プライベートウィンドウでも駄目。  ]]>
     
     </summary>
     

@@ -3,20 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>サイトジェネレーターをOctopressからHexoに変更 | Pagent</title>
+  <title>Tag: Git | Pagent</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Github Pagesのブログに使っている静的サイトジェネレーターをOctopressからHexoに変更してみた。  
-Octopressの/source/_posts内の記事ソースをそのままHexoの/source/_postsにコピーしたら、generateした時にパーマリンクがhttp://.../2014/10/24/2014-10-24-xubuntu-blank-menu/のように日">
-<meta property="og:type" content="article">
-<meta property="og:title" content="サイトジェネレーターをOctopressからHexoに変更">
-<meta property="og:url" content="http://pagent.github.io/2014/11/22/octopress-hexo/">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pagent">
+<meta property="og:url" content="http://pagent.github.io/tags/Git/">
 <meta property="og:site_name" content="Pagent">
-<meta property="og:description" content="Github Pagesのブログに使っている静的サイトジェネレーターをOctopressからHexoに変更してみた。  
-Octopressの/source/_posts内の記事ソースをそのままHexoの/source/_postsにコピーしたら、generateした時にパーマリンクがhttp://.../2014/10/24/2014-10-24-xubuntu-blank-menu/のように日">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="サイトジェネレーターをOctopressからHexoに変更">
-<meta name="twitter:description" content="Github Pagesのブログに使っている静的サイトジェネレーターをOctopressからHexoに変更してみた。  
-Octopressの/source/_posts内の記事ソースをそのままHexoの/source/_postsにコピーしたら、generateした時にパーマリンクがhttp://.../2014/10/24/2014-10-24-xubuntu-blank-menu/のように日">
+<meta name="twitter:title" content="Pagent">
+<meta name="twitter:description">
 
   
     <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
@@ -68,86 +65,39 @@ Octopressの/source/_posts内の記事ソースをそのままHexoの/source/_po
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-octopress-hexo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/11/22/octopress-hexo/" class="article-date">
-  <time datetime="2014-11-22T11:21:26.000Z" itemprop="datePublished">2014年11月22日</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      サイトジェネレーターをOctopressからHexoに変更
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2014" class="archive-year">2014</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2014/11/26/hexo-bitbucket/" class="archive-article-date">
+  <time datetime="2014-11-26T07:47:16.000Z" itemprop="datePublished">11月 26</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2014/11/26/hexo-bitbucket/">HexoのソースをBitbucketに置く</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Github Pagesのブログに使っている静的サイトジェネレーターをOctopressからHexoに変更してみた。  </p>
-<p>Octopressの/source/_posts内の記事ソースをそのままHexoの/source/_postsにコピーしたら、generateした時にパーマリンクが<code>http://.../2014/10/24/2014-10-24-xubuntu-blank-menu/</code>のように日付けが重複してしまった。<br>Hexoはデフォルトでは、新しく記事を作った時には日付けがつかず、生成する時に日付けを付加するようになっているらしい。  <a id="more"></a></p>
-<p>_config.ymlの  </p>
-<pre><code><span class="comment"># Writing</span>
-<span class="symbol">new_post_name:</span> <span class="symbol">:title</span>.md <span class="comment"># File name of new posts</span>
-</code></pre><p>のところを  </p>
-<pre><code><span class="symbol">new_post_name:</span> <span class="symbol">:year-</span><span class="symbol">:month-</span><span class="symbol">:day-</span><span class="symbol">:title</span>.md
-</code></pre><p>に変更したら良いようだ。<br><a href="http://hexo.io/docs/migration.html" target="_blank" rel="external">Migration | Hexo</a>  </p>
-<p>Octopressでは記事が/blogディレクトリ下に配置されるパーマリンクを使っていたが、今後はHexoのデフォルトの通りルート下に:year/:month/:day/:title/というパーマリンクを使うことにした。この方がシンプルで好みだし。<br>Githubでは.htaccessファイルを使ったリダイレクトが使用不可のようなので、以前の記事がリンク切れになるのは仕方がない。  </p>
-<p>あと、下記記事を参考に、FeedとSitemapのプラグインを入れた。<br>プラグインの導入はとても簡単だった。<br><a href="http://liginc.co.jp/web/programming/server/104594" target="_blank" rel="external">所要時間3分!? Github PagesとHEXOで爆速ブログ構築してみよう！ | 株式会社LIG</a>  </p>
-<p>Feedを導入すると、ヘッダー右上のアイコンでatom.xmlのページは表示出来たが、ブラウザのアドレスバーの端にフィードアイコンが表示されていない。  </p>
-<p>/themes/landscape/layout/_partial/head.ejsの26行目、<code>link rel=&quot;alternative&quot;</code>を<code>link rel=&quot;alternate&quot;</code>に変更したら、アドレスバーにフィードアイコンが表示された。  </p>
-<p>心配だったGithubへのdeployも、_config.ymlの<code># Deployment</code>の項目に記載するだけですんなりdeploy出来た。  </p>
-<p>記事数が増えるに従い（増えたといっても、ほんの20数記事だが）、動作がもっさりして来たOctopressに較べ、generateが断然早くて軽快。<br>コマンドも<br><code>hexo generate</code>→<code>hexo g</code><br><code>hexo server</code>→<code>hexo s</code><br><code>hexo deploy</code>→<code>hexo d</code><br>で良いようだし、なかなか便利。  </p>
-<p>ーー<br><code>hexo new</code>も<code>hexo n</code>でいいみたいで、<code>hexo deploy -g</code>は<code>hexo d -g</code>で良いようだ。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/22/octopress-hexo/" data-id="r4rq5dn171g49pzj" class="article-share-link">Share</a>
-      
-        <a href="http://pagent.github.io/2014/11/22/octopress-hexo/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2014/11/22/hexo-theme/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Hexoのテーマを変更したら、元に戻せなくなった
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2014/11/21/hexo-xubuntu/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Xubuntuに静的サイトジェネレーターHexoを入れてみた</div>
-    </a>
-  
-</nav>
-
-  
 </article>
-
-
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
+  
+  
+    </div></section>
+  
 </section>
         
           <aside id="sidebar">
@@ -249,13 +199,11 @@ acCODE = "<img width='0' height='0' src='http://a.pagent.org/xeno_git/xenoLogger
 <script>
   var disqus_shortname = 'pagents';
   
-  var disqus_url = 'http://pagent.github.io/2014/11/22/octopress-hexo/';
-  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

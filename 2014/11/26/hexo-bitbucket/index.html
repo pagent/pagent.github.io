@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>HexoのソースをBitbucketに置く | Pagent</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Hexoの作業フォルダはWindows領域のDropboxフォルダに置き、他のPCとも同期をとっている。これでソースを消失してしまう危険はかなり低いと思うが、Dropboxと同期する際、結構時間がかかってしまう。Bitbucketにソースを置いたらpushするのはそれほど時間は掛からないだろうし、過去の履歴も残ってくれてやはり便利だろうと思い、HexoのソースをBitbucketに置くことにした。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HexoのソースをBitbucketに置く">
+<meta property="og:url" content="http://pagent.github.io/2014/11/26/hexo-bitbucket/">
+<meta property="og:site_name" content="Pagent">
+<meta property="og:description" content="Hexoの作業フォルダはWindows領域のDropboxフォルダに置き、他のPCとも同期をとっている。これでソースを消失してしまう危険はかなり低いと思うが、Dropboxと同期する際、結構時間がかかってしまう。Bitbucketにソースを置いたらpushするのはそれほど時間は掛からないだろうし、過去の履歴も残ってくれてやはり便利だろうと思い、HexoのソースをBitbucketに置くことにした。">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HexoのソースをBitbucketに置く">
+<meta name="twitter:description" content="Hexoの作業フォルダはWindows領域のDropboxフォルダに置き、他のPCとも同期をとっている。これでソースを消失してしまう危険はかなり低いと思うが、Dropboxと同期する際、結構時間がかかってしまう。Bitbucketにソースを置いたらpushするのはそれほど時間は掛からないだろうし、過去の履歴も残ってくれてやはり便利だろうと思い、HexoのソースをBitbucketに置くことにした。">
+
+  
+    <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Pagent</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">GitHub Pages＋静的サイトジェネレーターでブログ</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://pagent.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-hexo-bitbucket" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/26/hexo-bitbucket/" class="article-date">
+  <time datetime="2014-11-26T07:47:16.000Z" itemprop="datePublished">2014年11月26日</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HexoのソースをBitbucketに置く
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Hexoの作業フォルダはWindows領域のDropboxフォルダに置き、他のPCとも同期をとっている。<br>これでソースを消失してしまう危険はかなり低いと思うが、Dropboxと同期する際、結構時間がかかってしまう。<br>Bitbucketにソースを置いたらpushするのはそれほど時間は掛からないだろうし、過去の履歴も残ってくれてやはり便利だろうと思い、HexoのソースをBitbucketに置くことにした。  </p>
+<p>OctopressのソースをBitbucketに置いた時と同様、Bitbucketにhexoという名前のリポジトリを作り、  </p>
+<pre><code>$ git remote <span class="built_in">add</span> bitbucket git@bitbucket.<span class="built_in">or</span><span class="variable">g:</span>ユーザー名/hexo.git
+$ git push -<span class="keyword">u</span> bitbucket <span class="keyword">source</span>
+</code></pre><p>とやったが、エラーになる。  </p>
+<p>新規リポジトリを作成後に表示されたRepository setupの指示に倣い、  </p>
+<pre><code><span class="variable">$ </span>git init
+<span class="variable">$ </span>git remote add bitbucket git<span class="variable">@bitbucket</span>.<span class="symbol">org:</span>ユーザー名/hexo.git
+<span class="variable">$ </span>echo <span class="string">"ユーザー名"</span> &gt;&gt; contributors.txt
+<span class="variable">$ </span>git add contributors.txt
+<span class="variable">$ </span>git commit -m <span class="string">'Initial commit with contributors'</span>
+<span class="variable">$ </span>git push -u bitbucket source
+</code></pre><p>としても、やはり  </p>
+<pre><code><span class="keyword">error</span>: src refspec source <span class="keyword">does</span> <span class="keyword">not</span> match any.
+<span class="keyword">error</span>: failed <span class="keyword">to</span> push <span class="keyword">some</span> refs <span class="keyword">to</span> 'git@bitbucket.org:ユーザー名/hexo.git'
+</code></pre><p>とエラーになる。  </p>
+<p>pushするbranchをsourceではなく、masterにしてみた。  </p>
+<pre><code>$ git push -<span class="keyword">u</span> bitbucket master
+Counting object<span class="variable">s:</span> <span class="number">3</span>, done.
+Writing object<span class="variable">s:</span> <span class="number">100</span>% (<span class="number">3</span>/<span class="number">3</span>), <span class="number">239</span> bytes | <span class="number">0</span> bytes/<span class="keyword">s</span>, done.
+Total <span class="number">3</span> (delta <span class="number">0</span>), reused <span class="number">0</span> (delta <span class="number">0</span>)
+To git@bitbucket.<span class="built_in">or</span><span class="variable">g:</span>ユーザー名/hexo.git
+ * [<span class="keyword">new</span> branch]      master -&gt; master
+Branch master <span class="keyword">set</span> <span class="keyword">up</span> <span class="keyword">to</span> track remote branch master from bitbucket.
+</code></pre><p>上手く行ったようだ。  </p>
+<p>だが、その後も  </p>
+<pre><code>$ git add .
+warning: You ran 'git add' with neither '-A (<span class="comment">--all)' or '--ignore-removal',</span>
+whose behaviour will <span class="operator"><span class="keyword">change</span> <span class="keyword">in</span> Git <span class="number">2.0</span> <span class="keyword">with</span> respect <span class="keyword">to</span> paths you removed.
+Paths <span class="keyword">like</span> <span class="string">'contributors.txt'</span> that <span class="keyword">are</span>
+removed <span class="keyword">from</span> your working tree <span class="keyword">are</span> ignored <span class="keyword">with</span> this <span class="keyword">version</span> <span class="keyword">of</span> Git.
+
+* <span class="string">'git add --ignore-removal &lt;pathspec&gt;'</span>, which <span class="keyword">is</span> the <span class="keyword">current</span> <span class="keyword">default</span>,
+  ignores paths you removed <span class="keyword">from</span> your working tree.
+
+* <span class="string">'git add --all &lt;pathspec&gt;'</span> will let you also record the removals.
+
+Run <span class="string">'git status'</span> <span class="keyword">to</span> <span class="keyword">check</span> the paths you removed <span class="keyword">from</span> your working tree.</span>
+</code></pre><p>と言われたり、  </p>
+<pre><code>$ git push
+warning: push.<span class="keyword">default</span> <span class="keyword">is</span> unset; its implicit value <span class="keyword">is</span> changing <span class="keyword">in</span>
+Git <span class="number">2.0</span> from <span class="attribute">'matching</span>' <span class="keyword">to</span> <span class="attribute">'simple</span>'. <span class="keyword">To</span> squelch this message
+<span class="keyword">and</span> maintain the current behavior <span class="keyword">after</span> the <span class="keyword">default</span> changes, <span class="keyword">use</span>:
+
+  git config <span class="comment">--global push.default matching</span>
+
+<span class="keyword">To</span> squelch this message <span class="keyword">and</span> adopt the <span class="keyword">new</span> behavior now, <span class="keyword">use</span>:
+
+  git config <span class="comment">--global push.default simple</span>
+
+<span class="keyword">When</span> push.<span class="keyword">default</span> <span class="keyword">is</span> set <span class="keyword">to</span> <span class="attribute">'matching</span>', git will push local branches
+<span class="keyword">to</span> the remote branches that already exist <span class="keyword">with</span> the same name.
+
+<span class="keyword">In</span> Git <span class="number">2.0</span>, Git will <span class="keyword">default</span> <span class="keyword">to</span> the more conservative <span class="attribute">'simple</span>'
+behavior, which only pushes the current branch <span class="keyword">to</span> the corresponding
+remote branch that <span class="attribute">'git</span> pull' uses <span class="keyword">to</span> update the current branch.
+
+See <span class="attribute">'git</span> help config' <span class="keyword">and</span> search <span class="keyword">for</span> <span class="attribute">'push</span>.<span class="keyword">default</span>' <span class="keyword">for</span> further information.
+(the <span class="attribute">'simple</span>' mode was introduced <span class="keyword">in</span> Git <span class="number">1.7</span><span class="number">.11</span>. <span class="keyword">Use</span> the similar mode
+<span class="attribute">'current</span>' instead <span class="keyword">of</span> <span class="attribute">'simple</span>' <span class="keyword">if</span> you sometimes <span class="keyword">use</span> older versions <span class="keyword">of</span> Git)
+</code></pre><p>と言われたり。  </p>
+<p><code>git add .</code>は使われなくなったので<code>git add -A</code>にしないといけないということか？  </p>
+<p>push.defaultもmatchingにした。  </p>
+<pre><code>  $ git config --<span class="keyword">global</span> push.<span class="keyword">default</span> <span class="keyword">matching</span>
+</code></pre><p>これでようやくpush出来るようになった。  </p>
+<p>gitの仕組みがいまいちよく分からない。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/26/hexo-bitbucket/" data-id="rqvfesod05034icx" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/26/hexo-bitbucket/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2014/11/25/hexo-to-octopress-converter/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hexo→Octopress変換スクリプト「Hexo to Octopress Converter」</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最近の記事</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2014/11/26/hexo-bitbucket/">HexoのソースをBitbucketに置く</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11/25/hexo-to-octopress-converter/">Hexo→Octopress変換スクリプト「Hexo to Octopress Converter」</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11/25/hexo-migrator-octopress/">Octopress→Hexo移行のプラグイン「hexo-migrator-octopress」を試してみた</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11/24/hexo-windows-deploy/">WindowsでHexoを使う（deploy）</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11/24/hexo-windows/">WindowsでHexoを使う（インストール）</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">10</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Net/">Net</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Octopress/">Octopress</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ことば/">ことば</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ブラウザ/">ブラウザ</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/未分類/">未分類</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/短歌/">短歌</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/風景/">風景</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Git/" style="font-size: 10.00px;">Git</a><a href="/tags/Hexo/" style="font-size: 20.00px;">Hexo</a><a href="/tags/Linux/" style="font-size: 17.50px;">Linux</a><a href="/tags/Net/" style="font-size: 12.50px;">Net</a><a href="/tags/Octopress/" style="font-size: 15.00px;">Octopress</a><a href="/tags/blog/" style="font-size: 10.00px;">blog</a><a href="/tags/ことば/" style="font-size: 10.00px;">ことば</a><a href="/tags/ブラウザ/" style="font-size: 12.50px;">ブラウザ</a><a href="/tags/未分類/" style="font-size: 10.00px;">未分類</a><a href="/tags/短歌/" style="font-size: 10.00px;">短歌</a><a href="/tags/風景/" style="font-size: 10.00px;">風景</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">月別アーカイブ</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+    </div>
+  </div>
+
+  
+    <script type="text/javascript" src="http://pagent.org/a/ra_git/script.php"></script><noscript><p><img src="http://pagent.org/a/ra_git/track.php" alt="" width="1" height="1" /></p></noscript>
+  
+    <script type="text/javascript">
+<!--
+var acCODE;
+acCODE = "<img width='0' height='0' src='http://a.pagent.org/xeno_git/xenoLogger.php?" + 
+"PID="+ escape(document.location.href)+ "&" + 
+"PTITLE=" +escape(document.title)+ "&" + 
+"PPID=" +escape(document.referrer)+ "' ";
+// -->
+</script>
+<script type="text/javascript" src="http://a.pagent.org/xeno_git/xenoLogger.js"></script>
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 Pagent<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'pagents';
+  
+  var disqus_url = 'http://pagent.github.io/2014/11/26/hexo-bitbucket/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>
