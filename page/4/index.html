@@ -67,10 +67,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-octopress-customize" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-hexo-xubuntu" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/10/23/octopress-customize/" class="article-date">
-  <time datetime="2014-10-23T09:30:20.000Z" itemprop="datePublished">2014年10月23日</time>
+    <a href="/2014/11/21/hexo-xubuntu/" class="article-date">
+  <time datetime="2014-11-21T04:56:19.000Z" itemprop="datePublished">2014年11月21日</time>
 </a>
     
   </div>
@@ -81,7 +81,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/10/23/octopress-customize/">Octopressのカスタマイズ</a>
+      <a class="article-title" href="/2014/11/21/hexo-xubuntu/">Xubuntuに静的サイトジェネレーターHexoを入れてみた</a>
     </h1>
   
 
@@ -89,20 +89,65 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>ブログをリニューアルするにあたって、またOctopressを少しカスタマイズした。  </p>
-<p>以前と同じく、<a href="http://tantant.jp/blog/Octopress/configuring-octopress/#paragraph07" target="_blank" rel="external">Octopressの初期設定時に気にしておきたい9箇所 – tantant</a>と<a href="http://rcmdnk.github.io/blog/2013/10/01/blog-octopress/" target="_blank" rel="external">月間アーカイブ for Octopress – rcmdnk’s blog</a>の通り、カテゴリ別アーカイブと月別アーカイブを追加した。  </p>
-<p>テーマは<a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes" target="_blank" rel="external">3rd Party Octopress Themes · imathis/octopress Wiki</a>で探してみたが、やっぱりデフォルトの方がよいかと思い、sass/custom/_styles.scssを下記に編集したのみ。  
+        <p>Octopressでブログを書いていて、さして不満はないのだが、別の静的サイトジェネレーターに「Hexo」というのがあるのを知った。<br>Octopressに較べ、テーマも豊富に用意あり、日本語のURLやカテゴリー名にも対応しているようだったので、入れてみた。<br>rubyではなく、Node.jsというのを使うらしい。  
         
           <p class="article-more-link">
-            <a href="/2014/10/23/octopress-customize/#more">続きを読む</a>
+            <a href="/2014/11/21/hexo-xubuntu/#more">続きを読む</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/10/23/octopress-customize/" data-id="131st2dra2qajpid" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/21/hexo-xubuntu/" data-id="tr3ag24owytx4h9x" class="article-share-link">Share</a>
       
-        <a href="http://pagent.github.io/2014/10/23/octopress-customize/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://pagent.github.io/2014/11/21/hexo-xubuntu/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-octopress-deploy-rejected" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/20/octopress-deploy-rejected/" class="article-date">
+  <time datetime="2014-11-20T10:11:54.000Z" itemprop="datePublished">2014年11月20日</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/20/octopress-deploy-rejected/">2台目のPCのOctopressでdeploy出来ない</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>DropboxでOctopressのフォルダを同期し、2台目のPCでもrake new_postやrake generateは出来るようになったが、rake deployが出来ない。<br>gitが入ってなかったので<code>sudo apt-get install git</code>し、<code>rake setup_github_pages</code>でセットアップしたが、  </p>
+<pre><code><span class="input"><span class="prompt">! [rejected]        master -&gt;</span> master (non-fast-forward)</span>
+</code></pre><p>とエラーになる。<br>SSHの公開鍵も設定したのだが。  
+        
+          <p class="article-more-link">
+            <a href="/2014/11/20/octopress-deploy-rejected/#more">続きを読む</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/20/octopress-deploy-rejected/" data-id="72c5uhgl9sv87h1d" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/20/octopress-deploy-rejected/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Octopress/">Octopress</a></li></ul>
@@ -114,10 +159,10 @@
 
 
   
-    <article id="post-site-renewal" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-install-libv8" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/10/23/site-renewal/" class="article-date">
-  <time datetime="2014-10-23T08:35:40.000Z" itemprop="datePublished">2014年10月23日</time>
+    <a href="/2014/11/19/install-libv8/" class="article-date">
+  <time datetime="2014-11-19T09:02:45.000Z" itemprop="datePublished">2014年11月19日</time>
 </a>
     
   </div>
@@ -128,7 +173,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/10/23/site-renewal/">独自ドメインが面倒</a>
+      <a class="article-title" href="/2014/11/19/install-libv8/">Installing libv8で止まる</a>
     </h1>
   
 
@@ -136,108 +181,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>deployのやり方が分からずFTPでのアップロードだったが、独自ドメインでもOctopressを使ってブログを書いていた。<br>先日、PCのhomeディレクトリを移動する際に誤ってhomeディレクトリをすべて削除してしまい、結局Linux（Xubuntu）を再インストールした。<br>ブログ自体は残っているが、sourceを消失してしまったので、更新するためにはかつての記事をOctopressのsource内に取り込む必要が有りそう。  
+        <p>OctopressのフォルダをDropboxに置くことにしたので、古いネットブックにインストールしたXubuntuからOctopressを使えるかどうか試してみた。<br>だがrake previewしようとしたら、エラーになってしまった。<br>Octopressを使う環境が整っていないので当然といえば当然。  
         
           <p class="article-more-link">
-            <a href="/2014/10/23/site-renewal/#more">続きを読む</a>
+            <a href="/2014/11/19/install-libv8/#more">続きを読む</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/10/23/site-renewal/" data-id="5fut0x2knwhu002t" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/19/install-libv8/" data-id="jq1ee8iyotljou87" class="article-share-link">Share</a>
       
-        <a href="http://pagent.github.io/2014/10/23/site-renewal/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-io" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/10/23/io/" class="article-date">
-  <time datetime="2014-10-23T01:23:23.000Z" itemprop="datePublished">2014年10月23日</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/10/23/io/">Githubへのdeployエラーとインド洋のイギリス領（.io）</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>OctopressブログをGithubのレポジトリにdeployしようとしても、エラーになってなかなか上手くいかなかった。  </p>
-<p>どうやら、レポジトリ名を（username）.github.comにしたのが原因だった様子。<br>新しく（username）.github.ioでレポジトリを作りなおしたら、すんなりdeploy出来た。<br>Githubがレポジトリを.github.comから.github.ioに移行したのが関係しているのだろうか。  
-        
-          <p class="article-more-link">
-            <a href="/2014/10/23/io/#more">続きを読む</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/10/23/io/" data-id="85y9pcznz93rh70i" class="article-share-link">Share</a>
-      
-        <a href="http://pagent.github.io/2014/10/23/io/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://pagent.github.io/2014/11/19/install-libv8/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Net/">Net</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/10/21/test/" class="article-date">
-  <time datetime="2014-10-21T05:22:41.000Z" itemprop="datePublished">2014年10月21日</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/10/21/test/">テスト投稿</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>テスト投稿</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/10/21/test/" data-id="z0rlft8nzorvt9ga" class="article-share-link">Share</a>
-      
-        <a href="http://pagent.github.io/2014/10/21/test/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/未分類/">未分類</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Octopress/">Octopress</a></li></ul>
 
     </footer>
   </div>
@@ -248,7 +206,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
     </nav>
   
 </section>

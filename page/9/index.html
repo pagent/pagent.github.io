@@ -8,7 +8,7 @@
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Pagent">
-<meta property="og:url" content="http://pagent.github.io/page/3/">
+<meta property="og:url" content="http://pagent.github.io/page/9/">
 <meta property="og:site_name" content="Pagent">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -67,10 +67,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-hexo-archve-category" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-octopress-source-bitbucket" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/11/23/hexo-archve-category/" class="article-date">
-  <time datetime="2014-11-22T22:54:43.000Z" itemprop="datePublished">2014年11月23日</time>
+    <a href="/2014/10/28/octopress-source-bitbucket/" class="article-date">
+  <time datetime="2014-10-28T00:28:36.000Z" itemprop="datePublished">2014年10月28日</time>
 </a>
     
   </div>
@@ -81,7 +81,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/23/hexo-archve-category/">Hexoのアーカイブ、カテゴリーページを全文表示からリスト表示に</a>
+      <a class="article-title" href="/2014/10/28/octopress-source-bitbucket/">OctopressのsourceはBitBucketに置くことにした</a>
     </h1>
   
 
@@ -89,22 +89,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>HexoのArchivesや各カテゴリーのページはデフォルトでは記事全文を表示するようになっている。<br>リスト表示の方が一覧を俯瞰出来て便利なので好みなのだが、カスタマイズの仕方がなかなか分からなかった。  </p>
-<p>結局は_config.ymlのArchivesの項目で  
-        
-          <p class="article-more-link">
-            <a href="/2014/11/23/hexo-archve-category/#more">続きを読む</a>
-          </p>
-        
+        <p>OctopressをDropboxに置いて作業するのはしっくりこなかったが、BitBucketのプライベートレポジトリにOctopressのsourceをバックアップしておけるようなので、やってみた。<br><a href="http://blog.withweb.info/blog/2012/10/04/octopress/" target="_blank" rel="external">Octopressでブログしよう - withweb</a>  </p>
+<p>BitBucketでアカウントを作り参照記事の通り設定したら、_postsを含むsourceを<code>git push</code>出来るようになった。<br>あまりあちこちにアカウントを作るのは気が進まなかったが、これでローカルPCになにかあってもブログの復旧が容易という安心感がある。</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/23/hexo-archve-category/" data-id="pulw863faip39pxw" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/10/28/octopress-source-bitbucket/" data-id="myvom3fsiy59d47l" class="article-share-link">Share</a>
       
-        <a href="http://pagent.github.io/2014/11/23/hexo-archve-category/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://pagent.github.io/2014/10/28/octopress-source-bitbucket/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Octopress/">Octopress</a></li></ul>
 
     </footer>
   </div>
@@ -113,10 +109,10 @@
 
 
   
-    <article id="post-hexo-theme" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-octopress-github-images" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/11/22/hexo-theme/" class="article-date">
-  <time datetime="2014-11-22T12:22:39.000Z" itemprop="datePublished">2014年11月22日</time>
+    <a href="/2014/10/26/octopress-github-images/" class="article-date">
+  <time datetime="2014-10-25T21:20:07.000Z" itemprop="datePublished">2014年10月26日</time>
 </a>
     
   </div>
@@ -127,7 +123,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/22/hexo-theme/">Hexoのテーマを変更したら、元に戻せなくなった</a>
+      <a class="article-title" href="/2014/10/26/octopress-github-images/">Octopress＋GitHubブログで画像の挿入</a>
     </h1>
   
 
@@ -135,21 +131,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Hexoにはいろいろテーマがあるようで有難い。（なぜか中国人が作ったテーマが多い。）<br>元々入っていたデフォルトのテーマは「Landscape」だったので、とりあえずそれとは別のOfficial Themes、「Phase」と「Light」を試してみた。<br>試したはいいが、「Light」を入れてから元のテーマに戻そうとしたら戻せなくなってしまった。<br>「Light」が崩れたようなスタイルから変更出来ない。  
+        <p>Octopressブログに画像を挿入するには、/source/images下に画像ファイルをコピーし、<a href="http://octopress.org/docs/plugins/image-tag/" target="_blank" rel="external">Image Tag - Octopress</a>に従って記事中にタグを記載すればよいらしい。  </p>
+<pre><code>{(半角の<span class="variable">%)</span> img /images/a0960_005150_r.jpg <span class="number">480</span> <span class="number">360</span> コスモス <span class="variable">%}</span>
+</code></pre><p>だが、クリックで元画像を表示するという風には出来ないようだ。  </p>
+<p>元画像をポップアップで表示するプラグインも公開されているが、そこまで凝らなくてもよいと思ったので、画像に関してはhtmlタグを使うことにした。  
         
           <p class="article-more-link">
-            <a href="/2014/11/22/hexo-theme/#more">続きを読む</a>
+            <a href="/2014/10/26/octopress-github-images/#more">続きを読む</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/22/hexo-theme/" data-id="ar5t6k3xl2y1sboy" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/10/26/octopress-github-images/" data-id="84hddvrryn3mikmo" class="article-share-link">Share</a>
       
-        <a href="http://pagent.github.io/2014/11/22/hexo-theme/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://pagent.github.io/2014/10/26/octopress-github-images/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Octopress/">Octopress</a></li></ul>
 
     </footer>
   </div>
@@ -158,10 +157,10 @@
 
 
   
-    <article id="post-octopress-hexo" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-cosmos" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/11/22/octopress-hexo/" class="article-date">
-  <time datetime="2014-11-22T11:21:26.000Z" itemprop="datePublished">2014年11月22日</time>
+    <a href="/2014/10/25/cosmos/" class="article-date">
+  <time datetime="2014-10-25T06:41:22.000Z" itemprop="datePublished">2014年10月25日</time>
 </a>
     
   </div>
@@ -172,7 +171,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/22/octopress-hexo/">サイトジェネレーターをOctopressからHexoに変更</a>
+      <a class="article-title" href="/2014/10/25/cosmos/">畑一面のコスモスはなぜ？</a>
     </h1>
   
 
@@ -180,22 +179,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Github Pagesのブログに使っている静的サイトジェネレーターをOctopressからHexoに変更してみた。  </p>
-<p>Octopressの/source/_posts内の記事ソースをそのままHexoの/source/_postsにコピーしたら、generateした時にパーマリンクが<code>http://.../2014/10/24/2014-10-24-xubuntu-blank-menu/</code>のように日付けが重複してしまった。<br>Hexoはデフォルトでは、新しく記事を作った時には日付けがつかず、生成する時に日付けを付加するようになっているらしい。  
+        <p>秋になって処々で秋桜（コスモス）が美しく咲いている。  </p>
+<p>区画一面にコスモスが咲きほこる畑もあちこち見かける。<br>あれはどういう理由からなのだろう。  
         
           <p class="article-more-link">
-            <a href="/2014/11/22/octopress-hexo/#more">続きを読む</a>
+            <a href="/2014/10/25/cosmos/#more">続きを読む</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/22/octopress-hexo/" data-id="r4rq5dn171g49pzj" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/10/25/cosmos/" data-id="phle6rcad8ot1nyz" class="article-share-link">Share</a>
       
-        <a href="http://pagent.github.io/2014/11/22/octopress-hexo/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://pagent.github.io/2014/10/25/cosmos/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/風景/">風景</a></li></ul>
 
     </footer>
   </div>
@@ -206,7 +205,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
     </nav>
   
 </section>
