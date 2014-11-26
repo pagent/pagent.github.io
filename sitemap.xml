@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2014/11/26/hexo-bitbucket/</loc>
+    <lastmod>2014-11-26T13:08:13.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2014/11/26/filename-case/</loc>
     <lastmod>2014-11-26T12:52:34.000Z</lastmod>
   </url>
@@ -24,11 +29,6 @@
   <url>
     <loc>http://pagent.github.io/2014/11/20/octopress-deploy-rejected/</loc>
     <lastmod>2014-11-26T09:19:07.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2014/11/26/hexo-bitbucket/</loc>
-    <lastmod>2014-11-26T08:59:47.000Z</lastmod>
   </url>
   
   <url>
