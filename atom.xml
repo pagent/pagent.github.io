@@ -4,7 +4,7 @@
   <subtitle><![CDATA[GitHub Pages＋静的サイトジェネレーターでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-11-26T06:26:38.195Z</updated>
+  <updated>2014-11-26T06:56:36.015Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -16,10 +16,10 @@
   
   <entry>
     <title><![CDATA[Hexo→Octopress変換スクリプト「Hexo to Octopress Converter」]]></title>
-    <link href="http://pagent.github.io/2014/11/25/Hexo-to-Octopress-Converter/"/>
-    <id>http://pagent.github.io/2014/11/25/Hexo-to-Octopress-Converter/</id>
+    <link href="http://pagent.github.io/2014/11/25/hexo-to-octopress-converter/"/>
+    <id>http://pagent.github.io/2014/11/25/hexo-to-octopress-converter/</id>
     <published>2014-11-25T11:59:04.000Z</published>
-    <updated>2014-11-26T06:26:28.000Z</updated>
+    <updated>2014-11-26T06:55:49.000Z</updated>
     <content type="html"><![CDATA[<p>HexoからOctopressに記事ソースを変換するrubyスクリプト<a href="https://github.com/ciffel/Hexo-to-Octopress-Converter" target="_blank" rel="external">「Hexo to Octopress Converter」</a>を試してみた。  </p>
 <p>「Download ZIP」からzipファイルをダウンロードし展開。converterファイルを作業したい場所に移し、端末から操作。  </p>
 <pre><code><span class="input"><span class="prompt">$ ./converter &lt;hexo_posts_dir&gt;</span> &lt;octopress_posts_dir&gt;</span>
@@ -37,6 +37,7 @@ date:
 <p>この場合はconverterファイルをエディタで開き、41行目  </p>
 <p>  file_name = “#{prefix}-#{base_name}”<br>の<code>#{prefix}-</code>を削除し、  </p>
 <p>  file_name = “#{base_name}”<br>にしておくと、日付けが付加されない。  </p>
+<p>それから、Hexoは漢字、ひらがな含め日本語のURLやtagsを使用可能だが、Octopressはデフォルトの状態では日本語を使用できない。<br>HexoからOctopressに移行する際にはこの点も注意が必要。</p>
 <p>ーー<br>HexoもOctopressも、共にmarkdown形式のファイルをhtmlに変換するという点では同じなのだが、細かいところが微妙に違っていて少し不便。<br>記事ソースの形式くらいは合わせられなかったものだろうか。</p>
 ]]></content>
     <summary type="html">

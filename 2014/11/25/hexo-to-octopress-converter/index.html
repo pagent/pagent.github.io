@@ -10,7 +10,7 @@
 $ ./converter &lt;hexo_posts_dir&gt; &lt;octopress_posts_">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo→Octopress変換スクリプト「Hexo to Octopress Converter」">
-<meta property="og:url" content="http://pagent.github.io/2014/11/25/Hexo-to-Octopress-Converter/">
+<meta property="og:url" content="http://pagent.github.io/2014/11/25/hexo-to-octopress-converter/">
 <meta property="og:site_name" content="Pagent">
 <meta property="og:description" content="HexoからOctopressに記事ソースを変換するrubyスクリプト「Hexo to Octopress Converter」を試してみた。  
 「Download ZIP」からzipファイルをダウンロードし展開。converterファイルを作業したい場所に移し、端末から操作。  
@@ -71,9 +71,9 @@ $ ./converter &lt;hexo_posts_dir&gt; &lt;octopress_posts_">
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Hexo-to-Octopress-Converter" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-hexo-to-octopress-converter" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/11/25/Hexo-to-Octopress-Converter/" class="article-date">
+    <a href="/2014/11/25/hexo-to-octopress-converter/" class="article-date">
   <time datetime="2014-11-25T11:59:04.000Z" itemprop="datePublished">2014年11月25日</time>
 </a>
     
@@ -110,14 +110,15 @@ date:
 <p>この場合はconverterファイルをエディタで開き、41行目  </p>
 <p>  file_name = “#{prefix}-#{base_name}”<br>の<code>#{prefix}-</code>を削除し、  </p>
 <p>  file_name = “#{base_name}”<br>にしておくと、日付けが付加されない。  </p>
+<p>それから、Hexoは漢字、ひらがな含め日本語のURLやtagsを使用可能だが、Octopressはデフォルトの状態では日本語を使用できない。<br>HexoからOctopressに移行する際にはこの点も注意が必要。</p>
 <p>ーー<br>HexoもOctopressも、共にmarkdown形式のファイルをhtmlに変換するという点では同じなのだが、細かいところが微妙に違っていて少し不便。<br>記事ソースの形式くらいは合わせられなかったものだろうか。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/25/Hexo-to-Octopress-Converter/" data-id="nob8nxmcz67rii88" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/25/hexo-to-octopress-converter/" data-id="f75t5a21t3c0pr9n" class="article-share-link">Share</a>
       
-        <a href="http://pagent.github.io/2014/11/25/Hexo-to-Octopress-Converter/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://pagent.github.io/2014/11/25/hexo-to-octopress-converter/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Octopress/">Octopress</a></li></ul>
@@ -156,7 +157,7 @@ date:
       <ul>
         
           <li>
-            <a href="/2014/11/25/Hexo-to-Octopress-Converter/">Hexo→Octopress変換スクリプト「Hexo to Octopress Converter」</a>
+            <a href="/2014/11/25/hexo-to-octopress-converter/">Hexo→Octopress変換スクリプト「Hexo to Octopress Converter」</a>
           </li>
         
           <li>
@@ -246,7 +247,7 @@ acCODE = "<img width='0' height='0' src='http://a.pagent.org/xeno_git/xenoLogger
 <script>
   var disqus_shortname = 'pagents';
   
-  var disqus_url = 'http://pagent.github.io/2014/11/25/Hexo-to-Octopress-Converter/';
+  var disqus_url = 'http://pagent.github.io/2014/11/25/hexo-to-octopress-converter/';
   
   (function(){
     var dsq = document.createElement('script');
