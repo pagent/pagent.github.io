@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Gitレポジトリと静的サイトジェネレーターでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-11-27T07:08:06.088Z</updated>
+  <updated>2014-11-27T12:05:02.156Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,11 +15,33 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Hexoは中国製だったか]]></title>
+    <link href="http://pagent.github.io/2014/11/27/hexo-china/"/>
+    <id>http://pagent.github.io/2014/11/27/hexo-china/</id>
+    <published>2014-11-27T11:13:57.000Z</published>
+    <updated>2014-11-27T12:01:27.000Z</updated>
+    <content type="html"><![CDATA[<p>しばらく前に静的サイトジェネレーターをOctopressからHexoに乗り換えた。<br>カスタマイズもわりと容易だしgenerateも早いし、気に入って使っている。  </p>
+<p>公開されているカスタムテーマを見ていて、なぜかデモサイトに中国語が多いなと不信に思っていが、オフィシャルテーマ３つのLICENSEを見ると３つとも中国人っぽい名前が記載されている。  </p>
+<p>よく見ると、レポジトリもオフィシャルサイトもこの中国人らしい人のものだった。<br>なんとHexoは中国製だったんだね。</p>
+<p>開発者さんにはなんの恨みも無いが、中国と聞くと正直ちょっと心配になってしまう。<br>中国製のパソコンに不正プログラムが入っていたなんてニュースもあったし。<br>でも、cloneしてくるHexoのソースはGitHub上で公開されているものだし、大丈夫なのだろう。  </p>
+<p>中国人、なかなかやるね。<br>ちょっとくやしい気がする。  </p>
+<p>日本製の秀逸な静的サイトジェネレーターが出てきてくれないものだろうか。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>しばらく前に静的サイトジェネレーターをOctopressからHexoに乗り換えた。<br>カスタマイズもわりと容易だしgenerateも早いし、気に入って使っている。  </p>
+<p>公開されているカスタムテーマを見ていて、なぜかデモサイトに中国語が多いなと不信に思ってい]]>
+    </summary>
+    
+      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Hexo新規記事作成時のタイトル大文字アルファベットを小文字のファイル名に]]></title>
     <link href="http://pagent.github.io/2014/11/26/filename-case/"/>
     <id>http://pagent.github.io/2014/11/26/filename-case/</id>
     <published>2014-11-26T09:50:31.000Z</published>
-    <updated>2014-11-27T06:40:26.000Z</updated>
+    <updated>2014-11-26T12:52:34.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoのデフォルト設定で新規記事を作成する際、記事タイトルに大文字アルファベットを使うと、そのままファイル名としてソースが作成される。</p>
 <pre><code>$ hexo new New-Post
 [info] File created at /.../source/_posts/2014-11-26-New-Post.md
@@ -48,7 +70,7 @@
     <link href="http://pagent.github.io/2014/11/26/hexo-bitbucket/"/>
     <id>http://pagent.github.io/2014/11/26/hexo-bitbucket/</id>
     <published>2014-11-26T07:47:16.000Z</published>
-    <updated>2014-11-27T06:40:26.000Z</updated>
+    <updated>2014-11-26T13:08:13.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoの作業フォルダはWindows領域のDropboxフォルダに置き、他のPCとも同期をとっている。<br>これでソースを消失してしまう危険はかなり低いと思うが、Dropboxと同期する際、結構時間がかかってしまう。<br>普段はDropboxを起動しておらず時々立ち上げる、という形をとっているせいもあるかもしれない。  </p>
 <p>Bitbucketにソースを置いたらpushするのはそれほど時間は掛からないだろうし、過去の履歴も残ってくれてやはり便利だろうと思い、HexoのソースをBitbucketに置くことにした。  </p>
 <p>OctopressのソースをBitbucketに置いた時と同様、Bitbucketにhexoという名前のリポジトリを作り、  </p>
@@ -409,14 +431,15 @@ tag: 1
     <link href="http://pagent.github.io/2014/11/22/hexo-theme/"/>
     <id>http://pagent.github.io/2014/11/22/hexo-theme/</id>
     <published>2014-11-22T12:22:39.000Z</published>
-    <updated>2014-11-27T06:40:26.000Z</updated>
-    <content type="html"><![CDATA[<p>Hexoにはいろいろテーマがあるようで有難い。（なぜか中国人が作ったテーマが多い。）<br>元々入っていたデフォルトのテーマは「Landscape」だったので、とりあえずそれとは別のOfficial Themes、「Phase」と「Light」を試してみた。<br>試したはいいが、「Light」を入れてから元のテーマに戻そうとしたら戻せなくなってしまった。<br>「Light」が崩れたようなスタイルから変更出来ない。  </p>
+    <updated>2014-11-27T12:04:23.000Z</updated>
+    <content type="html"><![CDATA[<p>Hexoにはいろいろテーマがあるようで有難い。<br><a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">Themes · hexojs/hexo Wiki</a><br>（デモサイトはなぜか中国語が多い。）</p>
+<p>元々入っていたデフォルトのテーマは「Landscape」だったので、とりあえずそれとは別のOfficial Themes、「Phase」と「Light」を試してみた。<br>試したはいいが、「Light」を入れてから元のテーマに戻そうとしたら戻せなくなってしまった。<br>「Light」が崩れたようなスタイルから変更出来ない。  </p>
 <p><code>hexo h</code>でヘルプを見ると、<code>clean</code>（Remove generated files and the cache）というコマンドオプションがあったので、<code>hexo clean</code>をしてみた。<br>書いてある通り/publicフォルダ自体も消えてしまったが、その後<code>hexo g</code>したらテーマも無事直った。  </p>
 <p>消したのに、カウント数が(0)のまま表示されているカテゴリやタグも、<code>hexo clean</code>で直るようだ。  </p>
 <p>ーー<br>テーマのCSSをカスタマイズする際にも、ローカルでの確認では問題ないが、いざdeployすると反映されていないようだ。<br>この時もいったん<code>hexo clean</code>すると良いようだ。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Hexoにはいろいろテーマがあるようで有難い。（なぜか中国人が作ったテーマが多い。）<br>元々入っていたデフォルトのテーマは「Landscape」だったので、とりあえずそれとは別のOfficial Themes、「Phase」と「Light」を試してみた。<br>試したは]]>
+    <![CDATA[<p>Hexoにはいろいろテーマがあるようで有難い。<br><a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">Themes · hexojs/hexo Wiki<]]>
     </summary>
     
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
@@ -643,7 +666,7 @@ sudo apt-get install nemo
     <link href="http://pagent.github.io/2014/11/06/yonifuru/"/>
     <id>http://pagent.github.io/2014/11/06/yonifuru/</id>
     <published>2014-11-06T08:59:22.000Z</published>
-    <updated>2014-11-27T06:40:26.000Z</updated>
+    <updated>2014-11-25T08:13:50.000Z</updated>
     <content type="html"><![CDATA[<p>花の色はうつりにけりな  </p>
 <p>いたづらにわがみ世にふる　ながめせしまに  </p>
 <p>（古今和歌集　小野小町）</p>
@@ -716,33 +739,6 @@ body {
     </summary>
     
       <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[xbacklightでモニター輝度を設定・調節]]></title>
-    <link href="http://pagent.github.io/2014/11/02/xbacklight/"/>
-    <id>http://pagent.github.io/2014/11/02/xbacklight/</id>
-    <published>2014-11-02T09:55:00.000Z</published>
-    <updated>2014-11-27T06:40:25.000Z</updated>
-    <content type="html"><![CDATA[<p>Xubuntu起動時のモニター輝度を少し下げてみた。  </p>
-<p>やり方は、/etc/default/grubで設定する方法、/etc/rc.localで設定する方法、xbacklightを使う方法などがあるようだ。<br><a href="https://sites.google.com/site/tetsuroweb/home/software/ubuntu/tips/display-brightness" target="_blank" rel="external">起動時の画面輝度を調整する (Ubuntu 12.04 - 14.04) - 哲朗web</a>  </p>
-<p>まず、/etc/rc.localで設定する方法を試してみた。<br>現在の輝度を変更するコマンドは<code>&gt;</code>の表示のまま止まってしまうので、</p>
-<pre><code>$ sudo -i
-
-# echo 6 &gt; /sys/class/backlight/acpi_video0/brightness
-</code></pre><p>としないといけなかったが、それ以外は参照記事に記載してある通りの方法で、起動時のモニター輝度を変更できた。  </p>
-<p>これで十分だったのだが、試しにxbacklightを入れてみたら、これがかなり便利な代物だった。<br><a href="http://x1japan.wordpress.com/2013/08/23/linux-keep-brightness-setting/" target="_blank" rel="external">目に優しい、LinuxMintやubuntuでモニター輝度を起動時に落とす設定。 | Woishin Journal</a>  </p>
-<p>自動開始アプリケーションに<code>xbacklight -set 80</code>のようにコマンドを登録しておけば反映されるし、変更したい時も簡単に変更できる。  </p>
-<p>輝度は0から100（パーセント）で設定するようなのだが、<code>xbacklight</code>と打って輝度を確認したところ、決まった値に近い切り下げ値にしかならないようだった。<br>自分の環境では、「14.285714」「28.571429」「42.857143」…と、およそ14の倍数になっていた。  </p>
-<p>パネルに複数のランチャーをひとまとめに表示するクイックランチャー（外部）を追加し、コマンド<code>xbacklight -inc 15</code>と<code>xbacklight -dec 14</code>を追加したら、マウスクリックで簡単に輝度を上下できるようになった。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Xubuntu起動時のモニター輝度を少し下げてみた。  </p>
-<p>やり方は、/etc/default/grubで設定する方法、/etc/rc.localで設定する方法、xbacklightを使う方法などがあるようだ。<br><a href="https://sites]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
     
   </entry>
   
