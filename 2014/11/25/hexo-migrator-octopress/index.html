@@ -52,6 +52,8 @@ Octopressの記事ソースをHexoに取り込む「hexo-migrator-octopress」�
         
           <a class="main-nav-link" href="/">Home</a>
         
+          <a class="main-nav-link" href="/about">About</a>
+        
           <a class="main-nav-link" href="/archives">Archives</a>
         
       </nav>
@@ -91,13 +93,13 @@ Octopressの記事ソースをHexoに取り込む「hexo-migrator-octopress」�
     <div class="article-entry" itemprop="articleBody">
       
         <p>OctopressとHexoでは記事ソースのファイルの形式やFront Matter（<code>---</code>で区切られた、title、dateなどの部分）が微妙に異なる。<br>OctopressのcategoriesはHexoではtagsに相当したり。  </p>
-<p>Octopressの記事ソースをHexoに取り込む<a href="https://github.com/sailxjx/hexo-migrator-octopress" target="_blank" rel="external">「hexo-migrator-octopress」</a>というHexo用プラグインがあったので、試してみた。<br>（Hexoの記事ソースをOctopress用に変換するスクリプト「Hexo to Octopress Converter」とは逆向き。）  <a id="more"></a></p>
+<p>Octopressの記事ソースをHexoに取り込む<a href="https://github.com/sailxjx/hexo-migrator-octopress" target="_blank" rel="external">「hexo-migrator-octopress」</a>というHexo用プラグインがあったので、試してみた。<br>（Hexoの記事ソースをOctopress用に変換するスクリプト「Hexo to Octopress Converter」とは逆向き。）  </p>
 <p>デスクトップ上にhexo-test（Hexoフォルダ）とoctopress-test（Octopressフォルダ）を作った。  </p>
 <p>hexo-testで端末を開き、プラグインをインストール。  </p>
 <pre><code>$ npm install hexo-migrator-octopress
 </code></pre><p>コマンド<code>hexo migrate octopress &lt;source&gt;</code>で記事ソースが変換され、Hexoに取り込まれる。（<code>&lt;source&gt;</code>はOctopressフォルダへのパス）<br>今回のテスト環境では</p>
 <pre><code>$ hexo migrate octopress ~/Desktop/octopress-test
-</code></pre><p>/octopress-test/source/_posts/2014-10-25-cosmos.markdownが/hexo-test/source/_posts/cosmos.mdとして取り込まれた。<br>（Hexoのデフォルト設定に従い、日付けが削除さるようだ。）  </p>
+</code></pre><p>octopress-test/source/_posts/2014-10-25-cosmos.markdownがhexo-test/source/_posts/cosmos.mdとして取り込まれた。<br>（Hexoのデフォルト設定に従い、日付けが削除さるようだ。）  </p>
 <p>Front MatterはOctopressの  </p>
 <pre><code>---
 layout: post
@@ -152,7 +154,7 @@ tags:
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/25/hexo-migrator-octopress/" data-id="4whbadwuzcs2qzzl" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/25/hexo-migrator-octopress/" data-id="187ol7ma2h9ij8d5" class="article-share-link">Share</a>
       
         <a href="http://pagent.github.io/2014/11/25/hexo-migrator-octopress/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -255,16 +257,6 @@ tags:
   </div>
 
   
-    
-  <div class="widget-wrap">
-    <div class="widget">
-      <ul>
-        <a href="/hello-world">Hello World</a> (Hexoの使い方)
-      </ul>
-    </div>
-  </div>
-
-  
     <script type="text/javascript" src="http://pagent.org/a/ra_git/script.php"></script><noscript><p><img src="http://pagent.org/a/ra_git/track.php" alt="" width="1" height="1" /></p></noscript>
   
     <script type="text/javascript">
@@ -294,6 +286,8 @@ acCODE = "<img width='0' height='0' src='http://a.pagent.org/xeno_git/xenoLogger
     <nav id="mobile-nav">
   
     <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
   
     <a href="/archives" class="mobile-nav-link">Archives</a>
   

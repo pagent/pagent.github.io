@@ -3,26 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>「disabling IRQ | Pagent</title>
+  <title>Pagent</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="環境
-ハード：NECのネットブックLaVie Light BL300/TOS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  
-現状と対応
-Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出">
-<meta property="og:type" content="article">
-<meta property="og:title" content="「disabling IRQ">
-<meta property="og:url" content="http://pagent.github.io/2014/11/01/irq-problem/">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pagent">
+<meta property="og:url" content="http://pagent.github.io/page/5/">
 <meta property="og:site_name" content="Pagent">
-<meta property="og:description" content="環境
-ハード：NECのネットブックLaVie Light BL300/TOS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  
-現状と対応
-Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="「disabling IRQ">
-<meta name="twitter:description" content="環境
-ハード：NECのネットブックLaVie Light BL300/TOS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  
-現状と対応
-Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出">
+<meta name="twitter:title" content="Pagent">
+<meta name="twitter:description">
 
   
     <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
@@ -76,7 +67,9 @@ Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でイン�
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-irq-problem" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main">
+  
+    <article id="post-irq-problem" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/11/01/irq-problem/" class="article-date">
   <time datetime="2014-11-01T06:45:55.000Z" itemprop="datePublished">2014年11月1日</time>
@@ -89,8 +82,8 @@ Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でイン�
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      「disabling IRQ
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/01/irq-problem/">「disabling IRQ</a>
     </h1>
   
 
@@ -138,35 +131,199 @@ GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
     </footer>
   </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/2014/11/02/xbacklight/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          xbacklightでモニター輝度を設定・調節
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2014/11/01/firefox-closed-tabs/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Firefoxで「閉じたタブを元に戻す」「最近閉じたタブ」がクリック出来ない</div>
-    </a>
-  
-</nav>
+</article>
 
+
+  
+    <article id="post-firefox-closed-tabs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/01/firefox-closed-tabs/" class="article-date">
+  <time datetime="2014-11-01T01:02:58.000Z" itemprop="datePublished">2014年11月1日</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/01/firefox-closed-tabs/">Firefoxで「閉じたタブを元に戻す」「最近閉じたタブ」がクリック出来ない</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>いつの間にかXubuntu14.04.1のFirefoxで「閉じたタブを元に戻す」「最近閉じたタブ」が灰色になっていて選択出来なくなっていた。<br>Tab Mix Plusを無効化したら「閉じたタブを元に戻す」をクリックは出来るが、タブが戻らず機能しない。<br>プライベートウィンドウでも駄目。  </p>
+<p>Firefoxのバージョンが33.0に更新されてからかと、synapticから「バージョンの強制」で28.0にダウングレードしてみたが、やはり駄目。<br>他のXubuntuPCを見てみると、そちらではちゃんと「閉じたタブを元に戻す」「最近閉じたタブ」が機能している。  </p>
+<p>Firefoxをインストールし直してみるしかなさそうなのでプロファイルも削除しておいた方が良いだろうかとプロファイルの保存場所を調べていたら、Firefoxにはリセット機能というのがあるようだった。<br><a href="https://support.mozilla.org/ja/kb/reset-firefox-easily-fix-most-problems" target="_blank" rel="external">Firefox をリセットするには | Firefox ヘルプ</a>  </p>
+<p>結局このリセットで復旧できた。  </p>
+<p>Firefoxをリセットしてもブックマークなどは残るが、アドオンは消去されてしまうので、「Firefox Sync」を利用した方が便利だと思う。<br>あとTab Mix Plusなど各種アドオンの設定もエクスポート出来るものは予めエクスポートしておいた方が良い。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/01/firefox-closed-tabs/" data-id="78qdhsysat2vjs6n" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/01/firefox-closed-tabs/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
   
 </article>
 
 
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
+    <article id="post-fcitx" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/31/fcitx/" class="article-date">
+  <time datetime="2014-10-31T05:40:11.000Z" itemprop="datePublished">2014年10月31日</time>
+</a>
+    
   </div>
-</section>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/31/fcitx/">ibus1.5のプロパティパネルがうっとおしいのでfcitxにした</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ibus1.5ではプロパティパネルがちょろちょろ出てきて邪魔になるし、通知領域のMozcのアイコンは「あ」のままだしで使い勝手が悪いので、ibusはやめてfcitxにした。  </p>
+<p>前にfcitxを入れたときは、Mozcで辞書登録したコマンドの記号やスペースが全角に変換されてしまうので断念したが、今回はちゃんと半角で出力してくれた。<br>前回はXubuntu12.04からアップグレードしたXubuntu14.04.1という環境が悪かったのだろうか。  </p>
+<p>通知領域のアイコンで入力状態が確認出来て、プロパティパネルに煩わされることがなくなったので、快適になった。  </p>
+<p>「Zenkakuhankaku」キーでのトグル式の入力切り替えは嫌なので、fcitxの全体の設定＞拡張オプション＞ホットキーでオン・オフにそれぞれ別のキーを割り当てたが、当初、「入力メソッドをオンに」と「入力メソッドをオフに」に設定したキーが逆に反映されてしまっていた。<br>入力メソッドの項目の並びを「キーボード - 日本語」を上、「Mozc」を下（初期入力状態を半角）にしたら、ちゃんと「入力メソッドをオンに」に設定した「Hiraganakatakana」キーでMozcがオン、「オフに」設定した「Muhenkan」キーでMozcがオフになった。  </p>
+<p>fcitxのスキンが他にないか検索したら、Linux Mintユーザーの方がMint向けのスキンをフォーラムで公開しておられた。<br><a href="http://forums.linuxmint-jp.net/viewtopic.php?t=1200" target="_blank" rel="external">Linux Mint Japan 日本語フォーラム • トピック - Fcitx のミントスキン</a>  </p>
+<p>「mint-dark」は落ち着いた色合いで、Mintじゃなくてもいい感じだ。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/10/31/fcitx/" data-id="dpvy3dbu2k0n1ayc" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/10/31/fcitx/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-unknown-media-type" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/31/unknown-media-type/" class="article-date">
+  <time datetime="2014-10-30T21:04:55.000Z" itemprop="datePublished">2014年10月31日</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/31/unknown-media-type/">「Unknown media type in type &#39;all/all&#39;」等が表示される</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近Octopressを使っている時やXubuntuの更新の際、端末上に「Unknown media type in type ‘all/all’」というような警告が数行表示されることが続いていた。<br>検索してみると、どうやらKDEのバグらしい。<br><a href="https://bugs.launchpad.net/ubuntu/+source/shared-mime-info/+bug/289592" target="_blank" rel="external">Bug #289592 “Unknown media types in /usr/share/mime/packages/kde…” : Bugs : “shared-mime-info” package : Ubuntu</a><br>確かに、KDEのアプリケーションをいくつかインストールしてからこの症状が起こっているように思う。  </p>
+<p>修正するには</p>
+<blockquote>
+<p>$ sudo rm /usr/share/mime/packages/kde.xml<br>$ sudo update-mime-database /usr/share/mime</p>
+</blockquote>
+<p>とすれば良いようだ。<br>だが、なんのためのファイルか知らないが、いきなりkde.xmlを削除するのも気が引けるので、  </p>
+<pre><code>$ sudo mv /usr/share/mime/packages/kde.xml /usr/share/mime/packages/kde.xml.bak
+</code></pre><p>とリネームしてから</p>
+<pre><code>$ sudo update-mime-database /usr/share/mime
+</code></pre><p>としてみた。  </p>
+<p>今のところ「Unknown media type in type …」は出てないし、特に不具合も無いようだ。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/10/31/unknown-media-type/" data-id="b8q8306pmnhaoy1g" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/10/31/unknown-media-type/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-kana" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/28/kana/" class="article-date">
+  <time datetime="2014-10-28T09:01:20.000Z" itemprop="datePublished">2014年10月28日</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/28/kana/">現代仮名遣い</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>ときどき現代仮名遣いに違和感を感じる。<br>例えば、「〜さえ」には「え」より「へ」を使った方が良いのではないかと。  </p>
+<p>でも実際「〜さへ」と書いてみると、これもしっくり来ない。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/10/28/kana/" data-id="hqcaoh3ggglvzm2i" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/10/28/kana/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ことば/">ことば</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+    </nav>
+  
 </section>
         
           <aside id="sidebar">
@@ -270,13 +427,11 @@ acCODE = "<img width='0' height='0' src='http://a.pagent.org/xeno_git/xenoLogger
 <script>
   var disqus_shortname = 'pagents';
   
-  var disqus_url = 'http://pagent.github.io/2014/11/01/irq-problem/';
-  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

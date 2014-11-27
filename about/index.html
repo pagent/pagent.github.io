@@ -3,17 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>起動オプションを付けてXubuntu14.04.1をインストール | Pagent</title>
+  <title>Pagent</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="NECのネットブックLaVie Light BL300/TにXubuntu14.04.1を再インストールした。以前もXubuntu14.04.1をインストールしたがその時はdisabling IRQ #9でインストールDVDを起動出来ず、いったんXubuntu13.04をインストールしてから、その後Xubuntu14.04.1にアップグレードしていた。だが、起動オプションにpci=noacpiを加">
-<meta property="og:type" content="article">
-<meta property="og:title" content="起動オプションを付けてXubuntu14.04.1をインストール">
-<meta property="og:url" content="http://pagent.github.io/2014/11/11/xubuntu-install-option/">
+  <meta name="description" content="このブログについて
+Linuxや静的サイトジェネレーターなどについての内容が多いです。  
+コンピューターやプログラムには疎いですが、「静的ファイルを設置して見てもらう」というシンプルな発想に魅せられて以来、静的サイトジェネレーターを使い始めました。nanocをほんの少しさわったあとOctopressに移り、今はHexoを使用しています。静的サイトジェネレーターを使うために、OSもLinux（Xu">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pagent">
+<meta property="og:url" content="http://pagent.github.io/about/index.html">
 <meta property="og:site_name" content="Pagent">
-<meta property="og:description" content="NECのネットブックLaVie Light BL300/TにXubuntu14.04.1を再インストールした。以前もXubuntu14.04.1をインストールしたがその時はdisabling IRQ #9でインストールDVDを起動出来ず、いったんXubuntu13.04をインストールしてから、その後Xubuntu14.04.1にアップグレードしていた。だが、起動オプションにpci=noacpiを加">
+<meta property="og:description" content="このブログについて
+Linuxや静的サイトジェネレーターなどについての内容が多いです。  
+コンピューターやプログラムには疎いですが、「静的ファイルを設置して見てもらう」というシンプルな発想に魅せられて以来、静的サイトジェネレーターを使い始めました。nanocをほんの少しさわったあとOctopressに移り、今はHexoを使用しています。静的サイトジェネレーターを使うために、OSもLinux（Xu">
+<meta property="og:image" content="/images/a0960_005150_r.jpg">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="起動オプションを付けてXubuntu14.04.1をインストール">
-<meta name="twitter:description" content="NECのネットブックLaVie Light BL300/TにXubuntu14.04.1を再インストールした。以前もXubuntu14.04.1をインストールしたがその時はdisabling IRQ #9でインストールDVDを起動出来ず、いったんXubuntu13.04をインストールしてから、その後Xubuntu14.04.1にアップグレードしていた。だが、起動オプションにpci=noacpiを加">
+<meta name="twitter:title" content="Pagent">
+<meta name="twitter:description" content="このブログについて
+Linuxや静的サイトジェネレーターなどについての内容が多いです。  
+コンピューターやプログラムには疎いですが、「静的ファイルを設置して見てもらう」というシンプルな発想に魅せられて以来、静的サイトジェネレーターを使い始めました。nanocをほんの少しさわったあとOctopressに移り、今はHexoを使用しています。静的サイトジェネレーターを使うために、OSもLinux（Xu">
 
   
     <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
@@ -67,79 +74,37 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-xubuntu-install-option" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/11/11/xubuntu-install-option/" class="article-date">
-  <time datetime="2014-11-11T09:39:48.000Z" itemprop="datePublished">2014年11月11日</time>
+    <a href="/about/index.html" class="article-date">
+  <time datetime="2014-11-27T06:27:53.000Z" itemprop="datePublished">2014年11月27日</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      起動オプションを付けてXubuntu14.04.1をインストール
-    </h1>
-  
-
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>NECのネットブックLaVie Light BL300/TにXubuntu14.04.1を再インストールした。<br>以前もXubuntu14.04.1をインストールしたがその時は<code>disabling IRQ #9</code>でインストールDVDを起動出来ず、いったんXubuntu13.04をインストールしてから、その後Xubuntu14.04.1にアップグレードしていた。<br>だが、起動オプションに<code>pci=noacpi</code>を加えれば、Linuxカーネル3.13.0-39でも起動出来るようだったので、起動オプションを付けてXubuntu14.04.1をインストールした。  </p>
-<p>Xubuntu14.04.1のインストールDVDを入れ、起動後「shift」キーを押し続けてオプションを表示。言語を日本語にした後「F6」キーで「その他のオプション」を表示。<br><code>acpi=off</code>、<code>noapic</code>、<code>nolapic</code>、<code>edd=on</code>、<code>nodmraid</code>、<code>nomodeset</code>等の起動オプションが選択出来るが、なにも選ばず「ESC」キーで選択画面を終了。（<code>acpi=off</code>では解像度が800×600に固定されてしまい、他のオプションでは<code>disabling IRQ #9</code>でインストールDVDを起動出来ない。）<br>下部に「起動オプション」の欄があり、キーボードで任意にオプションを入力出来るので、<code>quiet splash --</code>に続けて<code>pci=noacpi</code>と入力し「ENTER」で起動。<br>問題なくXubuntu14.04.1をインストール出来た。  </p>
-<p>インストール後再起動すると、/etc/default/grubの</p>
-<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;
-</code></pre><p>の下にちゃんと</p>
-<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
-</code></pre><p>の記載が加わっている。</p>
-<p>Xubuntuの前にLubuntu14.04.1も試してみたが、確かにXubuntuに較べて動作はやや軽いような気はした。<br>だがLubuntuソフトウェアセンターというのが検索も出来ず使いづらいし、お気に入りアプリケーションの登録も不便だったりと、カスタマイズの自由度の低さからLubuntuは断念した。</p>
+        <h3 id="このブログについて">このブログについて</h3>
+<p>Linuxや静的サイトジェネレーターなどについての内容が多いです。  </p>
+<p>コンピューターやプログラムには疎いですが、「静的ファイルを設置して見てもらう」というシンプルな発想に魅せられて以来、静的サイトジェネレーターを使い始めました。<br>nanocをほんの少しさわったあとOctopressに移り、今はHexoを使用しています。<br>静的サイトジェネレーターを使うために、OSもLinux（Xubuntu）を使うようになりました。  </p>
+<p>Linuxも静的サイトジェネレーターも、難しくてなかなか思うようにカスタマイズ出来ませんが、そこがまたおもしろくもあります。</p>
+<p><a href="/images/a0960_005150_r.jpg" target="_self"><img src="/images/a0960_005150_r.jpg" alt="コスモス" width="480" height="360"></a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/11/xubuntu-install-option/" data-id="rqtp96u437ioye9z" class="article-share-link">Share</a>
-      
-        <a href="http://pagent.github.io/2014/11/11/xubuntu-install-option/#disqus_thread" class="article-comment-link">Comments</a>
+      <a data-url="http://pagent.github.io/about/index.html" data-id="jpyz5gce4w3nubvt" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-
     </footer>
   </div>
   
     
-<nav id="article-nav">
-  
-    <a href="/2014/11/13/xubuntu-ar9285/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Xubuntu 14.04.1で無線LAN(Atheros AR9285)が安定しない
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2014/11/06/yonifuru/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">いたづらにわがみ世にふる</div>
-    </a>
-  
-</nav>
-
   
 </article>
 
-
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
 </section>
         
           <aside id="sidebar">
@@ -243,13 +208,13 @@ acCODE = "<img width='0' height='0' src='http://a.pagent.org/xeno_git/xenoLogger
 <script>
   var disqus_shortname = 'pagents';
   
-  var disqus_url = 'http://pagent.github.io/2014/11/11/xubuntu-install-option/';
+  var disqus_url = 'http://pagent.github.io/about/index.html';
   
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

@@ -3,23 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Octopressのカスタマイズ | Pagent</title>
+  <title>Pagent</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ブログをリニューアルするにあたって、またOctopressを少しカスタマイズした。  
-以前と同じく、Octopressの初期設定時に気にしておきたい9箇所 – tantantと月間アーカイブ for Octopress – rcmdnk’s blogの通り、カテゴリ別アーカイブと月別アーカイブを追加した。  
-テーマは3rd Party Octopress Themes · imathis/oc">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Octopressのカスタマイズ">
-<meta property="og:url" content="http://pagent.github.io/2014/10/23/octopress-customize/">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Pagent">
+<meta property="og:url" content="http://pagent.github.io/page/7/">
 <meta property="og:site_name" content="Pagent">
-<meta property="og:description" content="ブログをリニューアルするにあたって、またOctopressを少しカスタマイズした。  
-以前と同じく、Octopressの初期設定時に気にしておきたい9箇所 – tantantと月間アーカイブ for Octopress – rcmdnk’s blogの通り、カテゴリ別アーカイブと月別アーカイブを追加した。  
-テーマは3rd Party Octopress Themes · imathis/oc">
+<meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Octopressのカスタマイズ">
-<meta name="twitter:description" content="ブログをリニューアルするにあたって、またOctopressを少しカスタマイズした。  
-以前と同じく、Octopressの初期設定時に気にしておきたい9箇所 – tantantと月間アーカイブ for Octopress – rcmdnk’s blogの通り、カテゴリ別アーカイブと月別アーカイブを追加した。  
-テーマは3rd Party Octopress Themes · imathis/oc">
+<meta name="twitter:title" content="Pagent">
+<meta name="twitter:description">
 
   
     <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
@@ -73,7 +67,69 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-octopress-customize" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main">
+  
+    <article id="post-category-no-downcase" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/24/category-no-downcase/" class="article-date">
+  <time datetime="2014-10-24T00:16:56.000Z" itemprop="datePublished">2014年10月24日</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/24/category-no-downcase/">Octopressのカテゴリ表示が小文字になっていた</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>カテゴリ名を「Octopress」と先頭の「O」を大文字にしているのが、なぜか記事下部でもサイドバーでも「octopress」と小文字で表示されていた。<br>Jekyllのバージョンアップでカテゴリ名の先頭文字を小文字に統一することになったらしい。<br><a href="http://rcmdnk.github.io/blog/2014/07/10/blog-octopress-ruby/" target="_blank" rel="external">Jekyll 1.X or 2.X (+ Octopress)でのCategoryの取り扱い - rcmdnk’s blog</a>  </p>
+<p>参照記事の通り、post.rb（Xubuntu14.04.1では/var/lib/gems/1.9.1/gems/jekyll-2.4.0/lib/jekyllにあった）をoctopress/plugins内にコピーして編集したが、previewの際</p>
+<blockquote>
+<p>warning: already initialized constant MATCHER</p>
+<p>warning: already initialized constant EXCERPT_ATTRIBUTES_FOR_LIQUID</p>
+<p>warning: already initialized constant ATTRIBUTES_FOR_LIQUID</p>
+</blockquote>
+<p>と警告が出る。<br>コピーしてきたpost.rbの内容は、他の部分を削除してカテゴリー名に関する部分だけにした方が良いらしい。  </p>
+<p>大文字小文字は自分で好きに決めたいので、downcaseをcapitalizeにするのではなく<code>.map {|c| c.to_s.downcase}</code>の部分を省略した。  </p>
+<pre><code>module Jekyll
+  class Post
+    def populate_categories
+      categories_from_data = Utils.pluralized_array_from_hash(data, &#39;category&#39;, &#39;categories&#39;)
+      self.categories = (
+        Array(categories) + categories_from_data
+      ).flatten.uniq
+    end
+  end
+end
+</code></pre><p>大文字小文字を好きに決められるようになった。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/10/24/category-no-downcase/" data-id="auzgc4clv950z48f" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/10/24/category-no-downcase/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Octopress/">Octopress</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-octopress-customize" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/10/23/octopress-customize/" class="article-date">
   <time datetime="2014-10-23T09:30:20.000Z" itemprop="datePublished">2014年10月23日</time>
@@ -86,8 +142,8 @@
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      Octopressのカスタマイズ
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/23/octopress-customize/">Octopressのカスタマイズ</a>
     </h1>
   
 
@@ -151,35 +207,149 @@ article blockquote {
     </footer>
   </div>
   
-    
-<nav id="article-nav">
-  
-    <a href="/2014/10/24/category-no-downcase/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Octopressのカテゴリ表示が小文字になっていた
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2014/10/23/site-renewal/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">独自ドメインが面倒</div>
-    </a>
-  
-</nav>
+</article>
 
+
+  
+    <article id="post-site-renewal" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/23/site-renewal/" class="article-date">
+  <time datetime="2014-10-23T08:35:40.000Z" itemprop="datePublished">2014年10月23日</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/23/site-renewal/">独自ドメインが面倒</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>deployのやり方が分からずFTPでのアップロードだったが、独自ドメインでもOctopressを使ってブログを書いていた。<br>先日、PCのhomeディレクトリを移動する際に誤ってhomeディレクトリをすべて削除してしまい、結局Linux（Xubuntu）を再インストールした。<br>ブログ自体は残っているが、sourceを消失してしまったので、更新するためにはかつての記事をOctopressのsource内に取り込む必要が有りそう。  </p>
+<p>htmlファイルを一つ一つmarkdown形式に復元するのは骨が折れそうなので、かつての記事は諦めることにして、今度はレンタルサーバーではなくGithubを使って新しく始めることにした。<br>Githubでも独自ドメインを使えるようだがそれはせず、.github.ioのサブドメインを使わせてもらうことにした。  </p>
+<p>独自ドメインは自分のドメインということで自由度は高いが、いろいろ出来過ぎて逆に面倒になってしまった。<br>持ち家（独自ドメイン）の自由さというのは確かに魅力的だが、自分のようなずぼらな人間には借家・間借りの気楽さの方が向いているのかもしれない。 </p>
+<p>どちらにしても大したことは書いていなかったので、全データ消失しても大差ないのだが。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/10/23/site-renewal/" data-id="0l9cz8sk8z6t6ofh" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/10/23/site-renewal/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li></ul>
+
+    </footer>
+  </div>
   
 </article>
 
 
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  
+    <article id="post-io" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/23/io/" class="article-date">
+  <time datetime="2014-10-23T01:23:23.000Z" itemprop="datePublished">2014年10月23日</time>
+</a>
+    
   </div>
-</section>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/23/io/">Githubへのdeployエラーとインド洋のイギリス領（.io）</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>OctopressブログをGithubのレポジトリにdeployしようとしても、エラーになってなかなか上手くいかなかった。  </p>
+<p>どうやら、レポジトリ名を（username）.github.comにしたのが原因だった様子。<br>新しく（username）.github.ioでレポジトリを作りなおしたら、すんなりdeploy出来た。<br>Githubがレポジトリを.github.comから.github.ioに移行したのが関係しているのだろうか。  </p>
+<p>.ioというのは見慣れないドメインだったが、最近はIT分野で好まれているのだとか。</p>
+<blockquote>
+<p>.ioは国別コードトップレベルドメイン（ccTLD）の一つで、イギリス領インド洋地域(Indian Ocean Territory)に割り当てられている。</p>
+<p>入出力のI/O（Input/Output）やI/Oポートを表すとして、ウェブアプリケーションを始めとするコンピュータサイエンスの分野では近年.ioドメインが好まれている。2013年4月にGitHubはプロジェクトページの全ドメインを「github.io」に移行した。</p>
+</blockquote>
+<p><a href="http://ja.wikipedia.org/wiki/.io" target="_blank" rel="external">.io - Wikipedia</a>  </p>
+<p>イギリスという国がいまだにインド洋に領有地（植民地）を持っている、ということに驚いた。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/10/23/io/" data-id="f7tz82318copyi51" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/10/23/io/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Net/">Net</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/21/test/" class="article-date">
+  <time datetime="2014-10-21T05:22:41.000Z" itemprop="datePublished">2014年10月21日</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/21/test/">テスト投稿</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>テスト投稿</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/10/21/test/" data-id="xmf4s48vabsw0r39" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/10/21/test/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/未分類/">未分類</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span>
+    </nav>
+  
 </section>
         
           <aside id="sidebar">
@@ -283,13 +453,11 @@ acCODE = "<img width='0' height='0' src='http://a.pagent.org/xeno_git/xenoLogger
 <script>
   var disqus_shortname = 'pagents';
   
-  var disqus_url = 'http://pagent.github.io/2014/10/23/octopress-customize/';
-  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>

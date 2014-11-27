@@ -52,6 +52,8 @@
         
           <a class="main-nav-link" href="/">Home</a>
         
+          <a class="main-nav-link" href="/about">About</a>
+        
           <a class="main-nav-link" href="/archives">Archives</a>
         
       </nav>
@@ -91,7 +93,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>ネットブックLaVie LightにDebian Wheezyをインストールした。<br>ウィンドウマネージャはXfceが好みなので、debian-7.7.0-i386-netinst.isoでインストールする際、”Advanced options” 、”Alternate desktop environments”でXfceを選択した。  </p>
-<p>ファイルやフォルダを簡単に管理者権限で操作したいので、XfceデフォルトのファイルマネージャーThunarのアクションに「rootで開く」を追加し、gksuもインストールした。<br>だがrootで開こうとしても、認証画面は表示されるものの、フォルダやファイルを管理者権限で開くことが出来ない。  <a id="more"></a></p>
+<p>ファイルやフォルダを簡単に管理者権限で操作したいので、XfceデフォルトのファイルマネージャーThunarのアクションに「rootで開く」を追加し、gksuもインストールした。<br>だがrootで開こうとしても、認証画面は表示されるものの、フォルダやファイルを管理者権限で開くことが出来ない。  </p>
 <p>代わりにNemoをインストールしようとしたら、レポジトリにNemoが無かった。PCManFMも確かrootで開くメニューがあったのでインストールしてみたが、なぜかrootで開くメニューが無い。<br>困ってしまったが、Ubuntu 12.04 Preciseのレポジトリを追加することで、Nemoをインストール出来た。  </p>
 <pre><code>echo &quot;deb http://ppa.launchpad.net/noobslab/mint/ubuntu precise main&quot; | sudo tee -a /etc/apt/sources.list  
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F59EAE4D  
@@ -104,7 +106,7 @@ sudo apt-get install nemo
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/18/debian-wheezy-nemo/" data-id="7zggei3byoosi54o" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/18/debian-wheezy-nemo/" data-id="6co7ha7vnn6jdxbz" class="article-share-link">Share</a>
       
         <a href="http://pagent.github.io/2014/11/18/debian-wheezy-nemo/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -207,16 +209,6 @@ sudo apt-get install nemo
   </div>
 
   
-    
-  <div class="widget-wrap">
-    <div class="widget">
-      <ul>
-        <a href="/hello-world">Hello World</a> (Hexoの使い方)
-      </ul>
-    </div>
-  </div>
-
-  
     <script type="text/javascript" src="http://pagent.org/a/ra_git/script.php"></script><noscript><p><img src="http://pagent.org/a/ra_git/track.php" alt="" width="1" height="1" /></p></noscript>
   
     <script type="text/javascript">
@@ -246,6 +238,8 @@ acCODE = "<img width='0' height='0' src='http://a.pagent.org/xeno_git/xenoLogger
     <nav id="mobile-nav">
   
     <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
   
     <a href="/archives" class="mobile-nav-link">Archives</a>
   

@@ -55,6 +55,8 @@ $ ./converter &lt;hexo_posts_dir&gt; &lt;octopress_posts_">
         
           <a class="main-nav-link" href="/">Home</a>
         
+          <a class="main-nav-link" href="/about">About</a>
+        
           <a class="main-nav-link" href="/archives">Archives</a>
         
       </nav>
@@ -96,7 +98,7 @@ $ ./converter &lt;hexo_posts_dir&gt; &lt;octopress_posts_">
         <p>HexoからOctopressに記事ソースを変換するrubyスクリプト<a href="https://github.com/ciffel/Hexo-to-Octopress-Converter" target="_blank" rel="external">「Hexo to Octopress Converter」</a>を試してみた。  </p>
 <p>「Download ZIP」からzipファイルをダウンロードし展開。converterファイルを作業したい場所に移し、端末から操作。  </p>
 <pre><code>$ ./converter &lt;hexo_posts_dir&gt; &lt;octopress_posts_dir&gt;
-</code></pre><p>で変換出来る。<br><code>&lt;octopress_posts_dir&gt;</code>は適当に作ったフォルダでも可。  <a id="more"></a></p>
+</code></pre><p>で変換出来る。<br><code>&lt;octopress_posts_dir&gt;</code>は適当に作ったフォルダでも可。  </p>
 <p>変換が終了すると、ファイル名に日付けが付加されたものがOctopressのフォルダに出力される。（拡張子は.mdのまま。）<br>出力されたファイルのFront Matter部分は<code>tags:</code>が<code>categories:</code>に変換されており、また上部の<code>---</code>および<code>layout: post</code>、<code>comments: true</code>が追加される。  </p>
 <p>だが、Octopressのソースを「hexo-migrator-octopress」などでHexoに取り込んでいた場合は、Front Matter上部に既に<code>---</code>が<br>ついている。<br>この状態からだと<code>tags:</code>が<code>categories:</code>に変換されないので、上部の<code>---</code>を消しておく必要がある。  </p>
 <p>また<code>title:</code>の項目で記事タイトルが「”」で挟まれていると、さらに「”」で挟まれ<code>title: &quot;&quot;（記事タイトル）&quot;&quot;</code>のようになってしまう。<br>これではOctopressでgenerateする際エラーになってしまうので、これも削除し、  </p>
@@ -116,7 +118,7 @@ tags:
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/25/hexo-to-octopress-converter/" data-id="chk48o3pyy96ohu7" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/25/hexo-to-octopress-converter/" data-id="d2bijdso97y4a7vq" class="article-share-link">Share</a>
       
         <a href="http://pagent.github.io/2014/11/25/hexo-to-octopress-converter/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -219,16 +221,6 @@ tags:
   </div>
 
   
-    
-  <div class="widget-wrap">
-    <div class="widget">
-      <ul>
-        <a href="/hello-world">Hello World</a> (Hexoの使い方)
-      </ul>
-    </div>
-  </div>
-
-  
     <script type="text/javascript" src="http://pagent.org/a/ra_git/script.php"></script><noscript><p><img src="http://pagent.org/a/ra_git/track.php" alt="" width="1" height="1" /></p></noscript>
   
     <script type="text/javascript">
@@ -258,6 +250,8 @@ acCODE = "<img width='0' height='0' src='http://a.pagent.org/xeno_git/xenoLogger
     <nav id="mobile-nav">
   
     <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
   
     <a href="/archives" class="mobile-nav-link">Archives</a>
   

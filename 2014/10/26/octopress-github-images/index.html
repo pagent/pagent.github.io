@@ -5,24 +5,24 @@
   
   <title>Octopress＋GitHubブログで画像の挿入 | Pagent</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Octopressブログに画像を挿入するには、/source/images下に画像ファイルをコピーし、Image Tag - Octopressに従って記事中にタグを記載すればよいらしい。  
+  <meta name="description" content="Octopressブログに画像を挿入するには、source/images下に画像ファイルをコピーし、Image Tag - Octopressに従って記事中にタグを記載すればよいらしい。  
 {(半角の%) img /images/a0960_005150_r.jpg 480 360 コスモス %}
 だが、クリックで元画像を表示するという風には出来ないようだ。  
-元画像をポップアップで表示する">
+元画像をポップアップで表示するプ">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Octopress＋GitHubブログで画像の挿入">
 <meta property="og:url" content="http://pagent.github.io/2014/10/26/octopress-github-images/">
 <meta property="og:site_name" content="Pagent">
-<meta property="og:description" content="Octopressブログに画像を挿入するには、/source/images下に画像ファイルをコピーし、Image Tag - Octopressに従って記事中にタグを記載すればよいらしい。  
+<meta property="og:description" content="Octopressブログに画像を挿入するには、source/images下に画像ファイルをコピーし、Image Tag - Octopressに従って記事中にタグを記載すればよいらしい。  
 {(半角の%) img /images/a0960_005150_r.jpg 480 360 コスモス %}
 だが、クリックで元画像を表示するという風には出来ないようだ。  
-元画像をポップアップで表示する">
+元画像をポップアップで表示するプ">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Octopress＋GitHubブログで画像の挿入">
-<meta name="twitter:description" content="Octopressブログに画像を挿入するには、/source/images下に画像ファイルをコピーし、Image Tag - Octopressに従って記事中にタグを記載すればよいらしい。  
+<meta name="twitter:description" content="Octopressブログに画像を挿入するには、source/images下に画像ファイルをコピーし、Image Tag - Octopressに従って記事中にタグを記載すればよいらしい。  
 {(半角の%) img /images/a0960_005150_r.jpg 480 360 コスモス %}
 だが、クリックで元画像を表示するという風には出来ないようだ。  
-元画像をポップアップで表示する">
+元画像をポップアップで表示するプ">
 
   
     <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
@@ -57,6 +57,8 @@
         <a id="main-nav-toggle" class="nav-icon"></a>
         
           <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/about">About</a>
         
           <a class="main-nav-link" href="/archives">Archives</a>
         
@@ -96,10 +98,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Octopressブログに画像を挿入するには、/source/images下に画像ファイルをコピーし、<a href="http://octopress.org/docs/plugins/image-tag/" target="_blank" rel="external">Image Tag - Octopress</a>に従って記事中にタグを記載すればよいらしい。  </p>
+        <p>Octopressブログに画像を挿入するには、source/images下に画像ファイルをコピーし、<a href="http://octopress.org/docs/plugins/image-tag/" target="_blank" rel="external">Image Tag - Octopress</a>に従って記事中にタグを記載すればよいらしい。  </p>
 <pre><code>{(半角の%) img /images/a0960_005150_r.jpg 480 360 コスモス %}
 </code></pre><p>だが、クリックで元画像を表示するという風には出来ないようだ。  </p>
-<p>元画像をポップアップで表示するプラグインも公開されているが、そこまで凝らなくてもよいと思ったので、画像に関してはhtmlタグを使うことにした。  <a id="more"></a></p>
+<p>元画像をポップアップで表示するプラグインも公開されているが、そこまで凝らなくてもよいと思ったので、画像に関してはhtmlタグを使うことにした。  </p>
 <pre><code>&lt;img src=&quot;/images/a0960_005150_r.jpg&quot; onclick=&quot;location.href = &#39;/images/a0960_005150_r.jpg&#39;; return false;&quot; style=&quot;cursor:pointer;&quot; border=&quot;0&quot; width=&quot;480&quot; height=&quot;360&quot; alt=&quot;コスモス&quot;&gt;
 </code></pre><p>元画像を別ウィンドウで開きたい時は下記で良いようだ。</p>
 <pre><code>&lt;img src=&quot;/images/a0960_005150_r.jpg&quot; onclick=&quot;window.open(&#39;/images/a0960_005150_r.jpg&#39;); return false;&quot; style=&quot;cursor:pointer;&quot; border=&quot;0&quot; width=&quot;480&quot; height=&quot;360&quot; alt=&quot;コスモス&quot;&gt;
@@ -110,7 +112,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/10/26/octopress-github-images/" data-id="p9dq8pjcqjsujq1y" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/10/26/octopress-github-images/" data-id="7q9uj29a365y7dvt" class="article-share-link">Share</a>
       
         <a href="http://pagent.github.io/2014/10/26/octopress-github-images/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -213,16 +215,6 @@
   </div>
 
   
-    
-  <div class="widget-wrap">
-    <div class="widget">
-      <ul>
-        <a href="/hello-world">Hello World</a> (Hexoの使い方)
-      </ul>
-    </div>
-  </div>
-
-  
     <script type="text/javascript" src="http://pagent.org/a/ra_git/script.php"></script><noscript><p><img src="http://pagent.org/a/ra_git/track.php" alt="" width="1" height="1" /></p></noscript>
   
     <script type="text/javascript">
@@ -252,6 +244,8 @@ acCODE = "<img width='0' height='0' src='http://a.pagent.org/xeno_git/xenoLogger
     <nav id="mobile-nav">
   
     <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
   
     <a href="/archives" class="mobile-nav-link">Archives</a>
   
