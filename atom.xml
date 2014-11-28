@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーター（SSG）とGitレポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-11-28T09:34:57.352Z</updated>
+  <updated>2014-11-28T09:39:07.946Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2014/11/28/metalsmith/"/>
     <id>http://pagent.github.io/2014/11/28/metalsmith/</id>
     <published>2014-11-28T06:22:40.000Z</published>
-    <updated>2014-11-28T09:34:35.000Z</updated>
+    <updated>2014-11-28T09:38:12.000Z</updated>
     <content type="html"><![CDATA[<p>静的サイトジェネレーターは有名なものしか知らなかったが、かなりの数が公開されているようだ。<br><a href="https://staticsitegenerators.net/" target="_blank" rel="external">https://staticsitegenerators.net/</a><br><a href="https://www.staticgen.com/" target="_blank" rel="external">https://www.staticgen.com/</a>  </p>
 <p><a href="https://github.com/segmentio/metalsmith" target="_blank" rel="external">Metalsmith</a>（An extremely simple, pluggable static site generator.）というのが人気急上昇中のようなので、試してみた。<br>Hexo同様、プログラミング言語がJavaScriptなので、早さも期待できる。  </p>
 <p>テストするにあたり、下記サイトを参考にさせて頂いた。<br><a href="http://h2ham.net/metalsmith-static-site-generator" target="_blank" rel="external">Nodeで動作する静的サイトジェネレータ「metalsmith」を使ってみた - HAM MEDIA MEMO</a><br><a href="http://web-layman.com/metalsmith-simple-static-site-generator/" target="_blank" rel="external">metalsmith - シンプルな静的サイトジェネレーター - Layman’s Web Creation.</a>  </p>
@@ -111,7 +111,7 @@ metalsmith(__dirname)
   .use(templates(&#39;handlebars&#39;))
   .build();
 </code></pre><p>というのも、いったいどこの記載のことなんだか。</p>
-<p>「Everything is a Plugin」と謳われているように、カスタマイズ性は高そうだが、初心者がブログツールとして使うには、少々ハードルが高そうだ。  </p>
+<p>「Everything is a Plugin」と謳われているようにカスタマイズ性は高そうだが、Jekyllの使い方が分からず、すぐにOctopressに移った自分のような初心者には、少々ハードルが高そうだ。<br>静的サイトジェネレーターの仕組みを勉強するには良さそうだが。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>静的サイトジェネレーターは有名なものしか知らなかったが、かなりの数が公開されているようだ。<br><a href="https://staticsitegenerators.net/" target="_blank" rel="external">https://stati]]>
