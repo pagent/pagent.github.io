@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2014/11/27/hexo-china/</loc>
+    <lastmod>2014-11-28T10:01:23.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2014/11/28/metalsmith/</loc>
     <lastmod>2014-11-28T09:52:09.000Z</lastmod>
   </url>
@@ -14,11 +19,6 @@
   <url>
     <loc>http://pagent.github.io/2014/10/23/site-renewal/</loc>
     <lastmod>2014-11-28T09:19:34.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2014/11/27/hexo-china/</loc>
-    <lastmod>2014-11-28T09:06:51.000Z</lastmod>
   </url>
   
   <url>
