@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーター（SSG）とGitレポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-11-28T11:23:40.756Z</updated>
+  <updated>2014-11-28T11:24:39.496Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2014/11/28/metalsmith/"/>
     <id>http://pagent.github.io/2014/11/28/metalsmith/</id>
     <published>2014-11-28T06:22:40.000Z</published>
-    <updated>2014-11-28T11:23:27.000Z</updated>
+    <updated>2014-11-28T11:24:29.000Z</updated>
     <content type="html"><![CDATA[<p>静的サイトジェネレーターは有名なものしか知らなかったが、かなりの数が公開されているようだ。<br><a href="https://staticsitegenerators.net/" target="_blank" rel="external">https://staticsitegenerators.net/</a><br><a href="https://www.staticgen.com/" target="_blank" rel="external">https://www.staticgen.com/</a>  </p>
 <p><a href="https://github.com/segmentio/metalsmith" target="_blank" rel="external">Metalsmith</a>（An extremely simple, pluggable static site generator.）というのが人気急上昇中のようなので、試してみた。<br>Hexo同様、プログラミング言語がJavaScriptなので、早さも期待できる。  </p>
 <p>テストするにあたり、下記サイトを参考にさせて頂いた。<br><a href="http://h2ham.net/metalsmith-static-site-generator" target="_blank" rel="external">Nodeで動作する静的サイトジェネレータ「metalsmith」を使ってみた - HAM MEDIA MEMO</a><br><a href="http://web-layman.com/metalsmith-simple-static-site-generator/" target="_blank" rel="external">metalsmith - シンプルな静的サイトジェネレーター - Layman’s Web Creation.</a>  </p>
@@ -94,7 +94,7 @@ date: 2014-11-28
       &quot;verbose&quot;: &quot;true&quot;
     }
 </code></pre><p>と加えてみたら、<code>node node_modules/.bin/metalsmith</code>のコマンドで、生成と共にローカルホストが立ち上がった。<br>ブラウザで<code>http://localhost:8081/test-post-1/</code>にアクセスすると、CSSは当たっていないが表示はされた。  </p>
-<p>たぶん間違った使い方なのだと思うが、プラグインの説明の  </p>
+<p>たぶん正しい使い方ではないのだと思うが、プラグインの説明の  </p>
 <pre><code>var metalsmith = require(&#39;metalsmith&#39;);
 var serve = require(&#39;metalsmith-serve&#39;);
 

@@ -166,7 +166,7 @@ date: 2014-11-28
       &quot;verbose&quot;: &quot;true&quot;
     }
 </code></pre><p>と加えてみたら、<code>node node_modules/.bin/metalsmith</code>のコマンドで、生成と共にローカルホストが立ち上がった。<br>ブラウザで<code>http://localhost:8081/test-post-1/</code>にアクセスすると、CSSは当たっていないが表示はされた。  </p>
-<p>たぶん間違った使い方なのだと思うが、プラグインの説明の  </p>
+<p>たぶん正しい使い方ではないのだと思うが、プラグインの説明の  </p>
 <pre><code>var metalsmith = require(&#39;metalsmith&#39;);
 var serve = require(&#39;metalsmith-serve&#39;);
 
