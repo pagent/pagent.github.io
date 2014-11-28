@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーター（SSG）とGitレポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-11-28T11:26:56.144Z</updated>
+  <updated>2014-11-28T13:21:24.801Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,36 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[.deploy/.git/objectsが大きくなってきたのでgit gcしてみた]]></title>
+    <link href="http://pagent.github.io/2014/11/28/git-gc/"/>
+    <id>http://pagent.github.io/2014/11/28/git-gc/</id>
+    <published>2014-11-28T12:31:38.000Z</published>
+    <updated>2014-11-28T13:20:29.000Z</updated>
+    <content type="html"><![CDATA[<p>それほど記事数は多くないのに、Hexoのサイズが大きくなって来た。<br>最初、数MBだったのが20MB以上になっている。  </p>
+<p>.deploy/.git/objectsが12.4 MBあって、一番容量をくっているようだ。<br>ちょこちょこ記事を修正してその度にdeployしているせいだろう。<br>大した容量ではないが、Dropboxの同期に時間が掛かるのが困る。  </p>
+<p>必要性の低いようなオブジェクトが多数あったりすると、自動的にパックファイルを作って掃除（pack up）してくれるようだが、<code>git gc</code>コマンドにより手動でpack upすることも出来るらしい。<br><a href="http://heart-shaped-chocolate.hatenablog.jp/entry/2013/04/10/052752" target="_blank" rel="external">.git/objectsについて少し調べてみた - 煙と消えるその前に</a>  </p>
+<p>GitHubではないが、BitbucketのFAQには<code>git gc</code>してもリポジトリに悪い影響はないと書いてあった。<br><a href="https://confluence.atlassian.co.jp/pages/viewpage.action?pageId=35815474" target="_blank" rel="external">私のリポジトリで git gc (保全作業) を実行する必要がありますか？ - Bitbucket ドキュメンテーション - アトラシアン日本語ドキュメント</a>  </p>
+<p>早速、.deployで端末を開いて、<code>git gc</code>してみた。  </p>
+<pre><code>$ git gc
+Counting objects: 5328, done.
+Delta compression using up to 8 threads.
+Compressing objects:   5% (153/3046)   
+Compressing objects: 100% (3046/3046), done.
+Writing objects: 100% (5328/5328), done.
+Total 5328 (delta 2157), reused 0 (delta 0)
+</code></pre><p>objects下にたくさんあったフォルダが消えて、4つだけになった。<br>objects/pack内にはpack-〜.idxとpack-〜.packというファイルが出来てる。<br>objectsのサイズは12.4MB→1.8MBに縮小した。  </p>
+<p>あんまり頻回に更新しなくてもいいように、プレビュー時にはちゃんと校正しなければ。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>それほど記事数は多くないのに、Hexoのサイズが大きくなって来た。<br>最初、数MBだったのが20MB以上になっている。  </p>
+<p>.deploy/.git/objectsが12.4 MBあって、一番容量をくっているようだ。<br>ちょこちょこ記事を修正してその度]]>
+    </summary>
+    
+      <category term="Git" scheme="http://pagent.github.io/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[初心者がMetalsmithを試してみた]]></title>
@@ -816,26 +846,6 @@ sudo apt-get install nemo
     </summary>
     
       <category term="短歌" scheme="http://pagent.github.io/tags/%E7%9F%AD%E6%AD%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Firefoxの完全テーマ「MX3」を入れてみた]]></title>
-    <link href="http://pagent.github.io/2014/11/05/firefox-complete-theme/"/>
-    <id>http://pagent.github.io/2014/11/05/firefox-complete-theme/</id>
-    <published>2014-11-05T09:13:55.000Z</published>
-    <updated>2014-11-27T06:40:26.000Z</updated>
-    <content type="html"><![CDATA[<p>ウェブ閲覧をしていて、画面があまり白いと目が疲れる。<br>モニターの輝度を調節したり、FirefoxのアドオンStylishでページのスタイルを強制的に変えることである程度対処は出来るが、Firefoxのブックマークや履歴などサイドバーの背景も少し暗くしたいところ。  </p>
-<p>以前はStylishを使ったり、プロファイルフォルダ内のuserChrome.cssに記述を追加するといった方法でFirefoxのメニューまわりの見た目をカスタマイズ出来たようなのだが、どのバージョンからかブックマーク欄の背景の変更が効かなくなっている。  </p>
-<p>Firefoxのテーマで「完全テーマ」というのを使えばその辺も変更出来るようなので、いくつか試してみた。  </p>
-<p>darkやmidnightと名前に付いている完全テーマは確かにブックマークの背景を黒くしてくれるのだが、真っ黒は真っ黒でかえって見づらい。<br>MX3というテーマを入れたら、うっすら灰色になっていい感じになった。  </p>
-<p>ーー<br>（追記）<br>「MX4」もさらにシンプルでいいかも。  </p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>ウェブ閲覧をしていて、画面があまり白いと目が疲れる。<br>モニターの輝度を調節したり、FirefoxのアドオンStylishでページのスタイルを強制的に変えることである程度対処は出来るが、Firefoxのブックマークや履歴などサイドバーの背景も少し暗くしたいところ。  <]]>
-    </summary>
-    
-      <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
     
   </entry>
   

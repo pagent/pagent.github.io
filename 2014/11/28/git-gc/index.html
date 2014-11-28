@@ -3,20 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Githubへのdeployエラーとインド洋のイギリス領（.io） | Pagent</title>
+  <title>.deploy/.git/objectsが大きくなってきたのでgit gcしてみた | Pagent</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="OctopressブログをGithubのレポジトリにdeployしようとしても、エラーになってなかなか上手くいかなかった。  
-どうやら、レポジトリ名を（username）.github.comにしたのが原因だった様子。新しく（username）.github.ioでレポジトリを作りなおしたら、すんなりdeploy出来た。Githubがレポジトリを.github.comから.github.ioに移">
+  <meta name="description" content="それほど記事数は多くないのに、Hexoのサイズが大きくなって来た。最初、数MBだったのが20MB以上になっている。  
+.deploy/.git/objectsが12.4 MBあって、一番容量をくっているようだ。ちょこちょこ記事を修正してその度にdeployしているせいだろう。大した容量ではないが、Dropboxの同期に時間が掛かるのが困る。  
+必要性の低いようなオブジェクトが多数あったりすると">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Githubへのdeployエラーとインド洋のイギリス領（.io）">
-<meta property="og:url" content="http://pagent.github.io/2014/10/23/io/">
+<meta property="og:title" content=".deploy/.git/objectsが大きくなってきたのでgit gcしてみた">
+<meta property="og:url" content="http://pagent.github.io/2014/11/28/git-gc/">
 <meta property="og:site_name" content="Pagent">
-<meta property="og:description" content="OctopressブログをGithubのレポジトリにdeployしようとしても、エラーになってなかなか上手くいかなかった。  
-どうやら、レポジトリ名を（username）.github.comにしたのが原因だった様子。新しく（username）.github.ioでレポジトリを作りなおしたら、すんなりdeploy出来た。Githubがレポジトリを.github.comから.github.ioに移">
+<meta property="og:description" content="それほど記事数は多くないのに、Hexoのサイズが大きくなって来た。最初、数MBだったのが20MB以上になっている。  
+.deploy/.git/objectsが12.4 MBあって、一番容量をくっているようだ。ちょこちょこ記事を修正してその度にdeployしているせいだろう。大した容量ではないが、Dropboxの同期に時間が掛かるのが困る。  
+必要性の低いようなオブジェクトが多数あったりすると">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Githubへのdeployエラーとインド洋のイギリス領（.io）">
-<meta name="twitter:description" content="OctopressブログをGithubのレポジトリにdeployしようとしても、エラーになってなかなか上手くいかなかった。  
-どうやら、レポジトリ名を（username）.github.comにしたのが原因だった様子。新しく（username）.github.ioでレポジトリを作りなおしたら、すんなりdeploy出来た。Githubがレポジトリを.github.comから.github.ioに移">
+<meta name="twitter:title" content=".deploy/.git/objectsが大きくなってきたのでgit gcしてみた">
+<meta name="twitter:description" content="それほど記事数は多くないのに、Hexoのサイズが大きくなって来た。最初、数MBだったのが20MB以上になっている。  
+.deploy/.git/objectsが12.4 MBあって、一番容量をくっているようだ。ちょこちょこ記事を修正してその度にdeployしているせいだろう。大した容量ではないが、Dropboxの同期に時間が掛かるのが困る。  
+必要性の低いようなオブジェクトが多数あったりすると">
 
   
     <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
@@ -70,10 +73,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-io" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-git-gc" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/10/23/io/" class="article-date">
-  <time datetime="2014-10-23T01:23:23.000Z" itemprop="datePublished">2014年10月23日</time>
+    <a href="/2014/11/28/git-gc/" class="article-date">
+  <time datetime="2014-11-28T12:31:38.000Z" itemprop="datePublished">2014年11月28日</time>
 </a>
     
   </div>
@@ -84,7 +87,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Githubへのdeployエラーとインド洋のイギリス領（.io）
+      .deploy/.git/objectsが大きくなってきたのでgit gcしてみた
     </h1>
   
 
@@ -92,25 +95,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>OctopressブログをGithubのレポジトリにdeployしようとしても、エラーになってなかなか上手くいかなかった。  </p>
-<p>どうやら、レポジトリ名を（username）.github.comにしたのが原因だった様子。<br>新しく（username）.github.ioでレポジトリを作りなおしたら、すんなりdeploy出来た。<br>Githubがレポジトリを.github.comから.github.ioに移行したのが関係しているのだろうか。  </p>
-<p>.ioというのは見慣れないドメインだったが、最近はIT分野で好まれているのだとか。</p>
-<blockquote>
-<p>.ioは国別コードトップレベルドメイン（ccTLD）の一つで、イギリス領インド洋地域(Indian Ocean Territory)に割り当てられている。</p>
-<p>入出力のI/O（Input/Output）やI/Oポートを表すとして、ウェブアプリケーションを始めとするコンピュータサイエンスの分野では近年.ioドメインが好まれている。2013年4月にGitHubはプロジェクトページの全ドメインを「github.io」に移行した。</p>
-</blockquote>
-<p><a href="http://ja.wikipedia.org/wiki/.io" target="_blank" rel="external">.io - Wikipedia</a>  </p>
-<p>イギリスという国がいまだにインド洋に領有地（植民地）を持っている、ということに驚いた。</p>
+        <p>それほど記事数は多くないのに、Hexoのサイズが大きくなって来た。<br>最初、数MBだったのが20MB以上になっている。  </p>
+<p>.deploy/.git/objectsが12.4 MBあって、一番容量をくっているようだ。<br>ちょこちょこ記事を修正してその度にdeployしているせいだろう。<br>大した容量ではないが、Dropboxの同期に時間が掛かるのが困る。  </p>
+<p>必要性の低いようなオブジェクトが多数あったりすると、自動的にパックファイルを作って掃除（pack up）してくれるようだが、<code>git gc</code>コマンドにより手動でpack upすることも出来るらしい。<br><a href="http://heart-shaped-chocolate.hatenablog.jp/entry/2013/04/10/052752" target="_blank" rel="external">.git/objectsについて少し調べてみた - 煙と消えるその前に</a>  </p>
+<p>GitHubではないが、BitbucketのFAQには<code>git gc</code>してもリポジトリに悪い影響はないと書いてあった。<br><a href="https://confluence.atlassian.co.jp/pages/viewpage.action?pageId=35815474" target="_blank" rel="external">私のリポジトリで git gc (保全作業) を実行する必要がありますか？ - Bitbucket ドキュメンテーション - アトラシアン日本語ドキュメント</a>  </p>
+<p>早速、.deployで端末を開いて、<code>git gc</code>してみた。  </p>
+<pre><code>$ git gc
+Counting objects: 5328, done.
+Delta compression using up to 8 threads.
+Compressing objects:   5% (153/3046)   
+Compressing objects: 100% (3046/3046), done.
+Writing objects: 100% (5328/5328), done.
+Total 5328 (delta 2157), reused 0 (delta 0)
+</code></pre><p>objects下にたくさんあったフォルダが消えて、4つだけになった。<br>objects/pack内にはpack-〜.idxとpack-〜.packというファイルが出来てる。<br>objectsのサイズは12.4MB→1.8MBに縮小した。  </p>
+<p>あんまり頻回に更新しなくてもいいように、プレビュー時にはちゃんと校正しなければ。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/10/23/io/" data-id="f7tz82318copyi51" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/28/git-gc/" data-id="7nk9kiphxzcnbrss" class="article-share-link">Share</a>
       
-        <a href="http://pagent.github.io/2014/10/23/io/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://pagent.github.io/2014/11/28/git-gc/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Net/">Net</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
 
     </footer>
   </div>
@@ -118,19 +126,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2014/10/23/site-renewal/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          Octopressのソース消失
-        
-      </div>
-    </a>
   
-  
-    <a href="/2014/10/21/test/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2014/11/28/metalsmith/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">テスト投稿</div>
+      <div class="article-nav-title">初心者がMetalsmithを試してみた</div>
     </a>
   
 </nav>
@@ -247,7 +246,7 @@ acCODE = "<img width='0' height='0' src='http://a.pagent.org/xeno_git/xenoLogger
 <script>
   var disqus_shortname = 'pagents';
   
-  var disqus_url = 'http://pagent.github.io/2014/10/23/io/';
+  var disqus_url = 'http://pagent.github.io/2014/11/28/git-gc/';
   
   (function(){
     var dsq = document.createElement('script');

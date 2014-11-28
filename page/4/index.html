@@ -69,6 +69,83 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-install-libv8" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/19/install-libv8/" class="article-date">
+  <time datetime="2014-11-19T09:02:45.000Z" itemprop="datePublished">2014年11月19日</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/19/install-libv8/">Installing libv8で止まる</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>OctopressのフォルダをDropboxに置くことにしたので、古いネットブックにインストールしたXubuntuからOctopressを使えるかどうか試してみた。<br>だがrake previewしようとしたら、エラーになってしまった。<br>Octopressを使う環境が整っていないので当然といえば当然。  </p>
+<p>環境を整えるにあたり、bundle installで行き詰まってしまった。<br>途中    </p>
+<pre><code>Installing libv8 (3.16.14.7) 
+</code></pre><p>の表示のところで動かない。<br>フリーズしたのかと思ったが検索したところ、libv8のインストールには時間が掛かるらしい。<br>確かにCPUの使用率も100%で、頑張ってはいるようだ。  </p>
+<p>非力なマシンのせいか結局30分くらい掛かったろうか。<br>もう一度パスワード入力を求められ、その後またtherubyracer (0.12.1)のところで少し時間が掛かったが、ようやくYour bundle is complete!<br>Octopressを使えるようになった。  </p>
+<p>ーー<br>使えるようになったと思ったら、deployが出来ない。  </p>
+<pre><code>$ rake deploy
+cp -r source/images/.gitkeeper public/images/.gitkeeper
+## Deploying branch to Github Pages 
+## Pulling any updates from Github Pages 
+cd _deploy
+cd -
+rm -rf _deploy/assets
+rm -rf _deploy/atom.xml
+rm -rf _deploy/blog
+rm -rf _deploy/favicon.png
+rm -rf _deploy/images
+rm -rf _deploy/index.html
+rm -rf _deploy/javascripts
+rm -rf _deploy/posts
+rm -rf _deploy/robots.txt
+rm -rf _deploy/sitemap.xml
+rm -rf _deploy/stylesheets
+
+## Copying public to _deploy
+cp -r public/. _deploy
+cd _deploy
+
+## Committing: Site updated at 2014-11-19 11:02:25 UTC
+sh: 1: git: not found
+
+## Pushing generated _deploy website
+
+## Github Pages deploy complete
+cd -
+</code></pre><p>拒否はされてないみたいだが、記事を投稿出来ない。<br>どこに問題があるのか、よく分からない。<br>generateもやたら遅いし、ちょっとしんどいかな。  </p>
+<p>ーー<br>gitがインストールされてない？</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/19/install-libv8/" data-id="2n4hrttqjy4gk22b" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/19/install-libv8/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Octopress/">Octopress</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSG/">SSG</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-debian-wheezy-nemo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/11/18/debian-wheezy-nemo/" class="article-date">
@@ -258,51 +335,6 @@ sudo apt-get install nemo
 
 
   
-    <article id="post-firefox-complete-theme" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/11/05/firefox-complete-theme/" class="article-date">
-  <time datetime="2014-11-05T09:13:55.000Z" itemprop="datePublished">2014年11月5日</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/05/firefox-complete-theme/">Firefoxの完全テーマ「MX3」を入れてみた</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>ウェブ閲覧をしていて、画面があまり白いと目が疲れる。<br>モニターの輝度を調節したり、FirefoxのアドオンStylishでページのスタイルを強制的に変えることである程度対処は出来るが、Firefoxのブックマークや履歴などサイドバーの背景も少し暗くしたいところ。  </p>
-<p>以前はStylishを使ったり、プロファイルフォルダ内のuserChrome.cssに記述を追加するといった方法でFirefoxのメニューまわりの見た目をカスタマイズ出来たようなのだが、どのバージョンからかブックマーク欄の背景の変更が効かなくなっている。  </p>
-<p>Firefoxのテーマで「完全テーマ」というのを使えばその辺も変更出来るようなので、いくつか試してみた。  </p>
-<p>darkやmidnightと名前に付いている完全テーマは確かにブックマークの背景を黒くしてくれるのだが、真っ黒は真っ黒でかえって見づらい。<br>MX3というテーマを入れたら、うっすら灰色になっていい感じになった。  </p>
-<p>ーー<br>（追記）<br>「MX4」もさらにシンプルでいいかも。  </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/05/firefox-complete-theme/" data-id="jwrakb9nhsk2yjjq" class="article-share-link">Share</a>
-      
-        <a href="http://pagent.github.io/2014/11/05/firefox-complete-theme/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ブラウザ/">ブラウザ</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -317,6 +349,10 @@ sudo apt-get install nemo
     <h3 class="widget-title">最近の記事</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2014/11/28/git-gc/">.deploy/.git/objectsが大きくなってきたのでgit gcしてみた</a><hr style="border:none; border-bottom:1px dotted #999;width: 100%;">
+          </li>
         
           <li>
             <a href="/2014/11/28/metalsmith/">初心者がMetalsmithを試してみた</a><hr style="border:none; border-bottom:1px dotted #999;width: 100%;">
@@ -334,10 +370,6 @@ sudo apt-get install nemo
             <a href="/2014/11/26/hexo-bitbucket/">HexoのソースをBitbucketに置く</a><hr style="border:none; border-bottom:1px dotted #999;width: 100%;">
           </li>
         
-          <li>
-            <a href="/2014/11/25/hexo-to-octopress-converter/">Hexo→Octopress変換スクリプト「Hexo to Octopress Converter」</a><hr style="border:none; border-bottom:1px dotted #999;width: 100%;">
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -349,7 +381,7 @@ sudo apt-get install nemo
   <div class="widget-wrap">
     <h3 class="widget-title">タグ</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Net/">Net</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Octopress/">Octopress</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSG/">SSG</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/metalsmith/">metalsmith</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ことば/">ことば</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ブラウザ/">ブラウザ</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/未分類/">未分類</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/短歌/">短歌</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/風景/">風景</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Net/">Net</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Octopress/">Octopress</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SSG/">SSG</a><span class="tag-list-count">20</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/metalsmith/">metalsmith</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ことば/">ことば</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ブラウザ/">ブラウザ</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/未分類/">未分類</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/短歌/">短歌</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/風景/">風景</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -367,7 +399,7 @@ sudo apt-get install nemo
   <div class="widget-wrap">
     <h3 class="widget-title">月別アーカイブ</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">24</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
     </div>
   </div>
 
