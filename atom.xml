@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Gitレポジトリと静的サイトジェネレーターでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-11-27T12:05:02.156Z</updated>
+  <updated>2014-11-28T08:56:47.407Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,115 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Metalsmithを試そうとしてみた]]></title>
+    <link href="http://pagent.github.io/2014/11/28/metalsmith/"/>
+    <id>http://pagent.github.io/2014/11/28/metalsmith/</id>
+    <published>2014-11-28T06:22:40.000Z</published>
+    <updated>2014-11-28T08:56:19.000Z</updated>
+    <content type="html"><![CDATA[<p>静的サイトジェネレーターは有名なものしか知らなかったが、かなりの数が公開されているようだ。<br><a href="https://staticsitegenerators.net/" target="_blank" rel="external">https://staticsitegenerators.net/</a><br><a href="https://www.staticgen.com/" target="_blank" rel="external">https://www.staticgen.com/</a>  </p>
+<p><a href="https://github.com/segmentio/metalsmith" target="_blank" rel="external">Metalsmith</a>（An extremely simple, pluggable static site generator.）というのが人気急上昇中のようなので、試してみた。<br>Hexo同様、プログラミング言語がJavaScriptなので、早さも期待できる。  </p>
+<p>テストするにあたり、下記サイトを参考にさせて頂いた。<br><a href="http://h2ham.net/metalsmith-static-site-generator" target="_blank" rel="external">Nodeで動作する静的サイトジェネレータ「metalsmith」を使ってみた - HAM MEDIA MEMO</a><br><a href="http://web-layman.com/metalsmith-simple-static-site-generator/" target="_blank" rel="external">metalsmith - シンプルな静的サイトジェネレーター - Layman’s Web Creation.</a>  </p>
+<p>先ずはpackage.json を用意して、導入するプラグインを指定。一括インストールするのが良いようなのだが、本体やプラグインのバージョンがよく分からない。<br>なのでmetalsmith-testという作業フォルダを作り、そこで端末を開いて一個一個インストールした。  </p>
+<pre><code>~/metalsmith-test$ npm install metalsmith
+~/metalsmith-test$ npm install metalsmith-templates
+~/metalsmith-test$ npm install swig
+~/metalsmith-test$ npm install metalsmith-markdown
+~/metalsmith-test$ npm install metalsmith-permalinks
+~/metalsmith-test$ npm install metalsmith-sass
+~/metalsmith-test$ npm install metalsmith-watch
+~/metalsmith-test$ npm install metalsmith-drafts
+</code></pre><p>次に作業フォルダ内にmetalsmith.jsonを作成する必要があったが、これはjekyllの構成に倣ったexampleのものをほぼそのまま使わせてもらった。<br><a href="https://github.com/segmentio/metalsmith/blob/master/examples/jekyll/metalsmith.json" target="_blank" rel="external">https://github.com/segmentio/metalsmith/blob/master/examples/jekyll/metalsmith.json</a></p>
+<pre><code>{
+  &quot;source&quot;: &quot;./_posts&quot;,
+  &quot;destination&quot;: &quot;./_site&quot;,
+  &quot;metadata&quot;: {
+    &quot;title&quot;: &quot;My Jekyll-Powered Blog&quot;,
+    &quot;description&quot;: &quot;My second, super-cool, Jekyll-powered blog.&quot;
+  },
+  &quot;plugins&quot;: {
+    &quot;metalsmith-drafts&quot;: {},
+    &quot;metalsmith-markdown&quot;: {},
+    &quot;metalsmith-permalinks&quot;: {
+      &quot;pattern&quot;: &quot;:title&quot;
+    },
+    &quot;metalsmith-sass&quot;: {
+        &quot;outputStyle&quot;: &quot;expanded&quot;
+    },
+    &quot;metalsmith-templates&quot;: {
+      &quot;engine&quot;: &quot;swig&quot;,
+      &quot;directory&quot;: &quot;_layouts&quot;
+    }
+  }
+}
+</code></pre><p>_layoutsフォルダを作り、そこへ下記内容のpost.htmlを配置。  </p>
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;My Blog&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Metalsmithを試そうとしてみた&lt;/h1&gt;
+  &lt;time&gt;2014-11-28&lt;/time&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>_postsフォルダを作り、テスト用の記事test-post-1.mdを配置。  </p>
+<pre><code>---
+template: post.html
+title: テスト投稿１
+date: 2014-11-28
+---
+##今日の天気
+本日は晴天なり。
+</code></pre><p><code>node node_modules/.bin/metalsmith</code>とコマンドを打つと、自動的に_siteフォルダ、その下にtest-post-1フォルダ、その中にindex.htmlが生成された。  </p>
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;My Blog&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;テスト投稿&lt;/h1&gt;
+  &lt;time&gt;2014-11-28&lt;/time&gt;
+  &lt;h2 id=&quot;-&quot;&gt;今日の天気&lt;/h2&gt;
+&lt;p&gt;本日は晴天なり。&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>ローカルホスト上でプレビューを可能にするプラグインmetalsmith-serveというのがあったのでインストールしたが、どう使えばいいのかよく分からない。  </p>
+<p>無理やりmetalsmith.jsonの<code>&quot;plugins&quot;:</code>の箇所に  </p>
+<pre><code>    &quot;metalsmith-serve&quot;: {
+      &quot;port&quot;: &quot;8081&quot;,
+      &quot;verbose&quot;: &quot;true&quot;
+    }
+</code></pre><p>と加えてみたら、<code>node node_modules/.bin/metalsmith</code>のコマンドで、生成と共にローカルホストが立ち上がった。<br>ブラウザで<code>http://localhost:8081/test-post-1/</code>にアクセスすると、CSSは当たっていないが表示はされた。  </p>
+<p>たぶん間違った使い方なのだと思うが、説明の  </p>
+<pre><code>var metalsmith = require(&#39;metalsmith&#39;);
+var serve = require(&#39;metalsmith-serve&#39;);
+
+metalsmith(__dirname)
+  .use(serve())
+  .build();
+</code></pre><p>というのを何処で設定するのか分からない。  </p>
+<p>トップページの生成の仕方やCSSの当て方なども勉強する必要がありそう。<br>それに、新規記事作成やgenerate、プレビューなど、それぞれコマンドに割り当てて操作したいところ。  </p>
+<p>Metalsmithのサイトの上方に記載してある  </p>
+<pre><code>Metalsmith(__dirname)
+  .use(drafts())
+  .use(markdown())
+  .use(permalinks(&#39;posts/:title&#39;))
+  .use(templates(&#39;handlebars&#39;))
+  .build();
+</code></pre><p>も、いったいどこの記載のことなんだか。</p>
+<p>「Everything is a Plugin」と謳われているように、カスタマイズ性は高そうだが、初心者がブログツールとして使うには、少々ハードルが高そうだ。  </p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>静的サイトジェネレーターは有名なものしか知らなかったが、かなりの数が公開されているようだ。<br><a href="https://staticsitegenerators.net/" target="_blank" rel="external">https://stati]]>
+    </summary>
+    
+      <category term="SSG" scheme="http://pagent.github.io/tags/SSG/"/>
+    
+      <category term="metalsmith" scheme="http://pagent.github.io/tags/metalsmith/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Hexoは中国製だったか]]></title>
@@ -41,7 +150,7 @@
     <link href="http://pagent.github.io/2014/11/26/filename-case/"/>
     <id>http://pagent.github.io/2014/11/26/filename-case/</id>
     <published>2014-11-26T09:50:31.000Z</published>
-    <updated>2014-11-26T12:52:34.000Z</updated>
+    <updated>2014-11-27T06:40:26.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoのデフォルト設定で新規記事を作成する際、記事タイトルに大文字アルファベットを使うと、そのままファイル名としてソースが作成される。</p>
 <pre><code>$ hexo new New-Post
 [info] File created at /.../source/_posts/2014-11-26-New-Post.md
@@ -70,7 +179,7 @@
     <link href="http://pagent.github.io/2014/11/26/hexo-bitbucket/"/>
     <id>http://pagent.github.io/2014/11/26/hexo-bitbucket/</id>
     <published>2014-11-26T07:47:16.000Z</published>
-    <updated>2014-11-26T13:08:13.000Z</updated>
+    <updated>2014-11-27T06:40:26.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoの作業フォルダはWindows領域のDropboxフォルダに置き、他のPCとも同期をとっている。<br>これでソースを消失してしまう危険はかなり低いと思うが、Dropboxと同期する際、結構時間がかかってしまう。<br>普段はDropboxを起動しておらず時々立ち上げる、という形をとっているせいもあるかもしれない。  </p>
 <p>Bitbucketにソースを置いたらpushするのはそれほど時間は掛からないだろうし、過去の履歴も残ってくれてやはり便利だろうと思い、HexoのソースをBitbucketに置くことにした。  </p>
 <p>OctopressのソースをBitbucketに置いた時と同様、Bitbucketにhexoという名前のリポジトリを作り、  </p>
@@ -666,7 +775,7 @@ sudo apt-get install nemo
     <link href="http://pagent.github.io/2014/11/06/yonifuru/"/>
     <id>http://pagent.github.io/2014/11/06/yonifuru/</id>
     <published>2014-11-06T08:59:22.000Z</published>
-    <updated>2014-11-25T08:13:50.000Z</updated>
+    <updated>2014-11-27T06:40:26.000Z</updated>
     <content type="html"><![CDATA[<p>花の色はうつりにけりな  </p>
 <p>いたづらにわがみ世にふる　ながめせしまに  </p>
 <p>（古今和歌集　小野小町）</p>
@@ -696,46 +805,6 @@ sudo apt-get install nemo
 ]]></content>
     <summary type="html">
     <![CDATA[<p>ウェブ閲覧をしていて、画面があまり白いと目が疲れる。<br>モニターの輝度を調節したり、FirefoxのアドオンStylishでページのスタイルを強制的に変えることである程度対処は出来るが、Firefoxのブックマークや履歴などサイドバーの背景も少し暗くしたいところ。  <]]>
-    </summary>
-    
-      <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[FirefoxのアドオンStylishでGyaoの背景色を黒くする]]></title>
-    <link href="http://pagent.github.io/2014/11/03/gyao-background-color/"/>
-    <id>http://pagent.github.io/2014/11/03/gyao-background-color/</id>
-    <published>2014-11-03T07:29:59.000Z</published>
-    <updated>2014-11-27T06:40:25.000Z</updated>
-    <content type="html"><![CDATA[<p>Gyaoで動画を観るとき背景が白くてまぶしいので、FirefoxのアドオンStylishで背景を黒くした。  </p>
-<p>Stylishに下記スタイルを適当な名前で追加するだけ。</p>
-<pre><code>@namespace url(http://www.w3.org/1999/xhtml);
-@-moz-document domain(&quot;gyao.yahoo.co.jp&quot;)
-,domain(&quot;youtube.com&quot;) 
-{
-
-body {
-    background-color:#000;
-}
-#playerModule {
-    border: 1px solid #080808;
-}
-.wrapperText h1 {
-    color:#BBB;
-}
-}
-</code></pre><p>YouTubeの背景はそれ程まぶしいと感じたことは無かったが、いちおうYouTubeのドメインも加えた。<br>ずいぶんと目にやさしくなった。</p>
-<p>Stylishは対象のドメインを指定してスタイルを変えられるので、なにかと重宝している。  </p>
-<p>ーー<br>（追記）<br>下記記事で紹介されているStylishのスタイル、Midnight Surfing - Global Dark Styleというのが、ページをとてもきれいに黒くしてくれる。<br><a href="http://www.xmisao.com/2014/08/08/dark-firefox.html" target="_blank" rel="external">Firefoxを徹底的に黒くする テーマ / Stylish / Vimperator — ぺけみさお</a>  </p>
-<p>ただ、導入するとすべてのページが黒くなってしまうので、GyaoとYouTubeのドメインだけを指定した。<br>本当はツールバーやサイドバーなどFirefox自体の見た目も黒くなるはずらしいが、Firefox自体までは黒くならない。<br>最近のFirefoxのバージョンでは難しいようだ。  </p>
-<p>というわけで、自分で書いた上記のスタイルはお蔵行きとなった。  </p>
-<p>（追記2）<br>Solarized Dark Everywhereというスタイルも黒板っぽい色で落ち着く。<br>目が疲れた時のウェブ閲覧に良さそうだ。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Gyaoで動画を観るとき背景が白くてまぶしいので、FirefoxのアドオンStylishで背景を黒くした。  </p>
-<p>Stylishに下記スタイルを適当な名前で追加するだけ。</p>
-<pre><code>@namespace url(http://www.w3.o]]>
     </summary>
     
       <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>

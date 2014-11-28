@@ -3,26 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>「disabling IRQ | Pagent</title>
+  <title>Metalsmithを試そうとしてみた | Pagent</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="環境
-ハード：NECのネットブックLaVie Light BL300/TOS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  
-現状と対応
-Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出">
+  <meta name="description" content="静的サイトジェネレーターは有名なものしか知らなかったが、かなりの数が公開されているようだ。https://staticsitegenerators.net/https://www.staticgen.com/  
+Metalsmith（An extremely simple, pluggable static site generator.）というのが人気急上昇中のようなので、試してみた。Hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="「disabling IRQ">
-<meta property="og:url" content="http://pagent.github.io/2014/11/01/irq-problem/">
+<meta property="og:title" content="Metalsmithを試そうとしてみた">
+<meta property="og:url" content="http://pagent.github.io/2014/11/28/metalsmith/">
 <meta property="og:site_name" content="Pagent">
-<meta property="og:description" content="環境
-ハード：NECのネットブックLaVie Light BL300/TOS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  
-現状と対応
-Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出">
+<meta property="og:description" content="静的サイトジェネレーターは有名なものしか知らなかったが、かなりの数が公開されているようだ。https://staticsitegenerators.net/https://www.staticgen.com/  
+Metalsmith（An extremely simple, pluggable static site generator.）というのが人気急上昇中のようなので、試してみた。Hexo">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="「disabling IRQ">
-<meta name="twitter:description" content="環境
-ハード：NECのネットブックLaVie Light BL300/TOS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  
-現状と対応
-Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出">
+<meta name="twitter:title" content="Metalsmithを試そうとしてみた">
+<meta name="twitter:description" content="静的サイトジェネレーターは有名なものしか知らなかったが、かなりの数が公開されているようだ。https://staticsitegenerators.net/https://www.staticgen.com/  
+Metalsmith（An extremely simple, pluggable static site generator.）というのが人気急上昇中のようなので、試してみた。Hexo">
 
   
     <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
@@ -76,10 +70,10 @@ Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でイン�
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-irq-problem" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-metalsmith" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/11/01/irq-problem/" class="article-date">
-  <time datetime="2014-11-01T06:45:55.000Z" itemprop="datePublished">2014年11月1日</time>
+    <a href="/2014/11/28/metalsmith/" class="article-date">
+  <time datetime="2014-11-28T06:22:40.000Z" itemprop="datePublished">2014年11月28日</time>
 </a>
     
   </div>
@@ -90,7 +84,7 @@ Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でイン�
         
   
     <h1 class="article-title" itemprop="name">
-      「disabling IRQ
+      Metalsmithを試そうとしてみた
     </h1>
   
 
@@ -98,42 +92,108 @@ Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でイン�
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="環境">環境</h4>
-<p>ハード：NECのネットブックLaVie Light BL300/T<br>OS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  </p>
-<h4 id="現状と対応">現状と対応</h4>
-<p>Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出来なかった。<br>そのため、いったんXubuntu13.04をインストールしてから14.04.1にアップグレードしていた。<br>アップグレード中にもdisabling IRQで起動できなくなり、/etc/default/grubでGRUB_DEFAULT=”Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.8.0-19-generic”にして、デフォルトの起動カーネルを3.8.0-19にしていた。  </p>
-<p>このままでも使えるが、ソフトウェアの更新がしょっちゅうカーネルを更新するよう言ってくるし、カーネル3.13で起動できないかやってみた。  </p>
-<p>まず起動時にOS選択画面が出なかったが、他に起動できるOSがない場合grub2はOS選択画面をスキップしてしまうためらしい。<br><a href="http://www.serendip.ws/archives/3534" target="_blank" rel="external">Grub2 で起動時に選択リストを表示させる : Serendip - Webデザイン・プログラミング</a>  </p>
-<p>上記記事の通り</p>
-<pre><code>#GRUB_HIDDEN_TIMEOUT=0
-GRUB_HIDDEN_TIMEOUT_QUIET=false
-</code></pre><p>にしたらOS選択画面が出た。  </p>
-<p>試してみる起動オプションは下記記事を参考にさせて頂いた。<br><a href="http://kiddushin.jugem.jp/?eid=264" target="_blank" rel="external">Disabling IRQ (起動には成功の巻) | おもしろきこともなき世をおもしろく</a>  </p>
-<p>OS選択画面の「Advanced options for Ubuntu」で「Ubuntu, with Linux 3.13.0-39-generic」を選択し「e」キーでオプション編集画面へ。<br>linux /boot/vmlinuz-3.13.0-39…で始まる行の最後quiet nosplashのあとに半角スペースに続けてオプションを追加、「F10」キーで起動。<br>（参考記事：<a href="https://wiki.ubuntulinux.jp/UbuntuTips/Others/BootOptions#A.2BMKQw8zC5MMgw.2FDDrbggwfzC3MLkwxjDgMG6Nd1LVMKow1zC3MOcw8zCSTgBmQnaEMGtZCWb0MFkwizBrMG8-" target="_blank" rel="external">UbuntuTips/Others/BootOptions - Ubuntu Japanese Wiki</a>）  </p>
-<h4 id="結果">結果</h4>
-<p>acpi=off<br>起動は出来るが、画面が横に引き伸ばされてしまい、モニタの設定でも他の解像度を選べず。<br>シャットダウン時には「System halted」のスプラッシュ画面で止まってしまう。    </p>
-<p>pci=noacpi<br>良好。<br>問題なく使えそう。  </p>
-<p>acpi=noirq<br>一瞬起動できるかと思ったが画面が真っ暗のまま。  </p>
-<p>irqpoll<br>上に同じく真っ暗。  </p>
-<p>上記とは別にpci=routeirqというオプションも見かけたのでやってみたが、これは「disabling IRQ #9」で起動できず。  </p>
-<p>pci=noacpiを起動オプションに加えることにしたので、/etc/default/grubで</p>
-<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet nosplash pci=noacpi&quot;
-</code></pre><p>とし、<code>sudo update-grub</code>した。  </p>
-<p>ーー<br>（追記）<br>最初から「pci=noacpi」のオプションを付けてXubuntu14.04.1をインストールすることも可能だった。<br><a href="http://pagent.github.io/blog/2014/11/11/xubuntu-install-option/" target="_blank" rel="external">起動オプションを付けてXubuntu14.04.1をインストール - Pagent</a>  </p>
-<p>この場合grubの記述は</p>
-<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;
-GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
-</code></pre><p>となっていた。<br>スペース区切りで一行で書いても、改行してあらたにオプションを記述してもどちらでもいいようだ。</p>
+        <p>静的サイトジェネレーターは有名なものしか知らなかったが、かなりの数が公開されているようだ。<br><a href="https://staticsitegenerators.net/" target="_blank" rel="external">https://staticsitegenerators.net/</a><br><a href="https://www.staticgen.com/" target="_blank" rel="external">https://www.staticgen.com/</a>  </p>
+<p><a href="https://github.com/segmentio/metalsmith" target="_blank" rel="external">Metalsmith</a>（An extremely simple, pluggable static site generator.）というのが人気急上昇中のようなので、試してみた。<br>Hexo同様、プログラミング言語がJavaScriptなので、早さも期待できる。  </p>
+<p>テストするにあたり、下記サイトを参考にさせて頂いた。<br><a href="http://h2ham.net/metalsmith-static-site-generator" target="_blank" rel="external">Nodeで動作する静的サイトジェネレータ「metalsmith」を使ってみた - HAM MEDIA MEMO</a><br><a href="http://web-layman.com/metalsmith-simple-static-site-generator/" target="_blank" rel="external">metalsmith - シンプルな静的サイトジェネレーター - Layman’s Web Creation.</a>  </p>
+<p>先ずはpackage.json を用意して、導入するプラグインを指定。一括インストールするのが良いようなのだが、本体やプラグインのバージョンがよく分からない。<br>なのでmetalsmith-testという作業フォルダを作り、そこで端末を開いて一個一個インストールした。  </p>
+<pre><code>~/metalsmith-test$ npm install metalsmith
+~/metalsmith-test$ npm install metalsmith-templates
+~/metalsmith-test$ npm install swig
+~/metalsmith-test$ npm install metalsmith-markdown
+~/metalsmith-test$ npm install metalsmith-permalinks
+~/metalsmith-test$ npm install metalsmith-sass
+~/metalsmith-test$ npm install metalsmith-watch
+~/metalsmith-test$ npm install metalsmith-drafts
+</code></pre><p>次に作業フォルダ内にmetalsmith.jsonを作成する必要があったが、これはjekyllの構成に倣ったexampleのものをほぼそのまま使わせてもらった。<br><a href="https://github.com/segmentio/metalsmith/blob/master/examples/jekyll/metalsmith.json" target="_blank" rel="external">https://github.com/segmentio/metalsmith/blob/master/examples/jekyll/metalsmith.json</a></p>
+<pre><code>{
+  &quot;source&quot;: &quot;./_posts&quot;,
+  &quot;destination&quot;: &quot;./_site&quot;,
+  &quot;metadata&quot;: {
+    &quot;title&quot;: &quot;My Jekyll-Powered Blog&quot;,
+    &quot;description&quot;: &quot;My second, super-cool, Jekyll-powered blog.&quot;
+  },
+  &quot;plugins&quot;: {
+    &quot;metalsmith-drafts&quot;: {},
+    &quot;metalsmith-markdown&quot;: {},
+    &quot;metalsmith-permalinks&quot;: {
+      &quot;pattern&quot;: &quot;:title&quot;
+    },
+    &quot;metalsmith-sass&quot;: {
+        &quot;outputStyle&quot;: &quot;expanded&quot;
+    },
+    &quot;metalsmith-templates&quot;: {
+      &quot;engine&quot;: &quot;swig&quot;,
+      &quot;directory&quot;: &quot;_layouts&quot;
+    }
+  }
+}
+</code></pre><p>_layoutsフォルダを作り、そこへ下記内容のpost.htmlを配置。  </p>
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;My Blog&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Metalsmithを試そうとしてみた&lt;/h1&gt;
+  &lt;time&gt;2014-11-28&lt;/time&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>_postsフォルダを作り、テスト用の記事test-post-1.mdを配置。  </p>
+<pre><code>---
+template: post.html
+title: テスト投稿１
+date: 2014-11-28
+---
+##今日の天気
+本日は晴天なり。
+</code></pre><p><code>node node_modules/.bin/metalsmith</code>とコマンドを打つと、自動的に_siteフォルダ、その下にtest-post-1フォルダ、その中にindex.htmlが生成された。  </p>
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;My Blog&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;テスト投稿&lt;/h1&gt;
+  &lt;time&gt;2014-11-28&lt;/time&gt;
+  &lt;h2 id=&quot;-&quot;&gt;今日の天気&lt;/h2&gt;
+&lt;p&gt;本日は晴天なり。&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>ローカルホスト上でプレビューを可能にするプラグインmetalsmith-serveというのがあったのでインストールしたが、どう使えばいいのかよく分からない。  </p>
+<p>無理やりmetalsmith.jsonの<code>&quot;plugins&quot;:</code>の箇所に  </p>
+<pre><code>    &quot;metalsmith-serve&quot;: {
+      &quot;port&quot;: &quot;8081&quot;,
+      &quot;verbose&quot;: &quot;true&quot;
+    }
+</code></pre><p>と加えてみたら、<code>node node_modules/.bin/metalsmith</code>のコマンドで、生成と共にローカルホストが立ち上がった。<br>ブラウザで<code>http://localhost:8081/test-post-1/</code>にアクセスすると、CSSは当たっていないが表示はされた。  </p>
+<p>たぶん間違った使い方なのだと思うが、説明の  </p>
+<pre><code>var metalsmith = require(&#39;metalsmith&#39;);
+var serve = require(&#39;metalsmith-serve&#39;);
+
+metalsmith(__dirname)
+  .use(serve())
+  .build();
+</code></pre><p>というのを何処で設定するのか分からない。  </p>
+<p>トップページの生成の仕方やCSSの当て方なども勉強する必要がありそう。<br>それに、新規記事作成やgenerate、プレビューなど、それぞれコマンドに割り当てて操作したいところ。  </p>
+<p>Metalsmithのサイトの上方に記載してある  </p>
+<pre><code>Metalsmith(__dirname)
+  .use(drafts())
+  .use(markdown())
+  .use(permalinks(&#39;posts/:title&#39;))
+  .use(templates(&#39;handlebars&#39;))
+  .build();
+</code></pre><p>も、いったいどこの記載のことなんだか。</p>
+<p>「Everything is a Plugin」と謳われているように、カスタマイズ性は高そうだが、初心者がブログツールとして使うには、少々ハードルが高そうだ。  </p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/01/irq-problem/" data-id="cyozt7yu30vcqod8" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/28/metalsmith/" data-id="e66t5hxclbntaptw" class="article-share-link">Share</a>
       
-        <a href="http://pagent.github.io/2014/11/01/irq-problem/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://pagent.github.io/2014/11/28/metalsmith/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SSG/">SSG</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/metalsmith/">metalsmith</a></li></ul>
 
     </footer>
   </div>
@@ -141,19 +201,10 @@ GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
     
 <nav id="article-nav">
   
-    <a href="/2014/11/02/xbacklight/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          xbacklightでモニター輝度を設定・調節
-        
-      </div>
-    </a>
   
-  
-    <a href="/2014/11/01/firefox-closed-tabs/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2014/11/27/hexo-china/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Firefoxで「閉じたタブを元に戻す」「最近閉じたタブ」がクリック出来ない</div>
+      <div class="article-nav-title">Hexoは中国製だったか</div>
     </a>
   
 </nav>
@@ -270,7 +321,7 @@ acCODE = "<img width='0' height='0' src='http://a.pagent.org/xeno_git/xenoLogger
 <script>
   var disqus_shortname = 'pagents';
   
-  var disqus_url = 'http://pagent.github.io/2014/11/01/irq-problem/';
+  var disqus_url = 'http://pagent.github.io/2014/11/28/metalsmith/';
   
   (function(){
     var dsq = document.createElement('script');
