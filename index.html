@@ -159,13 +159,13 @@ date: 2014-11-28
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre><p>ローカルホスト上でプレビューを可能にするプラグインmetalsmith-serveというのがあったのでインストールしたが、どう使えばいいのかよく分からない。  </p>
-<p>無理やりmetalsmith.jsonの<code>&quot;plugins&quot;:</code>の箇所に  </p>
+<p>metalsmith.jsonの<code>&quot;plugins&quot;:</code>の箇所に無理やり  </p>
 <pre><code>    &quot;metalsmith-serve&quot;: {
       &quot;port&quot;: &quot;8081&quot;,
       &quot;verbose&quot;: &quot;true&quot;
     }
 </code></pre><p>と加えてみたら、<code>node node_modules/.bin/metalsmith</code>のコマンドで、生成と共にローカルホストが立ち上がった。<br>ブラウザで<code>http://localhost:8081/test-post-1/</code>にアクセスすると、CSSは当たっていないが表示はされた。  </p>
-<p>たぶん間違った使い方なのだと思うが、説明の  </p>
+<p>たぶん間違った使い方なのだと思うが、プラグインの説明の  </p>
 <pre><code>var metalsmith = require(&#39;metalsmith&#39;);
 var serve = require(&#39;metalsmith-serve&#39;);
 
