@@ -51,6 +51,8 @@
         
           <a class="main-nav-link" href="/about">About</a>
         
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
           <a class="main-nav-link" href="/archives">Archives</a>
         
       </nav>
@@ -68,6 +70,63 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-hexo-xubuntu" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/21/hexo-xubuntu/" class="article-date">
+  <time datetime="2014-11-21T04:56:19.000Z" itemprop="datePublished">2014年11月21日</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/21/hexo-xubuntu/">Xubuntuに静的サイトジェネレーターHexoを入れてみた</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Octopressでブログを書いていて、さして不満はないのだが、別の静的サイトジェネレーターに「Hexo」というのがあるのを知った。<br>Octopressに較べ、テーマも豊富に用意あり、日本語のURLやカテゴリー名にも対応しているようだったので、入れてみた。<br>rubyではなく、Node.jsというのを使うらしい。  </p>
+<p>導入には下記サイトなどを参考にさせて頂いた。<br><a href="http://tech.admax.ninja/2014/09/11/environment-of-hexo/" target="_blank" rel="external">【Node.js】Hexoでブログを書くための環境構築 | AdMax Tech Blog</a>  </p>
+<p>概ね上記サイトの通りに進めたらいいようだったが、Xubuntu14.04の環境では若干うまく行かないところがあった。  </p>
+<p>nodeにパスを通す際、~/.bash_profileというファイルが見つからなかったので、~/.profileに  </p>
+<pre><code>if [[ -s ~/.nvm/nvm.sh ]];
+then source ~/.nvm/nvm.sh
+fi
+</code></pre><p>を追記したが、これでは駄目なようで、ターミナルを起動する度にnvmというコマンドが見つからないと言われる。  </p>
+<p>どうやら~/.bashrcに追記しないと駄目なようだった。<br><a href="http://d.hatena.ne.jp/white_chi/20111101/1320097898" target="_blank" rel="external">Ubuntu11.10で、nvmからnode.jsをインストールする - ホワイトぼーど</a>  </p>
+<p>Hexoをインストールするところで  </p>
+<pre><code>npm WARN optional dep failed, continuing fsevents@0.2.0
+</code></pre><p>と言われたが、問題なく使えるようだ。<br>途中うまく行かないので、下記サイトを参考に  </p>
+<pre><code>curl -sL https://deb.nodesource.com/setup | sudo bash -
+
+sudo apt-get install -y nodejs
+</code></pre><p>とやったりしたが、果たしてこれが必要な操作だったのかどうかは不明。<br><a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager" target="_blank" rel="external">Installing Node.js via package manager · joyent/node Wiki</a>  </p>
+<p>しばらく試用してみて良ささそうだったら、Octopressから乗り換えるかもしれない。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/21/hexo-xubuntu/" data-id="cwfasgn7g80zu0g4" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/21/hexo-xubuntu/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-octopress-deploy-rejected" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -107,7 +166,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/20/octopress-deploy-rejected/" data-id="83j6ox2qpbhl5oma" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/20/octopress-deploy-rejected/" data-id="63laaj9uo00kck1y" class="article-share-link">Share</a>
       
         <a href="http://pagent.github.io/2014/11/20/octopress-deploy-rejected/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -184,7 +243,7 @@ cd -
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/19/install-libv8/" data-id="2n4hrttqjy4gk22b" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/19/install-libv8/" data-id="navehqx69igp4g5h" class="article-share-link">Share</a>
       
         <a href="http://pagent.github.io/2014/11/19/install-libv8/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -234,7 +293,7 @@ sudo apt-get install nemo
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/18/debian-wheezy-nemo/" data-id="6co7ha7vnn6jdxbz" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/18/debian-wheezy-nemo/" data-id="ffwcwrp3w5c0230j" class="article-share-link">Share</a>
       
         <a href="http://pagent.github.io/2014/11/18/debian-wheezy-nemo/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -282,57 +341,9 @@ sudo apt-get install nemo
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/13/xubuntu-ar9285/" data-id="3gp0enz9pwoletzy" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/13/xubuntu-ar9285/" data-id="d5erqeao4ufhi3if" class="article-share-link">Share</a>
       
         <a href="http://pagent.github.io/2014/11/13/xubuntu-ar9285/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-xubuntu-install-option" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/11/11/xubuntu-install-option/" class="article-date">
-  <time datetime="2014-11-11T09:39:48.000Z" itemprop="datePublished">2014年11月11日</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/11/xubuntu-install-option/">起動オプションを付けてXubuntu14.04.1をインストール</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>NECのネットブックLaVie Light BL300/TにXubuntu14.04.1を再インストールした。<br>以前もXubuntu14.04.1をインストールしたがその時は<code>disabling IRQ #9</code>でインストールDVDを起動出来ず、いったんXubuntu13.04をインストールしてから、その後Xubuntu14.04.1にアップグレードしていた。<br>だが、起動オプションに<code>pci=noacpi</code>を加えれば、Linuxカーネル3.13.0-39でも起動出来るようだったので、起動オプションを付けてXubuntu14.04.1をインストールした。  </p>
-<p>Xubuntu14.04.1のインストールDVDを入れ、起動後「shift」キーを押し続けてオプションを表示。言語を日本語にした後「F6」キーで「その他のオプション」を表示。<br><code>acpi=off</code>、<code>noapic</code>、<code>nolapic</code>、<code>edd=on</code>、<code>nodmraid</code>、<code>nomodeset</code>等の起動オプションが選択出来るが、なにも選ばず「ESC」キーで選択画面を終了。（<code>acpi=off</code>では解像度が800×600に固定されてしまい、他のオプションでは<code>disabling IRQ #9</code>でインストールDVDを起動出来ない。）<br>下部に「起動オプション」の欄があり、キーボードで任意にオプションを入力出来るので、<code>quiet splash --</code>に続けて<code>pci=noacpi</code>と入力し「ENTER」で起動。<br>問題なくXubuntu14.04.1をインストール出来た。  </p>
-<p>インストール後再起動すると、/etc/default/grubの</p>
-<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;
-</code></pre><p>の下にちゃんと</p>
-<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
-</code></pre><p>の記載が加わっている。</p>
-<p>Xubuntuの前にLubuntu14.04.1も試してみたが、確かにXubuntuに較べて動作はやや軽いような気はした。<br>だがLubuntuソフトウェアセンターというのが検索も出来ず使いづらいし、お気に入りアプリケーションの登録も不便だったりと、カスタマイズの自由度の低さからLubuntuは断念した。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/11/xubuntu-install-option/" data-id="rqtp96u437ioye9z" class="article-share-link">Share</a>
-      
-        <a href="http://pagent.github.io/2014/11/11/xubuntu-install-option/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -351,83 +362,6 @@ sudo apt-get install nemo
   
 </section>
         
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最近の記事</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2014/11/29/excerpt-separator/">HexoやOctopressのトップページを全文表示ではなく概要表示にする</a><hr style="border:none; border-bottom:1px dotted #999;width: 100%;">
-          </li>
-        
-          <li>
-            <a href="/2014/11/28/git-gc/">.deploy/.git/objectsが大きくなってきたのでgit gcしてみた</a><hr style="border:none; border-bottom:1px dotted #999;width: 100%;">
-          </li>
-        
-          <li>
-            <a href="/2014/11/28/metalsmith/">初心者がMetalsmithを試してみた</a><hr style="border:none; border-bottom:1px dotted #999;width: 100%;">
-          </li>
-        
-          <li>
-            <a href="/2014/11/27/hexo-china/">Hexoは中国製のようだ</a><hr style="border:none; border-bottom:1px dotted #999;width: 100%;">
-          </li>
-        
-          <li>
-            <a href="/2014/11/26/filename-case/">Hexo新規記事作成時のタイトル大文字アルファベットを小文字のファイル名に</a><hr style="border:none; border-bottom:1px dotted #999;width: 100%;">
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">タグ</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Metalsmith/">Metalsmith</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Net/">Net</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Octopress/">Octopress</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ことば/">ことば</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ブラウザ/">ブラウザ</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/未分類/">未分類</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/短歌/">短歌</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/風景/">風景</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">タグ・クラウド</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Git/" style="font-size: 16.00px;">Git</a><a href="/tags/Hexo/" style="font-size: 20.00px;">Hexo</a><a href="/tags/Linux/" style="font-size: 18.00px;">Linux</a><a href="/tags/Metalsmith/" style="font-size: 12.00px;">Metalsmith</a><a href="/tags/Net/" style="font-size: 14.00px;">Net</a><a href="/tags/Octopress/" style="font-size: 18.00px;">Octopress</a><a href="/tags/SSG/" style="font-size: 10.00px;">SSG</a><a href="/tags/blog/" style="font-size: 12.00px;">blog</a><a href="/tags/metalsmith/" style="font-size: 10.00px;">metalsmith</a><a href="/tags/ことば/" style="font-size: 12.00px;">ことば</a><a href="/tags/ブラウザ/" style="font-size: 14.00px;">ブラウザ</a><a href="/tags/未分類/" style="font-size: 12.00px;">未分類</a><a href="/tags/短歌/" style="font-size: 12.00px;">短歌</a><a href="/tags/風景/" style="font-size: 12.00px;">風景</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">月別アーカイブ</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
-    </div>
-  </div>
-
-  
-    <script type="text/javascript" src="http://pagent.org/a/ra_git/script.php"></script><noscript><p><img src="http://pagent.org/a/ra_git/track.php" alt="" width="1" height="1" /></p></noscript>
-  
-    <script type="text/javascript">
-<!--
-var acCODE;
-acCODE = "<img width='0' height='0' src='http://a.pagent.org/xeno_git/xenoLogger.php?" + 
-"PID="+ escape(document.location.href)+ "&" + 
-"PTITLE=" +escape(document.title)+ "&" + 
-"PPID=" +escape(document.referrer)+ "' ";
-// -->
-</script>
-<script type="text/javascript" src="http://a.pagent.org/xeno_git/xenoLogger.js"></script>
-  
-</aside>
-        
       </div>
       <footer id="footer">
   
@@ -445,10 +379,23 @@ acCODE = "<img width='0' height='0' src='http://a.pagent.org/xeno_git/xenoLogger
   
     <a href="/about" class="mobile-nav-link">About</a>
   
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
     <a href="/archives" class="mobile-nav-link">Archives</a>
   
 </nav>
-    
+    <script type="text/javascript" src="http://pagent.org/a/ra_git/script.php"></script><noscript><p><img src="http://pagent.org/a/ra_git/track.php" alt="" width="1" height="1" /></p></noscript>
+<script type="text/javascript">
+<!--
+var acCODE;
+acCODE = "<img width='0' height='0' src='http://a.pagent.org/xeno_git/xenoLogger.php?" + 
+"PID="+ escape(document.location.href)+ "&" + 
+"PTITLE=" +escape(document.title)+ "&" + 
+"PPID=" +escape(document.referrer)+ "' ";
+// -->
+</script>
+<script type="text/javascript" src="http://a.pagent.org/xeno_git/xenoLogger.js"></script>
+
 <script>
   var disqus_shortname = 'pagents';
   

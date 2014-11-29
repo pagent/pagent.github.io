@@ -51,6 +51,8 @@
         
           <a class="main-nav-link" href="/about">About</a>
         
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
           <a class="main-nav-link" href="/archives">Archives</a>
         
       </nav>
@@ -69,9 +71,57 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-yonifuru" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-xubuntu-install-option" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/11/06/yonifuru/" class="article-date">
+    <a href="/2014/11/11/xubuntu-install-option/" class="article-date">
+  <time datetime="2014-11-11T09:39:48.000Z" itemprop="datePublished">2014年11月11日</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/11/xubuntu-install-option/">起動オプションを付けてXubuntu14.04.1をインストール</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>NECのネットブックLaVie Light BL300/TにXubuntu14.04.1を再インストールした。<br>以前もXubuntu14.04.1をインストールしたがその時は<code>disabling IRQ #9</code>でインストールDVDを起動出来ず、いったんXubuntu13.04をインストールしてから、その後Xubuntu14.04.1にアップグレードしていた。<br>だが、起動オプションに<code>pci=noacpi</code>を加えれば、Linuxカーネル3.13.0-39でも起動出来るようだったので、起動オプションを付けてXubuntu14.04.1をインストールした。  </p>
+<p>Xubuntu14.04.1のインストールDVDを入れ、起動後「shift」キーを押し続けてオプションを表示。言語を日本語にした後「F6」キーで「その他のオプション」を表示。<br><code>acpi=off</code>、<code>noapic</code>、<code>nolapic</code>、<code>edd=on</code>、<code>nodmraid</code>、<code>nomodeset</code>等の起動オプションが選択出来るが、なにも選ばず「ESC」キーで選択画面を終了。（<code>acpi=off</code>では解像度が800×600に固定されてしまい、他のオプションでは<code>disabling IRQ #9</code>でインストールDVDを起動出来ない。）<br>下部に「起動オプション」の欄があり、キーボードで任意にオプションを入力出来るので、<code>quiet splash --</code>に続けて<code>pci=noacpi</code>と入力し「ENTER」で起動。<br>問題なくXubuntu14.04.1をインストール出来た。  </p>
+<p>インストール後再起動すると、/etc/default/grubの</p>
+<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;
+</code></pre><p>の下にちゃんと</p>
+<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
+</code></pre><p>の記載が加わっている。</p>
+<p>Xubuntuの前にLubuntu14.04.1も試してみたが、確かにXubuntuに較べて動作はやや軽いような気はした。<br>だがLubuntuソフトウェアセンターというのが検索も出来ず使いづらいし、お気に入りアプリケーションの登録も不便だったりと、カスタマイズの自由度の低さからLubuntuは断念した。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/11/xubuntu-install-option/" data-id="lrdqncvtdncobucc" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/11/xubuntu-install-option/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hana-no-iro" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/06/hana-no-iro/" class="article-date">
   <time datetime="2014-11-06T08:59:22.000Z" itemprop="datePublished">2014年11月6日</time>
 </a>
     
@@ -83,7 +133,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/06/yonifuru/">いたづらにわがみ世にふる</a>
+      <a class="article-title" href="/2014/11/06/hana-no-iro/">いたづらにわがみ世にふる</a>
     </h1>
   
 
@@ -98,9 +148,9 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/06/yonifuru/" data-id="dcfwe77orfel8yw4" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/06/hana-no-iro/" data-id="8zh28ng1mgwrra07" class="article-share-link">Share</a>
       
-        <a href="http://pagent.github.io/2014/11/06/yonifuru/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://pagent.github.io/2014/11/06/hana-no-iro/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/短歌/">短歌</a></li></ul>
@@ -143,7 +193,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/05/firefox-complete-theme/" data-id="jwrakb9nhsk2yjjq" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/05/firefox-complete-theme/" data-id="v9bvmchmxgm4bxwm" class="article-share-link">Share</a>
       
         <a href="http://pagent.github.io/2014/11/05/firefox-complete-theme/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -206,7 +256,7 @@ body {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/03/gyao-background-color/" data-id="0yu1kwtl9s7ni6mz" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/03/gyao-background-color/" data-id="pvmbbx541a3vn76a" class="article-share-link">Share</a>
       
         <a href="http://pagent.github.io/2014/11/03/gyao-background-color/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -257,75 +307,9 @@ body {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/02/xbacklight/" data-id="r120heq49ves3wh5" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/02/xbacklight/" data-id="do3zpeuu7j4ty3w0" class="article-share-link">Share</a>
       
         <a href="http://pagent.github.io/2014/11/02/xbacklight/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-irq-problem" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/11/01/irq-problem/" class="article-date">
-  <time datetime="2014-11-01T06:45:55.000Z" itemprop="datePublished">2014年11月1日</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/01/irq-problem/">「disabling IRQ</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="環境">環境</h4>
-<p>ハード：NECのネットブックLaVie Light BL300/T<br>OS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  </p>
-<h4 id="現状と対応">現状と対応</h4>
-<p>Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出来なかった。<br>そのため、いったんXubuntu13.04をインストールしてから14.04.1にアップグレードしていた。<br>アップグレード中にもdisabling IRQで起動できなくなり、/etc/default/grubでGRUB_DEFAULT=”Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.8.0-19-generic”にして、デフォルトの起動カーネルを3.8.0-19にしていた。  </p>
-<p>このままでも使えるが、ソフトウェアの更新がしょっちゅうカーネルを更新するよう言ってくるし、カーネル3.13で起動できないかやってみた。  </p>
-<p>まず起動時にOS選択画面が出なかったが、他に起動できるOSがない場合grub2はOS選択画面をスキップしてしまうためらしい。<br><a href="http://www.serendip.ws/archives/3534" target="_blank" rel="external">Grub2 で起動時に選択リストを表示させる : Serendip - Webデザイン・プログラミング</a>  </p>
-<p>上記記事の通り</p>
-<pre><code>#GRUB_HIDDEN_TIMEOUT=0
-GRUB_HIDDEN_TIMEOUT_QUIET=false
-</code></pre><p>にしたらOS選択画面が出た。  </p>
-<p>試してみる起動オプションは下記記事を参考にさせて頂いた。<br><a href="http://kiddushin.jugem.jp/?eid=264" target="_blank" rel="external">Disabling IRQ (起動には成功の巻) | おもしろきこともなき世をおもしろく</a>  </p>
-<p>OS選択画面の「Advanced options for Ubuntu」で「Ubuntu, with Linux 3.13.0-39-generic」を選択し「e」キーでオプション編集画面へ。<br>linux /boot/vmlinuz-3.13.0-39…で始まる行の最後quiet nosplashのあとに半角スペースに続けてオプションを追加、「F10」キーで起動。<br>（参考記事：<a href="https://wiki.ubuntulinux.jp/UbuntuTips/Others/BootOptions#A.2BMKQw8zC5MMgw.2FDDrbggwfzC3MLkwxjDgMG6Nd1LVMKow1zC3MOcw8zCSTgBmQnaEMGtZCWb0MFkwizBrMG8-" target="_blank" rel="external">UbuntuTips/Others/BootOptions - Ubuntu Japanese Wiki</a>）  </p>
-<h4 id="結果">結果</h4>
-<p>acpi=off<br>起動は出来るが、画面が横に引き伸ばされてしまい、モニタの設定でも他の解像度を選べず。<br>シャットダウン時には「System halted」のスプラッシュ画面で止まってしまう。    </p>
-<p>pci=noacpi<br>良好。<br>問題なく使えそう。  </p>
-<p>acpi=noirq<br>一瞬起動できるかと思ったが画面が真っ暗のまま。  </p>
-<p>irqpoll<br>上に同じく真っ暗。  </p>
-<p>上記とは別にpci=routeirqというオプションも見かけたのでやってみたが、これは「disabling IRQ #9」で起動できず。  </p>
-<p>pci=noacpiを起動オプションに加えることにしたので、/etc/default/grubで</p>
-<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet nosplash pci=noacpi&quot;
-</code></pre><p>とし、<code>sudo update-grub</code>した。  </p>
-<p>ーー<br>（追記）<br>最初から「pci=noacpi」のオプションを付けてXubuntu14.04.1をインストールすることも可能だった。<br><a href="http://pagent.github.io/blog/2014/11/11/xubuntu-install-option/" target="_blank" rel="external">起動オプションを付けてXubuntu14.04.1をインストール - Pagent</a>  </p>
-<p>この場合grubの記述は</p>
-<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;
-GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
-</code></pre><p>となっていた。<br>スペース区切りで一行で書いても、改行してあらたにオプションを記述してもどちらでもいいようだ。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/01/irq-problem/" data-id="cyozt7yu30vcqod8" class="article-share-link">Share</a>
-      
-        <a href="http://pagent.github.io/2014/11/01/irq-problem/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -344,83 +328,6 @@ GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
   
 </section>
         
-          <aside id="sidebar">
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">最近の記事</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2014/11/29/excerpt-separator/">HexoやOctopressのトップページを全文表示ではなく概要表示にする</a><hr style="border:none; border-bottom:1px dotted #999;width: 100%;">
-          </li>
-        
-          <li>
-            <a href="/2014/11/28/git-gc/">.deploy/.git/objectsが大きくなってきたのでgit gcしてみた</a><hr style="border:none; border-bottom:1px dotted #999;width: 100%;">
-          </li>
-        
-          <li>
-            <a href="/2014/11/28/metalsmith/">初心者がMetalsmithを試してみた</a><hr style="border:none; border-bottom:1px dotted #999;width: 100%;">
-          </li>
-        
-          <li>
-            <a href="/2014/11/27/hexo-china/">Hexoは中国製のようだ</a><hr style="border:none; border-bottom:1px dotted #999;width: 100%;">
-          </li>
-        
-          <li>
-            <a href="/2014/11/26/filename-case/">Hexo新規記事作成時のタイトル大文字アルファベットを小文字のファイル名に</a><hr style="border:none; border-bottom:1px dotted #999;width: 100%;">
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">タグ</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Metalsmith/">Metalsmith</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Net/">Net</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Octopress/">Octopress</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ことば/">ことば</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ブラウザ/">ブラウザ</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/未分類/">未分類</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/短歌/">短歌</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/風景/">風景</a><span class="tag-list-count">1</span></li></ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">タグ・クラウド</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Git/" style="font-size: 16.00px;">Git</a><a href="/tags/Hexo/" style="font-size: 20.00px;">Hexo</a><a href="/tags/Linux/" style="font-size: 18.00px;">Linux</a><a href="/tags/Metalsmith/" style="font-size: 12.00px;">Metalsmith</a><a href="/tags/Net/" style="font-size: 14.00px;">Net</a><a href="/tags/Octopress/" style="font-size: 18.00px;">Octopress</a><a href="/tags/SSG/" style="font-size: 10.00px;">SSG</a><a href="/tags/blog/" style="font-size: 12.00px;">blog</a><a href="/tags/metalsmith/" style="font-size: 10.00px;">metalsmith</a><a href="/tags/ことば/" style="font-size: 12.00px;">ことば</a><a href="/tags/ブラウザ/" style="font-size: 14.00px;">ブラウザ</a><a href="/tags/未分類/" style="font-size: 12.00px;">未分類</a><a href="/tags/短歌/" style="font-size: 12.00px;">短歌</a><a href="/tags/風景/" style="font-size: 12.00px;">風景</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">月別アーカイブ</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
-    </div>
-  </div>
-
-  
-    <script type="text/javascript" src="http://pagent.org/a/ra_git/script.php"></script><noscript><p><img src="http://pagent.org/a/ra_git/track.php" alt="" width="1" height="1" /></p></noscript>
-  
-    <script type="text/javascript">
-<!--
-var acCODE;
-acCODE = "<img width='0' height='0' src='http://a.pagent.org/xeno_git/xenoLogger.php?" + 
-"PID="+ escape(document.location.href)+ "&" + 
-"PTITLE=" +escape(document.title)+ "&" + 
-"PPID=" +escape(document.referrer)+ "' ";
-// -->
-</script>
-<script type="text/javascript" src="http://a.pagent.org/xeno_git/xenoLogger.js"></script>
-  
-</aside>
-        
       </div>
       <footer id="footer">
   
@@ -438,10 +345,23 @@ acCODE = "<img width='0' height='0' src='http://a.pagent.org/xeno_git/xenoLogger
   
     <a href="/about" class="mobile-nav-link">About</a>
   
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
     <a href="/archives" class="mobile-nav-link">Archives</a>
   
 </nav>
-    
+    <script type="text/javascript" src="http://pagent.org/a/ra_git/script.php"></script><noscript><p><img src="http://pagent.org/a/ra_git/track.php" alt="" width="1" height="1" /></p></noscript>
+<script type="text/javascript">
+<!--
+var acCODE;
+acCODE = "<img width='0' height='0' src='http://a.pagent.org/xeno_git/xenoLogger.php?" + 
+"PID="+ escape(document.location.href)+ "&" + 
+"PTITLE=" +escape(document.title)+ "&" + 
+"PPID=" +escape(document.referrer)+ "' ";
+// -->
+</script>
+<script type="text/javascript" src="http://a.pagent.org/xeno_git/xenoLogger.js"></script>
+
 <script>
   var disqus_shortname = 'pagents';
   
