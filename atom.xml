@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーター（SSG）とGitレポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-11-29T06:05:13.132Z</updated>
+  <updated>2014-11-29T06:10:13.434Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[HexoやOctopressのトップページの表示を全文表示ではなく概要表示にする]]></title>
+    <title><![CDATA[HexoやOctopressのトップページを全文表示ではなく概要表示にする]]></title>
     <link href="http://pagent.github.io/2014/11/29/excerpt-separator/"/>
     <id>http://pagent.github.io/2014/11/29/excerpt-separator/</id>
     <published>2014-11-29T04:37:03.000Z</published>
-    <updated>2014-11-29T06:03:54.000Z</updated>
+    <updated>2014-11-29T06:09:57.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoでトップページを表示した時、複数の記事の全文がだらだらと表示されているのは見づらいと思い、前半部分を抜粋した概要表示にしてみた。<br>やり方は簡単で、記事ソースの適当な箇所に<code>&lt;!-- more --&gt;</code>というタグを挿入するだけ。  </p>
 <p>WordPressやMovable Typeでは、200文字など決まった文字数で自動的に抜粋してくれたりもするが、その方法はちょっと分からないので、手動で挿入した。<br>タグを挿入すると<code>&lt;!-- more --&gt;</code>より前の部分だけの表示になる。<br>続きを読むためのリンクの文言「Read More」はHexo作業フォルダの_config.ymlではなく、themes/landscape/_config.ymlなどテーマ毎の_config.ymlで変更出来る。  </p>
 <p>Octopressの場合は_config.ymlの<code>excerpt_link:</code>でリンクの文言を変えられる。<br>また_config.ymlの<code>excerpt_link:</code>で、抜粋するためのタグ自体を<code>&lt;!-- more --&gt;</code>から別のものに変更出来るようだ。  </p>
