@@ -3,23 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>.deploy/.git/objectsが大きくなってきたのでgit gcしてみた | Pagent</title>
+  <title>HexoやOctopressのトップページの表示を全文表示ではなく概要表示にする | Pagent</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="それほど記事数は多くないのに、Hexoのサイズが大きくなって来た。最初、数MBだったのが20MB以上になっている。  
-.deploy/.git/objectsが12.4MBあって、一番容量をくっているようだ。ちょこちょこ記事を修正してその度にdeployしているせいだろう。大した容量ではないが、Dropboxの同期に時間が掛かるのが困る。  
-必要性の低いようなオブジェクトが多数あったりすると、">
+  <meta name="description" content="Hexoでトップページを表示した時、複数の記事の全文がだらだらと表示されているのは見づらいと思い、前半部分を抜粋した概要表示にしてみた。やり方は簡単で、記事ソースの適当な箇所に&lt;!-- more --&gt;というタグを挿入するだけ。  
+WordPressやMovable Typeでは、200文字など決まった文字数で自動的に抜粋してくれたりもするが、その方法はちょっと分からないので、手動で">
 <meta property="og:type" content="article">
-<meta property="og:title" content=".deploy/.git/objectsが大きくなってきたのでgit gcしてみた">
-<meta property="og:url" content="http://pagent.github.io/2014/11/28/git-gc/">
+<meta property="og:title" content="HexoやOctopressのトップページの表示を全文表示ではなく概要表示にする">
+<meta property="og:url" content="http://pagent.github.io/2014/11/29/excerpt-separator/">
 <meta property="og:site_name" content="Pagent">
-<meta property="og:description" content="それほど記事数は多くないのに、Hexoのサイズが大きくなって来た。最初、数MBだったのが20MB以上になっている。  
-.deploy/.git/objectsが12.4MBあって、一番容量をくっているようだ。ちょこちょこ記事を修正してその度にdeployしているせいだろう。大した容量ではないが、Dropboxの同期に時間が掛かるのが困る。  
-必要性の低いようなオブジェクトが多数あったりすると、">
+<meta property="og:description" content="Hexoでトップページを表示した時、複数の記事の全文がだらだらと表示されているのは見づらいと思い、前半部分を抜粋した概要表示にしてみた。やり方は簡単で、記事ソースの適当な箇所に&lt;!-- more --&gt;というタグを挿入するだけ。  
+WordPressやMovable Typeでは、200文字など決まった文字数で自動的に抜粋してくれたりもするが、その方法はちょっと分からないので、手動で">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content=".deploy/.git/objectsが大きくなってきたのでgit gcしてみた">
-<meta name="twitter:description" content="それほど記事数は多くないのに、Hexoのサイズが大きくなって来た。最初、数MBだったのが20MB以上になっている。  
-.deploy/.git/objectsが12.4MBあって、一番容量をくっているようだ。ちょこちょこ記事を修正してその度にdeployしているせいだろう。大した容量ではないが、Dropboxの同期に時間が掛かるのが困る。  
-必要性の低いようなオブジェクトが多数あったりすると、">
+<meta name="twitter:title" content="HexoやOctopressのトップページの表示を全文表示ではなく概要表示にする">
+<meta name="twitter:description" content="Hexoでトップページを表示した時、複数の記事の全文がだらだらと表示されているのは見づらいと思い、前半部分を抜粋した概要表示にしてみた。やり方は簡単で、記事ソースの適当な箇所に&lt;!-- more --&gt;というタグを挿入するだけ。  
+WordPressやMovable Typeでは、200文字など決まった文字数で自動的に抜粋してくれたりもするが、その方法はちょっと分からないので、手動で">
 
   
     <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
@@ -73,10 +70,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-git-gc" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-excerpt-separator" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/11/28/git-gc/" class="article-date">
-  <time datetime="2014-11-28T12:31:38.000Z" itemprop="datePublished">2014年11月28日</time>
+    <a href="/2014/11/29/excerpt-separator/" class="article-date">
+  <time datetime="2014-11-29T04:37:03.000Z" itemprop="datePublished">2014年11月29日</time>
 </a>
     
   </div>
@@ -87,7 +84,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      .deploy/.git/objectsが大きくなってきたのでgit gcしてみた
+      HexoやOctopressのトップページの表示を全文表示ではなく概要表示にする
     </h1>
   
 
@@ -95,30 +92,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>それほど記事数は多くないのに、Hexoのサイズが大きくなって来た。<br>最初、数MBだったのが20MB以上になっている。  </p>
-<p>.deploy/.git/objectsが12.4MBあって、一番容量をくっているようだ。<br>ちょこちょこ記事を修正してその度にdeployしているせいだろう。<br>大した容量ではないが、Dropboxの同期に時間が掛かるのが困る。  </p>
-<p>必要性の低いようなオブジェクトが多数あったりすると、自動的にパックファイルを作って掃除（pack up）してくれるようだが、<code>git gc</code>コマンドにより手動でpack upすることも出来るらしい。<br><a href="http://heart-shaped-chocolate.hatenablog.jp/entry/2013/04/10/052752" target="_blank" rel="external">.git/objectsについて少し調べてみた - 煙と消えるその前に</a>  </p>
-<p>GitHubではないが、BitbucketのFAQには<code>git gc</code>してもリポジトリに悪い影響はないと書いてあった。<br><a href="https://confluence.atlassian.co.jp/pages/viewpage.action?pageId=35815474" target="_blank" rel="external">私のリポジトリで git gc (保全作業) を実行する必要がありますか？ - Bitbucket ドキュメンテーション - アトラシアン日本語ドキュメント</a>  </p>
-<p>早速、.deployで端末を開いて、<code>git gc</code>してみた。  </p>
-<pre><code>$ git gc
-Counting objects: 5328, done.
-Delta compression using up to 8 threads.
-Compressing objects:   5% (153/3046)   
-Compressing objects: 100% (3046/3046), done.
-Writing objects: 100% (5328/5328), done.
-Total 5328 (delta 2157), reused 0 (delta 0)
-</code></pre><p>objects下にたくさんあったフォルダが消えて、4つだけになった。<br>objects/pack内にはpack-〜.idxとpack-〜.packというファイルが出来てる。<br>objectsのサイズは12.4MB→1.8MBに縮小した。  </p>
-<p>あんまり頻回に更新しなくてもいいように、プレビュー時にはちゃんと校正しなければ。</p>
-
+        <p>Hexoでトップページを表示した時、複数の記事の全文がだらだらと表示されているのは見づらいと思い、前半部分を抜粋した概要表示にしてみた。<br>やり方は簡単で、記事ソースの適当な箇所に<code>&lt;!-- more --&gt;</code>というタグを挿入するだけ。  </p>
+<p>WordPressやMovable Typeでは、200文字など決まった文字数で自動的に抜粋してくれたりもするが、その方法はちょっと分からないので、手動で挿入した。<br>タグを挿入すると<code>&lt;!-- more --&gt;</code>より前の部分だけの表示になる。<br>続きを読むためのリンクの文言「Read More」はHexo作業フォルダの_config.ymlではなく、themes/landscape/_config.ymlなどテーマ毎の_config.ymlで変更出来る。  </p>
+<p>Octopressの場合は_config.ymlの<code>excerpt_link:</code>でリンクの文言を変えられる。<br>また_config.ymlの<code>excerpt_link:</code>で、抜粋するためのタグ自体を<code>&lt;!-- more --&gt;</code>から別のものに変更出来るようだ。  </p>
+<p>ーー<br>（追記）<br>概要表示にはしてみたが、全文表示の方が都合の良いことがあったので、あとで全ての記事から<code>&lt;!-- more --&gt;</code>タグを削除した。<br>_postsで端末を開き、下記コマンドですべての.mdファイルから<code>&lt;!-- more --&gt;</code>を一括削除。</p>
+<pre><code>// すべての.mdファイルに拡張子.bakをつけてバックアップを取り、ファイル内の&lt;!-- more --&gt;を削除
+$ perl -p -i.bak -e &#39;s/&lt;!-- more --&gt;//g&#39; *.md
+</code></pre><p><code>&lt;!-- more --&gt;</code>が正常に削除されたことを確認後、.bakファイルを一括削除した。  </p>
+<pre><code>// 拡張子が「.bak」のファイルをカレントディレクトリで一括削除
+$ find . -type f -name &quot;*.bak&quot; -delete
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/28/git-gc/" data-id="7nk9kiphxzcnbrss" class="article-share-link">Share</a>
+      <a data-url="http://pagent.github.io/2014/11/29/excerpt-separator/" data-id="bhpux7d2y9jwm54x" class="article-share-link">Share</a>
       
-        <a href="http://pagent.github.io/2014/11/28/git-gc/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://pagent.github.io/2014/11/29/excerpt-separator/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Octopress/">Octopress</a></li></ul>
 
     </footer>
   </div>
@@ -126,19 +118,10 @@ Total 5328 (delta 2157), reused 0 (delta 0)
     
 <nav id="article-nav">
   
-    <a href="/2014/11/29/excerpt-separator/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          HexoやOctopressのトップページの表示を全文表示ではなく概要表示にする
-        
-      </div>
-    </a>
   
-  
-    <a href="/2014/11/28/metalsmith/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2014/11/28/git-gc/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">初心者がMetalsmithを試してみた</div>
+      <div class="article-nav-title">.deploy/.git/objectsが大きくなってきたのでgit gcしてみた</div>
     </a>
   
 </nav>
@@ -255,7 +238,7 @@ acCODE = "<img width='0' height='0' src='http://a.pagent.org/xeno_git/xenoLogger
 <script>
   var disqus_shortname = 'pagents';
   
-  var disqus_url = 'http://pagent.github.io/2014/11/28/git-gc/';
+  var disqus_url = 'http://pagent.github.io/2014/11/29/excerpt-separator/';
   
   (function(){
     var dsq = document.createElement('script');

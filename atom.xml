@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーター（SSG）とGitレポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-11-29T04:12:15.274Z</updated>
+  <updated>2014-11-29T06:05:13.132Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,32 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[HexoやOctopressのトップページの表示を全文表示ではなく概要表示にする]]></title>
+    <link href="http://pagent.github.io/2014/11/29/excerpt-separator/"/>
+    <id>http://pagent.github.io/2014/11/29/excerpt-separator/</id>
+    <published>2014-11-29T04:37:03.000Z</published>
+    <updated>2014-11-29T06:03:54.000Z</updated>
+    <content type="html"><![CDATA[<p>Hexoでトップページを表示した時、複数の記事の全文がだらだらと表示されているのは見づらいと思い、前半部分を抜粋した概要表示にしてみた。<br>やり方は簡単で、記事ソースの適当な箇所に<code>&lt;!-- more --&gt;</code>というタグを挿入するだけ。  </p>
+<p>WordPressやMovable Typeでは、200文字など決まった文字数で自動的に抜粋してくれたりもするが、その方法はちょっと分からないので、手動で挿入した。<br>タグを挿入すると<code>&lt;!-- more --&gt;</code>より前の部分だけの表示になる。<br>続きを読むためのリンクの文言「Read More」はHexo作業フォルダの_config.ymlではなく、themes/landscape/_config.ymlなどテーマ毎の_config.ymlで変更出来る。  </p>
+<p>Octopressの場合は_config.ymlの<code>excerpt_link:</code>でリンクの文言を変えられる。<br>また_config.ymlの<code>excerpt_link:</code>で、抜粋するためのタグ自体を<code>&lt;!-- more --&gt;</code>から別のものに変更出来るようだ。  </p>
+<p>ーー<br>（追記）<br>概要表示にはしてみたが、全文表示の方が都合の良いことがあったので、あとで全ての記事から<code>&lt;!-- more --&gt;</code>タグを削除した。<br>_postsで端末を開き、下記コマンドですべての.mdファイルから<code>&lt;!-- more --&gt;</code>を一括削除。</p>
+<pre><code>// すべての.mdファイルに拡張子.bakをつけてバックアップを取り、ファイル内の&lt;!-- more --&gt;を削除
+$ perl -p -i.bak -e &#39;s/&lt;!-- more --&gt;//g&#39; *.md
+</code></pre><p><code>&lt;!-- more --&gt;</code>が正常に削除されたことを確認後、.bakファイルを一括削除した。  </p>
+<pre><code>// 拡張子が「.bak」のファイルをカレントディレクトリで一括削除
+$ find . -type f -name &quot;*.bak&quot; -delete
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p>Hexoでトップページを表示した時、複数の記事の全文がだらだらと表示されているのは見づらいと思い、前半部分を抜粋した概要表示にしてみた。<br>やり方は簡単で、記事ソースの適当な箇所に<code>&lt;!-- more --&gt;</code>というタグを挿入するだけ。]]>
+    </summary>
+    
+      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
+    
+      <category term="Octopress" scheme="http://pagent.github.io/tags/Octopress/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[.deploy/.git/objectsが大きくなってきたのでgit gcしてみた]]></title>
@@ -795,27 +821,6 @@ sudo apt-get install nemo
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[いたづらにわがみ世にふる]]></title>
-    <link href="http://pagent.github.io/2014/11/06/yonifuru/"/>
-    <id>http://pagent.github.io/2014/11/06/yonifuru/</id>
-    <published>2014-11-06T08:59:22.000Z</published>
-    <updated>2014-11-27T06:40:26.000Z</updated>
-    <content type="html"><![CDATA[<p>花の色はうつりにけりな  </p>
-<p>いたづらにわがみ世にふる　ながめせしまに  </p>
-<p>（古今和歌集　小野小町）</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>花の色はうつりにけりな  </p>
-<p>いたづらにわがみ世にふる　ながめせしまに  </p>
-<p>（古今和歌集　小野小町）</p>
-]]>
-    </summary>
-    
-      <category term="短歌" scheme="http://pagent.github.io/tags/%E7%9F%AD%E6%AD%8C/"/>
     
   </entry>
   

@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2014/11/29/excerpt-separator/</loc>
+    <lastmod>2014-11-29T06:03:54.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2014/11/28/metalsmith/</loc>
     <lastmod>2014-11-29T04:11:59.000Z</lastmod>
   </url>
@@ -112,11 +117,6 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/11/06/yonifuru/</loc>
-    <lastmod>2014-11-27T06:40:26.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://pagent.github.io/2014/11/11/xubuntu-install-option/</loc>
     <lastmod>2014-11-27T06:40:26.000Z</lastmod>
   </url>
@@ -137,7 +137,12 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/10/28/kana/</loc>
+    <loc>http://pagent.github.io/2014/11/06/yonifuru/</loc>
+    <lastmod>2014-11-27T06:40:26.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2014/10/21/test/</loc>
     <lastmod>2014-11-27T06:40:25.000Z</lastmod>
   </url>
   
@@ -172,7 +177,7 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/10/21/test/</loc>
+    <loc>http://pagent.github.io/2014/10/28/kana/</loc>
     <lastmod>2014-11-27T06:40:25.000Z</lastmod>
   </url>
   

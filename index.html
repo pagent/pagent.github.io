@@ -69,6 +69,55 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-excerpt-separator" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/11/29/excerpt-separator/" class="article-date">
+  <time datetime="2014-11-29T04:37:03.000Z" itemprop="datePublished">2014年11月29日</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/11/29/excerpt-separator/">HexoやOctopressのトップページの表示を全文表示ではなく概要表示にする</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Hexoでトップページを表示した時、複数の記事の全文がだらだらと表示されているのは見づらいと思い、前半部分を抜粋した概要表示にしてみた。<br>やり方は簡単で、記事ソースの適当な箇所に<code>&lt;!-- more --&gt;</code>というタグを挿入するだけ。  </p>
+<p>WordPressやMovable Typeでは、200文字など決まった文字数で自動的に抜粋してくれたりもするが、その方法はちょっと分からないので、手動で挿入した。<br>タグを挿入すると<code>&lt;!-- more --&gt;</code>より前の部分だけの表示になる。<br>続きを読むためのリンクの文言「Read More」はHexo作業フォルダの_config.ymlではなく、themes/landscape/_config.ymlなどテーマ毎の_config.ymlで変更出来る。  </p>
+<p>Octopressの場合は_config.ymlの<code>excerpt_link:</code>でリンクの文言を変えられる。<br>また_config.ymlの<code>excerpt_link:</code>で、抜粋するためのタグ自体を<code>&lt;!-- more --&gt;</code>から別のものに変更出来るようだ。  </p>
+<p>ーー<br>（追記）<br>概要表示にはしてみたが、全文表示の方が都合の良いことがあったので、あとで全ての記事から<code>&lt;!-- more --&gt;</code>タグを削除した。<br>_postsで端末を開き、下記コマンドですべての.mdファイルから<code>&lt;!-- more --&gt;</code>を一括削除。</p>
+<pre><code>// すべての.mdファイルに拡張子.bakをつけてバックアップを取り、ファイル内の&lt;!-- more --&gt;を削除
+$ perl -p -i.bak -e &#39;s/&lt;!-- more --&gt;//g&#39; *.md
+</code></pre><p><code>&lt;!-- more --&gt;</code>が正常に削除されたことを確認後、.bakファイルを一括削除した。  </p>
+<pre><code>// 拡張子が「.bak」のファイルをカレントディレクトリで一括削除
+$ find . -type f -name &quot;*.bak&quot; -delete
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://pagent.github.io/2014/11/29/excerpt-separator/" data-id="bhpux7d2y9jwm54x" class="article-share-link">Share</a>
+      
+        <a href="http://pagent.github.io/2014/11/29/excerpt-separator/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Octopress/">Octopress</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-git-gc" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/11/28/git-gc/" class="article-date">
@@ -353,113 +402,6 @@ metalsmith(__dirname)
 
 
   
-    <article id="post-hexo-bitbucket" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/11/26/hexo-bitbucket/" class="article-date">
-  <time datetime="2014-11-26T07:47:16.000Z" itemprop="datePublished">2014年11月26日</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/26/hexo-bitbucket/">HexoのソースをBitbucketに置く</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Hexoの作業フォルダはWindows領域のDropboxフォルダに置き、他のPCとも同期をとっている。<br>これでソースを消失してしまう危険はかなり低いと思うが、Dropboxと同期する際、結構時間がかかってしまう。<br>普段はDropboxを起動しておらず時々立ち上げる、という形をとっているせいもあるかもしれない。  </p>
-<p>Bitbucketにソースを置いたらpushするのはそれほど時間は掛からないだろうし、過去の履歴も残ってくれてやはり便利だろうと思い、HexoのソースをBitbucketに置くことにした。  </p>
-<p>OctopressのソースをBitbucketに置いた時と同様、Bitbucketにhexoという名前のリポジトリを作り、  </p>
-<pre><code>$ git remote add bitbucket git@bitbucket.org:ユーザー名/hexo.git
-$ git push -u bitbucket source
-</code></pre><p>とやったが、エラーになる。  </p>
-<p>新規リポジトリを作成後に表示されたRepository setupの指示に倣い、  </p>
-<pre><code>$ git init
-$ git remote add bitbucket git@bitbucket.org:ユーザー名/hexo.git
-$ echo &quot;ユーザー名&quot; &gt;&gt; contributors.txt
-$ git add contributors.txt
-$ git commit -m &#39;Initial commit with contributors&#39;
-$ git push -u bitbucket source
-</code></pre><p>としても、やはり  </p>
-<pre><code>error: src refspec source does not match any.
-error: failed to push some refs to &#39;git@bitbucket.org:ユーザー名/hexo.git&#39;
-</code></pre><p>とエラーになる。  </p>
-<p>pushするbranchをsourceではなく、masterにしてみた。  </p>
-<pre><code>$ git push -u bitbucket master
-Counting objects: 3, done.
-Writing objects: 100% (3/3), 239 bytes | 0 bytes/s, done.
-Total 3 (delta 0), reused 0 (delta 0)
-To git@bitbucket.org:ユーザー名/hexo.git
- * [new branch]      master -&gt; master
-Branch master set up to track remote branch master from bitbucket.
-</code></pre><p>上手く行ったようだ。  </p>
-<p>だが、その後も  </p>
-<pre><code>$ git add .
-warning: You ran &#39;git add&#39; with neither &#39;-A (--all)&#39; or &#39;--ignore-removal&#39;,
-whose behaviour will change in Git 2.0 with respect to paths you removed.
-Paths like &#39;contributors.txt&#39; that are
-removed from your working tree are ignored with this version of Git.
-
-* &#39;git add --ignore-removal &lt;pathspec&gt;&#39;, which is the current default,
-  ignores paths you removed from your working tree.
-
-* &#39;git add --all &lt;pathspec&gt;&#39; will let you also record the removals.
-
-Run &#39;git status&#39; to check the paths you removed from your working tree.
-</code></pre><p>と言われたり、  </p>
-<pre><code>$ git push
-warning: push.default is unset; its implicit value is changing in
-Git 2.0 from &#39;matching&#39; to &#39;simple&#39;. To squelch this message
-and maintain the current behavior after the default changes, use:
-
-  git config --global push.default matching
-
-To squelch this message and adopt the new behavior now, use:
-
-  git config --global push.default simple
-
-When push.default is set to &#39;matching&#39;, git will push local branches
-to the remote branches that already exist with the same name.
-
-In Git 2.0, Git will default to the more conservative &#39;simple&#39;
-behavior, which only pushes the current branch to the corresponding
-remote branch that &#39;git pull&#39; uses to update the current branch.
-
-See &#39;git help config&#39; and search for &#39;push.default&#39; for further information.
-(the &#39;simple&#39; mode was introduced in Git 1.7.11. Use the similar mode
-&#39;current&#39; instead of &#39;simple&#39; if you sometimes use older versions of Git)
-</code></pre><p>と言われたり。  </p>
-<p><code>git add .</code>は使われなくなったので<code>git add -A</code>にしないといけないということか？<br><code>git add .</code>でもすんなり通る時もあるのは、状況の違いからだろうか。<br>（追記：そう言えば、Initial commitの時に作成されたcontributors.txtという中身が自分のユーザー名だけのファイルを、レポジトリとHexoの作業フォルダ両方から手動で削除したんだった。<br>これのせいだったのかもしれない。）</p>
-<p>push.defaultもmatchingにした。  </p>
-<pre><code>  $ git config --global push.default matching
-</code></pre><p>これでようやくpush出来るようになった。  </p>
-<p>gitの仕組みがいまいちよく分からない。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://pagent.github.io/2014/11/26/hexo-bitbucket/" data-id="h63zr0apzwbbhvzx" class="article-share-link">Share</a>
-      
-        <a href="http://pagent.github.io/2014/11/26/hexo-bitbucket/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -474,6 +416,10 @@ See &#39;git help config&#39; and search for &#39;push.default&#39; for further 
     <h3 class="widget-title">最近の記事</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2014/11/29/excerpt-separator/">HexoやOctopressのトップページの表示を全文表示ではなく概要表示にする</a><hr style="border:none; border-bottom:1px dotted #999;width: 100%;">
+          </li>
         
           <li>
             <a href="/2014/11/28/git-gc/">.deploy/.git/objectsが大きくなってきたのでgit gcしてみた</a><hr style="border:none; border-bottom:1px dotted #999;width: 100%;">
@@ -491,10 +437,6 @@ See &#39;git help config&#39; and search for &#39;push.default&#39; for further 
             <a href="/2014/11/26/filename-case/">Hexo新規記事作成時のタイトル大文字アルファベットを小文字のファイル名に</a><hr style="border:none; border-bottom:1px dotted #999;width: 100%;">
           </li>
         
-          <li>
-            <a href="/2014/11/26/hexo-bitbucket/">HexoのソースをBitbucketに置く</a><hr style="border:none; border-bottom:1px dotted #999;width: 100%;">
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -506,7 +448,7 @@ See &#39;git help config&#39; and search for &#39;push.default&#39; for further 
   <div class="widget-wrap">
     <h3 class="widget-title">タグ</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">12</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Metalsmith/">Metalsmith</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Net/">Net</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Octopress/">Octopress</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ことば/">ことば</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ブラウザ/">ブラウザ</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/未分類/">未分類</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/短歌/">短歌</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/風景/">風景</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Metalsmith/">Metalsmith</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Net/">Net</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Octopress/">Octopress</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/blog/">blog</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ことば/">ことば</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ブラウザ/">ブラウザ</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/未分類/">未分類</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/短歌/">短歌</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/風景/">風景</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -515,7 +457,7 @@ See &#39;git help config&#39; and search for &#39;push.default&#39; for further 
   <div class="widget-wrap">
     <h3 class="widget-title">タグ・クラウド</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Git/" style="font-size: 15.00px;">Git</a><a href="/tags/Hexo/" style="font-size: 20.00px;">Hexo</a><a href="/tags/Linux/" style="font-size: 18.33px;">Linux</a><a href="/tags/Metalsmith/" style="font-size: 11.67px;">Metalsmith</a><a href="/tags/Net/" style="font-size: 13.33px;">Net</a><a href="/tags/Octopress/" style="font-size: 16.67px;">Octopress</a><a href="/tags/SSG/" style="font-size: 10.00px;">SSG</a><a href="/tags/blog/" style="font-size: 11.67px;">blog</a><a href="/tags/metalsmith/" style="font-size: 10.00px;">metalsmith</a><a href="/tags/ことば/" style="font-size: 11.67px;">ことば</a><a href="/tags/ブラウザ/" style="font-size: 13.33px;">ブラウザ</a><a href="/tags/未分類/" style="font-size: 11.67px;">未分類</a><a href="/tags/短歌/" style="font-size: 11.67px;">短歌</a><a href="/tags/風景/" style="font-size: 11.67px;">風景</a>
+      <a href="/tags/Git/" style="font-size: 16.00px;">Git</a><a href="/tags/Hexo/" style="font-size: 20.00px;">Hexo</a><a href="/tags/Linux/" style="font-size: 18.00px;">Linux</a><a href="/tags/Metalsmith/" style="font-size: 12.00px;">Metalsmith</a><a href="/tags/Net/" style="font-size: 14.00px;">Net</a><a href="/tags/Octopress/" style="font-size: 18.00px;">Octopress</a><a href="/tags/SSG/" style="font-size: 10.00px;">SSG</a><a href="/tags/blog/" style="font-size: 12.00px;">blog</a><a href="/tags/metalsmith/" style="font-size: 10.00px;">metalsmith</a><a href="/tags/ことば/" style="font-size: 12.00px;">ことば</a><a href="/tags/ブラウザ/" style="font-size: 14.00px;">ブラウザ</a><a href="/tags/未分類/" style="font-size: 12.00px;">未分類</a><a href="/tags/短歌/" style="font-size: 12.00px;">短歌</a><a href="/tags/風景/" style="font-size: 12.00px;">風景</a>
     </div>
   </div>
 
@@ -524,7 +466,7 @@ See &#39;git help config&#39; and search for &#39;push.default&#39; for further 
   <div class="widget-wrap">
     <h3 class="widget-title">月別アーカイブ</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">25</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">26</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
     </div>
   </div>
 
