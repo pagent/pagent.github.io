@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーター（SSG）とGitレポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-11-28T13:21:24.801Z</updated>
+  <updated>2014-11-29T04:12:15.274Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,9 +19,9 @@
     <link href="http://pagent.github.io/2014/11/28/git-gc/"/>
     <id>http://pagent.github.io/2014/11/28/git-gc/</id>
     <published>2014-11-28T12:31:38.000Z</published>
-    <updated>2014-11-28T13:20:29.000Z</updated>
+    <updated>2014-11-28T13:34:30.000Z</updated>
     <content type="html"><![CDATA[<p>それほど記事数は多くないのに、Hexoのサイズが大きくなって来た。<br>最初、数MBだったのが20MB以上になっている。  </p>
-<p>.deploy/.git/objectsが12.4 MBあって、一番容量をくっているようだ。<br>ちょこちょこ記事を修正してその度にdeployしているせいだろう。<br>大した容量ではないが、Dropboxの同期に時間が掛かるのが困る。  </p>
+<p>.deploy/.git/objectsが12.4MBあって、一番容量をくっているようだ。<br>ちょこちょこ記事を修正してその度にdeployしているせいだろう。<br>大した容量ではないが、Dropboxの同期に時間が掛かるのが困る。  </p>
 <p>必要性の低いようなオブジェクトが多数あったりすると、自動的にパックファイルを作って掃除（pack up）してくれるようだが、<code>git gc</code>コマンドにより手動でpack upすることも出来るらしい。<br><a href="http://heart-shaped-chocolate.hatenablog.jp/entry/2013/04/10/052752" target="_blank" rel="external">.git/objectsについて少し調べてみた - 煙と消えるその前に</a>  </p>
 <p>GitHubではないが、BitbucketのFAQには<code>git gc</code>してもリポジトリに悪い影響はないと書いてあった。<br><a href="https://confluence.atlassian.co.jp/pages/viewpage.action?pageId=35815474" target="_blank" rel="external">私のリポジトリで git gc (保全作業) を実行する必要がありますか？ - Bitbucket ドキュメンテーション - アトラシアン日本語ドキュメント</a>  </p>
 <p>早速、.deployで端末を開いて、<code>git gc</code>してみた。  </p>
@@ -37,7 +37,7 @@ Total 5328 (delta 2157), reused 0 (delta 0)
 ]]></content>
     <summary type="html">
     <![CDATA[<p>それほど記事数は多くないのに、Hexoのサイズが大きくなって来た。<br>最初、数MBだったのが20MB以上になっている。  </p>
-<p>.deploy/.git/objectsが12.4 MBあって、一番容量をくっているようだ。<br>ちょこちょこ記事を修正してその度]]>
+<p>.deploy/.git/objectsが12.4MBあって、一番容量をくっているようだ。<br>ちょこちょこ記事を修正してその度に]]>
     </summary>
     
       <category term="Git" scheme="http://pagent.github.io/tags/Git/"/>
@@ -49,7 +49,7 @@ Total 5328 (delta 2157), reused 0 (delta 0)
     <link href="http://pagent.github.io/2014/11/28/metalsmith/"/>
     <id>http://pagent.github.io/2014/11/28/metalsmith/</id>
     <published>2014-11-28T06:22:40.000Z</published>
-    <updated>2014-11-28T11:26:36.000Z</updated>
+    <updated>2014-11-29T04:11:59.000Z</updated>
     <content type="html"><![CDATA[<p>静的サイトジェネレーターは有名なものしか知らなかったが、かなりの数が公開されているようだ。<br><a href="https://staticsitegenerators.net/" target="_blank" rel="external">https://staticsitegenerators.net/</a><br><a href="https://www.staticgen.com/" target="_blank" rel="external">https://www.staticgen.com/</a>  </p>
 <p><a href="https://github.com/segmentio/metalsmith" target="_blank" rel="external">Metalsmith</a>（An extremely simple, pluggable static site generator.）というのが人気急上昇中のようなので、試してみた。<br>Hexo同様、プログラミング言語がJavaScriptなので、早さも期待できる。  </p>
 <p>テストするにあたり、下記サイトを参考にさせて頂いた。<br><a href="http://h2ham.net/metalsmith-static-site-generator" target="_blank" rel="external">Nodeで動作する静的サイトジェネレータ「metalsmith」を使ってみた - HAM MEDIA MEMO</a><br><a href="http://web-layman.com/metalsmith-simple-static-site-generator/" target="_blank" rel="external">metalsmith - シンプルな静的サイトジェネレーター - Layman’s Web Creation.</a>  </p>
@@ -147,9 +147,7 @@ metalsmith(__dirname)
     <![CDATA[<p>静的サイトジェネレーターは有名なものしか知らなかったが、かなりの数が公開されているようだ。<br><a href="https://staticsitegenerators.net/" target="_blank" rel="external">https://stati]]>
     </summary>
     
-      <category term="SSG" scheme="http://pagent.github.io/tags/SSG/"/>
-    
-      <category term="metalsmith" scheme="http://pagent.github.io/tags/metalsmith/"/>
+      <category term="Metalsmith" scheme="http://pagent.github.io/tags/Metalsmith/"/>
     
   </entry>
   
@@ -158,11 +156,11 @@ metalsmith(__dirname)
     <link href="http://pagent.github.io/2014/11/27/hexo-china/"/>
     <id>http://pagent.github.io/2014/11/27/hexo-china/</id>
     <published>2014-11-27T11:13:57.000Z</published>
-    <updated>2014-11-28T10:01:23.000Z</updated>
+    <updated>2014-11-29T04:11:25.000Z</updated>
     <content type="html"><![CDATA[<p>しばらく前に静的サイトジェネレーターをOctopressからHexoに乗り換えた。<br>カスタマイズもわりと容易だしgenerateも早いし、気に入って使っている。  </p>
 <p>公開されているカスタムテーマを見ていて、なぜかデモサイトに中国語が多いなと不信に思っていが、オフィシャルテーマ３つのLICENSEを見ると３つとも中国人っぽい名前が記載されている。  </p>
 <p>よく見ると、レポジトリもオフィシャルサイトもこの中国人らしい人のものだった。<br>なんとHexoは中国製だったんだね。</p>
-<p>開発者さんにはなんの恨みも無いが、中国と聞くと正直ちょっと心配になってしまう。<br>中国製のパソコンに不正プログラムが入っていたなんてニュースもあったし。<br>でも、cloneしてくるHexoのソースはGitHub上で公開されているものだし、大丈夫なのだろう。  </p>
+<p>中国と聞くと正直ちょっと心配になってしまう。<br>中国製のパソコンに不正プログラムが入っていたなんてニュースもあったし。<br>ただ、cloneしてくるHexoのソースはGitHub上で公開されているものだし、大丈夫なのだろう。  </p>
 <p>中国人、なかなかやるね。<br>ちょっとくやしい気がする。  </p>
 <p>日本製の秀逸な静的サイトジェネレーターが出てきてくれないものだろうか。</p>
 ]]></content>
@@ -170,8 +168,6 @@ metalsmith(__dirname)
     <![CDATA[<p>しばらく前に静的サイトジェネレーターをOctopressからHexoに乗り換えた。<br>カスタマイズもわりと容易だしgenerateも早いし、気に入って使っている。  </p>
 <p>公開されているカスタムテーマを見ていて、なぜかデモサイトに中国語が多いなと不信に思ってい]]>
     </summary>
-    
-      <category term="SSG" scheme="http://pagent.github.io/tags/SSG/"/>
     
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
@@ -182,7 +178,7 @@ metalsmith(__dirname)
     <link href="http://pagent.github.io/2014/11/26/filename-case/"/>
     <id>http://pagent.github.io/2014/11/26/filename-case/</id>
     <published>2014-11-26T09:50:31.000Z</published>
-    <updated>2014-11-28T09:06:30.000Z</updated>
+    <updated>2014-11-29T04:11:08.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoのデフォルト設定で新規記事を作成する際、記事タイトルに大文字アルファベットを使うと、そのままファイル名としてソースが作成される。</p>
 <pre><code>$ hexo new New-Post
 [info] File created at /.../source/_posts/2014-11-26-New-Post.md
@@ -202,8 +198,6 @@ metalsmith(__dirname)
 [info] File created at /.../sourc]]>
     </summary>
     
-      <category term="SSG" scheme="http://pagent.github.io/tags/SSG/"/>
-    
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
   </entry>
@@ -213,7 +207,7 @@ metalsmith(__dirname)
     <link href="http://pagent.github.io/2014/11/26/hexo-bitbucket/"/>
     <id>http://pagent.github.io/2014/11/26/hexo-bitbucket/</id>
     <published>2014-11-26T07:47:16.000Z</published>
-    <updated>2014-11-28T09:06:40.000Z</updated>
+    <updated>2014-11-29T04:11:16.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoの作業フォルダはWindows領域のDropboxフォルダに置き、他のPCとも同期をとっている。<br>これでソースを消失してしまう危険はかなり低いと思うが、Dropboxと同期する際、結構時間がかかってしまう。<br>普段はDropboxを起動しておらず時々立ち上げる、という形をとっているせいもあるかもしれない。  </p>
 <p>Bitbucketにソースを置いたらpushするのはそれほど時間は掛からないだろうし、過去の履歴も残ってくれてやはり便利だろうと思い、HexoのソースをBitbucketに置くことにした。  </p>
 <p>OctopressのソースをBitbucketに置いた時と同様、Bitbucketにhexoという名前のリポジトリを作り、  </p>
@@ -286,8 +280,6 @@ See &#39;git help config&#39; and search for &#39;push.default&#39; for further 
     <![CDATA[<p>Hexoの作業フォルダはWindows領域のDropboxフォルダに置き、他のPCとも同期をとっている。<br>これでソースを消失してしまう危険はかなり低いと思うが、Dropboxと同期する際、結構時間がかかってしまう。<br>普段はDropboxを起動しておらず時々立ち上]]>
     </summary>
     
-      <category term="SSG" scheme="http://pagent.github.io/tags/SSG/"/>
-    
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
       <category term="Git" scheme="http://pagent.github.io/tags/Git/"/>
@@ -299,7 +291,7 @@ See &#39;git help config&#39; and search for &#39;push.default&#39; for further 
     <link href="http://pagent.github.io/2014/11/25/hexo-to-octopress-converter/"/>
     <id>http://pagent.github.io/2014/11/25/hexo-to-octopress-converter/</id>
     <published>2014-11-25T11:59:04.000Z</published>
-    <updated>2014-11-28T09:06:19.000Z</updated>
+    <updated>2014-11-29T04:11:00.000Z</updated>
     <content type="html"><![CDATA[<p>HexoからOctopressに記事ソースを変換するrubyスクリプト<a href="https://github.com/ciffel/Hexo-to-Octopress-Converter" target="_blank" rel="external">「Hexo to Octopress Converter」</a>を試してみた。  </p>
 <p>「Download ZIP」からzipファイルをダウンロードし展開。converterファイルを作業したい場所に移し、端末から操作。  </p>
 <pre><code>$ ./converter &lt;hexo_posts_dir&gt; &lt;octopress_posts_dir&gt;
@@ -324,8 +316,6 @@ tags:
     <![CDATA[<p>HexoからOctopressに記事ソースを変換するrubyスクリプト<a href="https://github.com/ciffel/Hexo-to-Octopress-Converter" target="_blank" rel="external">「Hexo t]]>
     </summary>
     
-      <category term="SSG" scheme="http://pagent.github.io/tags/SSG/"/>
-    
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
       <category term="Octopress" scheme="http://pagent.github.io/tags/Octopress/"/>
@@ -337,7 +327,7 @@ tags:
     <link href="http://pagent.github.io/2014/11/25/hexo-migrator-octopress/"/>
     <id>http://pagent.github.io/2014/11/25/hexo-migrator-octopress/</id>
     <published>2014-11-25T09:20:00.000Z</published>
-    <updated>2014-11-28T09:06:08.000Z</updated>
+    <updated>2014-11-29T04:10:51.000Z</updated>
     <content type="html"><![CDATA[<p>OctopressとHexoでは記事ソースのファイルの形式やFront Matter（<code>---</code>で区切られた、title、dateなどの部分）が微妙に異なる。<br>OctopressのcategoriesはHexoではtagsに相当したり。  </p>
 <p>Octopressの記事ソースをHexoに取り込む<a href="https://github.com/sailxjx/hexo-migrator-octopress" target="_blank" rel="external">「hexo-migrator-octopress」</a>というHexo用プラグインがあったので、試してみた。<br>（Hexoの記事ソースをOctopress用に変換するスクリプト「Hexo to Octopress Converter」とは逆向き。）  </p>
 <p>デスクトップ上にhexo-test（Hexoフォルダ）とoctopress-test（Octopressフォルダ）を作った。  </p>
@@ -401,8 +391,6 @@ tags:
     <![CDATA[<p>OctopressとHexoでは記事ソースのファイルの形式やFront Matter（<code>---</code>で区切られた、title、dateなどの部分）が微妙に異なる。<br>OctopressのcategoriesはHexoではtagsに相当したり。  </p]]>
     </summary>
     
-      <category term="SSG" scheme="http://pagent.github.io/tags/SSG/"/>
-    
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
       <category term="Octopress" scheme="http://pagent.github.io/tags/Octopress/"/>
@@ -414,7 +402,7 @@ tags:
     <link href="http://pagent.github.io/2014/11/24/hexo-windows-deploy/"/>
     <id>http://pagent.github.io/2014/11/24/hexo-windows-deploy/</id>
     <published>2014-11-24T11:31:27.000Z</published>
-    <updated>2014-11-28T09:05:52.000Z</updated>
+    <updated>2014-11-29T04:10:28.000Z</updated>
     <content type="html"><![CDATA[<p>Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来るかと思ったが、  </p>
 <pre><code>Run
 
@@ -438,8 +426,6 @@ and the repository exists.
   git config --global user.email &quot;you@example]]>
     </summary>
     
-      <category term="SSG" scheme="http://pagent.github.io/tags/SSG/"/>
-    
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
   </entry>
@@ -449,7 +435,7 @@ and the repository exists.
     <link href="http://pagent.github.io/2014/11/24/hexo-windows/"/>
     <id>http://pagent.github.io/2014/11/24/hexo-windows/</id>
     <published>2014-11-24T09:32:37.000Z</published>
-    <updated>2014-11-28T09:05:44.000Z</updated>
+    <updated>2014-11-29T04:10:19.000Z</updated>
     <content type="html"><![CDATA[<p>以前、静的サイトジェネレーターnanocをWindowsにインストールしたが、なんとかインストールは出来たものの、compile（generate）してhtmlファイルを生成する際、エラーになり使えなかった。<br>最近使い始めたHexoは、nanocやOctopressと違い、rubyではなくNode.jsで動いているそうなので、Windowsで使えるかもしれないと思い、試してみた。  </p>
 <p>結果、Windowsで実用可能だった。</p>
 <h3 id="Node-jsのインストール">Node.jsのインストール</h3>
@@ -495,8 +481,6 @@ The file will have its original line endings in your working directory.
     <![CDATA[<p>以前、静的サイトジェネレーターnanocをWindowsにインストールしたが、なんとかインストールは出来たものの、compile（generate）してhtmlファイルを生成する際、エラーになり使えなかった。<br>最近使い始めたHexoは、nanocやOctopressと]]>
     </summary>
     
-      <category term="SSG" scheme="http://pagent.github.io/tags/SSG/"/>
-    
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
   </entry>
@@ -506,7 +490,7 @@ The file will have its original line endings in your working directory.
     <link href="http://pagent.github.io/2014/11/23/hexo-post-template/"/>
     <id>http://pagent.github.io/2014/11/23/hexo-post-template/</id>
     <published>2014-11-22T23:20:38.000Z</published>
-    <updated>2014-11-28T09:05:36.000Z</updated>
+    <updated>2014-11-29T04:10:12.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoで新規記事を作ると、初期状態ではtitle、date、tagsの項目しか無いが、categoriesも使いたいので変更。<br>/scaffolds/post.mdに項目を追加するだけで出来た。<br>（<code>---</code>で区画された部分は「Front Matter」と言うらしい。）  </p>
 <p>またOctopressに戻ることもあるかもしれないので、Octopressの書式に倣ってlayout、commentsも加えた。  </p>
 <pre><code>---
@@ -541,8 +525,6 @@ tags:
     <![CDATA[<p>Hexoで新規記事を作ると、初期状態ではtitle、date、tagsの項目しか無いが、categoriesも使いたいので変更。<br>/scaffolds/post.mdに項目を追加するだけで出来た。<br>（<code>---</code>で区画された部分は「Front]]>
     </summary>
     
-      <category term="SSG" scheme="http://pagent.github.io/tags/SSG/"/>
-    
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
   </entry>
@@ -552,7 +534,7 @@ tags:
     <link href="http://pagent.github.io/2014/11/23/hexo-archve-category/"/>
     <id>http://pagent.github.io/2014/11/23/hexo-archve-category/</id>
     <published>2014-11-22T22:54:43.000Z</published>
-    <updated>2014-11-28T09:05:23.000Z</updated>
+    <updated>2014-11-29T04:10:03.000Z</updated>
     <content type="html"><![CDATA[<p>HexoのArchivesや各カテゴリーのページはデフォルトでは記事全文を表示するようになっている。<br>リスト表示の方が一覧を俯瞰出来て便利なので好みなのだが、カスタマイズの仕方がなかなか分からなかった。  </p>
 <p>結局は_config.ymlのArchivesの項目で  </p>
 <pre><code># Archives
@@ -577,8 +559,6 @@ tag: 1
 <p>結局は_config.ymlのArchives]]>
     </summary>
     
-      <category term="SSG" scheme="http://pagent.github.io/tags/SSG/"/>
-    
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
   </entry>
@@ -588,7 +568,7 @@ tag: 1
     <link href="http://pagent.github.io/2014/11/22/hexo-theme/"/>
     <id>http://pagent.github.io/2014/11/22/hexo-theme/</id>
     <published>2014-11-22T12:22:39.000Z</published>
-    <updated>2014-11-28T09:05:05.000Z</updated>
+    <updated>2014-11-29T04:09:39.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoにはいろいろテーマがあるようで有難い。<br><a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">Themes · hexojs/hexo Wiki</a><br>（デモサイトはなぜか中国語が多い。）</p>
 <p>元々入っていたデフォルトのテーマは「Landscape」だったので、とりあえずそれとは別のOfficial Themes、「Phase」と「Light」を試してみた。<br>試したはいいが、「Light」を入れてから元のテーマに戻そうとしたら戻せなくなってしまった。<br>「Light」が崩れたようなスタイルから変更出来ない。  </p>
 <p><code>hexo h</code>でヘルプを見ると、<code>clean</code>（Remove generated files and the cache）というコマンドオプションがあったので、<code>hexo clean</code>をしてみた。<br>書いてある通り/publicフォルダ自体も消えてしまったが、その後<code>hexo g</code>したらテーマも無事直った。  </p>
@@ -599,8 +579,6 @@ tag: 1
     <![CDATA[<p>Hexoにはいろいろテーマがあるようで有難い。<br><a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">Themes · hexojs/hexo Wiki<]]>
     </summary>
     
-      <category term="SSG" scheme="http://pagent.github.io/tags/SSG/"/>
-    
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
   </entry>
@@ -610,7 +588,7 @@ tag: 1
     <link href="http://pagent.github.io/2014/11/22/octopress-hexo/"/>
     <id>http://pagent.github.io/2014/11/22/octopress-hexo/</id>
     <published>2014-11-22T11:21:26.000Z</published>
-    <updated>2014-11-28T09:05:15.000Z</updated>
+    <updated>2014-11-29T04:09:47.000Z</updated>
     <content type="html"><![CDATA[<p>Github Pagesのブログに使っている静的サイトジェネレーターをOctopressからHexoに変更してみた。  </p>
 <p>Octopressの/source/_posts内の記事ソースをそのままHexoの/source/_postsにコピーしたら、generateした時にパーマリンクが<code>http://.../2014/10/24/2014-10-24-xubuntu-blank-menu/</code>のように日付けが重複してしまった。<br>Hexoはデフォルトでは、新しく記事を作った時には日付けがつかず、生成する時に日付けを付加するようになっているらしい。  </p>
 <p>_config.ymlの  </p>
@@ -632,8 +610,6 @@ new_post_name: :title.md # File name of new posts
 <p>Octopressの/source/_posts内の記事ソースをそのままHexoの/source/_postsにコピーしたら、genera]]>
     </summary>
     
-      <category term="SSG" scheme="http://pagent.github.io/tags/SSG/"/>
-    
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
   </entry>
@@ -643,7 +619,7 @@ new_post_name: :title.md # File name of new posts
     <link href="http://pagent.github.io/2014/11/21/hexo-xubuntu/"/>
     <id>http://pagent.github.io/2014/11/21/hexo-xubuntu/</id>
     <published>2014-11-21T04:56:19.000Z</published>
-    <updated>2014-11-28T09:04:44.000Z</updated>
+    <updated>2014-11-29T04:09:25.000Z</updated>
     <content type="html"><![CDATA[<p>Octopressでブログを書いていて、さして不満はないのだが、別の静的サイトジェネレーターに「Hexo」というのがあるのを知った。<br>Octopressに較べ、テーマも豊富に用意あり、日本語のURLやカテゴリー名にも対応しているようだったので、入れてみた。<br>rubyではなく、Node.jsというのを使うらしい。  </p>
 <p>導入には下記サイトなどを参考にさせて頂いた。<br><a href="http://tech.admax.ninja/2014/09/11/environment-of-hexo/" target="_blank" rel="external">【Node.js】Hexoでブログを書くための環境構築 | AdMax Tech Blog</a>  </p>
 <p>概ね上記サイトの通りに進めたらいいようだったが、Xubuntu14.04の環境では若干うまく行かないところがあった。  </p>
@@ -666,8 +642,6 @@ sudo apt-get install -y nodejs
     <![CDATA[<p>Octopressでブログを書いていて、さして不満はないのだが、別の静的サイトジェネレーターに「Hexo」というのがあるのを知った。<br>Octopressに較べ、テーマも豊富に用意あり、日本語のURLやカテゴリー名にも対応しているようだったので、入れてみた。<br>ru]]>
     </summary>
     
-      <category term="SSG" scheme="http://pagent.github.io/tags/SSG/"/>
-    
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
   </entry>
@@ -677,7 +651,7 @@ sudo apt-get install -y nodejs
     <link href="http://pagent.github.io/2014/11/20/octopress-deploy-rejected/"/>
     <id>http://pagent.github.io/2014/11/20/octopress-deploy-rejected/</id>
     <published>2014-11-20T10:11:54.000Z</published>
-    <updated>2014-11-28T09:04:10.000Z</updated>
+    <updated>2014-11-29T04:08:56.000Z</updated>
     <content type="html"><![CDATA[<p>DropboxでOctopressのフォルダを同期し、2台目のPCでもrake new_postやrake generateは出来るようになったが、rake deployが出来ない。<br>gitが入ってなかったので<code>sudo apt-get install git</code>し、<code>rake setup_github_pages</code>でセットアップしたが、  </p>
 <pre><code>! [rejected]        master -&gt; master (non-fast-forward)
 </code></pre><p>とエラーになる。<br>SSHの公開鍵も設定したのだが。  </p>
@@ -695,8 +669,6 @@ sudo apt-get install -y nodejs
     <![CDATA[<p>DropboxでOctopressのフォルダを同期し、2台目のPCでもrake new_postやrake generateは出来るようになったが、rake deployが出来ない。<br>gitが入ってなかったので<code>sudo apt-get install gi]]>
     </summary>
     
-      <category term="SSG" scheme="http://pagent.github.io/tags/SSG/"/>
-    
       <category term="Octopress" scheme="http://pagent.github.io/tags/Octopress/"/>
     
       <category term="Git" scheme="http://pagent.github.io/tags/Git/"/>
@@ -708,8 +680,8 @@ sudo apt-get install -y nodejs
     <link href="http://pagent.github.io/2014/11/19/install-libv8/"/>
     <id>http://pagent.github.io/2014/11/19/install-libv8/</id>
     <published>2014-11-19T09:02:45.000Z</published>
-    <updated>2014-11-28T09:03:30.000Z</updated>
-    <content type="html"><![CDATA[<p>OctopressのフォルダをDropboxに置くことにしたので、古いネットブックにインストールしたXubuntuからOctopressを使えるかどうか試してみた。<br>だがrake previewしようとしたら、エラーになってしまった。<br>Octopressを使う環境が整っていないので当然といえば当然。  </p>
+    <updated>2014-11-29T04:08:30.000Z</updated>
+    <content type="html"><![CDATA[<p>OctopressのフォルダをDropboxに置くことにしたので、メインで使っているPCではなく古いネットブックにインストールしたXubuntuからDropbox上のOctopressを使えるかどうか試してみた。<br>だがrake previewしようとしたら、エラーになってしまった。<br>Octopressを使う環境が整っていないので当然といえば当然。  </p>
 <p>環境を整えるにあたり、bundle installで行き詰まってしまった。<br>途中    </p>
 <pre><code>Installing libv8 (3.16.14.7) 
 </code></pre><p>の表示のところで動かない。<br>フリーズしたのかと思ったが検索したところ、libv8のインストールには時間が掛かるらしい。<br>確かにCPUの使用率も100%で、頑張ってはいるようだ。  </p>
@@ -748,10 +720,8 @@ cd -
 <p>ーー<br>gitがインストールされてない？</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>OctopressのフォルダをDropboxに置くことにしたので、古いネットブックにインストールしたXubuntuからOctopressを使えるかどうか試してみた。<br>だがrake previewしようとしたら、エラーになってしまった。<br>Octopressを使う環]]>
+    <![CDATA[<p>OctopressのフォルダをDropboxに置くことにしたので、メインで使っているPCではなく古いネットブックにインストールしたXubuntuからDropbox上のOctopressを使えるかどうか試してみた。<br>だがrake previewしようとしたら、エラーにな]]>
     </summary>
-    
-      <category term="SSG" scheme="http://pagent.github.io/tags/SSG/"/>
     
       <category term="Octopress" scheme="http://pagent.github.io/tags/Octopress/"/>
     
