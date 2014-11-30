@@ -68,14 +68,8 @@
 		<ul class="nav navbar-nav">
 		  
 		  <li>
-			<a href="/archives" title="All the articles.">
-			  <i class="fa fa-archive"></i>Archives
-			</a>
-		  </li>
-		  
-		  <li>
 			<a href="/categories" title="All the categories.">
-			  <i class="fa fa-folder"></i>Categories
+			  <i class="fa fa-folder"></i>Archives
 			</a>
 		  </li>
 		  
@@ -115,6 +109,42 @@
 
 			<!-- title and entry -->
 			<div class="panel panel-default">
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/11/27/hexo-china/" >Hexoは中国製のようだ</a>
+			<span class="text-muted pull-right"><small> 2014年11月27日 </small></span>
+		</h3>
+	
+
+</div>
+
+					<!-- _partial/post/entry -->
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>しばらく前に静的サイトジェネレーターをOctopressからHexoに乗り換えた。<br>カスタマイズもわりと容易だしgenerateも早いし、気に入って使っている。  </p>
+<p>公開されているカスタムテーマを見ていて、なぜかデモサイトに中国語が多いなと不信に思っていが、オフィシャルテーマ３つのLICENSEを見ると３つとも中国人っぽい名前が記載されている。  </p>
+<p>よく見ると、レポジトリもオフィシャルサイトもこの中国人らしい人のものだった。<br>なんとHexoは中国製だったんだね。</p>
+<p>中国と聞くと正直ちょっと心配になってしまう。<br>中国製のパソコンに不正プログラムが入っていたなんてニュースもあったし。<br>ただ、cloneしてくるHexoのソースはGitHub上で公開されているものだし、大丈夫なのだろう。  </p>
+<p>中国人、なかなかやるね。<br>ちょっとくやしい気がする。  </p>
+<p>日本製の秀逸な静的サイトジェネレーターが出てきてくれないものだろうか。</p>
+
+	
+	</div>
+	
+
+</div>
+	<a type="button" href="/2014/11/27/hexo-china/#more" class="btn btn-default more">Read More</a>
+</div>
+
 				
 					<!-- _partial/post/title -->
 <div class="panel-heading">
@@ -394,51 +424,6 @@ tags:
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/24/hexo-windows-deploy/" >WindowsでHexoを使う（deploy）</a>
-			<span class="text-muted pull-right"><small> 2014年11月24日 </small></span>
-		</h3>
-	
-
-</div>
-
-					<!-- _partial/post/entry -->
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来るかと思ったが、  </p>
-<pre><code>Run
-
-  git config --global user.email &quot;you@example.com&quot;
-  git config --global user.name &quot;Your Name&quot;
-</code></pre><p>と言われてしまった。  </p>
-<p>メールアドレスとGithubユーザー名を設定してdeployしようとしたが、  </p>
-<pre><code>Permission denied (publickey).
-fatal: Could not read from remote repository.
-
-Please make sure you have the correct access rights
-and the repository exists.
-</code></pre><p>とrejectされる。  </p>
-<p>SSHキーの設定が必要のようなので、Linuxで設定したSSH公開鍵を<code>C:\Users\（ユーザー名）\.ssh</code>にコピペしたが、やはりrejectされる。<br>秘密鍵もコピペしたら、ようやくdeploy出来た。<br>これで無事WindowsでもHexoを使えるようになった。  </p>
-<p>Hexoにはローカルホストで使う管理画面プラグインもあるようなので、もう少し導入が簡単になればWindowsユーザーにも「静的サイトジェネレーター」が広まる可能性がありそうだ。</p>
-
-	
-	</div>
-	
-
-</div>
-	<a type="button" href="/2014/11/24/hexo-windows-deploy/#more" class="btn btn-default more">Read More</a>
-</div>
-
-				
 
 			</div>
 
@@ -492,29 +477,29 @@ and the repository exists.
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>9</span></a></li>
+			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
 		
 			<li><a href="/tags/風景/">風景<span>1</span></a></li>
 		
+			<li><a href="/tags/Octopress/">Octopress<span>9</span></a></li>
+		
 			<li><a href="/tags/短歌/">短歌<span>1</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>1</span></a></li>
+			<li><a href="/tags/Git/">Git<span>5</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>1</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 			<li><a href="/tags/Net/">Net<span>2</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>4</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>9</span></a></li>
+			<li><a href="/tags/blog/">blog<span>2</span></a></li>
 		
 			<li><a href="/tags/Hexo/">Hexo<span>14</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>1</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>9</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>2</span></a></li>
 		
 		
 		</ul>
@@ -527,6 +512,10 @@ and the repository exists.
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2014/11/30/sidebar-git/" ><i class="fa fa-file-o"></i>Gitレポジトリを利用したブログとサイドバー</a>
+      </li>
     
       <li>
         <a href="/2014/11/29/page-no-date/" ><i class="fa fa-file-o"></i>Hexoの固定ページを日付け無しに</a>
@@ -542,10 +531,6 @@ and the repository exists.
     
       <li>
         <a href="/2014/11/28/metalsmith/" ><i class="fa fa-file-o"></i>初心者がMetalsmithを試してみた</a>
-      </li>
-    
-      <li>
-        <a href="/2014/11/27/hexo-china/" ><i class="fa fa-file-o"></i>Hexoは中国製のようだ</a>
       </li>
     
   </ul>
