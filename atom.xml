@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitレポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-01T10:38:39.307Z</updated>
+  <updated>2014-12-01T10:40:52.822Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2014/12/01/hexo-bootstrap/"/>
     <id>http://pagent.github.io/2014/12/01/hexo-bootstrap/</id>
     <published>2014-12-01T08:36:10.000Z</published>
-    <updated>2014-12-01T09:50:02.000Z</updated>
+    <updated>2014-12-01T10:40:10.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoのテーマをデフォルトのものから、Bootstrap準拠の<a href="https://github.com/yieme/hexo-theme-freewill" target="_blank" rel="external">Freewill</a>にした。<br>BootstrapのテーマBootswatchというものを採用しているようで、外観を簡単に変更出来る。  </p>
 <p>他のテーマ同様  </p>
 <pre><code>git clone https://github.com/yieme/hexo-theme-freewill.git themes/freewill
@@ -37,7 +37,7 @@
     
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
-      <category term="bootswatch" scheme="http://pagent.github.io/tags/bootswatch/"/>
+      <category term="Bootstrap" scheme="http://pagent.github.io/tags/Bootstrap/"/>
     
   </entry>
   
