@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2014/12 | Pagent</title>
+  <title>Gitにディレクトリを追加 | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitレポジトリでブログ">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="Gitにディレクトリを追加"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -83,141 +83,133 @@
 
   <div class="container">
   	<div class="content">
-    	 <!-- archive -->
-<!-- _partial/archive -->
+    	 <!-- post -->
 
 
-<!-- archive.title -->
-<div class="page-header">
-  <h1 class="archive-title">2014/12</h1>
-</div>
+<!-- _partial/article -->
 
-<div class="row page">
-  <!-- cols -->
-  
-  <div class="col-md-9">
+<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+  <!-- display as page -->
+		<div class="page-header">
+			<h1> Gitにディレクトリを追加</h1>
+		</div>
 	
 
-	  
-	  <!-- display as list -->
-	  <div class="archive">
+</div>
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div class="col-md-9">
+	
+
+	
+
+	<!-- content -->
+	<div class="mypage">
+	    <p>HexoのソースはBitbucketで管理しているが、Hexoのテーマを変えたところ、commit出来なくなった。  </p>
+<pre><code>Changes not staged for commit:
+  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+
+    modified:   themes/freewill (modified content, untracked content)
+
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+</code></pre><p>と表示される。  </p>
+<p>Bitbucketのソースを見ると、新しいテーマのディレクトリthemes/freewillは追加はされているが、クリックして開くことが出来ない。<br>何度かやり直してみたが、うまく行かない。  </p>
+<p>ためしに適当なファイルを一つpushしたらどうかと、  </p>
+<pre><code>$ git add themes/freewill/LICENSE
+$ git commit -m &#39;修正&#39;
+$ git push
+</code></pre><p>とやったらLICENSEが追加され、freewillを開くことが出来た。<br>その後もう一度<code>git add .</code>し、commit、pushしたら、他のファイルやディレクトリも追加された。  </p>
+<p>そう言えばレポジトリに初めてcommitした時も、一度contributors.txtというファイルをpushしてからでないとうまく行かなかった。<br>Gitというのはいきなりディレクトリ全体を追加するのは出来ない仕様なのかもしれない。</p>
+
+	</div>
+
+	<div>
+  	<center>
+	<!-- _partial/post/pagination -->
+<div class="pagination">
+<ul class="pagination">
+	 
 		
-		
-		
-			
-			
-			<h4 class="archive-ul" data-toggle="collapse" data-target="#2014">2014<b class="caret"></b></h4>
-			<ul id="2014" class="collapse in">
-			
-		
-<li class="listing-item">
-  <span class="date_class"> 2014-12-01 </span> &raquo;
-  
-  <span class="title"><a href="/2014/12/01/git-add-directory/" >Gitにディレクトリを追加</a></span>
-  
-</li>
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		
-<li class="listing-item">
-  <span class="date_class"> 2014-12-01 </span> &raquo;
-  
-  <span class="title"><a href="/2014/12/01/hexo-bootstrap/" >HexoのテーマをBootstrap準拠のFreewillにした</a></span>
-  
-</li>
-
+		   <li class="next"><a href="/2014/12/01/hexo-bootstrap/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+        
+	
 </ul>
 </div>
 
-
-</div> <!-- col-md-9/col-md-12 -->
-
-
-<!-- _partial/sidebar -->
-<div class="col-md-3">
-	<div id="sidebar">
-	
-			<!-- _widget/category -->
-
-
-		
-			<!-- _widget/tagcloud -->
-
-	<div class="widget">
-		<h4>Tag Cloud</h4>
-		<ul class="tag_box inline list-unstyled">
-		
-			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>1</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>1</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>9</span></a></li>
-		
-			<li><a href="/tags/風景/">風景<span>1</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>2</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>15</span></a></li>
-		
-			<li><a href="/tags/Net/">Net<span>2</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>6</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>1</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>9</span></a></li>
-		
-		
-		</ul>
+    </center>
 	</div>
 
+	<!-- comment -->
+	<!-- _partial/post/comment -->
 
-		
-			<!-- _widget/recent_posts -->
+<section id="comment">
+  <h2 class="title">Comments</h2>
 
-<div class="widget">
-  <h4>Recent Posts</h4>
-  <ul class="entry list-unstyled">
+  
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  
+</section>
+
+
+
+	</div> <!-- col-md-9/col-md-12 -->
+
+	
+		<!-- _partial/post/meta -->
+<div class="col-md-3"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2014年12月1日
+	</div>
+	
+
+	<!-- categories -->
     
-      <li>
-        <a href="/2014/12/01/git-add-directory/" ><i class="fa fa-file-o"></i>Gitにディレクトリを追加</a>
-      </li>
-    
-      <li>
-        <a href="/2014/12/01/hexo-bootstrap/" ><i class="fa fa-file-o"></i>HexoのテーマをBootstrap準拠のFreewi...</a>
-      </li>
-    
-      <li>
-        <a href="/2014/11/30/sidebar-git/" ><i class="fa fa-file-o"></i>Gitレポジトリを利用したブログとサイドバー</a>
-      </li>
-    
-      <li>
-        <a href="/2014/11/29/page-no-date/" ><i class="fa fa-file-o"></i>Hexoの固定ページを日付け無しに</a>
-      </li>
-    
-      <li>
-        <a href="/2014/11/29/excerpt-separator/" ><i class="fa fa-file-o"></i>HexoやOctopressのトップページを全文表示で...</a>
-      </li>
-    
-  </ul>
-</div>
 
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>
+    <ul id="tags" class="tag_box list-unstyled collapse in">
+	    <!-- _partial/post/tag -->
+  
+  <li><a href="/tags/Git/">Git<span>6</span></a></li>
 
-		
-			<!-- _widget/links -->
+    </ul>
+	</div>
+	
 
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
 
-		
-	</div> <!-- sidebar -->
-</div> <!-- col-md-3 -->
+    <hr>
 
+</div><!-- col-md-3 -->
 
+	
+
+</div><!-- row -->
 
 
 	  </div>
@@ -252,7 +244,7 @@ var disqus_shortname = 'pagents';
   var dsq = document.createElement('script');
   dsq.type = 'text/javascript';
   dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 }());
 </script>

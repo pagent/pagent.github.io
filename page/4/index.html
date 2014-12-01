@@ -112,6 +112,54 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/11/23/hexo-archve-category/" >Hexoのアーカイブ、カテゴリーページを全文表示からリスト表示に</a>
+			<span class="text-muted pull-right"><small> 2014年11月23日 </small></span>
+		</h3>
+	
+
+</div>
+
+					<!-- _partial/post/entry -->
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>HexoのArchivesや各カテゴリーのページはデフォルトでは記事全文を表示するようになっている。<br>リスト表示の方が一覧を俯瞰出来て便利なので好みなのだが、カスタマイズの仕方がなかなか分からなかった。  </p>
+<p>結局は_config.ymlのArchivesの項目で  </p>
+<pre><code># Archives
+## 2: Enable pagination
+## 1: Disable pagination
+## 0: Fully Disable
+archive: 2
+category: 2
+tag: 2
+</code></pre><p>となっているところの値を、2から1に変更。  </p>
+<pre><code># Archives
+## 2: Enable pagination
+## 1: Disable pagination
+## 0: Fully Disable
+archive: 1
+category: 1
+tag: 1
+</code></pre><p>簡単にリスト表示（タイル形式）になった。</p>
+
+	
+	</div>
+	
+
+</div>
+	<a type="button" href="/2014/11/23/hexo-archve-category/#more" class="btn btn-default more">Read More</a>
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/11/22/hexo-theme/" >Hexoのテーマを変更したら、元に戻せなくなった</a>
 			<span class="text-muted pull-right"><small> 2014年11月22日 </small></span>
 		</h3>
@@ -275,73 +323,6 @@ sudo apt-get install -y nodejs
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/19/install-libv8/" >Installing libv8で止まる</a>
-			<span class="text-muted pull-right"><small> 2014年11月19日 </small></span>
-		</h3>
-	
-
-</div>
-
-					<!-- _partial/post/entry -->
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>OctopressのフォルダをDropboxに置くことにしたので、メインで使っているPCではなく古いネットブックにインストールしたXubuntuからDropbox上のOctopressを使えるかどうか試してみた。<br>だがrake previewしようとしたら、エラーになってしまった。<br>Octopressを使う環境が整っていないので当然といえば当然。  </p>
-<p>環境を整えるにあたり、bundle installで行き詰まってしまった。<br>途中    </p>
-<pre><code>Installing libv8 (3.16.14.7) 
-</code></pre><p>の表示のところで動かない。<br>フリーズしたのかと思ったが検索したところ、libv8のインストールには時間が掛かるらしい。<br>確かにCPUの使用率も100%で、頑張ってはいるようだ。  </p>
-<p>非力なマシンのせいか結局30分くらい掛かったろうか。<br>もう一度パスワード入力を求められ、その後またtherubyracer (0.12.1)のところで少し時間が掛かったが、ようやくYour bundle is complete!<br>Octopressを使えるようになった。  </p>
-<p>ーー<br>使えるようになったと思ったら、deployが出来ない。  </p>
-<pre><code>$ rake deploy
-cp -r source/images/.gitkeeper public/images/.gitkeeper
-## Deploying branch to Github Pages 
-## Pulling any updates from Github Pages 
-cd _deploy
-cd -
-rm -rf _deploy/assets
-rm -rf _deploy/atom.xml
-rm -rf _deploy/blog
-rm -rf _deploy/favicon.png
-rm -rf _deploy/images
-rm -rf _deploy/index.html
-rm -rf _deploy/javascripts
-rm -rf _deploy/posts
-rm -rf _deploy/robots.txt
-rm -rf _deploy/sitemap.xml
-rm -rf _deploy/stylesheets
-
-## Copying public to _deploy
-cp -r public/. _deploy
-cd _deploy
-
-## Committing: Site updated at 2014-11-19 11:02:25 UTC
-sh: 1: git: not found
-
-## Pushing generated _deploy website
-
-## Github Pages deploy complete
-cd -
-</code></pre><p>拒否はされてないみたいだが、記事を投稿出来ない。<br>どこに問題があるのか、よく分からない。<br>generateもやたら遅いし、ちょっとしんどいかな。  </p>
-<p>ーー<br>gitがインストールされてない？</p>
-
-	
-	</div>
-	
-
-</div>
-	<a type="button" href="/2014/11/19/install-libv8/#more" class="btn btn-default more">Read More</a>
-</div>
-
-				
 
 			</div>
 
@@ -386,31 +367,31 @@ cd -
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Hexo/">Hexo<span>15</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>1</span></a></li>
-		
 			<li><a href="/tags/Linux/">Linux<span>9</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>6</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>2</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>9</span></a></li>
+			<li><a href="/tags/短歌/">短歌<span>1</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>1</span></a></li>
+		
+			<li><a href="/tags/Net/">Net<span>2</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>2</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>1</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>1</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
 		
 			<li><a href="/tags/風景/">風景<span>1</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>5</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>9</span></a></li>
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/Net/">Net<span>2</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>1</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>15</span></a></li>
 		
 		
 		</ul>
@@ -423,6 +404,10 @@ cd -
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2014/12/01/git-add-directory/" ><i class="fa fa-file-o"></i>Gitにディレクトリを追加</a>
+      </li>
     
       <li>
         <a href="/2014/12/01/hexo-bootstrap/" ><i class="fa fa-file-o"></i>HexoのテーマをBootstrap準拠のFreewi...</a>
@@ -438,10 +423,6 @@ cd -
     
       <li>
         <a href="/2014/11/29/excerpt-separator/" ><i class="fa fa-file-o"></i>HexoやOctopressのトップページを全文表示で...</a>
-      </li>
-    
-      <li>
-        <a href="/2014/11/28/git-gc/" ><i class="fa fa-file-o"></i>.deploy/.git/objectsが大きくなって...</a>
       </li>
     
   </ul>

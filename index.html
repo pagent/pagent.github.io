@@ -112,6 +112,53 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/12/01/git-add-directory/" >Gitにディレクトリを追加</a>
+			<span class="text-muted pull-right"><small> 2014年12月1日 </small></span>
+		</h3>
+	
+
+</div>
+
+					<!-- _partial/post/entry -->
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>HexoのソースはBitbucketで管理しているが、Hexoのテーマを変えたところ、commit出来なくなった。  </p>
+<pre><code>Changes not staged for commit:
+  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+
+    modified:   themes/freewill (modified content, untracked content)
+
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+</code></pre><p>と表示される。  </p>
+<p>Bitbucketのソースを見ると、新しいテーマのディレクトリthemes/freewillは追加はされているが、クリックして開くことが出来ない。<br>何度かやり直してみたが、うまく行かない。  </p>
+<p>ためしに適当なファイルを一つpushしたらどうかと、  </p>
+<pre><code>$ git add themes/freewill/LICENSE
+$ git commit -m &#39;修正&#39;
+$ git push
+</code></pre><p>とやったらLICENSEが追加され、freewillを開くことが出来た。<br>その後もう一度<code>git add .</code>し、commit、pushしたら、他のファイルやディレクトリも追加された。  </p>
+<p>そう言えばレポジトリに初めてcommitした時も、一度contributors.txtというファイルをpushしてからでないとうまく行かなかった。<br>Gitというのはいきなりディレクトリ全体を追加するのは出来ない仕様なのかもしれない。</p>
+
+	
+	</div>
+	
+
+</div>
+	<a type="button" href="/2014/12/01/git-add-directory/#more" class="btn btn-default more">Read More</a>
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/12/01/hexo-bootstrap/" >HexoのテーマをBootstrap準拠のFreewillにした</a>
 			<span class="text-muted pull-right"><small> 2014年12月1日 </small></span>
 		</h3>
@@ -263,50 +310,6 @@
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/28/git-gc/" >.deploy/.git/objectsが大きくなってきたのでgit gcしてみた</a>
-			<span class="text-muted pull-right"><small> 2014年11月28日 </small></span>
-		</h3>
-	
-
-</div>
-
-					<!-- _partial/post/entry -->
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>それほど記事数は多くないのに、Hexoのサイズが大きくなって来た。<br>最初、数MBだったのが20MB以上になっている。  </p>
-<p>.deploy/.git/objectsが12.4MBあって、一番容量をくっているようだ。<br>ちょこちょこ記事を修正してその度にdeployしているせいだろう。<br>大した容量ではないが、Dropboxの同期に時間が掛かるのが困る。  </p>
-<p>必要性の低いようなオブジェクトが多数あったりすると、自動的にパックファイルを作って掃除（pack up）してくれるようだが、<code>git gc</code>コマンドにより手動でpack upすることも出来るらしい。<br><a href="http://heart-shaped-chocolate.hatenablog.jp/entry/2013/04/10/052752" target="_blank" rel="external">.git/objectsについて少し調べてみた - 煙と消えるその前に</a>  </p>
-<p>GitHubではないが、BitbucketのFAQには<code>git gc</code>してもリポジトリに悪い影響はないと書いてあった。<br><a href="https://confluence.atlassian.co.jp/pages/viewpage.action?pageId=35815474" target="_blank" rel="external">私のリポジトリで git gc (保全作業) を実行する必要がありますか？ - Bitbucket ドキュメンテーション - アトラシアン日本語ドキュメント</a>  </p>
-<p>早速、.deployで端末を開いて、<code>git gc</code>してみた。  </p>
-<pre><code>$ git gc
-Counting objects: 5328, done.
-Delta compression using up to 8 threads.
-Compressing objects:   5% (153/3046)   
-Compressing objects: 100% (3046/3046), done.
-Writing objects: 100% (5328/5328), done.
-Total 5328 (delta 2157), reused 0 (delta 0)
-</code></pre><p>objects下にたくさんあったフォルダが消えて、4つだけになった。<br>objects/pack内にはpack-〜.idxとpack-〜.packというファイルが出来てる。<br>objectsのサイズは12.4MB→1.8MBに縮小した。  </p>
-<p>あんまり頻回に更新しなくてもいいように、プレビュー時にはちゃんと校正しなければ。</p>
-
-	
-	</div>
-	
-
-</div>
-	<a type="button" href="/2014/11/28/git-gc/#more" class="btn btn-default more">Read More</a>
-</div>
-
-				
 
 			</div>
 
@@ -351,31 +354,31 @@ Total 5328 (delta 2157), reused 0 (delta 0)
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Hexo/">Hexo<span>15</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>9</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>1</span></a></li>
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>1</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>9</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>9</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>5</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+			<li><a href="/tags/短歌/">短歌<span>1</span></a></li>
 		
 			<li><a href="/tags/風景/">風景<span>1</span></a></li>
 		
-			<li><a href="/tags/Net/">Net<span>2</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>1</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>2</span></a></li>
+		
+			<li><a href="/tags/Net/">Net<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>9</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>15</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>2</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>6</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>1</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
 		
 		
 		</ul>
@@ -388,6 +391,10 @@ Total 5328 (delta 2157), reused 0 (delta 0)
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2014/12/01/git-add-directory/" ><i class="fa fa-file-o"></i>Gitにディレクトリを追加</a>
+      </li>
     
       <li>
         <a href="/2014/12/01/hexo-bootstrap/" ><i class="fa fa-file-o"></i>HexoのテーマをBootstrap準拠のFreewi...</a>
@@ -403,10 +410,6 @@ Total 5328 (delta 2157), reused 0 (delta 0)
     
       <li>
         <a href="/2014/11/29/excerpt-separator/" ><i class="fa fa-file-o"></i>HexoやOctopressのトップページを全文表示で...</a>
-      </li>
-    
-      <li>
-        <a href="/2014/11/28/git-gc/" ><i class="fa fa-file-o"></i>.deploy/.git/objectsが大きくなって...</a>
       </li>
     
   </ul>
