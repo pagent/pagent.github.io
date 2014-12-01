@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>blog | Pagent</title>
+  <title>HexoのテーマをBootstrap準拠のFreewillにした | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitレポジトリでブログ">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="HexoのテーマをBootstrap準拠のFreewillにした"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -83,141 +83,126 @@
 
   <div class="container">
   	<div class="content">
-    	 <!-- tag -->
-<!-- _partial/archive -->
+    	 <!-- post -->
 
 
-<!-- archive.title -->
-<div class="page-header">
-  <h1 class="archive-title-tag archive-title-blog">blog</h1>
-</div>
+<!-- _partial/article -->
 
-<div class="row page">
-  <!-- cols -->
-  
-  <div class="col-md-9">
+<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+  <!-- display as page -->
+		<div class="page-header">
+			<h1> HexoのテーマをBootstrap準拠のFreewillにした</h1>
+		</div>
 	
 
-	  
-	  <!-- display as list -->
-	  <div class="archive">
+</div>
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div class="col-md-9">
+	
+
+	
+
+	<!-- content -->
+	<div class="mypage">
+	    <p>Hexoのテーマをデフォルトのものから、Bootstrap準拠の<a href="https://github.com/yieme/hexo-theme-freewill" target="_blank" rel="external">Freewill</a>にした。<br>BootstrapのテーマBootswatchというものを採用しているようで、外観を簡単に変更出来る。  </p>
+<p>他のテーマ同様  </p>
+<pre><code>git clone https://github.com/yieme/hexo-theme-freewill.git themes/freewill
+</code></pre><p>でインストール。  </p>
+<p>Freewillの_config.ymlで<code>bootswatch:</code>で種々のBootswatchテーマに変更出来る。<br>Bootswatchのテーマには、それぞれ2種類のカラーバリエーションがあるようで、layout/_partial/navigation.ejsの2行目で<code>navbar-default</code>と<code>navbar-inverse</code>（逆の配色）のどちらかに切り替え可能。  </p>
+<p>デフォルトの設定では画面をスクロールすると、ナビゲーションバーがフェードアウト、マウスを合わせるとフェードインする仕様になっていた。<br>出たり消えたりはかえって邪魔なので、source/js/main.jsの内容をすべて消去したらフェードアウトが無くなった。<br>navigation.ejs2行目のnavbar-fixed-topを削除すると、スクロールとともにナビゲーションバーが上方に移動する。  </p>
+<p>_config.ymlの表示不要な項目は先頭に<code>#</code>を付けてコメントアウト。  </p>
+<p>テーマの変更でAtomフィードが表示されなくなってしまったが、freewill/_config.ymlの<code>rss: true</code>を<code>rss: atom.xml</code>に変更してナビゲーションバーに追加したら表示された。<br>layout/_partial/head.ejsのtheme.rssの箇所の<code>link rel=&quot;alternative&quot;</code>を<code>link rel=&quot;alternate&quot;</code>に変更。アドレスバーにもアイコンが表示された。  </p>
+<p>Bootstrapのテーマらしく、すっきりしていて機能的な印象。  </p>
+<p>ただ、paginationのページ上方にでかでかと表示されているJumbotronというのをどう使えばいいか分からない。<br>デフォルトではブログタイトルもしくはブログの説明が表示されるようだが。</p>
+
+	</div>
+
+	<div>
+  	<center>
+	<!-- _partial/post/pagination -->
+<div class="pagination">
+<ul class="pagination">
+	 
 		
-		
-		
-			
-			
-			<h4 class="archive-ul" data-toggle="collapse" data-target="#2014">2014<b class="caret"></b></h4>
-			<ul id="2014" class="collapse in">
-			
-		
-<li class="listing-item">
-  <span class="date_class"> 2014-11-30 </span> &raquo;
-  
-  <span class="title"><a href="/2014/11/30/sidebar-git/" >Gitレポジトリを利用したブログとサイドバー</a></span>
-  
-</li>
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		
-<li class="listing-item">
-  <span class="date_class"> 2014-10-23 </span> &raquo;
-  
-  <span class="title"><a href="/2014/10/23/site-renewal/" >Octopressのソース消失</a></span>
-  
-</li>
-
+		   <li class="next"><a href="/2014/11/30/sidebar-git/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+        
+	
 </ul>
 </div>
 
-
-</div> <!-- col-md-9/col-md-12 -->
-
-
-<!-- _partial/sidebar -->
-<div class="col-md-3">
-	<div id="sidebar">
-	
-			<!-- _widget/category -->
-
-
-		
-			<!-- _widget/tagcloud -->
-
-	<div class="widget">
-		<h4>Tag Cloud</h4>
-		<ul class="tag_box inline list-unstyled">
-		
-			<li><a href="/tags/Linux/">Linux<span>9</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>2</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>15</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>5</span></a></li>
-		
-			<li><a href="/tags/Net/">Net<span>2</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>1</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>1</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>9</span></a></li>
-		
-			<li><a href="/tags/風景/">風景<span>1</span></a></li>
-		
-			<li><a href="/tags/bootswatch/">bootswatch<span>1</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>2</span></a></li>
-		
-		
-		</ul>
+    </center>
 	</div>
 
+	<!-- comment -->
+	<!-- _partial/post/comment -->
 
-		
-			<!-- _widget/recent_posts -->
+<section id="comment">
+  <h2 class="title">Comments</h2>
 
-<div class="widget">
-  <h4>Recent Posts</h4>
-  <ul class="entry list-unstyled">
+  
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  
+</section>
+
+
+
+	</div> <!-- col-md-9/col-md-12 -->
+
+	
+		<!-- _partial/post/meta -->
+<div class="col-md-3"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2014年12月1日
+	</div>
+	
+
+	<!-- categories -->
     
-      <li>
-        <a href="/2014/12/01/hexo-bootstrap/" ><i class="fa fa-file-o"></i>HexoのテーマをBootstrap準拠のFreewi...</a>
-      </li>
-    
-      <li>
-        <a href="/2014/11/30/sidebar-git/" ><i class="fa fa-file-o"></i>Gitレポジトリを利用したブログとサイドバー</a>
-      </li>
-    
-      <li>
-        <a href="/2014/11/29/page-no-date/" ><i class="fa fa-file-o"></i>Hexoの固定ページを日付け無しに</a>
-      </li>
-    
-      <li>
-        <a href="/2014/11/29/excerpt-separator/" ><i class="fa fa-file-o"></i>HexoやOctopressのトップページを全文表示で...</a>
-      </li>
-    
-      <li>
-        <a href="/2014/11/28/git-gc/" ><i class="fa fa-file-o"></i>.deploy/.git/objectsが大きくなって...</a>
-      </li>
-    
-  </ul>
-</div>
 
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>
+    <ul id="tags" class="tag_box list-unstyled collapse in">
+	    <!-- _partial/post/tag -->
+  
+  <li><a href="/tags/Hexo/">Hexo<span>15</span></a></li> <li><a href="/tags/bootswatch/">bootswatch<span>1</span></a></li>
 
-		
-			<!-- _widget/links -->
+    </ul>
+	</div>
+	
 
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
 
-		
-	</div> <!-- sidebar -->
-</div> <!-- col-md-3 -->
+    <hr>
 
+</div><!-- col-md-3 -->
 
+	
+
+</div><!-- row -->
 
 
 	  </div>
@@ -252,7 +237,7 @@ var disqus_shortname = 'pagents';
   var dsq = document.createElement('script');
   dsq.type = 'text/javascript';
   dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 }());
 </script>

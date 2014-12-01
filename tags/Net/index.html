@@ -19,7 +19,7 @@
   
 
   
-    <link rel="alternative" href="/true" title="Pagent" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
   
   
     <link href="/favicon.png" rel="icon">
@@ -69,6 +69,13 @@
 		  </li>
 		  
 		</ul>
+		<ul class="nav navbar-nav navbar-right">
+		  <li><a href="/atom.xml" title="Atom feed"><i class="fa fa-rss"></i>Feed</a></li>
+		</ul>
+		<form class="navbar-form navbar-right" action="//google.com/search" method="get" accept-charset="utf-8">
+		    <input type="search" name="q" results="0" placeholder="Search" class="form-control">
+		    <input type="hidden" name="q" value="site:pagent.github.io">
+		</form>
       </div>
     </div> <!-- container -->
 </nav>
@@ -130,15 +137,6 @@
 <div class="col-md-3">
 	<div id="sidebar">
 	
-			<!-- _widget/search -->
-<div class="form-group has-success has-feedback">
-  <form action="//google.com/search" method="get" accept-charset="utf-8" >
-    <input type="search" name="q" results="0" placeholder="Search" class="form-control">
-    <input type="hidden" name="q" value="site:pagent.github.io">
-  </form>
-</div>
-
-		
 			<!-- _widget/category -->
 
 
@@ -149,29 +147,31 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Hexo/">Hexo<span>14</span></a></li>
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>2</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>1</span></a></li>
-		
-			<li><a href="/tags/風景/">風景<span>1</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>2</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>1</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>9</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>9</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>15</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
 		
-			<li><a href="/tags/Net/">Net<span>2</span></a></li>
+			<li><a href="/tags/風景/">風景<span>1</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>9</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>1</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>5</span></a></li>
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+			<li><a href="/tags/Net/">Net<span>2</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>2</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>9</span></a></li>
+		
+			<li><a href="/tags/bootswatch/">bootswatch<span>1</span></a></li>
+		
+			<li><a href="/tags/短歌/">短歌<span>1</span></a></li>
 		
 		
 		</ul>
@@ -184,6 +184,10 @@
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2014/12/01/hexo-bootstrap/" ><i class="fa fa-file-o"></i>HexoのテーマをBootstrap準拠のFreewi...</a>
+      </li>
     
       <li>
         <a href="/2014/11/30/sidebar-git/" ><i class="fa fa-file-o"></i>Gitレポジトリを利用したブログとサイドバー</a>
@@ -199,10 +203,6 @@
     
       <li>
         <a href="/2014/11/28/git-gc/" ><i class="fa fa-file-o"></i>.deploy/.git/objectsが大きくなって...</a>
-      </li>
-    
-      <li>
-        <a href="/2014/11/28/metalsmith/" ><i class="fa fa-file-o"></i>初心者がMetalsmithを試してみた</a>
       </li>
     
   </ul>

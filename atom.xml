@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitレポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-01T07:13:53.140Z</updated>
+  <updated>2014-12-01T10:38:39.307Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,33 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[HexoのテーマをBootstrap準拠のFreewillにした]]></title>
+    <link href="http://pagent.github.io/2014/12/01/hexo-bootstrap/"/>
+    <id>http://pagent.github.io/2014/12/01/hexo-bootstrap/</id>
+    <published>2014-12-01T08:36:10.000Z</published>
+    <updated>2014-12-01T09:50:02.000Z</updated>
+    <content type="html"><![CDATA[<p>Hexoのテーマをデフォルトのものから、Bootstrap準拠の<a href="https://github.com/yieme/hexo-theme-freewill" target="_blank" rel="external">Freewill</a>にした。<br>BootstrapのテーマBootswatchというものを採用しているようで、外観を簡単に変更出来る。  </p>
+<p>他のテーマ同様  </p>
+<pre><code>git clone https://github.com/yieme/hexo-theme-freewill.git themes/freewill
+</code></pre><p>でインストール。  </p>
+<p>Freewillの_config.ymlで<code>bootswatch:</code>で種々のBootswatchテーマに変更出来る。<br>Bootswatchのテーマには、それぞれ2種類のカラーバリエーションがあるようで、layout/_partial/navigation.ejsの2行目で<code>navbar-default</code>と<code>navbar-inverse</code>（逆の配色）のどちらかに切り替え可能。  </p>
+<p>デフォルトの設定では画面をスクロールすると、ナビゲーションバーがフェードアウト、マウスを合わせるとフェードインする仕様になっていた。<br>出たり消えたりはかえって邪魔なので、source/js/main.jsの内容をすべて消去したらフェードアウトが無くなった。<br>navigation.ejs2行目のnavbar-fixed-topを削除すると、スクロールとともにナビゲーションバーが上方に移動する。  </p>
+<p>_config.ymlの表示不要な項目は先頭に<code>#</code>を付けてコメントアウト。  </p>
+<p>テーマの変更でAtomフィードが表示されなくなってしまったが、freewill/_config.ymlの<code>rss: true</code>を<code>rss: atom.xml</code>に変更してナビゲーションバーに追加したら表示された。<br>layout/_partial/head.ejsのtheme.rssの箇所の<code>link rel=&quot;alternative&quot;</code>を<code>link rel=&quot;alternate&quot;</code>に変更。アドレスバーにもアイコンが表示された。  </p>
+<p>Bootstrapのテーマらしく、すっきりしていて機能的な印象。  </p>
+<p>ただ、paginationのページ上方にでかでかと表示されているJumbotronというのをどう使えばいいか分からない。<br>デフォルトではブログタイトルもしくはブログの説明が表示されるようだが。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Hexoのテーマをデフォルトのものから、Bootstrap準拠の<a href="https://github.com/yieme/hexo-theme-freewill" target="_blank" rel="external">Freewill</a>にした。<br]]>
+    </summary>
+    
+      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
+    
+      <category term="bootswatch" scheme="http://pagent.github.io/tags/bootswatch/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Gitレポジトリを利用したブログとサイドバー]]></title>
@@ -803,31 +830,6 @@ cd -
     </summary>
     
       <category term="Octopress" scheme="http://pagent.github.io/tags/Octopress/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Debian WheezyにNemoをインストール]]></title>
-    <link href="http://pagent.github.io/2014/11/18/debian-wheezy-nemo/"/>
-    <id>http://pagent.github.io/2014/11/18/debian-wheezy-nemo/</id>
-    <published>2014-11-18T00:51:22.000Z</published>
-    <updated>2014-11-29T10:21:04.000Z</updated>
-    <content type="html"><![CDATA[<p>ネットブックLaVie LightにDebian Wheezyをインストールした。<br>ウィンドウマネージャはXfceが好みなので、debian-7.7.0-i386-netinst.isoでインストールする際、”Advanced options” 、”Alternate desktop environments”でXfceを選択した。  </p>
-<p>ファイルやフォルダを簡単に管理者権限で操作したいので、XfceデフォルトのファイルマネージャーThunarのアクションに「rootで開く」を追加し、gksuもインストールした。<br>だがrootで開こうとしても、認証画面は表示されるものの、フォルダやファイルを管理者権限で開くことが出来ない。  </p>
-<p>代わりにNemoをインストールしようとしたら、レポジトリにNemoが無かった。PCManFMも確かrootで開くメニューがあったのでインストールしてみたが、なぜかrootで開くメニューが無い。<br>困ってしまったが、Ubuntu 12.04 Preciseのレポジトリを追加することで、Nemoをインストール出来た。  </p>
-<pre><code>echo &quot;deb http://ppa.launchpad.net/noobslab/mint/ubuntu precise main&quot; | sudo tee -a /etc/apt/sources.list  
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F59EAE4D  
-sudo apt-get update  
-sudo apt-get install nemo  
-</code></pre><p><a href="http://www.techlw.com/2013/12/install-nemo-file-manager-with.html" target="_blank" rel="external">Install Nemo file Manager with Extensions in Debian 7 Wheezy and its derivatives | Technology Linux World</a>  </p>
-<p>Ubuntu 14.04 Trustyのレポジトリを入れた方が、Nemoのバージョンが新しくて良いかと思いやってみたが、「壊れたパッケージを修復出来ない」とかでNemoをインストール出来なかった。  </p>
-<p>それと、Nemoを起動すると、デスクトップ上の右クリックでアプリケーションメニューを表示するのが出来なくなってしまう。<br>これでは少々不便なので、普段はThunarを使った方が良いかもしれない。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>ネットブックLaVie LightにDebian Wheezyをインストールした。<br>ウィンドウマネージャはXfceが好みなので、debian-7.7.0-i386-netinst.isoでインストールする際、”Advanced options” 、”Alternate]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
     
   </entry>
   

@@ -19,7 +19,7 @@
   
 
   
-    <link rel="alternative" href="/true" title="Pagent" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
   
   
     <link href="/favicon.png" rel="icon">
@@ -69,6 +69,13 @@
 		  </li>
 		  
 		</ul>
+		<ul class="nav navbar-nav navbar-right">
+		  <li><a href="/atom.xml" title="Atom feed"><i class="fa fa-rss"></i>Feed</a></li>
+		</ul>
+		<form class="navbar-form navbar-right" action="//google.com/search" method="get" accept-charset="utf-8">
+		    <input type="search" name="q" results="0" placeholder="Search" class="form-control">
+		    <input type="hidden" name="q" value="site:pagent.github.io">
+		</form>
       </div>
     </div> <!-- container -->
 </nav>
@@ -121,8 +128,8 @@
 <ul class="pagination">
 	 
 		
-          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-        
+    	<li class="prev"><a href="/2014/12/01/hexo-bootstrap/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+  		
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 

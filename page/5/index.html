@@ -19,7 +19,7 @@
   
 
   
-    <link rel="alternative" href="/true" title="Pagent" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
   
   
     <link href="/favicon.png" rel="icon">
@@ -69,6 +69,13 @@
 		  </li>
 		  
 		</ul>
+		<ul class="nav navbar-nav navbar-right">
+		  <li><a href="/atom.xml" title="Atom feed"><i class="fa fa-rss"></i>Feed</a></li>
+		</ul>
+		<form class="navbar-form navbar-right" action="//google.com/search" method="get" accept-charset="utf-8">
+		    <input type="search" name="q" results="0" placeholder="Search" class="form-control">
+		    <input type="hidden" name="q" value="site:pagent.github.io">
+		</form>
       </div>
     </div> <!-- container -->
 </nav>
@@ -78,7 +85,7 @@
   	<div class="content">
     	 <!-- index -->
 <div class="jumbotron page-header bg-primary">
-  <h1>静的サイトジェネレーターとGitレポジトリでブログ</h1>
+  <h2>静的サイトジェネレーターとGitレポジトリでブログ</h2>
 </div>
 
 <!-- _partial/index -->
@@ -89,8 +96,8 @@
 	
 
 		<div class="slogan lead">
-    <i class="fa fa-heart"></i>
-    A bootswatch theme.
+    <i class="fa fa-linux"></i>
+    行き当たりばったり
 </div>
 
 
@@ -98,6 +105,46 @@
 
 			<!-- title and entry -->
 			<div class="panel panel-default">
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/11/18/debian-wheezy-nemo/" >Debian WheezyにNemoをインストール</a>
+			<span class="text-muted pull-right"><small> 2014年11月18日 </small></span>
+		</h3>
+	
+
+</div>
+
+					<!-- _partial/post/entry -->
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>ネットブックLaVie LightにDebian Wheezyをインストールした。<br>ウィンドウマネージャはXfceが好みなので、debian-7.7.0-i386-netinst.isoでインストールする際、”Advanced options” 、”Alternate desktop environments”でXfceを選択した。  </p>
+<p>ファイルやフォルダを簡単に管理者権限で操作したいので、XfceデフォルトのファイルマネージャーThunarのアクションに「rootで開く」を追加し、gksuもインストールした。<br>だがrootで開こうとしても、認証画面は表示されるものの、フォルダやファイルを管理者権限で開くことが出来ない。  </p>
+<p>代わりにNemoをインストールしようとしたら、レポジトリにNemoが無かった。PCManFMも確かrootで開くメニューがあったのでインストールしてみたが、なぜかrootで開くメニューが無い。<br>困ってしまったが、Ubuntu 12.04 Preciseのレポジトリを追加することで、Nemoをインストール出来た。  </p>
+<pre><code>echo &quot;deb http://ppa.launchpad.net/noobslab/mint/ubuntu precise main&quot; | sudo tee -a /etc/apt/sources.list  
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F59EAE4D  
+sudo apt-get update  
+sudo apt-get install nemo  
+</code></pre><p><a href="http://www.techlw.com/2013/12/install-nemo-file-manager-with.html" target="_blank" rel="external">Install Nemo file Manager with Extensions in Debian 7 Wheezy and its derivatives | Technology Linux World</a>  </p>
+<p>Ubuntu 14.04 Trustyのレポジトリを入れた方が、Nemoのバージョンが新しくて良いかと思いやってみたが、「壊れたパッケージを修復出来ない」とかでNemoをインストール出来なかった。  </p>
+<p>それと、Nemoを起動すると、デスクトップ上の右クリックでアプリケーションメニューを表示するのが出来なくなってしまう。<br>これでは少々不便なので、普段はThunarを使った方が良いかもしれない。</p>
+
+	
+	</div>
+	
+
+</div>
+	<a type="button" href="/2014/11/18/debian-wheezy-nemo/#more" class="btn btn-default more">Read More</a>
+</div>
+
 				
 					<!-- _partial/post/title -->
 <div class="panel-heading">
@@ -243,59 +290,6 @@
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/03/gyao-background-color/" >FirefoxのアドオンStylishでGyaoの背景色を黒くする</a>
-			<span class="text-muted pull-right"><small> 2014年11月3日 </small></span>
-		</h3>
-	
-
-</div>
-
-					<!-- _partial/post/entry -->
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Gyaoで動画を観るとき背景が白くてまぶしいので、FirefoxのアドオンStylishで背景を黒くした。  </p>
-<p>Stylishに下記スタイルを適当な名前で追加するだけ。</p>
-<pre><code>@namespace url(http://www.w3.org/1999/xhtml);
-@-moz-document domain(&quot;gyao.yahoo.co.jp&quot;)
-,domain(&quot;youtube.com&quot;) 
-{
-
-body {
-    background-color:#000;
-}
-#playerModule {
-    border: 1px solid #080808;
-}
-.wrapperText h1 {
-    color:#BBB;
-}
-}
-</code></pre><p>YouTubeの背景はそれ程まぶしいと感じたことは無かったが、いちおうYouTubeのドメインも加えた。<br>ずいぶんと目にやさしくなった。</p>
-<p>Stylishは対象のドメインを指定してスタイルを変えられるので、なにかと重宝している。  </p>
-<p>ーー<br>（追記）<br>下記記事で紹介されているStylishのスタイル、Midnight Surfing - Global Dark Styleというのが、ページをとてもきれいに黒くしてくれる。<br><a href="http://www.xmisao.com/2014/08/08/dark-firefox.html" target="_blank" rel="external">Firefoxを徹底的に黒くする テーマ / Stylish / Vimperator — ぺけみさお</a>  </p>
-<p>ただ、導入するとすべてのページが黒くなってしまうので、GyaoとYouTubeのドメインだけを指定した。<br>本当はツールバーやサイドバーなどFirefox自体の見た目も黒くなるはずらしいが、Firefox自体までは黒くならない。<br>最近のFirefoxのバージョンでは難しいようだ。  </p>
-<p>というわけで、自分で書いた上記のスタイルはお蔵行きとなった。  </p>
-<p>（追記2）<br>Solarized Dark Everywhereというスタイルも黒板っぽい色で落ち着く。<br>目が疲れた時のウェブ閲覧に良さそうだ。</p>
-
-	
-	</div>
-	
-
-</div>
-	<a type="button" href="/2014/11/03/gyao-background-color/#more" class="btn btn-default more">Read More</a>
-</div>
-
-				
 
 			</div>
 
@@ -330,15 +324,6 @@ body {
 <div class="col-md-3">
 	<div id="sidebar">
 	
-			<!-- _widget/search -->
-<div class="form-group has-success has-feedback">
-  <form action="//google.com/search" method="get" accept-charset="utf-8" >
-    <input type="search" name="q" results="0" placeholder="Search" class="form-control">
-    <input type="hidden" name="q" value="site:pagent.github.io">
-  </form>
-</div>
-
-		
 			<!-- _widget/category -->
 
 
@@ -349,29 +334,31 @@ body {
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Octopress/">Octopress<span>9</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>1</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>2</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>5</span></a></li>
-		
-			<li><a href="/tags/Net/">Net<span>2</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>1</span></a></li>
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 			<li><a href="/tags/風景/">風景<span>1</span></a></li>
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>2</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>14</span></a></li>
+			<li><a href="/tags/短歌/">短歌<span>1</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>2</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>1</span></a></li>
+		
+			<li><a href="/tags/bootswatch/">bootswatch<span>1</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>9</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>15</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>9</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>5</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
+		
+			<li><a href="/tags/Net/">Net<span>2</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>2</span></a></li>
 		
 		
 		</ul>
@@ -384,6 +371,10 @@ body {
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2014/12/01/hexo-bootstrap/" ><i class="fa fa-file-o"></i>HexoのテーマをBootstrap準拠のFreewi...</a>
+      </li>
     
       <li>
         <a href="/2014/11/30/sidebar-git/" ><i class="fa fa-file-o"></i>Gitレポジトリを利用したブログとサイドバー</a>
@@ -399,10 +390,6 @@ body {
     
       <li>
         <a href="/2014/11/28/git-gc/" ><i class="fa fa-file-o"></i>.deploy/.git/objectsが大きくなって...</a>
-      </li>
-    
-      <li>
-        <a href="/2014/11/28/metalsmith/" ><i class="fa fa-file-o"></i>初心者がMetalsmithを試してみた</a>
       </li>
     
   </ul>

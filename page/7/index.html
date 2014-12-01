@@ -19,7 +19,7 @@
   
 
   
-    <link rel="alternative" href="/true" title="Pagent" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
   
   
     <link href="/favicon.png" rel="icon">
@@ -69,6 +69,13 @@
 		  </li>
 		  
 		</ul>
+		<ul class="nav navbar-nav navbar-right">
+		  <li><a href="/atom.xml" title="Atom feed"><i class="fa fa-rss"></i>Feed</a></li>
+		</ul>
+		<form class="navbar-form navbar-right" action="//google.com/search" method="get" accept-charset="utf-8">
+		    <input type="search" name="q" results="0" placeholder="Search" class="form-control">
+		    <input type="hidden" name="q" value="site:pagent.github.io">
+		</form>
       </div>
     </div> <!-- container -->
 </nav>
@@ -78,7 +85,7 @@
   	<div class="content">
     	 <!-- index -->
 <div class="jumbotron page-header bg-primary">
-  <h1>静的サイトジェネレーターとGitレポジトリでブログ</h1>
+  <h2>静的サイトジェネレーターとGitレポジトリでブログ</h2>
 </div>
 
 <!-- _partial/index -->
@@ -89,8 +96,8 @@
 	
 
 		<div class="slogan lead">
-    <i class="fa fa-heart"></i>
-    A bootswatch theme.
+    <i class="fa fa-linux"></i>
+    行き当たりばったり
 </div>
 
 
@@ -98,6 +105,47 @@
 
 			<!-- title and entry -->
 			<div class="panel panel-default">
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/10/31/unknown-media-type/" >「Unknown media type in type &#39;all/all&#39;」等が表示される</a>
+			<span class="text-muted pull-right"><small> 2014年10月31日 </small></span>
+		</h3>
+	
+
+</div>
+
+					<!-- _partial/post/entry -->
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>最近Octopressを使っている時やXubuntuの更新の際、端末上に「Unknown media type in type ‘all/all’」というような警告が数行表示されることが続いていた。<br>検索してみると、どうやらKDEのバグらしい。<br><a href="https://bugs.launchpad.net/ubuntu/+source/shared-mime-info/+bug/289592" target="_blank" rel="external">Bug #289592 “Unknown media types in /usr/share/mime/packages/kde…” : Bugs : “shared-mime-info” package : Ubuntu</a><br>確かに、KDEのアプリケーションをいくつかインストールしてからこの症状が起こっているように思う。  </p>
+<p>修正するには</p>
+<blockquote>
+<p>$ sudo rm /usr/share/mime/packages/kde.xml<br>$ sudo update-mime-database /usr/share/mime</p>
+</blockquote>
+<p>とすれば良いようだ。<br>だが、なんのためのファイルか知らないが、いきなりkde.xmlを削除するのも気が引けるので、  </p>
+<pre><code>$ sudo mv /usr/share/mime/packages/kde.xml /usr/share/mime/packages/kde.xml.bak
+</code></pre><p>とリネームしてから</p>
+<pre><code>$ sudo update-mime-database /usr/share/mime
+</code></pre><p>としてみた。  </p>
+<p>今のところ「Unknown media type in type …」は出てないし、特に不具合も無いようだ。</p>
+
+	
+	</div>
+	
+
+</div>
+	<a type="button" href="/2014/10/31/unknown-media-type/#more" class="btn btn-default more">Read More</a>
+</div>
+
 				
 					<!-- _partial/post/title -->
 <div class="panel-heading">
@@ -239,44 +287,6 @@
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/10/24/doropbox/" >Dropbox。やっぱり便利だね</a>
-			<span class="text-muted pull-right"><small> 2014年10月24日 </small></span>
-		</h3>
-	
-
-</div>
-
-					<!-- _partial/post/entry -->
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Xubuntuで間違ってhomeディレクトリを削除してしまい、過去記事のmarkdownファイルもろともOctopressのsourceを消失させてしまうという失敗をしてしまった。<br>ここはOctopressの作業フォルダをDropboxに置いておいた方がよいかと思いやってみた。  </p>
-<p>いちおう動作はしてdeployも出来るが、どこから出てきたか下層にあるはずのフォルダやファイルが勝手に作られていたりする。<br>通信状況が良くないのか、使い勝手がいまいち。<br>Dropboxはあくまでバックアップ用にすることにした。  </p>
-<p>Octopressの作業フォルダは、Xubuntuで共有しているWindowsのDドライブに置き、homeディレクトリにはそこへのリンクを置いているので前よりは安全だろう。  </p>
-<p>DドライブはXubuntu起動時に自分が所有者としてマウントされるよう、/etc/fstabで下記に設定している。  </p>
-<pre><code>umask=002,uid=1000,gid=1000 0       0
-</code></pre><p>dumpとpassを0にしたのは何か理由があってのことだったと思うが、思い出せない。  </p>
-<p>とにかくこれで、Xubuntuでおかしなことをしてしまっても、Dドライブをいじらない限りは大丈夫なはず。  </p>
-<p>ーー<br>（追記）<br>使い方がよく分かってなかっただけで、やっぱりDropboxは便利かもしれない。<br>他のPCと作業を同期出来るし。<br>間違ってフィルを削除してしまっても、Dropboxのキャッシュから復元出来るし。</p>
-
-	
-	</div>
-	
-
-</div>
-	<a type="button" href="/2014/10/24/doropbox/#more" class="btn btn-default more">Read More</a>
-</div>
-
-				
 
 			</div>
 
@@ -311,15 +321,6 @@
 <div class="col-md-3">
 	<div id="sidebar">
 	
-			<!-- _widget/search -->
-<div class="form-group has-success has-feedback">
-  <form action="//google.com/search" method="get" accept-charset="utf-8" >
-    <input type="search" name="q" results="0" placeholder="Search" class="form-control">
-    <input type="hidden" name="q" value="site:pagent.github.io">
-  </form>
-</div>
-
-		
 			<!-- _widget/category -->
 
 
@@ -330,29 +331,31 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Net/">Net<span>2</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>5</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>2</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/風景/">風景<span>1</span></a></li>
-		
 			<li><a href="/tags/Octopress/">Octopress<span>9</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>14</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>1</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>9</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>2</span></a></li>
 		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>2</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>15</span></a></li>
+		
+			<li><a href="/tags/Net/">Net<span>2</span></a></li>
+		
+			<li><a href="/tags/bootswatch/">bootswatch<span>1</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>5</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>9</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>1</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
 			<li><a href="/tags/短歌/">短歌<span>1</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
+		
+			<li><a href="/tags/風景/">風景<span>1</span></a></li>
 		
 		
 		</ul>
@@ -365,6 +368,10 @@
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2014/12/01/hexo-bootstrap/" ><i class="fa fa-file-o"></i>HexoのテーマをBootstrap準拠のFreewi...</a>
+      </li>
     
       <li>
         <a href="/2014/11/30/sidebar-git/" ><i class="fa fa-file-o"></i>Gitレポジトリを利用したブログとサイドバー</a>
@@ -380,10 +387,6 @@
     
       <li>
         <a href="/2014/11/28/git-gc/" ><i class="fa fa-file-o"></i>.deploy/.git/objectsが大きくなって...</a>
-      </li>
-    
-      <li>
-        <a href="/2014/11/28/metalsmith/" ><i class="fa fa-file-o"></i>初心者がMetalsmithを試してみた</a>
       </li>
     
   </ul>

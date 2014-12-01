@@ -19,7 +19,7 @@
   
 
   
-    <link rel="alternative" href="/true" title="Pagent" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
   
   
     <link href="/favicon.png" rel="icon">
@@ -69,6 +69,13 @@
 		  </li>
 		  
 		</ul>
+		<ul class="nav navbar-nav navbar-right">
+		  <li><a href="/atom.xml" title="Atom feed"><i class="fa fa-rss"></i>Feed</a></li>
+		</ul>
+		<form class="navbar-form navbar-right" action="//google.com/search" method="get" accept-charset="utf-8">
+		    <input type="search" name="q" results="0" placeholder="Search" class="form-control">
+		    <input type="hidden" name="q" value="site:pagent.github.io">
+		</form>
       </div>
     </div> <!-- container -->
 </nav>
@@ -78,7 +85,7 @@
   	<div class="content">
     	 <!-- index -->
 <div class="jumbotron page-header bg-primary">
-  <h1>静的サイトジェネレーターとGitレポジトリでブログ</h1>
+  <h2>静的サイトジェネレーターとGitレポジトリでブログ</h2>
 </div>
 
 <!-- _partial/index -->
@@ -89,8 +96,8 @@
 	
 
 		<div class="slogan lead">
-    <i class="fa fa-heart"></i>
-    A bootswatch theme.
+    <i class="fa fa-linux"></i>
+    行き当たりばったり
 </div>
 
 
@@ -98,6 +105,59 @@
 
 			<!-- title and entry -->
 			<div class="panel panel-default">
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/11/03/gyao-background-color/" >FirefoxのアドオンStylishでGyaoの背景色を黒くする</a>
+			<span class="text-muted pull-right"><small> 2014年11月3日 </small></span>
+		</h3>
+	
+
+</div>
+
+					<!-- _partial/post/entry -->
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Gyaoで動画を観るとき背景が白くてまぶしいので、FirefoxのアドオンStylishで背景を黒くした。  </p>
+<p>Stylishに下記スタイルを適当な名前で追加するだけ。</p>
+<pre><code>@namespace url(http://www.w3.org/1999/xhtml);
+@-moz-document domain(&quot;gyao.yahoo.co.jp&quot;)
+,domain(&quot;youtube.com&quot;) 
+{
+
+body {
+    background-color:#000;
+}
+#playerModule {
+    border: 1px solid #080808;
+}
+.wrapperText h1 {
+    color:#BBB;
+}
+}
+</code></pre><p>YouTubeの背景はそれ程まぶしいと感じたことは無かったが、いちおうYouTubeのドメインも加えた。<br>ずいぶんと目にやさしくなった。</p>
+<p>Stylishは対象のドメインを指定してスタイルを変えられるので、なにかと重宝している。  </p>
+<p>ーー<br>（追記）<br>下記記事で紹介されているStylishのスタイル、Midnight Surfing - Global Dark Styleというのが、ページをとてもきれいに黒くしてくれる。<br><a href="http://www.xmisao.com/2014/08/08/dark-firefox.html" target="_blank" rel="external">Firefoxを徹底的に黒くする テーマ / Stylish / Vimperator — ぺけみさお</a>  </p>
+<p>ただ、導入するとすべてのページが黒くなってしまうので、GyaoとYouTubeのドメインだけを指定した。<br>本当はツールバーやサイドバーなどFirefox自体の見た目も黒くなるはずらしいが、Firefox自体までは黒くならない。<br>最近のFirefoxのバージョンでは難しいようだ。  </p>
+<p>というわけで、自分で書いた上記のスタイルはお蔵行きとなった。  </p>
+<p>（追記2）<br>Solarized Dark Everywhereというスタイルも黒板っぽい色で落ち着く。<br>目が疲れた時のウェブ閲覧に良さそうだ。</p>
+
+	
+	</div>
+	
+
+</div>
+	<a type="button" href="/2014/11/03/gyao-background-color/#more" class="btn btn-default more">Read More</a>
+</div>
+
 				
 					<!-- _partial/post/title -->
 <div class="panel-heading">
@@ -267,47 +327,6 @@ GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/10/31/unknown-media-type/" >「Unknown media type in type &#39;all/all&#39;」等が表示される</a>
-			<span class="text-muted pull-right"><small> 2014年10月31日 </small></span>
-		</h3>
-	
-
-</div>
-
-					<!-- _partial/post/entry -->
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>最近Octopressを使っている時やXubuntuの更新の際、端末上に「Unknown media type in type ‘all/all’」というような警告が数行表示されることが続いていた。<br>検索してみると、どうやらKDEのバグらしい。<br><a href="https://bugs.launchpad.net/ubuntu/+source/shared-mime-info/+bug/289592" target="_blank" rel="external">Bug #289592 “Unknown media types in /usr/share/mime/packages/kde…” : Bugs : “shared-mime-info” package : Ubuntu</a><br>確かに、KDEのアプリケーションをいくつかインストールしてからこの症状が起こっているように思う。  </p>
-<p>修正するには</p>
-<blockquote>
-<p>$ sudo rm /usr/share/mime/packages/kde.xml<br>$ sudo update-mime-database /usr/share/mime</p>
-</blockquote>
-<p>とすれば良いようだ。<br>だが、なんのためのファイルか知らないが、いきなりkde.xmlを削除するのも気が引けるので、  </p>
-<pre><code>$ sudo mv /usr/share/mime/packages/kde.xml /usr/share/mime/packages/kde.xml.bak
-</code></pre><p>とリネームしてから</p>
-<pre><code>$ sudo update-mime-database /usr/share/mime
-</code></pre><p>としてみた。  </p>
-<p>今のところ「Unknown media type in type …」は出てないし、特に不具合も無いようだ。</p>
-
-	
-	</div>
-	
-
-</div>
-	<a type="button" href="/2014/10/31/unknown-media-type/#more" class="btn btn-default more">Read More</a>
-</div>
-
-				
 
 			</div>
 
@@ -342,15 +361,6 @@ GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
 <div class="col-md-3">
 	<div id="sidebar">
 	
-			<!-- _widget/search -->
-<div class="form-group has-success has-feedback">
-  <form action="//google.com/search" method="get" accept-charset="utf-8" >
-    <input type="search" name="q" results="0" placeholder="Search" class="form-control">
-    <input type="hidden" name="q" value="site:pagent.github.io">
-  </form>
-</div>
-
-		
 			<!-- _widget/category -->
 
 
@@ -361,29 +371,31 @@ GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
+			<li><a href="/tags/風景/">風景<span>1</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>1</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>2</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>15</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>9</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>9</span></a></li>
+		
+			<li><a href="/tags/bootswatch/">bootswatch<span>1</span></a></li>
+		
 			<li><a href="/tags/Net/">Net<span>2</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>5</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>14</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>1</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
-		
-			<li><a href="/tags/風景/">風景<span>1</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>1</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>2</span></a></li>
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>2</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>9</span></a></li>
+			<li><a href="/tags/短歌/">短歌<span>1</span></a></li>
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>9</span></a></li>
+			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
 		
 		
 		</ul>
@@ -396,6 +408,10 @@ GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2014/12/01/hexo-bootstrap/" ><i class="fa fa-file-o"></i>HexoのテーマをBootstrap準拠のFreewi...</a>
+      </li>
     
       <li>
         <a href="/2014/11/30/sidebar-git/" ><i class="fa fa-file-o"></i>Gitレポジトリを利用したブログとサイドバー</a>
@@ -411,10 +427,6 @@ GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
     
       <li>
         <a href="/2014/11/28/git-gc/" ><i class="fa fa-file-o"></i>.deploy/.git/objectsが大きくなって...</a>
-      </li>
-    
-      <li>
-        <a href="/2014/11/28/metalsmith/" ><i class="fa fa-file-o"></i>初心者がMetalsmithを試してみた</a>
       </li>
     
   </ul>

@@ -163,13 +163,13 @@ img {
    slogan
    ========================================================================== */
 
-.slogan .icon-heart{
+.slogan .icon-bicycle {
   opacity: 0.5;
   margin-right: 5px;
   margin-top: 3px;
 }
 
-.slogan .icon-heart:hover{
+.slogan .icon-bicycle:hover{
   opacity: 1;
 }
 
