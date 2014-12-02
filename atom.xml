@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitレポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-02T13:44:25.666Z</updated>
+  <updated>2014-12-02T13:58:42.282Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -609,7 +609,7 @@ and the repository exists.
     <link href="http://pagent.github.io/2014/11/24/hexo-windows/"/>
     <id>http://pagent.github.io/2014/11/24/hexo-windows/</id>
     <published>2014-11-24T09:32:37.000Z</published>
-    <updated>2014-12-02T13:09:41.000Z</updated>
+    <updated>2014-12-02T13:58:32.000Z</updated>
     <content type="html"><![CDATA[<p>以前、静的サイトジェネレーターnanocをWindowsにインストールしたが、なんとかインストールは出来たものの、compile（generate）してhtmlファイルを生成する際、エラーになり使えなかった。<br>最近使い始めたHexoは、nanocやOctopressと違い、rubyではなくNode.jsで動いているそうなので、Windowsで使えるかもしれないと思い、試してみた。  </p>
 <p>結果、Windowsで実用可能だった。</p>
 <h3 id="Node-jsのインストール">Node.jsのインストール</h3>
@@ -624,7 +624,7 @@ The file will have its original line endings in your working directory.
 warning: LF will be replaced by CRLF in fancybox/helpers/jquery.fancybox-buttons.js.
 The file will have its original line endings in your working directory.
 ...
-</code></pre><p>と、改行コードが変更されるという警告が大量に表示されたので、結局上から3番目のオプション「Checkout as-is, commit as-is」（autocrlf = false）にした。<br>後から<code>C:\Users\（ユーザー名）\.gitconfig</code>で変更可能。  </p>
+</code></pre><p>と、改行コードが変更されるという警告が大量に表示されたので、結局上から3番目のオプション「Checkout as-is, commit as-is」（autocrlf = false）にした。<br>Windowsでしか使わないのであれば、あまり気にしなくても良さそう。<br>後から<code>C:\Users\（ユーザー名）\.gitconfig</code>で変更することも可能。  </p>
 <h3 id="Hexoのインストール">Hexoのインストール</h3>
 <p>コマンドプロンプトを開き、</p>
 <pre><code>&gt;npm install hexo -g
