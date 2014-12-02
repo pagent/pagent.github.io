@@ -380,13 +380,13 @@ tags:
 	<div class="col-md-12">
 	  
 	
-	  <p>Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来るかと思ったが、  </p>
+	  <p>Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来るかと思っていた。<br>だが、  </p>
 <pre><code>Run
 
   git config --global user.email &quot;you@example.com&quot;
   git config --global user.name &quot;Your Name&quot;
 </code></pre><p>と言われてしまった。  </p>
-<p>メールアドレスとGithubユーザー名を設定してdeployしようとしたが、  </p>
+<p>メールアドレスとGithubユーザー名を設定して、再度deployしようとしたが、  </p>
 <pre><code>Permission denied (publickey).
 fatal: Could not read from remote repository.
 
@@ -394,7 +394,7 @@ Please make sure you have the correct access rights
 and the repository exists.
 </code></pre><p>とrejectされる。  </p>
 <p>SSHキーの設定が必要のようなので、Linuxで設定したSSH公開鍵を<code>C:\Users\（ユーザー名）\.ssh</code>にコピペしたが、やはりrejectされる。<br>秘密鍵もコピペしたら、ようやくdeploy出来た。<br>これで無事WindowsでもHexoを使えるようになった。  </p>
-<p>Hexoにはローカルホストで使う管理画面プラグインもあるようなので、もう少し導入が簡単になればWindowsユーザーにも「静的サイトジェネレーター」が広まる可能性がありそうだ。</p>
+<p>Hexoにはローカルホストで使う管理画面プラグインもあるようなので、もう少し導入が簡単になればWindowsユーザーにも静的サイトジェネレーターが広まる可能性があるんじゃないだろうか。</p>
 
 	
 	</div>
@@ -531,9 +531,7 @@ The file will have its original line endings in your working directory.
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Linux/">Linux<span>9</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>16</span></a></li>
+			<li><a href="/tags/短歌/">短歌<span>1</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>2</span></a></li>
 		
@@ -543,19 +541,21 @@ The file will have its original line endings in your working directory.
 		
 			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
 		
+			<li><a href="/tags/Linux/">Linux<span>9</span></a></li>
+		
 			<li><a href="/tags/ことば/">ことば<span>1</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>9</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>1</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>6</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>2</span></a></li>
 		
-			<li><a href="/tags/短歌/">短歌<span>1</span></a></li>
-		
 			<li><a href="/tags/Net/">Net<span>2</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>6</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>1</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>16</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>9</span></a></li>
 		
 		
 		</ul>

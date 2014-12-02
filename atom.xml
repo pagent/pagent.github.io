@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitレポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-02T12:54:59.418Z</updated>
+  <updated>2014-12-02T13:03:26.370Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -576,14 +576,14 @@ tags:
     <link href="http://pagent.github.io/2014/11/24/hexo-windows-deploy/"/>
     <id>http://pagent.github.io/2014/11/24/hexo-windows-deploy/</id>
     <published>2014-11-24T11:31:27.000Z</published>
-    <updated>2014-11-29T10:18:37.000Z</updated>
-    <content type="html"><![CDATA[<p>Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来るかと思ったが、  </p>
+    <updated>2014-12-02T13:03:11.000Z</updated>
+    <content type="html"><![CDATA[<p>Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来るかと思っていた。<br>だが、  </p>
 <pre><code>Run
 
   git config --global user.email &quot;you@example.com&quot;
   git config --global user.name &quot;Your Name&quot;
 </code></pre><p>と言われてしまった。  </p>
-<p>メールアドレスとGithubユーザー名を設定してdeployしようとしたが、  </p>
+<p>メールアドレスとGithubユーザー名を設定して、再度deployしようとしたが、  </p>
 <pre><code>Permission denied (publickey).
 fatal: Could not read from remote repository.
 
@@ -591,13 +591,13 @@ Please make sure you have the correct access rights
 and the repository exists.
 </code></pre><p>とrejectされる。  </p>
 <p>SSHキーの設定が必要のようなので、Linuxで設定したSSH公開鍵を<code>C:\Users\（ユーザー名）\.ssh</code>にコピペしたが、やはりrejectされる。<br>秘密鍵もコピペしたら、ようやくdeploy出来た。<br>これで無事WindowsでもHexoを使えるようになった。  </p>
-<p>Hexoにはローカルホストで使う管理画面プラグインもあるようなので、もう少し導入が簡単になればWindowsユーザーにも「静的サイトジェネレーター」が広まる可能性がありそうだ。</p>
+<p>Hexoにはローカルホストで使う管理画面プラグインもあるようなので、もう少し導入が簡単になればWindowsユーザーにも静的サイトジェネレーターが広まる可能性があるんじゃないだろうか。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来るかと思ったが、  </p>
+    <![CDATA[<p>Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来るかと思っていた。<br>だが、  </p>
 <pre><code>Run
 
-  git config --global user.email &quot;you@example]]>
+  git config --global user.email &quot;you]]>
     </summary>
     
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
