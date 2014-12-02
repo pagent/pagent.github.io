@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitレポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-02T02:18:11.365Z</updated>
+  <updated>2014-12-02T02:22:16.947Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[Gitにディレクトリを追加]]></title>
+    <title><![CDATA[Gitレポジトリにディレクトリを追加]]></title>
     <link href="http://pagent.github.io/2014/12/01/git-add-directory/"/>
     <id>http://pagent.github.io/2014/12/01/git-add-directory/</id>
     <published>2014-12-01T14:27:34.000Z</published>
-    <updated>2014-12-01T14:53:14.000Z</updated>
+    <updated>2014-12-02T02:22:03.000Z</updated>
     <content type="html"><![CDATA[<p>HexoのソースはBitbucketで管理しているが、Hexoのテーマを変えたところ、commit出来なくなった。  </p>
 <pre><code>Changes not staged for commit:
   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
