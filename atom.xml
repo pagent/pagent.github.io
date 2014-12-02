@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitレポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-02T13:58:42.282Z</updated>
+  <updated>2014-12-02T14:14:50.553Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -609,8 +609,8 @@ and the repository exists.
     <link href="http://pagent.github.io/2014/11/24/hexo-windows/"/>
     <id>http://pagent.github.io/2014/11/24/hexo-windows/</id>
     <published>2014-11-24T09:32:37.000Z</published>
-    <updated>2014-12-02T13:58:32.000Z</updated>
-    <content type="html"><![CDATA[<p>以前、静的サイトジェネレーターnanocをWindowsにインストールしたが、なんとかインストールは出来たものの、compile（generate）してhtmlファイルを生成する際、エラーになり使えなかった。<br>最近使い始めたHexoは、nanocやOctopressと違い、rubyではなくNode.jsで動いているそうなので、Windowsで使えるかもしれないと思い、試してみた。  </p>
+    <updated>2014-12-02T14:14:35.000Z</updated>
+    <content type="html"><![CDATA[<p>以前、静的サイトジェネレーターnanocをWindowsにインストールしたが、なんとかインストールは出来たものの、compile（generate）してhtmlファイルを生成する際、エラーになり使えなかった。<br>最近使い始めたHexoは、nanocやOctopressと違い、RubyではなくJavaScript（Node.js）を用いているそうなので、Windowsでも使えるかもしれないと思い、試してみた。  </p>
 <p>結果、Windowsで実用可能だった。</p>
 <h3 id="Node-jsのインストール">Node.jsのインストール</h3>
 <p>Node.jsは下記からWindows用インストーラー付きのWindows Installer (.msi)をダウンロードし、デフォルトの設定のままインストールした。<br><a href="http://nodejs.org/download/" target="_blank" rel="external">http://nodejs.org/download/</a><br>バージョンはXubuntuに入れたのと同じv0.10.33だった。  </p>
@@ -632,7 +632,7 @@ The file will have its original line endings in your working directory.
 <p>Linuxの時と同様、  </p>
 <pre><code>npm WARN optional dep failed, continuing fsevents@0.2.0
 </code></pre><p>という警告が出たが、インストール完了。  </p>
-<p>テスト用にHexoの作業フォルダを作成してみる。<br>任意のフォルダを選択した状態で「SHIFT」キーを押しながら右クリック。<br>「コマンド ウィンドウをここで開く」でコマンドウィンドウを立ち上げ、  </p>
+<p>テスト用にHexoの作業フォルダを作成。<br>任意のフォルダを選択した状態で「SHIFT」キーを押しながら右クリック。<br>「コマンド ウィンドウをここで開く」でコマンドウィンドウを立ち上げ、  </p>
 <pre><code>&gt;hexo init hexo-win
 &gt;cd hexo-win
 &gt;npm install
