@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitレポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-02T13:03:26.370Z</updated>
+  <updated>2014-12-02T13:14:29.719Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,11 +19,11 @@
     <link href="http://pagent.github.io/2014/12/02/hexo-tweetbutton/"/>
     <id>http://pagent.github.io/2014/12/02/hexo-tweetbutton/</id>
     <published>2014-12-02T11:10:48.000Z</published>
-    <updated>2014-12-02T12:48:45.000Z</updated>
+    <updated>2014-12-02T13:13:40.000Z</updated>
     <content type="html"><![CDATA[<p>HexoのテーマをFreewill変えて、Disqusウィジェット内の「Share」にはTwitterのツイートボタンはあるが、それだと<code>http://disq.us/…</code>というDisqus経由の短縮URLになる様子。<br>普通のツイートボタンを設置したかったので、<a href="https://about.twitter.com/ja/resources/buttons" target="_blank" rel="external">Twitter公式のツイートボタン</a>を入れることにした。  </p>
 <p>個別の記事への設置は、Twitterサイトで「ページのURLを使う」の設定で作成したコードを/layout/_partial/article.ejsの<code>&lt;%- item.content %&gt;</code>の下あたりに追記したら問題なく表示された。 　</p>
 <p>だがそのコードをlayout/_partial/post/entry.ejsに挿入しても、トップページなどページネーションのページ（記事一覧のページ）では、ブログタイトルと一覧ページのURLにしかならない。<br>URLとツイート文を自分でカスタマイズする設定でコードを作成し、excerptリンクに倣って、それぞれ<code>&lt;%- config.root %&gt;&lt;%= item.path %&gt;</code>、<code>&lt;%= item.title %&gt;</code>で挿入しても、記事タイトルのみでURLを取得出来ない。  </p>
-<p>試行錯誤の結果、ブログURLの箇所をパスではなく直接記載して、<code>http://…/&lt;%= item.path %&gt;</code>にしたら上手くいった。<br><code>&lt;%- config.root %&gt;</code>がブログトップへのパスを取得出来なかったようだが、理由は不明。<br>「Read More」（続きを読む）の部分では、ちゃんと変換されているが。  </p>
+<p>試行錯誤の結果、ブログURLの箇所をパスではなく直接記載して、<code>http://…/&lt;%= item.path %&gt;</code>にしたら上手くいった。<br><code>&lt;%- config.root %&gt;</code>というパスがブログトップのURLを取得出来なかったようだが、理由は不明。<br>「Read More」（続きを読む）の部分では、ちゃんと変換されているが。  </p>
 <p>記事を概要表示にしている時は「Read More」。全文表示にしている時はツイートボタンを表示することにして、read_moreの箇所を下記に変更した。  </p>
 <pre><code>&lt;% if (item.excerpt &amp;&amp; index) { %&gt;
   &lt;a type=&quot;button&quot; href=&quot;&lt;%- config.root %&gt;&lt;%- item.path %&gt;#more&quot; class=&quot;btn btn-default more&quot;&gt;&lt;%= __(&#39;read_more&#39;) %&gt;&lt;/a&gt;
@@ -576,8 +576,8 @@ tags:
     <link href="http://pagent.github.io/2014/11/24/hexo-windows-deploy/"/>
     <id>http://pagent.github.io/2014/11/24/hexo-windows-deploy/</id>
     <published>2014-11-24T11:31:27.000Z</published>
-    <updated>2014-12-02T13:03:11.000Z</updated>
-    <content type="html"><![CDATA[<p>Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来るかと思っていた。<br>だが、  </p>
+    <updated>2014-12-02T13:05:08.000Z</updated>
+    <content type="html"><![CDATA[<p>Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来ると思っていた。<br>だが、  </p>
 <pre><code>Run
 
   git config --global user.email &quot;you@example.com&quot;
@@ -594,10 +594,10 @@ and the repository exists.
 <p>Hexoにはローカルホストで使う管理画面プラグインもあるようなので、もう少し導入が簡単になればWindowsユーザーにも静的サイトジェネレーターが広まる可能性があるんじゃないだろうか。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来るかと思っていた。<br>だが、  </p>
+    <![CDATA[<p>Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来ると思っていた。<br>だが、  </p>
 <pre><code>Run
 
-  git config --global user.email &quot;you]]>
+  git config --global user.email &quot;you@]]>
     </summary>
     
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
@@ -609,7 +609,7 @@ and the repository exists.
     <link href="http://pagent.github.io/2014/11/24/hexo-windows/"/>
     <id>http://pagent.github.io/2014/11/24/hexo-windows/</id>
     <published>2014-11-24T09:32:37.000Z</published>
-    <updated>2014-11-29T10:19:06.000Z</updated>
+    <updated>2014-12-02T13:09:41.000Z</updated>
     <content type="html"><![CDATA[<p>以前、静的サイトジェネレーターnanocをWindowsにインストールしたが、なんとかインストールは出来たものの、compile（generate）してhtmlファイルを生成する際、エラーになり使えなかった。<br>最近使い始めたHexoは、nanocやOctopressと違い、rubyではなくNode.jsで動いているそうなので、Windowsで使えるかもしれないと思い、試してみた。  </p>
 <p>結果、Windowsで実用可能だった。</p>
 <h3 id="Node-jsのインストール">Node.jsのインストール</h3>
@@ -632,7 +632,7 @@ The file will have its original line endings in your working directory.
 <p>Linuxの時と同様、  </p>
 <pre><code>npm WARN optional dep failed, continuing fsevents@0.2.0
 </code></pre><p>という警告が出たが、インストール完了。  </p>
-<p>Hexoの作業フォルダを作るため、任意のフォルダを選択した状態で「SHIFT」キーを押しながら右クリック。<br>「コマンド ウィンドウをここで開く」でコマンドウィンドウを立ち上げ、  </p>
+<p>テスト用にHexoの作業フォルダを作成してみる。<br>任意のフォルダを選択した状態で「SHIFT」キーを押しながら右クリック。<br>「コマンド ウィンドウをここで開く」でコマンドウィンドウを立ち上げ、  </p>
 <pre><code>&gt;hexo init hexo-win
 &gt;cd hexo-win
 &gt;npm install
