@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitレポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-02T13:14:29.719Z</updated>
+  <updated>2014-12-02T13:29:15.995Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -191,7 +191,7 @@ $ git push
     <link href="http://pagent.github.io/2014/11/28/git-gc/"/>
     <id>http://pagent.github.io/2014/11/28/git-gc/</id>
     <published>2014-11-28T12:31:38.000Z</published>
-    <updated>2014-11-29T10:15:08.000Z</updated>
+    <updated>2014-12-02T13:28:56.000Z</updated>
     <content type="html"><![CDATA[<p>それほど記事数は多くないのに、Hexoのサイズが大きくなって来た。<br>最初、数MBだったのが20MB以上になっている。  </p>
 <p>.deploy/.git/objectsが12.4MBあって、一番容量をくっているようだ。<br>ちょこちょこ記事を修正してその度にdeployしているせいだろう。<br>大した容量ではないが、Dropboxの同期に時間が掛かるのが困る。  </p>
 <p>必要性の低いようなオブジェクトが多数あったりすると、自動的にパックファイルを作って掃除（pack up）してくれるようだが、<code>git gc</code>コマンドにより手動でpack upすることも出来るらしい。<br><a href="http://heart-shaped-chocolate.hatenablog.jp/entry/2013/04/10/052752" target="_blank" rel="external">.git/objectsについて少し調べてみた - 煙と消えるその前に</a>  </p>
@@ -204,7 +204,7 @@ Compressing objects:   5% (153/3046)
 Compressing objects: 100% (3046/3046), done.
 Writing objects: 100% (5328/5328), done.
 Total 5328 (delta 2157), reused 0 (delta 0)
-</code></pre><p>objects下にたくさんあったフォルダが消えて、4つだけになった。<br>objects/pack内にはpack-〜.idxとpack-〜.packというファイルが出来てる。<br>objectsのサイズは12.4MB→1.8MBに縮小した。  </p>
+</code></pre><p>少し待たないといけなかったが、objects下にたくさんあったフォルダが消えて、4つだけになった。<br>objects/pack内にはpack-〜.idxとpack-〜.packというファイルが出来てる。<br>objectsのサイズは12.4MB→1.8MBに縮小した。  </p>
 <p>あんまり頻回に更新しなくてもいいように、プレビュー時にはちゃんと校正しなければ。</p>
 ]]></content>
     <summary type="html">
@@ -217,11 +217,11 @@ Total 5328 (delta 2157), reused 0 (delta 0)
   </entry>
   
   <entry>
-    <title><![CDATA[初心者がMetalsmithを試してみた]]></title>
+    <title><![CDATA[プログラム音痴がMetalsmithを試してみた]]></title>
     <link href="http://pagent.github.io/2014/11/28/metalsmith/"/>
     <id>http://pagent.github.io/2014/11/28/metalsmith/</id>
     <published>2014-11-28T06:22:40.000Z</published>
-    <updated>2014-12-01T10:55:49.000Z</updated>
+    <updated>2014-12-02T13:21:40.000Z</updated>
     <content type="html"><![CDATA[<p>静的サイトジェネレーターは有名なものしか知らなかったが、かなりの数が公開されているようだ。<br><a href="https://staticsitegenerators.net/" target="_blank" rel="external">https://staticsitegenerators.net/</a><br><a href="https://www.staticgen.com/" target="_blank" rel="external">https://www.staticgen.com/</a>  </p>
 <p><a href="https://github.com/segmentio/metalsmith" target="_blank" rel="external">Metalsmith</a>（An extremely simple, pluggable static site generator.）というのが人気急上昇中のようなので、試してみた。<br>Hexo同様、プログラミング言語がJavaScriptなので、早さも期待できる。  </p>
 <p>テストするにあたり、下記サイトを参考にさせて頂いた。<br><a href="http://h2ham.net/metalsmith-static-site-generator" target="_blank" rel="external">Nodeで動作する静的サイトジェネレータ「metalsmith」を使ってみた - HAM MEDIA MEMO</a><br><a href="http://web-layman.com/metalsmith-simple-static-site-generator/" target="_blank" rel="external">metalsmith - シンプルな静的サイトジェネレーター - Layman’s Web Creation.</a>  </p>
@@ -263,7 +263,7 @@ Total 5328 (delta 2157), reused 0 (delta 0)
   &lt;title&gt;My Blog&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-  &lt;h1&gt;初心者がMetalsmithを試してみた&lt;/h1&gt;
+  &lt;h1&gt;プログラム音痴がMetalsmithを試してみた&lt;/h1&gt;
   &lt;time&gt;2014-11-28&lt;/time&gt;
 
 &lt;/body&gt;
