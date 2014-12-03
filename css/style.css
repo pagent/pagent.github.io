@@ -165,13 +165,13 @@ img {
    slogan
    ========================================================================== */
 
-.slogan .icon-bicycle {
+.slogan .icon-heart {
   opacity: 0.5;
   margin-right: 5px;
   margin-top: 3px;
 }
 
-.slogan .icon-bicycle:hover{
+.slogan .icon-heart:hover{
   opacity: 1;
 }
 
@@ -306,4 +306,23 @@ h1,h2,h3,h4,h5,h6 {
  */
 .cf {
   *zoom: 1;
+}
+
+
+/* Monthly Archives
+---------------------------- */
+   
+.archive-list ul {
+  padding:0 5px;
+  list-style-type: none;
+  line-height: 20px;
+}
+.archive-list-count {
+    color: #888;
+}
+.archive-list-count:before {
+    content: " (";
+}
+.archive-list-count:after {
+    content: ")";
 }

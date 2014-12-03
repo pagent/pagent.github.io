@@ -112,6 +112,68 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/11/01/irq-problem/" >「disabling IRQ</a>
+			<span class="text-muted pull-right"><small> 2014年11月1日 </small></span>
+		</h3>
+	
+
+</div>
+
+					<!-- _partial/post/entry -->
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <h4 id="環境">環境</h4>
+<p>ハード：NECのネットブックLaVie Light BL300/T<br>OS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  </p>
+<h4 id="現状と対応">現状と対応</h4>
+<p>Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出来なかった。<br>そのため、いったんXubuntu13.04をインストールしてから14.04.1にアップグレードしていた。<br>アップグレード中にもdisabling IRQで起動できなくなり、/etc/default/grubでGRUB_DEFAULT=”Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.8.0-19-generic”にして、デフォルトの起動カーネルを3.8.0-19にしていた。  </p>
+<p>このままでも使えるが、ソフトウェアの更新がしょっちゅうカーネルを更新するよう言ってくるし、カーネル3.13で起動できないかやってみた。  </p>
+<p>まず起動時にOS選択画面が出なかったが、他に起動できるOSがない場合grub2はOS選択画面をスキップしてしまうためらしい。<br><a href="http://www.serendip.ws/archives/3534" target="_blank" rel="external">Grub2 で起動時に選択リストを表示させる : Serendip - Webデザイン・プログラミング</a>  </p>
+<p>上記記事の通り</p>
+<pre><code>#GRUB_HIDDEN_TIMEOUT=0
+GRUB_HIDDEN_TIMEOUT_QUIET=false
+</code></pre><p>にしたらOS選択画面が出た。  </p>
+<p>試してみる起動オプションは下記記事を参考にさせて頂いた。<br><a href="http://kiddushin.jugem.jp/?eid=264" target="_blank" rel="external">Disabling IRQ (起動には成功の巻) | おもしろきこともなき世をおもしろく</a>  </p>
+<p>OS選択画面の「Advanced options for Ubuntu」で「Ubuntu, with Linux 3.13.0-39-generic」を選択し「e」キーでオプション編集画面へ。<br>linux /boot/vmlinuz-3.13.0-39…で始まる行の最後quiet nosplashのあとに半角スペースに続けてオプションを追加、「F10」キーで起動。<br>（参考記事：<a href="https://wiki.ubuntulinux.jp/UbuntuTips/Others/BootOptions#A.2BMKQw8zC5MMgw.2FDDrbggwfzC3MLkwxjDgMG6Nd1LVMKow1zC3MOcw8zCSTgBmQnaEMGtZCWb0MFkwizBrMG8-" target="_blank" rel="external">UbuntuTips/Others/BootOptions - Ubuntu Japanese Wiki</a>）  </p>
+<h4 id="結果">結果</h4>
+<p>acpi=off<br>起動は出来るが、画面が横に引き伸ばされてしまい、モニタの設定でも他の解像度を選べず。<br>シャットダウン時には「System halted」のスプラッシュ画面で止まってしまう。    </p>
+<p>pci=noacpi<br>良好。<br>問題なく使えそう。  </p>
+<p>acpi=noirq<br>一瞬起動できるかと思ったが画面が真っ暗のまま。  </p>
+<p>irqpoll<br>上に同じく真っ暗。  </p>
+<p>上記とは別にpci=routeirqというオプションも見かけたのでやってみたが、これは「disabling IRQ #9」で起動できず。  </p>
+<p>pci=noacpiを起動オプションに加えることにしたので、/etc/default/grubで</p>
+<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet nosplash pci=noacpi&quot;
+</code></pre><p>とし、<code>sudo update-grub</code>した。  </p>
+<p>ーー<br>（追記）<br>最初から「pci=noacpi」のオプションを付けてXubuntu14.04.1をインストールすることも可能だった。<br><a href="http://pagent.github.io/blog/2014/11/11/xubuntu-install-option/" target="_blank" rel="external">起動オプションを付けてXubuntu14.04.1をインストール - Pagent</a>  </p>
+<p>この場合grubの記述は</p>
+<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
+</code></pre><p>となっていた。<br>スペース区切りで一行で書いても、改行してあらたにオプションを記述してもどちらでもいいようだ。</p>
+
+	
+	</div>
+	
+
+  </div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/01/irq-problem/" data-text="「disabling IRQ">Tweet</a>
+	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+	
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/11/01/firefox-closed-tabs/" >Firefoxで「閉じたタブを元に戻す」「最近閉じたタブ」がクリック出来ない</a>
 			<span class="text-muted pull-right"><small> 2014年11月1日 </small></span>
 		</h3>
@@ -274,44 +336,6 @@
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/10/28/octopress-source-bitbucket/" >OctopressのsourceはBitBucketに置くことにした</a>
-			<span class="text-muted pull-right"><small> 2014年10月28日 </small></span>
-		</h3>
-	
-
-</div>
-
-					<!-- _partial/post/entry -->
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>OctopressをDropboxに置いて作業するのはしっくりこなかったが、BitBucketのプライベートレポジトリにOctopressのsourceをバックアップしておけるようなので、やってみた。<br><a href="http://blog.withweb.info/blog/2012/10/04/octopress/" target="_blank" rel="external">Octopressでブログしよう - withweb</a>  </p>
-<p>BitBucketでアカウントを作り参照記事の通り設定したら、_postsを含むsourceを<code>git push</code>出来るようになった。<br>あまりあちこちにアカウントを作るのは気が進まなかったが、これでローカルPCになにかあってもブログの復旧が容易という安心感がある。</p>
-
-	
-	</div>
-	
-
-  </div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/10/28/octopress-source-bitbucket/" data-text="OctopressのsourceはBitBucketに置くことにした">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-	
-</div>
-
-				
 
 			</div>
 
@@ -356,31 +380,31 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Hexo/">Hexo<span>16</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>2</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>2</span></a></li>
 		
-			<li><a href="/tags/風景/">風景<span>1</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>9</span></a></li>
-		
-			<li><a href="/tags/Net/">Net<span>2</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>1</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>1</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>2</span></a></li>
+			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>9</span></a></li>
 		
-			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
+			<li><a href="/tags/風景/">風景<span>1</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>1</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>9</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>6</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>17</span></a></li>
+		
+			<li><a href="/tags/Net/">Net<span>2</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>1</span></a></li>
 		
 			<li><a href="/tags/短歌/">短歌<span>1</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>6</span></a></li>
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 		
 		</ul>
@@ -393,6 +417,10 @@
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2014/12/03/hexo-freewill-monthly-archives/" ><i class="fa fa-file-o"></i>HexoのテーマFreewillに月別アーカイブ</a>
+      </li>
     
       <li>
         <a href="/2014/12/02/hexo-tweetbutton/" ><i class="fa fa-file-o"></i>Hexoの記事一覧ページにツイートボタン設置</a>
@@ -410,13 +438,18 @@
         <a href="/2014/11/30/sidebar-git/" ><i class="fa fa-file-o"></i>Gitレポジトリを利用したブログとサイドバー</a>
       </li>
     
-      <li>
-        <a href="/2014/11/29/page-no-date/" ><i class="fa fa-file-o"></i>Hexoの固定ページを日付け無しに</a>
-      </li>
-    
   </ul>
 </div>
 
+
+		
+			
+	<div class="widget">
+		<h4>Monthly Archives</h4>
+		<ul class="archive-list inline list-unstyled">
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		</ul>
+	</div>
 
 		
 			<!-- _widget/links -->

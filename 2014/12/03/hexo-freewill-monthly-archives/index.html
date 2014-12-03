@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexoのテーマを変更したら、元に戻せなくなった | Pagent</title>
+  <title>HexoのテーマFreewillに月別アーカイブ | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitレポジトリでブログ">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Hexoのテーマを変更したら、元に戻せなくなった"/>
+  <meta property="og:title" content="HexoのテーマFreewillに月別アーカイブ"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -94,7 +94,7 @@
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> Hexoのテーマを変更したら、元に戻せなくなった</h1>
+			<h1> HexoのテーマFreewillに月別アーカイブ</h1>
 		</div>
 	
 
@@ -111,11 +111,38 @@
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>Hexoにはいろいろテーマがあるようで有難い。<br><a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">Themes · hexojs/hexo Wiki</a><br>（デモサイトはなぜか中国語が多い。）</p>
-<p>元々入っていたデフォルトのテーマは「Landscape」だったので、とりあえずそれとは別のOfficial Themes、「Phase」と「Light」を試してみた。<br>試したはいいが、「Light」を入れてから元のテーマに戻そうとしたら戻せなくなってしまった。<br>「Light」が崩れたようなスタイルから変更出来ない。  </p>
-<p><code>hexo h</code>でヘルプを見ると、<code>clean</code>（Remove generated files and the cache）というコマンドオプションがあったので、<code>hexo clean</code>をしてみた。<br>書いてある通り/publicフォルダ自体も消えてしまったが、その後<code>hexo g</code>したらテーマも無事直った。  </p>
-<p>消したのに、カウント数が(0)のまま表示されているカテゴリやタグも、<code>hexo clean</code>で直るようだ。  </p>
-<p>ーー<br>テーマのCSSをカスタマイズする際にも、ローカルでの確認では問題ないが、いざdeployすると反映されていないようだ。<br>この時もいったん<code>hexo clean</code>すると良いようだ。</p>
+	    <p>サイドバーの種類にもよるが、Gitレポジトリを使ったブログにサイドバーを付けると、新規記事をdeployする際に更新するファイルが増えてしまって良くないように思う。  </p>
+<p>先日入れたテーマFreewillはその辺を考慮してか、ページネーションのページ等どうしても更新せざるを得ないページにはサイドバーを置き、個別の記事ページではサイドバーの領域に投稿日やタグなどを表示するように工夫されている。<br>実際に新規記事をdeployしても、過去の記事はcommitされていないようだ。  </p>
+<p>ところで、Freewillには月別アーカイブが無かったので、入れることにした。  </p>
+<p>デフォルトテーマのLandscapeのarchive.ejsをそのままfreewill/layout/_widget内にコピペすると、西暦の後ろに投稿数が隙間なしにくっついていて、見栄えが良くない。  </p>
+<p>archive.ejsを修正、  </p>
+<pre><code>&lt;% if (site.posts.length){ %&gt;
+    &lt;div class=&quot;widget&quot;&gt;
+        &lt;h4&gt;&lt;%= __(&#39;Monthly Archives&#39;) %&gt;&lt;/h4&gt;
+        &lt;ul class=&quot;archive-list inline list-unstyled&quot;&gt;
+        &lt;%- list_archives() %&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;% } %&gt;
+</code></pre><p>freewill/source/css/style.cssにもスタイルを加えた。  </p>
+<pre><code>/* Monthly Archives
+---------------------------- */
+
+.archive-list ul {
+  padding:0 5px;
+  list-style-type: none;
+  line-height: 20px;
+}
+.archive-list-count {
+    color: #888;
+}
+.archive-list-count:before {
+    content: &quot; (&quot;;
+}
+.archive-list-count:after {
+    content: &quot;)&quot;;
+}
+</code></pre><p>ちゃんとした知識が無く、見よう見まねなので、あまり良い記述ではないと思うが、自分としては十分満足。</p>
 
 	</div>
 
@@ -131,13 +158,13 @@
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2014/11/23/hexo-archve-category/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2014/11/22/octopress-hexo/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2014/12/02/hexo-tweetbutton/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -171,7 +198,7 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2014年11月22日
+	2014年12月3日
 	</div>
 	
 

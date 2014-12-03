@@ -112,6 +112,53 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/11/29/page-no-date/" >Hexoの固定ページを日付け無しに</a>
+			<span class="text-muted pull-right"><small> 2014年11月29日 </small></span>
+		</h3>
+	
+
+</div>
+
+					<!-- _partial/post/entry -->
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Hexoでは固定ページを作る際、コマンド<code>hexo new page （ページ名）</code>でsource/（ページ名）下にindex.mdが作成される。<br>tagsやcategoriesは使えないようになっている。<br>コメントを禁止にするには、Front Matterに<code>comments: false</code>を加えれば良い。  </p>
+<p>固定ページでは日付けも表示したくないところだが、<code>date:</code>の項目を消してみるても、ファイルを更新した日付けが表示されてしまう。<br>themes/landscape/layout/page.ejsを見ると、post.ejsと同じ_partial/article.ejsがレイアウトとして使われていた。  </p>
+<p>_partialディレクトリ下のarticle.ejsをarticle-page.ejsという名前でコピー。<br>4行目の  </p>
+<pre><code>&lt;%- partial(&#39;post/date&#39;, {class_name: &#39;article-date&#39;, date_format: null}) %&gt;
+</code></pre><p>を削除。  </p>
+<p>page.ejsの  </p>
+<pre><code>&lt;%- partial(&#39;_partial/article&#39;, {post: page, index: false}) %&gt;
+</code></pre><p>を</p>
+<pre><code>&lt;%- partial(&#39;_partial/article-page&#39;, {post: page, index: false}) %&gt;
+</code></pre><p>に変更した。  </p>
+<p>希望通り、日付けが削除された。</p>
+
+	
+	</div>
+	
+
+  </div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/29/page-no-date/" data-text="Hexoの固定ページを日付け無しに">Tweet</a>
+	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+	
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/11/29/excerpt-separator/" >HexoやOctopressのトップページを全文表示ではなく概要表示にする</a>
 			<span class="text-muted pull-right"><small> 2014年11月29日 </small></span>
 		</h3>
@@ -371,54 +418,6 @@ metalsmith(__dirname)
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/26/filename-case/" >Hexo新規記事作成時のタイトル大文字アルファベットを小文字のファイル名に</a>
-			<span class="text-muted pull-right"><small> 2014年11月26日 </small></span>
-		</h3>
-	
-
-</div>
-
-					<!-- _partial/post/entry -->
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Hexoのデフォルト設定で新規記事を作成する際、記事タイトルに大文字アルファベットを使うと、そのままファイル名としてソースが作成される。</p>
-<pre><code>$ hexo new New-Post
-[info] File created at /.../source/_posts/2014-11-26-New-Post.md
-</code></pre><p>URLに大文字アルファベットが入ってしまう。  </p>
-<p>URLに大文字は使いたくないので、Octopressのように大文字→小文字でファイル出力して欲しい。  </p>
-<p>_config.ymlのWritingの項目<code>filename_case:</code>の値をデフォルトの「0」から「1」に変更することで設定出来た。  </p>
-<pre><code>$ hexo new New-Post
-[info] File created at /.../source/_posts/2014-11-26-new-post.md
-</code></pre><p>filename_case: 0（そのまま出力。New-Post→New-Post）  </p>
-<p>filename_case: 1（大文字を小文字に変換。New-Post→new-post.md）  </p>
-<p>filename_case: 2（すべて大文字に変換。New-Post→NEW-POST.md）  </p>
-<p>ーー<br>（追記）<br>出来たと思ったら、generateした際にtagsまでがすべて小文字になってしまった。<br>これでは困るので、<code>filename_case: 0</code>に戻した。<br>当面、大文字のファイル名は手作業で小文字にするしかなさそうだ。</p>
-
-	
-	</div>
-	
-
-  </div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/26/filename-case/" data-text="Hexo新規記事作成時のタイトル大文字アルファベットを小文字のファイル名に">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-	
-</div>
-
-				
 
 			</div>
 
@@ -463,31 +462,31 @@ metalsmith(__dirname)
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/風景/">風景<span>1</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>1</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>9</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>6</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>1</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>9</span></a></li>
+			<li><a href="/tags/blog/">blog<span>2</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>1</span></a></li>
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>2</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>16</span></a></li>
+			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
 		
 			<li><a href="/tags/Net/">Net<span>2</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>2</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>17</span></a></li>
 		
-			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
+			<li><a href="/tags/短歌/">短歌<span>1</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>6</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>1</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>9</span></a></li>
+		
+			<li><a href="/tags/風景/">風景<span>1</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>9</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>2</span></a></li>
 		
 		
 		</ul>
@@ -500,6 +499,10 @@ metalsmith(__dirname)
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2014/12/03/hexo-freewill-monthly-archives/" ><i class="fa fa-file-o"></i>HexoのテーマFreewillに月別アーカイブ</a>
+      </li>
     
       <li>
         <a href="/2014/12/02/hexo-tweetbutton/" ><i class="fa fa-file-o"></i>Hexoの記事一覧ページにツイートボタン設置</a>
@@ -517,13 +520,18 @@ metalsmith(__dirname)
         <a href="/2014/11/30/sidebar-git/" ><i class="fa fa-file-o"></i>Gitレポジトリを利用したブログとサイドバー</a>
       </li>
     
-      <li>
-        <a href="/2014/11/29/page-no-date/" ><i class="fa fa-file-o"></i>Hexoの固定ページを日付け無しに</a>
-      </li>
-    
   </ul>
 </div>
 
+
+		
+			
+	<div class="widget">
+		<h4>Monthly Archives</h4>
+		<ul class="archive-list inline list-unstyled">
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		</ul>
+	</div>
 
 		
 			<!-- _widget/links -->
