@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitレポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-03T08:45:17.387Z</updated>
+  <updated>2014-12-03T09:00:48.068Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2014/12/03/hexo-freewill-monthly-archives/"/>
     <id>http://pagent.github.io/2014/12/03/hexo-freewill-monthly-archives/</id>
     <published>2014-12-03T07:55:43.000Z</published>
-    <updated>2014-12-03T08:45:10.000Z</updated>
+    <updated>2014-12-03T08:59:10.000Z</updated>
     <content type="html"><![CDATA[<p>サイドバーの種類にもよるが、Gitレポジトリを使ったブログにサイドバーを付けると、新規記事をdeployする際に更新するファイルが増えてしまって良くないように思う。  </p>
 <p>先日入れたテーマFreewillはその辺を考慮してか、ページネーションのページ等どうしても更新せざるを得ないページにはサイドバーを置き、個別の記事ページではサイドバーの領域に投稿日やタグなどを表示するように工夫されている。<br>実際に新規記事をdeployしても、過去の記事はcommitされていないようだ。  </p>
 <p>ところで、Freewillには月別アーカイブが無かったので、入れることにした。  </p>
@@ -52,7 +52,11 @@
     content: &quot;)&quot;;
 }
 </code></pre><p>ちゃんとした知識が無く、見よう見まねなので、あまり良い記述ではないと思うが、自分としては十分満足。  </p>
-<p>ーー<br>（追記）<br>Githubのコミット歴をよく見てみたら、個別記事ページのタグの箇所に記事数があるせいか、同じタグを使っている過去記事も更新されるようだ。<br>タグクラウドやタグ一覧ページは良いとして、個別記事ページのタグには記事数は無い方が良さそうだ。</p>
+<p>ーー<br>（追記）<br>Githubのコミット歴をよく見てみたら、同じタグを使っている過去記事も更新されるようだ。<br>個別記事ページのタグの箇所に記事数も表示されているせいだろう。  </p>
+<p>タグクラウドやタグ一覧ページは良いとして、個別記事ページのタグには記事数は無い方が良さそうだ。  </p>
+<p>freewill/layout/_partial/post/tag.ejsの5行目から<code>&lt;span&gt;&#39; + tag.length  + &#39;&lt;/span&gt;</code>を削除して、タグ名だけにした。  </p>
+<pre><code>    tags.push(&#39;&lt;li&gt;&lt;a href=&quot;&#39; + config.root + tag.path + &#39;&quot;&gt;&#39; + tag.name + &#39;&lt;/a&gt;&lt;/li&gt;&#39;);
+</code></pre><p>これで様子を見てみようと思う。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>サイドバーの種類にもよるが、Gitレポジトリを使ったブログにサイドバーを付けると、新規記事をdeployする際に更新するファイルが増えてしまって良くないように思う。  </p>
