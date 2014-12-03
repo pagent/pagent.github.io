@@ -246,8 +246,8 @@
 	  <p>HexoのテーマをFreewill変えて、Disqusウィジェット内の「Share」にはTwitterのツイートボタンはあるが、それだと<code>http://disq.us/…</code>というDisqus経由の短縮URLになる様子。<br>普通のツイートボタンを設置したかったので、<a href="https://about.twitter.com/ja/resources/buttons" target="_blank" rel="external">Twitter公式のツイートボタン</a>を入れることにした。  </p>
 <p>個別の記事への設置は、Twitterサイトで「ページのURLを使う」の設定で作成したコードを/layout/_partial/article.ejsの<code>&lt;%- item.content %&gt;</code>の下あたりに追記したら問題なく表示された。 　</p>
 <p>だがそのコードをlayout/_partial/post/entry.ejsに挿入しても、トップページなどページネーションのページ（記事一覧のページ）では、ブログタイトルと一覧ページのURLにしかならない。<br>URLとツイート文を自分でカスタマイズする設定でコードを作成し、excerptリンクに倣って、それぞれ<code>&lt;%- config.root %&gt;&lt;%= item.path %&gt;</code>、<code>&lt;%= item.title %&gt;</code>で挿入しても、記事タイトルのみでURLを取得出来ない。  </p>
-<p>試行錯誤の結果、ブログURLの箇所をパスではなく直接記載して、<code>http://…/&lt;%= item.path %&gt;</code>にしたら上手くいった。<br><code>&lt;%- config.root %&gt;</code>というパスがブログトップのURLを取得出来なかったようだが、理由は不明。<br>「Read More」（続きを読む）の部分では、ちゃんと変換されているが。  </p>
-<p>（追記：個別記事URLへのパスは<code>&lt;%- item.permalink %&gt;</code>一つで良いようです。）  </p>
+<p><del>試行錯誤の結果、ブログURLの箇所をパスではなく直接記載して、<code>http://…/&lt;%= item.path %&gt;</code>にしたら上手くいった。<br><code>&lt;%- config.root %&gt;</code>というパスがブログトップのURLを取得出来なかったようだが、理由は不明。<br>「Read More」（続きを読む）の部分では、ちゃんと変換されているが。</del>  </p>
+<p>ーーー<br>（<strong>追記</strong>）<br>個別記事URLへのパスは<code>&lt;%- item.permalink %&gt;</code>一つで良いようだ。<br>ーーー  </p>
 <p>記事を概要表示にしている時は「Read More」。全文表示にしている時はツイートボタンを表示することにして、read_moreの箇所を下記に変更した。  </p>
 <pre><code>&lt;% if (item.excerpt &amp;&amp; index) { %&gt;
   &lt;a type=&quot;button&quot; href=&quot;&lt;%- config.root %&gt;&lt;%- item.path %&gt;#more&quot; class=&quot;btn btn-default more&quot;&gt;&lt;%= __(&#39;read_more&#39;) %&gt;&lt;/a&gt;
@@ -419,31 +419,31 @@ $ git push
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/風景/">風景<span>1</span></a></li>
+			<li><a href="/tags/blog/">blog<span>2</span></a></li>
 		
-			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
+			<li><a href="/tags/短歌/">短歌<span>1</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>9</span></a></li>
 		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>1</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>2</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
+		
+			<li><a href="/tags/風景/">風景<span>1</span></a></li>
+		
 			<li><a href="/tags/ことば/">ことば<span>1</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>9</span></a></li>
-		
 			<li><a href="/tags/Git/">Git<span>6</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>18</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>9</span></a></li>
 		
 			<li><a href="/tags/Net/">Net<span>2</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>1</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>2</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>18</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>2</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>1</span></a></li>
 		
 		
 		</ul>
