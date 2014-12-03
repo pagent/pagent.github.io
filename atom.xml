@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitレポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-03T09:56:06.014Z</updated>
+  <updated>2014-12-03T11:59:17.240Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,34 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Hexoで記事に画像を挿入する]]></title>
+    <link href="http://pagent.github.io/2014/12/03/hexo-image/"/>
+    <id>http://pagent.github.io/2014/12/03/hexo-image/</id>
+    <published>2014-12-03T10:24:04.000Z</published>
+    <updated>2014-12-03T11:58:07.000Z</updated>
+    <content type="html"><![CDATA[<p>Hexoで画像を挿入する場合、画像を表示するためのタグはOctopressと同様で、  </p>
+<pre><code>{(半角の%) img (class名) (画像へのパス) (幅) (高さ) (タイトル) %} 
+</code></pre><p>例えば  </p>
+<pre><code>{(半角の%) img /images/a0960_005150_r.jpg 480 360 コスモス %}  #class名は省略
+</code></pre><p>で良いようだ。<br>代わりに下記のようなhtmlタグを使っても良い。  </p>
+<pre><code>&lt;a href=&quot;/images/a0960_005150_r.jpg&quot; target=_blank&gt;&lt;img src=&quot;/images/a0960_005150_r.jpg&quot; alt=&quot;コスモス&quot; width=&quot;480&quot; height=&quot;360&quot;&gt;&lt;/a&gt;
+</code></pre><p>OctopressではMarkdown式のタグだと、画像をクリックしたら原寸大で表示というのが出来なかったので、htmlタグの方が良いかと思ったが、Hexoの場合、Markdownタグで画像クリック→原寸大表示が出来るようだ。  </p>
+<p>Hexoでは_config.ymlのWritingの箇所で<code>post_asset_folder</code>の値を<code>true</code>にするようを推奨している。<br><a href="http://hexo.io/docs/writing.html#Asset_Folder" target="_blank" rel="external">Writing | Hexo</a>  </p>
+<p>説明通り<code>post_asset_folder: true</code>にして新規postを作ると、postフォルダ内に.mdファイルと同名のフォルダが作成される。<br>このフォルダに画像ファイルを入れよということらしい。<br>画像を多用する場合は整理に便利なのかもしれないが、ほとんど画像を使わない場合はかえって煩雑なので、source下にimagenなどのフォルダを作ってそこへ入れた方が便利そうだ。  </p>
+<p>ーー<br>（追記）<br>テーマをFreewillにしたら画像が強制的に最大表示になってしまったので、freewill/source/css/style.cssのimgの箇所で<code>width: auto;</code>、<code>height: auto;</code>を削除した。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Hexoで画像を挿入する場合、画像を表示するためのタグはOctopressと同様で、  </p>
+<pre><code>{(半角の%) img (class名) (画像へのパス) (幅) (高さ) (タイトル) %} 
+</code></pre><p>例えば  </p>
+<]]>
+    </summary>
+    
+      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[HexoのテーマFreewillに月別アーカイブ]]></title>
@@ -72,17 +100,18 @@
     <link href="http://pagent.github.io/2014/12/02/hexo-tweetbutton/"/>
     <id>http://pagent.github.io/2014/12/02/hexo-tweetbutton/</id>
     <published>2014-12-02T11:10:48.000Z</published>
-    <updated>2014-12-02T13:44:10.000Z</updated>
+    <updated>2014-12-03T11:04:11.000Z</updated>
     <content type="html"><![CDATA[<p>HexoのテーマをFreewill変えて、Disqusウィジェット内の「Share」にはTwitterのツイートボタンはあるが、それだと<code>http://disq.us/…</code>というDisqus経由の短縮URLになる様子。<br>普通のツイートボタンを設置したかったので、<a href="https://about.twitter.com/ja/resources/buttons" target="_blank" rel="external">Twitter公式のツイートボタン</a>を入れることにした。  </p>
 <p>個別の記事への設置は、Twitterサイトで「ページのURLを使う」の設定で作成したコードを/layout/_partial/article.ejsの<code>&lt;%- item.content %&gt;</code>の下あたりに追記したら問題なく表示された。 　</p>
 <p>だがそのコードをlayout/_partial/post/entry.ejsに挿入しても、トップページなどページネーションのページ（記事一覧のページ）では、ブログタイトルと一覧ページのURLにしかならない。<br>URLとツイート文を自分でカスタマイズする設定でコードを作成し、excerptリンクに倣って、それぞれ<code>&lt;%- config.root %&gt;&lt;%= item.path %&gt;</code>、<code>&lt;%= item.title %&gt;</code>で挿入しても、記事タイトルのみでURLを取得出来ない。  </p>
 <p>試行錯誤の結果、ブログURLの箇所をパスではなく直接記載して、<code>http://…/&lt;%= item.path %&gt;</code>にしたら上手くいった。<br><code>&lt;%- config.root %&gt;</code>というパスがブログトップのURLを取得出来なかったようだが、理由は不明。<br>「Read More」（続きを読む）の部分では、ちゃんと変換されているが。  </p>
+<p>（追記：個別記事URLへのパスは<code>&lt;%- item.permalink %&gt;</code>一つで良いようです。）  </p>
 <p>記事を概要表示にしている時は「Read More」。全文表示にしている時はツイートボタンを表示することにして、read_moreの箇所を下記に変更した。  </p>
 <pre><code>&lt;% if (item.excerpt &amp;&amp; index) { %&gt;
   &lt;a type=&quot;button&quot; href=&quot;&lt;%- config.root %&gt;&lt;%- item.path %&gt;#more&quot; class=&quot;btn btn-default more&quot;&gt;&lt;%= __(&#39;read_more&#39;) %&gt;&lt;/a&gt;
 &lt;% } else { %&gt;
 &lt;div class=&quot;tweet-button&quot;&gt;
-  &lt;a href=&quot;https://twitter.com/share&quot; class=&quot;twitter-share-button&quot; data-url=&quot;http://pagent.github.io/&lt;%= item.path %&gt;&quot; data-text=&quot;&lt;%= item.title %&gt;&quot;&gt;Tweet&lt;/a&gt;
+  &lt;a href=&quot;https://twitter.com/share&quot; class=&quot;twitter-share-button&quot; data-url=&quot;&lt;%- item.permalink %&gt;&quot; data-text=&quot;&lt;%= item.title %&gt;&quot;&gt;Tweet&lt;/a&gt;
   &lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?&#39;http&#39;:&#39;https&#39;;if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+&#39;://platform.twitter.com/widgets.js&#39;;fjs.parentNode.insertBefore(js,fjs);}}(document, &#39;script&#39;, &#39;twitter-wjs&#39;);&lt;/script&gt;
 &lt;/div&gt;
 &lt;% } %&gt;
@@ -804,37 +833,6 @@ tag: 1
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Hexoにはいろいろテーマがあるようで有難い。<br><a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">Themes · hexojs/hexo Wiki<]]>
-    </summary>
-    
-      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[サイトジェネレーターをOctopressからHexoに変更]]></title>
-    <link href="http://pagent.github.io/2014/11/22/octopress-hexo/"/>
-    <id>http://pagent.github.io/2014/11/22/octopress-hexo/</id>
-    <published>2014-11-22T11:21:26.000Z</published>
-    <updated>2014-11-29T10:19:53.000Z</updated>
-    <content type="html"><![CDATA[<p>Github Pagesのブログに使っている静的サイトジェネレーターをOctopressからHexoに変更してみた。  </p>
-<p>Octopressの/source/_posts内の記事ソースをそのままHexoの/source/_postsにコピーしたら、generateした時にパーマリンクが<code>http://.../2014/10/24/2014-10-24-xubuntu-blank-menu/</code>のように日付けが重複してしまった。<br>Hexoはデフォルトでは、新しく記事を作った時には日付けがつかず、生成する時に日付けを付加するようになっているらしい。  </p>
-<p>_config.ymlの  </p>
-<pre><code># Writing
-new_post_name: :title.md # File name of new posts
-</code></pre><p>のところを  </p>
-<pre><code>new_post_name: :year-:month-:day-:title.md
-</code></pre><p>に変更したら良いようだ。<br><a href="http://hexo.io/docs/migration.html" target="_blank" rel="external">Migration | Hexo</a>  </p>
-<p>Octopressでは記事が/blogディレクトリ下に配置されるパーマリンクを使っていたが、今後はHexoのデフォルトの通りルート下に:year/:month/:day/:title/というパーマリンクを使うことにした。この方がシンプルで好みだし。<br>Githubでは.htaccessファイルを使ったリダイレクトが使用不可のようなので、以前の記事がリンク切れになるのは仕方がない。  </p>
-<p>あと、下記記事を参考に、FeedとSitemapのプラグインを入れた。<br>プラグインの導入はとても簡単だった。<br><a href="http://liginc.co.jp/web/programming/server/104594" target="_blank" rel="external">所要時間3分!? Github PagesとHEXOで爆速ブログ構築してみよう！ | 株式会社LIG</a>  </p>
-<p>Feedを導入すると、ヘッダー右上のアイコンでatom.xmlのページは表示出来たが、ブラウザのアドレスバーの端にフィードアイコンが表示されていない。  </p>
-<p>themes/landscape/layout/_partial/head.ejsの26行目、<code>link rel=&quot;alternative&quot;</code>を<code>link rel=&quot;alternate&quot;</code>に変更したら、アドレスバーにフィードアイコンが表示された。  </p>
-<p>心配だったGithubへのdeployも、_config.ymlの<code># Deployment</code>の項目に記載するだけですんなりdeploy出来た。  </p>
-<p>記事数が増えるに従い（増えたといっても、ほんの20数記事だが）、動作がもっさりして来たOctopressに較べ、generateが断然早くて軽快。<br>コマンドも<br><code>hexo generate</code>→<code>hexo g</code><br><code>hexo server</code>→<code>hexo s</code><br><code>hexo deploy</code>→<code>hexo d</code><br>で良いようだし、なかなか便利。  </p>
-<p>ーー<br><code>hexo new</code>も<code>hexo n</code>でいいみたいで、<code>hexo deploy -g</code>は<code>hexo d -g</code>で良いようだ。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Github Pagesのブログに使っている静的サイトジェネレーターをOctopressからHexoに変更してみた。  </p>
-<p>Octopressの/source/_posts内の記事ソースをそのままHexoの/source/_postsにコピーしたら、genera]]>
     </summary>
     
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
