@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitレポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-04T12:14:42.619Z</updated>
+  <updated>2014-12-04T13:11:53.274Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,37 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Gitで"non-fast-forward"]]></title>
+    <link href="http://pagent.github.io/2014/12/04/git-non-fast-forward/"/>
+    <id>http://pagent.github.io/2014/12/04/git-non-fast-forward/</id>
+    <published>2014-12-04T12:47:25.000Z</published>
+    <updated>2014-12-04T13:11:30.000Z</updated>
+    <content type="html"><![CDATA[<p>HexoのソースをBitbucketにcommitしようとしたら、  </p>
+<pre><code>Your branch and &#39;bitbucket/master&#39; have diverged,
+and have 1 and 1 different commit each, respectively.
+  (use &quot;git pull&quot; to merge the remote branch into yours)
+
+nothing to commit, working directory clean
+</code></pre><p>と警告が出た。  </p>
+<p>かまわずpushしたら”master -&gt; master (non-fast-forward)”といってrejectされた。   </p>
+<p>“git pull”しろということなのでやってみたが、次の画面でなにをすればいいのかよく分からない。  </p>
+<p>なにもせず「CTRL」+「X」で終了して、もう一度addから試してみようとしたら、  </p>
+<pre><code>このブランチは &#39;bitbucket/master&#39; よりも2コミット進んでいます。
+  (use &quot;git push&quot; to publish your local commits)
+</code></pre><p>とのこと。<br>“git push”しろということなのでやってみたら、今度はpush出来た。<br>“non-fast-forward”というのも検索してみたが、読んでもなんのことだかさっぱり。</p>
+<p>便利なんだが、Gitは本当によく分からない。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>HexoのソースをBitbucketにcommitしようとしたら、  </p>
+<pre><code>Your branch and &#39;bitbucket/master&#39; have diverged,
+and have 1 and 1 different c]]>
+    </summary>
+    
+      <category term="Git" scheme="http://pagent.github.io/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Bootstrapでページ内リンク先がナビゲーションバーに隠れる]]></title>
@@ -810,40 +841,6 @@ tags:
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Hexoで新規記事を作ると、初期状態ではtitle、date、tagsの項目しか無いが、categoriesも使いたいので変更。<br>/scaffolds/post.mdに項目を追加するだけで出来た。<br>（<code>---</code>で区画された部分は「Front]]>
-    </summary>
-    
-      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hexoのアーカイブ、カテゴリーページを全文表示からリスト表示に]]></title>
-    <link href="http://pagent.github.io/2014/11/23/hexo-archve-category/"/>
-    <id>http://pagent.github.io/2014/11/23/hexo-archve-category/</id>
-    <published>2014-11-22T22:54:43.000Z</published>
-    <updated>2014-11-29T10:19:37.000Z</updated>
-    <content type="html"><![CDATA[<p>HexoのArchivesや各カテゴリーのページはデフォルトでは記事全文を表示するようになっている。<br>リスト表示の方が一覧を俯瞰出来て便利なので好みなのだが、カスタマイズの仕方がなかなか分からなかった。  </p>
-<p>結局は_config.ymlのArchivesの項目で  </p>
-<pre><code># Archives
-## 2: Enable pagination
-## 1: Disable pagination
-## 0: Fully Disable
-archive: 2
-category: 2
-tag: 2
-</code></pre><p>となっているところの値を、2から1に変更。  </p>
-<pre><code># Archives
-## 2: Enable pagination
-## 1: Disable pagination
-## 0: Fully Disable
-archive: 1
-category: 1
-tag: 1
-</code></pre><p>簡単にリスト表示（タイル形式）になった。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>HexoのArchivesや各カテゴリーのページはデフォルトでは記事全文を表示するようになっている。<br>リスト表示の方が一覧を俯瞰出来て便利なので好みなのだが、カスタマイズの仕方がなかなか分からなかった。  </p>
-<p>結局は_config.ymlのArchives]]>
     </summary>
     
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
