@@ -340,3 +340,10 @@ h1,h2,h3,h4,h5,h6 {
 .asset-meta {
   padding: 5px 15px;
 }
+
+
+/* フッター調整
+---------------------------- */
+.container-narrow > footer {
+    text-align: center;
+}
