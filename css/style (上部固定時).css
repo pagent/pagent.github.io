@@ -325,7 +325,6 @@ h1,h2,h3,h4,h5,h6 {
     content: ")";
 }
 
-/* ナビゲーションバー固定時ページ内リンク位置修正
 *[id]:before { 
   display: block; 
   content: " "; 
@@ -334,9 +333,6 @@ h1,h2,h3,h4,h5,h6 {
   visibility: hidden; 
 }
 
-
-/* タイトル日付け
----------------------------- */
 .asset-meta {
   padding: 5px 15px;
 }
