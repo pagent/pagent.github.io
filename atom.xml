@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitレポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-03T22:24:51.566Z</updated>
+  <updated>2014-12-04T02:09:20.528Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,37 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Bootstrapでページ内リンク先がナビゲーションバーに隠れる]]></title>
+    <link href="http://pagent.github.io/2014/12/04/bootstrap-in-page-anchor-link/"/>
+    <id>http://pagent.github.io/2014/12/04/bootstrap-in-page-anchor-link/</id>
+    <published>2014-12-04T01:13:06.000Z</published>
+    <updated>2014-12-04T01:52:48.000Z</updated>
+    <content type="html"><![CDATA[<p>タグ一覧ページで、特定のタグをクリックしてページ内リンク先に移動すると、先頭部分がナビゲーションバーに隠れてしまっていた。  </p>
+<p>検索すると下記記事が見つかった。</p>
+<p><a href="http://blog.livedoor.jp/sonots/archives/28928405.html" target="_blank" rel="external">bootstrap の固定ナビゲーションとページ内アンカー問題 - sonots:blog</a>  </p>
+<p>難しそうなのでナビゲーションバーを上部に固定（<code>navbar-fixed-top</code>）しているのをやめようかと思ったが、リンクされていたGithub上のissueを見るとCSSを使った対処法が紹介されていた。  </p>
+<p><a href="https://github.com/twbs/bootstrap/issues/1768#issuecomment-46519033" target="_blank" rel="external">Navbar hides initial content when jumping to in-page anchor · Issue #1768 · twbs/bootstrap</a>  </p>
+<p>その通りstyle.cssに追記すると、リンク先の先頭部分は表示されるようになったが、使っているナビゲーションバーの高さが狭いせいか、一つ前のタグの下の部分が少し表示されている。  </p>
+<p>navbarのmin-heightに合わせて、75pxの箇所を50pxにしたら、ちょうど良い具合になった。  </p>
+<pre><code>*[id]:before { 
+  display: block; 
+  content: &quot; &quot;; 
+  margin-top: -50px; 
+  height: 50px; 
+  visibility: hidden; 
+}
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p>タグ一覧ページで、特定のタグをクリックしてページ内リンク先に移動すると、先頭部分がナビゲーションバーに隠れてしまっていた。  </p>
+<p>検索すると下記記事が見つかった。</p>
+<p><a href="http://blog.livedoor.jp/sonots/ar]]>
+    </summary>
+    
+      <category term="Bootstrap" scheme="http://pagent.github.io/tags/Bootstrap/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Hexoで記事に画像を挿入する]]></title>
@@ -169,13 +200,13 @@ $ git push
     <link href="http://pagent.github.io/2014/12/01/hexo-bootstrap/"/>
     <id>http://pagent.github.io/2014/12/01/hexo-bootstrap/</id>
     <published>2014-12-01T08:36:10.000Z</published>
-    <updated>2014-12-03T22:24:27.000Z</updated>
+    <updated>2014-12-04T01:13:36.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoのテーマをデフォルトのものから、Bootstrap準拠の<a href="https://github.com/yieme/hexo-theme-freewill" target="_blank" rel="external">Freewill</a>にした。<br>BootstrapのテーマBootswatchというものを採用しているようで、外観を簡単に変更出来る。  </p>
 <p>他のテーマ同様  </p>
 <pre><code>git clone https://github.com/yieme/hexo-theme-freewill.git themes/freewill
 </code></pre><p>でインストール。  </p>
 <p>Freewillの_config.ymlで<code>bootswatch:</code>で種々のBootswatchテーマに変更出来る。<br>Bootswatchのナビゲーションバーには、テーマ毎に2種類のカラーバリエーションがあり、layout/_partial/navigation.ejsの2行目で<code>navbar-default</code>と<code>navbar-inverse</code>（逆の配色）のどちらかに切り替え可能。  </p>
-<p>デフォルトの設定では画面をスクロールすると、ナビゲーションバーがフェードアウト、マウスを合わせるとフェードインする仕様になっていた。<br>出たり消えたりはかえって邪魔なので、source/js/main.jsの内容をすべて消去したらフェードアウトが無くなった。<br>navigation.ejs2行目のnavbar-fixed-topを削除すると、スクロールとともにナビゲーションバーが上方に移動する。  </p>
+<p>デフォルトの設定では画面をスクロールすると、ナビゲーションバーがフェードアウト、マウスを合わせるとフェードインする仕様になっていた。<br>出たり消えたりはかえって邪魔なので、source/js/main.jsの内容をすべて消去したらフェードアウトが無くなった。<br>navigation.ejs2行目の<code>navbar-fixed-top</code>を削除すると、スクロールとともにナビゲーションバーが上方に移動する。  </p>
 <p>_config.ymlの表示不要な項目は先頭に<code>#</code>を付けてコメントアウト。  </p>
 <p>テーマの変更でAtomフィードが表示されなくなってしまったが、freewill/_config.ymlの<code>rss: true</code>を<code>rss: atom.xml</code>に変更してナビゲーションバーに追加したら表示された。<br>layout/_partial/head.ejsのtheme.rssの箇所の<code>link rel=&quot;alternative&quot;</code>を<code>link rel=&quot;alternate&quot;</code>に変更。アドレスバーにもアイコンが表示された。  </p>
 <p>Bootstrapのテーマらしく、すっきりしていて機能的な印象。  </p>
@@ -813,26 +844,6 @@ tag: 1
     <summary type="html">
     <![CDATA[<p>HexoのArchivesや各カテゴリーのページはデフォルトでは記事全文を表示するようになっている。<br>リスト表示の方が一覧を俯瞰出来て便利なので好みなのだが、カスタマイズの仕方がなかなか分からなかった。  </p>
 <p>結局は_config.ymlのArchives]]>
-    </summary>
-    
-      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hexoのテーマを変更したら、元に戻せなくなった]]></title>
-    <link href="http://pagent.github.io/2014/11/22/hexo-theme/"/>
-    <id>http://pagent.github.io/2014/11/22/hexo-theme/</id>
-    <published>2014-11-22T12:22:39.000Z</published>
-    <updated>2014-11-29T04:09:39.000Z</updated>
-    <content type="html"><![CDATA[<p>Hexoにはいろいろテーマがあるようで有難い。<br><a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">Themes · hexojs/hexo Wiki</a><br>（デモサイトはなぜか中国語が多い。）</p>
-<p>元々入っていたデフォルトのテーマは「Landscape」だったので、とりあえずそれとは別のOfficial Themes、「Phase」と「Light」を試してみた。<br>試したはいいが、「Light」を入れてから元のテーマに戻そうとしたら戻せなくなってしまった。<br>「Light」が崩れたようなスタイルから変更出来ない。  </p>
-<p><code>hexo h</code>でヘルプを見ると、<code>clean</code>（Remove generated files and the cache）というコマンドオプションがあったので、<code>hexo clean</code>をしてみた。<br>書いてある通り/publicフォルダ自体も消えてしまったが、その後<code>hexo g</code>したらテーマも無事直った。  </p>
-<p>消したのに、カウント数が(0)のまま表示されているカテゴリやタグも、<code>hexo clean</code>で直るようだ。  </p>
-<p>ーー<br>テーマのCSSをカスタマイズする際にも、ローカルでの確認では問題ないが、いざdeployすると反映されていないようだ。<br>この時もいったん<code>hexo clean</code>すると良いようだ。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Hexoにはいろいろテーマがあるようで有難い。<br><a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">Themes · hexojs/hexo Wiki<]]>
     </summary>
     
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
