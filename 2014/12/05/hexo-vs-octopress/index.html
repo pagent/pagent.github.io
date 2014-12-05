@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Gitで”non-fast-forward” | Pagent</title>
+  <title>HexoとOctopressの比較 | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitレポジトリでブログ">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Gitで”non-fast-forward”"/>
+  <meta property="og:title" content="HexoとOctopressの比較"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -94,7 +94,7 @@
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> Gitで”non-fast-forward”</h1>
+			<h1> HexoとOctopressの比較</h1>
 		</div>
 	
 
@@ -110,20 +110,34 @@
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>HexoのソースをBitbucketにcommitしようとしたら、  </p>
-<pre><code>Your branch and &#39;bitbucket/master&#39; have diverged,
-and have 1 and 1 different commit each, respectively.
-  (use &quot;git pull&quot; to merge the remote branch into yours)
-
-nothing to commit, working directory clean
-</code></pre><p>と警告が出た。  </p>
-<p>かまわずpushしたら、”master -&gt; master (non-fast-forward)”といってrejectされた。   </p>
-<p>“git pull”を使え、ということのようなのでやってみたが、次の画面でなにをすれば良いのか分からない。  </p>
-<p>なにもせず「CTRL」+「X」で終了して、もう一度addから試してみようとしたら、  </p>
-<pre><code>このブランチは &#39;bitbucket/master&#39; よりも2コミット進んでいます。
-  (use &quot;git push&quot; to publish your local commits)
-</code></pre><p>とのこと。<br>言われた通り”git push”したら、今度はpush出来た。<br>「non-fast-forward」というのも検索してみたが、読んでもなんのことだかさっぱり。</p>
-<p>便利なんだが、Gitは本当によく分からない。</p>
+	    <p>どちらもブログとしての体裁が整っていて、導入したらすぐ始められるHexoとOctopress。<br>しばらくHexoを使ってみて、Octopressと比較しての感想。（あくまで私見）  </p>
+<h3 id="長所">長所</h3>
+<h4 id="・generateが早い">・generateが早い</h4>
+<p>Hexoの長所はなんと言ってもこれだろう。<br>手動での計測だが、30程の記事をgenerateするのに要した時間は、Octopressの12.5秒に対してHexoは2.3秒と、5分の1以下だった。<br>今後、記事数や使っているタグ、カテゴリーが増えれば、さらに差が広がると思われる。<br>プレビュー時の反映も早い。  </p>
+<h4 id="・デフォルトで日本語のタグ名（カテゴリー名）を使える">・デフォルトで日本語のタグ名（カテゴリー名）を使える</h4>
+<p>Octopressでもカスタマイズすれば日本語のカテゴリー名を使えるようだが、デフォルト状態では漢字は中国語読みらしきローマ字表記に変換される。（たとえば、”未分類”は”wei-fen-lei”に。）<br>仮名はローマ字表記になるが、”の”は”false”に。「の（no）」をyes、noの”no”と判断する様。  </p>
+<h4 id="・Windowsで使える">・Windowsで使える</h4>
+<p>あくまで自分の環境でだが、Octopressが使っているRubyはWindowsで正常に動作しなかった。<br>一方、Hexo（JavaScript使用）はWindowsで使用可能だった。<br>WindowsにJekyllをインストールする方法も紹介されているので、環境によってはOctopressもWindows上で使えるのかもしれない。  </p>
+<h4 id="・コマンドが簡単">・コマンドが簡単</h4>
+<p><code>hexo new</code>→<code>hexo n</code>、<code>hexo generate</code>→<code>hexo g</code>、<code>hexo server</code>→<code>hexo s</code>、<code>hexo deploy</code>→<code>hexo d</code>の省略でコマンド可能。<br>辞書登録すればあまり関係ないが。  </p>
+<h3 id="短所">短所</h3>
+<h4 id="・中国製？">・中国製？</h4>
+<p>使わせてもらっている身だが、なんかおもしろくない。  </p>
+<h4 id="・FrontMatterの書式がOctopressと違う">・FrontMatterの書式がOctopressと違う</h4>
+<p>他の静的サイトジェネレーターでもFrontMatter上部には<code>---</code>が入るのが一般的のよう。<br>この先、他の静的サイトジェネレーターに移行する可能性も考えると、ここは合わせて欲しかった。  </p>
+<h4 id="・ユーザー数が少ない">・ユーザー数が少ない</h4>
+<p><a href="https://staticsitegenerators.net/" target="_blank" rel="external">Static Site Generators</a>のStars（「いいね」みたいなもののよう）は、現時点（2014年12月5日）では、Octopressの8522に対しHexoは3430とOctopressの半分以下。<br>（1位はOctopressの本家Jekyllが17578と圧倒的）<br>調べ物をする際にも、参考になるドキュメントは少なくなる。特に日本語では。<br>Octopressより後発なので、今後増える可能性はある。  </p>
+<h4 id="・コマンドがかっこ悪い">・コマンドがかっこ悪い</h4>
+<p>ことある毎に<code>hexo</code>と連呼しないといけないのが、ちょっとかっこ悪い。  </p>
+<h3 id="引き分け">引き分け</h3>
+<h4 id="・テーマの豊富さ">・テーマの豊富さ</h4>
+<p>自分の知る限りでは大差はない。<br>テーマの変更や微修正の容易さでは、Hexoに分があるよう。  </p>
+<h4 id="・SEO">・SEO</h4>
+<p>あまり違いは無さそう。<br>使っているテーマにもよるだろうし、記事の内容次第か。  </p>
+<h4 id="・カテゴリーとタグのあつかい">・カテゴリーとタグのあつかい</h4>
+<p>Octopressの”categories”はHexoでは”tags”に相当する。<br>複数設定した際、階層ではなく並列になる点からすると、”tags”としてあつかうHexoの方が自然な気はする。  </p>
+<h3 id="結論">結論</h3>
+<p>なんといってもNode.js（JavaScript）の早さは魅力的なので、今後プログラミング言語がRubyの静的サイトジェネレーターに移ろうという気がしない。<br>自分のスキルが上がってMetalsmithを使いこなせるようになるか、他に良さそうな静的サイトジェネレーターが出てこない限りは、今後もHexoを使うことになりそうだ。</p>
 
 	</div>
 
@@ -139,13 +153,13 @@ nothing to commit, working directory clean
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2014/12/05/hexo-vs-octopress/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2014/12/04/bootstrap-in-page-anchor-link/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2014/12/04/git-non-fast-forward/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -179,7 +193,7 @@ nothing to commit, working directory clean
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2014年12月4日
+	2014年12月5日
 	</div>
 	
 
@@ -193,7 +207,7 @@ nothing to commit, working directory clean
     <ul id="tags" class="tag_box list-unstyled collapse in">
 	    <!-- _partial/post/tag -->
   
-  <li><a href="/tags/Git/">Git</a></li>
+  <li><a href="/tags/Hexo/">Hexo</a></li> <li><a href="/tags/Octopress/">Octopress</a></li>
 
     </ul>
 	</div>
