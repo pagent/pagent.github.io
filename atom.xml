@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitレポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-05T02:34:01.647Z</updated>
+  <updated>2014-12-05T09:33:42.658Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2014/12/05/hexo-vs-octopress/"/>
     <id>http://pagent.github.io/2014/12/05/hexo-vs-octopress/</id>
     <published>2014-12-04T23:01:11.000Z</published>
-    <updated>2014-12-05T02:33:35.000Z</updated>
+    <updated>2014-12-05T09:33:21.000Z</updated>
     <content type="html"><![CDATA[<p>どちらもブログとしての体裁が整っていて、導入したらすぐ始められるHexoとOctopress。<br>しばらくHexoを使ってみて、Octopressと比較しての感想。（あくまで私見）  </p>
 <h3 id="長所">長所</h3>
 <h4 id="・generateが早い">・generateが早い</h4>
@@ -36,7 +36,7 @@
 <h4 id="・FrontMatterの書式がOctopressと違う">・FrontMatterの書式がOctopressと違う</h4>
 <p>他の静的サイトジェネレーターでもFrontMatter上部には<code>---</code>が入るのが一般的のよう。<br>この先、他の静的サイトジェネレーターに移行する可能性も考えると、ここは合わせて欲しかった。  </p>
 <h4 id="・ユーザー数が少ない">・ユーザー数が少ない</h4>
-<p><a href="https://staticsitegenerators.net/" target="_blank" rel="external">Static Site Generators</a>のStars（「いいね」みたいなもののよう）は、現時点（2014年12月5日）では、Octopressの8522に対しHexoは3430とOctopressの半分以下。<br>（1位はOctopressの本家Jekyllが17578と圧倒的）<br>調べ物をする際にも、参考になるドキュメントは少なくなる。特に日本語では。<br>Octopressより後発なので、今後増える可能性はある。  </p>
+<p><a href="https://staticsitegenerators.net/" target="_blank" rel="external">Static Site Generators</a>のStars（「いいね」みたいなもののよう）は、現時点（2014年12月5日）では、Octopressの8522に対しHexoは3430とOctopressの半分以下。<br>（1位はOctopressの本家Jekyllが17578と圧倒的）<br>何か調べたい時にも、特に日本語では、参考になるドキュメントは少なくなる。<br>Octopressより後発なので、今後増える可能性はある。  </p>
 <h4 id="・コマンドがかっこ悪い">・コマンドがかっこ悪い</h4>
 <p>ことある毎に<code>hexo</code>と連呼しないといけないのが、ちょっとかっこ悪い。  </p>
 <h3 id="引き分け">引き分け</h3>
@@ -47,7 +47,7 @@
 <h4 id="・カテゴリーとタグのあつかい">・カテゴリーとタグのあつかい</h4>
 <p>Octopressの”categories”はHexoでは”tags”に相当する。<br>複数設定した際、階層ではなく並列になる点からすると、”tags”としてあつかうHexoの方が自然な気はする。  </p>
 <h3 id="結論">結論</h3>
-<p>なんといってもNode.js（JavaScript）の早さは魅力的なので、今後プログラミング言語がRubyの静的サイトジェネレーターに移ろうという気がしない。<br>自分のスキルが上がってMetalsmithを使いこなせるようになるか、他に良さそうな静的サイトジェネレーターが出てこない限りは、今後もHexoを使うことになりそうだ。</p>
+<p>Node.js（JavaScript）の早さは魅力的なので、今後プログラミング言語がRubyの静的サイトジェネレーターに積極的に移ろうという気はしない。<br>自分のスキルが上がってMetalsmithを使いこなせるようになるか、他に良さそうな静的サイトジェネレーターが出てこない限りは、今後もHexoを使うことになりそうだ。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>どちらもブログとしての体裁が整っていて、導入したらすぐ始められるHexoとOctopress。<br>しばらくHexoを使ってみて、Octopressと比較しての感想。（あくまで私見）  </p>
