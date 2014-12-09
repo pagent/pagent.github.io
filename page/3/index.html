@@ -112,6 +112,52 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/12/01/hexo-bootstrap/" >HexoのテーマをBootstrap準拠のFreewillにした</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年12月1日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Hexoのテーマをデフォルトのものから、Bootstrap準拠の<a href="https://github.com/yieme/hexo-theme-freewill" target="_blank" rel="external">Freewill</a>にした。<br>BootstrapのテーマBootswatchというものを採用しているようで、外観を簡単に変更出来る。  </p>
+<p>他のテーマ同様  </p>
+<pre><code>git clone https://github.com/yieme/hexo-theme-freewill.git themes/freewill
+</code></pre><p>でインストール。  </p>
+<p>Freewillの_config.ymlで<code>bootswatch:</code>で種々のBootswatchテーマに変更出来る。<br>Bootswatchのナビゲーションバーには、テーマ毎に2種類のカラーバリエーションがあり、layout/_partial/navigation.ejsの2行目で<code>navbar-default</code>と<code>navbar-inverse</code>（逆の配色）のどちらかに切り替え可能。  </p>
+<p>デフォルトの設定では画面をスクロールすると、ナビゲーションバーがフェードアウト、マウスを合わせるとフェードインする仕様になっていた。<br>出たり消えたりはかえって邪魔なので、source/js/main.jsの内容をすべて消去したらフェードアウトが無くなった。<br>navigation.ejs2行目の<code>navbar-fixed-top</code>を削除すると、スクロールとともにナビゲーションバーが上方に移動する。  </p>
+<p>_config.ymlの表示不要な項目は先頭に<code>#</code>を付けてコメントアウト。  </p>
+<p>テーマの変更でAtomフィードが表示されなくなってしまったが、freewill/_config.ymlの<code>rss: true</code>を<code>rss: atom.xml</code>に変更してナビゲーションバーに追加したら表示された。<br>layout/_partial/head.ejsのtheme.rssの箇所の<code>link rel=&quot;alternative&quot;</code>を<code>link rel=&quot;alternate&quot;</code>に変更。アドレスバーにもアイコンが表示された。  </p>
+<p>Bootstrapのテーマらしく、すっきりしていて機能的な印象。  </p>
+<p>ただ、paginationのページ上方にでかでかと表示されているJumbotronというのをどう使えばいいか分からない。<br>デフォルトではブログタイトルもしくはブログの説明が表示されるようだが。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/01/hexo-bootstrap/" data-text="HexoのテーマをBootstrap準拠のFreewillにした">Tweet</a>
+	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/11/30/sidebar-git/" >Gitレポジトリを利用したブログとサイドバー</a>
 		</h3>
 	
@@ -291,134 +337,6 @@ Total 5328 (delta 2157), reused 0 (delta 0)
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/28/metalsmith/" >プログラム音痴がMetalsmithを試してみた</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月28日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>静的サイトジェネレーターは有名なものしか知らなかったが、かなりの数が公開されているようだ。<br><a href="https://staticsitegenerators.net/" target="_blank" rel="external">https://staticsitegenerators.net/</a><br><a href="https://www.staticgen.com/" target="_blank" rel="external">https://www.staticgen.com/</a>  </p>
-<p><a href="https://github.com/segmentio/metalsmith" target="_blank" rel="external">Metalsmith</a>（An extremely simple, pluggable static site generator.）というのが人気急上昇中のようなので、試してみた。<br>Hexo同様、プログラミング言語がJavaScriptなので、早さも期待できる。  </p>
-<p>テストするにあたり、下記サイトを参考にさせて頂いた。<br><a href="http://h2ham.net/metalsmith-static-site-generator" target="_blank" rel="external">Nodeで動作する静的サイトジェネレータ「metalsmith」を使ってみた - HAM MEDIA MEMO</a><br><a href="http://web-layman.com/metalsmith-simple-static-site-generator/" target="_blank" rel="external">metalsmith - シンプルな静的サイトジェネレーター - Layman’s Web Creation.</a>  </p>
-<p>先ずはpackage.json を用意して導入するプラグインを指定、一括インストールするのが良いようなのだが、本体やプラグインのバージョンがよく分からない。<br>なのでmetalsmith-testという作業フォルダを作り、そこで端末を開いて一個一個インストールした。  </p>
-<pre><code>~/metalsmith-test$ npm install metalsmith
-~/metalsmith-test$ npm install metalsmith-templates
-~/metalsmith-test$ npm install swig
-~/metalsmith-test$ npm install metalsmith-markdown
-~/metalsmith-test$ npm install metalsmith-permalinks
-~/metalsmith-test$ npm install metalsmith-sass
-~/metalsmith-test$ npm install metalsmith-watch
-~/metalsmith-test$ npm install metalsmith-drafts
-</code></pre><p>次に作業フォルダ内にmetalsmith.jsonを作成する必要があったが、これはjekyllの構成に倣ったexampleのものをほぼそのまま使わせてもらった。<br><a href="https://github.com/segmentio/metalsmith/blob/master/examples/jekyll/metalsmith.json" target="_blank" rel="external">https://github.com/segmentio/metalsmith/blob/master/examples/jekyll/metalsmith.json</a></p>
-<pre><code>{
-  &quot;source&quot;: &quot;./_posts&quot;,
-  &quot;destination&quot;: &quot;./_site&quot;,
-  &quot;metadata&quot;: {
-    &quot;title&quot;: &quot;My Jekyll-Powered Blog&quot;,
-    &quot;description&quot;: &quot;My second, super-cool, Jekyll-powered blog.&quot;
-  },
-  &quot;plugins&quot;: {
-    &quot;metalsmith-drafts&quot;: {},
-    &quot;metalsmith-markdown&quot;: {},
-    &quot;metalsmith-permalinks&quot;: {
-      &quot;pattern&quot;: &quot;:title&quot;
-    },
-    &quot;metalsmith-sass&quot;: {
-        &quot;outputStyle&quot;: &quot;expanded&quot;
-    },
-    &quot;metalsmith-templates&quot;: {
-      &quot;engine&quot;: &quot;swig&quot;,
-      &quot;directory&quot;: &quot;_layouts&quot;
-    }
-  }
-}
-</code></pre><p>_layoutsフォルダを作り、そこへ下記内容のpost.htmlを配置。  </p>
-<pre><code>&lt;html&gt;
-&lt;head&gt;
-  &lt;title&gt;My Blog&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;プログラム音痴がMetalsmithを試してみた&lt;/h1&gt;
-  &lt;time&gt;2014-11-28&lt;/time&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre><p>_postsフォルダを作り、テスト用の記事test-post-1.mdを配置。  </p>
-<pre><code>---
-template: post.html
-title: テスト投稿１
-date: 2014-11-28
----
-##今日の天気
-本日は晴天なり。
-</code></pre><p><code>node node_modules/.bin/metalsmith</code>とコマンドを打つと、自動的に_siteフォルダ、その下にtest-post-1フォルダ、その中にindex.htmlが生成された。  </p>
-<pre><code>&lt;html&gt;
-&lt;head&gt;
-  &lt;title&gt;My Blog&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;テスト投稿&lt;/h1&gt;
-  &lt;time&gt;2014-11-28&lt;/time&gt;
-  &lt;h2 id=&quot;-&quot;&gt;今日の天気&lt;/h2&gt;
-&lt;p&gt;本日は晴天なり。&lt;/p&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre><p>ローカルホスト上でプレビューを可能にするプラグインmetalsmith-serveというのがあったのでインストールしたが、どう使えばいいのかよく分からない。  </p>
-<p>metalsmith.jsonの<code>&quot;plugins&quot;:</code>の箇所に無理やり  </p>
-<pre><code>    &quot;metalsmith-serve&quot;: {
-      &quot;port&quot;: &quot;8081&quot;,
-      &quot;verbose&quot;: &quot;true&quot;
-    }
-</code></pre><p>と加えてみたら、<code>node node_modules/.bin/metalsmith</code>のコマンドで、生成と共にローカルホストが立ち上がった。<br>ブラウザで<code>http://localhost:8081/test-post-1/</code>にアクセスすると、CSSは当たっていないが表示はされた。  </p>
-<p>たぶん正しい使い方ではないのだと思うが、プラグインの説明の  </p>
-<pre><code>var metalsmith = require(&#39;metalsmith&#39;);
-var serve = require(&#39;metalsmith-serve&#39;);
-
-metalsmith(__dirname)
-  .use(serve())
-  .build();
-</code></pre><p>というのを何処で設定するのか分からない。  </p>
-<p>トップページの生成の仕方やCSSの当て方なども勉強する必要がありそう。<br>それに、新規記事作成やgenerate、プレビューなど、それぞれコマンドに割り当てて操作したいところ。  </p>
-<p>Metalsmithのサイトの上方に記載してある  </p>
-<pre><code>Metalsmith(__dirname)
-  .use(drafts())
-  .use(markdown())
-  .use(permalinks(&#39;posts/:title&#39;))
-  .use(templates(&#39;handlebars&#39;))
-  .build();
-</code></pre><p>というのも、いったいどこの記載のことなんだか。</p>
-<p>「Everything is a Plugin」と謳われているようにカスタマイズ性は高そうだが、Jekyllの使い方が分からずOctopressに移った自分のようなプログラム音痴には、少々ハードルが高そうだ。<br>静的サイトジェネレーターの仕組みを勉強するには良さそうだが。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/28/metalsmith/" data-text="プログラム音痴がMetalsmithを試してみた">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -463,31 +381,33 @@ metalsmith(__dirname)
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+			<li><a href="/tags/blog/">blog<span>2</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>1</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>2</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 			<li><a href="/tags/Net/">Net<span>2</span></a></li>
 		
 			<li><a href="/tags/風景/">風景<span>1</span></a></li>
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>2</span></a></li>
+			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>19</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>10</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>9</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>7</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>2</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>10</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>19</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 		
 		</ul>
@@ -500,6 +420,10 @@ metalsmith(__dirname)
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2014/12/09/casio/" ><i class="fa fa-file-o"></i>50桁まで計算出来るカシオのフリー計算がすごい</a>
+      </li>
     
       <li>
         <a href="/2014/12/09/life/" ><i class="fa fa-file-o"></i>思い煩うな</a>
@@ -517,10 +441,6 @@ metalsmith(__dirname)
         <a href="/2014/12/04/git-non-fast-forward/" ><i class="fa fa-file-o"></i>Gitで”non-fast-forward”</a>
       </li>
     
-      <li>
-        <a href="/2014/12/04/bootstrap-in-page-anchor-link/" ><i class="fa fa-file-o"></i>Bootstrapでページ内リンク先がナビゲーションバ...</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -530,7 +450,7 @@ metalsmith(__dirname)
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
