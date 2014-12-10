@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitレポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-10T01:28:37.854Z</updated>
+  <updated>2014-12-10T10:27:31.080Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,26 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Briefの不具合（フィードを追加出来ない）]]></title>
+    <link href="http://pagent.github.io/2014/12/10/brief/"/>
+    <id>http://pagent.github.io/2014/12/10/brief/</id>
+    <published>2014-12-10T10:09:09.000Z</published>
+    <updated>2014-12-10T10:26:40.000Z</updated>
+    <content type="html"><![CDATA[<p>FirefoxのRSSアドオン「Brief」の調子が突然おかしくなった。<br>新たにフィードを追加しても、一覧に表示されない。<br>brief.sqliteをリネームしたり、Briefをインストールし直してみたりしたが、改善せず。  </p>
+<p>Briefの派生アドオン「Digest」も既に削除されており困ってしまったが、Briefのページ<a href="https://addons.mozilla.org/ja/firefox/addon/brief/?src=search" target="_blank" rel="external">Brief :: Add-ons for Firefox</a>の一番下に「開発チャンネル」というのがあった。<br>Version 2.0b1となっていて、どうやら開発版のよう。  </p>
+<p>駄目もとでインストールしてみたら、新たに追加したフィードがちゃんと表示された。  </p>
+<p>メニューは英語だし、信頼性にやや問題があるのかもしれないが、とりあえずは使えるので助かった。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>FirefoxのRSSアドオン「Brief」の調子が突然おかしくなった。<br>新たにフィードを追加しても、一覧に表示されない。<br>brief.sqliteをリネームしたり、Briefをインストールし直してみたりしたが、改善せず。  </p>
+<p>Briefの派生アド]]>
+    </summary>
+    
+      <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Linuxで「天気予報 - ウェザーニュース」が重すぎる]]></title>
@@ -646,90 +666,6 @@ metalsmith(__dirname)
     </summary>
     
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[HexoのソースをBitbucketに置く]]></title>
-    <link href="http://pagent.github.io/2014/11/26/hexo-bitbucket/"/>
-    <id>http://pagent.github.io/2014/11/26/hexo-bitbucket/</id>
-    <published>2014-11-26T07:47:16.000Z</published>
-    <updated>2014-11-29T10:17:16.000Z</updated>
-    <content type="html"><![CDATA[<p>Hexoの作業フォルダはWindows領域のDropboxフォルダに置き、他のPCとも同期をとっている。<br>これでソースを消失してしまう危険はかなり低いと思うが、Dropboxと同期する際、結構時間がかかってしまう。<br>普段はDropboxを起動しておらず時々立ち上げる、という形をとっているせいもあるかもしれない。  </p>
-<p>Bitbucketにソースを置いたらpushするのはそれほど時間は掛からないだろうし、過去の履歴も残ってくれてやはり便利だろうと思い、HexoのソースをBitbucketに置くことにした。  </p>
-<p>OctopressのソースをBitbucketに置いた時と同様、Bitbucketにhexoという名前のリポジトリを作り、  </p>
-<pre><code>$ git remote add bitbucket git@bitbucket.org:ユーザー名/hexo.git
-$ git push -u bitbucket source
-</code></pre><p>とやったが、エラーになる。  </p>
-<p>新規リポジトリを作成後に表示されたRepository setupの指示に倣い、  </p>
-<pre><code>$ git init
-$ git remote add bitbucket git@bitbucket.org:ユーザー名/hexo.git
-$ echo &quot;ユーザー名&quot; &gt;&gt; contributors.txt
-$ git add contributors.txt
-$ git commit -m &#39;Initial commit with contributors&#39;
-$ git push -u bitbucket source
-</code></pre><p>としても、やはり  </p>
-<pre><code>error: src refspec source does not match any.
-error: failed to push some refs to &#39;git@bitbucket.org:ユーザー名/hexo.git&#39;
-</code></pre><p>とエラーになる。  </p>
-<p>pushするbranchをsourceではなく、masterにしてみた。  </p>
-<pre><code>$ git push -u bitbucket master
-Counting objects: 3, done.
-Writing objects: 100% (3/3), 239 bytes | 0 bytes/s, done.
-Total 3 (delta 0), reused 0 (delta 0)
-To git@bitbucket.org:ユーザー名/hexo.git
- * [new branch]      master -&gt; master
-Branch master set up to track remote branch master from bitbucket.
-</code></pre><p>上手く行ったようだ。  </p>
-<p>だが、その後も  </p>
-<pre><code>$ git add .
-warning: You ran &#39;git add&#39; with neither &#39;-A (--all)&#39; or &#39;--ignore-removal&#39;,
-whose behaviour will change in Git 2.0 with respect to paths you removed.
-Paths like &#39;contributors.txt&#39; that are
-removed from your working tree are ignored with this version of Git.
-
-* &#39;git add --ignore-removal &lt;pathspec&gt;&#39;, which is the current default,
-  ignores paths you removed from your working tree.
-
-* &#39;git add --all &lt;pathspec&gt;&#39; will let you also record the removals.
-
-Run &#39;git status&#39; to check the paths you removed from your working tree.
-</code></pre><p>と言われたり、  </p>
-<pre><code>$ git push
-warning: push.default is unset; its implicit value is changing in
-Git 2.0 from &#39;matching&#39; to &#39;simple&#39;. To squelch this message
-and maintain the current behavior after the default changes, use:
-
-  git config --global push.default matching
-
-To squelch this message and adopt the new behavior now, use:
-
-  git config --global push.default simple
-
-When push.default is set to &#39;matching&#39;, git will push local branches
-to the remote branches that already exist with the same name.
-
-In Git 2.0, Git will default to the more conservative &#39;simple&#39;
-behavior, which only pushes the current branch to the corresponding
-remote branch that &#39;git pull&#39; uses to update the current branch.
-
-See &#39;git help config&#39; and search for &#39;push.default&#39; for further information.
-(the &#39;simple&#39; mode was introduced in Git 1.7.11. Use the similar mode
-&#39;current&#39; instead of &#39;simple&#39; if you sometimes use older versions of Git)
-</code></pre><p>と言われたり。  </p>
-<p><code>git add .</code>は使われなくなったので<code>git add -A</code>にしないといけないということか？<br><code>git add .</code>でもすんなり通る時もあるのは、状況の違いからだろうか。<br>（追記：そう言えば、Initial commitの時に作成されたcontributors.txtという中身が自分のユーザー名だけのファイルを、レポジトリとHexoの作業フォルダ両方から手動で削除したんだった。<br>これのせいだったのかもしれない。）</p>
-<p>push.defaultもmatchingにした。  </p>
-<pre><code>  $ git config --global push.default matching
-</code></pre><p>これでようやくpush出来るようになった。  </p>
-<p>gitの仕組みがいまいちよく分からない。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Hexoの作業フォルダはWindows領域のDropboxフォルダに置き、他のPCとも同期をとっている。<br>これでソースを消失してしまう危険はかなり低いと思うが、Dropboxと同期する際、結構時間がかかってしまう。<br>普段はDropboxを起動しておらず時々立ち上]]>
-    </summary>
-    
-      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
-    
-      <category term="Git" scheme="http://pagent.github.io/tags/Git/"/>
     
   </entry>
   
