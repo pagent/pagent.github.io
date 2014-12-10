@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitレポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-10T00:09:59.092Z</updated>
+  <updated>2014-12-10T01:08:11.157Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,26 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Linuxで「天気予報 - ウェザーニュース」が重すぎる]]></title>
+    <link href="http://pagent.github.io/2014/12/10/tenki-yohou/"/>
+    <id>http://pagent.github.io/2014/12/10/tenki-yohou/</id>
+    <published>2014-12-10T00:53:08.000Z</published>
+    <updated>2014-12-10T01:07:27.000Z</updated>
+    <content type="html"><![CDATA[<p>見やすいし、週間天気予報や台風情報などもあって便利なので、ネットで天気予報を見る時は<a href="http://weathernews.jp/map/" target="_blank" rel="external">「天気予報 - ウェザーニュース」</a>を利用して来た。  </p>
+<p>だがLinuxに移ってから、Firefoxで「ウェザーニュース」を開くと、とたんに重くなりFirefoxがフリーズする。<br>システムモニターを見ると、メモリ7.7GiBを使い果たしスワップを利用している。  </p>
+<p>Flashを使っているからといって、なぜこんなに重くなるのだろうか。<br>動画サイトでもこんなことはないのに。  </p>
+<p>Windowsでは大丈夫なので、Linux（Xubuntu）のFlash Playerのバージョンの問題かもしれない。  </p>
+<p>仕方がないので、「ウェザーニュース」は諦めて、<a href="http://www.tenki.jp/" target="_blank" rel="external">日本気象協会 tenki.jp</a>を使うことにした。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>見やすいし、週間天気予報や台風情報などもあって便利なので、ネットで天気予報を見る時は<a href="http://weathernews.jp/map/" target="_blank" rel="external">「天気予報 - ウェザーニュース」</a>を利用して来]]>
+    </summary>
+    
+      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[50桁まで計算出来るカシオのフリー計算がすごい]]></title>
@@ -710,44 +730,6 @@ See &#39;git help config&#39; and search for &#39;push.default&#39; for further 
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
       <category term="Git" scheme="http://pagent.github.io/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hexo→Octopress変換スクリプト「Hexo to Octopress Converter」]]></title>
-    <link href="http://pagent.github.io/2014/11/25/hexo-to-octopress-converter/"/>
-    <id>http://pagent.github.io/2014/11/25/hexo-to-octopress-converter/</id>
-    <published>2014-11-25T11:59:04.000Z</published>
-    <updated>2014-11-29T10:17:52.000Z</updated>
-    <content type="html"><![CDATA[<p>HexoからOctopressに記事ソースを変換するrubyスクリプト<a href="https://github.com/ciffel/Hexo-to-Octopress-Converter" target="_blank" rel="external">「Hexo to Octopress Converter」</a>を試してみた。  </p>
-<p>「Download ZIP」からzipファイルをダウンロードし展開。converterファイルを作業したい場所に移し、端末から操作。  </p>
-<pre><code>$ ./converter &lt;hexo_posts_dir&gt; &lt;octopress_posts_dir&gt;
-</code></pre><p>で変換出来る。<br><code>&lt;octopress_posts_dir&gt;</code>は適当に作ったフォルダでも可。  </p>
-<p>変換が終了すると、ファイル名に日付けが付加されたものがOctopressのフォルダに出力される。（拡張子は.mdのまま。）<br>出力されたファイルのFront Matter部分は<code>tags:</code>が<code>categories:</code>に変換されており、また上部の<code>---</code>および<code>layout: post</code>、<code>comments: true</code>が追加される。  </p>
-<p>だが、Octopressのソースを「hexo-migrator-octopress」などでHexoに取り込んでいた場合は、Front Matter上部に既に<code>---</code>が<br>ついている。<br>この状態からだと<code>tags:</code>が<code>categories:</code>に変換されないので、上部の<code>---</code>を消しておく必要がある。  </p>
-<p>また<code>title:</code>の項目で記事タイトルが「”」で挟まれていると、さらに「”」で挟まれ<code>title: &quot;&quot;（記事タイトル）&quot;&quot;</code>のようになってしまう。<br>これではOctopressでgenerateする際エラーになってしまうので、これも削除し、  </p>
-<pre><code>title:
-date:
-tags:
----
-</code></pre><p>のような形にしておく必要がある。<br><a href="/2014/11/25/hexo-migrator-octopress/">Octopress→Hexo移行のプラグイン「hexo-migrator-octopress」を試してみた </a>  </p>
-<p>なお、変換出力されるのは拡張子が.mdのものだけで、.markdownのもの（Octopressのソースをコピペで取り込んだような場合）は変換出力されず無視される。  </p>
-<p>変換後のファイル名には日付けが付加されるので、Hexoの運用をOctopress式に日付けをつけたファイル名で行っている場合は、日付けが2重になってしまう。  </p>
-<p>この場合はconverterファイルをエディタで開き、41行目  </p>
-<p>  file_name = “#{prefix}-#{base_name}”</p>
-<p>の<code>#{prefix}-</code>を削除し、  </p>
-<p>  file_name = “#{base_name}”</p>
-<p>にしておくと、日付けが付加されない。  </p>
-<p>それから、Hexoは漢字、ひらがな含め日本語のURLやtagsを使用可能だが、Octopressはデフォルトの状態では日本語を使用できない。<br>HexoからOctopressに移行する際には、この点も注意が必要。</p>
-<p>ーー<br>HexoもOctopressも、共にmarkdown形式のファイルをhtmlに変換するという点では同じなのだが、細かいところが微妙に違っていて少し不便。<br>記事ソースの形式くらいは合わせられなかったものだろうか。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>HexoからOctopressに記事ソースを変換するrubyスクリプト<a href="https://github.com/ciffel/Hexo-to-Octopress-Converter" target="_blank" rel="external">「Hexo t]]>
-    </summary>
-    
-      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
-    
-      <category term="Octopress" scheme="http://pagent.github.io/tags/Octopress/"/>
     
   </entry>
   
