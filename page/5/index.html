@@ -44,7 +44,7 @@
 
  <body>
   <!-- _partial/navigation -->
-<nav id="main-nav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav id="main-nav" class="navbar navbar-inverse" role="navigation">
     <div class="container">
       <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 		<span class="sr-only">Toggle navigation</span>
@@ -105,6 +105,54 @@
 
 			<!-- title and entry -->
 			<div class="panel panel-default">
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/11/26/filename-case/" >Hexo新規記事作成時のタイトル大文字アルファベットを小文字のファイル名に</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月26日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Hexoのデフォルト設定で新規記事を作成する際、記事タイトルに大文字アルファベットを使うと、そのままファイル名としてソースが作成される。</p>
+<pre><code>$ hexo new New-Post
+[info] File created at /.../source/_posts/2014-11-26-New-Post.md
+</code></pre><p>URLに大文字アルファベットが入ってしまう。  </p>
+<p>URLに大文字は使いたくないので、Octopressのように大文字→小文字でファイル出力して欲しい。  </p>
+<p>_config.ymlのWritingの項目<code>filename_case:</code>の値をデフォルトの「0」から「1」に変更することで設定出来た。  </p>
+<pre><code>$ hexo new New-Post
+[info] File created at /.../source/_posts/2014-11-26-new-post.md
+</code></pre><p>filename_case: 0（そのまま出力。New-Post→New-Post）  </p>
+<p>filename_case: 1（大文字を小文字に変換。New-Post→new-post.md）  </p>
+<p>filename_case: 2（すべて大文字に変換。New-Post→NEW-POST.md）  </p>
+<p>ーー<br>（追記）<br>出来たと思ったら、generateした際にtagsまでがすべて小文字になってしまった。<br>これでは困るので、<code>filename_case: 0</code>に戻した。<br>当面、大文字のファイル名は手作業で小文字にするしかなさそうだ。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/26/filename-case/" data-text="Hexo新規記事作成時のタイトル大文字アルファベットを小文字のファイル名に">Tweet</a>
+	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
 				
 					<!-- _partial/post/title -->
 <div class="panel-heading">
@@ -411,82 +459,6 @@ and the repository exists.
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/24/hexo-windows/" >WindowsでHexoを使う（インストール）</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月24日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>以前、静的サイトジェネレーターnanocをWindowsにインストールしたが、なんとかインストールは出来たものの、compile（generate）してhtmlファイルを生成する際、エラーになり使えなかった。<br>最近使い始めたHexoは、nanocやOctopressと違い、RubyではなくJavaScript（Node.js）を用いているそうなので、Windowsでも使えるかもしれないと思い、試してみた。  </p>
-<p>結果、Windowsで実用可能だった。</p>
-<h3 id="Node-jsのインストール">Node.jsのインストール</h3>
-<p>Node.jsは下記からWindows用インストーラー付きのWindows Installer (.msi)をダウンロードし、デフォルトの設定のままインストールした。<br><a href="http://nodejs.org/download/" target="_blank" rel="external">http://nodejs.org/download/</a><br>バージョンはXubuntuに入れたのと同じv0.10.33だった。  </p>
-<h3 id="msysgitのインストール">msysgitのインストール</h3>
-<p>Windowsでgitを使うため<a href="http://msysgit.github.io/" target="_blank" rel="external">msysgit</a>をインストールした。<br>インストールオプションは下記サイトを参考にさせて頂いた。<br><a href="http://d.hatena.ne.jp/xyk/20130920/1379659991" target="_blank" rel="external">Windows に msysgit をインストールして git 環境を作る - xykの日記</a>  </p>
-<p>「Select Components」ではすべてのチェックを外した。<br>「Adjusting your PATH environment」は上から2番目の「Run Git from the Windows Command Prompt」。<br>「Configuring the line ending conversions」は上から2番目の「Checkout as-is, commit Unix-style line endings」でインストールした。<br>だが、実際Hexoでdeployする際、  </p>
-<pre><code>warning: LF will be replaced by CRLF in css/style.css.
-The file will have its original line endings in your working directory.
-warning: LF will be replaced by CRLF in fancybox/helpers/jquery.fancybox-buttons.css.
-The file will have its original line endings in your working directory.
-warning: LF will be replaced by CRLF in fancybox/helpers/jquery.fancybox-buttons.js.
-The file will have its original line endings in your working directory.
-...
-</code></pre><p>と、改行コードが変更されるという警告が大量に表示されたので、結局上から3番目のオプション「Checkout as-is, commit as-is」（autocrlf = false）にした。<br>Windowsでしか使わないのであれば、あまり気にしなくても良さそう。<br>後から<code>C:\Users\（ユーザー名）\.gitconfig</code>で変更することも可能。  </p>
-<h3 id="Hexoのインストール">Hexoのインストール</h3>
-<p>コマンドプロンプトを開き、</p>
-<pre><code>&gt;npm install hexo -g
-</code></pre><p>でインストール。</p>
-<p>Linuxの時と同様、  </p>
-<pre><code>npm WARN optional dep failed, continuing fsevents@0.2.0
-</code></pre><p>という警告が出たが、インストール完了。  </p>
-<p>テスト用にHexoの作業フォルダを作成。<br>任意のフォルダを選択した状態で「SHIFT」キーを押しながら右クリック。<br>「コマンド ウィンドウをここで開く」でコマンドウィンドウを立ち上げ、  </p>
-<pre><code>&gt;hexo init hexo-win
-&gt;cd hexo-win
-&gt;npm install
-
-&gt;hexo g
-&gt;hexo s
-</code></pre><p>ローカルホストに無事、新規ブログが立ち上がった。  </p>
-<p>2回目の<code>hexo g</code>からは、なぜか  </p>
-<pre><code>[delete] Deleted: archives\2014\11\index.html
-[delete] Deleted: archives\index.html
-...
-
-[create] Generated: archives/index.html (124ms)
-[create] Generated: archives/2014/index.html (63ms)
-...
-</code></pre><p>と、一旦すべてのファイルを削除してからまたファイルを生成したというメッセージが表示される。<br>あまり気持ち良くはないが、実用上問題は無さそう。  </p>
-<p>この後deployで少し躓いてしまったが、WindowsでHexoを使うことが出来た。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/24/hexo-windows/" data-text="WindowsでHexoを使う（インストール）">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -531,31 +503,31 @@ The file will have its original line endings in your working directory.
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+			<li><a href="/tags/blog/">blog<span>2</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>10</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>3</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+			<li><a href="/tags/Git/">Git<span>8</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>2</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>19</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>7</span></a></li>
+			<li><a href="/tags/風景/">風景<span>1</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>3</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>10</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>9</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>4</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>19</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>9</span></a></li>
-		
-			<li><a href="/tags/風景/">風景<span>1</span></a></li>
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 		
 		</ul>
@@ -568,6 +540,10 @@ The file will have its original line endings in your working directory.
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2014/12/11/github-pages-server-down/" ><i class="fa fa-file-o"></i>GitHub Pagesのメンテナンス</a>
+      </li>
     
       <li>
         <a href="/2014/12/10/brief/" ><i class="fa fa-file-o"></i>Briefの不具合（フィードを追加出来ない）</a>
@@ -585,10 +561,6 @@ The file will have its original line endings in your working directory.
         <a href="/2014/12/09/life/" ><i class="fa fa-file-o"></i>思い煩うな</a>
       </li>
     
-      <li>
-        <a href="/2014/12/05/kareha/" ><i class="fa fa-file-o"></i>枯れ葉</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -598,7 +570,7 @@ The file will have its original line endings in your working directory.
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

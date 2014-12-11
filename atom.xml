@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-11T05:27:20.038Z</updated>
+  <updated>2014-12-11T09:45:52.673Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,34 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[GitHub Pagesのメンテナンス]]></title>
+    <link href="http://pagent.github.io/2014/12/11/github-pages-server-down/"/>
+    <id>http://pagent.github.io/2014/12/11/github-pages-server-down/</id>
+    <published>2014-12-11T09:30:49.000Z</published>
+    <updated>2014-12-11T09:45:27.000Z</updated>
+    <content type="html"><![CDATA[<p>今日何度か、GitHub Pagesのこのブログが表示されなかった。  </p>
+<blockquote>
+<p>GitHub Pages is temporarily down for maintenance.</p>
+</blockquote>
+<p>と表示されていて、サーバーのメンテナンスのよう。  </p>
+<p><a href="http://www.downforeveryoneorjustme.com/" target="_blank" rel="external">Down For Everyone Or Just Me -&gt; Check if your website is down or up?</a>で調べた時には既に回復していた。  </p>
+<p>pingコマンドでもサーバーの疎通を確認出来るようだ。<br>コマンドを実行すると延々pingが送信されるが、「CTRL」+「C」キーで停止すると結果が表示されるらしい。<br><a href="http://webkaru.net/linux/ping-command/" target="_blank" rel="external">Linuxコマンド【 ping 】ホストとの接続を確認 - Linux入門 - Webkaru</a>  </p>
+<p>確認した時には「0% packet loss」だった。  </p>
+<p>初めてだったので驚いたが、GitHub Pagesもメンテナンスするんだね。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>今日何度か、GitHub Pagesのこのブログが表示されなかった。  </p>
+<blockquote>
+<p>GitHub Pages is temporarily down for maintenance.</p>
+</blockquote>
+<p>と表示されていて、]]>
+    </summary>
+    
+      <category term="Git" scheme="http://pagent.github.io/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Briefの不具合（フィードを追加出来ない）]]></title>
@@ -634,35 +662,6 @@ metalsmith(__dirname)
     <summary type="html">
     <![CDATA[<p>しばらく前に静的サイトジェネレーターをOctopressからHexoに乗り換えた。<br>カスタマイズもわりと容易だしgenerateも早いし、気に入って使っている。  </p>
 <p>公開されているカスタムテーマを見ていて、なぜかデモサイトに中国語が多いなと不信に思ってい]]>
-    </summary>
-    
-      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hexo新規記事作成時のタイトル大文字アルファベットを小文字のファイル名に]]></title>
-    <link href="http://pagent.github.io/2014/11/26/filename-case/"/>
-    <id>http://pagent.github.io/2014/11/26/filename-case/</id>
-    <published>2014-11-26T09:50:31.000Z</published>
-    <updated>2014-11-29T10:17:31.000Z</updated>
-    <content type="html"><![CDATA[<p>Hexoのデフォルト設定で新規記事を作成する際、記事タイトルに大文字アルファベットを使うと、そのままファイル名としてソースが作成される。</p>
-<pre><code>$ hexo new New-Post
-[info] File created at /.../source/_posts/2014-11-26-New-Post.md
-</code></pre><p>URLに大文字アルファベットが入ってしまう。  </p>
-<p>URLに大文字は使いたくないので、Octopressのように大文字→小文字でファイル出力して欲しい。  </p>
-<p>_config.ymlのWritingの項目<code>filename_case:</code>の値をデフォルトの「0」から「1」に変更することで設定出来た。  </p>
-<pre><code>$ hexo new New-Post
-[info] File created at /.../source/_posts/2014-11-26-new-post.md
-</code></pre><p>filename_case: 0（そのまま出力。New-Post→New-Post）  </p>
-<p>filename_case: 1（大文字を小文字に変換。New-Post→new-post.md）  </p>
-<p>filename_case: 2（すべて大文字に変換。New-Post→NEW-POST.md）  </p>
-<p>ーー<br>（追記）<br>出来たと思ったら、generateした際にtagsまでがすべて小文字になってしまった。<br>これでは困るので、<code>filename_case: 0</code>に戻した。<br>当面、大文字のファイル名は手作業で小文字にするしかなさそうだ。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Hexoのデフォルト設定で新規記事を作成する際、記事タイトルに大文字アルファベットを使うと、そのままファイル名としてソースが作成される。</p>
-<pre><code>$ hexo new New-Post
-[info] File created at /.../sourc]]>
     </summary>
     
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>

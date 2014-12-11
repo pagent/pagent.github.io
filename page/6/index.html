@@ -44,7 +44,7 @@
 
  <body>
   <!-- _partial/navigation -->
-<nav id="main-nav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav id="main-nav" class="navbar navbar-inverse" role="navigation">
     <div class="container">
       <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 		<span class="sr-only">Toggle navigation</span>
@@ -105,6 +105,82 @@
 
 			<!-- title and entry -->
 			<div class="panel panel-default">
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/11/24/hexo-windows/" >WindowsでHexoを使う（インストール）</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月24日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>以前、静的サイトジェネレーターnanocをWindowsにインストールしたが、なんとかインストールは出来たものの、compile（generate）してhtmlファイルを生成する際、エラーになり使えなかった。<br>最近使い始めたHexoは、nanocやOctopressと違い、RubyではなくJavaScript（Node.js）を用いているそうなので、Windowsでも使えるかもしれないと思い、試してみた。  </p>
+<p>結果、Windowsで実用可能だった。</p>
+<h3 id="Node-jsのインストール">Node.jsのインストール</h3>
+<p>Node.jsは下記からWindows用インストーラー付きのWindows Installer (.msi)をダウンロードし、デフォルトの設定のままインストールした。<br><a href="http://nodejs.org/download/" target="_blank" rel="external">http://nodejs.org/download/</a><br>バージョンはXubuntuに入れたのと同じv0.10.33だった。  </p>
+<h3 id="msysgitのインストール">msysgitのインストール</h3>
+<p>Windowsでgitを使うため<a href="http://msysgit.github.io/" target="_blank" rel="external">msysgit</a>をインストールした。<br>インストールオプションは下記サイトを参考にさせて頂いた。<br><a href="http://d.hatena.ne.jp/xyk/20130920/1379659991" target="_blank" rel="external">Windows に msysgit をインストールして git 環境を作る - xykの日記</a>  </p>
+<p>「Select Components」ではすべてのチェックを外した。<br>「Adjusting your PATH environment」は上から2番目の「Run Git from the Windows Command Prompt」。<br>「Configuring the line ending conversions」は上から2番目の「Checkout as-is, commit Unix-style line endings」でインストールした。<br>だが、実際Hexoでdeployする際、  </p>
+<pre><code>warning: LF will be replaced by CRLF in css/style.css.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in fancybox/helpers/jquery.fancybox-buttons.css.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in fancybox/helpers/jquery.fancybox-buttons.js.
+The file will have its original line endings in your working directory.
+...
+</code></pre><p>と、改行コードが変更されるという警告が大量に表示されたので、結局上から3番目のオプション「Checkout as-is, commit as-is」（autocrlf = false）にした。<br>Windowsでしか使わないのであれば、あまり気にしなくても良さそう。<br>後から<code>C:\Users\（ユーザー名）\.gitconfig</code>で変更することも可能。  </p>
+<h3 id="Hexoのインストール">Hexoのインストール</h3>
+<p>コマンドプロンプトを開き、</p>
+<pre><code>&gt;npm install hexo -g
+</code></pre><p>でインストール。</p>
+<p>Linuxの時と同様、  </p>
+<pre><code>npm WARN optional dep failed, continuing fsevents@0.2.0
+</code></pre><p>という警告が出たが、インストール完了。  </p>
+<p>テスト用にHexoの作業フォルダを作成。<br>任意のフォルダを選択した状態で「SHIFT」キーを押しながら右クリック。<br>「コマンド ウィンドウをここで開く」でコマンドウィンドウを立ち上げ、  </p>
+<pre><code>&gt;hexo init hexo-win
+&gt;cd hexo-win
+&gt;npm install
+
+&gt;hexo g
+&gt;hexo s
+</code></pre><p>ローカルホストに無事、新規ブログが立ち上がった。  </p>
+<p>2回目の<code>hexo g</code>からは、なぜか  </p>
+<pre><code>[delete] Deleted: archives\2014\11\index.html
+[delete] Deleted: archives\index.html
+...
+
+[create] Generated: archives/index.html (124ms)
+[create] Generated: archives/2014/index.html (63ms)
+...
+</code></pre><p>と、一旦すべてのファイルを削除してからまたファイルを生成したというメッセージが表示される。<br>あまり気持ち良くはないが、実用上問題は無さそう。  </p>
+<p>この後deployで少し躓いてしまったが、WindowsでHexoを使うことが出来た。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/24/hexo-windows/" data-text="WindowsでHexoを使う（インストール）">Tweet</a>
+	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
 				
 					<!-- _partial/post/title -->
 <div class="panel-heading">
@@ -317,59 +393,6 @@ new_post_name: :title.md # File name of new posts
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/21/hexo-xubuntu/" >Xubuntuに静的サイトジェネレーターHexoを入れてみた</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月21日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Octopressでブログを書いていて、さして不満はないのだが、別の静的サイトジェネレーターに「Hexo」というのがあるのを知った。<br>Octopressに較べ、テーマも豊富に用意あり、日本語のURLやカテゴリー名にも対応しているようだったので、入れてみた。<br>rubyではなく、Node.jsというのを使うらしい。  </p>
-<p>導入には下記サイトなどを参考にさせて頂いた。<br><a href="http://tech.admax.ninja/2014/09/11/environment-of-hexo/" target="_blank" rel="external">【Node.js】Hexoでブログを書くための環境構築 | AdMax Tech Blog</a>  </p>
-<p>概ね上記サイトの通りに進めたらいいようだったが、Xubuntu14.04の環境では若干うまく行かないところがあった。  </p>
-<p>nodeにパスを通す際、~/.bash_profileというファイルが見つからなかったので、~/.profileに  </p>
-<pre><code>if [[ -s ~/.nvm/nvm.sh ]];
-then source ~/.nvm/nvm.sh
-fi
-</code></pre><p>を追記したが、これでは駄目なようで、ターミナルを起動する度にnvmというコマンドが見つからないと言われる。  </p>
-<p>どうやら~/.bashrcに追記しないと駄目なようだった。<br><a href="http://d.hatena.ne.jp/white_chi/20111101/1320097898" target="_blank" rel="external">Ubuntu11.10で、nvmからnode.jsをインストールする - ホワイトぼーど</a>  </p>
-<p>Hexoをインストールするところで  </p>
-<pre><code>npm WARN optional dep failed, continuing fsevents@0.2.0
-</code></pre><p>と言われたが、問題なく使えるようだ。<br>途中うまく行かないので、下記サイトを参考に  </p>
-<pre><code>curl -sL https://deb.nodesource.com/setup | sudo bash -
-
-sudo apt-get install -y nodejs
-</code></pre><p>とやったりしたが、果たしてこれが必要な操作だったのかどうかは不明。<br><a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager" target="_blank" rel="external">Installing Node.js via package manager · joyent/node Wiki</a>  </p>
-<p>しばらく試用してみて良ささそうだったら、Octopressから乗り換えるかもしれない。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/21/hexo-xubuntu/" data-text="Xubuntuに静的サイトジェネレーターHexoを入れてみた">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -414,31 +437,31 @@ sudo apt-get install -y nodejs
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
+			<li><a href="/tags/blog/">blog<span>2</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>3</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>4</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>19</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/風景/">風景<span>1</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/Octopress/">Octopress<span>10</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>19</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>2</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/風景/">風景<span>1</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
+			<li><a href="/tags/Git/">Git<span>8</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>9</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>7</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>4</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>3</span></a></li>
 		
 		
 		</ul>
@@ -451,6 +474,10 @@ sudo apt-get install -y nodejs
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2014/12/11/github-pages-server-down/" ><i class="fa fa-file-o"></i>GitHub Pagesのメンテナンス</a>
+      </li>
     
       <li>
         <a href="/2014/12/10/brief/" ><i class="fa fa-file-o"></i>Briefの不具合（フィードを追加出来ない）</a>
@@ -468,10 +495,6 @@ sudo apt-get install -y nodejs
         <a href="/2014/12/09/life/" ><i class="fa fa-file-o"></i>思い煩うな</a>
       </li>
     
-      <li>
-        <a href="/2014/12/05/kareha/" ><i class="fa fa-file-o"></i>枯れ葉</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -481,7 +504,7 @@ sudo apt-get install -y nodejs
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
