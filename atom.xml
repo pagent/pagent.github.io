@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-10T13:05:40.169Z</updated>
+  <updated>2014-12-11T05:27:20.038Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -36,8 +36,8 @@
   
   <entry>
     <title><![CDATA[Linuxで「天気予報 - ウェザーニュース」が重すぎる]]></title>
-    <link href="http://pagent.github.io/2014/12/10/tenki-yohou/"/>
-    <id>http://pagent.github.io/2014/12/10/tenki-yohou/</id>
+    <link href="http://pagent.github.io/2014/12/10/weather-news/"/>
+    <id>http://pagent.github.io/2014/12/10/weather-news/</id>
     <published>2014-12-10T00:53:08.000Z</published>
     <updated>2014-12-10T01:28:24.000Z</updated>
     <content type="html"><![CDATA[<p>見やすいし、週間天気予報や台風情報などもあって便利なので、ネットで天気予報を見る時は<a href="http://weathernews.jp/map/" target="_blank" rel="external">「天気予報 - ウェザーニュース」</a>を利用して来た。  </p>
