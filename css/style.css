@@ -4,7 +4,7 @@
 
 body {
   position: relative;
-  padding-top: 40px;
+  padding-top: 0px;
   background-color: #fff;
   background-repeat: repeat-x;
   background-position: 0 40px;
@@ -326,7 +326,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 /* ナビゲーションバー固定時ページ内リンク位置修正
----------------------------- */
+
 *[id]:before { 
   display: block; 
   content: " "; 
@@ -335,6 +335,7 @@ h1,h2,h3,h4,h5,h6 {
   visibility: hidden; 
 }
 
+---------------------------- */
 
 /* タイトル日付け
 ---------------------------- */
