@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-11T12:32:27.768Z</updated>
+  <updated>2014-12-11T21:44:32.933Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2014/12/11/github-pages-server-down/"/>
     <id>http://pagent.github.io/2014/12/11/github-pages-server-down/</id>
     <published>2014-12-11T09:30:49.000Z</published>
-    <updated>2014-12-11T12:32:01.000Z</updated>
+    <updated>2014-12-11T21:42:34.000Z</updated>
     <content type="html"><![CDATA[<p>今日何度か、GitHub Pagesのこのブログが表示されなかった。  </p>
 <blockquote>
 <p>GitHub Pages is temporarily down for maintenance.</p>
@@ -42,6 +42,8 @@
     
       <category term="Git" scheme="http://pagent.github.io/tags/Git/"/>
     
+      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
+    
   </entry>
   
   <entry>
@@ -49,7 +51,7 @@
     <link href="http://pagent.github.io/2014/12/10/brief/"/>
     <id>http://pagent.github.io/2014/12/10/brief/</id>
     <published>2014-12-10T10:09:09.000Z</published>
-    <updated>2014-12-10T10:26:40.000Z</updated>
+    <updated>2014-12-11T21:42:34.000Z</updated>
     <content type="html"><![CDATA[<p>FirefoxのRSSアドオン「Brief」の調子が突然おかしくなった。<br>新たにフィードを追加しても、一覧に表示されない。<br>brief.sqliteをリネームしたり、Briefをインストールし直してみたりしたが、改善せず。  </p>
 <p>Briefの派生アドオン「Digest」も既に削除されており困ってしまったが、Briefのページ<a href="https://addons.mozilla.org/ja/firefox/addon/brief/?src=search" target="_blank" rel="external">Brief :: Add-ons for Firefox</a>の一番下に「開発チャンネル」というのがあった。<br>Version 2.0b1となっていて、どうやら開発版のよう。  </p>
 <p>駄目もとでインストールしてみたら、新たに追加したフィードがちゃんと表示された。  </p>
@@ -69,7 +71,7 @@
     <link href="http://pagent.github.io/2014/12/10/weather-news/"/>
     <id>http://pagent.github.io/2014/12/10/weather-news/</id>
     <published>2014-12-10T00:53:08.000Z</published>
-    <updated>2014-12-10T01:28:24.000Z</updated>
+    <updated>2014-12-11T21:42:34.000Z</updated>
     <content type="html"><![CDATA[<p>見やすいし、週間天気予報や台風情報などもあって便利なので、ネットで天気予報を見る時は<a href="http://weathernews.jp/map/" target="_blank" rel="external">「天気予報 - ウェザーニュース」</a>を利用して来た。  </p>
 <p>だがLinuxに移ってから、Firefoxで「ウェザーニュース」を開くと、とたんに重くなりFirefoxがフリーズする。<br>システムモニターを見ると、メモリ7.7GiBを使い果たしスワップを利用している。  </p>
 <p>Flashを使っているからといって、なぜこんなに重くなるのだろうか。<br>動画サイトでもこんなことはないのに。  </p>
@@ -89,7 +91,7 @@
     <link href="http://pagent.github.io/2014/12/09/casio/"/>
     <id>http://pagent.github.io/2014/12/09/casio/</id>
     <published>2014-12-09T09:49:41.000Z</published>
-    <updated>2014-12-10T00:09:42.000Z</updated>
+    <updated>2014-12-11T21:42:34.000Z</updated>
     <content type="html"><![CDATA[<p>普通の計算機で表示出来るのは10桁くらいまでだが、カシオのフリー計算はなんと50桁まで表示される。<br><a href="http://keisan.casio.jp/calculator" target="_blank" rel="external">高精度な高等関数が使えるフリー計算</a>  </p>
 <p>たとえば、ヒトヨヒトヨニヒトミゴロの√2も  </p>
 <pre><code>1.4142135623730950488016887242096980785696718753769
@@ -115,7 +117,7 @@
     <link href="http://pagent.github.io/2014/12/09/life/"/>
     <id>http://pagent.github.io/2014/12/09/life/</id>
     <published>2014-12-09T06:38:52.000Z</published>
-    <updated>2014-12-09T06:53:26.000Z</updated>
+    <updated>2014-12-11T21:42:34.000Z</updated>
     <content type="html"><![CDATA[<p>思い煩うな。人生など つかの間だ。</p>
 <p>以前、「思い煩うな。人生は無意味なのだ。」という名言を見たことがあった。<br>誰の名言だったかと検索してみたら、どうやら英国の作家サマセット・モームのものらしい。<br>だが、原文が分からない。  </p>
 <p>“The secret to life is meaningless unless you discover it yourself.”<br>（「Of Human Bondage」邦題：「人生の絆」より）<br><a href="https://www.goodreads.com/work/quotes/2547187-of-human-bondage" target="_blank" rel="external">Of Human Bondage Quotes by W. Somerset Maugham</a></p>
@@ -136,7 +138,7 @@
     <link href="http://pagent.github.io/2014/12/05/kareha/"/>
     <id>http://pagent.github.io/2014/12/05/kareha/</id>
     <published>2014-12-05T09:59:21.000Z</published>
-    <updated>2014-12-05T20:26:40.000Z</updated>
+    <updated>2014-12-11T21:42:34.000Z</updated>
     <content type="html"><![CDATA[<p>からからとアスファルトの上枯れ葉転がり</p>
 ]]></content>
     <summary type="html">
@@ -153,7 +155,7 @@
     <link href="http://pagent.github.io/2014/12/05/hexo-vs-octopress/"/>
     <id>http://pagent.github.io/2014/12/05/hexo-vs-octopress/</id>
     <published>2014-12-04T23:01:11.000Z</published>
-    <updated>2014-12-05T09:33:21.000Z</updated>
+    <updated>2014-12-11T21:42:34.000Z</updated>
     <content type="html"><![CDATA[<p>どちらもブログとしての体裁が整っていて、導入したらすぐ始められるHexoとOctopress。<br>しばらくHexoを使ってみて、Octopressと比較しての感想。（あくまで私見）  </p>
 <h3 id="長所">長所</h3>
 <h4 id="・generateが早い">・generateが早い</h4>
@@ -200,7 +202,7 @@
     <link href="http://pagent.github.io/2014/12/04/git-non-fast-forward/"/>
     <id>http://pagent.github.io/2014/12/04/git-non-fast-forward/</id>
     <published>2014-12-04T12:47:25.000Z</published>
-    <updated>2014-12-04T23:59:44.000Z</updated>
+    <updated>2014-12-11T21:42:34.000Z</updated>
     <content type="html"><![CDATA[<p>HexoのソースをBitbucketにcommitしようとしたら、  </p>
 <pre><code>Your branch and &#39;bitbucket/master&#39; have diverged,
 and have 1 and 1 different commit each, respectively.
@@ -231,7 +233,7 @@ and have 1 and 1 different c]]>
     <link href="http://pagent.github.io/2014/12/04/bootstrap-in-page-anchor-link/"/>
     <id>http://pagent.github.io/2014/12/04/bootstrap-in-page-anchor-link/</id>
     <published>2014-12-04T01:13:06.000Z</published>
-    <updated>2014-12-04T01:52:48.000Z</updated>
+    <updated>2014-12-11T21:42:34.000Z</updated>
     <content type="html"><![CDATA[<p>タグ一覧ページで、特定のタグをクリックしてページ内リンク先に移動すると、先頭部分がナビゲーションバーに隠れてしまっていた。  </p>
 <p>検索すると下記記事が見つかった。</p>
 <p><a href="http://blog.livedoor.jp/sonots/archives/28928405.html" target="_blank" rel="external">bootstrap の固定ナビゲーションとページ内アンカー問題 - sonots:blog</a>  </p>
@@ -262,7 +264,7 @@ and have 1 and 1 different c]]>
     <link href="http://pagent.github.io/2014/12/03/hexo-image/"/>
     <id>http://pagent.github.io/2014/12/03/hexo-image/</id>
     <published>2014-12-03T10:24:04.000Z</published>
-    <updated>2014-12-03T11:58:07.000Z</updated>
+    <updated>2014-12-11T21:42:34.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoで画像を挿入する場合、画像を表示するためのタグはOctopressと同様で、  </p>
 <pre><code>{(半角の%) img (class名) (画像へのパス) (幅) (高さ) (タイトル) %} 
 </code></pre><p>例えば  </p>
@@ -290,8 +292,8 @@ and have 1 and 1 different c]]>
     <link href="http://pagent.github.io/2014/12/03/hexo-freewill-monthly-archives/"/>
     <id>http://pagent.github.io/2014/12/03/hexo-freewill-monthly-archives/</id>
     <published>2014-12-03T07:55:43.000Z</published>
-    <updated>2014-12-03T09:55:53.000Z</updated>
-    <content type="html"><![CDATA[<p>サイドバーの種類にもよるが、Gitレポジトリを使ったブログにサイドバーを付けると、新規記事をdeployする際に更新するファイルが増えてしまって良くないように思う。  </p>
+    <updated>2014-12-11T21:42:34.000Z</updated>
+    <content type="html"><![CDATA[<p>サイドバーの種類にもよるが、Gitリポジトリを使ったブログにサイドバーを付けると、新規記事をdeployする際に更新するファイルが増えてしまって良くないように思う。  </p>
 <p>先日入れたテーマFreewillはその辺を考慮してか、ページネーションのページ等どうしても更新せざるを得ないページにはサイドバーを置き、個別記事のページではサイドバー領域に投稿日やタグなどを表示するよう工夫されている。<br>実際、新規記事をdeployしても、過去の記事はcommitされていないようだ。  </p>
 <p>ところで、Freewillには月別アーカイブが無かったので、入れることにした。  </p>
 <p>デフォルトテーマのLandscapeのarchive.ejsをそのままfreewill/layout/_widget内にコピペすると、西暦の後ろに投稿数が隙間無しにくっついていて、見栄えが良くない。  </p>
@@ -330,7 +332,7 @@ and have 1 and 1 different c]]>
 </code></pre><p>これで様子を見てみようと思う。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>サイドバーの種類にもよるが、Gitレポジトリを使ったブログにサイドバーを付けると、新規記事をdeployする際に更新するファイルが増えてしまって良くないように思う。  </p>
+    <![CDATA[<p>サイドバーの種類にもよるが、Gitリポジトリを使ったブログにサイドバーを付けると、新規記事をdeployする際に更新するファイルが増えてしまって良くないように思う。  </p>
 <p>先日入れたテーマFreewillはその辺を考慮してか、ページネーションのページ等どうしても]]>
     </summary>
     
@@ -343,7 +345,7 @@ and have 1 and 1 different c]]>
     <link href="http://pagent.github.io/2014/12/02/hexo-tweetbutton/"/>
     <id>http://pagent.github.io/2014/12/02/hexo-tweetbutton/</id>
     <published>2014-12-02T11:10:48.000Z</published>
-    <updated>2014-12-03T12:19:29.000Z</updated>
+    <updated>2014-12-11T21:42:34.000Z</updated>
     <content type="html"><![CDATA[<p>HexoのテーマをFreewill変えて、Disqusウィジェット内の「Share」にはTwitterのツイートボタンはあるが、それだと<code>http://disq.us/…</code>というDisqus経由の短縮URLになる様子。<br>普通のツイートボタンを設置したかったので、<a href="https://about.twitter.com/ja/resources/buttons" target="_blank" rel="external">Twitter公式のツイートボタン</a>を入れることにした。  </p>
 <p>個別の記事への設置は、Twitterサイトで「ページのURLを使う」の設定で作成したコードを/layout/_partial/article.ejsの<code>&lt;%- item.content %&gt;</code>の下あたりに追記したら問題なく表示された。 　</p>
 <p>だがそのコードをlayout/_partial/post/entry.ejsに挿入しても、トップページなどページネーションのページ（記事一覧のページ）では、ブログタイトルと一覧ページのURLにしかならない。<br>URLとツイート文を自分でカスタマイズする設定でコードを作成し、excerptリンクに倣って、それぞれ<code>&lt;%- config.root %&gt;&lt;%= item.path %&gt;</code>、<code>&lt;%= item.title %&gt;</code>で挿入しても、記事タイトルのみでURLを取得出来ない。  </p>
@@ -374,11 +376,11 @@ and have 1 and 1 different c]]>
   </entry>
   
   <entry>
-    <title><![CDATA[Gitレポジトリにディレクトリを追加]]></title>
+    <title><![CDATA[Gitリポジトリにディレクトリを追加]]></title>
     <link href="http://pagent.github.io/2014/12/01/git-add-directory/"/>
     <id>http://pagent.github.io/2014/12/01/git-add-directory/</id>
     <published>2014-12-01T14:27:34.000Z</published>
-    <updated>2014-12-02T02:22:03.000Z</updated>
+    <updated>2014-12-11T21:42:34.000Z</updated>
     <content type="html"><![CDATA[<p>HexoのソースはBitbucketで管理しているが、Hexoのテーマを変えたところ、commit出来なくなった。  </p>
 <pre><code>Changes not staged for commit:
   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
@@ -395,7 +397,7 @@ no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&q
 $ git commit -m &#39;修正&#39;
 $ git push
 </code></pre><p>とやったらLICENSEが追加され、freewillを開くことが出来た。<br>その後もう一度<code>git add .</code>し、commit、pushしたら、他のファイルやディレクトリも追加された。  </p>
-<p>そう言えばレポジトリに初めてcommitした時も、一度contributors.txtというファイルをpushしてからでないとうまく行かなかった。<br>Gitというのはいきなりディレクトリ全体を追加するのは出来ない仕様なのかもしれない。</p>
+<p>そう言えばリポジトリに初めてcommitした時も、一度contributors.txtというファイルをpushしてからでないとうまく行かなかった。<br>Gitというのはいきなりディレクトリ全体を追加するのは出来ない仕様なのかもしれない。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>HexoのソースはBitbucketで管理しているが、Hexoのテーマを変えたところ、commit出来なくなった。  </p>
@@ -412,7 +414,7 @@ $ git push
     <link href="http://pagent.github.io/2014/12/01/hexo-bootstrap/"/>
     <id>http://pagent.github.io/2014/12/01/hexo-bootstrap/</id>
     <published>2014-12-01T08:36:10.000Z</published>
-    <updated>2014-12-04T01:13:36.000Z</updated>
+    <updated>2014-12-11T21:42:34.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoのテーマをデフォルトのものから、Bootstrap準拠の<a href="https://github.com/yieme/hexo-theme-freewill" target="_blank" rel="external">Freewill</a>にした。<br>BootstrapのテーマBootswatchというものを採用しているようで、外観を簡単に変更出来る。  </p>
 <p>他のテーマ同様  </p>
 <pre><code>git clone https://github.com/yieme/hexo-theme-freewill.git themes/freewill
@@ -435,11 +437,11 @@ $ git push
   </entry>
   
   <entry>
-    <title><![CDATA[Gitレポジトリを利用したブログとサイドバー]]></title>
+    <title><![CDATA[Gitリポジトリを利用したブログとサイドバー]]></title>
     <link href="http://pagent.github.io/2014/11/30/sidebar-git/"/>
     <id>http://pagent.github.io/2014/11/30/sidebar-git/</id>
     <published>2014-11-30T10:52:39.000Z</published>
-    <updated>2014-11-30T11:51:24.000Z</updated>
+    <updated>2014-12-11T21:42:34.000Z</updated>
     <content type="html"><![CDATA[<p>これまで、無料レンタルブログやWordPress、Octopressなどを使ったブログ含めて、ずっと右サイドバーの2コラムを好んで使って来た。  </p>
 <p>ブログを始めた頃は今のように、サイドバーの無いブログはあまり見かけなかったし、サイドバーはあるのが当たり前と思っていた。<br>訪問者がサイドバーを見て他の記事も読んでくれるかもしれないし。  </p>
 <p>普段使っているノートパソコンの右側にテンキーが付いていて、左に寄ってパソコンに向かうことになるので、記事が正面に来るよう、右サイドバーが都合が良かった。<br>両側サイドバーの3コラムは少しごちゃごちゃしている感じがして、好みではなかった。。  </p>
@@ -464,7 +466,7 @@ $ git push
     <link href="http://pagent.github.io/2014/11/29/page-no-date/"/>
     <id>http://pagent.github.io/2014/11/29/page-no-date/</id>
     <published>2014-11-29T10:52:13.000Z</published>
-    <updated>2014-11-29T11:38:09.000Z</updated>
+    <updated>2014-12-11T21:42:34.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoでは固定ページを作る際、コマンド<code>hexo new page （ページ名）</code>でsource/（ページ名）下にindex.mdが作成される。<br>tagsやcategoriesは使えないようになっている。<br>コメントを禁止にするには、Front Matterに<code>comments: false</code>を加えれば良い。  </p>
 <p>固定ページでは日付けも表示したくないところだが、<code>date:</code>の項目を消してみるても、ファイルを更新した日付けが表示されてしまう。<br>themes/landscape/layout/page.ejsを見ると、post.ejsと同じ_partial/article.ejsがレイアウトとして使われていた。  </p>
 <p>_partialディレクトリ下のarticle.ejsをarticle-page.ejsという名前でコピー。<br>4行目の  </p>
@@ -490,7 +492,7 @@ $ git push
     <link href="http://pagent.github.io/2014/11/29/excerpt-separator/"/>
     <id>http://pagent.github.io/2014/11/29/excerpt-separator/</id>
     <published>2014-11-29T04:37:03.000Z</published>
-    <updated>2014-11-29T10:13:47.000Z</updated>
+    <updated>2014-12-11T21:42:34.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoでトップページを表示した時、複数の記事の全文がだらだらと表示されているのは見づらいと思い、前半部分を抜粋した概要表示にしてみた。<br>やり方は簡単で、記事ソースの適当な箇所に<code>&lt;!-- more --&gt;</code>というタグを挿入するだけ。  </p>
 <p>WordPressやMovable Typeでは、200文字など決まった文字数で自動的に抜粋してくれたりもするが、その方法はちょっと分からないので、手動で挿入した。<br>タグを挿入すると<code>&lt;!-- more --&gt;</code>より前の部分だけの表示になる。<br>続きを読むためのリンクの文言「Read More」はHexo作業フォルダの_config.ymlではなく、themes/landscape/_config.ymlなどテーマ毎の_config.ymlで変更出来る。  </p>
 <p>Octopressの場合は_config.ymlの<code>excerpt_link:</code>でリンクの文言を変えられる。<br>また_config.ymlの<code>excerpt_link:</code>で、抜粋するためのタグ自体を<code>&lt;!-- more --&gt;</code>から別のものに変更出来るようだ。  </p>
@@ -516,7 +518,7 @@ $ git push
     <link href="http://pagent.github.io/2014/11/28/git-gc/"/>
     <id>http://pagent.github.io/2014/11/28/git-gc/</id>
     <published>2014-11-28T12:31:38.000Z</published>
-    <updated>2014-12-02T13:28:56.000Z</updated>
+    <updated>2014-12-11T21:42:34.000Z</updated>
     <content type="html"><![CDATA[<p>それほど記事数は多くないのに、Hexoのサイズが大きくなって来た。<br>最初、数MBだったのが20MB以上になっている。  </p>
 <p>.deploy/.git/objectsが12.4MBあって、一番容量をくっているようだ。<br>ちょこちょこ記事を修正してその度にdeployしているせいだろう。<br>大した容量ではないが、Dropboxの同期に時間が掛かるのが困る。  </p>
 <p>必要性の低いようなオブジェクトが多数あったりすると、自動的にパックファイルを作って掃除（pack up）してくれるようだが、<code>git gc</code>コマンドにより手動でpack upすることも出来るらしい。<br><a href="http://heart-shaped-chocolate.hatenablog.jp/entry/2013/04/10/052752" target="_blank" rel="external">.git/objectsについて少し調べてみた - 煙と消えるその前に</a>  </p>
@@ -546,7 +548,7 @@ Total 5328 (delta 2157), reused 0 (delta 0)
     <link href="http://pagent.github.io/2014/11/28/metalsmith/"/>
     <id>http://pagent.github.io/2014/11/28/metalsmith/</id>
     <published>2014-11-28T06:22:40.000Z</published>
-    <updated>2014-12-02T13:21:40.000Z</updated>
+    <updated>2014-12-11T21:42:34.000Z</updated>
     <content type="html"><![CDATA[<p>静的サイトジェネレーターは有名なものしか知らなかったが、かなりの数が公開されているようだ。<br><a href="https://staticsitegenerators.net/" target="_blank" rel="external">https://staticsitegenerators.net/</a><br><a href="https://www.staticgen.com/" target="_blank" rel="external">https://www.staticgen.com/</a>  </p>
 <p><a href="https://github.com/segmentio/metalsmith" target="_blank" rel="external">Metalsmith</a>（An extremely simple, pluggable static site generator.）というのが人気急上昇中のようなので、試してみた。<br>Hexo同様、プログラミング言語がJavaScriptなので、早さも期待できる。  </p>
 <p>テストするにあたり、下記サイトを参考にさせて頂いた。<br><a href="http://h2ham.net/metalsmith-static-site-generator" target="_blank" rel="external">Nodeで動作する静的サイトジェネレータ「metalsmith」を使ってみた - HAM MEDIA MEMO</a><br><a href="http://web-layman.com/metalsmith-simple-static-site-generator/" target="_blank" rel="external">metalsmith - シンプルな静的サイトジェネレーター - Layman’s Web Creation.</a>  </p>
@@ -653,10 +655,10 @@ metalsmith(__dirname)
     <link href="http://pagent.github.io/2014/11/27/hexo-china/"/>
     <id>http://pagent.github.io/2014/11/27/hexo-china/</id>
     <published>2014-11-27T11:13:57.000Z</published>
-    <updated>2014-11-29T04:11:25.000Z</updated>
+    <updated>2014-12-11T21:42:34.000Z</updated>
     <content type="html"><![CDATA[<p>しばらく前に静的サイトジェネレーターをOctopressからHexoに乗り換えた。<br>カスタマイズもわりと容易だしgenerateも早いし、気に入って使っている。  </p>
 <p>公開されているカスタムテーマを見ていて、なぜかデモサイトに中国語が多いなと不信に思っていが、オフィシャルテーマ３つのLICENSEを見ると３つとも中国人っぽい名前が記載されている。  </p>
-<p>よく見ると、レポジトリもオフィシャルサイトもこの中国人らしい人のものだった。<br>なんとHexoは中国製だったんだね。</p>
+<p>よく見ると、リポジトリもオフィシャルサイトもこの中国人らしい人のものだった。<br>なんとHexoは中国製だったんだね。</p>
 <p>中国と聞くと正直ちょっと心配になってしまう。<br>中国製のパソコンに不正プログラムが入っていたなんてニュースもあったし。<br>ただ、cloneしてくるHexoのソースはGitHub上で公開されているものだし、大丈夫なのだろう。  </p>
 <p>中国人、なかなかやるね。<br>ちょっとくやしい気がする。  </p>
 <p>日本製の秀逸な静的サイトジェネレーターが出てきてくれないものだろうか。</p>

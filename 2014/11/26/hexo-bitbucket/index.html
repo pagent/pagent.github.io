@@ -172,7 +172,7 @@ See &#39;git help config&#39; and search for &#39;push.default&#39; for further 
 (the &#39;simple&#39; mode was introduced in Git 1.7.11. Use the similar mode
 &#39;current&#39; instead of &#39;simple&#39; if you sometimes use older versions of Git)
 </code></pre><p>と言われたり。  </p>
-<p><code>git add .</code>は使われなくなったので<code>git add -A</code>にしないといけないということか？<br><code>git add .</code>でもすんなり通る時もあるのは、状況の違いからだろうか。<br>（追記：そう言えば、Initial commitの時に作成されたcontributors.txtという中身が自分のユーザー名だけのファイルを、レポジトリとHexoの作業フォルダ両方から手動で削除したんだった。<br>これのせいだったのかもしれない。）</p>
+<p><code>git add .</code>は使われなくなったので<code>git add -A</code>にしないといけないということか？<br><code>git add .</code>でもすんなり通る時もあるのは、状況の違いからだろうか。<br>（追記：そう言えば、Initial commitの時に作成されたcontributors.txtという中身が自分のユーザー名だけのファイルを、リポジトリとHexoの作業フォルダ両方から手動で削除したんだった。<br>これのせいだったのかもしれない。）</p>
 <p>push.defaultもmatchingにした。  </p>
 <pre><code>  $ git config --global push.default matching
 </code></pre><p>これでようやくpush出来るようになった。  </p>
