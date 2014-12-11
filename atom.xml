@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-11T10:27:38.504Z</updated>
+  <updated>2014-12-11T12:32:27.768Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,16 +19,18 @@
     <link href="http://pagent.github.io/2014/12/11/github-pages-server-down/"/>
     <id>http://pagent.github.io/2014/12/11/github-pages-server-down/</id>
     <published>2014-12-11T09:30:49.000Z</published>
-    <updated>2014-12-11T10:27:24.000Z</updated>
+    <updated>2014-12-11T12:32:01.000Z</updated>
     <content type="html"><![CDATA[<p>今日何度か、GitHub Pagesのこのブログが表示されなかった。  </p>
 <blockquote>
 <p>GitHub Pages is temporarily down for maintenance.</p>
 </blockquote>
 <p>と表示されていて、サーバーのメンテナンスのよう。  </p>
-<p><a href="http://www.downforeveryoneorjustme.com/" target="_blank" rel="external">Down For Everyone Or Just Me -&gt; Check if your website is down or up?</a>で調べた時には既に回復していた。  </p>
+<p><a href="http://www.downforeveryoneorjustme.com/" target="_blank" rel="external">Down For Everyone Or Just Me -&gt; Check if your website is down or up?</a>で調べた時には回復していた。  </p>
 <p>pingコマンドでもサーバーの疎通を確認出来るようだ。<br>コマンドを実行すると延々pingが送信されるが、「CTRL」+「C」キーで停止すると結果が表示されるらしい。<br><a href="http://webkaru.net/linux/ping-command/" target="_blank" rel="external">Linuxコマンド【 ping 】ホストとの接続を確認 - Linux入門 - Webkaru</a>  </p>
 <p>確認した時には「0% packet loss」だった。  </p>
-<p>初めてだったので驚いたが、GitHub Pagesもメンテナンスするんだね。</p>
+<p>初めてだったので驚いたが、GitHub Pagesもメンテナンスするんだね。  </p>
+<p>ーー<br>（追記）<br>その後も落ちたり回復したりの繰り返し。また、見られないページがあったり、Font Awesomeが文字化けしたりと不安定。<br>静的ページだし、信頼してたのに。  </p>
+<p>大丈夫なんだろうか。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>今日何度か、GitHub Pagesのこのブログが表示されなかった。  </p>
