@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2014/11/28/git-gc/</loc>
+    <lastmod>2014-12-12T12:32:13.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2014/12/12/repository/</loc>
     <lastmod>2014-12-12T08:21:28.000Z</lastmod>
   </url>
@@ -13,11 +18,6 @@
   
   <url>
     <loc>http://pagent.github.io/2014/11/24/hexo-windows-deploy/</loc>
-    <lastmod>2014-12-11T21:42:34.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2014/10/23/octopress-customize/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   
@@ -182,7 +182,7 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/11/28/git-gc/</loc>
+    <loc>http://pagent.github.io/2014/10/21/test/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   
@@ -277,12 +277,12 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/10/21/test/</loc>
+    <loc>http://pagent.github.io/2014/10/24/category-no-downcase/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/10/24/category-no-downcase/</loc>
+    <loc>http://pagent.github.io/2014/10/23/octopress-customize/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   
