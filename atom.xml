@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-12T05:50:16.386Z</updated>
+  <updated>2014-12-12T08:21:43.253Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -44,11 +44,11 @@ $ rename &#39;s/.md.bak/.md/&#39; *.bak
   </entry>
   
   <entry>
-    <title><![CDATA[repositoryは「レポジトリ」？「リポジトリ」？]]></title>
+    <title><![CDATA[repositoryは「リポジトリ」？「レポジトリ」？]]></title>
     <link href="http://pagent.github.io/2014/12/12/repository/"/>
     <id>http://pagent.github.io/2014/12/12/repository/</id>
     <published>2014-12-12T04:33:33.000Z</published>
-    <updated>2014-12-12T05:50:02.000Z</updated>
+    <updated>2014-12-12T08:21:28.000Z</updated>
     <content type="html"><![CDATA[<p>repositoryは「レポジトリ」だと思い、そう記載していた。<br>だが「リポジトリ」の方が、どうやら原音に近いようだ。<br><a href="http://ejje.weblio.jp/content/repository" target="_blank" rel="external">repositoryの意味 - 英和辞典 Weblio辞書</a>  </p>
 <p>英語が母国語らしい人の発音でも、人によっては「レポジトリ」に聞こえたりはするが。  </p>
 <p>日本でも「リポジトリ」の表記の方が一般的のようなので、過去記事の記載をすべて「リポジトリ」に変更した。</p>
