@@ -2,17 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://pagent.github.io/2014/11/23/hexo-post-template/</loc>
-    <lastmod>2014-12-11T21:42:34.000Z</lastmod>
+    <loc>http://pagent.github.io/2014/12/12/bulk-change/</loc>
+    <lastmod>2014-12-12T05:48:02.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/10/21/test/</loc>
-    <lastmod>2014-12-11T21:42:34.000Z</lastmod>
+    <loc>http://pagent.github.io/2014/12/12/repository/</loc>
+    <lastmod>2014-12-12T05:43:03.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/10/24/category-no-downcase/</loc>
+    <loc>http://pagent.github.io/2014/11/24/hexo-windows-deploy/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   
@@ -142,12 +142,12 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/10/23/site-renewal/</loc>
+    <loc>http://pagent.github.io/2014/11/23/hexo-post-template/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/11/24/hexo-windows-deploy/</loc>
+    <loc>http://pagent.github.io/2014/10/23/site-renewal/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   
@@ -273,6 +273,16 @@
   
   <url>
     <loc>http://pagent.github.io/2014/12/11/github-pages-server-down/</loc>
+    <lastmod>2014-12-11T21:42:34.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2014/10/21/test/</loc>
+    <lastmod>2014-12-11T21:42:34.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2014/10/24/category-no-downcase/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   

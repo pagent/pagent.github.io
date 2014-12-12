@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-11T21:44:32.933Z</updated>
+  <updated>2014-12-12T05:48:29.812Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,53 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[特定語句を含むファイルの抽出とその一括変換]]></title>
+    <link href="http://pagent.github.io/2014/12/12/bulk-change/"/>
+    <id>http://pagent.github.io/2014/12/12/bulk-change/</id>
+    <published>2014-12-12T04:44:46.000Z</published>
+    <updated>2014-12-12T05:48:02.000Z</updated>
+    <content type="html"><![CDATA[<p>“repository”は「リポジトリ」と表記するのが順当のよう。<br>「レポジトリ」としていた表記を「リポジトリ」に改めるため、ブログ投稿内で「レポジトリ」を用いているものを調べてみた。  </p>
+<p>source/_postsで端末を開き、下記コマンドで抽出。  </p>
+<pre><code>$ grep &quot;レポジトリ&quot; *
+</code></pre><p>（参考：<a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20060228/231140/" target="_blank" rel="external">Linuxコマンド逆引き大全 - 【 ファイルから文字列を検索する 】：ITpro</a>）  </p>
+<p>たくさんあって手作業で修正するのは大変そうなので、下記コマンドですべての.mdファイル内の「レポジトリ」を「リポジトリ」に一括変換。（元ファイルは拡張子.bakを付けてバックアップ）  </p>
+<pre><code>$ perl -p -i.bak -e &#39;s/レポジトリ/リポジトリ/g&#39; *.md
+</code></pre><p>正常に変換されたことを確認後、.bakファイルを一括削除。  </p>
+<pre><code>$ find ./ -type f -name &quot;*.bak&quot; -delete
+</code></pre><p>もし不具合があれば、特定のファイルに対しては下記で復帰可能。<br>（example.md.bakをexample.mdに名称変更し上書き）  </p>
+<pre><code>$ mv example.md.bak example.md
+</code></pre><p>ただし、mvコマンドは複数のファイル名の一括変換は出来ないようなので、すべてのファイルを元に戻す場合は、一旦すべての.mdファイルを削除してから、すべての.md.bakファイルの拡張子を.mdに変換。<br>（renameコマンドは上書きは出来ないようなので）  </p>
+<pre><code>$ find ./ -type f -name &quot;*.md&quot; -delete
+$ rename &#39;s/.md.bak/.md/&#39; *.bak
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p>“repository”は「リポジトリ」と表記するのが順当のよう。<br>「レポジトリ」としていた表記を「リポジトリ」に改めるため、ブログ投稿内で「レポジトリ」を用いているものを調べてみた。  </p>
+<p>source/_postsで端末を開き、下記コマンドで抽出。  ]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[repositoryは「レポジトリ」？「リポジトリ」？]]></title>
+    <link href="http://pagent.github.io/2014/12/12/repository/"/>
+    <id>http://pagent.github.io/2014/12/12/repository/</id>
+    <published>2014-12-12T04:33:33.000Z</published>
+    <updated>2014-12-12T05:43:03.000Z</updated>
+    <content type="html"><![CDATA[<p>“repository”は「レポジトリ」だと思い、そう記載していた。<br>だが「リポジトリ」の方が、どうやら原音に近いようだ。<br><a href="http://ejje.weblio.jp/content/repository" target="_blank" rel="external">repositoryの意味 - 英和辞典 Weblio辞書</a>  </p>
+<p>英語が母国語らしい人の発音でも、人によっては「レポジトリ」に聞こえたりはするが。  </p>
+<p>日本でも「リポジトリ」の表記の方が一般的のようなので、過去記事の記載をすべて「リポジトリ」に変更した。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>“repository”は「レポジトリ」だと思い、そう記載していた。<br>だが「リポジトリ」の方が、どうやら原音に近いようだ。<br><a href="http://ejje.weblio.jp/content/repository" target="_blank" re]]>
+    </summary>
+    
+      <category term="Git" scheme="http://pagent.github.io/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[GitHub Pagesがサーバーメンテナンス]]></title>
@@ -540,135 +587,6 @@ Total 5328 (delta 2157), reused 0 (delta 0)
     </summary>
     
       <category term="Git" scheme="http://pagent.github.io/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[プログラム音痴がMetalsmithを試してみた]]></title>
-    <link href="http://pagent.github.io/2014/11/28/metalsmith/"/>
-    <id>http://pagent.github.io/2014/11/28/metalsmith/</id>
-    <published>2014-11-28T06:22:40.000Z</published>
-    <updated>2014-12-11T21:42:34.000Z</updated>
-    <content type="html"><![CDATA[<p>静的サイトジェネレーターは有名なものしか知らなかったが、かなりの数が公開されているようだ。<br><a href="https://staticsitegenerators.net/" target="_blank" rel="external">https://staticsitegenerators.net/</a><br><a href="https://www.staticgen.com/" target="_blank" rel="external">https://www.staticgen.com/</a>  </p>
-<p><a href="https://github.com/segmentio/metalsmith" target="_blank" rel="external">Metalsmith</a>（An extremely simple, pluggable static site generator.）というのが人気急上昇中のようなので、試してみた。<br>Hexo同様、プログラミング言語がJavaScriptなので、早さも期待できる。  </p>
-<p>テストするにあたり、下記サイトを参考にさせて頂いた。<br><a href="http://h2ham.net/metalsmith-static-site-generator" target="_blank" rel="external">Nodeで動作する静的サイトジェネレータ「metalsmith」を使ってみた - HAM MEDIA MEMO</a><br><a href="http://web-layman.com/metalsmith-simple-static-site-generator/" target="_blank" rel="external">metalsmith - シンプルな静的サイトジェネレーター - Layman’s Web Creation.</a>  </p>
-<p>先ずはpackage.json を用意して導入するプラグインを指定、一括インストールするのが良いようなのだが、本体やプラグインのバージョンがよく分からない。<br>なのでmetalsmith-testという作業フォルダを作り、そこで端末を開いて一個一個インストールした。  </p>
-<pre><code>~/metalsmith-test$ npm install metalsmith
-~/metalsmith-test$ npm install metalsmith-templates
-~/metalsmith-test$ npm install swig
-~/metalsmith-test$ npm install metalsmith-markdown
-~/metalsmith-test$ npm install metalsmith-permalinks
-~/metalsmith-test$ npm install metalsmith-sass
-~/metalsmith-test$ npm install metalsmith-watch
-~/metalsmith-test$ npm install metalsmith-drafts
-</code></pre><p>次に作業フォルダ内にmetalsmith.jsonを作成する必要があったが、これはjekyllの構成に倣ったexampleのものをほぼそのまま使わせてもらった。<br><a href="https://github.com/segmentio/metalsmith/blob/master/examples/jekyll/metalsmith.json" target="_blank" rel="external">https://github.com/segmentio/metalsmith/blob/master/examples/jekyll/metalsmith.json</a></p>
-<pre><code>{
-  &quot;source&quot;: &quot;./_posts&quot;,
-  &quot;destination&quot;: &quot;./_site&quot;,
-  &quot;metadata&quot;: {
-    &quot;title&quot;: &quot;My Jekyll-Powered Blog&quot;,
-    &quot;description&quot;: &quot;My second, super-cool, Jekyll-powered blog.&quot;
-  },
-  &quot;plugins&quot;: {
-    &quot;metalsmith-drafts&quot;: {},
-    &quot;metalsmith-markdown&quot;: {},
-    &quot;metalsmith-permalinks&quot;: {
-      &quot;pattern&quot;: &quot;:title&quot;
-    },
-    &quot;metalsmith-sass&quot;: {
-        &quot;outputStyle&quot;: &quot;expanded&quot;
-    },
-    &quot;metalsmith-templates&quot;: {
-      &quot;engine&quot;: &quot;swig&quot;,
-      &quot;directory&quot;: &quot;_layouts&quot;
-    }
-  }
-}
-</code></pre><p>_layoutsフォルダを作り、そこへ下記内容のpost.htmlを配置。  </p>
-<pre><code>&lt;html&gt;
-&lt;head&gt;
-  &lt;title&gt;My Blog&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;プログラム音痴がMetalsmithを試してみた&lt;/h1&gt;
-  &lt;time&gt;2014-11-28&lt;/time&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre><p>_postsフォルダを作り、テスト用の記事test-post-1.mdを配置。  </p>
-<pre><code>---
-template: post.html
-title: テスト投稿１
-date: 2014-11-28
----
-##今日の天気
-本日は晴天なり。
-</code></pre><p><code>node node_modules/.bin/metalsmith</code>とコマンドを打つと、自動的に_siteフォルダ、その下にtest-post-1フォルダ、その中にindex.htmlが生成された。  </p>
-<pre><code>&lt;html&gt;
-&lt;head&gt;
-  &lt;title&gt;My Blog&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;テスト投稿&lt;/h1&gt;
-  &lt;time&gt;2014-11-28&lt;/time&gt;
-  &lt;h2 id=&quot;-&quot;&gt;今日の天気&lt;/h2&gt;
-&lt;p&gt;本日は晴天なり。&lt;/p&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre><p>ローカルホスト上でプレビューを可能にするプラグインmetalsmith-serveというのがあったのでインストールしたが、どう使えばいいのかよく分からない。  </p>
-<p>metalsmith.jsonの<code>&quot;plugins&quot;:</code>の箇所に無理やり  </p>
-<pre><code>    &quot;metalsmith-serve&quot;: {
-      &quot;port&quot;: &quot;8081&quot;,
-      &quot;verbose&quot;: &quot;true&quot;
-    }
-</code></pre><p>と加えてみたら、<code>node node_modules/.bin/metalsmith</code>のコマンドで、生成と共にローカルホストが立ち上がった。<br>ブラウザで<code>http://localhost:8081/test-post-1/</code>にアクセスすると、CSSは当たっていないが表示はされた。  </p>
-<p>たぶん正しい使い方ではないのだと思うが、プラグインの説明の  </p>
-<pre><code>var metalsmith = require(&#39;metalsmith&#39;);
-var serve = require(&#39;metalsmith-serve&#39;);
-
-metalsmith(__dirname)
-  .use(serve())
-  .build();
-</code></pre><p>というのを何処で設定するのか分からない。  </p>
-<p>トップページの生成の仕方やCSSの当て方なども勉強する必要がありそう。<br>それに、新規記事作成やgenerate、プレビューなど、それぞれコマンドに割り当てて操作したいところ。  </p>
-<p>Metalsmithのサイトの上方に記載してある  </p>
-<pre><code>Metalsmith(__dirname)
-  .use(drafts())
-  .use(markdown())
-  .use(permalinks(&#39;posts/:title&#39;))
-  .use(templates(&#39;handlebars&#39;))
-  .build();
-</code></pre><p>というのも、いったいどこの記載のことなんだか。</p>
-<p>「Everything is a Plugin」と謳われているようにカスタマイズ性は高そうだが、Jekyllの使い方が分からずOctopressに移った自分のようなプログラム音痴には、少々ハードルが高そうだ。<br>静的サイトジェネレーターの仕組みを勉強するには良さそうだが。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>静的サイトジェネレーターは有名なものしか知らなかったが、かなりの数が公開されているようだ。<br><a href="https://staticsitegenerators.net/" target="_blank" rel="external">https://stati]]>
-    </summary>
-    
-      <category term="Metalsmith" scheme="http://pagent.github.io/tags/Metalsmith/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hexoは中国製のようだ]]></title>
-    <link href="http://pagent.github.io/2014/11/27/hexo-china/"/>
-    <id>http://pagent.github.io/2014/11/27/hexo-china/</id>
-    <published>2014-11-27T11:13:57.000Z</published>
-    <updated>2014-12-11T21:42:34.000Z</updated>
-    <content type="html"><![CDATA[<p>しばらく前に静的サイトジェネレーターをOctopressからHexoに乗り換えた。<br>カスタマイズもわりと容易だしgenerateも早いし、気に入って使っている。  </p>
-<p>公開されているカスタムテーマを見ていて、なぜかデモサイトに中国語が多いなと不信に思っていが、オフィシャルテーマ３つのLICENSEを見ると３つとも中国人っぽい名前が記載されている。  </p>
-<p>よく見ると、リポジトリもオフィシャルサイトもこの中国人らしい人のものだった。<br>なんとHexoは中国製だったんだね。</p>
-<p>中国と聞くと正直ちょっと心配になってしまう。<br>中国製のパソコンに不正プログラムが入っていたなんてニュースもあったし。<br>ただ、cloneしてくるHexoのソースはGitHub上で公開されているものだし、大丈夫なのだろう。  </p>
-<p>中国人、なかなかやるね。<br>ちょっとくやしい気がする。  </p>
-<p>日本製の秀逸な静的サイトジェネレーターが出てきてくれないものだろうか。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>しばらく前に静的サイトジェネレーターをOctopressからHexoに乗り換えた。<br>カスタマイズもわりと容易だしgenerateも早いし、気に入って使っている。  </p>
-<p>公開されているカスタムテーマを見ていて、なぜかデモサイトに中国語が多いなと不信に思ってい]]>
-    </summary>
-    
-      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
   </entry>
   
