@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-12T05:48:29.812Z</updated>
+  <updated>2014-12-12T05:50:16.386Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <link href="http://pagent.github.io/2014/12/12/bulk-change/"/>
     <id>http://pagent.github.io/2014/12/12/bulk-change/</id>
     <published>2014-12-12T04:44:46.000Z</published>
-    <updated>2014-12-12T05:48:02.000Z</updated>
-    <content type="html"><![CDATA[<p>“repository”は「リポジトリ」と表記するのが順当のよう。<br>「レポジトリ」としていた表記を「リポジトリ」に改めるため、ブログ投稿内で「レポジトリ」を用いているものを調べてみた。  </p>
+    <updated>2014-12-12T05:49:50.000Z</updated>
+    <content type="html"><![CDATA[<p>repositoryは「リポジトリ」と表記するのが順当のよう。<br>「レポジトリ」としていた表記を「リポジトリ」に改めるため、ブログ投稿内で「レポジトリ」を用いているものを調べてみた。  </p>
 <p>source/_postsで端末を開き、下記コマンドで抽出。  </p>
 <pre><code>$ grep &quot;レポジトリ&quot; *
 </code></pre><p>（参考：<a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20060228/231140/" target="_blank" rel="external">Linuxコマンド逆引き大全 - 【 ファイルから文字列を検索する 】：ITpro</a>）  </p>
@@ -35,8 +35,8 @@
 $ rename &#39;s/.md.bak/.md/&#39; *.bak
 </code></pre>]]></content>
     <summary type="html">
-    <![CDATA[<p>“repository”は「リポジトリ」と表記するのが順当のよう。<br>「レポジトリ」としていた表記を「リポジトリ」に改めるため、ブログ投稿内で「レポジトリ」を用いているものを調べてみた。  </p>
-<p>source/_postsで端末を開き、下記コマンドで抽出。  ]]>
+    <![CDATA[<p>repositoryは「リポジトリ」と表記するのが順当のよう。<br>「レポジトリ」としていた表記を「リポジトリ」に改めるため、ブログ投稿内で「レポジトリ」を用いているものを調べてみた。  </p>
+<p>source/_postsで端末を開き、下記コマンドで抽出。  </]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
@@ -48,13 +48,13 @@ $ rename &#39;s/.md.bak/.md/&#39; *.bak
     <link href="http://pagent.github.io/2014/12/12/repository/"/>
     <id>http://pagent.github.io/2014/12/12/repository/</id>
     <published>2014-12-12T04:33:33.000Z</published>
-    <updated>2014-12-12T05:43:03.000Z</updated>
-    <content type="html"><![CDATA[<p>“repository”は「レポジトリ」だと思い、そう記載していた。<br>だが「リポジトリ」の方が、どうやら原音に近いようだ。<br><a href="http://ejje.weblio.jp/content/repository" target="_blank" rel="external">repositoryの意味 - 英和辞典 Weblio辞書</a>  </p>
+    <updated>2014-12-12T05:50:02.000Z</updated>
+    <content type="html"><![CDATA[<p>repositoryは「レポジトリ」だと思い、そう記載していた。<br>だが「リポジトリ」の方が、どうやら原音に近いようだ。<br><a href="http://ejje.weblio.jp/content/repository" target="_blank" rel="external">repositoryの意味 - 英和辞典 Weblio辞書</a>  </p>
 <p>英語が母国語らしい人の発音でも、人によっては「レポジトリ」に聞こえたりはするが。  </p>
 <p>日本でも「リポジトリ」の表記の方が一般的のようなので、過去記事の記載をすべて「リポジトリ」に変更した。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>“repository”は「レポジトリ」だと思い、そう記載していた。<br>だが「リポジトリ」の方が、どうやら原音に近いようだ。<br><a href="http://ejje.weblio.jp/content/repository" target="_blank" re]]>
+    <![CDATA[<p>repositoryは「レポジトリ」だと思い、そう記載していた。<br>だが「リポジトリ」の方が、どうやら原音に近いようだ。<br><a href="http://ejje.weblio.jp/content/repository" target="_blank" rel=]]>
     </summary>
     
       <category term="Git" scheme="http://pagent.github.io/tags/Git/"/>
