@@ -310,7 +310,7 @@
 	
 	  <p>それほど記事数は多くないのに、Hexoのサイズが大きくなって来た。<br>最初、数MBだったのが20MB以上になっている。  </p>
 <p>.deploy/.git/objectsが12.4MBあって、一番容量をくっているようだ。<br>ちょこちょこ記事を修正してその度にdeployしているせいだろう。<br>大した容量ではないが、Dropboxの同期に時間が掛かるのが困る。  </p>
-<p>必要性の低いようなオブジェクトが多数あったりすると、自動的にパックファイルを作って掃除（pack up）してくれるようだが、<code>git gc</code>コマンドにより手動でpack upすることも出来るらしい。<br><a href="http://heart-shaped-chocolate.hatenablog.jp/entry/2013/04/10/052752" target="_blank" rel="external">.git/objectsについて少し調べてみた - 煙と消えるその前に</a>  </p>
+<p>GitHubでは、必要性の低いオブジェクトが多数あったりすると、自動的にパックファイルを作って掃除（pack up）してくれるようだが、<code>git gc</code>コマンドにより手動でpack upすることも出来るらしい。<br><a href="http://heart-shaped-chocolate.hatenablog.jp/entry/2013/04/10/052752" target="_blank" rel="external">.git/objectsについて少し調べてみた - 煙と消えるその前に</a>  </p>
 <p>GitHubではないが、BitbucketのFAQには<code>git gc</code>してもリポジトリに悪い影響はないと書いてあった。<br><a href="https://confluence.atlassian.co.jp/pages/viewpage.action?pageId=35815474" target="_blank" rel="external">私のリポジトリで git gc (保全作業) を実行する必要がありますか？ - Bitbucket ドキュメンテーション - アトラシアン日本語ドキュメント</a>  </p>
 <p>.deployディレクトリで端末を開いて、<code>git gc</code>してみた。  </p>
 <pre><code>$ git gc
@@ -380,31 +380,31 @@ Total 5328 (delta 2157), reused 0 (delta 0)
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Linux/">Linux<span>10</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>3</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>2</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>9</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>10</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>19</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>10</span></a></li>
+			<li><a href="/tags/Git/">Git<span>9</span></a></li>
 		
 			<li><a href="/tags/風景/">風景<span>1</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>5</span></a></li>
 		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>3</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>2</span></a></li>
+		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>10</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>19</span></a></li>
 		
 		
 		</ul>
