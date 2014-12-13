@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-12T12:36:47.884Z</updated>
+  <updated>2014-12-13T05:36:00.667Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,23 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Qiitaは個人のブログじゃなかったのか]]></title>
+    <link href="http://pagent.github.io/2014/12/13/qiita/"/>
+    <id>http://pagent.github.io/2014/12/13/qiita/</id>
+    <published>2014-12-13T05:19:07.000Z</published>
+    <updated>2014-12-13T05:35:49.000Z</updated>
+    <content type="html"><![CDATA[<p>Linuxや静的サイトジェネレーターなどで困ったことについて検索していると、Qiitaというサイトを目にする機会が増えた。<br>博学な人が居るものだと感心していたら、個人でやっているサイトではなく、プログラマー向けの情報共有サービスなんだね。<br><a href="https://qiita.com/about" target="_blank" rel="external">Qiitaについて - Qiita</a>  </p>
+<p>記事を参考にさせてもらって助かったことは何度かあるが、自分自身はプログラマーじゃないし、何がどう便利なのか分からないので、利用しようという気にはならないが。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Linuxや静的サイトジェネレーターなどで困ったことについて検索していると、Qiitaというサイトを目にする機会が増えた。<br>博学な人が居るものだと感心していたら、個人でやっているサイトではなく、プログラマー向けの情報共有サービスなんだね。<br><a href="ht]]>
+    </summary>
+    
+      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[特定語句を含むファイルの抽出とその一括変換]]></title>
@@ -557,35 +574,6 @@ $ git push
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
       <category term="Octopress" scheme="http://pagent.github.io/tags/Octopress/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[.deploy/.git/objectsが大きくなってきたのでgit gcしてみた]]></title>
-    <link href="http://pagent.github.io/2014/11/28/git-gc/"/>
-    <id>http://pagent.github.io/2014/11/28/git-gc/</id>
-    <published>2014-11-28T12:31:38.000Z</published>
-    <updated>2014-12-12T12:36:31.000Z</updated>
-    <content type="html"><![CDATA[<p>それほど記事数は多くないのに、Hexoのサイズが大きくなって来た。<br>最初、数MBだったのが20MB以上になっている。  </p>
-<p>.deploy/.git/objectsが12.4MBあって、一番容量をくっているようだ。<br>ちょこちょこ記事を修正してその度にdeployしているせいだろう。<br>大した容量ではないが、Dropboxの同期に時間が掛かるのが困る。  </p>
-<p>GitHubでは、必要性の低いオブジェクトが多数あったりすると、自動的にパックファイルを作って掃除（pack up）してくれるようだが、<code>git gc</code>コマンドにより手動でpack upすることも出来るらしい。<br><a href="http://heart-shaped-chocolate.hatenablog.jp/entry/2013/04/10/052752" target="_blank" rel="external">.git/objectsについて少し調べてみた - 煙と消えるその前に</a>  </p>
-<p>GitHubではないが、BitbucketのFAQには<code>git gc</code>してもリポジトリに悪い影響はないと書いてあった。<br><a href="https://confluence.atlassian.co.jp/pages/viewpage.action?pageId=35815474" target="_blank" rel="external">私のリポジトリで git gc (保全作業) を実行する必要がありますか？ - Bitbucket ドキュメンテーション - アトラシアン日本語ドキュメント</a>  </p>
-<p>.deployディレクトリで端末を開いて、<code>git gc</code>してみた。  </p>
-<pre><code>$ git gc
-Counting objects: 5328, done.
-Delta compression using up to 8 threads.
-Compressing objects:   5% (153/3046)   
-Compressing objects: 100% (3046/3046), done.
-Writing objects: 100% (5328/5328), done.
-Total 5328 (delta 2157), reused 0 (delta 0)
-</code></pre><p>少し待たないといけなかったが、objects下にたくさんあったフォルダが消えて、4つだけになった。<br>objects/pack内にはpack-〜.idxとpack-〜.packというファイルが出来てる。<br>objectsのサイズは12.4MB→1.8MBに縮小した。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>それほど記事数は多くないのに、Hexoのサイズが大きくなって来た。<br>最初、数MBだったのが20MB以上になっている。  </p>
-<p>.deploy/.git/objectsが12.4MBあって、一番容量をくっているようだ。<br>ちょこちょこ記事を修正してその度に]]>
-    </summary>
-    
-      <category term="Git" scheme="http://pagent.github.io/tags/Git/"/>
     
   </entry>
   
