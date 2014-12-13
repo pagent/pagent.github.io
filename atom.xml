@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-13T12:38:36.307Z</updated>
+  <updated>2014-12-13T12:40:35.584Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -219,13 +219,13 @@ $ rename &#39;s/.md.bak/.md/&#39; *.bak
     <link href="http://pagent.github.io/2014/12/05/hexo-vs-octopress/"/>
     <id>http://pagent.github.io/2014/12/05/hexo-vs-octopress/</id>
     <published>2014-12-04T23:01:11.000Z</published>
-    <updated>2014-12-13T12:38:22.000Z</updated>
+    <updated>2014-12-13T12:40:27.000Z</updated>
     <content type="html"><![CDATA[<p>どちらもブログとしての体裁が整っていて、導入したらすぐ始められるHexoとOctopress。<br>しばらくHexoを使ってみて、Octopressと比較しての感想。（あくまで私見）  </p>
 <h3 id="長所">長所</h3>
 <h4 id="・generateが早い">・generateが早い</h4>
 <p>Hexoの長所はなんと言ってもこれだろう。<br>手動での計測だが、30程の記事をgenerateするのに要した時間は、Octopressの12.5秒に対して、Hexoは2.3秒と5分の1以下だった。<br>今後、記事数や使っているタグ、カテゴリーが増えれば、Octopressの遅さはかなりのマイナス要因になると思われる。<br>Hexoはプレビュー時の反映も早い。  </p>
 <h4 id="・デフォルトで日本語のタグ名（カテゴリー名）を使える">・デフォルトで日本語のタグ名（カテゴリー名）を使える</h4>
-<p>Octopressでもカスタマイズすれば日本語のカテゴリー名を使えるようだが、デフォルト状態では漢字は中国語読みらしきローマ字表記に変換される。（たとえば、”未分類”は”wei-fen-lei”に。）<br>仮名はローマ字表記になるが、”の”は”false”に。「の（no）」をyes、noの”no”と判断する様。  </p>
+<p>Octopressでもカスタマイズすれば日本語のカテゴリー名を使えるようだが、デフォルト状態では漢字は中国語読みらしきローマ字表記に変換される。（たとえば、”未分類”は”wei-fen-lei”に。）<br>仮名はローマ字表記に変換されるが、何故か”の”は”false”に。”の（no）”をyes、noの”no”と判断するためか。  </p>
 <h4 id="・Windowsで使える">・Windowsで使える</h4>
 <p>あくまで自分の環境でだが、Octopressが使っているRubyはWindowsで正常に動作しなかった。<br>一方、Hexo（JavaScript使用）はWindowsで使用可能だった。<br>WindowsにJekyllをインストールする方法も紹介されているので、環境によってはOctopressもWindows上で使えるのかもしれない。  </p>
 <h4 id="・コマンドが簡単">・コマンドが簡単</h4>
