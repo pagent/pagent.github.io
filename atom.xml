@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-17T10:18:20.787Z</updated>
+  <updated>2014-12-18T23:03:25.228Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2014/12/16/web-analyze/"/>
     <id>http://pagent.github.io/2014/12/16/web-analyze/</id>
     <published>2014-12-16T08:48:30.000Z</published>
-    <updated>2014-12-16T22:08:39.000Z</updated>
+    <updated>2014-12-18T23:02:54.000Z</updated>
     <content type="html"><![CDATA[<p>Githubではgraphs→trafficでトラフィックを見られるが、これはリポジトリへのアクセス状況などを見るもので、GitHub Pagesを利用したブログに対してのアクセス解析ではないようだ。<br>ブログのどのページにどれくらいアクセスがあったか等を確認するには、他のブログ同様なんらかのアクセス解析ツールを導入する必要がある。<br>（GitHub Pagesにサーバーログ型のアクセス解析は設置出来ないだろうから、AWStatsなどは対象外とした。）</p>
 <h4 id="アクセス解析サービスを利用する">アクセス解析サービスを利用する</h4>
 <p>登録してすぐ利用出来るので簡便。しかも高機能なサービスが多い。<br>Google Analytics等は無料で広告も入らない。  </p>
@@ -52,7 +52,8 @@
 </li>
 </ul>
 <h4 id="結論">結論</h4>
-<p>他にも多々あると思うが、普通はたぶんGoogle Analyticsを利用するのが順当なのだろう。Google嫌いの人はPt engineだろうか。<br>個人的には、他のブログでも利用していて使い慣れているXenoLogger（ミスター アクセス解析）が今のところ一押し。<br>Piwikは使いこなせればかなり有用かもしれない。<br>あと、Pt engineは使用経験が無いが、少し興味をそそられる。</p>
+<p>他にも多々あると思うが、普通はたぶんGoogle Analyticsを利用するのが順当なのだろう。Google嫌いの人はPt engineだろうか。<br>個人的には、他のブログでも利用していて使い慣れているXenoLogger（ミスター アクセス解析）が今のところ一押し。<br>Piwikは使いこなせればかなり有用かもしれない。<br>あと、Pt engineは使用経験が無いが、少し興味をそそられる。  </p>
+<p>ーー<br>（追記）<br>GhosteryのブロックリストにはPiwikも入っているようだ。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Githubではgraphs→trafficでトラフィックを見られるが、これはリポジトリへのアクセス状況などを見るもので、GitHub Pagesを利用したブログに対してのアクセス解析ではないようだ。<br>ブログのどのページにどれくらいアクセスがあったか等を確認するには、]]>
