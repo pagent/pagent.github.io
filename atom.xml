@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-21T10:09:11.480Z</updated>
+  <updated>2014-12-21T10:10:55.293Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,15 +19,15 @@
     <link href="http://pagent.github.io/2014/12/21/stylish-do-not-work/"/>
     <id>http://pagent.github.io/2014/12/21/stylish-do-not-work/</id>
     <published>2014-12-21T09:53:48.000Z</published>
-    <updated>2014-12-21T10:08:42.000Z</updated>
-    <content type="html"><![CDATA[<p>動画サイトの背景を黒くしたり、Twitterのダイレクトメッセージ（DM）のアイコンを消したり、なにかと便利なFirefoxのアドオン「Stylish」だが、急にすべてのサイトで動作しなくなってしまった。<br>Stylishをインストールし直したり開発版を入れてみたりしたが、動いてくれない。  </p>
+    <updated>2014-12-21T10:10:32.000Z</updated>
+    <content type="html"><![CDATA[<p>動画サイトの背景を黒くしたり、Twitterのダイレクトメッセージ（DM）のアイコンを消したりと、なにかと便利に使っているFirefoxのアドオン「Stylish」だが、急にすべてのサイトで動作しなくなってしまった。<br>Stylishをインストールし直したり開発版を入れてみたりしたが、動いてくれない。  </p>
 <p>Firefoxをリセットするしかないかと諦めかけたが、メニューバーのStylishのアイコンをクリックしたら上から2番目に「すべてのスタイルを作動させる」という項目があったので、クリックしてみた。  </p>
 <p>なんなく機能した。 　</p>
 <p>すべてのスタイルを作動させても、Stylishの設定で無効にしてあるスタイルは機能しない。<br>「すべてのスタイルを作動させる」はブラウザの再起動をせずにStylish自体を有効にするかどうかということらしい。<br>いつの間にか知らずに「すべてのスタイルを停止する」をクリックしてしまっていたようだ。  </p>
 <p>「すべてのスタイルを〜」ではく、「Stylishを有効にする」「Stylishを無効にする」と言ってくれた方が分かりやすいのだが。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>動画サイトの背景を黒くしたり、Twitterのダイレクトメッセージ（DM）のアイコンを消したり、なにかと便利なFirefoxのアドオン「Stylish」だが、急にすべてのサイトで動作しなくなってしまった。<br>Stylishをインストールし直したり開発版を入れてみたりした]]>
+    <![CDATA[<p>動画サイトの背景を黒くしたり、Twitterのダイレクトメッセージ（DM）のアイコンを消したりと、なにかと便利に使っているFirefoxのアドオン「Stylish」だが、急にすべてのサイトで動作しなくなってしまった。<br>Stylishをインストールし直したり開発版を入れ]]>
     </summary>
     
       <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
