@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-21T02:07:04.158Z</updated>
+  <updated>2014-12-21T02:12:13.004Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -47,7 +47,7 @@
     <link href="http://pagent.github.io/2014/12/16/web-analyze/"/>
     <id>http://pagent.github.io/2014/12/16/web-analyze/</id>
     <published>2014-12-16T08:48:30.000Z</published>
-    <updated>2014-12-18T23:02:54.000Z</updated>
+    <updated>2014-12-21T02:11:52.000Z</updated>
     <content type="html"><![CDATA[<p>Githubではgraphs→trafficでトラフィックを見られるが、これはリポジトリへのアクセス状況などを見るもので、GitHub Pagesを利用したブログに対してのアクセス解析ではないようだ。<br>ブログのどのページにどれくらいアクセスがあったか等を確認するには、他のブログ同様なんらかのアクセス解析ツールを導入する必要がある。<br>（GitHub Pagesにサーバーログ型のアクセス解析は設置出来ないだろうから、AWStatsなどは対象外とした。）</p>
 <h4 id="アクセス解析サービスを利用する">アクセス解析サービスを利用する</h4>
 <p>登録してすぐ利用出来るので簡便。しかも高機能なサービスが多い。<br>Google Analytics等は無料で広告も入らない。  </p>
@@ -76,7 +76,7 @@
 <ul>
 <li><p><strong>Research Artisan Lite</strong><br>高機能でページ内のリンククリック歴も解析してくれる。<br>悪くないのだが、管理画面が縦方向に大きいので、縦の狭いノートパソコンでの利用時はスクロールがしんどい。 　</p>
 </li>
-<li><p><strong>Piwik</strong><br>オープンソースのソフト。<br>リアルタイムでの解析などもあり高機能。さらにプラグインでの拡張性も可能。<br>これもリンククリックの解析あり。リンククリック解析にはデータベースが必要なのだろうか。<br>導入や使いこなしの難易度はやや高い印象。  </p>
+<li><p><strong>Piwik</strong><br>オープンソースのソフト。<br>リアルタイムでの解析などもあり高機能。さらにプラグインでの拡張も可能。<br>これもリンククリックの解析あり。リンククリック解析にはデータベースが必要なのだろうか。<br>導入や使いこなしの難易度はやや高い印象。  </p>
 </li>
 </ul>
 <h4 id="結論">結論</h4>
