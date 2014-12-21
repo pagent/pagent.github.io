@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-21T02:05:07.779Z</updated>
+  <updated>2014-12-21T02:07:04.158Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2014/12/21/clean-links/"/>
     <id>http://pagent.github.io/2014/12/21/clean-links/</id>
     <published>2014-12-21T00:50:12.000Z</published>
-    <updated>2014-12-21T02:04:57.000Z</updated>
+    <updated>2014-12-21T02:06:56.000Z</updated>
     <content type="html"><![CDATA[<p>たとえばGoogleで「example.com」を検索して、検索結果から「Example domains - Internet Assigned Numbers Authority」に行こうとすると、<br><code>http://www.google.co.jp/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;uact=8&amp;ved=0CB0QFjAA&amp;url=http%3A%2F%2Fexample.com%2F&amp;ei=7BmWVMvsGZLn8AXWvYD4BQ&amp;usg=AFQjCNFgcPdvBI3xyhn99rnOikPXwwtMmA&amp;bvm=bv.82001339,d.dGc</code><br>を経由して、<code>http://example.com/</code>にリダイレクトされる。  </p>
 <p>リダイレクトを経由せずに直接目的サイトに飛ぶためのアドオンとして、これまで「Redirect Cleaner」というのを使っていたが、いつの間にかホワイトリストに追加するための設定画面が無くなってしまい、アドオンの設定画面でしか追加出来ない。<br>「Redirect Cleaner」自体もFirefoxの公式サイトから無くなってしまっている。  </p>
 <p>使い勝手が悪くなってしまったことだし他に類似のアドオンがないか探してみたら、色々とあるようだった。  </p>
@@ -28,7 +28,7 @@
 </li>
 <li><p><strong>NoRedirect</strong><br>インストールしてみたが、使い方がよく分からない。  </p>
 </li>
-<li><p><strong>Clean Links</strong><br>メニューバーのアイコンを右クリックすると、リダイレクトをスキップした履歴が表示される。<br>通常通りにリダイレクトさせたい時は、ここから「Whitelist Selection」ボタンで簡単にホワイトリストに追加出来る。<br>ホワイトリストに追加すると、アドオンの設定画面の「Skip Domains」に追加される。<br>ホワイトリストから外す時は設定画面の「Skip Domains」から削除しないといけないが、使い勝手はかつての「Redirect Cleaner」に近い。  </p>
+<li><p><strong>Clean Links</strong><br>メニューバーのアイコンを右クリックすると、リダイレクトをスキップした履歴が表示される。<br>通常通りにリダイレクトさせたい時は、ここから「Whitelist Selection」ボタンで簡単にホワイトリストに追加出来る。ホワイトリストに追加すると、アドオンの設定画面の「Skip Domains」に追加される。<br>ホワイトリストから外す時は設定画面の「Skip Domains」から削除しないといけないが、使い勝手はかつての「Redirect Cleaner」に近い。  </p>
 </li>
 </ul>
 <p>というわけで、<a href="https://addons.mozilla.org/ja/firefox/addon/clean-links/" target="_blank" rel="external">「Clean Links」</a>を使うことにした。  </p>
