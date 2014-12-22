@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>「Stylish」が機能しなくて困ったが | Pagent</title>
+  <title>ScrapBookで保存したページにStylishのスタイルを適用する | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="「Stylish」が機能しなくて困ったが"/>
+  <meta property="og:title" content="ScrapBookで保存したページにStylishのスタイルを適用する"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -94,7 +94,7 @@
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> 「Stylish」が機能しなくて困ったが</h1>
+			<h1> ScrapBookで保存したページにStylishのスタイルを適用する</h1>
 		</div>
 	
 
@@ -110,11 +110,25 @@
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>動画サイトの背景を黒くしたり、Twitterのダイレクトメッセージ（DM）のアイコンを消したりと、なにかと便利に使っているFirefoxのアドオン「Stylish」だが、急にすべてのサイトで動作しなくなってしまった。<br>Stylishをインストールし直したり開発版を入れてみたりしたが、動いてくれない。  </p>
-<p>Firefoxをリセットするしかないかと諦めかけたが、メニューバーのStylishのアイコンをクリックしたら上から2番目に「すべてのスタイルを作動させる」という項目があったので、クリックしてみた。  </p>
-<p>なんなく機能した。 　</p>
-<p>すべてのスタイルを作動させても、Stylishの設定で無効にしてあるスタイルは機能しない。<br>「すべてのスタイルを作動させる」はブラウザの再起動をせずにStylish自体を有効にするかどうかということらしい。<br>いつの間にか知らずに「すべてのスタイルを停止する」をクリックしてしまっていたようだ。  </p>
-<p>「すべてのスタイルを〜」ではく、「Stylishを有効にする」「Stylishを無効にする」と言ってくれた方が分かりやすいのだが。</p>
+	    <p>ScrapBookなどでローカルに保存したページにStylishのスタイルを適用するには、対象ドメインを指定する箇所の下に<code>;@-moz-document url-prefix(file:///)</code>を追記すれば良い。  </p>
+<p>たとえば、Amebaブログのアメーバヘッダーと記事下部の有名人ブログ広告を削除するスタイルに追加する場合は下記。  </p>
+<pre><code>@namespace url(http://www.w3.org/1999/xhtml);
+@-moz-document domain(&quot;ameblo.jp&quot;)
+;@-moz-document url-prefix(file:///) 
+{
+
+#ambHeader {
+    display: none;
+}
+html.fixed body {
+    padding-top: 0px !important;
+}
+#rc_module2 {
+    display: none;
+}
+
+}
+</code></pre><p>ScrapBookに保存したページも見やすくなった。</p>
 
 	</div>
 
@@ -130,13 +144,13 @@
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2014/12/22/scrapbook-stylish/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2014/12/21/clean-links/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2014/12/21/stylish-do-not-work/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -170,7 +184,7 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2014年12月21日
+	2014年12月22日
 	</div>
 	
 

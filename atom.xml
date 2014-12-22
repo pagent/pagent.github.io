@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-21T10:11:59.303Z</updated>
+  <updated>2014-12-22T02:57:14.165Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,41 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[ScrapBookで保存したページにStylishのスタイルを適用する]]></title>
+    <link href="http://pagent.github.io/2014/12/22/scrapbook-stylish/"/>
+    <id>http://pagent.github.io/2014/12/22/scrapbook-stylish/</id>
+    <published>2014-12-22T02:35:46.000Z</published>
+    <updated>2014-12-22T02:56:38.000Z</updated>
+    <content type="html"><![CDATA[<p>ScrapBookなどでローカルに保存したページにStylishのスタイルを適用するには、対象ドメインを指定する箇所の下に<code>;@-moz-document url-prefix(file:///)</code>を追記すれば良い。  </p>
+<p>たとえば、Amebaブログのアメーバヘッダーと記事下部の有名人ブログ広告を削除するスタイルに追加する場合は下記。  </p>
+<pre><code>@namespace url(http://www.w3.org/1999/xhtml);
+@-moz-document domain(&quot;ameblo.jp&quot;)
+;@-moz-document url-prefix(file:///) 
+{
+
+#ambHeader {
+    display: none;
+}
+html.fixed body {
+    padding-top: 0px !important;
+}
+#rc_module2 {
+    display: none;
+}
+
+}
+</code></pre><p>ScrapBookに保存したページも見やすくなった。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>ScrapBookなどでローカルに保存したページにStylishのスタイルを適用するには、対象ドメインを指定する箇所の下に<code>;@-moz-document url-prefix(file:///)</code>を追記すれば良い。  </p>
+<p>たとえば、Ame]]>
+    </summary>
+    
+      <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[「Stylish」が機能しなくて困ったが]]></title>
@@ -554,40 +589,6 @@ and have 1 and 1 different c]]>
     </summary>
     
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Gitリポジトリにディレクトリを追加]]></title>
-    <link href="http://pagent.github.io/2014/12/01/git-add-directory/"/>
-    <id>http://pagent.github.io/2014/12/01/git-add-directory/</id>
-    <published>2014-12-01T14:27:34.000Z</published>
-    <updated>2014-12-11T21:42:34.000Z</updated>
-    <content type="html"><![CDATA[<p>HexoのソースはBitbucketで管理しているが、Hexoのテーマを変えたところ、commit出来なくなった。  </p>
-<pre><code>Changes not staged for commit:
-  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
-  (commit or discard the untracked or modified content in submodules)
-
-    modified:   themes/freewill (modified content, untracked content)
-
-no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
-</code></pre><p>と表示される。  </p>
-<p>Bitbucketのソースを見ると、新しいテーマのディレクトリthemes/freewillは追加はされているが、クリックして開くことが出来ない。<br>何度かやり直してみたが、うまく行かない。  </p>
-<p>ためしに適当なファイルを一つpushしたらどうかと、  </p>
-<pre><code>$ git add themes/freewill/LICENSE
-$ git commit -m &#39;修正&#39;
-$ git push
-</code></pre><p>とやったらLICENSEが追加され、freewillを開くことが出来た。<br>その後もう一度<code>git add .</code>し、commit、pushしたら、他のファイルやディレクトリも追加された。  </p>
-<p>そう言えばリポジトリに初めてcommitした時も、一度contributors.txtというファイルをpushしてからでないとうまく行かなかった。<br>Gitというのはいきなりディレクトリ全体を追加するのは出来ない仕様なのかもしれない。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>HexoのソースはBitbucketで管理しているが、Hexoのテーマを変えたところ、commit出来なくなった。  </p>
-<pre><code>Changes not staged for commit:
-  (use &quot;git add &lt;file&g]]>
-    </summary>
-    
-      <category term="Git" scheme="http://pagent.github.io/tags/Git/"/>
     
   </entry>
   

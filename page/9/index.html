@@ -112,6 +112,79 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/11/19/install-libv8/" >Installing libv8で止まる</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月19日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>OctopressのフォルダをDropboxに置くことにしたので、メインで使っているPCではなく古いネットブックにインストールしたXubuntuからDropbox上のOctopressを使えるかどうか試してみた。<br>だがrake previewしようとしたら、エラーになってしまった。<br>Octopressを使う環境が整っていないので当然といえば当然。  </p>
+<p>環境を整えるにあたり、bundle installで行き詰まってしまった。<br>途中    </p>
+<pre><code>Installing libv8 (3.16.14.7) 
+</code></pre><p>の表示のところで動かない。<br>フリーズしたのかと思ったが検索したところ、libv8のインストールには時間が掛かるらしい。<br>確かにCPUの使用率も100%で、頑張ってはいるようだ。  </p>
+<p>非力なマシンのせいか結局30分くらい掛かったろうか。<br>もう一度パスワード入力を求められ、その後またtherubyracer (0.12.1)のところで少し時間が掛かったが、ようやくYour bundle is complete!<br>Octopressを使えるようになった。  </p>
+<p>ーー<br>使えるようになったと思ったら、deployが出来ない。  </p>
+<pre><code>$ rake deploy
+cp -r source/images/.gitkeeper public/images/.gitkeeper
+## Deploying branch to Github Pages 
+## Pulling any updates from Github Pages 
+cd _deploy
+cd -
+rm -rf _deploy/assets
+rm -rf _deploy/atom.xml
+rm -rf _deploy/blog
+rm -rf _deploy/favicon.png
+rm -rf _deploy/images
+rm -rf _deploy/index.html
+rm -rf _deploy/javascripts
+rm -rf _deploy/posts
+rm -rf _deploy/robots.txt
+rm -rf _deploy/sitemap.xml
+rm -rf _deploy/stylesheets
+
+## Copying public to _deploy
+cp -r public/. _deploy
+cd _deploy
+
+## Committing: Site updated at 2014-11-19 11:02:25 UTC
+sh: 1: git: not found
+
+## Pushing generated _deploy website
+
+## Github Pages deploy complete
+cd -
+</code></pre><p>拒否はされてないみたいだが、記事を投稿出来ない。<br>どこに問題があるのか、よく分からない。<br>generateもやたら遅いし、ちょっとしんどいかな。  </p>
+<p>ーー<br>gitがインストールされてない？</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/19/install-libv8/" data-text="Installing libv8で止まる">Tweet</a>
+	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/11/18/debian-wheezy-nemo/" >Debian WheezyにNemoをインストール</a>
 		</h3>
 	
@@ -279,47 +352,6 @@ sudo apt-get install nemo
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/05/firefox-complete-theme/" >Firefoxの完全テーマ「MX3」を入れてみた</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月5日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>ウェブ閲覧をしていて、画面があまり白いと目が疲れる。<br>モニターの輝度を調節したり、FirefoxのアドオンStylishでページのスタイルを強制的に変えることである程度対処は出来るが、Firefoxのブックマークや履歴などサイドバーの背景も少し暗くしたいところ。  </p>
-<p>以前はStylishを使ったり、プロファイルフォルダ内のuserChrome.cssに記述を追加するといった方法でFirefoxのメニューまわりの見た目をカスタマイズ出来たようなのだが、どのバージョンからかブックマーク欄の背景の変更が効かなくなっている。  </p>
-<p>Firefoxのテーマで「完全テーマ」というのを使えばその辺も変更出来るようなので、いくつか試してみた。  </p>
-<p>darkやmidnightと名前に付いている完全テーマは確かにブックマークの背景を黒くしてくれるのだが、真っ黒は真っ黒でかえって見づらい。<br>MX3というテーマを入れたら、うっすら灰色になっていい感じになった。  </p>
-<p>ーー<br>（追記）<br>「MX4」もさらにシンプルでいいかも。  </p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/05/firefox-complete-theme/" data-text="Firefoxの完全テーマ「MX3」を入れてみた">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -364,31 +396,31 @@ sudo apt-get install nemo
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Octopress/">Octopress<span>10</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>5</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>2</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>10</span></a></li>
 		
 			<li><a href="/tags/Hexo/">Hexo<span>19</span></a></li>
 		
+			<li><a href="/tags/ネット/">ネット<span>8</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
+		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>9</span></a></li>
-		
-			<li><a href="/tags/風景/">風景<span>1</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>10</span></a></li>
 		
-			<li><a href="/tags/ネット/">ネット<span>8</span></a></li>
+			<li><a href="/tags/Git/">Git<span>9</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/風景/">風景<span>1</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>2</span></a></li>
 		
 		
 		</ul>
@@ -401,6 +433,10 @@ sudo apt-get install nemo
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2014/12/22/scrapbook-stylish/" ><i class="fa fa-file-o"></i>ScrapBookで保存したページにStylishのス...</a>
+      </li>
     
       <li>
         <a href="/2014/12/21/stylish-do-not-work/" ><i class="fa fa-file-o"></i>「Stylish」が機能しなくて困ったが</a>
@@ -418,10 +454,6 @@ sudo apt-get install nemo
         <a href="/2014/12/14/fc2-access-ranking/" ><i class="fa fa-file-o"></i>FC2アクセスランキングの集計が止まってる？</a>
       </li>
     
-      <li>
-        <a href="/2014/12/13/qiita/" ><i class="fa fa-file-o"></i>Qiitaは個人のブログじゃなかったのか</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -431,7 +463,7 @@ sudo apt-get install nemo
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
