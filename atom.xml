@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-23T17:41:15.454Z</updated>
+  <updated>2014-12-23T17:42:11.995Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[Googleを利用したサイト内検索が出来なくない]]></title>
+    <title><![CDATA[Googleを利用したサイト内検索が出来ない]]></title>
     <link href="http://pagent.github.io/2014/12/24/google-site-search/"/>
     <id>http://pagent.github.io/2014/12/24/google-site-search/</id>
     <published>2014-12-23T17:21:13.000Z</published>
-    <updated>2014-12-23T17:39:53.000Z</updated>
+    <updated>2014-12-23T17:42:00.000Z</updated>
     <content type="html"><![CDATA[<p>いつの間にかHexoを使って書いているブログで、Googleを利用したサイト内検索が出来なくなっていた。<br>検索してもブログ全体のインデックス状況（<code>site:pagent.github.io</code>を検索した結果）が表示されるだけ。  </p>
 <p>OctopressのブログではただのGoogle検索になってしまっている。<br>Googleでなんらかの変更があったのだろうか。  </p>
 <p>検索ボックスのレイアウト  </p>
