@@ -112,6 +112,47 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/11/01/firefox-closed-tabs/" >Firefoxで「閉じたタブを元に戻す」「最近閉じたタブ」がクリック出来ない</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月1日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>いつの間にかXubuntu14.04.1のFirefoxで「閉じたタブを元に戻す」「最近閉じたタブ」が灰色になっていて選択出来なくなっていた。<br>Tab Mix Plusを無効化したら「閉じたタブを元に戻す」をクリックは出来るが、タブが戻らず機能しない。<br>プライベートウィンドウでも駄目。  </p>
+<p>Firefoxのバージョンが33.0に更新されてからかと、synapticで「バージョンの強制」、28.0にダウングレードしてみたが、やはり駄目。<br>他のXubuntuPCを見てみると、そちらではちゃんと「閉じたタブを元に戻す」「最近閉じたタブ」が機能している。  </p>
+<p>Firefoxをインストールし直してみるしかなさそうなのでプロファイルも削除しておいた方が良いだろうかとプロファイルの保存場所を調べていたら、Firefoxにはリセット機能というのがあるようだった。<br><a href="https://support.mozilla.org/ja/kb/reset-firefox-easily-fix-most-problems" target="_blank" rel="external">Firefox をリセットするには | Firefox ヘルプ</a>  </p>
+<p>結局このリセットで復旧できた。  </p>
+<p>Firefoxをリセットしてもブックマークなどは残るが、アドオンは消去されてしまうので、「Firefox Sync」を利用してアドオンを保存しておいた方が便利だろう。<br>あとTab Mix Plusなど各種アドオンの設定もエクスポート出来るものは予めローカルにエクスポートしておいた方が良い。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/01/firefox-closed-tabs/" data-text="Firefoxで「閉じたタブを元に戻す」「最近閉じたタブ」がクリック出来ない">Tweet</a>
+	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/10/31/fcitx/" >ibus1.5のプロパティパネルがうっとおしいのでfcitxにした</a>
 		</h3>
 	
@@ -271,52 +312,6 @@
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/10/26/octopress-github-images/" >Octopress＋GitHubブログで画像の挿入</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年10月26日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Octopressブログに画像を挿入するには、source/images下に画像ファイルをコピーし、<a href="http://octopress.org/docs/plugins/image-tag/" target="_blank" rel="external">Image Tag - Octopress</a>に従って記事中にタグを記載すればよいらしい。  </p>
-<pre><code>{(半角の%) img /images/a0960_005150_r.jpg 480 360 コスモス %}
-</code></pre><p>だが、クリックで元画像を表示するという風には出来ないようだ。  </p>
-<p>元画像をポップアップで表示するプラグインも公開されているが、そこまで凝らなくてもよいと思ったので、画像に関してはhtmlタグを使うことにした。  </p>
-<pre><code>&lt;img src=&quot;/images/a0960_005150_r.jpg&quot; onclick=&quot;location.href = &#39;/images/a0960_005150_r.jpg&#39;; return false;&quot; style=&quot;cursor:pointer;&quot; border=&quot;0&quot; width=&quot;480&quot; height=&quot;360&quot; alt=&quot;コスモス&quot;&gt;
-</code></pre><p>元画像を別ウィンドウで開きたい時は下記で良いようだ。</p>
-<pre><code>&lt;img src=&quot;/images/a0960_005150_r.jpg&quot; onclick=&quot;window.open(&#39;/images/a0960_005150_r.jpg&#39;); return false;&quot; style=&quot;cursor:pointer;&quot; border=&quot;0&quot; width=&quot;480&quot; height=&quot;360&quot; alt=&quot;コスモス&quot;&gt;
-</code></pre><p>ーー<br>（追記）<br>下記のような馴染みの表記の方が良いような気もする。</p>
-<pre><code>&lt;a href=&quot;/images/a0960_005150_r.jpg&quot; target=_blank&gt;&lt;img src=&quot;/images/a0960_005150_r.jpg&quot; alt=&quot;コスモス&quot; width=&quot;480&quot; height=&quot;360&quot;&gt;&lt;/a&gt;
-</code></pre><p>それと、imgにはalt属性は必ず指定した方が良く、指定するほどの内容ではない場合にも<code>alt=&quot;&quot;</code>と空欄で入れておいた方が良いのだとか。<br><a href="http://www.mozilla.gr.jp/standards/webtips0024.html" target="_blank" rel="external">img要素でalt属性の内容がポップアップしない - Web標準普及プロジェクト</a></p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/10/26/octopress-github-images/" data-text="Octopress＋GitHubブログで画像の挿入">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -361,31 +356,33 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Linux/">Linux<span>10</span></a></li>
-		
-			<li><a href="/tags/風景/">風景<span>1</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>2</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>8</span></a></li>
-		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>10</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>19</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>1</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
+		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>10</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>9</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>10</span></a></li>
 		
-			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
+			<li><a href="/tags/ネット/">ネット<span>8</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>2</span></a></li>
+		
+			<li><a href="/tags/風景/">風景<span>1</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>19</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>9</span></a></li>
 		
 		
 		</ul>
@@ -398,6 +395,10 @@
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2014/12/23/windows8-upgrade/" ><i class="fa fa-file-o"></i>Windows8優待購入プログラムのプロダクトキーを紛失した</a>
+      </li>
     
       <li>
         <a href="/2014/12/22/scrapbook-stylish/" ><i class="fa fa-file-o"></i>ScrapBookで保存したページにStylishのス...</a>
@@ -415,10 +416,6 @@
         <a href="/2014/12/16/web-analyze/" ><i class="fa fa-file-o"></i>GitHub Pagesのブログでアクセス解析</a>
       </li>
     
-      <li>
-        <a href="/2014/12/14/fc2-access-ranking/" ><i class="fa fa-file-o"></i>FC2アクセスランキングの集計が止まってる？</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -428,7 +425,7 @@
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

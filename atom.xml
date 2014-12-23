@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-23T03:51:41.803Z</updated>
+  <updated>2014-12-23T10:09:27.073Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,28 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Windows8優待購入プログラムのプロダクトキーを紛失した]]></title>
+    <link href="http://pagent.github.io/2014/12/23/windows8-upgrade/"/>
+    <id>http://pagent.github.io/2014/12/23/windows8-upgrade/</id>
+    <published>2014-12-23T09:31:13.000Z</published>
+    <updated>2014-12-23T10:08:40.000Z</updated>
+    <content type="html"><![CDATA[<p>Windows8が発売されるちょっと前、Windows8のタイル形式が嫌だったのであわててWindows7のPCを買った。<br>Windows7のサポート終了後のことも考えて、お得にWindows8にアップグレード出来る「Windows8優待購入プログラム」にも登録した。<br>2000円位だった記憶がある。（1200円という記事を多く見かけるが。）<br>一度Windows8にアップグレードしてみたが、やはり使いづらいのですぐにWindows7に戻した。  </p>
+<p>アップグレードするためのisoファイルは今もあるが、肝心のプロダクトキーがどこかへ行ってしまった。<br>たしかScrapBookで保存していたんだったと思うが、以前Windows7を再インストールした時に消去してしまったんだろう。<br>メールも送られて来ていたように思うが、それも削除してしまっているようだ。  </p>
+<p>こうなるともうお手上げかもしれない。<br><a href="http://support2.microsoft.com/gp/customer-service-phone-numbers" target="_blank" rel="external">カスタマー サービス電話番号</a>に電話してみたら、なんとかなるかもしれないが。<br>（<a href="http://answers.microsoft.com/ja-jp/windows/forum/windows_8-windows_install/%E4%B8%80%E5%BA%A6windows8%E3%82%92%E8%B3%BC/7c523a81-be2a-4695-86e4-13f4a0f069f9" target="_blank" rel="external">一度、Windows8を購入したのですが再度ダインロードはできなのでしょうか？ - マイクロソフト コミュニティ</a>）  </p>
+<p>Windows7の延長サポートの終了が2020年、Windows8の延長サポートは2023年までのようなので、プロダクトキーが見つかれば3年長く安全にWindowsを使うことが出来るようなのだが。  </p>
+<p>2020年までにはWindows10の次の、さらにそのまた次のWindowsも出ているかもしれないし、Windows7のPCはほぼLinux専用としてWindowsではネットに繋がないようにした方が良いのかもしれない。<br>今でもWindowsはほとんど使ってないし。  </p>
+<p>「安い！と思ってもあわてて買わない方が良い。」という良い勉強になった。<br>あと、面倒臭くても紙に書いて残しておくことも大事なんだろう。  </p>
+<p>プロダクトキーを失くしてしまった人、他にも結構いるんじゃないだろうか。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Windows8が発売されるちょっと前、Windows8のタイル形式が嫌だったのであわててWindows7のPCを買った。<br>Windows7のサポート終了後のことも考えて、お得にWindows8にアップグレード出来る「Windows8優待購入プログラム」にも登録した。]]>
+    </summary>
+    
+      <category term="Windows" scheme="http://pagent.github.io/tags/Windows/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[ScrapBookで保存したページにStylishのスタイルを適用する]]></title>
@@ -552,41 +574,6 @@ and have 1 and 1 different c]]>
     <summary type="html">
     <![CDATA[<p>サイドバーの種類にもよるが、Gitリポジトリを使ったブログにサイドバーを付けると、新規記事をdeployする際に更新するファイルが増えてしまって良くないように思う。  </p>
 <p>先日入れたテーマFreewillはその辺を考慮してか、ページネーションのページ等どうしても]]>
-    </summary>
-    
-      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hexoの記事一覧ページにツイートボタン設置]]></title>
-    <link href="http://pagent.github.io/2014/12/02/hexo-tweetbutton/"/>
-    <id>http://pagent.github.io/2014/12/02/hexo-tweetbutton/</id>
-    <published>2014-12-02T11:10:48.000Z</published>
-    <updated>2014-12-11T21:42:34.000Z</updated>
-    <content type="html"><![CDATA[<p>HexoのテーマをFreewill変えて、Disqusウィジェット内の「Share」にはTwitterのツイートボタンはあるが、それだと<code>http://disq.us/…</code>というDisqus経由の短縮URLになる様子。<br>普通のツイートボタンを設置したかったので、<a href="https://about.twitter.com/ja/resources/buttons" target="_blank" rel="external">Twitter公式のツイートボタン</a>を入れることにした。  </p>
-<p>個別の記事への設置は、Twitterサイトで「ページのURLを使う」の設定で作成したコードを/layout/_partial/article.ejsの<code>&lt;%- item.content %&gt;</code>の下あたりに追記したら問題なく表示された。 　</p>
-<p>だがそのコードをlayout/_partial/post/entry.ejsに挿入しても、トップページなどページネーションのページ（記事一覧のページ）では、ブログタイトルと一覧ページのURLにしかならない。<br>URLとツイート文を自分でカスタマイズする設定でコードを作成し、excerptリンクに倣って、それぞれ<code>&lt;%- config.root %&gt;&lt;%= item.path %&gt;</code>、<code>&lt;%= item.title %&gt;</code>で挿入しても、記事タイトルのみでURLを取得出来ない。  </p>
-<p><del>試行錯誤の結果、ブログURLの箇所をパスではなく直接記載して、<code>http://…/&lt;%= item.path %&gt;</code>にしたら上手くいった。<br><code>&lt;%- config.root %&gt;</code>というパスがブログトップのURLを取得出来なかったようだが、理由は不明。<br>「Read More」（続きを読む）の部分では、ちゃんと変換されているが。</del>  </p>
-<p>ーーーー<br>（<strong>追記</strong>）<br>個別記事URLへのパスは<code>&lt;%- item.permalink %&gt;</code>一つで良いようだ。<br>ーーーー  </p>
-<p>記事を概要表示にしている時は「Read More」。全文表示にしている時はツイートボタンを表示することにして、read_moreの箇所を下記に変更した。  </p>
-<pre><code>&lt;% if (item.excerpt &amp;&amp; index) { %&gt;
-  &lt;a type=&quot;button&quot; href=&quot;&lt;%- config.root %&gt;&lt;%- item.path %&gt;#more&quot; class=&quot;btn btn-default more&quot;&gt;&lt;%= __(&#39;read_more&#39;) %&gt;&lt;/a&gt;
-&lt;% } else { %&gt;
-&lt;div class=&quot;tweet-button&quot;&gt;
-  &lt;a href=&quot;https://twitter.com/share&quot; class=&quot;twitter-share-button&quot; data-url=&quot;&lt;%- item.permalink %&gt;&quot; data-text=&quot;&lt;%= item.title %&gt;&quot;&gt;Tweet&lt;/a&gt;
-  &lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?&#39;http&#39;:&#39;https&#39;;if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+&#39;://platform.twitter.com/widgets.js&#39;;fjs.parentNode.insertBefore(js,fjs);}}(document, &#39;script&#39;, &#39;twitter-wjs&#39;);&lt;/script&gt;
-&lt;/div&gt;
-&lt;% } %&gt;
-</code></pre><p>ツイートボタンに対しては、source/css/style.cssに下記を追記、  </p>
-<pre><code>.tweet-button {
-  padding: 8px 0;
-}
-</code></pre><p>位置を調整した。  </p>
-<p>（参考にさせて頂いた記事）<br><a href="http://imaizu.me/program/twbtn-on-jekyll-post.html" target="_blank" rel="external">jekyllのブログで投稿一覧ページにtwitterのボタンを置く - Taught by Myself</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>HexoのテーマをFreewill変えて、Disqusウィジェット内の「Share」にはTwitterのツイートボタンはあるが、それだと<code>http://disq.us/…</code>というDisqus経由の短縮URLになる様子。<br>普通のツイートボタンを設置]]>
     </summary>
     
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
