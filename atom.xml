@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-23T10:10:40.154Z</updated>
+  <updated>2014-12-23T17:41:15.454Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,33 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Googleを利用したサイト内検索が出来なくない]]></title>
+    <link href="http://pagent.github.io/2014/12/24/google-site-search/"/>
+    <id>http://pagent.github.io/2014/12/24/google-site-search/</id>
+    <published>2014-12-23T17:21:13.000Z</published>
+    <updated>2014-12-23T17:39:53.000Z</updated>
+    <content type="html"><![CDATA[<p>いつの間にかHexoを使って書いているブログで、Googleを利用したサイト内検索が出来なくなっていた。<br>検索してもブログ全体のインデックス状況（<code>site:pagent.github.io</code>を検索した結果）が表示されるだけ。  </p>
+<p>OctopressのブログではただのGoogle検索になってしまっている。<br>Googleでなんらかの変更があったのだろうか。  </p>
+<p>検索ボックスのレイアウト  </p>
+<pre><code>&lt;input type=&quot;search&quot; name=&quot;q&quot; results=&quot;0&quot; placeholder=&quot;&lt;%= __(&#39;search&#39;) %&gt;&quot; class=&quot;form-control&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;q&quot; value=&quot;site:&lt;%- config.url.replace(/^https?:\/\//, &#39;&#39;) %&gt;&quot;&gt;
+</code></pre><p>の<code>value=</code>でサイトURLを指定している方（下の方）の<code>name=&quot;q&quot;</code>を<code>name=&quot;hq&quot;</code>に修正し、  </p>
+<pre><code>&lt;input type=&quot;search&quot; name=&quot;q&quot; results=&quot;0&quot; placeholder=&quot;&lt;%= __(&#39;search&#39;) %&gt;&quot; class=&quot;form-control&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;hq&quot; value=&quot;site:&lt;%- config.url.replace(/^https?:\/\//, &#39;&#39;) %&gt;&quot;&gt;
+</code></pre><p>にしたら、一応サイト内検索が出来るようになった。<br>Octopressの方でも同様だった。<br>その内サイトジェネレーターやそのテーマの方でも修正されるのだろう。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>いつの間にかHexoを使って書いているブログで、Googleを利用したサイト内検索が出来なくなっていた。<br>検索してもブログ全体のインデックス状況（<code>site:pagent.github.io</code>を検索した結果）が表示されるだけ。  </p>
+<p>]]>
+    </summary>
+    
+      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
+    
+      <category term="Octopress" scheme="http://pagent.github.io/tags/Octopress/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Windows8優待購入プログラムのプロダクトキーを紛失した]]></title>
@@ -521,59 +548,6 @@ and have 1 and 1 different c]]>
 <pre><code>{(半角の%) img (class名) (画像へのパス) (幅) (高さ) (タイトル) %} 
 </code></pre><p>例えば  </p>
 <]]>
-    </summary>
-    
-      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[HexoのテーマFreewillに月別アーカイブ]]></title>
-    <link href="http://pagent.github.io/2014/12/03/hexo-freewill-monthly-archives/"/>
-    <id>http://pagent.github.io/2014/12/03/hexo-freewill-monthly-archives/</id>
-    <published>2014-12-03T07:55:43.000Z</published>
-    <updated>2014-12-11T21:42:34.000Z</updated>
-    <content type="html"><![CDATA[<p>サイドバーの種類にもよるが、Gitリポジトリを使ったブログにサイドバーを付けると、新規記事をdeployする際に更新するファイルが増えてしまって良くないように思う。  </p>
-<p>先日入れたテーマFreewillはその辺を考慮してか、ページネーションのページ等どうしても更新せざるを得ないページにはサイドバーを置き、個別記事のページではサイドバー領域に投稿日やタグなどを表示するよう工夫されている。<br>実際、新規記事をdeployしても、過去の記事はcommitされていないようだ。  </p>
-<p>ところで、Freewillには月別アーカイブが無かったので、入れることにした。  </p>
-<p>デフォルトテーマのLandscapeのarchive.ejsをそのままfreewill/layout/_widget内にコピペすると、西暦の後ろに投稿数が隙間無しにくっついていて、見栄えが良くない。  </p>
-<p>archive.ejsを修正、  </p>
-<pre><code>&lt;% if (site.posts.length){ %&gt;
-    &lt;div class=&quot;widget&quot;&gt;
-        &lt;h4&gt;&lt;%= __(&#39;Monthly Archives&#39;) %&gt;&lt;/h4&gt;
-        &lt;ul class=&quot;archive-list inline list-unstyled&quot;&gt;
-        &lt;%- list_archives() %&gt;
-        &lt;/ul&gt;
-    &lt;/div&gt;
-&lt;% } %&gt;
-</code></pre><p>freewill/source/css/style.cssにもスタイルを加えた。  </p>
-<pre><code>/* Monthly Archives
----------------------------- */
-
-.archive-list ul {
-  padding:0 3px;
-  list-style-type: none;
-  line-height: 20px;
-}
-.archive-list-count {
-    color: #888;
-}
-.archive-list-count:before {
-    content: &quot; (&quot;;
-}
-.archive-list-count:after {
-    content: &quot;)&quot;;
-}
-</code></pre><p>ちゃんとした知識が無く、見よう見まねなので、あまり良い記述ではないと思うが、自分としては十分満足。  </p>
-<p>ーー<br>（追記）<br>Githubのコミット歴をよく見てみたら、同じタグを使っている過去記事も更新されるようだ。<br>個別記事ページのタグの箇所にそのタグを使っている記事数が表示されているせいだろう。  </p>
-<p>タグクラウドやタグ一覧ページは良いとして、個別記事ページのタグには記事数は無い方が良さそうだ。  </p>
-<p>freewill/layout/_partial/post/tag.ejsの5行目から<code>&lt;span&gt;&#39; + tag.length  + &#39;&lt;/span&gt;</code>を削除して、タグ名だけにした。  </p>
-<pre><code>tags.push(&#39;&lt;li&gt;&lt;a href=&quot;&#39; + config.root + tag.path + &#39;&quot;&gt;&#39; + tag.name + &#39;&lt;/a&gt;&lt;/li&gt;&#39;);
-</code></pre><p>これで様子を見てみようと思う。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>サイドバーの種類にもよるが、Gitリポジトリを使ったブログにサイドバーを付けると、新規記事をdeployする際に更新するファイルが増えてしまって良くないように思う。  </p>
-<p>先日入れたテーマFreewillはその辺を考慮してか、ページネーションのページ等どうしても]]>
     </summary>
     
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>

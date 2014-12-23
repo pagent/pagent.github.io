@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>HexoやOctopressのトップページを全文表示ではなく概要表示にする | Pagent</title>
+  <title>Googleを利用したサイト内検索が出来なくない | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="HexoやOctopressのトップページを全文表示ではなく概要表示にする"/>
+  <meta property="og:title" content="Googleを利用したサイト内検索が出来なくない"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -94,7 +94,7 @@
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> HexoやOctopressのトップページを全文表示ではなく概要表示にする</h1>
+			<h1> Googleを利用したサイト内検索が出来なくない</h1>
 		</div>
 	
 
@@ -110,16 +110,16 @@
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>Hexoでトップページを表示した時、複数の記事の全文がだらだらと表示されているのは見づらいと思い、前半部分を抜粋した概要表示にしてみた。<br>やり方は簡単で、記事ソースの適当な箇所に<code>&lt;!-- more --&gt;</code>というタグを挿入するだけ。  </p>
-<p>WordPressやMovable Typeでは、200文字など決まった文字数で自動的に抜粋してくれたりもするが、その方法はちょっと分からないので、手動で挿入した。<br>タグを挿入すると<code>&lt;!-- more --&gt;</code>より前の部分だけの表示になる。<br>続きを読むためのリンクの文言「Read More」はHexo作業フォルダの_config.ymlではなく、themes/landscape/_config.ymlなどテーマ毎の_config.ymlで変更出来る。  </p>
-<p>Octopressの場合は_config.ymlの<code>excerpt_link:</code>でリンクの文言を変えられる。<br>また_config.ymlの<code>excerpt_link:</code>で、抜粋するためのタグ自体を<code>&lt;!-- more --&gt;</code>から別のものに変更出来るようだ。  </p>
-<p>ーー<br>（追記）<br>概要表示にはしてみたが、全文表示の方が都合の良いことがあったので、あとで全ての記事から<code>&lt;!-- more --&gt;</code>タグを削除した。<br>_postsで端末を開き、下記コマンドですべての.mdファイルから<code>&lt;!-- more --&gt;</code>を一括削除。</p>
-<pre><code>$ perl -p -i.bak -e &#39;s/&lt;!-- more --&gt;//g&#39; *.md
-（すべての.mdファイルに拡張子.bakをつけてバックアップを取り、ファイル内の&lt;!-- more --&gt;を削除）
-</code></pre><p><code>&lt;!-- more --&gt;</code>が正常に削除されたことを確認後、.bakファイルを一括削除した。  </p>
-<pre><code>$ find . -type f -name &quot;*.bak&quot; -delete
-（拡張子が「.bak」のファイルをカレントディレクトリで一括削除）
-</code></pre>
+	    <p>いつの間にかHexoを使って書いているブログで、Googleを利用したサイト内検索が出来なくなっていた。<br>検索してもブログ全体のインデックス状況（<code>site:pagent.github.io</code>を検索した結果）が表示されるだけ。  </p>
+<p>OctopressのブログではただのGoogle検索になってしまっている。<br>Googleでなんらかの変更があったのだろうか。  </p>
+<p>検索ボックスのレイアウト  </p>
+<pre><code>&lt;input type=&quot;search&quot; name=&quot;q&quot; results=&quot;0&quot; placeholder=&quot;&lt;%= __(&#39;search&#39;) %&gt;&quot; class=&quot;form-control&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;q&quot; value=&quot;site:&lt;%- config.url.replace(/^https?:\/\//, &#39;&#39;) %&gt;&quot;&gt;
+</code></pre><p>の<code>value=</code>でサイトURLを指定している方（下の方）の<code>name=&quot;q&quot;</code>を<code>name=&quot;hq&quot;</code>に修正し、  </p>
+<pre><code>&lt;input type=&quot;search&quot; name=&quot;q&quot; results=&quot;0&quot; placeholder=&quot;&lt;%= __(&#39;search&#39;) %&gt;&quot; class=&quot;form-control&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;hq&quot; value=&quot;site:&lt;%- config.url.replace(/^https?:\/\//, &#39;&#39;) %&gt;&quot;&gt;
+</code></pre><p>にしたら、一応サイト内検索が出来るようになった。<br>Octopressの方でも同様だった。<br>その内サイトジェネレーターやそのテーマの方でも修正されるのだろう。</p>
+
 	</div>
 
 	<div class="tweet-button">
@@ -134,13 +134,13 @@
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2014/11/29/page-no-date/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2014/11/28/git-gc/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2014/12/23/windows8-product-key/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -174,7 +174,7 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2014年11月29日
+	2014年12月24日
 	</div>
 	
 
