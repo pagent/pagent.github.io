@@ -1,6 +1,7 @@
 User-agent: *
 Disallow: /css/
 Disallow: /*.js$
+
 Sitemap: http://pagent.github.io/sitemap.xml
 
 User-agent: bingbot
