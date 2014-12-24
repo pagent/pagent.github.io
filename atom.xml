@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-24T04:16:51.761Z</updated>
+  <updated>2014-12-24T09:01:06.265Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,11 +15,43 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[GitHub Pagesにrobots.txtを置いてみた]]></title>
+    <link href="http://pagent.github.io/2014/12/24/robots-txt/"/>
+    <id>http://pagent.github.io/2014/12/24/robots-txt/</id>
+    <published>2014-12-24T08:29:04.000Z</published>
+    <updated>2014-12-24T09:00:51.000Z</updated>
+    <content type="html"><![CDATA[<p>記事がなかなか検索エンジンにインデックスされない。古い記事がインデックスされず新しいのがインデックスされたりしているようだ。<br>プラグインでsitemap.xmlは導入しているが、ちゃんと読んでくれているのか疑問。  </p>
+<p>sitemapとは別にクローラーに各種の指定をするrobots.txtというのがあるようだったので、GitHub Pagesに置いてみた。<br>SeesaaやFC2などのブログサービスでは自動的に用意してくれているようだ。  </p>
+<p>sourceフォルダ直下にrobots.txtを新規作成。<br>generateするとちゃんとpublicフォルダ内にもrobots.txtが生成された。<br>GitHub Pagesのレポジトリにdeployしたらすぐに追加はされていたが、なぜかブラウザでrobots.txtにアクセスしてもしばらくは404エラーだった。<br>だが時間が経つとアクセス出来た。  </p>
+<p>robots.txtの内容は下記のようにした。  </p>
+<pre><code>User-agent: *
+Disallow: /css/
+Disallow: /*.js$
+
+Sitemap: http://pagent.github.io/sitemap.xml
+
+User-agent: bingbot
+Crawl-delay: 30
+
+User-agent: MSNBOT
+Crawl-delay: 30
+</code></pre><p>前のOctopressのブログではrobots.txtが無くてもしっかりインデックスされていたし、大して効果は無いのかもしれない。<br>だが、おかしなことを書かない限りデメリットはないだろうし、無いよりはましだろう。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>記事がなかなか検索エンジンにインデックスされない。古い記事がインデックスされず新しいのがインデックスされたりしているようだ。<br>プラグインでsitemap.xmlは導入しているが、ちゃんと読んでくれているのか疑問。  </p>
+<p>sitemapとは別にクローラーに各]]>
+    </summary>
+    
+      <category term="blog" scheme="http://pagent.github.io/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Googleを利用したサイト内検索が出来ない]]></title>
     <link href="http://pagent.github.io/2014/12/24/google-site-search/"/>
     <id>http://pagent.github.io/2014/12/24/google-site-search/</id>
     <published>2014-12-23T17:21:13.000Z</published>
-    <updated>2014-12-23T17:42:00.000Z</updated>
+    <updated>2014-12-24T08:31:21.000Z</updated>
     <content type="html"><![CDATA[<p>いつの間にかHexoを使って書いているブログで、Googleを利用したサイト内検索が出来なくなっていた。<br>検索してもブログ全体のインデックス状況（<code>site:pagent.github.io</code>を検索した結果）が表示されるだけ。  </p>
 <p>OctopressのブログではただのGoogle検索になってしまっている。<br>Googleでなんらかの変更があったのだろうか。  </p>
 <p>検索ボックスのレイアウト  </p>
@@ -38,6 +70,8 @@
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
       <category term="Octopress" scheme="http://pagent.github.io/tags/Octopress/"/>
+    
+      <category term="blog" scheme="http://pagent.github.io/tags/blog/"/>
     
   </entry>
   
@@ -151,7 +185,7 @@ html.fixed body {
     <link href="http://pagent.github.io/2014/12/16/web-analyze/"/>
     <id>http://pagent.github.io/2014/12/16/web-analyze/</id>
     <published>2014-12-16T08:48:30.000Z</published>
-    <updated>2014-12-21T02:11:52.000Z</updated>
+    <updated>2014-12-24T08:27:44.000Z</updated>
     <content type="html"><![CDATA[<p>Githubではgraphs→trafficでトラフィックを見られるが、これはリポジトリへのアクセス状況などを見るもので、GitHub Pagesを利用したブログに対してのアクセス解析ではないようだ。<br>ブログのどのページにどれくらいアクセスがあったか等を確認するには、他のブログ同様なんらかのアクセス解析ツールを導入する必要がある。<br>（GitHub Pagesにサーバーログ型のアクセス解析は設置出来ないだろうから、AWStatsなどは対象外とした。）</p>
 <h4 id="アクセス解析サービスを利用する">アクセス解析サービスを利用する</h4>
 <p>登録してすぐ利用出来るので簡便。しかも高機能なサービスが多い。<br>Google Analytics等は無料で広告も入らない。  </p>
@@ -191,7 +225,7 @@ html.fixed body {
     <![CDATA[<p>Githubではgraphs→trafficでトラフィックを見られるが、これはリポジトリへのアクセス状況などを見るもので、GitHub Pagesを利用したブログに対してのアクセス解析ではないようだ。<br>ブログのどのページにどれくらいアクセスがあったか等を確認するには、]]>
     </summary>
     
-      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
+      <category term="blog" scheme="http://pagent.github.io/tags/blog/"/>
     
   </entry>
   
@@ -200,7 +234,7 @@ html.fixed body {
     <link href="http://pagent.github.io/2014/12/14/fc2-access-ranking/"/>
     <id>http://pagent.github.io/2014/12/14/fc2-access-ranking/</id>
     <published>2014-12-14T09:06:10.000Z</published>
-    <updated>2014-12-16T07:10:12.000Z</updated>
+    <updated>2014-12-24T08:27:33.000Z</updated>
     <content type="html"><![CDATA[<p>別ブログで、ブログ内の人気ページを集計する「FC2アクセスランキング」を利用しているが、2014-12-06 23:50:01の集計を最後に1週間以上も更新されていない。タグはちゃんと貼ってあるのに。  </p>
 <p>FC2といえば、FC2ライブでの性行為ネット中継に関連して、実質的な運営会社とみられる「ホームページシステム」や関連会社に今年9月30日、家宅捜査が入ったことが思い返される。<br>FC2ブログにも影響が及ぶのではないかと懸念されていたが、これまでは通常に運営されていた模様。  </p>
 <p>FC2アクセスランキングの集計ストップの原因は分からないが、FC2大丈夫なんだろうか。  </p>
@@ -211,7 +245,7 @@ html.fixed body {
 <p>FC2といえば、FC2ライブでの性行為ネット中継に関連]]>
     </summary>
     
-      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
+      <category term="blog" scheme="http://pagent.github.io/tags/blog/"/>
     
   </entry>
   
@@ -284,7 +318,7 @@ $ rename &#39;s/.md.bak/.md/&#39; *.bak
     <link href="http://pagent.github.io/2014/12/11/github-pages-server-down/"/>
     <id>http://pagent.github.io/2014/12/11/github-pages-server-down/</id>
     <published>2014-12-11T09:30:49.000Z</published>
-    <updated>2014-12-11T21:42:34.000Z</updated>
+    <updated>2014-12-24T08:27:02.000Z</updated>
     <content type="html"><![CDATA[<p>今日何度か、GitHub Pagesのこのブログが表示されなかった。  </p>
 <blockquote>
 <p>GitHub Pages is temporarily down for maintenance.</p>
@@ -307,7 +341,7 @@ $ rename &#39;s/.md.bak/.md/&#39; *.bak
     
       <category term="Git" scheme="http://pagent.github.io/tags/Git/"/>
     
-      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
+      <category term="blog" scheme="http://pagent.github.io/tags/blog/"/>
     
   </entry>
   
@@ -421,7 +455,7 @@ $ rename &#39;s/.md.bak/.md/&#39; *.bak
     <link href="http://pagent.github.io/2014/12/05/hexo-vs-octopress/"/>
     <id>http://pagent.github.io/2014/12/05/hexo-vs-octopress/</id>
     <published>2014-12-04T23:01:11.000Z</published>
-    <updated>2014-12-13T12:42:23.000Z</updated>
+    <updated>2014-12-24T08:31:58.000Z</updated>
     <content type="html"><![CDATA[<p>どちらもブログとしての体裁が整っていて、導入したらすぐ始められるHexoとOctopress。<br>しばらくHexoを使ってみて、Octopressと比較しての感想。（あくまで私見）  </p>
 <h3 id="長所">長所</h3>
 <h4 id="・generateが早い">・generateが早い</h4>
@@ -460,6 +494,8 @@ $ rename &#39;s/.md.bak/.md/&#39; *.bak
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
       <category term="Octopress" scheme="http://pagent.github.io/tags/Octopress/"/>
+    
+      <category term="blog" scheme="http://pagent.github.io/tags/blog/"/>
     
   </entry>
   
@@ -523,34 +559,6 @@ and have 1 and 1 different c]]>
     </summary>
     
       <category term="Bootstrap" scheme="http://pagent.github.io/tags/Bootstrap/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hexoで記事に画像を挿入する]]></title>
-    <link href="http://pagent.github.io/2014/12/03/hexo-image/"/>
-    <id>http://pagent.github.io/2014/12/03/hexo-image/</id>
-    <published>2014-12-03T10:24:04.000Z</published>
-    <updated>2014-12-11T21:42:34.000Z</updated>
-    <content type="html"><![CDATA[<p>Hexoで画像を挿入する場合、画像を表示するためのタグはOctopressと同様で、  </p>
-<pre><code>{(半角の%) img (class名) (画像へのパス) (幅) (高さ) (タイトル) %} 
-</code></pre><p>例えば  </p>
-<pre><code>{(半角の%) img /images/a0960_005150_r.jpg 480 360 コスモス %}  #class名は省略
-</code></pre><p>で良いようだ。<br>代わりに下記のようなhtmlタグを使っても良い。  </p>
-<pre><code>&lt;a href=&quot;/images/a0960_005150_r.jpg&quot; target=_blank&gt;&lt;img src=&quot;/images/a0960_005150_r.jpg&quot; alt=&quot;コスモス&quot; width=&quot;480&quot; height=&quot;360&quot;&gt;&lt;/a&gt;
-</code></pre><p>OctopressではMarkdown式のタグだと、画像をクリックしたら原寸大で表示というのが出来なかったので、htmlタグの方が良いかと思ったが、Hexoの場合、Markdownタグで画像クリック→原寸大表示が出来るようだ。  </p>
-<p>Hexoでは_config.ymlのWritingの箇所で<code>post_asset_folder</code>の値を<code>true</code>にするようを推奨している。<br><a href="http://hexo.io/docs/writing.html#Asset_Folder" target="_blank" rel="external">Writing | Hexo</a>  </p>
-<p>説明通り<code>post_asset_folder: true</code>にして新規postを作ると、postフォルダ内に.mdファイルと同名のフォルダが作成される。<br>このフォルダに画像ファイルを入れよということらしい。<br>画像を多用する場合は整理に便利なのかもしれないが、ほとんど画像を使わない場合はかえって煩雑なので、source下にimagenなどのフォルダを作ってそこへ入れた方が便利そうだ。  </p>
-<p>ーー<br>（追記）<br>テーマをFreewillにしたら画像が強制的に最大表示になってしまったので、freewill/source/css/style.cssのimgの箇所で<code>width: auto;</code>、<code>height: auto;</code>を削除した。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Hexoで画像を挿入する場合、画像を表示するためのタグはOctopressと同様で、  </p>
-<pre><code>{(半角の%) img (class名) (画像へのパス) (幅) (高さ) (タイトル) %} 
-</code></pre><p>例えば  </p>
-<]]>
-    </summary>
-    
-      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
   </entry>
   
