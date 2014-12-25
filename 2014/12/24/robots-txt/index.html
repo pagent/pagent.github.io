@@ -111,7 +111,7 @@
 	<!-- content -->
 	<div class="mypage">
 	    <p>記事がなかなか検索エンジンにインデックスされない。古い記事がインデックスされず新しいのがインデックスされたりしているようだ。<br>プラグインでsitemap.xmlは導入しているが、ちゃんと読んでくれているのか疑問。  </p>
-<p>sitemapとは別にクローラーに各種の指定をするrobots.txtというのがあるようだったので、GitHub Pagesに置いてみた。<br>SeesaaやFC2などのブログサービスでは自動的に用意してくれているようだ。  </p>
+<p>sitemapとは別にクローラーに各種の指定をするrobots.txtというのがあるようなので、GitHub Pagesに置いてみた。<br>SeesaaやFC2などのブログサービスでは自動的に用意してくれているようだ。  </p>
 <p>sourceフォルダ直下にrobots.txtを新規作成。<br>generateするとちゃんとpublicフォルダ内にもrobots.txtが生成された。<br>deployし、ブラウザで <a href="http://pagent.github.io/robots.txt" target="_blank" rel="external">http://pagent.github.io/robots.txt</a> にアクセスしが、何故か404エラーだった。GitHub Pagesのレポジトリには追加されていたが。<br>反映に時間がかかるようでしばらくするとアクセス出来た。  </p>
 <p>robots.txtの内容は下記のようにした。  </p>
 <pre><code>User-agent: *
@@ -126,7 +126,7 @@ Crawl-delay: 30
 User-agent: MSNBOT
 Crawl-delay: 30
 </code></pre><p>前のOctopressのブログではrobots.txtを用意しなくてもしっかりインデックスされていたし、大して効果は無いのかもしれない。<br>だが、おかしなことを書かない限りデメリットはないだろうし、無いよりはましだろう。  </p>
-<p>ーー<br>（追記）<br>Octopressではデフォルトでsitemap.xmlとrobots.txtを生成してくれるようだ。<br>この点はHexoよりOctopressの方がSEO上優れていると言える。</p>
+<p>ーー<br>（追記）<br>Octopressではデフォルトでsitemap.xmlとrobots.txtを生成してくれるようだ。<br>この点、HexoよりOctopressの方がSEO上優れているようだ。</p>
 
 	</div>
 
