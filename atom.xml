@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-25T00:36:24.508Z</updated>
+  <updated>2014-12-25T00:44:38.329Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -456,7 +456,7 @@ $ rename &#39;s/.md.bak/.md/&#39; *.bak
     <link href="http://pagent.github.io/2014/12/05/hexo-vs-octopress/"/>
     <id>http://pagent.github.io/2014/12/05/hexo-vs-octopress/</id>
     <published>2014-12-04T23:01:11.000Z</published>
-    <updated>2014-12-25T00:30:25.000Z</updated>
+    <updated>2014-12-25T00:44:29.000Z</updated>
     <content type="html"><![CDATA[<p>どちらもブログとしての体裁が整っていて、導入したらすぐ始められるHexoとOctopress。<br>しばらくHexoを使ってみて、Octopressと比較しての感想。（あくまで私見）  </p>
 <h3 id="長所">長所</h3>
 <h4 id="・generateが早い">・generateが早い</h4>
@@ -469,7 +469,7 @@ $ rename &#39;s/.md.bak/.md/&#39; *.bak
 <p><code>hexo new</code>→<code>hexo n</code>、<code>hexo generate</code>→<code>hexo g</code>、<code>hexo server</code>→<code>hexo s</code>、<code>hexo deploy</code>→<code>hexo d</code>の省略でコマンド可能。<br>辞書登録すればあまり関係ないが。  </p>
 <h3 id="短所">短所</h3>
 <h4 id="・SEO">・SEO</h4>
-<p>Octopressはデフォルト状態でもsitemap.xmlとrobots.txtを生成してくれるが、Hexoでは自分で用意しないといけない。<br>Sitemapを作ってくれるプラグインはあるが、robots.txtは忘れがちだと思うので、注意が必要。  </p>
+<p>Octopressはデフォルト状態でもsitemap.xmlとrobots.txtを生成してくれるが、Hexoでは自分で用意する必要がある。<br>Sitemapを作ってくれるプラグインはあるが、robots.txtは忘れがちだと思うので、注意が必要。  </p>
 <h4 id="・中国製？">・中国製？</h4>
 <p>使わせてもらっている身だが、なんかおもしろくない。  </p>
 <h4 id="・FrontMatterの書式がOctopressと違う">・FrontMatterの書式がOctopressと違う</h4>
