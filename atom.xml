@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-25T01:45:03.343Z</updated>
+  <updated>2014-12-25T02:34:32.063Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,37 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Hexoのsitemap.xmlを変更してみた]]></title>
+    <link href="http://pagent.github.io/2014/12/25/sitemap/"/>
+    <id>http://pagent.github.io/2014/12/25/sitemap/</id>
+    <published>2014-12-25T01:56:21.000Z</published>
+    <updated>2014-12-25T02:33:25.000Z</updated>
+    <content type="html"><![CDATA[<p>検索エンジンにインデックスされにくいようなのでrobots.txtを置いてみたが、sitemap.xmlの内容も少し修正してみた。<br>プラグインで導入したsitemap.xmlには個別記事のURLしか記載されていないが、Octopressのサイトマップを見てみるとブログのルートURLやrobots.txt、/archives/も記載されている。  </p>
+<p>node_modules/hexo-generator-sitemap/sitemap.ejsの<code>&lt;urlset&gt;</code>内に下記を追記してみた。  </p>
+<pre><code>  &lt;url&gt;
+    &lt;loc&gt;http://pagent.github.io/&lt;/loc&gt;
+  &lt;/url&gt;
+  &lt;url&gt;
+    &lt;loc&gt;http://pagent.github.io/robots.txt&lt;/loc&gt;
+  &lt;/url&gt;
+  &lt;url&gt;
+    &lt;loc&gt;http://pagent.github.io/archives/&lt;/loc&gt;
+  &lt;/url&gt;
+</code></pre><p>URLを取得するための変数が分からないので、<code>&lt;loc&gt;</code>の箇所は手動で記載。<br><code>&lt;lastmod&gt;</code>は入れたかったが、これもどうやれば良いのか分からないし、省略可能とのことなので省略した。  </p>
+<p>Octopressでは個別記事の<code>&lt;lastmod&gt;</code>は、最終更新日時ではなく投稿日時のよう。つまり後から修正しても変更は無い。<br>一方Hexoのサイトマップでは最終的に変更された日時が記載され、それが上位に来ている。<br>どちらが良いのか分からないが、しばらく様子を見てみようと思う。  </p>
+<p>それから、Octopressのサイトマップでは<code>&lt;priority&gt;</code>や<code>&lt;changefreq&gt;</code>も記載されている。<br>SEO的にはOctopressの方が丁寧に作られているかもしれない。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>検索エンジンにインデックスされにくいようなのでrobots.txtを置いてみたが、sitemap.xmlの内容も少し修正してみた。<br>プラグインで導入したsitemap.xmlには個別記事のURLしか記載されていないが、Octopressのサイトマップを見てみるとブログ]]>
+    </summary>
+    
+      <category term="blog" scheme="http://pagent.github.io/tags/blog/"/>
+    
+      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[GitHub Pagesにrobots.txtを置いてみた]]></title>
@@ -528,38 +559,6 @@ and have 1 and 1 different c]]>
     </summary>
     
       <category term="Git" scheme="http://pagent.github.io/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Bootstrapでページ内リンク先がナビゲーションバーに隠れる]]></title>
-    <link href="http://pagent.github.io/2014/12/04/bootstrap-in-page-anchor-link/"/>
-    <id>http://pagent.github.io/2014/12/04/bootstrap-in-page-anchor-link/</id>
-    <published>2014-12-04T01:13:06.000Z</published>
-    <updated>2014-12-22T10:32:36.000Z</updated>
-    <content type="html"><![CDATA[<p>タグ一覧ページで、特定のタグをクリックしてページ内リンク先に移動すると、先頭部分がナビゲーションバーに隠れてしまっていた。  </p>
-<p>検索すると下記記事が見つかった。</p>
-<p><a href="http://blog.livedoor.jp/sonots/archives/28928405.html" target="_blank" rel="external">bootstrap の固定ナビゲーションとページ内アンカー問題 - sonots:blog</a>  </p>
-<p>難しそうなのでナビゲーションバーを上部に固定（<code>navbar-fixed-top</code>）しているのをやめようかと思ったが、リンクされていたGithub上のissueを見るとCSSを使った対処法が紹介されていた。  </p>
-<p><a href="https://github.com/twbs/bootstrap/issues/1768#issuecomment-46519033" target="_blank" rel="external">Navbar hides initial content when jumping to in-page anchor · Issue #1768 · twbs/bootstrap</a>  </p>
-<p>その通りstyle.cssに追記すると、リンク先の先頭部分は表示されるようになったが、使っているナビゲーションバーの高さが狭いせいか、一つ前のタグの下の部分が少し表示されている。  </p>
-<p>navbarのmin-heightに合わせて、-75px、75pxの箇所を-50px、50pxにしたら、ちょうど良い具合になった。  </p>
-<pre><code>*[id]:before { 
-  display: block; 
-  content: &quot; &quot;; 
-  margin-top: -50px; 
-  height: 50px; 
-  visibility: hidden; 
-}
-</code></pre><p>ーー<br>（追記）<br>その後<code>navbar-fixed-top</code>はやめました。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>タグ一覧ページで、特定のタグをクリックしてページ内リンク先に移動すると、先頭部分がナビゲーションバーに隠れてしまっていた。  </p>
-<p>検索すると下記記事が見つかった。</p>
-<p><a href="http://blog.livedoor.jp/sonots/ar]]>
-    </summary>
-    
-      <category term="Bootstrap" scheme="http://pagent.github.io/tags/Bootstrap/"/>
     
   </entry>
   
