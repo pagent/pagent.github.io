@@ -357,7 +357,7 @@ h1,h2,h3,h4,h5,h6 {
 /* フッター調整
 ---------------------------- */
 .container-narrow > footer {
-  border-top:1px solid #EEE;
+  border-top:1px solid #CCC;
   text-align: center;
   margin-top:10px;
   padding-top:20px;
