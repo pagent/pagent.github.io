@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-25T00:30:35.092Z</updated>
+  <updated>2014-12-25T00:36:24.508Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2014/12/24/robots-txt/"/>
     <id>http://pagent.github.io/2014/12/24/robots-txt/</id>
     <published>2014-12-24T08:29:04.000Z</published>
-    <updated>2014-12-25T00:22:46.000Z</updated>
+    <updated>2014-12-25T00:35:33.000Z</updated>
     <content type="html"><![CDATA[<p>記事がなかなか検索エンジンにインデックスされない。古い記事がインデックスされず新しいのがインデックスされたりしているようだ。<br>プラグインでsitemap.xmlは導入しているが、ちゃんと読んでくれているのか疑問。  </p>
 <p>sitemapとは別にクローラーに各種の指定をするrobots.txtというのがあるようだったので、GitHub Pagesに置いてみた。<br>SeesaaやFC2などのブログサービスでは自動的に用意してくれているようだ。  </p>
 <p>sourceフォルダ直下にrobots.txtを新規作成。<br>generateするとちゃんとpublicフォルダ内にもrobots.txtが生成された。<br>deployし、ブラウザで <a href="http://pagent.github.io/robots.txt" target="_blank" rel="external">http://pagent.github.io/robots.txt</a> にアクセスしが、何故か404エラーだった。GitHub Pagesのレポジトリには追加されていたが。<br>反映に時間がかかるようでしばらくするとアクセス出来た。  </p>
@@ -36,7 +36,7 @@ Crawl-delay: 30
 User-agent: MSNBOT
 Crawl-delay: 30
 </code></pre><p>前のOctopressのブログではrobots.txtを用意しなくてもしっかりインデックスされていたし、大して効果は無いのかもしれない。<br>だが、おかしなことを書かない限りデメリットはないだろうし、無いよりはましだろう。  </p>
-<p>ーー<br>（追記）<br>Octopressではデフォルトでsitemap.xmlとrobots.txtを生成してくれるようだ。<br>この点はHexoよりSEO上優れていると言える。</p>
+<p>ーー<br>（追記）<br>Octopressではデフォルトでsitemap.xmlとrobots.txtを生成してくれるようだ。<br>この点はHexoよりOctopressの方がSEO上優れていると言える。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>記事がなかなか検索エンジンにインデックスされない。古い記事がインデックスされず新しいのがインデックスされたりしているようだ。<br>プラグインでsitemap.xmlは導入しているが、ちゃんと読んでくれているのか疑問。  </p>
