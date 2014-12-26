@@ -110,11 +110,11 @@
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>ScrapBookなどでローカルに保存したページにStylishのスタイルを適用するには、対象ドメインを指定する箇所に<code>;@-moz-document url-prefix(file://)</code>を追記すれば良い。  </p>
+	    <p>ScrapBookなどでローカルに保存したページにStylishのスタイルを適用するには、対象ドメインを指定する箇所に<code>,url-prefix(file://)</code>を追記すれば良い。  </p>
 <p>たとえば、Amebaブログのアメーバヘッダーと記事下部の有名人ブログ広告を削除するスタイルに追加する場合は下記。  </p>
 <pre><code>@namespace url(http://www.w3.org/1999/xhtml);
 @-moz-document domain(&quot;ameblo.jp&quot;)
-;@-moz-document url-prefix(file://)
+,url-prefix(file://)
 {
 
 #ambHeader {

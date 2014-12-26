@@ -127,11 +127,11 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>ScrapBookなどでローカルに保存したページにStylishのスタイルを適用するには、対象ドメインを指定する箇所に<code>;@-moz-document url-prefix(file://)</code>を追記すれば良い。  </p>
+	  <p>ScrapBookなどでローカルに保存したページにStylishのスタイルを適用するには、対象ドメインを指定する箇所に<code>,url-prefix(file://)</code>を追記すれば良い。  </p>
 <p>たとえば、Amebaブログのアメーバヘッダーと記事下部の有名人ブログ広告を削除するスタイルに追加する場合は下記。  </p>
 <pre><code>@namespace url(http://www.w3.org/1999/xhtml);
 @-moz-document domain(&quot;ameblo.jp&quot;)
-;@-moz-document url-prefix(file://)
+,url-prefix(file://)
 {
 
 #ambHeader {
@@ -438,31 +438,31 @@ html.fixed body {
 		
 			<li><a href="/tags/ネット/">ネット<span>5</span></a></li>
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>1</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 			<li><a href="/tags/風景/">風景<span>1</span></a></li>
 		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
 			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>10</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>21</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>11</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>1</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>9</span></a></li>
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>11</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>21</span></a></li>
 		
 		
 		</ul>
