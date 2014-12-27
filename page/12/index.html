@@ -72,9 +72,19 @@
 		<ul class="nav navbar-nav navbar-right">
 		  <li><a href="/atom.xml" title="Atom feed"><i class="fa fa-rss"></i>Feed</a></li>
 		</ul>
+<!-- 
 		<form class="navbar-form navbar-right" action="//google.com/search" method="get" accept-charset="utf-8">
 		    <input type="search" name="q" results="0" placeholder="Search" class="form-control">
 		    <input type="hidden" name="hq" value="site:pagent.github.io">
+		</form>
+ -->
+		<form class="navbar-form navbar-right" action="https://ixquick.com/do/search" target="_blank" method="POST" accept-charset="UTF-8" name="searchsys" id="searchsys" onsubmit="javascript:document.searchsys.query.value=document.searchsys.keyword.value;;for(i=0;i<this.cat.length;i++){if(this.cat[i].checked){c=this.cat[i].value;}}if (c!='web') {this.host.value=document.domain;} else {this.host.value=''};" style="background:;"><!--If you need, apply background color in form style inline-->
+		    <input type="hidden" name="query" size="32">
+		    <input type="text" name="keyword" class="form-control" placeholder="Ixquick">
+		    <input type="hidden" name="host" value="">
+		    <input type="hidden" name="frm" value="sb">
+		    <input type="hidden" name="cmd" value="process_search">
+		    <input type="hidden" name="language" value="nihongo">
 		</form>
       </div>
     </div> <!-- container -->
@@ -351,6 +361,19 @@
 <div class="col-md-3">
 	<div id="sidebar">
 	
+			<!-- _widget/search -->
+<div class="form-group has-success has-feedback">
+		<form action="https://ixquick.com/do/search" target="_blank" method="POST" accept-charset="UTF-8" name="searchsys" id="searchsys" onsubmit="javascript:document.searchsys.query.value=document.searchsys.keyword.value;;for(i=0;i<this.cat.length;i++){if(this.cat[i].checked){c=this.cat[i].value;}}if (c!='web') {this.host.value=document.domain;} else {this.host.value=''};" style="background:;"><!--If you need, apply background color in form style inline-->
+		    <input type="hidden" name="query" size="32">
+		    <input type="text" name="keyword" class="form-control" placeholder="Ixquick">
+		    <input type="hidden" name="host" value="">
+		    <input type="hidden" name="frm" value="sb">
+		    <input type="hidden" name="cmd" value="process_search">
+		    <input type="hidden" name="language" value="nihongo">
+		</form>
+</div>
+
+		
 			<!-- _widget/recent_posts -->
 
 <div class="widget">
@@ -392,33 +415,33 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/blog/">blog<span>11</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>9</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
+			<li><a href="/tags/ネット/">ネット<span>5</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/ネット/">ネット<span>5</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>21</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>10</span></a></li>
-		
-			<li><a href="/tags/風景/">風景<span>1</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
+			<li><a href="/tags/blog/">blog<span>11</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>9</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>10</span></a></li>
 		
 			<li><a href="/tags/Windows/">Windows<span>1</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/風景/">風景<span>1</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>21</span></a></li>
 		
 		
 		</ul>
