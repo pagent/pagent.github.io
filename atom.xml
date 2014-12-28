@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2014-12-28T01:43:08.296Z</updated>
+  <updated>2014-12-28T02:47:58.605Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,10 +19,11 @@
     <link href="http://pagent.github.io/2014/12/28/nautilus-dropbox/"/>
     <id>http://pagent.github.io/2014/12/28/nautilus-dropbox/</id>
     <published>2014-12-28T01:02:03.000Z</published>
-    <updated>2014-12-28T01:42:17.000Z</updated>
+    <updated>2014-12-28T02:47:07.000Z</updated>
     <content type="html"><![CDATA[<p>Dropboxを利用するのに、Ubuntuのアプリケーションnautilus-dropboxを使っている。<br>ローカルのDropboxフォルダとウェブ上のDropboxを同期させてくれるので便利なのだが、ファイルやフォルダを移動する際の振る舞いは、あまり賢いとは言えない。  </p>
-<p>ローカルでファイル・フォルダを移動させてから同期させると、ウェブ上では移動するのではなく、元ディレクトリから一旦削除し、移動先ディレクトリにファイルやフォルダを新規作成してしまう。<br>ウェブ上で移動させたら大丈夫かと思ったが、今度はローカル側で削除と新規作成をしてしまいダウンロードに時間が掛かってしまう。  </p>
-<p>移動は移動として処理してくれると有難いのだが。<br>WindowsやMac用のクライアントではどうなのだろう。</p>
+<p>ローカルでファイル・フォルダを移動させてから同期させると、ウェブ上では移動するのではなく、元ディレクトリから一旦削除し、移動先ディレクトリにファイルやフォルダを追加してしまう。<br>ウェブ上で移動させたら大丈夫かと思ったが、今度はローカル側で削除と追加をしてしまいダウンロードに時間が掛かってしまう。  </p>
+<p>移動は移動として処理してくれると有難いのだが。<br>WindowsやMac用のクライアントではどうなのだろう。  </p>
+<p>ーー<br>（追記）<br>Dropboxサイト上の操作でも、フォルダの名称変更が、削除と追加になってしまったりする。<br>アプリケーションの問題ではなく、Dropboxの仕様なのかもしれない。<br>ただ、名称変更がちゃんと「変更」として取り扱われる場合もある。<br>Dropboxの振る舞いがよく分からない。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Dropboxを利用するのに、Ubuntuのアプリケーションnautilus-dropboxを使っている。<br>ローカルのDropboxフォルダとウェブ上のDropboxを同期させてくれるので便利なのだが、ファイルやフォルダを移動する際の振る舞いは、あまり賢いとは言えない]]>
