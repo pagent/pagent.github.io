@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-07T06:29:16.515Z</updated>
+  <updated>2015-01-08T16:06:38.125Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,25 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Bloglinesは終了なのだろうか]]></title>
+    <link href="http://pagent.github.io/2015/01/09/bloglines-netvibes/"/>
+    <id>http://pagent.github.io/2015/01/09/bloglines-netvibes/</id>
+    <published>2015-01-08T15:57:27.000Z</published>
+    <updated>2015-01-08T16:06:25.000Z</updated>
+    <content type="html"><![CDATA[<p>今月5日に確認したところBloglinesのフィードが見られない。トップページは存在しているが。<br>実際にはその数日前からフィードにアクセス出来ないようだ。  </p>
+<p>去年の9月にもサイトがアクセス不能になることがあってその時も何もアナウンスが無かったが、今回もなんのアナウンスも無いようだ。<br>もはやネットサービスの体をなしていない。<br>Bloglinesもそろそろ終わりなのだろうか。  </p>
+<p>Partner Sitesに挙げられているNetvibesは健在で、Bloglinesのフィードをバックアップすることも可能だし、Netvibesに移った方が良さそうだ。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>今月5日に確認したところBloglinesのフィードが見られない。トップページは存在しているが。<br>実際にはその数日前からフィードにアクセス出来ないようだ。  </p>
+<p>去年の9月にもサイトがアクセス不能になることがあってその時も何もアナウンスが無かったが、今回も]]>
+    </summary>
+    
+      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Dropboxでのファイル・フォルダの移動や名称変更時の挙動]]></title>
@@ -509,23 +528,6 @@ $ rename &#39;s/.md.bak/.md/&#39; *.bak
     </summary>
     
       <category term="ことば" scheme="http://pagent.github.io/tags/%E3%81%93%E3%81%A8%E3%81%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[枯れ葉]]></title>
-    <link href="http://pagent.github.io/2014/12/05/kareha/"/>
-    <id>http://pagent.github.io/2014/12/05/kareha/</id>
-    <published>2014-12-05T09:59:21.000Z</published>
-    <updated>2014-12-11T21:42:34.000Z</updated>
-    <content type="html"><![CDATA[<p>からからとアスファルトの上枯れ葉転がり</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>からからとアスファルトの上枯れ葉転がり</p>
-]]>
-    </summary>
-    
-      <category term="短歌・俳句等" scheme="http://pagent.github.io/tags/%E7%9F%AD%E6%AD%8C%E3%83%BB%E4%BF%B3%E5%8F%A5%E7%AD%89/"/>
     
   </entry>
   
