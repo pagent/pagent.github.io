@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-09T11:04:32.006Z</updated>
+  <updated>2015-01-09T12:32:15.617Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,24 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Lubuntuでアプリケーションを自動開始]]></title>
+    <link href="http://pagent.github.io/2015/01/09/lubuntu-autostart/"/>
+    <id>http://pagent.github.io/2015/01/09/lubuntu-autostart/</id>
+    <published>2015-01-09T12:05:15.000Z</published>
+    <updated>2015-01-09T12:31:44.000Z</updated>
+    <content type="html"><![CDATA[<p>Lubuntu14.04にクリップボードマネージャーのGlipperをインストールした。PC終了時に履歴を消去出来るので、パスワードをコピペしても割と安全に使える。<br>PC起動時には自動開始させたいので、「設定」→「LXSessionのデフォルトのアプリケーション」→「Autostart」の一覧にある「Glipper」にチェックをいれたが、何故か自動開始されない。  </p>
+<p>「Manual autostarted applications」の欄で「glipper」と入力して追加したら、自動開始出来た。  </p>
+<p>~/.config/lxsession/lubuntu/autostartを見ると、glipperが追加されている。<br>~/.config/lxsession/lubuntu/autostartに、自動開始したいアプリケーションを手書きで「xpad」等と追記しても良いようだ。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Lubuntu14.04にクリップボードマネージャーのGlipperをインストールした。PC終了時に履歴を消去出来るので、パスワードをコピペしても割と安全に使える。<br>PC起動時には自動開始させたいので、「設定」→「LXSessionのデフォルトのアプリケーション」→「]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[10年以上前の古いPCにLubuntu14.04をインストール]]></title>
@@ -500,32 +518,6 @@ $ rename &#39;s/.md.bak/.md/&#39; *.bak
 ]]></content>
     <summary type="html">
     <![CDATA[<p>見やすいし、週間天気予報や台風情報などもあって便利なので、ネットで天気予報を見る時は<a href="http://weathernews.jp/map/" target="_blank" rel="external">「天気予報 - ウェザーニュース」</a>を利用して来]]>
-    </summary>
-    
-      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[50桁まで計算出来るカシオのフリー計算がすごい]]></title>
-    <link href="http://pagent.github.io/2014/12/09/casio/"/>
-    <id>http://pagent.github.io/2014/12/09/casio/</id>
-    <published>2014-12-09T09:49:41.000Z</published>
-    <updated>2014-12-11T21:42:34.000Z</updated>
-    <content type="html"><![CDATA[<p>普通の計算機で表示出来るのは10桁くらいまでだが、カシオのフリー計算はなんと50桁まで表示される。<br><a href="http://keisan.casio.jp/calculator" target="_blank" rel="external">高精度な高等関数が使えるフリー計算</a>  </p>
-<p>たとえば、ヒトヨヒトヨニヒトミゴロの√2も  </p>
-<pre><code>1.4142135623730950488016887242096980785696718753769
-</code></pre><p>と表示される。<br>（普通にはコピペ出来ず、「要素を調査」しないとコピペ出来なかったが。）  </p>
-<p>ヒトナミニオゴレヤ（√3）  </p>
-<pre><code>1.7320508075688772935274463415058723669428052538104
-</code></pre><p>フジサンロク（に）オオムナク（√5）も  </p>
-<pre><code>2.2360679774997896964091736687312762354406183596115
-</code></pre><p>他にも色々な計算が出来るようだ。<br>日常では必要無いと言えば無いのだが。  </p>
-<p>生まれて初めて見た電子計算機（電卓）も、もちろんカシオだった。<br>起動時に点滅する緑色の液晶が滅茶苦茶かっこ良かった。  </p>
-<p>やっぱりカシオはすごい。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>普通の計算機で表示出来るのは10桁くらいまでだが、カシオのフリー計算はなんと50桁まで表示される。<br><a href="http://keisan.casio.jp/calculator" target="_blank" rel="external">高精度な高等関数が]]>
     </summary>
     
       <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>

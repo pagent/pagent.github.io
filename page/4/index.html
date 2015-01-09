@@ -112,6 +112,55 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/12/12/bulk-change/" >特定語句を含むファイルの抽出とその一括変換</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年12月12日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>repositoryは「リポジトリ」と表記するのが順当のよう。<br>「レポジトリ」としていた表記を「リポジトリ」に改めるため、ブログ投稿内で「レポジトリ」を用いているものを調べてみた。  </p>
+<p>source/_postsで端末を開き、下記コマンドで抽出。  </p>
+<pre><code>$ grep &quot;レポジトリ&quot; *
+</code></pre><p>（参考：<a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20060228/231140/" target="_blank" rel="external">Linuxコマンド逆引き大全 - 【 ファイルから文字列を検索する 】：ITpro</a>）  </p>
+<p>たくさんあって手作業で修正するのは大変そうなので、下記コマンドですべての.mdファイル内の「レポジトリ」を「リポジトリ」に一括変換。（元ファイルは拡張子.bakを付けてバックアップ）  </p>
+<pre><code>$ perl -p -i.bak -e &#39;s/レポジトリ/リポジトリ/g&#39; *.md
+</code></pre><p>正常に変換されたことを確認後、.bakファイルを一括削除。  </p>
+<pre><code>$ find ./ -type f -name &quot;*.bak&quot; -delete
+</code></pre><p>もし不具合があれば、特定のファイルに対しては下記で復帰可能。<br>（example.md.bakをexample.mdに名称変更し上書き）  </p>
+<pre><code>$ mv example.md.bak example.md
+</code></pre><p>ただし、mvコマンドは複数のファイル名の一括変換は出来ないようなので、すべてのファイルを元に戻す場合は、一旦すべての.mdファイルを削除してから、すべての.md.bakファイルの拡張子を.mdに変換。<br>（renameコマンドは上書きは出来ないようなので）  </p>
+<pre><code>$ find ./ -type f -name &quot;*.md&quot; -delete
+$ rename &#39;s/.md.bak/.md/&#39; *.bak
+</code></pre>
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/12/bulk-change/" data-text="特定語句を含むファイルの抽出とその一括変換">Tweet</a>
+	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/12/12/repository/" >repositoryは「リポジトリ」？「レポジトリ」？</a>
 		</h3>
 	
@@ -274,53 +323,6 @@
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/12/09/casio/" >50桁まで計算出来るカシオのフリー計算がすごい</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年12月9日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>普通の計算機で表示出来るのは10桁くらいまでだが、カシオのフリー計算はなんと50桁まで表示される。<br><a href="http://keisan.casio.jp/calculator" target="_blank" rel="external">高精度な高等関数が使えるフリー計算</a>  </p>
-<p>たとえば、ヒトヨヒトヨニヒトミゴロの√2も  </p>
-<pre><code>1.4142135623730950488016887242096980785696718753769
-</code></pre><p>と表示される。<br>（普通にはコピペ出来ず、「要素を調査」しないとコピペ出来なかったが。）  </p>
-<p>ヒトナミニオゴレヤ（√3）  </p>
-<pre><code>1.7320508075688772935274463415058723669428052538104
-</code></pre><p>フジサンロク（に）オオムナク（√5）も  </p>
-<pre><code>2.2360679774997896964091736687312762354406183596115
-</code></pre><p>他にも色々な計算が出来るようだ。<br>日常では必要無いと言えば無いのだが。  </p>
-<p>生まれて初めて見た電子計算機（電卓）も、もちろんカシオだった。<br>起動時に点滅する緑色の液晶が滅茶苦茶かっこ良かった。  </p>
-<p>やっぱりカシオはすごい。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/09/casio/" data-text="50桁まで計算出来るカシオのフリー計算がすごい">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -362,6 +364,10 @@
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/01/09/lubuntu-autostart/" ><i class="fa fa-file-o"></i>Lubuntuでアプリケーションを自動開始</a>
+      </li>
+    
+      <li>
         <a href="/2015/01/09/old-pc-lubuntu/" ><i class="fa fa-file-o"></i>10年以上前の古いPCにLubuntu14.04をイン...</a>
       </li>
     
@@ -375,10 +381,6 @@
     
       <li>
         <a href="/2014/12/26/seesaa-sp-page-ad/" ><i class="fa fa-file-o"></i>記事タイトル下のテキスト広告だけはやめて欲しい（See...</a>
-      </li>
-    
-      <li>
-        <a href="/2014/12/25/sitemap/" ><i class="fa fa-file-o"></i>Hexoのsitemap.xmlを変更してみた</a>
       </li>
     
   </ul>
@@ -396,33 +398,33 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>11</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>9</span></a></li>
-		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>7</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/風景/">風景<span>1</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>11</span></a></li>
 		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
 			<li><a href="/tags/Hexo/">Hexo<span>21</span></a></li>
 		
+			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
 			<li><a href="/tags/Windows/">Windows<span>1</span></a></li>
+		
+			<li><a href="/tags/風景/">風景<span>1</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>7</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>9</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>12</span></a></li>
 		
 		
 		</ul>
@@ -434,7 +436,7 @@
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
