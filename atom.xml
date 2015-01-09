@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-09T08:22:46.668Z</updated>
+  <updated>2015-01-09T10:35:04.119Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,11 +19,11 @@
     <link href="http://pagent.github.io/2015/01/09/old-pc-lubuntu/"/>
     <id>http://pagent.github.io/2015/01/09/old-pc-lubuntu/</id>
     <published>2015-01-09T08:00:15.000Z</published>
-    <updated>2015-01-09T08:22:05.000Z</updated>
+    <updated>2015-01-09T10:34:49.000Z</updated>
     <content type="html"><![CDATA[<p>古いパソコンFMVNB50HにXubuntu14.04をインストールしていた。<br>発売が2004年4月のようなので、10年以上前のパソコン。<br>CPUはモバイルCeleron2.4GHz、メモリ463MiB。  </p>
 <p>市販DVDを見るため、synapticでlibdvdread4がインストール済みなのを確認。その後、</p>
 <pre><code>sudo /usr/share/doc/libdvdread4/install-css.sh
-</code></pre><p>VLCメディアプレーヤーでDVDを開いたが、再生はされるものの画像の動きがカクカクして見られたものではない。<br>SMPlayerも試してみたが、これもカクカクする。  </p>
+</code></pre><p>VLCメディアプレーヤーでDVDを開いたが、再生はされるものの動画がカクカクして見られたものではない。<br>SMPlayerも試してみたが、これもカクカクする。  </p>
 <p>Xubuntuより軽いらしいLubuntuだったら見られるかと、Lubuntu14.04をインストールしてみた。  </p>
 <p>結果、Lubuntuだと問題無いレベルでDVDを再生出来た。<br>やはりLubuntuはXubuntuより軽いようだ。</p>
 ]]></content>
