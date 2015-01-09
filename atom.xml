@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-08T16:06:38.125Z</updated>
+  <updated>2015-01-09T08:22:46.668Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,28 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[10年以上前の古いPCにLubuntu14.04をインストール]]></title>
+    <link href="http://pagent.github.io/2015/01/09/old-pc-lubuntu/"/>
+    <id>http://pagent.github.io/2015/01/09/old-pc-lubuntu/</id>
+    <published>2015-01-09T08:00:15.000Z</published>
+    <updated>2015-01-09T08:22:05.000Z</updated>
+    <content type="html"><![CDATA[<p>古いパソコンFMVNB50HにXubuntu14.04をインストールしていた。<br>発売が2004年4月のようなので、10年以上前のパソコン。<br>CPUはモバイルCeleron2.4GHz、メモリ463MiB。  </p>
+<p>市販DVDを見るため、synapticでlibdvdread4がインストール済みなのを確認。その後、</p>
+<pre><code>sudo /usr/share/doc/libdvdread4/install-css.sh
+</code></pre><p>VLCメディアプレーヤーでDVDを開いたが、再生はされるものの画像の動きがカクカクして見られたものではない。<br>SMPlayerも試してみたが、これもカクカクする。  </p>
+<p>Xubuntuより軽いらしいLubuntuだったら見られるかと、Lubuntu14.04をインストールしてみた。  </p>
+<p>結果、Lubuntuだと問題無いレベルでDVDを再生出来た。<br>やはりLubuntuはXubuntuより軽いようだ。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>古いパソコンFMVNB50HにXubuntu14.04をインストールしていた。<br>発売が2004年4月のようなので、10年以上前のパソコン。<br>CPUはモバイルCeleron2.4GHz、メモリ463MiB。  </p>
+<p>市販DVDを見るため、synaptic]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Bloglinesは終了なのだろうか]]></title>
@@ -507,27 +529,6 @@ $ rename &#39;s/.md.bak/.md/&#39; *.bak
     </summary>
     
       <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[思い煩うな]]></title>
-    <link href="http://pagent.github.io/2014/12/09/life/"/>
-    <id>http://pagent.github.io/2014/12/09/life/</id>
-    <published>2014-12-09T06:38:52.000Z</published>
-    <updated>2014-12-11T21:42:34.000Z</updated>
-    <content type="html"><![CDATA[<p>思い煩うな。人生など つかの間だ。</p>
-<p>以前、「思い煩うな。人生は無意味なのだ。」という名言を見たことがあった。<br>誰の名言だったかと検索してみたら、どうやら英国の作家サマセット・モームのものらしい。<br>だが、原文が分からない。  </p>
-<p>“The secret to life is meaningless unless you discover it yourself.”<br>（「Of Human Bondage」邦題：「人生の絆」より）<br><a href="https://www.goodreads.com/work/quotes/2547187-of-human-bondage" target="_blank" rel="external">Of Human Bondage Quotes by W. Somerset Maugham</a></p>
-<p>はちょっと違うようだし。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>思い煩うな。人生など つかの間だ。</p>
-<p>以前、「思い煩うな。人生は無意味なのだ。」という名言を見たことがあった。<br>誰の名言だったかと検索してみたら、どうやら英国の作家サマセット・モームのものらしい。<br>だが、原文が分からない。  </p>
-<p>“The]]>
-    </summary>
-    
-      <category term="ことば" scheme="http://pagent.github.io/tags/%E3%81%93%E3%81%A8%E3%81%B0/"/>
     
   </entry>
   
