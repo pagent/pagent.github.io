@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2014/11/11/xubuntu-install-option/</loc>
+    <lastmod>2015-01-13T09:09:45.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2015/01/09/old-pc-lubuntu/</loc>
     <lastmod>2015-01-10T03:15:18.000Z</lastmod>
   </url>
@@ -142,11 +147,6 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/11/24/hexo-windows-deploy/</loc>
-    <lastmod>2014-12-11T21:42:34.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://pagent.github.io/2014/11/24/hexo-windows/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
@@ -177,7 +177,7 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/10/25/cosmos/</loc>
+    <loc>http://pagent.github.io/2014/10/26/octopress-github-images/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   
@@ -227,7 +227,7 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/10/26/octopress-github-images/</loc>
+    <loc>http://pagent.github.io/2014/10/28/kana/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   
@@ -237,7 +237,7 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/10/28/kana/</loc>
+    <loc>http://pagent.github.io/2014/10/28/octopress-source-bitbucket/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   
@@ -257,17 +257,12 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/10/28/octopress-source-bitbucket/</loc>
+    <loc>http://pagent.github.io/2014/10/31/fcitx/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://pagent.github.io/2014/12/10/weather-news/</loc>
-    <lastmod>2014-12-11T21:42:34.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2014/10/31/fcitx/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   
@@ -307,12 +302,12 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/11/11/xubuntu-install-option/</loc>
+    <loc>http://pagent.github.io/2014/10/23/site-renewal/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/10/23/site-renewal/</loc>
+    <loc>http://pagent.github.io/2014/10/25/cosmos/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   
@@ -337,12 +332,12 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/10/21/test/</loc>
+    <loc>http://pagent.github.io/2014/11/22/hexo-theme/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/11/22/hexo-theme/</loc>
+    <loc>http://pagent.github.io/2014/10/21/test/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   
@@ -358,6 +353,11 @@
   
   <url>
     <loc>http://pagent.github.io/2014/11/23/hexo-post-template/</loc>
+    <lastmod>2014-12-11T21:42:34.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2014/11/24/hexo-windows-deploy/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   
