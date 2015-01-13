@@ -134,12 +134,12 @@
 <p><a href="https://github.com/twbs/bootstrap/issues/1768#issuecomment-46519033" target="_blank" rel="external">Navbar hides initial content when jumping to in-page anchor · Issue #1768 · twbs/bootstrap</a>  </p>
 <p>その通りstyle.cssに追記すると、リンク先の先頭部分は表示されるようになったが、使っているナビゲーションバーの高さが狭いせいか、一つ前のタグの下の部分が少し表示されている。  </p>
 <p>navbarのmin-heightに合わせて、-75px、75pxの箇所を-50px、50pxにしたら、ちょうど良い具合になった。  </p>
-<pre><code>*[id]:before { 
-  display: block; 
-  content: &quot; &quot;; 
-  margin-top: -50px; 
-  height: 50px; 
-  visibility: hidden; 
+<pre><code>*[id]:before {
+  display: block;
+  content: &quot; &quot;;
+  margin-top: -50px;
+  height: 50px;
+  visibility: hidden;
 }
 </code></pre><p>ーー<br>（追記）<br>その後<code>navbar-fixed-top</code>はやめました。</p>
 
@@ -179,7 +179,7 @@
 	  
 	
 	  <p>Hexoで画像を挿入する場合、画像を表示するためのタグはOctopressと同様で、  </p>
-<pre><code>{(半角の%) img (class名) (画像へのパス) (幅) (高さ) (タイトル) %} 
+<pre><code>{(半角の%) img (class名) (画像へのパス) (幅) (高さ) (タイトル) %}
 </code></pre><p>例えば  </p>
 <pre><code>{(半角の%) img /images/a0960_005150_r.jpg 480 360 コスモス %}  #class名は省略
 </code></pre><p>で良いようだ。<br>代わりに下記のようなhtmlタグを使っても良い。  </p>
@@ -460,33 +460,33 @@ $ git push
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/風景/">風景<span>1</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+			<li><a href="/tags/ネット/">ネット<span>7</span></a></li>
 		
 			<li><a href="/tags/Windows/">Windows<span>1</span></a></li>
 		
 			<li><a href="/tags/Hexo/">Hexo<span>21</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+			<li><a href="/tags/blog/">blog<span>11</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>12</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>11</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
 		
-			<li><a href="/tags/風景/">風景<span>1</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>9</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>7</span></a></li>
 		
 		
 		</ul>

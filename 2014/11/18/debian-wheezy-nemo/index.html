@@ -113,10 +113,10 @@
 	    <p>ネットブックLaVie LightにDebian Wheezyをインストールした。<br>ウィンドウマネージャはXfceが好みなので、debian-7.7.0-i386-netinst.isoでインストールする際、”Advanced options” 、”Alternate desktop environments”でXfceを選択した。  </p>
 <p>ファイルやフォルダを簡単に管理者権限で操作したいので、XfceデフォルトのファイルマネージャーThunarのアクションに「rootで開く」を追加し、gksuもインストールした。<br>だがrootで開こうとしても、認証画面は表示されるものの、フォルダやファイルを管理者権限で開くことが出来ない。  </p>
 <p>代わりにNemoをインストールしようとしたら、リポジトリにNemoが無かった。PCManFMも確かrootで開くメニューがあったのでインストールしてみたが、なぜかrootで開くメニューが無い。<br>困ってしまったが、Ubuntu 12.04 Preciseのリポジトリを追加することで、Nemoをインストール出来た。  </p>
-<pre><code>echo &quot;deb http://ppa.launchpad.net/noobslab/mint/ubuntu precise main&quot; | sudo tee -a /etc/apt/sources.list  
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F59EAE4D  
-sudo apt-get update  
-sudo apt-get install nemo  
+<pre><code>echo &quot;deb http://ppa.launchpad.net/noobslab/mint/ubuntu precise main&quot; | sudo tee -a /etc/apt/sources.list
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F59EAE4D
+sudo apt-get update
+sudo apt-get install nemo
 </code></pre><p><a href="http://www.techlw.com/2013/12/install-nemo-file-manager-with.html" target="_blank" rel="external">Install Nemo file Manager with Extensions in Debian 7 Wheezy and its derivatives | Technology Linux World</a>  </p>
 <p>Ubuntu 14.04 Trustyのリポジトリを入れた方が、Nemoのバージョンが新しくて良いかと思いやってみたが、「壊れたパッケージを修復出来ない」とかでNemoをインストール出来なかった。  </p>
 <p>それと、Nemoを起動すると、デスクトップ上の右クリックでアプリケーションメニューを表示するのが出来なくなってしまう。<br>これでは少々不便なので、普段はThunarを使った方が良いかもしれない。</p>

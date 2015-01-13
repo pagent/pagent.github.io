@@ -117,12 +117,12 @@
 <p><a href="https://github.com/twbs/bootstrap/issues/1768#issuecomment-46519033" target="_blank" rel="external">Navbar hides initial content when jumping to in-page anchor · Issue #1768 · twbs/bootstrap</a>  </p>
 <p>その通りstyle.cssに追記すると、リンク先の先頭部分は表示されるようになったが、使っているナビゲーションバーの高さが狭いせいか、一つ前のタグの下の部分が少し表示されている。  </p>
 <p>navbarのmin-heightに合わせて、-75px、75pxの箇所を-50px、50pxにしたら、ちょうど良い具合になった。  </p>
-<pre><code>*[id]:before { 
-  display: block; 
-  content: &quot; &quot;; 
-  margin-top: -50px; 
-  height: 50px; 
-  visibility: hidden; 
+<pre><code>*[id]:before {
+  display: block;
+  content: &quot; &quot;;
+  margin-top: -50px;
+  height: 50px;
+  visibility: hidden;
 }
 </code></pre><p>ーー<br>（追記）<br>その後<code>navbar-fixed-top</code>はやめました。</p>
 
