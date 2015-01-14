@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-13T18:59:32.828Z</updated>
+  <updated>2015-01-14T07:52:33.745Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,27 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[LubuntuにPulseAudio Volume Controlを導入。音量が小さい時に便利]]></title>
+    <link href="http://pagent.github.io/2015/01/14/lubuntu-pavucontrol/"/>
+    <id>http://pagent.github.io/2015/01/14/lubuntu-pavucontrol/</id>
+    <published>2015-01-14T07:38:56.000Z</published>
+    <updated>2015-01-14T07:52:03.000Z</updated>
+    <content type="html"><![CDATA[<p>Lubuntu14.04には元々ボリュームコントローラーとしてalsamixerが入っていたが、完全にGUIのツールではなく使いづらい。  </p>
+<p>そこで、Xubuntuに標準で入っているPulseAudio Volume Control (pavucontrol)をインストールした。<br>synapticやソフトウェアセンター、もしくは下記コマンドで導入。</p>
+<pre><code>sudo apt-get install pavucontrol
+</code></pre><p>インストール後は自然に通知領域での設定がPulseAudio Volume Controlに変更される。  </p>
+<p>スピーカーからの出力を 153%（11.00dB）まで上げられるので、音量が小さくて困る時にもなにかと便利。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Lubuntu14.04には元々ボリュームコントローラーとしてalsamixerが入っていたが、完全にGUIのツールではなく使いづらい。  </p>
+<p>そこで、Xubuntuに標準で入っているPulseAudio Volume Control (pavucontrol)]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Lubuntuでアプリケーションを自動開始]]></title>
@@ -500,26 +521,6 @@ $ rename &#39;s/.md.bak/.md/&#39; *.bak
     </summary>
     
       <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Linuxで「天気予報 - ウェザーニュース」が重すぎる]]></title>
-    <link href="http://pagent.github.io/2014/12/10/weather-news/"/>
-    <id>http://pagent.github.io/2014/12/10/weather-news/</id>
-    <published>2014-12-10T00:53:08.000Z</published>
-    <updated>2014-12-11T21:42:34.000Z</updated>
-    <content type="html"><![CDATA[<p>見やすいし、週間天気予報や台風情報などもあって便利なので、ネットで天気予報を見る時は<a href="http://weathernews.jp/map/" target="_blank" rel="external">「天気予報 - ウェザーニュース」</a>を利用して来た。  </p>
-<p>だがLinuxに移ってから、Firefoxで「ウェザーニュース」を開くと、とたんに重くなりFirefoxがフリーズする。<br>システムモニターを見ると、メモリ7.7GiBを使い果たしスワップを利用している。  </p>
-<p>Flashを使っているからといって、なぜこんなに重くなるのだろうか。<br>動画サイトでもこんなことはないのに。  </p>
-<p>Windowsでは大丈夫なので、Linux（Xubuntu）のFlash Playerのバージョンの問題かもしれない。  </p>
-<p>仕方がないので「ウェザーニュース」は諦めて、<a href="http://www.tenki.jp/" target="_blank" rel="external">「日本気象協会 tenki.jp」</a>を使うことにした。<br>いちおう<a href="http://www.tenki.jp/week/" target="_blank" rel="external">「10日間天気」</a>というのもあるし。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>見やすいし、週間天気予報や台風情報などもあって便利なので、ネットで天気予報を見る時は<a href="http://weathernews.jp/map/" target="_blank" rel="external">「天気予報 - ウェザーニュース」</a>を利用して来]]>
-    </summary>
-    
-      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
     
   </entry>
   
