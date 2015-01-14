@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-14T07:53:48.972Z</updated>
+  <updated>2015-01-14T07:54:30.420Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,16 +19,15 @@
     <link href="http://pagent.github.io/2015/01/14/lubuntu-pavucontrol/"/>
     <id>http://pagent.github.io/2015/01/14/lubuntu-pavucontrol/</id>
     <published>2015-01-14T07:38:56.000Z</published>
-    <updated>2015-01-14T07:53:21.000Z</updated>
-    <content type="html"><![CDATA[<p>Lubuntu14.04には元々ボリュームコントローラーとしてalsamixerが入っているが、完全にGUIのツールではなく使いづらい。  </p>
-<p>そこで、Xubuntuに標準で入っているPulseAudio Volume Control (pavucontrol)をインストールした。<br>synapticやソフトウェアセンター、もしくは下記コマンドで導入。</p>
+    <updated>2015-01-14T07:54:23.000Z</updated>
+    <content type="html"><![CDATA[<p>Lubuntu14.04には元々ボリュームコントローラーとしてalsamixerが入っているが、完全にGUIのツールではなく使いづらい。<br>そこで、Xubuntuに標準で入っているPulseAudio Volume Control (pavucontrol)をインストールした。  </p>
+<p>synapticやソフトウェアセンター、もしくは下記コマンドで導入。</p>
 <pre><code>sudo apt-get install pavucontrol
 </code></pre><p>インストール後は自然に通知領域での設定がPulseAudio Volume Controlに変更される。  </p>
 <p>スピーカーからの出力を 153%（11.00dB）まで上げられるので、音量が小さくて困る時にもなにかと便利。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Lubuntu14.04には元々ボリュームコントローラーとしてalsamixerが入っているが、完全にGUIのツールではなく使いづらい。  </p>
-<p>そこで、Xubuntuに標準で入っているPulseAudio Volume Control (pavucontrol)]]>
+    <![CDATA[<p>Lubuntu14.04には元々ボリュームコントローラーとしてalsamixerが入っているが、完全にGUIのツールではなく使いづらい。<br>そこで、Xubuntuに標準で入っているPulseAudio Volume Control (pavucontrol)をインストー]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
