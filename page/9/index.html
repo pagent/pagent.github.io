@@ -112,6 +112,109 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/11/26/hexo-bitbucket/" >HexoのソースをBitbucketに置く</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月26日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Hexoの作業フォルダはWindows領域のDropboxフォルダに置き、他のPCとも同期をとっている。<br>これでソースを消失してしまう危険はかなり低いと思うが、Dropboxと同期する際、結構時間がかかってしまう。<br>普段はDropboxを起動しておらず時々立ち上げる、という形をとっているせいもあるかもしれない。  </p>
+<p>Bitbucketにソースを置いたらpushするのはそれほど時間は掛からないだろうし、過去の履歴も残ってくれてやはり便利だろうと思い、HexoのソースをBitbucketに置くことにした。  </p>
+<p>OctopressのソースをBitbucketに置いた時と同様、Bitbucketにhexoという名前のリポジトリを作り、  </p>
+<pre><code>$ git remote add bitbucket git@bitbucket.org:ユーザー名/hexo.git
+$ git push -u bitbucket source
+</code></pre><p>とやったが、エラーになる。  </p>
+<p>新規リポジトリを作成後に表示されたRepository setupの指示に倣い、  </p>
+<pre><code>$ git init
+$ git remote add bitbucket git@bitbucket.org:ユーザー名/hexo.git
+$ echo &quot;ユーザー名&quot; &gt;&gt; contributors.txt
+$ git add contributors.txt
+$ git commit -m &#39;Initial commit with contributors&#39;
+$ git push -u bitbucket source
+</code></pre><p>としても、やはり  </p>
+<pre><code>error: src refspec source does not match any.
+error: failed to push some refs to &#39;git@bitbucket.org:ユーザー名/hexo.git&#39;
+</code></pre><p>とエラーになる。  </p>
+<p>pushするbranchをsourceではなく、masterにしてみた。  </p>
+<pre><code>$ git push -u bitbucket master
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 239 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@bitbucket.org:ユーザー名/hexo.git
+ * [new branch]      master -&gt; master
+Branch master set up to track remote branch master from bitbucket.
+</code></pre><p>上手く行ったようだ。  </p>
+<p>だが、その後も  </p>
+<pre><code>$ git add .
+warning: You ran &#39;git add&#39; with neither &#39;-A (--all)&#39; or &#39;--ignore-removal&#39;,
+whose behaviour will change in Git 2.0 with respect to paths you removed.
+Paths like &#39;contributors.txt&#39; that are
+removed from your working tree are ignored with this version of Git.
+
+* &#39;git add --ignore-removal &lt;pathspec&gt;&#39;, which is the current default,
+  ignores paths you removed from your working tree.
+
+* &#39;git add --all &lt;pathspec&gt;&#39; will let you also record the removals.
+
+Run &#39;git status&#39; to check the paths you removed from your working tree.
+</code></pre><p>と言われたり、  </p>
+<pre><code>$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from &#39;matching&#39; to &#39;simple&#39;. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to &#39;matching&#39;, git will push local branches
+to the remote branches that already exist with the same name.
+
+In Git 2.0, Git will default to the more conservative &#39;simple&#39;
+behavior, which only pushes the current branch to the corresponding
+remote branch that &#39;git pull&#39; uses to update the current branch.
+
+See &#39;git help config&#39; and search for &#39;push.default&#39; for further information.
+(the &#39;simple&#39; mode was introduced in Git 1.7.11. Use the similar mode
+&#39;current&#39; instead of &#39;simple&#39; if you sometimes use older versions of Git)
+</code></pre><p>と言われたり。  </p>
+<p><code>git add .</code>は使われなくなったので<code>git add -A</code>にしないといけないということか？<br><code>git add .</code>でもすんなり通る時もあるのは、状況の違いからだろうか。<br>（追記：そう言えば、Initial commitの時に作成されたcontributors.txtという中身が自分のユーザー名だけのファイルを、リポジトリとHexoの作業フォルダ両方から手動で削除したんだった。<br>これのせいだったのかもしれない。）</p>
+<p>push.defaultもmatchingにした。  </p>
+<pre><code>  $ git config --global push.default matching
+</code></pre><p>これでようやくpush出来るようになった。  </p>
+<p>gitの仕組みがいまいちよく分からない。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/26/hexo-bitbucket/" data-text="HexoのソースをBitbucketに置く">Tweet</a>
+	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/11/25/hexo-to-octopress-converter/" >Hexo→Octopress変換スクリプト「Hexo to Octopress Converter」</a>
 		</h3>
 	
@@ -384,71 +487,6 @@ The file will have its original line endings in your working directory.
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/23/hexo-post-template/" >Hexoの新規記事テンプレートを変更</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月23日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Hexoで新規記事を作ると、初期状態ではtitle、date、tagsの項目しか無いが、categoriesも使いたいので変更。<br>/scaffolds/post.mdに項目を追加するだけで出来た。<br>（<code>---</code>で区画された部分は「Front Matter」と言うらしい。）  </p>
-<p>またOctopressに戻ることもあるかもしれないので、Octopressの書式に倣ってlayout、commentsも加えた。  </p>
-<pre><code>---
-layout: post
-title: ｛｛ title ｝｝      ## ｛｛  ｝｝は実際には半角英数
-date: ｛｛ date ｝｝
-comments: true
-tags: 
-categories: 
----
-</code></pre><p><code>hexo n test</code>すると下記内容のファイルが生成された。  </p>
-<pre><code>layout: post
-title: test
-comments: true
-date: 2014-11-23 09:15:51
-tags:
-categories:
----
-</code></pre><p>Octopressでは<code>comments: true</code>が無いとDisqusが表示されない。<br>Hexoではcommentsの項目が無くてもDisqusは表示されるが、<code>comments: false</code>にするとその記事だけDisqusの表示は消える。<br>記事によってコメント禁止にする時に便利かもしれない。  </p>
-<p>/scaffolds/post.mdで上部にも<code>---</code>を加えたが、生成ファイルでは下部にしか<code>---</code>が無い。<br>これだとOctopressでは記事をちゃんとgenerate出来ないようだが、上部に<code>---</code>を付ける方法が分からない。<br>もしまたOctopressに戻ることがあったら、手作業するしかなさそうだ。  </p>
-<p>ーー<br>（追記）<br>Hexoの/source/_posts内の記事ソースをOctopress形式のFront Matterに変換出力するスクリプトが公開されていた。<br><a href="https://github.com/ciffel/Hexo-to-Octopress-Converter" target="_blank" rel="external">ciffel/Hexo-to-Octopress-Converter</a>  </p>
-<p>これを使うと上部の<code>---</code>、<code>layout: post</code>そして<code>comments: true</code>を付加してくれる。<br>さらにHexoの<code>tags:</code>が<code>categories:</code>にリネームされる。<br>（Hexoの<code>tags:</code>はOctopressの<code>categories:</code>に相当するようだ。）  </p>
-<p>なので/scaffolds/post.mdは元の記載に戻した。  </p>
-<pre><code>title: Hexoの新規記事テンプレートを変更
-date: Sun Nov 23 2014 08:20:38 GMT+0900 (JST)
-tags:
----
-</code></pre><p>OctopressからHexoへの移行には下記プラグインが対応していて、これを使うとOctopressのソースの<code>categories:</code>が<code>tags:</code>に変換される。<br><a href="https://github.com/sailxjx/hexo-migrator-octopress" target="_blank" rel="external">hexo-migrator-octopress</a>  </p>
-<p>骨折り損だったが、Hexoでコメント禁止にしたい時は<code>comments: false</code>を加えれば良いというのが分かったのが収穫だった。<br>早めに気がついて良かった。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/23/hexo-post-template/" data-text="Hexoの新規記事テンプレートを変更">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -490,6 +528,10 @@ tags:
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/01/14/lubuntu-nm-applet/" ><i class="fa fa-file-o"></i>アップグレードしたLubuntuでネットワークインジケ...</a>
+      </li>
+    
+      <li>
         <a href="/2015/01/14/lubuntu-pavucontrol/" ><i class="fa fa-file-o"></i>LubuntuにPulseAudio Volume C...</a>
       </li>
     
@@ -503,10 +545,6 @@ tags:
     
       <li>
         <a href="/2015/01/09/bloglines-netvibes/" ><i class="fa fa-file-o"></i>Bloglinesは終了なのだろうか</a>
-      </li>
-    
-      <li>
-        <a href="/2014/12/28/dropbox-behavior/" ><i class="fa fa-file-o"></i>Dropboxでのファイル・フォルダの移動や名称変更時の挙動</a>
       </li>
     
   </ul>
@@ -524,33 +562,33 @@ tags:
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/blog/">blog<span>11</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>1</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>21</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
 			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
 		
-			<li><a href="/tags/ネット/">ネット<span>7</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>14</span></a></li>
 		
 			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 			<li><a href="/tags/風景/">風景<span>1</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>13</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>21</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>1</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>9</span></a></li>
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+			<li><a href="/tags/blog/">blog<span>11</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>7</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 		
 		</ul>
@@ -562,7 +600,7 @@ tags:
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
