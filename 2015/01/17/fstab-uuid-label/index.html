@@ -111,8 +111,8 @@
 	<!-- content -->
 	<div class="mypage">
 	    <p>Windows Xp以外にDebian、Xubuntu、Linux Mintをインストールして、クアッドブートにしていたPC。<br>Debianを削除してLubuntuをインストールしたら、Xubuntuが起動しなくなってしまった。<br>起動途中のスプラッシュ画面で  </p>
-<pre><code>sda6■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
-■■■■■■■■■■■■■■■■■■■■■■m
+<pre><code>/Linux/sda6 ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
+keys:■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ M■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
 </code></pre><p>のような表示のまま止まってしまう。<br>Lubuntuをインストールする際インストール先のパーティションをフォーマットしたので、そのパーティションのUUIDが変わってしまい、Xubuntuのfstabでの記述と違っている為のようだ。  </p>
 <p>Gpartedで新しいUUIDを調べてfstabを修正すると、起動出来るようになった。  </p>
 <p>fstabでのパーティションの指定はUUID以外に、以前のLinuxのように/dev/sda1などのデバイス名での指定、その他ラベルを用いる方法もあるようだ。<br><a href="http://edo.blog.jp/archives/1716151.html" target="_blank" rel="external">[Linux] /etc/fstabのエントリーをラベル名で定義 : Edo::World::Blog</a>  </p>
