@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-15T01:20:49.665Z</updated>
+  <updated>2015-01-17T02:32:03.588Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,28 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[マルチブート環境（複数のLinux）でのfstab]]></title>
+    <link href="http://pagent.github.io/2015/01/17/fstab-uuid-label/"/>
+    <id>http://pagent.github.io/2015/01/17/fstab-uuid-label/</id>
+    <published>2015-01-17T01:57:46.000Z</published>
+    <updated>2015-01-17T02:31:07.000Z</updated>
+    <content type="html"><![CDATA[<p>Windows Xp以外にDebian、Xubuntu、Linux Mintをインストールして、クアッドブートにしていたPC。<br>Debianを削除してLubuntuをインストールしたら、Xubuntuが起動しなくなってしまった。<br>起動途中のスプラッシュ画面で  </p>
+<pre><code>sda6■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+■■■■■■■■■■■■■■■■■■■■■■m
+</code></pre><p>のような表示のまま止まってしまう。<br>Lubuntuをインストールする際インストール先のパーティションをフォーマットしたので、そのパーティションのUUIDが変わってしまい、Xubuntuのfstabでの記述と違っている為のようだ。  </p>
+<p>Gpartedで新しいUUIDを調べてfstabを修正すると、起動出来るようになった。  </p>
+<p>fstabでのパーティションの指定はUUID以外に、以前のLinuxのように/dev/sda1などのデバイス名での指定、その他ラベルを用いる方法もあるようだ。<br><a href="http://edo.blog.jp/archives/1716151.html" target="_blank" rel="external">[Linux] /etc/fstabのエントリーをラベル名で定義 : Edo::World::Blog</a>  </p>
+<p>今後また別のLinuxをインストールし直すこともあるかもしれないし、デバイス名またはラベルでの指定に変更しておいた方が良いのかもしれない。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Windows Xp以外にDebian、Xubuntu、Linux Mintをインストールして、クアッドブートにしていたPC。<br>Debianを削除してLubuntuをインストールしたら、Xubuntuが起動しなくなってしまった。<br>起動途中のスプラッシュ画面で  ]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[アップグレードしたLubuntuでネットワークインジケーターが表示されない]]></title>
@@ -487,38 +509,6 @@ $ rename &#39;s/.md.bak/.md/&#39; *.bak
     </summary>
     
       <category term="Git" scheme="http://pagent.github.io/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[GitHub Pagesがサーバーメンテナンス]]></title>
-    <link href="http://pagent.github.io/2014/12/11/github-pages-server-down/"/>
-    <id>http://pagent.github.io/2014/12/11/github-pages-server-down/</id>
-    <published>2014-12-11T09:30:49.000Z</published>
-    <updated>2014-12-24T08:27:02.000Z</updated>
-    <content type="html"><![CDATA[<p>今日何度か、GitHub Pagesのこのブログが表示されなかった。  </p>
-<blockquote>
-<p>GitHub Pages is temporarily down for maintenance.</p>
-</blockquote>
-<p>と表示されていて、サーバーのメンテナンスのよう。  </p>
-<p><a href="http://www.downforeveryoneorjustme.com/" target="_blank" rel="external">Down For Everyone Or Just Me -&gt; Check if your website is down or up?</a>で調べた時には回復していた。  </p>
-<p>pingコマンドでもサーバーの疎通を確認出来るようだ。<br>コマンドを実行すると延々pingが送信されるが、「CTRL」+「C」キーで停止すると結果が表示されるらしい。<br><a href="http://webkaru.net/linux/ping-command/" target="_blank" rel="external">Linuxコマンド【 ping 】ホストとの接続を確認 - Linux入門 - Webkaru</a>  </p>
-<p>確認した時には「0% packet loss」だった。  </p>
-<p>初めてだったので驚いたが、GitHub Pagesもメンテナンスするんだね。  </p>
-<p>ーー<br>（追記）<br>その後も落ちたり回復したりの繰り返し。また、見られないページがあったり、Font Awesomeが文字化けしたりと不安定。<br>静的ページだし、信頼してたのに。  </p>
-<p>大丈夫なんだろうか。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>今日何度か、GitHub Pagesのこのブログが表示されなかった。  </p>
-<blockquote>
-<p>GitHub Pages is temporarily down for maintenance.</p>
-</blockquote>
-<p>と表示されていて、]]>
-    </summary>
-    
-      <category term="Git" scheme="http://pagent.github.io/tags/Git/"/>
-    
-      <category term="blog" scheme="http://pagent.github.io/tags/blog/"/>
     
   </entry>
   
