@@ -112,6 +112,49 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/01/20/clamtk/" >Linux用ウイルススキャンソフトClamTkを使ってみた</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年1月20日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Xubuntu14.04にClamTkを導入した。<br>Ubuntuソフトウェアセンターを使ったが、v4.45(デフォルト)の他v5.09(trusty-backports)もインストール可能。  </p>
+<p>ファイルマネージャーNemo上で右クリックから簡単にファイルをウイルススキャン出来るよう、nemo-sendto-clamtk_0.02-1もインストールした。<br><a href="http://ubuntuapps.blog67.fc2.com/blog-entry-609.html" target="_blank" rel="external">ClamTkでウイルススキャンをThunarやNemoの右クリックメニューに追加する | Ubuntuアプリのいいところ</a>  </p>
+<p>「ディレクトリを再帰的にスキャンする」「20MB以上のファイルもスキャンする」「ドットで始まるファイルをスキャンする(.*)」にチェックを入れてhomeディレクトリをスキャンしてもなにも検出されなかったが、「不要なアプリケーション(PUA)をスキャンする」にもチェックを入れると、  </p>
+<p>~/.cache/mozilla/firefox/…<br>~/.cache/chromium/Default/Cache/…<br>~/.cache/midori/web/…  </p>
+<p>など、11個のファイルが「潜在的な脅威」として検出された。  </p>
+<p>VirusTotalを使った「解析」しようとしたが、何故かファイルを送信できず実行出来ない。<br>ただのブラウザのキャッシュのようだが、気持ち悪いのですべて削除した。  </p>
+<p>LinuxはWindowsより安全というし、それほど神経質にならなくても良いかもしれないが、たまにウイルススキャンしてみても良いかもしれない。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/20/clamtk/" data-text="Linux用ウイルススキャンソフトClamTkを使ってみた">Tweet</a>
+	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/01/17/fstab-uuid-label/" >マルチブート環境（複数のLinux）でのfstab</a>
 		</h3>
 	
@@ -269,48 +312,6 @@ keys:■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ �
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/01/09/old-pc-lubuntu/" >10年以上前の古いPCにLubuntu14.04をインストール</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年1月9日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>古いパソコン、FMV-BIBLO NB50HにXubuntu14.04をインストールしていた。<br>発売が2004年4月のようなので、10年以上前のパソコン。<br>Mobile Intel(R) Celeron(R) CPU 2.40GHz、メモリ480MB RAM、HDD60GB。  </p>
-<p>市販DVDを見るため、synapticでlibdvdread4がインストール済みなのを確認。その後、</p>
-<pre><code>sudo /usr/share/doc/libdvdread4/install-css.sh
-</code></pre><p>VLCメディアプレーヤーでDVDを開いたが、再生はされるものの動画がカクカクして見られたものではない。<br>SMPlayerも試してみたが、これもカクカクする。  </p>
-<p>Xubuntuより軽いらしいLubuntuだったら見られるかと、Lubuntu14.04をインストールしてみた。  </p>
-<p>結果、Lubuntuだと問題無いレベルでDVDを再生出来た。<br>やはりLubuntuはXubuntuより軽いようだ。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/09/old-pc-lubuntu/" data-text="10年以上前の古いPCにLubuntu14.04をインストール">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -352,6 +353,10 @@ keys:■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ �
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/01/20/clamtk/" ><i class="fa fa-file-o"></i>Linux用ウイルススキャンソフトClamTkを使ってみた</a>
+      </li>
+    
+      <li>
         <a href="/2015/01/17/fstab-uuid-label/" ><i class="fa fa-file-o"></i>マルチブート環境（複数のLinux）でのfstab</a>
       </li>
     
@@ -365,10 +370,6 @@ keys:■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ �
     
       <li>
         <a href="/2015/01/09/lubuntu-autostart/" ><i class="fa fa-file-o"></i>Lubuntuでアプリケーションを自動開始</a>
-      </li>
-    
-      <li>
-        <a href="/2015/01/09/old-pc-lubuntu/" ><i class="fa fa-file-o"></i>10年以上前の古いPCにLubuntu14.04をイン...</a>
       </li>
     
   </ul>
@@ -386,33 +387,33 @@ keys:■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ �
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Git/">Git<span>9</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/風景/">風景<span>1</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>7</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>1</span></a></li>
-		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>21</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>11</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>15</span></a></li>
+			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>21</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>9</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/風景/">風景<span>1</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>1</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>7</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>16</span></a></li>
 		
 		
 		</ul>
@@ -424,7 +425,7 @@ keys:■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ �
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

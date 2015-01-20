@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-17T05:22:15.955Z</updated>
+  <updated>2015-01-20T14:54:58.359Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,29 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Linux用ウイルススキャンソフトClamTkを使ってみた]]></title>
+    <link href="http://pagent.github.io/2015/01/20/clamtk/"/>
+    <id>http://pagent.github.io/2015/01/20/clamtk/</id>
+    <published>2015-01-20T14:24:38.000Z</published>
+    <updated>2015-01-20T14:54:28.000Z</updated>
+    <content type="html"><![CDATA[<p>Xubuntu14.04にClamTkを導入した。<br>Ubuntuソフトウェアセンターを使ったが、v4.45(デフォルト)の他v5.09(trusty-backports)もインストール可能。  </p>
+<p>ファイルマネージャーNemo上で右クリックから簡単にファイルをウイルススキャン出来るよう、nemo-sendto-clamtk_0.02-1もインストールした。<br><a href="http://ubuntuapps.blog67.fc2.com/blog-entry-609.html" target="_blank" rel="external">ClamTkでウイルススキャンをThunarやNemoの右クリックメニューに追加する | Ubuntuアプリのいいところ</a>  </p>
+<p>「ディレクトリを再帰的にスキャンする」「20MB以上のファイルもスキャンする」「ドットで始まるファイルをスキャンする(.*)」にチェックを入れてhomeディレクトリをスキャンしてもなにも検出されなかったが、「不要なアプリケーション(PUA)をスキャンする」にもチェックを入れると、  </p>
+<p>~/.cache/mozilla/firefox/…<br>~/.cache/chromium/Default/Cache/…<br>~/.cache/midori/web/…  </p>
+<p>など、11個のファイルが「潜在的な脅威」として検出された。  </p>
+<p>VirusTotalを使った「解析」しようとしたが、何故かファイルを送信できず実行出来ない。<br>ただのブラウザのキャッシュのようだが、気持ち悪いのですべて削除した。  </p>
+<p>LinuxはWindowsより安全というし、それほど神経質にならなくても良いかもしれないが、たまにウイルススキャンしてみても良いかもしれない。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Xubuntu14.04にClamTkを導入した。<br>Ubuntuソフトウェアセンターを使ったが、v4.45(デフォルト)の他v5.09(trusty-backports)もインストール可能。  </p>
+<p>ファイルマネージャーNemo上で右クリックから簡単にファイ]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[マルチブート環境（複数のLinux）でのfstab]]></title>
@@ -491,24 +514,6 @@ $ rename &#39;s/.md.bak/.md/&#39; *.bak
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[repositoryは「リポジトリ」？「レポジトリ」？]]></title>
-    <link href="http://pagent.github.io/2014/12/12/repository/"/>
-    <id>http://pagent.github.io/2014/12/12/repository/</id>
-    <published>2014-12-12T04:33:33.000Z</published>
-    <updated>2014-12-12T08:21:28.000Z</updated>
-    <content type="html"><![CDATA[<p>repositoryは「レポジトリ」だと思い、そう記載していた。<br>だが「リポジトリ」の方が、どうやら原音に近いようだ。<br><a href="http://ejje.weblio.jp/content/repository" target="_blank" rel="external">repositoryの意味 - 英和辞典 Weblio辞書</a>  </p>
-<p>英語が母国語らしい人の発音でも、人によっては「レポジトリ」に聞こえたりはするが。  </p>
-<p>日本でも「リポジトリ」の表記の方が一般的のようなので、過去記事の記載をすべて「リポジトリ」に変更した。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>repositoryは「レポジトリ」だと思い、そう記載していた。<br>だが「リポジトリ」の方が、どうやら原音に近いようだ。<br><a href="http://ejje.weblio.jp/content/repository" target="_blank" rel=]]>
-    </summary>
-    
-      <category term="Git" scheme="http://pagent.github.io/tags/Git/"/>
     
   </entry>
   
