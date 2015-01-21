@@ -1,11 +1,4 @@
 User-agent: *
-Disallow: /css/
-Disallow: /*.js$
+Disallow: 
 
-Sitemap: http://pagent.github.io/sitemap.xml
-
-User-agent: bingbot
-Crawl-delay: 30
-
-User-agent: MSNBOT
-Crawl-delay: 30
+Sitemap: http://pagent.github.io/sitemap.xml 
