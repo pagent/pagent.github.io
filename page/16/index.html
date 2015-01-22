@@ -112,6 +112,84 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/10/23/octopress-customize/" >Octopressのカスタマイズ</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年10月23日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>ブログをリニューアルするにあたって、またOctopressを少しカスタマイズした。  </p>
+<p>以前と同じく、<a href="http://tantant.jp/blog/Octopress/configuring-octopress/#paragraph07" target="_blank" rel="external">Octopressの初期設定時に気にしておきたい9箇所 – tantant</a>と<a href="http://rcmdnk.github.io/blog/2013/10/01/blog-octopress/" target="_blank" rel="external">月間アーカイブ for Octopress – rcmdnk’s blog</a>の通り、カテゴリ別アーカイブと月別アーカイブを追加した。  </p>
+<p>テーマは<a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes" target="_blank" rel="external">3rd Party Octopress Themes · imathis/octopress Wiki</a>で探してみたが、やっぱりデフォルトの方がよいかと思い、sass/custom/_styles.scssを下記に編集したのみ。  </p>
+<pre><code>// This File is imported last, and will override other styles in the cascade
+// Add styles here to make changes without digging in too much
+
+body &gt; header {
+    padding-top: 1.3em;
+    padding-bottom: 1.1em;
+}
+
+body &gt; header h1 {
+    font-size: 2.0em;
+    font-family: &quot;PT Serif&quot;,&quot;Georgia&quot;,&quot;Helvetica Neue&quot;,Arial,sans-serif;
+}
+
+body &gt; header h2 {
+    font-size: 0.9em;
+    color: #AAA;
+}
+
+.entry-title {
+    font-size: 1.5em !important;
+}
+
+h2, section h1 {
+    font-size: 1.2em;
+}
+
+#blog-archives article h1 a {
+    font-size: 1.0em !important;
+}
+
+p {
+    font-size:  92%;
+}
+
+article blockquote {
+    font-size:  105%;
+}
+</code></pre><p>日付け表記は英語式ではなく日本語式がよかったので、<code>_config.yml</code>で<code>date_format: &quot;%Y年%-m月%-d日&quot;</code><br>としたが、なぜかデフォルトのテーマでは反映されず。<br>source/_includes/post/date.htmlをoctostrap3の<a href="https://github.com/kAworu/octostrap3/blob/master/source/_includes/post/date.html" target="_blank" rel="external">date.html</a>と入れ替えたら反映された。<br>よく分からないが、デフォルトテーマのdate.htmlの記述に問題があるらしい。  </p>
+<p>あと、記事タイトルやカテゴリー名に漢字を使うと中国語読みみたいになってしまうが、これはたぶんOctopressがベースとしているJekyllの仕様なのだろう。<br>WordPressのようにスラッグを指定出きれば良いのだが、やり方が分からないのでこの辺は我慢しないとしょうが無いようだ。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/10/23/octopress-customize/" data-text="Octopressのカスタマイズ">Tweet</a>
+	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/10/23/site-renewal/" >Octopressのソース消失</a>
 		</h3>
 	
@@ -267,6 +345,10 @@
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/01/23/lubuntu-alacarte-menulibre/" ><i class="fa fa-file-o"></i>Lubuntu14.04にメニュー編集ソフトAlaca...</a>
+      </li>
+    
+      <li>
         <a href="/2015/01/23/lubuntu-desktop-manager/" ><i class="fa fa-file-o"></i>Lubuntuで 「デスクトップマネージャはアクティブ...</a>
       </li>
     
@@ -280,10 +362,6 @@
     
       <li>
         <a href="/2015/01/17/fstab-uuid-label/" ><i class="fa fa-file-o"></i>マルチブート環境（複数のLinux）でのfstab</a>
-      </li>
-    
-      <li>
-        <a href="/2015/01/14/lubuntu-nm-applet/" ><i class="fa fa-file-o"></i>アップグレードしたLubuntuでネットワークインジケ...</a>
       </li>
     
   </ul>
@@ -301,33 +379,33 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/風景/">風景<span>1</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>7</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>2</span></a></li>
-		
 			<li><a href="/tags/Hexo/">Hexo<span>21</span></a></li>
 		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
 			<li><a href="/tags/blog/">blog<span>11</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/風景/">風景<span>1</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>2</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>9</span></a></li>
 		
+			<li><a href="/tags/Linux/">Linux<span>18</span></a></li>
+		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>17</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
 		
 		
 		</ul>
@@ -339,7 +417,7 @@
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

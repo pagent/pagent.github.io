@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-22T15:31:12.004Z</updated>
+  <updated>2015-01-22T18:00:05.637Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,25 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Lubuntu14.04にメニュー編集ソフトAlacarteとMenuLibreを入れた]]></title>
+    <link href="http://pagent.github.io/2015/01/23/lubuntu-alacarte-menulibre/"/>
+    <id>http://pagent.github.io/2015/01/23/lubuntu-alacarte-menulibre/</id>
+    <published>2015-01-22T17:35:29.000Z</published>
+    <updated>2015-01-22T17:59:30.000Z</updated>
+    <content type="html"><![CDATA[<p>Lubuntu14.04でメインメニューの編集をしたかったのだが、手動で設定するのは難しそう。<br>LXDE用のメニューエディターにLXMEDというのがあるようだが、使ったことがないし、メニューを削除せず非表示にしたり、上下の並びを入れ替えたり、といったことが出来るかどうか分からない。  </p>
+<p>そこで、AlacarteとMenuLibreを入れてみた。<br>どちらもsynapticでインストール出来る。  </p>
+<p>AlacarteはLubuntu14.04では満足に機能してくれず、非表示設定や並びの入れ替えが反映されなかった。再起動してみても変化無し。<br>一方、MenuLibreの方は望み通りにちゃんと機能してくれた。  </p>
+<p>GUIで簡単に設定出来るのでとても助かる。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Lubuntu14.04でメインメニューの編集をしたかったのだが、手動で設定するのは難しそう。<br>LXDE用のメニューエディターにLXMEDというのがあるようだが、使ったことがないし、メニューを削除せず非表示にしたり、上下の並びを入れ替えたり、といったことが出来るかどう]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Lubuntuで 「デスクトップマネージャはアクティブではありません」のエラー表示]]></title>
@@ -487,26 +506,6 @@ html.fixed body {
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Githubではgraphs→trafficでトラフィックを見られるが、これはリポジトリへのアクセス状況などを見るもので、GitHub Pagesを利用したブログに対してのアクセス解析ではないようだ。<br>ブログのどのページにどれくらいアクセスがあったか等を確認するには、]]>
-    </summary>
-    
-      <category term="blog" scheme="http://pagent.github.io/tags/blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[FC2アクセスランキングの集計が止まってる？]]></title>
-    <link href="http://pagent.github.io/2014/12/14/fc2-access-ranking/"/>
-    <id>http://pagent.github.io/2014/12/14/fc2-access-ranking/</id>
-    <published>2014-12-14T09:06:10.000Z</published>
-    <updated>2014-12-24T08:27:33.000Z</updated>
-    <content type="html"><![CDATA[<p>別ブログで、ブログ内の人気ページを集計する「FC2アクセスランキング」を利用しているが、2014-12-06 23:50:01の集計を最後に1週間以上も更新されていない。タグはちゃんと貼ってあるのに。  </p>
-<p>FC2といえば、FC2ライブでの性行為ネット中継に関連して、実質的な運営会社とみられる「ホームページシステム」や関連会社に今年9月30日、家宅捜査が入ったことが思い返される。<br>FC2ブログにも影響が及ぶのではないかと懸念されていたが、これまでは通常に運営されていた模様。  </p>
-<p>FC2アクセスランキングの集計ストップの原因は分からないが、FC2大丈夫なんだろうか。  </p>
-<p>ーー<br>（追記）<br>2014年12月16日現在、FC2アクセスランキングが復帰したようだ。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>別ブログで、ブログ内の人気ページを集計する「FC2アクセスランキング」を利用しているが、2014-12-06 23:50:01の集計を最後に1週間以上も更新されていない。タグはちゃんと貼ってあるのに。  </p>
-<p>FC2といえば、FC2ライブでの性行為ネット中継に関連]]>
     </summary>
     
       <category term="blog" scheme="http://pagent.github.io/tags/blog/"/>
