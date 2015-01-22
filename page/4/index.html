@@ -112,6 +112,61 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/12/22/scrapbook-stylish/" >ScrapBookで保存したページにStylishのスタイルを適用する</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年12月22日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>ScrapBookなどでローカルに保存したページにStylishのスタイルを適用するには、対象ドメインを指定する箇所に<code>,url-prefix(file://)</code>を追記すれば良い。  </p>
+<p>たとえば、Amebaブログのアメーバヘッダーと記事下部の有名人ブログ広告を削除するスタイルに追加する場合は下記。  </p>
+<pre><code>@namespace url(http://www.w3.org/1999/xhtml);
+@-moz-document domain(&quot;ameblo.jp&quot;)
+,url-prefix(file://)
+{
+
+#ambHeader {
+    display: none;
+}
+html.fixed body {
+    padding-top: 0px !important;
+}
+#rc_module2 {
+    display: none;
+}
+
+}
+</code></pre><p>ScrapBookに保存したページも見やすくなった。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/22/scrapbook-stylish/" data-text="ScrapBookで保存したページにStylishのスタイルを適用する">Tweet</a>
+	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/12/21/stylish-do-not-work/" >「Stylish」が機能しなくて困ったが</a>
 		</h3>
 	
@@ -306,44 +361,6 @@
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/12/13/qiita/" >Qiitaは個人のブログじゃなかったのか</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年12月13日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Linuxや静的サイトジェネレーターなどで困ったことについて検索していると、Qiitaというサイトを目にする機会が増えた。<br>博学な人が居るものだと感心していたら、個人でやっているサイトではなく、プログラマー向けの情報共有サービスなんだね。<br><a href="https://qiita.com/about" target="_blank" rel="external">Qiitaについて - Qiita</a>  </p>
-<p>記事を参考にさせてもらって助かったことは何度かあるが、自分自身はプログラマーじゃないし、何がどう便利なのか分からないので、利用しようという気にはならないが。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/13/qiita/" data-text="Qiitaは個人のブログじゃなかったのか">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -385,6 +402,10 @@
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/01/23/lubuntu-desktop-manager/" ><i class="fa fa-file-o"></i>Lubuntuで 「デスクトップマネージャはアクティブ...</a>
+      </li>
+    
+      <li>
         <a href="/2015/01/22/windows10-free/" ><i class="fa fa-file-o"></i>7や8からWindows 10へのアップグレードは無料</a>
       </li>
     
@@ -398,10 +419,6 @@
     
       <li>
         <a href="/2015/01/14/lubuntu-nm-applet/" ><i class="fa fa-file-o"></i>アップグレードしたLubuntuでネットワークインジケ...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/01/14/lubuntu-pavucontrol/" ><i class="fa fa-file-o"></i>LubuntuにPulseAudio Volume C...</a>
       </li>
     
   </ul>
@@ -419,15 +436,15 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>17</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>7</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+			<li><a href="/tags/blog/">blog<span>11</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>2</span></a></li>
 		
 			<li><a href="/tags/Hexo/">Hexo<span>21</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>9</span></a></li>
 		
@@ -435,17 +452,17 @@
 		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>2</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>11</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>16</span></a></li>
+			<li><a href="/tags/風景/">風景<span>1</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
 		
-			<li><a href="/tags/風景/">風景<span>1</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 		
 		</ul>
@@ -457,7 +474,7 @@
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

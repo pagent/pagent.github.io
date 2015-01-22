@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-22T11:48:31.420Z</updated>
+  <updated>2015-01-22T15:31:12.004Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,27 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Lubuntuで 「デスクトップマネージャはアクティブではありません」のエラー表示]]></title>
+    <link href="http://pagent.github.io/2015/01/23/lubuntu-desktop-manager/"/>
+    <id>http://pagent.github.io/2015/01/23/lubuntu-desktop-manager/</id>
+    <published>2015-01-22T15:15:48.000Z</published>
+    <updated>2015-01-22T15:27:59.000Z</updated>
+    <content type="html"><![CDATA[<p>13.04から14.04にアップグレードしたLubuntuで、いつのまにかデスクトップの壁紙が表示されなくなっていた。  </p>
+<p>壁紙を設定しようと「メニュー」→「設定」→「デスクトップの設定」と進んでも、「！ デスクトップマネージャはアクティブではありません。」とエラー表示が出て設定出来ない。<br>デスクトップ上での右クリックから「デスクトップの設定」を選択してもナシのつぶて。  </p>
+<p>Lubuntu14.04でのデスクトップの設定にはPCManFMが使われているようなので、「LXSessionのデフォルトのアプリケーション」でデフォルトのファイルマネージャーをnemoからPCManFMに戻してみたが、それでもデスクトップの設定が出来ない。  </p>
+<p>最終的には下記を参考に、synapticからPCManFMを再インストールすることで、「デスクトップの設定」を正常に起動出来た｡<br><a href="http://ubuntuforums.org/showthread.php?t=2218084&amp;p=13090056#post13090056" target="_blank" rel="external">[lubuntu] message:desktop manager is not active</a>  </p>
+<p>自分の環境では、回答前段に書いてあるコマンドは行わず、PCManFMの再インストールだけで大丈夫だった。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>13.04から14.04にアップグレードしたLubuntuで、いつのまにかデスクトップの壁紙が表示されなくなっていた。  </p>
+<p>壁紙を設定しようと「メニュー」→「設定」→「デスクトップの設定」と進んでも、「！ デスクトップマネージャはアクティブではありません。」と]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[7や8からWindows 10へのアップグレードは無料]]></title>
@@ -489,23 +510,6 @@ html.fixed body {
     </summary>
     
       <category term="blog" scheme="http://pagent.github.io/tags/blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Qiitaは個人のブログじゃなかったのか]]></title>
-    <link href="http://pagent.github.io/2014/12/13/qiita/"/>
-    <id>http://pagent.github.io/2014/12/13/qiita/</id>
-    <published>2014-12-13T05:19:07.000Z</published>
-    <updated>2014-12-13T05:35:49.000Z</updated>
-    <content type="html"><![CDATA[<p>Linuxや静的サイトジェネレーターなどで困ったことについて検索していると、Qiitaというサイトを目にする機会が増えた。<br>博学な人が居るものだと感心していたら、個人でやっているサイトではなく、プログラマー向けの情報共有サービスなんだね。<br><a href="https://qiita.com/about" target="_blank" rel="external">Qiitaについて - Qiita</a>  </p>
-<p>記事を参考にさせてもらって助かったことは何度かあるが、自分自身はプログラマーじゃないし、何がどう便利なのか分からないので、利用しようという気にはならないが。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Linuxや静的サイトジェネレーターなどで困ったことについて検索していると、Qiitaというサイトを目にする機会が増えた。<br>博学な人が居るものだと感心していたら、個人でやっているサイトではなく、プログラマー向けの情報共有サービスなんだね。<br><a href="ht]]>
-    </summary>
-    
-      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
     
   </entry>
   
