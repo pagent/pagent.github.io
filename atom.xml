@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-21T08:19:37.259Z</updated>
+  <updated>2015-01-22T08:47:13.141Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,24 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[7や8からWindows 10へのアップグレードは無料]]></title>
+    <link href="http://pagent.github.io/2015/01/22/windows10-free/"/>
+    <id>http://pagent.github.io/2015/01/22/windows10-free/</id>
+    <published>2015-01-22T08:18:04.000Z</published>
+    <updated>2015-01-22T08:46:45.000Z</updated>
+    <content type="html"><![CDATA[<p>今秋発売予定のMicrosoft次期OS、Windows 10はリリース後1年間に限り、Windows 7、Windows 8.1、Windows Phone 8.1からのアップグレードが無償で提供されるのだとか。<br><a href="http://www.itmedia.co.jp/news/articles/1501/22/news110.html" target="_blank" rel="external">Windows 10無償アップグレードは「必然的」　Microsoftの狙いは - ITmedia ニュース</a>  </p>
+<p>無料になるのはアップグレードに対してのみで、新規のWindows 10搭載パソコンにライセンス料が上乗せされるのはこれまでと変わりが無いようだ。<br>元々アップグレードによる収益は大きなものではなかったようだが、MicrosoftもAppleやGoogleに対して余程危機感を持っているということだろう。<br>ユーザーを無視したようなこれまでの姿勢から較べると朗報とも言えるが、もはや起動するのはLinuxのみで、Windowsを立ち上げることは殆ど無い。<br>だが、Windows 7のサポート終了後のことも考えて、リリース後1年間の内には一応Windows 10にアップグレードしておこうと思う。<br>安心してネットに繋げないようだと、困ることもあるかもしれないし。</p>
+<p>バックアップは取っておくつもりだが、多少使い勝手が悪くても問題無い。<br>Windows、ほんとに使わなくなったし。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>今秋発売予定のMicrosoft次期OS、Windows 10はリリース後1年間に限り、Windows 7、Windows 8.1、Windows Phone 8.1からのアップグレードが無償で提供されるのだとか。<br><a href="http://www.itmedi]]>
+    </summary>
+    
+      <category term="Windows" scheme="http://pagent.github.io/tags/Windows/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Linux用ウイルススキャンソフトClamTkを使ってみた]]></title>
@@ -480,35 +498,6 @@ html.fixed body {
     </summary>
     
       <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[特定語句を含むファイルの抽出とその一括変換]]></title>
-    <link href="http://pagent.github.io/2014/12/12/bulk-change/"/>
-    <id>http://pagent.github.io/2014/12/12/bulk-change/</id>
-    <published>2014-12-12T04:44:46.000Z</published>
-    <updated>2014-12-12T05:49:50.000Z</updated>
-    <content type="html"><![CDATA[<p>repositoryは「リポジトリ」と表記するのが順当のよう。<br>「レポジトリ」としていた表記を「リポジトリ」に改めるため、ブログ投稿内で「レポジトリ」を用いているものを調べてみた。  </p>
-<p>source/_postsで端末を開き、下記コマンドで抽出。  </p>
-<pre><code>$ grep &quot;レポジトリ&quot; *
-</code></pre><p>（参考：<a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20060228/231140/" target="_blank" rel="external">Linuxコマンド逆引き大全 - 【 ファイルから文字列を検索する 】：ITpro</a>）  </p>
-<p>たくさんあって手作業で修正するのは大変そうなので、下記コマンドですべての.mdファイル内の「レポジトリ」を「リポジトリ」に一括変換。（元ファイルは拡張子.bakを付けてバックアップ）  </p>
-<pre><code>$ perl -p -i.bak -e &#39;s/レポジトリ/リポジトリ/g&#39; *.md
-</code></pre><p>正常に変換されたことを確認後、.bakファイルを一括削除。  </p>
-<pre><code>$ find ./ -type f -name &quot;*.bak&quot; -delete
-</code></pre><p>もし不具合があれば、特定のファイルに対しては下記で復帰可能。<br>（example.md.bakをexample.mdに名称変更し上書き）  </p>
-<pre><code>$ mv example.md.bak example.md
-</code></pre><p>ただし、mvコマンドは複数のファイル名の一括変換は出来ないようなので、すべてのファイルを元に戻す場合は、一旦すべての.mdファイルを削除してから、すべての.md.bakファイルの拡張子を.mdに変換。<br>（renameコマンドは上書きは出来ないようなので）  </p>
-<pre><code>$ find ./ -type f -name &quot;*.md&quot; -delete
-$ rename &#39;s/.md.bak/.md/&#39; *.bak
-</code></pre>]]></content>
-    <summary type="html">
-    <![CDATA[<p>repositoryは「リポジトリ」と表記するのが順当のよう。<br>「レポジトリ」としていた表記を「リポジトリ」に改めるため、ブログ投稿内で「レポジトリ」を用いているものを調べてみた。  </p>
-<p>source/_postsで端末を開き、下記コマンドで抽出。  </]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
     
   </entry>
   
