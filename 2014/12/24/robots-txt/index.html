@@ -115,12 +115,20 @@
 <p>sourceフォルダ直下にrobots.txtを新規作成。<br>generateするとちゃんとpublicフォルダ内にもrobots.txtが生成された。<br>deployし、ブラウザで <a href="http://pagent.github.io/robots.txt" target="_blank" rel="external">http://pagent.github.io/robots.txt</a> にアクセスしが、何故か404エラーだった。GitHub Pagesのレポジトリには追加されていたが。<br>反映に時間がかかるようでしばらくするとアクセス出来た。  </p>
 <p>robots.txtの内容は下記のようにした。  </p>
 <pre><code>User-agent: *
-Disallow: 
+Disallow: /css/
+Disallow: /*.js$
 
-Sitemap: http://pagent.github.io/sitemap.xml 
+Sitemap: http://pagent.github.io/sitemap.xml
+
+User-agent: bingbot
+Crawl-delay: 30
+
+User-agent: MSNBOT
+Crawl-delay: 30
 </code></pre><p>大して効果は無いのかもしれないが、おかしなことを書かない限りデメリットはないだろうし、無いよりはましだろう。  </p>
-<p>ーー<br>（追記）<br>robots.txtを置いてから、わりと早く検索エンジンにインデックスされるようになった。<br>これまで知らなかったが、robots.txtというのは予想外に重要なものらしい。  </p>
-<p>それから、Octopressではデフォルトでsitemap.xmlとrobots.txtを生成してくれるようだ。<br>この点、HexoよりOctopressの方がSEO的には優れていると言える。</p>
+<p>ーー<br>（追記）<br>robots.txtを置いてから、わりと早く検索エンジンにインデックスされるようになった気がする。<br>Octopressではデフォルトでsitemap.xmlとrobots.txtを生成してくれるようであり、この点、HexoよりOctopressの方がSEO的には優れていると言えるかもしれない。  </p>
+<p>（再追記）<br>Google ウェブマスターツールのヘルプによると、「robots.txt ファイルが必要になるのは、Google などの検索エンジンのインデックスに登録したくないコンテンツがある場合のみ」らしい。<br><a href="https://support.google.com/webmasters/answer/6062608?hl=ja&amp;rd=1" target="_blank" rel="external">robots.txt ファイルについて - ウェブマスター ツール ヘルプ</a>  </p>
+<p>SEO上どうしても必要なものではないようだ。</p>
 
 	</div>
 
