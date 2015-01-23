@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>ことば | Pagent</title>
+  <title>XubuntuのメニューからNepomuk Cleanerを消す | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="XubuntuのメニューからNepomuk Cleanerを消す"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -83,153 +83,124 @@
 
   <div class="container">
   	<div class="content">
-    	 <!-- tag -->
-<!-- _partial/archive -->
+    	 <!-- post -->
 
 
-<!-- archive.title -->
-<div class="page-header">
-  <h1 class="archive-title-tag archive-title-ことば">ことば</h1>
-</div>
+<!-- _partial/article -->
 
-<div class="row page">
-  <!-- cols -->
-  
-  <div class="col-md-9">
+<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+  <!-- display as page -->
+		<div class="page-header">
+			<h1> XubuntuのメニューからNepomuk Cleanerを消す</h1>
+		</div>
 	
 
-	  
-	  <!-- display as list -->
-	  <div class="archive">
+</div>
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div class="col-md-9">
+	
+
+	
+
+	<!-- content -->
+	<div class="mypage">
+	    <p>以前、Xubuntu14.04のメインメニュー、システムの欄にNepomuk File Indexing Controllerというのが消えずに残っていて、AlacarteやMenuLibreでは項目が見当たらないので非表示にも出来ず、困ったことがあった。<br>この時は~/.local/share/desktop-directoriesディレクトリを削除したら消えてくれた。<br>ディレクトリ内の唯一のファイルalacarte-made.directoryの中身はnepomukcontrollerについての記載だった。  </p>
+<p>その後またNepomuk Cleanerという項目が表れた。<br>~/.local/share/desktop-directoriesを見てみるとファイルが７つあったが、今回はNepomuk〜に関するものは見当たらない。<br>試しにディレクトリをリネームし再起動してみたが、Nepomukが消えない。  </p>
+<p>結局、/usr/share/applications/kde4内のNepomuk CleanerとNepomuk Backupを削除することで、メニューからNepomukを消すことが出来た。  </p>
+<p>このディレクトリ内のNepomuk Cleaner、Nepomuk Backupの実体はnepomukcleaner.desktop、nepomukbackup.desktopというデスクトップ設定ファイル（メニューやランチャーに項目を表示するためのもの）で、アプリケーション本体では無いようだ。<br>削除したアプリケーションのデスクトップ設定ファイルはアンインストール時に一緒に削除してくれると有難いんだが。</p>
+
+	</div>
+
+	<div class="tweet-button">
+	<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+	<div>
+  	<center>
+	<!-- _partial/post/pagination -->
+<div class="pagination">
+<ul class="pagination">
+	 
 		
-		
-		
-			
-			
-			<h4 class="archive-ul" data-toggle="collapse" data-target="#2014">2014<b class="caret"></b></h4>
-			<ul id="2014" class="collapse in">
-			
-		
-<li class="listing-item">
-  <span class="date_class"> 2014-12-09 </span> &raquo;
-  
-  <span class="title"><a href="/2014/12/09/life/" >思い煩うな</a></span>
-  
-</li>
+    	<li class="prev"><a href="/2015/01/23/xubuntu-menu-nepomuk/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+  		
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		
-<li class="listing-item">
-  <span class="date_class"> 2014-10-28 </span> &raquo;
-  
-  <span class="title"><a href="/2014/10/28/kana/" >現代仮名遣い</a></span>
-  
-</li>
-
+		   <li class="next"><a href="/2015/01/23/lubuntu-alacarte-menulibre/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+        
+	
 </ul>
 </div>
 
+  	</center>
+	</div>
 
-</div> <!-- col-md-9/col-md-12 -->
+	<!-- comment -->
+	<!-- _partial/post/comment -->
+
+<section id="comment">
+  <h2 class="title">Comments</h2>
+
+  
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  
+</section>
 
 
-<!-- _partial/sidebar -->
-<div class="col-md-3">
-	<div id="sidebar">
+
+	</div> <!-- col-md-9/col-md-12 -->
+
 	
-			<!-- _widget/recent_posts -->
+		<!-- _partial/post/meta -->
+<div class="col-md-3"> 
 
-<div class="widget">
-  <h4>Recent Posts</h4>
-  <ul class="entry list-unstyled">
-    
-      <li>
-        <a href="/2015/01/23/xubuntu-menu-nepomuk/" ><i class="fa fa-file-o"></i>XubuntuのメニューからNepomuk Clean...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/01/23/menu-nepomuk-cleaner/" ><i class="fa fa-file-o"></i>XubuntuのメニューからNepomuk Clean...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/01/23/lubuntu-alacarte-menulibre/" ><i class="fa fa-file-o"></i>Lubuntu14.04にメニュー編集ソフトAlaca...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/01/23/lubuntu-desktop-manager/" ><i class="fa fa-file-o"></i>Lubuntuで 「デスクトップマネージャはアクティブ...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/01/22/windows10-free/" ><i class="fa fa-file-o"></i>7や8からWindows 10へのアップグレードは無料</a>
-      </li>
-    
-  </ul>
-</div>
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2015年1月23日
+	</div>
+	
 
+	<!-- categories -->
+    
 
-		
-			<!-- _widget/category -->
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>
+    <ul id="tags" class="tag_box list-unstyled collapse in">
+	    <!-- _partial/post/tag -->
+  
+  <li><a href="/tags/Linux/">Linux</a></li>
 
+    </ul>
+	</div>
+	
 
-		
-			<!-- _widget/tagcloud -->
-
-	<div class="widget">
-		<h4>Tag Cloud</h4>
-		<ul class="tag_box inline list-unstyled">
-		
-			<li><a href="/tags/風景/">風景<span>1</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>2</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>21</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>9</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>11</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>7</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>20</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-		
-		</ul>
+	<!-- toc -->
+	<div class="meta-widget">
+	
 	</div>
 
+    <hr>
 
-		
-			
-	<div class="widget">
-		<h4>Monthly Archives</h4>
-		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
-		</ul>
-	</div>
+</div><!-- col-md-3 -->
 
-		
-			<!-- _widget/links -->
+	
 
-
-		
-	</div> <!-- sidebar -->
-</div> <!-- col-md-3 -->
-
-
-</div>
+</div><!-- row -->
 
 
 	</div>
@@ -266,7 +237,7 @@ var disqus_shortname = 'pagents';
   var dsq = document.createElement('script');
   dsq.type = 'text/javascript';
   dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 }());
 </script>

@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2015/01/23/xubuntu-menu-nepomuk/</loc>
+    <lastmod>2015-01-23T11:10:28.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2015/01/23/menu-nepomuk-cleaner/</loc>
+    <lastmod>2015-01-23T10:39:03.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2015/01/23/lubuntu-alacarte-menulibre/</loc>
     <lastmod>2015-01-22T17:59:30.000Z</lastmod>
   </url>
@@ -197,17 +207,7 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/11/30/sidebar-git/</loc>
-    <lastmod>2014-12-11T21:42:34.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://pagent.github.io/2014/10/23/octopress-customize/</loc>
-    <lastmod>2014-12-11T21:42:34.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2014/12/01/hexo-bootstrap/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   
@@ -397,7 +397,17 @@
   </url>
   
   <url>
+    <loc>http://pagent.github.io/2014/11/30/sidebar-git/</loc>
+    <lastmod>2014-12-11T21:42:34.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2014/12/01/git-add-directory/</loc>
+    <lastmod>2014-12-11T21:42:34.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2014/12/01/hexo-bootstrap/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   
