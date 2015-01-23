@@ -112,48 +112,6 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/01/09/old-pc-lubuntu/" >10年以上前の古いPCにLubuntu14.04をインストール</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年1月9日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>古いパソコン、FMV-BIBLO NB50HにXubuntu14.04をインストールしていた。<br>発売が2004年4月のようなので、10年以上前のパソコン。<br>Mobile Intel(R) Celeron(R) CPU 2.40GHz、メモリ480MB RAM、HDD60GB。  </p>
-<p>市販DVDを見るため、synapticでlibdvdread4がインストール済みなのを確認。その後、</p>
-<pre><code>sudo /usr/share/doc/libdvdread4/install-css.sh
-</code></pre><p>VLCメディアプレーヤーでDVDを開いたが、再生はされるものの動画がカクカクして見られたものではない。<br>SMPlayerも試してみたが、これもカクカクする。  </p>
-<p>Xubuntuより軽いらしいLubuntuだったら見られるかと、Lubuntu14.04をインストールしてみた。  </p>
-<p>結果、Lubuntuだと問題無いレベルでDVDを再生出来た。<br>やはりLubuntuはXubuntuより軽いようだ。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/09/old-pc-lubuntu/" data-text="10年以上前の古いPCにLubuntu14.04をインストール">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
 			<a href="/2015/01/09/bloglines-netvibes/" >Bloglinesは終了なのだろうか</a>
 		</h3>
 	
@@ -324,6 +282,61 @@
 
 </div>
 				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/12/24/robots-txt/" >GitHub Pagesにrobots.txtを置いてみた</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年12月24日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>記事がなかなか検索エンジンにインデックスされない。古い記事がインデックスされず新しいのがインデックスされたりしているようだ。<br>プラグインでsitemap.xmlは導入しているが、ちゃんと読んでくれているのか疑問。  </p>
+<p>sitemapとは別にクローラーに各種の指定をするrobots.txtというのがあるようなので、GitHub Pagesに置いてみた。<br>SeesaaやFC2などのブログサービスでは自動的に用意してくれているようだ。  </p>
+<p>sourceフォルダ直下にrobots.txtを新規作成。<br>generateするとちゃんとpublicフォルダ内にもrobots.txtが生成された。<br>deployし、ブラウザで<code>http://pagent.github.io/robots.txt</code>にアクセスしが、何故か404エラーだった。GitHub Pagesのレポジトリには追加されていたが。<br>反映に時間がかかるようでしばらくするとアクセス出来た。  </p>
+<p>robots.txtの内容は下記のようにした。  </p>
+<pre><code>User-agent: *
+Disallow: /css/
+Disallow: /*.js$
+
+Sitemap: http://pagent.github.io/sitemap.xml
+
+User-agent: bingbot
+Crawl-delay: 30
+
+User-agent: MSNBOT
+Crawl-delay: 30
+</code></pre><p>大して効果は無いのかもしれないが、おかしなことを書かない限りデメリットはないだろうし、無いよりはましだろう。  </p>
+<p>ーー<br>（追記）<br>robots.txtを置いてから、わりと早く検索エンジンにインデックスされるようになった気がする。<br>Octopressではデフォルトでsitemap.xmlとrobots.txtを生成してくれるようであり、この点、HexoよりOctopressの方がSEO的には優れていると言えるかもしれない。  </p>
+<p>ーー<br>（再追記）<br>Google ウェブマスターツールのヘルプによると、「robots.txt ファイルが必要になるのは、Google などの検索エンジンのインデックスに登録したくないコンテンツがある場合のみ」らしい。<br><a href="https://support.google.com/webmasters/answer/6062608?hl=ja&amp;rd=1" target="_blank" rel="external">robots.txt ファイルについて - ウェブマスター ツール ヘルプ</a>  </p>
+<p>SEO上どうしても必要なものではないようだ。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/24/robots-txt/" data-text="GitHub Pagesにrobots.txtを置いてみた">Tweet</a>
+	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
 
 			</div>
 
@@ -365,11 +378,7 @@
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2015/01/23/xubuntu-menu-nepomuk/" ><i class="fa fa-file-o"></i>XubuntuのメニューからNepomuk Clean...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/01/23/menu-nepomuk-cleaner/" ><i class="fa fa-file-o"></i>XubuntuのメニューからNepomuk Clean...</a>
+        <a href="/2015/01/24/xubuntu-menu-nepomuk/" ><i class="fa fa-file-o"></i>XubuntuのメニューからNepomuk Clean...</a>
       </li>
     
       <li>
@@ -382,6 +391,10 @@
     
       <li>
         <a href="/2015/01/22/windows10-free/" ><i class="fa fa-file-o"></i>7や8からWindows 10へのアップグレードは無料</a>
+      </li>
+    
+      <li>
+        <a href="/2015/01/20/clamtk/" ><i class="fa fa-file-o"></i>Linux用ウイルススキャンソフトClamTkを使ってみた</a>
       </li>
     
   </ul>
@@ -399,33 +412,33 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+			<li><a href="/tags/Git/">Git<span>9</span></a></li>
 		
 			<li><a href="/tags/風景/">風景<span>1</span></a></li>
 		
 			<li><a href="/tags/Hexo/">Hexo<span>21</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>2</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
-		
 			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>11</span></a></li>
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>19</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>2</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>7</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>20</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>9</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 		
 		</ul>
@@ -437,7 +450,7 @@
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
