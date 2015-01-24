@@ -212,11 +212,6 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/12/01/hexo-bootstrap/</loc>
-    <lastmod>2014-12-11T21:42:34.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://pagent.github.io/2014/12/02/hexo-tweetbutton/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
@@ -337,11 +332,6 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/11/23/hexo-archve-category/</loc>
-    <lastmod>2014-12-11T21:42:34.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://pagent.github.io/2014/11/23/hexo-post-template/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
@@ -408,6 +398,16 @@
   
   <url>
     <loc>http://pagent.github.io/2014/12/01/git-add-directory/</loc>
+    <lastmod>2014-12-11T21:42:34.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2014/11/23/hexo-archive-category/</loc>
+    <lastmod>2014-12-11T21:42:34.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2014/12/01/hexo-bootstrap/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   
