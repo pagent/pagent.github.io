@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-24T13:05:03.345Z</updated>
+  <updated>2015-01-24T13:51:34.639Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,30 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Hexoにファビコン]]></title>
+    <link href="http://pagent.github.io/2015/01/24/hexo-favicon/"/>
+    <id>http://pagent.github.io/2015/01/24/hexo-favicon/</id>
+    <published>2015-01-24T13:08:09.000Z</published>
+    <updated>2015-01-24T13:50:42.000Z</updated>
+    <content type="html"><![CDATA[<p>Hexoで書いているGitHub Pagesのブログにファビコンを入れた。<br>Hexoでは使用しているテーマでファビコンを設定するらしい。</p>
+<p>freewillというテーマを使っているので、hexo/themes/freewill/_config.ymlで<code>favicon: favicon.png</code>となっているのを確認し、 作成したfavicon.pngをhexo/themes/freewill/source内に置いた。   </p>
+<p>generate、deployしてFirefoxでサイトを表示すると、タブにはファビコンが表示されているものの、何故かサイドバーのブックマーク欄には作ったファビコンが表示されていない。<br>他のブラウザのRekonqやMidoriではタブにも表示されず。  </p>
+<p>ブラウザのキャッシュが残っているせいかと、キャッシュを削除したり、ファビコンのサイズを変えてみたりしたが、やはりブックマーク欄には表示されない。  </p>
+<p>拡張子を.pngではなく.icoで作り直し、/_config.ymlを<code>favicon: favicon.ico</code>にしたら、ようやくブックマーク欄にもファビコンが表示された。<br>他のブラウザでもちゃんと表示されている。  </p>
+<p>ちなみに.icoファイルでは複数のサイズの画像を一つのファイルに格納出来るらしい。<br><a href="http://www.hp-stylelink.com/news/2014/02/20140213.php" target="_blank" rel="external">複数サイズも一つのファイルで！マルチアイコンの「favicon（ファビコン）」作成方法 | Web制作会社スタイル</a>  </p>
+<p>ちょうど16×16、32×32、64×64の3つの.pngファイルを作成していたので、下記サイトでこの3サイズを格納したfavicon.icoにした。<br><a href="http://ao-system.net/alphaicon/" target="_blank" rel="external">無料で半透過マルチアイコンやファビコン(favicon.ico)作成。ギザギザの無い美しい影を持ったアイコン作成がフリーでできます。</a>  </p>
+<p>ファビコンの拡張子は.icoの方が良いようだ。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Hexoで書いているGitHub Pagesのブログにファビコンを入れた。<br>Hexoでは使用しているテーマでファビコンを設定するらしい。</p>
+<p>freewillというテーマを使っているので、hexo/themes/freewill/_config.ymlで<c]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[XubuntuのメニューからNepomuk Cleanerを消す]]></title>
@@ -448,34 +472,6 @@ html.fixed body {
 ]]></content>
     <summary type="html">
     <![CDATA[<p>動画サイトの背景を黒くしたり、Twitterのダイレクトメッセージ（DM）のアイコンを消したりと、なにかと便利に使っているFirefoxのアドオン「Stylish」だが、急にすべてのサイトで動作しなくなってしまった。<br>Stylishをインストールし直したり開発版を入れ]]>
-    </summary>
-    
-      <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[リダイレクトを経由せず直接リンク先に飛ぶためのFirefoxアドオン「Clean Links」]]></title>
-    <link href="http://pagent.github.io/2014/12/21/clean-links/"/>
-    <id>http://pagent.github.io/2014/12/21/clean-links/</id>
-    <published>2014-12-21T00:50:12.000Z</published>
-    <updated>2014-12-21T02:06:56.000Z</updated>
-    <content type="html"><![CDATA[<p>たとえばGoogleで「example.com」を検索して、検索結果から「Example domains - Internet Assigned Numbers Authority」に行こうとすると、<br><code>http://www.google.co.jp/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;uact=8&amp;ved=0CB0QFjAA&amp;url=http%3A%2F%2Fexample.com%2F&amp;ei=7BmWVMvsGZLn8AXWvYD4BQ&amp;usg=AFQjCNFgcPdvBI3xyhn99rnOikPXwwtMmA&amp;bvm=bv.82001339,d.dGc</code><br>を経由して、<code>http://example.com/</code>にリダイレクトされる。  </p>
-<p>リダイレクトを経由せずに直接目的サイトに飛ぶためのアドオンとして、これまで「Redirect Cleaner」というのを使っていたが、いつの間にかホワイトリストに追加するための設定画面が無くなってしまい、アドオンの設定画面でしか追加出来ない。<br>「Redirect Cleaner」自体もFirefoxの公式サイトから無くなってしまっている。  </p>
-<p>使い勝手が悪くなってしまったことだし他に類似のアドオンがないか探してみたら、色々とあるようだった。  </p>
-<ul>
-<li><p><strong>Redirect Remover</strong><br>残念ながらFirefox 34.0に対応していない。  </p>
-</li>
-<li><p><strong>NoRedirect</strong><br>インストールしてみたが、使い方がよく分からない。  </p>
-</li>
-<li><p><strong>Clean Links</strong><br>メニューバーのアイコンを右クリックすると、リダイレクトをスキップした履歴が表示される。<br>通常通りにリダイレクトさせたい時は、ここから「Whitelist Selection」ボタンで簡単にホワイトリストに追加出来る。ホワイトリストに追加すると、アドオンの設定画面の「Skip Domains」に追加される。<br>ホワイトリストから外す時は設定画面の「Skip Domains」から削除しないといけないが、使い勝手はかつての「Redirect Cleaner」に近い。  </p>
-</li>
-</ul>
-<p>というわけで、<a href="https://addons.mozilla.org/ja/firefox/addon/clean-links/" target="_blank" rel="external">「Clean Links」</a>を使うことにした。  </p>
-<p>リダイレクトをスキップした時はハイライト表示されるのでちゃんと仕事をしてくれているのが分かる。<br>「Skip Domains」以外の設定項目はよく分からないが、たぶんデフォルトのままで良いのだろう。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>たとえばGoogleで「example.com」を検索して、検索結果から「Example domains - Internet Assigned Numbers Authority」に行こうとすると、<br><code>http://www.google.co.jp/url]]>
     </summary>
     
       <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
