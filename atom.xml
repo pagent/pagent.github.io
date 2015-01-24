@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-24T23:34:51.235Z</updated>
+  <updated>2015-01-24T23:56:35.577Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -338,11 +338,11 @@ keys:■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ �
   </entry>
   
   <entry>
-    <title><![CDATA[GitHub Pagesにrobots.txtを置いてみた]]></title>
+    <title><![CDATA[Hexoで書いているGitHub Pagesのブログにrobots.txtを置いてみた]]></title>
     <link href="http://pagent.github.io/2014/12/24/robots-txt/"/>
     <id>http://pagent.github.io/2014/12/24/robots-txt/</id>
     <published>2014-12-24T08:29:04.000Z</published>
-    <updated>2015-01-22T11:48:19.000Z</updated>
+    <updated>2015-01-24T23:55:57.000Z</updated>
     <content type="html"><![CDATA[<p>記事がなかなか検索エンジンにインデックスされない。古い記事がインデックスされず新しいのがインデックスされたりしているようだ。<br>プラグインでsitemap.xmlは導入しているが、ちゃんと読んでくれているのか疑問。  </p>
 <p>sitemapとは別にクローラーに各種の指定をするrobots.txtというのがあるようなので、GitHub Pagesに置いてみた。<br>SeesaaやFC2などのブログサービスでは自動的に用意してくれているようだ。  </p>
 <p>sourceフォルダ直下にrobots.txtを新規作成。<br>generateするとちゃんとpublicフォルダ内にもrobots.txtが生成された。<br>deployし、ブラウザで<code>http://pagent.github.io/robots.txt</code>にアクセスしが、何故か404エラーだった。GitHub Pagesのレポジトリには追加されていたが。<br>反映に時間がかかるようでしばらくするとアクセス出来た。  </p>
@@ -359,7 +359,7 @@ Crawl-delay: 30
 User-agent: MSNBOT
 Crawl-delay: 30
 </code></pre><p>大して効果は無いのかもしれないが、おかしなことを書かない限りデメリットはないだろうし、無いよりはましだろう。  </p>
-<p>ーー<br>（追記）<br>robots.txtを置いてから、わりと早く検索エンジンにインデックスされるようになった気がする。<br>Octopressではデフォルトでsitemap.xmlとrobots.txtを生成してくれるようであり、この点、HexoよりOctopressの方がSEO的には優れていると言えるかもしれない。  </p>
+<p>ーー<br>（追記）<br>robots.txtを置いてから、わりと早く検索エンジンにインデックスされるようになった気がする。<br>Octopressではデフォルトでsitemap.xmlとrobots.txtを生成してくれるようだ。<br>この点、HexoよりOctopressの方がSEO的に優れているかもしれない。  </p>
 <p>ーー<br>（再追記）<br>Google ウェブマスターツールのヘルプによると、「robots.txt ファイルが必要になるのは、Google などの検索エンジンのインデックスに登録したくないコンテンツがある場合のみ」らしい。<br><a href="https://support.google.com/webmasters/answer/6062608?hl=ja&amp;rd=1" target="_blank" rel="external">robots.txt ファイルについて - ウェブマスター ツール ヘルプ</a>  </p>
 <p>SEO上どうしても必要なものではないようだ。</p>
 ]]></content>
@@ -369,6 +369,8 @@ Crawl-delay: 30
     </summary>
     
       <category term="blog" scheme="http://pagent.github.io/tags/blog/"/>
+    
+      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
   </entry>
   
