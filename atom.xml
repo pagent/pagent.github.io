@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-24T14:44:40.557Z</updated>
+  <updated>2015-01-24T15:05:33.095Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/01/24/hexo-favicon/"/>
     <id>http://pagent.github.io/2015/01/24/hexo-favicon/</id>
     <published>2015-01-24T13:08:09.000Z</published>
-    <updated>2015-01-24T13:50:42.000Z</updated>
+    <updated>2015-01-24T15:05:15.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoで書いているGitHub Pagesのブログにファビコンを入れた。<br>Hexoでは使用しているテーマでファビコンを設定するらしい。</p>
 <p>freewillというテーマを使っているので、hexo/themes/freewill/_config.ymlで<code>favicon: favicon.png</code>となっているのを確認し、 作成したfavicon.pngをhexo/themes/freewill/source内に置いた。   </p>
 <p>generate、deployしてFirefoxでサイトを表示すると、タブにはファビコンが表示されているものの、何故かサイドバーのブックマーク欄には作ったファビコンが表示されていない。<br>他のブラウザのRekonqやMidoriではタブにも表示されず。  </p>
@@ -34,7 +34,7 @@
 <p>freewillというテーマを使っているので、hexo/themes/freewill/_config.ymlで<c]]>
     </summary>
     
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
   </entry>
   
