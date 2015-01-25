@@ -113,7 +113,7 @@
 	    <p>以前、Xubuntu14.04のメインメニュー、システムの欄にNepomuk File Indexing Controllerというのが消えずに残っていて、AlacarteやMenuLibreでは項目が見当たらないので非表示にも出来ず、困ったことがあった。<br>この時は~/.local/share/desktop-directoriesディレクトリを削除したら消えてくれた。<br>ディレクトリ内の唯一のファイルalacarte-made.directoryの中身はnepomukcontrollerについての記載だった。  </p>
 <p>その後またNepomuk Cleanerという項目が表れた。<br>~/.local/share/desktop-directoriesを見てみるとファイルが７つあったが、今回はNepomuk〜に関するものは見当たらない。<br>試しにディレクトリをリネームし再起動してみたが、Nepomukが消えない。  </p>
 <p>結局、/usr/share/applications/kde4内のNepomuk CleanerとNepomuk Backupを削除することで、メニューからNepomukを消すことが出来た。  </p>
-<p>このディレクトリ内のNepomuk Cleaner、Nepomuk Backupの実体は、nepomukcleaner.desktop、nepomukbackup.desktopというデスクトップ設定ファイル（メニューやランチャーに項目を表示するためのもの）で、アプリケーション本体では無いようだ。<br>インストールされていないソフトのようなので削除しても問題無いだろう。<br>アンインストール時に一緒に削除してくれると有難いんだが。</p>
+<p>このディレクトリ内のNepomuk Cleaner、Nepomuk Backupの実体は、nepomukcleaner.desktop、nepomukbackup.desktopというデスクトップ設定ファイル（メニューやランチャーに項目を表示するためのもの）で、アプリケーション本体では無いようだ。<br>アプリケーション自体はインストールされていないので、削除しても問題無いと思うが、心配な場合はmousepadなどエディタで開き、一番下に<code>NoDisplay=true</code>を追記してもメニューから消える。</p>
 
 	</div>
 
