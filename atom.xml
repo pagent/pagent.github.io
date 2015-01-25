@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-24T23:56:35.577Z</updated>
+  <updated>2015-01-25T00:51:04.879Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/01/24/hexo-favicon/"/>
     <id>http://pagent.github.io/2015/01/24/hexo-favicon/</id>
     <published>2015-01-24T13:08:09.000Z</published>
-    <updated>2015-01-24T15:05:15.000Z</updated>
+    <updated>2015-01-25T00:45:22.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoで書いているGitHub Pagesのブログにファビコンを入れた。<br>Hexoでは使用しているテーマでファビコンを設定するらしい。</p>
 <p>freewillというテーマを使っているので、hexo/themes/freewill/_config.ymlで<code>favicon: favicon.png</code>となっているのを確認し、 作成したfavicon.pngをhexo/themes/freewill/source内に置いた。   </p>
 <p>generate、deployしてFirefoxでサイトを表示すると、タブにはファビコンが表示されているものの、何故かサイドバーのブックマーク欄には作ったファビコンが表示されていない。<br>他のブラウザのRekonqやMidoriではタブにも表示されず。  </p>
@@ -27,7 +27,7 @@
 <p>拡張子を.pngではなく.icoで作り直し、/_config.ymlを<code>favicon: favicon.ico</code>にしたら、ようやくブックマーク欄にもファビコンが表示された。<br>他のブラウザでもちゃんと表示されている。  </p>
 <p>ちなみに.icoファイルでは複数のサイズの画像を一つのファイルに格納出来るらしい。<br><a href="http://www.hp-stylelink.com/news/2014/02/20140213.php" target="_blank" rel="external">複数サイズも一つのファイルで！マルチアイコンの「favicon（ファビコン）」作成方法 | Web制作会社スタイル</a>  </p>
 <p>ちょうど16×16、32×32、64×64の3つの.pngファイルを作成していたので、下記サイトでこの3サイズを格納したfavicon.icoにした。<br><a href="http://ao-system.net/alphaicon/" target="_blank" rel="external">無料で半透過マルチアイコンやファビコン(favicon.ico)作成。ギザギザの無い美しい影を持ったアイコン作成がフリーでできます。</a>  </p>
-<p>ファビコンの拡張子は.icoの方が良いようだ。</p>
+<p>HexoやOctopressでも、ファビコンの拡張子は.icoの方が良いようだ。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Hexoで書いているGitHub Pagesのブログにファビコンを入れた。<br>Hexoでは使用しているテーマでファビコンを設定するらしい。</p>
