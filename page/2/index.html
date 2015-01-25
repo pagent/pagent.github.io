@@ -112,6 +112,47 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/01/23/lubuntu-desktop-manager/" >Lubuntuで 「デスクトップマネージャはアクティブではありません」のエラー表示</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年1月23日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>13.04から14.04にアップグレードしたLubuntuで、いつのまにかデスクトップの壁紙が表示されなくなっていた。  </p>
+<p>壁紙を設定しようと「メニュー」→「設定」→「デスクトップの設定」と進んでも、「！ デスクトップマネージャはアクティブではありません。」とエラー表示が出て設定出来ない。<br>デスクトップ上での右クリックから「デスクトップの設定」を選択してもナシのつぶて。  </p>
+<p>Lubuntu14.04でのデスクトップの設定にはPCManFMが使われているようなので、「LXSessionのデフォルトのアプリケーション」でデフォルトのファイルマネージャーをnemoからPCManFMに戻してみたが、それでもデスクトップの設定が出来ない。  </p>
+<p>最終的には下記を参考に、synapticからPCManFMを再インストールすることで、「デスクトップの設定」を正常に起動出来た｡<br><a href="http://ubuntuforums.org/showthread.php?t=2218084&amp;p=13090056#post13090056" target="_blank" rel="external">[lubuntu] message:desktop manager is not active</a>  </p>
+<p>自分の環境では、回答前段に書いてあるコマンドは行わず、PCManFMの再インストールだけで大丈夫だった。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/23/lubuntu-desktop-manager/" data-text="Lubuntuで 「デスクトップマネージャはアクティブではありません」のエラー表示">Tweet</a>
+	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/01/22/windows10-free/" >7や8からWindows 10へのアップグレードは無料</a>
 		</h3>
 	
@@ -267,47 +308,6 @@ keys:■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ �
 	
 	<div class="tweet-button">
 	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/14/lubuntu-nm-applet/" data-text="アップグレードしたLubuntuでネットワークインジケーターが表示されない">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/01/14/lubuntu-pavucontrol/" >LubuntuにPulseAudio Volume Controlを導入。音量が小さい時にも便利</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年1月14日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Lubuntu14.04には元々ボリュームコントローラーとしてalsamixerが入っているが、完全にGUIのツールではなく使いづらい。<br>そこで、Xubuntuに標準で入っているPulseAudio Volume Control (pavucontrol)をインストールした。  </p>
-<p>synapticやソフトウェアセンター、もしくは下記コマンドで導入。</p>
-<pre><code>sudo apt-get install pavucontrol
-</code></pre><p>インストール後は自然に通知領域での設定がPulseAudio Volume Controlに変更される。  </p>
-<p>スピーカーからの出力を 153%（11.00dB）まで上げられるので、音量が小さくて困る時などにもなにかと便利。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/14/lubuntu-pavucontrol/" data-text="LubuntuにPulseAudio Volume Controlを導入。音量が小さい時にも便利">Tweet</a>
 	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	

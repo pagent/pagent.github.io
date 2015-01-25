@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015/1 | Pagent</title>
+  <title>Dropbpx上のHexoでdeploy時「競合コピ ー」のためエラーになる | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="Dropbpx上のHexoでdeploy時「競合コピ ー」のためエラーになる"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -83,177 +83,126 @@
 
   <div class="container">
   	<div class="content">
-    	 <!-- archive -->
-<!-- _partial/archive -->
+    	 <!-- post -->
 
 
-<!-- archive.title -->
-<div class="page-header">
-  <h1 class="archive-title">2015/1</h1>
-</div>
+<!-- _partial/article -->
 
-<div class="row page">
-  <!-- cols -->
-  
-  <div class="col-md-9">
+<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+  <!-- display as page -->
+		<div class="page-header">
+			<h1> Dropbpx上のHexoでdeploy時「競合コピ ー」のためエラーになる</h1>
+		</div>
 	
 
-	  
-	  <!-- display as list -->
-	  <div class="archive">
+</div>
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div class="col-md-9">
+	
+
+	
+
+	<!-- content -->
+	<div class="mypage">
+	    <p>Dropbpx上に置いてあるHexoフォルダ直下にdb (… の競合コピー 2015-01-25).jsonというファイルが出来てしまった。<br>deployしようとすると  </p>
+<pre><code>fatal: Reference has invalid format: &#39;refs/heads/master (... の競合コピ ー 2015-01-25)&#39;
+</code></pre><p>というエラー表示が出る。  </p>
+<p>Dropbpxでは１つのファイルに対して複数のPCで同時に変更があった場合、「競合コピー」というのが出来るらしい。<br>hexo/.deploy/.git/refs/heads内にも競合コピーが出来てしまい、これのせいで上手くdeploy出来ないようだ。<br><a href="http://rcmdnk.github.io/blog/2013/05/12/computer-octopress-git-github-dropbox/" target="_blank" rel="external">Git + Dropbox使用時の注意点</a>  </p>
+<p>競合コピーを削除したらエラーが出なくなった。  </p>
+<p>Hexoフォルダ内を「競合コピー」で検索したら計４つ見つかったので、すべて削除した。</p>
+
+	</div>
+
+	<div class="tweet-button">
+	<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+	<div>
+  	<center>
+	<!-- _partial/post/pagination -->
+<div class="pagination">
+<ul class="pagination">
+	 
 		
-		
-		
-			
-			
-			<h4 class="archive-ul" data-toggle="collapse" data-target="#2015">2015<b class="caret"></b></h4>
-			<ul id="2015" class="collapse in">
-			
-		
-<li class="listing-item">
-  <span class="date_class"> 2015-01-26 </span> &raquo;
-  
-  <span class="title"><a href="/2015/01/26/deploy-conflicted-copy-dropbox/" >Dropbpx上のHexoでdeploy時「競合コピ ー」のためエラーになる</a></span>
-  
-</li>
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		
-<li class="listing-item">
-  <span class="date_class"> 2015-01-25 </span> &raquo;
-  
-  <span class="title"><a href="/2015/01/25/facebookmail-spam/" >宅配業者からの不在通知を装ったスパムメール（info@…facebookmail.com）</a></span>
-  
-</li>
-
-		
-		
-<li class="listing-item">
-  <span class="date_class"> 2015-01-24 </span> &raquo;
-  
-  <span class="title"><a href="/2015/01/24/hexo-favicon/" >Hexoにファビコン</a></span>
-  
-</li>
-
-		
-		
-<li class="listing-item">
-  <span class="date_class"> 2015-01-24 </span> &raquo;
-  
-  <span class="title"><a href="/2015/01/24/xubuntu-menu-nepomuk/" >XubuntuのメニューからNepomuk Cleanerを消す</a></span>
-  
-</li>
-
-		
-		
-<li class="listing-item">
-  <span class="date_class"> 2015-01-23 </span> &raquo;
-  
-  <span class="title"><a href="/2015/01/23/lubuntu-alacarte-menulibre/" >Lubuntu14.04にメニュー編集ソフトAlacarteとMenuLibreを入れた</a></span>
-  
-</li>
-
-		
-		
-<li class="listing-item">
-  <span class="date_class"> 2015-01-23 </span> &raquo;
-  
-  <span class="title"><a href="/2015/01/23/lubuntu-desktop-manager/" >Lubuntuで 「デスクトップマネージャはアクティブではありません」のエラー表示</a></span>
-  
-</li>
-
-		
-		
-<li class="listing-item">
-  <span class="date_class"> 2015-01-22 </span> &raquo;
-  
-  <span class="title"><a href="/2015/01/22/windows10-free/" >7や8からWindows 10へのアップグレードは無料</a></span>
-  
-</li>
-
-		
-		
-<li class="listing-item">
-  <span class="date_class"> 2015-01-20 </span> &raquo;
-  
-  <span class="title"><a href="/2015/01/20/clamtk/" >Linux用ウイルススキャンソフトClamTkを使ってみた</a></span>
-  
-</li>
-
-		
-		
-<li class="listing-item">
-  <span class="date_class"> 2015-01-17 </span> &raquo;
-  
-  <span class="title"><a href="/2015/01/17/fstab-uuid-label/" >マルチブート環境（複数のLinux）でのfstab</a></span>
-  
-</li>
-
-		
-		
-<li class="listing-item">
-  <span class="date_class"> 2015-01-14 </span> &raquo;
-  
-  <span class="title"><a href="/2015/01/14/lubuntu-nm-applet/" >アップグレードしたLubuntuでネットワークインジケーターが表示されない</a></span>
-  
-</li>
-
-		
-		
-<li class="listing-item">
-  <span class="date_class"> 2015-01-14 </span> &raquo;
-  
-  <span class="title"><a href="/2015/01/14/lubuntu-pavucontrol/" >LubuntuにPulseAudio Volume Controlを導入。音量が小さい時にも便利</a></span>
-  
-</li>
-
-		
-		
-<li class="listing-item">
-  <span class="date_class"> 2015-01-09 </span> &raquo;
-  
-  <span class="title"><a href="/2015/01/09/lubuntu-autostart/" >Lubuntuでアプリケーションを自動開始</a></span>
-  
-</li>
-
-		
-		
-<li class="listing-item">
-  <span class="date_class"> 2015-01-09 </span> &raquo;
-  
-  <span class="title"><a href="/2015/01/09/old-pc-lubuntu/" >10年以上前の古いPCにLubuntu14.04をインストール</a></span>
-  
-</li>
-
-		
-		
-<li class="listing-item">
-  <span class="date_class"> 2015-01-09 </span> &raquo;
-  
-  <span class="title"><a href="/2015/01/09/bloglines-netvibes/" >Bloglinesは終了なのだろうか</a></span>
-  
-</li>
-
+		   <li class="next"><a href="/2015/01/25/facebookmail-spam/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+        
+	
 </ul>
 </div>
 
+  	</center>
+	</div>
 
-</div> <!-- col-md-9/col-md-12 -->
+	<!-- comment -->
+	<!-- _partial/post/comment -->
+
+<section id="comment">
+  <h2 class="title">Comments</h2>
+
+  
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  
+</section>
 
 
-<!-- _partial/sidebar -->
-<div class="col-md-3">
-	<div id="sidebar">
+
+	</div> <!-- col-md-9/col-md-12 -->
+
 	
-			<!-- _widget/links -->
+		<!-- _partial/post/meta -->
+<div class="col-md-3"> 
 
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2015年1月26日
+	</div>
+	
 
-		
-	</div> <!-- sidebar -->
-</div> <!-- col-md-3 -->
+	<!-- categories -->
+    
 
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>
+    <ul id="tags" class="tag_box list-unstyled collapse in">
+	    <!-- _partial/post/tag -->
+  
+  <li><a href="/tags/Git/">Git</a></li> <li><a href="/tags/ネット/">ネット</a></li>
 
-</div>
+    </ul>
+	</div>
+	
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+
+    <hr>
+
+</div><!-- col-md-3 -->
+
+	
+
+</div><!-- row -->
 
 
 	</div>
@@ -290,7 +239,7 @@ var disqus_shortname = 'pagents';
   var dsq = document.createElement('script');
   dsq.type = 'text/javascript';
   dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 }());
 </script>

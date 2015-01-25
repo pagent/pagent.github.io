@@ -112,6 +112,56 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/12/04/git-non-fast-forward/" >Gitで”non-fast-forward”</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年12月4日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>HexoのソースをBitbucketにcommitしようとしたら、  </p>
+<pre><code>Your branch and &#39;bitbucket/master&#39; have diverged,
+and have 1 and 1 different commit each, respectively.
+  (use &quot;git pull&quot; to merge the remote branch into yours)
+
+nothing to commit, working directory clean
+</code></pre><p>と警告が出た。  </p>
+<p>かまわずpushしたら、”master -&gt; master (non-fast-forward)”といってrejectされた。   </p>
+<p>“git pull”を使え、ということのようなのでやってみたが、次の画面でなにをすれば良いのか分からない。  </p>
+<p>なにもせず「CTRL」+「X」で終了して、もう一度addから試してみようとしたら、  </p>
+<pre><code>このブランチは &#39;bitbucket/master&#39; よりも2コミット進んでいます。
+  (use &quot;git push&quot; to publish your local commits)
+</code></pre><p>とのこと。<br>言われた通り”git push”したら、今度はpush出来た。<br>「non-fast-forward」というのも検索してみたが、読んでもなんのことだかさっぱり。</p>
+<p>便利なんだが、Gitは本当によく分からない。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/04/git-non-fast-forward/" data-text="Gitで”non-fast-forward”">Tweet</a>
+	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/12/04/bootstrap-in-page-anchor-link/" >Bootstrapでページ内リンク先がナビゲーションバーに隠れる</a>
 		</h3>
 	
@@ -326,59 +376,6 @@
 	
 	<div class="tweet-button">
 	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/02/hexo-tweetbutton/" data-text="Hexoの記事一覧ページにツイートボタン設置">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/12/01/git-add-directory/" >Gitリポジトリにディレクトリを追加</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年12月1日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>HexoのソースはBitbucketで管理しているが、Hexoのテーマを変えたところ、commit出来なくなった。  </p>
-<pre><code>Changes not staged for commit:
-  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
-  (commit or discard the untracked or modified content in submodules)
-
-    modified:   themes/freewill (modified content, untracked content)
-
-no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
-</code></pre><p>と表示される。  </p>
-<p>Bitbucketのソースを見ると、新しいテーマのディレクトリthemes/freewillは追加はされているが、クリックして開くことが出来ない。<br>何度かやり直してみたが、うまく行かない。  </p>
-<p>ためしに適当なファイルを一つpushしたらどうかと、  </p>
-<pre><code>$ git add themes/freewill/LICENSE
-$ git commit -m &#39;修正&#39;
-$ git push
-</code></pre><p>とやったらLICENSEが追加され、freewillを開くことが出来た。<br>その後もう一度<code>git add .</code>し、commit、pushしたら、他のファイルやディレクトリも追加された。  </p>
-<p>そう言えばリポジトリに初めてcommitした時も、一度contributors.txtというファイルをpushしてからでないとうまく行かなかった。<br>Gitというのはいきなりディレクトリ全体を追加するのは出来ない仕様なのかもしれない。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/01/git-add-directory/" data-text="Gitリポジトリにディレクトリを追加">Tweet</a>
 	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
