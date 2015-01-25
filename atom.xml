@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-25T01:14:06.414Z</updated>
+  <updated>2015-01-25T04:11:40.035Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,32 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[宅配業者からの不在通知を装ったスパムメール（info@…facebookmail.com）]]></title>
+    <link href="http://pagent.github.io/2015/01/25/facebookmail-spam/"/>
+    <id>http://pagent.github.io/2015/01/25/facebookmail-spam/</id>
+    <published>2015-01-25T03:07:43.000Z</published>
+    <updated>2015-01-25T03:57:53.000Z</updated>
+    <content type="html"><![CDATA[<p>今年になってから突然、サブのメールアドレスに迷惑メールが来るようになった。  </p>
+<p>ほとんどは卑猥な文言のひと目でスパムと分かるものだったが、一見スパムと分かりづらいメールもあった。<br><code>ペリカン配送 &lt;info@…facebookmail.com&gt;</code>を名乗る差出人からのもので、件名は<code>【ペリカン配送より不在通知】</code>となっている。  </p>
+<blockquote>
+<p>↓コチラから確認↓↓<br>http://…</p>
+<p>↓↓送付停止は下記より↓↓</p>
+<p>http://…</p>
+</blockquote>
+<p>という内容で、迷惑メールフィルタでも振り分けられていなかった。  </p>
+<p>スパムメールが来るようになった時期とちょうど重なっていたから「あやしい」と気付いたが、そうでなかったら「不在通知」と思い込み、うっかりリンクをクリックしていたかもしれない。<br>不在通知が郵便受けにではなくメールで来るなんて、冷静に考えたらおかしいのだが。<br>間違ってリンクをクリックしていたら「生きているアドレス」と判断されて、さらに大量のスパムメールが来ることになっていたのだろう。  </p>
+<p>検索してみると、facebookmail.comからスパムメールが来るというのは結構あるらしい。<br>みなさんもお気をつけ下さい。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>今年になってから突然、サブのメールアドレスに迷惑メールが来るようになった。  </p>
+<p>ほとんどは卑猥な文言のひと目でスパムと分かるものだったが、一見スパムと分かりづらいメールもあった。<br><code>ペリカン配送 &lt;info@…facebookmail.c]]>
+    </summary>
+    
+      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Hexoにファビコン]]></title>
@@ -454,26 +480,6 @@ html.fixed body {
     <summary type="html">
     <![CDATA[<p>ScrapBookなどでローカルに保存したページにStylishのスタイルを適用するには、対象ドメインを指定する箇所に<code>,url-prefix(file://)</code>を追記すれば良い。  </p>
 <p>たとえば、Amebaブログのアメーバヘッダーと記事下]]>
-    </summary>
-    
-      <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[「Stylish」が機能しなくて困ったが]]></title>
-    <link href="http://pagent.github.io/2014/12/21/stylish-do-not-work/"/>
-    <id>http://pagent.github.io/2014/12/21/stylish-do-not-work/</id>
-    <published>2014-12-21T09:53:48.000Z</published>
-    <updated>2014-12-21T10:10:32.000Z</updated>
-    <content type="html"><![CDATA[<p>動画サイトの背景を黒くしたり、Twitterのダイレクトメッセージ（DM）のアイコンを消したりと、なにかと便利に使っているFirefoxのアドオン「Stylish」だが、急にすべてのサイトで動作しなくなってしまった。<br>Stylishをインストールし直したり開発版を入れてみたりしたが、動いてくれない。  </p>
-<p>Firefoxをリセットするしかないかと諦めかけたが、メニューバーのStylishのアイコンをクリックしたら上から2番目に「すべてのスタイルを作動させる」という項目があったので、クリックしてみた。  </p>
-<p>なんなく機能した。 　</p>
-<p>すべてのスタイルを作動させても、Stylishの設定で無効にしてあるスタイルは機能しない。<br>「すべてのスタイルを作動させる」はブラウザの再起動をせずにStylish自体を有効にするかどうかということらしい。<br>いつの間にか知らずに「すべてのスタイルを停止する」をクリックしてしまっていたようだ。  </p>
-<p>「すべてのスタイルを〜」ではく、「Stylishを有効にする」「Stylishを無効にする」と言ってくれた方が分かりやすいのだが。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>動画サイトの背景を黒くしたり、Twitterのダイレクトメッセージ（DM）のアイコンを消したりと、なにかと便利に使っているFirefoxのアドオン「Stylish」だが、急にすべてのサイトで動作しなくなってしまった。<br>Stylishをインストールし直したり開発版を入れ]]>
     </summary>
     
       <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>

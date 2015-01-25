@@ -112,6 +112,52 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/11/18/debian-wheezy-nemo/" >Debian WheezyにNemoをインストール</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月18日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>ネットブックLaVie LightにDebian Wheezyをインストールした。<br>ウィンドウマネージャはXfceが好みなので、debian-7.7.0-i386-netinst.isoでインストールする際、”Advanced options” 、”Alternate desktop environments”でXfceを選択した。  </p>
+<p>ファイルやフォルダを簡単に管理者権限で操作したいので、XfceデフォルトのファイルマネージャーThunarのアクションに「rootで開く」を追加し、gksuもインストールした。<br>だがrootで開こうとしても、認証画面は表示されるものの、フォルダやファイルを管理者権限で開くことが出来ない。  </p>
+<p>代わりにNemoをインストールしようとしたら、リポジトリにNemoが無かった。PCManFMも確かrootで開くメニューがあったのでインストールしてみたが、なぜかrootで開くメニューが無い。<br>困ってしまったが、Ubuntu 12.04 Preciseのリポジトリを追加することで、Nemoをインストール出来た。  </p>
+<pre><code>echo &quot;deb http://ppa.launchpad.net/noobslab/mint/ubuntu precise main&quot; | sudo tee -a /etc/apt/sources.list
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F59EAE4D
+sudo apt-get update
+sudo apt-get install nemo
+</code></pre><p><a href="http://www.techlw.com/2013/12/install-nemo-file-manager-with.html" target="_blank" rel="external">Install Nemo file Manager with Extensions in Debian 7 Wheezy and its derivatives | Technology Linux World</a>  </p>
+<p>Ubuntu 14.04 Trustyのリポジトリを入れた方が、Nemoのバージョンが新しくて良いかと思いやってみたが、「壊れたパッケージを修復出来ない」とかでNemoをインストール出来なかった。  </p>
+<p>それと、Nemoを起動すると、デスクトップ上の右クリックでアプリケーションメニューを表示するのが出来なくなってしまう。<br>これでは少々不便なので、普段はThunarを使った方が良いかもしれない。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/18/debian-wheezy-nemo/" data-text="Debian WheezyにNemoをインストール">Tweet</a>
+	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/11/13/xubuntu-ar9285/" >Xubuntu 14.04.1で無線LAN(Atheros AR9285)が安定しない</a>
 		</h3>
 	
@@ -275,81 +321,6 @@
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/03/gyao-background-color/" >FirefoxのアドオンStylishでGyaoの背景色を黒くする</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月3日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Gyaoで動画を観るとき背景が白く、明る過ぎてまぶしいので、FirefoxのアドオンStylishで背景を黒くした。  </p>
-<p>Stylishに下記スタイルを適当な名前で追加した。</p>
-<pre><code>@namespace url(http://www.w3.org/1999/xhtml);
-@-moz-document domain(&quot;gyao.yahoo.co.jp&quot;)
-,domain(&quot;youtube.com&quot;) 
-{
-
-body {
-    background-color:#000;
-}
-#playerModule {
-    border: 1px solid #080808;
-}
-.wrapperText h1 {
-    color:#BBB;
-}
-}
-</code></pre><p>YouTubeの背景はそれ程まぶしいと感じたことは無かったが、一応YouTubeのドメインも加えた。<br>ずいぶんと目にやさしくなった。</p>
-<p>Stylishは対象のドメインを指定してスタイルを変えられるので、なにかと重宝している。  </p>
-<p>ーー<br>（追記）<br>下記記事で紹介されているStylishのスタイル、Midnight Surfing - Global Dark Styleというのが、とてもきれいに表示ページの背景を黒くしてくれる。<br><a href="http://www.xmisao.com/2014/08/08/dark-firefox.html" target="_blank" rel="external">Firefoxを徹底的に黒くする テーマ / Stylish / Vimperator — ぺけみさお</a>  </p>
-<p>（本当はツールバーやサイドバーなどFirefox自体の見た目も黒くなるはずらしいが、Firefox自体までは黒くならない。最近のバージョンのFirefoxではFirefox自体のスタイルを変更するには「完全テーマ」で変更する必要があるようだ。）  </p>
-<p>ただ、導入するとすべてのページが黒くなってしまうので、Gyao、YouTube等のドメインだけを指定。<br>Midnight Surfingの書き出し部分  </p>
-<pre><code>@namespace html url(http://www.w3.org/1999/xhtml);
-@namespace xul url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
-
-/* Browser Background */
-browser[type=&quot;content-primary&quot;] {background-color: #141414 !important;}
-
-@-moz-document url-prefix(http://), url-prefix(https://), url-prefix(ftp://), url-prefix(file://) {
-</code></pre><p>の箇所を下記に修正した。</p>
-<pre><code>@namespace html url(http://www.w3.org/1999/xhtml);
-@-moz-document domain(&quot;gyao.yahoo.co.jp&quot;)
-,domain(&quot;youtube.com&quot;)
-,domain(&quot;nicovideo.jp&quot;)
-,domain(&quot;video.fc2.com&quot;)
-{
-</code></pre><p>Gyaoの背景をまぶしく感じている人にはおすすめです。  </p>
-<p>というわけで、自分で書いたスタイルは必要なくなった。   </p>
-<p>（追記2）<br>Solarized Dark Everywhereというスタイルも黒板っぽい色で落ち着く。<br>目が疲れた時のウェブ閲覧に良さそうだ。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/03/gyao-background-color/" data-text="FirefoxのアドオンStylishでGyaoの背景色を黒くする">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -391,6 +362,10 @@ browser[type=&quot;content-primary&quot;] {background-color: #141414 !important;
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/01/25/facebookmail-spam/" ><i class="fa fa-file-o"></i>宅配業者からの不在通知を装ったスパムメール（info@...</a>
+      </li>
+    
+      <li>
         <a href="/2015/01/24/hexo-favicon/" ><i class="fa fa-file-o"></i>Hexoにファビコン</a>
       </li>
     
@@ -404,10 +379,6 @@ browser[type=&quot;content-primary&quot;] {background-color: #141414 !important;
     
       <li>
         <a href="/2015/01/23/lubuntu-desktop-manager/" ><i class="fa fa-file-o"></i>Lubuntuで 「デスクトップマネージャはアクティブ...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/01/22/windows10-free/" ><i class="fa fa-file-o"></i>7や8からWindows 10へのアップグレードは無料</a>
       </li>
     
   </ul>
@@ -425,33 +396,33 @@ browser[type=&quot;content-primary&quot;] {background-color: #141414 !important;
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>7</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>9</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>2</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/風景/">風景<span>1</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>11</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>19</span></a></li>
 		
+			<li><a href="/tags/ネット/">ネット<span>8</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>11</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>2</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>9</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
+		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
+			<li><a href="/tags/風景/">風景<span>1</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 		
 		</ul>
@@ -463,7 +434,7 @@ browser[type=&quot;content-primary&quot;] {background-color: #141414 !important;
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

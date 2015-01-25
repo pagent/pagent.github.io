@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexoにファビコン | Pagent</title>
+  <title>宅配業者からの不在通知を装ったスパムメール（info@…facebookmail.com） | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Hexoにファビコン"/>
+  <meta property="og:title" content="宅配業者からの不在通知を装ったスパムメール（info@…facebookmail.com）"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -94,7 +94,7 @@
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> Hexoにファビコン</h1>
+			<h1> 宅配業者からの不在通知を装ったスパムメール（info@…facebookmail.com）</h1>
 		</div>
 	
 
@@ -110,14 +110,16 @@
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>Hexoで書いているGitHub Pagesのブログにファビコンを入れた。<br>Hexoでは使用しているテーマでファビコンを設定するらしい。</p>
-<p>freewillというテーマを使っているので、hexo/themes/freewill/_config.ymlで<code>favicon: favicon.png</code>となっているのを確認し、 作成したfavicon.pngをhexo/themes/freewill/source内に置いた。   </p>
-<p>generate、deployしてFirefoxでサイトを表示すると、タブにはファビコンが表示されているものの、何故かサイドバーのブックマーク欄には作ったファビコンが表示されていない。<br>他のブラウザのRekonqやMidoriではタブにも表示されず。  </p>
-<p>ブラウザのキャッシュが残っているせいかと、キャッシュを削除したり、ファビコンのサイズを変えてみたりしたが、やはりブックマーク欄には表示されない。  </p>
-<p>拡張子を.pngではなく.icoで作り直し、/_config.ymlを<code>favicon: favicon.ico</code>にしたら、ようやくブックマーク欄にもファビコンが表示された。<br>他のブラウザでもちゃんと表示されている。  </p>
-<p>ちなみに.icoファイルでは複数のサイズの画像を一つのファイルに格納出来るらしい。<br><a href="http://www.hp-stylelink.com/news/2014/02/20140213.php" target="_blank" rel="external">複数サイズも一つのファイルで！マルチアイコンの「favicon（ファビコン）」作成方法 | Web制作会社スタイル</a>  </p>
-<p>ちょうど16×16、32×32、64×64の3つの.pngファイルを作成していたので、下記サイトでこの3サイズを格納したfavicon.icoにした。<br><a href="http://ao-system.net/alphaicon/" target="_blank" rel="external">無料で半透過マルチアイコンやファビコン(favicon.ico)作成。ギザギザの無い美しい影を持ったアイコン作成がフリーでできます。</a>  </p>
-<p>HexoやOctopressでも、ファビコンの拡張子は.icoの方が良いようだ。</p>
+	    <p>今年になってから突然、サブのメールアドレスに迷惑メールが来るようになった。  </p>
+<p>ほとんどは卑猥な文言のひと目でスパムと分かるものだったが、一見スパムと分かりづらいメールもあった。<br><code>ペリカン配送 &lt;info@…facebookmail.com&gt;</code>を名乗る差出人からのもので、件名は<code>【ペリカン配送より不在通知】</code>となっている。  </p>
+<blockquote>
+<p>↓コチラから確認↓↓<br>http://…</p>
+<p>↓↓送付停止は下記より↓↓</p>
+<p>http://…</p>
+</blockquote>
+<p>という内容で、迷惑メールフィルタでも振り分けられていなかった。  </p>
+<p>スパムメールが来るようになった時期とちょうど重なっていたから「あやしい」と気付いたが、そうでなかったら「不在通知」と思い込み、うっかりリンクをクリックしていたかもしれない。<br>不在通知が郵便受けにではなくメールで来るなんて、冷静に考えたらおかしいのだが。<br>間違ってリンクをクリックしていたら「生きているアドレス」と判断されて、さらに大量のスパムメールが来ることになっていたのだろう。  </p>
+<p>検索してみると、facebookmail.comからスパムメールが来るというのは結構あるらしい。<br>みなさんもお気をつけ下さい。</p>
 
 	</div>
 
@@ -133,13 +135,13 @@
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2015/01/25/facebookmail-spam/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2015/01/24/xubuntu-menu-nepomuk/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2015/01/24/hexo-favicon/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -173,7 +175,7 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2015年1月24日
+	2015年1月25日
 	</div>
 	
 
@@ -187,7 +189,7 @@
     <ul id="tags" class="tag_box list-unstyled collapse in">
 	    <!-- _partial/post/tag -->
   
-  <li><a href="/tags/Hexo/">Hexo</a></li>
+  <li><a href="/tags/ネット/">ネット</a></li>
 
     </ul>
 	</div>

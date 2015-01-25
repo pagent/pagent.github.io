@@ -112,6 +112,81 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/11/03/gyao-background-color/" >FirefoxのアドオンStylishでGyaoの背景色を黒くする</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月3日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Gyaoで動画を観るとき背景が白く、明る過ぎてまぶしいので、FirefoxのアドオンStylishで背景を黒くした。  </p>
+<p>Stylishに下記スタイルを適当な名前で追加した。</p>
+<pre><code>@namespace url(http://www.w3.org/1999/xhtml);
+@-moz-document domain(&quot;gyao.yahoo.co.jp&quot;)
+,domain(&quot;youtube.com&quot;) 
+{
+
+body {
+    background-color:#000;
+}
+#playerModule {
+    border: 1px solid #080808;
+}
+.wrapperText h1 {
+    color:#BBB;
+}
+}
+</code></pre><p>YouTubeの背景はそれ程まぶしいと感じたことは無かったが、一応YouTubeのドメインも加えた。<br>ずいぶんと目にやさしくなった。</p>
+<p>Stylishは対象のドメインを指定してスタイルを変えられるので、なにかと重宝している。  </p>
+<p>ーー<br>（追記）<br>下記記事で紹介されているStylishのスタイル、Midnight Surfing - Global Dark Styleというのが、とてもきれいに表示ページの背景を黒くしてくれる。<br><a href="http://www.xmisao.com/2014/08/08/dark-firefox.html" target="_blank" rel="external">Firefoxを徹底的に黒くする テーマ / Stylish / Vimperator — ぺけみさお</a>  </p>
+<p>（本当はツールバーやサイドバーなどFirefox自体の見た目も黒くなるはずらしいが、Firefox自体までは黒くならない。最近のバージョンのFirefoxではFirefox自体のスタイルを変更するには「完全テーマ」で変更する必要があるようだ。）  </p>
+<p>ただ、導入するとすべてのページが黒くなってしまうので、Gyao、YouTube等のドメインだけを指定。<br>Midnight Surfingの書き出し部分  </p>
+<pre><code>@namespace html url(http://www.w3.org/1999/xhtml);
+@namespace xul url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+
+/* Browser Background */
+browser[type=&quot;content-primary&quot;] {background-color: #141414 !important;}
+
+@-moz-document url-prefix(http://), url-prefix(https://), url-prefix(ftp://), url-prefix(file://) {
+</code></pre><p>の箇所を下記に修正した。</p>
+<pre><code>@namespace html url(http://www.w3.org/1999/xhtml);
+@-moz-document domain(&quot;gyao.yahoo.co.jp&quot;)
+,domain(&quot;youtube.com&quot;)
+,domain(&quot;nicovideo.jp&quot;)
+,domain(&quot;video.fc2.com&quot;)
+{
+</code></pre><p>Gyaoの背景をまぶしく感じている人にはおすすめです。  </p>
+<p>というわけで、自分で書いたスタイルは必要なくなった。   </p>
+<p>（追記2）<br>Solarized Dark Everywhereというスタイルも黒板っぽい色で落ち着く。<br>目が疲れた時のウェブ閲覧に良さそうだ。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/03/gyao-background-color/" data-text="FirefoxのアドオンStylishでGyaoの背景色を黒くする">Tweet</a>
+	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/11/02/xbacklight/" >xbacklightでモニター輝度を設定・調節</a>
 		</h3>
 	
@@ -298,53 +373,6 @@ GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/10/31/unknown-media-type/" >「Unknown media type in type &#39;all/all&#39;」等が表示される</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年10月31日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>最近Octopressを使っている時やXubuntuの更新の際、端末上に「Unknown media type in type ‘all/all’」というような警告が数行表示されることが続いていた。<br>検索してみると、どうやらKDEのバグらしい。<br><a href="https://bugs.launchpad.net/ubuntu/+source/shared-mime-info/+bug/289592" target="_blank" rel="external">Bug #289592 “Unknown media types in /usr/share/mime/packages/kde…” : Bugs : “shared-mime-info” package : Ubuntu</a><br>確かに、KDEのアプリケーションをいくつかインストールしてからこの症状が起こっているように思う。  </p>
-<p>修正するには</p>
-<blockquote>
-<p>$ sudo rm /usr/share/mime/packages/kde.xml<br>$ sudo update-mime-database /usr/share/mime</p>
-</blockquote>
-<p>とすれば良いようだ。<br>だが、なんのためのファイルか知らないが、いきなりkde.xmlを削除するのも気が引けるので、  </p>
-<pre><code>$ sudo mv /usr/share/mime/packages/kde.xml /usr/share/mime/packages/kde.xml.bak
-</code></pre><p>とリネームしてから</p>
-<pre><code>$ sudo update-mime-database /usr/share/mime
-</code></pre><p>としてみた。  </p>
-<p>今のところ「Unknown media type in type …」は出てないし、特に不具合も無いようだ。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/10/31/unknown-media-type/" data-text="「Unknown media type in type &#39;all/all&#39;」等が表示される">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -386,6 +414,10 @@ GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/01/25/facebookmail-spam/" ><i class="fa fa-file-o"></i>宅配業者からの不在通知を装ったスパムメール（info@...</a>
+      </li>
+    
+      <li>
         <a href="/2015/01/24/hexo-favicon/" ><i class="fa fa-file-o"></i>Hexoにファビコン</a>
       </li>
     
@@ -399,10 +431,6 @@ GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
     
       <li>
         <a href="/2015/01/23/lubuntu-desktop-manager/" ><i class="fa fa-file-o"></i>Lubuntuで 「デスクトップマネージャはアクティブ...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/01/22/windows10-free/" ><i class="fa fa-file-o"></i>7や8からWindows 10へのアップグレードは無料</a>
       </li>
     
   </ul>
@@ -420,33 +448,33 @@ GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>11</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>7</span></a></li>
-		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>2</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>9</span></a></li>
 		
 			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>19</span></a></li>
+			<li><a href="/tags/ネット/">ネット<span>8</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>11</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
+			<li><a href="/tags/Windows/">Windows<span>2</span></a></li>
+		
 			<li><a href="/tags/風景/">風景<span>1</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>19</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>9</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
 		
 		
 		</ul>
@@ -458,7 +486,7 @@ GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
