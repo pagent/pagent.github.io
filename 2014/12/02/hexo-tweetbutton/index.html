@@ -26,7 +26,7 @@
   
 
   
-  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/bootstrap.cerulean.min.css" media="screen" type="text/css">
   
   <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
@@ -112,16 +112,16 @@
 	<div class="mypage">
 	    <p>HexoのテーマをFreewill変えて、Disqusウィジェット内の「Share」にはTwitterのツイートボタンはあるが、それだと<code>http://disq.us/…</code>というDisqus経由の短縮URLになる様子。<br>普通のツイートボタンを設置したかったので、<a href="https://about.twitter.com/ja/resources/buttons" target="_blank" rel="external">Twitter公式のツイートボタン</a>を入れることにした。  </p>
 <p>個別の記事への設置は、Twitterサイトで「ページのURLを使う」の設定で作成したコードを/layout/_partial/article.ejsの<code>&lt;%- item.content %&gt;</code>の下あたりに追記したら問題なく表示された。 　</p>
-<p>だがそのコードをlayout/_partial/post/entry.ejsに挿入しても、トップページなどページネーションのページ（記事一覧のページ）では、ブログタイトルと一覧ページのURLにしかならない。<br>URLとツイート文を自分でカスタマイズする設定でコードを作成し、excerptリンクに倣って、それぞれ<code>&lt;%- config.root %&gt;&lt;%= item.path %&gt;</code>、<code>&lt;%= item.title %&gt;</code>で挿入しても、記事タイトルのみでURLを取得出来ない。  </p>
+<p>だがそのコードをページネーション記事のレイアウトlayout/_partial/post/entry.ejsに挿入しても、タイトル名と一覧ページのURLしか取得出来ない。<br>URLとツイート本文を自分でカスタマイズする設定でコードを作成し、excerptリンクに倣って、それぞれ<code>&lt;%- config.root %&gt;&lt;%= item.path %&gt;</code>、<code>&lt;%= item.title %&gt;</code>で挿入したが、記事タイトルのみでURLを取得出来ない。  </p>
 <p><del>試行錯誤の結果、ブログURLの箇所をパスではなく直接記載して、<code>http://…/&lt;%= item.path %&gt;</code>にしたら上手くいった。<br><code>&lt;%- config.root %&gt;</code>というパスがブログトップのURLを取得出来なかったようだが、理由は不明。<br>「Read More」（続きを読む）の部分では、ちゃんと変換されているが。</del>  </p>
-<p>ーーーー<br>（<strong>追記</strong>）<br>個別記事URLへのパスは<code>&lt;%- item.permalink %&gt;</code>一つで良いようだ。<br>ーーーー  </p>
+<p>ーーーー<br>（<strong>追記</strong>）<br>個別記事URLへのパスは<code>&lt;%- item.permalink %&gt;</code>一つで良いようだ。<br>ツイート本文は<code>&lt;%= item.title %&gt; | &lt;%= config.title %&gt;</code>（記事タイトル | ブログ名）で作成。<br>ーーーー  </p>
 <p>記事を概要表示にしている時は「Read More」。全文表示にしている時はツイートボタンを表示することにして、read_moreの箇所を下記に変更した。  </p>
 <pre><code>&lt;% if (item.excerpt &amp;&amp; index) { %&gt;
   &lt;a type=&quot;button&quot; href=&quot;&lt;%- config.root %&gt;&lt;%- item.path %&gt;#more&quot; class=&quot;btn btn-default more&quot;&gt;&lt;%= __(&#39;read_more&#39;) %&gt;&lt;/a&gt;
 &lt;% } else { %&gt;
 &lt;div class=&quot;tweet-button&quot;&gt;
-  &lt;a href=&quot;https://twitter.com/share&quot; class=&quot;twitter-share-button&quot; data-url=&quot;&lt;%- item.permalink %&gt;&quot; data-text=&quot;&lt;%= item.title %&gt;&quot;&gt;Tweet&lt;/a&gt;
-  &lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?&#39;http&#39;:&#39;https&#39;;if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+&#39;://platform.twitter.com/widgets.js&#39;;fjs.parentNode.insertBefore(js,fjs);}}(document, &#39;script&#39;, &#39;twitter-wjs&#39;);&lt;/script&gt;
+  &lt;a href=&quot;https://twitter.com/share&quot; class=&quot;twitter-share-button&quot; data-url=&quot;&lt;%- item.permalink %&gt;&quot; data-text=&quot;&lt;%= item.title %&gt; | &lt;%= config.title %&gt;&quot; data-lang=&quot;ja&quot;&gt;ツイート&lt;/a&gt;
+&lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?&#39;http&#39;:&#39;https&#39;;if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+&#39;://platform.twitter.com/widgets.js&#39;;fjs.parentNode.insertBefore(js,fjs);}}(document, &#39;script&#39;, &#39;twitter-wjs&#39;);&lt;/script&gt;
 &lt;/div&gt;
 &lt;% } %&gt;
 </code></pre><p>ツイートボタンに対しては、source/css/style.cssに下記を追記、  </p>

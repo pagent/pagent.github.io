@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-25T15:31:42.293Z</updated>
+  <updated>2015-01-27T12:20:56.378Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,29 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Xubuntu14.04で常にNumlockオンで起動する]]></title>
+    <link href="http://pagent.github.io/2015/01/26/numlockx/"/>
+    <id>http://pagent.github.io/2015/01/26/numlockx/</id>
+    <published>2015-01-26T14:28:21.000Z</published>
+    <updated>2015-01-27T12:17:52.000Z</updated>
+    <content type="html"><![CDATA[<p>PC起動時にNumlockが有効になっていると、すぐにテンキーで数字を入力出来るので少しだけ助かる。<br>オフになっていてもNumlockキーを押せばいいだけではあるが。  </p>
+<p>Xubuntu14.04の設定マネージャーを見ていると「設定エディター」というのがあった。<br>マウスを合わせるとツールチップで「Xfconf のグラフィカル設定エディターです」と説明が出ているもの。<br>何の気無しにクリックしてみると、keyboadsのところが開いていてNumlockについての設定のようだった。<br>「値」の処にチェックは入っていない。  </p>
+<p>試しにチェックを入れてみたら良かったのだが、説明らしい説明が無かったので躊躇してしまい、「Numlock」+「Ubuntu」で検索してnumlockxをインストールした。<br>だがこれだけだと、Numlockがオフの状態でPCを終了して再起動すると、Numlockオフで起動してしまう。<br>Ubuntuソフトウェアセンターの説明には「本パッケージは、セッション開始時に numlock を有効化するセッションスクリプト を自動的にインストールします。」とあるのだが。  </p>
+<p>/etc/lightdm/lightdm.confに「greeter-setup-script=/usr/bin/numlockx on」を追記するよう解説しているサイトがあったのでやってみたが、これもうまく行かない。<br>さっきの「設定エディター」でチェックを入れても、オフ状態でPCを終了するとNumlockオフで起動する。  </p>
+<p>結局、「セッションと起動」の自動開始アプリケーションにコマンド<code>numlockx</code>の項目を追加することで、「常にNumlockオンで起動」させることが出来た。  </p>
+<p>ーー<br>（追記）<br>自動開始アプリケーションに追加するコマンドは<code>numlockx</code>だけでも大丈夫だったが、<code>/usr/bin/numlockx on</code>もしくは<code>/usr/bin/numlockx</code>とするのがLinuxの正統な作法のようだ。<br>（自動開始アプリケーションに追加されていた他の項目を見ると、どれも/usr/bin/…という記法になっている。）  </p>
+<p>「<code>numlockx</code>だけで実行出来る」＝「パスが通っている」ということらしいので、どちらでも良いのだろう。<br><a href="http://www.obenri.com/_operation/path_through.html" target="_blank" rel="external">◇”パスが通っている”とは？◇初心者のためのLinuxサーバー構築講座(CentOS 自宅サーバー対応)☆お便利サーバー.com☆</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>PC起動時にNumlockが有効になっていると、すぐにテンキーで数字を入力出来るので少しだけ助かる。<br>オフになっていてもNumlockキーを押せばいいだけではあるが。  </p>
+<p>Xubuntu14.04の設定マネージャーを見ていると「設定エディター」というのが]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Dropbpx上のHexoでdeploy時「競合コピ ー」のためエラーになる]]></title>
@@ -43,7 +66,7 @@
     <link href="http://pagent.github.io/2015/01/25/facebookmail-spam/"/>
     <id>http://pagent.github.io/2015/01/25/facebookmail-spam/</id>
     <published>2015-01-25T03:07:43.000Z</published>
-    <updated>2015-01-25T03:57:53.000Z</updated>
+    <updated>2015-01-27T12:17:52.000Z</updated>
     <content type="html"><![CDATA[<p>今年になってから突然、サブのメールアドレスに迷惑メールが来るようになった。  </p>
 <p>ほとんどは卑猥な文言のひと目でスパムと分かるものだったが、一見スパムと分かりづらいメールもあった。<br><code>ペリカン配送 &lt;info@…facebookmail.com&gt;</code>を名乗る差出人からのもので、件名は<code>【ペリカン配送より不在通知】</code>となっている。  </p>
 <blockquote>
@@ -52,7 +75,8 @@
 <p>http://…</p>
 </blockquote>
 <p>という内容で、迷惑メールフィルタでも振り分けられていなかった。  </p>
-<p>スパムメールが来るようになった時期とちょうど重なっていたから「あやしい」と気付いたが、そうでなかったら「不在通知」と思い込み、うっかりリンクをクリックしていたかもしれない。<br>不在通知が郵便受けにではなくメールで来るなんて、冷静に考えたらおかしいのだが。<br>間違ってリンクをクリックしていたら「生きているアドレス」と判断されて、さらに大量のスパムメールが来ることになっていたのだろう。  </p>
+<p>スパムメールが来るようになった時期とちょうど重なっていたから「あやしい」と気付いたが、そうでなかったら本当の「不在通知」と思い込み、うっかりリンクをクリックしていた可能性がある。<br>不在通知が郵便受けにではなくメールで来るなんて、冷静に考えたらおかしいのだが。  </p>
+<p>間違ってリンクをクリックしていたら悪質なサイトに誘導されていたのだろう。<br>また「生きているアドレス」と判断されて、さらに大量のスパムメールが来ることになっていたかもしれない。  </p>
 <p>検索してみると、facebookmail.comからスパムメールが来るというのは結構あるらしい。<br>みなさんもお気をつけ下さい。</p>
 ]]></content>
     <summary type="html">
@@ -450,28 +474,6 @@ Crawl-delay: 30
       <category term="Octopress" scheme="http://pagent.github.io/tags/Octopress/"/>
     
       <category term="blog" scheme="http://pagent.github.io/tags/blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Windows8優待購入プログラムのプロダクトキーを紛失した]]></title>
-    <link href="http://pagent.github.io/2014/12/23/windows8-product-key/"/>
-    <id>http://pagent.github.io/2014/12/23/windows8-product-key/</id>
-    <published>2014-12-23T09:31:13.000Z</published>
-    <updated>2014-12-23T10:08:40.000Z</updated>
-    <content type="html"><![CDATA[<p>Windows8が発売されるちょっと前、Windows8のタイル形式が嫌だったのであわててWindows7のPCを買った。<br>Windows7のサポート終了後のことも考えて、お得にWindows8にアップグレード出来る「Windows8優待購入プログラム」にも登録した。<br>2000円位だった記憶がある。（1200円という記事を多く見かけるが。）<br>一度Windows8にアップグレードしてみたが、やはり使いづらいのですぐにWindows7に戻した。  </p>
-<p>アップグレードするためのisoファイルは今もあるが、肝心のプロダクトキーがどこかへ行ってしまった。<br>たしかScrapBookで保存していたんだったと思うが、以前Windows7を再インストールした時に消去してしまったんだろう。<br>メールも送られて来ていたように思うが、それも削除してしまっているようだ。  </p>
-<p>こうなるともうお手上げかもしれない。<br><a href="http://support2.microsoft.com/gp/customer-service-phone-numbers" target="_blank" rel="external">カスタマー サービス電話番号</a>に電話してみたら、なんとかなるかもしれないが。<br>（<a href="http://answers.microsoft.com/ja-jp/windows/forum/windows_8-windows_install/%E4%B8%80%E5%BA%A6windows8%E3%82%92%E8%B3%BC/7c523a81-be2a-4695-86e4-13f4a0f069f9" target="_blank" rel="external">一度、Windows8を購入したのですが再度ダインロードはできなのでしょうか？ - マイクロソフト コミュニティ</a>）  </p>
-<p>Windows7の延長サポートの終了が2020年、Windows8の延長サポートは2023年までのようなので、プロダクトキーが見つかれば3年長く安全にWindowsを使うことが出来るようなのだが。  </p>
-<p>2020年までにはWindows10の次の、さらにそのまた次のWindowsも出ているかもしれないし、Windows7のPCはほぼLinux専用としてWindowsではネットに繋がないようにした方が良いのかもしれない。<br>今でもWindowsはほとんど使ってないし。  </p>
-<p>「安い！と思ってもあわてて買わない方が良い。」という良い勉強になった。<br>あと、面倒臭くても紙に書いて残しておくことも大事なんだろう。  </p>
-<p>プロダクトキーを失くしてしまった人、他にも結構いるんじゃないだろうか。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Windows8が発売されるちょっと前、Windows8のタイル形式が嫌だったのであわててWindows7のPCを買った。<br>Windows7のサポート終了後のことも考えて、お得にWindows8にアップグレード出来る「Windows8優待購入プログラム」にも登録した。]]>
-    </summary>
-    
-      <category term="Windows" scheme="http://pagent.github.io/tags/Windows/"/>
     
   </entry>
   

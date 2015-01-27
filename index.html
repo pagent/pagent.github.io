@@ -26,7 +26,7 @@
   
 
   
-  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/bootstrap.cerulean.min.css" media="screen" type="text/css">
   
   <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
@@ -112,6 +112,49 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/01/26/numlockx/" >Xubuntu14.04で常にNumlockオンで起動する</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年1月26日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>PC起動時にNumlockが有効になっていると、すぐにテンキーで数字を入力出来るので少しだけ助かる。<br>オフになっていてもNumlockキーを押せばいいだけではあるが。  </p>
+<p>Xubuntu14.04の設定マネージャーを見ていると「設定エディター」というのがあった。<br>マウスを合わせるとツールチップで「Xfconf のグラフィカル設定エディターです」と説明が出ているもの。<br>何の気無しにクリックしてみると、keyboadsのところが開いていてNumlockについての設定のようだった。<br>「値」の処にチェックは入っていない。  </p>
+<p>試しにチェックを入れてみたら良かったのだが、説明らしい説明が無かったので躊躇してしまい、「Numlock」+「Ubuntu」で検索してnumlockxをインストールした。<br>だがこれだけだと、Numlockがオフの状態でPCを終了して再起動すると、Numlockオフで起動してしまう。<br>Ubuntuソフトウェアセンターの説明には「本パッケージは、セッション開始時に numlock を有効化するセッションスクリプト を自動的にインストールします。」とあるのだが。  </p>
+<p>/etc/lightdm/lightdm.confに「greeter-setup-script=/usr/bin/numlockx on」を追記するよう解説しているサイトがあったのでやってみたが、これもうまく行かない。<br>さっきの「設定エディター」でチェックを入れても、オフ状態でPCを終了するとNumlockオフで起動する。  </p>
+<p>結局、「セッションと起動」の自動開始アプリケーションにコマンド<code>numlockx</code>の項目を追加することで、「常にNumlockオンで起動」させることが出来た。  </p>
+<p>ーー<br>（追記）<br>自動開始アプリケーションに追加するコマンドは<code>numlockx</code>だけでも大丈夫だったが、<code>/usr/bin/numlockx on</code>もしくは<code>/usr/bin/numlockx</code>とするのがLinuxの正統な作法のようだ。<br>（自動開始アプリケーションに追加されていた他の項目を見ると、どれも/usr/bin/…という記法になっている。）  </p>
+<p>「<code>numlockx</code>だけで実行出来る」＝「パスが通っている」ということらしいので、どちらでも良いのだろう。<br><a href="http://www.obenri.com/_operation/path_through.html" target="_blank" rel="external">◇”パスが通っている”とは？◇初心者のためのLinuxサーバー構築講座(CentOS 自宅サーバー対応)☆お便利サーバー.com☆</a></p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/26/numlockx/" data-text="Xubuntu14.04で常にNumlockオンで起動する | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/01/26/deploy-conflicted-copy-dropbox/" >Dropbpx上のHexoでdeploy時「競合コピ ー」のためエラーになる</a>
 		</h3>
 	
@@ -141,8 +184,8 @@
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/26/deploy-conflicted-copy-dropbox/" data-text="Dropbpx上のHexoでdeploy時「競合コピ ー」のためエラーになる">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/26/deploy-conflicted-copy-dropbox/" data-text="Dropbpx上のHexoでdeploy時「競合コピ ー」のためエラーになる | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
 
@@ -177,7 +220,8 @@
 <p>http://…</p>
 </blockquote>
 <p>という内容で、迷惑メールフィルタでも振り分けられていなかった。  </p>
-<p>スパムメールが来るようになった時期とちょうど重なっていたから「あやしい」と気付いたが、そうでなかったら「不在通知」と思い込み、うっかりリンクをクリックしていたかもしれない。<br>不在通知が郵便受けにではなくメールで来るなんて、冷静に考えたらおかしいのだが。<br>間違ってリンクをクリックしていたら「生きているアドレス」と判断されて、さらに大量のスパムメールが来ることになっていたのだろう。  </p>
+<p>スパムメールが来るようになった時期とちょうど重なっていたから「あやしい」と気付いたが、そうでなかったら本当の「不在通知」と思い込み、うっかりリンクをクリックしていた可能性がある。<br>不在通知が郵便受けにではなくメールで来るなんて、冷静に考えたらおかしいのだが。  </p>
+<p>間違ってリンクをクリックしていたら悪質なサイトに誘導されていたのだろう。<br>また「生きているアドレス」と判断されて、さらに大量のスパムメールが来ることになっていたかもしれない。  </p>
 <p>検索してみると、facebookmail.comからスパムメールが来るというのは結構あるらしい。<br>みなさんもお気をつけ下さい。</p>
 
 	
@@ -187,8 +231,8 @@
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/25/facebookmail-spam/" data-text="宅配業者からの不在通知を装ったスパムメール（info@…facebookmail.com）">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/25/facebookmail-spam/" data-text="宅配業者からの不在通知を装ったスパムメール（info@…facebookmail.com） | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
 
@@ -231,8 +275,8 @@
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/24/hexo-favicon/" data-text="Hexoにファビコン">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/24/hexo-favicon/" data-text="Hexoにファビコン | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
 
@@ -271,8 +315,8 @@
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/24/xubuntu-menu-nepomuk/" data-text="XubuntuのメニューからNepomuk Cleanerを消す">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/24/xubuntu-menu-nepomuk/" data-text="XubuntuのメニューからNepomuk Cleanerを消す | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
 
@@ -311,8 +355,176 @@
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/23/lubuntu-alacarte-menulibre/" data-text="Lubuntu14.04にメニュー編集ソフトAlacarteとMenuLibreを入れた">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/23/lubuntu-alacarte-menulibre/" data-text="Lubuntu14.04にメニュー編集ソフトAlacarteとMenuLibreを入れた | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/01/23/lubuntu-desktop-manager/" >Lubuntuで 「デスクトップマネージャはアクティブではありません」のエラー表示</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年1月23日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>13.04から14.04にアップグレードしたLubuntuで、いつのまにかデスクトップの壁紙が表示されなくなっていた。  </p>
+<p>壁紙を設定しようと「メニュー」→「設定」→「デスクトップの設定」と進んでも、「！ デスクトップマネージャはアクティブではありません。」とエラー表示が出て設定出来ない。<br>デスクトップ上での右クリックから「デスクトップの設定」を選択してもナシのつぶて。  </p>
+<p>Lubuntu14.04でのデスクトップの設定にはPCManFMが使われているようなので、「LXSessionのデフォルトのアプリケーション」でデフォルトのファイルマネージャーをnemoからPCManFMに戻してみたが、それでもデスクトップの設定が出来ない。  </p>
+<p>最終的には下記を参考に、synapticからPCManFMを再インストールすることで、「デスクトップの設定」を正常に起動出来た｡<br><a href="http://ubuntuforums.org/showthread.php?t=2218084&amp;p=13090056#post13090056" target="_blank" rel="external">[lubuntu] message:desktop manager is not active</a>  </p>
+<p>自分の環境では、回答前段に書いてあるコマンドは行わず、PCManFMの再インストールだけで大丈夫だった。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/23/lubuntu-desktop-manager/" data-text="Lubuntuで 「デスクトップマネージャはアクティブではありません」のエラー表示 | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/01/22/windows10-free/" >7や8からWindows 10へのアップグレードは無料</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年1月22日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>今秋発売予定のMicrosoft次期OS、Windows 10はリリース後1年間に限り、Windows 7、Windows 8.1、Windows Phone 8.1からのアップグレードが無償で提供されるのだとか。<br><a href="http://www.itmedia.co.jp/news/articles/1501/22/news110.html" target="_blank" rel="external">Windows 10無償アップグレードは「必然的」　Microsoftの狙いは - ITmedia ニュース</a>  </p>
+<p>無料になるのはアップグレードに対してのみで、新規のWindows 10搭載パソコンにライセンス料が上乗せされるのはこれまでと変わりが無いようだ。<br>元々アップグレードによる収益は大きなものではなかったようだが、MicrosoftもAppleやGoogleに対して余程危機感を持っているということだろう。<br>ユーザーを無視したようなこれまでの姿勢から較べると朗報とも言えるが、もはや起動するのはLinuxのみで、Windowsを立ち上げることは殆ど無い。<br>だが、Windows 7のサポート終了後のことも考えて、リリース後1年間の内には一応Windows 10にアップグレードしておこうと思う。<br>安心してネットに繋げないようだと、困ることもあるかもしれないし。</p>
+<p>バックアップは取っておくつもりだが、多少使い勝手が悪くても問題無い。<br>Windows、ほんとに使わなくなったし。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/22/windows10-free/" data-text="7や8からWindows 10へのアップグレードは無料 | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/01/20/clamtk/" >Linux用ウイルススキャンソフトClamTkを使ってみた</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年1月20日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Xubuntu14.04にClamTkを導入した。<br>Ubuntuソフトウェアセンターを使ったが、v4.45(デフォルト)の他v5.09(trusty-backports)もインストール可能。  </p>
+<p>ファイルマネージャーNemo上で右クリックから簡単にファイルをウイルススキャン出来るよう、nemo-sendto-clamtk_0.02-1もインストールした。<br><a href="http://ubuntuapps.blog67.fc2.com/blog-entry-609.html" target="_blank" rel="external">ClamTkでウイルススキャンをThunarやNemoの右クリックメニューに追加する | Ubuntuアプリのいいところ</a>  </p>
+<p>「ディレクトリを再帰的にスキャンする」「20MB以上のファイルもスキャンする」「ドットで始まるファイルをスキャンする(.*)」にチェックを入れてhomeディレクトリをスキャンしてもなにも検出されなかったが、「不要なアプリケーション(PUA)をスキャンする」にもチェックを入れると、  </p>
+<p>~/.cache/mozilla/firefox/…<br>~/.cache/chromium/Default/Cache/…<br>~/.cache/midori/web/…  </p>
+<p>など、11個のファイルが「潜在的な脅威」として検出された。  </p>
+<p>VirusTotalを使った「解析」しようとしたが、何故かファイルを送信できず実行出来ない。<br>ただのブラウザのキャッシュのようだが、気持ち悪いのですべて削除した。  </p>
+<p>LinuxはWindowsより安全というし、それほど神経質にならなくても良いかもしれないが、たまにウイルススキャンしてみても良いかもしれない。  </p>
+<p>ーー<br>（追記）<br>Windows領域もスキャンしたら、「脅威」であるはずのないものまでいくつも「潜在的な脅威」として検出されて100を超えてしまった。<br>だが「不要なアプリケーション(PUA)をスキャンする」のチェックを外してスキャンしたら6だった。<br>「解析」では問題のあるファイルではないようだったので、そのままにしておくことにしたが。  </p>
+<p>「不要なアプリケーション(PUA)をスキャンする」のチェックは外して使用した方が良いのかもしれない。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/20/clamtk/" data-text="Linux用ウイルススキャンソフトClamTkを使ってみた | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/01/17/fstab-uuid-label/" >マルチブート環境（複数のLinux）でのfstab</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年1月17日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Windows Xp以外にDebian、Xubuntu、Linux Mintをインストールして、クアッドブートにしていたPC。<br>Debianを削除してLubuntuをインストールしたら、Xubuntuが起動しなくなってしまった。<br>起動途中のスプラッシュ画面で  </p>
+<pre><code>/Linux/sda6 ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
+keys:■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ M■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
+</code></pre><p>のような表示のまま止まってしまう。<br>Lubuntuをインストールする際インストール先のパーティションをフォーマットしたので、そのパーティションのUUIDが変わってしまい、Xubuntuのfstabでの記述と違っている為のようだ。  </p>
+<p>Gpartedで新しいUUIDを調べてfstabを修正すると、起動出来るようになった。  </p>
+<p>fstabでのパーティションの指定はUUID以外に、以前のLinuxのように/dev/sda1などのデバイス名での指定、その他ラベルを用いる方法もあるようだ。<br><a href="http://edo.blog.jp/archives/1716151.html" target="_blank" rel="external">[Linux] /etc/fstabのエントリーをラベル名で定義 : Edo::World::Blog</a>  </p>
+<p>今後また別のLinuxをインストールし直すこともあるかもしれないし、デバイス名またはラベルでの指定に変更しておいた方が良いのかもしれない。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/17/fstab-uuid-label/" data-text="マルチブート環境（複数のLinux）でのfstab | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
 
@@ -352,6 +564,90 @@
 <div class="col-md-3">
 	<div id="sidebar">
 	
+			<!-- _widget/recent_posts -->
+
+<div class="widget">
+  <h4>Recent Posts</h4>
+  <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/01/26/numlockx/" ><i class="fa fa-file-o"></i>Xubuntu14.04で常にNumlockオンで起動する</a>
+      </li>
+    
+      <li>
+        <a href="/2015/01/26/deploy-conflicted-copy-dropbox/" ><i class="fa fa-file-o"></i>Dropbpx上のHexoでdeploy時「競合コピ ...</a>
+      </li>
+    
+      <li>
+        <a href="/2015/01/25/facebookmail-spam/" ><i class="fa fa-file-o"></i>宅配業者からの不在通知を装ったスパムメール（info@...</a>
+      </li>
+    
+      <li>
+        <a href="/2015/01/24/hexo-favicon/" ><i class="fa fa-file-o"></i>Hexoにファビコン</a>
+      </li>
+    
+      <li>
+        <a href="/2015/01/24/xubuntu-menu-nepomuk/" ><i class="fa fa-file-o"></i>XubuntuのメニューからNepomuk Clean...</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+		
+			<!-- _widget/category -->
+
+
+		
+			<!-- _widget/tagcloud -->
+
+	<div class="widget">
+		<h4>Tag Cloud</h4>
+		<ul class="tag_box inline list-unstyled">
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>11</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/風景/">風景<span>1</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>20</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>2</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>10</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>9</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+		
+		</ul>
+	</div>
+
+
+		
+			
+	<div class="widget">
+		<h4>Monthly Archives</h4>
+		<ul class="archive-list inline list-unstyled">
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		</ul>
+	</div>
+
+		
 			<!-- _widget/links -->
 
 

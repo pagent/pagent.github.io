@@ -26,7 +26,7 @@
   
 
   
-  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/bootstrap.cerulean.min.css" media="screen" type="text/css">
   
   <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
@@ -112,14 +112,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/12/01/git-add-directory/" >Gitリポジトリにディレクトリを追加</a>
+			<a href="/2014/10/23/octopress-customize/" >Octopressのカスタマイズ</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年12月1日
+	2014年10月23日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -127,23 +127,48 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>HexoのソースはBitbucketで管理しているが、Hexoのテーマを変えたところ、commit出来なくなった。  </p>
-<pre><code>Changes not staged for commit:
-  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
-  (commit or discard the untracked or modified content in submodules)
+	  <p>ブログをリニューアルするにあたって、またOctopressを少しカスタマイズした。  </p>
+<p>以前と同じく、<a href="http://tantant.jp/blog/Octopress/configuring-octopress/#paragraph07" target="_blank" rel="external">Octopressの初期設定時に気にしておきたい9箇所 – tantant</a>と<a href="http://rcmdnk.github.io/blog/2013/10/01/blog-octopress/" target="_blank" rel="external">月間アーカイブ for Octopress – rcmdnk’s blog</a>の通り、カテゴリ別アーカイブと月別アーカイブを追加した。  </p>
+<p>テーマは<a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes" target="_blank" rel="external">3rd Party Octopress Themes · imathis/octopress Wiki</a>で探してみたが、やっぱりデフォルトの方がよいかと思い、sass/custom/_styles.scssを下記に編集したのみ。  </p>
+<pre><code>// This File is imported last, and will override other styles in the cascade
+// Add styles here to make changes without digging in too much
 
-    modified:   themes/freewill (modified content, untracked content)
+body &gt; header {
+    padding-top: 1.3em;
+    padding-bottom: 1.1em;
+}
 
-no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
-</code></pre><p>と表示される。  </p>
-<p>Bitbucketのソースを見ると、新しいテーマのディレクトリthemes/freewillは追加はされているが、クリックして開くことが出来ない。<br>何度かやり直してみたが、うまく行かない。  </p>
-<p>ためしに適当なファイルを一つpushしたらどうかと、  </p>
-<pre><code>$ git add themes/freewill/LICENSE
-$ git commit -m &#39;修正&#39;
-$ git push
-</code></pre><p>とやったらLICENSEが追加され、freewillを開くことが出来た。<br>その後もう一度<code>git add .</code>し、commit、pushしたら、他のファイルやディレクトリも追加された。  </p>
-<p>そう言えばリポジトリに初めてcommitした時も、一度contributors.txtというファイルをpushしてからでないとうまく行かなかった。<br>Gitというのはいきなりディレクトリ全体を追加するのは出来ない仕様なのかもしれない。</p>
+body &gt; header h1 {
+    font-size: 2.0em;
+    font-family: &quot;PT Serif&quot;,&quot;Georgia&quot;,&quot;Helvetica Neue&quot;,Arial,sans-serif;
+}
+
+body &gt; header h2 {
+    font-size: 0.9em;
+    color: #AAA;
+}
+
+.entry-title {
+    font-size: 1.5em !important;
+}
+
+h2, section h1 {
+    font-size: 1.2em;
+}
+
+#blog-archives article h1 a {
+    font-size: 1.0em !important;
+}
+
+p {
+    font-size:  92%;
+}
+
+article blockquote {
+    font-size:  105%;
+}
+</code></pre><p>日付け表記は英語式ではなく日本語式がよかったので、<code>_config.yml</code>で<code>date_format: &quot;%Y年%-m月%-d日&quot;</code><br>としたが、なぜかデフォルトのテーマでは反映されず。<br>source/_includes/post/date.htmlをoctostrap3の<a href="https://github.com/kAworu/octostrap3/blob/master/source/_includes/post/date.html" target="_blank" rel="external">date.html</a>と入れ替えたら反映された。<br>よく分からないが、デフォルトテーマのdate.htmlの記述に問題があるらしい。  </p>
+<p>あと、記事タイトルやカテゴリー名に漢字を使うと中国語読みみたいになってしまうが、これはたぶんOctopressがベースとしているJekyllの仕様なのだろう。<br>WordPressのようにスラッグを指定出きれば良いのだが、やり方が分からないのでこの辺は我慢しないとしょうが無いようだ。</p>
 
 	
 	</div>
@@ -152,8 +177,8 @@ $ git push
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/01/git-add-directory/" data-text="Gitリポジトリにディレクトリを追加">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/10/23/octopress-customize/" data-text="Octopressのカスタマイズ | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
 
@@ -165,14 +190,14 @@ $ git push
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/12/01/hexo-bootstrap/" >HexoのテーマをBootstrap準拠のFreewillにした</a>
+			<a href="/2014/10/23/site-renewal/" >Octopressのソース消失</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年12月1日
+	2014年10月23日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -180,16 +205,8 @@ $ git push
 	<div class="col-md-12">
 	  
 	
-	  <p>Hexoのテーマをデフォルトのものから、Bootstrap準拠の<a href="https://github.com/yieme/hexo-theme-freewill" target="_blank" rel="external">Freewill</a>にした。<br>BootstrapのテーマBootswatchというものを採用しているようで、外観を簡単に変更出来る。  </p>
-<p>他のテーマ同様  </p>
-<pre><code>git clone https://github.com/yieme/hexo-theme-freewill.git themes/freewill
-</code></pre><p>でインストール。  </p>
-<p>Freewillの_config.ymlで<code>bootswatch:</code>で種々のBootswatchテーマに変更出来る。<br>Bootswatchのナビゲーションバーには、テーマ毎に2種類のカラーバリエーションがあり、layout/_partial/navigation.ejsの2行目で<code>navbar-default</code>と<code>navbar-inverse</code>（逆の配色）のどちらかに切り替え可能。  </p>
-<p>デフォルトの設定では画面をスクロールすると、ナビゲーションバーがフェードアウト、マウスを合わせるとフェードインする仕様になっていた。<br>出たり消えたりはかえって邪魔なので、source/js/main.jsの内容をすべて消去したらフェードアウトが無くなった。<br>navigation.ejs2行目の<code>navbar-fixed-top</code>を削除すると、スクロールとともにナビゲーションバーが上方に移動する。  </p>
-<p>_config.ymlの表示不要な項目は先頭に<code>#</code>を付けてコメントアウト。  </p>
-<p>テーマの変更でAtomフィードが表示されなくなってしまったが、freewill/_config.ymlの<code>rss: true</code>を<code>rss: atom.xml</code>に変更してナビゲーションバーに追加したら表示された。<br>layout/_partial/head.ejsのtheme.rssの箇所の<code>link rel=&quot;alternative&quot;</code>を<code>link rel=&quot;alternate&quot;</code>に変更。アドレスバーにもアイコンが表示された。  </p>
-<p>Bootstrapのテーマらしく、すっきりしていて機能的な印象。  </p>
-<p>ただ、paginationのページ上方にでかでかと表示されているJumbotronというのをどう使えばいいか分からない。<br>デフォルトではブログタイトルもしくはブログの説明が表示されるようだが。</p>
+	  <p>deployのやり方が分からずFTPでのアップロードだったが、独自ドメインでもOctopressを使ってブログを書いていた。<br>先日、PCのhomeディレクトリを移動する際に誤ってhomeディレクトリをすべて削除してしまい、結局Linux（Xubuntu）を再インストールした。<br>ブログ自体は残っているが、sourceを消失してしまったので、更新するためにはかつての記事をOctopressのsource内に取り込む必要が有りそう。<br>htmlファイルを一つ一つmarkdown形式に復元するのは骨が折れそうなのでかつての記事は諦めることにして、今度はレンタルサーバーではなくGithubを使って新しく始めることにした。<br>Githubでも独自ドメインを使えるようだがそれはせず、.github.ioのサブドメインを使わせてもらうことにした。  </p>
+<p>静的サイトジェネレーターはソースが手元にあるのでバックアップ不要と安心していたが、ソースを消失してしまうとどうしようも無いと痛感。</p>
 
 	
 	</div>
@@ -198,8 +215,8 @@ $ git push
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/01/hexo-bootstrap/" data-text="HexoのテーマをBootstrap準拠のFreewillにした">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/10/23/site-renewal/" data-text="Octopressのソース消失 | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
 
@@ -211,14 +228,14 @@ $ git push
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/11/30/sidebar-git/" >Gitリポジトリを利用したブログとサイドバー</a>
+			<a href="/2014/10/23/io/" >Githubへのdeployエラーとインド洋のイギリス領（.io）</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年11月30日
+	2014年10月23日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -226,13 +243,15 @@ $ git push
 	<div class="col-md-12">
 	  
 	
-	  <p>これまで、無料レンタルブログやWordPress、Octopressなどを使ったブログ含めて、ずっと右サイドバーの2コラムを好んで使って来た。  </p>
-<p>ブログを始めた頃は今のように、サイドバーの無いブログはあまり見かけなかったし、サイドバーはあるのが当たり前と思っていた。<br>訪問者がサイドバーを見て他の記事も読んでくれるかもしれないし。  </p>
-<p>普段使っているノートパソコンの右側にテンキーが付いていて、左に寄ってパソコンに向かうことになるので、記事が正面に来るよう、右サイドバーが都合が良かった。<br>両側サイドバーの3コラムは少しごちゃごちゃしている感じがして、好みではなかった。。  </p>
-<p>スマホに合わせるといっても、レスポンシブルデザインならサイドバーが下に回ってくれるし、レンタルブログサービスではスマホ用のページも用意してくれている。<br>サイドバーの無いブログを見ても、正直なにが良いのかよく分からなかった。<br>だが、静的サイトジェネレーターで作ったブログをGithub Pagesにdeployするようになって、考えが変わって来た。  </p>
-<p>サイドバーがあると、一つ記事を投稿しただけで、過去のすべての記事のサイドバーも変更される可能性がある。<br>「最近の記事」を表示している場合は当然そうだろうし、新たにタグやカテゴリーを追加した場合、それにカテゴリーや月別アーカイブの記事数が更新される場合も同様に違いない。<br>（JavaScriptを用いていたら大丈夫なのかもしれないが。）</p>
-<p>これをdeployすると、すべての記事を更新することになってしまう。<br>これでは非効率だし、.deploy/.git/objectsの肥大化の原因にもなるはず。<br>サイドバーが下にある場合も同様だろう。</p>
-<p>Github Pagesを使うなら、サイドバーは無い方が良さそうだ。<br>自分のことを思い返してみても、よほど興味のあるキーワードがある時以外は、サイドバーの項目をクリックすることはほとんど無いようだ。</p>
+	  <p>OctopressブログをGithubのリポジトリにdeployしようとしても、エラーになってなかなか上手くいかなかった。  </p>
+<p>どうやら、リポジトリ名を（username）.github.comにしたのが原因だった様子。<br>新しく（username）.github.ioでリポジトリを作りなおしたら、すんなりdeploy出来た。<br>Githubがリポジトリを.github.comから.github.ioに移行したのが関係しているのだろうか。  </p>
+<p>.ioというのは見慣れないドメインだったが、最近はIT分野で好まれているのだとか。</p>
+<blockquote>
+<p>.ioは国別コードトップレベルドメイン（ccTLD）の一つで、イギリス領インド洋地域(Indian Ocean Territory)に割り当てられている。</p>
+<p>入出力のI/O（Input/Output）やI/Oポートを表すとして、ウェブアプリケーションを始めとするコンピュータサイエンスの分野では近年.ioドメインが好まれている。2013年4月にGitHubはプロジェクトページの全ドメインを「github.io」に移行した。</p>
+</blockquote>
+<p><a href="http://ja.wikipedia.org/wiki/.io" target="_blank" rel="external">.io - Wikipedia</a>  </p>
+<p>イギリスという国がいまだにインド洋に領有地（植民地）を持っている、ということに驚いた。</p>
 
 	
 	</div>
@@ -241,8 +260,8 @@ $ git push
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/30/sidebar-git/" data-text="Gitリポジトリを利用したブログとサイドバー">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/10/23/io/" data-text="Githubへのdeployエラーとインド洋のイギリス領（.io） | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
 
@@ -254,14 +273,14 @@ $ git push
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/11/29/page-no-date/" >Hexoの固定ページを日付け無しに</a>
+			<a href="/2014/10/21/test/" >テスト投稿</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年11月29日
+	2014年10月21日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -269,17 +288,7 @@ $ git push
 	<div class="col-md-12">
 	  
 	
-	  <p>Hexoでは固定ページを作る際、コマンド<code>hexo new page （ページ名）</code>でsource/（ページ名）下にindex.mdが作成される。<br>tagsやcategoriesは使えないようになっている。<br>コメントを禁止にするには、Front Matterに<code>comments: false</code>を加えれば良い。  </p>
-<p>固定ページでは日付けも表示したくないところだが、<code>date:</code>の項目を消してみるても、ファイルを更新した日付けが表示されてしまう。<br>themes/landscape/layout/page.ejsを見ると、post.ejsと同じ_partial/article.ejsがレイアウトとして使われていた。  </p>
-<p>_partialディレクトリ下のarticle.ejsをarticle-page.ejsという名前でコピー。<br>4行目の  </p>
-<pre><code>&lt;%- partial(&#39;post/date&#39;, {class_name: &#39;article-date&#39;, date_format: null}) %&gt;
-</code></pre><p>を削除。  </p>
-<p>page.ejsの  </p>
-<pre><code>&lt;%- partial(&#39;_partial/article&#39;, {post: page, index: false}) %&gt;
-</code></pre><p>を</p>
-<pre><code>&lt;%- partial(&#39;_partial/article-page&#39;, {post: page, index: false}) %&gt;
-</code></pre><p>に変更した。  </p>
-<p>希望通り、日付けが削除された。</p>
+	  <p>テスト投稿</p>
 
 	
 	</div>
@@ -288,53 +297,8 @@ $ git push
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/29/page-no-date/" data-text="Hexoの固定ページを日付け無しに">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/29/excerpt-separator/" >HexoやOctopressのトップページを全文表示ではなく概要表示にする</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月29日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Hexoでトップページを表示した時、複数の記事の全文がだらだらと表示されているのは見づらいと思い、前半部分を抜粋した概要表示にしてみた。<br>やり方は簡単で、記事ソースの適当な箇所に<code>&lt;!-- more --&gt;</code>というタグを挿入するだけ。  </p>
-<p>WordPressやMovable Typeでは、200文字など決まった文字数で自動的に抜粋してくれたりもするが、その方法はちょっと分からないので、手動で挿入した。<br>タグを挿入すると<code>&lt;!-- more --&gt;</code>より前の部分だけの表示になる。<br>続きを読むためのリンクの文言「Read More」はHexo作業フォルダの_config.ymlではなく、themes/landscape/_config.ymlなどテーマ毎の_config.ymlで変更出来る。  </p>
-<p>Octopressの場合は_config.ymlの<code>excerpt_link:</code>でリンクの文言を変えられる。<br>また_config.ymlの<code>excerpt_link:</code>で、抜粋するためのタグ自体を<code>&lt;!-- more --&gt;</code>から別のものに変更出来るようだ。  </p>
-<p>ーー<br>（追記）<br>概要表示にはしてみたが、全文表示の方が都合の良いことがあったので、あとで全ての記事から<code>&lt;!-- more --&gt;</code>タグを削除した。<br>_postsで端末を開き、下記コマンドですべての.mdファイルから<code>&lt;!-- more --&gt;</code>を一括削除。</p>
-<pre><code>$ perl -p -i.bak -e &#39;s/&lt;!-- more --&gt;//g&#39; *.md
-（すべての.mdファイルに拡張子.bakをつけてバックアップを取り、ファイル内の&lt;!-- more --&gt;を削除）
-</code></pre><p><code>&lt;!-- more --&gt;</code>が正常に削除されたことを確認後、.bakファイルを一括削除した。  </p>
-<pre><code>$ find . -type f -name &quot;*.bak&quot; -delete
-（拡張子が「.bak」のファイルをカレントディレクトリで一括削除）
-</code></pre>
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/29/excerpt-separator/" data-text="HexoやOctopressのトップページを全文表示ではなく概要表示にする">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/10/21/test/" data-text="テスト投稿 | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
 
@@ -357,7 +321,7 @@ $ git push
         <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
 
 		
-		   <li class="next"> <a href="/page/10/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a> </li>
+          <li class="next disabled"><a>Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -374,6 +338,90 @@ $ git push
 <div class="col-md-3">
 	<div id="sidebar">
 	
+			<!-- _widget/recent_posts -->
+
+<div class="widget">
+  <h4>Recent Posts</h4>
+  <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/01/26/numlockx/" ><i class="fa fa-file-o"></i>Xubuntu14.04で常にNumlockオンで起動する</a>
+      </li>
+    
+      <li>
+        <a href="/2015/01/26/deploy-conflicted-copy-dropbox/" ><i class="fa fa-file-o"></i>Dropbpx上のHexoでdeploy時「競合コピ ...</a>
+      </li>
+    
+      <li>
+        <a href="/2015/01/25/facebookmail-spam/" ><i class="fa fa-file-o"></i>宅配業者からの不在通知を装ったスパムメール（info@...</a>
+      </li>
+    
+      <li>
+        <a href="/2015/01/24/hexo-favicon/" ><i class="fa fa-file-o"></i>Hexoにファビコン</a>
+      </li>
+    
+      <li>
+        <a href="/2015/01/24/xubuntu-menu-nepomuk/" ><i class="fa fa-file-o"></i>XubuntuのメニューからNepomuk Clean...</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+		
+			<!-- _widget/category -->
+
+
+		
+			<!-- _widget/tagcloud -->
+
+	<div class="widget">
+		<h4>Tag Cloud</h4>
+		<ul class="tag_box inline list-unstyled">
+		
+			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>2</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>11</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>20</span></a></li>
+		
+			<li><a href="/tags/風景/">風景<span>1</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>10</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>9</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+		
+		</ul>
+	</div>
+
+
+		
+			
+	<div class="widget">
+		<h4>Monthly Archives</h4>
+		<ul class="archive-list inline list-unstyled">
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		</ul>
+	</div>
+
+		
 			<!-- _widget/links -->
 
 

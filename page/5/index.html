@@ -26,7 +26,7 @@
   
 
   
-  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/bootstrap.cerulean.min.css" media="screen" type="text/css">
   
   <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
@@ -112,14 +112,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/12/22/scrapbook-stylish/" >ScrapBookで保存したページにStylishのスタイルを適用する</a>
+			<a href="/2014/12/02/hexo-tweetbutton/" >Hexoの記事一覧ページにツイートボタン設置</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年12月22日
+	2014年12月2日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -127,25 +127,26 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>ScrapBookなどでローカルに保存したページにStylishのスタイルを適用するには、対象ドメインを指定する箇所に<code>,url-prefix(file://)</code>を追記すれば良い。  </p>
-<p>たとえば、Amebaブログのアメーバヘッダーと記事下部の有名人ブログ広告を削除するスタイルに追加する場合は下記。  </p>
-<pre><code>@namespace url(http://www.w3.org/1999/xhtml);
-@-moz-document domain(&quot;ameblo.jp&quot;)
-,url-prefix(file://)
-{
-
-#ambHeader {
-    display: none;
+	  <p>HexoのテーマをFreewill変えて、Disqusウィジェット内の「Share」にはTwitterのツイートボタンはあるが、それだと<code>http://disq.us/…</code>というDisqus経由の短縮URLになる様子。<br>普通のツイートボタンを設置したかったので、<a href="https://about.twitter.com/ja/resources/buttons" target="_blank" rel="external">Twitter公式のツイートボタン</a>を入れることにした。  </p>
+<p>個別の記事への設置は、Twitterサイトで「ページのURLを使う」の設定で作成したコードを/layout/_partial/article.ejsの<code>&lt;%- item.content %&gt;</code>の下あたりに追記したら問題なく表示された。 　</p>
+<p>だがそのコードをページネーション記事のレイアウトlayout/_partial/post/entry.ejsに挿入しても、タイトル名と一覧ページのURLしか取得出来ない。<br>URLとツイート本文を自分でカスタマイズする設定でコードを作成し、excerptリンクに倣って、それぞれ<code>&lt;%- config.root %&gt;&lt;%= item.path %&gt;</code>、<code>&lt;%= item.title %&gt;</code>で挿入したが、記事タイトルのみでURLを取得出来ない。  </p>
+<p><del>試行錯誤の結果、ブログURLの箇所をパスではなく直接記載して、<code>http://…/&lt;%= item.path %&gt;</code>にしたら上手くいった。<br><code>&lt;%- config.root %&gt;</code>というパスがブログトップのURLを取得出来なかったようだが、理由は不明。<br>「Read More」（続きを読む）の部分では、ちゃんと変換されているが。</del>  </p>
+<p>ーーーー<br>（<strong>追記</strong>）<br>個別記事URLへのパスは<code>&lt;%- item.permalink %&gt;</code>一つで良いようだ。<br>ツイート本文は<code>&lt;%= item.title %&gt; | &lt;%= config.title %&gt;</code>（記事タイトル | ブログ名）で作成。<br>ーーーー  </p>
+<p>記事を概要表示にしている時は「Read More」。全文表示にしている時はツイートボタンを表示することにして、read_moreの箇所を下記に変更した。  </p>
+<pre><code>&lt;% if (item.excerpt &amp;&amp; index) { %&gt;
+  &lt;a type=&quot;button&quot; href=&quot;&lt;%- config.root %&gt;&lt;%- item.path %&gt;#more&quot; class=&quot;btn btn-default more&quot;&gt;&lt;%= __(&#39;read_more&#39;) %&gt;&lt;/a&gt;
+&lt;% } else { %&gt;
+&lt;div class=&quot;tweet-button&quot;&gt;
+  &lt;a href=&quot;https://twitter.com/share&quot; class=&quot;twitter-share-button&quot; data-url=&quot;&lt;%- item.permalink %&gt;&quot; data-text=&quot;&lt;%= item.title %&gt; | &lt;%= config.title %&gt;&quot; data-lang=&quot;ja&quot;&gt;ツイート&lt;/a&gt;
+&lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?&#39;http&#39;:&#39;https&#39;;if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+&#39;://platform.twitter.com/widgets.js&#39;;fjs.parentNode.insertBefore(js,fjs);}}(document, &#39;script&#39;, &#39;twitter-wjs&#39;);&lt;/script&gt;
+&lt;/div&gt;
+&lt;% } %&gt;
+</code></pre><p>ツイートボタンに対しては、source/css/style.cssに下記を追記、  </p>
+<pre><code>.tweet-button {
+  padding: 8px 0;
 }
-html.fixed body {
-    padding-top: 0px !important;
-}
-#rc_module2 {
-    display: none;
-}
-
-}
-</code></pre><p>ScrapBookに保存したページも見やすくなった。</p>
+</code></pre><p>位置を調整した。  </p>
+<p>（参考にさせて頂いた記事）<br><a href="http://imaizu.me/program/twbtn-on-jekyll-post.html" target="_blank" rel="external">jekyllのブログで投稿一覧ページにtwitterのボタンを置く - Taught by Myself</a></p>
 
 	
 	</div>
@@ -154,8 +155,8 @@ html.fixed body {
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/22/scrapbook-stylish/" data-text="ScrapBookで保存したページにStylishのスタイルを適用する">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/02/hexo-tweetbutton/" data-text="Hexoの記事一覧ページにツイートボタン設置 | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
 
@@ -167,14 +168,14 @@ html.fixed body {
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/12/21/stylish-do-not-work/" >「Stylish」が機能しなくて困ったが</a>
+			<a href="/2014/12/01/git-add-directory/" >Gitリポジトリにディレクトリを追加</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年12月21日
+	2014年12月1日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -182,11 +183,23 @@ html.fixed body {
 	<div class="col-md-12">
 	  
 	
-	  <p>動画サイトの背景を黒くしたり、Twitterのダイレクトメッセージ（DM）のアイコンを消したりと、なにかと便利に使っているFirefoxのアドオン「Stylish」だが、急にすべてのサイトで動作しなくなってしまった。<br>Stylishをインストールし直したり開発版を入れてみたりしたが、動いてくれない。  </p>
-<p>Firefoxをリセットするしかないかと諦めかけたが、メニューバーのStylishのアイコンをクリックしたら上から2番目に「すべてのスタイルを作動させる」という項目があったので、クリックしてみた。  </p>
-<p>なんなく機能した。 　</p>
-<p>すべてのスタイルを作動させても、Stylishの設定で無効にしてあるスタイルは機能しない。<br>「すべてのスタイルを作動させる」はブラウザの再起動をせずにStylish自体を有効にするかどうかということらしい。<br>いつの間にか知らずに「すべてのスタイルを停止する」をクリックしてしまっていたようだ。  </p>
-<p>「すべてのスタイルを〜」ではく、「Stylishを有効にする」「Stylishを無効にする」と言ってくれた方が分かりやすいのだが。</p>
+	  <p>HexoのソースはBitbucketで管理しているが、Hexoのテーマを変えたところ、commit出来なくなった。  </p>
+<pre><code>Changes not staged for commit:
+  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+
+    modified:   themes/freewill (modified content, untracked content)
+
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+</code></pre><p>と表示される。  </p>
+<p>Bitbucketのソースを見ると、新しいテーマのディレクトリthemes/freewillは追加はされているが、クリックして開くことが出来ない。<br>何度かやり直してみたが、うまく行かない。  </p>
+<p>ためしに適当なファイルを一つpushしたらどうかと、  </p>
+<pre><code>$ git add themes/freewill/LICENSE
+$ git commit -m &#39;修正&#39;
+$ git push
+</code></pre><p>とやったらLICENSEが追加され、freewillを開くことが出来た。<br>その後もう一度<code>git add .</code>し、commit、pushしたら、他のファイルやディレクトリも追加された。  </p>
+<p>そう言えばリポジトリに初めてcommitした時も、一度contributors.txtというファイルをpushしてからでないとうまく行かなかった。<br>Gitというのはいきなりディレクトリ全体を追加するのは出来ない仕様なのかもしれない。</p>
 
 	
 	</div>
@@ -195,8 +208,8 @@ html.fixed body {
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/21/stylish-do-not-work/" data-text="「Stylish」が機能しなくて困ったが">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/01/git-add-directory/" data-text="Gitリポジトリにディレクトリを追加 | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
 
@@ -208,14 +221,14 @@ html.fixed body {
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/12/21/clean-links/" >リダイレクトを経由せず直接リンク先に飛ぶためのFirefoxアドオン「Clean Links」</a>
+			<a href="/2014/12/01/hexo-bootstrap/" >HexoのテーマをBootstrap準拠のFreewillにした</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年12月21日
+	2014年12月1日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -223,19 +236,25 @@ html.fixed body {
 	<div class="col-md-12">
 	  
 	
-	  <p>たとえばGoogleで「example.com」を検索して、検索結果から「Example domains - Internet Assigned Numbers Authority」に行こうとすると、<br><code>http://www.google.co.jp/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;uact=8&amp;ved=0CB0QFjAA&amp;url=http%3A%2F%2Fexample.com%2F&amp;ei=7BmWVMvsGZLn8AXWvYD4BQ&amp;usg=AFQjCNFgcPdvBI3xyhn99rnOikPXwwtMmA&amp;bvm=bv.82001339,d.dGc</code><br>を経由して、<code>http://example.com/</code>にリダイレクトされる。  </p>
-<p>リダイレクトを経由せずに直接目的サイトに飛ぶためのアドオンとして、これまで「Redirect Cleaner」というのを使っていたが、いつの間にかホワイトリストに追加するための設定画面が無くなってしまい、アドオンの設定画面でしか追加出来ない。<br>「Redirect Cleaner」自体もFirefoxの公式サイトから無くなってしまっている。  </p>
-<p>使い勝手が悪くなってしまったことだし他に類似のアドオンがないか探してみたら、色々とあるようだった。  </p>
-<ul>
-<li><p><strong>Redirect Remover</strong><br>残念ながらFirefox 34.0に対応していない。  </p>
-</li>
-<li><p><strong>NoRedirect</strong><br>インストールしてみたが、使い方がよく分からない。  </p>
-</li>
-<li><p><strong>Clean Links</strong><br>メニューバーのアイコンを右クリックすると、リダイレクトをスキップした履歴が表示される。<br>通常通りにリダイレクトさせたい時は、ここから「Whitelist Selection」ボタンで簡単にホワイトリストに追加出来る。ホワイトリストに追加すると、アドオンの設定画面の「Skip Domains」に追加される。<br>ホワイトリストから外す時は設定画面の「Skip Domains」から削除しないといけないが、使い勝手はかつての「Redirect Cleaner」に近い。  </p>
-</li>
-</ul>
-<p>というわけで、<a href="https://addons.mozilla.org/ja/firefox/addon/clean-links/" target="_blank" rel="external">「Clean Links」</a>を使うことにした。  </p>
-<p>リダイレクトをスキップした時はハイライト表示されるのでちゃんと仕事をしてくれているのが分かる。<br>「Skip Domains」以外の設定項目はよく分からないが、たぶんデフォルトのままで良いのだろう。</p>
+	  <p>Hexoのテーマをデフォルトのものから、Bootstrap準拠の<a href="https://github.com/yieme/hexo-theme-freewill" target="_blank" rel="external">Freewill</a>にした。<br>BootstrapのテーマBootswatchというものを採用しているようで、外観を簡単に変更出来る。  </p>
+<p>他のテーマ同様  </p>
+<pre><code>git clone https://github.com/yieme/hexo-theme-freewill.git themes/freewill
+</code></pre><p>でインストール。  </p>
+<p>Freewillの_config.ymlで<code>bootswatch:</code>で種々のBootswatchテーマに変更出来る。<br>Bootswatchのナビゲーションバーには、テーマ毎に2種類のカラーバリエーションがあり、freewill/layout/_partial/navigation.ejsの2行目で<code>navbar-default</code>と<code>navbar-inverse</code>（逆の配色）のどちらかに切り替え可能。  </p>
+<p>デフォルトの設定では画面をスクロールしたりマウスが離れると、ナビゲーションバーがフェードアウト、マウスを合わせるとフェードインする仕様になっていた。<br>出たり消えたりがかえって邪魔だったので、themes/freewill/source/js/main.jsの7、10、17、22行目の  </p>
+<pre><code>$(&quot;.navbar&quot;).stop().fadeTo(333, 0.2);
+
+$(&quot;.navbar&quot;).stop().fadeTo(333, 1);
+
+$(&quot;.navbar&quot;).fadeTo(100, 1);
+
+$(&quot;.navbar&quot;).fadeTo(100, 0.2);
+</code></pre><p>を削除したら、フェードアウトしなくなった。  </p>
+<p>navigation.ejs2行目の<code>navbar-fixed-top</code>を削除すると、スクロールとともにナビゲーションバーが上方に移動。  </p>
+<p>_config.ymlの表示不要な項目は先頭に<code>#</code>を付けてコメントアウト。  </p>
+<p>テーマの変更でAtomフィードが表示されなくなってしまったが、freewill/_config.ymlの<code>rss: true</code>を<code>rss: atom.xml</code>に変更してナビゲーションバーに追加したら表示された。<br>layout/_partial/head.ejsのtheme.rssの箇所の<code>link rel=&quot;alternative&quot;</code>を<code>link rel=&quot;alternate&quot;</code>に変更。アドレスバーにもアイコンが表示された。  </p>
+<p>Bootstrapのテーマらしく、すっきりしていて機能的な印象。  </p>
+<p>ただ、paginationのページ上方にでかでかと表示されているJumbotronというのをどう使えばいいか分からない。<br>デフォルトではブログタイトルもしくはブログの説明が表示されるようだが。</p>
 
 	
 	</div>
@@ -244,8 +263,8 @@ html.fixed body {
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/21/clean-links/" data-text="リダイレクトを経由せず直接リンク先に飛ぶためのFirefoxアドオン「Clean Links」">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/01/hexo-bootstrap/" data-text="HexoのテーマをBootstrap準拠のFreewillにした | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
 
@@ -257,14 +276,14 @@ html.fixed body {
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/12/16/web-analyze/" >GitHub Pagesのブログでアクセス解析</a>
+			<a href="/2014/11/30/sidebar-git/" >Gitリポジトリを利用したブログとサイドバー</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年12月16日
+	2014年11月30日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -272,40 +291,13 @@ html.fixed body {
 	<div class="col-md-12">
 	  
 	
-	  <p>Githubではgraphs→trafficでトラフィックを見られるが、これはリポジトリへのアクセス状況などを見るもので、GitHub Pagesを利用したブログに対してのアクセス解析ではないようだ。<br>ブログのどのページにどれくらいアクセスがあったか等を確認するには、他のブログ同様なんらかのアクセス解析ツールを導入する必要がある。<br>（GitHub Pagesにサーバーログ型のアクセス解析は設置出来ないだろうから、AWStatsなどは対象外とした。）</p>
-<h4 id="アクセス解析サービスを利用する">アクセス解析サービスを利用する</h4>
-<p>登録してすぐ利用出来るので簡便。しかも高機能なサービスが多い。<br>Google Analytics等は無料で広告も入らない。  </p>
-<ul>
-<li><p><strong>Google Analytics</strong><br>OctopressでもHexoでも、Google Analyticsを使うことを想定している様だが、なんでもかんでもGoogleというのはちょっと嫌な気がする。<br>それに、DisconnectやGhosteryなどトラッカーをブロックするアドオンがブラウザに導入されていたら、その訪問は解析出来ない。（導入している人はそれほど多くはないかもしれないが。）<br>（補記）<br>FirefoxのトラッカーブロックアドオンGhosteryのリストには、Google Analyticsの他、Yahoo Analytics、Pt engine、Ninja Access Analysisなども挙げられている。<br>FC2アクセス解析は現在のところ何故かリストに入っていない。</p>
-</li>
-<li><p><strong>Yahoo!アクセス解析</strong><br>検索エンジンではGoogleと提携していることだし、わざわざ使おうという気にはならない。  </p>
-</li>
-<li><p><strong>Pt engine</strong><br>Google Analyticsにヒートマップ機能を追加したようなもので、かなり高機能らしい。大企業での導入も多数実績がある様子。<br>無料版で解析できるドメイン（サイト）は一つだけのようで、有料版だととたんに高額になる。  </p>
-</li>
-<li><p><strong>他のアクセス解析サービス</strong><br>忍者アクセス解析やFC2アクセス解析など色々あるが、無料だと広告などが入るという難点がある。<br>QLOOKはバナーが上部でチカチカ点滅したりしないのでそれほど気にならないが、それでも広告バナーは表示される。  </p>
-</li>
-</ul>
-<h4 id="サーバー設置型のアクセス解析ツールを導入する">サーバー設置型のアクセス解析ツールを導入する</h4>
-<p>レンタルサーバーにアクセス解析ツールを導入してブログに解析タグを貼れば、無料で利用出来て広告も入らないツールが多々ある。<br>上記のようなアクセス解析サービスの利用と違って、解析サービス会社に情報を渡さずに済むというのもメリットかもしれない。<br>それほど多くは試してないが、利用経験のあるものは下記。  </p>
-<p>（データベース不要のもの）  </p>
-<ul>
-<li><p><strong>futomiの高機能アクセス解析CGI</strong><br>無料版（Standard版）では自分のアクセスを除外出来ないという致命的な欠点がある。  </p>
-</li>
-<li><p><strong>w3Analyzer</strong><br>動作は軽快だが、解析出来る項目はやや少ない。  </p>
-</li>
-<li><p><strong>XenoLogger</strong><br>現在は開発は終了していて「ミスター アクセス解析」に統合されている模様だが、XenoLoggerも依然ダウンロード可能。<br>データベースを使わないタイプなので、見た目の派手さはないが、充分な機能を備えている。<br>管理画面がコンパクト（文字や行間が小さめ）なので、ノートパソコンでの利用に向いている。<br>おすすめ。  </p>
-</li>
-</ul>
-<p>（データベースが必要なもの）  </p>
-<ul>
-<li><p><strong>Research Artisan Lite</strong><br>高機能でページ内のリンククリック歴も解析してくれる。<br>悪くないのだが、管理画面が縦方向に大きいので、縦の狭いノートパソコンでの利用時はスクロールがしんどい。 　<br>検索エンジンのクローラーが来てくれてるかどうかの解析は精度が高いように思う。  </p>
-</li>
-<li><p><strong>Piwik</strong><br>オープンソースのソフト。<br>リアルタイムでの解析などもあり高機能。さらにプラグインでの拡張も可能。<br>これもリンククリックの解析あり。リンククリック解析にはデータベースが必要なのだろうか。<br>導入や使いこなしの難易度はやや高い印象だが、かなり有用なツール。  </p>
-</li>
-</ul>
-<h4 id="結論">結論</h4>
-<p>他にも多々あると思うが、普通はたぶんGoogle Analyticsを利用するのが順当なのだろう。Google嫌いの人はPt engineだろうか。<br>個人的には、他のブログでも利用していて使い慣れているXenoLogger（ミスター アクセス解析）が今のところ一押し。<br>Piwikは使いこなせればかなり有用かもしれない。<br>あと、Pt engineは使用経験が無いが、少し興味をそそられる。  </p>
-<p>ーー<br>（追記）<br>GhosteryのブロックリストにはPiwikも入っているようだ。</p>
+	  <p>これまで、無料レンタルブログやWordPress、Octopressなどを使ったブログ含めて、ずっと右サイドバーの2コラムを好んで使って来た。  </p>
+<p>ブログを始めた頃は今のように、サイドバーの無いブログはあまり見かけなかったし、サイドバーはあるのが当たり前と思っていた。<br>訪問者がサイドバーを見て他の記事も読んでくれるかもしれないし。  </p>
+<p>普段使っているノートパソコンの右側にテンキーが付いていて、左に寄ってパソコンに向かうことになるので、記事が正面に来るよう、右サイドバーが都合が良かった。<br>両側サイドバーの3コラムは少しごちゃごちゃしている感じがして、好みではなかった。。  </p>
+<p>スマホに合わせるといっても、レスポンシブルデザインならサイドバーが下に回ってくれるし、レンタルブログサービスではスマホ用のページも用意してくれている。<br>サイドバーの無いブログを見ても、正直なにが良いのかよく分からなかった。<br>だが、静的サイトジェネレーターで作ったブログをGithub Pagesにdeployするようになって、考えが変わって来た。  </p>
+<p>サイドバーがあると、一つ記事を投稿しただけで、過去のすべての記事のサイドバーも変更される可能性がある。<br>「最近の記事」を表示している場合は当然そうだろうし、新たにタグやカテゴリーを追加した場合、それにカテゴリーや月別アーカイブの記事数が更新される場合も同様に違いない。<br>（JavaScriptを用いていたら大丈夫なのかもしれないが。）</p>
+<p>これをdeployすると、すべての記事を更新することになってしまう。<br>これでは非効率だし、.deploy/.git/objectsの肥大化の原因にもなるはず。<br>サイドバーが下にある場合も同様だろう。</p>
+<p>Github Pagesを使うなら、サイドバーは無い方が良さそうだ。<br>自分のことを思い返してみても、よほど興味のあるキーワードがある時以外は、サイドバーの項目をクリックすることはほとんど無いようだ。</p>
 
 	
 	</div>
@@ -314,8 +306,8 @@ html.fixed body {
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/16/web-analyze/" data-text="GitHub Pagesのブログでアクセス解析">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/30/sidebar-git/" data-text="Gitリポジトリを利用したブログとサイドバー | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
 
@@ -327,14 +319,14 @@ html.fixed body {
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/12/14/fc2-access-ranking/" >FC2アクセスランキングの集計が止まってる？</a>
+			<a href="/2014/11/29/page-no-date/" >Hexoの固定ページを日付け無しに</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年12月14日
+	2014年11月29日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -342,10 +334,17 @@ html.fixed body {
 	<div class="col-md-12">
 	  
 	
-	  <p>別ブログで、ブログ内の人気ページを集計する「FC2アクセスランキング」を利用しているが、2014-12-06 23:50:01の集計を最後に1週間以上も更新されていない。タグはちゃんと貼ってあるのに。  </p>
-<p>FC2といえば、FC2ライブでの性行為ネット中継に関連して、実質的な運営会社とみられる「ホームページシステム」や関連会社に今年9月30日、家宅捜査が入ったことが思い返される。<br>FC2ブログにも影響が及ぶのではないかと懸念されていたが、これまでは通常に運営されていた模様。  </p>
-<p>FC2アクセスランキングの集計ストップの原因は分からないが、FC2大丈夫なんだろうか。  </p>
-<p>ーー<br>（追記）<br>2014年12月16日現在、FC2アクセスランキングが復帰したようだ。</p>
+	  <p>Hexoでは固定ページを作る際、コマンド<code>hexo new page （ページ名）</code>でsource/（ページ名）下にindex.mdが作成される。<br>tagsやcategoriesは使えないようになっている。<br>コメントを禁止にするには、Front Matterに<code>comments: false</code>を加えれば良い。  </p>
+<p>固定ページでは日付けも表示したくないところだが、<code>date:</code>の項目を消してみるても、ファイルを更新した日付けが表示されてしまう。<br>themes/landscape/layout/page.ejsを見ると、post.ejsと同じ_partial/article.ejsがレイアウトとして使われていた。  </p>
+<p>_partialディレクトリ下のarticle.ejsをarticle-page.ejsという名前でコピー。<br>4行目の  </p>
+<pre><code>&lt;%- partial(&#39;post/date&#39;, {class_name: &#39;article-date&#39;, date_format: null}) %&gt;
+</code></pre><p>を削除。  </p>
+<p>page.ejsの  </p>
+<pre><code>&lt;%- partial(&#39;_partial/article&#39;, {post: page, index: false}) %&gt;
+</code></pre><p>を</p>
+<pre><code>&lt;%- partial(&#39;_partial/article-page&#39;, {post: page, index: false}) %&gt;
+</code></pre><p>に変更した。  </p>
+<p>希望通り、日付けが削除された。</p>
 
 	
 	</div>
@@ -354,8 +353,320 @@ html.fixed body {
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/14/fc2-access-ranking/" data-text="FC2アクセスランキングの集計が止まってる？">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/29/page-no-date/" data-text="Hexoの固定ページを日付け無しに | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/11/29/excerpt-separator/" >HexoやOctopressのトップページを全文表示ではなく概要表示にする</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月29日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Hexoでトップページを表示した時、複数の記事の全文がだらだらと表示されているのは見づらいと思い、前半部分を抜粋した概要表示にしてみた。<br>やり方は簡単で、記事ソースの適当な箇所に<code>&lt;!-- more --&gt;</code>というタグを挿入するだけ。  </p>
+<p>WordPressやMovable Typeでは、200文字など決まった文字数で自動的に抜粋してくれたりもするが、その方法はちょっと分からないので、手動で挿入した。<br>タグを挿入すると<code>&lt;!-- more --&gt;</code>より前の部分だけの表示になる。<br>続きを読むためのリンクの文言「Read More」はHexo作業フォルダの_config.ymlではなく、themes/landscape/_config.ymlなどテーマ毎の_config.ymlで変更出来る。  </p>
+<p>Octopressの場合は_config.ymlの<code>excerpt_link:</code>でリンクの文言を変えられる。<br>また_config.ymlの<code>excerpt_link:</code>で、抜粋するためのタグ自体を<code>&lt;!-- more --&gt;</code>から別のものに変更出来るようだ。  </p>
+<p>ーー<br>（追記）<br>概要表示にはしてみたが、全文表示の方が都合の良いことがあったので、あとで全ての記事から<code>&lt;!-- more --&gt;</code>タグを削除した。<br>_postsで端末を開き、下記コマンドですべての.mdファイルから<code>&lt;!-- more --&gt;</code>を一括削除。</p>
+<pre><code>$ perl -p -i.bak -e &#39;s/&lt;!-- more --&gt;//g&#39; *.md
+（すべての.mdファイルに拡張子.bakをつけてバックアップを取り、ファイル内の&lt;!-- more --&gt;を削除）
+</code></pre><p><code>&lt;!-- more --&gt;</code>が正常に削除されたことを確認後、.bakファイルを一括削除した。  </p>
+<pre><code>$ find . -type f -name &quot;*.bak&quot; -delete
+（拡張子が「.bak」のファイルをカレントディレクトリで一括削除）
+</code></pre>
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/29/excerpt-separator/" data-text="HexoやOctopressのトップページを全文表示ではなく概要表示にする | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/11/28/git-gc/" >.deploy/.git/objectsが大きくなってきたのでgit gcしてみた</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月28日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>それほど記事数は多くないのに、Hexoのサイズが大きくなって来た。<br>最初、数MBだったのが20MB以上になっている。  </p>
+<p>.deploy/.git/objectsが12.4MBあって、一番容量をくっているようだ。<br>ちょこちょこ記事を修正してその度にdeployしているせいだろう。<br>大した容量ではないが、Dropboxの同期に時間が掛かるのが困る。  </p>
+<p>GitHubでは、必要性の低いオブジェクトが多数あったりすると、自動的にパックファイルを作って掃除（pack up）してくれるようだが、<code>git gc</code>コマンドにより手動でpack upすることも出来るらしい。<br><a href="http://heart-shaped-chocolate.hatenablog.jp/entry/2013/04/10/052752" target="_blank" rel="external">.git/objectsについて少し調べてみた - 煙と消えるその前に</a>  </p>
+<p>GitHubではないが、BitbucketのFAQには<code>git gc</code>してもリポジトリに悪い影響はないと書いてあった。<br><a href="https://confluence.atlassian.co.jp/pages/viewpage.action?pageId=35815474" target="_blank" rel="external">私のリポジトリで git gc (保全作業) を実行する必要がありますか？ - Bitbucket ドキュメンテーション - アトラシアン日本語ドキュメント</a>  </p>
+<p>.deployディレクトリで端末を開いて、<code>git gc</code>してみた。  </p>
+<pre><code>$ git gc
+Counting objects: 5328, done.
+Delta compression using up to 8 threads.
+Compressing objects:   5% (153/3046)   
+Compressing objects: 100% (3046/3046), done.
+Writing objects: 100% (5328/5328), done.
+Total 5328 (delta 2157), reused 0 (delta 0)
+</code></pre><p>少し待たないといけなかったが、objects下にたくさんあったフォルダが消えて、4つだけになった。<br>objects/pack内にはpack-〜.idxとpack-〜.packというファイルが出来てる。<br>objectsのサイズは12.4MB→1.8MBに縮小した。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/28/git-gc/" data-text=".deploy/.git/objectsが大きくなってきたのでgit gcしてみた | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/11/28/metalsmith/" >プログラム音痴がMetalsmithを試してみた</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月28日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>静的サイトジェネレーターは有名なものしか知らなかったが、かなりの数が公開されているようだ。<br><a href="https://staticsitegenerators.net/" target="_blank" rel="external">https://staticsitegenerators.net/</a><br><a href="https://www.staticgen.com/" target="_blank" rel="external">https://www.staticgen.com/</a>  </p>
+<p><a href="https://github.com/segmentio/metalsmith" target="_blank" rel="external">Metalsmith</a>（An extremely simple, pluggable static site generator.）というのが人気急上昇中のようなので、試してみた。<br>Hexo同様、プログラミング言語がJavaScriptなので、早さも期待できる。  </p>
+<p>テストするにあたり、下記サイトを参考にさせて頂いた。<br><a href="http://h2ham.net/metalsmith-static-site-generator" target="_blank" rel="external">Nodeで動作する静的サイトジェネレータ「metalsmith」を使ってみた - HAM MEDIA MEMO</a><br><a href="http://web-layman.com/metalsmith-simple-static-site-generator/" target="_blank" rel="external">metalsmith - シンプルな静的サイトジェネレーター - Layman’s Web Creation.</a>  </p>
+<p>先ずはpackage.json を用意して導入するプラグインを指定、一括インストールするのが良いようなのだが、本体やプラグインのバージョンがよく分からない。<br>なのでmetalsmith-testという作業フォルダを作り、そこで端末を開いて一個一個インストールした。  </p>
+<pre><code>~/metalsmith-test$ npm install metalsmith
+~/metalsmith-test$ npm install metalsmith-templates
+~/metalsmith-test$ npm install swig
+~/metalsmith-test$ npm install metalsmith-markdown
+~/metalsmith-test$ npm install metalsmith-permalinks
+~/metalsmith-test$ npm install metalsmith-sass
+~/metalsmith-test$ npm install metalsmith-watch
+~/metalsmith-test$ npm install metalsmith-drafts
+</code></pre><p>次に作業フォルダ内にmetalsmith.jsonを作成する必要があったが、これはjekyllの構成に倣ったexampleのものをほぼそのまま使わせてもらった。<br><a href="https://github.com/segmentio/metalsmith/blob/master/examples/jekyll/metalsmith.json" target="_blank" rel="external">https://github.com/segmentio/metalsmith/blob/master/examples/jekyll/metalsmith.json</a></p>
+<pre><code>{
+  &quot;source&quot;: &quot;./_posts&quot;,
+  &quot;destination&quot;: &quot;./_site&quot;,
+  &quot;metadata&quot;: {
+    &quot;title&quot;: &quot;My Jekyll-Powered Blog&quot;,
+    &quot;description&quot;: &quot;My second, super-cool, Jekyll-powered blog.&quot;
+  },
+  &quot;plugins&quot;: {
+    &quot;metalsmith-drafts&quot;: {},
+    &quot;metalsmith-markdown&quot;: {},
+    &quot;metalsmith-permalinks&quot;: {
+      &quot;pattern&quot;: &quot;:title&quot;
+    },
+    &quot;metalsmith-sass&quot;: {
+        &quot;outputStyle&quot;: &quot;expanded&quot;
+    },
+    &quot;metalsmith-templates&quot;: {
+      &quot;engine&quot;: &quot;swig&quot;,
+      &quot;directory&quot;: &quot;_layouts&quot;
+    }
+  }
+}
+</code></pre><p>_layoutsフォルダを作り、そこへ下記内容のpost.htmlを配置。  </p>
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;My Blog&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;プログラム音痴がMetalsmithを試してみた&lt;/h1&gt;
+  &lt;time&gt;2014-11-28&lt;/time&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>_postsフォルダを作り、テスト用の記事test-post-1.mdを配置。  </p>
+<pre><code>---
+template: post.html
+title: テスト投稿１
+date: 2014-11-28
+---
+##今日の天気
+本日は晴天なり。
+</code></pre><p><code>node node_modules/.bin/metalsmith</code>とコマンドを打つと、自動的に_siteフォルダ、その下にtest-post-1フォルダ、その中にindex.htmlが生成された。  </p>
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;My Blog&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;テスト投稿&lt;/h1&gt;
+  &lt;time&gt;2014-11-28&lt;/time&gt;
+  &lt;h2 id=&quot;-&quot;&gt;今日の天気&lt;/h2&gt;
+&lt;p&gt;本日は晴天なり。&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p>ローカルホスト上でプレビューを可能にするプラグインmetalsmith-serveというのがあったのでインストールしたが、どう使えばいいのかよく分からない。  </p>
+<p>metalsmith.jsonの<code>&quot;plugins&quot;:</code>の箇所に無理やり  </p>
+<pre><code>    &quot;metalsmith-serve&quot;: {
+      &quot;port&quot;: &quot;8081&quot;,
+      &quot;verbose&quot;: &quot;true&quot;
+    }
+</code></pre><p>と加えてみたら、<code>node node_modules/.bin/metalsmith</code>のコマンドで、生成と共にローカルホストが立ち上がった。<br>ブラウザで<code>http://localhost:8081/test-post-1/</code>にアクセスすると、CSSは当たっていないが表示はされた。  </p>
+<p>たぶん正しい使い方ではないのだと思うが、プラグインの説明の  </p>
+<pre><code>var metalsmith = require(&#39;metalsmith&#39;);
+var serve = require(&#39;metalsmith-serve&#39;);
+
+metalsmith(__dirname)
+  .use(serve())
+  .build();
+</code></pre><p>というのを何処で設定するのか分からない。  </p>
+<p>トップページの生成の仕方やCSSの当て方なども勉強する必要がありそう。<br>それに、新規記事作成やgenerate、プレビューなど、それぞれコマンドに割り当てて操作したいところ。  </p>
+<p>Metalsmithのサイトの上方に記載してある  </p>
+<pre><code>Metalsmith(__dirname)
+  .use(drafts())
+  .use(markdown())
+  .use(permalinks(&#39;posts/:title&#39;))
+  .use(templates(&#39;handlebars&#39;))
+  .build();
+</code></pre><p>というのも、いったいどこの記載のことなんだか。</p>
+<p>「Everything is a Plugin」と謳われているようにカスタマイズ性は高そうだが、Jekyllの使い方が分からずOctopressに移った自分のようなプログラム音痴には、少々ハードルが高そうだ。<br>静的サイトジェネレーターの仕組みを勉強するには良さそうだが。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/28/metalsmith/" data-text="プログラム音痴がMetalsmithを試してみた | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/11/27/hexo-china/" >Hexoは中国製のようだ</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月27日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>しばらく前に静的サイトジェネレーターをOctopressからHexoに乗り換えた。<br>カスタマイズもわりと容易だしgenerateも早いし、気に入って使っている。  </p>
+<p>公開されているカスタムテーマを見ていて、なぜかデモサイトに中国語が多いなと不信に思っていが、オフィシャルテーマ３つのLICENSEを見ると３つとも中国人っぽい名前が記載されている。  </p>
+<p>よく見ると、リポジトリもオフィシャルサイトもこの中国人らしい人のものだった。<br>なんとHexoは中国製だったんだね。</p>
+<p>中国と聞くと正直ちょっと心配になってしまう。<br>中国製のパソコンに不正プログラムが入っていたなんてニュースもあったし。<br>ただ、cloneしてくるHexoのソースはGitHub上で公開されているものだし、大丈夫なのだろう。  </p>
+<p>中国人、なかなかやるね。<br>ちょっとくやしい気がする。  </p>
+<p>日本製の秀逸な静的サイトジェネレーターが出てきてくれないものだろうか。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/27/hexo-china/" data-text="Hexoは中国製のようだ | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/11/26/filename-case/" >Hexo新規記事作成時のタイトル大文字アルファベットを小文字のファイル名に</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月26日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Hexoのデフォルト設定で新規記事を作成する際、記事タイトルに大文字アルファベットを使うと、そのままファイル名としてソースが作成される。</p>
+<pre><code>$ hexo new New-Post
+[info] File created at /.../source/_posts/2014-11-26-New-Post.md
+</code></pre><p>URLに大文字アルファベットが入ってしまう。  </p>
+<p>URLに大文字は使いたくないので、Octopressのように大文字→小文字でファイル出力して欲しい。  </p>
+<p>_config.ymlのWritingの項目<code>filename_case:</code>の値をデフォルトの「0」から「1」に変更することで設定出来た。  </p>
+<pre><code>$ hexo new New-Post
+[info] File created at /.../source/_posts/2014-11-26-new-post.md
+</code></pre><p>filename_case: 0（そのまま出力。New-Post→New-Post）  </p>
+<p>filename_case: 1（大文字を小文字に変換。New-Post→new-post.md）  </p>
+<p>filename_case: 2（すべて大文字に変換。New-Post→NEW-POST.md）  </p>
+<p>ーー<br>（追記）<br>出来たと思ったら、generateした際にtagsまでがすべて小文字になってしまった。<br>これでは困るので、<code>filename_case: 0</code>に戻した。<br>当面、大文字のファイル名は手作業で小文字にするしかなさそうだ。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/26/filename-case/" data-text="Hexo新規記事作成時のタイトル大文字アルファベットを小文字のファイル名に | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
 
@@ -395,6 +706,90 @@ html.fixed body {
 <div class="col-md-3">
 	<div id="sidebar">
 	
+			<!-- _widget/recent_posts -->
+
+<div class="widget">
+  <h4>Recent Posts</h4>
+  <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/01/26/numlockx/" ><i class="fa fa-file-o"></i>Xubuntu14.04で常にNumlockオンで起動する</a>
+      </li>
+    
+      <li>
+        <a href="/2015/01/26/deploy-conflicted-copy-dropbox/" ><i class="fa fa-file-o"></i>Dropbpx上のHexoでdeploy時「競合コピ ...</a>
+      </li>
+    
+      <li>
+        <a href="/2015/01/25/facebookmail-spam/" ><i class="fa fa-file-o"></i>宅配業者からの不在通知を装ったスパムメール（info@...</a>
+      </li>
+    
+      <li>
+        <a href="/2015/01/24/hexo-favicon/" ><i class="fa fa-file-o"></i>Hexoにファビコン</a>
+      </li>
+    
+      <li>
+        <a href="/2015/01/24/xubuntu-menu-nepomuk/" ><i class="fa fa-file-o"></i>XubuntuのメニューからNepomuk Clean...</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+		
+			<!-- _widget/category -->
+
+
+		
+			<!-- _widget/tagcloud -->
+
+	<div class="widget">
+		<h4>Tag Cloud</h4>
+		<ul class="tag_box inline list-unstyled">
+		
+			<li><a href="/tags/Windows/">Windows<span>2</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
+		
+			<li><a href="/tags/風景/">風景<span>1</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>20</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>10</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>11</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>9</span></a></li>
+		
+		
+		</ul>
+	</div>
+
+
+		
+			
+	<div class="widget">
+		<h4>Monthly Archives</h4>
+		<ul class="archive-list inline list-unstyled">
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		</ul>
+	</div>
+
+		
 			<!-- _widget/links -->
 
 

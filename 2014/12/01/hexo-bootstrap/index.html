@@ -26,7 +26,7 @@
   
 
   
-  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/bootstrap.cerulean.min.css" media="screen" type="text/css">
   
   <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
@@ -114,8 +114,17 @@
 <p>他のテーマ同様  </p>
 <pre><code>git clone https://github.com/yieme/hexo-theme-freewill.git themes/freewill
 </code></pre><p>でインストール。  </p>
-<p>Freewillの_config.ymlで<code>bootswatch:</code>で種々のBootswatchテーマに変更出来る。<br>Bootswatchのナビゲーションバーには、テーマ毎に2種類のカラーバリエーションがあり、layout/_partial/navigation.ejsの2行目で<code>navbar-default</code>と<code>navbar-inverse</code>（逆の配色）のどちらかに切り替え可能。  </p>
-<p>デフォルトの設定では画面をスクロールすると、ナビゲーションバーがフェードアウト、マウスを合わせるとフェードインする仕様になっていた。<br>出たり消えたりはかえって邪魔なので、source/js/main.jsの内容をすべて消去したらフェードアウトが無くなった。<br>navigation.ejs2行目の<code>navbar-fixed-top</code>を削除すると、スクロールとともにナビゲーションバーが上方に移動する。  </p>
+<p>Freewillの_config.ymlで<code>bootswatch:</code>で種々のBootswatchテーマに変更出来る。<br>Bootswatchのナビゲーションバーには、テーマ毎に2種類のカラーバリエーションがあり、freewill/layout/_partial/navigation.ejsの2行目で<code>navbar-default</code>と<code>navbar-inverse</code>（逆の配色）のどちらかに切り替え可能。  </p>
+<p>デフォルトの設定では画面をスクロールしたりマウスが離れると、ナビゲーションバーがフェードアウト、マウスを合わせるとフェードインする仕様になっていた。<br>出たり消えたりがかえって邪魔だったので、themes/freewill/source/js/main.jsの7、10、17、22行目の  </p>
+<pre><code>$(&quot;.navbar&quot;).stop().fadeTo(333, 0.2);
+
+$(&quot;.navbar&quot;).stop().fadeTo(333, 1);
+
+$(&quot;.navbar&quot;).fadeTo(100, 1);
+
+$(&quot;.navbar&quot;).fadeTo(100, 0.2);
+</code></pre><p>を削除したら、フェードアウトしなくなった。  </p>
+<p>navigation.ejs2行目の<code>navbar-fixed-top</code>を削除すると、スクロールとともにナビゲーションバーが上方に移動。  </p>
 <p>_config.ymlの表示不要な項目は先頭に<code>#</code>を付けてコメントアウト。  </p>
 <p>テーマの変更でAtomフィードが表示されなくなってしまったが、freewill/_config.ymlの<code>rss: true</code>を<code>rss: atom.xml</code>に変更してナビゲーションバーに追加したら表示された。<br>layout/_partial/head.ejsのtheme.rssの箇所の<code>link rel=&quot;alternative&quot;</code>を<code>link rel=&quot;alternate&quot;</code>に変更。アドレスバーにもアイコンが表示された。  </p>
 <p>Bootstrapのテーマらしく、すっきりしていて機能的な印象。  </p>

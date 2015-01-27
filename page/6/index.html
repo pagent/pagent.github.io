@@ -26,7 +26,7 @@
   
 
   
-  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/bootstrap.cerulean.min.css" media="screen" type="text/css">
   
   <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
@@ -112,14 +112,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/12/13/qiita/" >Qiitaは個人のブログじゃなかったのか</a>
+			<a href="/2014/11/26/hexo-bitbucket/" >HexoのソースをBitbucketに置く</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年12月13日
+	2014年11月26日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -127,8 +127,73 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>Linuxや静的サイトジェネレーターなどで困ったことについて検索していると、Qiitaというサイトを目にする機会が増えた。<br>博学な人が居るものだと感心していたら、個人でやっているサイトではなく、プログラマー向けの情報共有サービスなんだね。<br><a href="https://qiita.com/about" target="_blank" rel="external">Qiitaについて - Qiita</a>  </p>
-<p>記事を参考にさせてもらって助かったことは何度かあるが、自分自身はプログラマーじゃないし、何がどう便利なのか分からないので、利用しようという気にはならないが。</p>
+	  <p>Hexoの作業フォルダはWindows領域のDropboxフォルダに置き、他のPCとも同期をとっている。<br>これでソースを消失してしまう危険はかなり低いと思うが、Dropboxと同期する際、結構時間がかかってしまう。<br>普段はDropboxを起動しておらず時々立ち上げる、という形をとっているせいもあるかもしれない。  </p>
+<p>Bitbucketにソースを置いたらpushするのはそれほど時間は掛からないだろうし、過去の履歴も残ってくれてやはり便利だろうと思い、HexoのソースをBitbucketに置くことにした。  </p>
+<p>OctopressのソースをBitbucketに置いた時と同様、Bitbucketにhexoという名前のリポジトリを作り、  </p>
+<pre><code>$ git remote add bitbucket git@bitbucket.org:ユーザー名/hexo.git
+$ git push -u bitbucket source
+</code></pre><p>とやったが、エラーになる。  </p>
+<p>新規リポジトリを作成後に表示されたRepository setupの指示に倣い、  </p>
+<pre><code>$ git init
+$ git remote add bitbucket git@bitbucket.org:ユーザー名/hexo.git
+$ echo &quot;ユーザー名&quot; &gt;&gt; contributors.txt
+$ git add contributors.txt
+$ git commit -m &#39;Initial commit with contributors&#39;
+$ git push -u bitbucket source
+</code></pre><p>としても、やはり  </p>
+<pre><code>error: src refspec source does not match any.
+error: failed to push some refs to &#39;git@bitbucket.org:ユーザー名/hexo.git&#39;
+</code></pre><p>とエラーになる。  </p>
+<p>pushするbranchをsourceではなく、masterにしてみた。  </p>
+<pre><code>$ git push -u bitbucket master
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 239 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To git@bitbucket.org:ユーザー名/hexo.git
+ * [new branch]      master -&gt; master
+Branch master set up to track remote branch master from bitbucket.
+</code></pre><p>上手く行ったようだ。  </p>
+<p>だが、その後も  </p>
+<pre><code>$ git add .
+warning: You ran &#39;git add&#39; with neither &#39;-A (--all)&#39; or &#39;--ignore-removal&#39;,
+whose behaviour will change in Git 2.0 with respect to paths you removed.
+Paths like &#39;contributors.txt&#39; that are
+removed from your working tree are ignored with this version of Git.
+
+* &#39;git add --ignore-removal &lt;pathspec&gt;&#39;, which is the current default,
+  ignores paths you removed from your working tree.
+
+* &#39;git add --all &lt;pathspec&gt;&#39; will let you also record the removals.
+
+Run &#39;git status&#39; to check the paths you removed from your working tree.
+</code></pre><p>と言われたり、  </p>
+<pre><code>$ git push
+warning: push.default is unset; its implicit value is changing in
+Git 2.0 from &#39;matching&#39; to &#39;simple&#39;. To squelch this message
+and maintain the current behavior after the default changes, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to &#39;matching&#39;, git will push local branches
+to the remote branches that already exist with the same name.
+
+In Git 2.0, Git will default to the more conservative &#39;simple&#39;
+behavior, which only pushes the current branch to the corresponding
+remote branch that &#39;git pull&#39; uses to update the current branch.
+
+See &#39;git help config&#39; and search for &#39;push.default&#39; for further information.
+(the &#39;simple&#39; mode was introduced in Git 1.7.11. Use the similar mode
+&#39;current&#39; instead of &#39;simple&#39; if you sometimes use older versions of Git)
+</code></pre><p>と言われたり。  </p>
+<p><code>git add .</code>は使われなくなったので<code>git add -A</code>にしないといけないということか？<br><code>git add .</code>でもすんなり通る時もあるのは、状況の違いからだろうか。<br>（追記：そう言えば、Initial commitの時に作成されたcontributors.txtという中身が自分のユーザー名だけのファイルを、リポジトリとHexoの作業フォルダ両方から手動で削除したんだった。<br>これのせいだったのかもしれない。）</p>
+<p>push.defaultもmatchingにした。  </p>
+<pre><code>  $ git config --global push.default matching
+</code></pre><p>これでようやくpush出来るようになった。  </p>
+<p>gitの仕組みがいまいちよく分からない。</p>
 
 	
 	</div>
@@ -137,8 +202,8 @@
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/13/qiita/" data-text="Qiitaは個人のブログじゃなかったのか">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/26/hexo-bitbucket/" data-text="HexoのソースをBitbucketに置く | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
 
@@ -150,14 +215,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/12/12/bulk-change/" >特定語句を含むファイルの抽出とその一括変換</a>
+			<a href="/2014/11/25/hexo-to-octopress-converter/" >Hexo→Octopress変換スクリプト「Hexo to Octopress Converter」</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年12月12日
+	2014年11月25日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -165,20 +230,28 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>repositoryは「リポジトリ」と表記するのが順当のよう。<br>「レポジトリ」としていた表記を「リポジトリ」に改めるため、ブログ投稿内で「レポジトリ」を用いているものを調べてみた。  </p>
-<p>source/_postsで端末を開き、下記コマンドで抽出。  </p>
-<pre><code>$ grep &quot;レポジトリ&quot; *
-</code></pre><p>（参考：<a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20060228/231140/" target="_blank" rel="external">Linuxコマンド逆引き大全 - 【 ファイルから文字列を検索する 】：ITpro</a>）  </p>
-<p>たくさんあって手作業で修正するのは大変そうなので、下記コマンドですべての.mdファイル内の「レポジトリ」を「リポジトリ」に一括変換。（元ファイルは拡張子.bakを付けてバックアップ）  </p>
-<pre><code>$ perl -p -i.bak -e &#39;s/レポジトリ/リポジトリ/g&#39; *.md
-</code></pre><p>正常に変換されたことを確認後、.bakファイルを一括削除。  </p>
-<pre><code>$ find ./ -type f -name &quot;*.bak&quot; -delete
-</code></pre><p>もし不具合があれば、特定のファイルに対しては下記で復帰可能。<br>（example.md.bakをexample.mdに名称変更し上書き）  </p>
-<pre><code>$ mv example.md.bak example.md
-</code></pre><p>ただし、mvコマンドは複数のファイル名の一括変換は出来ないようなので、すべてのファイルを元に戻す場合は、一旦すべての.mdファイルを削除してから、すべての.md.bakファイルの拡張子を.mdに変換。<br>（renameコマンドは上書きは出来ないようなので）  </p>
-<pre><code>$ find ./ -type f -name &quot;*.md&quot; -delete
-$ rename &#39;s/.md.bak/.md/&#39; *.bak
-</code></pre>
+	  <p>HexoからOctopressに記事ソースを変換するrubyスクリプト<a href="https://github.com/ciffel/Hexo-to-Octopress-Converter" target="_blank" rel="external">「Hexo to Octopress Converter」</a>を試してみた。  </p>
+<p>「Download ZIP」からzipファイルをダウンロードし展開。converterファイルを作業したい場所に移し、端末から操作。  </p>
+<pre><code>$ ./converter &lt;hexo_posts_dir&gt; &lt;octopress_posts_dir&gt;
+</code></pre><p>で変換出来る。<br><code>&lt;octopress_posts_dir&gt;</code>は適当に作ったフォルダでも可。  </p>
+<p>変換が終了すると、ファイル名に日付けが付加されたものがOctopressのフォルダに出力される。（拡張子は.mdのまま。）<br>出力されたファイルのFront Matter部分は<code>tags:</code>が<code>categories:</code>に変換されており、また上部の<code>---</code>および<code>layout: post</code>、<code>comments: true</code>が追加される。  </p>
+<p>だが、Octopressのソースを「hexo-migrator-octopress」などでHexoに取り込んでいた場合は、Front Matter上部に既に<code>---</code>が<br>ついている。<br>この状態からだと<code>tags:</code>が<code>categories:</code>に変換されないので、上部の<code>---</code>を消しておく必要がある。  </p>
+<p>また<code>title:</code>の項目で記事タイトルが「”」で挟まれていると、さらに「”」で挟まれ<code>title: &quot;&quot;（記事タイトル）&quot;&quot;</code>のようになってしまう。<br>これではOctopressでgenerateする際エラーになってしまうので、これも削除し、  </p>
+<pre><code>title:
+date:
+tags:
+---
+</code></pre><p>のような形にしておく必要がある。<br><a href="/2014/11/25/hexo-migrator-octopress/">Octopress→Hexo移行のプラグイン「hexo-migrator-octopress」を試してみた </a>  </p>
+<p>なお、変換出力されるのは拡張子が.mdのものだけで、.markdownのもの（Octopressのソースをコピペで取り込んだような場合）は変換出力されず無視される。  </p>
+<p>変換後のファイル名には日付けが付加されるので、Hexoの運用をOctopress式に日付けをつけたファイル名で行っている場合は、日付けが2重になってしまう。  </p>
+<p>この場合はconverterファイルをエディタで開き、41行目  </p>
+<p>  file_name = “#{prefix}-#{base_name}”</p>
+<p>の<code>#{prefix}-</code>を削除し、  </p>
+<p>  file_name = “#{base_name}”</p>
+<p>にしておくと、日付けが付加されない。  </p>
+<p>それから、Hexoは漢字、ひらがな含め日本語のURLやtagsを使用可能だが、Octopressはデフォルトの状態では日本語を使用できない。<br>HexoからOctopressに移行する際には、この点も注意が必要。</p>
+<p>ーー<br>HexoもOctopressも、共にmarkdown形式のファイルをhtmlに変換するという点では同じなのだが、細かいところが微妙に違っていて少し不便。<br>記事ソースの形式くらいは合わせられなかったものだろうか。</p>
+
 	
 	</div>
 	
@@ -186,8 +259,8 @@ $ rename &#39;s/.md.bak/.md/&#39; *.bak
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/12/bulk-change/" data-text="特定語句を含むファイルの抽出とその一括変換">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/25/hexo-to-octopress-converter/" data-text="Hexo→Octopress変換スクリプト「Hexo to Octopress Converter」 | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
 
@@ -199,14 +272,14 @@ $ rename &#39;s/.md.bak/.md/&#39; *.bak
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/12/12/repository/" >repositoryは「リポジトリ」？「レポジトリ」？</a>
+			<a href="/2014/11/25/hexo-migrator-octopress/" >Octopress→Hexo移行のプラグイン「hexo-migrator-octopress」を試してみた</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年12月12日
+	2014年11月25日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -214,9 +287,64 @@ $ rename &#39;s/.md.bak/.md/&#39; *.bak
 	<div class="col-md-12">
 	  
 	
-	  <p>repositoryは「レポジトリ」だと思い、そう記載していた。<br>だが「リポジトリ」の方が、どうやら原音に近いようだ。<br><a href="http://ejje.weblio.jp/content/repository" target="_blank" rel="external">repositoryの意味 - 英和辞典 Weblio辞書</a>  </p>
-<p>英語が母国語らしい人の発音でも、人によっては「レポジトリ」に聞こえたりはするが。  </p>
-<p>日本でも「リポジトリ」の表記の方が一般的のようなので、過去記事の記載をすべて「リポジトリ」に変更した。</p>
+	  <p>OctopressとHexoでは記事ソースのファイルの形式やFront Matter（<code>---</code>で区切られた、title、dateなどの部分）が微妙に異なる。<br>OctopressのcategoriesはHexoではtagsに相当したり。  </p>
+<p>Octopressの記事ソースをHexoに取り込む<a href="https://github.com/sailxjx/hexo-migrator-octopress" target="_blank" rel="external">「hexo-migrator-octopress」</a>というHexo用プラグインがあったので、試してみた。<br>（Hexoの記事ソースをOctopress用に変換するスクリプト「Hexo to Octopress Converter」とは逆向き。）  </p>
+<p>デスクトップ上にhexo-test（Hexoフォルダ）とoctopress-test（Octopressフォルダ）を作った。  </p>
+<p>hexo-testで端末を開き、プラグインをインストール。  </p>
+<pre><code>$ npm install hexo-migrator-octopress
+</code></pre><p>コマンド<code>hexo migrate octopress &lt;source&gt;</code>で記事ソースが変換され、Hexoに取り込まれる。（<code>&lt;source&gt;</code>はOctopressフォルダへのパス）<br>今回のテスト環境では</p>
+<pre><code>$ hexo migrate octopress ~/Desktop/octopress-test
+</code></pre><p>octopress-test/source/_posts/2014-10-25-cosmos.markdownがhexo-test/source/_posts/cosmos.mdとして取り込まれた。<br>（Hexoのデフォルト設定に従い、日付けが削除さるようだ。）  </p>
+<p>Front MatterはOctopressの  </p>
+<pre><code>---
+layout: post
+title: &quot;畑一面のコスモスはなぜ？&quot;
+date: 2014-10-25 15:41:22 +0900
+comments: true
+categories:
+- 未分類
+- 写真
+---
+</code></pre><p>から  </p>
+<pre><code>---
+layout: post
+title: &quot;畑一面のコスモスはなぜ？&quot;
+date: 2014-10-25 15:41:22 +0900
+comments: true
+tags:
+- 未分類
+- 写真
+---
+</code></pre><p>に変換されたが、変更は<code>categories:</code>が<code>tags:</code>になっただけのようだ。  </p>
+<p>この状態でもHexoで使えるのだが、これを「Hexo to Octopress Converter」でOctopress用に再変換すると  </p>
+<pre><code>---
+layout: post
+comments: true
+---
+layout: post
+title: &quot;畑一面のコスモスはなぜ？&quot;
+date: 2014-10-25 15:41:22 +0900
+comments: true
+tags:
+- 未分類
+- 写真
+---
+</code></pre><p>となってしまい、<code>tags:</code>が<code>categories:</code>に変換されない。  </p>
+<p>上部の<code>---</code>を削除しておくと<code>categories:</code>に変換はされたが、タイトルの部分が<code>title: &quot;&quot;畑一面のコスモスはなぜ？&quot;&quot;</code>と「”」が重複しまい、rake generateでエラーになる。  </p>
+<p>結局、Octopress用に再変換する場合には、「hexo-migrator-octopress」でHexo用に変換したものを手作業で  </p>
+<pre><code>title: 畑一面のコスモスはなぜ？
+date: 2014-10-25 15:41:22 +0900
+tags:
+- 未分類
+- 写真
+---
+</code></pre><p>のように変更しておく必要がありそうだ。<br>それにOctopressでcategoriesとtagsを両方使っていた場合は変換後<code>tags:</code>が重複してしまう。  </p>
+<p>それから、Hexoの新規記事ソースはデフォルトでは日付けがつかないが、_config.ymlの<code>new_post_name:</code>で日付けをつけることが出来る。<br>日付けがあった方が同じタイトルの記事を複数書けたり、過去記事編集の際に探し易かったりと、なにかと都合が良い。  </p>
+<p>Octopressの方のファイル拡張子が.markdownではなく.mdなら「Hexo to Octopress Converter」で変換しても日付けが削除されないので、前もって.mdに変えておいた方が良いかもしれない。<br>拡張子が.mdでも<code>tags:</code>は<code>categories:</code>に変換される。  </p>
+<p>拡張子の一括変換は/_postsディレクトリで  </p>
+<pre><code>$ rename &#39;s/.markdown/.md/&#39; *.markdown
+</code></pre><p>とするか、ファイルマネージャーThunarを使えば簡単のようだ。  </p>
+<p>ーー<br>（関連記事）<br><a href="/2014/11/25/Hexo-to-Octopress-Converter/">Hexo→Octopress変換スクリプト「Hexo to Octopress Converter」</a></p>
 
 	
 	</div>
@@ -225,8 +353,8 @@ $ rename &#39;s/.md.bak/.md/&#39; *.bak
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/12/repository/" data-text="repositoryは「リポジトリ」？「レポジトリ」？">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/25/hexo-migrator-octopress/" data-text="Octopress→Hexo移行のプラグイン「hexo-migrator-octopress」を試してみた | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
 
@@ -238,14 +366,14 @@ $ rename &#39;s/.md.bak/.md/&#39; *.bak
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/12/11/github-pages-server-down/" >GitHub Pagesがサーバーメンテナンス</a>
+			<a href="/2014/11/24/hexo-windows-deploy/" >WindowsでHexoを使う（deploy）</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年12月11日
+	2014年11月24日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -253,17 +381,21 @@ $ rename &#39;s/.md.bak/.md/&#39; *.bak
 	<div class="col-md-12">
 	  
 	
-	  <p>今日何度か、GitHub Pagesのこのブログが表示されなかった。  </p>
-<blockquote>
-<p>GitHub Pages is temporarily down for maintenance.</p>
-</blockquote>
-<p>と表示されていて、サーバーのメンテナンスのよう。  </p>
-<p><a href="http://www.downforeveryoneorjustme.com/" target="_blank" rel="external">Down For Everyone Or Just Me -&gt; Check if your website is down or up?</a>で調べた時には回復していた。  </p>
-<p>pingコマンドでもサーバーの疎通を確認出来るようだ。<br>コマンドを実行すると延々pingが送信されるが、「CTRL」+「C」キーで停止すると結果が表示されるらしい。<br><a href="http://webkaru.net/linux/ping-command/" target="_blank" rel="external">Linuxコマンド【 ping 】ホストとの接続を確認 - Linux入門 - Webkaru</a>  </p>
-<p>確認した時には「0% packet loss」だった。  </p>
-<p>初めてだったので驚いたが、GitHub Pagesもメンテナンスするんだね。  </p>
-<p>ーー<br>（追記）<br>その後も落ちたり回復したりの繰り返し。また、見られないページがあったり、Font Awesomeが文字化けしたりと不安定。<br>静的ページだし、信頼してたのに。  </p>
-<p>大丈夫なんだろうか。</p>
+	  <p>Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来ると思っていた。<br>だが、  </p>
+<pre><code>Run
+
+  git config --global user.email &quot;you@example.com&quot;
+  git config --global user.name &quot;Your Name&quot;
+</code></pre><p>と言われてしまった。  </p>
+<p>メールアドレスとGithubユーザー名を設定して、再度deployしようとしたが、  </p>
+<pre><code>Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+</code></pre><p>とrejectされる。  </p>
+<p>SSHキーの設定が必要のようなので、Linuxで設定したSSH公開鍵を<code>C:\Users\（ユーザー名）\.ssh</code>にコピペしたが、やはりrejectされる。<br>秘密鍵もコピペしたら、ようやくdeploy出来た。<br>これで無事WindowsでもHexoを使えるようになった。  </p>
+<p>Hexoにはローカルホストで使う管理画面プラグインもあるようなので、もう少し導入が簡単になればWindowsユーザーにも静的サイトジェネレーターが広まる可能性があるんじゃないだろうか。</p>
 
 	
 	</div>
@@ -272,8 +404,8 @@ $ rename &#39;s/.md.bak/.md/&#39; *.bak
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/11/github-pages-server-down/" data-text="GitHub Pagesがサーバーメンテナンス">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/24/hexo-windows-deploy/" data-text="WindowsでHexoを使う（deploy） | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
 
@@ -285,14 +417,14 @@ $ rename &#39;s/.md.bak/.md/&#39; *.bak
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/12/10/brief/" >Briefの不具合（フィードを追加出来ない）</a>
+			<a href="/2014/11/24/hexo-windows/" >WindowsでHexoを使う（インストール）</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年12月10日
+	2014年11月24日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -300,11 +432,46 @@ $ rename &#39;s/.md.bak/.md/&#39; *.bak
 	<div class="col-md-12">
 	  
 	
-	  <p>FirefoxのRSSアドオン「Brief」の調子が突然おかしくなった。<br>新たにフィードを追加しても、一覧に表示されない。<br>brief.sqliteをリネームしたり、Briefをインストールし直してみたりしたが、改善せず。  </p>
-<p>Briefの派生アドオン「Digest」も既に削除されており困ってしまったが、Briefのページ<a href="https://addons.mozilla.org/ja/firefox/addon/brief/?src=search" target="_blank" rel="external">Brief :: Add-ons for Firefox</a>の一番下に「開発チャンネル」というのがあった。<br>Version 2.0b1となっていて、どうやら開発版のよう。  </p>
-<p>駄目もとでインストールしてみたら、新たに追加したフィードがちゃんと表示された。  </p>
-<p>メニューは英語だし、信頼性にやや問題があるのかもしれないが、とりあえずは使えるので助かった。  </p>
-<p>ーー<br>（追記）<br>開発版のインターフェースは安定版と少し違っていて最初は戸惑ったが、記事内容を省いてタイトルのみを表示させるボタンがあったりするので、けっこう便利かもしれない。</p>
+	  <p>以前、静的サイトジェネレーターnanocをWindowsにインストールしたが、なんとかインストールは出来たものの、compile（generate）してhtmlファイルを生成する際、エラーになり使えなかった。<br>最近使い始めたHexoは、nanocやOctopressと違い、RubyではなくJavaScript（Node.js）を用いているそうなので、Windowsでも使えるかもしれないと思い、試してみた。  </p>
+<p>結果、Windowsで実用可能だった。</p>
+<h3 id="Node-jsのインストール">Node.jsのインストール</h3>
+<p>Node.jsは下記からWindows用インストーラー付きのWindows Installer (.msi)をダウンロードし、デフォルトの設定のままインストールした。<br><a href="http://nodejs.org/download/" target="_blank" rel="external">http://nodejs.org/download/</a><br>バージョンはXubuntuに入れたのと同じv0.10.33だった。  </p>
+<h3 id="msysgitのインストール">msysgitのインストール</h3>
+<p>Windowsでgitを使うため<a href="http://msysgit.github.io/" target="_blank" rel="external">msysgit</a>をインストールした。<br>インストールオプションは下記サイトを参考にさせて頂いた。<br><a href="http://d.hatena.ne.jp/xyk/20130920/1379659991" target="_blank" rel="external">Windows に msysgit をインストールして git 環境を作る - xykの日記</a>  </p>
+<p>「Select Components」ではすべてのチェックを外した。<br>「Adjusting your PATH environment」は上から2番目の「Run Git from the Windows Command Prompt」。<br>「Configuring the line ending conversions」は上から2番目の「Checkout as-is, commit Unix-style line endings」でインストールした。<br>だが、実際Hexoでdeployする際、  </p>
+<pre><code>warning: LF will be replaced by CRLF in css/style.css.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in fancybox/helpers/jquery.fancybox-buttons.css.
+The file will have its original line endings in your working directory.
+warning: LF will be replaced by CRLF in fancybox/helpers/jquery.fancybox-buttons.js.
+The file will have its original line endings in your working directory.
+...
+</code></pre><p>と、改行コードが変更されるという警告が大量に表示されたので、結局上から3番目のオプション「Checkout as-is, commit as-is」（autocrlf = false）にした。<br>Windowsでしか使わないのであれば、あまり気にしなくても良さそう。<br>後から<code>C:\Users\（ユーザー名）\.gitconfig</code>で変更することも可能。  </p>
+<h3 id="Hexoのインストール">Hexoのインストール</h3>
+<p>コマンドプロンプトを開き、</p>
+<pre><code>&gt;npm install hexo -g
+</code></pre><p>でインストール。</p>
+<p>Linuxの時と同様、  </p>
+<pre><code>npm WARN optional dep failed, continuing fsevents@0.2.0
+</code></pre><p>という警告が出たが、インストール完了。  </p>
+<p>テスト用にHexoの作業フォルダを作成。<br>任意のフォルダを選択した状態で「SHIFT」キーを押しながら右クリック。<br>「コマンド ウィンドウをここで開く」でコマンドウィンドウを立ち上げ、  </p>
+<pre><code>&gt;hexo init hexo-win
+&gt;cd hexo-win
+&gt;npm install
+
+&gt;hexo g
+&gt;hexo s
+</code></pre><p>ローカルホストに無事、新規ブログが立ち上がった。  </p>
+<p>2回目の<code>hexo g</code>からは、なぜか  </p>
+<pre><code>[delete] Deleted: archives\2014\11\index.html
+[delete] Deleted: archives\index.html
+...
+
+[create] Generated: archives/index.html (124ms)
+[create] Generated: archives/2014/index.html (63ms)
+...
+</code></pre><p>と、一旦すべてのファイルを削除してからまたファイルを生成したというメッセージが表示される。<br>あまり気持ち良くはないが、実用上問題は無さそう。  </p>
+<p>この後deployで少し躓いてしまったが、WindowsでHexoを使うことが出来た。</p>
 
 	
 	</div>
@@ -313,8 +480,272 @@ $ rename &#39;s/.md.bak/.md/&#39; *.bak
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/10/brief/" data-text="Briefの不具合（フィードを追加出来ない）">Tweet</a>
-	  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/24/hexo-windows/" data-text="WindowsでHexoを使う（インストール） | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/11/23/hexo-post-template/" >Hexoの新規記事テンプレートを変更</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月23日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Hexoで新規記事を作ると、初期状態ではtitle、date、tagsの項目しか無いが、categoriesも使いたいので変更。<br>/scaffolds/post.mdに項目を追加するだけで出来た。<br>（<code>---</code>で区画された部分は「Front Matter」と言うらしい。）  </p>
+<p>またOctopressに戻ることもあるかもしれないので、Octopressの書式に倣ってlayout、commentsも加えた。  </p>
+<pre><code>---
+layout: post
+title: ｛｛ title ｝｝      ## ｛｛  ｝｝は実際には半角英数
+date: ｛｛ date ｝｝
+comments: true
+tags: 
+categories: 
+---
+</code></pre><p><code>hexo n test</code>すると下記内容のファイルが生成された。  </p>
+<pre><code>layout: post
+title: test
+comments: true
+date: 2014-11-23 09:15:51
+tags:
+categories:
+---
+</code></pre><p>Octopressでは<code>comments: true</code>が無いとDisqusが表示されない。<br>Hexoではcommentsの項目が無くてもDisqusは表示されるが、<code>comments: false</code>にするとその記事だけDisqusの表示は消える。<br>記事によってコメント禁止にする時に便利かもしれない。  </p>
+<p>/scaffolds/post.mdで上部にも<code>---</code>を加えたが、生成ファイルでは下部にしか<code>---</code>が無い。<br>これだとOctopressでは記事をちゃんとgenerate出来ないようだが、上部に<code>---</code>を付ける方法が分からない。<br>もしまたOctopressに戻ることがあったら、手作業するしかなさそうだ。  </p>
+<p>ーー<br>（追記）<br>Hexoの/source/_posts内の記事ソースをOctopress形式のFront Matterに変換出力するスクリプトが公開されていた。<br><a href="https://github.com/ciffel/Hexo-to-Octopress-Converter" target="_blank" rel="external">ciffel/Hexo-to-Octopress-Converter</a>  </p>
+<p>これを使うと上部の<code>---</code>、<code>layout: post</code>そして<code>comments: true</code>を付加してくれる。<br>さらにHexoの<code>tags:</code>が<code>categories:</code>にリネームされる。<br>（Hexoの<code>tags:</code>はOctopressの<code>categories:</code>に相当するようだ。）  </p>
+<p>なので/scaffolds/post.mdは元の記載に戻した。  </p>
+<pre><code>title: Hexoの新規記事テンプレートを変更
+date: Sun Nov 23 2014 08:20:38 GMT+0900 (JST)
+tags:
+---
+</code></pre><p>OctopressからHexoへの移行には下記プラグインが対応していて、これを使うとOctopressのソースの<code>categories:</code>が<code>tags:</code>に変換される。<br><a href="https://github.com/sailxjx/hexo-migrator-octopress" target="_blank" rel="external">hexo-migrator-octopress</a>  </p>
+<p>骨折り損だったが、Hexoでコメント禁止にしたい時は<code>comments: false</code>を加えれば良いというのが分かったのが収穫だった。<br>早めに気がついて良かった。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/23/hexo-post-template/" data-text="Hexoの新規記事テンプレートを変更 | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/11/23/hexo-archive-category/" >Hexoのアーカイブ、カテゴリーページを全文表示からリスト表示に</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月23日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>HexoのArchivesや各カテゴリーのページはデフォルトでは記事全文を表示するようになっている。<br>リスト表示の方が一覧を俯瞰出来て便利なので好みなのだが、カスタマイズの仕方がなかなか分からなかった。  </p>
+<p>結局は_config.ymlのArchivesの項目で  </p>
+<pre><code># Archives
+## 2: Enable pagination
+## 1: Disable pagination
+## 0: Fully Disable
+archive: 2
+category: 2
+tag: 2
+</code></pre><p>となっているところの値を、2から1に変更。  </p>
+<pre><code># Archives
+## 2: Enable pagination
+## 1: Disable pagination
+## 0: Fully Disable
+archive: 1
+category: 1
+tag: 1
+</code></pre><p>簡単にリスト表示（タイル形式）になった。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/23/hexo-archive-category/" data-text="Hexoのアーカイブ、カテゴリーページを全文表示からリスト表示に | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/11/22/hexo-theme/" >Hexoのテーマを変更したら、元に戻せなくなった</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月22日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Hexoにはいろいろテーマがあるようで有難い。<br><a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">Themes · hexojs/hexo Wiki</a><br>（デモサイトはなぜか中国語が多い。）</p>
+<p>元々入っていたデフォルトのテーマは「Landscape」だったので、とりあえずそれとは別のOfficial Themes、「Phase」と「Light」を試してみた。<br>試したはいいが、「Light」を入れてから元のテーマに戻そうとしたら戻せなくなってしまった。<br>「Light」が崩れたようなスタイルから変更出来ない。  </p>
+<p><code>hexo h</code>でヘルプを見ると、<code>clean</code>（Remove generated files and the cache）というコマンドオプションがあったので、<code>hexo clean</code>をしてみた。<br>書いてある通り/publicフォルダ自体も消えてしまったが、その後<code>hexo g</code>したらテーマも無事直った。  </p>
+<p>消したのに、カウント数が(0)のまま表示されているカテゴリやタグも、<code>hexo clean</code>で直るようだ。  </p>
+<p>ーー<br>テーマのCSSをカスタマイズする際にも、ローカルでの確認では問題ないが、いざdeployすると反映されていないようだ。<br>この時もいったん<code>hexo clean</code>すると良いようだ。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/22/hexo-theme/" data-text="Hexoのテーマを変更したら、元に戻せなくなった | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/11/22/octopress-hexo/" >サイトジェネレーターをOctopressからHexoに変更</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月22日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Github Pagesのブログに使っている静的サイトジェネレーターをOctopressからHexoに変更してみた。  </p>
+<p>Octopressの/source/_posts内の記事ソースをそのままHexoの/source/_postsにコピーしたら、generateした時にパーマリンクが<code>http://.../2014/10/24/2014-10-24-xubuntu-blank-menu/</code>のように日付けが重複してしまった。<br>Hexoはデフォルトでは、新しく記事を作った時には日付けがつかず、生成する時に日付けを付加するようになっているらしい。  </p>
+<p>_config.ymlの  </p>
+<pre><code># Writing
+new_post_name: :title.md # File name of new posts
+</code></pre><p>のところを  </p>
+<pre><code>new_post_name: :year-:month-:day-:title.md
+</code></pre><p>に変更したら良いようだ。<br><a href="http://hexo.io/docs/migration.html" target="_blank" rel="external">Migration | Hexo</a>  </p>
+<p>Octopressでは記事が/blogディレクトリ下に配置されるパーマリンクを使っていたが、今後はHexoのデフォルトの通りルート下に:year/:month/:day/:title/というパーマリンクを使うことにした。この方がシンプルで好みだし。<br>Githubでは.htaccessファイルを使ったリダイレクトが使用不可のようなので、以前の記事がリンク切れになるのは仕方がない。  </p>
+<p>あと、下記記事を参考に、FeedとSitemapのプラグインを入れた。<br>プラグインの導入はとても簡単だった。<br><a href="http://liginc.co.jp/web/programming/server/104594" target="_blank" rel="external">所要時間3分!? Github PagesとHEXOで爆速ブログ構築してみよう！ | 株式会社LIG</a>  </p>
+<p>Feedを導入すると、ヘッダー右上のアイコンでatom.xmlのページは表示出来たが、ブラウザのアドレスバーの端にフィードアイコンが表示されていない。  </p>
+<p>themes/landscape/layout/_partial/head.ejsの26行目、<code>link rel=&quot;alternative&quot;</code>を<code>link rel=&quot;alternate&quot;</code>に変更したら、アドレスバーにフィードアイコンが表示された。  </p>
+<p>心配だったGithubへのdeployも、_config.ymlの<code># Deployment</code>の項目に記載するだけですんなりdeploy出来た。  </p>
+<p>記事数が増えるに従い（増えたといっても、ほんの20数記事だが）、動作がもっさりして来たOctopressに較べ、generateが断然早くて軽快。<br>コマンドも<br><code>hexo generate</code>→<code>hexo g</code><br><code>hexo server</code>→<code>hexo s</code><br><code>hexo deploy</code>→<code>hexo d</code><br>で良いようだし、なかなか便利。  </p>
+<p>ーー<br><code>hexo new</code>も<code>hexo n</code>でいいみたいで、<code>hexo deploy -g</code>は<code>hexo d -g</code>で良いようだ。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/22/octopress-hexo/" data-text="サイトジェネレーターをOctopressからHexoに変更 | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/11/21/hexo-xubuntu/" >Xubuntuに静的サイトジェネレーターHexoを入れてみた</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月21日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Octopressでブログを書いていて、さして不満はないのだが、別の静的サイトジェネレーターに「Hexo」というのがあるのを知った。<br>Octopressに較べ、テーマも豊富に用意あり、日本語のURLやカテゴリー名にも対応しているようだったので、入れてみた。<br>rubyではなく、Node.jsというのを使うらしい。  </p>
+<p>導入には下記サイトなどを参考にさせて頂いた。<br><a href="http://tech.admax.ninja/2014/09/11/environment-of-hexo/" target="_blank" rel="external">【Node.js】Hexoでブログを書くための環境構築 | AdMax Tech Blog</a>  </p>
+<p>概ね上記サイトの通りに進めたらいいようだったが、Xubuntu14.04の環境では若干うまく行かないところがあった。  </p>
+<p>nodeにパスを通す際、~/.bash_profileというファイルが見つからなかったので、~/.profileに  </p>
+<pre><code>if [[ -s ~/.nvm/nvm.sh ]];
+then source ~/.nvm/nvm.sh
+fi
+</code></pre><p>を追記したが、これでは駄目なようで、ターミナルを起動する度にnvmというコマンドが見つからないと言われる。  </p>
+<p>どうやら~/.bashrcに追記しないと駄目なようだった。<br><a href="http://d.hatena.ne.jp/white_chi/20111101/1320097898" target="_blank" rel="external">Ubuntu11.10で、nvmからnode.jsをインストールする - ホワイトぼーど</a>  </p>
+<p>Hexoをインストールするところで  </p>
+<pre><code>npm WARN optional dep failed, continuing fsevents@0.2.0
+</code></pre><p>と言われたが、問題なく使えるようだ。<br>途中うまく行かないので、下記サイトを参考に  </p>
+<pre><code>curl -sL https://deb.nodesource.com/setup | sudo bash -
+
+sudo apt-get install -y nodejs
+</code></pre><p>とやったりしたが、果たしてこれが必要な操作だったのかどうかは不明。<br><a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager" target="_blank" rel="external">Installing Node.js via package manager · joyent/node Wiki</a>  </p>
+<p>しばらく試用してみて良ささそうだったら、Octopressから乗り換えるかもしれない。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/21/hexo-xubuntu/" data-text="Xubuntuに静的サイトジェネレーターHexoを入れてみた | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
 
@@ -354,6 +785,90 @@ $ rename &#39;s/.md.bak/.md/&#39; *.bak
 <div class="col-md-3">
 	<div id="sidebar">
 	
+			<!-- _widget/recent_posts -->
+
+<div class="widget">
+  <h4>Recent Posts</h4>
+  <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/01/26/numlockx/" ><i class="fa fa-file-o"></i>Xubuntu14.04で常にNumlockオンで起動する</a>
+      </li>
+    
+      <li>
+        <a href="/2015/01/26/deploy-conflicted-copy-dropbox/" ><i class="fa fa-file-o"></i>Dropbpx上のHexoでdeploy時「競合コピ ...</a>
+      </li>
+    
+      <li>
+        <a href="/2015/01/25/facebookmail-spam/" ><i class="fa fa-file-o"></i>宅配業者からの不在通知を装ったスパムメール（info@...</a>
+      </li>
+    
+      <li>
+        <a href="/2015/01/24/hexo-favicon/" ><i class="fa fa-file-o"></i>Hexoにファビコン</a>
+      </li>
+    
+      <li>
+        <a href="/2015/01/24/xubuntu-menu-nepomuk/" ><i class="fa fa-file-o"></i>XubuntuのメニューからNepomuk Clean...</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+		
+			<!-- _widget/category -->
+
+
+		
+			<!-- _widget/tagcloud -->
+
+	<div class="widget">
+		<h4>Tag Cloud</h4>
+		<ul class="tag_box inline list-unstyled">
+		
+			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>9</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>11</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>2</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>20</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/風景/">風景<span>1</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>10</span></a></li>
+		
+		
+		</ul>
+	</div>
+
+
+		
+			
+	<div class="widget">
+		<h4>Monthly Archives</h4>
+		<ul class="archive-list inline list-unstyled">
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		</ul>
+	</div>
+
+		
 			<!-- _widget/links -->
 
 
