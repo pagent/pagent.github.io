@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Xubuntu14.04で常にNumlockオンで起動する | Pagent</title>
+  <title>これは便利！シンプルで軽快、おすすめのオンラインメモ帳「Simplenote」 | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Xubuntu14.04で常にNumlockオンで起動する"/>
+  <meta property="og:title" content="これは便利！シンプルで軽快、おすすめのオンラインメモ帳「Simplenote」"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -94,7 +94,7 @@
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> Xubuntu14.04で常にNumlockオンで起動する</h1>
+			<h1> これは便利！シンプルで軽快、おすすめのオンラインメモ帳「Simplenote」</h1>
 		</div>
 	
 
@@ -110,13 +110,15 @@
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>PC起動時にNumlockが有効になっていると、すぐにテンキーで数字を入力出来るので少しだけ助かる。<br>オフになっていてもNumlockキーを押せばいいだけではあるが。  </p>
-<p>Xubuntu14.04の設定マネージャーを見ていると「設定エディター」というのがあった。<br>マウスを合わせるとツールチップで「Xfconf のグラフィカル設定エディターです」と説明が出ているもの。<br>何の気無しにクリックしてみると、keyboadsのところが開いていてNumlockについての設定のようだった。<br>「値」の処にチェックは入っていない。  </p>
-<p>試しにチェックを入れてみたら良かったのだが、説明らしい説明が無かったので躊躇してしまい、「Numlock」+「Ubuntu」で検索してnumlockxをインストールした。<br>だがこれだけだと、Numlockがオフの状態でPCを終了して再起動すると、Numlockオフで起動してしまう。<br>Ubuntuソフトウェアセンターの説明には「本パッケージは、セッション開始時に numlock を有効化するセッションスクリプト を自動的にインストールします。」とあるのだが。  </p>
-<p>/etc/lightdm/lightdm.confに「greeter-setup-script=/usr/bin/numlockx on」を追記するよう解説しているサイトがあったのでやってみたが、これもうまく行かない。<br>さっきの「設定エディター」でチェックを入れても、オフ状態でPCを終了するとNumlockオフで起動する。  </p>
-<p>結局、「セッションと起動」の自動開始アプリケーションにコマンド<code>numlockx</code>の項目を追加することで、「常にNumlockオンで起動」させることが出来た。  </p>
-<p>ーー<br>（追記）<br>自動開始アプリケーションに追加するコマンドは<code>numlockx</code>だけでも大丈夫だったが、<code>/usr/bin/numlockx on</code>もしくは<code>/usr/bin/numlockx</code>とするのがLinuxの正統な作法のようだ。<br>（自動開始アプリケーションに追加されていた他の項目を見ると、どれも/usr/bin/…という記法になっている。）  </p>
-<p>「<code>numlockx</code>だけで実行出来る」＝「パスが通っている」ということらしいので、どちらでも良いのだろう。<br><a href="http://www.obenri.com/_operation/path_through.html" target="_blank" rel="external">◇”パスが通っている”とは？◇初心者のためのLinuxサーバー構築講座(CentOS 自宅サーバー対応)☆お便利サーバー.com☆</a></p>
+	    <p>以前はちょっとした文字列をPC間でやり取りするのに、自分宛てにメールを送ったりしていた。<br>あるサイトのURLを別のPCでも開きたい時など。  </p>
+<p>Firefox Syncを使うようになってからはURLを送る必要は無くなったが、それでもちょっとした、それでいて文字を一から入力するのは大変そうな時がわりとある。<br>そういう時はGoogleやYahoo!で検索してその結果のURLをブックマーク。Firefox Syncの同期を利用して別のPCに送るというようなことをしていた。  </p>
+<p>ずいぶん前にオンラインノートの老舗Evernoteのアカウントは作っていた。長らく放置していたこれをもう一度使ってみようかと思ったが、やっぱり動作が重くてどうにもやりきれない。<br>もっと簡単にちょこちょこっと書いたり、コピペしたりしたいだけなのだ。  </p>
+<p>なにか良いサービスはないかと探してみたら、有りました！  </p>
+<p><a href="https://app.simplenote.com/" target="_blank" rel="external">「Simplenote」</a>  </p>
+<p>とにかく軽い。<br>そしてシンプル。<br>こういうのが欲しかった。  </p>
+<p>管理するアカウントが増えるのが嫌で、はじめ少し躊躇したが、試してみて良かった。  </p>
+<p>これはおすすめです。</p>
+<p>（参照サイト）<br><a href="http://allabout.co.jp/matome/cl000000002229/" target="_blank" rel="external">お散歩に持って出ると便利な「オンラインノート」サービス10選｜All About（オールアバウト）</a></p>
 
 	</div>
 
@@ -132,13 +134,13 @@
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2015/01/28/simplenote/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2015/01/26/deploy-conflicted-copy-dropbox/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2015/01/26/numlockx/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -172,7 +174,7 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2015年1月26日
+	2015年1月28日
 	</div>
 	
 
@@ -186,7 +188,7 @@
     <ul id="tags" class="tag_box list-unstyled collapse in">
 	    <!-- _partial/post/tag -->
   
-  <li><a href="/tags/Linux/">Linux</a></li>
+  <li><a href="/tags/ネット/">ネット</a></li>
 
     </ul>
 	</div>

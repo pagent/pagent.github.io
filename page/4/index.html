@@ -112,6 +112,53 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/12/11/github-pages-server-down/" >GitHub Pagesがサーバーメンテナンス</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年12月11日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>今日何度か、GitHub Pagesのこのブログが表示されなかった。  </p>
+<blockquote>
+<p>GitHub Pages is temporarily down for maintenance.</p>
+</blockquote>
+<p>と表示されていて、サーバーのメンテナンスのよう。  </p>
+<p><a href="http://www.downforeveryoneorjustme.com/" target="_blank" rel="external">Down For Everyone Or Just Me -&gt; Check if your website is down or up?</a>で調べた時には回復していた。  </p>
+<p>pingコマンドでもサーバーの疎通を確認出来るようだ。<br>コマンドを実行すると延々pingが送信されるが、「CTRL」+「C」キーで停止すると結果が表示されるらしい。<br><a href="http://webkaru.net/linux/ping-command/" target="_blank" rel="external">Linuxコマンド【 ping 】ホストとの接続を確認 - Linux入門 - Webkaru</a>  </p>
+<p>確認した時には「0% packet loss」だった。  </p>
+<p>初めてだったので驚いたが、GitHub Pagesもメンテナンスするんだね。  </p>
+<p>ーー<br>（追記）<br>その後も落ちたり回復したりの繰り返し。また、見られないページがあったり、Font Awesomeが文字化けしたりと不安定。<br>静的ページだし、信頼してたのに。  </p>
+<p>大丈夫なんだろうか。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/11/github-pages-server-down/" data-text="GitHub Pagesがサーバーメンテナンス | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/12/10/brief/" >Briefの不具合（フィードを追加出来ない）</a>
 		</h3>
 	
@@ -524,79 +571,6 @@ nothing to commit, working directory clean
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/12/03/hexo-freewill-monthly-archives/" >HexoのテーマFreewillに月別アーカイブ</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年12月3日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>サイドバーの種類にもよるが、Gitリポジトリを使ったブログにサイドバーを付けると、新規記事をdeployする際に更新するファイルが増えてしまって良くないように思う。  </p>
-<p>先日入れたテーマFreewillはその辺を考慮してか、ページネーションのページ等どうしても更新せざるを得ないページにはサイドバーを置き、個別記事のページではサイドバー領域に投稿日やタグなどを表示するよう工夫されている。<br>実際、新規記事をdeployしても、過去の記事はcommitされていないようだ。  </p>
-<p>ところで、Freewillには月別アーカイブが無かったので、入れることにした。  </p>
-<p>デフォルトテーマのLandscapeのarchive.ejsをそのままfreewill/layout/_widget内にコピペすると、西暦の後ろに投稿数が隙間無しにくっついていて、見栄えが良くない。  </p>
-<p>archive.ejsを修正、  </p>
-<pre><code>&lt;% if (site.posts.length){ %&gt;
-    &lt;div class=&quot;widget&quot;&gt;
-        &lt;h4&gt;&lt;%= __(&#39;Monthly Archives&#39;) %&gt;&lt;/h4&gt;
-        &lt;ul class=&quot;archive-list inline list-unstyled&quot;&gt;
-        &lt;%- list_archives() %&gt;
-        &lt;/ul&gt;
-    &lt;/div&gt;
-&lt;% } %&gt;
-</code></pre><p>freewill/source/css/style.cssにもスタイルを加えた。  </p>
-<pre><code>/* Monthly Archives
----------------------------- */
-
-.archive-list ul {
-  padding:0 3px;
-  list-style-type: none;
-  line-height: 20px;
-}
-.archive-list-count {
-    color: #888;
-}
-.archive-list-count:before {
-    content: &quot; (&quot;;
-}
-.archive-list-count:after {
-    content: &quot;)&quot;;
-}
-</code></pre><p>ちゃんとした知識が無く、見よう見まねなので、あまり良い記述ではないと思うが、自分としては十分満足。  </p>
-<p>ーー<br>（追記）<br>Githubのコミット歴をよく見てみたら、同じタグを使っている過去記事も更新されるようだ。<br>個別記事ページのタグの箇所にそのタグを使っている記事数が表示されているせいだろう。  </p>
-<p>タグクラウドやタグ一覧ページは良いとして、個別記事ページのタグには記事数は無い方が良さそうだ。  </p>
-<p>freewill/layout/_partial/post/tag.ejsの5行目から<code>&lt;span&gt;&#39; + tag.length  + &#39;&lt;/span&gt;</code>を削除して、タグ名だけにした。  </p>
-<pre><code>tags.push(&#39;&lt;li&gt;&lt;a href=&quot;&#39; + config.root + tag.path + &#39;&quot;&gt;&#39; + tag.name + &#39;&lt;/a&gt;&lt;/li&gt;&#39;);
-</code></pre><p>これで様子を見てみようと思う。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/03/hexo-freewill-monthly-archives/" data-text="HexoのテーマFreewillに月別アーカイブ | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -638,6 +612,10 @@ nothing to commit, working directory clean
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/01/28/simplenote/" ><i class="fa fa-file-o"></i>これは便利！シンプルで軽快、おすすめのオンラインメモ帳...</a>
+      </li>
+    
+      <li>
         <a href="/2015/01/26/numlockx/" ><i class="fa fa-file-o"></i>Xubuntu14.04で常にNumlockオンで起動する</a>
       </li>
     
@@ -651,10 +629,6 @@ nothing to commit, working directory clean
     
       <li>
         <a href="/2015/01/24/hexo-favicon/" ><i class="fa fa-file-o"></i>Hexoにファビコン</a>
-      </li>
-    
-      <li>
-        <a href="/2015/01/24/xubuntu-menu-nepomuk/" ><i class="fa fa-file-o"></i>XubuntuのメニューからNepomuk Clean...</a>
       </li>
     
   </ul>
@@ -672,33 +646,33 @@ nothing to commit, working directory clean
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/blog/">blog<span>11</span></a></li>
-		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>9</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>20</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
-		
 			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>10</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>20</span></a></li>
 		
 			<li><a href="/tags/風景/">風景<span>1</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>10</span></a></li>
 		
 			<li><a href="/tags/Windows/">Windows<span>2</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>11</span></a></li>
 		
 		
 		</ul>
@@ -710,7 +684,7 @@ nothing to commit, working directory clean
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

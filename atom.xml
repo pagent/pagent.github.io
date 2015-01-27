@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-27T13:49:06.004Z</updated>
+  <updated>2015-01-27T17:12:51.340Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,31 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[これは便利！シンプルで軽快、おすすめのオンラインメモ帳「Simplenote」]]></title>
+    <link href="http://pagent.github.io/2015/01/28/simplenote/"/>
+    <id>http://pagent.github.io/2015/01/28/simplenote/</id>
+    <published>2015-01-27T16:29:30.000Z</published>
+    <updated>2015-01-27T17:12:11.000Z</updated>
+    <content type="html"><![CDATA[<p>以前はちょっとした文字列をPC間でやり取りするのに、自分宛てにメールを送ったりしていた。<br>あるサイトのURLを別のPCでも開きたい時など。  </p>
+<p>Firefox Syncを使うようになってからはURLを送る必要は無くなったが、それでもちょっとした、それでいて文字を一から入力するのは大変そうな時がわりとある。<br>そういう時はGoogleやYahoo!で検索してその結果のURLをブックマーク。Firefox Syncの同期を利用して別のPCに送るというようなことをしていた。  </p>
+<p>ずいぶん前にオンラインノートの老舗Evernoteのアカウントは作っていた。長らく放置していたこれをもう一度使ってみようかと思ったが、やっぱり動作が重くてどうにもやりきれない。<br>もっと簡単にちょこちょこっと書いたり、コピペしたりしたいだけなのだ。  </p>
+<p>なにか良いサービスはないかと探してみたら、有りました！  </p>
+<p><a href="https://app.simplenote.com/" target="_blank" rel="external">「Simplenote」</a>  </p>
+<p>とにかく軽い。<br>そしてシンプル。<br>こういうのが欲しかった。  </p>
+<p>管理するアカウントが増えるのが嫌で、はじめ少し躊躇したが、試してみて良かった。  </p>
+<p>これはおすすめです。</p>
+<p>（参照サイト）<br><a href="http://allabout.co.jp/matome/cl000000002229/" target="_blank" rel="external">お散歩に持って出ると便利な「オンラインノート」サービス10選｜All About（オールアバウト）</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>以前はちょっとした文字列をPC間でやり取りするのに、自分宛てにメールを送ったりしていた。<br>あるサイトのURLを別のPCでも開きたい時など。  </p>
+<p>Firefox Syncを使うようになってからはURLを送る必要は無くなったが、それでもちょっとした、それでい]]>
+    </summary>
+    
+      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Xubuntu14.04で常にNumlockオンで起動する]]></title>
@@ -445,35 +470,6 @@ Crawl-delay: 30
       <category term="blog" scheme="http://pagent.github.io/tags/blog/"/>
     
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Googleを利用したサイト内検索が出来ない]]></title>
-    <link href="http://pagent.github.io/2014/12/24/google-site-search/"/>
-    <id>http://pagent.github.io/2014/12/24/google-site-search/</id>
-    <published>2014-12-23T17:21:13.000Z</published>
-    <updated>2014-12-24T08:31:21.000Z</updated>
-    <content type="html"><![CDATA[<p>いつの間にかHexoを使って書いているブログで、Googleを利用したサイト内検索が出来なくなっていた。<br>検索してもブログ全体のインデックス状況（<code>site:pagent.github.io</code>を検索した結果）が表示されるだけ。  </p>
-<p>OctopressのブログではただのGoogle検索になってしまっている。<br>Googleでなんらかの変更があったのだろうか。  </p>
-<p>検索ボックスのレイアウト  </p>
-<pre><code>&lt;input type=&quot;search&quot; name=&quot;q&quot; results=&quot;0&quot; placeholder=&quot;&lt;%= __(&#39;search&#39;) %&gt;&quot; class=&quot;form-control&quot;&gt;
-&lt;input type=&quot;hidden&quot; name=&quot;q&quot; value=&quot;site:&lt;%- config.url.replace(/^https?:\/\//, &#39;&#39;) %&gt;&quot;&gt;
-</code></pre><p>の<code>value=</code>でサイトURLを指定している方（下の方）の<code>name=&quot;q&quot;</code>を<code>name=&quot;hq&quot;</code>に修正し、  </p>
-<pre><code>&lt;input type=&quot;search&quot; name=&quot;q&quot; results=&quot;0&quot; placeholder=&quot;&lt;%= __(&#39;search&#39;) %&gt;&quot; class=&quot;form-control&quot;&gt;
-&lt;input type=&quot;hidden&quot; name=&quot;hq&quot; value=&quot;site:&lt;%- config.url.replace(/^https?:\/\//, &#39;&#39;) %&gt;&quot;&gt;
-</code></pre><p>にしたら、一応サイト内検索が出来るようになった。<br>Octopressの方でも同様だった。<br>その内サイトジェネレーターやそのテーマの方でも修正されるのだろう。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>いつの間にかHexoを使って書いているブログで、Googleを利用したサイト内検索が出来なくなっていた。<br>検索してもブログ全体のインデックス状況（<code>site:pagent.github.io</code>を検索した結果）が表示されるだけ。  </p>
-<p>]]>
-    </summary>
-    
-      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
-    
-      <category term="Octopress" scheme="http://pagent.github.io/tags/Octopress/"/>
-    
-      <category term="blog" scheme="http://pagent.github.io/tags/blog/"/>
     
   </entry>
   
