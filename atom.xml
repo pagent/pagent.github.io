@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-27T12:20:56.378Z</updated>
+  <updated>2015-01-27T13:49:06.004Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/01/26/numlockx/"/>
     <id>http://pagent.github.io/2015/01/26/numlockx/</id>
     <published>2015-01-26T14:28:21.000Z</published>
-    <updated>2015-01-27T12:17:52.000Z</updated>
+    <updated>2015-01-27T11:31:29.000Z</updated>
     <content type="html"><![CDATA[<p>PC起動時にNumlockが有効になっていると、すぐにテンキーで数字を入力出来るので少しだけ助かる。<br>オフになっていてもNumlockキーを押せばいいだけではあるが。  </p>
 <p>Xubuntu14.04の設定マネージャーを見ていると「設定エディター」というのがあった。<br>マウスを合わせるとツールチップで「Xfconf のグラフィカル設定エディターです」と説明が出ているもの。<br>何の気無しにクリックしてみると、keyboadsのところが開いていてNumlockについての設定のようだった。<br>「値」の処にチェックは入っていない。  </p>
 <p>試しにチェックを入れてみたら良かったのだが、説明らしい説明が無かったので躊躇してしまい、「Numlock」+「Ubuntu」で検索してnumlockxをインストールした。<br>だがこれだけだと、Numlockがオフの状態でPCを終了して再起動すると、Numlockオフで起動してしまう。<br>Ubuntuソフトウェアセンターの説明には「本パッケージは、セッション開始時に numlock を有効化するセッションスクリプト を自動的にインストールします。」とあるのだが。  </p>
@@ -66,7 +66,7 @@
     <link href="http://pagent.github.io/2015/01/25/facebookmail-spam/"/>
     <id>http://pagent.github.io/2015/01/25/facebookmail-spam/</id>
     <published>2015-01-25T03:07:43.000Z</published>
-    <updated>2015-01-27T12:17:52.000Z</updated>
+    <updated>2015-01-25T21:55:29.000Z</updated>
     <content type="html"><![CDATA[<p>今年になってから突然、サブのメールアドレスに迷惑メールが来るようになった。  </p>
 <p>ほとんどは卑猥な文言のひと目でスパムと分かるものだったが、一見スパムと分かりづらいメールもあった。<br><code>ペリカン配送 &lt;info@…facebookmail.com&gt;</code>を名乗る差出人からのもので、件名は<code>【ペリカン配送より不在通知】</code>となっている。  </p>
 <blockquote>
