@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-28T02:43:09.833Z</updated>
+  <updated>2015-01-28T02:58:33.188Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/01/28/simplenote/"/>
     <id>http://pagent.github.io/2015/01/28/simplenote/</id>
     <published>2015-01-27T16:29:30.000Z</published>
-    <updated>2015-01-28T02:42:33.000Z</updated>
+    <updated>2015-01-28T02:58:25.000Z</updated>
     <content type="html"><![CDATA[<p>以前はちょっとした文章などをPC間でやり取りするのに、自分宛てにメールを送ったりしていた。<br>あるサイトのURLを別のPCでも開きたい時など。  </p>
 <p>Firefox Syncを使うようになってからはURLを送る必要は無くなったが、それでもちょっとした、それでいて文字を一から入力するのは大変そうな文章を送りたい時がわりとある。<br>そういう時はGoogleやYahoo!で検索して検索結果のURLをブックマーク、Firefox Syncの同期を利用して別のPCに送るというようなことをしていた。  </p>
 <p>あまりスマートなやり方とは思えないし、なにか良い方法はないものか。<br>Dropboxにテキストファイルを保存するというのは同期に時間が掛かるし。  </p>
@@ -28,7 +28,7 @@
 <p><a href="https://app.simplenote.com/" target="_blank" rel="external">「Simplenote」</a>  </p>
 <p>とにかく軽い。<br>そしてシンプル。<br>こういうのが欲しかった。  </p>
 <p>（参照サイト）<br><a href="http://allabout.co.jp/matome/cl000000002229/" target="_blank" rel="external">お散歩に持って出ると便利な「オンラインノート」サービス10選｜All About（オールアバウト）</a>  </p>
-<p>管理するアカウントが増えるのが嫌で、はじめは少し躊躇したが、試してみて良かった。  </p>
+<p>はじめは管理するアカウントをあまり増やしたくないので少し躊躇したが、試してみて良かった。  </p>
 <p>これはおすすめです。  </p>
 <p>ーー<br>（追記）<br>Linux、Windows、OS Xなど、クロスプラットフォームで利用可能なメモ帳ソフト「nvPY」というのがあった。（Ubuntu系ならソフトウェアセンターからインストール可能）<br>「nvPY」を使えばSimplenoteと簡単に同期出来て、さらに便利。</p>
 ]]></content>
