@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-28T05:24:50.279Z</updated>
+  <updated>2015-01-28T07:38:44.727Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,11 +15,43 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Simplenoteと簡単に同期出来るメモ帳ソフト「nvPY」]]></title>
+    <link href="http://pagent.github.io/2015/01/28/nvpy/"/>
+    <id>http://pagent.github.io/2015/01/28/nvpy/</id>
+    <published>2015-01-28T05:57:28.000Z</published>
+    <updated>2015-01-28T07:35:54.000Z</updated>
+    <content type="html"><![CDATA[<p>オンラインノートのSimplenoteだけでも十分便利だが、ブラウザを立ち上げずに済むなら尚便利。<br>検索すると「nvPY」というメモ帳ソフトが見つかった。<br>Simplenoteと簡単に同期出来て、しかもLinux、Windows、OS Xなどクロスプラットフォームで利用可能らしい。<br><a href="http://moebuntu.blog48.fc2.com/blog-entry-452.html" target="_blank" rel="external">萌え萌えmoebuntu　UbuntuでSimplenote</a>  </p>
+<p>Ubuntu系なら、ソフトウェアセンターやsynapticからインストール出来る。  </p>
+<p>メニュー→アクセサリから起動すると、  </p>
+<blockquote>
+<p>Could not read any configuration files.<br>See<br>/usr/share/doc/nvpy/examples/nvpy-example.cfg</p>
+</blockquote>
+<p>と注意が表示される。  </p>
+<p>/usr/share/doc/nvpy/examples内のnvpy-example.cfgを自分のユーザーディレクトリにコピー。<br>Simplenoteのアカウント（メールアドレス）とパスワードを記入し、nvpy-example.cfgのファイル名を<code>.nvpy.cfg</code>に変更するだけの簡単設定。<br>.nvpy.cfgでいろいろ設定出来るようだが、取り敢えずフォントサイズを11にした。  </p>
+<p>自動開始アプリケーションにも追加してみたが、起動の度に立ち上がる必要も無さそうなのでクイックランチャーに追加した。<br>アイコンは/usr/share/icons/hicolor/256x256/apps/nvpy.pngにあった。（青のローバーMINI）  </p>
+<p>マウスでのコピペは出来ないようで「CTRL」キーを使わないといけないが、autosave、autosyncしてくれる。  </p>
+<p>デフォルトのsort modeでは更新日時での降順（新しいノートが上）。  </p>
+<p>nvPY下部の「Pinned」のチェックボックスにチェックを入れると、常に上に表示される。  </p>
+<p>右上の「CS」（case-sensitivity）にチェックが入っていたら、検索のときアルファベットの大文字と小文字を区別して検索。  </p>
+<p>search modeのgstyleとregexpは、英語など語句の間にスペースの入った文節を検索した際、完全一致のみ（regexp）を表示するかどうかのオプションのよう。<br>日本語環境ではデフォルトのgstyleで良さそう。  </p>
+<p>便利です。<br>有難い。  </p>
+<p>あと、場所が分かりにくいが、<a href="http://simplenote.com/downloads/" target="_blank" rel="external">Downloads | Simplenote</a>にMac OS X用、Windows用、Mobile用等のアプリやプラグイン等が挙げられている。  </p>
+<p>ーー<br>（関連記事）<br><a href="http://pagent.github.io/2015/01/28/simplenote/" target="_blank" rel="external">これは便利！シンプルで軽快、おすすめのオンラインメモ帳「Simplenote」 | Pagent</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>オンラインノートのSimplenoteだけでも十分便利だが、ブラウザを立ち上げずに済むなら尚便利。<br>検索すると「nvPY」というメモ帳ソフトが見つかった。<br>Simplenoteと簡単に同期出来て、しかもLinux、Windows、OS Xなどクロスプラットフォー]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[これは便利！シンプルで軽快、おすすめのオンラインメモ帳「Simplenote」]]></title>
     <link href="http://pagent.github.io/2015/01/28/simplenote/"/>
     <id>http://pagent.github.io/2015/01/28/simplenote/</id>
     <published>2015-01-27T16:29:30.000Z</published>
-    <updated>2015-01-28T03:02:25.000Z</updated>
+    <updated>2015-01-28T07:37:44.000Z</updated>
     <content type="html"><![CDATA[<p>以前はちょっとした文章などをPC間でやり取りするのに、自分宛てにメールを送ったりしていた。<br>あるサイトのURLを別のPCでも開きたい時など。  </p>
 <p>Firefox Syncを使うようになってからはURLを送る必要は無くなったが、それでもちょっとした、それでいて文字を一から入力するのは大変そうな文章を送りたい時がわりとある。<br>そういう時はGoogleやYahoo!で検索して検索結果のURLをブックマーク、Firefox Syncの同期を利用して別のPCに送るというようなことをしていた。  </p>
 <p>あまりスマートなやり方とは思えないし、なにか良い方法はないものか。<br>Dropboxにテキストファイルを保存するというのは同期に時間が掛かるし。  </p>
@@ -30,7 +62,7 @@
 <p>（参照サイト）<br><a href="http://allabout.co.jp/matome/cl000000002229/" target="_blank" rel="external">お散歩に持って出ると便利な「オンラインノート」サービス10選｜All About（オールアバウト）</a>  </p>
 <p>はじめは管理するアカウントをあまり増やしたくないので少し躊躇したが、試してみて良かった。  </p>
 <p>これはおすすめです。  </p>
-<p>ーー<br>（追記）<br>Linux、Windows、OS Xなど、クロスプラットフォームで利用可能なメモ帳ソフト「nvPY」というのがあった。（Ubuntu系ならソフトウェアセンターからインストール可能）<br>「nvPY」はSimplenoteと簡単に同期出来て、ブラウザでサイトを開く必要がなくなるので、さらに便利。</p>
+<p>ーー<br>（追記）<br>Linux、Windows、OS Xなど、クロスプラットフォームで利用可能なメモ帳ソフト「nvPY」というのがあった。（Ubuntu系ならソフトウェアセンターからインストール可能）<br>「nvPY」はSimplenoteと簡単に同期出来て、ブラウザでサイトを開く必要がなくなるので、さらに便利。<br><a href="http://pagent.github.io/2015/01/28/nvpy/" target="_blank" rel="external">Simplenoteと簡単に同期出来るメモ帳ソフト「nvPY」 | Pagent</a></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>以前はちょっとした文章などをPC間でやり取りするのに、自分宛てにメールを送ったりしていた。<br>あるサイトのURLを別のPCでも開きたい時など。  </p>
@@ -430,43 +462,6 @@ keys:■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ �
 ]]></content>
     <summary type="html">
     <![CDATA[<p>検索エンジンにインデックスされにくいようなのでrobots.txtを置いてみたが、sitemap.xmlの内容も少し修正してみた。<br>プラグインで導入したsitemap.xmlには個別記事のURLしか記載されていないが、Octopressのサイトマップを見てみるとブログ]]>
-    </summary>
-    
-      <category term="blog" scheme="http://pagent.github.io/tags/blog/"/>
-    
-      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hexoで書いているGitHub Pagesのブログにrobots.txtを置いてみた]]></title>
-    <link href="http://pagent.github.io/2014/12/24/robots-txt/"/>
-    <id>http://pagent.github.io/2014/12/24/robots-txt/</id>
-    <published>2014-12-24T08:29:04.000Z</published>
-    <updated>2015-01-24T23:55:57.000Z</updated>
-    <content type="html"><![CDATA[<p>記事がなかなか検索エンジンにインデックスされない。古い記事がインデックスされず新しいのがインデックスされたりしているようだ。<br>プラグインでsitemap.xmlは導入しているが、ちゃんと読んでくれているのか疑問。  </p>
-<p>sitemapとは別にクローラーに各種の指定をするrobots.txtというのがあるようなので、GitHub Pagesに置いてみた。<br>SeesaaやFC2などのブログサービスでは自動的に用意してくれているようだ。  </p>
-<p>sourceフォルダ直下にrobots.txtを新規作成。<br>generateするとちゃんとpublicフォルダ内にもrobots.txtが生成された。<br>deployし、ブラウザで<code>http://pagent.github.io/robots.txt</code>にアクセスしが、何故か404エラーだった。GitHub Pagesのレポジトリには追加されていたが。<br>反映に時間がかかるようでしばらくするとアクセス出来た。  </p>
-<p>robots.txtの内容は下記のようにした。  </p>
-<pre><code>User-agent: *
-Disallow: /css/
-Disallow: /*.js$
-
-Sitemap: http://pagent.github.io/sitemap.xml
-
-User-agent: bingbot
-Crawl-delay: 30
-
-User-agent: MSNBOT
-Crawl-delay: 30
-</code></pre><p>大して効果は無いのかもしれないが、おかしなことを書かない限りデメリットはないだろうし、無いよりはましだろう。  </p>
-<p>ーー<br>（追記）<br>robots.txtを置いてから、わりと早く検索エンジンにインデックスされるようになった気がする。<br>Octopressではデフォルトでsitemap.xmlとrobots.txtを生成してくれるようだ。<br>この点、HexoよりOctopressの方がSEO的に優れているかもしれない。  </p>
-<p>ーー<br>（再追記）<br>Google ウェブマスターツールのヘルプによると、「robots.txt ファイルが必要になるのは、Google などの検索エンジンのインデックスに登録したくないコンテンツがある場合のみ」らしい。<br><a href="https://support.google.com/webmasters/answer/6062608?hl=ja&amp;rd=1" target="_blank" rel="external">robots.txt ファイルについて - ウェブマスター ツール ヘルプ</a>  </p>
-<p>SEO上どうしても必要なものではないようだ。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>記事がなかなか検索エンジンにインデックスされない。古い記事がインデックスされず新しいのがインデックスされたりしているようだ。<br>プラグインでsitemap.xmlは導入しているが、ちゃんと読んでくれているのか疑問。  </p>
-<p>sitemapとは別にクローラーに各]]>
     </summary>
     
       <category term="blog" scheme="http://pagent.github.io/tags/blog/"/>
