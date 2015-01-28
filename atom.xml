@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-28T09:28:01.301Z</updated>
+  <updated>2015-01-28T09:40:17.223Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,9 +19,9 @@
     <link href="http://pagent.github.io/2015/01/28/nvpy/"/>
     <id>http://pagent.github.io/2015/01/28/nvpy/</id>
     <published>2015-01-28T05:57:28.000Z</published>
-    <updated>2015-01-28T09:27:54.000Z</updated>
+    <updated>2015-01-28T09:37:30.000Z</updated>
     <content type="html"><![CDATA[<p>オンラインノートのSimplenoteだけでも十分便利だが、ブラウザを立ち上げずに済むなら尚便利。<br>検索すると「nvPY」というメモ帳ソフトが見つかった。<br>Simplenoteと簡単に同期出来て、しかもLinux、Windows、Mac OS Xなどクロスプラットフォームで利用可能らしい。<br><a href="http://moebuntu.blog48.fc2.com/blog-entry-452.html" target="_blank" rel="external">萌え萌えmoebuntu　UbuntuでSimplenote</a>  </p>
-<p>Ubuntuソフトウェアセンターやsynapticからもインストール可能。  </p>
+<p>UbuntuソフトウェアセンターやSynapticからもインストール可能。  </p>
 <p>メニュー→アクセサリから起動すると、  </p>
 <blockquote>
 <p>Could not read any configuration files.<br>See<br>/usr/share/doc/nvpy/examples/nvpy-example.cfg</p>
@@ -196,9 +196,9 @@
     <link href="http://pagent.github.io/2015/01/23/lubuntu-alacarte-menulibre/"/>
     <id>http://pagent.github.io/2015/01/23/lubuntu-alacarte-menulibre/</id>
     <published>2015-01-22T17:35:29.000Z</published>
-    <updated>2015-01-25T07:55:56.000Z</updated>
+    <updated>2015-01-28T09:38:43.000Z</updated>
     <content type="html"><![CDATA[<p>Lubuntu14.04でメインメニューの編集をしたかったのだが、手動で設定するのは難しそう。<br><a href="https://wiki.archlinux.org/index.php/LXDE_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29#.E3.82.A2.E3.83.97.E3.83.AA.E3.82.B1.E3.83.BC.E3.82.B7.E3.83.A7.E3.83.B3.E3.83.A1.E3.83.8B.E3.83.A5.E3.83.BC.E3.81.AE.E7.B7.A8.E9.9B.86" target="_blank" rel="external">LXDE (日本語) - ArchWiki</a>  </p>
-<p>LXDE用のメニューエディターにLXMEDというのがあるようだが、使ったことがないし、メニューを削除せず非表示にしたり、上下の並びを入れ替えたり、といったことが出来るかどうか分からない。<br>そこで、AlacarteとMenuLibreを入れてみた。<br>どちらもsynapticでインストール出来る。  </p>
+<p>LXDE用のメニューエディターにLXMEDというのがあるようだが、使ったことがないし、メニューを削除せず非表示にしたり、上下の並びを入れ替えたり、といったことが出来るかどうか分からない。<br>そこで、AlacarteとMenuLibreを入れてみた。<br>どちらもSynapticでインストール。  </p>
 <p>AlacarteはLubuntu14.04では満足に機能してくれず、非表示設定や並びの入れ替えが反映されなかった。再起動してみても変化無し。<br>一方、MenuLibreの方は望み通りにちゃんと機能してくれた。  </p>
 <p>GUIで簡単に設定出来るのでとても助かる。</p>
 ]]></content>
@@ -215,11 +215,11 @@
     <link href="http://pagent.github.io/2015/01/23/lubuntu-desktop-manager/"/>
     <id>http://pagent.github.io/2015/01/23/lubuntu-desktop-manager/</id>
     <published>2015-01-22T15:15:48.000Z</published>
-    <updated>2015-01-22T15:27:59.000Z</updated>
+    <updated>2015-01-28T09:39:08.000Z</updated>
     <content type="html"><![CDATA[<p>13.04から14.04にアップグレードしたLubuntuで、いつのまにかデスクトップの壁紙が表示されなくなっていた。  </p>
 <p>壁紙を設定しようと「メニュー」→「設定」→「デスクトップの設定」と進んでも、「！ デスクトップマネージャはアクティブではありません。」とエラー表示が出て設定出来ない。<br>デスクトップ上での右クリックから「デスクトップの設定」を選択してもナシのつぶて。  </p>
 <p>Lubuntu14.04でのデスクトップの設定にはPCManFMが使われているようなので、「LXSessionのデフォルトのアプリケーション」でデフォルトのファイルマネージャーをnemoからPCManFMに戻してみたが、それでもデスクトップの設定が出来ない。  </p>
-<p>最終的には下記を参考に、synapticからPCManFMを再インストールすることで、「デスクトップの設定」を正常に起動出来た｡<br><a href="http://ubuntuforums.org/showthread.php?t=2218084&amp;p=13090056#post13090056" target="_blank" rel="external">[lubuntu] message:desktop manager is not active</a>  </p>
+<p>最終的には下記を参考に、SynapticからPCManFMを再インストールすることで、「デスクトップの設定」を正常に起動出来た｡<br><a href="http://ubuntuforums.org/showthread.php?t=2218084&amp;p=13090056#post13090056" target="_blank" rel="external">[lubuntu] message:desktop manager is not active</a>  </p>
 <p>自分の環境では、回答前段に書いてあるコマンドは行わず、PCManFMの再インストールだけで大丈夫だった。</p>
 ]]></content>
     <summary type="html">
@@ -321,9 +321,9 @@ keys:■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ �
     <link href="http://pagent.github.io/2015/01/14/lubuntu-pavucontrol/"/>
     <id>http://pagent.github.io/2015/01/14/lubuntu-pavucontrol/</id>
     <published>2015-01-14T07:38:56.000Z</published>
-    <updated>2015-01-14T07:56:05.000Z</updated>
+    <updated>2015-01-28T09:37:48.000Z</updated>
     <content type="html"><![CDATA[<p>Lubuntu14.04には元々ボリュームコントローラーとしてalsamixerが入っているが、完全にGUIのツールではなく使いづらい。<br>そこで、Xubuntuに標準で入っているPulseAudio Volume Control (pavucontrol)をインストールした。  </p>
-<p>synapticやソフトウェアセンター、もしくは下記コマンドで導入。</p>
+<p>Synapticやソフトウェアセンター、もしくは下記コマンドで導入。</p>
 <pre><code>sudo apt-get install pavucontrol
 </code></pre><p>インストール後は自然に通知領域での設定がPulseAudio Volume Controlに変更される。  </p>
 <p>スピーカーからの出力を 153%（11.00dB）まで上げられるので、音量が小さくて困る時などにもなにかと便利。</p>
@@ -359,9 +359,9 @@ keys:■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ �
     <link href="http://pagent.github.io/2015/01/09/old-pc-lubuntu/"/>
     <id>http://pagent.github.io/2015/01/09/old-pc-lubuntu/</id>
     <published>2015-01-09T08:00:15.000Z</published>
-    <updated>2015-01-10T03:15:18.000Z</updated>
+    <updated>2015-01-28T09:37:05.000Z</updated>
     <content type="html"><![CDATA[<p>古いパソコン、FMV-BIBLO NB50HにXubuntu14.04をインストールしていた。<br>発売が2004年4月のようなので、10年以上前のパソコン。<br>Mobile Intel(R) Celeron(R) CPU 2.40GHz、メモリ480MB RAM、HDD60GB。  </p>
-<p>市販DVDを見るため、synapticでlibdvdread4がインストール済みなのを確認。その後、</p>
+<p>市販DVDを見るため、Synapticでlibdvdread4がインストール済みなのを確認。その後、</p>
 <pre><code>sudo /usr/share/doc/libdvdread4/install-css.sh
 </code></pre><p>VLCメディアプレーヤーでDVDを開いたが、再生はされるものの動画がカクカクして見られたものではない。<br>SMPlayerも試してみたが、これもカクカクする。  </p>
 <p>Xubuntuより軽いらしいLubuntuだったら見られるかと、Lubuntu14.04をインストールしてみた。  </p>

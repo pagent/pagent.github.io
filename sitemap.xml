@@ -2,8 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2015/01/23/lubuntu-desktop-manager/</loc>
+    <lastmod>2015-01-28T09:39:08.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2015/01/23/lubuntu-alacarte-menulibre/</loc>
+    <lastmod>2015-01-28T09:38:43.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2015/01/14/lubuntu-pavucontrol/</loc>
+    <lastmod>2015-01-28T09:37:48.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2015/01/28/nvpy/</loc>
-    <lastmod>2015-01-28T09:27:54.000Z</lastmod>
+    <lastmod>2015-01-28T09:37:30.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2015/01/09/old-pc-lubuntu/</loc>
+    <lastmod>2015-01-28T09:37:05.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2014/11/01/firefox-closed-tabs/</loc>
+    <lastmod>2015-01-28T09:35:57.000Z</lastmod>
   </url>
   
   <url>
@@ -57,11 +82,6 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2015/01/23/lubuntu-alacarte-menulibre/</loc>
-    <lastmod>2015-01-25T07:55:56.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://pagent.github.io/2014/12/05/hexo-vs-octopress/</loc>
     <lastmod>2015-01-25T01:13:47.000Z</lastmod>
   </url>
@@ -74,11 +94,6 @@
   <url>
     <loc>http://pagent.github.io/2014/12/24/robots-txt/</loc>
     <lastmod>2015-01-24T23:55:57.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2015/01/23/lubuntu-desktop-manager/</loc>
-    <lastmod>2015-01-22T15:27:59.000Z</lastmod>
   </url>
   
   <url>
@@ -99,11 +114,6 @@
   <url>
     <loc>http://pagent.github.io/2015/01/14/lubuntu-nm-applet/</loc>
     <lastmod>2015-01-15T01:19:05.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2015/01/14/lubuntu-pavucontrol/</loc>
-    <lastmod>2015-01-14T07:56:05.000Z</lastmod>
   </url>
   
   <url>
@@ -129,11 +139,6 @@
   <url>
     <loc>http://pagent.github.io/2014/11/11/xubuntu-install-option/</loc>
     <lastmod>2015-01-13T09:09:45.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2015/01/09/old-pc-lubuntu/</loc>
-    <lastmod>2015-01-10T03:15:18.000Z</lastmod>
   </url>
   
   <url>
@@ -219,11 +224,6 @@
   <url>
     <loc>http://pagent.github.io/2014/12/10/brief/</loc>
     <lastmod>2014-12-14T04:29:19.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2014/11/01/firefox-closed-tabs/</loc>
-    <lastmod>2014-12-13T21:40:33.000Z</lastmod>
   </url>
   
   <url>
