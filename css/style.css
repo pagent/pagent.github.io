@@ -398,3 +398,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     display: none;
     background-color: #999;
 }
+
+/* 記事タイトル位置修正
+---------------------------- */
+.panel-heading {
+    padding: 10px 0px;
+}
+.xtitle {
+    padding: 0px 15px;
+}
