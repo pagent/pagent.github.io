@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-28T08:50:05.129Z</updated>
+  <updated>2015-01-28T08:58:39.819Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/01/28/nvpy/"/>
     <id>http://pagent.github.io/2015/01/28/nvpy/</id>
     <published>2015-01-28T05:57:28.000Z</published>
-    <updated>2015-01-28T08:49:03.000Z</updated>
+    <updated>2015-01-28T08:55:00.000Z</updated>
     <content type="html"><![CDATA[<p>オンラインノートのSimplenoteだけでも十分便利だが、ブラウザを立ち上げずに済むなら尚便利。<br>検索すると「nvPY」というメモ帳ソフトが見つかった。<br>Simplenoteと簡単に同期出来て、しかもLinux、Windows、OS Xなどクロスプラットフォームで利用可能らしい。<br><a href="http://moebuntu.blog48.fc2.com/blog-entry-452.html" target="_blank" rel="external">萌え萌えmoebuntu　UbuntuでSimplenote</a>  </p>
 <p>Ubuntu系ならソフトウェアセンターやsynapticからインストール可能。  </p>
 <p>メニュー→アクセサリから起動すると、  </p>
@@ -34,9 +34,8 @@
 <p>nvPY下部の「Pinned」のチェックボックスにチェックを入れると、そのノートが常に一番上に表示される。  </p>
 <p>右上の「CS」（case-sensitivity）にチェックが入っていたら、検索のときアルファベットの大文字と小文字を区別して検索。  </p>
 <p>search modeのgstyleとregexpは、英語など語句の間にスペースの入った文節を検索した際、対象を完全一致のみ（regexp）にするかどうかのオプションのよう。<br>日本語環境ではデフォルトのgstyleで良さそう。  </p>
-<p>詳しい説明はnvPYのリポジトリ<a href="https://github.com/cpbotha/nvpy" target="_blank" rel="external">cpbotha/nvpy</a>（英語）に。</p>
+<p>詳しい説明はnvPYのリポジトリに。<br><a href="https://github.com/cpbotha/nvpy" target="_blank" rel="external">https://github.com/cpbotha/nvpy</a>（英語）  </p>
 <p>便利です。  </p>
-<p>あと、場所が分かりにくいが、<a href="http://simplenote.com/downloads/" target="_blank" rel="external">Downloads | Simplenote</a>にMac OS X用、Windows用、Mobile用等のアプリやプラグイン等が挙げられている。  </p>
 <p>ーー<br>（関連記事）<br><a href="http://pagent.github.io/2015/01/28/simplenote/" target="_blank" rel="external">これは便利！シンプルで軽快、おすすめのオンラインメモ帳「Simplenote」 | Pagent</a></p>
 ]]></content>
     <summary type="html">
@@ -52,7 +51,7 @@
     <link href="http://pagent.github.io/2015/01/28/simplenote/"/>
     <id>http://pagent.github.io/2015/01/28/simplenote/</id>
     <published>2015-01-27T16:29:30.000Z</published>
-    <updated>2015-01-28T07:37:44.000Z</updated>
+    <updated>2015-01-28T08:58:17.000Z</updated>
     <content type="html"><![CDATA[<p>以前はちょっとした文章などをPC間でやり取りするのに、自分宛てにメールを送ったりしていた。<br>あるサイトのURLを別のPCでも開きたい時など。  </p>
 <p>Firefox Syncを使うようになってからはURLを送る必要は無くなったが、それでもちょっとした、それでいて文字を一から入力するのは大変そうな文章を送りたい時がわりとある。<br>そういう時はGoogleやYahoo!で検索して検索結果のURLをブックマーク、Firefox Syncの同期を利用して別のPCに送るというようなことをしていた。  </p>
 <p>あまりスマートなやり方とは思えないし、なにか良い方法はないものか。<br>Dropboxにテキストファイルを保存するというのは同期に時間が掛かるし。  </p>
@@ -63,7 +62,8 @@
 <p>（参照サイト）<br><a href="http://allabout.co.jp/matome/cl000000002229/" target="_blank" rel="external">お散歩に持って出ると便利な「オンラインノート」サービス10選｜All About（オールアバウト）</a>  </p>
 <p>はじめは管理するアカウントをあまり増やしたくないので少し躊躇したが、試してみて良かった。  </p>
 <p>これはおすすめです。  </p>
-<p>ーー<br>（追記）<br>Linux、Windows、OS Xなど、クロスプラットフォームで利用可能なメモ帳ソフト「nvPY」というのがあった。（Ubuntu系ならソフトウェアセンターからインストール可能）<br>「nvPY」はSimplenoteと簡単に同期出来て、ブラウザでサイトを開く必要がなくなるので、さらに便利。<br><a href="http://pagent.github.io/2015/01/28/nvpy/" target="_blank" rel="external">Simplenoteと簡単に同期出来るメモ帳ソフト「nvPY」 | Pagent</a></p>
+<p>ーー<br>（追記）<br>Linux、Windows、OS Xなど、クロスプラットフォームで利用可能なメモ帳ソフト「nvPY」というのがあった。（Ubuntu系ならソフトウェアセンターからインストール可能）<br>「nvPY」はSimplenoteと簡単に同期出来て、ブラウザでサイトを開く必要がなくなるので、さらに便利。<br><a href="http://pagent.github.io/2015/01/28/nvpy/" target="_blank" rel="external">Simplenoteと簡単に同期出来るメモ帳ソフト「nvPY」 | Pagent</a>  </p>
+<p>あと場所が分かりにくいが、<a href="http://simplenote.com/downloads/" target="_blank" rel="external">Downloads | Simplenote</a>にSimplenoteのアプリ一覧が挙げられている。<br>Mac OS X用、Windows用、Mobile用などのアプリやFirefox用プラグインなど多数あり。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>以前はちょっとした文章などをPC間でやり取りするのに、自分宛てにメールを送ったりしていた。<br>あるサイトのURLを別のPCでも開きたい時など。  </p>
