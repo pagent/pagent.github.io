@@ -110,7 +110,7 @@
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来ると思っていた。<br>だが、  </p>
+	    <p>Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来ると思っていた。<br>だがdeployしようとすると、  </p>
 <pre><code>Run
 
   git config --global user.email &quot;you@example.com&quot;
@@ -122,9 +122,11 @@ fatal: Could not read from remote repository.
 
 Please make sure you have the correct access rights
 and the repository exists.
-</code></pre><p>とrejectされる。  </p>
-<p>SSHキーの設定が必要のようなので、Linuxで設定したSSH公開鍵を<code>C:\Users\（ユーザー名）\.ssh</code>にコピペしたが、やはりrejectされる。<br>秘密鍵もコピペしたら、ようやくdeploy出来た。<br>これで無事WindowsでもHexoを使えるようになった。  </p>
-<p>Hexoにはローカルホストで使う管理画面プラグインもあるようなので、もう少し導入が簡単になればWindowsユーザーにも静的サイトジェネレーターが広まる可能性があるんじゃないだろうか。</p>
+</code></pre><p>とrejectされる。<br>よく考えたら当たり前だが、WindowsでもSSHキーの設定が必要らしい。  </p>
+<p>Linuxで設定したSSH秘密鍵と公開鍵の両方を<code>C:\Users\（ユーザー名）\.ssh</code>内にコピペしたら、ようやくdeploy出来た。  </p>
+<p>これで無事WindowsでもHexoを使えるようになった。  </p>
+<p>Hexoにはローカルホストで使う管理画面プラグインもあるようなので、もう少し導入が簡単になればWindowsユーザーにも静的サイトジェネレーターが広まる可能性があるんじゃないだろうか。  </p>
+<p>ーー<br>（関連記事）<br><a href="http://pagent.github.io/2014/11/24/hexo-windows/" target="_blank" rel="external">WindowsでHexoを使う（インストール） | Pagent</a></p>
 
 	</div>
 
@@ -194,7 +196,7 @@ and the repository exists.
     <ul id="tags" class="tag_box list-unstyled collapse in">
 	    <!-- _partial/post/tag -->
   
-  <li><a href="/tags/Hexo/">Hexo</a></li>
+  <li><a href="/tags/Hexo/">Hexo</a></li> <li><a href="/tags/Windows/">Windows</a></li>
 
     </ul>
 	</div>
