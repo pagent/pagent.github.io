@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-28T11:58:53.394Z</updated>
+  <updated>2015-01-28T12:07:57.824Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/01/28/nvpy/"/>
     <id>http://pagent.github.io/2015/01/28/nvpy/</id>
     <published>2015-01-28T05:57:28.000Z</published>
-    <updated>2015-01-28T11:56:55.000Z</updated>
+    <updated>2015-01-28T12:07:38.000Z</updated>
     <content type="html"><![CDATA[<p>オンラインノートのSimplenoteだけでも十分便利だが、ブラウザを立ち上げずに済むなら尚便利。<br>検索すると「nvPY」というメモ帳ソフトが見つかった。<br>Simplenoteと簡単に同期出来て、しかもLinux、Windows、Mac OS Xなどクロスプラットフォームで利用可能らしい。<br><a href="http://moebuntu.blog48.fc2.com/blog-entry-452.html" target="_blank" rel="external">萌え萌えmoebuntu　UbuntuでSimplenote</a>  </p>
 <p>UbuntuソフトウェアセンターやSynapticからもインストール可能。  </p>
 <p>メニュー→アクセサリから起動すると、  </p>
@@ -37,7 +37,7 @@
 <p>英語だが、nvPYのリポジトリに詳しい説明あり。<br><a href="https://github.com/cpbotha/nvpy" target="_blank" rel="external">https://github.com/cpbotha/nvpy</a>  </p>
 <p>便利です。  </p>
 <p>ーー<br>（関連記事）<br><a href="http://pagent.github.io/2015/01/28/simplenote/" target="_blank" rel="external">これは便利！シンプルで軽快、おすすめのオンラインメモ帳「Simplenote」 | Pagent</a>  </p>
-<p>ーー<br>（追記）<br>nvPYではノートは~/.nvpy下に.jsonファイルで保存されているが、普通に読むことが出来ない。<br>試験的な実装のようだが、.nvpy.cfgのdump notes as textの項目で、<code>notes_as_txt</code>のデフォルトの値0を1にすると、~/.nvpy/notes下に.txtファイルとして保存される。<br>これならテキストとして読むことが出来る。<br>予めノートをバックアップしておいた方が良いようだが。</p>
+<p>ーー<br>（追記）<br>nvPYではノートは~/.nvpy下に.jsonファイルで保存されているが、普通に読むことが出来ない。<br>試験的な実装とのことだが、.nvpy.cfgのdump notes as textの項で、<code>notes_as_txt</code>のデフォルト値0を1にすると、~/.nvpy/notes下に.txtファイルとして保存される。<br>これならテキストとして読むことが出来る。<br>あらかじめ何らかの形でノートをバックアップしておいた方が良いようだが。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>オンラインノートのSimplenoteだけでも十分便利だが、ブラウザを立ち上げずに済むなら尚便利。<br>検索すると「nvPY」というメモ帳ソフトが見つかった。<br>Simplenoteと簡単に同期出来て、しかもLinux、Windows、Mac OS Xなどクロスプラッ]]>
