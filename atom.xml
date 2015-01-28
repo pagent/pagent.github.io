@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-28T12:24:25.746Z</updated>
+  <updated>2015-01-28T14:17:54.072Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/01/28/nvpy/"/>
     <id>http://pagent.github.io/2015/01/28/nvpy/</id>
     <published>2015-01-28T05:57:28.000Z</published>
-    <updated>2015-01-28T12:23:30.000Z</updated>
+    <updated>2015-01-28T12:38:25.000Z</updated>
     <content type="html"><![CDATA[<p>オンラインノートのSimplenoteだけでも十分便利だが、ブラウザを立ち上げずに済むなら尚便利。<br>検索すると「nvPY」というメモ帳ソフトが見つかった。<br>Simplenoteと簡単に同期出来て、しかもLinux、Windows、Mac OS Xなどクロスプラットフォームで利用可能らしい。<br><a href="http://moebuntu.blog48.fc2.com/blog-entry-452.html" target="_blank" rel="external">萌え萌えmoebuntu　UbuntuでSimplenote</a>  </p>
 <p>UbuntuソフトウェアセンターやSynapticからもインストール可能。  </p>
 <p>メニュー→アクセサリから起動すると、  </p>
