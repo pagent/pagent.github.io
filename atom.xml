@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-29T10:59:18.484Z</updated>
+  <updated>2015-01-29T11:21:20.836Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/01/29/dropbox-number-of-files/"/>
     <id>http://pagent.github.io/2015/01/29/dropbox-number-of-files/</id>
     <published>2015-01-29T10:06:13.000Z</published>
-    <updated>2015-01-29T10:58:33.000Z</updated>
+    <updated>2015-01-29T10:58:34.000Z</updated>
     <content type="html"><![CDATA[<p>独自ドメイン運用のサーバーからダウンロードしたファイル一式をDropboxのフォルダに置いたら、同期に時間が掛かるようになってしまった。<br>いったん同期が済み、なにも更新が無い時でも、Dropboxクライアント起動後のファイルリストのダウンロードとインデックス作成に10分以上掛かる。<br>どうやらファイル数が多いためらしい。<br>同期にはファイルサイズだけではなく、ファイル数も影響するのだとか。<br><a href="http://www.iodata.jp/support/qanda/answer/nas_dropbox.html#a4" target="_blank" rel="external">Dropbox制限事項Q&amp;A</a>  </p>
 <p>サーバーのファイルの数は数万の単位だったので、これを圧縮ファイルにして１つのファイルにしたところ、同期時間を大幅に短縮出来た。  </p>
 <p>圧縮前はファイル数が60000以上、Dropboxフォルダの総サイズが約500MB。なにも更新がない状態でDropboxクライアントを起動し、同期が完了するのに約12分掛かった。<br>圧縮後はファイル数が約5500、サイズは約300MB。同期は約1分で完了した。  </p>
@@ -38,7 +38,7 @@
     <link href="http://pagent.github.io/2015/01/29/xubuntu-copy-error-qgtkstyle/"/>
     <id>http://pagent.github.io/2015/01/29/xubuntu-copy-error-qgtkstyle/</id>
     <published>2015-01-29T05:17:29.000Z</published>
-    <updated>2015-01-29T07:44:50.000Z</updated>
+    <updated>2015-01-29T11:18:59.000Z</updated>
     <content type="html"><![CDATA[<p>Xubuntu14.04にDropboxに似たオンラインストレージ「Copy」のクライアントを導入した。<br>クライアントはcopy.comからダウンロードしたものではなく、下記サイトを参考にUbuntu向けのものをインストールした。<br><a href="http://kometchtech.blog.fc2.com/blog-entry-1542.html" target="_blank" rel="external">いつか、そのとき、あの場所で。 | [Ubuntu][自分用メモ]　Copy.com クライアントのインストール方法。</a>  </p>
 <p>インストール後、メニュー→アクセサリ→Copyで起動し、64bitのPCでは問題なく使用出来た。<br>だが32bitのPCではログインする際、「curl failed to post data」とエラーになり、終了してしまう。  </p>
 <p>端末から  </p>
@@ -49,13 +49,14 @@
 <p>QGtkStyleとかGTK+とか、なんのことかよく分からなかったが、どうやら<code>libgnomeui</code>をインストールする必要があるらしい。<br><a href="https://wiki.archlinux.org/index.php/Uniform_Look_for_Qt_and_GTK_Applications_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29#Qt_.E3.82.A2.E3.83.97.E3.83.AA.E3.82.B1.E3.83.BC.E3.82.B7.E3.83.A7.E3.83.B3.E3.81.8C_QGtkStyle_.E3.82.92.E4.BD.BF.E3.82.8F.E3.81.AA.E3.81.84" target="_blank" rel="external">Uniform Look for Qt and GTK Applications (日本語) - ArchWiki</a>  </p>
 <p>さらに検索してみると、Ubuntuでは以前からCopy.com クライアント利用にあたっての不具合が報告されているようだ。<br><a href="http://ubuntuforums.org/showthread.php?t=2217713&amp;page=2&amp;p=12993324#post12993324" target="_blank" rel="external">Copy.com indicator problem with Ubuntu 14.04 - Page 2</a>  </p>
 <p>インジケーター問題の修正はインストール時に行った（最新バージョンでは修正済か？）が、この回答を参考に、Synapticから<code>libgnomeui-0</code>をインストールした。<br>無事Copy.com クライアントを使用出来るようになった。  </p>
-<p>回答にあった「canberra-gtk-module」のエラーは出なかった。</p>
+<p>回答にあった「canberra-gtk-module」のエラーは出なかった。  </p>
+<p>ーー<br>（追記）<br>64bitのPCでもCopy.com クライアントを起動した時、Logging Inの状態でギクシャクすることがある。<br>こちらも<code>libgnomeui-0</code>をインストールした方が良さそうだ。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Xubuntu14.04にDropboxに似たオンラインストレージ「Copy」のクライアントを導入した。<br>クライアントはcopy.comからダウンロードしたものではなく、下記サイトを参考にUbuntu向けのものをインストールした。<br><a href="http:/]]>
     </summary>
     
-      <category term="linux" scheme="http://pagent.github.io/tags/linux/"/>
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
     
   </entry>
   
@@ -64,7 +65,7 @@
     <link href="http://pagent.github.io/2015/01/28/nvpy/"/>
     <id>http://pagent.github.io/2015/01/28/nvpy/</id>
     <published>2015-01-28T05:57:28.000Z</published>
-    <updated>2015-01-28T12:38:28.000Z</updated>
+    <updated>2015-01-28T12:38:25.000Z</updated>
     <content type="html"><![CDATA[<p>オンラインノートのSimplenoteだけでも十分便利だが、ブラウザを立ち上げずに済むなら尚便利。<br>検索すると「nvPY」というメモ帳ソフトが見つかった。<br>Simplenoteと簡単に同期出来て、しかもLinux、Windows、Mac OS Xなどクロスプラットフォームで利用可能らしい。<br><a href="http://moebuntu.blog48.fc2.com/blog-entry-452.html" target="_blank" rel="external">萌え萌えmoebuntu　UbuntuでSimplenote</a>  </p>
 <p>UbuntuソフトウェアセンターやSynapticからもインストール可能。  </p>
 <p>メニュー→アクセサリから起動すると、  </p>
@@ -96,7 +97,7 @@
     <link href="http://pagent.github.io/2015/01/28/simplenote/"/>
     <id>http://pagent.github.io/2015/01/28/simplenote/</id>
     <published>2015-01-27T16:29:30.000Z</published>
-    <updated>2015-01-28T10:21:11.000Z</updated>
+    <updated>2015-01-28T10:21:08.000Z</updated>
     <content type="html"><![CDATA[<p>以前はちょっとした文章などをPC間でやり取りするのに、自分宛てにメールを送ったりしていた。<br>あるサイトのURLを別のPCでも開きたい時など。  </p>
 <p>Firefox Syncを使うようになってからはURLを送る必要は無くなったが、それでもちょっとした、それでいて文字を一から入力するのは大変そうな文章を送りたい時がわりとある。<br>そういう時はGoogleやYahoo!で検索して検索結果のURLをブックマーク、Firefox Syncの同期を利用して別のPCに送るというようなことをしていた。  </p>
 <p>あまりスマートなやり方とは思えないし、なにか良い方法はないものか。<br>Dropboxにテキストファイルを保存するというのは同期に時間が掛かる。  </p>
@@ -124,7 +125,7 @@
     <link href="http://pagent.github.io/2015/01/26/numlockx/"/>
     <id>http://pagent.github.io/2015/01/26/numlockx/</id>
     <published>2015-01-26T14:28:21.000Z</published>
-    <updated>2015-01-27T11:31:32.000Z</updated>
+    <updated>2015-01-27T11:31:29.000Z</updated>
     <content type="html"><![CDATA[<p>PC起動時にNumlockが有効になっていると、すぐにテンキーで数字を入力出来るので少しだけ助かる。<br>オフになっていてもNumlockキーを押せばいいだけではあるが。  </p>
 <p>Xubuntu14.04の設定マネージャーを見ていると「設定エディター」というのがあった。<br>マウスを合わせるとツールチップで「Xfconf のグラフィカル設定エディターです」と説明が出ているもの。<br>何の気無しにクリックしてみると、keyboadsのところが開いていてNumlockについての設定のようだった。<br>「値」の処にチェックは入っていない。  </p>
 <p>試しにチェックを入れてみたら良かったのだが、説明らしい説明が無かったので躊躇してしまい、「Numlock」+「Ubuntu」で検索してnumlockxをインストールした。<br>だがこれだけだと、Numlockがオフの状態でPCを終了して再起動すると、Numlockオフで起動してしまう。<br>Ubuntuソフトウェアセンターの説明には「本パッケージは、セッション開始時に numlock を有効化するセッションスクリプト を自動的にインストールします。」とあるのだが。  </p>
@@ -147,7 +148,7 @@
     <link href="http://pagent.github.io/2015/01/26/deploy-conflicted-copy-dropbox/"/>
     <id>http://pagent.github.io/2015/01/26/deploy-conflicted-copy-dropbox/</id>
     <published>2015-01-25T15:11:33.000Z</published>
-    <updated>2015-01-25T15:31:19.000Z</updated>
+    <updated>2015-01-25T15:31:16.000Z</updated>
     <content type="html"><![CDATA[<p>Dropbpx上に置いてあるHexoフォルダ直下にdb (… の競合コピー 2015-01-25).jsonというファイルが出来てしまった。<br>deployしようとすると  </p>
 <pre><code>fatal: Reference has invalid format: &#39;refs/heads/master (... の競合コピ ー 2015-01-25)&#39;
 </code></pre><p>というエラー表示が出る。  </p>
@@ -171,7 +172,7 @@
     <link href="http://pagent.github.io/2015/01/25/facebookmail-spam/"/>
     <id>http://pagent.github.io/2015/01/25/facebookmail-spam/</id>
     <published>2015-01-25T03:07:43.000Z</published>
-    <updated>2015-01-25T21:55:32.000Z</updated>
+    <updated>2015-01-25T21:55:29.000Z</updated>
     <content type="html"><![CDATA[<p>今年になってから突然、サブのメールアドレスに迷惑メールが来るようになった。  </p>
 <p>ほとんどは卑猥な文言のひと目でスパムと分かるものだったが、一見スパムと分かりづらいメールもあった。<br><code>ペリカン配送 &lt;info@…facebookmail.com&gt;</code>を名乗る差出人からのもので、件名は<code>【ペリカン配送より不在通知】</code>となっている。  </p>
 <blockquote>
@@ -198,7 +199,7 @@
     <link href="http://pagent.github.io/2015/01/24/hexo-favicon/"/>
     <id>http://pagent.github.io/2015/01/24/hexo-favicon/</id>
     <published>2015-01-24T13:08:09.000Z</published>
-    <updated>2015-01-25T00:45:25.000Z</updated>
+    <updated>2015-01-25T00:45:22.000Z</updated>
     <content type="html"><![CDATA[<p>Hexoで書いているGitHub Pagesのブログにファビコンを入れた。<br>Hexoでは使用しているテーマでファビコンを設定するらしい。</p>
 <p>freewillというテーマを使っているので、hexo/themes/freewill/_config.ymlで<code>favicon: favicon.png</code>となっているのを確認し、 作成したfavicon.pngをhexo/themes/freewill/source内に置いた。   </p>
 <p>generate、deployしてFirefoxでサイトを表示すると、タブにはファビコンが表示されているものの、何故かサイドバーのブックマーク欄には作ったファビコンが表示されていない。<br>他のブラウザのRekonqやMidoriではタブにも表示されず。  </p>
@@ -222,7 +223,7 @@
     <link href="http://pagent.github.io/2015/01/24/xubuntu-menu-nepomuk/"/>
     <id>http://pagent.github.io/2015/01/24/xubuntu-menu-nepomuk/</id>
     <published>2015-01-23T21:38:28.000Z</published>
-    <updated>2015-01-25T08:00:54.000Z</updated>
+    <updated>2015-01-25T08:00:51.000Z</updated>
     <content type="html"><![CDATA[<p>以前、Xubuntu14.04のメインメニュー、システムの欄にNepomuk File Indexing Controllerというのが消えずに残っていて、AlacarteやMenuLibreでは項目が見当たらないので非表示にも出来ず、困ったことがあった。<br>この時は~/.local/share/desktop-directoriesディレクトリを削除したら消えてくれた。<br>ディレクトリ内の唯一のファイルalacarte-made.directoryの中身はnepomukcontrollerについての記載だった。  </p>
 <p>その後またNepomuk Cleanerという項目が表れた。<br>~/.local/share/desktop-directoriesを見てみるとファイルが７つあったが、今回はNepomuk〜に関するものは見当たらない。<br>試しにディレクトリをリネームし再起動してみたが、Nepomukが消えない。  </p>
 <p>結局、/usr/share/applications/kde4内のNepomuk CleanerとNepomuk Backupを削除することで、メニューからNepomukを消すことが出来た。  </p>
@@ -241,7 +242,7 @@
     <link href="http://pagent.github.io/2015/01/23/lubuntu-alacarte-menulibre/"/>
     <id>http://pagent.github.io/2015/01/23/lubuntu-alacarte-menulibre/</id>
     <published>2015-01-22T17:35:29.000Z</published>
-    <updated>2015-01-28T09:38:44.000Z</updated>
+    <updated>2015-01-28T09:38:43.000Z</updated>
     <content type="html"><![CDATA[<p>Lubuntu14.04でメインメニューの編集をしたかったのだが、手動で設定するのは難しそう。<br><a href="https://wiki.archlinux.org/index.php/LXDE_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29#.E3.82.A2.E3.83.97.E3.83.AA.E3.82.B1.E3.83.BC.E3.82.B7.E3.83.A7.E3.83.B3.E3.83.A1.E3.83.8B.E3.83.A5.E3.83.BC.E3.81.AE.E7.B7.A8.E9.9B.86" target="_blank" rel="external">LXDE (日本語) - ArchWiki</a>  </p>
 <p>LXDE用のメニューエディターにLXMEDというのがあるようだが、使ったことがないし、メニューを削除せず非表示にしたり、上下の並びを入れ替えたり、といったことが出来るかどうか分からない。<br>そこで、AlacarteとMenuLibreを入れてみた。<br>どちらもSynapticでインストール。  </p>
 <p>AlacarteはLubuntu14.04では満足に機能してくれず、非表示設定や並びの入れ替えが反映されなかった。再起動してみても変化無し。<br>一方、MenuLibreの方は望み通りにちゃんと機能してくれた。  </p>
@@ -260,7 +261,7 @@
     <link href="http://pagent.github.io/2015/01/23/lubuntu-desktop-manager/"/>
     <id>http://pagent.github.io/2015/01/23/lubuntu-desktop-manager/</id>
     <published>2015-01-22T15:15:48.000Z</published>
-    <updated>2015-01-28T09:39:11.000Z</updated>
+    <updated>2015-01-28T09:39:08.000Z</updated>
     <content type="html"><![CDATA[<p>13.04から14.04にアップグレードしたLubuntuで、いつのまにかデスクトップの壁紙が表示されなくなっていた。  </p>
 <p>壁紙を設定しようと「メニュー」→「設定」→「デスクトップの設定」と進んでも、「！ デスクトップマネージャはアクティブではありません。」とエラー表示が出て設定出来ない。<br>デスクトップ上での右クリックから「デスクトップの設定」を選択してもナシのつぶて。  </p>
 <p>Lubuntu14.04でのデスクトップの設定にはPCManFMが使われているようなので、「LXSessionのデフォルトのアプリケーション」でデフォルトのファイルマネージャーをnemoからPCManFMに戻してみたが、それでもデスクトップの設定が出来ない。  </p>
@@ -281,7 +282,7 @@
     <link href="http://pagent.github.io/2015/01/22/windows10-free/"/>
     <id>http://pagent.github.io/2015/01/22/windows10-free/</id>
     <published>2015-01-22T08:18:04.000Z</published>
-    <updated>2015-01-22T08:46:48.000Z</updated>
+    <updated>2015-01-22T08:46:45.000Z</updated>
     <content type="html"><![CDATA[<p>今秋発売予定のMicrosoft次期OS、Windows 10はリリース後1年間に限り、Windows 7、Windows 8.1、Windows Phone 8.1からのアップグレードが無償で提供されるのだとか。<br><a href="http://www.itmedia.co.jp/news/articles/1501/22/news110.html" target="_blank" rel="external">Windows 10無償アップグレードは「必然的」　Microsoftの狙いは - ITmedia ニュース</a>  </p>
 <p>無料になるのはアップグレードに対してのみで、新規のWindows 10搭載パソコンにライセンス料が上乗せされるのはこれまでと変わりが無いようだ。<br>元々アップグレードによる収益は大きなものではなかったようだが、MicrosoftもAppleやGoogleに対して余程危機感を持っているということだろう。<br>ユーザーを無視したようなこれまでの姿勢から較べると朗報とも言えるが、もはや起動するのはLinuxのみで、Windowsを立ち上げることは殆ど無い。<br>だが、Windows 7のサポート終了後のことも考えて、リリース後1年間の内には一応Windows 10にアップグレードしておこうと思う。<br>安心してネットに繋げないようだと、困ることもあるかもしれないし。</p>
 <p>バックアップは取っておくつもりだが、多少使い勝手が悪くても問題無い。<br>Windows、ほんとに使わなくなったし。</p>
@@ -299,7 +300,7 @@
     <link href="http://pagent.github.io/2015/01/20/clamtk/"/>
     <id>http://pagent.github.io/2015/01/20/clamtk/</id>
     <published>2015-01-20T14:24:38.000Z</published>
-    <updated>2015-01-21T08:19:02.000Z</updated>
+    <updated>2015-01-21T08:18:59.000Z</updated>
     <content type="html"><![CDATA[<p>Xubuntu14.04にClamTkを導入した。<br>Ubuntuソフトウェアセンターを使ったが、v4.45(デフォルト)の他v5.09(trusty-backports)もインストール可能。  </p>
 <p>ファイルマネージャーNemo上で右クリックから簡単にファイルをウイルススキャン出来るよう、nemo-sendto-clamtk_0.02-1もインストールした。<br><a href="http://ubuntuapps.blog67.fc2.com/blog-entry-609.html" target="_blank" rel="external">ClamTkでウイルススキャンをThunarやNemoの右クリックメニューに追加する | Ubuntuアプリのいいところ</a>  </p>
 <p>「ディレクトリを再帰的にスキャンする」「20MB以上のファイルもスキャンする」「ドットで始まるファイルをスキャンする(.*)」にチェックを入れてhomeディレクトリをスキャンしてもなにも検出されなかったが、「不要なアプリケーション(PUA)をスキャンする」にもチェックを入れると、  </p>
@@ -324,7 +325,7 @@
     <link href="http://pagent.github.io/2015/01/17/fstab-uuid-label/"/>
     <id>http://pagent.github.io/2015/01/17/fstab-uuid-label/</id>
     <published>2015-01-17T01:57:46.000Z</published>
-    <updated>2015-01-17T05:21:36.000Z</updated>
+    <updated>2015-01-17T05:21:33.000Z</updated>
     <content type="html"><![CDATA[<p>Windows Xp以外にDebian、Xubuntu、Linux Mintをインストールして、クアッドブートにしていたPC。<br>Debianを削除してLubuntuをインストールしたら、Xubuntuが起動しなくなってしまった。<br>起動途中のスプラッシュ画面で  </p>
 <pre><code>/Linux/sda6 ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
 keys:■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ M■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
@@ -346,7 +347,7 @@ keys:■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ �
     <link href="http://pagent.github.io/2015/01/14/lubuntu-nm-applet/"/>
     <id>http://pagent.github.io/2015/01/14/lubuntu-nm-applet/</id>
     <published>2015-01-14T08:37:15.000Z</published>
-    <updated>2015-01-15T01:19:06.000Z</updated>
+    <updated>2015-01-15T01:19:05.000Z</updated>
     <content type="html"><![CDATA[<p>13.04から13.10→14.04.1にアップグレードしたLubuntuで、通知領域にネットワークインジケーターが表示されない。network-manager-gnomeはインストールされているようなのだが。  </p>
 <p>hidden SSID（ESS-IDステルス機能）で無線LANを接続する際、メインメニューの設定の項目にあるネットワーク接続（nm-connection-editor）からでは設定し辛く、ネットワークインジケーターの「非表示Wi-Fiネットワークに接続」の方が簡単ということもあり、インジケーターを表示させたい。  </p>
 <p>ネットワークインジケーターはアップグレードした際に消えてしまうことがあるようだ。<br><a href="http://qiita.com/cm3/items/72c51ff3b416f5981986" target="_blank" rel="external">Lubuntu で無線LANのインディケータをパネルに表示する方法 - Qiita</a>  </p>
@@ -366,7 +367,7 @@ keys:■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ �
     <link href="http://pagent.github.io/2015/01/14/lubuntu-pavucontrol/"/>
     <id>http://pagent.github.io/2015/01/14/lubuntu-pavucontrol/</id>
     <published>2015-01-14T07:38:56.000Z</published>
-    <updated>2015-01-28T09:37:51.000Z</updated>
+    <updated>2015-01-28T09:37:48.000Z</updated>
     <content type="html"><![CDATA[<p>Lubuntu14.04には元々ボリュームコントローラーとしてalsamixerが入っているが、完全にGUIのツールではなく使いづらい。<br>そこで、Xubuntuに標準で入っているPulseAudio Volume Control (pavucontrol)をインストールした。  </p>
 <p>Synapticやソフトウェアセンター、もしくは下記コマンドで導入。</p>
 <pre><code>sudo apt-get install pavucontrol
@@ -386,7 +387,7 @@ keys:■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ �
     <link href="http://pagent.github.io/2015/01/09/lubuntu-autostart/"/>
     <id>http://pagent.github.io/2015/01/09/lubuntu-autostart/</id>
     <published>2015-01-09T12:05:15.000Z</published>
-    <updated>2015-01-09T12:31:47.000Z</updated>
+    <updated>2015-01-09T12:31:44.000Z</updated>
     <content type="html"><![CDATA[<p>Lubuntu14.04にクリップボードマネージャーのGlipperをインストールした。PC終了時に履歴を消去出来るので、パスワードをコピペしても割と安全に使える。<br>PC起動時には自動開始させたいので、「設定」→「LXSessionのデフォルトのアプリケーション」→「Autostart」の一覧にある「Glipper」にチェックをいれたが、何故か自動開始されない。  </p>
 <p>「Manual autostarted applications」の欄で「glipper」と入力して追加したら、自動開始出来た。  </p>
 <p>~/.config/lxsession/lubuntu/autostartを見ると、glipperが追加されている。<br>~/.config/lxsession/lubuntu/autostartに、自動開始したいアプリケーションを手書きで「xpad」等と追記しても良いようだ。</p>
@@ -404,7 +405,7 @@ keys:■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ �
     <link href="http://pagent.github.io/2015/01/09/old-pc-lubuntu/"/>
     <id>http://pagent.github.io/2015/01/09/old-pc-lubuntu/</id>
     <published>2015-01-09T08:00:15.000Z</published>
-    <updated>2015-01-28T09:37:06.000Z</updated>
+    <updated>2015-01-28T09:37:05.000Z</updated>
     <content type="html"><![CDATA[<p>古いパソコン、FMV-BIBLO NB50HにXubuntu14.04をインストールしていた。<br>発売が2004年4月のようなので、10年以上前のパソコン。<br>Mobile Intel(R) Celeron(R) CPU 2.40GHz、メモリ480MB RAM、HDD60GB。  </p>
 <p>市販DVDを見るため、Synapticでlibdvdread4がインストール済みなのを確認。その後、</p>
 <pre><code>sudo /usr/share/doc/libdvdread4/install-css.sh
@@ -425,7 +426,7 @@ keys:■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ �
     <link href="http://pagent.github.io/2015/01/09/bloglines-netvibes/"/>
     <id>http://pagent.github.io/2015/01/09/bloglines-netvibes/</id>
     <published>2015-01-08T15:57:27.000Z</published>
-    <updated>2015-01-08T16:06:28.000Z</updated>
+    <updated>2015-01-08T16:06:25.000Z</updated>
     <content type="html"><![CDATA[<p>今月5日に確認したところBloglinesのフィードが見られない。トップページは存在しているが。<br>実際にはその数日前からフィードにアクセス出来ないようだ。  </p>
 <p>去年の9月にもサイトがアクセス不能になることがあってその時も何もアナウンスが無かったが、今回もなんのアナウンスも無いようだ。<br>もはやネットサービスの体をなしていない。<br>Bloglinesもそろそろ終わりなのだろうか。  </p>
 <p>Partner Sitesに挙げられているNetvibesは健在で、Bloglinesのフィードをバックアップすることも可能だし、Netvibesに移った方が良さそうだ。</p>
@@ -444,7 +445,7 @@ keys:■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ �
     <link href="http://pagent.github.io/2014/12/28/dropbox-behavior/"/>
     <id>http://pagent.github.io/2014/12/28/dropbox-behavior/</id>
     <published>2014-12-28T01:02:03.000Z</published>
-    <updated>2014-12-28T02:56:04.000Z</updated>
+    <updated>2014-12-28T02:56:01.000Z</updated>
     <content type="html"><![CDATA[<p>Dropboxを利用するのに、Ubuntuのアプリケーションnautilus-dropboxを使っている。<br>ローカルのDropboxフォルダとウェブ上のDropboxを同期させてくれるので便利なのだが、ファイルやフォルダを移動する際の振る舞いは、あまり賢いとは言えないようだ。  </p>
 <p>ローカルでファイル・フォルダを移動させてから同期させると、ウェブ上では移動するのではなく、元ディレクトリから一旦削除し、移動先ディレクトリにファイルやフォルダを追加してしまう。<br>ウェブ上で移動させたら大丈夫かと思ったが、今度はローカル側で削除と追加をしてしまいダウンロードに時間が掛かってしまう。  </p>
 <p>移動は移動として処理してくれると有難いのだが。<br>WindowsやMac用のクライアントではどうなのだろう。  </p>
