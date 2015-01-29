@@ -112,6 +112,46 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/01/29/dropbox-number-of-files/" >Dropbox サイズだけではなくファイル数も問題</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年1月29日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>独自ドメイン運用のサーバーからダウンロードしたファイル一式をDropboxのフォルダに置いたら、同期に時間が掛かるようになってしまった。<br>いったん同期が済み、なにも更新が無い時でも、Dropboxクライアント起動後のファイルリストのダウンロードとインデックス作成に10分以上掛かる。<br>どうやらファイル数が多いためらしい。<br>同期にはファイルサイズだけではなく、ファイル数も影響するのだとか。<br><a href="http://www.iodata.jp/support/qanda/answer/nas_dropbox.html#a4" target="_blank" rel="external">Dropbox制限事項Q&amp;A</a>  </p>
+<p>サーバーのファイルの数は数万の単位だったので、これを圧縮ファイルにして１つのファイルにしたところ、同期時間を大幅に短縮出来た。  </p>
+<p>圧縮前はファイル数が60000以上、Dropboxフォルダの総サイズが約500MB。なにも更新がない状態でDropboxクライアントを起動し、同期が完了するのに約12分掛かった。<br>圧縮後はファイル数が約5500、サイズは約300MB。同期は約1分で完了した。  </p>
+<p>Hexo（Octopressに似た静的サイトジェネレーター）のフォルダもDropboxフォルダに置いているが、.deploy/.git/objectsや.git/objects下にフォルダ・ファイルが多数生成されてしまうので、同期前には<code>git gc</code>するようにしている。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/29/dropbox-number-of-files/" data-text="Dropbox サイズだけではなくファイル数も問題 | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/01/29/xubuntu-copy-error-qgtkstyle/" >Xubuntu14.04にインストールしたCopy.com クライアントで「QGtkStyle was unable to detect the current GTK+ theme.」のエラー</a>
 		</h3>
 	
@@ -510,47 +550,6 @@
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/01/23/lubuntu-desktop-manager/" >Lubuntuで 「デスクトップマネージャはアクティブではありません」のエラー表示</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年1月23日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>13.04から14.04にアップグレードしたLubuntuで、いつのまにかデスクトップの壁紙が表示されなくなっていた。  </p>
-<p>壁紙を設定しようと「メニュー」→「設定」→「デスクトップの設定」と進んでも、「！ デスクトップマネージャはアクティブではありません。」とエラー表示が出て設定出来ない。<br>デスクトップ上での右クリックから「デスクトップの設定」を選択してもナシのつぶて。  </p>
-<p>Lubuntu14.04でのデスクトップの設定にはPCManFMが使われているようなので、「LXSessionのデフォルトのアプリケーション」でデフォルトのファイルマネージャーをnemoからPCManFMに戻してみたが、それでもデスクトップの設定が出来ない。  </p>
-<p>最終的には下記を参考に、SynapticからPCManFMを再インストールすることで、「デスクトップの設定」を正常に起動出来た｡<br><a href="http://ubuntuforums.org/showthread.php?t=2218084&amp;p=13090056#post13090056" target="_blank" rel="external">[lubuntu] message:desktop manager is not active</a>  </p>
-<p>自分の環境では、回答前段に書いてあるコマンドは行わず、PCManFMの再インストールだけで大丈夫だった。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/23/lubuntu-desktop-manager/" data-text="Lubuntuで 「デスクトップマネージャはアクティブではありません」のエラー表示 | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -592,6 +591,10 @@
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/01/29/dropbox-number-of-files/" ><i class="fa fa-file-o"></i>Dropbox サイズだけではなくファイル数も問題</a>
+      </li>
+    
+      <li>
         <a href="/2015/01/29/xubuntu-copy-error-qgtkstyle/" ><i class="fa fa-file-o"></i>Xubuntu14.04にインストールしたCopy.c...</a>
       </li>
     
@@ -605,10 +608,6 @@
     
       <li>
         <a href="/2015/01/26/numlockx/" ><i class="fa fa-file-o"></i>Xubuntu14.04で常にNumlockオンで起動する</a>
-      </li>
-    
-      <li>
-        <a href="/2015/01/26/deploy-conflicted-copy-dropbox/" ><i class="fa fa-file-o"></i>Dropbpx上のHexoでdeploy時「競合コピ ...</a>
       </li>
     
   </ul>
@@ -626,35 +625,35 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>11</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>21</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>10</span></a></li>
 		
 			<li><a href="/tags/linux/">linux<span>1</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
-			<li><a href="/tags/風景/">風景<span>1</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
-		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
-			<li><a href="/tags/ネット/">ネット<span>10</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+			<li><a href="/tags/blog/">blog<span>11</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>21</span></a></li>
+		
+			<li><a href="/tags/風景/">風景<span>1</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 		
 		</ul>
@@ -666,7 +665,7 @@
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
