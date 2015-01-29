@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-29T00:09:22.810Z</updated>
+  <updated>2015-01-29T07:28:24.896Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,32 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Xubuntu14.04にインストールしたCopy.com クライアントで「QGtkStyle was unable to detect the current GTK+ theme.」]]></title>
+    <link href="http://pagent.github.io/2015/01/29/xubuntu-copy-qgtkstyle/"/>
+    <id>http://pagent.github.io/2015/01/29/xubuntu-copy-qgtkstyle/</id>
+    <published>2015-01-29T05:17:29.000Z</published>
+    <updated>2015-01-29T06:52:31.000Z</updated>
+    <content type="html"><![CDATA[<p>Xubuntu14.04にDropboxに似たオンラインストレージ「Copy」のクライアントを導入した。<br>クライアントはcopy.comからダウンロードしたものではなく、下記サイトを参考にUbuntu向けのものをインストールした。<br><a href="http://kometchtech.blog.fc2.com/blog-entry-1542.html" target="_blank" rel="external">いつか、そのとき、あの場所で。 | [Ubuntu][自分用メモ]　Copy.com クライアントのインストール方法。</a>  </p>
+<p>インストール後、メニュー→アクセサリ→Copyで起動し、64bitのPCでは問題なく使用出来た。<br>だが32bitのPCではログインする際、「curl failed to post data」とエラーになり、終了してしまう。  </p>
+<p>端末から  </p>
+<pre><code>$ /opt/copy-client/CopyAgent
+</code></pre><p>とコマンド入力して起動させても、  </p>
+<pre><code>QGtkStyle was unable to detect the current GTK+ theme.
+</code></pre><p>というエラー表示が出て、やはりログイン出来ない。  </p>
+<p>QGtkStyleとかGTK+とか、なんのことかよく分からなかったが、どうやら<code>libgnomeui</code>をインストールする必要があるらしい。<br><a href="https://wiki.archlinux.org/index.php/Uniform_Look_for_Qt_and_GTK_Applications_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29#Qt_.E3.82.A2.E3.83.97.E3.83.AA.E3.82.B1.E3.83.BC.E3.82.B7.E3.83.A7.E3.83.B3.E3.81.8C_QGtkStyle_.E3.82.92.E4.BD.BF.E3.82.8F.E3.81.AA.E3.81.84" target="_blank" rel="external">Uniform Look for Qt and GTK Applications (日本語) - ArchWiki</a>  </p>
+<p>さらに検索してみると、Ubuntuでは以前からCopy.com クライアント利用にあたっての不具合が報告されているようだ。<br><a href="http://ubuntuforums.org/showthread.php?t=2217713&amp;page=2&amp;p=12993324#post12993324" target="_blank" rel="external">Copy.com indicator problem with Ubuntu 14.04 - Page 2</a>  </p>
+<p>インジケーター問題の修正はインストール時に行った（最新バージョンでは修正済か？）が、この回答を参考に、Synapticから<code>libgnomeui-0</code>をインストールした。<br>無事Copy.com クライアントを使用出来るようになった。  </p>
+<p>回答にあった「canberra-gtk-module」のエラーは出なかった。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Xubuntu14.04にDropboxに似たオンラインストレージ「Copy」のクライアントを導入した。<br>クライアントはcopy.comからダウンロードしたものではなく、下記サイトを参考にUbuntu向けのものをインストールした。<br><a href="http:/]]>
+    </summary>
+    
+      <category term="linux" scheme="http://pagent.github.io/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Simplenoteと簡単に同期出来るメモ帳ソフト「nvPY」]]></title>
@@ -437,37 +463,6 @@ keys:■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ �
     </summary>
     
       <category term="blog" scheme="http://pagent.github.io/tags/blog/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hexoのsitemap.xmlを変更してみた]]></title>
-    <link href="http://pagent.github.io/2014/12/25/sitemap/"/>
-    <id>http://pagent.github.io/2014/12/25/sitemap/</id>
-    <published>2014-12-25T01:56:21.000Z</published>
-    <updated>2014-12-25T02:37:54.000Z</updated>
-    <content type="html"><![CDATA[<p>検索エンジンにインデックスされにくいようなのでrobots.txtを置いてみたが、sitemap.xmlの内容も少し修正してみた。<br>プラグインで導入したsitemap.xmlには個別記事のURLしか記載されていないが、Octopressのサイトマップを見てみるとブログのルートURLやrobots.txt、/archives/も記載されている。  </p>
-<p>node_modules/hexo-generator-sitemap/sitemap.ejsの<code>&lt;urlset&gt;</code>内に下記を追記してみた。  </p>
-<pre><code>  &lt;url&gt;
-    &lt;loc&gt;http://pagent.github.io/&lt;/loc&gt;
-  &lt;/url&gt;
-  &lt;url&gt;
-    &lt;loc&gt;http://pagent.github.io/robots.txt&lt;/loc&gt;
-  &lt;/url&gt;
-  &lt;url&gt;
-    &lt;loc&gt;http://pagent.github.io/archives/&lt;/loc&gt;
-  &lt;/url&gt;
-</code></pre><p>URLを取得するための変数が分からないので、<code>&lt;loc&gt;</code>の箇所は手動で記載。<br><code>&lt;lastmod&gt;</code>は入れたかったが、これもどうやれば良いのか分からないし、省略可能とのことなので省略した。  </p>
-<p>Octopressでは個別記事の<code>&lt;lastmod&gt;</code>は、最終更新日時ではなく投稿日時のよう。つまり後から修正しても変更は無い。<br>一方Hexoのサイトマップでは最終的に変更された日時が記載され、それが上位に来ている。<br>どちらが良いのか分からないが、しばらく様子を見てみようと思う。  </p>
-<p>それから、Octopressのサイトマップでは<code>&lt;priority&gt;</code>や<code>&lt;changefreq&gt;</code>も記載されている。<br>SEO的にはOctopressの方が丁寧に作られているかもしれない。<br>generateが断然早いので、なるべくHexoを使いたいところだが。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>検索エンジンにインデックスされにくいようなのでrobots.txtを置いてみたが、sitemap.xmlの内容も少し修正してみた。<br>プラグインで導入したsitemap.xmlには個別記事のURLしか記載されていないが、Octopressのサイトマップを見てみるとブログ]]>
-    </summary>
-    
-      <category term="blog" scheme="http://pagent.github.io/tags/blog/"/>
-    
-      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
   </entry>
   
