@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-29T07:28:24.896Z</updated>
+  <updated>2015-01-29T07:34:50.415Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/01/29/xubuntu-copy-qgtkstyle/"/>
     <id>http://pagent.github.io/2015/01/29/xubuntu-copy-qgtkstyle/</id>
     <published>2015-01-29T05:17:29.000Z</published>
-    <updated>2015-01-29T06:52:31.000Z</updated>
+    <updated>2015-01-29T07:34:24.000Z</updated>
     <content type="html"><![CDATA[<p>Xubuntu14.04にDropboxに似たオンラインストレージ「Copy」のクライアントを導入した。<br>クライアントはcopy.comからダウンロードしたものではなく、下記サイトを参考にUbuntu向けのものをインストールした。<br><a href="http://kometchtech.blog.fc2.com/blog-entry-1542.html" target="_blank" rel="external">いつか、そのとき、あの場所で。 | [Ubuntu][自分用メモ]　Copy.com クライアントのインストール方法。</a>  </p>
 <p>インストール後、メニュー→アクセサリ→Copyで起動し、64bitのPCでは問題なく使用出来た。<br>だが32bitのPCではログインする際、「curl failed to post data」とエラーになり、終了してしまう。  </p>
 <p>端末から  </p>
