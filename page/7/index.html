@@ -112,6 +112,71 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/11/23/hexo-post-template/" >Hexoの新規記事テンプレートを変更</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月23日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Hexoで新規記事を作ると、初期状態ではtitle、date、tagsの項目しか無いが、categoriesも使いたいので変更。<br>/scaffolds/post.mdに項目を追加するだけで出来た。<br>（<code>---</code>で区画された部分は「Front Matter」と言うらしい。）  </p>
+<p>またOctopressに戻ることもあるかもしれないので、Octopressの書式に倣ってlayout、commentsも加えた。  </p>
+<pre><code>---
+layout: post
+title: ｛｛ title ｝｝      ## ｛｛  ｝｝は実際には半角英数
+date: ｛｛ date ｝｝
+comments: true
+tags: 
+categories: 
+---
+</code></pre><p><code>hexo n test</code>すると下記内容のファイルが生成された。  </p>
+<pre><code>layout: post
+title: test
+comments: true
+date: 2014-11-23 09:15:51
+tags:
+categories:
+---
+</code></pre><p>Octopressでは<code>comments: true</code>が無いとDisqusが表示されない。<br>Hexoではcommentsの項目が無くてもDisqusは表示されるが、<code>comments: false</code>にするとその記事だけDisqusの表示は消える。<br>記事によってコメント禁止にする時に便利かもしれない。  </p>
+<p>/scaffolds/post.mdで上部にも<code>---</code>を加えたが、生成ファイルでは下部にしか<code>---</code>が無い。<br>これだとOctopressでは記事をちゃんとgenerate出来ないようだが、上部に<code>---</code>を付ける方法が分からない。<br>もしまたOctopressに戻ることがあったら、手作業するしかなさそうだ。  </p>
+<p>ーー<br>（追記）<br>Hexoの/source/_posts内の記事ソースをOctopress形式のFront Matterに変換出力するスクリプトが公開されていた。<br><a href="https://github.com/ciffel/Hexo-to-Octopress-Converter" target="_blank" rel="external">ciffel/Hexo-to-Octopress-Converter</a>  </p>
+<p>これを使うと上部の<code>---</code>、<code>layout: post</code>そして<code>comments: true</code>を付加してくれる。<br>さらにHexoの<code>tags:</code>が<code>categories:</code>にリネームされる。<br>（Hexoの<code>tags:</code>はOctopressの<code>categories:</code>に相当するようだ。）  </p>
+<p>なので/scaffolds/post.mdは元の記載に戻した。  </p>
+<pre><code>title: Hexoの新規記事テンプレートを変更
+date: Sun Nov 23 2014 08:20:38 GMT+0900 (JST)
+tags:
+---
+</code></pre><p>OctopressからHexoへの移行には下記プラグインが対応していて、これを使うとOctopressのソースの<code>categories:</code>が<code>tags:</code>に変換される。<br><a href="https://github.com/sailxjx/hexo-migrator-octopress" target="_blank" rel="external">hexo-migrator-octopress</a>  </p>
+<p>骨折り損だったが、Hexoでコメント禁止にしたい時は<code>comments: false</code>を加えれば良いというのが分かったのが収穫だった。<br>早めに気がついて良かった。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/23/hexo-post-template/" data-text="Hexoの新規記事テンプレートを変更 | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/11/23/hexo-archive-category/" >Hexoのアーカイブ、カテゴリーページを全文表示からリスト表示に</a>
 		</h3>
 	
@@ -561,45 +626,6 @@ sudo apt-get install nemo
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/06/hana-no-iro/" >いたづらにわがみ世にふる</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月6日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>花の色はうつりにけりな  </p>
-<p>いたづらにわがみ世にふる　ながめせしまに  </p>
-<p>（古今和歌集　小野小町）</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/06/hana-no-iro/" data-text="いたづらにわがみ世にふる | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -641,6 +667,10 @@ sudo apt-get install nemo
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/01/30/xubuntu-copy-client/" ><i class="fa fa-file-o"></i>Xubuntuで非公式レポジトリのCopyクライアントが不調</a>
+      </li>
+    
+      <li>
         <a href="/2015/01/29/dropbox-number-of-files/" ><i class="fa fa-file-o"></i>Dropbox サイズだけではなくファイル数も問題</a>
       </li>
     
@@ -654,10 +684,6 @@ sudo apt-get install nemo
     
       <li>
         <a href="/2015/01/28/simplenote/" ><i class="fa fa-file-o"></i>これは便利！シンプルで軽快、おすすめのオンラインメモ帳...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/01/26/numlockx/" ><i class="fa fa-file-o"></i>Xubuntu14.04で常にNumlockオンで起動する</a>
       </li>
     
   </ul>
@@ -675,31 +701,31 @@ sudo apt-get install nemo
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/blog/">blog<span>11</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>22</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
+			<li><a href="/tags/blog/">blog<span>11</span></a></li>
 		
-			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/風景/">風景<span>1</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>23</span></a></li>
 		
 			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>10</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
 		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/風景/">風景<span>1</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>10</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>6</span></a></li>
 		
@@ -713,7 +739,7 @@ sudo apt-get install nemo
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

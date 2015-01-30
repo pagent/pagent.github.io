@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Xubuntu14.04にインストールしたCopy.com クライアントで「QGtkStyle was unable to detect the current GTK+ theme.」のエラー | Pagent</title>
+  <title>Xubuntuで非公式レポジトリのCopyクライアントが不調 | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Xubuntu14.04にインストールしたCopy.com クライアントで「QGtkStyle was unable to detect the current GTK+ theme.」のエラー"/>
+  <meta property="og:title" content="Xubuntuで非公式レポジトリのCopyクライアントが不調"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -94,7 +94,7 @@
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> Xubuntu14.04にインストールしたCopy.com クライアントで「QGtkStyle was unable to detect the current GTK+ theme.」のエラー</h1>
+			<h1> Xubuntuで非公式レポジトリのCopyクライアントが不調</h1>
 		</div>
 	
 
@@ -110,18 +110,16 @@
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>Xubuntu14.04にDropboxに似たオンラインストレージ「Copy」のクライアントを導入した。<br>クライアントはcopy.comからダウンロードしたものではなく、下記サイトを参考にUbuntu向けのものをインストールした。<br><a href="http://kometchtech.blog.fc2.com/blog-entry-1542.html" target="_blank" rel="external">いつか、そのとき、あの場所で。 | [Ubuntu][自分用メモ]　Copy.com クライアントのインストール方法。</a>  </p>
-<p>インストール後、メニュー→アクセサリ→Copyで起動し、64bitのPCでは問題なく使用出来た。<br>だが32bitのPCではログインする際、「curl failed to post data」とエラーになり、終了してしまう。  </p>
-<p>端末から  </p>
-<pre><code>$ /opt/copy-client/CopyAgent
-</code></pre><p>とコマンド入力して起動させても、  </p>
-<pre><code>QGtkStyle was unable to detect the current GTK+ theme.
-</code></pre><p>というエラー表示が出て、やはりログイン出来ない。  </p>
-<p>QGtkStyleとかGTK+とか、なんのことかよく分からなかったが、どうやら<code>libgnomeui</code>をインストールする必要があるらしい。<br><a href="https://wiki.archlinux.org/index.php/Uniform_Look_for_Qt_and_GTK_Applications_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29#Qt_.E3.82.A2.E3.83.97.E3.83.AA.E3.82.B1.E3.83.BC.E3.82.B7.E3.83.A7.E3.83.B3.E3.81.8C_QGtkStyle_.E3.82.92.E4.BD.BF.E3.82.8F.E3.81.AA.E3.81.84" target="_blank" rel="external">Uniform Look for Qt and GTK Applications (日本語) - ArchWiki</a>  </p>
-<p>さらに検索してみると、Ubuntuでは以前からCopy.com クライアント利用にあたっての不具合が報告されているようだ。<br><a href="http://ubuntuforums.org/showthread.php?t=2217713&amp;page=2&amp;p=12993324#post12993324" target="_blank" rel="external">Copy.com indicator problem with Ubuntu 14.04 - Page 2</a>  </p>
-<p>インジケーター問題の修正はインストール時に行った（最新バージョンでは修正済か？）が、この回答を参考に、Synapticから<code>libgnomeui-0</code>をインストールした。<br>無事Copy.com クライアントを使用出来るようになった。  </p>
-<p>回答にあった「canberra-gtk-module」のエラーは出なかった。  </p>
-<p>ーー<br>（追記）<br>64bitのPCでもCopy.com クライアントを起動した際、”Logging In”の状態でギクシャクすることがあるので、こちらにも<code>libgnomeui-0</code>をインストールした。<br>だがその後も不調が続いたので、Copy.comのサイトからダウンロードしたクライアントを入れなおした。</p>
+	    <p>Xubuntu14.04に、非公式レポジトリからCopyクライアントをインストールしたが、調子が良くない。  </p>
+<p>“Downloading File List”→”Processing .. items”→”Scanning  for changes”ときて、その後また”Downloading File List”→”Processing .. items”と、延々処理が続き、同期が終わらない。<br>さらに起動しても”Logging In”のまま固まってしまうようになった。  </p>
+<p>まともに機能しない状態なので、非公式レポジトリのクライアントはアンインストールし、<a href="https://www.copy.com/install/" target="_blank" rel="external">Copy.comのダウンロードページ</a>から落としたクライアントをインストールし直した。<br>インストールといっても、ダウンロードした圧縮ファイルを展開し、任意のディレクトリに配置しただけだが。  </p>
+<p>追加アプリケーションを配置するためのディレクトリ/optに配置した。  </p>
+<pre><code>cd ~/Desktop
+tar zxvf copy_agent-1.48.0456.tgz
+sudo cp -r copy/x86_64 /opt/copy
+</code></pre><p>コマンドなど使わずファイルマネージャーで「ここに展開」し、/optを「Rootとして開く」してからコピペでも問題無い。  </p>
+<p>端末から<code>/opt/copy/CopyAgent</code>で起動。<br>一応ちゃんと動いてくれているようだ。<br><code>/opt/copy/CopyConsole</code>なら端末で動作する。  </p>
+<p>簡便のためコマンド<code>/opt/copy/CopyAgent</code>をメニューに追加した。</p>
 
 	</div>
 
@@ -137,13 +135,13 @@
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2015/01/29/dropbox-number-of-files/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2015/01/28/nvpy/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2015/01/29/dropbox-number-of-files/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -177,7 +175,7 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2015年1月29日
+	2015年1月30日
 	</div>
 	
 
