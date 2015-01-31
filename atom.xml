@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-31T10:49:21.634Z</updated>
+  <updated>2015-01-31T15:51:32.432Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,30 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[qupzilla-simplenote]]></title>
+    <link href="http://pagent.github.io/2015/01/31/qupzilla-simplenote/"/>
+    <id>http://pagent.github.io/2015/01/31/qupzilla-simplenote/</id>
+    <published>2015-01-31T14:35:38.000Z</published>
+    <updated>2015-01-31T15:49:32.000Z</updated>
+    <content type="html"><![CDATA[<p>オンラインノートSimplenoteと同期出来るメモ帳アプリnvPY。<br>良いかと思ったが、マウス右クリックでのコピー・ペーストが出来ないというのが、やはり致命的に使いづらい。<br>かといってわざわざFirefoxを起動してブックマークからサイトを開いて、というのももどかしい。  </p>
+<p>そこで、適当なブラウザをSimplenote専用にし、ランチャーに登録しようと考えた。<br>まず候補に上がったのがキーボードで操作するブラウザLuakit。  </p>
+<p>ところが、起動からSimplenoteのサイト表示までが、期待したほど早くない。<br>それに起動時に縮小表示してコンパクトにしたいところだが、それも難しいようだ。  </p>
+<p>他に良いブラウザは無いかと、Ubuntuソフトウェアセンターで片っ端からインストールしてみた。<br>あまり有名ではないと思うが、QupZillaというのが目的にピッタリだった。  </p>
+<p>けっこう早い。<br>デフォルトのズーム率も任意に設定出来る。  </p>
+<p>小さめの倍率にし、ナビゲーションツールバーとブックマークツールバーを非表示にしたら、許容範囲内のコンパクトさになってくれた。<br>ランチャーにコマンドを登録して完了。  </p>
+<pre><code>qupzilla https://app.simplenote.com/
+</code></pre><p>まるで何かのメモ帳ソフトのようになった。  </p>
+<p>QupZillaにはFirefoxのようなアドオンこそ無いが、機能もそこそこ充実していて癖のない作り。<br>普段使いのブラウザとしても、軽快に活躍してくれそうだ。<br>Simplenote専用にしておくのは、ちょっともったいないような気もする。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>オンラインノートSimplenoteと同期出来るメモ帳アプリnvPY。<br>良いかと思ったが、マウス右クリックでのコピー・ペーストが出来ないというのが、やはり致命的に使いづらい。<br>かといってわざわざFirefoxを起動してブックマークからサイトを開いて、というのもも]]>
+    </summary>
+    
+      <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Xubuntuで非公式レポジトリのCopyクライアントが不調]]></title>
@@ -444,25 +468,6 @@ keys:■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ �
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Bloglinesは終了なのだろうか]]></title>
-    <link href="http://pagent.github.io/2015/01/09/bloglines-netvibes/"/>
-    <id>http://pagent.github.io/2015/01/09/bloglines-netvibes/</id>
-    <published>2015-01-08T15:57:27.000Z</published>
-    <updated>2015-01-08T16:06:25.000Z</updated>
-    <content type="html"><![CDATA[<p>今月5日に確認したところBloglinesのフィードが見られない。トップページは存在しているが。<br>実際にはその数日前からフィードにアクセス出来ないようだ。  </p>
-<p>去年の9月にもサイトがアクセス不能になることがあってその時も何もアナウンスが無かったが、今回もなんのアナウンスも無いようだ。<br>もはやネットサービスの体をなしていない。<br>Bloglinesもそろそろ終わりなのだろうか。  </p>
-<p>Partner Sitesに挙げられているNetvibesは健在で、Bloglinesのフィードをバックアップすることも可能だし、Netvibesに移った方が良さそうだ。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>今月5日に確認したところBloglinesのフィードが見られない。トップページは存在しているが。<br>実際にはその数日前からフィードにアクセス出来ないようだ。  </p>
-<p>去年の9月にもサイトがアクセス不能になることがあってその時も何もアナウンスが無かったが、今回も]]>
-    </summary>
-    
-      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
     
   </entry>
   

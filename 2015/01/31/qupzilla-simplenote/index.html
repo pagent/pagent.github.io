@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Xubuntuで非公式レポジトリのCopyクライアントが不調 | Pagent</title>
+  <title>qupzilla-simplenote | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Xubuntuで非公式レポジトリのCopyクライアントが不調"/>
+  <meta property="og:title" content="qupzilla-simplenote"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -94,7 +94,7 @@
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> Xubuntuで非公式レポジトリのCopyクライアントが不調</h1>
+			<h1> qupzilla-simplenote</h1>
 		</div>
 	
 
@@ -110,16 +110,15 @@
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>Xubuntu14.04に、非公式レポジトリからCopyクライアントをインストールしたが、調子が良くない。  </p>
-<p>“Scanning  for changes”→”Processing .. items”→”Downloading File List”ときて、その後また”Scanning  for changes”→”Processing .. items”と延々処理が続き、いつまで経っても同期が終わらない。<br>さらに起動しても”Logging In”のまま固まってしまうようになった。  </p>
-<p>まともに機能しない状態なので、非公式レポジトリのクライアントはアンインストールし、<a href="https://www.copy.com/install/" target="_blank" rel="external">Copy.comのダウンロードページ</a>から落としたクライアントをインストールし直した。<br>インストールといっても、ダウンロードした圧縮ファイルを展開し、任意のディレクトリに配置しただけだが。  </p>
-<p>追加アプリケーションを配置するためのディレクトリ/optに配置した。  </p>
-<pre><code>cd ~/Desktop
-tar zxvf copy_agent-1.48.0456.tgz
-sudo cp -r copy/x86_64 /opt/copy
-</code></pre><p>コマンドなど使わずファイルマネージャーで「ここに展開」し、/optを「Rootとして開く」してからコピペでも問題無い。  </p>
-<p>端末から<code>/opt/copy/CopyAgent</code>で起動。<br>一応ちゃんと動いてくれているようだ。<br><code>/opt/copy/CopyConsole</code>なら端末で動作する。  </p>
-<p>簡便のためコマンド<code>/opt/copy/CopyAgent</code>をメニューに追加した。</p>
+	    <p>オンラインノートSimplenoteと同期出来るメモ帳アプリnvPY。<br>良いかと思ったが、マウス右クリックでのコピー・ペーストが出来ないというのが、やはり致命的に使いづらい。<br>かといってわざわざFirefoxを起動してブックマークからサイトを開いて、というのももどかしい。  </p>
+<p>そこで、適当なブラウザをSimplenote専用にし、ランチャーに登録しようと考えた。<br>まず候補に上がったのがキーボードで操作するブラウザLuakit。  </p>
+<p>ところが、起動からSimplenoteのサイト表示までが、期待したほど早くない。<br>それに起動時に縮小表示してコンパクトにしたいところだが、それも難しいようだ。  </p>
+<p>他に良いブラウザは無いかと、Ubuntuソフトウェアセンターで片っ端からインストールしてみた。<br>あまり有名ではないと思うが、QupZillaというのが目的にピッタリだった。  </p>
+<p>けっこう早い。<br>デフォルトのズーム率も任意に設定出来る。  </p>
+<p>小さめの倍率にし、ナビゲーションツールバーとブックマークツールバーを非表示にしたら、許容範囲内のコンパクトさになってくれた。<br>ランチャーにコマンドを登録して完了。  </p>
+<pre><code>qupzilla https://app.simplenote.com/
+</code></pre><p>まるで何かのメモ帳ソフトのようになった。  </p>
+<p>QupZillaにはFirefoxのようなアドオンこそ無いが、機能もそこそこ充実していて癖のない作り。<br>普段使いのブラウザとしても、軽快に活躍してくれそうだ。<br>Simplenote専用にしておくのは、ちょっともったいないような気もする。</p>
 
 	</div>
 
@@ -135,13 +134,13 @@ sudo cp -r copy/x86_64 /opt/copy
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2015/01/31/qupzilla-simplenote/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2015/01/29/dropbox-number-of-files/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2015/01/30/xubuntu-copy-client/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -175,7 +174,7 @@ sudo cp -r copy/x86_64 /opt/copy
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2015年1月30日
+	2015年1月31日
 	</div>
 	
 
@@ -189,7 +188,7 @@ sudo cp -r copy/x86_64 /opt/copy
     <ul id="tags" class="tag_box list-unstyled collapse in">
 	    <!-- _partial/post/tag -->
   
-  <li><a href="/tags/Linux/">Linux</a></li>
+  <li><a href="/tags/ブラウザ/">ブラウザ</a></li>
 
     </ul>
 	</div>
