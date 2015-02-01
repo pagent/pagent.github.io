@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-02-01T12:41:05.365Z</updated>
+  <updated>2015-02-01T13:05:45.159Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <link href="http://pagent.github.io/2015/02/01/piwik-login-cookie-expiration/"/>
     <id>http://pagent.github.io/2015/02/01/piwik-login-cookie-expiration/</id>
     <published>2015-02-01T11:43:35.000Z</published>
-    <updated>2015-02-01T12:40:49.000Z</updated>
-    <content type="html"><![CDATA[<p>オープンソースのアクセス解析ツールPiwikを導入している。<br>管理画面へのログイン時には「次回の入力を省略」にチェックを入れているが、頻回にパスワード入力を求められる。<br>FirefoxのアドオンFirebugでログイン時のリクエストヘッダーを見てみると、クッキーの有効期限が2週間と短いようだ。  </p>
+    <updated>2015-02-01T13:05:23.000Z</updated>
+    <content type="html"><![CDATA[<p>オープンソースのアクセス解析ツールPiwikを導入している。<br>管理画面へのログイン時には「次回の入力を省略」にチェックを入れているが、頻回にパスワード入力を求められる。<br>FirefoxのアドオンFirebugでログイン時のリクエストヘッダーを見てみると、クッキーの有効期限が2週間しかないようだ。  </p>
 <p>Piwikのログイン・クッキー有効期限がどこで設定されているのか、あちこちファイルを見まわって、ようやくpiwik/config/global.ini.phpの210行目に見つけた。  </p>
 <pre><code>; login cookie expiration (14 days)
 login_cookie_expire = 1209600
