@@ -112,6 +112,48 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/01/09/old-pc-lubuntu/" >10年以上前の古いPCにLubuntu14.04をインストール</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年1月9日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>古いパソコン、FMV-BIBLO NB50HにXubuntu14.04をインストールしていた。<br>発売が2004年4月のようなので、10年以上前のパソコン。<br>Mobile Intel(R) Celeron(R) CPU 2.40GHz、メモリ480MB RAM、HDD60GB。  </p>
+<p>市販DVDを見るため、Synapticでlibdvdread4がインストール済みなのを確認。その後、</p>
+<pre><code>sudo /usr/share/doc/libdvdread4/install-css.sh
+</code></pre><p>VLCメディアプレーヤーでDVDを開いたが、再生はされるものの動画がカクカクして見られたものではない。<br>SMPlayerも試してみたが、これもカクカクする。  </p>
+<p>Xubuntuより軽いらしいLubuntuだったら見られるかと、Lubuntu14.04をインストールしてみた。  </p>
+<p>結果、Lubuntuだと問題無いレベルでDVDを再生出来た。<br>やはりLubuntuはXubuntuより軽いようだ。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/09/old-pc-lubuntu/" data-text="10年以上前の古いPCにLubuntu14.04をインストール | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/01/09/bloglines-netvibes/" >Bloglinesは終了なのだろうか</a>
 		</h3>
 	
@@ -523,55 +565,6 @@ html.fixed body {
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/12/21/clean-links/" >リダイレクトを経由せず直接リンク先に飛ぶためのFirefoxアドオン「Clean Links」</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年12月21日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>たとえばGoogleで「example.com」を検索して、検索結果から「Example domains - Internet Assigned Numbers Authority」に行こうとすると、<br><code>http://www.google.co.jp/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=1&amp;cad=rja&amp;uact=8&amp;ved=0CB0QFjAA&amp;url=http%3A%2F%2Fexample.com%2F&amp;ei=7BmWVMvsGZLn8AXWvYD4BQ&amp;usg=AFQjCNFgcPdvBI3xyhn99rnOikPXwwtMmA&amp;bvm=bv.82001339,d.dGc</code><br>を経由して、<code>http://example.com/</code>にリダイレクトされる。  </p>
-<p>リダイレクトを経由せずに直接目的サイトに飛ぶためのアドオンとして、これまで「Redirect Cleaner」というのを使っていたが、いつの間にかホワイトリストに追加するための設定画面が無くなってしまい、アドオンの設定画面でしか追加出来ない。<br>「Redirect Cleaner」自体もFirefoxの公式サイトから無くなってしまっている。  </p>
-<p>使い勝手が悪くなってしまったことだし他に類似のアドオンがないか探してみたら、色々とあるようだった。  </p>
-<ul>
-<li><p><strong>Redirect Remover</strong><br>残念ながらFirefox 34.0に対応していない。  </p>
-</li>
-<li><p><strong>NoRedirect</strong><br>インストールしてみたが、使い方がよく分からない。  </p>
-</li>
-<li><p><strong>Clean Links</strong><br>メニューバーのアイコンを右クリックすると、リダイレクトをスキップした履歴が表示される。<br>通常通りにリダイレクトさせたい時は、ここから「Whitelist Selection」ボタンで簡単にホワイトリストに追加出来る。ホワイトリストに追加すると、アドオンの設定画面の「Skip Domains」に追加される。<br>ホワイトリストから外す時は設定画面の「Skip Domains」から削除しないといけないが、使い勝手はかつての「Redirect Cleaner」に近い。  </p>
-</li>
-</ul>
-<p>というわけで、<a href="https://addons.mozilla.org/ja/firefox/addon/clean-links/" target="_blank" rel="external">「Clean Links」</a>を使うことにした。  </p>
-<p>リダイレクトをスキップした時はハイライト表示されるのでちゃんと仕事をしてくれているのが分かる。<br>「Skip Domains」以外の設定項目はよく分からないが、たぶんデフォルトのままで良いのだろう。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/21/clean-links/" data-text="リダイレクトを経由せず直接リンク先に飛ぶためのFirefoxアドオン「Clean Links」 | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -613,6 +606,10 @@ html.fixed body {
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/02/01/piwik-login-cookie-expiration/" ><i class="fa fa-file-o"></i>Piwikのログイン・クッキー有効期限を延長する</a>
+      </li>
+    
+      <li>
         <a href="/2015/01/31/qupzilla-simplenote/" ><i class="fa fa-file-o"></i>軽快ブラウザQupZillaをSimplenoteアプ...</a>
       </li>
     
@@ -626,10 +623,6 @@ html.fixed body {
     
       <li>
         <a href="/2015/01/29/xubuntu-copy-error-qgtkstyle/" ><i class="fa fa-file-o"></i>Xubuntu14.04にインストールしたCopy.c...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/01/28/nvpy/" ><i class="fa fa-file-o"></i>Simplenoteと簡単に同期出来るメモ帳ソフト「n...</a>
       </li>
     
   </ul>
@@ -647,33 +640,31 @@ html.fixed body {
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
 			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
-			<li><a href="/tags/未分類/">未分類<span>1</span></a></li>
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/風景/">風景<span>1</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>11</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>10</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
 			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>22</span></a></li>
+			<li><a href="/tags/Git/">Git<span>10</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>8</span></a></li>
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>22</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 		
 		</ul>
@@ -685,7 +676,7 @@ html.fixed body {
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

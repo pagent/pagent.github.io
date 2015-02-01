@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>軽快ブラウザQupZillaをSimplenoteアプリとして使う | Pagent</title>
+  <title>Piwikのログイン・クッキー有効期限を延長する | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="軽快ブラウザQupZillaをSimplenoteアプリとして使う"/>
+  <meta property="og:title" content="Piwikのログイン・クッキー有効期限を延長する"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -94,7 +94,7 @@
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> 軽快ブラウザQupZillaをSimplenoteアプリとして使う</h1>
+			<h1> Piwikのログイン・クッキー有効期限を延長する</h1>
 		</div>
 	
 
@@ -110,15 +110,19 @@
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>オンラインノートSimplenoteと同期出来るメモ帳アプリnvPY。<br>良いかと思ったが、マウス右クリックでのコピー・ペーストが出来ないというのが、やはり致命的に使いづらい。<br>かといってわざわざFirefoxを起動してブックマークからサイトを開いて、というのももどかしい。  </p>
-<p>そこで、適当なブラウザをSimplenote専用にし、ランチャーに登録しようと考えた。<br>まず候補に上がったのがキーボードで操作するブラウザLuakit。  </p>
-<p>ところが、起動からSimplenoteのサイト表示までが、期待したほど早くない。<br>それに起動時に縮小表示してコンパクトにしたいところだが、それも難しいようだ。  </p>
-<p>他に良いブラウザは無いかと、Ubuntuソフトウェアセンターで片っ端からインストールしてみた。<br>あまり有名ではないと思うが、QupZillaというのが目的にピッタリだった。<br><a href="http://www.qupzilla.com/" target="_blank" rel="external">QupZilla - マルチプラットフォーム対応、軽量ブラウザ</a>  </p>
-<p>起動速度、サイト表示が早い。<br>デフォルトのズーム率も任意に設定出来る。  </p>
-<p>小さめの倍率にし、ナビゲーションツールバーとブックマークツールバーを非表示にしたら、許容範囲内のコンパクトさになってくれた。<br>ランチャーにコマンドを登録して完了。  </p>
-<pre><code>qupzilla https://app.simplenote.com/
-</code></pre><p>まるで何かのメモ帳ソフトのようになった。  </p>
-<p>QupZillaにはFirefoxのようなアドオンこそ無いが、機能もそこそこ充実していて癖のない作り。<br>普段使いのブラウザとしても、軽快に活躍してくれそうだ。<br>Simplenote専用にしておくのは、ちょっともったいないような気もする。</p>
+	    <p>オープンソースのアクセス解析ツールPiwikを導入している。<br>管理画面へのログイン時には「次回の入力を省略」にチェックを入れているが、頻回にパスワード入力を求められる。<br>FirefoxのアドオンFirebugでログイン時のリクエストヘッダーを見てみると、クッキーの有効期限が2週間しかないようだ。  </p>
+<p>Piwikのログイン・クッキー有効期限がどこで設定されているのか、あちこちファイルを見まわって、ようやくpiwik/config/global.ini.phpの210行目に見つけた。  </p>
+<pre><code>; login cookie expiration (14 days)
+login_cookie_expire = 1209600
+</code></pre><p>だが、global.ini.phpの冒頭には下記のように書いてある。  </p>
+<blockquote>
+<p>; If you want to change some of these default values, the best practise is to override<br>; them in your configuration file in config/config.ini.php. If you directly edit this file,<br>; you will lose your changes when you upgrade Piwik.<br>; For example if you want to override action_title_category_delimiter,<br>; edit config/config.ini.php and add the following:<br>; [General]<br>; action_title_category_delimiter = “-“</p>
+</blockquote>
+<p>global.ini.phpを直接編集しても、Piwikをアップグレードした際に元に戻ってしまうから、変更したい挙動はconfig/config.ini.phpに加筆して設定を上書きせよ、ということらしい。  </p>
+<p>自分の環境ではconfig.ini.phpの所有者はApacheとなっていて、このままではファイルを変更出来なかったので、パーミッションを644から646に変更。<br>クッキー有効期限を180日（15552000秒）にすることにして、global.ini.phpの[General]の箇所に  </p>
+<pre><code>login_cookie_expire = 15552000
+</code></pre><p>を加筆した。  </p>
+<p>Piwikにログインし直し、Firebugで確認すると、”Set-Cookie…expires=Fri, 31-Jul-2015 11:30:24”と、クッキーの有効期限が延長されていた。<br>ファイルのパーミッションを644に戻して作業終了。</p>
 
 	</div>
 
@@ -134,13 +138,13 @@
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2015/02/01/piwik-login-cookie-expiration/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2015/01/30/xubuntu-copy-client/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2015/01/31/qupzilla-simplenote/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -174,7 +178,7 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2015年1月31日
+	2015年2月1日
 	</div>
 	
 
@@ -188,7 +192,7 @@
     <ul id="tags" class="tag_box list-unstyled collapse in">
 	    <!-- _partial/post/tag -->
   
-  <li><a href="/tags/ブラウザ/">ブラウザ</a></li>
+  <li><a href="/tags/blog/">blog</a></li>
 
     </ul>
 	</div>

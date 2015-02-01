@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-01-31T22:52:24.991Z</updated>
+  <updated>2015-02-01T12:37:44.948Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,34 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Piwikのログイン・クッキー有効期限を延長する]]></title>
+    <link href="http://pagent.github.io/2015/02/01/piwik-login-cookie-expiration/"/>
+    <id>http://pagent.github.io/2015/02/01/piwik-login-cookie-expiration/</id>
+    <published>2015-02-01T11:43:35.000Z</published>
+    <updated>2015-02-01T12:36:53.000Z</updated>
+    <content type="html"><![CDATA[<p>オープンソースのアクセス解析ツールPiwikを導入している。<br>管理画面へのログイン時には「次回の入力を省略」にチェックを入れているが、頻回にパスワード入力を求められる。<br>FirefoxのアドオンFirebugでログイン時のリクエストヘッダーを見てみると、クッキーの有効期限が2週間しかないようだ。  </p>
+<p>Piwikのログイン・クッキー有効期限がどこで設定されているのか、あちこちファイルを見まわって、ようやくpiwik/config/global.ini.phpの210行目に見つけた。  </p>
+<pre><code>; login cookie expiration (14 days)
+login_cookie_expire = 1209600
+</code></pre><p>だが、global.ini.phpの冒頭には下記のように書いてある。  </p>
+<blockquote>
+<p>; If you want to change some of these default values, the best practise is to override<br>; them in your configuration file in config/config.ini.php. If you directly edit this file,<br>; you will lose your changes when you upgrade Piwik.<br>; For example if you want to override action_title_category_delimiter,<br>; edit config/config.ini.php and add the following:<br>; [General]<br>; action_title_category_delimiter = “-“</p>
+</blockquote>
+<p>global.ini.phpを直接編集しても、Piwikをアップグレードした際に元に戻ってしまうから、変更したい挙動はconfig/config.ini.phpに加筆して設定を上書きせよ、ということらしい。  </p>
+<p>自分の環境ではconfig.ini.phpの所有者はApacheとなっていて、このままではファイルを変更出来なかったので、パーミッションを644から646に変更。<br>クッキー有効期限を180日（15552000秒）にすることにして、global.ini.phpの[General]の箇所に  </p>
+<pre><code>login_cookie_expire = 15552000
+</code></pre><p>を加筆した。  </p>
+<p>Piwikにログインし直し、Firebugで確認すると、”Set-Cookie…expires=Fri, 31-Jul-2015 11:30:24”と、クッキーの有効期限が延長されていた。<br>ファイルのパーミッションを644に戻して作業終了。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>オープンソースのアクセス解析ツールPiwikを導入している。<br>管理画面へのログイン時には「次回の入力を省略」にチェックを入れているが、頻回にパスワード入力を求められる。<br>FirefoxのアドオンFirebugでログイン時のリクエストヘッダーを見てみると、クッキー]]>
+    </summary>
+    
+      <category term="blog" scheme="http://pagent.github.io/tags/blog/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[軽快ブラウザQupZillaをSimplenoteアプリとして使う]]></title>
@@ -444,27 +472,6 @@ keys:■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ �
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Lubuntu14.04にクリップボードマネージャーのGlipperをインストールした。PC終了時に履歴を消去出来るので、パスワードをコピペしても割と安全に使える。<br>PC起動時には自動開始させたいので、「設定」→「LXSessionのデフォルトのアプリケーション」→「]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[10年以上前の古いPCにLubuntu14.04をインストール]]></title>
-    <link href="http://pagent.github.io/2015/01/09/old-pc-lubuntu/"/>
-    <id>http://pagent.github.io/2015/01/09/old-pc-lubuntu/</id>
-    <published>2015-01-09T08:00:15.000Z</published>
-    <updated>2015-01-28T09:37:05.000Z</updated>
-    <content type="html"><![CDATA[<p>古いパソコン、FMV-BIBLO NB50HにXubuntu14.04をインストールしていた。<br>発売が2004年4月のようなので、10年以上前のパソコン。<br>Mobile Intel(R) Celeron(R) CPU 2.40GHz、メモリ480MB RAM、HDD60GB。  </p>
-<p>市販DVDを見るため、Synapticでlibdvdread4がインストール済みなのを確認。その後、</p>
-<pre><code>sudo /usr/share/doc/libdvdread4/install-css.sh
-</code></pre><p>VLCメディアプレーヤーでDVDを開いたが、再生はされるものの動画がカクカクして見られたものではない。<br>SMPlayerも試してみたが、これもカクカクする。  </p>
-<p>Xubuntuより軽いらしいLubuntuだったら見られるかと、Lubuntu14.04をインストールしてみた。  </p>
-<p>結果、Lubuntuだと問題無いレベルでDVDを再生出来た。<br>やはりLubuntuはXubuntuより軽いようだ。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>古いパソコン、FMV-BIBLO NB50HにXubuntu14.04をインストールしていた。<br>発売が2004年4月のようなので、10年以上前のパソコン。<br>Mobile Intel(R) Celeron(R) CPU 2.40GHz、メモリ480MB RAM、H]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
