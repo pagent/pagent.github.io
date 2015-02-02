@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-02-02T00:59:32.294Z</updated>
+  <updated>2015-02-02T01:41:57.544Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/02/02/xubuntu-kate/"/>
     <id>http://pagent.github.io/2015/02/02/xubuntu-kate/</id>
     <published>2015-02-01T23:24:01.000Z</published>
-    <updated>2015-02-02T00:57:06.000Z</updated>
+    <updated>2015-02-02T01:02:23.000Z</updated>
     <content type="html"><![CDATA[<p>Xubuntu14.04でテキストエディターとしてMousepadやLeafpadを使っているが、先に開いて編集作業をしていたファイルを再度開くと、新たなウィンドウで開いてしまう。<br>その後、別の作業をしてまたファイルの編集作業に戻ったりすると、どちらのウィンドウが新しい編集だったか分かりづらい。<br>ウィンドウを閉じる時、「この文書は外部から変更されています。このまま保存しますか?」と警告は出るが、両方のウィンドウで編集作業をしてしまっていることもしばしば。  </p>
 <p>KDEのテキストエディター「Kate」をインストールしてみた。  </p>
 <p>複数のファイルを開いてもウィンドウが１つ。<br>だがデフォルト状態ではタブも無く、サイドバーの「文書」で開いているファイルをツリー表示してくれるのみ。<br>これでは使いづらいので使用を諦めようかと思ったが、設定→Kateを設定→プラグイン→タブバー、でタブ表示出来た。<br><a href="http://news.mynavi.jp/articles/2012/05/15/kate/003.html" target="_blank" rel="external">【レビュー】世界のテキストエディターから - KDEの優秀なテキストエディター「Kate」 (4) 「Kate」を使いこなすTips | マイナビニュース</a>  </p>
@@ -63,19 +63,19 @@ login_cookie_expire = 1209600
   </entry>
   
   <entry>
-    <title><![CDATA[軽快ブラウザQupZillaをSimplenoteアプリとして使う]]></title>
+    <title><![CDATA[軽量ブラウザQupZillaをSimplenoteアプリとして使う]]></title>
     <link href="http://pagent.github.io/2015/01/31/qupzilla-simplenote/"/>
     <id>http://pagent.github.io/2015/01/31/qupzilla-simplenote/</id>
     <published>2015-01-31T14:35:38.000Z</published>
-    <updated>2015-01-31T22:52:15.000Z</updated>
+    <updated>2015-02-02T01:41:44.000Z</updated>
     <content type="html"><![CDATA[<p>オンラインノートSimplenoteと同期出来るメモ帳アプリnvPY。<br>良いかと思ったが、マウス右クリックでのコピー・ペーストが出来ないというのが、やはり致命的に使いづらい。<br>かといってわざわざFirefoxを起動してブックマークからサイトを開いて、というのももどかしい。  </p>
 <p>そこで、適当なブラウザをSimplenote専用にし、ランチャーに登録しようと考えた。<br>まず候補に上がったのがキーボードで操作するブラウザLuakit。  </p>
 <p>ところが、起動からSimplenoteのサイト表示までが、期待したほど早くない。<br>それに起動時に縮小表示してコンパクトにしたいところだが、それも難しいようだ。  </p>
 <p>他に良いブラウザは無いかと、Ubuntuソフトウェアセンターで片っ端からインストールしてみた。<br>あまり有名ではないと思うが、QupZillaというのが目的にピッタリだった。<br><a href="http://www.qupzilla.com/" target="_blank" rel="external">QupZilla - マルチプラットフォーム対応、軽量ブラウザ</a>  </p>
-<p>起動速度、サイト表示が早い。<br>デフォルトのズーム率も任意に設定出来る。  </p>
-<p>小さめの倍率にし、ナビゲーションツールバーとブックマークツールバーを非表示にしたら、許容範囲内のコンパクトさになってくれた。<br>ランチャーにコマンドを登録して完了。  </p>
+<p>起動速度、サイト表示が早い。<br>設定→ブラウジング→Web設定でデフォルトのズーム率も任意に設定出来る。  </p>
+<p>小さめの倍率にし、ナビゲーションツールバーとブックマークツールバーを非表示に。<br>設定→タブで「タブが1つだけの時タブバーを非表示」にチェックを入れたら、許容範囲内のコンパクトさになってくれた。<br>ランチャーにコマンドを登録して完了。  </p>
 <pre><code>qupzilla https://app.simplenote.com/
-</code></pre><p>まるで何かのメモ帳ソフトのようになった。  </p>
+</code></pre><p>まるでメモ帳ソフトのようになった。  </p>
 <p>QupZillaにはFirefoxのようなアドオンこそ無いが、機能もそこそこ充実していて癖のない作り。<br>普段使いのブラウザとしても、軽快に活躍してくれそうだ。<br>Simplenote専用にしておくのは、ちょっともったいないような気もする。</p>
 ]]></content>
     <summary type="html">
