@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-02-02T01:41:57.544Z</updated>
+  <updated>2015-02-02T16:12:28.245Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,33 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[XubuntuにインストールしたDolphinでRootで開く]]></title>
+    <link href="http://pagent.github.io/2015/02/03/xubuntu-dolphin-root-actions/"/>
+    <id>http://pagent.github.io/2015/02/03/xubuntu-dolphin-root-actions/</id>
+    <published>2015-02-02T15:53:03.000Z</published>
+    <updated>2015-02-02T16:12:05.000Z</updated>
+    <content type="html"><![CDATA[<p>Xubuntu14.04にKDEのファイルマネージャーDolphinをインストールしたが、Rootで開くためのRoot Actionsで手こずった。  </p>
+<ul>
+<li>Dolphinの設定の「新しいサービスをダウンロード」からインストールする方法  </li>
+<li>rootactions_servicemenuのtar.gzファイルをダウンロードし、メニューファイルとスクリプトを手動で配置する方法  </li>
+</ul>
+<p>2通り試したが、どちらも上手くいかない。<br>最終的にはLinux Mint用のdebパッケージをインストールして解決した。  </p>
+<p>下記サイトの「All arch deb package」というリンクからrootactions-servicemenu_2.7.3-0mint1_all.debをダウンロード。<br><a href="http://www.ubuntuupdates.org/package/mint_main/olivia/main/base/rootactions-servicemenu" target="_blank" rel="external">UbuntuUpdates - Package “rootactions-servicemenu” (olivia )</a>  </p>
+<p>クリックするとUbuntuソフトウェアセンターが立ち上がるので、いつも通りにインストール。<br>“Open as Text”は既定のテキストエディターがKateでないと機能しないが、フォルダはちゃんとRootで開くことが出来た。  </p>
+<p>（参照サイト）<br><a href="http://ubuntuforums.org/showthread.php?t=2157705&amp;p=12707272#post12707272" target="_blank" rel="external">[gnome] “Root Actions” in dolphin not available</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Xubuntu14.04にKDEのファイルマネージャーDolphinをインストールしたが、Rootで開くためのRoot Actionsで手こずった。  </p>
+<ul>
+<li>Dolphinの設定の「新しいサービスをダウンロード」からインストールする方法  </li>
+]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[XubuntuでKDEのテキストエディターKate]]></title>
@@ -454,26 +481,6 @@ keys:■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ �
     <summary type="html">
     <![CDATA[<p>13.04から13.10→14.04.1にアップグレードしたLubuntuで、通知領域にネットワークインジケーターが表示されない。network-manager-gnomeはインストールされているようなのだが。  </p>
 <p>hidden SSID（ESS-IDステルス]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[LubuntuにPulseAudio Volume Controlを導入。音量が小さい時にも便利]]></title>
-    <link href="http://pagent.github.io/2015/01/14/lubuntu-pavucontrol/"/>
-    <id>http://pagent.github.io/2015/01/14/lubuntu-pavucontrol/</id>
-    <published>2015-01-14T07:38:56.000Z</published>
-    <updated>2015-01-28T09:37:48.000Z</updated>
-    <content type="html"><![CDATA[<p>Lubuntu14.04には元々ボリュームコントローラーとしてalsamixerが入っているが、完全にGUIのツールではなく使いづらい。<br>そこで、Xubuntuに標準で入っているPulseAudio Volume Control (pavucontrol)をインストールした。  </p>
-<p>Synapticやソフトウェアセンター、もしくは下記コマンドで導入。</p>
-<pre><code>sudo apt-get install pavucontrol
-</code></pre><p>インストール後は自然に通知領域での設定がPulseAudio Volume Controlに変更される。  </p>
-<p>スピーカーからの出力を 153%（11.00dB）まで上げられるので、音量が小さくて困る時などにもなにかと便利。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Lubuntu14.04には元々ボリュームコントローラーとしてalsamixerが入っているが、完全にGUIのツールではなく使いづらい。<br>そこで、Xubuntuに標準で入っているPulseAudio Volume Control (pavucontrol)をインストー]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
