@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-02-03T12:20:31.032Z</updated>
+  <updated>2015-02-03T12:34:26.120Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/02/03/lubuntu-look-and-feel/"/>
     <id>http://pagent.github.io/2015/02/03/lubuntu-look-and-feel/</id>
     <published>2015-02-03T11:57:46.000Z</published>
-    <updated>2015-02-03T12:19:25.000Z</updated>
+    <updated>2015-02-03T12:33:52.000Z</updated>
     <content type="html"><![CDATA[<p>ネットブックにインストールしたLubuntu14.04.1で、ブラウザーでもファイルマネージャーでも何でもデカデカと大きく表示される。<br>モニターの解像度は確かに低いが、マルチブートで入れているXubuntuの方はそうでもない。<br>解像度の設定のせいかとも思ったが、ディスプレイの設定ではちゃんと解像度1024×600、リフレッシュシート60.0になっている。<br>xrandrコマンドでも正常のよう。<br>あちこち設定を見てようやくルックアンドフィールの設定だと分かった。  </p>
 <p>メニュー→設定→ルックアンドフィールを設定します<br>ウィジェットでデフォルトのフォントが11になっていたのを10に変更。<br>ウィンドウ境界→タイトルバーの「アクティブウィンドウのタイトルのフォント」、「非アクティブウィンドウのタイトルのフォント」も10に。<br>標準的な表示になった。</p>
 ]]></content>
@@ -27,7 +27,7 @@
     <![CDATA[<p>ネットブックにインストールしたLubuntu14.04.1で、ブラウザーでもファイルマネージャーでも何でもデカデカと大きく表示される。<br>モニターの解像度は確かに低いが、マルチブートで入れているXubuntuの方はそうでもない。<br>解像度の設定のせいかとも思ったが、]]>
     </summary>
     
-      <category term="linux" scheme="http://pagent.github.io/tags/linux/"/>
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
     
   </entry>
   
