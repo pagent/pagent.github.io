@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-02-03T00:16:25.723Z</updated>
+  <updated>2015-02-03T02:17:17.667Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,38 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Dolphinが.directoryファイルを生成するのを止める]]></title>
+    <link href="http://pagent.github.io/2015/02/03/dolphin-directory-files/"/>
+    <id>http://pagent.github.io/2015/02/03/dolphin-directory-files/</id>
+    <published>2015-02-03T01:21:28.000Z</published>
+    <updated>2015-02-03T02:16:47.000Z</updated>
+    <content type="html"><![CDATA[<p>ファイルマネージャーDolphinを使っていて、あちこちのディレクトリに.directoryというファイルがあることに気付いた。  </p>
+<p>内容は以下のようなもの。  </p>
+<pre><code>[Dolphin]
+Timestamp=2015,2,2,22,45,9
+Version=3
+ViewMode=2
+
+[Settings]
+HiddenFilesShown=true
+</code></pre><p>Dolphinでアイコン表示、詳細表示などの表示モードやソート基準を変更をしたり、隠しファイルを表示したりすると、この.directoryファイルが自動生成されるようだ。<br>（/etc等、所有者がrootのディレクトリには作成されない。）  </p>
+<p>多くのファイルマネージャーでは隠しファイルの表示・非表示をディレクトリ毎に設定出来ないが、Dolphinでは.directoryファイルのおかげでディレクトリ毎に設定可能になっている。  </p>
+<p>便利と言えば便利なのだが、静的サイトジェネレーターHexoの作業フォルダ内にこの.directoryファイルを作られるのはまずい気がする。<br>deployやgitコマンドの際に不具合が出るかもしれない。  </p>
+<p>Dolphinの設定→全般→動作タブで、「フォルダごとにビューのプロパティを保存する」から「すべてのフォルダに共通のプロバティを使う」に変更したら、.directoryファイルは生成されなくなった。<br><a href="https://forum.kde.org/viewtopic.php?f=223&amp;t=119876" target="_blank" rel="external">.directory files • KDE Community Forums</a>  </p>
+<p>だが、表示モードやソート基準も全フォルダで共通になってしまった。<br>使い勝手が悪く、これならnemoの方が便利だ。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>ファイルマネージャーDolphinを使っていて、あちこちのディレクトリに.directoryというファイルがあることに気付いた。  </p>
+<p>内容は以下のようなもの。  </p>
+<pre><code>[Dolphin]
+Timestamp=2015,2,2,22,4]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[XubuntuにインストールしたDolphinでRootで開く]]></title>
@@ -463,26 +495,6 @@ keys:■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ �
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Windows Xp以外にDebian、Xubuntu、Linux Mintをインストールして、クアッドブートにしていたPC。<br>Debianを削除してLubuntuをインストールしたら、Xubuntuが起動しなくなってしまった。<br>起動途中のスプラッシュ画面で  ]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[アップグレードしたLubuntuでネットワークインジケーターが表示されない]]></title>
-    <link href="http://pagent.github.io/2015/01/14/lubuntu-nm-applet/"/>
-    <id>http://pagent.github.io/2015/01/14/lubuntu-nm-applet/</id>
-    <published>2015-01-14T08:37:15.000Z</published>
-    <updated>2015-01-15T01:19:05.000Z</updated>
-    <content type="html"><![CDATA[<p>13.04から13.10→14.04.1にアップグレードしたLubuntuで、通知領域にネットワークインジケーターが表示されない。network-manager-gnomeはインストールされているようなのだが。  </p>
-<p>hidden SSID（ESS-IDステルス機能）で無線LANを接続する際、メインメニューの設定の項目にあるネットワーク接続（nm-connection-editor）からでは設定し辛く、ネットワークインジケーターの「非表示Wi-Fiネットワークに接続」の方が簡単ということもあり、インジケーターを表示させたい。  </p>
-<p>ネットワークインジケーターはアップグレードした際に消えてしまうことがあるようだ。<br><a href="http://qiita.com/cm3/items/72c51ff3b416f5981986" target="_blank" rel="external">Lubuntu で無線LANのインディケータをパネルに表示する方法 - Qiita</a>  </p>
-<p>参照記事の通り「LXSessionのデフォルトのアプリケーション」→「Aurostart」でManual autostarted applicationsにnm-appletを追加し再起動したら、ネットワークインジケーターが追加された。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>13.04から13.10→14.04.1にアップグレードしたLubuntuで、通知領域にネットワークインジケーターが表示されない。network-manager-gnomeはインストールされているようなのだが。  </p>
-<p>hidden SSID（ESS-IDステルス]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>

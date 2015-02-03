@@ -112,6 +112,56 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/02/03/dolphin-directory-files/" >Dolphinが.directoryファイルを生成するのを止める</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月3日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>ファイルマネージャーDolphinを使っていて、あちこちのディレクトリに.directoryというファイルがあることに気付いた。  </p>
+<p>内容は以下のようなもの。  </p>
+<pre><code>[Dolphin]
+Timestamp=2015,2,2,22,45,9
+Version=3
+ViewMode=2
+
+[Settings]
+HiddenFilesShown=true
+</code></pre><p>Dolphinでアイコン表示、詳細表示などの表示モードやソート基準を変更をしたり、隠しファイルを表示したりすると、この.directoryファイルが自動生成されるようだ。<br>（/etc等、所有者がrootのディレクトリには作成されない。）  </p>
+<p>多くのファイルマネージャーでは隠しファイルの表示・非表示をディレクトリ毎に設定出来ないが、Dolphinでは.directoryファイルのおかげでディレクトリ毎に設定可能になっている。  </p>
+<p>便利と言えば便利なのだが、静的サイトジェネレーターHexoの作業フォルダ内にこの.directoryファイルを作られるのはまずい気がする。<br>deployやgitコマンドの際に不具合が出るかもしれない。  </p>
+<p>Dolphinの設定→全般→動作タブで、「フォルダごとにビューのプロパティを保存する」から「すべてのフォルダに共通のプロバティを使う」に変更したら、.directoryファイルは生成されなくなった。<br><a href="https://forum.kde.org/viewtopic.php?f=223&amp;t=119876" target="_blank" rel="external">.directory files • KDE Community Forums</a>  </p>
+<p>だが、表示モードやソート基準も全フォルダで共通になってしまった。<br>使い勝手が悪く、これならnemoの方が便利だ。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/03/dolphin-directory-files/" data-text="Dolphinが.directoryファイルを生成するのを止める | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/02/03/xubuntu-dolphin-root-actions/" >XubuntuにインストールしたDolphinでRootで開く</a>
 		</h3>
 	
@@ -522,49 +572,6 @@ sudo cp -r copy/x86_64 /opt/copy
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/01/26/numlockx/" >Xubuntu14.04で常にNumlockオンで起動する</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年1月26日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>PC起動時にNumlockが有効になっていると、すぐにテンキーで数字を入力出来るので少しだけ助かる。<br>オフになっていてもNumlockキーを押せばいいだけではあるが。  </p>
-<p>Xubuntu14.04の設定マネージャーを見ていると「設定エディター」というのがあった。<br>マウスを合わせるとツールチップで「Xfconf のグラフィカル設定エディターです」と説明が出ているもの。<br>何の気無しにクリックしてみると、keyboadsのところが開いていてNumlockについての設定のようだった。<br>「値」の処にチェックは入っていない。  </p>
-<p>試しにチェックを入れてみたら良かったのだが、説明らしい説明が無かったので躊躇してしまい、「Numlock」+「Ubuntu」で検索してnumlockxをインストールした。<br>だがこれだけだと、Numlockがオフの状態でPCを終了して再起動すると、Numlockオフで起動してしまう。<br>Ubuntuソフトウェアセンターの説明には「本パッケージは、セッション開始時に numlock を有効化するセッションスクリプト を自動的にインストールします。」とあるのだが。  </p>
-<p>/etc/lightdm/lightdm.confに「greeter-setup-script=/usr/bin/numlockx on」を追記するよう解説しているサイトがあったのでやってみたが、これもうまく行かない。<br>さっきの「設定エディター」でチェックを入れても、オフ状態でPCを終了するとNumlockオフで起動する。  </p>
-<p>結局、「セッションと起動」の自動開始アプリケーションにコマンド<code>numlockx</code>の項目を追加することで、「常にNumlockオンで起動」させることが出来た。  </p>
-<p>ーー<br>（追記）<br>自動開始アプリケーションに追加するコマンドは<code>numlockx</code>だけでも大丈夫だったが、<code>/usr/bin/numlockx on</code>もしくは<code>/usr/bin/numlockx</code>とするのがLinuxの正統な作法のようだ。<br>（自動開始アプリケーションに追加されていた他の項目を見ると、どれも/usr/bin/…という記法になっている。）  </p>
-<p>「<code>numlockx</code>だけで実行出来る」＝「パスが通っている」ということらしいので、どちらでも良いのだろう。<br><a href="http://www.obenri.com/_operation/path_through.html" target="_blank" rel="external">◇”パスが通っている”とは？◇初心者のためのLinuxサーバー構築講座(CentOS 自宅サーバー対応)☆お便利サーバー.com☆</a></p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/26/numlockx/" data-text="Xubuntu14.04で常にNumlockオンで起動する | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -606,6 +613,10 @@ sudo cp -r copy/x86_64 /opt/copy
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/02/03/dolphin-directory-files/" ><i class="fa fa-file-o"></i>Dolphinが.directoryファイルを生成する...</a>
+      </li>
+    
+      <li>
         <a href="/2015/02/03/xubuntu-dolphin-root-actions/" ><i class="fa fa-file-o"></i>XubuntuにインストールしたDolphinでRoo...</a>
       </li>
     
@@ -619,10 +630,6 @@ sudo cp -r copy/x86_64 /opt/copy
     
       <li>
         <a href="/2015/01/31/qupzilla-simplenote/" ><i class="fa fa-file-o"></i>軽量ブラウザQupZillaをSimplenoteアプ...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/01/30/xubuntu-copy-client/" ><i class="fa fa-file-o"></i>Xubuntuで非公式レポジトリのCopyクライアントが不調</a>
       </li>
     
   </ul>
@@ -640,31 +647,31 @@ sudo cp -r copy/x86_64 /opt/copy
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>24</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>8</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>10</span></a></li>
 		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>25</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>10</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>8</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
 		
 		</ul>
@@ -676,7 +683,7 @@ sudo cp -r copy/x86_64 /opt/copy
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
