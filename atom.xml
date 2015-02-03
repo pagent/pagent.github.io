@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-02-03T08:07:17.939Z</updated>
+  <updated>2015-02-03T12:20:31.032Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,23 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Lubuntuで解像度が低いと思ったら、ルックアンドフィールのフォントサイズだった]]></title>
+    <link href="http://pagent.github.io/2015/02/03/lubuntu-look-and-feel/"/>
+    <id>http://pagent.github.io/2015/02/03/lubuntu-look-and-feel/</id>
+    <published>2015-02-03T11:57:46.000Z</published>
+    <updated>2015-02-03T12:19:25.000Z</updated>
+    <content type="html"><![CDATA[<p>ネットブックにインストールしたLubuntu14.04.1で、ブラウザーでもファイルマネージャーでも何でもデカデカと大きく表示される。<br>モニターの解像度は確かに低いが、マルチブートで入れているXubuntuの方はそうでもない。<br>解像度の設定のせいかとも思ったが、ディスプレイの設定ではちゃんと解像度1024×600、リフレッシュシート60.0になっている。<br>xrandrコマンドでも正常のよう。<br>あちこち設定を見てようやくルックアンドフィールの設定だと分かった。  </p>
+<p>メニュー→設定→ルックアンドフィールを設定します<br>ウィジェットでデフォルトのフォントが11になっていたのを10に変更。<br>ウィンドウ境界→タイトルバーの「アクティブウィンドウのタイトルのフォント」、「非アクティブウィンドウのタイトルのフォント」も10に。<br>標準的な表示になった。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>ネットブックにインストールしたLubuntu14.04.1で、ブラウザーでもファイルマネージャーでも何でもデカデカと大きく表示される。<br>モニターの解像度は確かに低いが、マルチブートで入れているXubuntuの方はそうでもない。<br>解像度の設定のせいかとも思ったが、]]>
+    </summary>
+    
+      <category term="linux" scheme="http://pagent.github.io/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[隠しファイルの検索など（findコマンド）]]></title>
@@ -489,31 +506,6 @@ sudo cp -r copy/x86_64 /opt/copy
     </summary>
     
       <category term="Windows" scheme="http://pagent.github.io/tags/Windows/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Linux用ウイルススキャンソフトClamTkを使ってみた]]></title>
-    <link href="http://pagent.github.io/2015/01/20/clamtk/"/>
-    <id>http://pagent.github.io/2015/01/20/clamtk/</id>
-    <published>2015-01-20T14:24:38.000Z</published>
-    <updated>2015-01-21T08:18:59.000Z</updated>
-    <content type="html"><![CDATA[<p>Xubuntu14.04にClamTkを導入した。<br>Ubuntuソフトウェアセンターを使ったが、v4.45(デフォルト)の他v5.09(trusty-backports)もインストール可能。  </p>
-<p>ファイルマネージャーNemo上で右クリックから簡単にファイルをウイルススキャン出来るよう、nemo-sendto-clamtk_0.02-1もインストールした。<br><a href="http://ubuntuapps.blog67.fc2.com/blog-entry-609.html" target="_blank" rel="external">ClamTkでウイルススキャンをThunarやNemoの右クリックメニューに追加する | Ubuntuアプリのいいところ</a>  </p>
-<p>「ディレクトリを再帰的にスキャンする」「20MB以上のファイルもスキャンする」「ドットで始まるファイルをスキャンする(.*)」にチェックを入れてhomeディレクトリをスキャンしてもなにも検出されなかったが、「不要なアプリケーション(PUA)をスキャンする」にもチェックを入れると、  </p>
-<p>~/.cache/mozilla/firefox/…<br>~/.cache/chromium/Default/Cache/…<br>~/.cache/midori/web/…  </p>
-<p>など、11個のファイルが「潜在的な脅威」として検出された。  </p>
-<p>VirusTotalを使った「解析」しようとしたが、何故かファイルを送信できず実行出来ない。<br>ただのブラウザのキャッシュのようだが、気持ち悪いのですべて削除した。  </p>
-<p>LinuxはWindowsより安全というし、それほど神経質にならなくても良いかもしれないが、たまにウイルススキャンしてみても良いかもしれない。  </p>
-<p>ーー<br>（追記）<br>Windows領域もスキャンしたら、「脅威」であるはずのないものまでいくつも「潜在的な脅威」として検出されて100を超えてしまった。<br>だが「不要なアプリケーション(PUA)をスキャンする」のチェックを外してスキャンしたら6だった。<br>「解析」では問題のあるファイルではないようだったので、そのままにしておくことにしたが。  </p>
-<p>「不要なアプリケーション(PUA)をスキャンする」のチェックは外して使用した方が良いのかもしれない。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Xubuntu14.04にClamTkを導入した。<br>Ubuntuソフトウェアセンターを使ったが、v4.45(デフォルト)の他v5.09(trusty-backports)もインストール可能。  </p>
-<p>ファイルマネージャーNemo上で右クリックから簡単にファイ]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
     
   </entry>
   
