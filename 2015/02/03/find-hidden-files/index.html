@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Dolphinが.directoryファイルを生成するのを止める | Pagent</title>
+  <title>隠しファイルの検索など（findコマンド） | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Dolphinが.directoryファイルを生成するのを止める"/>
+  <meta property="og:title" content="隠しファイルの検索など（findコマンド）"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -94,7 +94,7 @@
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> Dolphinが.directoryファイルを生成するのを止める</h1>
+			<h1> 隠しファイルの検索など（findコマンド）</h1>
 		</div>
 	
 
@@ -110,17 +110,32 @@
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>ファイルマネージャーDolphinを使っていて、あちこちのディレクトリに.directoryというファイルがあることに気付いた。  </p>
-<p>内容は以下のようなもの。  </p>
-<blockquote>
-<p>[Dolphin]<br>Timestamp=2015,2,2,22,45,9<br>Version=3<br>ViewMode=2</p>
-<p>[Settings]<br>HiddenFilesShown=true</p>
-</blockquote>
-<p>Dolphinでアイコン表示、詳細表示などの表示モードやソート基準を変更をしたり、隠しファイルを表示したりすると、この.directoryファイルが自動生成されるようだ。<br>（/etc等、所有者がrootのディレクトリには作成されない。）  </p>
-<p>多くのファイルマネージャーでは隠しファイルの表示・非表示をディレクトリ毎に設定出来ないが、Dolphinでは.directoryファイルのおかげでディレクトリ毎に設定可能になっている。  </p>
-<p>便利と言えば便利なのだが、静的サイトジェネレーターHexoの作業フォルダ内にこの.directoryファイルを作られるのはまずい気がする。<br>deployやgitコマンドの際に不具合が出るかもしれない。  </p>
-<p>Dolphinの設定→全般→動作タブで、「フォルダごとにビューのプロパティを保存する」から「すべてのフォルダに共通のプロバティを使う」に変更したら、.directoryファイルは生成されなくなった。<br><a href="https://forum.kde.org/viewtopic.php?f=223&amp;t=119876" target="_blank" rel="external">.directory files • KDE Community Forums</a>  </p>
-<p>だが、表示モードやソート基準も全フォルダで共通になってしまった。<br>使い勝手が悪く、これならnemoの方が便利だ。</p>
+	    <p>Dolphinが自動生成した.directoryファイルを削除しようと、ファイルマネージャーで”.directory”を検索したが、ファイルが見つからない。<br>“directory”でも該当無し。<br>確かにあるのだが、ファイルマネージャーの機能では隠しファイルを検索出来ないらしい。</p>
+<p>端末でfindコマンドを使ったらヒットした。  </p>
+<pre><code>find ~/ -name .directory
+// ~/ディレクトリ以下で名前に&quot;.directory&quot;を含むファイル・ディレクトリを再帰的に検索
+</code></pre><p>ーー<br>以下、findコマンドについて  </p>
+<p><strong>Linuxではディレクトリを省略すると、カレントディレクトリ以下で検索</strong><br>（他のUNIXでは<code>.</code>が必要。）</p>
+<pre><code>find -name .directory
+find . -name .directory
+</code></pre><p><strong>-typeオプションで検索対象の種類を指定（ファイル、ディレクトリ、リンク）</strong>  </p>
+<pre><code>find -type f
+find -type d
+find -type l
+</code></pre><p><strong>名前の前後にワイルドカード<code>*</code>を付けての検索が可能</strong>  </p>
+<pre><code>find -type f -name &quot;*.pdf&quot;
+</code></pre><p>（名前にワイルドカードを付ける場合は、半角ダブルクォーテーション<code>&quot;</code>で囲った方が良いらしい。 「find: パス名は評価式の前に置かなければいけません」とエラーになることがある。） </p>
+<p><strong>-sizeオプションでサイズを指定</strong>  </p>
+<pre><code>find -type f -name &quot;*.JPG&quot; -size +1000k
+</code></pre><p>（1000KB以上の.JPGファイルを検索。JPGとjpgは区別される。）</p>
+<p><strong>-deleteオプションで該当ファイルを削除</strong>  </p>
+<pre><code>find -type f -name &quot;*.hogehoge&quot; -delete
+</code></pre><p>など。  </p>
+<p>（参照）<br><a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20060227/230777/" target="_blank" rel="external">Linuxコマンド集 - 【 find 】 ファイルやディレクトリを検索する：ITpro</a><br><a href="http://x68000.q-e-d.net/~68user/unix/pickup?find" target="_blank" rel="external">UNIXの部屋 コマンド検索:find (*BSD/Linux)</a>  </p>
+<p>またディレクトリにワイルドカード<code>*</code>を付けると検索結果が異なる様子。  </p>
+<pre><code>find ~/* -name .directory
+</code></pre><p>~/.kde/share/apps/dolphin/view_properties/global/.directory<br>~/.kde/share/apps/dolphin/view_properties/local/usr/.directory<br>などがリストアップされなかった。  </p>
+<p>隠しフォルダ内が検索対象から外れるのかとも思ったが、自作した隠しフォルダは検索された。<br>この辺はよく分からない。</p>
 
 	</div>
 
@@ -136,13 +151,13 @@
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2015/02/03/find-hidden-files/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2015/02/03/xubuntu-dolphin-root-actions/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2015/02/03/dolphin-directory-files/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -190,7 +205,7 @@
     <ul id="tags" class="tag_box list-unstyled collapse in">
 	    <!-- _partial/post/tag -->
   
-  <li><a href="/tags/Linux/">Linux</a></li>
+  <li><a href="/tags/コマンド/">コマンド</a></li>
 
     </ul>
 	</div>
