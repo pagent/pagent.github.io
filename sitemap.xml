@@ -2,6 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2015/02/04/elementary-os/</loc>
+    <lastmod>2015-02-04T08:26:15.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2014/12/21/clean-links/</loc>
+    <lastmod>2015-02-04T01:21:08.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2014/12/12/bulk-change/</loc>
+    <lastmod>2015-02-03T23:28:32.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2015/01/17/fstab-uuid-label/</loc>
+    <lastmod>2015-02-03T23:27:57.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2015/01/31/qupzilla-simplenote/</loc>
     <lastmod>2015-02-03T13:05:28.000Z</lastmod>
   </url>
@@ -167,11 +187,6 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2015/01/17/fstab-uuid-label/</loc>
-    <lastmod>2015-01-17T05:21:33.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://pagent.github.io/2015/01/14/lubuntu-nm-applet/</loc>
     <lastmod>2015-01-15T01:19:05.000Z</lastmod>
   </url>
@@ -272,11 +287,6 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/12/21/clean-links/</loc>
-    <lastmod>2014-12-21T02:06:56.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://pagent.github.io/2014/12/13/qiita/</loc>
     <lastmod>2014-12-13T05:35:49.000Z</lastmod>
   </url>
@@ -292,17 +302,7 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/12/12/bulk-change/</loc>
-    <lastmod>2014-12-12T05:49:50.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://pagent.github.io/2014/12/05/kareha/</loc>
-    <lastmod>2014-12-11T21:42:34.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2014/11/06/hana-no-iro/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   
@@ -478,6 +478,11 @@
   
   <url>
     <loc>http://pagent.github.io/2014/11/22/octopress-hexo/</loc>
+    <lastmod>2014-12-11T21:42:34.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2014/11/06/hana-no-iro/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   

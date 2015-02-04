@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Lubuntuで解像度が低いと思ったら、ルックアンドフィールのフォントサイズだった | Pagent</title>
+  <title>elementary OS（Luna）をインストールしてみた | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Lubuntuで解像度が低いと思ったら、ルックアンドフィールのフォントサイズだった"/>
+  <meta property="og:title" content="elementary OS（Luna）をインストールしてみた"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -94,7 +94,7 @@
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> Lubuntuで解像度が低いと思ったら、ルックアンドフィールのフォントサイズだった</h1>
+			<h1> elementary OS（Luna）をインストールしてみた</h1>
 		</div>
 	
 
@@ -110,8 +110,19 @@
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>ネットブックにインストールしたLubuntu14.04.1で、ブラウザーでもファイルマネージャーでも何でもデカデカと大きく表示される。<br>モニターの解像度は確かに低いが、マルチブートで入れているXubuntuの方はそうでもない。<br>解像度の設定のせいかとも思ったが、ディスプレイの設定ではちゃんと解像度1024×600、リフレッシュシート60.0になっている。<br>xrandrコマンドでも正常のよう。<br>あちこち設定を見てようやくルックアンドフィールの設定だと分かった。  </p>
-<p>メニュー→設定→ルックアンドフィールを設定します<br>ウィジェットでデフォルトのフォントが11になっていたのを10に変更。<br>ウィンドウ境界→タイトルバーの「アクティブウィンドウのタイトルのフォント」、「非アクティブウィンドウのタイトルのフォント」も10に。<br>標準的な表示になった。</p>
+	    <p>軽量Linuxにelementary OSというのがあるらしいので、Windows Xp時代のネットブックにインストールしてみた。<br><a href="http://mogi2fruits.net/blog/os-software/linux/elementary-os/2772/" target="_blank" rel="external">elementary OS – 軽い！キレイ！日本語OK！ な Ubuntu ベースの軽量Linux | mogi2fruitsどっとねっと</a>  </p>
+<p>ダウンロードリンクに”$10.00”と書いてあり、「有料か？」と躊躇したが、参照サイトにある通り強制的なものではないらしい。  </p>
+<p>Ubuntu12.04ベースらしく、インストールは戸惑うことも無く終了。  </p>
+<p>外観はXubuntuやLubuntuとは随分違っておしゃれな印象。<br>視覚効果もなかなか凝っていて優雅さを感じさせる。    </p>
+<p>デフォルトではScrachという聞いたこともないテキストエディターと、名前も分からないファイルマネージャーが入っていたが、それぞれGeditとnemoに変更。  </p>
+<p>Dropboxクライアントも入れようと、Ubuntuソフトウェアセンターから試みたが途中でフリーズ。<br>中途半端にインストールされたせいか、その後Synapticやsudo apt-get updateが使えなくなってしまった。  </p>
+<p>少々焦ったが、２ちゃんねるのカキコを参考に、nautilus-dropboxを削除したら復旧した。<br><a href="http://hayabusa6.2ch.net/test/read.cgi/linux/1412604392/301" target="_blank" rel="external">【人気一位】Linux Mint 15</a>  </p>
+<p>nautilus-dropboxが上手くインストール出来ないのは、Ubuntu12.04特有のバグらしい。<br>Dropbox公式サイトの記載通り、コマンドラインでインストールしたら無事にインストール出来た。<br><a href="https://www.dropbox.com/install?os=lnx" target="_blank" rel="external">Linux マシンに Dropbox をインストール</a>  </p>
+<p>コマンドラインからのインストールだと、Dropboxを起動してもトレイアイコンが表示されないようだが、これは諦める。  </p>
+<p>elementary OSのメニューはクラシックなタイプではなく板状のもの。<br>メニューのカスタマイズ性は高くないようだ。  </p>
+<p>下部にあるDock内のアイコンはクリックするとぴょんぴょん跳ねるので、クリックし損なったかと何度もクリックしてしまう恐れは少ない。<br>また既に立ち上げているアプリケーションは基本、新規ウィンドウで開かず既存のウィンドウにフォーカスしてくれる。<br>Dockを下部ではなく横配置に変更出来たらもっと有難いんだが。  </p>
+<p>システムモニターのみ開き他のアプリケーションを起動していない状態で消費メモリは240MiB程度。<br>システムフォントのサイズも小さ目で、モニター画面の小さなネットブックには調度良い。  </p>
+<p>好みに合わせてカスタマイズするにはあまり向いていないようだが、魅力的なOSだ。</p>
 
 	</div>
 
@@ -127,13 +138,13 @@
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2015/02/04/elementary-os/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2015/02/03/find-hidden-files/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2015/02/03/lubuntu-look-and-feel/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -167,7 +178,7 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2015年2月3日
+	2015年2月4日
 	</div>
 	
 
