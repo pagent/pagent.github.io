@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-02-04T08:42:05.947Z</updated>
+  <updated>2015-02-04T09:09:40.706Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/02/04/elementary-os/"/>
     <id>http://pagent.github.io/2015/02/04/elementary-os/</id>
     <published>2015-02-04T08:17:25.000Z</published>
-    <updated>2015-02-04T08:26:15.000Z</updated>
+    <updated>2015-02-04T09:09:22.000Z</updated>
     <content type="html"><![CDATA[<p>軽量Linuxにelementary OSというのがあるらしいので、Windows Xp時代のネットブックにインストールしてみた。<br><a href="http://mogi2fruits.net/blog/os-software/linux/elementary-os/2772/" target="_blank" rel="external">elementary OS – 軽い！キレイ！日本語OK！ な Ubuntu ベースの軽量Linux | mogi2fruitsどっとねっと</a>  </p>
 <p>ダウンロードリンクに”$10.00”と書いてあり、「有料か？」と躊躇したが、参照サイトにある通り強制的なものではないらしい。  </p>
 <p>Ubuntu12.04ベースらしく、インストールは戸惑うことも無く終了。  </p>
@@ -30,7 +30,7 @@
 <p>nautilus-dropboxが上手くインストール出来ないのは、Ubuntu12.04特有のバグらしい。<br>Dropbox公式サイトの記載通り、コマンドラインでインストールしたら無事にインストール出来た。<br><a href="https://www.dropbox.com/install?os=lnx" target="_blank" rel="external">Linux マシンに Dropbox をインストール</a>  </p>
 <p>コマンドラインからのインストールだと、Dropboxを起動してもトレイアイコンが表示されないようだが、これは諦める。  </p>
 <p>elementary OSのメニューはクラシックなタイプではなく板状のもの。<br>メニューのカスタマイズ性は高くないようだ。  </p>
-<p>下部にあるDock内のアイコンはクリックするとぴょんぴょん跳ねるので、クリックし損なったかと何度もクリックしてしまう恐れは少ない。<br>また既に立ち上げているアプリケーションは基本、新規ウィンドウで開かず既存のウィンドウにフォーカスしてくれる。<br>Dockを下部ではなく横配置に変更出来たらもっと有難いんだが。  </p>
+<p>下部にあるDock内のアイコンは、クリックするとぴょーんと跳ねるので、クリックし損なったかと何度もクリックしてしまう恐れは少ない。<br>また既に立ち上げているアプリケーションは基本、新規ウィンドウで開かず既存のウィンドウにフォーカスしてくれる。Dock内のアイコンも跳ねない。<br>Dockを下部ではなく横配置に変更出来たらもっと有難いんだが。  </p>
 <p>システムモニターのみ開き他のアプリケーションを起動していない状態で消費メモリは240MiB程度。<br>システムフォントのサイズも小さ目で、モニター画面の小さなネットブックには調度良い。  </p>
 <p>好みに合わせてカスタマイズするにはあまり向いていないようだが、魅力的なOSだ。</p>
 ]]></content>
