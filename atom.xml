@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-02-04T09:09:40.706Z</updated>
+  <updated>2015-02-04T12:58:37.103Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,24 +15,78 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Puppy LinuxのGrub４Dosインストール時に「要素が欠けています。」のエラー]]></title>
+    <link href="http://pagent.github.io/2015/02/04/puppy-grub4dos-error/"/>
+    <id>http://pagent.github.io/2015/02/04/puppy-grub4dos-error/</id>
+    <published>2015-02-04T12:47:43.000Z</published>
+    <updated>2015-02-04T12:58:19.000Z</updated>
+    <content type="html"><![CDATA[<p>ネットブックLaVie Light BL300/TにPrecise Puppy 5.7.1日本語版をFrugalインストールした。  </p>
+<p>既存のOS領域にもインストール出来るらしいが、Gpartedで新たにパーティションを用意。<br>ファイルのコピーは順調に進んだが、Grub４Dosのインストールでつまづいてしまった。  </p>
+<p>「Grub４Dosブートローダーの設定」で「PBSも表示」をクリックし、Grub４Dosをインストールする場所をPuppy用のパーティションに指定。  </p>
+<p>追加オプションの「ブートレコードを書き換えない」をマウスオーバーすると、  </p>
+<blockquote>
+<p>すでにあるMBRを変更したくないときにのみチェックしてください。<br>現在grldrが起動できるようになっていることが前提です。　フロッピーでは無効</p>
+</blockquote>
+<p>というツールチップが表示された。  </p>
+<p>MBRにはすでにMBM（Multiple Boot Manager）が入っているので、「ブートレコードを書き換えない」にチェック。<br>個人用ファイルの保存を終え再起動したが、”Invalid boot record”とエラーになり、起動出来ない。  </p>
+<p>怪訝に思いながらも「ブートレコードを書き換えない」をチェックせずに、再度Grub４Dosをインストールし直した。  </p>
+<p>すると今度は</p>
+<blockquote>
+<p>この機能を実行するにはいくつかの要素が欠けています。　:/usr/lib/grub4dos/chain.c32, extlinux/syslinux(version &gt; =  4.0)</p>
+</blockquote>
+<p>と警告。  </p>
+<p>構わずOKをクリックして進めると、</p>
+<blockquote>
+<p>不明のエラーが生じました。<br>See /tmp/grub4dosconfig/grub4dosconfig.log</p>
+</blockquote>
+<p>とエラー。  </p>
+<p>grub4dosconfig.logは下記だった。 </p>
+<blockquote>
+<p>/usr/sbin/grub4dosconfig PBS<br>version 1.9.1<br>2015年  2月  4日 水曜日 04:09:01 JST<br>Writing… /initrd/mnt/dev_save/menu.lst<br>Installing grldr …<br><code>/usr/lib/grub4dos/grldr&#39; -&gt;</code>/initrd/mnt/dev_save/grldr’</p>
+</blockquote>
+<p>“Error”とは特に書いていないので再起動してみたが、やはり起動出来ない。  </p>
+<p>Grub４Dosのエラーについて検索すると、下記のディスカッションが見つかった。<br><a href="http://www.murga-linux.com/puppy/viewtopic.php?t=91838" target="_blank" rel="external">Puppy Linux Discussion Forum :: View topic - slacko 5.6, Grub4Dos doesn’t install</a>  </p>
+<p>どうやらext4でフォーマットされたパーティションにGrub４Dosをインストールするには、chain.c32およびバージョン4.0以上のextlinuxが必要らしい。<br>Puppy Linux用のパーティションをext4でフォーマットしていたのが原因だったようだ。  </p>
+<p>パーティションをext3でフォーマットし直し、再度Puppyをインストール。  </p>
+<p>Grub４Dosの設定では「ブートレコードを書き換えない」のチェックを入れて試みたが駄目で、チェックを外してGrub４Dosを入れ直して、ようやくハードディスクからPuppy Linuxを起動出来た。   </p>
+<p>MBM→各PBSのブートレコード→各OSの起動、という形でマルチブートしているので、「ブートレコードを書き換えない」のツールチップの説明が少し分かりにくかった。  </p>
+<p>インストールに成功した際のgrub4dosconfig.logは下記。  </p>
+<blockquote>
+<p>/usr/sbin/grub4dosconfig PBS<br>version 1.8.9<br>2015年  2月  4日 水曜日 05:03:13 JST<br>Writing… /mnt/sda9/menu.lst<br>Installing grldr …<br><code>/usr/lib/grub4dos/grldr&#39; -&gt;</code>/mnt/sda9/grldr’<br>Installing bootloader on /dev/sda9(PBS)…</p>
+<p>Filesystem type is EXT2.</p>
+<p>Success.</p>
+</blockquote>
+<p>（Grub4DosをPuppy Linux 5.5のUSBメモリーからインストールし直したので、versionは1.8.9。）</p>
+<p>“Filesystem type is EXT2.”となっているが、MBMでもext3やext4をext2と認識しているようだし、問題無いのだろう。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>ネットブックLaVie Light BL300/TにPrecise Puppy 5.7.1日本語版をFrugalインストールした。  </p>
+<p>既存のOS領域にもインストール出来るらしいが、Gpartedで新たにパーティションを用意。<br>ファイルのコピーは順調に進]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[elementary OS（Luna）をインストールしてみた]]></title>
     <link href="http://pagent.github.io/2015/02/04/elementary-os/"/>
     <id>http://pagent.github.io/2015/02/04/elementary-os/</id>
     <published>2015-02-04T08:17:25.000Z</published>
-    <updated>2015-02-04T09:09:22.000Z</updated>
+    <updated>2015-02-04T12:46:11.000Z</updated>
     <content type="html"><![CDATA[<p>軽量Linuxにelementary OSというのがあるらしいので、Windows Xp時代のネットブックにインストールしてみた。<br><a href="http://mogi2fruits.net/blog/os-software/linux/elementary-os/2772/" target="_blank" rel="external">elementary OS – 軽い！キレイ！日本語OK！ な Ubuntu ベースの軽量Linux | mogi2fruitsどっとねっと</a>  </p>
-<p>ダウンロードリンクに”$10.00”と書いてあり、「有料か？」と躊躇したが、参照サイトにある通り強制的なものではないらしい。  </p>
-<p>Ubuntu12.04ベースらしく、インストールは戸惑うことも無く終了。  </p>
-<p>外観はXubuntuやLubuntuとは随分違っておしゃれな印象。<br>視覚効果もなかなか凝っていて優雅さを感じさせる。    </p>
+<p>ダウンロードリンクに”$10.00”と書いてあり、「有料か？」と躊躇したが、参照サイトにある通り強制的なものではない。  </p>
+<p>Ubuntu12.04ベースらしく、インストールは戸惑うこと無く終了。  </p>
+<p>XubuntuやLubuntuとは違って随分おしゃれな外観。<br>視覚効果もなかなか凝っている。  </p>
 <p>デフォルトではScrachという聞いたこともないテキストエディターと、名前も分からないファイルマネージャーが入っていたが、それぞれGeditとnemoに変更。  </p>
 <p>Dropboxクライアントも入れようと、Ubuntuソフトウェアセンターから試みたが途中でフリーズ。<br>中途半端にインストールされたせいか、その後Synapticやsudo apt-get updateが使えなくなってしまった。  </p>
-<p>少々焦ったが、２ちゃんねるのカキコを参考に、nautilus-dropboxを削除したら復旧した。<br><a href="http://hayabusa6.2ch.net/test/read.cgi/linux/1412604392/301" target="_blank" rel="external">【人気一位】Linux Mint 15</a>  </p>
-<p>nautilus-dropboxが上手くインストール出来ないのは、Ubuntu12.04特有のバグらしい。<br>Dropbox公式サイトの記載通り、コマンドラインでインストールしたら無事にインストール出来た。<br><a href="https://www.dropbox.com/install?os=lnx" target="_blank" rel="external">Linux マシンに Dropbox をインストール</a>  </p>
-<p>コマンドラインからのインストールだと、Dropboxを起動してもトレイアイコンが表示されないようだが、これは諦める。  </p>
-<p>elementary OSのメニューはクラシックなタイプではなく板状のもの。<br>メニューのカスタマイズ性は高くないようだ。  </p>
-<p>下部にあるDock内のアイコンは、クリックするとぴょーんと跳ねるので、クリックし損なったかと何度もクリックしてしまう恐れは少ない。<br>また既に立ち上げているアプリケーションは基本、新規ウィンドウで開かず既存のウィンドウにフォーカスしてくれる。Dock内のアイコンも跳ねない。<br>Dockを下部ではなく横配置に変更出来たらもっと有難いんだが。  </p>
-<p>システムモニターのみ開き他のアプリケーションを起動していない状態で消費メモリは240MiB程度。<br>システムフォントのサイズも小さ目で、モニター画面の小さなネットブックには調度良い。  </p>
-<p>好みに合わせてカスタマイズするにはあまり向いていないようだが、魅力的なOSだ。</p>
+<p>少々焦ったが、２ちゃんねるの書き込みを参考に、nautilus-dropboxを削除したら復旧した。<br><a href="http://hayabusa6.2ch.net/test/read.cgi/linux/1412604392/301" target="_blank" rel="external">【人気一位】Linux Mint 15</a>  </p>
+<p>nautilus-dropboxのインストールでの不具合はUbuntu12.04特有のバグらしい。<br>Dropbox公式サイトの記載通り、コマンドラインでインストールしたら無事にインストール出来た。<br><a href="https://www.dropbox.com/install?os=lnx" target="_blank" rel="external">Linux マシンに Dropbox をインストール</a>  </p>
+<p>コマンドラインからのインストールだと、Dropboxを起動してもインジケーター領域にアイコンが表示されない。<br>ログアウトして表示されるログイン画面では、GNOME Classic、GNOME Classic (No effects)、Pantheon、Ubuntuの4種のセッションを選択出来るが、Ubuntuセッションの時だけアイコンが表示された。  </p>
+<p>elementary OSのメインメニューはクラシックなドロップダウンタイプではなく最近流行りの板状のもの。<br>デフォルトではメニュー編集のツールも無く、カスタマイズ性は高くないようだ。<br>AlacarteとMenuLibleを入れてみたが、Alacarteは起動はするがメニューを編集しても反映されず、MenuLibleは起動も出来なかった。</p>
+<p>下部にあるDock内のアイコンは、クリックするとぴょーんと跳ねるので、クリックし損なったかと何度もクリックしてしまう恐れは少ない。<br>また既に立ち上げているアプリケーションは基本、新規ウィンドウで開かず既存のウィンドウにフォーカスしてくれる。Dock内のアイコンも跳ねない。<br>Dockを下部ではなく横配置に出来たらもっと有難いんだが。  </p>
+<p>システムモニターのみ開き、他のアプリケーションを起動していない状態でリソースを見ると、消費メモリは240MiB程度。<br>システムフォントのサイズも小さ目で、モニター画面の小さなネットブックには調度良い。  </p>
+<p>好みに合わせてカスタマイズするにはあまり向いていないようだが、優雅さが印象的なOSだ。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>軽量Linuxにelementary OSというのがあるらしいので、Windows Xp時代のネットブックにインストールしてみた。<br><a href="http://mogi2fruits.net/blog/os-software/linux/elementary-os]]>
@@ -493,27 +547,6 @@ sudo cp -r copy/x86_64 /opt/copy
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Lubuntu14.04でメインメニューの編集をしたかったのだが、手動で設定するのは難しそう。<br><a href="https://wiki.archlinux.org/index.php/LXDE_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29#.]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Lubuntuで 「デスクトップマネージャはアクティブではありません」のエラー表示]]></title>
-    <link href="http://pagent.github.io/2015/01/23/lubuntu-desktop-manager/"/>
-    <id>http://pagent.github.io/2015/01/23/lubuntu-desktop-manager/</id>
-    <published>2015-01-22T15:15:48.000Z</published>
-    <updated>2015-01-28T09:39:08.000Z</updated>
-    <content type="html"><![CDATA[<p>13.04から14.04にアップグレードしたLubuntuで、いつのまにかデスクトップの壁紙が表示されなくなっていた。  </p>
-<p>壁紙を設定しようと「メニュー」→「設定」→「デスクトップの設定」と進んでも、「！ デスクトップマネージャはアクティブではありません。」とエラー表示が出て設定出来ない。<br>デスクトップ上での右クリックから「デスクトップの設定」を選択してもナシのつぶて。  </p>
-<p>Lubuntu14.04でのデスクトップの設定にはPCManFMが使われているようなので、「LXSessionのデフォルトのアプリケーション」でデフォルトのファイルマネージャーをnemoからPCManFMに戻してみたが、それでもデスクトップの設定が出来ない。  </p>
-<p>最終的には下記を参考に、SynapticからPCManFMを再インストールすることで、「デスクトップの設定」を正常に起動出来た｡<br><a href="http://ubuntuforums.org/showthread.php?t=2218084&amp;p=13090056#post13090056" target="_blank" rel="external">[lubuntu] message:desktop manager is not active</a>  </p>
-<p>自分の環境では、回答前段に書いてあるコマンドは行わず、PCManFMの再インストールだけで大丈夫だった。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>13.04から14.04にアップグレードしたLubuntuで、いつのまにかデスクトップの壁紙が表示されなくなっていた。  </p>
-<p>壁紙を設定しようと「メニュー」→「設定」→「デスクトップの設定」と進んでも、「！ デスクトップマネージャはアクティブではありません。」と]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
