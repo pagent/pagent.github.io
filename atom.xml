@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-02-05T15:46:42.862Z</updated>
+  <updated>2015-02-05T16:33:33.908Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/02/06/puppy-dropbox/"/>
     <id>http://pagent.github.io/2015/02/06/puppy-dropbox/</id>
     <published>2015-02-05T15:02:51.000Z</published>
-    <updated>2015-02-05T15:39:51.000Z</updated>
+    <updated>2015-02-05T16:33:24.000Z</updated>
     <content type="html"><![CDATA[<p>Puppy Linux5.7.1のパッケージマネージャにDropboxクライアントが見当たらないので、コマンドラインでインストールした。<br><a href="https://www.dropbox.com/install?os=lnx" target="_blank" rel="external">Linux マシンに Dropbox をインストール</a>  </p>
 <p>コマンドを入力すると、サーバー証明書エラーになった。  </p>
 <pre><code>cd ~ &amp;&amp; wget -O - &quot;https://www.dropbox.com/download?plat=lnx.x86&quot; | tar xzf -
@@ -36,8 +36,7 @@ tar: エラーを回復できません: 直ちに終了します
 <pre><code>cd ~ &amp;&amp; wget --no-check-certificate -O - &quot;https://www.dropbox.com/download?plat=lnx.x86&quot; | tar xzf -
 </code></pre><p>インストールは無事完了し、<code>~/.dropbox-dist/dropboxd</code>で起動出来た。  </p>
 <p>後になって気がついたが、Puppy Linuxのタスクトレイの時刻がおかしい。<br>約9時間遅れている。  </p>
-<p>そういえば、Puppy Linuxを起動してすぐに表示される国と時刻の設定を、面倒臭くて飛ばしてたんだった。  </p>
-<p>こちらの時刻がおかしくてエラーになってたようだ。</p>
+<p>そういえば、Puppy Linuxを起動してすぐに表示される国とタイムゾーンの設定を、面倒臭くて飛ばしていたんだった。<br>このせいでエラーが出ていたんだろうか。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Puppy Linux5.7.1のパッケージマネージャにDropboxクライアントが見当たらないので、コマンドラインでインストールした。<br><a href="https://www.dropbox.com/install?os=lnx" target="_blank" ]]>
