@@ -112,6 +112,43 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/12/05/kareha/" >枯れ葉</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年12月5日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>からからとアスファルトの上枯れ葉転がり</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/05/kareha/" data-text="枯れ葉 | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/12/05/hexo-vs-octopress/" >HexoとOctopressの比較</a>
 		</h3>
 	
@@ -598,53 +635,6 @@ $(&quot;.navbar&quot;).fadeTo(100, 0.2);
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/29/page-no-date/" >Hexoの固定ページを日付け無しに</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月29日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Hexoでは固定ページを作る際、コマンド<code>hexo new page （ページ名）</code>でsource/（ページ名）下にindex.mdが作成される。<br>tagsやcategoriesは使えないようになっている。<br>コメントを禁止にするには、Front Matterに<code>comments: false</code>を加えれば良い。  </p>
-<p>固定ページでは日付けも表示したくないところだが、<code>date:</code>の項目を消してみるても、ファイルを更新した日付けが表示されてしまう。<br>themes/landscape/layout/page.ejsを見ると、post.ejsと同じ_partial/article.ejsがレイアウトとして使われていた。  </p>
-<p>_partialディレクトリ下のarticle.ejsをarticle-page.ejsという名前でコピー。<br>4行目の  </p>
-<pre><code>&lt;%- partial(&#39;post/date&#39;, {class_name: &#39;article-date&#39;, date_format: null}) %&gt;
-</code></pre><p>を削除。  </p>
-<p>page.ejsの  </p>
-<pre><code>&lt;%- partial(&#39;_partial/article&#39;, {post: page, index: false}) %&gt;
-</code></pre><p>を</p>
-<pre><code>&lt;%- partial(&#39;_partial/article-page&#39;, {post: page, index: false}) %&gt;
-</code></pre><p>に変更した。  </p>
-<p>希望通り、日付けが削除された。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/29/page-no-date/" data-text="Hexoの固定ページを日付け無しに | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -686,6 +676,10 @@ $(&quot;.navbar&quot;).fadeTo(100, 0.2);
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/02/06/puppy-dropbox/" ><i class="fa fa-file-o"></i>Puppy LinuxにDropboxクライアントをイ...</a>
+      </li>
+    
+      <li>
         <a href="/2015/02/05/roxterm-segmentation-fault/" ><i class="fa fa-file-o"></i>ターミナルミュレーターRoxtermで&quot;Segment...</a>
       </li>
     
@@ -699,10 +693,6 @@ $(&quot;.navbar&quot;).fadeTo(100, 0.2);
     
       <li>
         <a href="/2015/02/03/lubuntu-look-and-feel/" ><i class="fa fa-file-o"></i>Lubuntuで解像度が低いと思ったら、ルックアンドフ...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/02/03/find-hidden-files/" ><i class="fa fa-file-o"></i>隠しファイルの検索など（findコマンド）</a>
       </li>
     
   </ul>
@@ -720,35 +710,35 @@ $(&quot;.navbar&quot;).fadeTo(100, 0.2);
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>27</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/アプリケーション/">アプリケーション<span>1</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>10</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
+			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
 			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+			<li><a href="/tags/アプリケーション/">アプリケーション<span>0</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>8</span></a></li>
 		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>10</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>29</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
 		
 		</ul>
@@ -760,7 +750,7 @@ $(&quot;.navbar&quot;).fadeTo(100, 0.2);
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

@@ -112,6 +112,60 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/02/06/puppy-dropbox/" >Puppy LinuxにDropboxクライアントをインストール</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月6日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Puppy Linux5.7.1のパッケージマネージャにDropboxクライアントが見当たらないので、コマンドラインでインストールした。<br><a href="https://www.dropbox.com/install?os=lnx" target="_blank" rel="external">Linux マシンに Dropbox をインストール</a>  </p>
+<p>コマンドを入力すると、サーバー証明書エラーになった。  </p>
+<pre><code>cd ~ &amp;&amp; wget -O - &quot;https://www.dropbox.com/download?plat=lnx.x86&quot; | tar xzf -
+
+...
+エラー: cannot verify www.dropbox.com&#39;s certificate, issued by `/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert SHA2 Extended Validation Server CA&#39;:
+  発行者の権限を検証できませんでした。
+www.dropbox.com に安全の確認をしないで接続するには、`--no-check-certificate&#39; を使ってください。
+
+gzip: stdin: unexpected end of file
+tar: Child returned status 1
+tar: エラーを回復できません: 直ちに終了します
+</code></pre><p>原因がよく分からないがdropbox.comは安全だろうと、`—no-check-certificate’のオプションを付けてインストールした。  </p>
+<pre><code>cd ~ &amp;&amp; wget --no-check-certificate -O - &quot;https://www.dropbox.com/download?plat=lnx.x86&quot; | tar xzf -
+</code></pre><p>インストールは無事完了し、<code>~/.dropbox-dist/dropboxd</code>で起動出来た。  </p>
+<p>後になって気がついたが、Puppy Linuxのタスクトレイの時刻がおかしい。<br>約9時間遅れている。  </p>
+<p>そういえば、Puppy Linuxを起動してすぐに表示される国と時刻の設定を、面倒臭くて飛ばしてたんだった。  </p>
+<p>こちらの時刻がおかしくてエラーになってたようだ。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/06/puppy-dropbox/" data-text="Puppy LinuxにDropboxクライアントをインストール | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/02/05/roxterm-segmentation-fault/" >ターミナルミュレーターRoxtermで&quot;Segmentation fault&quot;</a>
 		</h3>
 	
@@ -558,52 +612,6 @@ login_cookie_expire = 1209600
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/01/31/qupzilla-simplenote/" >軽量ブラウザQupZillaをSimplenoteアプリとして使う</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年1月31日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>オンラインノートSimplenoteと同期出来るメモ帳アプリnvPY。<br>良いかと思ったが、マウス右クリックでのコピー・ペーストが出来ないというのが、やはり致命的に使いづらい。<br>かといってわざわざFirefoxを起動してブックマークからサイトを開いて、というのももどかしい。  </p>
-<p>そこで、適当なブラウザをSimplenote専用にし、ランチャーに登録しようと考えた。<br>まず候補に上がったのがキーボードで操作するブラウザLuakit。  </p>
-<p>ところが、起動からSimplenoteのサイト表示までが、期待したほど早くない。<br>それに起動時に縮小表示してコンパクトにしたいところだが、それも難しいようだ。  </p>
-<p>他に良いブラウザは無いかと、Ubuntuソフトウェアセンターで片っ端からインストールしてみた。<br>あまり有名ではないと思うが、QupZillaというのが目的にピッタリだった。<br><a href="http://www.qupzilla.com/" target="_blank" rel="external">QupZilla - マルチプラットフォーム対応、軽量ブラウザ</a>  </p>
-<p>起動速度、サイト表示が早い。<br>設定→ブラウジング→Web設定でデフォルトのズーム率も任意に設定出来る。  </p>
-<p>小さめの倍率にし、ナビゲーションツールバーとブックマークツールバーを非表示に。<br>設定→タブで「タブが1つだけの時タブバーを非表示」にチェックを入れたら、許容範囲内のコンパクトさになってくれた。<br>ランチャーにコマンドを登録して完了。  </p>
-<pre><code>qupzilla https://app.simplenote.com/
-</code></pre><p>まるでメモ帳ソフトのようになった。  </p>
-<p>QupZillaにはFirefoxのようなアドオンこそ無いが、機能もそこそこ充実していて癖のない作り。<br>普段使いのブラウザとしても、軽快に活躍してくれそうだ。<br>Linuxのほか、Windows、Mac OS Xでも使えるというのも良い。  </p>
-<p>Simplenote専用にしておくのは、ちょっともったいないような気もする。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/31/qupzilla-simplenote/" data-text="軽量ブラウザQupZillaをSimplenoteアプリとして使う | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -645,6 +653,10 @@ login_cookie_expire = 1209600
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/02/06/puppy-dropbox/" ><i class="fa fa-file-o"></i>Puppy LinuxにDropboxクライアントをイ...</a>
+      </li>
+    
+      <li>
         <a href="/2015/02/05/roxterm-segmentation-fault/" ><i class="fa fa-file-o"></i>ターミナルミュレーターRoxtermで&quot;Segment...</a>
       </li>
     
@@ -658,10 +670,6 @@ login_cookie_expire = 1209600
     
       <li>
         <a href="/2015/02/03/lubuntu-look-and-feel/" ><i class="fa fa-file-o"></i>Lubuntuで解像度が低いと思ったら、ルックアンドフ...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/02/03/find-hidden-files/" ><i class="fa fa-file-o"></i>隠しファイルの検索など（findコマンド）</a>
       </li>
     
   </ul>
@@ -679,35 +687,35 @@ login_cookie_expire = 1209600
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>10</span></a></li>
-		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/アプリケーション/">アプリケーション<span>1</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>27</span></a></li>
+			<li><a href="/tags/Git/">Git<span>10</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
+			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
 			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
+		
+			<li><a href="/tags/アプリケーション/">アプリケーション<span>0</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>8</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>29</span></a></li>
 		
 		
 		</ul>
@@ -719,7 +727,7 @@ login_cookie_expire = 1209600
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
