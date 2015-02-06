@@ -112,6 +112,49 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/11/30/sidebar-git/" >Gitリポジトリを利用したブログとサイドバー</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月30日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>これまで、無料レンタルブログやWordPress、Octopressなどを使ったブログ含めて、ずっと右サイドバーの2コラムを好んで使って来た。  </p>
+<p>ブログを始めた頃は今のように、サイドバーの無いブログはあまり見かけなかったし、サイドバーはあるのが当たり前と思っていた。<br>訪問者がサイドバーを見て他の記事も読んでくれるかもしれないし。  </p>
+<p>普段使っているノートパソコンの右側にテンキーが付いていて、左に寄ってパソコンに向かうことになるので、記事が正面に来るよう、右サイドバーが都合が良かった。<br>両側サイドバーの3コラムは少しごちゃごちゃしている感じがして、好みではなかった。。  </p>
+<p>スマホに合わせるといっても、レスポンシブルデザインならサイドバーが下に回ってくれるし、レンタルブログサービスではスマホ用のページも用意してくれている。<br>サイドバーの無いブログを見ても、正直なにが良いのかよく分からなかった。<br>だが、静的サイトジェネレーターで作ったブログをGithub Pagesにdeployするようになって、考えが変わって来た。  </p>
+<p>サイドバーがあると、一つ記事を投稿しただけで、過去のすべての記事のサイドバーも変更される可能性がある。<br>「最近の記事」を表示している場合は当然そうだろうし、新たにタグやカテゴリーを追加した場合、それにカテゴリーや月別アーカイブの記事数が更新される場合も同様に違いない。<br>（JavaScriptを用いていたら大丈夫なのかもしれないが。）</p>
+<p>これをdeployすると、すべての記事を更新することになってしまう。<br>これでは非効率だし、.deploy/.git/objectsの肥大化の原因にもなるはず。<br>サイドバーが下にある場合も同様だろう。</p>
+<p>Github Pagesを使うなら、サイドバーは無い方が良さそうだ。<br>自分のことを思い返してみても、よほど興味のあるキーワードがある時以外は、サイドバーの項目をクリックすることはほとんど無いようだ。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/30/sidebar-git/" data-text="Gitリポジトリを利用したブログとサイドバー | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/11/29/page-no-date/" >Hexoの固定ページを日付け無しに</a>
 		</h3>
 	
@@ -719,59 +762,6 @@ tags:
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/24/hexo-windows-deploy/" >WindowsでHexoを使う（deploy）</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月24日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来ると思っていた。<br>だがdeployしようとすると、  </p>
-<pre><code>Run
-
-  git config --global user.email &quot;you@example.com&quot;
-  git config --global user.name &quot;Your Name&quot;
-</code></pre><p>と言われてしまった。  </p>
-<p>メールアドレスとGithubユーザー名を設定して、再度deployしようとしたが、  </p>
-<pre><code>Permission denied (publickey).
-fatal: Could not read from remote repository.
-
-Please make sure you have the correct access rights
-and the repository exists.
-</code></pre><p>とrejectされる。<br>よく考えたら当たり前だが、WindowsでもSSHキーの設定が必要らしい。  </p>
-<p>Linuxで設定したSSH秘密鍵と公開鍵の両方を<code>C:\Users\（ユーザー名）\.ssh</code>内にコピペしたら、ようやくdeploy出来た。  </p>
-<p>これで無事WindowsでもHexoを使えるようになった。  </p>
-<p>Hexoにはローカルホストで使う管理画面プラグインもあるようなので、もう少し導入が簡単になればWindowsユーザーにも静的サイトジェネレーターが広まる可能性があるんじゃないだろうか。  </p>
-<p>ーー<br>（関連記事）<br><a href="http://pagent.github.io/2014/11/24/hexo-windows/" target="_blank" rel="external">WindowsでHexoを使う（インストール） | Pagent</a></p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/24/hexo-windows-deploy/" data-text="WindowsでHexoを使う（deploy） | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -813,6 +803,10 @@ and the repository exists.
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/02/06/lxpup-LxQtPup/" ><i class="fa fa-file-o"></i>Puppy Linux派生。本家より扱いやすい「LxP...</a>
+      </li>
+    
+      <li>
         <a href="/2015/02/06/puppy-dropbox/" ><i class="fa fa-file-o"></i>Puppy LinuxにDropboxクライアントをイ...</a>
       </li>
     
@@ -826,10 +820,6 @@ and the repository exists.
     
       <li>
         <a href="/2015/02/04/elementary-os/" ><i class="fa fa-file-o"></i>elementary OS（Luna）をインストールしてみた</a>
-      </li>
-    
-      <li>
-        <a href="/2015/02/03/lubuntu-look-and-feel/" ><i class="fa fa-file-o"></i>Lubuntuで解像度が低いと思ったら、ルックアンドフ...</a>
       </li>
     
   </ul>
@@ -847,35 +837,35 @@ and the repository exists.
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/アプリケーション/">アプリケーション<span>0</span></a></li>
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
 		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>29</span></a></li>
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>8</span></a></li>
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>30</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>10</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/アプリケーション/">アプリケーション<span>0</span></a></li>
 		
 		
 		</ul>
@@ -887,7 +877,7 @@ and the repository exists.
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

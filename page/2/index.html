@@ -112,6 +112,55 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/02/01/piwik-login-cookie-expiration/" >Piwikのログイン・クッキー有効期限を延長する</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月1日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>オープンソースのアクセス解析ツールPiwikを導入している。<br>管理画面へのログイン時には「次回の入力を省略」にチェックを入れているが、頻回にパスワード入力を求められる。<br>FirefoxのアドオンFirebugでログイン時のリクエストヘッダーを見てみると、クッキーの有効期限が2週間しかないようだ。  </p>
+<p>Piwikのログイン・クッキー有効期限がどこで設定されているのか、あちこちファイルを見まわって、ようやくpiwik/config/global.ini.phpの210行目に見つけた。  </p>
+<pre><code>; login cookie expiration (14 days)
+login_cookie_expire = 1209600
+</code></pre><p>だが、global.ini.phpの冒頭には下記のように書いてある。  </p>
+<blockquote>
+<p>; If you want to change some of these default values, the best practise is to override<br>; them in your configuration file in config/config.ini.php. If you directly edit this file,<br>; you will lose your changes when you upgrade Piwik.<br>; For example if you want to override action_title_category_delimiter,<br>; edit config/config.ini.php and add the following:<br>; [General]<br>; action_title_category_delimiter = “-“</p>
+</blockquote>
+<p>global.ini.phpを直接編集しても、Piwikをアップグレードした際に元に戻ってしまうから、変更したい挙動はconfig/config.ini.phpに加筆して設定を上書きせよ、ということらしい。  </p>
+<p>自分の環境ではconfig.ini.phpの所有者はApacheになっていて、そのままではファイルを変更出来なかったので、パーミッションを644から646に変更。<br>クッキー有効期限を180日（15552000秒）にすることにして、global.ini.phpの[General]の箇所に  </p>
+<pre><code>login_cookie_expire = 15552000
+</code></pre><p>を加筆した。  </p>
+<p>Piwikにログインし直し、Firebugで確認すると、”Set-Cookie…expires=Fri, 31-Jul-2015 11:30:24”と、クッキーの有効期限が延長されていた。<br>ファイルのパーミッションを644に戻して作業終了。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/01/piwik-login-cookie-expiration/" data-text="Piwikのログイン・クッキー有効期限を延長する | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/01/31/qupzilla-simplenote/" >軽量ブラウザQupZillaをSimplenoteアプリとして使う</a>
 		</h3>
 	
@@ -518,50 +567,6 @@ sudo cp -r copy/x86_64 /opt/copy
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/01/24/hexo-favicon/" >Hexoにファビコン</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年1月24日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Hexoで書いているGitHub Pagesのブログにファビコンを入れた。<br>Hexoでは使用しているテーマでファビコンを設定するらしい。</p>
-<p>freewillというテーマを使っているので、hexo/themes/freewill/_config.ymlで<code>favicon: favicon.png</code>となっているのを確認し、 作成したfavicon.pngをhexo/themes/freewill/source内に置いた。   </p>
-<p>generate、deployしてFirefoxでサイトを表示すると、タブにはファビコンが表示されているものの、何故かサイドバーのブックマーク欄には作ったファビコンが表示されていない。<br>他のブラウザのRekonqやMidoriではタブにも表示されず。  </p>
-<p>ブラウザのキャッシュが残っているせいかと、キャッシュを削除したり、ファビコンのサイズを変えてみたりしたが、やはりブックマーク欄には表示されない。  </p>
-<p>拡張子を.pngではなく.icoで作り直し、/_config.ymlを<code>favicon: favicon.ico</code>にしたら、ようやくブックマーク欄にもファビコンが表示された。<br>他のブラウザでもちゃんと表示されている。  </p>
-<p>ちなみに.icoファイルでは複数のサイズの画像を一つのファイルに格納出来るらしい。<br><a href="http://www.hp-stylelink.com/news/2014/02/20140213.php" target="_blank" rel="external">複数サイズも一つのファイルで！マルチアイコンの「favicon（ファビコン）」作成方法 | Web制作会社スタイル</a>  </p>
-<p>ちょうど16×16、32×32、64×64の3つの.pngファイルを作成していたので、下記サイトでこの3サイズを格納したfavicon.icoにした。<br><a href="http://ao-system.net/alphaicon/" target="_blank" rel="external">無料で半透過マルチアイコンやファビコン(favicon.ico)作成。ギザギザの無い美しい影を持ったアイコン作成がフリーでできます。</a>  </p>
-<p>HexoやOctopressでも、ファビコンの拡張子は.icoの方が良いようだ。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/24/hexo-favicon/" data-text="Hexoにファビコン | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -603,6 +608,10 @@ sudo cp -r copy/x86_64 /opt/copy
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/02/06/lxpup-LxQtPup/" ><i class="fa fa-file-o"></i>Puppy Linux派生。本家より扱いやすい「LxP...</a>
+      </li>
+    
+      <li>
         <a href="/2015/02/06/puppy-dropbox/" ><i class="fa fa-file-o"></i>Puppy LinuxにDropboxクライアントをイ...</a>
       </li>
     
@@ -616,10 +625,6 @@ sudo cp -r copy/x86_64 /opt/copy
     
       <li>
         <a href="/2015/02/04/elementary-os/" ><i class="fa fa-file-o"></i>elementary OS（Luna）をインストールしてみた</a>
-      </li>
-    
-      <li>
-        <a href="/2015/02/03/lubuntu-look-and-feel/" ><i class="fa fa-file-o"></i>Lubuntuで解像度が低いと思ったら、ルックアンドフ...</a>
       </li>
     
   </ul>
@@ -637,33 +642,33 @@ sudo cp -r copy/x86_64 /opt/copy
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
 			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 			<li><a href="/tags/アプリケーション/">アプリケーション<span>0</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
+			<li><a href="/tags/Git/">Git<span>10</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>30</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>8</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>29</span></a></li>
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>10</span></a></li>
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
@@ -677,7 +682,7 @@ sudo cp -r copy/x86_64 /opt/copy
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

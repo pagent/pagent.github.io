@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-02-05T16:33:33.908Z</updated>
+  <updated>2015-02-06T09:12:36.203Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,49 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Puppy Linux派生。本家より扱いやすい「LxPup」と美しさが際立つ「LxQtPup」]]></title>
+    <link href="http://pagent.github.io/2015/02/06/lxpup-LxQtPup/"/>
+    <id>http://pagent.github.io/2015/02/06/lxpup-LxQtPup/</id>
+    <published>2015-02-06T01:02:10.000Z</published>
+    <updated>2015-02-06T09:10:52.000Z</updated>
+    <content type="html"><![CDATA[<p>Puppy Linuxのウィンドウマネージャーについて調べ物をしていたら、LxPup - Puppy Linux + LXDEというページがあった。<br><a href="http://sourceforge.jp/projects/sfnet_lxpup/" target="_blank" rel="external">LxPup - Puppy Linux + LXDE プロジェクト日本語トップページ - SourceForge.JP</a>  </p>
+<p>LxPup、LxQtPupというのを初めて知ったが、Puppy LinuxをLXDEデスクトップにアレンジしたものらしい。  </p>
+<p>早速、LxPup-15.02.2のPAE版と非PAE版、それとLxQtPup（非PAE）をダウンロードした。<br>いずれもSlacko Puppy 5.9.3がベースのもの。</p>
+<p>LxQtPupのウィンドウマネージャー「LXQt」というのは、「LXDE-QtとRazor-qtの成果物を統合したデスクトップ環境」で「Qtに移行したLXDEの後継バージョン」とのこと。<br><a href="http://ja.wikipedia.org/wiki/LXDE" target="_blank" rel="external">LXDE - Wikipedia</a><br>LXDEよりさらに軽いということか。  </p>
+<h3 id="試用してみての感想">試用してみての感想</h3>
+<p><strong>「LxPup」</strong></p>
+<p>ブートCDを焼き起動すると、PAEのLxPupはいきなり「Disabling IRQ #9」と出て、その後なんとか「Loading　kernel 　modules…」までは進んだが、そこでフリーズした様子。  </p>
+<p>非PAEの方で起動すると、無事デスクトップが表示された。  </p>
+<p>デスクトップに子犬の姿は無かったが、開始時に表示される言語やタイムゾーン、モニターなどの設定ウィンドウを閉じると、「ワン！ワン！」と元気に迎えてくれる。<br>本家Puppyよりすっきりした外観。  </p>
+<p>だが動作の軽快さは、まさにPuppy Linux。</p>
+<p>ファイルマネージャーにはPcmanfmが入っていた。<br>とても有難い。<br>Pupy標準のROX-filerは、コピーしようと思ってファイルをドラッグドロップすると、コピーではなくリンクを作ってしまったり、右クリックでコピーしようとするとコピー先のパスを入力させられたりで、使い勝手が悪い。  </p>
+<p>ブラウザはFirefoxで、これまた有難い。<br>起動はやはり多少もたつくが、Firefoxにはそれに勝る便利さがある。  </p>
+<p>LxPup。<br>Puppy Linuxの軽快さと、LXDEや他アプリケーションの快適性を上手く融合させている。  </p>
+<p><strong>「LxQtPup」</strong>  </p>
+<p>LxQtPupの方はというと、起動も起動後の操作も、ややもっさり感が否めない。<br>実際、タスクマネージャーだけを開いた状態での消費メモリは、LxPupの68MBに対し、LxQtPupは135MBと倍の差。  </p>
+<p>だが、LxQtPupの外観はとても丁寧に作りこまれていて、「本当にこれがパピーか？」と驚愕を覚える。<br>特にメニュー周りなど、LxPupがPuppy Linuxの素朴さ（ごちゃごちゃ感）を残しているのに対し、LxQtPupには精錬された美しさがある。<br>もはやPuppyの域を超えていて、外観だけを見れば全く別のディストリビューションと思えるほど。  </p>
+<p>凄いです。<br>伊達にメモリー食ってません。  </p>
+<h3 id="LxPupをFrugalインストール">LxPupをFrugalインストール</h3>
+<p>LxPupをHDDにインストールしようと思ったら、ユニバーサルインストーラーはあるが、どこを探してもFrugalインストーラーが見当たらない。<br>参照させて頂いた下記サイトでも、ユニバーサルインストーラーを使ってのFullインストールが紹介されていた。<br><a href="http://no-windows.blog.jp/archives/8229193.html" target="_blank" rel="external">LxPupのインストールからインターネット接続のまとめ : Windowsはもういらない</a>  </p>
+<p>既にPuppy Linux5.7.1をFrugalインストールしているし、出来れば同じパーティション内にFrugalインストールしたいところ。<br>FrugalインストールしてこそのPuppy Linuxとも思える。  </p>
+<p>Frugalインストールは必要なファイルをコピーして、その後Grub４Dosブートローダーをインストールしているだけのようだし、最後のGrub４Dosブートローダーの設定さえちゃんとやれば、ファイルのコピーは手動でも良さそうに思える。<br>やってみた結果、ちゃんとFrugalインストール出来た。  </p>
+<p>まず、インストールするパーティション内に「lxpup1502」等、適当な名前でフォルダを作成。<br>（名前はなるべく入力しやすいものが良い。後に個人保存ファイルを複数作成した場合、個人保存ファイルへのフルパス入力を求められる。）  </p>
+<p>LxPup-15.02.2を例にとると、ブートCD内には12個のファイルがあるが、そのうち必要なのは下記の４つ。  </p>
+<p>initrd.gz<br>vmlinuz<br>puppy_lxpup_15.02.sfs<br>zdrv_lxpup_15.02.sfs</p>
+<p>この４つのファイルをあらかじめ作っておいたフォルダにコピペ。<br>後は「メインメニュー」→「Setup」→「Grub4Dos bootloader config」からGrub４Dosブートローダーをインストールすれば良い。  </p>
+<p>シャットダウンの際、個人保存ファイルの作成を促されるから、好みの形で作成。<br>ブートCDを取り出して再起動すればLxPupの画面が現れる。  </p>
+<p>日本語化は上記参照サイトを参考にさせて頂いた。  </p>
+<p>LxPup、LxQtPup、いずれもノーマルのPuppy Linuxより親しみやすいアレンジになっているので、初心者からベテランまで、ぜひ一度触れてみてもらいたい優れたディストリビューションだ。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Puppy Linuxのウィンドウマネージャーについて調べ物をしていたら、LxPup - Puppy Linux + LXDEというページがあった。<br><a href="http://sourceforge.jp/projects/sfnet_lxpup/" targe]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Puppy LinuxにDropboxクライアントをインストール]]></title>
@@ -544,30 +587,6 @@ sudo cp -r copy/x86_64 /opt/copy
     </summary>
     
       <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hexoにファビコン]]></title>
-    <link href="http://pagent.github.io/2015/01/24/hexo-favicon/"/>
-    <id>http://pagent.github.io/2015/01/24/hexo-favicon/</id>
-    <published>2015-01-24T13:08:09.000Z</published>
-    <updated>2015-01-25T00:45:22.000Z</updated>
-    <content type="html"><![CDATA[<p>Hexoで書いているGitHub Pagesのブログにファビコンを入れた。<br>Hexoでは使用しているテーマでファビコンを設定するらしい。</p>
-<p>freewillというテーマを使っているので、hexo/themes/freewill/_config.ymlで<code>favicon: favicon.png</code>となっているのを確認し、 作成したfavicon.pngをhexo/themes/freewill/source内に置いた。   </p>
-<p>generate、deployしてFirefoxでサイトを表示すると、タブにはファビコンが表示されているものの、何故かサイドバーのブックマーク欄には作ったファビコンが表示されていない。<br>他のブラウザのRekonqやMidoriではタブにも表示されず。  </p>
-<p>ブラウザのキャッシュが残っているせいかと、キャッシュを削除したり、ファビコンのサイズを変えてみたりしたが、やはりブックマーク欄には表示されない。  </p>
-<p>拡張子を.pngではなく.icoで作り直し、/_config.ymlを<code>favicon: favicon.ico</code>にしたら、ようやくブックマーク欄にもファビコンが表示された。<br>他のブラウザでもちゃんと表示されている。  </p>
-<p>ちなみに.icoファイルでは複数のサイズの画像を一つのファイルに格納出来るらしい。<br><a href="http://www.hp-stylelink.com/news/2014/02/20140213.php" target="_blank" rel="external">複数サイズも一つのファイルで！マルチアイコンの「favicon（ファビコン）」作成方法 | Web制作会社スタイル</a>  </p>
-<p>ちょうど16×16、32×32、64×64の3つの.pngファイルを作成していたので、下記サイトでこの3サイズを格納したfavicon.icoにした。<br><a href="http://ao-system.net/alphaicon/" target="_blank" rel="external">無料で半透過マルチアイコンやファビコン(favicon.ico)作成。ギザギザの無い美しい影を持ったアイコン作成がフリーでできます。</a>  </p>
-<p>HexoやOctopressでも、ファビコンの拡張子は.icoの方が良いようだ。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Hexoで書いているGitHub Pagesのブログにファビコンを入れた。<br>Hexoでは使用しているテーマでファビコンを設定するらしい。</p>
-<p>freewillというテーマを使っているので、hexo/themes/freewill/_config.ymlで<c]]>
-    </summary>
-    
-      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
   </entry>
   
