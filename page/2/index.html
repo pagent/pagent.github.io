@@ -112,6 +112,47 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/02/02/xubuntu-kate/" >XubuntuでKDEのテキストエディターKate</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月2日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Xubuntu14.04でテキストエディターとしてMousepadやLeafpadを使っているが、先に開いて編集作業をしていたファイルを再度開くと、新たなウィンドウで開いてしまう。<br>その後、別の作業をしてまたファイルの編集作業に戻ったりすると、どちらのウィンドウが新しい編集だったか分かりづらい。<br>ウィンドウを閉じる時、「この文書は外部から変更されています。このまま保存しますか?」と警告は出るが、両方のウィンドウで編集作業をしてしまっていることもしばしば。  </p>
+<p>KDEのテキストエディター「Kate」をインストールしてみた。  </p>
+<p>複数のファイルを開いてもウィンドウが１つ。<br>だがデフォルト状態ではタブも無く、サイドバーの「文書」で開いているファイルをツリー表示してくれるのみ。<br>これでは使いづらいので使用を諦めようかと思ったが、設定→Kateを設定→プラグイン→タブバー、でタブ表示出来た。<br><a href="http://news.mynavi.jp/articles/2012/05/15/kate/003.html" target="_blank" rel="external">【レビュー】世界のテキストエディターから - KDEの優秀なテキストエディター「Kate」 (4) 「Kate」を使いこなすTips | マイナビニュース</a>  </p>
+<p>既に開いているファイルを開くとそのウィンドウ（タブ）にフォーカスが移る。<br>これでいくつもウィンドウを開かずに済みそうだ。<br>「Projects」や「セッション」はよく分からないが、デザインも精錬されている。  </p>
+<p>ーー<br>（追記）<br>Ubuntu標準のテキストエディターGeditもタブ表示可能で、同一ファイルを複数のウィンドウで開かずに済むようだ。<br>だが変更のあるタブを含むウィンドウを閉じようとした際、Geditは「ドキュメント“…”で変更した内容を閉じる前に保存しますか?」という文章のみの警告なのに対し、Kateはチェックボックス付きのリスト表示をしてくれて分かりやすい。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/02/xubuntu-kate/" data-text="XubuntuでKDEのテキストエディターKate | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/02/01/piwik-login-cookie-expiration/" >Piwikのログイン・クッキー有効期限を延長する</a>
 		</h3>
 	
@@ -520,53 +561,6 @@ sudo cp -r copy/x86_64 /opt/copy
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/01/25/facebookmail-spam/" >宅配業者からの不在通知を装ったスパムメール（info@…facebookmail.com）</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年1月25日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>今年になってから突然、サブのメールアドレスに迷惑メールが来るようになった。  </p>
-<p>ほとんどは卑猥な文言のひと目でスパムと分かるものだったが、一見スパムと分かりづらいメールもあった。<br><code>ペリカン配送 &lt;info@…facebookmail.com&gt;</code>を名乗る差出人からのもので、件名は<code>【ペリカン配送より不在通知】</code>となっている。  </p>
-<blockquote>
-<p>↓コチラから確認↓↓<br>http://…</p>
-<p>↓↓送付停止は下記より↓↓</p>
-<p>http://…</p>
-</blockquote>
-<p>という内容で、迷惑メールフィルタでも振り分けられていなかった。  </p>
-<p>スパムメールが来るようになった時期とちょうど重なっていたから「あやしい」と気付いたが、そうでなかったら本当の「不在通知」と思い込み、うっかりリンクをクリックしていた可能性がある。<br>不在通知が郵便受けにではなくメールで来るなんて、冷静に考えたらおかしいのだが。  </p>
-<p>間違ってリンクをクリックしていたら悪質なサイトに誘導されていたのだろう。<br>また「生きているアドレス」と判断されて、さらに大量のスパムメールが来ることになっていたかもしれない。  </p>
-<p>検索してみると、facebookmail.comからスパムメールが来るというのは結構あるらしい。<br>みなさんもお気をつけ下さい。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/25/facebookmail-spam/" data-text="宅配業者からの不在通知を装ったスパムメール（info@…facebookmail.com） | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -608,6 +602,10 @@ sudo cp -r copy/x86_64 /opt/copy
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/02/08/scrapbook-error/" ><i class="fa fa-file-o"></i>突然ScrapBookの保存データが消えた</a>
+      </li>
+    
+      <li>
         <a href="/2015/02/06/lxpup-LxQtPup/" ><i class="fa fa-file-o"></i>Puppy Linux派生。本家より扱いやすい「LxP...</a>
       </li>
     
@@ -621,10 +619,6 @@ sudo cp -r copy/x86_64 /opt/copy
     
       <li>
         <a href="/2015/02/04/puppy-grub4dos-error/" ><i class="fa fa-file-o"></i>Puppy LinuxのGrub４Dosインストール時...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/02/04/elementary-os/" ><i class="fa fa-file-o"></i>elementary OS（Luna）をインストールしてみた</a>
       </li>
     
   </ul>
@@ -642,35 +636,35 @@ sudo cp -r copy/x86_64 /opt/copy
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
 			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/アプリケーション/">アプリケーション<span>0</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>10</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>30</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>8</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
+		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>30</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>10</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
+		
+			<li><a href="/tags/アプリケーション/">アプリケーション<span>0</span></a></li>
 		
 		
 		</ul>
@@ -682,7 +676,7 @@ sudo cp -r copy/x86_64 /opt/copy
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

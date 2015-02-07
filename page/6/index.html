@@ -112,6 +112,53 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/12/09/casio/" >50桁まで計算出来るカシオのフリー計算がすごい</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年12月9日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>普通の計算機で表示出来るのは10桁くらいまでだが、カシオのフリー計算はなんと50桁まで表示される。<br><a href="http://keisan.casio.jp/calculator" target="_blank" rel="external">高精度な高等関数が使えるフリー計算</a>  </p>
+<p>たとえば、ヒトヨヒトヨニヒトミゴロの√2も  </p>
+<pre><code>1.4142135623730950488016887242096980785696718753769
+</code></pre><p>と表示される。<br>（普通にはコピペ出来ず、「要素を調査」しないとコピペ出来なかったが。）  </p>
+<p>ヒトナミニオゴレヤ（√3）  </p>
+<pre><code>1.7320508075688772935274463415058723669428052538104
+</code></pre><p>フジサンロク（に）オオムナク（√5）も  </p>
+<pre><code>2.2360679774997896964091736687312762354406183596115
+</code></pre><p>他にも色々な計算が出来るようだ。<br>日常では必要無いと言えば無いのだが。  </p>
+<p>生まれて初めて見た電子計算機（電卓）も、もちろんカシオだった。<br>起動時に点滅する緑色の液晶が滅茶苦茶かっこ良かった。  </p>
+<p>やっぱりカシオはすごい。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/09/casio/" data-text="50桁まで計算出来るカシオのフリー計算がすごい | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/12/09/life/" >思い煩うな</a>
 		</h3>
 	
@@ -577,61 +624,6 @@ $ git push
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/12/01/hexo-bootstrap/" >HexoのテーマをBootstrap準拠のFreewillにした</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年12月1日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Hexoのテーマをデフォルトのものから、Bootstrap準拠の<a href="https://github.com/yieme/hexo-theme-freewill" target="_blank" rel="external">Freewill</a>にした。<br>BootstrapのテーマBootswatchというものを採用しているようで、外観を簡単に変更出来る。  </p>
-<p>他のテーマ同様  </p>
-<pre><code>git clone https://github.com/yieme/hexo-theme-freewill.git themes/freewill
-</code></pre><p>でインストール。  </p>
-<p>Freewillの_config.ymlで<code>bootswatch:</code>で種々のBootswatchテーマに変更出来る。<br>Bootswatchのナビゲーションバーには、テーマ毎に2種類のカラーバリエーションがあり、freewill/layout/_partial/navigation.ejsの2行目で<code>navbar-default</code>と<code>navbar-inverse</code>（逆の配色）のどちらかに切り替え可能。  </p>
-<p>デフォルトの設定では画面をスクロールしたりマウスが離れると、ナビゲーションバーがフェードアウト、マウスを合わせるとフェードインする仕様になっていた。<br>出たり消えたりがかえって邪魔だったので、themes/freewill/source/js/main.jsの7、10、17、22行目の  </p>
-<pre><code>$(&quot;.navbar&quot;).stop().fadeTo(333, 0.2);
-
-$(&quot;.navbar&quot;).stop().fadeTo(333, 1);
-
-$(&quot;.navbar&quot;).fadeTo(100, 1);
-
-$(&quot;.navbar&quot;).fadeTo(100, 0.2);
-</code></pre><p>を削除したら、フェードアウトしなくなった。  </p>
-<p>navigation.ejs2行目の<code>navbar-fixed-top</code>を削除すると、スクロールとともにナビゲーションバーが上方に移動。  </p>
-<p>_config.ymlの表示不要な項目は先頭に<code>#</code>を付けてコメントアウト。  </p>
-<p>テーマの変更でAtomフィードが表示されなくなってしまったが、freewill/_config.ymlの<code>rss: true</code>を<code>rss: atom.xml</code>に変更してナビゲーションバーに追加したら表示された。<br>layout/_partial/head.ejsのtheme.rssの箇所の<code>link rel=&quot;alternative&quot;</code>を<code>link rel=&quot;alternate&quot;</code>に変更。アドレスバーにもアイコンが表示された。  </p>
-<p>Bootstrapのテーマらしく、すっきりしていて機能的な印象。  </p>
-<p>ただ、paginationのページ上方にでかでかと表示されているJumbotronというのをどう使えばいいか分からない。<br>デフォルトではブログタイトルもしくはブログの説明が表示されるようだが。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/01/hexo-bootstrap/" data-text="HexoのテーマをBootstrap準拠のFreewillにした | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -673,6 +665,10 @@ $(&quot;.navbar&quot;).fadeTo(100, 0.2);
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/02/08/scrapbook-error/" ><i class="fa fa-file-o"></i>突然ScrapBookの保存データが消えた</a>
+      </li>
+    
+      <li>
         <a href="/2015/02/06/lxpup-LxQtPup/" ><i class="fa fa-file-o"></i>Puppy Linux派生。本家より扱いやすい「LxP...</a>
       </li>
     
@@ -686,10 +682,6 @@ $(&quot;.navbar&quot;).fadeTo(100, 0.2);
     
       <li>
         <a href="/2015/02/04/puppy-grub4dos-error/" ><i class="fa fa-file-o"></i>Puppy LinuxのGrub４Dosインストール時...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/02/04/elementary-os/" ><i class="fa fa-file-o"></i>elementary OS（Luna）をインストールしてみた</a>
       </li>
     
   </ul>
@@ -707,35 +699,35 @@ $(&quot;.navbar&quot;).fadeTo(100, 0.2);
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>30</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>8</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+			<li><a href="/tags/アプリケーション/">アプリケーション<span>0</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>10</span></a></li>
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
 			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
 		
-			<li><a href="/tags/アプリケーション/">アプリケーション<span>0</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>30</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
 		
 		</ul>
@@ -747,7 +739,7 @@ $(&quot;.navbar&quot;).fadeTo(100, 0.2);
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
