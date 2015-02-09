@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-02-09T13:04:59.332Z</updated>
+  <updated>2015-02-09T13:28:05.144Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -44,11 +44,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[Puppy Linux派生。本家より扱いやすい「LxPup」と美しさが際立つ「LxQtPup」]]></title>
+    <title><![CDATA[Puppy Linux派生。Puppy本家より扱いやすい「LxPup」と「LxQtPup」]]></title>
     <link href="http://pagent.github.io/2015/02/06/lxpup-LxQtPup/"/>
     <id>http://pagent.github.io/2015/02/06/lxpup-LxQtPup/</id>
     <published>2015-02-06T01:02:10.000Z</published>
-    <updated>2015-02-06T09:10:52.000Z</updated>
+    <updated>2015-02-09T13:27:31.000Z</updated>
     <content type="html"><![CDATA[<p>Puppy Linuxのウィンドウマネージャーについて調べ物をしていたら、LxPup - Puppy Linux + LXDEというページがあった。<br><a href="http://sourceforge.jp/projects/sfnet_lxpup/" target="_blank" rel="external">LxPup - Puppy Linux + LXDE プロジェクト日本語トップページ - SourceForge.JP</a>  </p>
 <p>LxPup、LxQtPupというのを初めて知ったが、Puppy LinuxをLXDEデスクトップにアレンジしたものらしい。  </p>
 <p>早速、LxPup-15.02.2のPAE版と非PAE版、それとLxQtPup（非PAE）をダウンロードした。<br>いずれもSlacko Puppy 5.9.3がベースのもの。</p>
