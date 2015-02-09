@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2014/11/01/firefox-closed-tabs/</loc>
+    <lastmod>2015-02-09T13:04:34.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2015/02/05/roxterm-segmentation-fault/</loc>
     <lastmod>2015-02-08T09:35:56.000Z</lastmod>
   </url>
@@ -99,11 +104,6 @@
   <url>
     <loc>http://pagent.github.io/2015/01/24/xubuntu-menu-nepomuk/</loc>
     <lastmod>2015-01-31T08:52:49.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2014/11/01/firefox-closed-tabs/</loc>
-    <lastmod>2015-01-30T14:36:49.000Z</lastmod>
   </url>
   
   <url>
