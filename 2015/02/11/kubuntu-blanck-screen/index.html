@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>突然ScrapBookの保存データが消えた | Pagent</title>
+  <title>Kubuntu14.04で画面が真っ暗 | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="突然ScrapBookの保存データが消えた"/>
+  <meta property="og:title" content="Kubuntu14.04で画面が真っ暗"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -94,7 +94,7 @@
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> 突然ScrapBookの保存データが消えた</h1>
+			<h1> Kubuntu14.04で画面が真っ暗</h1>
 		</div>
 	
 
@@ -110,17 +110,13 @@
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>Firfoxで何だったかを見ていたら、突然、英文の警告がポップアップされた。  </p>
-<blockquote>
-<p>ERROR: Failed to initialize datasource.</p>
-<p>[Exception… “Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsILocalFile.create]”  nsresult: “0x80004005 (NS_ERROR_FAILURE)”  location: “JS frame :: resource://scrapbook-modules/utils.jsm :: SBU_getScrapBookDir :: line 24”  data: no]</p>
-</blockquote>
-<p>ページを保存するアドオンScrapBookのもの。<br>気付くとサイドバーのScrapBookのツリーが真っ白で、保存してあったページが無くなっている。  </p>
-<p>「code: 0x80004005」を検索してみたが、Windows起動時のエラーとかVirtualBoxのエラーとか、「0x80004005」はプログラム関係で広く使われているエラーコードらしい。  </p>
-<p>肝心のScrapBookの対処法は見つからなかったが、ScrapBookの「ツール」を開くと、一番下に「緊急時の修復ツール」というのがあった。<br>backupのscrap.rdfファイルからツリーを復元するものらしい。  </p>
-<p>これで復元出来るかと思ったが、バックアップのファイルも見当たらず。<br>ついてない。  </p>
-<p>ーー<br>（追記）<br>よく考えたら、Xubuntu側のScrapBookの保存先は、マルチブート下のWindows 7のSsrapbookフォルダに設定して、共有しているんだった。<br>少し前にWindowsのマウント先を変えたから、それでリンクが切れてしまっただけのようだ。  </p>
-<p>データ保存先を設定し直したら、ちゃんと表示された。</p>
+	    <p>ネットブックLavie LiteにインストールしたKubuntu。<br>新しいkernelだとディスプレイや無線LANに不具合が出るので、旧kernelを使うため、12.04から14.04にアップグレードしたもの。<br>アップグレード後いったんは正常にログイン出来たが、その後再度起動すると、ログイン後に画面が真っ暗になり、マウスポインターのみが表示されている状態になってしまった。<br>（なぜかGuestアカウントではデスクトップが表示される。）  </p>
+<p>検索すると似たような事例が多く見つかった。  </p>
+<p><a href="https://forums.ubuntulinux.jp/viewtopic.php?id=5996" target="_blank" rel="external">Ubuntu日本語フォーラム / KDEログアウト後に画面が真っ暗になり操作不能</a><br><a href="http://192168111.blog71.fc2.com/category1-1.html" target="_blank" rel="external">俺の覚書 Linux/Unix</a><br><a href="https://www.kubuntuforums.net/showthread.php?66592-Black-screen-after-login&amp;p=360188&amp;viewfull=1#post360188" target="_blank" rel="external">[DESKTOP] Black screen after login - Kubuntu Forums</a>  </p>
+<p>「CTRL」+「ALT」+「F2」キーでコンソール画面に行き、ディスプレイマネージャーをkdmからgdmに変える方法、<code>sudo apt-get update</code>、<code>sudo apt-get upupgrade</code>する方法、また自分のホームディレクトリの.kdmをリネームして新規に生成させる方法など試してみたが、どれも効果なし。<br>コマンドに不慣れで、/ver/log以下のログを確認するのも上手く行かない。  </p>
+<p>諦めかけたが、KDEならYakuakeがインストールされているのではないかと思い、Yakuakeで<code>xrandr</code>コマンドを使えばディスプレイの状態を確認出来るかと、真っ暗な画面でYakuakeを表示するショートカットキー「F12」を押してみた。  </p>
+<p>するとデスクトップが現れた。<br>Kubuntu12.04の時と違い、ディスプレイの小さな端末向けのUnityみたいに画面だが。<br>（Yakuakeはインストールされていないのか、出て来なかった。）  </p>
+<p>なぜ復活したのかはまったく謎。</p>
 
 	</div>
 
@@ -136,13 +132,13 @@
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2015/02/11/kubuntu-blanck-screen/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2015/02/06/lxpup-LxQtPup/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2015/02/08/scrapbook-error/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -176,7 +172,7 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2015年2月8日
+	2015年2月11日
 	</div>
 	
 
@@ -190,7 +186,7 @@
     <ul id="tags" class="tag_box list-unstyled collapse in">
 	    <!-- _partial/post/tag -->
   
-  <li><a href="/tags/ブラウザ/">ブラウザ</a></li>
+  <li><a href="/tags/Linux/">Linux</a></li>
 
     </ul>
 	</div>

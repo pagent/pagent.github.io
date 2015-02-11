@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-02-09T13:28:05.144Z</updated>
+  <updated>2015-02-11T03:50:29.116Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,28 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Kubuntu14.04で画面が真っ暗]]></title>
+    <link href="http://pagent.github.io/2015/02/11/kubuntu-blanck-screen/"/>
+    <id>http://pagent.github.io/2015/02/11/kubuntu-blanck-screen/</id>
+    <published>2015-02-11T02:51:05.000Z</published>
+    <updated>2015-02-11T03:49:54.000Z</updated>
+    <content type="html"><![CDATA[<p>ネットブックLavie LiteにインストールしたKubuntu。<br>新しいkernelだとディスプレイや無線LANに不具合が出るので、旧kernelを使うため、12.04から14.04にアップグレードしたもの。<br>アップグレード後いったんは正常にログイン出来たが、その後再度起動すると、ログイン後に画面が真っ暗になり、マウスポインターのみが表示されている状態になってしまった。<br>（なぜかGuestアカウントではデスクトップが表示される。）  </p>
+<p>検索すると似たような事例が多く見つかった。  </p>
+<p><a href="https://forums.ubuntulinux.jp/viewtopic.php?id=5996" target="_blank" rel="external">Ubuntu日本語フォーラム / KDEログアウト後に画面が真っ暗になり操作不能</a><br><a href="http://192168111.blog71.fc2.com/category1-1.html" target="_blank" rel="external">俺の覚書 Linux/Unix</a><br><a href="https://www.kubuntuforums.net/showthread.php?66592-Black-screen-after-login&amp;p=360188&amp;viewfull=1#post360188" target="_blank" rel="external">[DESKTOP] Black screen after login - Kubuntu Forums</a>  </p>
+<p>「CTRL」+「ALT」+「F2」キーでコンソール画面に行き、ディスプレイマネージャーをkdmからgdmに変える方法、<code>sudo apt-get update</code>、<code>sudo apt-get upupgrade</code>する方法、また自分のホームディレクトリの.kdmをリネームして新規に生成させる方法など試してみたが、どれも効果なし。<br>コマンドに不慣れで、/ver/log以下のログを確認するのも上手く行かない。  </p>
+<p>諦めかけたが、KDEならYakuakeがインストールされているのではないかと思い、Yakuakeで<code>xrandr</code>コマンドを使えばディスプレイの状態を確認出来るかと、真っ暗な画面でYakuakeを表示するショートカットキー「F12」を押してみた。  </p>
+<p>するとデスクトップが現れた。<br>Kubuntu12.04の時と違い、ディスプレイの小さな端末向けのUnityみたいに画面だが。<br>（Yakuakeはインストールされていないのか、出て来なかった。）  </p>
+<p>なぜ復活したのかはまったく謎。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>ネットブックLavie LiteにインストールしたKubuntu。<br>新しいkernelだとディスプレイや無線LANに不具合が出るので、旧kernelを使うため、12.04から14.04にアップグレードしたもの。<br>アップグレード後いったんは正常にログイン出来たが、]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[突然ScrapBookの保存データが消えた]]></title>
@@ -565,30 +587,6 @@ sudo cp -r copy/x86_64 /opt/copy
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Dropbpx上のHexoでdeploy時「競合コピ ー」のためエラーになる]]></title>
-    <link href="http://pagent.github.io/2015/01/26/deploy-conflicted-copy-dropbox/"/>
-    <id>http://pagent.github.io/2015/01/26/deploy-conflicted-copy-dropbox/</id>
-    <published>2015-01-25T15:11:33.000Z</published>
-    <updated>2015-01-25T15:31:16.000Z</updated>
-    <content type="html"><![CDATA[<p>Dropbpx上に置いてあるHexoフォルダ直下にdb (… の競合コピー 2015-01-25).jsonというファイルが出来てしまった。<br>deployしようとすると  </p>
-<pre><code>fatal: Reference has invalid format: &#39;refs/heads/master (... の競合コピ ー 2015-01-25)&#39;
-</code></pre><p>というエラー表示が出る。  </p>
-<p>Dropbpxでは１つのファイルに対して複数のPCで同時に変更があった場合、「競合コピー」というのが出来るらしい。<br>hexo/.deploy/.git/refs/heads内にも競合コピーが出来てしまい、これのせいで上手くdeploy出来ないようだ。<br><a href="http://rcmdnk.github.io/blog/2013/05/12/computer-octopress-git-github-dropbox/" target="_blank" rel="external">Git + Dropbox使用時の注意点</a>  </p>
-<p>競合コピーを削除したらエラーが出なくなった。  </p>
-<p>Hexoフォルダ内を「競合コピー」で検索したら計４つ見つかったので、すべて削除した。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Dropbpx上に置いてあるHexoフォルダ直下にdb (… の競合コピー 2015-01-25).jsonというファイルが出来てしまった。<br>deployしようとすると  </p>
-<pre><code>fatal: Reference has invalid for]]>
-    </summary>
-    
-      <category term="Git" scheme="http://pagent.github.io/tags/Git/"/>
-    
-      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
     
   </entry>
   
