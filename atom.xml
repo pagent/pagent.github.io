@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-02-14T14:54:39.750Z</updated>
+  <updated>2015-02-14T15:03:44.730Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/02/14/mbr-gpt/"/>
     <id>http://pagent.github.io/2015/02/14/mbr-gpt/</id>
     <published>2015-02-14T09:39:51.000Z</published>
-    <updated>2015-02-14T14:54:25.000Z</updated>
+    <updated>2015-02-14T15:03:32.000Z</updated>
     <content type="html"><![CDATA[<p>サブマシンのネットブックでArch Linuxを試してみようと思ったが、ブートローダーのGRUBをインストールするところで、BIOS（MBR形式）ではなくUEFI（GPT）を選択してしまった。<br>そのせいでMBRが壊れてしまったようで、起動出来なくなってしまった。<br>MBM（Multiple Boot Manager）を再インストールしてみたが、ディスク全体が”unknown”と表示されるのみ。  </p>
 <p>「TestDisk」というフリーソフトでパーティションテーブルを修復出来るようだった。  </p>
 <p>「TestDisk」は「Ultimate Boot CD」に同梱されてるという情報を見かけたが、どうやら現在は「Ultimate Boot CD」には同梱されていないようで、見つからなかった。<br>「SystemRescueCd」に入っていたので、こちらから利用した。<br>「SystemRescueCd」でブート。入力出来る状態になった後、<code>testdisk</code>とコマンドを打つと起動した。  </p>
@@ -29,7 +29,8 @@
 <p>パーティションテーブルは一応復旧出来て、起動も出来るようになったが、どうやらGPTでのパーティショニングの痕跡が依然残っている様子。<br>GpartedもGPTでパーティショニングされていると判断するようで、なにかパーティションの操作をすると、また起動出来なくなる。  </p>
 <p>これでは不便だし安心感も持てないが、「AOMEI Partition Assistant Standard Edition」というWindows用のフリーソフトでディスクの内容を保持したままGPTとMBRの変換が出来るようなので、試してみることにした。  </p>
 <p>「AOMEI Partition Assistant」を試す前にパーティションのバックアップをしようと思ったが、Clonezillaもパーティションテーブルを読めないらしい。<br>仕方が無いので下記サイトを参考に、<code>dd</code>コマンドでバックアップすることにした。<br><a href="http://takuya-1st.hatenablog.jp/entry/20101025/1288002819" target="_blank" rel="external">dd でディスクをコピーするよく使う例 - それマグで！</a>  </p>
-<p>ーー<br>（追記）<br>「AOMEI Partition Assistant」はWindows XpではMBRに変換出来ないようで、結局ハードディスクのデータを全消去してパーティションテーブルをMBRで作り直し、ddでバックアップしたものをリストアしてようやく復旧した。</p>
+<p>ーー<br>（追記）<br>「AOMEI Partition Assistant」はWindows XpではMBRに変換出来ないようで、結局ハードディスクのデータを全消去してパーティションテーブルをMBRで作り直し、ddでバックアップしたものをリストアしてようやく復旧した。  </p>
+<p>復旧後拡張パーティションのLinuxが起動しなかったが、SystemRescueCdの”Boot an existing Linux system installed on the disk”で起動させ、<code>sudo grub-install --force /dev/sda6</code>でgrub2をインストール。`sudo update-grub｀で起動出来た。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>サブマシンのネットブックでArch Linuxを試してみようと思ったが、ブートローダーのGRUBをインストールするところで、BIOS（MBR形式）ではなくUEFI（GPT）を選択してしまった。<br>そのせいでMBRが壊れてしまったようで、起動出来なくなってしまった。<br]]>
