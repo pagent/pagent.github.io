@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2015/02/15/stop-kwallet-manager/</loc>
+    <lastmod>2015-02-14T15:16:09.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2015/02/14/mbr-gpt/</loc>
-    <lastmod>2015-02-14T15:03:32.000Z</lastmod>
+    <lastmod>2015-02-14T15:04:09.000Z</lastmod>
   </url>
   
   <url>
@@ -347,7 +352,7 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/12/10/weather-news/</loc>
+    <loc>http://pagent.github.io/2014/11/26/hexo-bitbucket/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   
@@ -442,6 +447,11 @@
   </url>
   
   <url>
+    <loc>http://pagent.github.io/2014/12/10/weather-news/</loc>
+    <lastmod>2014-12-11T21:42:34.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2014/10/21/test/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
@@ -518,11 +528,6 @@
   
   <url>
     <loc>http://pagent.github.io/2014/11/26/filename-case/</loc>
-    <lastmod>2014-12-11T21:42:34.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2014/11/26/hexo-bitbucket/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   
