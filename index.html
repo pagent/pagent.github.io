@@ -112,6 +112,53 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/02/14/mbr-gpt/" >パーティションテーブルをMBRからGPTに書き換えてしまった</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月14日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>サブマシンのネットブックでArch Linuxを試してみようと思ったが、ブートローダーのGRUBをインストールするところで、BIOS（MBR形式）ではなくEFI-GPTを選択してしまった。  </p>
+<p>キャンセル出来ず途中で強制終了したが、MBRが壊れてしまったようで、起動出来なくなってしまった。<br>MBM（Multiple Boot Manager）を再インストールしてみたが、ディスク全体が”unknown”と表示されるのみ。  </p>
+<p>「TestDisk」というフリーソフトでパーティションテーブルを修復出来るようだった。  </p>
+<p>「TestDisk」は「Ultimate Boot CD」に同梱されてるという情報を見かけたが、どうやら現在は「Ultimate Boot CD」には同梱されていないようで、見つからなかった。<br>「SystemRescueCd」に入っていたので、こちらから利用した。<br>「SystemRescueCd」でブート。入力出来る状態になった後、<code>testdisk</code>とコマンドを打つと起動した。  </p>
+<p>使い方は最初はよく分からなかったが、サーチで表示されたリストの内、テーブルに書き込みたいものをキードードの左右のキーで設定し、緑色にしたら良いらしい。<br>リストは「p」キーでリストの内容を確認しながら選べば良いので、要領が分かれば簡単。<br>「q」で前の画面に戻る。</p>
+<p>使い方は下記サイトの解説が分かりやすかった。<br><a href="http://uiuicy.cs.land.to/testdisk1.html" target="_blank" rel="external">【TestDisk】について</a>  </p>
+<p>「Deeper Search」にはけっこう時間が掛かり、またせっかく「Deeper Search」が終わったリストを、途中で「ENTER」を押してしまって戻れなくなり、また最初から「Deeper Search」ということもあったが。  </p>
+<p>パーティションテーブルは一応復旧出来て、起動も出来るようになったが、どうやらGPTでのパーティショニングの痕跡が依然残っている様子。<br>GpartedもGPTでパーティショニングされていると判断するようで、なにかパーティションの操作をすると、また起動出来なくなる。  </p>
+<p>これでは不便だし安心感も持てないが、「AOMEI Partition Assistant Standard Edition」というWindows用のフリーソフトでディスクの内容を保持したままGPTとMBRの変換が出来るようなので、試してみることにした。  </p>
+<p>「AOMEI Partition Assistant」を試す前にパーティションのバックアップをしようと思ったが、Clonezillaもパーティションテーブルを読めないらしい。<br>仕方が無いので下記サイトを参考に、<code>dd</code>コマンドでバックアップすることにした。<br><a href="http://takuya-1st.hatenablog.jp/entry/20101025/1288002819" target="_blank" rel="external">dd でディスクをコピーするよく使う例 - それマグで！</a>  </p>
+<p>本当にバックアップ出来ているのかどうか分からないが。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/14/mbr-gpt/" data-text="パーティションテーブルをMBRからGPTに書き換えてしまった | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/02/11/kde-plasma-netbook/" >Kubuntuのネットブック向けデスクトップ「Plasma Netbook」を通常のデスクトップに</a>
 		</h3>
 	
@@ -558,68 +605,6 @@ tar: エラーを回復できません: 直ちに終了します
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/02/03/find-hidden-files/" >隠しファイルの検索など（findコマンド）</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年2月3日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Dolphinが自動生成した.directoryファイルを削除しようと、ファイルマネージャーで”.directory”を検索したが、ファイルが見つからない。<br>“directory”でも該当無し。<br>確かにあるのだが、ファイルマネージャーの機能では隠しファイルを検索出来ないらしい。</p>
-<p>端末でfindコマンドを使ったらヒットした。  </p>
-<pre><code>find ~/ -name .directory
-// ~/ディレクトリ以下で名前に&quot;.directory&quot;を含むファイル・ディレクトリを再帰的に検索
-</code></pre><p>ーー<br>以下、findコマンドについて  </p>
-<p><strong>Linuxではディレクトリを省略すると、カレントディレクトリ以下で検索</strong><br>（他のUNIXでは<code>.</code>が必要。）</p>
-<pre><code>find -name .directory
-find . -name .directory
-</code></pre><p><strong>-typeオプションで検索対象の種類を指定（ファイル、ディレクトリ、リンク）</strong>  </p>
-<pre><code>find -type f
-find -type d
-find -type l
-</code></pre><p><strong>名前の前後にワイルドカード<code>*</code>を付けての検索が可能</strong>  </p>
-<pre><code>find -type f -name &quot;*.pdf&quot;
-</code></pre><p>（名前にワイルドカードを付ける場合は、半角ダブルクォーテーション<code>&quot;</code>で囲った方が良いらしい。 「find: パス名は評価式の前に置かなければいけません」とエラーになることがある。） </p>
-<p><strong>-sizeオプションでサイズを指定</strong>  </p>
-<pre><code>find -type f -name &quot;*.JPG&quot; -size +1000k
-</code></pre><p>（1000KB以上の.JPGファイルを検索。JPGとjpgは区別される。）</p>
-<p><strong>-deleteオプションで該当ファイルを削除</strong>  </p>
-<pre><code>find -type f -name &quot;*.hogehoge&quot; -delete
-</code></pre><p>など。  </p>
-<p>（参照）<br><a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20060227/230777/" target="_blank" rel="external">Linuxコマンド集 - 【 find 】 ファイルやディレクトリを検索する：ITpro</a><br><a href="http://x68000.q-e-d.net/~68user/unix/pickup?find" target="_blank" rel="external">UNIXの部屋 コマンド検索:find (*BSD/Linux)</a>  </p>
-<p>またディレクトリにワイルドカード<code>*</code>を付けると検索結果が異なる様子。  </p>
-<pre><code>find ~/* -name .directory
-</code></pre><p>~/.kde/share/apps/dolphin/view_properties/global/.directory<br>~/.kde/share/apps/dolphin/view_properties/local/usr/.directory<br>などがリストアップされなかった。  </p>
-<p>隠しフォルダ内が検索対象から外れるのかとも思ったが、自作した隠しフォルダは検索された。<br>この辺はよく分からない。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/03/find-hidden-files/" data-text="隠しファイルの検索など（findコマンド） | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -661,6 +646,10 @@ find -type l
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/02/14/mbr-gpt/" ><i class="fa fa-file-o"></i>パーティションテーブルをMBRからGPTに書き換えてしまった</a>
+      </li>
+    
+      <li>
         <a href="/2015/02/11/kde-plasma-netbook/" ><i class="fa fa-file-o"></i>Kubuntuのネットブック向けデスクトップ「Plas...</a>
       </li>
     
@@ -674,10 +663,6 @@ find -type l
     
       <li>
         <a href="/2015/02/06/lxpup-LxQtPup/" ><i class="fa fa-file-o"></i>Puppy Linux派生。Puppy本家より扱いやす...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/02/06/puppy-dropbox/" ><i class="fa fa-file-o"></i>Puppy LinuxにDropboxクライアントをイ...</a>
       </li>
     
   </ul>
@@ -695,35 +680,35 @@ find -type l
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
 			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>10</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
+			<li><a href="/tags/Linux/">Linux<span>33</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
+		
 			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+			<li><a href="/tags/Git/">Git<span>10</span></a></li>
 		
 			<li><a href="/tags/アプリケーション/">アプリケーション<span>0</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>32</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 		
 		</ul>
@@ -735,7 +720,7 @@ find -type l
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

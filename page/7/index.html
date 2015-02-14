@@ -112,6 +112,79 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/12/03/hexo-freewill-monthly-archives/" >HexoのテーマFreewillに月別アーカイブ</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年12月3日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>サイドバーの種類にもよるが、Gitリポジトリを使ったブログにサイドバーを付けると、新規記事をdeployする際に更新するファイルが増えてしまって良くないように思う。  </p>
+<p>先日入れたテーマFreewillはその辺を考慮してか、ページネーションのページ等どうしても更新せざるを得ないページにはサイドバーを置き、個別記事のページではサイドバー領域に投稿日やタグなどを表示するよう工夫されている。<br>実際、新規記事をdeployしても、過去の記事はcommitされていないようだ。  </p>
+<p>ところで、Freewillには月別アーカイブが無かったので、入れることにした。  </p>
+<p>デフォルトテーマのLandscapeのarchive.ejsをそのままfreewill/layout/_widget内にコピペすると、西暦の後ろに投稿数が隙間無しにくっついていて、見栄えが良くない。  </p>
+<p>archive.ejsを修正、  </p>
+<pre><code>&lt;% if (site.posts.length){ %&gt;
+    &lt;div class=&quot;widget&quot;&gt;
+        &lt;h4&gt;&lt;%= __(&#39;Monthly Archives&#39;) %&gt;&lt;/h4&gt;
+        &lt;ul class=&quot;archive-list inline list-unstyled&quot;&gt;
+        &lt;%- list_archives() %&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;% } %&gt;
+</code></pre><p>freewill/source/css/style.cssにもスタイルを加えた。  </p>
+<pre><code>/* Monthly Archives
+---------------------------- */
+
+.archive-list ul {
+  padding:0 3px;
+  list-style-type: none;
+  line-height: 20px;
+}
+.archive-list-count {
+    color: #888;
+}
+.archive-list-count:before {
+    content: &quot; (&quot;;
+}
+.archive-list-count:after {
+    content: &quot;)&quot;;
+}
+</code></pre><p>ちゃんとした知識が無く、見よう見まねなので、あまり良い記述ではないと思うが、自分としては十分満足。  </p>
+<p>ーー<br>（追記）<br>Githubのコミット歴をよく見てみたら、同じタグを使っている過去記事も更新されるようだ。<br>個別記事ページのタグの箇所にそのタグを使っている記事数が表示されているせいだろう。  </p>
+<p>タグクラウドやタグ一覧ページは良いとして、個別記事ページのタグには記事数は無い方が良さそうだ。  </p>
+<p>freewill/layout/_partial/post/tag.ejsの5行目から<code>&lt;span&gt;&#39; + tag.length  + &#39;&lt;/span&gt;</code>を削除して、タグ名だけにした。  </p>
+<pre><code>tags.push(&#39;&lt;li&gt;&lt;a href=&quot;&#39; + config.root + tag.path + &#39;&quot;&gt;&#39; + tag.name + &#39;&lt;/a&gt;&lt;/li&gt;&#39;);
+</code></pre><p>これで様子を見てみようと思う。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/03/hexo-freewill-monthly-archives/" data-text="HexoのテーマFreewillに月別アーカイブ | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/12/02/hexo-tweetbutton/" >Hexoの記事一覧ページにツイートボタン設置</a>
 		</h3>
 	
@@ -624,54 +697,6 @@ metalsmith(__dirname)
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/26/filename-case/" >Hexo新規記事作成時のタイトル大文字アルファベットを小文字のファイル名に</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月26日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Hexoのデフォルト設定で新規記事を作成する際、記事タイトルに大文字アルファベットを使うと、そのままファイル名としてソースが作成される。</p>
-<pre><code>$ hexo new New-Post
-[info] File created at /.../source/_posts/2014-11-26-New-Post.md
-</code></pre><p>URLに大文字アルファベットが入ってしまう。  </p>
-<p>URLに大文字は使いたくないので、Octopressのように大文字→小文字でファイル出力して欲しい。  </p>
-<p>_config.ymlのWritingの項目<code>filename_case:</code>の値をデフォルトの「0」から「1」に変更することで設定出来た。  </p>
-<pre><code>$ hexo new New-Post
-[info] File created at /.../source/_posts/2014-11-26-new-post.md
-</code></pre><p>filename_case: 0（そのまま出力。New-Post→New-Post）  </p>
-<p>filename_case: 1（大文字を小文字に変換。New-Post→new-post.md）  </p>
-<p>filename_case: 2（すべて大文字に変換。New-Post→NEW-POST.md）  </p>
-<p>ーー<br>（追記）<br>出来たと思ったら、generateした際にtagsまでがすべて小文字になってしまった。<br>これでは困るので、<code>filename_case: 0</code>に戻した。<br>当面、大文字のファイル名は手作業で小文字にするしかなさそうだ。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/26/filename-case/" data-text="Hexo新規記事作成時のタイトル大文字アルファベットを小文字のファイル名に | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -713,6 +738,10 @@ metalsmith(__dirname)
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/02/14/mbr-gpt/" ><i class="fa fa-file-o"></i>パーティションテーブルをMBRからGPTに書き換えてしまった</a>
+      </li>
+    
+      <li>
         <a href="/2015/02/11/kde-plasma-netbook/" ><i class="fa fa-file-o"></i>Kubuntuのネットブック向けデスクトップ「Plas...</a>
       </li>
     
@@ -726,10 +755,6 @@ metalsmith(__dirname)
     
       <li>
         <a href="/2015/02/06/lxpup-LxQtPup/" ><i class="fa fa-file-o"></i>Puppy Linux派生。Puppy本家より扱いやす...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/02/06/puppy-dropbox/" ><i class="fa fa-file-o"></i>Puppy LinuxにDropboxクライアントをイ...</a>
       </li>
     
   </ul>
@@ -747,35 +772,35 @@ metalsmith(__dirname)
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>10</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>32</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
 		
 			<li><a href="/tags/アプリケーション/">アプリケーション<span>0</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>10</span></a></li>
+		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>33</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 		
 		</ul>
@@ -787,7 +812,7 @@ metalsmith(__dirname)
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

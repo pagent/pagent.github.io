@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Kubuntuのネットブック向けデスクトップ「Plasma Netbook」を通常のデスクトップに | Pagent</title>
+  <title>パーティションテーブルをMBRからGPTに書き換えてしまった | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Kubuntuのネットブック向けデスクトップ「Plasma Netbook」を通常のデスクトップに"/>
+  <meta property="og:title" content="パーティションテーブルをMBRからGPTに書き換えてしまった"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -94,7 +94,7 @@
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> Kubuntuのネットブック向けデスクトップ「Plasma Netbook」を通常のデスクトップに</h1>
+			<h1> パーティションテーブルをMBRからGPTに書き換えてしまった</h1>
 		</div>
 	
 
@@ -110,9 +110,17 @@
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>Kubuntuのネットブック向けデスクトップは「Plasma Netbook」というそうで、ディスプレイの小さいネットブックで使う分には、これはこれで便利そうなのだが、FirefoxやQupzillaなどのアプリケーションでメニューバーを表示出来ないという不便さがある。<br>特にQupzillaでは設定画面に行けず、Qupzillaの設定を変更出来ない。</p>
-<p>「KDEシステム設定」→「ワークスペースの挙動」→「Workspace」でWorkspace typeをNetbookからDesktopにしたら、通常のデスクトップに変更出来た。  </p>
-<p>ーー<br>ネットブックでKubuntuは厳しいのではないかと思ったが、ログインしてからの動作は許容範囲内。<br>Xubuntuと較べると、もっさり感はぬぐえないが。</p>
+	    <p>サブマシンのネットブックでArch Linuxを試してみようと思ったが、ブートローダーのGRUBをインストールするところで、BIOS（MBR形式）ではなくEFI-GPTを選択してしまった。  </p>
+<p>キャンセル出来ず途中で強制終了したが、MBRが壊れてしまったようで、起動出来なくなってしまった。<br>MBM（Multiple Boot Manager）を再インストールしてみたが、ディスク全体が”unknown”と表示されるのみ。  </p>
+<p>「TestDisk」というフリーソフトでパーティションテーブルを修復出来るようだった。  </p>
+<p>「TestDisk」は「Ultimate Boot CD」に同梱されてるという情報を見かけたが、どうやら現在は「Ultimate Boot CD」には同梱されていないようで、見つからなかった。<br>「SystemRescueCd」に入っていたので、こちらから利用した。<br>「SystemRescueCd」でブート。入力出来る状態になった後、<code>testdisk</code>とコマンドを打つと起動した。  </p>
+<p>使い方は最初はよく分からなかったが、サーチで表示されたリストの内、テーブルに書き込みたいものをキードードの左右のキーで設定し、緑色にしたら良いらしい。<br>リストは「p」キーでリストの内容を確認しながら選べば良いので、要領が分かれば簡単。<br>「q」で前の画面に戻る。</p>
+<p>使い方は下記サイトの解説が分かりやすかった。<br><a href="http://uiuicy.cs.land.to/testdisk1.html" target="_blank" rel="external">【TestDisk】について</a>  </p>
+<p>「Deeper Search」にはけっこう時間が掛かり、またせっかく「Deeper Search」が終わったリストを、途中で「ENTER」を押してしまって戻れなくなり、また最初から「Deeper Search」ということもあったが。  </p>
+<p>パーティションテーブルは一応復旧出来て、起動も出来るようになったが、どうやらGPTでのパーティショニングの痕跡が依然残っている様子。<br>GpartedもGPTでパーティショニングされていると判断するようで、なにかパーティションの操作をすると、また起動出来なくなる。  </p>
+<p>これでは不便だし安心感も持てないが、「AOMEI Partition Assistant Standard Edition」というWindows用のフリーソフトでディスクの内容を保持したままGPTとMBRの変換が出来るようなので、試してみることにした。  </p>
+<p>「AOMEI Partition Assistant」を試す前にパーティションのバックアップをしようと思ったが、Clonezillaもパーティションテーブルを読めないらしい。<br>仕方が無いので下記サイトを参考に、<code>dd</code>コマンドでバックアップすることにした。<br><a href="http://takuya-1st.hatenablog.jp/entry/20101025/1288002819" target="_blank" rel="external">dd でディスクをコピーするよく使う例 - それマグで！</a>  </p>
+<p>本当にバックアップ出来ているのかどうか分からないが。</p>
 
 	</div>
 
@@ -128,13 +136,13 @@
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2015/02/14/mbr-gpt/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2015/02/11/kubuntu-blanck-screen/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2015/02/11/kde-plasma-netbook/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -168,7 +176,7 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2015年2月11日
+	2015年2月14日
 	</div>
 	
 

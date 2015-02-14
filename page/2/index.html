@@ -112,6 +112,68 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/02/03/find-hidden-files/" >隠しファイルの検索など（findコマンド）</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月3日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Dolphinが自動生成した.directoryファイルを削除しようと、ファイルマネージャーで”.directory”を検索したが、ファイルが見つからない。<br>“directory”でも該当無し。<br>確かにあるのだが、ファイルマネージャーの機能では隠しファイルを検索出来ないらしい。</p>
+<p>端末でfindコマンドを使ったらヒットした。  </p>
+<pre><code>find ~/ -name .directory
+// ~/ディレクトリ以下で名前に&quot;.directory&quot;を含むファイル・ディレクトリを再帰的に検索
+</code></pre><p>ーー<br>以下、findコマンドについて  </p>
+<p><strong>Linuxではディレクトリを省略すると、カレントディレクトリ以下で検索</strong><br>（他のUNIXでは<code>.</code>が必要。）</p>
+<pre><code>find -name .directory
+find . -name .directory
+</code></pre><p><strong>-typeオプションで検索対象の種類を指定（ファイル、ディレクトリ、リンク）</strong>  </p>
+<pre><code>find -type f
+find -type d
+find -type l
+</code></pre><p><strong>名前の前後にワイルドカード<code>*</code>を付けての検索が可能</strong>  </p>
+<pre><code>find -type f -name &quot;*.pdf&quot;
+</code></pre><p>（名前にワイルドカードを付ける場合は、半角ダブルクォーテーション<code>&quot;</code>で囲った方が良いらしい。 「find: パス名は評価式の前に置かなければいけません」とエラーになることがある。） </p>
+<p><strong>-sizeオプションでサイズを指定</strong>  </p>
+<pre><code>find -type f -name &quot;*.JPG&quot; -size +1000k
+</code></pre><p>（1000KB以上の.JPGファイルを検索。JPGとjpgは区別される。）</p>
+<p><strong>-deleteオプションで該当ファイルを削除</strong>  </p>
+<pre><code>find -type f -name &quot;*.hogehoge&quot; -delete
+</code></pre><p>など。  </p>
+<p>（参照）<br><a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20060227/230777/" target="_blank" rel="external">Linuxコマンド集 - 【 find 】 ファイルやディレクトリを検索する：ITpro</a><br><a href="http://x68000.q-e-d.net/~68user/unix/pickup?find" target="_blank" rel="external">UNIXの部屋 コマンド検索:find (*BSD/Linux)</a>  </p>
+<p>またディレクトリにワイルドカード<code>*</code>を付けると検索結果が異なる様子。  </p>
+<pre><code>find ~/* -name .directory
+</code></pre><p>~/.kde/share/apps/dolphin/view_properties/global/.directory<br>~/.kde/share/apps/dolphin/view_properties/local/usr/.directory<br>などがリストアップされなかった。  </p>
+<p>隠しフォルダ内が検索対象から外れるのかとも思ったが、自作した隠しフォルダは検索された。<br>この辺はよく分からない。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/03/find-hidden-files/" data-text="隠しファイルの検索など（findコマンド） | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/02/03/dolphin-directory-files/" >Dolphinが.directoryファイルを生成するのを止める</a>
 		</h3>
 	
@@ -522,54 +584,6 @@ sudo cp -r copy/x86_64 /opt/copy
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/01/28/simplenote/" >これは便利！シンプルで軽快、おすすめのオンラインメモ帳「Simplenote」</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年1月28日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>以前はちょっとした文章などをPC間でやり取りするのに、自分宛てにメールを送ったりしていた。<br>あるサイトのURLを別のPCでも開きたい時など。  </p>
-<p>Firefox Syncを使うようになってからはURLを送る必要は無くなったが、それでもちょっとした、それでいて文字を一から入力するのは大変そうな文章を送りたい時がわりとある。<br>そういう時はGoogleやYahoo!で検索して検索結果のURLをブックマーク、Firefox Syncの同期を利用して別のPCに送るというようなことをしていた。  </p>
-<p>あまりスマートなやり方とは思えないし、なにか良い方法はないものか。<br>Dropboxにテキストファイルを保存するというのは同期に時間が掛かる。  </p>
-<p>ずいぶん前にオンラインノートの老舗Evernoteのアカウントは作っていた。<br>長らく放置していたEvernoteをもう一度使ってみようかと思ったが、多機能ゆえか動作が重く、どうにもやりきれない。<br>もっと簡単にちょこちょこっと書いたり、コピペしたりしたいだけなのだ。  </p>
-<p>なにか良いサービスはないかと探してみたら、有りました！  </p>
-<p><a href="https://app.simplenote.com/" target="_blank" rel="external">「Simplenote」</a>  </p>
-<p>とにかく軽い。<br>そしてシンプル。<br>こういうのが欲しかった。  </p>
-<p>（参照サイト）<br><a href="http://allabout.co.jp/matome/cl000000002229/" target="_blank" rel="external">お散歩に持って出ると便利な「オンラインノート」サービス10選｜All About（オールアバウト）</a>  </p>
-<p>はじめは管理するアカウントをあまり増やしたくないので少し躊躇したが、試してみて良かった。  </p>
-<p>これはおすすめです。  </p>
-<p>ーー<br>（追記）<br>Linux、Windows、OS Xなど、クロスプラットフォームで利用可能なメモ帳ソフト「nvPY」というのがあった。（Ubuntu系ならソフトウェアセンターからインストール可能）<br>「nvPY」はSimplenoteと簡単に同期出来て、ブラウザでサイトを開く必要がなくなるので、さらに便利。<br><a href="http://pagent.github.io/2015/01/28/nvpy/" target="_blank" rel="external">Simplenoteと簡単に同期出来るメモ帳ソフト「nvPY」 | Pagent</a>    </p>
-<p>あと場所が分かりにくいが、<a href="http://simplenote.com/downloads/" target="_blank" rel="external">Downloads | Simplenote</a>にSimplenoteのアプリ一覧が挙げられていた。<br>Mac OS X用、Windows用、Mobile用などのアプリや、Microsoft Outlook用、Emacs用プラグインなど多数あり。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/28/simplenote/" data-text="これは便利！シンプルで軽快、おすすめのオンラインメモ帳「Simplenote」 | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -611,6 +625,10 @@ sudo cp -r copy/x86_64 /opt/copy
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/02/14/mbr-gpt/" ><i class="fa fa-file-o"></i>パーティションテーブルをMBRからGPTに書き換えてしまった</a>
+      </li>
+    
+      <li>
         <a href="/2015/02/11/kde-plasma-netbook/" ><i class="fa fa-file-o"></i>Kubuntuのネットブック向けデスクトップ「Plas...</a>
       </li>
     
@@ -624,10 +642,6 @@ sudo cp -r copy/x86_64 /opt/copy
     
       <li>
         <a href="/2015/02/06/lxpup-LxQtPup/" ><i class="fa fa-file-o"></i>Puppy Linux派生。Puppy本家より扱いやす...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/02/06/puppy-dropbox/" ><i class="fa fa-file-o"></i>Puppy LinuxにDropboxクライアントをイ...</a>
       </li>
     
   </ul>
@@ -645,35 +659,35 @@ sudo cp -r copy/x86_64 /opt/copy
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
 			<li><a href="/tags/アプリケーション/">アプリケーション<span>0</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>32</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
 		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
 			<li><a href="/tags/Git/">Git<span>10</span></a></li>
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
 		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>23</span></a></li>
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>33</span></a></li>
 		
 		
 		</ul>
@@ -685,7 +699,7 @@ sudo cp -r copy/x86_64 /opt/copy
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
