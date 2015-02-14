@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-02-14T10:30:55.132Z</updated>
+  <updated>2015-02-14T10:51:35.909Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,9 +19,8 @@
     <link href="http://pagent.github.io/2015/02/14/mbr-gpt/"/>
     <id>http://pagent.github.io/2015/02/14/mbr-gpt/</id>
     <published>2015-02-14T09:39:51.000Z</published>
-    <updated>2015-02-14T10:30:37.000Z</updated>
-    <content type="html"><![CDATA[<p>サブマシンのネットブックでArch Linuxを試してみようと思ったが、ブートローダーのGRUBをインストールするところで、BIOS（MBR形式）ではなくEFI-GPTを選択してしまった。  </p>
-<p>キャンセル出来ず途中で強制終了したが、MBRが壊れてしまったようで、起動出来なくなってしまった。<br>MBM（Multiple Boot Manager）を再インストールしてみたが、ディスク全体が”unknown”と表示されるのみ。  </p>
+    <updated>2015-02-14T10:51:25.000Z</updated>
+    <content type="html"><![CDATA[<p>サブマシンのネットブックでArch Linuxを試してみようと思ったが、ブートローダーのGRUBをインストールするところで、BIOS（MBR形式）ではなくEFI-GPTを選択してしまった。<br>そのせいでMBRが壊れてしまったようで、起動出来なくなってしまった。<br>MBM（Multiple Boot Manager）を再インストールしてみたが、ディスク全体が”unknown”と表示されるのみ。  </p>
 <p>「TestDisk」というフリーソフトでパーティションテーブルを修復出来るようだった。  </p>
 <p>「TestDisk」は「Ultimate Boot CD」に同梱されてるという情報を見かけたが、どうやら現在は「Ultimate Boot CD」には同梱されていないようで、見つからなかった。<br>「SystemRescueCd」に入っていたので、こちらから利用した。<br>「SystemRescueCd」でブート。入力出来る状態になった後、<code>testdisk</code>とコマンドを打つと起動した。  </p>
 <p>使い方は最初はよく分からなかったが、サーチで表示されたリストの内、テーブルに書き込みたいものをキードードの左右のキーで設定し、緑色にしたら良いらしい。<br>リストは「p」キーでリストの内容を確認しながら選べば良いので、要領が分かれば簡単。<br>「q」で前の画面に戻る。</p>
@@ -33,8 +32,7 @@
 <p>本当にバックアップ出来ているのかどうか分からないが。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>サブマシンのネットブックでArch Linuxを試してみようと思ったが、ブートローダーのGRUBをインストールするところで、BIOS（MBR形式）ではなくEFI-GPTを選択してしまった。  </p>
-<p>キャンセル出来ず途中で強制終了したが、MBRが壊れてしまったようで]]>
+    <![CDATA[<p>サブマシンのネットブックでArch Linuxを試してみようと思ったが、ブートローダーのGRUBをインストールするところで、BIOS（MBR形式）ではなくEFI-GPTを選択してしまった。<br>そのせいでMBRが壊れてしまったようで、起動出来なくなってしまった。<br>M]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
