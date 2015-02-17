@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-02-17T11:46:58.257Z</updated>
+  <updated>2015-02-17T14:09:58.948Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[GitHub Pagesのブログでリダイレクト「hexo-generator-alias」]]></title>
-    <link href="http://pagent.github.io/2015/02/17/hexo-github-pages-redirect/"/>
-    <id>http://pagent.github.io/2015/02/17/hexo-github-pages-redirect/</id>
+    <link href="http://pagent.github.io/2015/02/17/github-pages-redirect/"/>
+    <id>http://pagent.github.io/2015/02/17/github-pages-redirect/</id>
     <published>2015-02-17T09:46:03.000Z</published>
     <updated>2015-02-17T11:21:27.000Z</updated>
     <content type="html"><![CDATA[<p>先日書いた記事のURLが、一部大文字のアルファベットになっていたので小文字に変更したら、当然のごとくリンク切れになってしまった。  </p>
