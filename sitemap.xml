@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2015/02/17/hexo-github-pages-redirect/</loc>
+    <lastmod>2015-02-17T10:54:07.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2015/02/06/lxpup-lxqtpup/</loc>
     <lastmod>2015-02-17T09:42:48.000Z</lastmod>
   </url>
@@ -352,11 +357,6 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/11/26/hexo-bitbucket/</loc>
-    <lastmod>2014-12-11T21:42:34.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://pagent.github.io/2014/11/27/hexo-china/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
@@ -528,6 +528,11 @@
   
   <url>
     <loc>http://pagent.github.io/2014/11/26/filename-case/</loc>
+    <lastmod>2014-12-11T21:42:34.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2014/11/26/hexo-bitbucket/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   

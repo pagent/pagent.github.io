@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>KDEウォレットマネージャーを停止 | Pagent</title>
+  <title>GitHub Pagesのブログでリダイレクト「hexo-generator-alias」 | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="KDEウォレットマネージャーを停止"/>
+  <meta property="og:title" content="GitHub Pagesのブログでリダイレクト「hexo-generator-alias」"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -94,7 +94,7 @@
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> KDEウォレットマネージャーを停止</h1>
+			<h1> GitHub Pagesのブログでリダイレクト「hexo-generator-alias」</h1>
 		</div>
 	
 
@@ -110,10 +110,19 @@
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>無線LANのパスワードを設定してから、Kubuntuにログインする度にKDEウォレットマネージャーが起動してくるようになった。<br>パスワードはクロスプラットフォームの管理ソフト「KeePass2」を使う方が便利なので、KDEウォレットマネージャーは不要。  </p>
-<p>Software CenterでKWalletManagerをアンインストールしたのに、それでもしつこく起動してくる。  </p>
-<p>もう一度インストールし、KDEウォレットマネージャーの設定で「KDEウォレットサブシステムを使う。」のチェックを外して、ようやく起動を停止出来た。  </p>
-<p>アンインストールしても起動してくるって、どうなってるんだろう。</p>
+	    <p>先日書いた記事のURLが一部大文字のアルファベットになっていたので小文字に変更したら、当然のごとくリンク切れになってしまった。<br>以前、.htaccessを使って転送しようとしたことがあったが、.htaccessをdeployすることは出来たものの効果は無かった。<br>GitHub Pagesでは.htaccessは使えないらしい。  </p>
+<p>meta refreshタグなら使えるのではないかと思い、やってみた。</p>
+<p>全ての記事の基本レイアウトで転送設定する訳にはいかないので、publicフォルダ内に転送元となるindex.htmlを作り、転送タグを記載。<br>generateの際に消えてしまわないよう所有者をrootに変更し、さらにパーミッションも444に変更した。<br>だが、この状態でgenerateするとエラーになってしまう。  </p>
+<p>なにか良い方法は無いかと検索したら、転送元となるindex.htmlを自動生成してくれるプラグインが見つかった。<br><a href="https://www.npmjs.com/package/hexo-generator-alias" target="_blank" rel="external">hexo-generator-alias</a>  </p>
+<p>Hexoの作業フォルダ内で端末を開き  </p>
+<pre><code>$ npm install hexo-generator-alias --save
+</code></pre><p>とコマンドを打つとインストール完了。<br>node_modulesフォルダにhexo-generator-aliasが追加される。  </p>
+<p>転送先となる新しい記事ソースのFrontMatterに<code>alias: （転送元のパス）</code>を追加しgenerateすると、publicフォルダ内に転送元となるindex.htmlを生成してくれる。  </p>
+<p>自分の例では、2015-02-06-lxpup-lxqtpup.mdのFrontMatterに<code>alias: 2015/02/06/lxpup-LxQtPup/</code>を追記。<br>generateすると、public/2015/02/06/lxpup-LxQtPup/index.htmlが生成された。<br>ファイルの中身は転送指定のみの簡潔なもの。  </p>
+<pre><code>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;title&gt;Redirecting...&lt;/title&gt;&lt;link rel=&quot;canonical&quot; href=&quot;/2015/02/06/lxpup-lxqtpup/index.html&quot;&gt;&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0; url=/2015/02/06/lxpup-lxqtpup/index.html&quot;&gt;&lt;/head&gt;&lt;/html&gt;
+</code></pre><p>旧URL <a href="http://pagent.github.io/2015/02/06/lxpup-LxQtPup/index.html" target="_blank" rel="external">http://pagent.github.io/2015/02/06/lxpup-LxQtPup/index.html</a> にアクセスすると、ちゃんと新URLに転送された。  </p>
+<p>Jekyllにも同様のプラグインがありOctopressでも使えるようで、以前使っていたOctopressで試してみたところ、転送用のindex.htmlを生成出来た。<br><a href="https://github.com/tsmango/jekyll_alias_generator" target="_blank" rel="external">tsmango/jekyll_alias_generator</a>  </p>
+<p>GitHub Pagesでの転送は以前は諦めていたが、これで一安心。</p>
 
 	</div>
 
@@ -129,13 +138,13 @@
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2015/02/17/hexo-github-pages-redirect/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2015/02/14/mbr-gpt/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2015/02/15/stop-kwallet-manager/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -169,7 +178,7 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2015年2月15日
+	2015年2月17日
 	</div>
 	
 
@@ -183,7 +192,7 @@
     <ul id="tags" class="tag_box list-unstyled collapse in">
 	    <!-- _partial/post/tag -->
   
-  <li><a href="/tags/Linux/">Linux</a></li>
+  <li><a href="/tags/Hexo/">Hexo</a></li> <li><a href="/tags/Git/">Git</a></li>
 
     </ul>
 	</div>

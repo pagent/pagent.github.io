@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-02-17T09:43:30.015Z</updated>
+  <updated>2015-02-17T10:54:33.094Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,36 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[GitHub Pagesのブログでリダイレクト「hexo-generator-alias」]]></title>
+    <link href="http://pagent.github.io/2015/02/17/hexo-github-pages-redirect/"/>
+    <id>http://pagent.github.io/2015/02/17/hexo-github-pages-redirect/</id>
+    <published>2015-02-17T09:46:03.000Z</published>
+    <updated>2015-02-17T10:54:07.000Z</updated>
+    <content type="html"><![CDATA[<p>先日書いた記事のURLが一部大文字のアルファベットになっていたので小文字に変更したら、当然のごとくリンク切れになってしまった。<br>以前、.htaccessを使って転送しようとしたことがあったが、.htaccessをdeployすることは出来たものの効果は無かった。<br>GitHub Pagesでは.htaccessは使えないらしい。  </p>
+<p>meta refreshタグなら使えるのではないかと思い、やってみた。</p>
+<p>全ての記事の基本レイアウトで転送設定する訳にはいかないので、publicフォルダ内に転送元となるindex.htmlを作り、転送タグを記載。<br>generateの際に消えてしまわないよう所有者をrootに変更し、さらにパーミッションも444に変更した。<br>だが、この状態でgenerateするとエラーになってしまう。  </p>
+<p>なにか良い方法は無いかと検索したら、転送元となるindex.htmlを自動生成してくれるプラグインが見つかった。<br><a href="https://www.npmjs.com/package/hexo-generator-alias" target="_blank" rel="external">hexo-generator-alias</a>  </p>
+<p>Hexoの作業フォルダ内で端末を開き  </p>
+<pre><code>$ npm install hexo-generator-alias --save
+</code></pre><p>とコマンドを打つとインストール完了。<br>node_modulesフォルダにhexo-generator-aliasが追加される。  </p>
+<p>転送先となる新しい記事ソースのFrontMatterに<code>alias: （転送元のパス）</code>を追加しgenerateすると、publicフォルダ内に転送元となるindex.htmlを生成してくれる。  </p>
+<p>自分の例では、2015-02-06-lxpup-lxqtpup.mdのFrontMatterに<code>alias: 2015/02/06/lxpup-LxQtPup/</code>を追記。<br>generateすると、public/2015/02/06/lxpup-LxQtPup/index.htmlが生成された。<br>ファイルの中身は転送指定のみの簡潔なもの。  </p>
+<pre><code>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;title&gt;Redirecting...&lt;/title&gt;&lt;link rel=&quot;canonical&quot; href=&quot;/2015/02/06/lxpup-lxqtpup/index.html&quot;&gt;&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0; url=/2015/02/06/lxpup-lxqtpup/index.html&quot;&gt;&lt;/head&gt;&lt;/html&gt;
+</code></pre><p>旧URL <a href="http://pagent.github.io/2015/02/06/lxpup-LxQtPup/index.html" target="_blank" rel="external">http://pagent.github.io/2015/02/06/lxpup-LxQtPup/index.html</a> にアクセスすると、ちゃんと新URLに転送された。  </p>
+<p>Jekyllにも同様のプラグインがありOctopressでも使えるようで、以前使っていたOctopressで試してみたところ、転送用のindex.htmlを生成出来た。<br><a href="https://github.com/tsmango/jekyll_alias_generator" target="_blank" rel="external">tsmango/jekyll_alias_generator</a>  </p>
+<p>GitHub Pagesでの転送は以前は諦めていたが、これで一安心。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>先日書いた記事のURLが一部大文字のアルファベットになっていたので小文字に変更したら、当然のごとくリンク切れになってしまった。<br>以前、.htaccessを使って転送しようとしたことがあったが、.htaccessをdeployすることは出来たものの効果は無かった。<br]]>
+    </summary>
+    
+      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
+    
+      <category term="Git" scheme="http://pagent.github.io/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[KDEウォレットマネージャーを停止]]></title>
@@ -542,33 +572,6 @@ sudo cp -r copy/x86_64 /opt/copy
     </summary>
     
       <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Xubuntu14.04にインストールしたCopy.com クライアントで「QGtkStyle was unable to detect the current GTK+ theme.」のエラー]]></title>
-    <link href="http://pagent.github.io/2015/01/29/xubuntu-copy-error-qgtkstyle/"/>
-    <id>http://pagent.github.io/2015/01/29/xubuntu-copy-error-qgtkstyle/</id>
-    <published>2015-01-29T05:17:29.000Z</published>
-    <updated>2015-01-30T11:27:09.000Z</updated>
-    <content type="html"><![CDATA[<p>Xubuntu14.04にDropboxに似たオンラインストレージ「Copy」のクライアントを導入した。<br>クライアントはcopy.comからダウンロードしたものではなく、下記サイトを参考にUbuntu向けのものをインストールした。<br><a href="http://kometchtech.blog.fc2.com/blog-entry-1542.html" target="_blank" rel="external">いつか、そのとき、あの場所で。 | [Ubuntu][自分用メモ]　Copy.com クライアントのインストール方法。</a>  </p>
-<p>インストール後、メニュー→アクセサリ→Copyで起動し、64bitのPCでは問題なく使用出来た。<br>だが32bitのPCではログインする際、「curl failed to post data」とエラーになり、終了してしまう。  </p>
-<p>端末から  </p>
-<pre><code>$ /opt/copy-client/CopyAgent
-</code></pre><p>とコマンド入力して起動させても、  </p>
-<pre><code>QGtkStyle was unable to detect the current GTK+ theme.
-</code></pre><p>というエラー表示が出て、やはりログイン出来ない。  </p>
-<p>QGtkStyleとかGTK+とか、なんのことかよく分からなかったが、どうやら<code>libgnomeui</code>をインストールする必要があるらしい。<br><a href="https://wiki.archlinux.org/index.php/Uniform_Look_for_Qt_and_GTK_Applications_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29#Qt_.E3.82.A2.E3.83.97.E3.83.AA.E3.82.B1.E3.83.BC.E3.82.B7.E3.83.A7.E3.83.B3.E3.81.8C_QGtkStyle_.E3.82.92.E4.BD.BF.E3.82.8F.E3.81.AA.E3.81.84" target="_blank" rel="external">Uniform Look for Qt and GTK Applications (日本語) - ArchWiki</a>  </p>
-<p>さらに検索してみると、Ubuntuでは以前からCopy.com クライアント利用にあたっての不具合が報告されているようだ。<br><a href="http://ubuntuforums.org/showthread.php?t=2217713&amp;page=2&amp;p=12993324#post12993324" target="_blank" rel="external">Copy.com indicator problem with Ubuntu 14.04 - Page 2</a>  </p>
-<p>インジケーター問題の修正はインストール時に行った（最新バージョンでは修正済か？）が、この回答を参考に、Synapticから<code>libgnomeui-0</code>をインストールした。<br>無事Copy.com クライアントを使用出来るようになった。  </p>
-<p>回答にあった「canberra-gtk-module」のエラーは出なかった。  </p>
-<p>ーー<br>（追記）<br>64bitのPCでもCopy.com クライアントを起動した際、”Logging In”の状態でギクシャクすることがあるので、こちらにも<code>libgnomeui-0</code>をインストールした。<br>だがその後も不調が続いたので、Copy.comのサイトからダウンロードしたクライアントを入れなおした。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Xubuntu14.04にDropboxに似たオンラインストレージ「Copy」のクライアントを導入した。<br>クライアントはcopy.comからダウンロードしたものではなく、下記サイトを参考にUbuntu向けのものをインストールした。<br><a href="http:/]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
     
   </entry>
   
