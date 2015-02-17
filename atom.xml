@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-02-16T21:21:32.846Z</updated>
+  <updated>2015-02-17T09:43:30.015Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -134,7 +134,7 @@
     <link href="http://pagent.github.io/2015/02/06/lxpup-lxqtpup/"/>
     <id>http://pagent.github.io/2015/02/06/lxpup-lxqtpup/</id>
     <published>2015-02-06T01:02:10.000Z</published>
-    <updated>2015-02-15T15:13:48.000Z</updated>
+    <updated>2015-02-17T09:42:48.000Z</updated>
     <content type="html"><![CDATA[<p>Puppy Linuxのデスクトップ環境について調べ物をしていたら、LxPup - Puppy Linux + LXDEというページがあった。<br><a href="http://sourceforge.jp/projects/sfnet_lxpup/" target="_blank" rel="external">LxPup - Puppy Linux + LXDE プロジェクト日本語トップページ - SourceForge.JP</a>  </p>
 <p>LxPup、LxQtPupというのを初めて知ったが、Puppy LinuxをLXDEデスクトップにアレンジしたものらしい。  </p>
 <p>早速、LxPup-15.02.2のPAE版と非PAE版、それとLxQtPup（非PAE）をダウンロードした。<br>いずれもSlacko Puppy 5.9.3がベースのもの。</p>
