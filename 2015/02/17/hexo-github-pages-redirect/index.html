@@ -110,7 +110,8 @@
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>先日書いた記事のURLが一部大文字のアルファベットになっていたので小文字に変更したら、当然のごとくリンク切れになってしまった。<br>以前、.htaccessを使って転送しようとしたことがあったが、.htaccessをdeployすることは出来たものの効果は無かった。<br>GitHub Pagesでは.htaccessは使えないらしい。  </p>
+	    <p>先日書いた記事のURLが一部大文字のアルファベットになっていたので小文字に変更したら、当然のごとくリンク切れになってしまった。  </p>
+<p>以前、.htaccessを使って301リダイレクトをしようと試みたことがあったが、.htaccessをdeployすることは出来たものの効果は無かった。<br>GitHub Pagesでは.htaccessを使えないらしい。  </p>
 <p>meta refreshタグなら使えるのではないかと思い、やってみた。</p>
 <p>全ての記事の基本レイアウトで転送設定する訳にはいかないので、publicフォルダ内に転送元となるindex.htmlを作り、転送タグを記載。<br>generateの際に消えてしまわないよう所有者をrootに変更し、さらにパーミッションも444に変更した。<br>だが、この状態でgenerateするとエラーになってしまう。  </p>
 <p>なにか良い方法は無いかと検索したら、転送元となるindex.htmlを自動生成してくれるプラグインが見つかった。<br><a href="https://www.npmjs.com/package/hexo-generator-alias" target="_blank" rel="external">hexo-generator-alias</a>  </p>
@@ -121,7 +122,7 @@
 <p>自分の例では、2015-02-06-lxpup-lxqtpup.mdのFrontMatterに<code>alias: 2015/02/06/lxpup-LxQtPup/</code>を追記。<br>generateすると、public/2015/02/06/lxpup-LxQtPup/index.htmlが生成された。<br>ファイルの中身は転送指定のみの簡潔なもの。  </p>
 <pre><code>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;title&gt;Redirecting...&lt;/title&gt;&lt;link rel=&quot;canonical&quot; href=&quot;/2015/02/06/lxpup-lxqtpup/index.html&quot;&gt;&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0; url=/2015/02/06/lxpup-lxqtpup/index.html&quot;&gt;&lt;/head&gt;&lt;/html&gt;
 </code></pre><p>旧URL <a href="http://pagent.github.io/2015/02/06/lxpup-LxQtPup/index.html" target="_blank" rel="external">http://pagent.github.io/2015/02/06/lxpup-LxQtPup/index.html</a> にアクセスすると、ちゃんと新URLに転送された。  </p>
-<p>Jekyllにも同様のプラグインがありOctopressでも使えるようで、以前使っていたOctopressで試してみたところ、転送用のindex.htmlを生成出来た。<br><a href="https://github.com/tsmango/jekyll_alias_generator" target="_blank" rel="external">tsmango/jekyll_alias_generator</a>  </p>
+<p>Jekyllにも同様のプラグインがあり、Octopressでも使えるようだ。<br><a href="https://github.com/tsmango/jekyll_alias_generator" target="_blank" rel="external">tsmango/jekyll_alias_generator</a><br>以前使っていたOctopressで試してみたところ、転送用のindex.htmlを生成出来た。 </p>
 <p>GitHub Pagesでの転送は以前は諦めていたが、これで一安心。</p>
 
 	</div>
