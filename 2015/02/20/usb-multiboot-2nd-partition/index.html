@@ -119,7 +119,7 @@
 <pre><code>syslinux /dev/sdb2
 </code></pre><p>さらにsdbにMBRを再インストール。  </p>
 <pre><code>dd bs=440 count=1 conv=notrunc if=~/Desktop/syslinux-4.04/mbr/mbr.bin of=/dev/sdb
-</code></pre><p>（デスクトップ上で解凍したが、if=以下のパスは状況に応じて。）  </p>
+</code></pre><p>（デスクトップ上で解凍したが、if=やof=以下のパスは状況に応じて。）  </p>
 <p>USBメモリの2番目のパーティションsdb2から起動出来るようになった。  </p>
 <p>ーー<br>（参照記事）<br><a href="http://www.server-world.info/query?os=Other&amp;p=knoppix&amp;f=2" target="_blank" rel="external">KNOPPIX - 複数パーティション構成のUSBメモリから起動する ： Server World</a><br><a href="https://wiki.archlinux.org/index.php/Syslinux_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29#.E6.89.8B.E5.8B.95.E3.82.A4.E3.83.B3.E3.82.B9.E3.83.88.E3.83.BC.E3.83.AB" target="_blank" rel="external">Syslinux (日本語) - ArchWiki</a></p>
 
