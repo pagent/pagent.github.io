@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-02-17T14:09:58.948Z</updated>
+  <updated>2015-02-20T14:06:01.696Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,34 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[USBメモリの第2パーティションからisoファイルをマルチブート]]></title>
+    <link href="http://pagent.github.io/2015/02/20/usb-multiboot-2nd-partition/"/>
+    <id>http://pagent.github.io/2015/02/20/usb-multiboot-2nd-partition/</id>
+    <published>2015-02-20T13:22:48.000Z</published>
+    <updated>2015-02-20T14:05:18.000Z</updated>
+    <content type="html"><![CDATA[<p>USBメモリから、Puppy LinuxとClonezillaの両方を起動出来たら便利そうだ。  </p>
+<p>複数のisoファイルをUSBメモリから起動させるツールはいくつかあるようだったが、Windows用のXBOOTというのがサイズがコンパクトで手軽、使い勝手も良かった。  </p>
+<p>XBOOTで唯一の不満は、isoファイルをUSBメモリの2番目以降のパーティションにインストール出来ないこと。<br>やはりパーティションは分けた方がデータを整理しやすい。<br>Windowsでは1番目のパーティションしか見えないので、データの保存は第1パーティション、isoファイルの起動は第2パーティションにしたいところ。  </p>
+<p>XBOOTでいったん先頭のパーティション（sdb1）にPuppyとClonezillaのisoファイルをインストール。<br>その後そのデータを第2パーティション（sdb2）にコピー。<br>だが、これではUSBが起動しなくなってしまうので、syslinuxとMBRを再度インストールする必要があった。  </p>
+<p>下記サイトからsyslinuxの圧縮ファイルをダウンロード。<br>（syslinux-4.04を用いたが、現時点の最新版はsyslinux-6.03のよう）<br><a href="https://www.kernel.org/pub/linux/utils/boot/syslinux/" target="_blank" rel="external">Index of /pub/linux/utils/boot/syslinux</a>  </p>
+<p>syslinux-4.04.tar.bz2を解凍。syslinux-4.04/linuxフォルダ内で端末を開き、下記コマンドでsdb2（環境によってはsdc2など）にsyslinuxをインストール。  </p>
+<pre><code>syslinux /dev/sdb2
+</code></pre><p>さらにsdbにMBRを再インストール。  </p>
+<pre><code>dd bs=440 count=1 conv=notrunc if=~/Desktop/syslinux-4.04/mbr/mbr.bin of=/dev/sdb
+</code></pre><p>（デスクトップ上で解凍したが、if=以下のパスは状況に応じて。）  </p>
+<p>USBメモリの2番目のパーティションsdb2から起動出来るようになった。  </p>
+<p>ーー<br>（参照記事）<br><a href="http://www.server-world.info/query?os=Other&amp;p=knoppix&amp;f=2" target="_blank" rel="external">KNOPPIX - 複数パーティション構成のUSBメモリから起動する ： Server World</a><br><a href="https://wiki.archlinux.org/index.php/Syslinux_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29#.E6.89.8B.E5.8B.95.E3.82.A4.E3.83.B3.E3.82.B9.E3.83.88.E3.83.BC.E3.83.AB" target="_blank" rel="external">Syslinux (日本語) - ArchWiki</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>USBメモリから、Puppy LinuxとClonezillaの両方を起動出来たら便利そうだ。  </p>
+<p>複数のisoファイルをUSBメモリから起動させるツールはいくつかあるようだったが、Windows用のXBOOTというのがサイズがコンパクトで手軽、使い勝手も良か]]>
+    </summary>
+    
+      <category term="Utility" scheme="http://pagent.github.io/tags/Utility/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[GitHub Pagesのブログでリダイレクト「hexo-generator-alias」]]></title>
@@ -555,25 +583,6 @@ sudo cp -r copy/x86_64 /opt/copy
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Dropbox サイズだけではなくファイル数も問題]]></title>
-    <link href="http://pagent.github.io/2015/01/29/dropbox-number-of-files/"/>
-    <id>http://pagent.github.io/2015/01/29/dropbox-number-of-files/</id>
-    <published>2015-01-29T10:06:13.000Z</published>
-    <updated>2015-01-29T10:58:34.000Z</updated>
-    <content type="html"><![CDATA[<p>独自ドメイン運用のサーバーからダウンロードしたファイル一式をDropboxのフォルダに置いたら、同期に時間が掛かるようになってしまった。<br>いったん同期が済み、なにも更新が無い時でも、Dropboxクライアント起動後のファイルリストのダウンロードとインデックス作成に10分以上掛かる。<br>どうやらファイル数が多いためらしい。<br>同期にはファイルサイズだけではなく、ファイル数も影響するのだとか。<br><a href="http://www.iodata.jp/support/qanda/answer/nas_dropbox.html#a4" target="_blank" rel="external">Dropbox制限事項Q&amp;A</a>  </p>
-<p>サーバーのファイルの数は数万の単位だったので、これを圧縮ファイルにして１つのファイルにしたところ、同期時間を大幅に短縮出来た。  </p>
-<p>圧縮前はファイル数が60000以上、Dropboxフォルダの総サイズが約500MB。なにも更新がない状態でDropboxクライアントを起動し、同期が完了するのに約12分掛かった。<br>圧縮後はファイル数が約5500、サイズは約300MB。同期は約1分で完了した。  </p>
-<p>Hexo（Octopressに似た静的サイトジェネレーター）のフォルダもDropboxフォルダに置いているが、.deploy/.git/objectsや.git/objects下にフォルダ・ファイルが多数生成されてしまうので、同期前には<code>git gc</code>するようにしている。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>独自ドメイン運用のサーバーからダウンロードしたファイル一式をDropboxのフォルダに置いたら、同期に時間が掛かるようになってしまった。<br>いったん同期が済み、なにも更新が無い時でも、Dropboxクライアント起動後のファイルリストのダウンロードとインデックス作成に10]]>
-    </summary>
-    
-      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
     
   </entry>
   
