@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-02-25T14:23:56.271Z</updated>
+  <updated>2015-02-25T15:35:36.615Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,14 +19,14 @@
     <link href="http://pagent.github.io/2015/02/25/clonezilla-architecture-speed/"/>
     <id>http://pagent.github.io/2015/02/25/clonezilla-architecture-speed/</id>
     <published>2015-02-25T13:59:15.000Z</published>
-    <updated>2015-02-25T14:23:46.000Z</updated>
-    <content type="html"><![CDATA[<p>新しいkernelだと古いPCで通常に起動しない。<br>kernel3.10台のものなら大丈夫なので、その条件でなるべく新しいClonezillaを探したら、clonezilla-live-2.1.2-43（もしくはclonezilla-live-20130819-raring）のようだった。  </p>
+    <updated>2015-02-25T15:35:24.000Z</updated>
+    <content type="html"><![CDATA[<p>新しいkernelだと古いPCで通常に起動しないが、kernel3.10台までのものなら大丈夫。<br>その条件でなるべく新しいClonezillaを探したら、clonezilla-live-2.1.2-43（もしくはclonezilla-live-20130819-raring）のようだった。  </p>
 <p>どのアーキテクチャのものを使えば良いのか分からず、clonezilla-live-2.1.2-43-i486.isoを使ったら、バックアップが異様に遅かった。100GB中67.1GBを使用中のパーティションをバックアップするのに50分近くかかった。<br>アーキテクチャが合ったものを使わないと遅くなってしまうようだ。  </p>
 <p>clonezilla-live-2.1.2-43-i686-pae.isoをダウンロードして使ったら、18分あまりだった。<br><a href="http://ftp.twaren.net/local-distfiles/clonezilla-live/oldstable/2.1.2-43/" target="_blank" rel="external">Index of /local-distfiles/clonezilla-live/oldstable/2.1.2-43</a><br>clonezilla-live-20130819-raring-i386.isoでも18分あまり。<br><a href="http://ftp.twaren.net/local-distfiles/clonezilla-live/alternative/oldstable/20130819-raring/" target="_blank" rel="external">Index of /local-distfiles/clonezilla-live/alternative/oldstable/20130819-raring</a>  </p>
 <p>ちなみに、amd64となっているものは当然のごとく32bitのPCでは使用出来なかった。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>新しいkernelだと古いPCで通常に起動しない。<br>kernel3.10台のものなら大丈夫なので、その条件でなるべく新しいClonezillaを探したら、clonezilla-live-2.1.2-43（もしくはclonezilla-live-20130819-rar]]>
+    <![CDATA[<p>新しいkernelだと古いPCで通常に起動しないが、kernel3.10台までのものなら大丈夫。<br>その条件でなるべく新しいClonezillaを探したら、clonezilla-live-2.1.2-43（もしくはclonezilla-live-20130819-rar]]>
     </summary>
     
       <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
