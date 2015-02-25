@@ -120,7 +120,7 @@
 <p>これでは不便だし安心感も持てないが、「AOMEI Partition Assistant Standard Edition」というWindows用のフリーソフトでディスクの内容を保持したままGPTとMBRの変換が出来るようなので、試してみることにした。  </p>
 <p>「AOMEI Partition Assistant」を試す前にパーティションのバックアップをしようと思ったが、Clonezillaもパーティションテーブルを読めないらしい。<br>仕方が無いので下記サイトを参考に、<code>dd</code>コマンドでバックアップすることにした。<br><a href="http://takuya-1st.hatenablog.jp/entry/20101025/1288002819" target="_blank" rel="external">dd でディスクをコピーするよく使う例 - それマグで！</a>  </p>
 <p>ーー<br>（追記）<br>「AOMEI Partition Assistant」はWindows XpではMBRに変換出来ないようで、結局ハードディスクのデータを全消去してパーティションテーブルをMBRで作り直し、ddでバックアップしたものをリストアしてようやく復旧した。  </p>
-<p>復旧後、拡張パーティションにあるLinuxが起動しなかったが、SystemRescueCdの”Boot an existing Linux system installed on the disk”で起動させ、<code>sudo grub-install --force /dev/sda6</code>でgrub2をインストール。`sudo update-grub｀で起動出来た。</p>
+<p>復旧後、拡張パーティションにあるLinuxが起動しなかったが、SystemRescueCdの”Boot an existing Linux system installed on the disk”で起動させ、<code>sudo grub-install --force /dev/sda6</code>でgrub2をインストール。<code>sudo update-grub</code>で起動出来た。</p>
 
 	</div>
 
