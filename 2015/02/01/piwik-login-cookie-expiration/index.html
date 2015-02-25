@@ -119,7 +119,7 @@ login_cookie_expire = 1209600
 <p>; If you want to change some of these default values, the best practise is to override<br>; them in your configuration file in config/config.ini.php. If you directly edit this file,<br>; you will lose your changes when you upgrade Piwik.<br>; For example if you want to override action_title_category_delimiter,<br>; edit config/config.ini.php and add the following:<br>; [General]<br>; action_title_category_delimiter = “-“</p>
 </blockquote>
 <p>global.ini.phpを直接編集しても、Piwikをアップグレードした際に元に戻ってしまうから、変更したい挙動はconfig/config.ini.phpに加筆して設定を上書きせよ、ということらしい。  </p>
-<p>自分の環境ではconfig.ini.phpの所有者はApacheになっていて、そのままではファイルを変更出来なかったので、パーミッションを644から646に変更。<br>クッキー有効期限を180日（15552000秒）にすることにして、global.ini.phpの[General]の箇所に  </p>
+<p>自分の環境ではconfig.ini.phpの所有者はApacheになっていて、そのままではファイルを変更出来なかったので、パーミッションを644から646に変更。<br>クッキー有効期限を180日（15552000秒）にすることにして、config.ini.phpの[General]の箇所に  </p>
 <pre><code>login_cookie_expire = 15552000
 </code></pre><p>を加筆した。  </p>
 <p>Piwikにログインし直し、Firebugで確認すると、”Set-Cookie…expires=Fri, 31-Jul-2015 11:30:24”と、クッキーの有効期限が延長されていた。<br>ファイルのパーミッションを644に戻して作業終了。</p>
