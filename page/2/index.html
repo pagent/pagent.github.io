@@ -112,6 +112,51 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/02/05/roxterm-segmentation-fault/" >ターミナルエミュレーターRoxtermで&quot;Segmentation fault&quot;</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月5日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Puppy Linux5.7.1には、デフォルトのターミナルミュレーターとしてurxvtというのが入っていたが、右クリックでのコピーペーストが出来ず不便。<br>Puppyパッケージマネージャで他のを探すと、Roxtermというのが見つかった。  </p>
+<p>右クリックでのコピーペーストが可能でかなり軽量。<br>Ubuntuソフトウェアセンターにもあったので、Xubuntuにもインストールしてみた。  </p>
+<p>カスタマイズのためDefaultのプロフィールをコピーし、Default01を作成した。<br>プロフィールをDefault01に切り替えたところ、突然終了。<br>その後、Roxtermを起動出来なくなってしまった。  </p>
+<p>メニューからアイコンをクリックしても反応は無いし、xfce4-terminalで<code>roxterm</code>とコマンドを打つと、”Segmentation fault”と返ってくる。  </p>
+<p>検索したところ、同様のケースが見つかった。<br><a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=752253" target="_blank" rel="external">#752253 - roxterm: Segmentation Fault with the copy of default profile - Debian Bug report logs</a>  </p>
+<p>“empty profile file”が原因とのことだが、~/.config/roxterm.sourceforge.net/Profiles内のDefault01を開くと、確かに何も書かれておらず真っ白だった。  </p>
+<p>Default01に一行 </p>
+<p> [roxterm profile]</p>
+<p>と書くと、無事起動出来た。  </p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/05/roxterm-segmentation-fault/" data-text="ターミナルエミュレーターRoxtermで&quot;Segmentation fault&quot; | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/02/04/puppy-grub4dos-error/" >Puppy LinuxのGrub４Dosインストール時に「要素が欠けています。」のエラー</a>
 		</h3>
 	
@@ -559,52 +604,6 @@ login_cookie_expire = 1209600
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/01/30/xubuntu-copy-client/" >Xubuntuで非公式レポジトリのCopyクライアントが不調</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年1月30日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Xubuntu14.04に、非公式レポジトリからCopyクライアントをインストールしたが、調子が良くない。  </p>
-<p>“Scanning  for changes”→”Processing .. items”→”Downloading File List”ときて、その後また”Scanning  for changes”→”Processing .. items”と延々処理が続き、いつまで経っても同期が終わらない。<br>さらに起動しても”Logging In”のまま固まってしまうようになった。  </p>
-<p>まともに機能しない状態なので、非公式レポジトリのクライアントはアンインストールし、<a href="https://www.copy.com/install/" target="_blank" rel="external">Copy.comのダウンロードページ</a>から落としたクライアントをインストールし直した。<br>インストールといっても、ダウンロードした圧縮ファイルを展開し、任意のディレクトリに配置しただけだが。  </p>
-<p>追加アプリケーションを配置するためのディレクトリ/optに配置した。  </p>
-<pre><code>cd ~/Desktop
-tar zxvf copy_agent-1.48.0456.tgz
-sudo cp -r copy/x86_64 /opt/copy
-</code></pre><p>コマンドなど使わずファイルマネージャーで「ここに展開」し、/optを「Rootとして開く」してからコピペでも問題無い。  </p>
-<p>端末から<code>/opt/copy/CopyAgent</code>で起動。<br>一応ちゃんと動いてくれているようだ。<br><code>/opt/copy/CopyConsole</code>なら端末で動作する。  </p>
-<p>簡便のためコマンド<code>/opt/copy/CopyAgent</code>をメニューに追加した。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/30/xubuntu-copy-client/" data-text="Xubuntuで非公式レポジトリのCopyクライアントが不調 | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -646,6 +645,10 @@ sudo cp -r copy/x86_64 /opt/copy
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/02/25/clonezilla-architecture-speed/" ><i class="fa fa-file-o"></i>Clonezillaのアーキテクチャとバックアップスピード</a>
+      </li>
+    
+      <li>
         <a href="/2015/02/20/usb-multiboot-2nd-partition/" ><i class="fa fa-file-o"></i>USBメモリの第2パーティションからisoファイルをマ...</a>
       </li>
     
@@ -659,10 +662,6 @@ sudo cp -r copy/x86_64 /opt/copy
     
       <li>
         <a href="/2015/02/14/mbr-gpt/" ><i class="fa fa-file-o"></i>パーティションテーブルをMBRからGPTに書き換えてしまった</a>
-      </li>
-    
-      <li>
-        <a href="/2015/02/11/kde-plasma-netbook/" ><i class="fa fa-file-o"></i>Kubuntuのネットブック向けデスクトップ「Plas...</a>
       </li>
     
   </ul>
@@ -680,35 +679,35 @@ sudo cp -r copy/x86_64 /opt/copy
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>24</span></a></li>
-		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
 		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
+			<li><a href="/tags/Hexo/">Hexo<span>24</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
 			<li><a href="/tags/Linux/">Linux<span>34</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>1</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>2</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
 		
 		
 		</ul>
@@ -720,7 +719,7 @@ sudo cp -r copy/x86_64 /opt/copy
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

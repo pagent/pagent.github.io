@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-02-25T12:14:03.443Z</updated>
+  <updated>2015-02-25T14:18:01.157Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,26 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Clonezillaのアーキテクチャとバックアップスピード]]></title>
+    <link href="http://pagent.github.io/2015/02/25/clonezilla-architecture-speed/"/>
+    <id>http://pagent.github.io/2015/02/25/clonezilla-architecture-speed/</id>
+    <published>2015-02-25T13:59:15.000Z</published>
+    <updated>2015-02-25T14:17:24.000Z</updated>
+    <content type="html"><![CDATA[<p>新しいkernelだと古いPCで通常に起動しない。<br>kernel3.10台のものなら大丈夫なので、その条件でなるべく新しいClonezillaを探したら、clonezilla-live-2.1.2-43（もしくはclonezilla-live-20130819-raring）のようだった。  </p>
+<p>どのアーキテクチャが良いのか分からず、clonezilla-live-2.1.2-43-i486.isoを使ったら、バックアップが異様に遅かった。100GB中67.1GBを使用中のパーティションをバックアップするのに50分近くかかった。  </p>
+<p>clonezilla-live-2.1.2-43-i686-pae.isoをダウンロードして使ったら、18分あまりだった。<br>clonezilla-live-20130819-raring-i386.isoでも18分あまり。</p>
+<p>アーキテクチャが合ったものを使わないと遅くなってしまうようだ。  </p>
+<p>ちなみに、amd64となっているものは当然のごとく32bitのPCでは使用出来なかった。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>新しいkernelだと古いPCで通常に起動しない。<br>kernel3.10台のものなら大丈夫なので、その条件でなるべく新しいClonezillaを探したら、clonezilla-live-2.1.2-43（もしくはclonezilla-live-20130819-rar]]>
+    </summary>
+    
+      <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[USBメモリの第2パーティションからisoファイルをマルチブート]]></title>
@@ -557,32 +577,6 @@ login_cookie_expire = 1209600
     </summary>
     
       <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Xubuntuで非公式レポジトリのCopyクライアントが不調]]></title>
-    <link href="http://pagent.github.io/2015/01/30/xubuntu-copy-client/"/>
-    <id>http://pagent.github.io/2015/01/30/xubuntu-copy-client/</id>
-    <published>2015-01-30T11:13:13.000Z</published>
-    <updated>2015-01-30T12:32:19.000Z</updated>
-    <content type="html"><![CDATA[<p>Xubuntu14.04に、非公式レポジトリからCopyクライアントをインストールしたが、調子が良くない。  </p>
-<p>“Scanning  for changes”→”Processing .. items”→”Downloading File List”ときて、その後また”Scanning  for changes”→”Processing .. items”と延々処理が続き、いつまで経っても同期が終わらない。<br>さらに起動しても”Logging In”のまま固まってしまうようになった。  </p>
-<p>まともに機能しない状態なので、非公式レポジトリのクライアントはアンインストールし、<a href="https://www.copy.com/install/" target="_blank" rel="external">Copy.comのダウンロードページ</a>から落としたクライアントをインストールし直した。<br>インストールといっても、ダウンロードした圧縮ファイルを展開し、任意のディレクトリに配置しただけだが。  </p>
-<p>追加アプリケーションを配置するためのディレクトリ/optに配置した。  </p>
-<pre><code>cd ~/Desktop
-tar zxvf copy_agent-1.48.0456.tgz
-sudo cp -r copy/x86_64 /opt/copy
-</code></pre><p>コマンドなど使わずファイルマネージャーで「ここに展開」し、/optを「Rootとして開く」してからコピペでも問題無い。  </p>
-<p>端末から<code>/opt/copy/CopyAgent</code>で起動。<br>一応ちゃんと動いてくれているようだ。<br><code>/opt/copy/CopyConsole</code>なら端末で動作する。  </p>
-<p>簡便のためコマンド<code>/opt/copy/CopyAgent</code>をメニューに追加した。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Xubuntu14.04に、非公式レポジトリからCopyクライアントをインストールしたが、調子が良くない。  </p>
-<p>“Scanning  for changes”→”Processing .. items”→”Downloading File List”ときて、そ]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
     
   </entry>
   

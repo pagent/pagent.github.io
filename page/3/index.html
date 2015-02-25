@@ -112,6 +112,52 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/01/30/xubuntu-copy-client/" >Xubuntuで非公式レポジトリのCopyクライアントが不調</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年1月30日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Xubuntu14.04に、非公式レポジトリからCopyクライアントをインストールしたが、調子が良くない。  </p>
+<p>“Scanning  for changes”→”Processing .. items”→”Downloading File List”ときて、その後また”Scanning  for changes”→”Processing .. items”と延々処理が続き、いつまで経っても同期が終わらない。<br>さらに起動しても”Logging In”のまま固まってしまうようになった。  </p>
+<p>まともに機能しない状態なので、非公式レポジトリのクライアントはアンインストールし、<a href="https://www.copy.com/install/" target="_blank" rel="external">Copy.comのダウンロードページ</a>から落としたクライアントをインストールし直した。<br>インストールといっても、ダウンロードした圧縮ファイルを展開し、任意のディレクトリに配置しただけだが。  </p>
+<p>追加アプリケーションを配置するためのディレクトリ/optに配置した。  </p>
+<pre><code>cd ~/Desktop
+tar zxvf copy_agent-1.48.0456.tgz
+sudo cp -r copy/x86_64 /opt/copy
+</code></pre><p>コマンドなど使わずファイルマネージャーで「ここに展開」し、/optを「Rootとして開く」してからコピペでも問題無い。  </p>
+<p>端末から<code>/opt/copy/CopyAgent</code>で起動。<br>一応ちゃんと動いてくれているようだ。<br><code>/opt/copy/CopyConsole</code>なら端末で動作する。  </p>
+<p>簡便のためコマンド<code>/opt/copy/CopyAgent</code>をメニューに追加した。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/30/xubuntu-copy-client/" data-text="Xubuntuで非公式レポジトリのCopyクライアントが不調 | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/01/29/dropbox-number-of-files/" >Dropbox サイズだけではなくファイル数も問題</a>
 		</h3>
 	
@@ -511,46 +557,6 @@
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/01/23/lubuntu-alacarte-menulibre/" >Lubuntu14.04にメニュー編集ソフトMenuLibreを入れた</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年1月23日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Lubuntu14.04でメインメニューの編集をしたかったのだが、手動で設定するのは難しそう。<br><a href="https://wiki.archlinux.org/index.php/LXDE_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29#.E3.82.A2.E3.83.97.E3.83.AA.E3.82.B1.E3.83.BC.E3.82.B7.E3.83.A7.E3.83.B3.E3.83.A1.E3.83.8B.E3.83.A5.E3.83.BC.E3.81.AE.E7.B7.A8.E9.9B.86" target="_blank" rel="external">LXDE (日本語) - ArchWiki</a>  </p>
-<p>LXDE用のメニューエディターにLXMEDというのがあるようだが、使ったことがないし、メニューを削除せず非表示にしたり、上下の並びを入れ替えたり、といったことが出来るかどうか分からない。<br>そこで、AlacarteとMenuLibreを入れてみた。<br>どちらもSynapticでインストール。  </p>
-<p>AlacarteはLubuntu14.04では満足に機能してくれず、非表示設定や並びの入れ替えが反映されなかった。再起動してみても変化無し。<br>一方、MenuLibreの方は望み通りにちゃんと機能してくれた。  </p>
-<p>GUIで簡単に設定出来るのでとても助かる。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/23/lubuntu-alacarte-menulibre/" data-text="Lubuntu14.04にメニュー編集ソフトMenuLibreを入れた | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -592,6 +598,10 @@
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/02/25/clonezilla-architecture-speed/" ><i class="fa fa-file-o"></i>Clonezillaのアーキテクチャとバックアップスピード</a>
+      </li>
+    
+      <li>
         <a href="/2015/02/20/usb-multiboot-2nd-partition/" ><i class="fa fa-file-o"></i>USBメモリの第2パーティションからisoファイルをマ...</a>
       </li>
     
@@ -605,10 +615,6 @@
     
       <li>
         <a href="/2015/02/14/mbr-gpt/" ><i class="fa fa-file-o"></i>パーティションテーブルをMBRからGPTに書き換えてしまった</a>
-      </li>
-    
-      <li>
-        <a href="/2015/02/11/kde-plasma-netbook/" ><i class="fa fa-file-o"></i>Kubuntuのネットブック向けデスクトップ「Plas...</a>
       </li>
     
   </ul>
@@ -626,35 +632,35 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
 			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>24</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>24</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>34</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
 			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
 		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>34</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>1</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>2</span></a></li>
 		
 		
 		</ul>
@@ -666,7 +672,7 @@
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
