@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-02-26T12:26:16.685Z</updated>
+  <updated>2015-02-26T12:34:25.424Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/02/26/nemo-terminal/"/>
     <id>http://pagent.github.io/2015/02/26/nemo-terminal/</id>
     <published>2015-02-26T04:54:42.000Z</published>
-    <updated>2015-02-26T05:08:27.000Z</updated>
+    <updated>2015-02-26T12:34:11.000Z</updated>
     <content type="html"><![CDATA[<p>ファイルマネージャーnemoに端末を追加する拡張機能「nemo-terminal」を入れた。  </p>
 <pre><code>sudo add-apt-repository ppa:webupd8team/nemo
 
@@ -27,7 +27,7 @@ sudo apt-get update
 
 sudo apt-get install nemo-terminal
 </code></pre><p>nemoの上部に端末画面が追加される。  </p>
-<p>「F4」キーで端末画面の表示・非表示を切り替え。<br>端末での階層はnemoで開いているフォルダと同期されるので、コマンド操作する時になかなか便利。  </p>
+<p>「F4」キーで端末画面の表示・非表示を切り替え。<br>端末での階層はnemoで開いているフォルダと同期されるので、コマンド操作する時に便利。  </p>
 <p>別途「dconfエディター」も入れておけば、端末画面の高さなども調節出来る。</p>
 ]]></content>
     <summary type="html">
