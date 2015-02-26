@@ -112,6 +112,51 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/02/26/nemo-terminal/" >nemoの拡張機能「nemo-terminal」がちょっと便利</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月26日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>ファイルマネージャーnemoに端末を追加する拡張機能「nemo-terminal」を入れた。  </p>
+<pre><code>sudo add-apt-repository ppa:webupd8team/nemo
+
+sudo apt-get update
+
+sudo apt-get install nemo-terminal
+</code></pre><p>nemoの上部に端末画面が追加される。  </p>
+<p>「F4」キーで端末画面の表示・非表示を切り替え。<br>端末での階層はnemoで開いているフォルダと同期されるので、コマンド操作する時になかなか便利。  </p>
+<p>別途「dconfエディター」も入れておけば、端末画面の高さなども調節出来る。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/26/nemo-terminal/" data-text="nemoの拡張機能「nemo-terminal」がちょっと便利 | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/02/25/clonezilla-architecture-speed/" >Clonezillaのアーキテクチャとバックアップスピード</a>
 		</h3>
 	
@@ -525,59 +570,6 @@
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/02/06/puppy-dropbox/" >Puppy LinuxにDropboxクライアントをインストール</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年2月6日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Puppy Linux5.7.1のパッケージマネージャにDropboxクライアントが見当たらないので、コマンドラインでインストールした。<br><a href="https://www.dropbox.com/install?os=lnx" target="_blank" rel="external">Linux マシンに Dropbox をインストール</a>  </p>
-<p>コマンドを入力すると、サーバー証明書エラーになった。  </p>
-<pre><code>cd ~ &amp;&amp; wget -O - &quot;https://www.dropbox.com/download?plat=lnx.x86&quot; | tar xzf -
-
-...
-エラー: cannot verify www.dropbox.com&#39;s certificate, issued by `/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert SHA2 Extended Validation Server CA&#39;:
-  発行者の権限を検証できませんでした。
-www.dropbox.com に安全の確認をしないで接続するには、`--no-check-certificate&#39; を使ってください。
-
-gzip: stdin: unexpected end of file
-tar: Child returned status 1
-tar: エラーを回復できません: 直ちに終了します
-</code></pre><p>原因がよく分からないがdropbox.comは安全だろうと、`—no-check-certificate’のオプションを付けてインストールした。  </p>
-<pre><code>cd ~ &amp;&amp; wget --no-check-certificate -O - &quot;https://www.dropbox.com/download?plat=lnx.x86&quot; | tar xzf -
-</code></pre><p>インストールは無事完了し、<code>~/.dropbox-dist/dropboxd</code>で起動出来た。  </p>
-<p>後になって気がついたが、Puppy Linuxのタスクトレイの時刻がおかしい。<br>約9時間遅れている。  </p>
-<p>そういえば、Puppy Linuxを起動してすぐに表示される国とタイムゾーンの設定を、面倒臭くて飛ばしていたんだった。<br>このせいでエラーが出ていたんだろうか。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/06/puppy-dropbox/" data-text="Puppy LinuxにDropboxクライアントをインストール | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -619,6 +611,10 @@ tar: エラーを回復できません: 直ちに終了します
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/02/26/nemo-terminal/" ><i class="fa fa-file-o"></i>nemoの拡張機能「nemo-terminal」がちょ...</a>
+      </li>
+    
+      <li>
         <a href="/2015/02/25/clonezilla-architecture-speed/" ><i class="fa fa-file-o"></i>Clonezillaのアーキテクチャとバックアップスピード</a>
       </li>
     
@@ -632,10 +628,6 @@ tar: エラーを回復できません: 直ちに終了します
     
       <li>
         <a href="/2015/02/15/stop-kwallet-manager/" ><i class="fa fa-file-o"></i>KDEウォレットマネージャーを停止</a>
-      </li>
-    
-      <li>
-        <a href="/2015/02/14/mbr-gpt/" ><i class="fa fa-file-o"></i>パーティションテーブルをMBRからGPTに書き換えてしまった</a>
       </li>
     
   </ul>
@@ -653,35 +645,35 @@ tar: エラーを回復できません: 直ちに終了します
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>2</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>34</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
 			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
 		
 			<li><a href="/tags/Hexo/">Hexo<span>24</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>35</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>2</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
 		
 		
 		</ul>
@@ -693,7 +685,7 @@ tar: エラーを回復できません: 直ちに終了します
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">19</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
