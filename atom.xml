@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-02-27T09:28:57.923Z</updated>
+  <updated>2015-02-27T09:35:20.372Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,20 +15,20 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[dead-link-checkerが遅いので、リンク切れチェックソフト「linkchecker」を使ってみた]]></title>
+    <title><![CDATA[dead-link-checkerが遅いので、リンク切れチェックソフト「LinkChecker」を使ってみた]]></title>
     <link href="http://pagent.github.io/2015/02/27/linkchecker/"/>
     <id>http://pagent.github.io/2015/02/27/linkchecker/</id>
     <published>2015-02-27T08:48:11.000Z</published>
-    <updated>2015-02-27T09:28:41.000Z</updated>
+    <updated>2015-02-27T09:35:07.000Z</updated>
     <content type="html"><![CDATA[<p>ネット上のページは開設者の都合などにより消えることも多いだろうし、SEO的にはそれ程気にしなくても良いのかもしれないが、ページのリンクをクリックしても404エラーだったりするとやはりがっかりする。<br>自分のブログにもリンク切れになっている発リンクが無いか調べてみた。  </p>
 <p>まず、有名どころらしいdead-link-checker.comでチェックしてみたが、とにかく遅い。<br>1600あまりのページのチェックだったが、2時間以上も掛かってしまった。<br>遅すぎて、そのあとリンク切れの修正という気にはとてもなれない。  </p>
 <p>ウェブアプリの場合、サーバーの負担を減らす為ある程度遅くなるのは仕方が無いらしい。<br><a href="http://chusho-it.net/post_linkcheck.html" target="_blank" rel="external">サイト全体をチェックできるリンクチェックツール比較</a>  </p>
-<p>というわけで、上記の記事で高評価で紹介されていた<a href="http://wummel.github.io/linkchecker/" target="_blank" rel="external">「linkchecker」</a>を使ってみた。<br>Linux、Windows、Macで使えるクロスプラットフォームらしい。  </p>
+<p>というわけで、上記の記事で高評価で紹介されていた<a href="http://wummel.github.io/linkchecker/" target="_blank" rel="external">「LinkChecker」</a>を使ってみた。<br>Linux、Windows、Macで使えるクロスプラットフォームらしい。  </p>
 <p>最新版のlinkchecker-gui_9.3-1_all.debをダウンロードしたが、インストールの際にUbuntuソフトウェアセンターが、少し古いバージョンだったらリポジトリにあると言ってきたので、言われた通りリポジトリのlinkchecker-gui 8.6-2をインストールした。  </p>
 <p>使ってみたらこれが早かった。<br>すべてのページのチェックが5分程で完了した。  </p>
 <p>結果は、404や301などの異常の種類やURL等で並び替えが出来るので、その後の修正作業もはかどった。  </p>
-<p>サイズも397.3 kBと小さいし、わざわざ遅いウエブアプリを使うより「linkchecker」をインストールする方が断然おすすめ。  </p>
-<p>ウェブアプリも便利だったりするが、リンク切れチェックはソフトをインストールするに限ると思った次第。</p>
+<p>サイズも397.3 kBと小さいし、わざわざ遅いウエブアプリを使うより「LinkChecker」をインストールする方が断然おすすめ。  </p>
+<p>ときにはウェブアプリも便利だったりはするが、リンク切れチェックはソフトをインストールするに限ると思った次第。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>ネット上のページは開設者の都合などにより消えることも多いだろうし、SEO的にはそれ程気にしなくても良いのかもしれないが、ページのリンクをクリックしても404エラーだったりするとやはりがっかりする。<br>自分のブログにもリンク切れになっている発リンクが無いか調べてみた。  ]]>
