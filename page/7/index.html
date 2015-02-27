@@ -494,7 +494,7 @@ nothing to commit, working directory clean
 <p>だがページネーションの方はlayout/_partial/post/entry.ejsにコードを挿入しても、タイトル名と一覧ページのURLしか取得出来ない。  </p>
 <p>URLとツイート本文を自分でカスタマイズする設定でコードを作成し、excerptリンクに倣って、それぞれ<code>&lt;%- config.root %&gt;&lt;%= item.path %&gt;</code>、<code>&lt;%= item.title %&gt;</code>で挿入したが、これだと記事タイトルのみでURLが表示されない。<br><code>&lt;%- config.root %&gt;</code>でブログトップのURLを取得出来ないようだ。<br>「Read More」（続きを読む）の部分では、ちゃんと変換されているんだが。  </p>
 <p><del>ブログトップのURLをパスではなく直接記載したら上手くいった。</del>  </p>
-<p>ーーーー<br>（<strong>追記</strong>）<br>個別記事URLへのパスは<code>&lt;%- item.permalink %&gt;</code>一つで良いようだ。<br>ツイート本文は<code>&lt;%= item.title %&gt; | &lt;%= config.title %&gt;</code>（記事タイトル | ブログ名）で作成。<br>ーーーー  </p>
+<p>ーーーー<br>（<strong>追記</strong>）<br>個別記事URLへのパスは<code>&lt;%- item.permalink %&gt;</code>一つで良いようだ。<br>ーーーー  </p>
 <p>記事を概要表示にしている時は「Read More」。全文表示にしている時はツイートボタンを表示することにして、read_moreの箇所を下記に変更した。  </p>
 <pre><code>&lt;% if (item.excerpt &amp;&amp; index) { %&gt;
   &lt;a type=&quot;button&quot; href=&quot;&lt;%- config.root %&gt;&lt;%- item.path %&gt;#more&quot; class=&quot;btn btn-default more&quot;&gt;&lt;%= __(&#39;read_more&#39;) %&gt;&lt;/a&gt;
@@ -708,17 +708,17 @@ $(&quot;.navbar&quot;).fadeTo(100, 0.2);
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
-		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>24</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>3</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
@@ -726,17 +726,17 @@ $(&quot;.navbar&quot;).fadeTo(100, 0.2);
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
 		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>24</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>35</span></a></li>
 		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>3</span></a></li>
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
 		
 		</ul>

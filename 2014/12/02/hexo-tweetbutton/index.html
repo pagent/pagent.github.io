@@ -115,7 +115,7 @@
 <p>だがページネーションの方はlayout/_partial/post/entry.ejsにコードを挿入しても、タイトル名と一覧ページのURLしか取得出来ない。  </p>
 <p>URLとツイート本文を自分でカスタマイズする設定でコードを作成し、excerptリンクに倣って、それぞれ<code>&lt;%- config.root %&gt;&lt;%= item.path %&gt;</code>、<code>&lt;%= item.title %&gt;</code>で挿入したが、これだと記事タイトルのみでURLが表示されない。<br><code>&lt;%- config.root %&gt;</code>でブログトップのURLを取得出来ないようだ。<br>「Read More」（続きを読む）の部分では、ちゃんと変換されているんだが。  </p>
 <p><del>ブログトップのURLをパスではなく直接記載したら上手くいった。</del>  </p>
-<p>ーーーー<br>（<strong>追記</strong>）<br>個別記事URLへのパスは<code>&lt;%- item.permalink %&gt;</code>一つで良いようだ。<br>ツイート本文は<code>&lt;%= item.title %&gt; | &lt;%= config.title %&gt;</code>（記事タイトル | ブログ名）で作成。<br>ーーーー  </p>
+<p>ーーーー<br>（<strong>追記</strong>）<br>個別記事URLへのパスは<code>&lt;%- item.permalink %&gt;</code>一つで良いようだ。<br>ーーーー  </p>
 <p>記事を概要表示にしている時は「Read More」。全文表示にしている時はツイートボタンを表示することにして、read_moreの箇所を下記に変更した。  </p>
 <pre><code>&lt;% if (item.excerpt &amp;&amp; index) { %&gt;
   &lt;a type=&quot;button&quot; href=&quot;&lt;%- config.root %&gt;&lt;%- item.path %&gt;#more&quot; class=&quot;btn btn-default more&quot;&gt;&lt;%= __(&#39;read_more&#39;) %&gt;&lt;/a&gt;
