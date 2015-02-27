@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-02-27T09:26:12.264Z</updated>
+  <updated>2015-02-27T09:28:57.923Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/02/27/linkchecker/"/>
     <id>http://pagent.github.io/2015/02/27/linkchecker/</id>
     <published>2015-02-27T08:48:11.000Z</published>
-    <updated>2015-02-27T09:25:37.000Z</updated>
+    <updated>2015-02-27T09:28:41.000Z</updated>
     <content type="html"><![CDATA[<p>ネット上のページは開設者の都合などにより消えることも多いだろうし、SEO的にはそれ程気にしなくても良いのかもしれないが、ページのリンクをクリックしても404エラーだったりするとやはりがっかりする。<br>自分のブログにもリンク切れになっている発リンクが無いか調べてみた。  </p>
 <p>まず、有名どころらしいdead-link-checker.comでチェックしてみたが、とにかく遅い。<br>1600あまりのページのチェックだったが、2時間以上も掛かってしまった。<br>遅すぎて、そのあとリンク切れの修正という気にはとてもなれない。  </p>
 <p>ウェブアプリの場合、サーバーの負担を減らす為ある程度遅くなるのは仕方が無いらしい。<br><a href="http://chusho-it.net/post_linkcheck.html" target="_blank" rel="external">サイト全体をチェックできるリンクチェックツール比較</a>  </p>
