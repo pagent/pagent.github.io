@@ -112,6 +112,51 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/02/27/linkchecker/" >dead-link-checkerが遅いので、リンク切れチェックソフト「linkchecker」を使ってみた</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月27日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>ネット上のページは開設者の都合などにより消えることも多いだろうし、SEO的にはそれ程気にしなくても良いのかもしれないが、ページのリンクをクリックしても404エラーだったりするとやはりがっかりする。<br>自分のブログにもリンク切れになっている発リンクが無いか調べてみた。  </p>
+<p>まず、有名どころらしいdead-link-checker.comでチェックしてみたが、とにかく遅い。<br>1600あまりのページのチェックだったが、2時間以上も掛かってしまった。<br>遅すぎて、そのあとリンク切れの修正という気にはとてもなれない。  </p>
+<p>ウェブアプリの場合、サーバーの負担を減らす為ある程度遅くなるのは仕方が無いらしい。<br><a href="http://chusho-it.net/post_linkcheck.html" target="_blank" rel="external">サイト全体をチェックできるリンクチェックツール比較</a>  </p>
+<p>というわけで、上記の記事で高評価で紹介されていた<a href="http://wummel.github.io/linkchecker/" target="_blank" rel="external">「linkchecker」</a>を使ってみた。<br>Linux、Windows、Macで使えるクロスプラットフォームらしい。  </p>
+<p>最新版のlinkchecker-gui_9.3-1_all.debをダウンロードしたが、インストールの際にUbuntuソフトウェアセンターが、少し古いバージョンだったらリポジトリにあると言ってきたので、言われた通りリポジトリのlinkchecker-gui 8.6-2をインストールした。  </p>
+<p>使ってみたらこれが早かった。<br>すべてのページのチェックが5分程で完了した。  </p>
+<p>結果は、404や301などの異常の種類やURL等で並び替えが出来るので、その後の修正作業もはかどった。  </p>
+<p>サイズも397.3 kBと小さいし、わざわざ遅いウエブアプリを使うより「linkchecker」をインストールする方が断然おすすめ。  </p>
+<p>ウェブアプリも便利だったりするが、リンク切れチェックはソフトをインストールするに限ると思った次第。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/27/linkchecker/" data-text="dead-link-checkerが遅いので、リンク切れチェックソフト「linkchecker」を使ってみた | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/02/26/nemo-terminal/" >nemoの拡張機能「nemo-terminal」がちょっと便利</a>
 		</h3>
 	
@@ -505,71 +550,6 @@ $ sudo apt-get install nemo-terminal
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/02/06/lxpup-lxqtpup/" >Puppy Linux派生。Puppy本家より扱いやすい「LxPup」と「LxQtPup」</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年2月6日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Puppy Linuxのデスクトップ環境について調べ物をしていたら、LxPup - Puppy Linux + LXDEというページがあった。<br><a href="http://sourceforge.jp/projects/sfnet_lxpup/" target="_blank" rel="external">LxPup - Puppy Linux + LXDE プロジェクト日本語トップページ - SourceForge.JP</a>  </p>
-<p>LxPup、LxQtPupというのは初めて知ったが、Puppy LinuxをLXDEデスクトップにアレンジしたものらしい。  </p>
-<p>早速、LxPup-15.02.2のPAE版と非PAE版、それとLxQtPup（非PAE）をダウンロードした。<br>いずれもSlacko Puppy 5.9.3がベースのもの。</p>
-<p>LxQtPupのデスクトップ環境「LXQt」というのは、「LXDE-QtとRazor-qtの成果物を統合したデスクトップ環境」で「Qtに移行したLXDEの後継バージョン」とのこと。<br><a href="http://ja.wikipedia.org/wiki/LXDE" target="_blank" rel="external">LXDE - Wikipedia</a><br>LXDEよりさらに軽いということか。  </p>
-<h3 id="試用してみての感想">試用してみての感想</h3>
-<p><strong>「LxPup」</strong></p>
-<p>ブートCDを焼き起動すると、PAEのLxPupはいきなり「Disabling IRQ #9」と出て、その後なんとか「Loading　kernel 　modules…」までは進んだが、そこでフリーズした様子。  </p>
-<p>非PAEの方で起動すると、無事デスクトップが表示された。  </p>
-<p>デスクトップに子犬の姿は無かったが、開始時に表示される言語やタイムゾーン、モニターなどの設定ウィンドウを閉じると、「ワン！ワン！」と元気に迎えてくれる。<br>本家Puppyよりすっきりした外観。  </p>
-<p>だが動作の軽快さは、まさにPuppy Linux。</p>
-<p>ファイルマネージャーにはPcmanfmが入っていた。<br>とても有難い。<br>Pupy標準のROX-filerは、コピーしようと思ってファイルをドラッグドロップすると、コピーではなくリンクを作ってしまったり、右クリックでコピーしようとするとコピー先のパスを入力させられたりで、使い勝手が悪い。  </p>
-<p>ブラウザはFirefoxで、これも有難い。<br>起動はやはり多少もたつくが、Firefoxにはそれに勝る便利さがある。  </p>
-<p>端末はPuppyデフォルトのrxvtに加えLXTerminalが入っている。<br>右クリックでのコピーペーストが出来て便利。<br>これまた有難い。  </p>
-<p>LxPup。<br>Puppy Linuxの軽快さと、LXDEや他アプリケーションの快適性を上手く融合させている。  </p>
-<p><strong>「LxQtPup」</strong>  </p>
-<p>LxQtPupの方はというと、起動も起動後の操作も、ややもっさり感が否めない。<br>実際、タスクマネージャーだけを開いた状態での消費メモリは、LxPupの68MBに対し、LxQtPupは135MBと倍の差。  </p>
-<p>だが、LxQtPupの外観はとても丁寧に作りこまれていて、「本当にこれがパピーか？」と驚愕を覚える。<br>特にメニュー周りなど、LxPupがPuppy Linuxの素朴さ（ごちゃごちゃ感）を残しているのに対し、LxQtPupには精錬された美しさがある。<br>もはやPuppyの域を超えていて、外観だけを見れば全く別のディストリビューションと思えるほど。  </p>
-<p>凄いです。<br>伊達にメモリー食ってません。  </p>
-<h3 id="LxPupをFrugalインストール">LxPupをFrugalインストール</h3>
-<p>LxPupをHDDにインストールしようと思ったら、ユニバーサルインストーラーはあるが、どこを探してもFrugalインストーラーが見当たらない。<br>参照させて頂いた下記サイトでも、ユニバーサルインストーラーを使ってのFullインストールが紹介されていた。<br><a href="http://no-windows.blog.jp/archives/8229193.html" target="_blank" rel="external">LxPupのインストールからインターネット接続のまとめ : Windowsはもういらない</a>  </p>
-<p>既にPuppy Linux5.7.1をFrugalインストールしているし、出来れば同じパーティション内にFrugalインストールしたいところ。<br>FrugalインストールしてこそのPuppy Linuxとも思える。  </p>
-<p>Frugalインストールは必要なファイルをコピーして、その後Grub４Dosブートローダーをインストールしているだけのようだし、最後のGrub４Dosブートローダーの設定さえちゃんとやれば、ファイルのコピーは手動でも良さそうに思える。<br>やってみた結果、ちゃんとFrugalインストール出来た。  </p>
-<p>まず、インストールするパーティション内に「lxpup1502」等、適当な名前でフォルダを作成。<br>（名前はなるべく入力しやすいものが良い。後に個人保存ファイルを複数作成した場合、個人保存ファイルへのフルパス入力を求められる。）  </p>
-<p>LxPup-15.02.2を例にとると、ブートCD内には12個のファイルがあるが、そのうち必要なのは下記の４つ。  </p>
-<p>initrd.gz<br>vmlinuz<br>puppy_lxpup_15.02.sfs<br>zdrv_lxpup_15.02.sfs</p>
-<p>この４つのファイルをあらかじめ作っておいたフォルダにコピペ。<br>後は「メインメニュー」→「Setup」→「Grub4Dos bootloader config」からGrub４Dosブートローダーをインストールすれば良い。  </p>
-<p>シャットダウンの際、個人保存ファイルの作成を促されるから、好みの形で作成。<br>ブートCDを取り出して再起動すればLxPupの画面が現れる。  </p>
-<p>日本語化は上記参照サイトを参考にさせて頂いた。  </p>
-<p>LxPup、LxQtPup、いずれもノーマルのPuppy Linuxより親しみやすいアレンジになっているので、初心者からベテランまで、ぜひ一度触れてみてもらいたい優れたディストリビューションだ。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/06/lxpup-lxqtpup/" data-text="Puppy Linux派生。Puppy本家より扱いやすい「LxPup」と「LxQtPup」 | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -611,6 +591,10 @@ $ sudo apt-get install nemo-terminal
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/02/27/linkchecker/" ><i class="fa fa-file-o"></i>dead-link-checkerが遅いので、リンク切...</a>
+      </li>
+    
+      <li>
         <a href="/2015/02/26/nemo-terminal/" ><i class="fa fa-file-o"></i>nemoの拡張機能「nemo-terminal」がちょ...</a>
       </li>
     
@@ -624,10 +608,6 @@ $ sudo apt-get install nemo-terminal
     
       <li>
         <a href="/2015/02/17/github-pages-redirect/" ><i class="fa fa-file-o"></i>GitHub Pagesのブログでリダイレクト「hex...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/02/15/stop-kwallet-manager/" ><i class="fa fa-file-o"></i>KDEウォレットマネージャーを停止</a>
       </li>
     
   </ul>
@@ -645,35 +625,35 @@ $ sudo apt-get install nemo-terminal
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>24</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>3</span></a></li>
 		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>24</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>35</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>2</span></a></li>
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 		
 		</ul>
@@ -685,7 +665,7 @@ $ sudo apt-get install nemo-terminal
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">20</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

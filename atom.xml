@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-02-27T04:58:26.925Z</updated>
+  <updated>2015-02-27T09:26:12.264Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,30 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[dead-link-checkerが遅いので、リンク切れチェックソフト「linkchecker」を使ってみた]]></title>
+    <link href="http://pagent.github.io/2015/02/27/linkchecker/"/>
+    <id>http://pagent.github.io/2015/02/27/linkchecker/</id>
+    <published>2015-02-27T08:48:11.000Z</published>
+    <updated>2015-02-27T09:25:37.000Z</updated>
+    <content type="html"><![CDATA[<p>ネット上のページは開設者の都合などにより消えることも多いだろうし、SEO的にはそれ程気にしなくても良いのかもしれないが、ページのリンクをクリックしても404エラーだったりするとやはりがっかりする。<br>自分のブログにもリンク切れになっている発リンクが無いか調べてみた。  </p>
+<p>まず、有名どころらしいdead-link-checker.comでチェックしてみたが、とにかく遅い。<br>1600あまりのページのチェックだったが、2時間以上も掛かってしまった。<br>遅すぎて、そのあとリンク切れの修正という気にはとてもなれない。  </p>
+<p>ウェブアプリの場合、サーバーの負担を減らす為ある程度遅くなるのは仕方が無いらしい。<br><a href="http://chusho-it.net/post_linkcheck.html" target="_blank" rel="external">サイト全体をチェックできるリンクチェックツール比較</a>  </p>
+<p>というわけで、上記の記事で高評価で紹介されていた<a href="http://wummel.github.io/linkchecker/" target="_blank" rel="external">「linkchecker」</a>を使ってみた。<br>Linux、Windows、Macで使えるクロスプラットフォームらしい。  </p>
+<p>最新版のlinkchecker-gui_9.3-1_all.debをダウンロードしたが、インストールの際にUbuntuソフトウェアセンターが、少し古いバージョンだったらリポジトリにあると言ってきたので、言われた通りリポジトリのlinkchecker-gui 8.6-2をインストールした。  </p>
+<p>使ってみたらこれが早かった。<br>すべてのページのチェックが5分程で完了した。  </p>
+<p>結果は、404や301などの異常の種類やURL等で並び替えが出来るので、その後の修正作業もはかどった。  </p>
+<p>サイズも397.3 kBと小さいし、わざわざ遅いウエブアプリを使うより「linkchecker」をインストールする方が断然おすすめ。  </p>
+<p>ウェブアプリも便利だったりするが、リンク切れチェックはソフトをインストールするに限ると思った次第。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>ネット上のページは開設者の都合などにより消えることも多いだろうし、SEO的にはそれ程気にしなくても良いのかもしれないが、ページのリンクをクリックしても404エラーだったりするとやはりがっかりする。<br>自分のブログにもリンク切れになっている発リンクが無いか調べてみた。  ]]>
+    </summary>
+    
+      <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[nemoの拡張機能「nemo-terminal」がちょっと便利]]></title>
@@ -552,34 +576,6 @@ find -type l
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Piwikのログイン・クッキー有効期限を延長する]]></title>
-    <link href="http://pagent.github.io/2015/02/01/piwik-login-cookie-expiration/"/>
-    <id>http://pagent.github.io/2015/02/01/piwik-login-cookie-expiration/</id>
-    <published>2015-02-01T11:43:35.000Z</published>
-    <updated>2015-02-25T11:41:15.000Z</updated>
-    <content type="html"><![CDATA[<p>オープンソースのアクセス解析ツールPiwikを導入している。<br>管理画面へのログイン時には「次回の入力を省略」にチェックを入れているが、頻回にパスワード入力を求められる。<br>FirefoxのアドオンFirebugでログイン時のリクエストヘッダーを見てみると、クッキーの有効期限が2週間しかないようだ。  </p>
-<p>Piwikのログイン・クッキー有効期限がどこで設定されているのか、あちこちファイルを見まわって、ようやくpiwik/config/global.ini.phpの210行目に見つけた。  </p>
-<pre><code>; login cookie expiration (14 days)
-login_cookie_expire = 1209600
-</code></pre><p>だが、global.ini.phpの冒頭には下記のように書いてある。  </p>
-<blockquote>
-<p>; If you want to change some of these default values, the best practise is to override<br>; them in your configuration file in config/config.ini.php. If you directly edit this file,<br>; you will lose your changes when you upgrade Piwik.<br>; For example if you want to override action_title_category_delimiter,<br>; edit config/config.ini.php and add the following:<br>; [General]<br>; action_title_category_delimiter = “-“</p>
-</blockquote>
-<p>global.ini.phpを直接編集しても、Piwikをアップグレードした際に元に戻ってしまうから、変更したい挙動はconfig/config.ini.phpに加筆して設定を上書きせよ、ということらしい。  </p>
-<p>自分の環境ではconfig.ini.phpの所有者はApacheになっていて、そのままではファイルを変更出来なかったので、パーミッションを644から646に変更。<br>クッキー有効期限を180日（15552000秒）にすることにして、config.ini.phpの[General]の箇所に  </p>
-<pre><code>login_cookie_expire = 15552000
-</code></pre><p>を加筆した。  </p>
-<p>Piwikにログインし直し、Firebugで確認すると、”Set-Cookie…expires=Fri, 31-Jul-2015 11:30:24”と、クッキーの有効期限が延長されていた。<br>ファイルのパーミッションを644に戻して作業終了。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>オープンソースのアクセス解析ツールPiwikを導入している。<br>管理画面へのログイン時には「次回の入力を省略」にチェックを入れているが、頻回にパスワード入力を求められる。<br>FirefoxのアドオンFirebugでログイン時のリクエストヘッダーを見てみると、クッキー]]>
-    </summary>
-    
-      <category term="blog" scheme="http://pagent.github.io/tags/blog/"/>
     
   </entry>
   
