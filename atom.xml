@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-02-27T23:48:52.711Z</updated>
+  <updated>2015-02-27T23:55:38.547Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -265,7 +265,7 @@ $ ]]>
     <link href="http://pagent.github.io/2015/02/06/lxpup-lxqtpup/"/>
     <id>http://pagent.github.io/2015/02/06/lxpup-lxqtpup/</id>
     <published>2015-02-06T01:02:10.000Z</published>
-    <updated>2015-02-20T22:37:52.000Z</updated>
+    <updated>2015-02-27T23:55:25.000Z</updated>
     <content type="html"><![CDATA[<p>Puppy Linuxのデスクトップ環境について調べ物をしていたら、LxPup - Puppy Linux + LXDEというページがあった。<br><a href="http://sourceforge.jp/projects/sfnet_lxpup/" target="_blank" rel="external">LxPup - Puppy Linux + LXDE プロジェクト日本語トップページ - SourceForge.JP</a>  </p>
 <p>LxPup、LxQtPupというのは初めて知ったが、Puppy LinuxをLXDEデスクトップにアレンジしたものらしい。  </p>
 <p>早速、LxPup-15.02.2のPAE版と非PAE版、それとLxQtPup（非PAE）をダウンロードした。<br>いずれもSlacko Puppy 5.9.3がベースのもの。</p>
@@ -278,8 +278,8 @@ $ ]]>
 <p>だが動作の軽快さは、まさにPuppy Linux。</p>
 <p>ファイルマネージャーにはPcmanfmが入っていた。<br>とても有難い。<br>Pupy標準のROX-filerは、コピーしようと思ってファイルをドラッグドロップすると、コピーではなくリンクを作ってしまったり、右クリックでコピーしようとするとコピー先のパスを入力させられたりで、使い勝手が悪い。  </p>
 <p>ブラウザはFirefoxで、これも有難い。<br>起動はやはり多少もたつくが、Firefoxにはそれに勝る便利さがある。  </p>
-<p>端末はPuppyデフォルトのrxvtに加えLXTerminalが入っている。<br>右クリックでのコピーペーストが出来て便利。<br>これまた有難い。  </p>
-<p>LxPup。<br>Puppy Linuxの軽快さと、LXDEや他アプリケーションの快適性を上手く融合させている。  </p>
+<p>端末はPuppyデフォルトのrxvtに加えLXTerminalが入っている。<br>右クリックでのコピーペーストが出来て便利。   </p>
+<p>LxPup。<br>Puppy Linuxの軽快さと、LXDEの快適性を上手く融合させている。  </p>
 <p><strong>「LxQtPup」</strong>  </p>
 <p>LxQtPupの方はというと、起動も起動後の操作も、ややもっさり感が否めない。<br>実際、タスクマネージャーだけを開いた状態での消費メモリは、LxPupの68MBに対し、LxQtPupは135MBと倍の差。  </p>
 <p>だが、LxQtPupの外観はとても丁寧に作りこまれていて、「本当にこれがパピーか？」と驚愕を覚える。<br>特にメニュー周りなど、LxPupがPuppy Linuxの素朴さ（ごちゃごちゃ感）を残しているのに対し、LxQtPupには精錬された美しさがある。<br>もはやPuppyの域を超えていて、外観だけを見れば全く別のディストリビューションと思えるほど。  </p>
