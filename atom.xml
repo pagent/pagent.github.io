@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-03-01T10:10:49.196Z</updated>
+  <updated>2015-03-01T10:31:54.700Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <link href="http://pagent.github.io/2015/03/01/arch-ati-video-driver/"/>
     <id>http://pagent.github.io/2015/03/01/arch-ati-video-driver/</id>
     <published>2015-03-01T08:57:24.000Z</published>
-    <updated>2015-03-01T10:10:28.000Z</updated>
-    <content type="html"><![CDATA[<p>Dellの古いノートパソコンVOSTRO1000にArch Linuxを入れてみた。  </p>
+    <updated>2015-03-01T10:31:22.000Z</updated>
+    <content type="html"><![CDATA[<p>Dellの古いノートパソコンVOSTRO1000にArch Linuxを入れてみた。<br>（NECのLavie Liteは、kernelが3.10台を超えると不具合が出る問題がArch Linuxでは解決出来ず、諦めた。）</p>
 <p>インストールには、グラフィカルインストールが可能なArchbootを使った。（archlinux-2015.01-1-archboot.iso）<br>Ubuntu等のインストーラーほど懇切丁寧ではないが、コマンドラインでのインストールよりは楽だった。  </p>
 <p>ネット上の紹介記事を参考に進めたら、それ程迷うこともなかったが、最後ブートローダーのインストールで、GRUB2を選択すると、インストール先をMBRにしか出来なかったので、SysLinuxをインストールした。<br>無線LANの設定も後から苦労するよりはと、ぽちぽちパスワードを入力した。  </p>
 <p>一応インストールは完了したが、デスクトップ環境の導入で躓いてしまった。  </p>
@@ -29,16 +29,25 @@
 <p>ほぼ下記記事の説明の通りに進めた。<br><a href="http://elfcobe.hateblo.jp/entry/2014/05/11/015243" target="_blank" rel="external">Windows で VirtualBox + Arch Linux (Xfce + Slim) - けいれん現象の幽玄美よ</a>  </p>
 <p>Xorg、グラフィックドライバー（xf86-video-vesa）、Xfceをインストールしたが、<code>startxfce4</code>とコマンドを打ってデスクトップに入ろうとしても、X serverが落ちてしまう。  </p>
 <p>エラーメッセージは「ビデオドライバーが無い」というような内容だった。<br>LXDEの時もこのせいで画面がザラザラだったのかもしれない。  </p>
-<p>デュアルブートのLubuntuで<code>xrandr</code>してみると、”VGA-0 disconnected”、”LVDS connected”。<br><code>lspci</code>してみると、”VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] RS482/RS485 [Radeon Xpress 1100/1150]”<br>何のドライバーが必要なのかよく分からない。  </p>
+<p>デュアルブートのLubuntuで<code>xrandr</code>してみると、  </p>
+<blockquote>
+<p>VGA-0 disconnected… LVDS connected</p>
+</blockquote>
+<p>と返ってくる。  </p>
+<p><code>lspci</code>をしてみると、  </p>
+<blockquote>
+<p>VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] RS482/RS485 [Radeon Xpress 1100/1150]</p>
+</blockquote>
+<p>何のドライバーが必要なのか、よく分からない。  </p>
 <p>Puppy linux派生のLxpupを起動してみると、クイックセットアップのGraphicsのところに「現在はATIビデオドライバーを使用している」というようなことが書いてあった。  </p>
-<p>「ATI video driver Arch」で検索すると、Arch Linuxの日本語wikiページが見つかった。<br><a href="https://wiki.archlinux.org/index.php/ATI_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29" target="_blank" rel="external">ATI (日本語) - ArchWiki</a>  </p>
+<p>「ATI video driver Arch」で検索すると、Arch Linuxの日本語wikiページが見つかった。<br><a href="https://wiki.archlinux.org/index.php/ATI_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29" target="_blank" rel="external">ATI (日本語)  ArchWiki</a>  </p>
 <p><code>pacman -S xf86-video-ati</code>でxf86-video-atiをインストールしたら、ようやくXfceのデスクトップに入ることが出来た。  </p>
-<p>フォントがザラザラで汚かったりで、環境はまだ整っていないが、いちおう一段落は付けられた。  </p>
+<p>日本語環境がまだだったり、全体的にフォントがザラザラで汚かったりで、環境はまだ全然だが、いちおう一段落は付けられた。  </p>
 <p>それにしても、XubuntuやLubuntuなどUbuntu派生ディストリビューションの楽ちんさは、本当に有難いと痛感した。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Dellの古いノートパソコンVOSTRO1000にArch Linuxを入れてみた。  </p>
-<p>インストールには、グラフィカルインストールが可能なArchbootを使った。（archlinux-2015.01-1-archboot.iso）<br>Ubuntu等のイ]]>
+    <![CDATA[<p>Dellの古いノートパソコンVOSTRO1000にArch Linuxを入れてみた。<br>（NECのLavie Liteは、kernelが3.10台を超えると不具合が出る問題がArch Linuxでは解決出来ず、諦めた。）</p>
+<p>インストールには、グラフィカルイン]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
