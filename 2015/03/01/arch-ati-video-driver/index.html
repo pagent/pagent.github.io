@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>update-grubで&quot;options:not found&quot;のエラー | Pagent</title>
+  <title>Arch Linuxをインストールした。（ビデオドライバーはATIでうまく行った） | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="update-grubで&quot;options:not found&quot;のエラー"/>
+  <meta property="og:title" content="Arch Linuxをインストールした。（ビデオドライバーはATIでうまく行った）"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -94,7 +94,7 @@
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> update-grubで&quot;options:not found&quot;のエラー</h1>
+			<h1> Arch Linuxをインストールした。（ビデオドライバーはATIでうまく行った）</h1>
 		</div>
 	
 
@@ -110,15 +110,21 @@
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>/etc/default/grubを編集して<code>update-grub</code>しようとしたら、  </p>
-<blockquote>
-<p>/usr/sbin/grub-mkconfig: 6: /etc/default/grub: options: not found</p>
-</blockquote>
-<p>とエラーになった。  </p>
-<p>意味がよく分からず、grub2を再度インストールしてみたが、やはりエラーになる。  </p>
-<p>grubファイルをよく見ると編集した箇所、GRUB_DEFAULT=”Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.16.0-30-generic”のダブルクォーテーションが全角の「”」になっていた。<br>半角に直したらアップデート出来た。<br>エラーメッセージの”6”はgrubファイルの6行目ということらしい。  </p>
-<p>“line 6”と言ってくれたら親切なんだが。<br>“options: not found”も”invalid”等の方が分かりやすい。  </p>
-<p>自分の不注意は棚に上げてだが。</p>
+	    <p>Dellの古いノートパソコンVOSTRO1000にArch Linuxを入れてみた。  </p>
+<p>インストールには、グラフィカルインストールが可能なArchbootを使った。（archlinux-2015.01-1-archboot.iso）<br>Ubuntu等のインストーラーほど懇切丁寧ではないが、コマンドラインでのインストールよりは楽だった。  </p>
+<p>ネット上の紹介記事を参考に進めたら、それ程迷うこともなかったが、最後ブートローダーのインストールで、GRUB2を選択すると、インストール先をMBRにしか出来なかったので、SysLinuxをインストールした。<br>無線LANの設定も後から苦労するよりはと、ぽちぽちパスワードを入力した。  </p>
+<p>一応インストールは完了したが、デスクトップ環境の導入で躓いてしまった。  </p>
+<p>最初LXDEを入れてみたが、画面がザラザラで何も見えない。<br>PC起動時にLXDEを自動開始するよう設定してしまったようで、コマンドラインにも戻れない。<br>修正の仕方も分からず困ったが、幸いインストール後の状態をClonezillaでバックアップしていたので、これをリストアした。  </p>
+<p>LXDEでダメならと、次はXfceでチャレンジしてみた。  </p>
+<p>ほぼ下記記事の説明の通りに進めた。<br><a href="http://elfcobe.hateblo.jp/entry/2014/05/11/015243" target="_blank" rel="external">Windows で VirtualBox + Arch Linux (Xfce + Slim) - けいれん現象の幽玄美よ</a>  </p>
+<p>Xorg、グラフィックドライバー（xf86-video-vesa）、Xfceをインストールしたが、<code>startxfce4</code>とコマンドを打ってデスクトップに入ろうとしても、X serverが落ちてしまう。  </p>
+<p>エラーメッセージは「ビデオドライバーが無い」というような内容だった。<br>LXDEの時もこのせいで画面がザラザラだったのかもしれない。  </p>
+<p>デュアルブートのLubuntuで<code>xrandr</code>してみると、”VGA-0 disconnected”、”LVDS connected”。<br><code>lspci</code>してみると、”VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] RS482/RS485 [Radeon Xpress 1100/1150]”<br>何のドライバーが必要なのかよく分からない。  </p>
+<p>Puppy linux派生のLxpupを起動してみると、クイックセットアップのGraphicsのところに「現在はATIビデオドライバーを使用している」というようなことが書いてあった。  </p>
+<p>「ATI video driver Arch」で検索すると、Arch Linuxの日本語wikiページが見つかった。<br><a href="https://wiki.archlinux.org/index.php/ATI_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29" target="_blank" rel="external">ATI (日本語) - ArchWiki</a>  </p>
+<p><code>pacman -S xf86-video-ati</code>でxf86-video-atiをインストールしたら、ようやくXfceのデスクトップに入ることが出来た。  </p>
+<p>フォントがザラザラで汚かったりで、環境はまだ整っていないが、いちおう一段落は付けられた。  </p>
+<p>それにしても、XubuntuやLubuntuなどUbuntu派生ディストリビューションの楽ちんさは、本当に有難いと痛感した。</p>
 
 	</div>
 
@@ -134,13 +140,13 @@
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2015/03/01/arch-ati-video-driver/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2015/02/27/linkchecker/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2015/03/01/update-grub-error/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
