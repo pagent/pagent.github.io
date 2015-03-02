@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-03-02T13:12:22.379Z</updated>
+  <updated>2015-03-02T23:07:09.106Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <link href="http://pagent.github.io/2015/03/02/easy2boot/"/>
     <id>http://pagent.github.io/2015/03/02/easy2boot/</id>
     <published>2015-03-02T02:31:03.000Z</published>
-    <updated>2015-03-02T13:12:06.000Z</updated>
-    <content type="html"><![CDATA[<p>isoファイルからブータブルUSBメモリを作成出来るツールは多々あるが、「Easy2Boot」は作成したEasy2Boot領域にisoファイルをコピーペーストするだけで、マルチブート可能になるようだ。  </p>
+    <updated>2015-03-02T23:06:28.000Z</updated>
+    <content type="html"><![CDATA[<p>isoファイルからブータブルUSBメモリを作成出来るツールは多々あるが、「Easy2Boot」は作成した領域にisoファイルをコピーペーストするだけで、マルチブート可能になるようだ。  </p>
 <p>公式サイト（英語）以外には解説が見当たらず、その公式サイトも「Easy2Boot」のダウンロードやインストール方法など、どこに記載があるのか分かりづらかった。<br>だが使ってみると、配置したisoファイルは自動的にブートメニューに追加されるし、とても便利だった。  </p>
 <h3 id="Linux環境でのインストール">Linux環境でのインストール</h3>
 <p>まず、<a href="http://www.easy2boot.com/download/" target="_blank" rel="external">Downloads</a>からEasy2Boot_v1.62.zipをダウンロードし、解凍。  </p>
@@ -58,8 +58,8 @@
 <p>ーー<br>（追記）<br>isoファイルをそのまま起動するには、Syslinuxの「memdisk」を使う方法やGrub4dosを使う方法などあるようだが、memdiskでは起動出来ないisoファイルも少なくなかった。<br>もしかすると、デフラグすればmemdiskでも起動出来たのだろうか。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>isoファイルからブータブルUSBメモリを作成出来るツールは多々あるが、「Easy2Boot」は作成したEasy2Boot領域にisoファイルをコピーペーストするだけで、マルチブート可能になるようだ。  </p>
-<p>公式サイト（英語）以外には解説が見当たらず、その公式サ]]>
+    <![CDATA[<p>isoファイルからブータブルUSBメモリを作成出来るツールは多々あるが、「Easy2Boot」は作成した領域にisoファイルをコピーペーストするだけで、マルチブート可能になるようだ。  </p>
+<p>公式サイト（英語）以外には解説が見当たらず、その公式サイトも「Easy2]]>
     </summary>
     
       <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
