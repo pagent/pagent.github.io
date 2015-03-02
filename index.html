@@ -145,11 +145,11 @@
 <p>ブートすると、LxPupは起動出来たが、clonezillaは「ファイルがcontiguous（隣接）じゃない」と言われ、上手く起動出来なかった。<br>どうやら断片化しているからデフラグが必要ということらしい。  </p>
 <p>isoファイルから直接ブートする際には、ちょっとした断片化でも起動出来ないようで、「Easy2Boot」ではいろいろ対策が用意されている。  </p>
 <p>defragfs.pl（_ISO/docs/linux_utils内）やWINCONTIG（_ISO/docs/内）の他、特にLinuxユーザーの為に_ISO内にCONTIG.ISOというファイルが同梱されている。  </p>
-<p>CONTIG.ISOは、isoファイルに断片化があった際に自動的にデフラグ操作を行うためのものらしい。<br>サイズが500MBに設定されていて、Easy2Bootインストール直後の状態でのほとんど全ての容量にあたる。<br>clonezillaが上手く起動出来なかったのもフリーズしていた訳ではなく、CONTIG.ISOがデフラグ操作を行っていたのかもしれない。<br>ただ時間が掛かるようだし、4GBを超えるようなインストールDVDをデフラグするためにはCONTIG.ISOも4GB以上にリサイズしておく必要があるようだ。  </p>
+<p>CONTIG.ISOは、isoファイルに断片化があった際に自動的にデフラグ操作を行うためのものらしい。<br>サイズが500MBに設定されていて、Easy2Bootインストール直後の状態でのほとんど全ての容量にあたる。<br>clonezillaが上手く起動出来なかったのもフリーズしていた訳ではなく、CONTIG.ISOがデフラグ操作を行っていたのかもしれない。<br>ただかなり時間が掛かるようだし、サイズが500MB以上のisoファイルをデフラグするためには、CONTIG.ISOもそれ以上のサイズにリサイズしておく必要があるようだ。  </p>
 <p>defragfs.plはなぜか機能しなかったが、Windows用のWinContigでデフラグしたらclonezillaも起動出来るようになった。  </p>
 <p>WinContigはWindows 7を起動して使用したが、Windows PE（Windows プレインストール環境）やHiren’s BootCDの「Mini Windows Xp」など、Windows環境を提供するisoファイルをEasy2Bootに入れておけば、Easy2BootによるブートでWinContigを利用出来る。  </p>
 <h3 id="フォーマットをNTSFにする">フォーマットをNTSFにする</h3>
-<p>4GBを超えるisoファイルを利用するためには、Easy2Boot領域をFat32ではなく、NTSFもしくはext3、ext4にしておく必要があるが、LinuxのインストールDVDには4GBを超えるものもあるのでなるべく4GB以上のファイルを扱いたい。  </p>
+<p>4GBを超えるファイルを利用するためには、Easy2Boot領域をFat32ではなく、NTSFもしくはext3、ext4にしておく必要があるが、なるべくなら4GB以上のファイルも扱いたい。  </p>
 <p>Easy2Bootインストール時に領域がFat32にフォーマットされてしまうが、_ISO/docs/linux_utils内のfmt.shファイルの131行目の  </p>
 <pre><code>/sbin/mkfs.vfat -F32 -n &quot;$label&quot; $device
 </code></pre><p>を</p>
@@ -673,35 +673,35 @@ $ sudo apt-get install nemo-terminal
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>24</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
 			<li><a href="/tags/Linux/">Linux<span>37</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>4</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>4</span></a></li>
 		
 			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>24</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 		
 		</ul>
