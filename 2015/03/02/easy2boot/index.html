@@ -1,0 +1,316 @@
+<!DOCTYPE HTML><!-- _partial/head -->
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>isoファイルを置くだけでUSBマルチブート可能な「Easy2Boot」 | Pagent</title>
+  <meta name="author" content="Pagent">
+  
+  <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="isoファイルを置くだけでUSBマルチブート可能な「Easy2Boot」"/>
+  <meta property="og:site_name" content="Pagent"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+    <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
+  
+  
+    <link href="/favicon.ico" rel="icon">
+  
+
+  
+  <link rel="stylesheet" href="/css/bootstrap.cerulean.min.css" media="screen" type="text/css">
+  
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  <!-- _partial/post/google_analytics -->
+
+
+
+</head>
+
+<body>
+  <!-- _partial/navigation -->
+<nav id="main-nav" class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">Pagent</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class="fa fa-tags"></i>Tags
+			</a>
+		  </li>
+		  
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+		  <li><a href="/atom.xml" title="Atom feed"><i class="fa fa-rss"></i>Feed</a></li>
+		</ul>
+		<form class="navbar-form navbar-right" action="//google.com/search" method="get" accept-charset="utf-8">
+		    <input type="search" name="q" results="0" placeholder="Search" class="form-control">
+		    <input type="hidden" name="hq" value="site:pagent.github.io">
+		</form>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 <!-- post -->
+
+
+<!-- _partial/article -->
+
+<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+  <!-- display as page -->
+		<div class="page-header">
+			<h1> isoファイルを置くだけでUSBマルチブート可能な「Easy2Boot」</h1>
+		</div>
+	
+
+</div>
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div class="col-md-9">
+	
+
+	
+
+	<!-- content -->
+	<div class="mypage">
+	    <p>isoファイルからブータブルUSBメモリを作成出来るツールは多々あるが、「Easy2Boot」は作成したEasy2Boot領域にisoファイルをコピーペーストするだけで、マルチブート可能になるようだ。  </p>
+<p>公式サイト（英語）以外には解説が見当たらず、その公式サイトも「Easy2Boot」のダウンロードやインストール方法など、どこに記載があるのか分かりづらかった。<br>だが使ってみると、配置したisoファイルは自動的にブートメニューに追加されるし、とても便利だった。  </p>
+<h3 id="Linux環境でのインストール">Linux環境でのインストール</h3>
+<p>まず、<a href="http://www.easy2boot.com/download/" target="_blank" rel="external">Downloads</a>からEasy2Boot_v1.62.zipをダウンロードし、解凍。  </p>
+<p>Linux環境で作業したので、<a href="http://www.rmprepusb.com/tutorials/114" target="_blank" rel="external">114 - How to make an Easy2Boot (grub4dos) USB Flash drive using linux - RMPrepUSB</a>を参照したが、解凍して出て来たフォルダ内にも同様の解説があった。<br>_ISO/docs/linux_utils/ReadMe_fmt.sh.txt  </p>
+<p>（Windows用の解説は_ISO/docs/Make_E2B_USB_Drive/ReadMe.txt）  </p>
+<p>linux_utilsフォルダ内で端末を開き、  </p>
+<pre><code>sudo chmod 777 *
+</code></pre><p>フォルダ内のすべてのファイルのパーティションを777に変更し、その後  </p>
+<pre><code>sudo ./fmt.sh
+</code></pre><p>インストール先を聞かれるので、OKなら「y」。<br>違う場合は「n」の後、自分で指定。<br>（外付けHDDにもインストール可能で、さらに2番目以降のパーティションにもインストール可。）  </p>
+<p>フォーマットして良いか聞かれるので、良ければ「y」。  </p>
+<p>指定したパーティションに「Easy2Boot」がコピーされ、ブートローダーもインストールされた。  </p>
+<h3 id="起動とデフラグ">起動とデフラグ</h3>
+<p>_ISO/LINUX内にLxPup-15.02.1-s-nopae.isoを、_ISO/BACKUPにclonezilla-live-2.1.2-43-i686-pae.isoを配置した。  </p>
+<p>ブートすると、LxPupは起動出来たが、clonezillaは「ファイルがcontiguous（隣接）じゃない」と言われ、上手く起動出来なかった。<br>どうやら断片化しているからデフラグが必要ということらしい。  </p>
+<p>isoファイルから直接ブートする際には、ちょっとした断片化でも起動出来ないようで、「Easy2Boot」ではいろいろ対策が用意されている。  </p>
+<p>defragfs.pl（_ISO/docs/linux_utils内）やWINCONTIG（_ISO/docs/内）の他、特にLinuxユーザーの為に_ISO内にCONTIG.ISOというファイルが同梱されている。  </p>
+<p>CONTIG.ISOは、isoファイルに断片化があった際に自動的にデフラグ操作を行うためのものらしい。<br>サイズが500MBに設定されていて、Easy2Bootインストール直後の状態でのほとんど全ての容量にあたる。<br>clonezillaが上手く起動出来なかったのもフリーズしていた訳ではなく、CONTIG.ISOがデフラグ操作を行っていたのかもしれない。<br>ただ時間が掛かるようだし、4GBを超えるようなインストールDVDをデフラグするためにはCONTIG.ISOも4GB以上にリサイズしておく必要があるようだ。  </p>
+<p>defragfs.plはなぜか機能しなかったが、Windows用のWinContigでデフラグしたらclonezillaも起動出来るようになった。  </p>
+<p>WinContigはWindows 7を起動して使用したが、Windows PE（Windows プレインストール環境）やHiren’s BootCDの「Mini Windows Xp」など、Windows環境を提供するisoファイルをEasy2Bootに入れておけば、Easy2BootによるブートでWinContigを利用出来る。  </p>
+<h3 id="フォーマットをNTSFにする">フォーマットをNTSFにする</h3>
+<p>4GBを超えるisoファイルを利用するためには、Easy2Boot領域をFat32ではなく、NTSFもしくはext3、ext4にしておく必要があるが、LinuxのインストールDVDには4GBを超えるものもあるのでなるべく4GB以上のファイルを扱いたい。  </p>
+<p>Easy2Bootインストール時に領域がFat32にフォーマットされてしまうが、_ISO/docs/linux_utils内のfmt.shファイルの131行目の  </p>
+<pre><code>/sbin/mkfs.vfat -F32 -n &quot;$label&quot; $device
+</code></pre><p>を</p>
+<pre><code>/sbin/mkfs.ntfs -n &quot;$label&quot; $device
+</code></pre><p>に変更することでNTSFにすることが出来た。  </p>
+<p>後からファイルを保持したままFat32をNTSFに変換することも可能のようなので、それでも良いかもしれない。  </p>
+<h3 id="よく分からないトラブル">よく分からないトラブル</h3>
+<p>外付けHDDではこれで上手く行ったが、USBメモリではEasy2Bootを起動しようとしたら、パーティションの「パーティションのlast sectorをチェックしている」というような表示のまま止まってしまった。  </p>
+<p>USBメモリを一旦抜き、再度挿入してconstinue。<br>ブートメニュー画面でInstall　Grub4dos…を選択したら、その後は起動出来るようになった。  </p>
+<p>理由はよく分からないままだが、使用したUSBメモリの特性やインストール方法などにもよるのかもしれない。  </p>
+<h3 id="感想">感想</h3>
+<p>以上、少しややこしかったが、配置するだけで（正確にはデフラグの必要があったりするが）isoファイルを起動出来る「Easy2Boot」はなかなか便利そうだ。  </p>
+<p>ーー<br>（追記）<br>isoファイルをそのまま起動するには、Syslinuxの「memdisk」を使う方法やGrub4dosを使う方法などあるようだが、memdiskでは起動出来ないisoファイルも少なくなかった。<br>もしかすると、デフラグすればmemdiskでも起動出来たのだろうか。</p>
+
+	</div>
+
+	<div class="tweet-button">
+	<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+	<div>
+  	<center>
+	<!-- _partial/post/pagination -->
+<div class="pagination">
+<ul class="pagination">
+	 
+		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
+
+		
+		   <li class="next"><a href="/2015/03/01/arch-ati-video-driver/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+        
+	
+</ul>
+</div>
+
+  	</center>
+	</div>
+
+	<!-- comment -->
+	<!-- _partial/post/comment -->
+
+<section id="comment">
+  <h2 class="title">Comments</h2>
+
+  
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  
+</section>
+
+
+
+	</div> <!-- col-md-9/col-md-12 -->
+
+	
+		<!-- _partial/post/meta -->
+<div class="col-md-3"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2015年3月2日
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>
+    <ul id="tags" class="tag_box list-unstyled collapse in">
+	    <!-- _partial/post/tag -->
+  
+  <li><a href="/tags/ユーティリティ/">ユーティリティ</a></li>
+
+    </ul>
+	</div>
+	
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+
+    <hr>
+
+</div><!-- col-md-3 -->
+
+	
+
+</div><!-- row -->
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+    <footer> <!-- _partial/footer -->
+<p>
+  &copy; 2015 Pagent
+  &nbsp;
+  <span class="text-muted">Powered by:
+    <a class="text-muted" href="http://zespia.tw/hexo/" target="_blank">Hexo</a>,
+    <a class="text-muted" href="http://github.com/yieme/hexo-theme-freewill/">Freewill</a>
+    &amp;
+    <a class="text-muted" href="http://bootswatch.com/" target="_blank">Bootswatch <small>v3.2</small></a>
+  </span>
+</p>
+ </footer>
+  </div> <!-- container-narrow -->
+  <!-- _partial/after_footer -->
+<a id="gotop" href="#">
+  <span>▲</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'pagents';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<script type="text/javascript">
+<!--
+var acCODE;
+acCODE = "<img width='0' height='0' src='http://a.pagent.org/xeno_git/xenoLogger.php?" + 
+"PID="+ escape(document.location.href)+ "&" + 
+"PTITLE=" +escape(document.title)+ "&" + 
+"PPID=" +escape(document.referrer)+ "' ";
+// -->
+</script>
+<script type="text/javascript" src="http://a.pagent.org/xeno_git/xenoLogger.js"></script>
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//a.pagent.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//a.pagent.org/piwik/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+</body>
+</html>

@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-03-01T10:31:54.700Z</updated>
+  <updated>2015-03-02T09:45:18.239Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,58 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[isoファイルを置くだけでUSBマルチブート可能な「Easy2Boot」]]></title>
+    <link href="http://pagent.github.io/2015/03/02/easy2boot/"/>
+    <id>http://pagent.github.io/2015/03/02/easy2boot/</id>
+    <published>2015-03-02T02:31:03.000Z</published>
+    <updated>2015-03-02T09:44:33.000Z</updated>
+    <content type="html"><![CDATA[<p>isoファイルからブータブルUSBメモリを作成出来るツールは多々あるが、「Easy2Boot」は作成したEasy2Boot領域にisoファイルをコピーペーストするだけで、マルチブート可能になるようだ。  </p>
+<p>公式サイト（英語）以外には解説が見当たらず、その公式サイトも「Easy2Boot」のダウンロードやインストール方法など、どこに記載があるのか分かりづらかった。<br>だが使ってみると、配置したisoファイルは自動的にブートメニューに追加されるし、とても便利だった。  </p>
+<h3 id="Linux環境でのインストール">Linux環境でのインストール</h3>
+<p>まず、<a href="http://www.easy2boot.com/download/" target="_blank" rel="external">Downloads</a>からEasy2Boot_v1.62.zipをダウンロードし、解凍。  </p>
+<p>Linux環境で作業したので、<a href="http://www.rmprepusb.com/tutorials/114" target="_blank" rel="external">114 - How to make an Easy2Boot (grub4dos) USB Flash drive using linux - RMPrepUSB</a>を参照したが、解凍して出て来たフォルダ内にも同様の解説があった。<br>_ISO/docs/linux_utils/ReadMe_fmt.sh.txt  </p>
+<p>（Windows用の解説は_ISO/docs/Make_E2B_USB_Drive/ReadMe.txt）  </p>
+<p>linux_utilsフォルダ内で端末を開き、  </p>
+<pre><code>sudo chmod 777 *
+</code></pre><p>フォルダ内のすべてのファイルのパーティションを777に変更し、その後  </p>
+<pre><code>sudo ./fmt.sh
+</code></pre><p>インストール先を聞かれるので、OKなら「y」。<br>違う場合は「n」の後、自分で指定。<br>（外付けHDDにもインストール可能で、さらに2番目以降のパーティションにもインストール可。）  </p>
+<p>フォーマットして良いか聞かれるので、良ければ「y」。  </p>
+<p>指定したパーティションに「Easy2Boot」がコピーされ、ブートローダーもインストールされた。  </p>
+<h3 id="起動とデフラグ">起動とデフラグ</h3>
+<p>_ISO/LINUX内にLxPup-15.02.1-s-nopae.isoを、_ISO/BACKUPにclonezilla-live-2.1.2-43-i686-pae.isoを配置した。  </p>
+<p>ブートすると、LxPupは起動出来たが、clonezillaは「ファイルがcontiguous（隣接）じゃない」と言われ、上手く起動出来なかった。<br>どうやら断片化しているからデフラグが必要ということらしい。  </p>
+<p>isoファイルから直接ブートする際には、ちょっとした断片化でも起動出来ないようで、「Easy2Boot」ではいろいろ対策が用意されている。  </p>
+<p>defragfs.pl（_ISO/docs/linux_utils内）やWINCONTIG（_ISO/docs/内）の他、特にLinuxユーザーの為に_ISO内にCONTIG.ISOというファイルが同梱されている。  </p>
+<p>CONTIG.ISOは、isoファイルに断片化があった際に自動的にデフラグ操作を行うためのものらしい。<br>サイズが500MBに設定されていて、Easy2Bootインストール直後の状態でのほとんど全ての容量にあたる。<br>clonezillaが上手く起動出来なかったのもフリーズしていた訳ではなく、CONTIG.ISOがデフラグ操作を行っていたのかもしれない。<br>ただ時間が掛かるようだし、4GBを超えるようなインストールDVDをデフラグするためにはCONTIG.ISOも4GB以上にリサイズしておく必要があるようだ。  </p>
+<p>defragfs.plはなぜか機能しなかったが、Windows用のWinContigでデフラグしたらclonezillaも起動出来るようになった。  </p>
+<p>WinContigはWindows 7を起動して使用したが、Windows PE（Windows プレインストール環境）やHiren’s BootCDの「Mini Windows Xp」など、Windows環境を提供するisoファイルをEasy2Bootに入れておけば、Easy2BootによるブートでWinContigを利用出来る。  </p>
+<h3 id="フォーマットをNTSFにする">フォーマットをNTSFにする</h3>
+<p>4GBを超えるisoファイルを利用するためには、Easy2Boot領域をFat32ではなく、NTSFもしくはext3、ext4にしておく必要があるが、LinuxのインストールDVDには4GBを超えるものもあるのでなるべく4GB以上のファイルを扱いたい。  </p>
+<p>Easy2Bootインストール時に領域がFat32にフォーマットされてしまうが、_ISO/docs/linux_utils内のfmt.shファイルの131行目の  </p>
+<pre><code>/sbin/mkfs.vfat -F32 -n &quot;$label&quot; $device
+</code></pre><p>を</p>
+<pre><code>/sbin/mkfs.ntfs -n &quot;$label&quot; $device
+</code></pre><p>に変更することでNTSFにすることが出来た。  </p>
+<p>後からファイルを保持したままFat32をNTSFに変換することも可能のようなので、それでも良いかもしれない。  </p>
+<h3 id="よく分からないトラブル">よく分からないトラブル</h3>
+<p>外付けHDDではこれで上手く行ったが、USBメモリではEasy2Bootを起動しようとしたら、パーティションの「パーティションのlast sectorをチェックしている」というような表示のまま止まってしまった。  </p>
+<p>USBメモリを一旦抜き、再度挿入してconstinue。<br>ブートメニュー画面でInstall　Grub4dos…を選択したら、その後は起動出来るようになった。  </p>
+<p>理由はよく分からないままだが、使用したUSBメモリの特性やインストール方法などにもよるのかもしれない。  </p>
+<h3 id="感想">感想</h3>
+<p>以上、少しややこしかったが、配置するだけで（正確にはデフラグの必要があったりするが）isoファイルを起動出来る「Easy2Boot」はなかなか便利そうだ。  </p>
+<p>ーー<br>（追記）<br>isoファイルをそのまま起動するには、Syslinuxの「memdisk」を使う方法やGrub4dosを使う方法などあるようだが、memdiskでは起動出来ないisoファイルも少なくなかった。<br>もしかすると、デフラグすればmemdiskでも起動出来たのだろうか。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>isoファイルからブータブルUSBメモリを作成出来るツールは多々あるが、「Easy2Boot」は作成したEasy2Boot領域にisoファイルをコピーペーストするだけで、マルチブート可能になるようだ。  </p>
+<p>公式サイト（英語）以外には解説が見当たらず、その公式サ]]>
+    </summary>
+    
+      <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Arch Linuxをインストールした。（ビデオドライバーはATIでうまく行った）]]></title>
@@ -331,7 +383,7 @@ $ ]]>
     <link href="http://pagent.github.io/2015/02/06/lxpup-lxqtpup/"/>
     <id>http://pagent.github.io/2015/02/06/lxpup-lxqtpup/</id>
     <published>2015-02-06T01:02:10.000Z</published>
-    <updated>2015-02-27T23:55:25.000Z</updated>
+    <updated>2015-03-02T09:19:54.000Z</updated>
     <content type="html"><![CDATA[<p>Puppy Linuxのデスクトップ環境について調べ物をしていたら、LxPup - Puppy Linux + LXDEというページがあった。<br><a href="http://sourceforge.jp/projects/sfnet_lxpup/" target="_blank" rel="external">LxPup - Puppy Linux + LXDE プロジェクト日本語トップページ - SourceForge.JP</a>  </p>
 <p>LxPup、LxQtPupというのは初めて知ったが、Puppy LinuxをLXDEデスクトップにアレンジしたものらしい。  </p>
 <p>早速、LxPup-15.02.2のPAE版と非PAE版、それとLxQtPup（非PAE）をダウンロードした。<br>いずれもSlacko Puppy 5.9.3がベースのもの。</p>
@@ -564,35 +616,6 @@ find -type l
     </summary>
     
       <category term="コマンド" scheme="http://pagent.github.io/tags/%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Dolphinが.directoryファイルを生成するのを止める]]></title>
-    <link href="http://pagent.github.io/2015/02/03/dolphin-directory-files/"/>
-    <id>http://pagent.github.io/2015/02/03/dolphin-directory-files/</id>
-    <published>2015-02-03T01:21:28.000Z</published>
-    <updated>2015-02-03T07:22:51.000Z</updated>
-    <content type="html"><![CDATA[<p>ファイルマネージャーDolphinを使っていて、あちこちのディレクトリに.directoryというファイルがあることに気付いた。  </p>
-<p>内容は以下のようなもの。  </p>
-<blockquote>
-<p>[Dolphin]<br>Timestamp=2015,2,2,22,45,9<br>Version=3<br>ViewMode=2</p>
-<p>[Settings]<br>HiddenFilesShown=true</p>
-</blockquote>
-<p>Dolphinでアイコン表示、詳細表示などの表示モードやソート基準を変更をしたり、隠しファイルを表示したりすると、この.directoryファイルが自動生成されるようだ。<br>（/etc等、所有者がrootのディレクトリには作成されない。）  </p>
-<p>多くのファイルマネージャーでは隠しファイルの表示・非表示をディレクトリ毎に設定出来ないが、Dolphinでは.directoryファイルのおかげでディレクトリ毎に設定可能になっている。  </p>
-<p>便利と言えば便利なのだが、静的サイトジェネレーターHexoの作業フォルダ内にこの.directoryファイルを作られるのはまずい気がする。<br>deployやgitコマンドの際に不具合が出るかもしれない。  </p>
-<p>Dolphinの設定→全般→動作タブで、「フォルダごとにビューのプロパティを保存する」から「すべてのフォルダに共通のプロバティを使う」に変更したら、.directoryファイルは生成されなくなった。<br><a href="https://forum.kde.org/viewtopic.php?f=223&amp;t=119876" target="_blank" rel="external">.directory files • KDE Community Forums</a>  </p>
-<p>だが、表示モードやソート基準も全フォルダで共通になってしまった。<br>使い勝手が悪く、これならnemoの方が便利だ。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>ファイルマネージャーDolphinを使っていて、あちこちのディレクトリに.directoryというファイルがあることに気付いた。  </p>
-<p>内容は以下のようなもの。  </p>
-<blockquote>
-<p>[Dolphin]<br>Timestamp=2015,]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
     
   </entry>
   

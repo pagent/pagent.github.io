@@ -112,6 +112,47 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/11/01/firefox-closed-tabs/" >Firefoxで「閉じたタブを元に戻す」「最近閉じたタブ」がクリック出来ない</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月1日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>いつの間にかXubuntu14.04.1のFirefoxで、「閉じたタブを元に戻す」「最近閉じたタブ」が灰色になっていて選択出来なくなっていた。<br>Tab Mix Plusを無効化したら「閉じたタブを元に戻す」はクリックは出来るが、タブが戻らず機能しない。<br>プライベートウィンドウでも同様。  </p>
+<p>Firefoxのバージョンが33.0に更新されてからかと、Synapticの「バージョンの強制」で28.0にダウングレードしてみたが、やはり駄目。<br>他のXubuntuPCを見てみると、そちらではちゃんと「閉じたタブを元に戻す」「最近閉じたタブ」が機能している。  </p>
+<p>Firefoxを再インストールしてみるしかなさそうなので、古いプロファイルも削除しておいた方が良いだろうとプロファイルの保存場所を調べていたら、Firefoxにはリセット機能というのがあるようだった。<br><a href="https://support.mozilla.org/ja/kb/reset-firefox-easily-fix-most-problems" target="_blank" rel="external">Firefox をリセットするには | Firefox ヘルプ</a>  </p>
+<p>結局このリセットで復旧出来た。  </p>
+<p>Firefoxをリセットしてもブックマークなどは残るが、アドオンは消去されてしまうので、「Firefox Sync」を利用してアドオンを保存しておくのが便利。<br>あとTab Mix Plusなど各種アドオンの設定やScrapBookで保存したページなど、エクスポート出来るものは予めローカルにエクスポートしておいた方が良い。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/01/firefox-closed-tabs/" data-text="Firefoxで「閉じたタブを元に戻す」「最近閉じたタブ」がクリック出来ない | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/10/31/fcitx/" >ibus1.5のプロパティパネルがうっとおしいのでfcitxにした</a>
 		</h3>
 	
@@ -501,84 +542,6 @@ end
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/10/23/octopress-customize/" >Octopressのカスタマイズ</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年10月23日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>ブログをリニューアルするにあたって、またOctopressを少しカスタマイズした。  </p>
-<p>以前と同じく、<a href="http://tantant.jp/blog/Octopress/configuring-octopress/#paragraph07" target="_blank" rel="external">Octopressの初期設定時に気にしておきたい9箇所 – tantant</a>と<a href="http://rcmdnk.github.io/blog/2013/10/01/blog-octopress/" target="_blank" rel="external">月間アーカイブ for Octopress – rcmdnk’s blog</a>の通り、カテゴリ別アーカイブと月別アーカイブを追加した。  </p>
-<p>テーマは<a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes" target="_blank" rel="external">3rd Party Octopress Themes · imathis/octopress Wiki</a>で探してみたが、やっぱりデフォルトの方がよいかと思い、sass/custom/_styles.scssを下記に編集したのみ。  </p>
-<pre><code>// This File is imported last, and will override other styles in the cascade
-// Add styles here to make changes without digging in too much
-
-body &gt; header {
-    padding-top: 1.3em;
-    padding-bottom: 1.1em;
-}
-
-body &gt; header h1 {
-    font-size: 2.0em;
-    font-family: &quot;PT Serif&quot;,&quot;Georgia&quot;,&quot;Helvetica Neue&quot;,Arial,sans-serif;
-}
-
-body &gt; header h2 {
-    font-size: 0.9em;
-    color: #AAA;
-}
-
-.entry-title {
-    font-size: 1.5em !important;
-}
-
-h2, section h1 {
-    font-size: 1.2em;
-}
-
-#blog-archives article h1 a {
-    font-size: 1.0em !important;
-}
-
-p {
-    font-size:  92%;
-}
-
-article blockquote {
-    font-size:  105%;
-}
-</code></pre><p>日付け表記は英語式ではなく日本語式がよかったので、<code>_config.yml</code>で<code>date_format: &quot;%Y年%-m月%-d日&quot;</code><br>としたが、なぜかデフォルトのテーマでは反映されず。<br>source/_includes/post/date.htmlをoctostrap3の<a href="https://github.com/kAworu/octostrap3/blob/master/source/_includes/post/date.html" target="_blank" rel="external">date.html</a>と入れ替えたら反映された。<br>よく分からないが、デフォルトテーマのdate.htmlの記述に問題があるらしい。  </p>
-<p>あと、記事タイトルやカテゴリー名に漢字を使うと中国語読みみたいになってしまうが、これはたぶんOctopressがベースとしているJekyllの仕様なのだろう。<br>WordPressのようにスラッグを指定出きれば良いのだが、やり方が分からないのでこの辺は我慢しないとしょうが無いようだ。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/10/23/octopress-customize/" data-text="Octopressのカスタマイズ | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -620,6 +583,10 @@ article blockquote {
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/03/02/easy2boot/" ><i class="fa fa-file-o"></i>isoファイルを置くだけでUSBマルチブート可能な「E...</a>
+      </li>
+    
+      <li>
         <a href="/2015/03/01/arch-ati-video-driver/" ><i class="fa fa-file-o"></i>Arch Linuxをインストールした。（ビデオドライ...</a>
       </li>
     
@@ -633,10 +600,6 @@ article blockquote {
     
       <li>
         <a href="/2015/02/26/nemo-terminal/" ><i class="fa fa-file-o"></i>nemoの拡張機能「nemo-terminal」がちょ...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/02/25/clonezilla-architecture-speed/" ><i class="fa fa-file-o"></i>Clonezillaのアーキテクチャとバックアップスピード</a>
       </li>
     
   </ul>
@@ -654,35 +617,35 @@ article blockquote {
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>37</span></a></li>
+		
 			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>4</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>3</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>37</span></a></li>
-		
 			<li><a href="/tags/Hexo/">Hexo<span>24</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 		
 		</ul>
@@ -694,7 +657,7 @@ article blockquote {
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
