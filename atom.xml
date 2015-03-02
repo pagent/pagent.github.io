@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-03-02T23:14:41.482Z</updated>
+  <updated>2015-03-02T23:57:57.130Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/03/02/easy2boot/"/>
     <id>http://pagent.github.io/2015/03/02/easy2boot/</id>
     <published>2015-03-02T02:31:03.000Z</published>
-    <updated>2015-03-02T23:14:24.000Z</updated>
+    <updated>2015-03-02T23:56:52.000Z</updated>
     <content type="html"><![CDATA[<p>isoファイルからブータブルUSBメモリを作成出来るツールは多々あるが、「Easy2Boot」は作成した領域にisoファイルをコピーペーストするだけで、マルチブート可能になるようだ。  </p>
 <p>公式サイト（英語）以外には解説が見当たらず、その公式サイトも「Easy2Boot」のダウンロードやインストール方法など、どこに記載があるのか分かりづらかった。<br>だが使ってみると、配置したisoファイルは自動的にブートメニューに追加されるし、とても便利だった。  </p>
 <h3 id="Linux環境でのインストール">Linux環境でのインストール</h3>
@@ -34,7 +34,8 @@
 <p>フォーマットして良いか聞かれるので、良ければ「y」。  </p>
 <p>指定したパーティションに「Easy2Boot」がコピーされ、ブートローダーもインストールされた。  </p>
 <h3 id="起動とデフラグ">起動とデフラグ</h3>
-<p>_ISO/LINUX内にLxPup-15.02.1-s-nopae.isoを、_ISO/BACKUPにclonezilla-live-2.1.2-43-i686-pae.isoを配置した。  </p>
+<p>使い方は簡単で、_ISO内の空いてるフォルダ（LINUXやWINなど）にisoファイルを追加するだけ。  </p>
+<p>今回は_ISO/LINUX内にLxPup-15.02.1-s-nopae.iso、_ISO/BACKUP内にclonezilla-live-2.1.2-43-i686-pae.isoを配置した。  </p>
 <p>ブートすると、LxPupは起動出来たが、clonezillaは「ファイルがcontiguous（隣接）じゃない」と言われ、上手く起動出来なかった。<br>どうやら断片化しているからデフラグが必要ということらしい。  </p>
 <p>isoファイルから直接ブートする際には、ちょっとした断片化でも起動出来ないようで、「Easy2Boot」ではいろいろ対策が用意されている。  </p>
 <p>defragfs.pl（_ISO/docs/linux_utils内）やWINCONTIG（_ISO/docs/内）の他、特にLinuxユーザーの為に_ISO内にCONTIG.ISOというファイルが同梱されている。  </p>
