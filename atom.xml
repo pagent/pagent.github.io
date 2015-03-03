@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-03-03T01:49:06.986Z</updated>
+  <updated>2015-03-03T01:52:41.104Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -387,8 +387,8 @@ $ ]]>
     <link href="http://pagent.github.io/2015/02/06/lxpup-lxqtpup/"/>
     <id>http://pagent.github.io/2015/02/06/lxpup-lxqtpup/</id>
     <published>2015-02-06T01:02:10.000Z</published>
-    <updated>2015-03-02T09:19:54.000Z</updated>
-    <content type="html"><![CDATA[<p>Puppy Linuxのデスクトップ環境について調べ物をしていたら、LxPup - Puppy Linux + LXDEというページがあった。<br><a href="http://sourceforge.jp/projects/sfnet_lxpup/" target="_blank" rel="external">LxPup - Puppy Linux + LXDE プロジェクト日本語トップページ - SourceForge.JP</a>  </p>
+    <updated>2015-03-03T01:52:29.000Z</updated>
+    <content type="html"><![CDATA[<p>Puppy Linuxのデスクトップ環境について調べ物をしていたら、”LxPup - Puppy Linux + LXDE”というページがあった。<br><a href="http://sourceforge.jp/projects/sfnet_lxpup/" target="_blank" rel="external">LxPup - Puppy Linux + LXDE プロジェクト日本語トップページ - SourceForge.JP</a>  </p>
 <p>LxPup、LxQtPupというのは初めて知ったが、Puppy LinuxをLXDEデスクトップにアレンジしたものらしい。  </p>
 <p>早速、LxPup-15.02.2のPAE版と非PAE版、それとLxQtPup（非PAE）をダウンロードした。<br>いずれもSlacko Puppy 5.9.3がベースのもの。</p>
 <p>LxQtPupのデスクトップ環境「LXQt」というのは、「LXDE-QtとRazor-qtの成果物を統合したデスクトップ環境」で「Qtに移行したLXDEの後継バージョン」とのこと。<br><a href="http://ja.wikipedia.org/wiki/LXDE" target="_blank" rel="external">LXDE - Wikipedia</a><br>LXDEよりさらに軽いということか。  </p>
@@ -419,7 +419,7 @@ $ ]]>
 <p>LxPup、LxQtPup、いずれもノーマルのPuppy Linuxより親しみやすいアレンジになっているので、初心者からベテランまで、ぜひ一度触れてみてもらいたい優れたディストリビューションだ。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Puppy Linuxのデスクトップ環境について調べ物をしていたら、LxPup - Puppy Linux + LXDEというページがあった。<br><a href="http://sourceforge.jp/projects/sfnet_lxpup/" target="]]>
+    <![CDATA[<p>Puppy Linuxのデスクトップ環境について調べ物をしていたら、”LxPup - Puppy Linux + LXDE”というページがあった。<br><a href="http://sourceforge.jp/projects/sfnet_lxpup/" target]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
