@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-03-02T23:57:57.130Z</updated>
+  <updated>2015-03-03T00:37:13.043Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/03/02/easy2boot/"/>
     <id>http://pagent.github.io/2015/03/02/easy2boot/</id>
     <published>2015-03-02T02:31:03.000Z</published>
-    <updated>2015-03-02T23:56:52.000Z</updated>
+    <updated>2015-03-03T00:36:59.000Z</updated>
     <content type="html"><![CDATA[<p>isoファイルからブータブルUSBメモリを作成出来るツールは多々あるが、「Easy2Boot」は作成した領域にisoファイルをコピーペーストするだけで、マルチブート可能になるようだ。  </p>
 <p>公式サイト（英語）以外には解説が見当たらず、その公式サイトも「Easy2Boot」のダウンロードやインストール方法など、どこに記載があるのか分かりづらかった。<br>だが使ってみると、配置したisoファイルは自動的にブートメニューに追加されるし、とても便利だった。  </p>
 <h3 id="Linux環境でのインストール">Linux環境でのインストール</h3>
@@ -55,7 +55,7 @@
 <p>USBメモリを一旦抜き、再度挿入してconstinue。<br>ブートメニュー画面で”Install Grub4dos…”を選択したら、その後は起動出来るようになった。  </p>
 <p>理由はよく分からないままだが、使用したUSBメモリの特性やインストール方法などにもよるのかもしれない。  </p>
 <h3 id="感想">感想</h3>
-<p>以上、少しややこしかったが、配置するだけで（正確にはデフラグの必要があったりするが）isoファイルを起動出来る「Easy2Boot」はなかなか便利そうだ。  </p>
+<p>以上、少しややこしかったが、配置するだけで（正確にはデフラグの必要があったりするが）isoファイルを起動出来る「Easy2Boot」はなかなか便利だ。<br>Linuxディストリビューションを試してみたい時にもDVD-RWなどに焼く必要が無くなる。<br>導入がもう少し簡単だったらとは思うが、isoファイルを直接起動するためには仕方が無いのだろう。  </p>
 <p>ーー<br>（追記）<br>isoファイルをそのまま起動するには、Syslinuxの「memdisk」を使う方法やGrub4dosを使う方法などあるようだが、memdiskでは起動出来ないisoファイルも少なくなかった。<br>もしかすると、デフラグすればmemdiskでも起動出来たのだろうか。</p>
 ]]></content>
     <summary type="html">
