@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2014/12/12/bulk-change/</loc>
+    <lastmod>2015-03-03T01:46:59.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2015/02/17/github-pages-redirect/</loc>
+    <lastmod>2015-03-03T01:42:33.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2014/11/24/hexo-windows-install/</loc>
     <lastmod>2015-03-03T01:21:07.000Z</lastmod>
   </url>
@@ -87,11 +97,6 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2015/02/17/github-pages-redirect/</loc>
-    <lastmod>2015-02-20T22:26:04.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://pagent.github.io/2015/02/15/stop-kwallet-manager/</loc>
     <lastmod>2015-02-16T21:21:10.000Z</lastmod>
   </url>
@@ -144,11 +149,6 @@
   <url>
     <loc>http://pagent.github.io/2014/12/21/clean-links/</loc>
     <lastmod>2015-02-04T01:21:08.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2014/12/12/bulk-change/</loc>
-    <lastmod>2015-02-03T23:28:32.000Z</lastmod>
   </url>
   
   <url>

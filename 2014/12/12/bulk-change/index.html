@@ -113,7 +113,8 @@
 	    <p>repositoryは「リポジトリ」と表記するのが順当のよう。<br>「レポジトリ」としていた表記を「リポジトリ」に改めるため、ブログ投稿内で「レポジトリ」を用いているものを調べてみた。  </p>
 <p>source/_postsで端末を開き、下記コマンドで抽出。  </p>
 <pre><code>$ grep &quot;レポジトリ&quot; *
-</code></pre><p>（参考：<a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20060228/231140/" target="_blank" rel="external">Linuxコマンド逆引き大全 - 【 ファイルから文字列を検索する 】：ITpro</a>）  </p>
+</code></pre><p><code>*</code>ですべてのファイルを検索対象に。<br>.mdファイルのみを対象にするなら<code>*.md</code>に。  </p>
+<p>（参考：<a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20060228/231140/" target="_blank" rel="external">Linuxコマンド逆引き大全 - 【 ファイルから文字列を検索する 】：ITpro</a>）  </p>
 <p>たくさんあって手作業で修正するのは大変そうなので、下記コマンドですべての.mdファイル内の「レポジトリ」を「リポジトリ」に一括変換。（元ファイルは拡張子.bakを付けてバックアップ）  </p>
 <pre><code>$ perl -p -i.bak -e &#39;s/レポジトリ/リポジトリ/g&#39; *.md
 </code></pre><p>正常に変換されたことを確認後、.bakファイルを一括削除。  </p>
