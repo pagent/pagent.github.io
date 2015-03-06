@@ -112,6 +112,49 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/03/06/clonezilla-restore-different-partition/" >Clonezillaでバックアップしたイメージを別のパーティションにリストア</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年3月6日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Clonezillaでバックアップしたパーティションのイメージを元とは違う別のパーティションにリストアした。<br>（下記はsda1からバックアップしたArch Linuxをsda6にリストアした例）  </p>
+<p>・バックアップしたイメージフォルダ内のpartsファイルの記述をsda1からsda6に変更。  </p>
+<p>・バックアップイメージsda1.ext4-ptcl-img.gz.aaをsda6.ext4-ptcl-img.gz.aaに変更。<br>（….gz.ab、….gz.acと複数ある場合もすべて変更）  </p>
+<p>上記で別のパーティションにリストア出来た。  </p>
+<p>ただこれだけではArch Linuxを起動出来ないので、リストアしたsda6内の/etc/fstabと/boot/syslinux/syslinux.cfgの記述を修正。<br>（ブートローダーがGrub2の場合はgrub.cfgの修正で可か）  </p>
+<p>sda6にリストアしたArch Linuxを起動出来た。  </p>
+<p>ーー<br>（参照記事）<br><a href="http://drbl.org/faq/fine-print.php?path=./2_System/102_restore_image_to_different_partition.faq#102_restore_image_to_different_partition.faq" target="_blank" rel="external">How can I restore an image of a partition to different partition, e.g. restore the image of /dev/sda5 to /dev/sda6? - DRBL - FAQ/Q&amp;A</a></p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/06/clonezilla-restore-different-partition/" data-text="Clonezillaでバックアップしたイメージを別のパーティションにリストア | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/03/02/easy2boot/" >isoファイルを置くだけでUSBマルチブート可能な「Easy2Boot」</a>
 		</h3>
 	
@@ -555,53 +598,6 @@ $ sudo apt-get install nemo-terminal
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/02/14/mbr-gpt/" >パーティションテーブルをMBRからGPTに書き換えてしまった</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年2月14日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>サブマシンのネットブックでArch Linuxを試してみようと思ったが、ブートローダーのGRUBをインストールするところで、BIOS（MBR形式）ではなくUEFI（GPT）を選択してしまった。<br>そのせいでMBRが壊れてしまったようで、起動出来なくなってしまった。<br>MBM（Multiple Boot Manager）を再インストールしてみたが、ディスク全体が”unknown”と表示されるのみ。  </p>
-<p>「TestDisk」というフリーソフトでパーティションテーブルを修復出来るようだった。  </p>
-<p>「TestDisk」は「Ultimate Boot CD」に同梱されてるという情報を見かけたが、どうやら現在は「Ultimate Boot CD」には同梱されていないようで、見つからなかった。<br>「SystemRescueCd」に入っていたので、こちらから利用した。<br>「SystemRescueCd」でブート。入力出来る状態になった後、<code>testdisk</code>とコマンドを打つと起動した。  </p>
-<p>使い方は最初はよく分からなかったが、サーチで表示されたリストの内、テーブルに書き込みたいものをキードードの左右のキーで設定し、緑色にしたら良いらしい。<br>リストは「p」キーでリストの内容を確認しながら選べば良いので、要領が分かれば簡単。<br>「q」で前の画面に戻る。</p>
-<p>使い方は下記サイトの解説が分かりやすかった。<br><a href="http://uiuicy.cs.land.to/testdisk1.html" target="_blank" rel="external">【TestDisk】について</a>  </p>
-<p>「Deeper Search」にはけっこう時間が掛かり、またせっかく「Deeper Search」が終わったリストを、途中で「ENTER」を押してしまって戻れなくなり、また最初から「Deeper Search」ということもあったが。  </p>
-<p>パーティションテーブルは一応復旧出来て、起動も出来るようになったが、どうやらGPTでのパーティショニングの痕跡が依然残っている様子。<br>GpartedもGPTでパーティショニングされていると判断するようで、なにかパーティションの操作をすると、また起動出来なくなる。  </p>
-<p>これでは不便だし安心感も持てないが、「AOMEI Partition Assistant Standard Edition」というWindows用のフリーソフトでディスクの内容を保持したままGPTとMBRの変換が出来るようなので、試してみることにした。  </p>
-<p>「AOMEI Partition Assistant」を試す前にパーティションのバックアップをしようと思ったが、Clonezillaもパーティションテーブルを読めないらしい。<br>仕方が無いので下記サイトを参考に、<code>dd</code>コマンドでバックアップすることにした。<br><a href="http://takuya-1st.hatenablog.jp/entry/20101025/1288002819" target="_blank" rel="external">dd でディスクをコピーするよく使う例 - それマグで！</a>  </p>
-<p>ーー<br>（追記）<br>「AOMEI Partition Assistant」はWindows XpではMBRに変換出来ないようで、結局ハードディスクのデータを全消去してパーティションテーブルをMBRで作り直し、ddでバックアップしたものをリストアしてようやく復旧した。  </p>
-<p>復旧後、拡張パーティションにあるLinuxが起動しなかったが、SystemRescueCdの”Boot an existing Linux system installed on the disk”で起動させ、<code>sudo grub-install --force /dev/sda6</code>でgrub2を再インストール。<code>sudo update-grub</code>で起動出来るようになった。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/14/mbr-gpt/" data-text="パーティションテーブルをMBRからGPTに書き換えてしまった | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -643,6 +639,10 @@ $ sudo apt-get install nemo-terminal
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/03/06/clonezilla-restore-different-partition/" ><i class="fa fa-file-o"></i>Clonezillaでバックアップしたイメージを別のパ...</a>
+      </li>
+    
+      <li>
         <a href="/2015/03/02/easy2boot/" ><i class="fa fa-file-o"></i>isoファイルを置くだけでUSBマルチブート可能な「E...</a>
       </li>
     
@@ -656,10 +656,6 @@ $ sudo apt-get install nemo-terminal
     
       <li>
         <a href="/2015/02/27/linkchecker/" ><i class="fa fa-file-o"></i>dead-link-checkerがあまりに遅いので「...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/02/26/nemo-terminal/" ><i class="fa fa-file-o"></i>nemoの拡張機能「nemo-terminal」がちょ...</a>
       </li>
     
   </ul>
@@ -677,35 +673,35 @@ $ sudo apt-get install nemo-terminal
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>4</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>24</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
-		
 			<li><a href="/tags/Linux/">Linux<span>37</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
 			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>5</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>24</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 		
 		</ul>
@@ -717,7 +713,7 @@ $ sudo apt-get install nemo-terminal
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
