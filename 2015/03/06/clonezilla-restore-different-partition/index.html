@@ -114,7 +114,7 @@
 <p>・バックアップしたイメージフォルダ内のpartsファイルの記述をsda1からsda6に変更。  </p>
 <p>・バックアップイメージsda1.ext4-ptcl-img.gz.aaをsda6.ext4-ptcl-img.gz.aaに変更。<br>（….gz.ab、….gz.acと複数ある場合もすべて変更）  </p>
 <p>上記で別のパーティションにリストア出来た。  </p>
-<p>ただこれだけではArch Linuxを起動出来ないので、リストアしたsda6内の/etc/fstabと/boot/syslinux/syslinux.cfgの記述を修正。<br>（ブートローダーがGrub2の場合はgrub.cfgの修正で可か）  </p>
+<p>ただこれだけではArch Linuxを起動出来ないので、リストアしたsda6内の/etc/fstabと/boot/syslinux/syslinux.cfgの記述を修正。<br>（ブートローダーがGrub2の場合はgrub.cfgの修正でOKか）  </p>
 <p>sda6にリストアしたArch Linuxを起動出来た。  </p>
 <p>ーー<br>（参照記事）<br><a href="http://drbl.org/faq/fine-print.php?path=./2_System/102_restore_image_to_different_partition.faq#102_restore_image_to_different_partition.faq" target="_blank" rel="external">How can I restore an image of a partition to different partition, e.g. restore the image of /dev/sda5 to /dev/sda6? - DRBL - FAQ/Q&amp;A</a></p>
 
