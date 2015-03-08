@@ -112,6 +112,51 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/01/20/clamtk/" >Linux用ウイルススキャンソフトClamTkを使ってみた</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年1月20日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Xubuntu14.04にClamTkを導入した。<br>Ubuntuソフトウェアセンターを使ったが、v4.45(デフォルト)の他v5.09(trusty-backports)もインストール可能。  </p>
+<p>ファイルマネージャーNemo上で右クリックから簡単にファイルをウイルススキャン出来るよう、nemo-sendto-clamtk_0.02-1もインストールした。<br><a href="http://ubuntuapps.blog67.fc2.com/blog-entry-609.html" target="_blank" rel="external">ClamTkでウイルススキャンをThunarやNemoの右クリックメニューに追加する | Ubuntuアプリのいいところ</a>  </p>
+<p>「ディレクトリを再帰的にスキャンする」「20MB以上のファイルもスキャンする」「ドットで始まるファイルをスキャンする(.*)」にチェックを入れてhomeディレクトリをスキャンしてもなにも検出されなかったが、「不要なアプリケーション(PUA)をスキャンする」にもチェックを入れると、  </p>
+<p>~/.cache/mozilla/firefox/…<br>~/.cache/chromium/Default/Cache/…<br>~/.cache/midori/web/…  </p>
+<p>など、11個のファイルが「潜在的な脅威」として検出された。  </p>
+<p>VirusTotalを使った「解析」しようとしたが、何故かファイルを送信できず実行出来ない。<br>ただのブラウザのキャッシュのようだが、気持ち悪いのですべて削除した。  </p>
+<p>LinuxはWindowsより安全というし、それほど神経質にならなくても良いかもしれないが、たまにウイルススキャンしてみても良いかもしれない。  </p>
+<p>ーー<br>（追記）<br>Windows領域もスキャンしたら、「脅威」であるはずのないものまでいくつも「潜在的な脅威」として検出されて100を超えてしまった。<br>だが「不要なアプリケーション(PUA)をスキャンする」のチェックを外してスキャンしたら6だった。<br>「解析」では問題のあるファイルではないようだったので、そのままにしておくことにしたが。  </p>
+<p>「不要なアプリケーション(PUA)をスキャンする」のチェックは外して使用した方が良いのかもしれない。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/20/clamtk/" data-text="Linux用ウイルススキャンソフトClamTkを使ってみた | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/01/17/fstab-uuid-label/" >マルチブート環境（複数のLinux）でのfstab</a>
 		</h3>
 	
@@ -491,61 +536,6 @@ LABEL=（ラベル名）
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/12/24/robots-txt/" >Hexoで書いているGitHub Pagesのブログにrobots.txtを置いてみた</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年12月24日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>記事がなかなか検索エンジンにインデックスされない。古い記事がインデックスされず新しいのがインデックスされたりしているようだ。<br>プラグインでsitemap.xmlは導入しているが、ちゃんと読んでくれているのか疑問。  </p>
-<p>sitemapとは別にクローラーに各種の指定をするrobots.txtというのがあるようなので、GitHub Pagesに置いてみた。<br>SeesaaやFC2などのブログサービスでは自動的に用意してくれているようだ。  </p>
-<p>sourceフォルダ直下にrobots.txtを新規作成。<br>generateするとちゃんとpublicフォルダ内にもrobots.txtが生成された。<br>deployし、ブラウザで<code>http://pagent.github.io/robots.txt</code>にアクセスしが、何故か404エラーだった。GitHub Pagesのレポジトリには追加されていたが。<br>反映に時間がかかるようでしばらくするとアクセス出来た。  </p>
-<p>robots.txtの内容は下記のようにした。  </p>
-<pre><code>User-agent: *
-Disallow: /css/
-Disallow: /*.js$
-
-Sitemap: http://pagent.github.io/sitemap.xml
-
-User-agent: bingbot
-Crawl-delay: 30
-
-User-agent: MSNBOT
-Crawl-delay: 30
-</code></pre><p>大して効果は無いのかもしれないが、おかしなことを書かない限りデメリットはないだろうし、無いよりはましだろう。  </p>
-<p>ーー<br>（追記）<br>robots.txtを置いてから、わりと早く検索エンジンにインデックスされるようになった気がする。<br>Octopressではデフォルトでsitemap.xmlとrobots.txtを生成してくれるようだ。<br>この点、HexoよりOctopressの方がSEO的に優れているかもしれない。  </p>
-<p>ーー<br>（再追記）<br>Google ウェブマスターツールのヘルプによると、「robots.txt ファイルが必要になるのは、Google などの検索エンジンのインデックスに登録したくないコンテンツがある場合のみ」らしい。<br><a href="https://support.google.com/webmasters/answer/6062608?hl=ja&amp;rd=1" target="_blank" rel="external">robots.txt ファイルについて - ウェブマスター ツール ヘルプ</a>  </p>
-<p>SEO上どうしても必要なものではないようだ。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/24/robots-txt/" data-text="Hexoで書いているGitHub Pagesのブログにrobots.txtを置いてみた | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -587,6 +577,10 @@ Crawl-delay: 30
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/03/08/xfce-beep/" ><i class="fa fa-file-o"></i>Xfceログアウト時のビープ音を消す</a>
+      </li>
+    
+      <li>
         <a href="/2015/03/06/clonezilla-restore-different-partition/" ><i class="fa fa-file-o"></i>Clonezillaでバックアップしたイメージを別のパ...</a>
       </li>
     
@@ -600,10 +594,6 @@ Crawl-delay: 30
     
       <li>
         <a href="/2015/03/01/update-grub-error/" ><i class="fa fa-file-o"></i>update-grubで&quot;options:not fo...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/02/27/linkchecker/" ><i class="fa fa-file-o"></i>dead-link-checkerがあまりに遅いので「...</a>
       </li>
     
   </ul>
@@ -621,35 +611,35 @@ Crawl-delay: 30
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>11</span></a></li>
 		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>24</span></a></li>
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>37</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>5</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>38</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>24</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>5</span></a></li>
 		
 		
 		</ul>
@@ -661,7 +651,7 @@ Crawl-delay: 30
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

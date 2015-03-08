@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>コマンド | Pagent</title>
+  <title>Xfceログアウト時のビープ音を消す | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="Xfceログアウト時のビープ音を消す"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -83,163 +83,124 @@
 
   <div class="container">
   	<div class="content">
-    	 <!-- tag -->
-<!-- _partial/archive -->
+    	 <!-- post -->
 
 
-<!-- archive.title -->
-<div class="page-header">
-  <h1 class="archive-title-tag archive-title-コマンド">コマンド</h1>
-</div>
+<!-- _partial/article -->
 
-<div class="row page">
-  <!-- cols -->
-  
-  <div class="col-md-9">
+<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+  <!-- display as page -->
+		<div class="page-header">
+			<h1> Xfceログアウト時のビープ音を消す</h1>
+		</div>
 	
 
-	  
-	  <!-- display as list -->
-	  <div class="archive">
+</div>
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div class="col-md-9">
+	
+
+	
+
+	<!-- content -->
+	<div class="mypage">
+	    <p>Arch LinuxにXfceデスクトップを入れたが、ログアウト時に大音量のビープ音がして不快なので、鳴らないようにした。  </p>
+<p>/etc/modprobe.d内にnobeep.confファイルを作成し、<code>blacklist pcspkr</code>と記述して保存。<br>もしくは下記コマンドを実行。  </p>
+<pre><code># echo &quot;blacklist pcspkr&quot; &gt; /etc/modprobe.d/nobeep.conf
+</code></pre><p><a href="https://archlinuxjp.kusakata.com/wiki/PC_%E3%82%B9%E3%83%94%E3%83%BC%E3%82%AB%E3%83%BC%E3%81%AE%E3%83%93%E3%83%BC%E3%83%97%E9%9F%B3%E3%81%AE%E7%84%A1%E5%8A%B9%E5%8C%96?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DDisable_PC_Speaker_Beep_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno#.E3.82.B0.E3.83.AD.E3.83.BC.E3.83.90.E3.83.AB.E7.92.B0.E5.A2.83" target="_blank" rel="external">PC スピーカーのビープ音の無効化 - ArchWiki</a>  </p>
+
+	</div>
+
+	<div class="tweet-button">
+	<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+	<div>
+  	<center>
+	<!-- _partial/post/pagination -->
+<div class="pagination">
+<ul class="pagination">
+	 
 		
-		
-		
-			
-			
-			<h4 class="archive-ul" data-toggle="collapse" data-target="#2015">2015<b class="caret"></b></h4>
-			<ul id="2015" class="collapse in">
-			
-		
-<li class="listing-item">
-  <span class="date_class"> 2015-02-03 </span> &raquo;
-  
-  <span class="title"><a href="/2015/02/03/find-hidden-files/" >隠しファイルの検索など（findコマンド）</a></span>
-  
-</li>
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		
-			
-			</ul>
-			
-			
-			<h4 class="archive-ul" data-toggle="collapse" data-target="#2014">2014<b class="caret"></b></h4>
-			<ul id="2014" class="collapse in">
-			
-		
-<li class="listing-item">
-  <span class="date_class"> 2014-12-12 </span> &raquo;
-  
-  <span class="title"><a href="/2014/12/12/bulk-change/" >特定語句を含むファイルの抽出とその一括変換</a></span>
-  
-</li>
-
+		   <li class="next"><a href="/2015/03/06/clonezilla-restore-different-partition/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+        
+	
 </ul>
 </div>
 
+  	</center>
+	</div>
 
-</div> <!-- col-md-9/col-md-12 -->
+	<!-- comment -->
+	<!-- _partial/post/comment -->
+
+<section id="comment">
+  <h2 class="title">Comments</h2>
+
+  
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  
+</section>
 
 
-<!-- _partial/sidebar -->
-<div class="col-md-3">
-	<div id="sidebar">
+
+	</div> <!-- col-md-9/col-md-12 -->
+
 	
-			<!-- _widget/recent_posts -->
+		<!-- _partial/post/meta -->
+<div class="col-md-3"> 
 
-<div class="widget">
-  <h4>Recent Posts</h4>
-  <ul class="entry list-unstyled">
-    
-      <li>
-        <a href="/2015/03/08/xfce-beep/" ><i class="fa fa-file-o"></i>Xfceログアウト時のビープ音を消す</a>
-      </li>
-    
-      <li>
-        <a href="/2015/03/06/clonezilla-restore-different-partition/" ><i class="fa fa-file-o"></i>Clonezillaでバックアップしたイメージを別のパ...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/03/02/easy2boot/" ><i class="fa fa-file-o"></i>isoファイルを置くだけでUSBマルチブート可能な「E...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/03/01/arch-ati-video-driver/" ><i class="fa fa-file-o"></i>Arch Linuxをインストールした。（ビデオドライ...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/03/01/update-grub-error/" ><i class="fa fa-file-o"></i>update-grubで&quot;options:not fo...</a>
-      </li>
-    
-  </ul>
-</div>
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2015年3月8日
+	</div>
+	
 
+	<!-- categories -->
+    
 
-		
-			<!-- _widget/category -->
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>
+    <ul id="tags" class="tag_box list-unstyled collapse in">
+	    <!-- _partial/post/tag -->
+  
+  <li><a href="/tags/Linux/">Linux</a></li>
 
+    </ul>
+	</div>
+	
 
-		
-			<!-- _widget/tagcloud -->
-
-	<div class="widget">
-		<h4>Tag Cloud</h4>
-		<ul class="tag_box inline list-unstyled">
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>38</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>24</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>5</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>4</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-		
-		</ul>
+	<!-- toc -->
+	<div class="meta-widget">
+	
 	</div>
 
+    <hr>
 
-		
-			
-	<div class="widget">
-		<h4>Monthly Archives</h4>
-		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
-		</ul>
-	</div>
+</div><!-- col-md-3 -->
 
-		
-			<!-- _widget/links -->
+	
 
-
-		
-	</div> <!-- sidebar -->
-</div> <!-- col-md-3 -->
-
-
-</div>
+</div><!-- row -->
 
 
 	</div>
@@ -276,7 +237,7 @@ var disqus_shortname = 'pagents';
   var dsq = document.createElement('script');
   dsq.type = 'text/javascript';
   dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 }());
 </script>
