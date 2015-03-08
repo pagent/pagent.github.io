@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-03-08T07:16:43.739Z</updated>
+  <updated>2015-03-08T07:27:27.999Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/03/08/yaourt/"/>
     <id>http://pagent.github.io/2015/03/08/yaourt/</id>
     <published>2015-03-08T06:53:26.000Z</published>
-    <updated>2015-03-08T07:16:25.000Z</updated>
+    <updated>2015-03-08T07:27:04.000Z</updated>
     <content type="html"><![CDATA[<p>AUR (Arch User Repository)のパッケージをインストールするため、pacmanラッパーYaourtを入れた。  </p>
 <p><a href="https://archlinuxjp.kusakata.com/wiki/Yaourt?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DYaourt_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno" target="_blank" rel="external">Yaourt - ArchWiki</a>  </p>
 <p>「まず package-query をインストール」とのことだが、pacmanからだとpackage-queryのインストールが出来なかったので、/etc/pacman.confに下記記述を加えた。  </p>
@@ -31,8 +31,9 @@ Server = http://repo.archlinux.fr/$arch
 </code></pre><p>GlipperなどもYaourtからインストール出来るようになった。  </p>
 <pre><code>yaourt -S glipper
 </code></pre><p>クリップボードマネージャーは色々あるが、Glipperはログアウト時に履歴を消去出来るので気に入っている。  </p>
-<p>ーー<br>（追記）<br>Xfceデスクトップに標準で入っていたClipmanでも、「終了時に保存する」のチェックボックスを外せば履歴を消去出来るようだ。</p>
-]]></content>
+<p>ーー<br>（追記）<br>Xfceデスクトップに標準で入っていたClipmanでも、「終了時に保存する」のチェックボックスを外せば履歴を消去出来るようだ。<br>Glipperのアイコンが正常に表示されないこともあり、結局Clipmanを使うことにしてGlipperをアンインストールした。  </p>
+<pre><code>yaourt -Rs glipper
+</code></pre>]]></content>
     <summary type="html">
     <![CDATA[<p>AUR (Arch User Repository)のパッケージをインストールするため、pacmanラッパーYaourtを入れた。  </p>
 <p><a href="https://archlinuxjp.kusakata.com/wiki/Yaourt?rdfrom=h]]>
