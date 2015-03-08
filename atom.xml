@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-03-08T06:51:22.378Z</updated>
+  <updated>2015-03-08T07:04:02.950Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,31 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Yaourtをインストール]]></title>
+    <link href="http://pagent.github.io/2015/03/08/yaourt/"/>
+    <id>http://pagent.github.io/2015/03/08/yaourt/</id>
+    <published>2015-03-08T06:53:26.000Z</published>
+    <updated>2015-03-08T07:03:50.000Z</updated>
+    <content type="html"><![CDATA[<p>AUR (Arch User Repository)のパッケージをインストールするため、pacmanラッパーYaourtを入れた。  </p>
+<p><a href="https://archlinuxjp.kusakata.com/wiki/Yaourt?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DYaourt_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno" target="_blank" rel="external">Yaourt - ArchWiki</a>  </p>
+<p>「まず package-query をインストール」とのことだが、pacmanからだとpackage-queryのインストールが出来なかったので、/etc/pacman.confに下記記述を加えた。  </p>
+<pre><code>[archlinuxfr]
+SigLevel = Never
+Server = http://repo.archlinux.fr/$arch
+</code></pre><p>その後  </p>
+<pre><code>pacman --sync --refresh yaourt
+</code></pre><p>GlipperなどもYaourtからインストール出来るようになった。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>AUR (Arch User Repository)のパッケージをインストールするため、pacmanラッパーYaourtを入れた。  </p>
+<p><a href="https://archlinuxjp.kusakata.com/wiki/Yaourt?rdfrom=h]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Xfceログアウト時のビープ音を消す]]></title>
@@ -574,34 +599,6 @@ tar: エラーを回復できません: 直ちに終了します
     <summary type="html">
     <![CDATA[<p>ネットブックLaVie Light BL300/TにPrecise Puppy 5.7.1日本語版をFrugalインストールした。  </p>
 <p>既存のOS領域にもインストール出来るらしいが、Gpartedで新たにパーティションを用意。<br>ファイルのコピーは順調に進]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[elementary OS（Luna）をインストールしてみた]]></title>
-    <link href="http://pagent.github.io/2015/02/04/elementary-os/"/>
-    <id>http://pagent.github.io/2015/02/04/elementary-os/</id>
-    <published>2015-02-04T08:17:25.000Z</published>
-    <updated>2015-02-04T12:46:11.000Z</updated>
-    <content type="html"><![CDATA[<p>軽量Linuxにelementary OSというのがあるらしいので、Windows Xp時代のネットブックにインストールしてみた。<br><a href="http://mogi2fruits.net/blog/os-software/linux/elementary-os/2772/" target="_blank" rel="external">elementary OS – 軽い！キレイ！日本語OK！ な Ubuntu ベースの軽量Linux | mogi2fruitsどっとねっと</a>  </p>
-<p>ダウンロードリンクに”$10.00”と書いてあり、「有料か？」と躊躇したが、参照サイトにある通り強制的なものではない。  </p>
-<p>Ubuntu12.04ベースらしく、インストールは戸惑うこと無く終了。  </p>
-<p>XubuntuやLubuntuとは違って随分おしゃれな外観。<br>視覚効果もなかなか凝っている。  </p>
-<p>デフォルトではScrachという聞いたこともないテキストエディターと、名前も分からないファイルマネージャーが入っていたが、それぞれGeditとnemoに変更。  </p>
-<p>Dropboxクライアントも入れようと、Ubuntuソフトウェアセンターから試みたが途中でフリーズ。<br>中途半端にインストールされたせいか、その後Synapticやsudo apt-get updateが使えなくなってしまった。  </p>
-<p>少々焦ったが、２ちゃんねるの書き込みを参考に、nautilus-dropboxを削除したら復旧した。<br><a href="http://hayabusa6.2ch.net/test/read.cgi/linux/1412604392/301" target="_blank" rel="external">【人気一位】Linux Mint 15</a>  </p>
-<p>nautilus-dropboxのインストールでの不具合はUbuntu12.04特有のバグらしい。<br>Dropbox公式サイトの記載通り、コマンドラインでインストールしたら無事にインストール出来た。<br><a href="https://www.dropbox.com/install?os=lnx" target="_blank" rel="external">Linux マシンに Dropbox をインストール</a>  </p>
-<p>コマンドラインからのインストールだと、Dropboxを起動してもインジケーター領域にアイコンが表示されない。<br>ログアウトして表示されるログイン画面では、GNOME Classic、GNOME Classic (No effects)、Pantheon、Ubuntuの4種のセッションを選択出来るが、Ubuntuセッションの時だけアイコンが表示された。  </p>
-<p>elementary OSのメインメニューはクラシックなドロップダウンタイプではなく最近流行りの板状のもの。<br>デフォルトではメニュー編集のツールも無く、カスタマイズ性は高くないようだ。<br>AlacarteとMenuLibleを入れてみたが、Alacarteは起動はするがメニューを編集しても反映されず、MenuLibleは起動も出来なかった。</p>
-<p>下部にあるDock内のアイコンは、クリックするとぴょーんと跳ねるので、クリックし損なったかと何度もクリックしてしまう恐れは少ない。<br>また既に立ち上げているアプリケーションは基本、新規ウィンドウで開かず既存のウィンドウにフォーカスしてくれる。Dock内のアイコンも跳ねない。<br>Dockを下部ではなく横配置に出来たらもっと有難いんだが。  </p>
-<p>システムモニターのみ開き、他のアプリケーションを起動していない状態でリソースを見ると、消費メモリは240MiB程度。<br>システムフォントのサイズも小さ目で、モニター画面の小さなネットブックには調度良い。  </p>
-<p>好みに合わせてカスタマイズするにはあまり向いていないようだが、優雅さが印象的なOSだ。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>軽量Linuxにelementary OSというのがあるらしいので、Windows Xp時代のネットブックにインストールしてみた。<br><a href="http://mogi2fruits.net/blog/os-software/linux/elementary-os]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
