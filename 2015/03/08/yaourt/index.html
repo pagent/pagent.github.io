@@ -112,7 +112,7 @@
 	<div class="mypage">
 	    <p>AUR (Arch User Repository)のパッケージをインストールするため、pacmanラッパーYaourtを入れた。  </p>
 <p><a href="https://archlinuxjp.kusakata.com/wiki/Yaourt?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DYaourt_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno" target="_blank" rel="external">Yaourt - ArchWiki</a>  </p>
-<p>「まず package-query をインストール」とのことだが、pacmanからpackage-queryをインストールしようとしても見つからないと言われるので、/etc/pacman.confに下記記述を加えた。  </p>
+<p>「まず package-query をインストール」とのことだが、pacmanからpackage-queryをインストールしようとしても、見つからないと言われるので、/etc/pacman.confに下記記述を加えた。  </p>
 <pre><code>[archlinuxfr]
 SigLevel = Never
 Server = http://repo.archlinux.fr/$arch
