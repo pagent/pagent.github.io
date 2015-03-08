@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2015/03/08/xfce-icon-theme/</loc>
+    <lastmod>2015-03-08T13:30:11.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2015/03/08/yaourt/</loc>
     <lastmod>2015-03-08T07:30:05.000Z</lastmod>
   </url>
@@ -407,11 +412,6 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/11/02/xbacklight/</loc>
-    <lastmod>2014-12-11T21:42:34.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://pagent.github.io/2014/12/04/git-non-fast-forward/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
@@ -477,12 +477,12 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/10/21/test/</loc>
+    <loc>http://pagent.github.io/2014/11/21/hexo-xubuntu/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/11/21/hexo-xubuntu/</loc>
+    <loc>http://pagent.github.io/2014/10/21/test/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   
@@ -583,6 +583,11 @@
   
   <url>
     <loc>http://pagent.github.io/2014/10/24/category-no-downcase/</loc>
+    <lastmod>2014-12-11T21:42:34.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2014/11/02/xbacklight/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   

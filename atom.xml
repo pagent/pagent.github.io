@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-03-08T07:30:14.907Z</updated>
+  <updated>2015-03-08T13:30:25.572Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,28 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Xfceに新しいアイコンテーマをインストール]]></title>
+    <link href="http://pagent.github.io/2015/03/08/xfce-icon-theme/"/>
+    <id>http://pagent.github.io/2015/03/08/xfce-icon-theme/</id>
+    <published>2015-03-08T13:14:50.000Z</published>
+    <updated>2015-03-08T13:30:11.000Z</updated>
+    <content type="html"><![CDATA[<p>Arch LinuxのXfceのアイコンがgnomeで少しやぼったい感じだったので、新しいアイコンを入れた。  </p>
+<p>アイコンは下記サイトでダウンロード数が一番多かったMistにした。<br><a href="http://xfce-look.org/index.php?xsortmode=high&amp;page=0&amp;xcontentmode=430" target="_blank" rel="external">Eyecandy for your Xfce-Desktop - Xfce-Look.org</a>  </p>
+<p>ダウンロードしたファイルを解凍し、出て来たMistフォルダを/usr/share/iconsに移動。<br>だがこれだけでは「設定」→「外観」→「アイコン」に表示されない。<br>アイコンテーマ毎にキャッシュファイルを生成しないといけないようだ。<br><a href="http://docs.xfce.org/xfce/xfce4-settings/4.10/appearance#icon_cache" target="_blank" rel="external">xfce:xfce4-settings:4.10:appearance [Xfce Docs]</a>    </p>
+<p>端末でコマンドを入力しキャッシュファイルを生成。  </p>
+<pre><code>sudo gtk-update-icon-cache /usr/share/icons/Mist
+</code></pre><p>アイコンの設定に表示され、選択可能になった。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Arch LinuxのXfceのアイコンがgnomeで少しやぼったい感じだったので、新しいアイコンを入れた。  </p>
+<p>アイコンは下記サイトでダウンロード数が一番多かったMistにした。<br><a href="http://xfce-look.org/index.]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Yaourtをインストール]]></title>
@@ -549,60 +571,6 @@ tar: エラーを回復できません: 直ちに終了します
     <summary type="html">
     <![CDATA[<p>Puppy Linux5.7.1には、デフォルトのターミナルミュレーターとしてurxvtというのが入っていたが、右クリックでのコピーペーストが出来ず不便。<br>Puppyパッケージマネージャで他のを探すと、Roxtermというのが見つかった。  </p>
 <p>右クリック]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Puppy LinuxのGrub４Dosインストール時に「要素が欠けています。」のエラー]]></title>
-    <link href="http://pagent.github.io/2015/02/04/puppy-grub4dos-error/"/>
-    <id>http://pagent.github.io/2015/02/04/puppy-grub4dos-error/</id>
-    <published>2015-02-04T12:47:43.000Z</published>
-    <updated>2015-02-04T13:30:54.000Z</updated>
-    <content type="html"><![CDATA[<p>ネットブックLaVie Light BL300/TにPrecise Puppy 5.7.1日本語版をFrugalインストールした。  </p>
-<p>既存のOS領域にもインストール出来るらしいが、Gpartedで新たにパーティションを用意。<br>ファイルのコピーは順調に進んだが、Grub４Dosのインストールでつまづいてしまった。  </p>
-<p>「Grub４Dosブートローダーの設定」で「PBSも表示」をクリックし、Grub４Dosをインストールする場所をPuppy用のパーティションに指定。  </p>
-<p>追加オプションの「ブートレコードを書き換えない」をマウスオーバーすると、  </p>
-<blockquote>
-<p>すでにあるMBRを変更したくないときにのみチェックしてください。<br>現在grldrが起動できるようになっていることが前提です。　フロッピーでは無効</p>
-</blockquote>
-<p>というツールチップが表示された。  </p>
-<p>MBRにはすでにMBM（Multiple Boot Manager）が入っているので、「ブートレコードを書き換えない」にチェック。<br>個人保存ファイルの設定を終え再起動したが、”Invalid boot record”とエラーになり、起動出来ない。  </p>
-<p>怪訝に思いながらも「ブートレコードを書き換えない」をチェックせずに、再度Grub４Dosをインストールし直した。  </p>
-<p>すると今度は</p>
-<blockquote>
-<p>この機能を実行するにはいくつかの要素が欠けています。　:/usr/lib/grub4dos/chain.c32, extlinux/syslinux(version &gt; =  4.0)</p>
-</blockquote>
-<p>と警告。  </p>
-<p>構わずOKをクリックして進めると、</p>
-<blockquote>
-<p>不明のエラーが生じました。<br>See /tmp/grub4dosconfig/grub4dosconfig.log</p>
-</blockquote>
-<p>とエラー。  </p>
-<p>grub4dosconfig.logは下記だった。 </p>
-<blockquote>
-<p>/usr/sbin/grub4dosconfig PBS<br>version 1.9.1<br>2015年  2月  4日 水曜日 04:09:01 JST<br>Writing… /initrd/mnt/dev_save/menu.lst<br>Installing grldr …<br><code>/usr/lib/grub4dos/grldr&#39; -&gt;</code>/initrd/mnt/dev_save/grldr’</p>
-</blockquote>
-<p>“Error”とは特に書いていないので再起動してみたが、やはり起動出来ない。  </p>
-<p>Grub４Dosのエラーについて検索すると、下記のディスカッションが見つかった。<br><a href="http://www.murga-linux.com/puppy/viewtopic.php?t=91838" target="_blank" rel="external">Puppy Linux Discussion Forum :: View topic - slacko 5.6, Grub4Dos doesn’t install</a>  </p>
-<p>どうやらext4でフォーマットされたパーティションにGrub４Dosをインストールするには、chain.c32およびバージョン4.0以上のextlinuxが必要らしい。<br>Puppy Linux用のパーティションをext4でフォーマットしていたのが原因だったようだ。  </p>
-<p>パーティションをext3でフォーマットし直し、再度Puppyをインストール。  </p>
-<p>Grub４Dosの設定では「ブートレコードを書き換えない」のチェックを入れて試みたが駄目で、チェックを外してGrub４Dosを入れ直して、ようやくハードディスクからPuppy Linuxを起動出来た。   </p>
-<p>MBM→各PBSのブートレコード→各OSの起動、という形でマルチブートしているので、「ブートレコードを書き換えない」のツールチップの説明が少し分かりにくかった。  </p>
-<p>インストールに成功した際のgrub4dosconfig.logは下記。  </p>
-<blockquote>
-<p>/usr/sbin/grub4dosconfig PBS<br>version 1.8.9<br>2015年  2月  4日 水曜日 05:03:13 JST<br>Writing… /mnt/sda9/menu.lst<br>Installing grldr …<br><code>/usr/lib/grub4dos/grldr&#39; -&gt;</code>/mnt/sda9/grldr’<br>Installing bootloader on /dev/sda9(PBS)…</p>
-<p>Filesystem type is EXT2.</p>
-<p>Success.</p>
-</blockquote>
-<p>（Grub4DosをPuppy Linux 5.5のUSBメモリーからインストールし直したので、versionは1.8.9。）</p>
-<p>“Filesystem type is EXT2.”となっているが、MBMでもext3やext4をext2と認識しているようだし、問題無いのだろう。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>ネットブックLaVie Light BL300/TにPrecise Puppy 5.7.1日本語版をFrugalインストールした。  </p>
-<p>既存のOS領域にもインストール出来るらしいが、Gpartedで新たにパーティションを用意。<br>ファイルのコピーは順調に進]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
