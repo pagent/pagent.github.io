@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Xfceに新しいアイコンテーマをインストール | Pagent</title>
+  <title>DELL Vostro1000（Xp機）のビデオドライバー | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Xfceに新しいアイコンテーマをインストール"/>
+  <meta property="og:title" content="DELL Vostro1000（Xp機）のビデオドライバー"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -94,7 +94,7 @@
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> Xfceに新しいアイコンテーマをインストール</h1>
+			<h1> DELL Vostro1000（Xp機）のビデオドライバー</h1>
 		</div>
 	
 
@@ -110,12 +110,12 @@
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>Arch LinuxのXfceのアイコンがgnomeで少しやぼったい感じだったので、新しいアイコンを入れた。  </p>
-<p>アイコンは下記サイトでダウンロード数が一番多かったMistにした。<br><a href="http://xfce-look.org/index.php?xsortmode=high&amp;page=0&amp;xcontentmode=430" target="_blank" rel="external">Eyecandy for your Xfce-Desktop - Xfce-Look.org</a>  </p>
-<p>ダウンロードしたファイルを解凍し、出て来たMistフォルダを/usr/share/iconsに移動。<br>だがこれだけでは「設定」→「外観」→「アイコン」に表示されない。<br>アイコンテーマ毎にキャッシュファイルを生成しないといけないようだ。<br><a href="http://docs.xfce.org/xfce/xfce4-settings/4.10/appearance#icon_cache" target="_blank" rel="external">xfce:xfce4-settings:4.10:appearance [Xfce Docs]</a>    </p>
-<p>端末でコマンドを入力しキャッシュファイルを生成。  </p>
-<pre><code>sudo gtk-update-icon-cache /usr/share/icons/Mist
-</code></pre><p>アイコンの設定に表示され、選択可能になった。</p>
+	    <p>DELLの古いノートパソコンVostro1000（プリインストールOSはXpSP2）をLinux専用にしていたのだが、WineでKindle for PCを使ってみたくなったので、Windows Xp再インストールした。  </p>
+<p>Kindle for PCを利用するためにはWindows Media Playerのバージョン11以上が必要という情報を見たので、<a href="http://www.microsoft.com/ja-jp/download/windows-media-player-details.aspx?id=8163" target="_blank" rel="external">Windows Media Player 11</a>とついでに<a href="http://www.microsoft.com/ja-jp/download/details.aspx?id=24" target="_blank" rel="external">Windows XP SP3</a>もダウンロード、インストールした。<br>（Windows XPはネットに繋がない方が良いかと思い、ダウンロードはLinuxで行った。）  </p>
+<p>Kindle for PCは無事インストール出来、Wineを使ってLinuxでも使用可能になった。  </p>
+<p>これで良いと言えば良いのだが、Xpの方の解像度が本来は1024×800のはずが1024×768しか選択出来ない。<br>普段Xpを使うことは無いと思うが、あまり気持ち良くはない。  </p>
+<p>付属していたResourceCDからビデオドライバーR156746をインストールしようとしたが、「システムにインストールされているディスプレイアダプタと互換性がない」と言われて、インストールが失敗する。  </p>
+<p><a href="http://www.dell.com/support/home/jp/ja/jppad1/product-support/product/vostro-1000/drivers" target="_blank" rel="external">製品サポート | Dell 日本</a>からR168684.EXEをダウンロードしたら、インストール出来た。</p>
 
 	</div>
 
@@ -131,13 +131,13 @@
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2015/03/09/vostro1000-video-driver/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2015/03/08/yaourt/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2015/03/08/xfce-icon-theme/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -171,7 +171,7 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2015年3月8日
+	2015年3月9日
 	</div>
 	
 
@@ -185,7 +185,7 @@
     <ul id="tags" class="tag_box list-unstyled collapse in">
 	    <!-- _partial/post/tag -->
   
-  <li><a href="/tags/Linux/">Linux</a></li>
+  <li><a href="/tags/Windows/">Windows</a></li>
 
     </ul>
 	</div>
