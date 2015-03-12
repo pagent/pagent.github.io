@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-03-09T09:30:44.769Z</updated>
+  <updated>2015-03-12T14:10:11.572Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,30 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Arch Linux+Xfce。nemoをインストールして二重に表示されたデスクトップアイコンを消す]]></title>
+    <link href="http://pagent.github.io/2015/03/12/xfce-nemo-icon/"/>
+    <id>http://pagent.github.io/2015/03/12/xfce-nemo-icon/</id>
+    <published>2015-03-12T13:46:32.000Z</published>
+    <updated>2015-03-12T14:09:16.000Z</updated>
+    <content type="html"><![CDATA[<p>Arch Linux+Xfceにファイルマネージャーnemoをインストールしたら、デスクトップ上のアイコンが二重に表示されるようになってしまった。  </p>
+<p>さらにはファイルマネージャーでデスクトップを開くとファイルがあるのにデスクトップにはなにも表示されていなかったり、デスクトップ上右クリックからのアプリケーションメニューが消えてしまったり。  </p>
+<p>Xfce標準のファイルマネージャーThunarに加え、nemoもデスクトップを管理しようとするためこうなってしまうようだ。<br>確かにnemoをインストールする時にcinnamon-desktopも依存関係から同時にインストールされていた。  </p>
+<p>Xubuntuではどういう設定なのかこういうことは無いし、Arch Linux+LXDEにnemoをインストールしてもデスクトップアイコンが二重に表示されることはない。  </p>
+<p>このままでは使い勝手が悪いので、XfceをあきらめてLXDEにしようかと思ったが、Arch Linuxのwikiにnemoによるデスクトップアイコンを非表示にする方法があった。  </p>
+<pre><code>$ gsettings set org.nemo.desktop show-desktop-icons false
+</code></pre><p><a href="https://archlinuxjp.kusakata.com/wiki/Nemo?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DNemo_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno" target="_blank" rel="external">Nemo - ArchWiki</a>  </p>
+<p>nemoによるデスクトップアイコンが消えて、デスクトップ上右クリックでのアプリケーションメニューも復活した。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Arch Linux+Xfceにファイルマネージャーnemoをインストールしたら、デスクトップ上のアイコンが二重に表示されるようになってしまった。  </p>
+<p>さらにはファイルマネージャーでデスクトップを開くとファイルがあるのにデスクトップにはなにも表示されていなかっ]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[DELL Vostro1000（Xp機）のビデオドライバー]]></title>
@@ -63,7 +87,7 @@
     <link href="http://pagent.github.io/2015/03/08/yaourt/"/>
     <id>http://pagent.github.io/2015/03/08/yaourt/</id>
     <published>2015-03-08T06:53:26.000Z</published>
-    <updated>2015-03-08T07:30:05.000Z</updated>
+    <updated>2015-03-11T15:48:29.000Z</updated>
     <content type="html"><![CDATA[<p>AUR (Arch User Repository)のパッケージをインストールするため、pacmanラッパーYaourtを入れた。  </p>
 <p><a href="https://archlinuxjp.kusakata.com/wiki/Yaourt?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DYaourt_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno" target="_blank" rel="external">Yaourt - ArchWiki</a>  </p>
 <p>「まず package-query をインストール」とのことだが、pacmanからpackage-queryをインストールしようとしても、見つからないと言われるので、/etc/pacman.confに下記記述を加えた。  </p>
@@ -71,7 +95,7 @@
 SigLevel = Never
 Server = http://repo.archlinux.fr/$arch
 </code></pre><p>その後  </p>
-<pre><code>pacman --sync --refresh yaourt
+<pre><code>sudo pacman --sync --refresh yaourt
 </code></pre><p>GlipperなどもYaourtからインストール出来るようになった。  </p>
 <pre><code>yaourt -S glipper
 </code></pre><p>クリップボードマネージャーは色々あるが、Glipperはログアウト時に履歴を消去出来るので気に入っている。  </p>
@@ -536,38 +560,6 @@ $ ]]>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Puppy Linuxのデスクトップ環境について調べ物をしていたら、”LxPup - Puppy Linux + LXDE”というページがあった。<br><a href="http://sourceforge.jp/projects/sfnet_lxpup/" target]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Puppy LinuxにDropboxクライアントをインストール]]></title>
-    <link href="http://pagent.github.io/2015/02/06/puppy-dropbox/"/>
-    <id>http://pagent.github.io/2015/02/06/puppy-dropbox/</id>
-    <published>2015-02-05T15:02:51.000Z</published>
-    <updated>2015-02-05T16:33:24.000Z</updated>
-    <content type="html"><![CDATA[<p>Puppy Linux5.7.1のパッケージマネージャにDropboxクライアントが見当たらないので、コマンドラインでインストールした。<br><a href="https://www.dropbox.com/install?os=lnx" target="_blank" rel="external">Linux マシンに Dropbox をインストール</a>  </p>
-<p>コマンドを入力すると、サーバー証明書エラーになった。  </p>
-<pre><code>cd ~ &amp;&amp; wget -O - &quot;https://www.dropbox.com/download?plat=lnx.x86&quot; | tar xzf -
-
-...
-エラー: cannot verify www.dropbox.com&#39;s certificate, issued by `/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert SHA2 Extended Validation Server CA&#39;:
-  発行者の権限を検証できませんでした。
-www.dropbox.com に安全の確認をしないで接続するには、`--no-check-certificate&#39; を使ってください。
-
-gzip: stdin: unexpected end of file
-tar: Child returned status 1
-tar: エラーを回復できません: 直ちに終了します
-</code></pre><p>原因がよく分からないがdropbox.comは安全だろうと、`—no-check-certificate’のオプションを付けてインストールした。  </p>
-<pre><code>cd ~ &amp;&amp; wget --no-check-certificate -O - &quot;https://www.dropbox.com/download?plat=lnx.x86&quot; | tar xzf -
-</code></pre><p>インストールは無事完了し、<code>~/.dropbox-dist/dropboxd</code>で起動出来た。  </p>
-<p>後になって気がついたが、Puppy Linuxのタスクトレイの時刻がおかしい。<br>約9時間遅れている。  </p>
-<p>そういえば、Puppy Linuxを起動してすぐに表示される国とタイムゾーンの設定を、面倒臭くて飛ばしていたんだった。<br>このせいでエラーが出ていたんだろうか。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Puppy Linux5.7.1のパッケージマネージャにDropboxクライアントが見当たらないので、コマンドラインでインストールした。<br><a href="https://www.dropbox.com/install?os=lnx" target="_blank" ]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>

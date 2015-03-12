@@ -112,6 +112,50 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/03/12/xfce-nemo-icon/" >Arch Linux+Xfce。nemoをインストールして二重に表示されたデスクトップアイコンを消す</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年3月12日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Arch Linux+Xfceにファイルマネージャーnemoをインストールしたら、デスクトップ上のアイコンが二重に表示されるようになってしまった。  </p>
+<p>さらにはファイルマネージャーでデスクトップを開くとファイルがあるのにデスクトップにはなにも表示されていなかったり、デスクトップ上右クリックからのアプリケーションメニューが消えてしまったり。  </p>
+<p>Xfce標準のファイルマネージャーThunarに加え、nemoもデスクトップを管理しようとするためこうなってしまうようだ。<br>確かにnemoをインストールする時にcinnamon-desktopも依存関係から同時にインストールされていた。  </p>
+<p>Xubuntuではどういう設定なのかこういうことは無いし、Arch Linux+LXDEにnemoをインストールしてもデスクトップアイコンが二重に表示されることはない。  </p>
+<p>このままでは使い勝手が悪いので、XfceをあきらめてLXDEにしようかと思ったが、Arch Linuxのwikiにnemoによるデスクトップアイコンを非表示にする方法があった。  </p>
+<pre><code>$ gsettings set org.nemo.desktop show-desktop-icons false
+</code></pre><p><a href="https://archlinuxjp.kusakata.com/wiki/Nemo?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DNemo_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno" target="_blank" rel="external">Nemo - ArchWiki</a>  </p>
+<p>nemoによるデスクトップアイコンが消えて、デスクトップ上右クリックでのアプリケーションメニューも復活した。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/12/xfce-nemo-icon/" data-text="Arch Linux+Xfce。nemoをインストールして二重に表示されたデスクトップアイコンを消す | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/03/09/vostro1000-video-driver/" >DELL Vostro1000（Xp機）のビデオドライバー</a>
 		</h3>
 	
@@ -218,7 +262,7 @@
 SigLevel = Never
 Server = http://repo.archlinux.fr/$arch
 </code></pre><p>その後  </p>
-<pre><code>pacman --sync --refresh yaourt
+<pre><code>sudo pacman --sync --refresh yaourt
 </code></pre><p>GlipperなどもYaourtからインストール出来るようになった。  </p>
 <pre><code>yaourt -S glipper
 </code></pre><p>クリップボードマネージャーは色々あるが、Glipperはログアウト時に履歴を消去出来るので気に入っている。  </p>
@@ -545,51 +589,6 @@ Server = http://repo.archlinux.fr/$arch
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/02/26/nemo-terminal/" >nemoの拡張機能「nemo-terminal」がちょっと便利</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年2月26日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>ファイルマネージャーnemoに端末を追加する拡張機能「nemo-terminal」を入れた。  </p>
-<pre><code>$ sudo add-apt-repository ppa:webupd8team/nemo
-
-$ sudo apt-get update
-
-$ sudo apt-get install nemo-terminal
-</code></pre><p>nemoの上部に端末画面が追加される。  </p>
-<p>「F4」キーで端末画面の表示・非表示を切り替え。<br>端末での階層はnemoで開いているフォルダと同期されるので、コマンド操作する時に便利。  </p>
-<p>別途「dconfエディター」も入れておけば、端末画面の高さなども調節出来る。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/26/nemo-terminal/" data-text="nemoの拡張機能「nemo-terminal」がちょっと便利 | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -631,6 +630,10 @@ $ sudo apt-get install nemo-terminal
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/03/12/xfce-nemo-icon/" ><i class="fa fa-file-o"></i>Arch Linux+Xfce。nemoをインストール...</a>
+      </li>
+    
+      <li>
         <a href="/2015/03/09/vostro1000-video-driver/" ><i class="fa fa-file-o"></i>DELL Vostro1000（Xp機）のビデオドライバー</a>
       </li>
     
@@ -644,10 +647,6 @@ $ sudo apt-get install nemo-terminal
     
       <li>
         <a href="/2015/03/08/xfce-beep/" ><i class="fa fa-file-o"></i>Xfceログアウト時のビープ音を消す</a>
-      </li>
-    
-      <li>
-        <a href="/2015/03/06/clonezilla-restore-different-partition/" ><i class="fa fa-file-o"></i>Clonezillaでバックアップしたイメージを別のパ...</a>
       </li>
     
   </ul>
@@ -665,35 +664,35 @@ $ sudo apt-get install nemo-terminal
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>41</span></a></li>
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>24</span></a></li>
 		
 			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
 			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>5</span></a></li>
 		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>24</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>40</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
 		
 		</ul>
@@ -705,7 +704,7 @@ $ sudo apt-get install nemo-terminal
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

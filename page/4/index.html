@@ -112,6 +112,52 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/01/31/qupzilla-simplenote/" >軽量ブラウザQupZillaをSimplenoteアプリとして使う</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年1月31日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>オンラインノートSimplenoteと同期出来るメモ帳アプリnvPY。<br>良いかと思ったが、マウス右クリックでのコピー・ペーストが出来ないというのが、やはり致命的に使いづらい。<br>かといってわざわざFirefoxを起動してブックマークからサイトを開いて、というのももどかしい。  </p>
+<p>そこで、適当なブラウザをSimplenote専用にし、ランチャーに登録しようと考えた。<br>まず候補に上がったのがキーボードで操作するブラウザLuakit。  </p>
+<p>ところが、起動からSimplenoteのサイト表示までが、期待したほど早くない。<br>それに起動時に縮小表示してコンパクトにしたいところだが、それも難しいようだ。  </p>
+<p>他に良いブラウザは無いかと、Ubuntuソフトウェアセンターで片っ端からインストールしてみた。<br>あまり有名ではないと思うが、QupZillaというのが目的にピッタリだった。<br><a href="http://www.qupzilla.com/" target="_blank" rel="external">QupZilla - マルチプラットフォーム対応、軽量ブラウザ</a>  </p>
+<p>起動速度、サイト表示が早い。<br>設定→ブラウジング→Web設定でデフォルトのズーム率も任意に設定出来る。  </p>
+<p>小さめの倍率にし、ナビゲーションツールバーとブックマークツールバーを非表示に。<br>設定→タブで「タブが1つだけの時タブバーを非表示」にチェックを入れたら、許容範囲内のコンパクトさになってくれた。<br>ランチャーにコマンドを登録して完了。  </p>
+<pre><code>qupzilla https://app.simplenote.com/
+</code></pre><p>まるでメモ帳ソフトのようになった。  </p>
+<p>QupZillaにはFirefoxのようなアドオンこそ無いが、機能もそこそこ充実していて癖のない作り。<br>普段使いのブラウザとしても、軽快に活躍してくれそうだ。<br>Linuxのほか、Windows、Mac OS Xでも使えるというのも良い。  </p>
+<p>Simplenote専用にしておくのは、ちょっともったいないような気もする。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/31/qupzilla-simplenote/" data-text="軽量ブラウザQupZillaをSimplenoteアプリとして使う | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/01/30/xubuntu-copy-client/" >Xubuntuで非公式レポジトリのCopyクライアントが不調</a>
 		</h3>
 	
@@ -516,47 +562,6 @@ sudo cp -r copy/x86_64 /opt/copy
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/01/24/xubuntu-menu-nepomuk/" >XubuntuのメニューからNepomuk Cleanerを消す</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年1月24日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>以前、Xubuntu14.04のメインメニュー、システムの欄にNepomuk File Indexing Controllerというのが消えずに残っていて、AlacarteやMenuLibreでは項目が見当たらないので非表示にも出来ず、困ったことがあった。<br>この時は~/.local/share/desktop-directoriesディレクトリを削除したら消えてくれた。<br>ディレクトリ内の唯一のファイルalacarte-made.directoryの中身はnepomukcontrollerについての記載だった。  </p>
-<p>その後またNepomuk Cleanerという項目が表れた。<br>~/.local/share/desktop-directoriesを見てみるとファイルが７つあったが、今回はNepomuk〜に関するものは見当たらない。<br>試しにディレクトリをリネームし再起動してみたが、Nepomukが消えない。  </p>
-<p>結局、/usr/share/applications/kde4内のNepomuk CleanerとNepomuk Backupを削除することで、メニューからNepomukを消すことが出来た。  </p>
-<p>このディレクトリ内のNepomuk Cleaner、Nepomuk Backupの実体は、nepomukcleaner.desktop、nepomukbackup.desktopというデスクトップ設定ファイル（メニューやランチャーに項目を表示するためのもの）で、アプリケーション本体では無いようだ。<br>アプリケーション自体はインストールされていないようなので、削除しても問題無いと思うが、残しておきたい場合は、ファイルをエディタで開き一番下に<code>NoDisplay=true</code>を追記すると良いようだ。<br><a href="https://wiki.archlinux.org/index.php/Xfce_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29#.E3.83.A1.E3.83.8B.E3.83.A5.E3.83.BC" target="_blank" rel="external">Xfce (日本語) - ArchWiki</a>  </p>
-<p>ーー<br>（追記）<br><code>NoDisplay=true</code>では効果無く、<code>ShowOnlyIn=KDE</code>を追記したらメニューから消えた。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/24/xubuntu-menu-nepomuk/" data-text="XubuntuのメニューからNepomuk Cleanerを消す | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -598,6 +603,10 @@ sudo cp -r copy/x86_64 /opt/copy
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/03/12/xfce-nemo-icon/" ><i class="fa fa-file-o"></i>Arch Linux+Xfce。nemoをインストール...</a>
+      </li>
+    
+      <li>
         <a href="/2015/03/09/vostro1000-video-driver/" ><i class="fa fa-file-o"></i>DELL Vostro1000（Xp機）のビデオドライバー</a>
       </li>
     
@@ -611,10 +620,6 @@ sudo cp -r copy/x86_64 /opt/copy
     
       <li>
         <a href="/2015/03/08/xfce-beep/" ><i class="fa fa-file-o"></i>Xfceログアウト時のビープ音を消す</a>
-      </li>
-    
-      <li>
-        <a href="/2015/03/06/clonezilla-restore-different-partition/" ><i class="fa fa-file-o"></i>Clonezillaでバックアップしたイメージを別のパ...</a>
       </li>
     
   </ul>
@@ -632,35 +637,35 @@ sudo cp -r copy/x86_64 /opt/copy
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>40</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>24</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
+			<li><a href="/tags/Hexo/">Hexo<span>24</span></a></li>
+		
 			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>5</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>41</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 		
 		</ul>
@@ -672,7 +677,7 @@ sudo cp -r copy/x86_64 /opt/copy
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
