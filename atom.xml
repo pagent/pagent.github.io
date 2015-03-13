@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-03-13T10:09:19.562Z</updated>
+  <updated>2015-03-13T23:35:59.527Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,30 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Keepass2のフォントを日本語化]]></title>
+    <link href="http://pagent.github.io/2015/03/14/keepass2-font/"/>
+    <id>http://pagent.github.io/2015/03/14/keepass2-font/</id>
+    <published>2015-03-13T22:47:05.000Z</published>
+    <updated>2015-03-13T23:35:34.000Z</updated>
+    <content type="html"><![CDATA[<p>Windowsではパスワード管理ソフトとして、長らくIDMを使っていた。  </p>
+<p>IDMはとても便利で長らくお世話になったが、Linuxでは使えない。<br>OSをWindowsからLinuxに乗り換える際、パスワード管理ソフトをクロスプラットフォームのKeepass2に変更した。  </p>
+<p>Keepass2の日本語化は、Xubuntuでは<a href="http://keepass.info/translations.html" target="_blank" rel="external">Translations - KeePass</a>からKeePass-2.28-Japanese.zipをダウンロードし解凍。<br>Japanese.lngxをJapanese.lngxを/usr/lib/keepass2内にコピー。<br>Keepass2のView→Change LanguageからJapaneseを選択したら日本語化出来た。  </p>
+<p>今回、Arch LinuxにもKeepass2をインストールした。  </p>
+<p>Arch LinuxではKeePass.exeは/usr/lib/keepass2ではなく/usr/share/keepass内にあるので、ここへJapanese.lngxをコピー。<br>日本語化しようとしたが、文字化けしてしまい豆腐状態。  </p>
+<p>Tools→options→Interface→Serect List Fontで、IPA Pゴシック、Takao Pゴシックなど日本語フォントに変更すると、パスワード管理している項目は日本語化されたが、メニューは依然文字化けしたまま。<br>ネットで検索し、システムフォントを日本語フォントに変更してみたが、それでも豆腐状態が治らない。  </p>
+<p>Keepass2のoptions→Interfaceのチェックボックスリスト内に”Force using system font(Unix only)”「強制的にシステムフォントを使用(Unixのみ)」という項目があり、これにチェックが入っていたので、チェックを外してみたらようやくメニューも日本語化出来た。  </p>
+<p>XubuntuのKeepass2を見てみると、「強制的にシステムフォントを使用(Unixのみ)」のチェックが入ったままで日本語化出来ている。<br>同じLinuxでもディストリビューションによって色々と挙動、設定が違うようだ。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Windowsではパスワード管理ソフトとして、長らくIDMを使っていた。  </p>
+<p>IDMはとても便利で長らくお世話になったが、Linuxでは使えない。<br>OSをWindowsからLinuxに乗り換える際、パスワード管理ソフトをクロスプラットフォームのKeepa]]>
+    </summary>
+    
+      <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Arch Linux+Xfce。nemoをインストールして二重に表示されたデスクトップアイコンを消す]]></title>
@@ -519,50 +543,6 @@ $ ]]>
     </summary>
     
       <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Puppy Linux派生。Puppy本家より扱いやすい「LxPup」と「LxQtPup」]]></title>
-    <link href="http://pagent.github.io/2015/02/06/lxpup-lxqtpup/"/>
-    <id>http://pagent.github.io/2015/02/06/lxpup-lxqtpup/</id>
-    <published>2015-02-06T01:02:10.000Z</published>
-    <updated>2015-03-03T01:53:28.000Z</updated>
-    <content type="html"><![CDATA[<p>Puppy Linuxのデスクトップ環境について調べ物をしていたら、”LxPup - Puppy Linux + LXDE”というページがあった。<br><a href="http://sourceforge.jp/projects/sfnet_lxpup/" target="_blank" rel="external">LxPup - Puppy Linux + LXDE プロジェクト日本語トップページ - SourceForge.JP</a>  </p>
-<p>Puppy LinuxをLXDEデスクトップにアレンジしたものらしい。  </p>
-<p>早速、LxPup-15.02.2のPAE版と非PAE版、それとLxQtPup（非PAE）をダウンロードした。<br>いずれもSlacko Puppy 5.9.3がベースのもの。</p>
-<p>LxQtPupのデスクトップ環境「LXQt」というのは、「LXDE-QtとRazor-qtの成果物を統合したデスクトップ環境」で「Qtに移行したLXDEの後継バージョン」とのこと。<br><a href="http://ja.wikipedia.org/wiki/LXDE" target="_blank" rel="external">LXDE - Wikipedia</a><br>LXDEよりさらに軽いということか。  </p>
-<h3 id="試用してみての感想">試用してみての感想</h3>
-<p><strong>「LxPup」</strong></p>
-<p>ブートCDを焼き起動すると、PAEのLxPupはいきなり「Disabling IRQ #9」と出て、その後なんとか「Loading　kernel 　modules…」までは進んだが、そこでフリーズした様子。  </p>
-<p>非PAEの方で起動すると、無事デスクトップが表示された。  </p>
-<p>デスクトップに子犬の姿は無かったが、開始時に表示される言語やタイムゾーン、モニターなどの設定ウィンドウを閉じると、「ワン！ワン！」と元気に迎えてくれる。<br>本家Puppyよりすっきりした外観。  </p>
-<p>だが動作の軽快さは、まさにPuppy Linux。</p>
-<p>ファイルマネージャーにはPcmanfmが入っていた。<br>とても有難い。<br>Pupy標準のROX-filerは、コピーしようと思ってファイルをドラッグドロップすると、コピーではなくリンクを作ってしまったり、右クリックでコピーしようとするとコピー先のパスを入力させられたりで、使い勝手が悪い。  </p>
-<p>ブラウザはFirefoxで、これも有難い。<br>起動はやはり多少もたつくが、Firefoxにはそれに勝る便利さがある。  </p>
-<p>端末はPuppyデフォルトのrxvtに加えLXTerminalが入っている。<br>右クリックでのコピーペーストが出来て便利。   </p>
-<p>LxPup。<br>Puppy Linuxの軽快さと、LXDEの快適性を上手く融合させている。  </p>
-<p><strong>「LxQtPup」</strong>  </p>
-<p>LxQtPupの方はというと、起動も起動後の操作も、ややもっさり感が否めない。<br>実際、タスクマネージャーだけを開いた状態での消費メモリは、LxPupの68MBに対し、LxQtPupは135MBと倍の差。  </p>
-<p>だが、LxQtPupの外観はとても丁寧に作りこまれていて、「本当にこれがパピーか？」と驚愕を覚える。<br>特にメニュー周りなど、LxPupがPuppy Linuxの素朴さ（ごちゃごちゃ感）を残しているのに対し、LxQtPupには精錬された美しさがある。<br>もはやPuppyの域を超えていて、外観だけを見れば全く別のディストリビューションと思えるほど。  </p>
-<p>凄いです。<br>伊達にメモリー食ってません。  </p>
-<h3 id="LxPupをFrugalインストール">LxPupをFrugalインストール</h3>
-<p>LxPupをHDDにインストールしようと思ったら、ユニバーサルインストーラーはあるが、どこを探してもFrugalインストーラーが見当たらない。<br>参照させて頂いた下記サイトでも、ユニバーサルインストーラーを使ってのFullインストールが紹介されていた。<br><a href="http://no-windows.blog.jp/archives/8229193.html" target="_blank" rel="external">LxPupのインストールからインターネット接続のまとめ : Windowsはもういらない</a>  </p>
-<p>既にPuppy Linux5.7.1をFrugalインストールしているし、出来れば同じパーティション内にFrugalインストールしたいところ。<br>FrugalインストールしてこそのPuppy Linuxとも思える。  </p>
-<p>Frugalインストールは必要なファイルをコピーして、その後Grub４Dosブートローダーをインストールしているだけのようだし、最後のGrub４Dosブートローダーの設定さえちゃんとやれば、ファイルのコピーは手動でも良さそうに思える。<br>やってみた結果、ちゃんとFrugalインストール出来た。  </p>
-<p>まず、インストールするパーティション内に「lxpup1502」等、適当な名前でフォルダを作成。<br>（名前はなるべく入力しやすいものが良い。後に個人保存ファイルを複数作成した場合、個人保存ファイルへのフルパス入力を求められる。）  </p>
-<p>LxPup-15.02.2を例にとると、ブートCD内には12個のファイルがあるが、そのうち必要なのは下記の４つ。  </p>
-<p>initrd.gz<br>vmlinuz<br>puppy_lxpup_15.02.sfs<br>zdrv_lxpup_15.02.sfs</p>
-<p>この４つのファイルをあらかじめ作っておいたフォルダにコピペ。<br>後は「メインメニュー」→「Setup」→「Grub4Dos bootloader config」からGrub４Dosブートローダーをインストールすれば良い。  </p>
-<p>シャットダウンの際、個人保存ファイルの作成を促されるから、好みの形で作成。<br>ブートCDを取り出して再起動すればLxPupの画面が現れる。  </p>
-<p>日本語化は上記参照サイトを参考にさせて頂いた。  </p>
-<p>LxPup、LxQtPup、いずれもノーマルのPuppy Linuxより親しみやすいアレンジになっているので、初心者からベテランまで、ぜひ一度触れてみてもらいたい優れたディストリビューションだ。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Puppy Linuxのデスクトップ環境について調べ物をしていたら、”LxPup - Puppy Linux + LXDE”というページがあった。<br><a href="http://sourceforge.jp/projects/sfnet_lxpup/" target]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
     
   </entry>
   
