@@ -112,8 +112,8 @@
 	<div class="mypage">
 	    <p>Arch LinuxにTrueCryptをインストールした。  </p>
 <p>pacmanからインストールすると、guiツールが無くcuiツールのみのようなので、ネットでtruecrypt-7.1aを探しダウンロード、インストールした。<br>（TrueCryptの最終バージョン7.2は解読機能のみで、新たに暗号化ボリュームを作れない。）  </p>
-<p>ちゃんと使用出来たが、いったんPCを終了して、その後TrueCryptを起動しようとすると、”TrueCrypt is already running”とのみ表示され、guiツールが表示されなくなってしまった。<br>コマンドラインからだと使用出来るが、使い勝手が悪い。  </p>
-<p>どうやら暗号化ボリュームをアンマウントせずにPCをシャットダウンしたせいらしい。  </p>
+<p>ちゃんと使用出来たが、いったんPCを終了して、その後TrueCryptを起動しようとすると、”TrueCrypt is already running”とのみ表示され、guiツールが表示されなくなってしまった。<br>コマンドラインからだと使用出来るようだが、使い勝手が悪い。  </p>
+<p>暗号化ボリュームをアンマウントせずにPCをシャットダウンしたせいらしい。  </p>
 <p>ホームディレクトリに.TrueCrypt-lock-(ユーザー名)という隠しファイルが残っており、これを削除するとguiのTrueCryptを起動出来た。<br><a href="http://sebs-blog.de/truecrypt-is-already-running-what-to-do.html" target="_blank" rel="external">‘TrueCrypt is already running’ what to do? | Seb’s Blog</a>  </p>
 <p>暗号化ボリュームをアンマウントせずにPCを終了してしまうことはよくあるし、なんとか自動的にアンマウントしたいところ。  </p>
 <p>検索したら、Arch Linuxのwikiに自動アンマウントの方法が紹介されていた。<br><a href="https://wiki.archlinux.org/index.php/TrueCrypt#Safely_unmount_and_unmap_volumes_.28on_shutdown.29" target="_blank" rel="external">TrueCrypt - ArchWiki</a>  </p>
@@ -140,8 +140,8 @@ fi
 <ul class="pagination">
 	 
 		
-          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-        
+    	<li class="prev"><a href="/2015/03/14/hexo283/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+  		
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 

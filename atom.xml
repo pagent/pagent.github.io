@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-03-14T13:20:17.076Z</updated>
+  <updated>2015-03-14T14:15:21.139Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,15 +15,39 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Hexo 2.8.3をインストール]]></title>
+    <link href="http://pagent.github.io/2015/03/14/hexo283/"/>
+    <id>http://pagent.github.io/2015/03/14/hexo283/</id>
+    <published>2015-03-14T13:33:52.000Z</published>
+    <updated>2015-03-14T14:13:54.384Z</updated>
+    <content type="html"><![CDATA[<p>XubuntuでHexoを使っていたが、Arch Linuxにもインストールした。<br>いつの間にかHexoのバージョンが上がっていたようで、Arch LinuxにはHexo 3.0.0がインストールされた。  </p>
+<p>サーバー機能がHexo本体と別になっていて、hexo-serverをインストールしないとコマンド<code>hexo server</code>が使えなかったりと、いろいろ変更があるようだ。  </p>
+<p>XubuntuのHexo 2.8.3をアップグレードして、これまでの作業フォルダ（WindowsのDドライブに置いてある）を使おうとしたが、アップグレードがうまく行かない。  </p>
+<p>そこでArch Linuxにも旧バージョンのHexo 2.8.3をインストールすることにした。  </p>
+<p>Hexoの公式サイトには旧バージョンのインストール方法が見あたらなかったが、幸い検索で見つかった。<br><a href="http://sandylaw.tk/2015/03/07/hexo3to2/" target="_blank" rel="external">Hexo降级 3.0 to 2.8 | Sandy’s Blog</a>  </p>
+<pre><code>npm install hexo@2.8.3 -g
+</code></pre><p>Hexo 3.0.0は機能が強化されているのかもしれないが、旧バージョンでも特に不満は無いし、当面はこのままHexo 2.8.3を使う予定。  </p>
+<p>アップグレードにはまた今度挑戦してみようと思う。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>XubuntuでHexoを使っていたが、Arch Linuxにもインストールした。<br>いつの間にかHexoのバージョンが上がっていたようで、Arch LinuxにはHexo 3.0.0がインストールされた。  </p>
+<p>サーバー機能がHexo本体と別になっていて、]]>
+    </summary>
+    
+      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[TrueCryptを起動しようとすると"TrueCrypt is already running"と表示される]]></title>
     <link href="http://pagent.github.io/2015/03/14/truecrypt-already-running/"/>
     <id>http://pagent.github.io/2015/03/14/truecrypt-already-running/</id>
     <published>2015-03-14T01:57:05.000Z</published>
-    <updated>2015-03-14T02:42:35.000Z</updated>
+    <updated>2015-03-14T13:24:22.623Z</updated>
     <content type="html"><![CDATA[<p>Arch LinuxにTrueCryptをインストールした。  </p>
 <p>pacmanからインストールすると、guiツールが無くcuiツールのみのようなので、ネットでtruecrypt-7.1aを探しダウンロード、インストールした。<br>（TrueCryptの最終バージョン7.2は解読機能のみで、新たに暗号化ボリュームを作れない。）  </p>
-<p>ちゃんと使用出来たが、いったんPCを終了して、その後TrueCryptを起動しようとすると、”TrueCrypt is already running”とのみ表示され、guiツールが表示されなくなってしまった。<br>コマンドラインからだと使用出来るが、使い勝手が悪い。  </p>
-<p>どうやら暗号化ボリュームをアンマウントせずにPCをシャットダウンしたせいらしい。  </p>
+<p>ちゃんと使用出来たが、いったんPCを終了して、その後TrueCryptを起動しようとすると、”TrueCrypt is already running”とのみ表示され、guiツールが表示されなくなってしまった。<br>コマンドラインからだと使用出来るようだが、使い勝手が悪い。  </p>
+<p>暗号化ボリュームをアンマウントせずにPCをシャットダウンしたせいらしい。  </p>
 <p>ホームディレクトリに.TrueCrypt-lock-(ユーザー名)という隠しファイルが残っており、これを削除するとguiのTrueCryptを起動出来た。<br><a href="http://sebs-blog.de/truecrypt-is-already-running-what-to-do.html" target="_blank" rel="external">‘TrueCrypt is already running’ what to do? | Seb’s Blog</a>  </p>
 <p>暗号化ボリュームをアンマウントせずにPCを終了してしまうことはよくあるし、なんとか自動的にアンマウントしたいところ。  </p>
 <p>検索したら、Arch Linuxのwikiに自動アンマウントの方法が紹介されていた。<br><a href="https://wiki.archlinux.org/index.php/TrueCrypt#Safely_unmount_and_unmap_volumes_.28on_shutdown.29" target="_blank" rel="external">TrueCrypt - ArchWiki</a>  </p>
@@ -520,28 +544,6 @@ $ ]]>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Kubuntuのネットブック向けデスクトップは「Plasma Netbook」というそうで、ディスプレイの小さいネットブックで使う分には、これはこれで便利そうなのだが、FirefoxやQupzillaなどのアプリケーションでメニューバーを表示出来ないという不便さがある。<b]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Kubuntu14.04で画面が真っ暗]]></title>
-    <link href="http://pagent.github.io/2015/02/11/kubuntu-blanck-screen/"/>
-    <id>http://pagent.github.io/2015/02/11/kubuntu-blanck-screen/</id>
-    <published>2015-02-11T02:51:05.000Z</published>
-    <updated>2015-02-11T08:23:04.000Z</updated>
-    <content type="html"><![CDATA[<p>ネットブックLavie LiteにインストールしたKubuntu。<br>新しいkernelだとディスプレイや無線LANに不具合が出るので、旧kernelを使うため、12.04から14.04にアップグレードしたもの。<br>アップグレード後いったんは正常にログイン出来たが、その後再度起動すると、ログイン後に画面が真っ暗になり、マウスポインターのみが表示されている状態になってしまった。<br>左上の隅にポインターを合わせると青く光る。<br>（なぜかGuestアカウントではデスクトップが表示される。）  </p>
-<p>検索すると似たような事例が多く見つかった。  </p>
-<p><a href="https://forums.ubuntulinux.jp/viewtopic.php?id=5996" target="_blank" rel="external">Ubuntu日本語フォーラム / KDEログアウト後に画面が真っ暗になり操作不能</a><br><a href="http://192168111.blog71.fc2.com/category1-1.html" target="_blank" rel="external">俺の覚書 Linux/Unix</a><br><a href="https://www.kubuntuforums.net/showthread.php?66592-Black-screen-after-login&amp;p=360188&amp;viewfull=1#post360188" target="_blank" rel="external">[DESKTOP] Black screen after login - Kubuntu Forums</a>  </p>
-<p>「CTRL」+「ALT」+「F2」でコンソール画面に行き、ディスプレイマネージャーをkdmからgdmに変える方法、<code>sudo apt-get update</code>、<code>sudo apt-get upupgrade</code>する方法、また自分のホームディレクトリの.kdmをリネームして新規に生成させる方法など試してみたが、どれも効果なし。<br>コマンドに不慣れで、/ver/log以下のログを確認するのも上手く行かない。  </p>
-<p>諦めかけたが、KDEならショートカットキーで出し入れ出来る端末エミュレーターYakuakeがインストールされているのではないかと思い、Yakuakeで<code>xrandr</code>コマンドを使えばディスプレイの状態を確認出来るかと、真っ暗な画面で「F12」キーを押してみた。  </p>
-<p>するとデスクトップが現れた。<br>Kubuntu12.04の時と違い、ディスプレイの小さな端末向けのUnityみたいに画面だが。<br>（Yakuakeはインストールされていないのか、出て来なかった。）  </p>
-<p>なぜ復活したのかはまったく謎。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>ネットブックLavie LiteにインストールしたKubuntu。<br>新しいkernelだとディスプレイや無線LANに不具合が出るので、旧kernelを使うため、12.04から14.04にアップグレードしたもの。<br>アップグレード後いったんは正常にログイン出来たが、]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>

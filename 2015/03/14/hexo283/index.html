@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>短歌・俳句等 | Pagent</title>
+  <title>Hexo 2.8.3をインストール | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="Hexo 2.8.3をインストール"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -83,155 +83,128 @@
 
   <div class="container">
   	<div class="content">
-    	 <!-- tag -->
-<!-- _partial/archive -->
+    	 <!-- post -->
 
 
-<!-- archive.title -->
-<div class="page-header">
-  <h1 class="archive-title-tag archive-title-短歌・俳句等">短歌・俳句等</h1>
-</div>
+<!-- _partial/article -->
 
-<div class="row page">
-  <!-- cols -->
-  
-  <div class="col-md-9">
+<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+  <!-- display as page -->
+		<div class="page-header">
+			<h1> Hexo 2.8.3をインストール</h1>
+		</div>
 	
 
-	  
-	  <!-- display as list -->
-	  <div class="archive">
+</div>
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div class="col-md-9">
+	
+
+	
+
+	<!-- content -->
+	<div class="mypage">
+	    <p>XubuntuでHexoを使っていたが、Arch Linuxにもインストールした。<br>いつの間にかHexoのバージョンが上がっていたようで、Arch LinuxにはHexo 3.0.0がインストールされた。  </p>
+<p>サーバー機能がHexo本体と別になっていて、hexo-serverをインストールしないとコマンド<code>hexo server</code>が使えなかったりと、いろいろ変更があるようだ。  </p>
+<p>XubuntuのHexo 2.8.3をアップグレードして、これまでの作業フォルダ（WindowsのDドライブに置いてある）を使おうとしたが、アップグレードがうまく行かない。  </p>
+<p>そこでArch Linuxにも旧バージョンのHexo 2.8.3をインストールすることにした。  </p>
+<p>Hexoの公式サイトには旧バージョンのインストール方法が見あたらなかったが、幸い検索で見つかった。<br><a href="http://sandylaw.tk/2015/03/07/hexo3to2/" target="_blank" rel="external">Hexo降级 3.0 to 2.8 | Sandy’s Blog</a>  </p>
+<pre><code>npm install hexo@2.8.3 -g
+</code></pre><p>Hexo 3.0.0は機能が強化されているのかもしれないが、旧バージョンでも特に不満は無いし、当面はこのままHexo 2.8.3を使う予定。  </p>
+<p>アップグレードにはまた今度挑戦してみようと思う。</p>
+
+	</div>
+
+	<div class="tweet-button">
+	<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+	<div>
+  	<center>
+	<!-- _partial/post/pagination -->
+<div class="pagination">
+<ul class="pagination">
+	 
 		
-		
-		
-			
-			
-			<h4 class="archive-ul" data-toggle="collapse" data-target="#2014">2014<b class="caret"></b></h4>
-			<ul id="2014" class="collapse in">
-			
-		
-<li class="listing-item">
-  <span class="date_class"> 2014-12-05 </span> &raquo;
-  
-  <span class="title"><a href="/2014/12/05/kareha/" >枯れ葉</a></span>
-  
-</li>
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		
-<li class="listing-item">
-  <span class="date_class"> 2014-11-06 </span> &raquo;
-  
-  <span class="title"><a href="/2014/11/06/hana-no-iro/" >いたづらにわがみ世にふる</a></span>
-  
-</li>
-
+		   <li class="next"><a href="/2015/03/14/truecrypt-already-running/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+        
+	
 </ul>
 </div>
 
+  	</center>
+	</div>
 
-</div> <!-- col-md-9/col-md-12 -->
+	<!-- comment -->
+	<!-- _partial/post/comment -->
+
+<section id="comment">
+  <h2 class="title">Comments</h2>
+
+  
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  
+</section>
 
 
-<!-- _partial/sidebar -->
-<div class="col-md-3">
-	<div id="sidebar">
+
+	</div> <!-- col-md-9/col-md-12 -->
+
 	
-			<!-- _widget/recent_posts -->
+		<!-- _partial/post/meta -->
+<div class="col-md-3"> 
 
-<div class="widget">
-  <h4>Recent Posts</h4>
-  <ul class="entry list-unstyled">
-    
-      <li>
-        <a href="/2015/03/14/hexo283/" ><i class="fa fa-file-o"></i>Hexo 2.8.3をインストール</a>
-      </li>
-    
-      <li>
-        <a href="/2015/03/14/truecrypt-already-running/" ><i class="fa fa-file-o"></i>TrueCryptを起動しようとすると&quot;TrueCry...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/03/14/keepass2-font/" ><i class="fa fa-file-o"></i>Keepass2のフォントを日本語化</a>
-      </li>
-    
-      <li>
-        <a href="/2015/03/12/xfce-nemo-icon/" ><i class="fa fa-file-o"></i>Arch Linux+Xfce。nemoをインストール...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/03/09/vostro1000-video-driver/" ><i class="fa fa-file-o"></i>DELL Vostro1000（Xp機）のビデオドライバー</a>
-      </li>
-    
-  </ul>
-</div>
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2015年3月14日
+	</div>
+	
 
+	<!-- categories -->
+    
 
-		
-			<!-- _widget/category -->
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>
+    <ul id="tags" class="tag_box list-unstyled collapse in">
+	    <!-- _partial/post/tag -->
+  
+  <li><a href="/tags/Hexo/">Hexo</a></li>
 
+    </ul>
+	</div>
+	
 
-		
-			<!-- _widget/tagcloud -->
-
-	<div class="widget">
-		<h4>Tag Cloud</h4>
-		<ul class="tag_box inline list-unstyled">
-		
-			<li><a href="/tags/Linux/">Linux<span>41</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
-		
-		
-		</ul>
+	<!-- toc -->
+	<div class="meta-widget">
+	
 	</div>
 
+    <hr>
 
-		
-			
-	<div class="widget">
-		<h4>Monthly Archives</h4>
-		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
-		</ul>
-	</div>
+</div><!-- col-md-3 -->
 
-		
-			<!-- _widget/links -->
+	
 
-
-		
-	</div> <!-- sidebar -->
-</div> <!-- col-md-3 -->
-
-
-</div>
+</div><!-- row -->
 
 
 	</div>
@@ -268,7 +241,7 @@ var disqus_shortname = 'pagents';
   var dsq = document.createElement('script');
   dsq.type = 'text/javascript';
   dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 }());
 </script>

@@ -112,6 +112,49 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/02/11/kubuntu-blanck-screen/" >Kubuntu14.04で画面が真っ暗</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月11日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>ネットブックLavie LiteにインストールしたKubuntu。<br>新しいkernelだとディスプレイや無線LANに不具合が出るので、旧kernelを使うため、12.04から14.04にアップグレードしたもの。<br>アップグレード後いったんは正常にログイン出来たが、その後再度起動すると、ログイン後に画面が真っ暗になり、マウスポインターのみが表示されている状態になってしまった。<br>左上の隅にポインターを合わせると青く光る。<br>（なぜかGuestアカウントではデスクトップが表示される。）  </p>
+<p>検索すると似たような事例が多く見つかった。  </p>
+<p><a href="https://forums.ubuntulinux.jp/viewtopic.php?id=5996" target="_blank" rel="external">Ubuntu日本語フォーラム / KDEログアウト後に画面が真っ暗になり操作不能</a><br><a href="http://192168111.blog71.fc2.com/category1-1.html" target="_blank" rel="external">俺の覚書 Linux/Unix</a><br><a href="https://www.kubuntuforums.net/showthread.php?66592-Black-screen-after-login&amp;p=360188&amp;viewfull=1#post360188" target="_blank" rel="external">[DESKTOP] Black screen after login - Kubuntu Forums</a>  </p>
+<p>「CTRL」+「ALT」+「F2」でコンソール画面に行き、ディスプレイマネージャーをkdmからgdmに変える方法、<code>sudo apt-get update</code>、<code>sudo apt-get upupgrade</code>する方法、また自分のホームディレクトリの.kdmをリネームして新規に生成させる方法など試してみたが、どれも効果なし。<br>コマンドに不慣れで、/ver/log以下のログを確認するのも上手く行かない。  </p>
+<p>諦めかけたが、KDEならショートカットキーで出し入れ出来る端末エミュレーターYakuakeがインストールされているのではないかと思い、Yakuakeで<code>xrandr</code>コマンドを使えばディスプレイの状態を確認出来るかと、真っ暗な画面で「F12」キーを押してみた。  </p>
+<p>するとデスクトップが現れた。<br>Kubuntu12.04の時と違い、ディスプレイの小さな端末向けのUnityみたいに画面だが。<br>（Yakuakeはインストールされていないのか、出て来なかった。）  </p>
+<p>なぜ復活したのかはまったく謎。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/11/kubuntu-blanck-screen/" data-text="Kubuntu14.04で画面が真っ暗 | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/02/08/scrapbook-error/" >突然ScrapBookの保存データが消えた</a>
 		</h3>
 	
@@ -586,53 +629,6 @@ find -type l
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/02/03/xubuntu-dolphin-root-actions/" >XubuntuにインストールしたDolphinでRootで開く</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年2月3日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Xubuntu14.04にKDEのファイルマネージャーDolphinをインストールしたが、Rootで開くためのRoot Actionsで手こずった。  </p>
-<ul>
-<li>Dolphinの設定の「新しいサービスをダウンロード」からインストールする方法  </li>
-<li>rootactions_servicemenuのtar.gzファイルをダウンロードし、メニューファイルとスクリプトを手動で配置する方法  </li>
-</ul>
-<p>2通り試したが、どちらも上手くいかない。<br>パズワード入力画面までは行くが、パスワードを入れても何も起こらない。  </p>
-<p>最終的にはLinux Mint用のdebパッケージをインストールして解決した。  </p>
-<p>下記サイトの「All arch deb package」というリンクからrootactions-servicemenu_2.7.3-0mint1_all.debをダウンロード。<br><a href="http://www.ubuntuupdates.org/package/mint_main/olivia/main/base/rootactions-servicemenu" target="_blank" rel="external">UbuntuUpdates - Package “rootactions-servicemenu” (olivia )</a>  </p>
-<p>クリックするとUbuntuソフトウェアセンターが立ち上がるので、いつも通りにインストール。<br>“Open as Text”は既定のテキストエディターがKateでないと機能しないが、フォルダはちゃんとRootで開くことが出来た。  </p>
-<p>（参照サイト）<br><a href="http://ubuntuforums.org/showthread.php?t=2157705&amp;p=12707272#post12707272" target="_blank" rel="external">[gnome] “Root Actions” in dolphin not available</a>  </p>
-<p>ーー<br>（追記）<br>Ubuntuソフトウェアセンターの履歴を見ると、rootactions-servicemenu以外にkdesudoもインストールされていた。<br>手動でのインストールでもkdesudoがあれば機能していたのかもしれない。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/03/xubuntu-dolphin-root-actions/" data-text="XubuntuにインストールしたDolphinでRootで開く | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -674,6 +670,10 @@ find -type l
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/03/14/hexo283/" ><i class="fa fa-file-o"></i>Hexo 2.8.3をインストール</a>
+      </li>
+    
+      <li>
         <a href="/2015/03/14/truecrypt-already-running/" ><i class="fa fa-file-o"></i>TrueCryptを起動しようとすると&quot;TrueCry...</a>
       </li>
     
@@ -687,10 +687,6 @@ find -type l
     
       <li>
         <a href="/2015/03/09/vostro1000-video-driver/" ><i class="fa fa-file-o"></i>DELL Vostro1000（Xp機）のビデオドライバー</a>
-      </li>
-    
-      <li>
-        <a href="/2015/03/08/xfce-icon-theme/" ><i class="fa fa-file-o"></i>Xfceに新しいアイコンテーマをインストール</a>
       </li>
     
   </ul>
@@ -708,35 +704,35 @@ find -type l
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>24</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
+		
 			<li><a href="/tags/Linux/">Linux<span>41</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
 		
 		</ul>
@@ -748,7 +744,7 @@ find -type l
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
