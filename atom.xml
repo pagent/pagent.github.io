@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-03-13T23:35:59.527Z</updated>
+  <updated>2015-03-14T02:43:08.240Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,37 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[TrueCryptを起動しようとすると"TrueCrypt is already running"と表示される]]></title>
+    <link href="http://pagent.github.io/2015/03/14/truecrypt-already-running/"/>
+    <id>http://pagent.github.io/2015/03/14/truecrypt-already-running/</id>
+    <published>2015-03-14T01:57:05.000Z</published>
+    <updated>2015-03-14T02:42:35.000Z</updated>
+    <content type="html"><![CDATA[<p>Arch LinuxにTrueCryptをインストールした。  </p>
+<p>pacmanからインストールすると、guiツールが無くcuiツールのみのようなので、ネットでtruecrypt-7.1aを探しダウンロード、インストールした。<br>（TrueCryptの最終バージョン7.2は解読機能のみで、新たに暗号化ボリュームを作れない。）  </p>
+<p>ちゃんと使用出来たが、いったんPCを終了して、その後TrueCryptを起動しようとすると、”TrueCrypt is already running”とのみ表示され、guiツールが表示されなくなってしまった。<br>コマンドラインからだと使用出来るが、使い勝手が悪い。  </p>
+<p>どうやら暗号化ボリュームをアンマウントせずにPCをシャットダウンしたせいらしい。  </p>
+<p>ホームディレクトリに.TrueCrypt-lock-(ユーザー名)という隠しファイルが残っており、これを削除するとguiのTrueCryptを起動出来た。<br><a href="http://sebs-blog.de/truecrypt-is-already-running-what-to-do.html" target="_blank" rel="external">‘TrueCrypt is already running’ what to do? | Seb’s Blog</a>  </p>
+<p>暗号化ボリュームをアンマウントせずにPCを終了してしまうことはよくあるし、なんとか自動的にアンマウントしたいところ。  </p>
+<p>検索したら、Arch Linuxのwikiに自動アンマウントの方法が紹介されていた。<br><a href="https://wiki.archlinux.org/index.php/TrueCrypt#Safely_unmount_and_unmap_volumes_.28on_shutdown.29" target="_blank" rel="external">TrueCrypt - ArchWiki</a>  </p>
+<p>/etc内にrc.local.shutdownファイルを新規作成。<br>下記内容で保存。  </p>
+<pre><code>if (/usr/bin/truecrypt --text --list)
+then {
+/usr/bin/truecrypt -d
+sleep 3
+}
+fi
+</code></pre><p>PC終了時に自動的に暗号化ボリュームがアンマウントされるようになった。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Arch LinuxにTrueCryptをインストールした。  </p>
+<p>pacmanからインストールすると、guiツールが無くcuiツールのみのようなので、ネットでtruecrypt-7.1aを探しダウンロード、インストールした。<br>（TrueCryptの最終バ]]>
+    </summary>
+    
+      <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Keepass2のフォントを日本語化]]></title>
@@ -514,35 +545,6 @@ $ ]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[突然ScrapBookの保存データが消えた]]></title>
-    <link href="http://pagent.github.io/2015/02/08/scrapbook-error/"/>
-    <id>http://pagent.github.io/2015/02/08/scrapbook-error/</id>
-    <published>2015-02-07T16:42:00.000Z</published>
-    <updated>2015-02-07T18:07:40.000Z</updated>
-    <content type="html"><![CDATA[<p>Firfoxで何だったかを見ていたら、突然、英文の警告がポップアップされた。  </p>
-<blockquote>
-<p>ERROR: Failed to initialize datasource.</p>
-<p>[Exception… “Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsILocalFile.create]”  nsresult: “0x80004005 (NS_ERROR_FAILURE)”  location: “JS frame :: resource://scrapbook-modules/utils.jsm :: SBU_getScrapBookDir :: line 24”  data: no]</p>
-</blockquote>
-<p>ページを保存するアドオンScrapBookのもの。<br>気付くとサイドバーのScrapBookのツリーが真っ白で、保存してあったページが無くなっている。  </p>
-<p>「code: 0x80004005」を検索してみたが、Windows起動時のエラーとかVirtualBoxのエラーとか、「0x80004005」はプログラム関係で広く使われているエラーコードらしい。  </p>
-<p>肝心のScrapBookの対処法は見つからなかったが、ScrapBookの「ツール」を開くと、一番下に「緊急時の修復ツール」というのがあった。<br>backupのscrap.rdfファイルからツリーを復元するものらしい。  </p>
-<p>これで復元出来るかと思ったが、バックアップのファイルも見当たらず。<br>ついてない。  </p>
-<p>ーー<br>（追記）<br>よく考えたら、Xubuntu側のScrapBookの保存先は、マルチブート下のWindows 7のSsrapbookフォルダに設定して、共有しているんだった。<br>少し前にWindowsのマウント先を変えたから、それでリンクが切れてしまっただけのようだ。  </p>
-<p>データ保存先を設定し直したら、ちゃんと表示された。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Firfoxで何だったかを見ていたら、突然、英文の警告がポップアップされた。  </p>
-<blockquote>
-<p>ERROR: Failed to initialize datasource.</p>
-<p>[Exception… “Component return]]>
-    </summary>
-    
-      <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
     
   </entry>
   

@@ -112,6 +112,61 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/12/01/hexo-bootstrap/" >HexoのテーマをBootstrap準拠のFreewillにした</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年12月1日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Hexoのテーマをデフォルトのものから、Bootstrap準拠の<a href="https://github.com/yieme/hexo-theme-freewill" target="_blank" rel="external">Freewill</a>にした。<br>BootstrapのテーマBootswatchというものを採用しているようで、外観を簡単に変更出来る。  </p>
+<p>他のテーマ同様  </p>
+<pre><code>git clone https://github.com/yieme/hexo-theme-freewill.git themes/freewill
+</code></pre><p>でインストール。  </p>
+<p>Freewillの_config.ymlで<code>bootswatch:</code>で種々のBootswatchテーマに変更出来る。<br>Bootswatchのナビゲーションバーには、テーマ毎に2種類のカラーバリエーションがあり、freewill/layout/_partial/navigation.ejsの2行目で<code>navbar-default</code>と<code>navbar-inverse</code>（逆の配色）のどちらかに切り替え可能。  </p>
+<p>デフォルトの設定では画面をスクロールしたりマウスが離れると、ナビゲーションバーがフェードアウト、マウスを合わせるとフェードインする仕様になっていた。<br>出たり消えたりがかえって邪魔だったので、themes/freewill/source/js/main.jsの7、10、17、22行目の  </p>
+<pre><code>$(&quot;.navbar&quot;).stop().fadeTo(333, 0.2);
+
+$(&quot;.navbar&quot;).stop().fadeTo(333, 1);
+
+$(&quot;.navbar&quot;).fadeTo(100, 1);
+
+$(&quot;.navbar&quot;).fadeTo(100, 0.2);
+</code></pre><p>を削除したら、フェードアウトしなくなった。  </p>
+<p>navigation.ejs2行目の<code>navbar-fixed-top</code>を削除すると、スクロールとともにナビゲーションバーが上方に移動。  </p>
+<p>_config.ymlの表示不要な項目は先頭に<code>#</code>を付けてコメントアウト。  </p>
+<p>テーマの変更でAtomフィードが表示されなくなってしまったが、freewill/_config.ymlの<code>rss: true</code>を<code>rss: atom.xml</code>に変更してナビゲーションバーに追加したら表示された。<br>layout/_partial/head.ejsのtheme.rssの箇所の<code>link rel=&quot;alternative&quot;</code>を<code>link rel=&quot;alternate&quot;</code>に変更。アドレスバーにもアイコンが表示された。  </p>
+<p>Bootstrapのテーマらしく、すっきりしていて機能的な印象。  </p>
+<p>ただ、paginationのページ上方にでかでかと表示されているJumbotronというのをどう使えばいいか分からない。<br>デフォルトではブログタイトルもしくはブログの説明が表示されるようだが。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/01/hexo-bootstrap/" data-text="HexoのテーマをBootstrap準拠のFreewillにした | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/11/30/sidebar-git/" >Gitリポジトリを利用したブログとサイドバー</a>
 		</h3>
 	
@@ -668,100 +723,6 @@ tags:
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/25/hexo-migrator-octopress/" >Octopress→Hexo移行のプラグイン「hexo-migrator-octopress」を試してみた</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月25日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>OctopressとHexoでは記事ソースのファイルの形式やFront Matter（<code>---</code>で区切られた、title、dateなどの部分）が微妙に異なる。<br>OctopressのcategoriesはHexoではtagsに相当したり。  </p>
-<p>Octopressの記事ソースをHexoに取り込む<a href="https://github.com/sailxjx/hexo-migrator-octopress" target="_blank" rel="external">「hexo-migrator-octopress」</a>というHexo用プラグインがあったので、試してみた。<br>（Hexoの記事ソースをOctopress用に変換するスクリプト「Hexo to Octopress Converter」とは逆向き。）  </p>
-<p>デスクトップ上にhexo-test（Hexoフォルダ）とoctopress-test（Octopressフォルダ）を作った。  </p>
-<p>hexo-testで端末を開き、プラグインをインストール。  </p>
-<pre><code>$ npm install hexo-migrator-octopress
-</code></pre><p>コマンド<code>hexo migrate octopress &lt;source&gt;</code>で記事ソースが変換され、Hexoに取り込まれる。（<code>&lt;source&gt;</code>はOctopressフォルダへのパス）<br>今回のテスト環境では</p>
-<pre><code>$ hexo migrate octopress ~/Desktop/octopress-test
-</code></pre><p>octopress-test/source/_posts/2014-10-25-cosmos.markdownがhexo-test/source/_posts/cosmos.mdとして取り込まれた。<br>（Hexoのデフォルト設定に従い、日付けが削除さるようだ。）  </p>
-<p>Front MatterはOctopressの  </p>
-<pre><code>---
-layout: post
-title: &quot;畑一面のコスモスはなぜ？&quot;
-date: 2014-10-25 15:41:22 +0900
-comments: true
-categories:
-- 未分類
-- 写真
----
-</code></pre><p>から  </p>
-<pre><code>---
-layout: post
-title: &quot;畑一面のコスモスはなぜ？&quot;
-date: 2014-10-25 15:41:22 +0900
-comments: true
-tags:
-- 未分類
-- 写真
----
-</code></pre><p>に変換されたが、変更は<code>categories:</code>が<code>tags:</code>になっただけのようだ。  </p>
-<p>この状態でもHexoで使えるのだが、これを「Hexo to Octopress Converter」でOctopress用に再変換すると  </p>
-<pre><code>---
-layout: post
-comments: true
----
-layout: post
-title: &quot;畑一面のコスモスはなぜ？&quot;
-date: 2014-10-25 15:41:22 +0900
-comments: true
-tags:
-- 未分類
-- 写真
----
-</code></pre><p>となってしまい、<code>tags:</code>が<code>categories:</code>に変換されない。  </p>
-<p>上部の<code>---</code>を削除しておくと<code>categories:</code>に変換はされたが、タイトルの部分が<code>title: &quot;&quot;畑一面のコスモスはなぜ？&quot;&quot;</code>と「”」が重複しまい、rake generateでエラーになる。  </p>
-<p>結局、Octopress用に再変換する場合には、「hexo-migrator-octopress」でHexo用に変換したものを手作業で  </p>
-<pre><code>title: 畑一面のコスモスはなぜ？
-date: 2014-10-25 15:41:22 +0900
-tags:
-- 未分類
-- 写真
----
-</code></pre><p>のように変更しておく必要がありそうだ。<br>それにOctopressでcategoriesとtagsを両方使っていた場合は変換後<code>tags:</code>が重複してしまう。  </p>
-<p>それから、Hexoの新規記事ソースはデフォルトでは日付けがつかないが、_config.ymlの<code>new_post_name:</code>で日付けをつけることが出来る。<br>日付けがあった方が同じタイトルの記事を複数書けたり、過去記事編集の際に探し易かったりと、なにかと都合が良い。  </p>
-<p>Octopressの方のファイル拡張子が.markdownではなく.mdなら「Hexo to Octopress Converter」で変換しても日付けが削除されないので、前もって.mdに変えておいた方が良いかもしれない。<br>拡張子が.mdでも<code>tags:</code>は<code>categories:</code>に変換される。  </p>
-<p>拡張子の一括変換は/_postsディレクトリで  </p>
-<pre><code>$ rename &#39;s/.markdown/.md/&#39; *.markdown
-</code></pre><p>とするか、ファイルマネージャーThunarを使えば簡単のようだ。  </p>
-<p>ーー<br>（関連記事）<br><a href="/2014/11/25/Hexo-to-Octopress-Converter/">Hexo→Octopress変換スクリプト「Hexo to Octopress Converter」</a></p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/25/hexo-migrator-octopress/" data-text="Octopress→Hexo移行のプラグイン「hexo-migrator-octopress」を試してみた | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -803,6 +764,10 @@ tags:
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/03/14/truecrypt-already-running/" ><i class="fa fa-file-o"></i>TrueCryptを起動しようとすると&quot;TrueCry...</a>
+      </li>
+    
+      <li>
         <a href="/2015/03/14/keepass2-font/" ><i class="fa fa-file-o"></i>Keepass2のフォントを日本語化</a>
       </li>
     
@@ -816,10 +781,6 @@ tags:
     
       <li>
         <a href="/2015/03/08/xfce-icon-theme/" ><i class="fa fa-file-o"></i>Xfceに新しいアイコンテーマをインストール</a>
-      </li>
-    
-      <li>
-        <a href="/2015/03/08/yaourt/" ><i class="fa fa-file-o"></i>Yaourtをインストール</a>
       </li>
     
   </ul>
@@ -837,35 +798,35 @@ tags:
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Linux/">Linux<span>41</span></a></li>
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>24</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
 		
 			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>6</span></a></li>
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>24</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>41</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 		
 		</ul>
@@ -877,7 +838,7 @@ tags:
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

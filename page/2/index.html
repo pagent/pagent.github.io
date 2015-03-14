@@ -112,6 +112,51 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/03/01/update-grub-error/" >update-grubで&quot;options:not found&quot;のエラー</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年3月1日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>/etc/default/grubを編集して<code>update-grub</code>しようとしたら、  </p>
+<blockquote>
+<p>/usr/sbin/grub-mkconfig: 6: /etc/default/grub: options: not found</p>
+</blockquote>
+<p>とエラーになった。  </p>
+<p>意味がよく分からず、grub2を再度インストールしてみたが、やはりエラーになる。  </p>
+<p>grubファイルをよく見ると編集した箇所、GRUB_DEFAULT=”Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.16.0-30-generic”のダブルクォーテーションが全角の「”」になっていた。<br>半角に直したらアップデート出来た。<br>エラーメッセージの”6”はgrubファイルの6行目ということらしい。  </p>
+<p>“line 6”と言ってくれたら親切なんだが。<br>“options: not found”も”invalid”等の方が分かりやすい。  </p>
+<p>自分の不注意は棚に上げてだが。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/01/update-grub-error/" data-text="update-grubで&quot;options:not found&quot;のエラー | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/02/27/linkchecker/" >dead-link-checkerがあまりに遅いので「LinkChecker」を使ってみた（リンク切れチェック）</a>
 		</h3>
 	
@@ -506,53 +551,6 @@ $ sudo apt-get install nemo-terminal
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/02/08/scrapbook-error/" >突然ScrapBookの保存データが消えた</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年2月8日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Firfoxで何だったかを見ていたら、突然、英文の警告がポップアップされた。  </p>
-<blockquote>
-<p>ERROR: Failed to initialize datasource.</p>
-<p>[Exception… “Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsILocalFile.create]”  nsresult: “0x80004005 (NS_ERROR_FAILURE)”  location: “JS frame :: resource://scrapbook-modules/utils.jsm :: SBU_getScrapBookDir :: line 24”  data: no]</p>
-</blockquote>
-<p>ページを保存するアドオンScrapBookのもの。<br>気付くとサイドバーのScrapBookのツリーが真っ白で、保存してあったページが無くなっている。  </p>
-<p>「code: 0x80004005」を検索してみたが、Windows起動時のエラーとかVirtualBoxのエラーとか、「0x80004005」はプログラム関係で広く使われているエラーコードらしい。  </p>
-<p>肝心のScrapBookの対処法は見つからなかったが、ScrapBookの「ツール」を開くと、一番下に「緊急時の修復ツール」というのがあった。<br>backupのscrap.rdfファイルからツリーを復元するものらしい。  </p>
-<p>これで復元出来るかと思ったが、バックアップのファイルも見当たらず。<br>ついてない。  </p>
-<p>ーー<br>（追記）<br>よく考えたら、Xubuntu側のScrapBookの保存先は、マルチブート下のWindows 7のSsrapbookフォルダに設定して、共有しているんだった。<br>少し前にWindowsのマウント先を変えたから、それでリンクが切れてしまっただけのようだ。  </p>
-<p>データ保存先を設定し直したら、ちゃんと表示された。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/08/scrapbook-error/" data-text="突然ScrapBookの保存データが消えた | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -594,6 +592,10 @@ $ sudo apt-get install nemo-terminal
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/03/14/truecrypt-already-running/" ><i class="fa fa-file-o"></i>TrueCryptを起動しようとすると&quot;TrueCry...</a>
+      </li>
+    
+      <li>
         <a href="/2015/03/14/keepass2-font/" ><i class="fa fa-file-o"></i>Keepass2のフォントを日本語化</a>
       </li>
     
@@ -607,10 +609,6 @@ $ sudo apt-get install nemo-terminal
     
       <li>
         <a href="/2015/03/08/xfce-icon-theme/" ><i class="fa fa-file-o"></i>Xfceに新しいアイコンテーマをインストール</a>
-      </li>
-    
-      <li>
-        <a href="/2015/03/08/yaourt/" ><i class="fa fa-file-o"></i>Yaourtをインストール</a>
       </li>
     
   </ul>
@@ -628,35 +626,35 @@ $ sudo apt-get install nemo-terminal
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
-		
 			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>24</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>41</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>6</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>24</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
 		
 		
 		</ul>
@@ -668,7 +666,7 @@ $ sudo apt-get install nemo-terminal
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
