@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-03-14T19:56:12.582Z</updated>
+  <updated>2015-03-14T19:57:15.327Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,9 +19,9 @@
     <link href="http://pagent.github.io/2015/03/14/install-hexo-283/"/>
     <id>http://pagent.github.io/2015/03/14/install-hexo-283/</id>
     <published>2015-03-14T13:33:52.000Z</published>
-    <updated>2015-03-14T19:52:43.394Z</updated>
+    <updated>2015-03-14T19:57:07.829Z</updated>
     <content type="html"><![CDATA[<p>XubuntuでHexoを使っていたが、Arch Linuxにもインストールした。<br>いつの間にかHexoのバージョンが上がっていたようで、Arch LinuxにはHexo 3.0.0がインストールされた。  </p>
-<p>CLIがメインモジュールから分離されたりと、かなり大幅な変更があるようだ。<br>サーバー機能もHexo本体とは別になっていて、hexo-serverをインストールしないと<code>hexo server</code>コマンドが使えない。  </p>
+<p>CLIがメインモジュールから分離されたりと、かなり大幅な変更があるようだ。<br><a href="https://github.com/hexojs/hexo/wiki/Breaking-Changes-in-Hexo-3.0" target="_blank" rel="external">Breaking Changes in Hexo 3.0 · hexojs/hexo Wiki</a><br>サーバー機能もHexo本体とは別になっていて、hexo-serverをインストールしないと<code>hexo server</code>コマンドが使えない。  </p>
 <p>XubuntuのHexo 2.8.3をアップグレードして、これまでの作業フォルダ（WindowsのDドライブに置いてある）を使おうと試みたが、Hexo 3へのアップグレードがうまく行かない。  </p>
 <p>そこでArch Linuxにも旧バージョンのHexo 2.8.3をインストールすることにした。  </p>
 <p>Hexoの公式サイトには旧バージョンのインストール方法が見あたらなかったが、幸い検索で見つかった。<br>下記コマンドで良いようだ。  </p>
