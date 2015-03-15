@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-03-14T19:59:47.268Z</updated>
+  <updated>2015-03-15T01:29:25.379Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -16,10 +16,10 @@
   
   <entry>
     <title><![CDATA[Hexo 2.8.3をインストール]]></title>
-    <link href="http://pagent.github.io/2015/03/14/install-hexo-283/"/>
-    <id>http://pagent.github.io/2015/03/14/install-hexo-283/</id>
+    <link href="http://pagent.github.io/2015/03/14/hexo-283-install/"/>
+    <id>http://pagent.github.io/2015/03/14/hexo-283-install/</id>
     <published>2015-03-14T13:33:52.000Z</published>
-    <updated>2015-03-14T19:59:40.605Z</updated>
+    <updated>2015-03-14T19:59:40.000Z</updated>
     <content type="html"><![CDATA[<p>XubuntuでHexoを使っていたが、Arch Linuxにもインストールした。<br>いつの間にかHexoのバージョンが上がっていたようで、Arch LinuxにはHexo 3.0.0がインストールされた。  </p>
 <p>CLIがメインモジュールから分離されたりと、かなり大幅な変更があるようだ。<br><a href="https://github.com/hexojs/hexo/wiki/Breaking-Changes-in-Hexo-3.0" target="_blank" rel="external">Breaking Changes in Hexo 3.0 · hexojs/hexo Wiki</a><br>サーバー機能もHexo本体とは別になっていて、hexo-serverをインストールしないと<code>hexo server</code>コマンドが使えない。  </p>
 <p>XubuntuのHexo 2.8.3をアップグレードして、これまでの作業フォルダ（WindowsのDドライブに置いてある）を使おうと思ったが、Hexo 3へのアップグレードがうまく行かない。  </p>
@@ -44,7 +44,7 @@
     <link href="http://pagent.github.io/2015/03/14/truecrypt-already-running/"/>
     <id>http://pagent.github.io/2015/03/14/truecrypt-already-running/</id>
     <published>2015-03-14T01:57:05.000Z</published>
-    <updated>2015-03-14T13:24:22.623Z</updated>
+    <updated>2015-03-14T13:24:22.000Z</updated>
     <content type="html"><![CDATA[<p>Arch LinuxにTrueCryptをインストールした。  </p>
 <p>pacmanからインストールすると、guiツールが無くcuiツールのみのようなので、ネットでtruecrypt-7.1aを探しダウンロード、インストールした。<br>（TrueCryptの最終バージョン7.2は解読機能のみで、新たに暗号化ボリュームを作れない。）  </p>
 <p>ちゃんと使用出来たが、いったんPCを終了して、その後TrueCryptを起動しようとすると、”TrueCrypt is already running”とのみ表示され、guiツールが表示されなくなってしまった。<br>コマンドラインからだと使用出来るようだが、使い勝手が悪い。  </p>
@@ -75,7 +75,7 @@ fi
     <link href="http://pagent.github.io/2015/03/14/keepass2-font/"/>
     <id>http://pagent.github.io/2015/03/14/keepass2-font/</id>
     <published>2015-03-13T22:47:05.000Z</published>
-    <updated>2015-03-14T13:12:32.022Z</updated>
+    <updated>2015-03-14T13:12:32.000Z</updated>
     <content type="html"><![CDATA[<p>Windowsではパスワード管理ソフトとして、長らくIDMを使っていた。  </p>
 <p>IDMはとても便利で長らくお世話になったが、Linuxでは使えない。<br>OSをWindowsからLinuxに乗り換える際、パスワード管理ソフトをクロスプラットフォームのKeepass2に変更した。  </p>
 <p>Keepass2の日本語化は、Xubuntuでは<a href="http://keepass.info/translations.html" target="_blank" rel="external">Translations - KeePass</a>からKeePass-2.28-Japanese.zipをダウンロードし解凍。<br>Japanese.lngxをJapanese.lngxを/usr/lib/keepass2内にコピー。<br>Keepass2のView→Change LanguageからJapaneseを選択したら日本語化出来た。  </p>
