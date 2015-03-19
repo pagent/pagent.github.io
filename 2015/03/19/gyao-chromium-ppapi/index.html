@@ -115,7 +115,7 @@
 <p>だが今週初めから、上記の方法ではGyaoの全ての動画が視聴出来なくなった。<br>Gyaoの動作環境が全動画で「Adobe Flash Player 15 以上」に引き上げられたためらしい。<br>（Linux用Adobe Flash Playerは11.2までで終了）  </p>
 <p>Linuxでバージョン15以上のFlash Playerを使用する方法はいくつかあるようだったが、ChromiumでPPAPI（Pepper Plugin API）を利用するのが最も簡便だった。<br><a href="http://gihyo.jp/admin/serial/01/ubuntu-recipe/0340" target="_blank" rel="external">第340回　Firefoxで最新バージョンのFlashを使用するには：Ubuntu Weekly Recipe｜gihyo.jp … 技術評論社</a>  </p>
 <p>Debian系ならsynapticから”pepperflashplugin-nonfree”をインストール可能。<br>“nonfree” とあるのは、Adobeに所有権があるというだけで、無料で使用出来る。<br><a href="https://wiki.ubuntulinux.jp/UbuntuTips/Application/Chromium/Getting-Flash" target="_blank" rel="external">UbuntuTips/Application/Chromium/Getting-Flash - Ubuntu Japanese Wiki</a>  </p>
-<p>“pepperflashplugin-nonfree”をインストールし、Chromiumのアドレス欄に<code>chrome://plugins/</code>と入力すると、現在導入されているプラグインが表示される。<br>（2015年3月19日現在では”Adobe Flash Player - バージョン: 17.0.0.134””Shockwave Flash 17.0 r0”と表示されている。）  </p>
+<p>“pepperflashplugin-nonfree”をインストールし、Chromiumのアドレス欄に<code>chrome://plugins/</code>と入力すると、2015年3月19日現在では”Adobe Flash Player - バージョン: 17.0.0.134””Shockwave Flash 17.0 r0”と表示されている。  </p>
 <p>User-Agent Switcherも入れて、OSをWindowsもしくはMacと宣言することで、Gyaoが視聴可能になった。  </p>
 <p>User-Agent Switcherに元から入っている「Chome on Mac」（Chrome 27.0）だとGoogleの検索結果が古い形式で表示されるので、下記を追加した。  </p>
 <p><code>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.76 Safari/537.36</code></p>
