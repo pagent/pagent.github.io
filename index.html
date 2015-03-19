@@ -112,6 +112,51 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/03/19/gyao-chromium-ppapi/" >Chromium+Pepper Plugin API（PPAPI）でGyaoを視聴</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年3月19日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>GyaoはWindows、Mac以外のOSでの視聴を制限している。  </p>
+<p>これまでFirefoxのアドオンUser Agent Switcherで、OSをWindowsもしくはMac OS Xと宣言することで、LinuxでもGyaoの視聴が出来ていた。<br>一部の動画はFlashのバージョンが足りてないらしく見られなかったが、ほとんどの動画は視聴可能だった。  </p>
+<p>だが今週初めから、上記の方法ではGyaoの全ての動画が視聴出来なくなった。<br>Gyaoの動作環境が全動画で「Adobe Flash Player 15 以上」に引き上げられたためらしい。<br>（Linux用Adobe Flash Playerは11.2までで終了）  </p>
+<p>Linuxでバージョン15以上のFlash Playerを使用する方法はいくつかあるようだったが、ChromiumでPPAPI（Pepper Plugin API）を利用するのが最も簡便だった。<br><a href="http://gihyo.jp/admin/serial/01/ubuntu-recipe/0340" target="_blank" rel="external">第340回　Firefoxで最新バージョンのFlashを使用するには：Ubuntu Weekly Recipe｜gihyo.jp … 技術評論社</a>  </p>
+<p>Debian系ならsynapticから”pepperflashplugin-nonfree”をインストール可能。<br>“nonfree” とあるのは、Adobeに所有権があるというだけで、無料で使用出来る。<br><a href="https://wiki.ubuntulinux.jp/UbuntuTips/Application/Chromium/Getting-Flash" target="_blank" rel="external">UbuntuTips/Application/Chromium/Getting-Flash - Ubuntu Japanese Wiki</a>  </p>
+<p>“pepperflashplugin-nonfree”をインストールし、Chromiumのアドレス欄に<code>chrome://plugins/</code>と入力すると、現在導入されているプラグインが表示される。<br>（2015年3月19日現在では”Adobe Flash Player - バージョン: 17.0.0.134””Shockwave Flash 17.0 r0”と表示されている。）  </p>
+<p>User-Agent Switcherも入れて、OSをWindowsもしくはMacと宣言することで、Gyaoが視聴可能になった。  </p>
+<p>User-Agent Switcherに元から入っている「Chome on Mac」（Chrome 27.0）だとGoogleの検索結果が古い形式で表示されるので、下記を追加した。  </p>
+<p><code>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.76 Safari/537.36</code></p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/19/gyao-chromium-ppapi/" data-text="Chromium+Pepper Plugin API（PPAPI）でGyaoを視聴 | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/03/14/hexo-283-install/" >Hexo 2.8.3をインストール</a>
 		</h3>
 	
@@ -516,79 +561,6 @@ Server = http://repo.archlinux.fr/$arch
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/03/02/easy2boot/" >isoファイルを置くだけでUSBマルチブート可能な「Easy2Boot」</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年3月2日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>isoファイルからブータブルUSBメモリを作成出来るツールは多々あるが、「Easy2Boot」は作成した領域にisoファイルをコピーペーストするだけで、マルチブート可能になるようだ。  </p>
-<p>公式サイト（英語）以外には解説が見当たらず、その公式サイトも「Easy2Boot」のダウンロードやインストール方法など、どこに記載があるのか分かりづらかった。<br>だが使ってみると、配置したisoファイルは自動的にブートメニューに追加されるし、とても便利だった。  </p>
-<h3 id="Linux環境でのインストール">Linux環境でのインストール</h3>
-<p>まず、<a href="http://www.easy2boot.com/download/" target="_blank" rel="external">Downloads</a>からEasy2Boot_v1.62.zipをダウンロードし、解凍。  </p>
-<p>Linux環境で作業したので、<a href="http://www.rmprepusb.com/tutorials/114" target="_blank" rel="external">114 - How to make an Easy2Boot (grub4dos) USB Flash drive using linux - RMPrepUSB</a>を参照したが、解凍して出て来たフォルダ内にも同様の解説があった。<br>_ISO/docs/linux_utils/ReadMe_fmt.sh.txt  </p>
-<p>（Windows用の解説は_ISO/docs/Make_E2B_USB_Drive/ReadMe.txt）  </p>
-<p>linux_utilsフォルダ内で端末を開き、  </p>
-<pre><code>sudo chmod 777 *
-</code></pre><p>フォルダ内のすべてのファイルのパーティションを777に変更し、その後  </p>
-<pre><code>sudo ./fmt.sh
-</code></pre><p>インストール先を聞かれるので、OKなら「y」。<br>違う場合は「n」の後、自分で指定。<br>（外付けHDDにもインストール可能で、さらに2番目以降のパーティションにもインストール可。）  </p>
-<p>フォーマットして良いか聞かれるので、良ければ「y」。  </p>
-<p>指定したパーティションに「Easy2Boot」がコピーされ、ブートローダーもインストールされた。  </p>
-<h3 id="起動とデフラグ">起動とデフラグ</h3>
-<p>使い方は簡単で、_ISO内の空いてるフォルダ（LINUXやWINなど）にisoファイルを追加するだけ。  </p>
-<p>今回は_ISO/LINUX内にLxPup-15.02.1-s-nopae.iso、_ISO/BACKUP内にclonezilla-live-2.1.2-43-i686-pae.isoを配置した。  </p>
-<p>ブートすると、LxPupは起動出来たが、clonezillaは「ファイルがcontiguous（隣接）じゃない」と言われ、上手く起動出来なかった。<br>どうやら断片化しているからデフラグが必要ということらしい。  </p>
-<p>isoファイルから直接ブートする際には、ちょっとした断片化でも起動出来ないようで、「Easy2Boot」ではいろいろ対策が用意されている。  </p>
-<p>defragfs.pl（_ISO/docs/linux_utils内）やWINCONTIG（_ISO/docs/内）の他、特にLinuxユーザーの為に_ISO内にCONTIG.ISOというファイルが同梱されている。  </p>
-<p>CONTIG.ISOは、isoファイルに断片化があった際に自動的にデフラグ操作を行うためのものらしい。<br>サイズが500MBに設定されていて、Easy2Bootインストール直後の状態でのほとんど全ての容量にあたる。<br>clonezillaが上手く起動出来なかったのもフリーズしていた訳ではなく、CONTIG.ISOがデフラグ操作を行っていたのかもしれない。<br>ただかなり時間が掛かるようだし、サイズが500MB以上のisoファイルをデフラグするためには、CONTIG.ISOもそれ以上のサイズにリサイズしておく必要があるようだ。  </p>
-<p>defragfs.plはなぜか機能しなかったが、Windows用のWinContigでデフラグしたらclonezillaも起動出来るようになった。  </p>
-<p>WinContigはWindows 7を起動して使用したが、Windows PE（Windows プレインストール環境）やHiren’s BootCDの「Mini Windows Xp」など、Windows環境を提供するisoファイルをEasy2Bootに入れておけば、Easy2BootによるブートでWinContigを利用出来る。<br>この場合はCONTIG.ISOは必要ないので、削除してしまっても良いようだ。  </p>
-<h3 id="フォーマットをNTSFにする">フォーマットをNTSFにする</h3>
-<p>4GBを超えるファイルを利用するためには、Easy2Boot領域をFat32ではなく、NTSFもしくはext3、ext4にしておく必要があるが、なるべくなら4GB以上のファイルも扱いたい。  </p>
-<p>Easy2Bootインストール時に領域がFat32にフォーマットされてしまうが、_ISO/docs/linux_utils内のfmt.shファイルの131行目の  </p>
-<pre><code>/sbin/mkfs.vfat -F32 -n &quot;$label&quot; $device
-</code></pre><p>を</p>
-<pre><code>/sbin/mkfs.ntfs -n &quot;$label&quot; $device
-</code></pre><p>に変更することでNTSFにすることが出来た。  </p>
-<p>後からファイルを保持したままFat32をNTSFに変換することも可能のようなので、それでも良いかもしれない。  </p>
-<h3 id="よく分からないトラブル">よく分からないトラブル</h3>
-<p>外付けHDDではこれで上手く行ったが、USBメモリではEasy2Bootを起動しようとしたら、パーティションの「パーティションのlast sectorをチェックしている」というような表示のまま止まってしまった。  </p>
-<p>USBメモリを一旦抜き、再度挿入してconstinue。<br>ブートメニュー画面で”Install Grub4dos…”を選択したら、その後は起動出来るようになった。  </p>
-<p>理由はよく分からないままだが、使用したUSBメモリの特性やインストール方法などにもよるのかもしれない。  </p>
-<h3 id="感想">感想</h3>
-<p>以上、少しややこしかったが、配置するだけで（正確にはデフラグの必要があったりするが）isoファイルを起動出来る「Easy2Boot」はなかなか便利だ。<br>Linuxディストリビューションを試してみたい時にもDVD-RWなどに焼く必要が無くなる。<br>導入がもう少し簡単だったらとは思うが、isoファイルを直接起動するためには仕方が無いのだろう。  </p>
-<p>ーー<br>（追記）<br>Windowsの場合はRMPrepUSBを使って、もっと簡単にEasy2Bootをインストール出来るようだ。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/02/easy2boot/" data-text="isoファイルを置くだけでUSBマルチブート可能な「Easy2Boot」 | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -630,6 +602,10 @@ Server = http://repo.archlinux.fr/$arch
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/03/19/gyao-chromium-ppapi/" ><i class="fa fa-file-o"></i>Chromium+Pepper Plugin API（...</a>
+      </li>
+    
+      <li>
         <a href="/2015/03/14/hexo-283-install/" ><i class="fa fa-file-o"></i>Hexo 2.8.3をインストール</a>
       </li>
     
@@ -643,10 +619,6 @@ Server = http://repo.archlinux.fr/$arch
     
       <li>
         <a href="/2015/03/12/xfce-nemo-icon/" ><i class="fa fa-file-o"></i>Arch Linux+Xfce。nemoをインストール...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/03/09/vostro1000-video-driver/" ><i class="fa fa-file-o"></i>DELL Vostro1000（Xp機）のビデオドライバー</a>
       </li>
     
   </ul>
@@ -664,35 +636,35 @@ Server = http://repo.archlinux.fr/$arch
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>41</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
 			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
 		
 			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
 		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>42</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 		
 		</ul>
@@ -704,7 +676,7 @@ Server = http://repo.archlinux.fr/$arch
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

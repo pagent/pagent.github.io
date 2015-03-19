@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-03-17T12:34:22.456Z</updated>
+  <updated>2015-03-19T00:47:49.207Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,31 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Chromium+Pepper Plugin API（PPAPI）でGyaoを視聴]]></title>
+    <link href="http://pagent.github.io/2015/03/19/gyao-chromium-ppapi/"/>
+    <id>http://pagent.github.io/2015/03/19/gyao-chromium-ppapi/</id>
+    <published>2015-03-19T00:00:39.000Z</published>
+    <updated>2015-03-19T00:46:59.000Z</updated>
+    <content type="html"><![CDATA[<p>GyaoはWindows、Mac以外のOSでの視聴を制限している。  </p>
+<p>これまでFirefoxのアドオンUser Agent Switcherで、OSをWindowsもしくはMac OS Xと宣言することで、LinuxでもGyaoの視聴が出来ていた。<br>一部の動画はFlashのバージョンが足りてないらしく見られなかったが、ほとんどの動画は視聴可能だった。  </p>
+<p>だが今週初めから、上記の方法ではGyaoの全ての動画が視聴出来なくなった。<br>Gyaoの動作環境が全動画で「Adobe Flash Player 15 以上」に引き上げられたためらしい。<br>（Linux用Adobe Flash Playerは11.2までで終了）  </p>
+<p>Linuxでバージョン15以上のFlash Playerを使用する方法はいくつかあるようだったが、ChromiumでPPAPI（Pepper Plugin API）を利用するのが最も簡便だった。<br><a href="http://gihyo.jp/admin/serial/01/ubuntu-recipe/0340" target="_blank" rel="external">第340回　Firefoxで最新バージョンのFlashを使用するには：Ubuntu Weekly Recipe｜gihyo.jp … 技術評論社</a>  </p>
+<p>Debian系ならsynapticから”pepperflashplugin-nonfree”をインストール可能。<br>“nonfree” とあるのは、Adobeに所有権があるというだけで、無料で使用出来る。<br><a href="https://wiki.ubuntulinux.jp/UbuntuTips/Application/Chromium/Getting-Flash" target="_blank" rel="external">UbuntuTips/Application/Chromium/Getting-Flash - Ubuntu Japanese Wiki</a>  </p>
+<p>“pepperflashplugin-nonfree”をインストールし、Chromiumのアドレス欄に<code>chrome://plugins/</code>と入力すると、現在導入されているプラグインが表示される。<br>（2015年3月19日現在では”Adobe Flash Player - バージョン: 17.0.0.134””Shockwave Flash 17.0 r0”と表示されている。）  </p>
+<p>User-Agent Switcherも入れて、OSをWindowsもしくはMacと宣言することで、Gyaoが視聴可能になった。  </p>
+<p>User-Agent Switcherに元から入っている「Chome on Mac」（Chrome 27.0）だとGoogleの検索結果が古い形式で表示されるので、下記を追加した。  </p>
+<p><code>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.76 Safari/537.36</code></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>GyaoはWindows、Mac以外のOSでの視聴を制限している。  </p>
+<p>これまでFirefoxのアドオンUser Agent Switcherで、OSをWindowsもしくはMac OS Xと宣言することで、LinuxでもGyaoの視聴が出来ていた。<br>一]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Hexo 2.8.3をインストール]]></title>
@@ -537,24 +562,6 @@ $ ]]>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>サブマシンのネットブックでArch Linuxを試してみようと思ったが、ブートローダーのGRUBをインストールするところで、BIOS（MBR形式）ではなくUEFI（GPT）を選択してしまった。<br>そのせいでMBRが壊れてしまったようで、起動出来なくなってしまった。<br]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Kubuntuのネットブック向けデスクトップ「Plasma Netbook」を通常のデスクトップに]]></title>
-    <link href="http://pagent.github.io/2015/02/11/kde-plasma-netbook/"/>
-    <id>http://pagent.github.io/2015/02/11/kde-plasma-netbook/</id>
-    <published>2015-02-11T04:57:42.000Z</published>
-    <updated>2015-02-11T08:26:28.000Z</updated>
-    <content type="html"><![CDATA[<p>Kubuntuのネットブック向けデスクトップは「Plasma Netbook」というそうで、ディスプレイの小さいネットブックで使う分には、これはこれで便利そうなのだが、FirefoxやQupzillaなどのアプリケーションでメニューバーを表示出来ないという不便さがある。<br>特にQupzillaでは設定画面に行けず、Qupzillaの設定を変更出来ない。</p>
-<p>「KDEシステム設定」→「ワークスペースの挙動」→「Workspace」でWorkspace typeをNetbookからDesktopにしたら、通常のデスクトップに変更出来た。  </p>
-<p>ーー<br>ネットブックでKubuntuは厳しいのではないかと思ったが、ログインしてからの動作は許容範囲内。<br>Xubuntuと較べると、もっさり感はぬぐえないが。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Kubuntuのネットブック向けデスクトップは「Plasma Netbook」というそうで、ディスプレイの小さいネットブックで使う分には、これはこれで便利そうなのだが、FirefoxやQupzillaなどのアプリケーションでメニューバーを表示出来ないという不便さがある。<b]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
