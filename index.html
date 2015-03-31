@@ -112,6 +112,45 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/03/31/gyao-cm-skip/" >AdBlockでGyaoのCMをスキップ</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年3月31日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>LinuxではFirefoxでGyaoを見られなくなった（FirefoxにPepper Flashのwrapperを入れたら見られるようだが）ので、ChromiumでGyaoを見ている。<br>Firefoxの時は、動画を一時停止してその後再開すると、いつまでも読み込み中のマークが回っていたが、Chromium+PPAPIだとFlashのバージョンが17.0のためか、そういう不具合も無く快適。  </p>
+<p>もう一つ気付いたのが、拡張機能<a href="https://chrome.google.com/webstore/detail/adblock/gighmmpiobklfepjocnamgkkbiglidom?hl=ja" target="_blank" rel="external">AdBlock</a>を入れると、GyaoのCMをスキップ出来るようだ。<br>Adblock Plusだとスキップ出来ない。  </p>
+<p>Adblock Plusでも、AdBlockでブロックしているフィルタを追加したらCMをスキップ出来るのだと思うが、どのフィルタなのかは確認していない。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/31/gyao-cm-skip/" data-text="AdBlockでGyaoのCMをスキップ | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/03/19/gyao-chromium-ppapi/" >Chromium+Pepper Plugin API（PPAPI）でGyaoを視聴</a>
 		</h3>
 	
@@ -518,49 +557,6 @@ Server = http://repo.archlinux.fr/$arch
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/03/06/clonezilla-restore-different-partition/" >Clonezillaでバックアップしたイメージを別のパーティションにリストア</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年3月6日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Clonezillaでバックアップしたパーティションのイメージを、元とは違う別のパーティションにリストアした。<br>（下記はsda1からバックアップしたArch Linuxをsda6にリストアした例）  </p>
-<p>・バックアップしたイメージフォルダ内のpartsファイルの記述をsda1からsda6に変更。  </p>
-<p>・バックアップイメージsda1.ext4-ptcl-img.gz.aaをsda6.ext4-ptcl-img.gz.aaに変更。<br>（….gz.ab、….gz.acと複数ある場合はすべて変更）  </p>
-<p>上記で別のパーティションにリストア出来た。  </p>
-<p>ただこれだけではArch Linuxを起動出来ないので、リストアしたsda6内の/etc/fstabと/boot/syslinux/syslinux.cfgの記述を修正。<br>（ブートローダーがGrub2の場合はgrub.cfgの修正でOKか）  </p>
-<p>sda6にリストアしたArch Linuxを起動出来た。  </p>
-<p>ーー<br>（参照記事）<br><a href="http://drbl.org/faq/fine-print.php?path=./2_System/102_restore_image_to_different_partition.faq#102_restore_image_to_different_partition.faq" target="_blank" rel="external">How can I restore an image of a partition to different partition, e.g. restore the image of /dev/sda5 to /dev/sda6? - DRBL - FAQ/Q&amp;A</a></p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/06/clonezilla-restore-different-partition/" data-text="Clonezillaでバックアップしたイメージを別のパーティションにリストア | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -602,6 +598,10 @@ Server = http://repo.archlinux.fr/$arch
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/03/31/gyao-cm-skip/" ><i class="fa fa-file-o"></i>AdBlockでGyaoのCMをスキップ</a>
+      </li>
+    
+      <li>
         <a href="/2015/03/19/gyao-chromium-ppapi/" ><i class="fa fa-file-o"></i>Chromium+Pepper Plugin API（...</a>
       </li>
     
@@ -615,10 +615,6 @@ Server = http://repo.archlinux.fr/$arch
     
       <li>
         <a href="/2015/03/14/keepass2-font/" ><i class="fa fa-file-o"></i>Keepass2のフォントを日本語化</a>
-      </li>
-    
-      <li>
-        <a href="/2015/03/12/xfce-nemo-icon/" ><i class="fa fa-file-o"></i>Arch Linux+Xfce。nemoをインストール...</a>
       </li>
     
   </ul>
@@ -636,35 +632,35 @@ Server = http://repo.archlinux.fr/$arch
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>9</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
-		
 			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
 		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
 		
 			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>42</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
 		
 		
 		</ul>
@@ -676,7 +672,7 @@ Server = http://repo.archlinux.fr/$arch
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
