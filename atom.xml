@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-03-31T15:49:33.308Z</updated>
+  <updated>2015-03-31T23:52:40.787Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,9 +19,9 @@
     <link href="http://pagent.github.io/2015/04/01/xfce4-terminal-browser/"/>
     <id>http://pagent.github.io/2015/04/01/xfce4-terminal-browser/</id>
     <published>2015-03-31T15:27:13.000Z</published>
-    <updated>2015-03-31T15:41:48.344Z</updated>
-    <content type="html"><![CDATA[<p>「お気に入りのアプリケーション」のブラウザをFirefoxにしていて、これまでXfce4 terminal内のリンクを開く時もFirefoxで開けていた。<br>だが、Chromiumをインストールしてから、リンクがChromiumで開くようになってしまった。<br>Xfce4 terminal自体にはブラウザを指定する箇所が無い。  </p>
-<p>検索すると、下記トピックが見つかった。<br><a href="https://bbs.archlinux.org/viewtopic.php?id=191547" target="_blank" rel="external">[SOLVED] Xfce terminal open links with wrong browser. / Applications &amp; Desktop Environments / Arch Linux Forums</a>  </p>
+    <updated>2015-03-31T23:51:52.215Z</updated>
+    <content type="html"><![CDATA[<p>「お気に入りのアプリケーション」のブラウザをFirefoxにしていて、これまでXfce4 terminal内のリンクを開く時もFirefoxで開けていた。<br>だが、Chromiumをインストールしてから、リンクがChromiumで開くようになってしまった。<br>Xfce4 terminalの設定ではブラウザを指定出来ない。  </p>
+<p>検索すると下記トピックが見つかった。<br><a href="https://bbs.archlinux.org/viewtopic.php?id=191547" target="_blank" rel="external">[SOLVED] Xfce terminal open links with wrong browser. / Applications &amp; Desktop Environments / Arch Linux Forums</a>  </p>
 <p>~/.config/mimeapps.listの[Added Associations]の箇所に下記を追記した。  </p>
 <pre><code>text/vcard=firefox.desktop;
 text/html=firefox.desktop;
