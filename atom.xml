@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-03-31T00:48:35.184Z</updated>
+  <updated>2015-03-31T15:07:37.095Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,11 +15,39 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Lubuntuのアップデート中にフリーズ]]></title>
+    <link href="http://pagent.github.io/2015/03/31/lubuntu-update-stuck/"/>
+    <id>http://pagent.github.io/2015/03/31/lubuntu-update-stuck/</id>
+    <published>2015-03-31T14:42:55.000Z</published>
+    <updated>2015-03-31T15:07:21.907Z</updated>
+    <content type="html"><![CDATA[<p>Lubuntu14.04をアップデート中に  </p>
+<pre><code>run-parts: executing /etc/kernel/postinst.d/zz-update-grub 3.16.0-33-generic /boot/vmlinuz-3.16.0-33-generic
+</code></pre><p>の表示のところでフリーズしてしまった。<br>カーネルのアップデート中だったので嫌な予感がしたが、やむなく強制終了した。<br>起動しようとすると、案の定  </p>
+<pre><code>buffer i/o error on device sda4
+</code></pre><p>と延々エラーを吐いて起動してくれない。  </p>
+<p>sda4はswapに当てていたので、隣のArch Linuxを起動して、sda4を再度swapでフォーマットし直したら起動できるようになった。<br>（fstabの記載はUUIDではなくデバイス名にしていた）  </p>
+<p>起動は出来たが、今度はSynapticを使おうとすると、  </p>
+<pre><code>E: dpkg は中断されました。問題を修正するには &#39;dpkg --configure -a&#39; を手動で実行する必要があります。
+E: _cache-&gt;open() failed, please report.
+</code></pre><p>という表示が出る。<br>言われたとおり<code>dpkg --configure -a</code>を実行すると、中断した箇所からアップデートが再開された。  </p>
+<p>今度はアップデートも無事終了。  </p>
+<p>意味はよく分かってはいないが、ネットの情報の助けがあれば、エラー表示はとても助かる。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Lubuntu14.04をアップデート中に  </p>
+<pre><code>run-parts: executing /etc/kernel/postinst.d/zz-update-grub 3.16.0-33-generic /boot/vmlinuz-3.16.0-]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[AdBlockでGyaoのCMをスキップ]]></title>
     <link href="http://pagent.github.io/2015/03/31/gyao-cm-skip/"/>
     <id>http://pagent.github.io/2015/03/31/gyao-cm-skip/</id>
     <published>2015-03-31T00:30:24.000Z</published>
-    <updated>2015-03-31T00:48:26.000Z</updated>
+    <updated>2015-03-31T00:48:26.539Z</updated>
     <content type="html"><![CDATA[<p>LinuxではFirefoxでGyaoを見られなくなったので、ChromiumでGyaoを見ている。<br>（FirefoxにPepper Flashのwrapperを入れたら、Firefoxでも見られるようだが）<br>Firefoxの時は、動画を一時停止してその後再開すると、読み込み中のマークが回り続けて消えなかったが、Chromium+PPAPIだとFlashのバージョンが17.0のためか、そういう不具合も無く快適。  </p>
 <p>もう一つ気付いたのが、拡張機能<a href="https://chrome.google.com/webstore/detail/adblock/gighmmpiobklfepjocnamgkkbiglidom?hl=ja" target="_blank" rel="external">AdBlock</a>を入れると、GyaoのCMをスキップ出来るようだ。<br>Adblock Plusだとスキップ出来ない。  </p>
 <p>Adblock Plusでも、AdBlockでブロックしているフィルタを追加したらCMをスキップ出来るのだと思うが、どのフィルタなのかは確認していない。</p>
@@ -37,7 +65,7 @@
     <link href="http://pagent.github.io/2015/03/19/gyao-chromium-ppapi/"/>
     <id>http://pagent.github.io/2015/03/19/gyao-chromium-ppapi/</id>
     <published>2015-03-19T00:00:39.000Z</published>
-    <updated>2015-03-20T22:29:08.000Z</updated>
+    <updated>2015-03-20T22:29:08.108Z</updated>
     <content type="html"><![CDATA[<p>GyaoはWindows、Mac以外のOSでの視聴を制限している。  </p>
 <p>これまでFirefoxのアドオンUser Agent Switcherで、OSをWindowsもしくはMac OS Xと宣言することで、LinuxでもGyaoの視聴が出来ていた。<br>一部の動画はFlashのバージョンが足りてないらしく見られなかったが、ほとんどの動画は視聴可能だった。  </p>
 <p>だが今週初めから、上記の方法ではGyaoの全ての動画が視聴出来なくなった。<br>Gyaoの動作環境が全動画で「Adobe Flash Player 15 以上」に引き上げられたためらしい。<br>（Linux用Adobe Flash Playerは11.2までで終了）  </p>
@@ -62,7 +90,7 @@
     <link href="http://pagent.github.io/2015/03/14/hexo-283-install/"/>
     <id>http://pagent.github.io/2015/03/14/hexo-283-install/</id>
     <published>2015-03-14T13:33:52.000Z</published>
-    <updated>2015-03-17T12:33:59.000Z</updated>
+    <updated>2015-03-17T12:33:59.685Z</updated>
     <content type="html"><![CDATA[<p>XubuntuでHexoを使っていたが、Arch Linuxにもインストールした。<br>いつの間にかHexoのバージョンが上がっていたようで、Arch LinuxにはHexo 3.0.0がインストールされた。  </p>
 <p>CLIがメインモジュールから分離されたりと、かなり大幅な変更があるようだ。<br><a href="https://github.com/hexojs/hexo/wiki/Breaking-Changes-in-Hexo-3.0" target="_blank" rel="external">Breaking Changes in Hexo 3.0 · hexojs/hexo Wiki</a><br>サーバー機能もHexo本体とは別になっていて、hexo-serverをインストールしないと<code>hexo server</code>コマンドが使えない。  </p>
 <p>XubuntuのHexo 2.8.3をアップグレードして、これまでの作業フォルダ（WindowsのDドライブに置いてある）を使おうと思ったが、Hexo 3へのアップグレードがうまく行かない。  </p>
@@ -97,7 +125,7 @@ $ npm install hexo-renderer-stylus@0.1 --save
     <link href="http://pagent.github.io/2015/03/14/truecrypt-already-running/"/>
     <id>http://pagent.github.io/2015/03/14/truecrypt-already-running/</id>
     <published>2015-03-14T01:57:05.000Z</published>
-    <updated>2015-03-14T13:24:22.000Z</updated>
+    <updated>2015-03-14T13:24:22.623Z</updated>
     <content type="html"><![CDATA[<p>Arch LinuxにTrueCryptをインストールした。  </p>
 <p>pacmanからインストールすると、guiツールが無くcuiツールのみのようなので、ネットでtruecrypt-7.1aを探しダウンロード、インストールした。<br>（TrueCryptの最終バージョン7.2は解読機能のみで、新たに暗号化ボリュームを作れない。）  </p>
 <p>ちゃんと使用出来たが、いったんPCを終了して、その後TrueCryptを起動しようとすると、”TrueCrypt is already running”とのみ表示され、guiツールが表示されなくなってしまった。<br>コマンドラインからだと使用出来るようだが、使い勝手が悪い。  </p>
@@ -128,7 +156,7 @@ fi
     <link href="http://pagent.github.io/2015/03/14/keepass2-font/"/>
     <id>http://pagent.github.io/2015/03/14/keepass2-font/</id>
     <published>2015-03-13T22:47:05.000Z</published>
-    <updated>2015-03-14T13:12:32.000Z</updated>
+    <updated>2015-03-14T13:12:32.022Z</updated>
     <content type="html"><![CDATA[<p>Windowsではパスワード管理ソフトとして、長らくIDMを使っていた。  </p>
 <p>IDMはとても便利で長らくお世話になったが、Linuxでは使えない。<br>OSをWindowsからLinuxに乗り換える際、パスワード管理ソフトをクロスプラットフォームのKeepass2に変更した。  </p>
 <p>Keepass2の日本語化は、Xubuntuでは<a href="http://keepass.info/translations.html" target="_blank" rel="external">Translations - KeePass</a>からKeePass-2.28-Japanese.zipをダウンロードし解凍。<br>Japanese.lngxをJapanese.lngxを/usr/lib/keepass2内にコピー。<br>Keepass2のView→Change LanguageからJapaneseを選択したら日本語化出来た。  </p>
@@ -537,26 +565,6 @@ $ ]]>
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
       <category term="Git" scheme="http://pagent.github.io/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[KDEウォレットマネージャーを停止]]></title>
-    <link href="http://pagent.github.io/2015/02/15/stop-kwallet-manager/"/>
-    <id>http://pagent.github.io/2015/02/15/stop-kwallet-manager/</id>
-    <published>2015-02-14T15:06:17.000Z</published>
-    <updated>2015-02-16T21:21:10.000Z</updated>
-    <content type="html"><![CDATA[<p>無線LANのパスワードを設定してから、Kubuntuにログインする度にKDEウォレットマネージャーが起動してくるようになった。<br>パスワードはクロスプラットフォームの管理ソフト「KeePass2」を使う方が便利なので、KDEウォレットマネージャーは不要。  </p>
-<p>Software CenterでKWalletManagerをアンインストールしたのに、それでもしつこく起動してくる。  </p>
-<p>もう一度インストールし、KDEウォレットマネージャーの設定で「KDEウォレットサブシステムを使う。」のチェックを外して、ようやく起動を停止出来た。  </p>
-<p>アンインストールしても起動してくるって、どうなってるんだろう。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>無線LANのパスワードを設定してから、Kubuntuにログインする度にKDEウォレットマネージャーが起動してくるようになった。<br>パスワードはクロスプラットフォームの管理ソフト「KeePass2」を使う方が便利なので、KDEウォレットマネージャーは不要。  </p>
-<]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
     
   </entry>
   

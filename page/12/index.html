@@ -112,6 +112,53 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/11/02/xbacklight/" >xbacklightでモニター輝度を設定・調節</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月2日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Xubuntu起動時のモニター輝度を少し下げてみた。  </p>
+<p>やり方は、/etc/default/grubで設定する方法、/etc/rc.localで設定する方法、xbacklightを使う方法などがあるようだ。<br><a href="https://sites.google.com/site/tetsuroweb/home/software/ubuntu/tips/display-brightness" target="_blank" rel="external">起動時の画面輝度を調整する (Ubuntu 12.04 - 14.04) - 哲朗web</a>  </p>
+<p>まず、/etc/rc.localで設定する方法を試してみた。<br>現在の輝度を変更するコマンドは<code>&gt;</code>の表示のまま止まってしまうので、</p>
+<pre><code>$ sudo -i
+
+# echo 6 &gt; /sys/class/backlight/acpi_video0/brightness
+</code></pre><p>としないといけなかったが、それ以外は参照記事に記載してある通りの方法で、起動時のモニター輝度を変更できた。  </p>
+<p>これで十分だったのだが、試しにxbacklightを入れてみたら、これがかなり便利な代物だった。<br><a href="http://x1japan.wordpress.com/2013/08/23/linux-keep-brightness-setting/" target="_blank" rel="external">目に優しい、LinuxMintやubuntuでモニター輝度を起動時に落とす設定。 | Woishin Journal</a>  </p>
+<p>自動開始アプリケーションに<code>xbacklight -set 80</code>のようにコマンドを登録しておけば反映されるし、変更したい時も簡単に変更できる。  </p>
+<p>輝度は0から100（パーセント）で設定するようなのだが、<code>xbacklight</code>と打って輝度を確認したところ、決まった値に近い切り下げ値にしかならないようだった。<br>自分の環境では、「14.285714」「28.571429」「42.857143」…と、およそ14の倍数になっていた。  </p>
+<p>パネルに複数のランチャーをひとまとめに表示するクイックランチャー（外部）を追加し、コマンド<code>xbacklight -inc 15</code>と<code>xbacklight -dec 14</code>を追加したら、マウスクリックで簡単に輝度を上下できるようになった。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/02/xbacklight/" data-text="xbacklightでモニター輝度を設定・調節 | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/11/01/irq-problem/" >「disabling IRQ ＃9」でXubuntuが起動できない</a>
 		</h3>
 	
@@ -506,48 +553,6 @@ GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/10/24/xubuntu-blank-menu/" >Xubuntuでメニューが表示されず真っ白</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年10月24日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>これまで12.04からアップグレードしたXubuntu14.04.1を使っていたので気づかなかったが、14.04.1ではメニュー編集ツールの「メイン・メニュー」が無くなっていて、「メニューエディタ」（MenuLibre）しか入っていない。<br>自分でメニューを追加する際、MenuLibreはどうも使い方がよく分からない。<br>かつての「メイン・メニュー」はalacarteというそうで、<code>sudo apt-get install alacarte</code>でこれを導入した。  </p>
-<p>導入したまでは良かったのだが、alacarteで新規メニューを追加していたら突然トラブルが発生して、メニューがすべて消えてしまった。<br>Whisker Menuは真っ白の状態で、デスクトップ上右クリックのアプリケーションでも短い横棒が表示されるのみで、アプリケーションがなにも表示されない。<br>MenuLibreとalacarteを同時に立ち上げていたのが悪かったのだろうか。<br>ログインし直してみても変わらず困ってしまった。  </p>
-<p>ユーザー固有のメニューファイルは~/.config/menus（/home/ユーザー名/.config/menus）にあるらしいのでmenusを見てみたら、真っ白でなにも書かれていない。<br>どうりでメニューになにも表示されないわけだ。  </p>
-<p>menusがどんな内容だったかは思い出せなかったが、新規にユーザーを追加してそのmenusファイルを流用すれば良いのではないかと思い、やってみたらこれで無事に復帰できた。  </p>
-<p>コマンドは忘れたが端末で新規ユーザーを追加した。<br>この時新規ユーザーのhomeディレクトリも作成する形で追加したんだったと思う。<br>何にせよ、またクリーンインストールするはめにならずに済んで良かった。  </p>
-<p>MenuLibreはよく分からないし、Whisker Menuも一見おしゃれのようだが、かつての「アプリケーションメニュー」の方が目的のアプリケーションを素早く選択出来て好みだ。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/10/24/xubuntu-blank-menu/" data-text="Xubuntuでメニューが表示されず真っ白 | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -589,6 +594,10 @@ GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/03/31/lubuntu-update-stuck/" ><i class="fa fa-file-o"></i>Lubuntuのアップデート中にフリーズ</a>
+      </li>
+    
+      <li>
         <a href="/2015/03/31/gyao-cm-skip/" ><i class="fa fa-file-o"></i>AdBlockでGyaoのCMをスキップ</a>
       </li>
     
@@ -602,10 +611,6 @@ GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
     
       <li>
         <a href="/2015/03/14/truecrypt-already-running/" ><i class="fa fa-file-o"></i>TrueCryptを起動しようとすると&quot;TrueCry...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/03/14/keepass2-font/" ><i class="fa fa-file-o"></i>Keepass2のフォントを日本語化</a>
       </li>
     
   </ul>
@@ -623,35 +628,35 @@ GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
 		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+		
 			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>42</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>43</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
 			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 		
 		</ul>
@@ -663,7 +668,7 @@ GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
