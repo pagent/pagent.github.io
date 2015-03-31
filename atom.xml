@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-03-31T00:45:37.496Z</updated>
+  <updated>2015-03-31T00:48:35.184Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,13 +19,13 @@
     <link href="http://pagent.github.io/2015/03/31/gyao-cm-skip/"/>
     <id>http://pagent.github.io/2015/03/31/gyao-cm-skip/</id>
     <published>2015-03-31T00:30:24.000Z</published>
-    <updated>2015-03-31T00:44:59.000Z</updated>
-    <content type="html"><![CDATA[<p>LinuxではFirefoxでGyaoを見られなくなった（FirefoxにPepper Flashのwrapperを入れたら見られるようだが）ので、ChromiumでGyaoを見ている。<br>Firefoxの時は、動画を一時停止してその後再開すると、いつまでも読み込み中のマークが回っていたが、Chromium+PPAPIだとFlashのバージョンが17.0のためか、そういう不具合も無く快適。  </p>
+    <updated>2015-03-31T00:48:26.000Z</updated>
+    <content type="html"><![CDATA[<p>LinuxではFirefoxでGyaoを見られなくなったので、ChromiumでGyaoを見ている。<br>（FirefoxにPepper Flashのwrapperを入れたら、Firefoxでも見られるようだが）<br>Firefoxの時は、動画を一時停止してその後再開すると、読み込み中のマークが回り続けて消えなかったが、Chromium+PPAPIだとFlashのバージョンが17.0のためか、そういう不具合も無く快適。  </p>
 <p>もう一つ気付いたのが、拡張機能<a href="https://chrome.google.com/webstore/detail/adblock/gighmmpiobklfepjocnamgkkbiglidom?hl=ja" target="_blank" rel="external">AdBlock</a>を入れると、GyaoのCMをスキップ出来るようだ。<br>Adblock Plusだとスキップ出来ない。  </p>
 <p>Adblock Plusでも、AdBlockでブロックしているフィルタを追加したらCMをスキップ出来るのだと思うが、どのフィルタなのかは確認していない。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>LinuxではFirefoxでGyaoを見られなくなった（FirefoxにPepper Flashのwrapperを入れたら見られるようだが）ので、ChromiumでGyaoを見ている。<br>Firefoxの時は、動画を一時停止してその後再開すると、いつまでも読み込み中の]]>
+    <![CDATA[<p>LinuxではFirefoxでGyaoを見られなくなったので、ChromiumでGyaoを見ている。<br>（FirefoxにPepper Flashのwrapperを入れたら、Firefoxでも見られるようだが）<br>Firefoxの時は、動画を一時停止してその後再開す]]>
     </summary>
     
       <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
