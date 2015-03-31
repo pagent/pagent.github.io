@@ -112,6 +112,55 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/03/08/yaourt/" >Yaourtをインストール</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年3月8日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>AUR (Arch User Repository)のパッケージをインストールするため、pacmanラッパーYaourtを入れた。  </p>
+<p><a href="https://archlinuxjp.kusakata.com/wiki/Yaourt?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DYaourt_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno" target="_blank" rel="external">Yaourt - ArchWiki</a>  </p>
+<p>「まず package-query をインストール」とのことだが、pacmanからpackage-queryをインストールしようとしても、見つからないと言われるので、/etc/pacman.confに下記記述を加えた。  </p>
+<pre><code>[archlinuxfr]
+SigLevel = Never
+Server = http://repo.archlinux.fr/$arch
+</code></pre><p>その後  </p>
+<pre><code>sudo pacman --sync --refresh yaourt
+</code></pre><p>GlipperなどもYaourtからインストール出来るようになった。  </p>
+<pre><code>yaourt -S glipper
+</code></pre><p>クリップボードマネージャーは色々あるが、Glipperはログアウト時に履歴を消去出来るので気に入っている。  </p>
+<p>ーー<br>（追記）<br>Xfceデスクトップに標準で入っていたClipmanでも、「終了時に保存する」のチェックボックスを外せば履歴を消去出来るようだ。<br>Glipperのアイコンが正常に表示されないこともあり、結局Clipmanを使うことにしてGlipperをアンインストールした。  </p>
+<pre><code>yaourt -Rs glipper
+</code></pre>
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/08/yaourt/" data-text="Yaourtをインストール | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/03/08/xfce-beep/" >Xfceログアウト時のビープ音を消す</a>
 		</h3>
 	
@@ -545,59 +594,6 @@ $ sudo apt-get install nemo-terminal
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/02/17/github-pages-redirect/" >GitHub Pagesのブログでリダイレクト「hexo-generator-alias」</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年2月17日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>先日書いた記事のURLが、一部大文字のアルファベットになっていたので小文字に変更したら、当然のごとくリンク切れになってしまった。  </p>
-<p>以前、.htaccessを使って301リダイレクトをしようと試みたことがあったが、.htaccessのファイルをdeployすることは出来たものの効果は無かった。<br>GitHub Pagesでは.htaccessを使えないらしい。  </p>
-<p>meta refreshタグなら使えるのではないかと思い、やってみた。</p>
-<p>全ての記事の基本レイアウトで転送設定する訳にはいかないので、publicフォルダ内に転送元となるindex.htmlを作り、転送タグを記載。<br>generateの際に消えてしまわないよう所有者をrootに変更し、さらにパーミッションも444に変更した。<br>だが、この状態でgenerateするとエラーになってしまう。  </p>
-<p>なにか良い方法は無いかと検索したら、転送元となるindex.htmlを自動生成してくれるプラグインが見つかった。<br><a href="https://www.npmjs.com/package/hexo-generator-alias" target="_blank" rel="external">hexo-generator-alias</a>  </p>
-<p>Hexoの作業フォルダ内で端末を開き  </p>
-<pre><code>$ npm install hexo-generator-alias --save
-</code></pre><p>とコマンドを打つとインストール完了。<br>node_modulesフォルダにhexo-generator-aliasが追加される。  </p>
-<p>転送先の記事ソースのFrontMatterに<code>alias: （転送元のパス）</code>を追加しgenerateすると、publicフォルダ内に転送元となるindex.htmlを生成してくれる。  </p>
-<p>自分の例では、転送先の2015-02-06-lxpup-lxqtpup.mdのFrontMatterに<code>alias: 2015/02/06/lxpup-LxQtPup/index.html</code>を追記。（<code>alias: 2015/02/06/lxpup-LxQtPup/</code>でも良いよう）<br>generateすると、public/2015/02/06/lxpup-LxQtPup/index.htmlが生成された。<br>ファイルの中身は転送指定のみの簡潔なもの。  </p>
-<pre><code>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;title&gt;Redirecting...&lt;/title&gt;&lt;link rel=&quot;canonical&quot; href=&quot;/2015/02/06/lxpup-lxqtpup/index.html&quot;&gt;&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0; url=/2015/02/06/lxpup-lxqtpup/index.html&quot;&gt;&lt;/head&gt;&lt;/html&gt;
-</code></pre><p>旧URL <a href="http://pagent.github.io/2015/02/06/lxpup-LxQtPup/" target="_blank" rel="external">http://pagent.github.io/2015/02/06/lxpup-LxQtPup/</a> にアクセスすると、ちゃんと新URLに転送された。  </p>
-<p>Jekyllにも同様のプラグインがあり、Octopressでも使えるようだ。<br><a href="http://rawsyntax.com/blog/blogging-on-jekyll-url-redirects/" target="_blank" rel="external">Blogging on Jekyll: URL Redirects - Raw Syntax</a>  </p>
-<p>GitHub Pagesでの転送は以前は諦めていたが、これで一安心。  </p>
-<p>ーー<br>（追記）<br>過去の記事から転送指定しているものを探すには、source/_posts内で端末を開き下記コマンド  </p>
-<pre><code>grep &quot;alias:&quot; *.md
-</code></pre><p>すべての.mdファイルから「alias:」を含むファイルを抽出。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/17/github-pages-redirect/" data-text="GitHub Pagesのブログでリダイレクト「hexo-generator-alias」 | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -639,6 +635,10 @@ $ sudo apt-get install nemo-terminal
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/04/01/xfce4-terminal-link-default-browser/" ><i class="fa fa-file-o"></i>Xfce4 terminal内のリンクを開くブラウザを...</a>
+      </li>
+    
+      <li>
         <a href="/2015/03/31/lubuntu-update-stuck/" ><i class="fa fa-file-o"></i>Lubuntuのアップデート中にフリーズ</a>
       </li>
     
@@ -652,10 +652,6 @@ $ sudo apt-get install nemo-terminal
     
       <li>
         <a href="/2015/03/14/hexo-283-install/" ><i class="fa fa-file-o"></i>Hexo 2.8.3をインストール</a>
-      </li>
-    
-      <li>
-        <a href="/2015/03/14/truecrypt-already-running/" ><i class="fa fa-file-o"></i>TrueCryptを起動しようとすると&quot;TrueCry...</a>
       </li>
     
   </ul>
@@ -673,35 +669,35 @@ $ sudo apt-get install nemo-terminal
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>43</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
 			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>44</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 		
 		</ul>
@@ -713,7 +709,7 @@ $ sudo apt-get install nemo-terminal
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

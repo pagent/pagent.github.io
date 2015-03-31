@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-03-31T15:07:37.095Z</updated>
+  <updated>2015-03-31T15:42:49.380Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,29 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Xfce4 terminal内のリンクを開くブラウザをFirefoxに]]></title>
+    <link href="http://pagent.github.io/2015/04/01/xfce4-terminal-link-default-browser/"/>
+    <id>http://pagent.github.io/2015/04/01/xfce4-terminal-link-default-browser/</id>
+    <published>2015-03-31T15:27:13.000Z</published>
+    <updated>2015-03-31T15:41:48.344Z</updated>
+    <content type="html"><![CDATA[<p>「お気に入りのアプリケーション」のブラウザをFirefoxにしていて、これまでXfce4 terminal内のリンクを開く時もFirefoxで開けていた。<br>だが、Chromiumをインストールしてから、リンクがChromiumで開くようになってしまった。<br>Xfce4 terminal自体にはブラウザを指定する箇所が無い。  </p>
+<p>検索すると、下記トピックが見つかった。<br><a href="https://bbs.archlinux.org/viewtopic.php?id=191547" target="_blank" rel="external">[SOLVED] Xfce terminal open links with wrong browser. / Applications &amp; Desktop Environments / Arch Linux Forums</a>  </p>
+<p>~/.config/mimeapps.listの[Added Associations]の箇所に下記を追記した。  </p>
+<pre><code>text/vcard=firefox.desktop;
+text/html=firefox.desktop;
+x-scheme-handler/http=firefox.desktop;
+x-scheme-handler/https=firefox.desktop;
+</code></pre><p>Xfce4 terminal内のリンクがFirefoxで開くようになった。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>「お気に入りのアプリケーション」のブラウザをFirefoxにしていて、これまでXfce4 terminal内のリンクを開く時もFirefoxで開けていた。<br>だが、Chromiumをインストールしてから、リンクがChromiumで開くようになってしまった。<br>Xfc]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Lubuntuのアップデート中にフリーズ]]></title>
@@ -530,41 +553,6 @@ $ ]]>
     </summary>
     
       <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[GitHub Pagesのブログでリダイレクト「hexo-generator-alias」]]></title>
-    <link href="http://pagent.github.io/2015/02/17/github-pages-redirect/"/>
-    <id>http://pagent.github.io/2015/02/17/github-pages-redirect/</id>
-    <published>2015-02-17T09:46:03.000Z</published>
-    <updated>2015-03-03T01:42:33.000Z</updated>
-    <content type="html"><![CDATA[<p>先日書いた記事のURLが、一部大文字のアルファベットになっていたので小文字に変更したら、当然のごとくリンク切れになってしまった。  </p>
-<p>以前、.htaccessを使って301リダイレクトをしようと試みたことがあったが、.htaccessのファイルをdeployすることは出来たものの効果は無かった。<br>GitHub Pagesでは.htaccessを使えないらしい。  </p>
-<p>meta refreshタグなら使えるのではないかと思い、やってみた。</p>
-<p>全ての記事の基本レイアウトで転送設定する訳にはいかないので、publicフォルダ内に転送元となるindex.htmlを作り、転送タグを記載。<br>generateの際に消えてしまわないよう所有者をrootに変更し、さらにパーミッションも444に変更した。<br>だが、この状態でgenerateするとエラーになってしまう。  </p>
-<p>なにか良い方法は無いかと検索したら、転送元となるindex.htmlを自動生成してくれるプラグインが見つかった。<br><a href="https://www.npmjs.com/package/hexo-generator-alias" target="_blank" rel="external">hexo-generator-alias</a>  </p>
-<p>Hexoの作業フォルダ内で端末を開き  </p>
-<pre><code>$ npm install hexo-generator-alias --save
-</code></pre><p>とコマンドを打つとインストール完了。<br>node_modulesフォルダにhexo-generator-aliasが追加される。  </p>
-<p>転送先の記事ソースのFrontMatterに<code>alias: （転送元のパス）</code>を追加しgenerateすると、publicフォルダ内に転送元となるindex.htmlを生成してくれる。  </p>
-<p>自分の例では、転送先の2015-02-06-lxpup-lxqtpup.mdのFrontMatterに<code>alias: 2015/02/06/lxpup-LxQtPup/index.html</code>を追記。（<code>alias: 2015/02/06/lxpup-LxQtPup/</code>でも良いよう）<br>generateすると、public/2015/02/06/lxpup-LxQtPup/index.htmlが生成された。<br>ファイルの中身は転送指定のみの簡潔なもの。  </p>
-<pre><code>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;title&gt;Redirecting...&lt;/title&gt;&lt;link rel=&quot;canonical&quot; href=&quot;/2015/02/06/lxpup-lxqtpup/index.html&quot;&gt;&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0; url=/2015/02/06/lxpup-lxqtpup/index.html&quot;&gt;&lt;/head&gt;&lt;/html&gt;
-</code></pre><p>旧URL <a href="http://pagent.github.io/2015/02/06/lxpup-LxQtPup/" target="_blank" rel="external">http://pagent.github.io/2015/02/06/lxpup-LxQtPup/</a> にアクセスすると、ちゃんと新URLに転送された。  </p>
-<p>Jekyllにも同様のプラグインがあり、Octopressでも使えるようだ。<br><a href="http://rawsyntax.com/blog/blogging-on-jekyll-url-redirects/" target="_blank" rel="external">Blogging on Jekyll: URL Redirects - Raw Syntax</a>  </p>
-<p>GitHub Pagesでの転送は以前は諦めていたが、これで一安心。  </p>
-<p>ーー<br>（追記）<br>過去の記事から転送指定しているものを探すには、source/_posts内で端末を開き下記コマンド  </p>
-<pre><code>grep &quot;alias:&quot; *.md
-</code></pre><p>すべての.mdファイルから「alias:」を含むファイルを抽出。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>先日書いた記事のURLが、一部大文字のアルファベットになっていたので小文字に変更したら、当然のごとくリンク切れになってしまった。  </p>
-<p>以前、.htaccessを使って301リダイレクトをしようと試みたことがあったが、.htaccessのファイルをdeployす]]>
-    </summary>
-    
-      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
-    
-      <category term="Git" scheme="http://pagent.github.io/tags/Git/"/>
     
   </entry>
   
