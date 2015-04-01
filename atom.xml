@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-04-01T04:46:45.188Z</updated>
+  <updated>2015-04-01T04:49:50.076Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/04/01/xfce4-appearance-settings-crash/"/>
     <id>http://pagent.github.io/2015/04/01/xfce4-appearance-settings-crash/</id>
     <published>2015-04-01T04:05:49.000Z</published>
-    <updated>2015-04-01T04:46:26.668Z</updated>
+    <updated>2015-04-01T04:49:41.822Z</updated>
     <content type="html"><![CDATA[<p>Xfce4の設定で「外観」（appearance）→「フォント」のデフォルトフォントをFixedにしたら、クラッシュして、パネルが消えてしまった。<br>デスクトップ上右クリック→アプリケーションから再び「外観」を呼び出そうとしても、一瞬現れて瞬時に消えてしまう。設定マネージャーも起動せず。<br>「設定」→「パネル」でパネルは「キオスクモード」とかでなんとか立ち上げることが出来たが、これもファイルマネージャーを開くと消えてしまう。  </p>
 <p>Firefoxで「システムフォント」等を検索したが、/etc/fonts/conf.d内のファイルにはそれらしい記述は見当たらず。<br>「外観」のデフォルトフォントはシステムフォントとは別物らしい。  </p>
 <p><a href="https://archlinuxjp.kusakata.com/wiki/GTK%2B" target="_blank" rel="external">GTK+ - ArchWiki</a>を見て、~/.gtkrc-2.0を探したが、そんなファイルは無い。<br>自作してみたが効果なし。  </p>
@@ -28,7 +28,8 @@
     ...
     &lt;property name=&quot;FontName&quot; type=&quot;string&quot; value=&quot;Fixed Medium 10&quot;/&gt;
     ...
-</code></pre><p>「Fixed」を「Droid Sans」に変更。<br>再起動すると無事復旧した。</p>
+</code></pre><p>「Fixed」を「Droid Sans」に変更。<br>再起動すると無事復旧した。  </p>
+<p>デスクトップ上右クリックからアプリケーションを起動出来るXfce4で助かった。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Xfce4の設定で「外観」（appearance）→「フォント」のデフォルトフォントをFixedにしたら、クラッシュして、パネルが消えてしまった。<br>デスクトップ上右クリック→アプリケーションから再び「外観」を呼び出そうとしても、一瞬現れて瞬時に消えてしまう。設定マネー]]>
