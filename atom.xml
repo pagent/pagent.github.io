@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-04-01T04:49:50.076Z</updated>
+  <updated>2015-04-01T14:50:14.441Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -156,7 +156,7 @@ E: _cache-&gt;open() failed, please report.
     <link href="http://pagent.github.io/2015/03/19/gyao-chromium-ppapi/"/>
     <id>http://pagent.github.io/2015/03/19/gyao-chromium-ppapi/</id>
     <published>2015-03-19T00:00:39.000Z</published>
-    <updated>2015-03-20T22:29:08.108Z</updated>
+    <updated>2015-04-01T14:43:52.820Z</updated>
     <content type="html"><![CDATA[<p>GyaoはWindows、Mac以外のOSでの視聴を制限している。  </p>
 <p>これまでFirefoxのアドオンUser Agent Switcherで、OSをWindowsもしくはMac OS Xと宣言することで、LinuxでもGyaoの視聴が出来ていた。<br>一部の動画はFlashのバージョンが足りてないらしく見られなかったが、ほとんどの動画は視聴可能だった。  </p>
 <p>だが今週初めから、上記の方法ではGyaoの全ての動画が視聴出来なくなった。<br>Gyaoの動作環境が全動画で「Adobe Flash Player 15 以上」に引き上げられたためらしい。<br>（Linux用Adobe Flash Playerは11.2までで終了）  </p>
@@ -164,8 +164,9 @@ E: _cache-&gt;open() failed, please report.
 <p>Debian系ならSynapticから”pepperflashplugin-nonfree”をインストール可能。<br>“nonfree” とあるが、Adobeに所有権があるというだけで、無料で使用出来る。<br><a href="https://wiki.ubuntulinux.jp/UbuntuTips/Application/Chromium/Getting-Flash" target="_blank" rel="external">UbuntuTips/Application/Chromium/Getting-Flash - Ubuntu Japanese Wiki</a>  </p>
 <p>“pepperflashplugin-nonfree”をインストールし、Chromiumのアドレス欄に<code>chrome://plugins</code>と入れて確認すると、2015年3月19日現在では、”Adobe Flash Player - バージョン: 17.0.0.134 Shockwave Flash 17.0 r0”と表示されている。  </p>
 <p>User-Agent Switcherも入れて、OSをWindowsもしくはMacと宣言することで、Gyaoの視聴が可能になった。  </p>
-<p>User-Agent Switcherに元から入っている「Chome on Mac」での指定はChomeのバージョンが古いようで（Chrome 27.0）、Googleの検索結果も古い形式で表示される。<br>「Chrome 41.0 on Mac」の名称で下記を追加した。  </p>
-<p><code>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.76 Safari/537.36</code></p>
+<p>User-Agent Switcherに元から入っている「Chome on Mac」での指定はChomeのバージョンが古いようで（Chrome 27.0）、Googleの検索結果も古い形式で表示される。<br>「Chrome 41.0 on Mac」と「Safari 7」を追加した。  </p>
+<p>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36  </p>
+<p>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0.3 Safari/7046A194A</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>GyaoはWindows、Mac以外のOSでの視聴を制限している。  </p>
