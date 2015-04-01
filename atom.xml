@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-04-01T00:32:12.376Z</updated>
+  <updated>2015-04-01T02:57:58.713Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,31 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Arch LinuxのフォントレンダリングをInfinalityにした]]></title>
+    <link href="http://pagent.github.io/2015/04/01/infinality/"/>
+    <id>http://pagent.github.io/2015/04/01/infinality/</id>
+    <published>2015-04-01T02:40:37.000Z</published>
+    <updated>2015-04-01T02:57:47.556Z</updated>
+    <content type="html"><![CDATA[<p>Arch Linuxのフォントが汚かったの見づらかったので、<a href="https://archlinuxjp.kusakata.com/wiki/Infinality?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DInfinality-bundle%252Bfonts_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno" target="_blank" rel="external">Infinality</a>インストールした。  </p>
+<p>途中、</p>
+<pre><code>Unable to update the static FcBlanks: 0x0600
+Unable to update the static FcBlanks: 0x0601
+Unable to update the static FcBlanks: 0x0602
+…
+</code></pre><p>というエラーが出たが、下記トピックを参考に、<code>sudo pacman -S fontconfig-infinality-ultimate</code>でfontconfig-iu-compを削除した。<br><a href="https://bbs.archlinux.org/viewtopic.php?id=195198" target="_blank" rel="external">[SOLVED] Font cache: Unable to update the static FcBlanks / Newbie Corner / Arch Linux Forums</a>  </p>
+<p>首尾よくフォントが綺麗になったのだが、その後一部の漢字フォントが縦に潰れたようになってしまった。  </p>
+<p>Ubuntuのフォントレンダリングに変えようかとも思ったが、ibfonts-meta-extendedをインストールしたら治った。  </p>
+<p>IPA Pゴシックなどでは、依然、一部漢字フォントが潰れているが。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Arch Linuxのフォントが汚かったの見づらかったので、<a href="https://archlinuxjp.kusakata.com/wiki/Infinality?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.p]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[nemoの右クリックメニューに「圧縮...」を追加]]></title>
@@ -525,25 +550,6 @@ $ ]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Clonezillaのアーキテクチャとバックアップスピード]]></title>
-    <link href="http://pagent.github.io/2015/02/25/clonezilla-architecture-speed/"/>
-    <id>http://pagent.github.io/2015/02/25/clonezilla-architecture-speed/</id>
-    <published>2015-02-25T13:59:15.000Z</published>
-    <updated>2015-02-26T12:44:43.000Z</updated>
-    <content type="html"><![CDATA[<p>古いPCで、新しいkernelだと正常に起動しないが、kernel3.10台までのものなら大丈夫。<br>その条件でなるべく新しいClonezillaを探したら、clonezilla-live-2.1.2-43（もしくはclonezilla-live-20130819-raring）のようだった。  </p>
-<p>どのアーキテクチャのものを使えば良いのか分からず、clonezilla-live-2.1.2-43-i486.isoを使ったら、バックアップが異様に遅かった。100GB中67.1GBを使用中のパーティションをバックアップするのに50分近くかかった。<br>アーキテクチャが合ったものを使わないと遅くなってしまうようだ。  </p>
-<p>clonezilla-live-2.1.2-43-i686-pae.isoをダウンロードして使ったら、18分あまりだった。<br><a href="http://ftp.twaren.net/local-distfiles/clonezilla-live/oldstable/2.1.2-43/" target="_blank" rel="external">Index of /local-distfiles/clonezilla-live/oldstable/2.1.2-43</a><br>clonezilla-live-20130819-raring-i386.isoでも18分あまり。<br><a href="http://ftp.twaren.net/local-distfiles/clonezilla-live/alternative/oldstable/20130819-raring/" target="_blank" rel="external">Index of /local-distfiles/clonezilla-live/alternative/oldstable/20130819-raring</a>  </p>
-<p>ちなみに、amd64となっているものは当然のごとく32bitのPCでは使用出来なかった。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>古いPCで、新しいkernelだと正常に起動しないが、kernel3.10台までのものなら大丈夫。<br>その条件でなるべく新しいClonezillaを探したら、clonezilla-live-2.1.2-43（もしくはclonezilla-live-20130819-ra]]>
-    </summary>
-    
-      <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
     
   </entry>
   

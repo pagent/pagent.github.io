@@ -112,6 +112,71 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/12/05/hexo-vs-octopress/" >HexoとOctopressの比較</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年12月5日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>どちらもブログとしての体裁が整っていて、導入したらすぐ始められるHexoとOctopress。<br>しばらくHexoを使ってみて、Octopressと比較しての感想。（あくまで私見）  </p>
+<h3 id="長所">長所</h3>
+<h4 id="・generateが早い">・generateが早い</h4>
+<p>Hexoの長所はなんと言ってもこれだろう。<br>手動での計測だが、30程の記事ソースからgenerateするのに要した時間は、Octopressの12.5秒に対して、Hexoは2.3秒と5分の1以下だった。<br>今後、記事数や使っているタグ、カテゴリーが増えれば、Octopressの遅さはかなりのマイナス要因になると思われる。<br>Hexoはプレビュー時の変更の反映も早い。  </p>
+<h4 id="・デフォルトで日本語のタグ名（カテゴリー名）を使える">・デフォルトで日本語のタグ名（カテゴリー名）を使える</h4>
+<p>URLがパーセントエンコーディングされると長くなるし何の記事か分からなくなるので、パーマリンクに日本語を使おうとは思わないが、タグやカテゴリーに日本語を使えるのはとても助かる。  </p>
+<p>Octopressでもカスタマイズすれば日本語のカテゴリー名を使えるようだが、デフォルト状態では漢字は中国語読みらしきローマ字表記に変換される。（たとえば、「未分類」は「wei-fen-lei」に。）<br>仮名はほぼ正しくローマ字表記に変換されるが、何故か「の」は「false」に。「の（no）」をyes・noの「no」と判断するためか。  </p>
+<h4 id="・Windowsで使える">・Windowsで使える</h4>
+<p>あくまで自分の環境でだが、WindowsではRuby（Octopressのプログラミング言語）が正常に動作しなかった。<br>一方、Hexo（JavaScript使用）はWindowsで使用可能だった。<br>検索するとWindowsにJekyllをインストールする方法も紹介されているので、環境によってはOctopressもWindows上で使えるのかもしれない。  </p>
+<h4 id="・コマンドが簡単">・コマンドが簡単</h4>
+<p><code>hexo new</code>→<code>hexo n</code>、<code>hexo generate</code>→<code>hexo g</code>、<code>hexo server</code>→<code>hexo s</code>、<code>hexo deploy</code>→<code>hexo d</code>のようにコマンドの省略が可能。<br>辞書登録すればあまり関係無いが。  </p>
+<h3 id="短所">短所</h3>
+<h4 id="・SEO">・SEO</h4>
+<p>Octopressはデフォルト状態でもsitemap.xmlとrobots.txtを生成してくれるが、Hexoでは導入が必要。<br>ただ、Sitemapを作ってくれるプラグインは有り、導入も容易。  </p>
+<h4 id="・中国製？">・中国製？</h4>
+<p>どうやら中国製のよう。<br>ソースはGitHub上で公開されていることだし、安全性に問題は無いと思われる。  </p>
+<h4 id="・FrontMatterの書式がOctopressと違う">・FrontMatterの書式がOctopressと違う</h4>
+<p>他の静的サイトジェネレーターでも、FrontMatter下部だけではなく上部にも<code>---</code>が入るのが一般的のよう。<br>この先、他の静的サイトジェネレーターに移行する可能性を考えると、ここは合わせて欲しかった。  </p>
+<h4 id="・ユーザー数が少ない">・ユーザー数が少ない</h4>
+<p><a href="https://staticsitegenerators.net/" target="_blank" rel="external">Static Site Generators</a>のStars（「いいね」みたいなものの）は、2014年12月5日時点で、Octopressの8522に対しHexoは3430とOctopressの半分以下。<br>（1位はOctopressの本家Jekyllが17578と圧倒的）<br>何か調べ物をする時にも、特に日本語では、参考になるドキュメントは少なくなる。<br>Octopressより後発なので、今後増える可能性はある。  </p>
+<h4 id="・コマンドがかっこ悪い">・コマンドがかっこ悪い</h4>
+<p>ことある毎に<code>hexo</code>と連呼しないといけないのが、ちょっとかっこ悪い。  </p>
+<h3 id="引き分け">引き分け</h3>
+<h4 id="・テーマの豊富さ">・テーマの豊富さ</h4>
+<p>自分の知る限りでは大差はない。<br>テーマの変更や微修正の容易さでは、Hexoに分があるよう。  </p>
+<h4 id="・カテゴリーとタグのあつかい">・カテゴリーとタグのあつかい</h4>
+<p>Octopressの”categories”はHexoでは”tags”に相当する。<br>複数設定した際、階層ではなく並列になる点からすると、”tags”としてあつかうHexoの方が自然な気はする。  </p>
+<h3 id="結論">結論</h3>
+<p>Hexoのgenerateの早さはやはり魅力的なので、今後プログラミング言語がRuby製の静的サイトジェネレーターに積極的に移ろうという気はしない。<br>他に面白そうな静的サイトジェネレーターが出てこない限り、今後もHexoを使うことになりそうだ。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/05/hexo-vs-octopress/" data-text="HexoとOctopressの比較 | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/12/04/git-non-fast-forward/" >Gitで”non-fast-forward”</a>
 		</h3>
 	
@@ -581,51 +646,6 @@ $(&quot;.navbar&quot;).fadeTo(100, 0.2);
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/29/excerpt-separator/" >HexoやOctopressのトップページを全文表示ではなく概要表示にする</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月29日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Hexoでトップページを表示した時、複数の記事の全文がだらだらと表示されているのは見づらいと思い、前半部分を抜粋した概要表示にしてみた。<br>やり方は簡単で、記事ソースの適当な箇所に<code>&lt;!-- more --&gt;</code>というタグを挿入するだけ。  </p>
-<p>WordPressやMovable Typeでは、200文字など決まった文字数で自動的に抜粋してくれたりもするが、その方法はちょっと分からないので、手動で挿入した。<br>タグを挿入すると<code>&lt;!-- more --&gt;</code>より前の部分だけの表示になる。<br>続きを読むためのリンクの文言「Read More」はHexo作業フォルダの_config.ymlではなく、themes/landscape/_config.ymlなどテーマ毎の_config.ymlで変更出来る。  </p>
-<p>Octopressの場合は_config.ymlの<code>excerpt_link:</code>でリンクの文言を変えられる。<br>また_config.ymlの<code>excerpt_link:</code>で、抜粋するためのタグ自体を<code>&lt;!-- more --&gt;</code>から別のものに変更出来るようだ。  </p>
-<p>ーー<br>（追記）<br>概要表示にはしてみたが、全文表示の方が都合の良いことがあったので、あとで全ての記事から<code>&lt;!-- more --&gt;</code>タグを削除した。<br>_postsで端末を開き、下記コマンドですべての.mdファイルから<code>&lt;!-- more --&gt;</code>を一括削除。</p>
-<pre><code>$ perl -p -i.bak -e &#39;s/&lt;!-- more --&gt;//g&#39; *.md
-（すべての.mdファイルに拡張子.bakをつけてバックアップを取り、ファイル内の&lt;!-- more --&gt;を削除）
-</code></pre><p><code>&lt;!-- more --&gt;</code>が正常に削除されたことを確認後、.bakファイルを一括削除した。  </p>
-<pre><code>$ find . -type f -name &quot;*.bak&quot; -delete
-（拡張子が「.bak」のファイルをカレントディレクトリで一括削除）
-</code></pre>
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/29/excerpt-separator/" data-text="HexoやOctopressのトップページを全文表示ではなく概要表示にする | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -667,6 +687,10 @@ $(&quot;.navbar&quot;).fadeTo(100, 0.2);
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/04/01/infinality/" ><i class="fa fa-file-o"></i>Arch LinuxのフォントレンダリングをInfin...</a>
+      </li>
+    
+      <li>
         <a href="/2015/04/01/nemo-fileroller/" ><i class="fa fa-file-o"></i>nemoの右クリックメニューに「圧縮...」を追加</a>
       </li>
     
@@ -680,10 +704,6 @@ $(&quot;.navbar&quot;).fadeTo(100, 0.2);
     
       <li>
         <a href="/2015/03/31/gyao-cm-skip/" ><i class="fa fa-file-o"></i>AdBlockでGyaoのCMをスキップ</a>
-      </li>
-    
-      <li>
-        <a href="/2015/03/19/gyao-chromium-ppapi/" ><i class="fa fa-file-o"></i>Chromium+Pepper Plugin API（...</a>
       </li>
     
   </ul>
@@ -703,33 +723,33 @@ $(&quot;.navbar&quot;).fadeTo(100, 0.2);
 		
 			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>45</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>46</span></a></li>
+		
 			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
 		
 		
 		</ul>
@@ -741,7 +761,7 @@ $(&quot;.navbar&quot;).fadeTo(100, 0.2);
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

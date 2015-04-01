@@ -112,6 +112,46 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/02/25/clonezilla-architecture-speed/" >Clonezillaのアーキテクチャとバックアップスピード</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月25日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>古いPCで、新しいkernelだと正常に起動しないが、kernel3.10台までのものなら大丈夫。<br>その条件でなるべく新しいClonezillaを探したら、clonezilla-live-2.1.2-43（もしくはclonezilla-live-20130819-raring）のようだった。  </p>
+<p>どのアーキテクチャのものを使えば良いのか分からず、clonezilla-live-2.1.2-43-i486.isoを使ったら、バックアップが異様に遅かった。100GB中67.1GBを使用中のパーティションをバックアップするのに50分近くかかった。<br>アーキテクチャが合ったものを使わないと遅くなってしまうようだ。  </p>
+<p>clonezilla-live-2.1.2-43-i686-pae.isoをダウンロードして使ったら、18分あまりだった。<br><a href="http://ftp.twaren.net/local-distfiles/clonezilla-live/oldstable/2.1.2-43/" target="_blank" rel="external">Index of /local-distfiles/clonezilla-live/oldstable/2.1.2-43</a><br>clonezilla-live-20130819-raring-i386.isoでも18分あまり。<br><a href="http://ftp.twaren.net/local-distfiles/clonezilla-live/alternative/oldstable/20130819-raring/" target="_blank" rel="external">Index of /local-distfiles/clonezilla-live/alternative/oldstable/20130819-raring</a>  </p>
+<p>ちなみに、amd64となっているものは当然のごとく32bitのPCでは使用出来なかった。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/25/clonezilla-architecture-speed/" data-text="Clonezillaのアーキテクチャとバックアップスピード | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/02/20/usb-multiboot-2nd-partition/" >USBメモリの第2パーティションからisoファイルをマルチブート</a>
 		</h3>
 	
@@ -541,51 +581,6 @@ tar: エラーを回復できません: 直ちに終了します
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/02/05/roxterm-segmentation-fault/" >ターミナルエミュレーターRoxtermで&quot;Segmentation fault&quot;</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年2月5日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Puppy Linux5.7.1には、デフォルトのターミナルミュレーターとしてurxvtというのが入っていたが、右クリックでのコピーペーストが出来ず不便。<br>Puppyパッケージマネージャで他のを探すと、Roxtermというのが見つかった。  </p>
-<p>右クリックでのコピーペーストが可能でかなり軽量。<br>Ubuntuソフトウェアセンターにもあったので、Xubuntuにもインストールしてみた。  </p>
-<p>カスタマイズのためDefaultのプロフィールをコピーし、Default01を作成した。<br>プロフィールをDefault01に切り替えたところ、突然終了。<br>その後、Roxtermを起動出来なくなってしまった。  </p>
-<p>メニューからアイコンをクリックしても反応は無いし、xfce4-terminalで<code>roxterm</code>とコマンドを打つと、”Segmentation fault”と返ってくる。  </p>
-<p>検索したところ、同様のケースが見つかった。<br><a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=752253" target="_blank" rel="external">#752253 - roxterm: Segmentation Fault with the copy of default profile - Debian Bug report logs</a>  </p>
-<p>“empty profile file”が原因とのことだが、~/.config/roxterm.sourceforge.net/Profiles内のDefault01を開くと、確かに何も書かれておらず真っ白だった。  </p>
-<p>Default01に一行 </p>
-<p> [roxterm profile]</p>
-<p>と書くと、無事起動出来た。  </p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/05/roxterm-segmentation-fault/" data-text="ターミナルエミュレーターRoxtermで&quot;Segmentation fault&quot; | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -627,6 +622,10 @@ tar: エラーを回復できません: 直ちに終了します
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/04/01/infinality/" ><i class="fa fa-file-o"></i>Arch LinuxのフォントレンダリングをInfin...</a>
+      </li>
+    
+      <li>
         <a href="/2015/04/01/nemo-fileroller/" ><i class="fa fa-file-o"></i>nemoの右クリックメニューに「圧縮...」を追加</a>
       </li>
     
@@ -640,10 +639,6 @@ tar: エラーを回復できません: 直ちに終了します
     
       <li>
         <a href="/2015/03/31/gyao-cm-skip/" ><i class="fa fa-file-o"></i>AdBlockでGyaoのCMをスキップ</a>
-      </li>
-    
-      <li>
-        <a href="/2015/03/19/gyao-chromium-ppapi/" ><i class="fa fa-file-o"></i>Chromium+Pepper Plugin API（...</a>
       </li>
     
   </ul>
@@ -661,35 +656,35 @@ tar: エラーを回復できません: 直ちに終了します
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>11</span></a></li>
 		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>46</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+		
 			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>45</span></a></li>
-		
 			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
 		
 		</ul>
@@ -701,7 +696,7 @@ tar: エラーを回復できません: 直ちに終了します
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
