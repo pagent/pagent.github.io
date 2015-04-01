@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-04-01T03:03:03.359Z</updated>
+  <updated>2015-04-01T04:46:45.188Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,30 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Xfce4設定の外観~フォントをFixedにしたらクラッシュした]]></title>
+    <link href="http://pagent.github.io/2015/04/01/xfce4-appearance-settings-crash/"/>
+    <id>http://pagent.github.io/2015/04/01/xfce4-appearance-settings-crash/</id>
+    <published>2015-04-01T04:05:49.000Z</published>
+    <updated>2015-04-01T04:46:26.668Z</updated>
+    <content type="html"><![CDATA[<p>Xfce4の設定で「外観」（appearance）→「フォント」のデフォルトフォントをFixedにしたら、クラッシュして、パネルが消えてしまった。<br>デスクトップ上右クリック→アプリケーションから再び「外観」を呼び出そうとしても、一瞬現れて瞬時に消えてしまう。設定マネージャーも起動せず。<br>「設定」→「パネル」でパネルは「キオスクモード」とかでなんとか立ち上げることが出来たが、これもファイルマネージャーを開くと消えてしまう。  </p>
+<p>Firefoxで「システムフォント」等を検索したが、/etc/fonts/conf.d内のファイルにはそれらしい記述は見当たらず。<br>「外観」のデフォルトフォントはシステムフォントとは別物らしい。  </p>
+<p><a href="https://archlinuxjp.kusakata.com/wiki/GTK%2B" target="_blank" rel="external">GTK+ - ArchWiki</a>を見て、~/.gtkrc-2.0を探したが、そんなファイルは無い。<br>自作してみたが効果なし。  </p>
+<p>ホームディレクトリ内を探しまわって、ようやく~/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xmlに記述を見つけた。  </p>
+<pre><code>  &lt;property name=&quot;Gtk&quot; type=&quot;empty&quot;&gt;
+    ...
+    &lt;property name=&quot;FontName&quot; type=&quot;string&quot; value=&quot;Fixed Medium 10&quot;/&gt;
+    ...
+</code></pre><p>「Fixed」を「Droid Sans」に変更。<br>再起動すると無事復旧した。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Xfce4の設定で「外観」（appearance）→「フォント」のデフォルトフォントをFixedにしたら、クラッシュして、パネルが消えてしまった。<br>デスクトップ上右クリック→アプリケーションから再び「外観」を呼び出そうとしても、一瞬現れて瞬時に消えてしまう。設定マネー]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Arch LinuxのフォントレンダリングをInfinalityにした]]></title>
@@ -521,35 +545,6 @@ Server = http://repo.archlinux.fr/$arch
     </summary>
     
       <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[nemoの拡張機能「nemo-terminal」がちょっと便利]]></title>
-    <link href="http://pagent.github.io/2015/02/26/nemo-terminal/"/>
-    <id>http://pagent.github.io/2015/02/26/nemo-terminal/</id>
-    <published>2015-02-26T04:54:42.000Z</published>
-    <updated>2015-02-26T12:36:27.000Z</updated>
-    <content type="html"><![CDATA[<p>ファイルマネージャーnemoに端末を追加する拡張機能「nemo-terminal」を入れた。  </p>
-<pre><code>$ sudo add-apt-repository ppa:webupd8team/nemo
-
-$ sudo apt-get update
-
-$ sudo apt-get install nemo-terminal
-</code></pre><p>nemoの上部に端末画面が追加される。  </p>
-<p>「F4」キーで端末画面の表示・非表示を切り替え。<br>端末での階層はnemoで開いているフォルダと同期されるので、コマンド操作する時に便利。  </p>
-<p>別途「dconfエディター」も入れておけば、端末画面の高さなども調節出来る。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>ファイルマネージャーnemoに端末を追加する拡張機能「nemo-terminal」を入れた。  </p>
-<pre><code>$ sudo add-apt-repository ppa:webupd8team/nemo
-
-$ sudo apt-get update
-
-$ ]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
     
   </entry>
   
