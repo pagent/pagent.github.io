@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-04-01T02:57:58.713Z</updated>
+  <updated>2015-04-01T03:01:54.738Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/04/01/infinality/"/>
     <id>http://pagent.github.io/2015/04/01/infinality/</id>
     <published>2015-04-01T02:40:37.000Z</published>
-    <updated>2015-04-01T02:57:47.556Z</updated>
+    <updated>2015-04-01T03:01:42.997Z</updated>
     <content type="html"><![CDATA[<p>Arch Linuxのフォントが汚かったの見づらかったので、<a href="https://archlinuxjp.kusakata.com/wiki/Infinality?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DInfinality-bundle%252Bfonts_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno" target="_blank" rel="external">Infinality</a>インストールした。  </p>
 <p>途中、</p>
 <pre><code>Unable to update the static FcBlanks: 0x0600
@@ -27,9 +27,9 @@ Unable to update the static FcBlanks: 0x0601
 Unable to update the static FcBlanks: 0x0602
 …
 </code></pre><p>というエラーが出たが、下記トピックを参考に、<code>sudo pacman -S fontconfig-infinality-ultimate</code>でfontconfig-iu-compを削除した。<br><a href="https://bbs.archlinux.org/viewtopic.php?id=195198" target="_blank" rel="external">[SOLVED] Font cache: Unable to update the static FcBlanks / Newbie Corner / Arch Linux Forums</a>  </p>
-<p>首尾よくフォントが綺麗になったのだが、その後一部の漢字フォントが縦に潰れたようになってしまった。  </p>
-<p>Ubuntuのフォントレンダリングに変えようかとも思ったが、ibfonts-meta-extendedをインストールしたら治った。  </p>
-<p>IPA Pゴシックなどでは、依然、一部漢字フォントが潰れているが。</p>
+<p>首尾よくフォントが綺麗になったのだが、その後一部の漢字フォントが縦に潰れたようになってしまった。<br>（もしかすると、気づいたのが最近だっただけで、以前から潰れたフォントがあったのかもしれない。）</p>
+<p>Ubuntuのフォントレンダリングに変えようかとも思ったが、ibfonts-meta-extendedをインストールしたら治った。<br>IPA Pゴシックなどでは、依然、一部漢字フォントが潰れているが。  </p>
+<p>どうしても具合が悪いようだったら、Ubuntuのフォントレンダリングに変更してみようと思う。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Arch Linuxのフォントが汚かったの見づらかったので、<a href="https://archlinuxjp.kusakata.com/wiki/Infinality?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.p]]>
