@@ -112,6 +112,50 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/03/14/keepass2-font/" >Keepass2のフォントを日本語化</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年3月14日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Windowsではパスワード管理ソフトとして、長らくIDMを使っていた。  </p>
+<p>IDMはとても便利で長らくお世話になったが、Linuxでは使えない。<br>OSをWindowsからLinuxに乗り換える際、パスワード管理ソフトをクロスプラットフォームのKeepass2に変更した。  </p>
+<p>Keepass2の日本語化は、Xubuntuでは<a href="http://keepass.info/translations.html" target="_blank" rel="external">Translations - KeePass</a>からKeePass-2.28-Japanese.zipをダウンロードし解凍。<br>Japanese.lngxをJapanese.lngxを/usr/lib/keepass2内にコピー。<br>Keepass2のView→Change LanguageからJapaneseを選択したら日本語化出来た。  </p>
+<p>今回、Arch LinuxにもKeepass2をインストールした。<br><code>sudo pacman -S keepass</code>でkeepass-2.28-2がインストールされた。  </p>
+<p>Arch LinuxではKeePass.exeは/usr/lib/keepass2ではなく/usr/share/keepass内にあるので、ここへJapanese.lngxをコピー。<br>日本語化しようとしたが、文字化けしてしまい豆腐状態。  </p>
+<p>Tools→options→Interface→Serect List Fontで、IPA Pゴシック、Takao Pゴシックなど日本語フォントに変更すると、パスワード管理している項目は日本語化されたが、メニューは依然文字化けしたまま。<br>ネットで検索し、システムフォントを日本語フォントに変更してみたが、それでも豆腐状態が治らない。  </p>
+<p>Keepass2のoptions→Interfaceのチェックボックスリスト内に”Force using system font(Unix only)”「強制的にシステムフォントを使用(Unixのみ)」という項目があり、これにチェックが入っていたので、チェックを外してみたらようやくメニューも日本語化出来た。  </p>
+<p>XubuntuのKeepass2を見てみると、「強制的にシステムフォントを使用(Unixのみ)」のチェックが入ったままで日本語化出来ている。<br>同じLinuxでもディストリビューションによって色々と挙動、設定が違うようだ。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/14/keepass2-font/" data-text="Keepass2のフォントを日本語化 | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/03/12/xfce-nemo-icon/" >Arch Linux+Xfce。nemoをインストールして二重に表示されたデスクトップアイコンを消す</a>
 		</h3>
 	
@@ -544,51 +588,6 @@ Server = http://repo.archlinux.fr/$arch
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/02/27/linkchecker/" >dead-link-checkerがあまりに遅いので「LinkChecker」を使ってみた（リンク切れチェック）</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年2月27日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>ネット上のページは開設者の都合などにより消えることも多いだろうし、SEO的にはそれ程気にしなくても良いのかもしれないが、ページのリンクをクリックしても404エラーだったりするとやはりがっかりする。<br>自分のブログにもリンク切れになっている発リンクが無いか調べてみた。  </p>
-<p>まず、有名どころらしいdead-link-checker.comでチェックしてみたが、とにかく遅い。<br>1600あまりのページのチェックだったが、2時間以上も掛かってしまった。<br>遅すぎて、そのあとリンク切れの修正という気にはとてもなれなかった。  </p>
-<p>ウェブアプリの場合、サーバーの負担を減らす為ある程度遅くなるのは仕方が無いらしい。<br><a href="http://chusho-it.net/post_linkcheck.html" target="_blank" rel="external">サイト全体をチェックできるリンクチェックツール比較</a>  </p>
-<p>というわけで、上記の記事で高評価で紹介されていた<a href="http://wummel.github.io/linkchecker/" target="_blank" rel="external">「LinkChecker」</a>を使ってみた。<br>Linux、Windows、Macで使えるクロスプラットフォームらしい。  </p>
-<p>最新版のlinkchecker-gui_9.3-1_all.debをダウンロードしたが、インストールの際にUbuntuソフトウェアセンターが、少し古いバージョンだったらリポジトリにあると言ってきたので、言われた通りリポジトリのlinkchecker-gui 8.6-2をインストールした。  </p>
-<p>使ってみたらこれが早かった。  </p>
-<p>すべてのページのチェックが5分程で完了。<br>結果は、404や301などの異常の種類やURL等で並び替えが出来るので、その後の修正作業もはかどった。  </p>
-<p>サイズも397.3 kBと小さいし、わざわざ遅いウエブアプリを使うより「LinkChecker」をインストールする方が断然おすすめ。  </p>
-<p>ときにはウェブアプリも便利だったりはするが、リンク切れチェックはソフトをインストールするに限ると痛感。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/27/linkchecker/" data-text="dead-link-checkerがあまりに遅いので「LinkChecker」を使ってみた（リンク切れチェック） | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -630,6 +629,10 @@ Server = http://repo.archlinux.fr/$arch
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/04/02/fcitx-qt-program/" ><i class="fa fa-file-o"></i>Qtベースのプログラムで日本語入力（fcitx-mozc）</a>
+      </li>
+    
+      <li>
         <a href="/2015/04/01/xfce4-appearance-settings-crash/" ><i class="fa fa-file-o"></i>Xfce4設定の外観~フォントをFixedにしたらクラ...</a>
       </li>
     
@@ -643,10 +646,6 @@ Server = http://repo.archlinux.fr/$arch
     
       <li>
         <a href="/2015/04/01/xfce4-terminal-browser/" ><i class="fa fa-file-o"></i>Xfce4 terminal内のリンクを開くブラウザを...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/03/31/lubuntu-update-stuck/" ><i class="fa fa-file-o"></i>Lubuntuのアップデート中にフリーズ</a>
       </li>
     
   </ul>
@@ -664,35 +663,35 @@ Server = http://repo.archlinux.fr/$arch
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>47</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
 			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>48</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
 		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
 		
 		
 		</ul>
@@ -704,7 +703,7 @@ Server = http://repo.archlinux.fr/$arch
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

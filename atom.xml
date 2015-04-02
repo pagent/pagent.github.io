@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-04-01T18:56:47.880Z</updated>
+  <updated>2015-04-02T05:17:51.817Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,34 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Qtベースのプログラムで日本語入力（fcitx-mozc）]]></title>
+    <link href="http://pagent.github.io/2015/04/02/fcitx-qt-program/"/>
+    <id>http://pagent.github.io/2015/04/02/fcitx-qt-program/</id>
+    <published>2015-04-02T03:57:36.000Z</published>
+    <updated>2015-04-02T05:15:44.705Z</updated>
+    <content type="html"><![CDATA[<p>iBusのプロパティパネル採用以降、iBusをやめて日本語入力にfcitx-mozcを使っている。  </p>
+<p>Xubuntuでは特に問題無く使えていたが、Arch LinuxでQtベースのプログラムを使用する際、日本語入力が有効にならず困っていた。<br>Simplenote専用にするのにうってつけの軽量ブラウザ「QupZilla」や、markdownファイル編集の際プレビューが出来て便利な「ReText」など、日本語入力出来ないと不便。  </p>
+<p>モジュールのfcitx-qt4、fcitx-qt5はインストールしたが、何故かインプットメソッドがオンにならない。<br>（fcitx-qt5はあまり必要無いようだが、念の為インストール）  </p>
+<p><code>fcitx-diagnose</code>を実行してフロントエンド設定の項目を確認すると、XMODIFIERS、QT_IM_MODULEが正しく設定されていないようで、「設定されていません」という表示だったり空欄だったりする。  </p>
+<p>ホームディレクトリに.xprofileを新規作成し、下記内容で保存。  </p>
+<pre><code>export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=&quot;@im=fcitx&quot;
+</code></pre><p>再起動したら、QupZilla、ReTextともに日本語入力が可能になった。  </p>
+<p>（参照記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Fcitx?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DFcitx_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno" target="_blank" rel="external">Fcitx - ArchWiki</a>  </p>
+<p>再度<code>fcitx-diagnose</code>で見てみると、「環境変数 XMODIFIERS は “{$2}” に正しく設定されています。」「環境変数 QT_IM_MODULE は “{$2}” に正しく設定されています。」となっていた。  </p>
+<p>あと、fcitx-configtool（Qt 設定ツール）で、デフォルトのインプットメソッドをfcitxに変更出来るが、こちらはximのままでも問題無いようだった。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>iBusのプロパティパネル採用以降、iBusをやめて日本語入力にfcitx-mozcを使っている。  </p>
+<p>Xubuntuでは特に問題無く使えていたが、Arch LinuxでQtベースのプログラムを使用する際、日本語入力が有効にならず困っていた。<br>Simpl]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Xfce4設定の外観~フォントをFixedにしたらクラッシュした]]></title>
@@ -529,30 +557,6 @@ Server = http://repo.archlinux.fr/$arch
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[dead-link-checkerがあまりに遅いので「LinkChecker」を使ってみた（リンク切れチェック）]]></title>
-    <link href="http://pagent.github.io/2015/02/27/linkchecker/"/>
-    <id>http://pagent.github.io/2015/02/27/linkchecker/</id>
-    <published>2015-02-27T08:48:11.000Z</published>
-    <updated>2015-03-02T11:25:34.000Z</updated>
-    <content type="html"><![CDATA[<p>ネット上のページは開設者の都合などにより消えることも多いだろうし、SEO的にはそれ程気にしなくても良いのかもしれないが、ページのリンクをクリックしても404エラーだったりするとやはりがっかりする。<br>自分のブログにもリンク切れになっている発リンクが無いか調べてみた。  </p>
-<p>まず、有名どころらしいdead-link-checker.comでチェックしてみたが、とにかく遅い。<br>1600あまりのページのチェックだったが、2時間以上も掛かってしまった。<br>遅すぎて、そのあとリンク切れの修正という気にはとてもなれなかった。  </p>
-<p>ウェブアプリの場合、サーバーの負担を減らす為ある程度遅くなるのは仕方が無いらしい。<br><a href="http://chusho-it.net/post_linkcheck.html" target="_blank" rel="external">サイト全体をチェックできるリンクチェックツール比較</a>  </p>
-<p>というわけで、上記の記事で高評価で紹介されていた<a href="http://wummel.github.io/linkchecker/" target="_blank" rel="external">「LinkChecker」</a>を使ってみた。<br>Linux、Windows、Macで使えるクロスプラットフォームらしい。  </p>
-<p>最新版のlinkchecker-gui_9.3-1_all.debをダウンロードしたが、インストールの際にUbuntuソフトウェアセンターが、少し古いバージョンだったらリポジトリにあると言ってきたので、言われた通りリポジトリのlinkchecker-gui 8.6-2をインストールした。  </p>
-<p>使ってみたらこれが早かった。  </p>
-<p>すべてのページのチェックが5分程で完了。<br>結果は、404や301などの異常の種類やURL等で並び替えが出来るので、その後の修正作業もはかどった。  </p>
-<p>サイズも397.3 kBと小さいし、わざわざ遅いウエブアプリを使うより「LinkChecker」をインストールする方が断然おすすめ。  </p>
-<p>ときにはウェブアプリも便利だったりはするが、リンク切れチェックはソフトをインストールするに限ると痛感。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>ネット上のページは開設者の都合などにより消えることも多いだろうし、SEO的にはそれ程気にしなくても良いのかもしれないが、ページのリンクをクリックしても404エラーだったりするとやはりがっかりする。<br>自分のブログにもリンク切れになっている発リンクが無いか調べてみた。  ]]>
-    </summary>
-    
-      <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
     
   </entry>
   
