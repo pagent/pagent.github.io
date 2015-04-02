@@ -114,7 +114,7 @@
 <p>Xubuntuでは特に問題無く使えていたが、Arch LinuxでQtベースのプログラムを使用する際、日本語入力が有効にならず困っていた。<br>Simplenote専用にするのにうってつけの軽量ブラウザ「QupZilla」や、markdownファイル編集の際プレビューが出来て便利な「ReText」など、日本語入力出来ないと不便。  </p>
 <p>モジュールのfcitx-qt4、fcitx-qt5はインストールしたが、何故かインプットメソッドがオンにならない。<br>（fcitx-qt5はあまり必要無いようだが、念の為インストール）  </p>
 <p><code>fcitx-diagnose</code>を実行してフロントエンド設定の項目を確認すると、XMODIFIERS、QT_IM_MODULEが正しく設定されていないようで、「設定されていません」という表示だったり空欄だったりする。  </p>
-<p>ホームディレクトリに.xprofileを新規作成し、下記内容で保存。  </p>
+<p>ホームディレクトリに.xprofileを新規作成し、下記内容で保存。<br>（ディスプレイマネージャにSLiMを使っている場合は、~/.xprofileではなく~/.xinitrcに記載するらしい）  </p>
 <pre><code>export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=&quot;@im=fcitx&quot;
