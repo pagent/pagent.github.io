@@ -128,13 +128,14 @@
 	  
 	
 	  <p>Windowsではパスワード管理ソフトとして、長らくIDMを使っていた。  </p>
-<p>IDMはとても便利で長らくお世話になったが、Linuxでは使えない。<br>OSをWindowsからLinuxに乗り換える際、パスワード管理ソフトをクロスプラットフォームのKeepass2に変更した。  </p>
+<p>IDMはとても便利で長らくお世話になったが、Linuxでは使えない。<br>OSをWindowsからLinuxに乗り換える際、パスワード管理ソフトをクロスプラットフォームのKeepass2（KeePass Password Safe）に変更した。  </p>
 <p>Keepass2の日本語化は、Xubuntuでは<a href="http://keepass.info/translations.html" target="_blank" rel="external">Translations - KeePass</a>からKeePass-2.28-Japanese.zipをダウンロードし解凍。<br>Japanese.lngxをJapanese.lngxを/usr/lib/keepass2内にコピー。<br>Keepass2のView→Change LanguageからJapaneseを選択したら日本語化出来た。  </p>
 <p>今回、Arch LinuxにもKeepass2をインストールした。<br><code>sudo pacman -S keepass</code>でkeepass-2.28-2がインストールされた。  </p>
 <p>Arch LinuxではKeePass.exeは/usr/lib/keepass2ではなく/usr/share/keepass内にあるので、ここへJapanese.lngxをコピー。<br>日本語化しようとしたが、文字化けしてしまい豆腐状態。  </p>
 <p>Tools→options→Interface→Serect List Fontで、IPA Pゴシック、Takao Pゴシックなど日本語フォントに変更すると、パスワード管理している項目は日本語化されたが、メニューは依然文字化けしたまま。<br>ネットで検索し、システムフォントを日本語フォントに変更してみたが、それでも豆腐状態が治らない。  </p>
 <p>Keepass2のoptions→Interfaceのチェックボックスリスト内に”Force using system font(Unix only)”「強制的にシステムフォントを使用(Unixのみ)」という項目があり、これにチェックが入っていたので、チェックを外してみたらようやくメニューも日本語化出来た。  </p>
-<p>XubuntuのKeepass2を見てみると、「強制的にシステムフォントを使用(Unixのみ)」のチェックが入ったままで日本語化出来ている。<br>同じLinuxでもディストリビューションによって色々と挙動、設定が違うようだ。</p>
+<p>XubuntuのKeepass2を見てみると、「強制的にシステムフォントを使用(Unixのみ)」のチェックが入ったままで日本語化出来ている。<br>同じLinuxでもディストリビューションによって色々と挙動、設定が違うようだ。  </p>
+<p>ーー<br>（追記）<br>その後Keepass2のツールバーの項目がショートカットキーしか表示されなくなってしまった。<br>今度は「強制的にシステムフォントを使用(Unixのみ)」のチェックを入れると、ちゃんと日本語表示された。</p>
 
 	
 	</div>
@@ -663,35 +664,35 @@ Server = http://repo.archlinux.fr/$arch
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>48</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>48</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
 			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
 		
 		
 		</ul>

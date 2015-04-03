@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-04-02T12:16:03.867Z</updated>
+  <updated>2015-04-03T03:53:08.961Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -282,15 +282,16 @@ fi
     <link href="http://pagent.github.io/2015/03/14/keepass2-font/"/>
     <id>http://pagent.github.io/2015/03/14/keepass2-font/</id>
     <published>2015-03-13T22:47:05.000Z</published>
-    <updated>2015-03-14T13:12:32.022Z</updated>
+    <updated>2015-04-03T03:52:42.535Z</updated>
     <content type="html"><![CDATA[<p>Windowsではパスワード管理ソフトとして、長らくIDMを使っていた。  </p>
-<p>IDMはとても便利で長らくお世話になったが、Linuxでは使えない。<br>OSをWindowsからLinuxに乗り換える際、パスワード管理ソフトをクロスプラットフォームのKeepass2に変更した。  </p>
+<p>IDMはとても便利で長らくお世話になったが、Linuxでは使えない。<br>OSをWindowsからLinuxに乗り換える際、パスワード管理ソフトをクロスプラットフォームのKeepass2（KeePass Password Safe）に変更した。  </p>
 <p>Keepass2の日本語化は、Xubuntuでは<a href="http://keepass.info/translations.html" target="_blank" rel="external">Translations - KeePass</a>からKeePass-2.28-Japanese.zipをダウンロードし解凍。<br>Japanese.lngxをJapanese.lngxを/usr/lib/keepass2内にコピー。<br>Keepass2のView→Change LanguageからJapaneseを選択したら日本語化出来た。  </p>
 <p>今回、Arch LinuxにもKeepass2をインストールした。<br><code>sudo pacman -S keepass</code>でkeepass-2.28-2がインストールされた。  </p>
 <p>Arch LinuxではKeePass.exeは/usr/lib/keepass2ではなく/usr/share/keepass内にあるので、ここへJapanese.lngxをコピー。<br>日本語化しようとしたが、文字化けしてしまい豆腐状態。  </p>
 <p>Tools→options→Interface→Serect List Fontで、IPA Pゴシック、Takao Pゴシックなど日本語フォントに変更すると、パスワード管理している項目は日本語化されたが、メニューは依然文字化けしたまま。<br>ネットで検索し、システムフォントを日本語フォントに変更してみたが、それでも豆腐状態が治らない。  </p>
 <p>Keepass2のoptions→Interfaceのチェックボックスリスト内に”Force using system font(Unix only)”「強制的にシステムフォントを使用(Unixのみ)」という項目があり、これにチェックが入っていたので、チェックを外してみたらようやくメニューも日本語化出来た。  </p>
-<p>XubuntuのKeepass2を見てみると、「強制的にシステムフォントを使用(Unixのみ)」のチェックが入ったままで日本語化出来ている。<br>同じLinuxでもディストリビューションによって色々と挙動、設定が違うようだ。</p>
+<p>XubuntuのKeepass2を見てみると、「強制的にシステムフォントを使用(Unixのみ)」のチェックが入ったままで日本語化出来ている。<br>同じLinuxでもディストリビューションによって色々と挙動、設定が違うようだ。  </p>
+<p>ーー<br>（追記）<br>その後Keepass2のツールバーの項目がショートカットキーしか表示されなくなってしまった。<br>今度は「強制的にシステムフォントを使用(Unixのみ)」のチェックを入れると、ちゃんと日本語表示された。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Windowsではパスワード管理ソフトとして、長らくIDMを使っていた。  </p>
