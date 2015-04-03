@@ -112,14 +112,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/01/26/numlockx/" >Xubuntu14.04で常にNumlockオンで起動する</a>
+			<a href="/2015/02/25/clonezilla-architecture-speed/" >Clonezillaのアーキテクチャとバックアップスピード</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年1月26日
+	2015年2月25日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -127,13 +127,10 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>PC起動時にNumlockが有効になっていると、すぐにテンキーで数字を入力出来るので少しだけ助かる。<br>オフになっていてもNumlockキーを押せばいいだけではあるが。  </p>
-<p>Xubuntu14.04の設定マネージャーを見ていると「設定エディター」というのがあった。<br>マウスを合わせるとツールチップで「Xfconf のグラフィカル設定エディターです」と説明が出ているもの。<br>何の気無しにクリックしてみると、keyboadsのところが開いていてNumlockについての設定のようだった。<br>「値」の処にチェックは入っていない。  </p>
-<p>試しにチェックを入れてみたら良かったのだが、説明らしい説明が無かったので躊躇してしまい、「Numlock」+「Ubuntu」で検索してnumlockxをインストールした。<br>だがこれだけだと、Numlockがオフの状態でPCを終了して再起動すると、Numlockオフで起動してしまう。<br>Ubuntuソフトウェアセンターの説明には「本パッケージは、セッション開始時に numlock を有効化するセッションスクリプト を自動的にインストールします。」とあるのだが。  </p>
-<p>/etc/lightdm/lightdm.confに「greeter-setup-script=/usr/bin/numlockx on」を追記するよう解説しているサイトがあったのでやってみたが、これもうまく行かない。<br>さっきの「設定エディター」でチェックを入れても、オフ状態でPCを終了するとNumlockオフで起動する。  </p>
-<p>結局、「セッションと起動」の自動開始アプリケーションにコマンド<code>numlockx</code>の項目を追加することで、「常にNumlockオンで起動」させることが出来た。  </p>
-<p>ーー<br>（追記）<br>自動開始アプリケーションに追加するコマンドは<code>numlockx</code>だけでも大丈夫だったが、<code>/usr/bin/numlockx on</code>もしくは<code>/usr/bin/numlockx</code>とするのがLinuxの正統な作法のようだ。<br>（自動開始アプリケーションに追加されていた他の項目を見ると、どれも/usr/bin/…という記法になっている。）  </p>
-<p>「<code>numlockx</code>だけで実行出来る」＝「パスが通っている」ということらしいので、どちらでも良いのだろう。<br><a href="http://www.obenri.com/_operation/path_through.html" target="_blank" rel="external">◇”パスが通っている”とは？◇初心者のためのLinuxサーバー構築講座(CentOS 自宅サーバー対応)☆お便利サーバー.com☆</a></p>
+	  <p>古いPCで、新しいkernelだと正常に起動しないが、kernel3.10台までのものなら大丈夫。<br>その条件でなるべく新しいClonezillaを探したら、clonezilla-live-2.1.2-43（もしくはclonezilla-live-20130819-raring）のようだった。  </p>
+<p>どのアーキテクチャのものを使えば良いのか分からず、clonezilla-live-2.1.2-43-i486.isoを使ったら、バックアップが異様に遅かった。100GB中67.1GBを使用中のパーティションをバックアップするのに50分近くかかった。<br>アーキテクチャが合ったものを使わないと遅くなってしまうようだ。  </p>
+<p>clonezilla-live-2.1.2-43-i686-pae.isoをダウンロードして使ったら、18分あまりだった。<br><a href="http://ftp.twaren.net/local-distfiles/clonezilla-live/oldstable/2.1.2-43/" target="_blank" rel="external">Index of /local-distfiles/clonezilla-live/oldstable/2.1.2-43</a><br>clonezilla-live-20130819-raring-i386.isoでも18分あまり。<br><a href="http://ftp.twaren.net/local-distfiles/clonezilla-live/alternative/oldstable/20130819-raring/" target="_blank" rel="external">Index of /local-distfiles/clonezilla-live/alternative/oldstable/20130819-raring</a>  </p>
+<p>ちなみに、amd64となっているものは当然のごとく32bitのPCでは使用出来なかった。</p>
 
 	
 	</div>
@@ -142,7 +139,7 @@
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/26/numlockx/" data-text="Xubuntu14.04で常にNumlockオンで起動する | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/25/clonezilla-architecture-speed/" data-text="Clonezillaのアーキテクチャとバックアップスピード | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -155,14 +152,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/01/26/deploy-conflicted-copy-dropbox/" >Dropbpx上のHexoでdeploy時「競合コピ ー」のためエラーになる</a>
+			<a href="/2015/02/20/usb-multiboot-2nd-partition/" >USBメモリの第2パーティションからisoファイルをマルチブート</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年1月26日
+	2015年2月20日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -170,12 +167,18 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>Dropbpx上に置いてあるHexoフォルダ直下にdb (… の競合コピー 2015-01-25).jsonというファイルが出来てしまった。<br>deployしようとすると  </p>
-<pre><code>fatal: Reference has invalid format: &#39;refs/heads/master (... の競合コピ ー 2015-01-25)&#39;
-</code></pre><p>というエラー表示が出る。  </p>
-<p>Dropbpxでは１つのファイルに対して複数のPCで同時に変更があった場合、「競合コピー」というのが出来るらしい。<br>hexo/.deploy/.git/refs/heads内にも競合コピーが出来てしまい、これのせいで上手くdeploy出来ないようだ。<br><a href="http://rcmdnk.github.io/blog/2013/05/12/computer-octopress-git-github-dropbox/" target="_blank" rel="external">Git + Dropbox使用時の注意点</a>  </p>
-<p>競合コピーを削除したらエラーが出なくなった。  </p>
-<p>Hexoフォルダ内を「競合コピー」で検索したら計４つ見つかったので、すべて削除した。</p>
+	  <p>USBメモリからPuppy LinuxとClonezillaの両方を起動出来たら、便利そうだ。<br>GpartedとClonezillaの両方を同梱したLive CDがあればいいが、そういうのが見つからない。<br>かつてはGParted-Clonezilla LiveCDというのがあったようだが、既に開発終了してしまっているようだ。  </p>
+<p>複数のisoファイルをUSBメモリ起動させるツールはいくつかあるようだったが、Windows用のXBOOTというのがサイズがコンパクトで手軽。使い勝手も良かった。  </p>
+<p>XBOOTで唯一の不満は、isoファイルをUSBメモリの2番目以降のパーティションにインストール出来ないこと。<br>やはりパーティションは分けた方がデータを整理しやすい。<br>Windowsでは1番目のパーティションしか見えないので、データの保存は第1パーティション、isoファイルの起動は第2パーティションにしたいところ。  </p>
+<p>XBOOTでいったん先頭のパーティション（sdb1）にPuppyとClonezillaのisoファイルをインストール。<br>その後そのデータを第2パーティション（sdb2）にコピー。<br>だが、これではUSBが起動しなくなってしまうので、syslinuxとMBRを再度インストールする必要があった。  </p>
+<p>下記サイトからsyslinuxの圧縮ファイルをダウンロード。<br>（syslinux-4.04を用いたが、現時点での最新版はsyslinux-6.03のよう）<br><a href="https://www.kernel.org/pub/linux/utils/boot/syslinux/" target="_blank" rel="external">Index of /pub/linux/utils/boot/syslinux</a>  </p>
+<p>syslinux-4.04.tar.bz2を解凍。syslinux-4.04/linuxフォルダ内で端末を開き、下記コマンドでsdb2（環境によってはsdc2など）にsyslinuxをインストール。  </p>
+<pre><code>syslinux /dev/sdb2
+</code></pre><p>さらにsdbにMBRを再インストール。  </p>
+<pre><code>dd bs=440 count=1 conv=notrunc if=~/Desktop/syslinux-4.04/mbr/mbr.bin of=/dev/sdb
+</code></pre><p>（デスクトップ上で解凍したので上記のパスになっているが、if=やof=以下のパスは状況に応じて。）  </p>
+<p>USBメモリの2番目のパーティションsdb2から起動出来るようになった。  </p>
+<p>ーー<br>（参照記事）<br><a href="http://www.server-world.info/query?os=Other&amp;p=knoppix&amp;f=2" target="_blank" rel="external">KNOPPIX - 複数パーティション構成のUSBメモリから起動する ： Server World</a><br><a href="https://wiki.archlinux.org/index.php/Syslinux_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29#.E6.89.8B.E5.8B.95.E3.82.A4.E3.83.B3.E3.82.B9.E3.83.88.E3.83.BC.E3.83.AB" target="_blank" rel="external">Syslinux (日本語) - ArchWiki</a></p>
 
 	
 	</div>
@@ -184,7 +187,7 @@
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/26/deploy-conflicted-copy-dropbox/" data-text="Dropbpx上のHexoでdeploy時「競合コピ ー」のためエラーになる | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/20/usb-multiboot-2nd-partition/" data-text="USBメモリの第2パーティションからisoファイルをマルチブート | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -197,14 +200,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/01/25/facebookmail-spam/" >宅配業者からの不在通知を装ったスパムメール（info@…facebookmail.com）</a>
+			<a href="/2015/02/17/github-pages-redirect/" >GitHub Pagesのブログでリダイレクト「hexo-generator-alias」</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年1月25日
+	2015年2月17日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -212,17 +215,23 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>今年になってから突然、サブのメールアドレスに迷惑メールが来るようになった。  </p>
-<p>ほとんどは卑猥な文言のひと目でスパムと分かるものだったが、一見スパムと分かりづらいメールもあった。<br><code>ペリカン配送 &lt;info@…facebookmail.com&gt;</code>を名乗る差出人からのもので、件名は<code>【ペリカン配送より不在通知】</code>となっている。  </p>
-<blockquote>
-<p>↓コチラから確認↓↓<br>http://…</p>
-<p>↓↓送付停止は下記より↓↓</p>
-<p>http://…</p>
-</blockquote>
-<p>という内容で、迷惑メールフィルタでも振り分けられていなかった。  </p>
-<p>スパムメールが来るようになった時期とちょうど重なっていたから「あやしい」と気付いたが、そうでなかったら本当の「不在通知」と思い込み、うっかりリンクをクリックしていた可能性がある。<br>不在通知が郵便受けにではなくメールで来るなんて、冷静に考えたらおかしいのだが。  </p>
-<p>間違ってリンクをクリックしていたら悪質なサイトに誘導されていたのだろう。<br>また「生きているアドレス」と判断されて、さらに大量のスパムメールが来ることになっていたかもしれない。  </p>
-<p>検索してみると、facebookmail.comからスパムメールが来るというのは結構あるらしい。<br>みなさんもお気をつけ下さい。</p>
+	  <p>先日書いた記事のURLが、一部大文字のアルファベットになっていたので小文字に変更したら、当然のごとくリンク切れになってしまった。  </p>
+<p>以前、.htaccessを使って301リダイレクトをしようと試みたことがあったが、.htaccessのファイルをdeployすることは出来たものの効果は無かった。<br>GitHub Pagesでは.htaccessを使えないらしい。  </p>
+<p>meta refreshタグなら使えるのではないかと思い、やってみた。</p>
+<p>全ての記事の基本レイアウトで転送設定する訳にはいかないので、publicフォルダ内に転送元となるindex.htmlを作り、転送タグを記載。<br>generateの際に消えてしまわないよう所有者をrootに変更し、さらにパーミッションも444に変更した。<br>だが、この状態でgenerateするとエラーになってしまう。  </p>
+<p>なにか良い方法は無いかと検索したら、転送元となるindex.htmlを自動生成してくれるプラグインが見つかった。<br><a href="https://www.npmjs.com/package/hexo-generator-alias" target="_blank" rel="external">hexo-generator-alias</a>  </p>
+<p>Hexoの作業フォルダ内で端末を開き  </p>
+<pre><code>$ npm install hexo-generator-alias --save
+</code></pre><p>とコマンドを打つとインストール完了。<br>node_modulesフォルダにhexo-generator-aliasが追加される。  </p>
+<p>転送先の記事ソースのFrontMatterに<code>alias: （転送元のパス）</code>を追加しgenerateすると、publicフォルダ内に転送元となるindex.htmlを生成してくれる。  </p>
+<p>自分の例では、転送先の2015-02-06-lxpup-lxqtpup.mdのFrontMatterに<code>alias: 2015/02/06/lxpup-LxQtPup/index.html</code>を追記。（<code>alias: 2015/02/06/lxpup-LxQtPup/</code>でも良いよう）<br>generateすると、public/2015/02/06/lxpup-LxQtPup/index.htmlが生成された。<br>ファイルの中身は転送指定のみの簡潔なもの。  </p>
+<pre><code>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;title&gt;Redirecting...&lt;/title&gt;&lt;link rel=&quot;canonical&quot; href=&quot;/2015/02/06/lxpup-lxqtpup/index.html&quot;&gt;&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0; url=/2015/02/06/lxpup-lxqtpup/index.html&quot;&gt;&lt;/head&gt;&lt;/html&gt;
+</code></pre><p>旧URL <a href="http://pagent.github.io/2015/02/06/lxpup-LxQtPup/" target="_blank" rel="external">http://pagent.github.io/2015/02/06/lxpup-LxQtPup/</a> にアクセスすると、ちゃんと新URLに転送された。  </p>
+<p>Jekyllにも同様のプラグインがあり、Octopressでも使えるようだ。<br><a href="http://rawsyntax.com/blog/blogging-on-jekyll-url-redirects/" target="_blank" rel="external">Blogging on Jekyll: URL Redirects - Raw Syntax</a>  </p>
+<p>GitHub Pagesでの転送は以前は諦めていたが、これで一安心。  </p>
+<p>ーー<br>（追記）<br>過去の記事から転送指定しているものを探すには、source/_posts内で端末を開き下記コマンド  </p>
+<pre><code>grep &quot;alias:&quot; *.md
+</code></pre><p>すべての.mdファイルから「alias:」を含むファイルを抽出。</p>
 
 	
 	</div>
@@ -231,7 +240,7 @@
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/25/facebookmail-spam/" data-text="宅配業者からの不在通知を装ったスパムメール（info@…facebookmail.com） | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/17/github-pages-redirect/" data-text="GitHub Pagesのブログでリダイレクト「hexo-generator-alias」 | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -244,14 +253,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/01/24/hexo-favicon/" >Hexoにファビコン</a>
+			<a href="/2015/02/15/stop-kwallet-manager/" >KDEウォレットマネージャーを停止</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年1月24日
+	2015年2月15日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -259,14 +268,10 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>Hexoで書いているGitHub Pagesのブログにファビコンを入れた。<br>Hexoでは使用しているテーマでファビコンを設定するらしい。</p>
-<p>freewillというテーマを使っているので、hexo/themes/freewill/_config.ymlで<code>favicon: favicon.png</code>となっているのを確認し、 作成したfavicon.pngをhexo/themes/freewill/source内に置いた。   </p>
-<p>generate、deployしてFirefoxでサイトを表示すると、タブにはファビコンが表示されているものの、何故かサイドバーのブックマーク欄には作ったファビコンが表示されていない。<br>他のブラウザのRekonqやMidoriではタブにも表示されず。  </p>
-<p>ブラウザのキャッシュが残っているせいかと、キャッシュを削除したり、ファビコンのサイズを変えてみたりしたが、やはりブックマーク欄には表示されない。  </p>
-<p>拡張子を.pngではなく.icoで作り直し、/_config.ymlを<code>favicon: favicon.ico</code>にしたら、ようやくブックマーク欄にもファビコンが表示された。<br>他のブラウザでもちゃんと表示されている。  </p>
-<p>ちなみに.icoファイルでは複数のサイズの画像を一つのファイルに格納出来るらしい。<br><a href="http://www.hp-stylelink.com/news/2014/02/20140213.php" target="_blank" rel="external">複数サイズも一つのファイルで！マルチアイコンの「favicon（ファビコン）」作成方法 | Web制作会社スタイル</a>  </p>
-<p>ちょうど16×16、32×32、64×64の3つの.pngファイルを作成していたので、下記サイトでこの3サイズを格納したfavicon.icoにした。<br><a href="http://ao-system.net/alphaicon/" target="_blank" rel="external">無料で半透過マルチアイコンやファビコン(favicon.ico)作成。ギザギザの無い美しい影を持ったアイコン作成がフリーでできます。</a>  </p>
-<p>HexoやOctopressでも、ファビコンの拡張子は.icoの方が良いようだ。</p>
+	  <p>無線LANのパスワードを設定してから、Kubuntuにログインする度にKDEウォレットマネージャーが起動してくるようになった。<br>パスワードはクロスプラットフォームの管理ソフト「KeePass2」を使う方が便利なので、KDEウォレットマネージャーは不要。  </p>
+<p>Software CenterでKWalletManagerをアンインストールしたのに、それでもしつこく起動してくる。  </p>
+<p>もう一度インストールし、KDEウォレットマネージャーの設定で「KDEウォレットサブシステムを使う。」のチェックを外して、ようやく起動を停止出来た。  </p>
+<p>アンインストールしても起動してくるって、どうなってるんだろう。</p>
 
 	
 	</div>
@@ -275,7 +280,7 @@
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/24/hexo-favicon/" data-text="Hexoにファビコン | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/15/stop-kwallet-manager/" data-text="KDEウォレットマネージャーを停止 | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -288,14 +293,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/01/24/xubuntu-menu-nepomuk/" >XubuntuのメニューからNepomuk Cleanerを消す</a>
+			<a href="/2015/02/14/mbr-gpt/" >パーティションテーブルをMBRからGPTに書き換えてしまった</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年1月24日
+	2015年2月14日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -303,11 +308,17 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>以前、Xubuntu14.04のメインメニュー、システムの欄にNepomuk File Indexing Controllerというのが消えずに残っていて、AlacarteやMenuLibreでは項目が見当たらないので非表示にも出来ず、困ったことがあった。<br>この時は~/.local/share/desktop-directoriesディレクトリを削除したら消えてくれた。<br>ディレクトリ内の唯一のファイルalacarte-made.directoryの中身はnepomukcontrollerについての記載だった。  </p>
-<p>その後またNepomuk Cleanerという項目が表れた。<br>~/.local/share/desktop-directoriesを見てみるとファイルが７つあったが、今回はNepomuk〜に関するものは見当たらない。<br>試しにディレクトリをリネームし再起動してみたが、Nepomukが消えない。  </p>
-<p>結局、/usr/share/applications/kde4内のNepomuk CleanerとNepomuk Backupを削除することで、メニューからNepomukを消すことが出来た。  </p>
-<p>このディレクトリ内のNepomuk Cleaner、Nepomuk Backupの実体は、nepomukcleaner.desktop、nepomukbackup.desktopというデスクトップ設定ファイル（メニューやランチャーに項目を表示するためのもの）で、アプリケーション本体では無いようだ。<br>アプリケーション自体はインストールされていないようなので、削除しても問題無いと思うが、残しておきたい場合は、ファイルをエディタで開き一番下に<code>NoDisplay=true</code>を追記すると良いようだ。<br><a href="https://wiki.archlinux.org/index.php/Xfce_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29#.E3.83.A1.E3.83.8B.E3.83.A5.E3.83.BC" target="_blank" rel="external">Xfce (日本語) - ArchWiki</a>  </p>
-<p>ーー<br>（追記）<br><code>NoDisplay=true</code>では効果無く、<code>ShowOnlyIn=KDE</code>を追記したらメニューから消えた。</p>
+	  <p>サブマシンのネットブックでArch Linuxを試してみようと思ったが、ブートローダーのGRUBをインストールするところで、BIOS（MBR形式）ではなくUEFI（GPT）を選択してしまった。<br>そのせいでMBRが壊れてしまったようで、起動出来なくなってしまった。<br>MBM（Multiple Boot Manager）を再インストールしてみたが、ディスク全体が”unknown”と表示されるのみ。  </p>
+<p>「TestDisk」というフリーソフトでパーティションテーブルを修復出来るようだった。  </p>
+<p>「TestDisk」は「Ultimate Boot CD」に同梱されてるという情報を見かけたが、どうやら現在は「Ultimate Boot CD」には同梱されていないようで、見つからなかった。<br>「SystemRescueCd」に入っていたので、こちらから利用した。<br>「SystemRescueCd」でブート。入力出来る状態になった後、<code>testdisk</code>とコマンドを打つと起動した。  </p>
+<p>使い方は最初はよく分からなかったが、サーチで表示されたリストの内、テーブルに書き込みたいものをキードードの左右のキーで設定し、緑色にしたら良いらしい。<br>リストは「p」キーでリストの内容を確認しながら選べば良いので、要領が分かれば簡単。<br>「q」で前の画面に戻る。</p>
+<p>使い方は下記サイトの解説が分かりやすかった。<br><a href="http://uiuicy.cs.land.to/testdisk1.html" target="_blank" rel="external">【TestDisk】について</a>  </p>
+<p>「Deeper Search」にはけっこう時間が掛かり、またせっかく「Deeper Search」が終わったリストを、途中で「ENTER」を押してしまって戻れなくなり、また最初から「Deeper Search」ということもあったが。  </p>
+<p>パーティションテーブルは一応復旧出来て、起動も出来るようになったが、どうやらGPTでのパーティショニングの痕跡が依然残っている様子。<br>GpartedもGPTでパーティショニングされていると判断するようで、なにかパーティションの操作をすると、また起動出来なくなる。  </p>
+<p>これでは不便だし安心感も持てないが、「AOMEI Partition Assistant Standard Edition」というWindows用のフリーソフトでディスクの内容を保持したままGPTとMBRの変換が出来るようなので、試してみることにした。  </p>
+<p>「AOMEI Partition Assistant」を試す前にパーティションのバックアップをしようと思ったが、Clonezillaもパーティションテーブルを読めないらしい。<br>仕方が無いので下記サイトを参考に、<code>dd</code>コマンドでバックアップすることにした。<br><a href="http://takuya-1st.hatenablog.jp/entry/20101025/1288002819" target="_blank" rel="external">dd でディスクをコピーするよく使う例 - それマグで！</a>  </p>
+<p>ーー<br>（追記）<br>「AOMEI Partition Assistant」はWindows XpではMBRに変換出来ないようで、結局ハードディスクのデータを全消去してパーティションテーブルをMBRで作り直し、ddでバックアップしたものをリストアしてようやく復旧した。  </p>
+<p>復旧後、拡張パーティションにあるLinuxが起動しなかったが、SystemRescueCdの”Boot an existing Linux system installed on the disk”で起動させ、<code>sudo grub-install --force /dev/sda6</code>でgrub2を再インストール。<code>sudo update-grub</code>で起動出来るようになった。</p>
 
 	
 	</div>
@@ -316,219 +327,7 @@
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/24/xubuntu-menu-nepomuk/" data-text="XubuntuのメニューからNepomuk Cleanerを消す | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/01/23/lubuntu-alacarte-menulibre/" >Lubuntu14.04にメニュー編集ソフトMenuLibreを入れた</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年1月23日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Lubuntu14.04でメインメニューの編集をしたかったのだが、手動で設定するのは難しそう。<br><a href="https://wiki.archlinux.org/index.php/LXDE_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29#.E3.82.A2.E3.83.97.E3.83.AA.E3.82.B1.E3.83.BC.E3.82.B7.E3.83.A7.E3.83.B3.E3.83.A1.E3.83.8B.E3.83.A5.E3.83.BC.E3.81.AE.E7.B7.A8.E9.9B.86" target="_blank" rel="external">LXDE (日本語) - ArchWiki</a>  </p>
-<p>LXDE用のメニューエディターにLXMEDというのがあるようだが、使ったことがないし、メニューを削除せず非表示にしたり、上下の並びを入れ替えたり、といったことが出来るかどうか分からない。<br>そこで、AlacarteとMenuLibreを入れてみた。<br>どちらもSynapticでインストール。  </p>
-<p>AlacarteはLubuntu14.04では満足に機能してくれず、非表示設定や並びの入れ替えが反映されなかった。再起動してみても変化無し。<br>一方、MenuLibreの方は望み通りにちゃんと機能してくれた。  </p>
-<p>GUIで簡単に設定出来るのでとても助かる。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/23/lubuntu-alacarte-menulibre/" data-text="Lubuntu14.04にメニュー編集ソフトMenuLibreを入れた | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/01/23/lubuntu-desktop-manager/" >Lubuntuで 「デスクトップマネージャはアクティブではありません」のエラー表示</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年1月23日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>13.04から14.04にアップグレードしたLubuntuで、いつのまにかデスクトップの壁紙が表示されなくなっていた。  </p>
-<p>壁紙を設定しようと「メニュー」→「設定」→「デスクトップの設定」と進んでも、「！ デスクトップマネージャはアクティブではありません。」とエラー表示が出て設定出来ない。<br>デスクトップ上での右クリックから「デスクトップの設定」を選択してもナシのつぶて。  </p>
-<p>Lubuntu14.04でのデスクトップの設定にはPCManFMが使われているようなので、「LXSessionのデフォルトのアプリケーション」でデフォルトのファイルマネージャーをnemoからPCManFMに戻してみたが、それでもデスクトップの設定が出来ない。  </p>
-<p>最終的には下記を参考に、SynapticからPCManFMを再インストールすることで、「デスクトップの設定」を正常に起動出来た｡<br><a href="http://ubuntuforums.org/showthread.php?t=2218084&amp;p=13090056#post13090056" target="_blank" rel="external">[lubuntu] message:desktop manager is not active</a>  </p>
-<p>自分の環境では、回答前段に書いてあるコマンドは行わず、PCManFMの再インストールだけで大丈夫だった。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/23/lubuntu-desktop-manager/" data-text="Lubuntuで 「デスクトップマネージャはアクティブではありません」のエラー表示 | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/01/22/windows10-free/" >7や8からWindows 10へのアップグレードは無料</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年1月22日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>今秋発売予定のMicrosoft次期OS、Windows 10はリリース後1年間に限り、Windows 7、Windows 8.1、Windows Phone 8.1からのアップグレードが無償で提供されるのだとか。<br><a href="http://www.itmedia.co.jp/news/articles/1501/22/news110.html" target="_blank" rel="external">Windows 10無償アップグレードは「必然的」　Microsoftの狙いは - ITmedia ニュース</a>  </p>
-<p>無料になるのはアップグレードに対してのみで、新規のWindows 10搭載パソコンにライセンス料が上乗せされるのはこれまでと変わりが無いようだ。<br>元々アップグレードによる収益は大きなものではなかったようだが、MicrosoftもAppleやGoogleに対して余程危機感を持っているということだろう。<br>ユーザーを無視したようなこれまでの姿勢から較べると朗報とも言えるが、もはや起動するのはLinuxのみで、Windowsを立ち上げることは殆ど無い。<br>だが、Windows 7のサポート終了後のことも考えて、リリース後1年間の内には一応Windows 10にアップグレードしておこうと思う。<br>安心してネットに繋げないようだと、困ることもあるかもしれないし。</p>
-<p>バックアップは取っておくつもりだが、多少使い勝手が悪くても問題無い。<br>Windows、ほんとに使わなくなったし。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/22/windows10-free/" data-text="7や8からWindows 10へのアップグレードは無料 | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/01/20/clamtk/" >Linux用ウイルススキャンソフトClamTkを使ってみた</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年1月20日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Xubuntu14.04にClamTkを導入した。<br>Ubuntuソフトウェアセンターを使ったが、v4.45(デフォルト)の他v5.09(trusty-backports)もインストール可能。  </p>
-<p>ファイルマネージャーNemo上で右クリックから簡単にファイルをウイルススキャン出来るよう、nemo-sendto-clamtk_0.02-1もインストールした。<br><a href="http://ubuntuapps.blog67.fc2.com/blog-entry-609.html" target="_blank" rel="external">ClamTkでウイルススキャンをThunarやNemoの右クリックメニューに追加する | Ubuntuアプリのいいところ</a>  </p>
-<p>「ディレクトリを再帰的にスキャンする」「20MB以上のファイルもスキャンする」「ドットで始まるファイルをスキャンする(.*)」にチェックを入れてhomeディレクトリをスキャンしてもなにも検出されなかったが、「不要なアプリケーション(PUA)をスキャンする」にもチェックを入れると、  </p>
-<p>~/.cache/mozilla/firefox/…<br>~/.cache/chromium/Default/Cache/…<br>~/.cache/midori/web/…  </p>
-<p>など、11個のファイルが「潜在的な脅威」として検出された。  </p>
-<p>VirusTotalを使った「解析」しようとしたが、何故かファイルを送信できず実行出来ない。<br>ただのブラウザのキャッシュのようだが、気持ち悪いのですべて削除した。  </p>
-<p>LinuxはWindowsより安全というし、それほど神経質にならなくても良いかもしれないが、たまにウイルススキャンしてみても良いかもしれない。  </p>
-<p>ーー<br>（追記）<br>Windows領域もスキャンしたら、「脅威」であるはずのないものまでいくつも「潜在的な脅威」として検出されて100を超えてしまった。<br>だが「不要なアプリケーション(PUA)をスキャンする」のチェックを外してスキャンしたら6だった。<br>「解析」では問題のあるファイルではないようだったので、そのままにしておくことにしたが。  </p>
-<p>「不要なアプリケーション(PUA)をスキャンする」のチェックは外して使用した方が良いのかもしれない。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/20/clamtk/" data-text="Linux用ウイルススキャンソフトClamTkを使ってみた | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/01/17/fstab-uuid-label/" >マルチブート環境（複数のLinux）でのfstab</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年1月17日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Windows Xp以外にDebian、Xubuntu、Linux Mintをインストールして、クアッドブートにしていたPC。<br>Debianを削除してLubuntuをインストールしたら、Xubuntuが起動しなくなってしまった。<br>起動途中のスプラッシュ画面で  </p>
-<pre><code>/Linux/sda6 ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
-keys:■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ M■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
-</code></pre><p>のような表示のまま止まってしまう。<br>Lubuntuをインストールする際インストール先のパーティションをフォーマットしたので、そのパーティションのUUIDが変わってしまい、Xubuntuのfstabでの記述と違っている為のようだ。  </p>
-<p>Gpartedで新しいUUIDを調べてfstabを修正すると、起動出来るようになった。  </p>
-<p>fstabでのパーティションの指定はUUID以外に、以前のLinuxのように/dev/sda1などのデバイス名での指定、その他ラベルを用いる方法もあるようだ。  </p>
-<pre><code>UUID=72df5d...
-↓
-LABEL=（ラベル名）
-</code></pre><p><a href="http://edo.blog.jp/archives/1716151.html" target="_blank" rel="external">[Linux] /etc/fstabのエントリーをラベル名で定義 : Edo::World::Blog</a>  </p>
-<p>今後また別のLinuxをインストールし直すこともあるかもしれないし、デバイス名またはラベルでの指定に変更しておいた方が良いのかもしれない。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/17/fstab-uuid-label/" data-text="マルチブート環境（複数のLinux）でのfstab | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/14/mbr-gpt/" data-text="パーティションテーブルをMBRからGPTに書き換えてしまった | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -610,35 +409,35 @@ LABEL=（ラベル名）
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
 		
 			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
 		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
 			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
 		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
 		
 		</ul>

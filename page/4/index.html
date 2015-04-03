@@ -112,14 +112,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/02/11/kde-plasma-netbook/" >Kubuntuのネットブック向けデスクトップ「Plasma Netbook」を通常のデスクトップに</a>
+			<a href="/2015/03/09/vostro1000-video-driver/" >DELL Vostro1000（Xp機）のビデオドライバー</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年2月11日
+	2015年3月9日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -127,9 +127,12 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>Kubuntuのネットブック向けデスクトップは「Plasma Netbook」というそうで、ディスプレイの小さいネットブックで使う分には、これはこれで便利そうなのだが、FirefoxやQupzillaなどのアプリケーションでメニューバーを表示出来ないという不便さがある。<br>特にQupzillaでは設定画面に行けず、Qupzillaの設定を変更出来ない。</p>
-<p>「KDEシステム設定」→「ワークスペースの挙動」→「Workspace」でWorkspace typeをNetbookからDesktopにしたら、通常のデスクトップに変更出来た。  </p>
-<p>ーー<br>ネットブックでKubuntuは厳しいのではないかと思ったが、ログインしてからの動作は許容範囲内。<br>Xubuntuと較べると、もっさり感はぬぐえないが。</p>
+	  <p>DELLの古いノートパソコンVostro1000（プリインストールOSはXpSP2）をLinux専用にしていたのだが、WineでKindle for PCを使ってみたくなったので、Windows Xp再インストールした。  </p>
+<p>Kindle for PCを利用するためにはWindows Media Playerのバージョン11以上が必要という情報を見たので、<a href="http://www.microsoft.com/ja-jp/download/windows-media-player-details.aspx?id=8163" target="_blank" rel="external">Windows Media Player 11</a>とついでに<a href="http://www.microsoft.com/ja-jp/download/details.aspx?id=24" target="_blank" rel="external">Windows XP SP3</a>もダウンロード、インストールした。<br>（Windows XPはネットに繋がない方が良いかと思い、ダウンロードはLinuxで行った。）  </p>
+<p>Kindle for PCは無事インストール出来、Wineを使ってLinuxでも使用可能になった。  </p>
+<p>これで良いと言えば良いのだが、Xpの方の解像度が本来は1024×800のはずが1024×768しか選択出来ない。<br>普段Xpを使うことは無いと思うが、あまり気持ち良くはない。  </p>
+<p>付属していたResourceCDからビデオドライバーR156746をインストールしようとしたが、「システムにインストールされているディスプレイアダプタと互換性がない」と言われて、インストールが失敗する。  </p>
+<p><a href="http://www.dell.com/support/home/jp/ja/jppad1/product-support/product/vostro-1000/drivers" target="_blank" rel="external">製品サポート | Dell 日本</a>からR168684.EXEをダウンロードしたら、インストール出来た。</p>
 
 	
 	</div>
@@ -138,7 +141,7 @@
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/11/kde-plasma-netbook/" data-text="Kubuntuのネットブック向けデスクトップ「Plasma Netbook」を通常のデスクトップに | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/09/vostro1000-video-driver/" data-text="DELL Vostro1000（Xp機）のビデオドライバー | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -151,14 +154,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/02/11/kubuntu-blanck-screen/" >Kubuntu14.04で画面が真っ暗</a>
+			<a href="/2015/03/08/xfce-icon-theme/" >Xfceに新しいアイコンテーマをインストール</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年2月11日
+	2015年3月8日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -166,13 +169,12 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>ネットブックLavie LiteにインストールしたKubuntu。<br>新しいkernelだとディスプレイや無線LANに不具合が出るので、旧kernelを使うため、12.04から14.04にアップグレードしたもの。<br>アップグレード後いったんは正常にログイン出来たが、その後再度起動すると、ログイン後に画面が真っ暗になり、マウスポインターのみが表示されている状態になってしまった。<br>左上の隅にポインターを合わせると青く光る。<br>（なぜかGuestアカウントではデスクトップが表示される。）  </p>
-<p>検索すると似たような事例が多く見つかった。  </p>
-<p><a href="https://forums.ubuntulinux.jp/viewtopic.php?id=5996" target="_blank" rel="external">Ubuntu日本語フォーラム / KDEログアウト後に画面が真っ暗になり操作不能</a><br><a href="http://192168111.blog71.fc2.com/category1-1.html" target="_blank" rel="external">俺の覚書 Linux/Unix</a><br><a href="https://www.kubuntuforums.net/showthread.php?66592-Black-screen-after-login&amp;p=360188&amp;viewfull=1#post360188" target="_blank" rel="external">[DESKTOP] Black screen after login - Kubuntu Forums</a>  </p>
-<p>「CTRL」+「ALT」+「F2」でコンソール画面に行き、ディスプレイマネージャーをkdmからgdmに変える方法、<code>sudo apt-get update</code>、<code>sudo apt-get upupgrade</code>する方法、また自分のホームディレクトリの.kdmをリネームして新規に生成させる方法など試してみたが、どれも効果なし。<br>コマンドに不慣れで、/ver/log以下のログを確認するのも上手く行かない。  </p>
-<p>諦めかけたが、KDEならショートカットキーで出し入れ出来る端末エミュレーターYakuakeがインストールされているのではないかと思い、Yakuakeで<code>xrandr</code>コマンドを使えばディスプレイの状態を確認出来るかと、真っ暗な画面で「F12」キーを押してみた。  </p>
-<p>するとデスクトップが現れた。<br>Kubuntu12.04の時と違い、ディスプレイの小さな端末向けのUnityみたいに画面だが。<br>（Yakuakeはインストールされていないのか、出て来なかった。）  </p>
-<p>なぜ復活したのかはまったく謎。</p>
+	  <p>Arch LinuxのXfceのアイコンがgnomeで少しやぼったい感じだったので、新しいアイコンを入れた。  </p>
+<p>アイコンは下記サイトでダウンロード数が一番多かったMistにした。<br><a href="http://xfce-look.org/index.php?xsortmode=high&amp;page=0&amp;xcontentmode=430" target="_blank" rel="external">Eyecandy for your Xfce-Desktop - Xfce-Look.org</a>  </p>
+<p>ダウンロードしたファイルを解凍し、出て来たMistフォルダを/usr/share/iconsに移動。<br>だがこれだけでは「設定」→「外観」→「アイコン」に表示されない。<br>アイコンテーマ毎にキャッシュファイルを生成しないといけないようだ。<br><a href="http://docs.xfce.org/xfce/xfce4-settings/4.10/appearance#icon_cache" target="_blank" rel="external">xfce:xfce4-settings:4.10:appearance [Xfce Docs]</a>    </p>
+<p>端末でコマンドを入力しキャッシュファイルを生成。  </p>
+<pre><code>sudo gtk-update-icon-cache /usr/share/icons/Mist
+</code></pre><p>アイコンの設定に表示され、選択可能になった。</p>
 
 	
 	</div>
@@ -181,7 +183,7 @@
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/11/kubuntu-blanck-screen/" data-text="Kubuntu14.04で画面が真っ暗 | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/08/xfce-icon-theme/" data-text="Xfceに新しいアイコンテーマをインストール | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -194,14 +196,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/02/08/scrapbook-error/" >突然ScrapBookの保存データが消えた</a>
+			<a href="/2015/03/08/yaourt/" >Yaourtをインストール</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年2月8日
+	2015年3月8日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -209,18 +211,20 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>Firfoxで何だったかを見ていたら、突然、英文の警告がポップアップされた。  </p>
-<blockquote>
-<p>ERROR: Failed to initialize datasource.</p>
-<p>[Exception… “Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsILocalFile.create]”  nsresult: “0x80004005 (NS_ERROR_FAILURE)”  location: “JS frame :: resource://scrapbook-modules/utils.jsm :: SBU_getScrapBookDir :: line 24”  data: no]</p>
-</blockquote>
-<p>ページを保存するアドオンScrapBookのもの。<br>気付くとサイドバーのScrapBookのツリーが真っ白で、保存してあったページが無くなっている。  </p>
-<p>「code: 0x80004005」を検索してみたが、Windows起動時のエラーとかVirtualBoxのエラーとか、「0x80004005」はプログラム関係で広く使われているエラーコードらしい。  </p>
-<p>肝心のScrapBookの対処法は見つからなかったが、ScrapBookの「ツール」を開くと、一番下に「緊急時の修復ツール」というのがあった。<br>backupのscrap.rdfファイルからツリーを復元するものらしい。  </p>
-<p>これで復元出来るかと思ったが、バックアップのファイルも見当たらず。<br>ついてない。  </p>
-<p>ーー<br>（追記）<br>よく考えたら、Xubuntu側のScrapBookの保存先は、マルチブート下のWindows 7のSsrapbookフォルダに設定して、共有しているんだった。<br>少し前にWindowsのマウント先を変えたから、それでリンクが切れてしまっただけのようだ。  </p>
-<p>データ保存先を設定し直したら、ちゃんと表示された。</p>
-
+	  <p>AUR (Arch User Repository)のパッケージをインストールするため、pacmanラッパーYaourtを入れた。  </p>
+<p><a href="https://archlinuxjp.kusakata.com/wiki/Yaourt" target="_blank" rel="external">Yaourt - ArchWiki</a>  </p>
+<p>「まず package-query をインストール」とのことだが、pacmanからpackage-queryをインストールしようとしても、見つからないと言われるので、/etc/pacman.confに下記記述を加えた。  </p>
+<pre><code>[archlinuxfr]
+SigLevel = Never
+Server = http://repo.archlinux.fr/$arch
+</code></pre><p>その後  </p>
+<pre><code>sudo pacman --sync --refresh yaourt
+</code></pre><p>GlipperなどもYaourtからインストール出来るようになった。  </p>
+<pre><code>yaourt -S glipper
+</code></pre><p>クリップボードマネージャーは色々あるが、Glipperはログアウト時に履歴を消去出来るので気に入っている。  </p>
+<p>ーー<br>（追記）<br>Xfceデスクトップに標準で入っていたClipmanでも、「終了時に保存する」のチェックボックスを外せば履歴を消去出来るようだ。<br>Glipperのアイコンが正常に表示されないこともあり、結局Clipmanを使うことにしてGlipperをアンインストールした。  </p>
+<pre><code>yaourt -Rs glipper
+</code></pre>
 	
 	</div>
 	
@@ -228,7 +232,7 @@
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/08/scrapbook-error/" data-text="突然ScrapBookの保存データが消えた | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/08/yaourt/" data-text="Yaourtをインストール | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -241,14 +245,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/02/06/lxpup-lxqtpup/" >Puppy Linux派生。Puppy本家より扱いやすい「LxPup」と「LxQtPup」</a>
+			<a href="/2015/03/08/xfce-beep/" >Xfceログアウト時のビープ音を消す</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年2月6日
+	2015年3月8日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -256,35 +260,10 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>Puppy Linuxのデスクトップ環境について調べ物をしていたら、”LxPup - Puppy Linux + LXDE”というページがあった。<br><a href="http://sourceforge.jp/projects/sfnet_lxpup/" target="_blank" rel="external">LxPup - Puppy Linux + LXDE プロジェクト日本語トップページ - SourceForge.JP</a>  </p>
-<p>Puppy LinuxをLXDEデスクトップにアレンジしたものらしい。  </p>
-<p>早速、LxPup-15.02.2のPAE版と非PAE版、それとLxQtPup（非PAE）をダウンロードした。<br>いずれもSlacko Puppy 5.9.3がベースのもの。</p>
-<p>LxQtPupのデスクトップ環境「LXQt」というのは、「LXDE-QtとRazor-qtの成果物を統合したデスクトップ環境」で「Qtに移行したLXDEの後継バージョン」とのこと。<br><a href="http://ja.wikipedia.org/wiki/LXDE" target="_blank" rel="external">LXDE - Wikipedia</a><br>LXDEよりさらに軽いということか。  </p>
-<h3 id="試用してみての感想">試用してみての感想</h3>
-<p><strong>「LxPup」</strong></p>
-<p>ブートCDを焼き起動すると、PAEのLxPupはいきなり「Disabling IRQ #9」と出て、その後なんとか「Loading　kernel 　modules…」までは進んだが、そこでフリーズした様子。  </p>
-<p>非PAEの方で起動すると、無事デスクトップが表示された。  </p>
-<p>デスクトップに子犬の姿は無かったが、開始時に表示される言語やタイムゾーン、モニターなどの設定ウィンドウを閉じると、「ワン！ワン！」と元気に迎えてくれる。<br>本家Puppyよりすっきりした外観。  </p>
-<p>だが動作の軽快さは、まさにPuppy Linux。</p>
-<p>ファイルマネージャーにはPcmanfmが入っていた。<br>とても有難い。<br>Pupy標準のROX-filerは、コピーしようと思ってファイルをドラッグドロップすると、コピーではなくリンクを作ってしまったり、右クリックでコピーしようとするとコピー先のパスを入力させられたりで、使い勝手が悪い。  </p>
-<p>ブラウザはFirefoxで、これも有難い。<br>起動はやはり多少もたつくが、Firefoxにはそれに勝る便利さがある。  </p>
-<p>端末はPuppyデフォルトのrxvtに加えLXTerminalが入っている。<br>右クリックでのコピーペーストが出来て便利。   </p>
-<p>LxPup。<br>Puppy Linuxの軽快さと、LXDEの快適性を上手く融合させている。  </p>
-<p><strong>「LxQtPup」</strong>  </p>
-<p>LxQtPupの方はというと、起動も起動後の操作も、ややもっさり感が否めない。<br>実際、タスクマネージャーだけを開いた状態での消費メモリは、LxPupの68MBに対し、LxQtPupは135MBと倍の差。  </p>
-<p>だが、LxQtPupの外観はとても丁寧に作りこまれていて、「本当にこれがパピーか？」と驚愕を覚える。<br>特にメニュー周りなど、LxPupがPuppy Linuxの素朴さ（ごちゃごちゃ感）を残しているのに対し、LxQtPupには精錬された美しさがある。<br>もはやPuppyの域を超えていて、外観だけを見れば全く別のディストリビューションと思えるほど。  </p>
-<p>凄いです。<br>伊達にメモリー食ってません。  </p>
-<h3 id="LxPupをFrugalインストール">LxPupをFrugalインストール</h3>
-<p>LxPupをHDDにインストールしようと思ったら、ユニバーサルインストーラーはあるが、どこを探してもFrugalインストーラーが見当たらない。<br>参照させて頂いた下記サイトでも、ユニバーサルインストーラーを使ってのFullインストールが紹介されていた。<br><a href="http://no-windows.blog.jp/archives/8229193.html" target="_blank" rel="external">LxPupのインストールからインターネット接続のまとめ : Windowsはもういらない</a>  </p>
-<p>既にPuppy Linux5.7.1をFrugalインストールしているし、出来れば同じパーティション内にFrugalインストールしたいところ。<br>FrugalインストールしてこそのPuppy Linuxとも思える。  </p>
-<p>Frugalインストールは必要なファイルをコピーして、その後Grub４Dosブートローダーをインストールしているだけのようだし、最後のGrub４Dosブートローダーの設定さえちゃんとやれば、ファイルのコピーは手動でも良さそうに思える。<br>やってみた結果、ちゃんとFrugalインストール出来た。  </p>
-<p>まず、インストールするパーティション内に「lxpup1502」等、適当な名前でフォルダを作成。<br>（名前はなるべく入力しやすいものが良い。後に個人保存ファイルを複数作成した場合、個人保存ファイルへのフルパス入力を求められる。）  </p>
-<p>LxPup-15.02.2を例にとると、ブートCD内には12個のファイルがあるが、そのうち必要なのは下記の４つ。  </p>
-<p>initrd.gz<br>vmlinuz<br>puppy_lxpup_15.02.sfs<br>zdrv_lxpup_15.02.sfs</p>
-<p>この４つのファイルをあらかじめ作っておいたフォルダにコピペ。<br>後は「メインメニュー」→「Setup」→「Grub4Dos bootloader config」からGrub４Dosブートローダーをインストールすれば良い。  </p>
-<p>シャットダウンの際、個人保存ファイルの作成を促されるから、好みの形で作成。<br>ブートCDを取り出して再起動すればLxPupの画面が現れる。  </p>
-<p>日本語化は上記参照サイトを参考にさせて頂いた。  </p>
-<p>LxPup、LxQtPup、いずれもノーマルのPuppy Linuxより親しみやすいアレンジになっているので、初心者からベテランまで、ぜひ一度触れてみてもらいたい優れたディストリビューションだ。</p>
+	  <p>Arch LinuxにXfceデスクトップを入れたが、ログアウト時に大音量のビープ音がして不快なので、鳴らないようにした。  </p>
+<p>/etc/modprobe.d内にnobeep.confファイルを作成し、<code>blacklist pcspkr</code>と記述して保存。<br>もしくは下記コマンドを実行。  </p>
+<pre><code># echo &quot;blacklist pcspkr&quot; &gt; /etc/modprobe.d/nobeep.conf
+</code></pre><p><a href="https://archlinuxjp.kusakata.com/wiki/PC_%E3%82%B9%E3%83%94%E3%83%BC%E3%82%AB%E3%83%BC%E3%81%AE%E3%83%93%E3%83%BC%E3%83%97%E9%9F%B3%E3%81%AE%E7%84%A1%E5%8A%B9%E5%8C%96?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DDisable_PC_Speaker_Beep_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno#.E3.82.B0.E3.83.AD.E3.83.BC.E3.83.90.E3.83.AB.E7.92.B0.E5.A2.83" target="_blank" rel="external">PC スピーカーのビープ音の無効化 - ArchWiki</a>  </p>
 
 	
 	</div>
@@ -293,7 +272,7 @@
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/06/lxpup-lxqtpup/" data-text="Puppy Linux派生。Puppy本家より扱いやすい「LxPup」と「LxQtPup」 | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/08/xfce-beep/" data-text="Xfceログアウト時のビープ音を消す | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -306,14 +285,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/02/06/puppy-dropbox/" >Puppy LinuxにDropboxクライアントをインストール</a>
+			<a href="/2015/03/06/clonezilla-restore-different-partition/" >Clonezillaでバックアップしたイメージを別のパーティションにリストア</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年2月6日
+	2015年3月6日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -321,23 +300,13 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>Puppy Linux5.7.1のパッケージマネージャにDropboxクライアントが見当たらないので、コマンドラインでインストールした。<br><a href="https://www.dropbox.com/install?os=lnx" target="_blank" rel="external">Linux マシンに Dropbox をインストール</a>  </p>
-<p>コマンドを入力すると、サーバー証明書エラーになった。  </p>
-<pre><code>cd ~ &amp;&amp; wget -O - &quot;https://www.dropbox.com/download?plat=lnx.x86&quot; | tar xzf -
-
-...
-エラー: cannot verify www.dropbox.com&#39;s certificate, issued by `/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert SHA2 Extended Validation Server CA&#39;:
-  発行者の権限を検証できませんでした。
-www.dropbox.com に安全の確認をしないで接続するには、`--no-check-certificate&#39; を使ってください。
-
-gzip: stdin: unexpected end of file
-tar: Child returned status 1
-tar: エラーを回復できません: 直ちに終了します
-</code></pre><p>原因がよく分からないがdropbox.comは安全だろうと、`—no-check-certificate’のオプションを付けてインストールした。  </p>
-<pre><code>cd ~ &amp;&amp; wget --no-check-certificate -O - &quot;https://www.dropbox.com/download?plat=lnx.x86&quot; | tar xzf -
-</code></pre><p>インストールは無事完了し、<code>~/.dropbox-dist/dropboxd</code>で起動出来た。  </p>
-<p>後になって気がついたが、Puppy Linuxのタスクトレイの時刻がおかしい。<br>約9時間遅れている。  </p>
-<p>そういえば、Puppy Linuxを起動してすぐに表示される国とタイムゾーンの設定を、面倒臭くて飛ばしていたんだった。<br>このせいでエラーが出ていたんだろうか。</p>
+	  <p>Clonezillaでバックアップしたパーティションのイメージを、元とは違う別のパーティションにリストアした。<br>（下記はsda1からバックアップしたArch Linuxをsda6にリストアした例）  </p>
+<p>・バックアップしたイメージフォルダ内のpartsファイルの記述をsda1からsda6に変更。  </p>
+<p>・バックアップイメージsda1.ext4-ptcl-img.gz.aaをsda6.ext4-ptcl-img.gz.aaに変更。<br>（….gz.ab、….gz.acと複数ある場合はすべて変更）  </p>
+<p>上記で別のパーティションにリストア出来た。  </p>
+<p>ただこれだけではArch Linuxを起動出来ないので、リストアしたsda6内の/etc/fstabと/boot/syslinux/syslinux.cfgの記述を修正。<br>（ブートローダーがGrub2の場合はgrub.cfgの修正でOKか）  </p>
+<p>sda6にリストアしたArch Linuxを起動出来た。  </p>
+<p>ーー<br>（参照記事）<br><a href="http://drbl.org/faq/fine-print.php?path=./2_System/102_restore_image_to_different_partition.faq#102_restore_image_to_different_partition.faq" target="_blank" rel="external">How can I restore an image of a partition to different partition, e.g. restore the image of /dev/sda5 to /dev/sda6? - DRBL - FAQ/Q&amp;A</a></p>
 
 	
 	</div>
@@ -346,275 +315,7 @@ tar: エラーを回復できません: 直ちに終了します
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/06/puppy-dropbox/" data-text="Puppy LinuxにDropboxクライアントをインストール | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/02/05/roxterm-segmentation-fault/" >ターミナルエミュレーターRoxtermで&quot;Segmentation fault&quot;</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年2月5日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Puppy Linux5.7.1には、デフォルトのターミナルミュレーターとしてurxvtというのが入っていたが、右クリックでのコピーペーストが出来ず不便。<br>Puppyパッケージマネージャで他のを探すと、Roxtermというのが見つかった。  </p>
-<p>右クリックでのコピーペーストが可能でかなり軽量。<br>Ubuntuソフトウェアセンターにもあったので、Xubuntuにもインストールしてみた。  </p>
-<p>カスタマイズのためDefaultのプロフィールをコピーし、Default01を作成した。<br>プロフィールをDefault01に切り替えたところ、突然終了。<br>その後、Roxtermを起動出来なくなってしまった。  </p>
-<p>メニューからアイコンをクリックしても反応は無いし、xfce4-terminalで<code>roxterm</code>とコマンドを打つと、”Segmentation fault”と返ってくる。  </p>
-<p>検索したところ、同様のケースが見つかった。<br><a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=752253" target="_blank" rel="external">#752253 - roxterm: Segmentation Fault with the copy of default profile - Debian Bug report logs</a>  </p>
-<p>“empty profile file”が原因とのことだが、~/.config/roxterm.sourceforge.net/Profiles内のDefault01を開くと、確かに何も書かれておらず真っ白だった。  </p>
-<p>Default01に一行 </p>
-<p> [roxterm profile]</p>
-<p>と書くと、無事起動出来た。  </p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/05/roxterm-segmentation-fault/" data-text="ターミナルエミュレーターRoxtermで&quot;Segmentation fault&quot; | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/02/04/puppy-grub4dos-error/" >Puppy LinuxのGrub４Dosインストール時に「要素が欠けています。」のエラー</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年2月4日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>ネットブックLaVie Light BL300/TにPrecise Puppy 5.7.1日本語版をFrugalインストールした。  </p>
-<p>既存のOS領域にもインストール出来るらしいが、Gpartedで新たにパーティションを用意。<br>ファイルのコピーは順調に進んだが、Grub４Dosのインストールでつまづいてしまった。  </p>
-<p>「Grub４Dosブートローダーの設定」で「PBSも表示」をクリックし、Grub４Dosをインストールする場所をPuppy用のパーティションに指定。  </p>
-<p>追加オプションの「ブートレコードを書き換えない」をマウスオーバーすると、  </p>
-<blockquote>
-<p>すでにあるMBRを変更したくないときにのみチェックしてください。<br>現在grldrが起動できるようになっていることが前提です。　フロッピーでは無効</p>
-</blockquote>
-<p>というツールチップが表示された。  </p>
-<p>MBRにはすでにMBM（Multiple Boot Manager）が入っているので、「ブートレコードを書き換えない」にチェック。<br>個人保存ファイルの設定を終え再起動したが、”Invalid boot record”とエラーになり、起動出来ない。  </p>
-<p>怪訝に思いながらも「ブートレコードを書き換えない」をチェックせずに、再度Grub４Dosをインストールし直した。  </p>
-<p>すると今度は</p>
-<blockquote>
-<p>この機能を実行するにはいくつかの要素が欠けています。　:/usr/lib/grub4dos/chain.c32, extlinux/syslinux(version &gt; =  4.0)</p>
-</blockquote>
-<p>と警告。  </p>
-<p>構わずOKをクリックして進めると、</p>
-<blockquote>
-<p>不明のエラーが生じました。<br>See /tmp/grub4dosconfig/grub4dosconfig.log</p>
-</blockquote>
-<p>とエラー。  </p>
-<p>grub4dosconfig.logは下記だった。 </p>
-<blockquote>
-<p>/usr/sbin/grub4dosconfig PBS<br>version 1.9.1<br>2015年  2月  4日 水曜日 04:09:01 JST<br>Writing… /initrd/mnt/dev_save/menu.lst<br>Installing grldr …<br><code>/usr/lib/grub4dos/grldr&#39; -&gt;</code>/initrd/mnt/dev_save/grldr’</p>
-</blockquote>
-<p>“Error”とは特に書いていないので再起動してみたが、やはり起動出来ない。  </p>
-<p>Grub４Dosのエラーについて検索すると、下記のディスカッションが見つかった。<br><a href="http://www.murga-linux.com/puppy/viewtopic.php?t=91838" target="_blank" rel="external">Puppy Linux Discussion Forum :: View topic - slacko 5.6, Grub4Dos doesn’t install</a>  </p>
-<p>どうやらext4でフォーマットされたパーティションにGrub４Dosをインストールするには、chain.c32およびバージョン4.0以上のextlinuxが必要らしい。<br>Puppy Linux用のパーティションをext4でフォーマットしていたのが原因だったようだ。  </p>
-<p>パーティションをext3でフォーマットし直し、再度Puppyをインストール。  </p>
-<p>Grub４Dosの設定では「ブートレコードを書き換えない」のチェックを入れて試みたが駄目で、チェックを外してGrub４Dosを入れ直して、ようやくハードディスクからPuppy Linuxを起動出来た。   </p>
-<p>MBM→各PBSのブートレコード→各OSの起動、という形でマルチブートしているので、「ブートレコードを書き換えない」のツールチップの説明が少し分かりにくかった。  </p>
-<p>インストールに成功した際のgrub4dosconfig.logは下記。  </p>
-<blockquote>
-<p>/usr/sbin/grub4dosconfig PBS<br>version 1.8.9<br>2015年  2月  4日 水曜日 05:03:13 JST<br>Writing… /mnt/sda9/menu.lst<br>Installing grldr …<br><code>/usr/lib/grub4dos/grldr&#39; -&gt;</code>/mnt/sda9/grldr’<br>Installing bootloader on /dev/sda9(PBS)…</p>
-<p>Filesystem type is EXT2.</p>
-<p>Success.</p>
-</blockquote>
-<p>（Grub4DosをPuppy Linux 5.5のUSBメモリーからインストールし直したので、versionは1.8.9。）</p>
-<p>“Filesystem type is EXT2.”となっているが、MBMでもext3やext4をext2と認識しているようだし、問題無いのだろう。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/04/puppy-grub4dos-error/" data-text="Puppy LinuxのGrub４Dosインストール時に「要素が欠けています。」のエラー | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/02/04/elementary-os/" >elementary OS（Luna）をインストールしてみた</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年2月4日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>軽量Linuxにelementary OSというのがあるらしいので、Windows Xp時代のネットブックにインストールしてみた。<br><a href="http://mogi2fruits.net/blog/os-software/linux/elementary-os/2772/" target="_blank" rel="external">elementary OS – 軽い！キレイ！日本語OK！ な Ubuntu ベースの軽量Linux | mogi2fruitsどっとねっと</a>  </p>
-<p>ダウンロードリンクに”$10.00”と書いてあり、「有料か？」と躊躇したが、参照サイトにある通り強制的なものではない。  </p>
-<p>Ubuntu12.04ベースらしく、インストールは戸惑うこと無く終了。  </p>
-<p>XubuntuやLubuntuとは違って随分おしゃれな外観。<br>視覚効果もなかなか凝っている。  </p>
-<p>デフォルトではScrachという聞いたこともないテキストエディターと、名前も分からないファイルマネージャーが入っていたが、それぞれGeditとnemoに変更。  </p>
-<p>Dropboxクライアントも入れようと、Ubuntuソフトウェアセンターから試みたが途中でフリーズ。<br>中途半端にインストールされたせいか、その後Synapticやsudo apt-get updateが使えなくなってしまった。  </p>
-<p>少々焦ったが、２ちゃんねるの書き込みを参考に、nautilus-dropboxを削除したら復旧した。<br><a href="http://hayabusa6.2ch.net/test/read.cgi/linux/1412604392/301" target="_blank" rel="external">【人気一位】Linux Mint 15</a>  </p>
-<p>nautilus-dropboxのインストールでの不具合はUbuntu12.04特有のバグらしい。<br>Dropbox公式サイトの記載通り、コマンドラインでインストールしたら無事にインストール出来た。<br><a href="https://www.dropbox.com/install?os=lnx" target="_blank" rel="external">Linux マシンに Dropbox をインストール</a>  </p>
-<p>コマンドラインからのインストールだと、Dropboxを起動してもインジケーター領域にアイコンが表示されない。<br>ログアウトして表示されるログイン画面では、GNOME Classic、GNOME Classic (No effects)、Pantheon、Ubuntuの4種のセッションを選択出来るが、Ubuntuセッションの時だけアイコンが表示された。  </p>
-<p>elementary OSのメインメニューはクラシックなドロップダウンタイプではなく最近流行りの板状のもの。<br>デフォルトではメニュー編集のツールも無く、カスタマイズ性は高くないようだ。<br>AlacarteとMenuLibleを入れてみたが、Alacarteは起動はするがメニューを編集しても反映されず、MenuLibleは起動も出来なかった。</p>
-<p>下部にあるDock内のアイコンは、クリックするとぴょーんと跳ねるので、クリックし損なったかと何度もクリックしてしまう恐れは少ない。<br>また既に立ち上げているアプリケーションは基本、新規ウィンドウで開かず既存のウィンドウにフォーカスしてくれる。Dock内のアイコンも跳ねない。<br>Dockを下部ではなく横配置に出来たらもっと有難いんだが。  </p>
-<p>システムモニターのみ開き、他のアプリケーションを起動していない状態でリソースを見ると、消費メモリは240MiB程度。<br>システムフォントのサイズも小さ目で、モニター画面の小さなネットブックには調度良い。  </p>
-<p>好みに合わせてカスタマイズするにはあまり向いていないようだが、優雅さが印象的なOSだ。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/04/elementary-os/" data-text="elementary OS（Luna）をインストールしてみた | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/02/03/lubuntu-look-and-feel/" >Lubuntuで解像度が低いと思ったら、ルックアンドフィールのフォントサイズだった</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年2月3日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>ネットブックにインストールしたLubuntu14.04.1で、ブラウザーでもファイルマネージャーでもデカデカと大きく表示される。<br>モニターの解像度は確かに低いが、マルチブートで入れているXubuntuの方はそうでもない。<br>解像度の設定のせいかとも思ったが、ディスプレイの設定ではちゃんと解像度1024×600、リフレッシュシート60.0になっている。<br>xrandrコマンドで見ても正常のよう。<br>あちこち設定を見てようやくルックアンドフィールの設定だと分かった。  </p>
-<p>メニュー→設定→ルックアンドフィールを設定します<br>ウィジェットでデフォルトのフォントが11になっていたのを10に変更。<br>ウィンドウ境界→タイトルバーの「アクティブウィンドウのタイトルのフォント」、「非アクティブウィンドウのタイトルのフォント」も10に。<br>標準的な表示になった。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/03/lubuntu-look-and-feel/" data-text="Lubuntuで解像度が低いと思ったら、ルックアンドフィールのフォントサイズだった | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/02/03/find-hidden-files/" >隠しファイルの検索など（findコマンド）</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年2月3日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Dolphinが自動生成した.directoryファイルを削除しようと、ファイルマネージャーで”.directory”を検索したが、ファイルが見つからない。<br>“directory”でも該当無し。<br>確かにあるのだが、ファイルマネージャーの機能では隠しファイルを検索出来ないらしい。</p>
-<p>端末でfindコマンドを使ったらヒットした。  </p>
-<pre><code>find ~/ -name .directory
-// ~/ディレクトリ以下で名前に&quot;.directory&quot;を含むファイル・ディレクトリを再帰的に検索
-</code></pre><p>ーー<br>以下、findコマンドについて  </p>
-<p><strong>Linuxではディレクトリを省略すると、カレントディレクトリ以下で検索</strong><br>（他のUNIXでは<code>.</code>が必要。）</p>
-<pre><code>find -name .directory
-find . -name .directory
-</code></pre><p><strong>-typeオプションで検索対象の種類を指定（ファイル、ディレクトリ、リンク）</strong>  </p>
-<pre><code>find -type f
-find -type d
-find -type l
-</code></pre><p><strong>名前の前後にワイルドカード<code>*</code>を付けての検索が可能</strong>  </p>
-<pre><code>find -type f -name &quot;*.pdf&quot;
-</code></pre><p>（名前にワイルドカードを付ける場合は、半角ダブルクォーテーション<code>&quot;</code>で囲った方が良いらしい。 「find: パス名は評価式の前に置かなければいけません」とエラーになることがある。） </p>
-<p><strong>-sizeオプションでサイズを指定</strong>  </p>
-<pre><code>find -type f -name &quot;*.JPG&quot; -size +1000k
-</code></pre><p>（1000KB以上の.JPGファイルを検索。JPGとjpgは区別される。）</p>
-<p><strong>-deleteオプションで該当ファイルを削除</strong>  </p>
-<pre><code>find -type f -name &quot;*.hogehoge&quot; -delete
-</code></pre><p>など。  </p>
-<p>（参照）<br><a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20060227/230777/" target="_blank" rel="external">Linuxコマンド集 - 【 find 】 ファイルやディレクトリを検索する：ITpro</a><br><a href="http://x68000.q-e-d.net/~68user/unix/pickup?find" target="_blank" rel="external">UNIXの部屋 コマンド検索:find (*BSD/Linux)</a>  </p>
-<p>またディレクトリにワイルドカード<code>*</code>を付けると検索結果が異なる様子。  </p>
-<pre><code>find ~/* -name .directory
-</code></pre><p>~/.kde/share/apps/dolphin/view_properties/global/.directory<br>~/.kde/share/apps/dolphin/view_properties/local/usr/.directory<br>などがリストアップされなかった。  </p>
-<p>隠しフォルダ内が検索対象から外れるのかとも思ったが、自作した隠しフォルダは検索された。<br>この辺はよく分からない。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/03/find-hidden-files/" data-text="隠しファイルの検索など（findコマンド） | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/06/clonezilla-restore-different-partition/" data-text="Clonezillaでバックアップしたイメージを別のパーティションにリストア | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -696,33 +397,33 @@ find -type l
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+		
 			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
-		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
 			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		

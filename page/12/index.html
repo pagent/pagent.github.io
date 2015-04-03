@@ -112,14 +112,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/11/20/octopress-deploy-rejected/" >2台目のPCのOctopressでdeploy出来ない</a>
+			<a href="/2015/01/23/lubuntu-alacarte-menulibre/" >Lubuntu14.04にメニュー編集ソフトMenuLibreを入れた</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年11月20日
+	2015年1月23日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -127,18 +127,10 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>DropboxでOctopressのフォルダを同期し、2台目のPCでもrake new_postやrake generateは出来るようになったが、rake deployが出来ない。<br>gitが入ってなかったので<code>sudo apt-get install git</code>し、<code>rake setup_github_pages</code>でセットアップしたが、  </p>
-<pre><code>! [rejected]        master -&gt; master (non-fast-forward)
-</code></pre><p>とエラーになる。<br>SSHの公開鍵も設定したのだが。  </p>
-<p>検索したところ、Octopressで突然deploy出来なくなった時には、Rakefileを編集するという対処法があるらしい。<br><a href="http://qiita.com/takuma7/items/2d6f6e786eb6c0afbefb" target="_blank" rel="external">Octopressでrake deployした際にrejectedされた場合の対処 - Qiita</a>  </p>
-<p>どうやら強制的にdeployするものらしい。  </p>
-<p>上記記事の通り、Rakefileの268行目の<code>#</code>の前に<code>+</code>を付けて  </p>
-<pre><code>Bundler.with_clean_env { system &quot;git push origin +#{deploy_branch}&quot; }
-</code></pre><p>にすると、deploy出来た。  </p>
-<p>元記事によると、deploy出来るようになった後は、Rakefileの編集を元に戻しておいた方がいいらしい。<br><a href="http://stackoverflow.com/questions/17609453/rake-gen-deploy-rejected-in-octopress" target="_blank" rel="external">rake gen_deploy rejected in Octopress - Stack Overflow</a>  </p>
-<p>いったんdeploy出来るようになったら、その後はRakefileを元に戻してもdeploy出来る。  </p>
-<p>記事ではoctopress/_deployディレクトリで<code>git pull origin master</code>というコマンドを使う回答もあった。<br>機会があれば今度試してみようと思う。  </p>
-<p>gitがなんなのかよく分からないが、FTPでアップロードしていた時に較べるとブログの更新も楽だし、スマートな感じがする。<br>でもほんと、gitってよく分からない。</p>
+	  <p>Lubuntu14.04でメインメニューの編集をしたかったのだが、手動で設定するのは難しそう。<br><a href="https://wiki.archlinux.org/index.php/LXDE_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29#.E3.82.A2.E3.83.97.E3.83.AA.E3.82.B1.E3.83.BC.E3.82.B7.E3.83.A7.E3.83.B3.E3.83.A1.E3.83.8B.E3.83.A5.E3.83.BC.E3.81.AE.E7.B7.A8.E9.9B.86" target="_blank" rel="external">LXDE (日本語) - ArchWiki</a>  </p>
+<p>LXDE用のメニューエディターにLXMEDというのがあるようだが、使ったことがないし、メニューを削除せず非表示にしたり、上下の並びを入れ替えたり、といったことが出来るかどうか分からない。<br>そこで、AlacarteとMenuLibreを入れてみた。<br>どちらもSynapticでインストール。  </p>
+<p>AlacarteはLubuntu14.04では満足に機能してくれず、非表示設定や並びの入れ替えが反映されなかった。再起動してみても変化無し。<br>一方、MenuLibreの方は望み通りにちゃんと機能してくれた。  </p>
+<p>GUIで簡単に設定出来るのでとても助かる。</p>
 
 	
 	</div>
@@ -147,7 +139,7 @@
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/20/octopress-deploy-rejected/" data-text="2台目のPCのOctopressでdeploy出来ない | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/23/lubuntu-alacarte-menulibre/" data-text="Lubuntu14.04にメニュー編集ソフトMenuLibreを入れた | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -160,14 +152,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/11/19/install-libv8/" >Installing libv8で止まる</a>
+			<a href="/2015/01/23/lubuntu-desktop-manager/" >Lubuntuで 「デスクトップマネージャはアクティブではありません」のエラー表示</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年11月19日
+	2015年1月23日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -175,43 +167,11 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>OctopressのフォルダをDropboxに置くことにしたので、メインで使っているPCではなく古いネットブックにインストールしたXubuntuからDropbox上のOctopressを使えるかどうか試してみた。<br>だがrake previewしようとしたら、エラーになってしまった。<br>Octopressを使う環境が整っていないので当然といえば当然。  </p>
-<p>環境を整えるにあたり、bundle installで行き詰まってしまった。<br>途中    </p>
-<pre><code>Installing libv8 (3.16.14.7)
-</code></pre><p>の表示のところで動かない。<br>フリーズしたのかと思ったが検索したところ、libv8のインストールには時間が掛かるらしい。<br>確かにCPUの使用率も100%で、頑張ってはいるようだ。  </p>
-<p>非力なマシンのせいか結局30分くらい掛かったろうか。<br>もう一度パスワード入力を求められ、その後またtherubyracer (0.12.1)のところで少し時間が掛かったが、ようやくYour bundle is complete!<br>Octopressを使えるようになった。  </p>
-<p>ーー<br>使えるようになったと思ったら、deployが出来ない。  </p>
-<pre><code>$ rake deploy
-cp -r source/images/.gitkeeper public/images/.gitkeeper
-## Deploying branch to Github Pages 
-## Pulling any updates from Github Pages 
-cd _deploy
-cd -
-rm -rf _deploy/assets
-rm -rf _deploy/atom.xml
-rm -rf _deploy/blog
-rm -rf _deploy/favicon.png
-rm -rf _deploy/images
-rm -rf _deploy/index.html
-rm -rf _deploy/javascripts
-rm -rf _deploy/posts
-rm -rf _deploy/robots.txt
-rm -rf _deploy/sitemap.xml
-rm -rf _deploy/stylesheets
-
-## Copying public to _deploy
-cp -r public/. _deploy
-cd _deploy
-
-## Committing: Site updated at 2014-11-19 11:02:25 UTC
-sh: 1: git: not found
-
-## Pushing generated _deploy website
-
-## Github Pages deploy complete
-cd -
-</code></pre><p>拒否はされてないみたいだが、記事を投稿出来ない。<br>どこに問題があるのか、よく分からない。<br>generateもやたら遅いし、ちょっとしんどいかな。  </p>
-<p>ーー<br>gitがインストールされてない？</p>
+	  <p>13.04から14.04にアップグレードしたLubuntuで、いつのまにかデスクトップの壁紙が表示されなくなっていた。  </p>
+<p>壁紙を設定しようと「メニュー」→「設定」→「デスクトップの設定」と進んでも、「！ デスクトップマネージャはアクティブではありません。」とエラー表示が出て設定出来ない。<br>デスクトップ上での右クリックから「デスクトップの設定」を選択してもナシのつぶて。  </p>
+<p>Lubuntu14.04でのデスクトップの設定にはPCManFMが使われているようなので、「LXSessionのデフォルトのアプリケーション」でデフォルトのファイルマネージャーをnemoからPCManFMに戻してみたが、それでもデスクトップの設定が出来ない。  </p>
+<p>最終的には下記を参考に、SynapticからPCManFMを再インストールすることで、「デスクトップの設定」を正常に起動出来た｡<br><a href="http://ubuntuforums.org/showthread.php?t=2218084&amp;p=13090056#post13090056" target="_blank" rel="external">[lubuntu] message:desktop manager is not active</a>  </p>
+<p>自分の環境では、回答前段に書いてあるコマンドは行わず、PCManFMの再インストールだけで大丈夫だった。</p>
 
 	
 	</div>
@@ -220,7 +180,7 @@ cd -
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/19/install-libv8/" data-text="Installing libv8で止まる | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/23/lubuntu-desktop-manager/" data-text="Lubuntuで 「デスクトップマネージャはアクティブではありません」のエラー表示 | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -233,14 +193,14 @@ cd -
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/11/18/debian-wheezy-nemo/" >Debian WheezyにNemoをインストール</a>
+			<a href="/2015/01/22/windows10-free/" >7や8からWindows 10へのアップグレードは無料</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年11月18日
+	2015年1月22日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -248,16 +208,9 @@ cd -
 	<div class="col-md-12">
 	  
 	
-	  <p>ネットブックLaVie LightにDebian Wheezyをインストールした。<br>ウィンドウマネージャはXfceが好みなので、debian-7.7.0-i386-netinst.isoでインストールする際、”Advanced options” 、”Alternate desktop environments”でXfceを選択した。  </p>
-<p>ファイルやフォルダを簡単に管理者権限で操作したいので、XfceデフォルトのファイルマネージャーThunarのアクションに「rootで開く」を追加し、gksuもインストールした。<br>だがrootで開こうとしても、認証画面は表示されるものの、フォルダやファイルを管理者権限で開くことが出来ない。  </p>
-<p>代わりにNemoをインストールしようとしたら、リポジトリにNemoが無かった。PCManFMも確かrootで開くメニューがあったのでインストールしてみたが、なぜかrootで開くメニューが無い。<br>困ってしまったが、Ubuntu 12.04 Preciseのリポジトリを追加することで、Nemoをインストール出来た。  </p>
-<pre><code>echo &quot;deb http://ppa.launchpad.net/noobslab/mint/ubuntu precise main&quot; | sudo tee -a /etc/apt/sources.list
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F59EAE4D
-sudo apt-get update
-sudo apt-get install nemo
-</code></pre><p><a href="http://www.techlw.com/2013/12/install-nemo-file-manager-with.html" target="_blank" rel="external">Install Nemo file Manager with Extensions in Debian 7 Wheezy and its derivatives | Technology Linux World</a>  </p>
-<p>Ubuntu 14.04 Trustyのリポジトリを入れた方が、Nemoのバージョンが新しくて良いかと思いやってみたが、「壊れたパッケージを修復出来ない」とかでNemoをインストール出来なかった。  </p>
-<p>それと、Nemoを起動すると、デスクトップ上の右クリックでアプリケーションメニューを表示するのが出来なくなってしまう。<br>これでは少々不便なので、普段はThunarを使った方が良いかもしれない。</p>
+	  <p>今秋発売予定のMicrosoft次期OS、Windows 10はリリース後1年間に限り、Windows 7、Windows 8.1、Windows Phone 8.1からのアップグレードが無償で提供されるのだとか。<br><a href="http://www.itmedia.co.jp/news/articles/1501/22/news110.html" target="_blank" rel="external">Windows 10無償アップグレードは「必然的」　Microsoftの狙いは - ITmedia ニュース</a>  </p>
+<p>無料になるのはアップグレードに対してのみで、新規のWindows 10搭載パソコンにライセンス料が上乗せされるのはこれまでと変わりが無いようだ。<br>元々アップグレードによる収益は大きなものではなかったようだが、MicrosoftもAppleやGoogleに対して余程危機感を持っているということだろう。<br>ユーザーを無視したようなこれまでの姿勢から較べると朗報とも言えるが、もはや起動するのはLinuxのみで、Windowsを立ち上げることは殆ど無い。<br>だが、Windows 7のサポート終了後のことも考えて、リリース後1年間の内には一応Windows 10にアップグレードしておこうと思う。<br>安心してネットに繋げないようだと、困ることもあるかもしれないし。</p>
+<p>バックアップは取っておくつもりだが、多少使い勝手が悪くても問題無い。<br>Windows、ほんとに使わなくなったし。</p>
 
 	
 	</div>
@@ -266,7 +219,7 @@ sudo apt-get install nemo
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/18/debian-wheezy-nemo/" data-text="Debian WheezyにNemoをインストール | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/22/windows10-free/" data-text="7や8からWindows 10へのアップグレードは無料 | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -279,14 +232,14 @@ sudo apt-get install nemo
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/11/13/xubuntu-ar9285/" >Xubuntu 14.04.1で無線LAN(Atheros AR9285)が安定しない</a>
+			<a href="/2015/01/20/clamtk/" >Linux用ウイルススキャンソフトClamTkを使ってみた</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年11月13日
+	2015年1月20日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -294,15 +247,15 @@ sudo apt-get install nemo
 	<div class="col-md-12">
 	  
 	
-	  <p>Xubuntu 14.04.1をインストールしたネットブックLaVie Light BL300/T。<br>有線でのネット接続は問題無いが、無線LANがとても不安定。<br>頻回に接続が切れて認証を要求されるし、接続も異様に遅い。<br>Xubuntu 12.04では問題なく使えていたのだが。  </p>
-<p>どうも無線LANアダプターAtheros製AR9285とドライバーath9kの相性の問題もあるらしい。<br><a href="http://blog.livedoor.jp/furikku9310/archives/52298627.html" target="_blank" rel="external">ノートPCの無線LANデバイスにて : フレイドフォートonBlog</a>  </p>
-<p>/etc/modprobe.d内にath9k.confというファイルを作りそこに<code>options ath9k nohwcrypt=1</code>と記載したり、ath9kをロードし直したりしてみたが改善しない。<br>NdisWrapperでWindows Xp用のドライバーを使えば良いかと思いやってみたが、これも満足に動作しない。  </p>
-<p>Xubuntu 14.04.1にLinux 3.2や3.8カーネルをコンパイルしてインストールすれば良いのかもしれないが、自分の力量を超えているので断念。<br>（カーネルのコンパイルをしなくても、Ubuntu 12.04 Preciseのリポジトリを追加してLinux 3.2カーネルをインストールすれば良かったのかもしれない。<a href="/2014/11/18/debian-wheezy-nemo/">Debian WheezyにNemoをインストール</a>）  </p>
-<p>結局Xubuntu 12.04をインストールしそれを14.04.1にアップグレード、起動カーネルをLinux 3.2にすることで無線LANも安定した。  </p>
-<pre><code>GRUB_DEFAULT=&quot;Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.2.0-58-generic&quot;
-</code></pre><p>古いPCでもLinuxは利用出来ると言われるが、Linuxも新しい機器への対応を進める一方、古いPCは切り捨てられていくのだろうか。<br>使い勝手はUbuntu派生ディストリに劣るかもしれないが、今度Debian+Xfceも試してみようと思う。  </p>
-<p>ーー<br>（追記）<br>lshwコマンドで見たところ、Xubuntu 12.04（Linux 3.2カーネル）でもAR9285に使われているドライバーはath9kだった。<br>なぜXubuntu 14.04.1の場合は無線が安定しないのだろう？<br>「disabling IRQ #9」回避のため、起動オプションに「pci=noacpi」を付けていたからだろうか。  </p>
-<p>ーー<br>（再追記）<br>Xubuntuのアップデートで、カーネルが更新される度にgrubが書き換えられてはかなわないので、/etc/default/grubのパーミッションで、所有者rootのアクセス権が「読み書き」だったのを「読み込み専用」にした。<br>変更が必要な時はまたアクセス権を変更しないといけないが、これで意図に反してgrubが書き換えらるのを防ぐことが出来る。</p>
+	  <p>Xubuntu14.04にClamTkを導入した。<br>Ubuntuソフトウェアセンターを使ったが、v4.45(デフォルト)の他v5.09(trusty-backports)もインストール可能。  </p>
+<p>ファイルマネージャーNemo上で右クリックから簡単にファイルをウイルススキャン出来るよう、nemo-sendto-clamtk_0.02-1もインストールした。<br><a href="http://ubuntuapps.blog67.fc2.com/blog-entry-609.html" target="_blank" rel="external">ClamTkでウイルススキャンをThunarやNemoの右クリックメニューに追加する | Ubuntuアプリのいいところ</a>  </p>
+<p>「ディレクトリを再帰的にスキャンする」「20MB以上のファイルもスキャンする」「ドットで始まるファイルをスキャンする(.*)」にチェックを入れてhomeディレクトリをスキャンしてもなにも検出されなかったが、「不要なアプリケーション(PUA)をスキャンする」にもチェックを入れると、  </p>
+<p>~/.cache/mozilla/firefox/…<br>~/.cache/chromium/Default/Cache/…<br>~/.cache/midori/web/…  </p>
+<p>など、11個のファイルが「潜在的な脅威」として検出された。  </p>
+<p>VirusTotalを使った「解析」しようとしたが、何故かファイルを送信できず実行出来ない。<br>ただのブラウザのキャッシュのようだが、気持ち悪いのですべて削除した。  </p>
+<p>LinuxはWindowsより安全というし、それほど神経質にならなくても良いかもしれないが、たまにウイルススキャンしてみても良いかもしれない。  </p>
+<p>ーー<br>（追記）<br>Windows領域もスキャンしたら、「脅威」であるはずのないものまでいくつも「潜在的な脅威」として検出されて100を超えてしまった。<br>だが「不要なアプリケーション(PUA)をスキャンする」のチェックを外してスキャンしたら6だった。<br>「解析」では問題のあるファイルではないようだったので、そのままにしておくことにしたが。  </p>
+<p>「不要なアプリケーション(PUA)をスキャンする」のチェックは外して使用した方が良いのかもしれない。</p>
 
 	
 	</div>
@@ -311,7 +264,7 @@ sudo apt-get install nemo
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/13/xubuntu-ar9285/" data-text="Xubuntu 14.04.1で無線LAN(Atheros AR9285)が安定しない | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/20/clamtk/" data-text="Linux用ウイルススキャンソフトClamTkを使ってみた | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -324,14 +277,14 @@ sudo apt-get install nemo
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/11/11/xubuntu-install-option/" >起動オプションを付けてXubuntu14.04.1をインストール</a>
+			<a href="/2015/01/17/fstab-uuid-label/" >マルチブート環境（複数のLinux）でのfstab</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年11月11日
+	2015年1月17日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -339,14 +292,17 @@ sudo apt-get install nemo
 	<div class="col-md-12">
 	  
 	
-	  <p>NECのネットブックLaVie Light BL300/TにXubuntu14.04.1を再インストールした。<br>以前もXubuntu14.04.1をインストールしたがその時は<code>disabling IRQ #9</code>でインストールDVDを起動出来ず、いったんXubuntu13.04をインストールしてから、その後Xubuntu14.04.1にアップグレードしていた。<br>だが、起動オプションに<code>pci=noacpi</code>を加えれば、Linuxカーネル3.13.0-39でも起動出来るようだったので、起動オプションを付けてXubuntu14.04.1をインストールした。  </p>
-<p>Xubuntu14.04.1のインストールDVDを入れ、起動後「shift」キーを押し続けてオプションを表示。言語を日本語にした後「F6」キーで「その他のオプション」を表示。<br><code>acpi=off</code>、<code>noapic</code>、<code>nolapic</code>、<code>edd=on</code>、<code>nodmraid</code>、<code>nomodeset</code>等の起動オプションが選択出来るが、なにも選ばず「ESC」キーで選択画面を終了。（<code>acpi=off</code>では解像度が800×600に固定されてしまい、他のオプションでは<code>disabling IRQ #9</code>でインストールDVDを起動出来ない。）<br>下部に「起動オプション」の欄があり、キーボードで任意にオプションを入力出来るので、<code>quiet splash --</code>に続けて<code>pci=noacpi</code>と入力し「ENTER」で起動。<br>問題なくXubuntu14.04.1をインストール出来た。  </p>
-<p>インストール後再起動すると、/etc/default/grubの</p>
-<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;
-</code></pre><p>の下にちゃんと</p>
-<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
-</code></pre><p>の記載が加わっている。</p>
-<p>Xubuntuの前にLubuntu14.04.1も試してみたが、確かにXubuntuに較べて動作はやや軽いような気はした。<br>だがLubuntuソフトウェアセンターというのが検索も出来ず使いづらいし、お気に入りアプリケーションの登録も不便だったりと、カスタマイズの容易さではXubuntuに劣るようだ。</p>
+	  <p>Windows Xp以外にDebian、Xubuntu、Linux Mintをインストールして、クアッドブートにしていたPC。<br>Debianを削除してLubuntuをインストールしたら、Xubuntuが起動しなくなってしまった。<br>起動途中のスプラッシュ画面で  </p>
+<pre><code>/Linux/sda6 ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
+keys:■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ M■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■
+</code></pre><p>のような表示のまま止まってしまう。<br>Lubuntuをインストールする際インストール先のパーティションをフォーマットしたので、そのパーティションのUUIDが変わってしまい、Xubuntuのfstabでの記述と違っている為のようだ。  </p>
+<p>Gpartedで新しいUUIDを調べてfstabを修正すると、起動出来るようになった。  </p>
+<p>fstabでのパーティションの指定はUUID以外に、以前のLinuxのように/dev/sda1などのデバイス名での指定、その他ラベルを用いる方法もあるようだ。  </p>
+<pre><code>UUID=72df5d...
+↓
+LABEL=（ラベル名）
+</code></pre><p><a href="http://edo.blog.jp/archives/1716151.html" target="_blank" rel="external">[Linux] /etc/fstabのエントリーをラベル名で定義 : Edo::World::Blog</a>  </p>
+<p>今後また別のLinuxをインストールし直すこともあるかもしれないし、デバイス名またはラベルでの指定に変更しておいた方が良いのかもしれない。</p>
 
 	
 	</div>
@@ -355,271 +311,7 @@ sudo apt-get install nemo
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/11/xubuntu-install-option/" data-text="起動オプションを付けてXubuntu14.04.1をインストール | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/06/hana-no-iro/" >いたづらにわがみ世にふる</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月6日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>花の色はうつりにけりな  </p>
-<p>いたづらにわがみ世にふる　ながめせしまに  </p>
-<p>（古今和歌集　小野小町）</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/06/hana-no-iro/" data-text="いたづらにわがみ世にふる | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/05/firefox-complete-theme/" >Firefoxの完全テーマ「MX3」を入れてみた</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月5日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>ウェブ閲覧をしていて、画面があまり白いと目が疲れる。<br>モニターの輝度を調節したり、FirefoxのアドオンStylishでページのスタイルを強制的に変えることである程度対処は出来るが、Firefoxのブックマークや履歴などサイドバーの背景も少し暗くしたいところ。  </p>
-<p>以前はStylishを使ったり、プロファイルフォルダ内のuserChrome.cssに記述を追加するといった方法でFirefoxのメニューまわりの見た目をカスタマイズ出来たようなのだが、どのバージョンからかブックマーク欄の背景の変更が効かなくなっている。  </p>
-<p>Firefoxのテーマで「完全テーマ」というのを使えばその辺も変更出来るようなので、いくつか試してみた。  </p>
-<p>darkやmidnightと名前に付いている完全テーマは確かにブックマークの背景を黒くしてくれるのだが、真っ黒は真っ黒でかえって見づらい。<br>MX3というテーマを入れたら、うっすら灰色になっていい感じになった。  </p>
-<p>ーー<br>（追記）<br>「MX4」もさらにシンプルでいいかも。  </p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/05/firefox-complete-theme/" data-text="Firefoxの完全テーマ「MX3」を入れてみた | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/03/gyao-background-color/" >FirefoxのアドオンStylishでGyaoの背景色を黒くする</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月3日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Gyaoで動画を観るとき背景が白く、明る過ぎてまぶしいので、FirefoxのアドオンStylishで背景を黒くした。  </p>
-<p>Stylishに下記スタイルを適当な名前で追加した。</p>
-<pre><code>@namespace url(http://www.w3.org/1999/xhtml);
-@-moz-document domain(&quot;gyao.yahoo.co.jp&quot;)
-,domain(&quot;youtube.com&quot;) 
-{
-
-body {
-    background-color:#000;
-}
-#playerModule {
-    border: 1px solid #080808;
-}
-.wrapperText h1 {
-    color:#BBB;
-}
-}
-</code></pre><p>YouTubeの背景はそれ程まぶしいと感じたことは無かったが、一応YouTubeのドメインも加えた。<br>ずいぶんと目にやさしくなった。</p>
-<p>Stylishは対象のドメインを指定してスタイルを変えられるので、なにかと重宝している。  </p>
-<p>ーー<br>（追記）<br>下記記事で紹介されているStylishのスタイル、<a href="https://userstyles.org/styles/23516/midnight-surfing-global-dark-style" target="_blank" rel="external">Midnight Surfing - Global Dark Style</a>というのが、とてもきれいに表示ページの背景を黒くしてくれる。<br><a href="http://www.xmisao.com/2014/08/08/dark-firefox.html" target="_blank" rel="external">Firefoxを徹底的に黒くする テーマ / Stylish / Vimperator — ぺけみさお</a>  </p>
-<p>（本当はツールバーやサイドバーなどFirefox自体の見た目も黒くなるはずらしいが、Firefox自体までは黒くならない。最近のバージョンのFirefoxではFirefox自体のスタイルを変更するには「完全テーマ」で変更する必要があるようだ。）  </p>
-<p>ただ、導入するとすべてのページが黒くなってしまうので、Gyao、YouTube等のドメインだけを指定。<br>Midnight Surfingの書き出し部分  </p>
-<pre><code>@namespace html url(http://www.w3.org/1999/xhtml);
-@namespace xul url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
-
-/* Browser Background */
-browser[type=&quot;content-primary&quot;] {background-color: #141414 !important;}
-
-@-moz-document url-prefix(http://), url-prefix(https://), url-prefix(ftp://), url-prefix(file://) {
-</code></pre><p>の箇所を下記に修正した。</p>
-<pre><code>@namespace html url(http://www.w3.org/1999/xhtml);
-@-moz-document domain(&quot;gyao.yahoo.co.jp&quot;)
-,domain(&quot;youtube.com&quot;)
-,domain(&quot;nicovideo.jp&quot;)
-,domain(&quot;video.fc2.com&quot;)
-{
-</code></pre><p>Gyaoの背景をまぶしく感じている人にはおすすめです。  </p>
-<p>というわけで、自分で書いたスタイルは必要なくなった。   </p>
-<p>（追記2）<br>Solarized Dark Everywhereというスタイルも黒板っぽい色で落ち着く。<br>目が疲れた時のウェブ閲覧に良さそうだ。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/03/gyao-background-color/" data-text="FirefoxのアドオンStylishでGyaoの背景色を黒くする | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/02/xbacklight/" >xbacklightでモニター輝度を設定・調節</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月2日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Xubuntu起動時のモニター輝度を少し下げてみた。  </p>
-<p>やり方は、/etc/default/grubで設定する方法、/etc/rc.localで設定する方法、xbacklightを使う方法などがあるようだ。<br><a href="https://sites.google.com/site/tetsuroweb/home/software/ubuntu/tips/display-brightness" target="_blank" rel="external">起動時の画面輝度を調整する (Ubuntu 12.04 - 14.04) - 哲朗web</a>  </p>
-<p>まず、/etc/rc.localで設定する方法を試してみた。<br>現在の輝度を変更するコマンドは<code>&gt;</code>の表示のまま止まってしまうので、</p>
-<pre><code>$ sudo -i
-
-# echo 6 &gt; /sys/class/backlight/acpi_video0/brightness
-</code></pre><p>としないといけなかったが、それ以外は参照記事に記載してある通りの方法で、起動時のモニター輝度を変更できた。  </p>
-<p>これで十分だったのだが、試しにxbacklightを入れてみたら、これがかなり便利な代物だった。<br><a href="http://x1japan.wordpress.com/2013/08/23/linux-keep-brightness-setting/" target="_blank" rel="external">目に優しい、LinuxMintやubuntuでモニター輝度を起動時に落とす設定。 | Woishin Journal</a>  </p>
-<p>自動開始アプリケーションに<code>xbacklight -set 80</code>のようにコマンドを登録しておけば反映されるし、変更したい時も簡単に変更できる。  </p>
-<p>輝度は0から100（パーセント）で設定するようなのだが、<code>xbacklight</code>と打って輝度を確認したところ、決まった値に近い切り下げ値にしかならないようだった。<br>自分の環境では、「14.285714」「28.571429」「42.857143」…と、およそ14の倍数になっていた。  </p>
-<p>パネルに複数のランチャーをひとまとめに表示するクイックランチャー（外部）を追加し、コマンド<code>xbacklight -inc 15</code>と<code>xbacklight -dec 14</code>を追加したら、マウスクリックで簡単に輝度を上下できるようになった。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/02/xbacklight/" data-text="xbacklightでモニター輝度を設定・調節 | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/01/irq-problem/" >「disabling IRQ ＃9」でXubuntuが起動できない</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月1日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <h4 id="環境">環境</h4>
-<p>ハード：NECのネットブックLaVie Light BL300/T<br>OS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  </p>
-<h4 id="現状と対応">現状と対応</h4>
-<p>Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出来なかった。<br>そのため、いったんXubuntu13.04をインストールしてから14.04.1にアップグレードしていた。<br>アップグレード中にもdisabling IRQで起動できなくなり、/etc/default/grubでGRUB_DEFAULT=”Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.8.0-19-generic”にして、デフォルトの起動カーネルを3.8.0-19にしていた。  </p>
-<p>このままでも使えるが、ソフトウェアの更新がしょっちゅうカーネルを更新するよう言ってくるし、カーネル3.13で起動できないかやってみた。  </p>
-<p>まず起動時にOS選択画面が出なかったが、他に起動できるOSがない場合grub2はOS選択画面をスキップしてしまうためらしい。<br><a href="http://www.serendip.ws/archives/3534" target="_blank" rel="external">Grub2 で起動時に選択リストを表示させる : Serendip - Webデザイン・プログラミング</a>  </p>
-<p>上記記事の通り</p>
-<pre><code>#GRUB_HIDDEN_TIMEOUT=0
-GRUB_HIDDEN_TIMEOUT_QUIET=false
-</code></pre><p>にしたらOS選択画面が出た。  </p>
-<p>試してみる起動オプションは下記記事を参考にさせて頂いた。<br><a href="http://kiddushin.jugem.jp/?eid=264" target="_blank" rel="external">Disabling IRQ (起動には成功の巻) | おもしろきこともなき世をおもしろく</a>  </p>
-<p>OS選択画面の「Advanced options for Ubuntu」で「Ubuntu, with Linux 3.13.0-39-generic」を選択し「e」キーでオプション編集画面へ。<br>linux /boot/vmlinuz-3.13.0-39…で始まる行の最後quiet nosplashのあとに半角スペースに続けてオプションを追加、「F10」キーで起動。<br>（参考記事：<a href="https://wiki.ubuntulinux.jp/UbuntuTips/Others/BootOptions#A.2BMKQw8zC5MMgw.2FDDrbggwfzC3MLkwxjDgMG6Nd1LVMKow1zC3MOcw8zCSTgBmQnaEMGtZCWb0MFkwizBrMG8-" target="_blank" rel="external">UbuntuTips/Others/BootOptions - Ubuntu Japanese Wiki</a>）  </p>
-<h4 id="結果">結果</h4>
-<p>acpi=off<br>起動は出来るが、画面が横に引き伸ばされてしまい、モニタの設定でも他の解像度を選べず。<br>シャットダウン時には「System halted」のスプラッシュ画面で止まってしまう。    </p>
-<p>pci=noacpi<br>良好。<br>問題なく使えそう。  </p>
-<p>acpi=noirq<br>一瞬起動できるかと思ったが画面が真っ暗のまま。  </p>
-<p>irqpoll<br>上に同じく真っ暗。  </p>
-<p>上記とは別にpci=routeirqというオプションも見かけたのでやってみたが、これは「disabling IRQ #9」で起動できず。  </p>
-<p>pci=noacpiを起動オプションに加えることにしたので、/etc/default/grubで</p>
-<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet nosplash pci=noacpi&quot;
-</code></pre><p>とし、<code>sudo update-grub</code>した。  </p>
-<p>ーー<br>（追記）<br>最初から「pci=noacpi」のオプションを付けてXubuntu14.04.1をインストールすることも可能だった。<br><a href="http://pagent.github.io/blog/2014/11/11/xubuntu-install-option/" target="_blank" rel="external">起動オプションを付けてXubuntu14.04.1をインストール - Pagent</a>  </p>
-<p>この場合grubの記述は</p>
-<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;
-GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
-</code></pre><p>となっていた。<br>スペース区切りで一行で書いても、改行してあらたにオプションを記述してもどちらでもいいようだ。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/01/irq-problem/" data-text="「disabling IRQ ＃9」でXubuntuが起動できない | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/17/fstab-uuid-label/" data-text="マルチブート環境（複数のLinux）でのfstab | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -701,35 +393,35 @@ GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
 		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 		
 		</ul>

@@ -112,14 +112,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/02/03/dolphin-directory-files/" >Dolphinが.directoryファイルを生成するのを止める</a>
+			<a href="/2015/03/02/easy2boot/" >isoファイルを置くだけでUSBマルチブート可能な「Easy2Boot」</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年2月3日
+	2015年3月2日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -127,154 +127,103 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>ファイルマネージャーDolphinを使っていて、あちこちのディレクトリに.directoryというファイルがあることに気付いた。  </p>
-<p>内容は以下のようなもの。  </p>
+	  <p>isoファイルからブータブルUSBメモリを作成出来るツールは多々あるが、「Easy2Boot」は作成した領域にisoファイルをコピーペーストするだけで、マルチブート可能になるようだ。  </p>
+<p>公式サイト（英語）以外には解説が見当たらず、その公式サイトも「Easy2Boot」のダウンロードやインストール方法など、どこに記載があるのか分かりづらかった。<br>だが使ってみると、配置したisoファイルは自動的にブートメニューに追加されるし、とても便利だった。  </p>
+<h3 id="Linux環境でのインストール">Linux環境でのインストール</h3>
+<p>まず、<a href="http://www.easy2boot.com/download/" target="_blank" rel="external">Downloads</a>からEasy2Boot_v1.62.zipをダウンロードし、解凍。  </p>
+<p>Linux環境で作業したので、<a href="http://www.rmprepusb.com/tutorials/114" target="_blank" rel="external">114 - How to make an Easy2Boot (grub4dos) USB Flash drive using linux - RMPrepUSB</a>を参照したが、解凍して出て来たフォルダ内にも同様の解説があった。<br>_ISO/docs/linux_utils/ReadMe_fmt.sh.txt  </p>
+<p>（Windows用の解説は_ISO/docs/Make_E2B_USB_Drive/ReadMe.txt）  </p>
+<p>linux_utilsフォルダ内で端末を開き、  </p>
+<pre><code>sudo chmod 777 *
+</code></pre><p>フォルダ内のすべてのファイルのパーティションを777に変更し、その後  </p>
+<pre><code>sudo ./fmt.sh
+</code></pre><p>インストール先を聞かれるので、OKなら「y」。<br>違う場合は「n」の後、自分で指定。<br>（外付けHDDにもインストール可能で、さらに2番目以降のパーティションにもインストール可。）  </p>
+<p>フォーマットして良いか聞かれるので、良ければ「y」。  </p>
+<p>指定したパーティションに「Easy2Boot」がコピーされ、ブートローダーもインストールされた。  </p>
+<h3 id="起動とデフラグ">起動とデフラグ</h3>
+<p>使い方は簡単で、_ISO内の空いてるフォルダ（LINUXやWINなど）にisoファイルを追加するだけ。  </p>
+<p>今回は_ISO/LINUX内にLxPup-15.02.1-s-nopae.iso、_ISO/BACKUP内にclonezilla-live-2.1.2-43-i686-pae.isoを配置した。  </p>
+<p>ブートすると、LxPupは起動出来たが、clonezillaは「ファイルがcontiguous（隣接）じゃない」と言われ、上手く起動出来なかった。<br>どうやら断片化しているからデフラグが必要ということらしい。  </p>
+<p>isoファイルから直接ブートする際には、ちょっとした断片化でも起動出来ないようで、「Easy2Boot」ではいろいろ対策が用意されている。  </p>
+<p>defragfs.pl（_ISO/docs/linux_utils内）やWINCONTIG（_ISO/docs/内）の他、特にLinuxユーザーの為に_ISO内にCONTIG.ISOというファイルが同梱されている。  </p>
+<p>CONTIG.ISOは、isoファイルに断片化があった際に自動的にデフラグ操作を行うためのものらしい。<br>サイズが500MBに設定されていて、Easy2Bootインストール直後の状態でのほとんど全ての容量にあたる。<br>clonezillaが上手く起動出来なかったのもフリーズしていた訳ではなく、CONTIG.ISOがデフラグ操作を行っていたのかもしれない。<br>ただかなり時間が掛かるようだし、サイズが500MB以上のisoファイルをデフラグするためには、CONTIG.ISOもそれ以上のサイズにリサイズしておく必要があるようだ。  </p>
+<p>defragfs.plはなぜか機能しなかったが、Windows用のWinContigでデフラグしたらclonezillaも起動出来るようになった。  </p>
+<p>WinContigはWindows 7を起動して使用したが、Windows PE（Windows プレインストール環境）やHiren’s BootCDの「Mini Windows Xp」など、Windows環境を提供するisoファイルをEasy2Bootに入れておけば、Easy2BootによるブートでWinContigを利用出来る。<br>この場合はCONTIG.ISOは必要ないので、削除してしまっても良いようだ。  </p>
+<h3 id="フォーマットをNTSFにする">フォーマットをNTSFにする</h3>
+<p>4GBを超えるファイルを利用するためには、Easy2Boot領域をFat32ではなく、NTSFもしくはext3、ext4にしておく必要があるが、なるべくなら4GB以上のファイルも扱いたい。  </p>
+<p>Easy2Bootインストール時に領域がFat32にフォーマットされてしまうが、_ISO/docs/linux_utils内のfmt.shファイルの131行目の  </p>
+<pre><code>/sbin/mkfs.vfat -F32 -n &quot;$label&quot; $device
+</code></pre><p>を</p>
+<pre><code>/sbin/mkfs.ntfs -n &quot;$label&quot; $device
+</code></pre><p>に変更することでNTSFにすることが出来た。  </p>
+<p>後からファイルを保持したままFat32をNTSFに変換することも可能のようなので、それでも良いかもしれない。  </p>
+<h3 id="よく分からないトラブル">よく分からないトラブル</h3>
+<p>外付けHDDではこれで上手く行ったが、USBメモリではEasy2Bootを起動しようとしたら、パーティションの「パーティションのlast sectorをチェックしている」というような表示のまま止まってしまった。  </p>
+<p>USBメモリを一旦抜き、再度挿入してconstinue。<br>ブートメニュー画面で”Install Grub4dos…”を選択したら、その後は起動出来るようになった。  </p>
+<p>理由はよく分からないままだが、使用したUSBメモリの特性やインストール方法などにもよるのかもしれない。  </p>
+<h3 id="感想">感想</h3>
+<p>以上、少しややこしかったが、配置するだけで（正確にはデフラグの必要があったりするが）isoファイルを起動出来る「Easy2Boot」はなかなか便利だ。<br>Linuxディストリビューションを試してみたい時にもDVD-RWなどに焼く必要が無くなる。<br>導入がもう少し簡単だったらとは思うが、isoファイルを直接起動するためには仕方が無いのだろう。  </p>
+<p>ーー<br>（追記）<br>Windowsの場合はRMPrepUSBを使って、もっと簡単にEasy2Bootをインストール出来るようだ。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/02/easy2boot/" data-text="isoファイルを置くだけでUSBマルチブート可能な「Easy2Boot」 | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/03/01/arch-ati-video-driver/" >Arch Linuxをインストールした。（ビデオドライバーはATIでうまく行った）</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年3月1日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Dellの古いノートパソコンVOSTRO1000にArch Linuxを入れてみた。<br>（NECのLavie Liteは、kernelが3.10台を超えると不具合が出る問題がArch Linuxでは解決出来ず、諦めた。）</p>
+<p>インストールには、グラフィカルインストールが可能なArchbootを使った。（archlinux-2015.01-1-archboot.iso）<br>Ubuntu等のインストーラーほど懇切丁寧ではないが、コマンドラインでのインストールよりは楽だった。  </p>
+<p>ネット上の紹介記事を参考に進めたら、それ程迷うこともなかったが、最後ブートローダーのインストールで、GRUB2を選択すると、インストール先をMBRにしか出来なかったので、SysLinuxをインストールした。<br>無線LANの設定も後から苦労するよりはと、ぽちぽちパスワードを入力した。  </p>
+<p>一応インストールは完了したが、デスクトップ環境の導入で躓いてしまった。  </p>
+<p>最初LXDEを入れてみたが、画面がザラザラで何も見えない。<br>PC起動時にLXDEを自動開始するよう設定してしまったようで、コマンドラインにも戻れない。<br>修正の仕方も分からず困ったが、幸いインストール後の状態をClonezillaでバックアップしていたので、これをリストアした。  </p>
+<p>LXDEでダメならと、次はXfceでチャレンジしてみた。  </p>
+<p>ほぼ下記記事の説明の通りに進めた。<br><a href="http://elfcobe.hateblo.jp/entry/2014/05/11/015243" target="_blank" rel="external">Windows で VirtualBox + Arch Linux (Xfce + Slim) - けいれん現象の幽玄美よ</a>  </p>
+<p>Xorg、グラフィックドライバー（xf86-video-vesa）、Xfceをインストールしたが、<code>startxfce4</code>とコマンドを打ってデスクトップに入ろうとしても、X serverが落ちてしまう。  </p>
+<p>エラーメッセージは「ビデオドライバーが無い」というような内容だった。<br>LXDEの時もこのせいで画面がザラザラだったのかもしれない。  </p>
+<p>デュアルブートのLubuntuで<code>xrandr</code>してみると、  </p>
 <blockquote>
-<p>[Dolphin]<br>Timestamp=2015,2,2,22,45,9<br>Version=3<br>ViewMode=2</p>
-<p>[Settings]<br>HiddenFilesShown=true</p>
+<p>VGA-0 disconnected… LVDS connected</p>
 </blockquote>
-<p>Dolphinでアイコン表示、詳細表示などの表示モードやソート基準を変更をしたり、隠しファイルを表示したりすると、この.directoryファイルが自動生成されるようだ。<br>（/etc等、所有者がrootのディレクトリには作成されない。）  </p>
-<p>多くのファイルマネージャーでは隠しファイルの表示・非表示をディレクトリ毎に設定出来ないが、Dolphinでは.directoryファイルのおかげでディレクトリ毎に設定可能になっている。  </p>
-<p>便利と言えば便利なのだが、静的サイトジェネレーターHexoの作業フォルダ内にこの.directoryファイルを作られるのはまずい気がする。<br>deployやgitコマンドの際に不具合が出るかもしれない。  </p>
-<p>Dolphinの設定→全般→動作タブで、「フォルダごとにビューのプロパティを保存する」から「すべてのフォルダに共通のプロバティを使う」に変更したら、.directoryファイルは生成されなくなった。<br><a href="https://forum.kde.org/viewtopic.php?f=223&amp;t=119876" target="_blank" rel="external">.directory files • KDE Community Forums</a>  </p>
-<p>だが、表示モードやソート基準も全フォルダで共通になってしまった。<br>使い勝手が悪く、これならnemoの方が便利だ。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/03/dolphin-directory-files/" data-text="Dolphinが.directoryファイルを生成するのを止める | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/02/03/xubuntu-dolphin-root-actions/" >XubuntuにインストールしたDolphinでRootで開く</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年2月3日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Xubuntu14.04にKDEのファイルマネージャーDolphinをインストールしたが、Rootで開くためのRoot Actionsで手こずった。  </p>
-<ul>
-<li>Dolphinの設定の「新しいサービスをダウンロード」からインストールする方法  </li>
-<li>rootactions_servicemenuのtar.gzファイルをダウンロードし、メニューファイルとスクリプトを手動で配置する方法  </li>
-</ul>
-<p>2通り試したが、どちらも上手くいかない。<br>パズワード入力画面までは行くが、パスワードを入れても何も起こらない。  </p>
-<p>最終的にはLinux Mint用のdebパッケージをインストールして解決した。  </p>
-<p>下記サイトの「All arch deb package」というリンクからrootactions-servicemenu_2.7.3-0mint1_all.debをダウンロード。<br><a href="http://www.ubuntuupdates.org/package/mint_main/olivia/main/base/rootactions-servicemenu" target="_blank" rel="external">UbuntuUpdates - Package “rootactions-servicemenu” (olivia )</a>  </p>
-<p>クリックするとUbuntuソフトウェアセンターが立ち上がるので、いつも通りにインストール。<br>“Open as Text”は既定のテキストエディターがKateでないと機能しないが、フォルダはちゃんとRootで開くことが出来た。  </p>
-<p>（参照サイト）<br><a href="http://ubuntuforums.org/showthread.php?t=2157705&amp;p=12707272#post12707272" target="_blank" rel="external">[gnome] “Root Actions” in dolphin not available</a>  </p>
-<p>ーー<br>（追記）<br>Ubuntuソフトウェアセンターの履歴を見ると、rootactions-servicemenu以外にkdesudoもインストールされていた。<br>手動でのインストールでもkdesudoがあれば機能していたのかもしれない。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/03/xubuntu-dolphin-root-actions/" data-text="XubuntuにインストールしたDolphinでRootで開く | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/02/02/xubuntu-kate/" >XubuntuでKDEのテキストエディターKate</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年2月2日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Xubuntu14.04でテキストエディターとしてMousepadやLeafpadを使っているが、先に開いて編集作業をしていたファイルを再度開くと、新たなウィンドウで開いてしまう。<br>その後、別の作業をしてまたファイルの編集作業に戻ったりすると、どちらのウィンドウが新しい編集だったか分かりづらい。<br>ウィンドウを閉じる時、「この文書は外部から変更されています。このまま保存しますか?」と警告は出るが、両方のウィンドウで編集作業をしてしまっていることもしばしば。  </p>
-<p>KDEのテキストエディター「Kate」をインストールしてみた。  </p>
-<p>複数のファイルを開いてもウィンドウが１つ。<br>だがデフォルト状態ではタブも無く、サイドバーの「文書」で開いているファイルをツリー表示してくれるのみ。<br>これでは使いづらいので使用を諦めようかと思ったが、設定→Kateを設定→プラグイン→タブバー、でタブ表示出来た。<br><a href="http://news.mynavi.jp/articles/2012/05/15/kate/003.html" target="_blank" rel="external">【レビュー】世界のテキストエディターから - KDEの優秀なテキストエディター「Kate」 (4) 「Kate」を使いこなすTips | マイナビニュース</a>  </p>
-<p>既に開いているファイルを開くとそのウィンドウ（タブ）にフォーカスが移る。<br>これでいくつもウィンドウを開かずに済みそうだ。<br>「Projects」や「セッション」はよく分からないが、デザインも精錬されている。  </p>
-<p>ーー<br>（追記）<br>Ubuntu標準のテキストエディターGeditもタブ表示可能で、同一ファイルを複数のウィンドウで開かずに済むようだ。<br>だが変更のあるタブを含むウィンドウを閉じようとした際、Geditは「ドキュメント“…”で変更した内容を閉じる前に保存しますか?」という文章のみの警告なのに対し、Kateはチェックボックス付きのリスト表示をしてくれて分かりやすい。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/02/xubuntu-kate/" data-text="XubuntuでKDEのテキストエディターKate | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/02/01/piwik-login-cookie-expiration/" >Piwikのログイン・クッキー有効期限を延長する</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年2月1日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>オープンソースのアクセス解析ツールPiwikを導入している。<br>管理画面へのログイン時には「次回の入力を省略」にチェックを入れているが、頻回にパスワード入力を求められる。<br>FirefoxのアドオンFirebugでログイン時のリクエストヘッダーを見てみると、クッキーの有効期限が2週間しかないようだ。  </p>
-<p>Piwikのログイン・クッキー有効期限がどこで設定されているのか、あちこちファイルを見まわって、ようやくpiwik/config/global.ini.phpの210行目に見つけた。  </p>
-<pre><code>; login cookie expiration (14 days)
-login_cookie_expire = 1209600
-</code></pre><p>だが、global.ini.phpの冒頭には下記のように書いてある。  </p>
+<p>と返ってくる。  </p>
+<p><code>lspci</code>をしてみると、  </p>
 <blockquote>
-<p>; If you want to change some of these default values, the best practise is to override<br>; them in your configuration file in config/config.ini.php. If you directly edit this file,<br>; you will lose your changes when you upgrade Piwik.<br>; For example if you want to override action_title_category_delimiter,<br>; edit config/config.ini.php and add the following:<br>; [General]<br>; action_title_category_delimiter = “-“</p>
+<p>VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] RS482/RS485 [Radeon Xpress 1100/1150]</p>
 </blockquote>
-<p>global.ini.phpを直接編集しても、Piwikをアップグレードした際に元に戻ってしまうから、変更したい挙動はconfig/config.ini.phpに加筆して設定を上書きせよ、ということらしい。  </p>
-<p>自分の環境ではconfig.ini.phpの所有者はApacheになっていて、そのままではファイルを変更出来なかったので、パーミッションを644から646に変更。<br>クッキー有効期限を180日（15552000秒）にすることにして、config.ini.phpの[General]の箇所に  </p>
-<pre><code>login_cookie_expire = 15552000
-</code></pre><p>を加筆した。  </p>
-<p>Piwikにログインし直し、Firebugで確認すると、”Set-Cookie…expires=Fri, 31-Jul-2015 11:30:24”と、クッキーの有効期限が延長されていた。<br>ファイルのパーミッションを644に戻して作業終了。</p>
+<p>何のドライバーが必要なのか、よく分からない。  </p>
+<p>Puppy linux派生のLxpupを起動してみると、クイックセットアップのGraphicsのところに「現在はATIビデオドライバーを使用している」というようなことが書いてあった。  </p>
+<p>「ATI video driver Arch」で検索すると、Arch Linuxの日本語wikiページが見つかった。<br><a href="https://wiki.archlinux.org/index.php/ATI_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29" target="_blank" rel="external">ATI - ArchWiki (日本語)</a>  </p>
+<p><code>pacman -S xf86-video-ati</code>でxf86-video-atiをインストールしたら、ようやくXfceのデスクトップに入ることが出来た。  </p>
+<p>日本語環境がまだだったり、全体的にフォントがザラザラで汚かったりで、環境はまだ全然だが、いちおう一段落は付けられた。  </p>
+<p>それにしても、XubuntuやLubuntuなどUbuntu派生ディストリビューションの楽ちんさは、本当に有難いと痛感した。</p>
 
 	
 	</div>
@@ -283,7 +232,7 @@ login_cookie_expire = 1209600
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/01/piwik-login-cookie-expiration/" data-text="Piwikのログイン・クッキー有効期限を延長する | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/01/arch-ati-video-driver/" data-text="Arch Linuxをインストールした。（ビデオドライバーはATIでうまく行った） | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -296,14 +245,14 @@ login_cookie_expire = 1209600
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/01/31/qupzilla-simplenote/" >軽量ブラウザQupZillaをSimplenoteアプリとして使う</a>
+			<a href="/2015/03/01/update-grub-error/" >update-grubで&quot;options:not found&quot;のエラー</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年1月31日
+	2015年3月1日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -311,202 +260,15 @@ login_cookie_expire = 1209600
 	<div class="col-md-12">
 	  
 	
-	  <p>オンラインノートSimplenoteと同期出来るメモ帳アプリnvPY。<br>良いかと思ったが、マウス右クリックでのコピー・ペーストが出来ないというのが、やはり致命的に使いづらい。<br>かといってわざわざFirefoxを起動してブックマークからサイトを開いて、というのももどかしい。  </p>
-<p>そこで、適当なブラウザをSimplenote専用にし、ランチャーに登録しようと考えた。<br>まず候補に上がったのがキーボードで操作するブラウザLuakit。  </p>
-<p>ところが、起動からSimplenoteのサイト表示までが、期待したほど早くない。<br>それに起動時に縮小表示してコンパクトにしたいところだが、それも難しいようだ。  </p>
-<p>他に良いブラウザは無いかと、Ubuntuソフトウェアセンターで片っ端からインストールしてみた。<br>あまり有名ではないと思うが、QupZillaというのが目的にピッタリだった。<br><a href="http://www.qupzilla.com/" target="_blank" rel="external">QupZilla - マルチプラットフォーム対応、軽量ブラウザ</a>  </p>
-<p>起動速度、サイト表示が早い。<br>設定→ブラウジング→Web設定でデフォルトのズーム率も任意に設定出来る。  </p>
-<p>小さめの倍率にし、ナビゲーションツールバーとブックマークツールバーを非表示に。<br>設定→タブで「タブが1つだけの時タブバーを非表示」にチェックを入れたら、許容範囲内のコンパクトさになってくれた。<br>ランチャーにコマンドを登録して完了。  </p>
-<pre><code>qupzilla https://app.simplenote.com/
-</code></pre><p>まるでメモ帳ソフトのようになった。  </p>
-<p>QupZillaにはFirefoxのようなアドオンこそ無いが、機能もそこそこ充実していて癖のない作り。<br>普段使いのブラウザとしても、軽快に活躍してくれそうだ。<br>Linuxのほか、Windows、Mac OS Xでも使えるというのも良い。  </p>
-<p>Simplenote専用にしておくのは、ちょっともったいないような気もする。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/31/qupzilla-simplenote/" data-text="軽量ブラウザQupZillaをSimplenoteアプリとして使う | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/01/30/xubuntu-copy-client/" >Xubuntuで非公式レポジトリのCopyクライアントが不調</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年1月30日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Xubuntu14.04に、非公式レポジトリからCopyクライアントをインストールしたが、調子が良くない。  </p>
-<p>“Scanning  for changes”→”Processing .. items”→”Downloading File List”ときて、その後また”Scanning  for changes”→”Processing .. items”と延々処理が続き、いつまで経っても同期が終わらない。<br>さらに起動しても”Logging In”のまま固まってしまうようになった。  </p>
-<p>まともに機能しない状態なので、非公式レポジトリのクライアントはアンインストールし、<a href="https://www.copy.com/install/" target="_blank" rel="external">Copy.comのダウンロードページ</a>から落としたクライアントをインストールし直した。<br>インストールといっても、ダウンロードした圧縮ファイルを展開し、任意のディレクトリに配置しただけだが。  </p>
-<p>追加アプリケーションを配置するためのディレクトリ/optに配置した。  </p>
-<pre><code>cd ~/Desktop
-tar zxvf copy_agent-1.48.0456.tgz
-sudo cp -r copy/x86_64 /opt/copy
-</code></pre><p>コマンドなど使わずファイルマネージャーで「ここに展開」し、/optを「Rootとして開く」してからコピペでも問題無い。  </p>
-<p>端末から<code>/opt/copy/CopyAgent</code>で起動。<br>一応ちゃんと動いてくれているようだ。<br><code>/opt/copy/CopyConsole</code>なら端末で動作する。  </p>
-<p>簡便のためコマンド<code>/opt/copy/CopyAgent</code>をメニューに追加した。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/30/xubuntu-copy-client/" data-text="Xubuntuで非公式レポジトリのCopyクライアントが不調 | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/01/29/dropbox-number-of-files/" >Dropbox サイズだけではなくファイル数も問題</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年1月29日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>独自ドメイン運用のサーバーからダウンロードしたファイル一式をDropboxのフォルダに置いたら、同期に時間が掛かるようになってしまった。<br>いったん同期が済み、なにも更新が無い時でも、Dropboxクライアント起動後のファイルリストのダウンロードとインデックス作成に10分以上掛かる。<br>どうやらファイル数が多いためらしい。<br>同期にはファイルサイズだけではなく、ファイル数も影響するのだとか。<br><a href="http://www.iodata.jp/support/qanda/answer/nas_dropbox.html#a4" target="_blank" rel="external">Dropbox制限事項Q&amp;A</a>  </p>
-<p>サーバーのファイルの数は数万の単位だったので、これを圧縮ファイルにして１つのファイルにしたところ、同期時間を大幅に短縮出来た。  </p>
-<p>圧縮前はファイル数が60000以上、Dropboxフォルダの総サイズが約500MB。なにも更新がない状態でDropboxクライアントを起動し、同期が完了するのに約12分掛かった。<br>圧縮後はファイル数が約5500、サイズは約300MB。同期は約1分で完了した。  </p>
-<p>Hexo（Octopressに似た静的サイトジェネレーター）のフォルダもDropboxフォルダに置いているが、.deploy/.git/objectsや.git/objects下にフォルダ・ファイルが多数生成されてしまうので、同期前には<code>git gc</code>するようにしている。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/29/dropbox-number-of-files/" data-text="Dropbox サイズだけではなくファイル数も問題 | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/01/29/xubuntu-copy-error-qgtkstyle/" >Xubuntu14.04にインストールしたCopy.com クライアントで「QGtkStyle was unable to detect the current GTK+ theme.」のエラー</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年1月29日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Xubuntu14.04にDropboxに似たオンラインストレージ「Copy」のクライアントを導入した。<br>クライアントはcopy.comからダウンロードしたものではなく、下記サイトを参考にUbuntu向けのものをインストールした。<br><a href="http://kometchtech.blog.fc2.com/blog-entry-1542.html" target="_blank" rel="external">いつか、そのとき、あの場所で。 | [Ubuntu][自分用メモ]　Copy.com クライアントのインストール方法。</a>  </p>
-<p>インストール後、メニュー→アクセサリ→Copyで起動し、64bitのPCでは問題なく使用出来た。<br>だが32bitのPCではログインする際、「curl failed to post data」とエラーになり、終了してしまう。  </p>
-<p>端末から  </p>
-<pre><code>$ /opt/copy-client/CopyAgent
-</code></pre><p>とコマンド入力して起動させても、  </p>
-<pre><code>QGtkStyle was unable to detect the current GTK+ theme.
-</code></pre><p>というエラー表示が出て、やはりログイン出来ない。  </p>
-<p>QGtkStyleとかGTK+とか、なんのことかよく分からなかったが、どうやら<code>libgnomeui</code>をインストールする必要があるらしい。<br><a href="https://wiki.archlinux.org/index.php/Uniform_Look_for_Qt_and_GTK_Applications_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29#Qt_.E3.82.A2.E3.83.97.E3.83.AA.E3.82.B1.E3.83.BC.E3.82.B7.E3.83.A7.E3.83.B3.E3.81.8C_QGtkStyle_.E3.82.92.E4.BD.BF.E3.82.8F.E3.81.AA.E3.81.84" target="_blank" rel="external">Uniform Look for Qt and GTK Applications (日本語) - ArchWiki</a>  </p>
-<p>さらに検索してみると、Ubuntuでは以前からCopy.com クライアント利用にあたっての不具合が報告されているようだ。<br><a href="http://ubuntuforums.org/showthread.php?t=2217713&amp;page=2&amp;p=12993324#post12993324" target="_blank" rel="external">Copy.com indicator problem with Ubuntu 14.04 - Page 2</a>  </p>
-<p>インジケーター問題の修正はインストール時に行った（最新バージョンでは修正済か？）が、この回答を参考に、Synapticから<code>libgnomeui-0</code>をインストールした。<br>無事Copy.com クライアントを使用出来るようになった。  </p>
-<p>回答にあった「canberra-gtk-module」のエラーは出なかった。  </p>
-<p>ーー<br>（追記）<br>64bitのPCでもCopy.com クライアントを起動した際、”Logging In”の状態でギクシャクすることがあるので、こちらにも<code>libgnomeui-0</code>をインストールした。<br>だがその後も不調が続いたので、結局Copy.comのサイトからダウンロードしたクライアントを入れなおした。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/29/xubuntu-copy-error-qgtkstyle/" data-text="Xubuntu14.04にインストールしたCopy.com クライアントで「QGtkStyle was unable to detect the current GTK+ theme.」のエラー | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/01/28/nvpy/" >Simplenoteと簡単に同期出来るメモ帳ソフト「nvPY」</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年1月28日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>オンラインノートのSimplenoteだけでも十分便利だが、ブラウザを立ち上げずに済むなら尚便利。<br>検索すると「nvPY」というメモ帳ソフトが見つかった。<br>Simplenoteと簡単に同期出来て、しかもLinux、Windows、Mac OS Xなどクロスプラットフォームで利用可能らしい。<br>UbuntuソフトウェアセンターやSynapticからもインストール可能。<br><a href="http://moebuntu.blog48.fc2.com/blog-entry-688.html" target="_blank" rel="external">萌え萌えmoebuntu　SimplenoteクライアントnvPY</a>  </p>
-<p>メニュー→アクセサリから起動すると、  </p>
+	  <p>/etc/default/grubを編集して<code>update-grub</code>しようとしたら、  </p>
 <blockquote>
-<p>Could not read any configuration files.<br>See<br>/usr/share/doc/nvpy/examples/nvpy-example.cfg</p>
+<p>/usr/sbin/grub-mkconfig: 6: /etc/default/grub: options: not found</p>
 </blockquote>
-<p>と注意が表示される。  </p>
-<p>nvpy-example.cfgが設定ファイルのひな形らしい。<br>/usr/share/doc/nvpy/examples内のnvpy-example.cfgを自分のホームディレクトリにコピー。<br>Simplenoteのアカウント（メールアドレス）とパスワードを記入し、nvpy-example.cfgのファイル名を<code>.nvpy.cfg</code>に変更したらSimplenoteとの同期設定は完了。<br>他にも.nvpy.cfgで色々と設定出来るよう。<br>取り敢えずフォントをdroid sans mono、フォントサイズを10に、リストペインのフォントサイズを9にした。  </p>
-<p>nvPYを立ち上げたらすぐに同期してSimplenote上のノートを取り込んでくれた。<br>自動開始アプリケーションにも追加してみたが、PC起動の度に立ち上がっている必要も無さそうなので、クイックランチャーに追加することにした。<br>アイコンは/usr/share/icons/hicolor/256x256/apps/nvpy.png。（青のローバーMINI）  </p>
-<p>autosave、autosyncしてくれるので、ブラウザでSimplenoteを開く必要がない。  </p>
-<p>デフォルトのsort modeでは更新日時での降順（新しいノートが上）。  </p>
-<p>nvPY下部の「Pinned」のチェックボックスにチェックを入れると、そのノートが常に一番上に表示される。  </p>
-<p>右上の「CS」（case-sensitivity）にチェックが入っていたら、検索のときアルファベットの大文字と小文字を区別して検索。  </p>
-<p>search modeのgstyleとregexpは、英語など語句の間にスペースの入った文節を検索した際、対象を完全一致のみ（regexp）にするかどうかのオプションのよう。<br>日本語環境ではデフォルトのgstyleで良さそう。  </p>
-<p>その他、英語だがnvPYのリポジトリに詳しい説明あり。<br><a href="https://github.com/cpbotha/nvpy" target="_blank" rel="external">https://github.com/cpbotha/nvpy</a>  </p>
-<p>欠点はマウス右クリックでのコピーやペーストは出来ず、CTRL＋cやCTRL＋vを使う必要があること。<br>また、nvPY内でなら中クリックでのペーストは可能だが、アプリケーションをまたいでは使えない。  </p>
-<p>ーー<br>（追記）<br>右クリックのコピーペーストが出来ないのがやはり不便なので、結局QupZillaという軽量ブラウザをSimplenote専用とすることにした。<br><a href="http://pagent.github.io/2015/01/31/qupzilla-simplenote/" target="_blank" rel="external">軽量ブラウザQupZillaをSimplenoteアプリとして使う | Pagent</a></p>
+<p>とエラーになった。  </p>
+<p>意味がよく分からず、grub2を再度インストールしてみたが、やはりエラーになる。  </p>
+<p>grubファイルをよく見ると編集した箇所、GRUB_DEFAULT=”Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.16.0-30-generic”のダブルクォーテーションが全角の「”」になっていた。<br>半角に直したらアップデート出来た。<br>エラーメッセージの”6”はgrubファイルの6行目ということらしい。  </p>
+<p>“line 6”と言ってくれたら親切なんだが。<br>“options: not found”も”invalid”等の方が分かりやすい。  </p>
+<p>自分の不注意は棚に上げてだが。</p>
 
 	
 	</div>
@@ -515,7 +277,7 @@ sudo cp -r copy/x86_64 /opt/copy
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/28/nvpy/" data-text="Simplenoteと簡単に同期出来るメモ帳ソフト「nvPY」 | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/01/update-grub-error/" data-text="update-grubで&quot;options:not found&quot;のエラー | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -528,14 +290,14 @@ sudo cp -r copy/x86_64 /opt/copy
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/01/28/simplenote/" >これは便利！シンプルで軽快、おすすめのオンラインメモ帳「Simplenote」</a>
+			<a href="/2015/02/27/linkchecker/" >dead-link-checkerがあまりに遅いので「LinkChecker」を使ってみた（リンク切れチェック）</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年1月28日
+	2015年2月27日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -543,18 +305,15 @@ sudo cp -r copy/x86_64 /opt/copy
 	<div class="col-md-12">
 	  
 	
-	  <p>以前はちょっとした文章などをPC間でやり取りするのに、自分宛てにメールを送ったりしていた。<br>あるサイトのURLを別のPCでも開きたい時など。  </p>
-<p>Firefox Syncを使うようになってからはそういうことも無くなったが、それでもちょっとした、それでいて一から文字を入力するのは大変な文章を送りたい時がある。<br>そういう時はGoogleやYahoo!で検索して検索結果のURLをブックマーク、Firefox Syncの同期を利用して別のPCに送るというようなことをしていた。  </p>
-<p>あまりスマートなやり方とは思えないし、文字数が多くなると難しい。<br>なにか良い方法はないものか。<br>Dropboxでテキストファイルをやり取りするというのは大層だし。  </p>
-<p>ずいぶん前にオンラインノートの老舗Evernoteのアカウントは作っていた。<br>長らく放置していたEvernoteをもう一度使ってみようかと思ったが、多機能ゆえか動作が重く、どうにもやりきれない。<br>もっと簡単にちょこちょこっと書いたり、コピペしたりしたいだけなのだ。  </p>
-<p>なにか良いサービスはないかと探してみたら、有りました！  </p>
-<p><a href="https://app.simplenote.com/" target="_blank" rel="external">「Simplenote」</a>  </p>
-<p>とにかく軽い。<br>そしてシンプル。<br>こういうのが欲しかった。  </p>
-<p>（参照サイト）<br><a href="http://allabout.co.jp/matome/cl000000002229/" target="_blank" rel="external">お散歩に持って出ると便利な「オンラインノート」サービス10選｜All About（オールアバウト）</a>  </p>
-<p>管理するアカウントをあまり増やしたくないので、はじめは登録するのを少し躊躇したが、試してみて良かった。  </p>
-<p>これはおすすめです。  </p>
-<p>ーー<br>（追記）<br>Linux、Windows、OS Xなど、クロスプラットフォームで利用可能なメモ帳ソフト「nvPY」というのがあった。（Ubuntu系ならソフトウェアセンターからインストール可能）<br>「nvPY」はSimplenoteと簡単に同期出来て、ブラウザでサイトを開く必要がなくなる。<br><a href="http://pagent.github.io/2015/01/28/nvpy/" target="_blank" rel="external">Simplenoteと簡単に同期出来るメモ帳ソフト「nvPY」 | Pagent</a>    </p>
-<p>あと場所が分かりにくいが、<a href="http://simplenote.com/downloads/" target="_blank" rel="external">Downloads | Simplenote</a>にSimplenoteのアプリ一覧が挙げられていた。<br>Mac OS X用、Windows用、Mobile用などのアプリや、Microsoft Outlook用、Emacs用プラグインなど多数あり。</p>
+	  <p>ネット上のページは開設者の都合などにより消えることも多いだろうし、SEO的にはそれ程気にしなくても良いのかもしれないが、ページのリンクをクリックしても404エラーだったりするとやはりがっかりする。<br>自分のブログにもリンク切れになっている発リンクが無いか調べてみた。  </p>
+<p>まず、有名どころらしいdead-link-checker.comでチェックしてみたが、とにかく遅い。<br>1600あまりのページのチェックだったが、2時間以上も掛かってしまった。<br>遅すぎて、そのあとリンク切れの修正という気にはとてもなれなかった。  </p>
+<p>ウェブアプリの場合、サーバーの負担を減らす為ある程度遅くなるのは仕方が無いらしい。<br><a href="http://chusho-it.net/post_linkcheck.html" target="_blank" rel="external">サイト全体をチェックできるリンクチェックツール比較</a>  </p>
+<p>というわけで、上記の記事で高評価で紹介されていた<a href="http://wummel.github.io/linkchecker/" target="_blank" rel="external">「LinkChecker」</a>を使ってみた。<br>Linux、Windows、Macで使えるクロスプラットフォームらしい。  </p>
+<p>最新版のlinkchecker-gui_9.3-1_all.debをダウンロードしたが、インストールの際にUbuntuソフトウェアセンターが、少し古いバージョンだったらリポジトリにあると言ってきたので、言われた通りリポジトリのlinkchecker-gui 8.6-2をインストールした。  </p>
+<p>使ってみたらこれが早かった。  </p>
+<p>すべてのページのチェックが5分程で完了。<br>結果は、404や301などの異常の種類やURL等で並び替えが出来るので、その後の修正作業もはかどった。  </p>
+<p>サイズも397.3 kBと小さいし、わざわざ遅いウエブアプリを使うより「LinkChecker」をインストールする方が断然おすすめ。  </p>
+<p>ときにはウェブアプリも便利だったりはするが、リンク切れチェックはソフトをインストールするに限ると痛感。</p>
 
 	
 	</div>
@@ -563,7 +322,52 @@ sudo cp -r copy/x86_64 /opt/copy
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/28/simplenote/" data-text="これは便利！シンプルで軽快、おすすめのオンラインメモ帳「Simplenote」 | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/27/linkchecker/" data-text="dead-link-checkerがあまりに遅いので「LinkChecker」を使ってみた（リンク切れチェック） | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/02/26/nemo-terminal/" >nemoの拡張機能「nemo-terminal」がちょっと便利</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月26日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>ファイルマネージャーnemoに端末を追加する拡張機能「nemo-terminal」を入れた。  </p>
+<pre><code>$ sudo add-apt-repository ppa:webupd8team/nemo
+
+$ sudo apt-get update
+
+$ sudo apt-get install nemo-terminal
+</code></pre><p>nemoの上部に端末画面が追加される。  </p>
+<p>「F4」キーで端末画面の表示・非表示を切り替え。<br>端末での階層はnemoで開いているフォルダと同期されるので、コマンド操作する時に便利。  </p>
+<p>別途「dconfエディター」も入れておけば、端末画面の高さなども調節出来る。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/26/nemo-terminal/" data-text="nemoの拡張機能「nemo-terminal」がちょっと便利 | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -645,35 +449,35 @@ sudo cp -r copy/x86_64 /opt/copy
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
-		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
 			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
 		
 		</ul>

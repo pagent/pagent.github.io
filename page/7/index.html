@@ -112,14 +112,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/01/14/lubuntu-nm-applet/" >アップグレードしたLubuntuでネットワークインジケーターが表示されない</a>
+			<a href="/2015/02/11/kde-plasma-netbook/" >Kubuntuのネットブック向けデスクトップ「Plasma Netbook」を通常のデスクトップに</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年1月14日
+	2015年2月11日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -127,10 +127,9 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>13.04から13.10→14.04.1にアップグレードしたLubuntuで、通知領域にネットワークインジケーターが表示されない。network-manager-gnomeはインストールされているようなのだが。  </p>
-<p>hidden SSID（ESS-IDステルス機能）で無線LANを接続する際、メインメニューの設定の項目にあるネットワーク接続（nm-connection-editor）からでは設定し辛く、ネットワークインジケーターの「非表示Wi-Fiネットワークに接続」の方が簡単ということもあり、インジケーターを表示させたい。  </p>
-<p>ネットワークインジケーターはアップグレードした際に消えてしまうことがあるようだ。<br><a href="http://qiita.com/cm3/items/72c51ff3b416f5981986" target="_blank" rel="external">Lubuntu で無線LANのインディケータをパネルに表示する方法 - Qiita</a>  </p>
-<p>参照記事の通り「LXSessionのデフォルトのアプリケーション」→「Aurostart」でManual autostarted applicationsにnm-appletを追加し再起動したら、ネットワークインジケーターが追加された。</p>
+	  <p>Kubuntuのネットブック向けデスクトップは「Plasma Netbook」というそうで、ディスプレイの小さいネットブックで使う分には、これはこれで便利そうなのだが、FirefoxやQupzillaなどのアプリケーションでメニューバーを表示出来ないという不便さがある。<br>特にQupzillaでは設定画面に行けず、Qupzillaの設定を変更出来ない。</p>
+<p>「KDEシステム設定」→「ワークスペースの挙動」→「Workspace」でWorkspace typeをNetbookからDesktopにしたら、通常のデスクトップに変更出来た。  </p>
+<p>ーー<br>ネットブックでKubuntuは厳しいのではないかと思ったが、ログインしてからの動作は許容範囲内。<br>Xubuntuと較べると、もっさり感はぬぐえないが。</p>
 
 	
 	</div>
@@ -139,7 +138,7 @@
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/14/lubuntu-nm-applet/" data-text="アップグレードしたLubuntuでネットワークインジケーターが表示されない | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/11/kde-plasma-netbook/" data-text="Kubuntuのネットブック向けデスクトップ「Plasma Netbook」を通常のデスクトップに | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -152,14 +151,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/01/14/lubuntu-pavucontrol/" >LubuntuにPulseAudio Volume Controlを導入。音量が小さい時にも便利</a>
+			<a href="/2015/02/11/kubuntu-blanck-screen/" >Kubuntu14.04で画面が真っ暗</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年1月14日
+	2015年2月11日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -167,11 +166,13 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>Lubuntu14.04には元々ボリュームコントローラーとしてalsamixerが入っているが、完全にGUIのツールではなく使いづらい。<br>そこで、Xubuntuに標準で入っているPulseAudio Volume Control (pavucontrol)をインストールした。  </p>
-<p>Synapticやソフトウェアセンター、もしくは下記コマンドで導入。</p>
-<pre><code>sudo apt-get install pavucontrol
-</code></pre><p>インストール後は自然に通知領域での設定がPulseAudio Volume Controlに変更される。  </p>
-<p>スピーカーからの出力を 153%（11.00dB）まで上げられるので、音量が小さくて困る時などにもなにかと便利。</p>
+	  <p>ネットブックLavie LiteにインストールしたKubuntu。<br>新しいkernelだとディスプレイや無線LANに不具合が出るので、旧kernelを使うため、12.04から14.04にアップグレードしたもの。<br>アップグレード後いったんは正常にログイン出来たが、その後再度起動すると、ログイン後に画面が真っ暗になり、マウスポインターのみが表示されている状態になってしまった。<br>左上の隅にポインターを合わせると青く光る。<br>（なぜかGuestアカウントではデスクトップが表示される。）  </p>
+<p>検索すると似たような事例が多く見つかった。  </p>
+<p><a href="https://forums.ubuntulinux.jp/viewtopic.php?id=5996" target="_blank" rel="external">Ubuntu日本語フォーラム / KDEログアウト後に画面が真っ暗になり操作不能</a><br><a href="http://192168111.blog71.fc2.com/category1-1.html" target="_blank" rel="external">俺の覚書 Linux/Unix</a><br><a href="https://www.kubuntuforums.net/showthread.php?66592-Black-screen-after-login&amp;p=360188&amp;viewfull=1#post360188" target="_blank" rel="external">[DESKTOP] Black screen after login - Kubuntu Forums</a>  </p>
+<p>「CTRL」+「ALT」+「F2」でコンソール画面に行き、ディスプレイマネージャーをkdmからgdmに変える方法、<code>sudo apt-get update</code>、<code>sudo apt-get upupgrade</code>する方法、また自分のホームディレクトリの.kdmをリネームして新規に生成させる方法など試してみたが、どれも効果なし。<br>コマンドに不慣れで、/ver/log以下のログを確認するのも上手く行かない。  </p>
+<p>諦めかけたが、KDEならショートカットキーで出し入れ出来る端末エミュレーターYakuakeがインストールされているのではないかと思い、Yakuakeで<code>xrandr</code>コマンドを使えばディスプレイの状態を確認出来るかと、真っ暗な画面で「F12」キーを押してみた。  </p>
+<p>するとデスクトップが現れた。<br>Kubuntu12.04の時と違い、ディスプレイの小さな端末向けのUnityみたいに画面だが。<br>（Yakuakeはインストールされていないのか、出て来なかった。）  </p>
+<p>なぜ復活したのかはまったく謎。</p>
 
 	
 	</div>
@@ -180,7 +181,7 @@
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/14/lubuntu-pavucontrol/" data-text="LubuntuにPulseAudio Volume Controlを導入。音量が小さい時にも便利 | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/11/kubuntu-blanck-screen/" data-text="Kubuntu14.04で画面が真っ暗 | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -193,14 +194,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/01/09/lubuntu-autostart/" >Lubuntuでアプリケーションを自動開始</a>
+			<a href="/2015/02/08/scrapbook-error/" >突然ScrapBookの保存データが消えた</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年1月9日
+	2015年2月8日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -208,177 +209,17 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>Lubuntu14.04にクリップボードマネージャーのGlipperをインストールした。PC終了時に履歴を消去出来るので、パスワードをコピペしても割と安全に使える。<br>PC起動時には自動開始させたいので、「設定」→「LXSessionのデフォルトのアプリケーション」→「Autostart」の一覧にある「Glipper」にチェックをいれたが、何故か自動開始されない。  </p>
-<p>「Manual autostarted applications」の欄で「glipper」と入力して追加したら、自動開始出来た。  </p>
-<p>~/.config/lxsession/lubuntu/autostartを見ると、glipperが追加されている。<br>~/.config/lxsession/lubuntu/autostartに、自動開始したいアプリケーションを手書きで「xpad」等と追記しても良いようだ。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/09/lubuntu-autostart/" data-text="Lubuntuでアプリケーションを自動開始 | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/01/09/old-pc-lubuntu/" >10年以上前の古いPCにLubuntu14.04をインストール</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年1月9日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>古いパソコン、FMV-BIBLO NB50HにXubuntu14.04をインストールしていた。<br>発売が2004年4月のようなので、10年以上前のパソコン。<br>Mobile Intel(R) Celeron(R) CPU 2.40GHz、メモリ480MB RAM、HDD60GB。  </p>
-<p>市販DVDを見るため、Synapticでlibdvdread4がインストール済みなのを確認。その後、</p>
-<pre><code>sudo /usr/share/doc/libdvdread4/install-css.sh
-</code></pre><p>VLCメディアプレーヤーでDVDを開いたが、再生はされるものの動画がカクカクして見られたものではない。<br>SMPlayerも試してみたが、これもカクカクする。  </p>
-<p>Xubuntuより軽いらしいLubuntuだったら見られるかと、Lubuntu14.04をインストールしてみた。  </p>
-<p>結果、Lubuntuだと問題無いレベルでDVDを再生出来た。<br>やはりLubuntuはXubuntuより軽いようだ。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/09/old-pc-lubuntu/" data-text="10年以上前の古いPCにLubuntu14.04をインストール | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/01/09/bloglines-netvibes/" >Bloglinesは終了なのだろうか</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年1月9日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>今月5日に確認したところBloglinesのフィードが見られない。トップページは存在しているが。<br>実際にはその数日前からフィードにアクセス出来ないようだ。  </p>
-<p>去年の9月にもサイトがアクセス不能になることがあってその時も何もアナウンスが無かったが、今回もなんのアナウンスも無いようだ。<br>もはやネットサービスの体をなしていない。<br>Bloglinesもそろそろ終わりなのだろうか。  </p>
-<p>Partner Sitesに挙げられているNetvibesは健在で、Bloglinesのフィードをバックアップすることも可能だし、Netvibesに移った方が良さそうだ。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/09/bloglines-netvibes/" data-text="Bloglinesは終了なのだろうか | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/12/28/dropbox-behavior/" >Dropboxでのファイル・フォルダの移動や名称変更時の挙動</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年12月28日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Dropboxを利用するのに、Ubuntuのアプリケーションnautilus-dropboxを使っている。<br>ローカルのDropboxフォルダとウェブ上のDropboxを同期させてくれるので便利なのだが、ファイルやフォルダを移動する際の振る舞いは、あまり賢いとは言えないようだ。  </p>
-<p>ローカルでファイル・フォルダを移動させてから同期させると、ウェブ上では移動するのではなく、元ディレクトリから一旦削除し、移動先ディレクトリにファイルやフォルダを追加してしまう。<br>ウェブ上で移動させたら大丈夫かと思ったが、今度はローカル側で削除と追加をしてしまいダウンロードに時間が掛かってしまう。  </p>
-<p>移動は移動として処理してくれると有難いのだが。<br>WindowsやMac用のクライアントではどうなのだろう。  </p>
-<p>ーー<br>（追記）<br>Dropboxサイト上の操作でも、フォルダの名称変更が、削除と追加になってしまったりする。<br>アプリケーションの問題ではなく、Dropboxの仕様なのかもしれない。<br>ただ、名称変更がちゃんと「変更」として取り扱われる場合もある。<br>どういう時に削除と追加になり、どういう時に「変更」として扱われるのか、よく分からない。  </p>
-<p>いずれにせよ、Dropboxではフォルダの移動や名称変更は極力控えた方が良さそうだ。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/28/dropbox-behavior/" data-text="Dropboxでのファイル・フォルダの移動や名称変更時の挙動 | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/12/26/seesaa-sp-page-ad/" >記事タイトル下のテキスト広告だけはやめて欲しい（Seesaaブログのスマホ用ページ）</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年12月26日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Seesaaブログでもブログを書いている。<br>再構築が遅かったり、コメントのRSSが無かったりと色々不満はあるが、１ヶ月以上更新が無くても広告が表示されないし、けっこう気に入っている。  </p>
-<p>先日アクセス解析「Piwik」を見ていると、<code>http://rd.ane.yahoo.co.jp/rd?ep=...</code>という見慣れない外部リンクへの移動があるようだった。<br>そういうリンクを貼った記事は探しても見つからないし、不審に思っていたが、どうやらスマートフォン用ページの広告のようだった。<br>スマホ用のページは滅多に確認しないし、ブラウザにアドオンのAdblock PlusとGhosteryが入っているので、これまでまったく気が付かなかったようだ。  </p>
-<p>Adblock PlusとGhosteryを無効にしてUser Agent Switcherでスマホ用ページを見てみると、けっこう広告が挿入されている。<br>Seesaaにとって広告は重要な収入源だろうし、無料で利用させてもらっている身としては仕方の無いことだが、記事タイトルと記事本文の間のテキスト広告はちょっと酷いんじゃないだろうか。  </p>
-<p>タイトルと本文の間に、しかもテキスト広告。<br>文字の大きさは違うが、本文と勘違いする人もいるかもしれない。<br>イメージバナー広告だったらまだまし。<br>FC2ブログでもここまで酷くはないようだ。  </p>
-<p>検索すると、スタイルシートに加筆して広告を非表示にする方法もあるようだが、<a href="http://kiyaku.seesaa.net/category/548013-1.html" target="_blank" rel="external">Seesaaブログ利用規約</a>の禁止事項2に該当するようだ。  </p>
+	  <p>Firfoxで何だったかを見ていたら、突然、英文の警告がポップアップされた。  </p>
 <blockquote>
-<p>2.Seesaaが表示する広告を不正に移動、改変、削除または不正表示させる行為</p>
+<p>ERROR: Failed to initialize datasource.</p>
+<p>[Exception… “Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsILocalFile.create]”  nsresult: “0x80004005 (NS_ERROR_FAILURE)”  location: “JS frame :: resource://scrapbook-modules/utils.jsm :: SBU_getScrapBookDir :: line 24”  data: no]</p>
 </blockquote>
-<p>いきなりブログを削除されてもかなわないし。<br>ちょっとゲンナリ。  </p>
-<p>スマホの人もAdblockを使ってくれるといいんだが。</p>
+<p>ページを保存するアドオンScrapBookのもの。<br>気付くとサイドバーのScrapBookのツリーが真っ白で、保存してあったページが無くなっている。  </p>
+<p>「code: 0x80004005」を検索してみたが、Windows起動時のエラーとかVirtualBoxのエラーとか、「0x80004005」はプログラム関係で広く使われているエラーコードらしい。  </p>
+<p>肝心のScrapBookの対処法は見つからなかったが、ScrapBookの「ツール」を開くと、一番下に「緊急時の修復ツール」というのがあった。<br>backupのscrap.rdfファイルからツリーを復元するものらしい。  </p>
+<p>これで復元出来るかと思ったが、バックアップのファイルも見当たらず。<br>ついてない。  </p>
+<p>ーー<br>（追記）<br>よく考えたら、Xubuntu側のScrapBookの保存先は、マルチブート下のWindows 7のSsrapbookフォルダに設定して、共有しているんだった。<br>少し前にWindowsのマウント先を変えたから、それでリンクが切れてしまっただけのようだ。  </p>
+<p>データ保存先を設定し直したら、ちゃんと表示された。</p>
 
 	
 	</div>
@@ -387,7 +228,7 @@
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/26/seesaa-sp-page-ad/" data-text="記事タイトル下のテキスト広告だけはやめて欲しい（Seesaaブログのスマホ用ページ） | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/08/scrapbook-error/" data-text="突然ScrapBookの保存データが消えた | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -400,14 +241,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/12/25/sitemap/" >Hexoのsitemap.xmlを変更してみた</a>
+			<a href="/2015/02/06/lxpup-lxqtpup/" >Puppy Linux派生。Puppy本家より扱いやすい「LxPup」と「LxQtPup」</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年12月25日
+	2015年2月6日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -415,20 +256,35 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>検索エンジンにインデックスされにくいようなのでrobots.txtを置いてみたが、sitemap.xmlの内容も少し修正してみた。<br>プラグインで導入したsitemap.xmlには個別記事のURLしか記載されていないが、Octopressのサイトマップを見てみるとブログのルートURLやrobots.txt、/archives/も記載されている。  </p>
-<p>node_modules/hexo-generator-sitemap/sitemap.ejsの<code>&lt;urlset&gt;</code>内に下記を追記してみた。  </p>
-<pre><code>  &lt;url&gt;
-    &lt;loc&gt;http://pagent.github.io/&lt;/loc&gt;
-  &lt;/url&gt;
-  &lt;url&gt;
-    &lt;loc&gt;http://pagent.github.io/robots.txt&lt;/loc&gt;
-  &lt;/url&gt;
-  &lt;url&gt;
-    &lt;loc&gt;http://pagent.github.io/archives/&lt;/loc&gt;
-  &lt;/url&gt;
-</code></pre><p>URLを取得するための変数が分からないので、<code>&lt;loc&gt;</code>の箇所は手動で記載。<br><code>&lt;lastmod&gt;</code>は入れたかったが、これもどうやれば良いのか分からないし、省略可能とのことなので省略した。  </p>
-<p>Octopressでは個別記事の<code>&lt;lastmod&gt;</code>は、最終更新日時ではなく投稿日時のよう。つまり後から修正しても変更は無い。<br>一方Hexoのサイトマップでは最終的に変更された日時が記載され、それが上位に来ている。<br>どちらが良いのか分からないが、しばらく様子を見てみようと思う。  </p>
-<p>それから、Octopressのサイトマップでは<code>&lt;priority&gt;</code>や<code>&lt;changefreq&gt;</code>も記載されている。<br>SEO的にはOctopressの方が丁寧に作られているかもしれない。<br>generateが断然早いので、なるべくHexoを使いたいところだが。</p>
+	  <p>Puppy Linuxのデスクトップ環境について調べ物をしていたら、”LxPup - Puppy Linux + LXDE”というページがあった。<br><a href="http://sourceforge.jp/projects/sfnet_lxpup/" target="_blank" rel="external">LxPup - Puppy Linux + LXDE プロジェクト日本語トップページ - SourceForge.JP</a>  </p>
+<p>Puppy LinuxをLXDEデスクトップにアレンジしたものらしい。  </p>
+<p>早速、LxPup-15.02.2のPAE版と非PAE版、それとLxQtPup（非PAE）をダウンロードした。<br>いずれもSlacko Puppy 5.9.3がベースのもの。</p>
+<p>LxQtPupのデスクトップ環境「LXQt」というのは、「LXDE-QtとRazor-qtの成果物を統合したデスクトップ環境」で「Qtに移行したLXDEの後継バージョン」とのこと。<br><a href="http://ja.wikipedia.org/wiki/LXDE" target="_blank" rel="external">LXDE - Wikipedia</a><br>LXDEよりさらに軽いということか。  </p>
+<h3 id="試用してみての感想">試用してみての感想</h3>
+<p><strong>「LxPup」</strong></p>
+<p>ブートCDを焼き起動すると、PAEのLxPupはいきなり「Disabling IRQ #9」と出て、その後なんとか「Loading　kernel 　modules…」までは進んだが、そこでフリーズした様子。  </p>
+<p>非PAEの方で起動すると、無事デスクトップが表示された。  </p>
+<p>デスクトップに子犬の姿は無かったが、開始時に表示される言語やタイムゾーン、モニターなどの設定ウィンドウを閉じると、「ワン！ワン！」と元気に迎えてくれる。<br>本家Puppyよりすっきりした外観。  </p>
+<p>だが動作の軽快さは、まさにPuppy Linux。</p>
+<p>ファイルマネージャーにはPcmanfmが入っていた。<br>とても有難い。<br>Pupy標準のROX-filerは、コピーしようと思ってファイルをドラッグドロップすると、コピーではなくリンクを作ってしまったり、右クリックでコピーしようとするとコピー先のパスを入力させられたりで、使い勝手が悪い。  </p>
+<p>ブラウザはFirefoxで、これも有難い。<br>起動はやはり多少もたつくが、Firefoxにはそれに勝る便利さがある。  </p>
+<p>端末はPuppyデフォルトのrxvtに加えLXTerminalが入っている。<br>右クリックでのコピーペーストが出来て便利。   </p>
+<p>LxPup。<br>Puppy Linuxの軽快さと、LXDEの快適性を上手く融合させている。  </p>
+<p><strong>「LxQtPup」</strong>  </p>
+<p>LxQtPupの方はというと、起動も起動後の操作も、ややもっさり感が否めない。<br>実際、タスクマネージャーだけを開いた状態での消費メモリは、LxPupの68MBに対し、LxQtPupは135MBと倍の差。  </p>
+<p>だが、LxQtPupの外観はとても丁寧に作りこまれていて、「本当にこれがパピーか？」と驚愕を覚える。<br>特にメニュー周りなど、LxPupがPuppy Linuxの素朴さ（ごちゃごちゃ感）を残しているのに対し、LxQtPupには精錬された美しさがある。<br>もはやPuppyの域を超えていて、外観だけを見れば全く別のディストリビューションと思えるほど。  </p>
+<p>凄いです。<br>伊達にメモリー食ってません。  </p>
+<h3 id="LxPupをFrugalインストール">LxPupをFrugalインストール</h3>
+<p>LxPupをHDDにインストールしようと思ったら、ユニバーサルインストーラーはあるが、どこを探してもFrugalインストーラーが見当たらない。<br>参照させて頂いた下記サイトでも、ユニバーサルインストーラーを使ってのFullインストールが紹介されていた。<br><a href="http://no-windows.blog.jp/archives/8229193.html" target="_blank" rel="external">LxPupのインストールからインターネット接続のまとめ : Windowsはもういらない</a>  </p>
+<p>既にPuppy Linux5.7.1をFrugalインストールしているし、出来れば同じパーティション内にFrugalインストールしたいところ。<br>FrugalインストールしてこそのPuppy Linuxとも思える。  </p>
+<p>Frugalインストールは必要なファイルをコピーして、その後Grub４Dosブートローダーをインストールしているだけのようだし、最後のGrub４Dosブートローダーの設定さえちゃんとやれば、ファイルのコピーは手動でも良さそうに思える。<br>やってみた結果、ちゃんとFrugalインストール出来た。  </p>
+<p>まず、インストールするパーティション内に「lxpup1502」等、適当な名前でフォルダを作成。<br>（名前はなるべく入力しやすいものが良い。後に個人保存ファイルを複数作成した場合、個人保存ファイルへのフルパス入力を求められる。）  </p>
+<p>LxPup-15.02.2を例にとると、ブートCD内には12個のファイルがあるが、そのうち必要なのは下記の４つ。  </p>
+<p>initrd.gz<br>vmlinuz<br>puppy_lxpup_15.02.sfs<br>zdrv_lxpup_15.02.sfs</p>
+<p>この４つのファイルをあらかじめ作っておいたフォルダにコピペ。<br>後は「メインメニュー」→「Setup」→「Grub4Dos bootloader config」からGrub４Dosブートローダーをインストールすれば良い。  </p>
+<p>シャットダウンの際、個人保存ファイルの作成を促されるから、好みの形で作成。<br>ブートCDを取り出して再起動すればLxPupの画面が現れる。  </p>
+<p>日本語化は上記参照サイトを参考にさせて頂いた。  </p>
+<p>LxPup、LxQtPup、いずれもノーマルのPuppy Linuxより親しみやすいアレンジになっているので、初心者からベテランまで、ぜひ一度触れてみてもらいたい優れたディストリビューションだ。</p>
 
 	
 	</div>
@@ -437,7 +293,7 @@
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/25/sitemap/" data-text="Hexoのsitemap.xmlを変更してみた | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/06/lxpup-lxqtpup/" data-text="Puppy Linux派生。Puppy本家より扱いやすい「LxPup」と「LxQtPup」 | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -450,14 +306,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/12/24/robots-txt/" >Hexoで書いているGitHub Pagesのブログにrobots.txtを置いてみた</a>
+			<a href="/2015/02/06/puppy-dropbox/" >Puppy LinuxにDropboxクライアントをインストール</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年12月24日
+	2015年2月6日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -465,25 +321,23 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>記事がなかなか検索エンジンにインデックスされない。古い記事がインデックスされず新しいのがインデックスされたりしているようだ。<br>プラグインでsitemap.xmlは導入しているが、ちゃんと読んでくれているのか疑問。  </p>
-<p>sitemapとは別にクローラーに各種の指定をするrobots.txtというのがあるようなので、GitHub Pagesに置いてみた。<br>SeesaaやFC2などのブログサービスでは自動的に用意してくれているようだ。  </p>
-<p>sourceフォルダ直下にrobots.txtを新規作成。<br>generateするとちゃんとpublicフォルダ内にもrobots.txtが生成された。<br>deployし、ブラウザで<code>http://pagent.github.io/robots.txt</code>にアクセスしが、何故か404エラーだった。GitHub Pagesのレポジトリには追加されていたが。<br>反映に時間がかかるようでしばらくするとアクセス出来た。  </p>
-<p>robots.txtの内容は下記のようにした。  </p>
-<pre><code>User-agent: *
-Disallow: /css/
-Disallow: /*.js$
+	  <p>Puppy Linux5.7.1のパッケージマネージャにDropboxクライアントが見当たらないので、コマンドラインでインストールした。<br><a href="https://www.dropbox.com/install?os=lnx" target="_blank" rel="external">Linux マシンに Dropbox をインストール</a>  </p>
+<p>コマンドを入力すると、サーバー証明書エラーになった。  </p>
+<pre><code>cd ~ &amp;&amp; wget -O - &quot;https://www.dropbox.com/download?plat=lnx.x86&quot; | tar xzf -
 
-Sitemap: http://pagent.github.io/sitemap.xml
+...
+エラー: cannot verify www.dropbox.com&#39;s certificate, issued by `/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert SHA2 Extended Validation Server CA&#39;:
+  発行者の権限を検証できませんでした。
+www.dropbox.com に安全の確認をしないで接続するには、`--no-check-certificate&#39; を使ってください。
 
-User-agent: bingbot
-Crawl-delay: 30
-
-User-agent: MSNBOT
-Crawl-delay: 30
-</code></pre><p>大して効果は無いのかもしれないが、おかしなことを書かない限りデメリットはないだろうし、無いよりはましだろう。  </p>
-<p>ーー<br>（追記）<br>robots.txtを置いてから、わりと早く検索エンジンにインデックスされるようになった気がする。<br>Octopressではデフォルトでsitemap.xmlとrobots.txtを生成してくれるようだ。<br>この点、HexoよりOctopressの方がSEO的に優れているかもしれない。  </p>
-<p>ーー<br>（再追記）<br>Google ウェブマスターツールのヘルプによると、「robots.txt ファイルが必要になるのは、Google などの検索エンジンのインデックスに登録したくないコンテンツがある場合のみ」らしい。<br><a href="https://support.google.com/webmasters/answer/6062608?hl=ja&amp;rd=1" target="_blank" rel="external">robots.txt ファイルについて - ウェブマスター ツール ヘルプ</a>  </p>
-<p>SEO上どうしても必要なものではないようだ。</p>
+gzip: stdin: unexpected end of file
+tar: Child returned status 1
+tar: エラーを回復できません: 直ちに終了します
+</code></pre><p>原因がよく分からないがdropbox.comは安全だろうと、`—no-check-certificate’のオプションを付けてインストールした。  </p>
+<pre><code>cd ~ &amp;&amp; wget --no-check-certificate -O - &quot;https://www.dropbox.com/download?plat=lnx.x86&quot; | tar xzf -
+</code></pre><p>インストールは無事完了し、<code>~/.dropbox-dist/dropboxd</code>で起動出来た。  </p>
+<p>後になって気がついたが、Puppy Linuxのタスクトレイの時刻がおかしい。<br>約9時間遅れている。  </p>
+<p>そういえば、Puppy Linuxを起動してすぐに表示される国とタイムゾーンの設定を、面倒臭くて飛ばしていたんだった。<br>このせいでエラーが出ていたんだろうか。</p>
 
 	
 	</div>
@@ -492,52 +346,7 @@ Crawl-delay: 30
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/24/robots-txt/" data-text="Hexoで書いているGitHub Pagesのブログにrobots.txtを置いてみた | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/12/24/google-site-search/" >Googleを利用したサイト内検索が出来ない</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年12月24日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>いつの間にかHexoを使って書いているブログで、Googleを利用したサイト内検索が出来なくなっていた。<br>検索してもブログ全体のインデックス状況（<code>site:pagent.github.io</code>を検索した結果）が表示されるだけ。  </p>
-<p>OctopressのブログではただのGoogle検索になってしまっている。<br>Googleでなんらかの変更があったのだろうか。  </p>
-<p>検索ボックスのレイアウト  </p>
-<pre><code>&lt;input type=&quot;search&quot; name=&quot;q&quot; results=&quot;0&quot; placeholder=&quot;&lt;%= __(&#39;search&#39;) %&gt;&quot; class=&quot;form-control&quot;&gt;
-&lt;input type=&quot;hidden&quot; name=&quot;q&quot; value=&quot;site:&lt;%- config.url.replace(/^https?:\/\//, &#39;&#39;) %&gt;&quot;&gt;
-</code></pre><p>の<code>value=</code>でサイトURLを指定している方（下の方）の<code>name=&quot;q&quot;</code>を<code>name=&quot;hq&quot;</code>に修正し、  </p>
-<pre><code>&lt;input type=&quot;search&quot; name=&quot;q&quot; results=&quot;0&quot; placeholder=&quot;&lt;%= __(&#39;search&#39;) %&gt;&quot; class=&quot;form-control&quot;&gt;
-&lt;input type=&quot;hidden&quot; name=&quot;hq&quot; value=&quot;site:&lt;%- config.url.replace(/^https?:\/\//, &#39;&#39;) %&gt;&quot;&gt;
-</code></pre><p>にしたら、一応サイト内検索が出来るようになった。<br>Octopressの方でも同様だった。<br>その内サイトジェネレーターやそのテーマの方でも修正されるのだろう。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/24/google-site-search/" data-text="Googleを利用したサイト内検索が出来ない | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/06/puppy-dropbox/" data-text="Puppy LinuxにDropboxクライアントをインストール | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -619,35 +428,35 @@ Crawl-delay: 30
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
 			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
 		
 			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
-		
 			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
 		
 		
 		</ul>

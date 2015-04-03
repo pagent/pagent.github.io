@@ -112,14 +112,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/12/02/hexo-tweetbutton/" >Hexoの記事一覧ページにツイートボタン設置</a>
+			<a href="/2015/01/30/xubuntu-copy-client/" >Xubuntuで非公式レポジトリのCopyクライアントが不調</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年12月2日
+	2015年1月30日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -127,27 +127,16 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>HexoのテーマをFreewill変えて、Disqusウィジェット内の「Share」にはTwitterのツイートボタンはあるが、それだと<code>http://disq.us/…</code>というDisqus経由の短縮URLになる様子。<br>普通のツイートボタンを設置したかったので、<a href="https://about.twitter.com/ja/resources/buttons" target="_blank" rel="external">Twitter公式のツイートボタン</a>を入れることにした。  </p>
-<p>個別の記事への設置は、Twitterサイトで「ページのURLを使う」の設定で作成したコードを/layout/_partial/article.ejsの<code>&lt;%- item.content %&gt;</code>の下あたりに追記したら問題なく表示された。 　</p>
-<p>だがページネーションの方はlayout/_partial/post/entry.ejsにコードを挿入しても、タイトル名と一覧ページのURLしか取得出来ない。  </p>
-<p>URLとツイート本文を自分でカスタマイズする設定でコードを作成し、excerptリンクに倣って、それぞれ<code>&lt;%- config.root %&gt;&lt;%= item.path %&gt;</code>、<code>&lt;%= item.title %&gt;</code>で挿入したが、これだと記事タイトルのみでURLが表示されない。<br><code>&lt;%- config.root %&gt;</code>でブログトップのURLを取得出来ないようだ。<br>「Read More」（続きを読む）の部分では、ちゃんと変換されているんだが。  </p>
-<p><del>ブログトップのURLをパスではなく直接記載したら上手くいった。</del>  </p>
-<p>ーーーー<br>（<strong>追記</strong>）<br>個別記事URLへのパスは<code>&lt;%- item.permalink %&gt;</code>一つで良いようだ。<br>ーーーー  </p>
-<p>記事を概要表示にしている時は「Read More」。全文表示にしている時はツイートボタンを表示することにして、read_moreの箇所を下記に変更した。  </p>
-<pre><code>&lt;% if (item.excerpt &amp;&amp; index) { %&gt;
-  &lt;a type=&quot;button&quot; href=&quot;&lt;%- config.root %&gt;&lt;%- item.path %&gt;#more&quot; class=&quot;btn btn-default more&quot;&gt;&lt;%= __(&#39;read_more&#39;) %&gt;&lt;/a&gt;
-&lt;% } else { %&gt;
-&lt;div class=&quot;tweet-button&quot;&gt;
-  &lt;a href=&quot;https://twitter.com/share&quot; class=&quot;twitter-share-button&quot; data-url=&quot;&lt;%- item.permalink %&gt;&quot; data-text=&quot;&lt;%= item.title %&gt; | &lt;%= config.title %&gt;&quot; data-lang=&quot;ja&quot;&gt;ツイート&lt;/a&gt;
-&lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?&#39;http&#39;:&#39;https&#39;;if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+&#39;://platform.twitter.com/widgets.js&#39;;fjs.parentNode.insertBefore(js,fjs);}}(document, &#39;script&#39;, &#39;twitter-wjs&#39;);&lt;/script&gt;
-&lt;/div&gt;
-&lt;% } %&gt;
-</code></pre><p>ツイートボタンに対しては、source/css/style.cssに下記を追記、  </p>
-<pre><code>.tweet-button {
-  padding: 8px 0;
-}
-</code></pre><p>位置を調整した。  </p>
-<p>（参照記事）<br><a href="http://imaizu.me/program/twbtn-on-jekyll-post.html" target="_blank" rel="external">jekyllのブログで投稿一覧ページにtwitterのボタンを置く - Taught by Myself</a></p>
+	  <p>Xubuntu14.04に、非公式レポジトリからCopyクライアントをインストールしたが、調子が良くない。  </p>
+<p>“Scanning  for changes”→”Processing .. items”→”Downloading File List”ときて、その後また”Scanning  for changes”→”Processing .. items”と延々処理が続き、いつまで経っても同期が終わらない。<br>さらに起動しても”Logging In”のまま固まってしまうようになった。  </p>
+<p>まともに機能しない状態なので、非公式レポジトリのクライアントはアンインストールし、<a href="https://www.copy.com/install/" target="_blank" rel="external">Copy.comのダウンロードページ</a>から落としたクライアントをインストールし直した。<br>インストールといっても、ダウンロードした圧縮ファイルを展開し、任意のディレクトリに配置しただけだが。  </p>
+<p>追加アプリケーションを配置するためのディレクトリ/optに配置した。  </p>
+<pre><code>cd ~/Desktop
+tar zxvf copy_agent-1.48.0456.tgz
+sudo cp -r copy/x86_64 /opt/copy
+</code></pre><p>コマンドなど使わずファイルマネージャーで「ここに展開」し、/optを「Rootとして開く」してからコピペでも問題無い。  </p>
+<p>端末から<code>/opt/copy/CopyAgent</code>で起動。<br>一応ちゃんと動いてくれているようだ。<br><code>/opt/copy/CopyConsole</code>なら端末で動作する。  </p>
+<p>簡便のためコマンド<code>/opt/copy/CopyAgent</code>をメニューに追加した。</p>
 
 	
 	</div>
@@ -156,7 +145,7 @@
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/02/hexo-tweetbutton/" data-text="Hexoの記事一覧ページにツイートボタン設置 | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/30/xubuntu-copy-client/" data-text="Xubuntuで非公式レポジトリのCopyクライアントが不調 | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -169,14 +158,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/12/01/git-add-directory/" >Gitリポジトリにディレクトリを追加</a>
+			<a href="/2015/01/29/dropbox-number-of-files/" >Dropbox サイズだけではなくファイル数も問題</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年12月1日
+	2015年1月29日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -184,23 +173,10 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>HexoのソースはBitbucketで管理しているが、Hexoのテーマを変えたところ、commit出来なくなった。  </p>
-<pre><code>Changes not staged for commit:
-  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
-  (commit or discard the untracked or modified content in submodules)
-
-    modified:   themes/freewill (modified content, untracked content)
-
-no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
-</code></pre><p>と表示される。  </p>
-<p>Bitbucketのソースを見ると、新しいテーマのディレクトリthemes/freewillは追加はされているが、クリックして開くことが出来ない。<br>何度かやり直してみたが、うまく行かない。  </p>
-<p>ためしに適当なファイルを一つpushしたらどうかと、  </p>
-<pre><code>$ git add themes/freewill/LICENSE
-$ git commit -m &#39;修正&#39;
-$ git push
-</code></pre><p>とやったらLICENSEが追加され、freewillを開くことが出来た。<br>その後もう一度<code>git add .</code>し、commit、pushしたら、他のファイルやディレクトリも追加された。  </p>
-<p>そう言えばリポジトリに初めてcommitした時も、一度contributors.txtというファイルをpushしてからでないとうまく行かなかった。<br>Gitというのはいきなりディレクトリ全体を追加するのは出来ない仕様なのかもしれない。</p>
+	  <p>独自ドメイン運用のサーバーからダウンロードしたファイル一式をDropboxのフォルダに置いたら、同期に時間が掛かるようになってしまった。<br>いったん同期が済み、なにも更新が無い時でも、Dropboxクライアント起動後のファイルリストのダウンロードとインデックス作成に10分以上掛かる。<br>どうやらファイル数が多いためらしい。<br>同期にはファイルサイズだけではなく、ファイル数も影響するのだとか。<br><a href="http://www.iodata.jp/support/qanda/answer/nas_dropbox.html#a4" target="_blank" rel="external">Dropbox制限事項Q&amp;A</a>  </p>
+<p>サーバーのファイルの数は数万の単位だったので、これを圧縮ファイルにして１つのファイルにしたところ、同期時間を大幅に短縮出来た。  </p>
+<p>圧縮前はファイル数が60000以上、Dropboxフォルダの総サイズが約500MB。なにも更新がない状態でDropboxクライアントを起動し、同期が完了するのに約12分掛かった。<br>圧縮後はファイル数が約5500、サイズは約300MB。同期は約1分で完了した。  </p>
+<p>Hexo（Octopressに似た静的サイトジェネレーター）のフォルダもDropboxフォルダに置いているが、.deploy/.git/objectsや.git/objects下にフォルダ・ファイルが多数生成されてしまうので、同期前には<code>git gc</code>するようにしている。</p>
 
 	
 	</div>
@@ -209,7 +185,7 @@ $ git push
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/01/git-add-directory/" data-text="Gitリポジトリにディレクトリを追加 | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/29/dropbox-number-of-files/" data-text="Dropbox サイズだけではなくファイル数も問題 | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -222,14 +198,14 @@ $ git push
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/12/01/hexo-bootstrap/" >HexoのテーマをBootstrap準拠のFreewillにした</a>
+			<a href="/2015/01/29/xubuntu-copy-error-qgtkstyle/" >Xubuntu14.04にインストールしたCopy.com クライアントで「QGtkStyle was unable to detect the current GTK+ theme.」のエラー</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年12月1日
+	2015年1月29日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -237,25 +213,18 @@ $ git push
 	<div class="col-md-12">
 	  
 	
-	  <p>Hexoのテーマをデフォルトのものから、Bootstrap準拠の<a href="https://github.com/yieme/hexo-theme-freewill" target="_blank" rel="external">Freewill</a>にした。<br>BootstrapのテーマBootswatchというものを採用しているようで、外観を簡単に変更出来る。  </p>
-<p>他のテーマ同様  </p>
-<pre><code>git clone https://github.com/yieme/hexo-theme-freewill.git themes/freewill
-</code></pre><p>でインストール。  </p>
-<p>Freewillの_config.ymlで<code>bootswatch:</code>で種々のBootswatchテーマに変更出来る。<br>Bootswatchのナビゲーションバーには、テーマ毎に2種類のカラーバリエーションがあり、freewill/layout/_partial/navigation.ejsの2行目で<code>navbar-default</code>と<code>navbar-inverse</code>（逆の配色）のどちらかに切り替え可能。  </p>
-<p>デフォルトの設定では画面をスクロールしたりマウスが離れると、ナビゲーションバーがフェードアウト、マウスを合わせるとフェードインする仕様になっていた。<br>出たり消えたりがかえって邪魔だったので、themes/freewill/source/js/main.jsの7、10、17、22行目の  </p>
-<pre><code>$(&quot;.navbar&quot;).stop().fadeTo(333, 0.2);
-
-$(&quot;.navbar&quot;).stop().fadeTo(333, 1);
-
-$(&quot;.navbar&quot;).fadeTo(100, 1);
-
-$(&quot;.navbar&quot;).fadeTo(100, 0.2);
-</code></pre><p>を削除したら、フェードアウトしなくなった。  </p>
-<p>navigation.ejs2行目の<code>navbar-fixed-top</code>を削除すると、スクロールとともにナビゲーションバーが上方に移動。  </p>
-<p>_config.ymlの表示不要な項目は先頭に<code>#</code>を付けてコメントアウト。  </p>
-<p>テーマの変更でAtomフィードが表示されなくなってしまったが、freewill/_config.ymlの<code>rss: true</code>を<code>rss: atom.xml</code>に変更してナビゲーションバーに追加したら表示された。<br>layout/_partial/head.ejsのtheme.rssの箇所の<code>link rel=&quot;alternative&quot;</code>を<code>link rel=&quot;alternate&quot;</code>に変更。アドレスバーにもアイコンが表示された。  </p>
-<p>Bootstrapのテーマらしく、すっきりしていて機能的な印象。  </p>
-<p>ただ、paginationのページ上方にでかでかと表示されているJumbotronというのをどう使えばいいか分からない。<br>デフォルトではブログタイトルもしくはブログの説明が表示されるようだが。</p>
+	  <p>Xubuntu14.04にDropboxに似たオンラインストレージ「Copy」のクライアントを導入した。<br>クライアントはcopy.comからダウンロードしたものではなく、下記サイトを参考にUbuntu向けのものをインストールした。<br><a href="http://kometchtech.blog.fc2.com/blog-entry-1542.html" target="_blank" rel="external">いつか、そのとき、あの場所で。 | [Ubuntu][自分用メモ]　Copy.com クライアントのインストール方法。</a>  </p>
+<p>インストール後、メニュー→アクセサリ→Copyで起動し、64bitのPCでは問題なく使用出来た。<br>だが32bitのPCではログインする際、「curl failed to post data」とエラーになり、終了してしまう。  </p>
+<p>端末から  </p>
+<pre><code>$ /opt/copy-client/CopyAgent
+</code></pre><p>とコマンド入力して起動させても、  </p>
+<pre><code>QGtkStyle was unable to detect the current GTK+ theme.
+</code></pre><p>というエラー表示が出て、やはりログイン出来ない。  </p>
+<p>QGtkStyleとかGTK+とか、なんのことかよく分からなかったが、どうやら<code>libgnomeui</code>をインストールする必要があるらしい。<br><a href="https://wiki.archlinux.org/index.php/Uniform_Look_for_Qt_and_GTK_Applications_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29#Qt_.E3.82.A2.E3.83.97.E3.83.AA.E3.82.B1.E3.83.BC.E3.82.B7.E3.83.A7.E3.83.B3.E3.81.8C_QGtkStyle_.E3.82.92.E4.BD.BF.E3.82.8F.E3.81.AA.E3.81.84" target="_blank" rel="external">Uniform Look for Qt and GTK Applications (日本語) - ArchWiki</a>  </p>
+<p>さらに検索してみると、Ubuntuでは以前からCopy.com クライアント利用にあたっての不具合が報告されているようだ。<br><a href="http://ubuntuforums.org/showthread.php?t=2217713&amp;page=2&amp;p=12993324#post12993324" target="_blank" rel="external">Copy.com indicator problem with Ubuntu 14.04 - Page 2</a>  </p>
+<p>インジケーター問題の修正はインストール時に行った（最新バージョンでは修正済か？）が、この回答を参考に、Synapticから<code>libgnomeui-0</code>をインストールした。<br>無事Copy.com クライアントを使用出来るようになった。  </p>
+<p>回答にあった「canberra-gtk-module」のエラーは出なかった。  </p>
+<p>ーー<br>（追記）<br>64bitのPCでもCopy.com クライアントを起動した際、”Logging In”の状態でギクシャクすることがあるので、こちらにも<code>libgnomeui-0</code>をインストールした。<br>だがその後も不調が続いたので、結局Copy.comのサイトからダウンロードしたクライアントを入れなおした。</p>
 
 	
 	</div>
@@ -264,7 +233,7 @@ $(&quot;.navbar&quot;).fadeTo(100, 0.2);
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/01/hexo-bootstrap/" data-text="HexoのテーマをBootstrap準拠のFreewillにした | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/29/xubuntu-copy-error-qgtkstyle/" data-text="Xubuntu14.04にインストールしたCopy.com クライアントで「QGtkStyle was unable to detect the current GTK+ theme.」のエラー | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -277,14 +246,14 @@ $(&quot;.navbar&quot;).fadeTo(100, 0.2);
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/11/30/sidebar-git/" >Gitリポジトリを利用したブログとサイドバー</a>
+			<a href="/2015/01/28/nvpy/" >Simplenoteと簡単に同期出来るメモ帳ソフト「nvPY」</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年11月30日
+	2015年1月28日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -292,13 +261,22 @@ $(&quot;.navbar&quot;).fadeTo(100, 0.2);
 	<div class="col-md-12">
 	  
 	
-	  <p>これまで、無料レンタルブログやWordPress、Octopressなどを使ったブログ含めて、ずっと右サイドバーの2コラムを好んで使って来た。  </p>
-<p>ブログを始めた頃は今のように、サイドバーの無いブログはあまり見かけなかったし、サイドバーはあるのが当たり前と思っていた。<br>訪問者がサイドバーを見て他の記事も読んでくれるかもしれないし。  </p>
-<p>普段使っているノートパソコンの右側にテンキーが付いていて、左に寄ってパソコンに向かうことになるので、記事が正面に来るよう、右サイドバーが都合が良かった。<br>両側サイドバーの3コラムは少しごちゃごちゃしている感じがして、好みではなかった。。  </p>
-<p>スマホに合わせるといっても、レスポンシブルデザインならサイドバーが下に回ってくれるし、レンタルブログサービスではスマホ用のページも用意してくれている。<br>サイドバーの無いブログを見ても、正直なにが良いのかよく分からなかった。<br>だが、静的サイトジェネレーターで作ったブログをGithub Pagesにdeployするようになって、考えが変わって来た。  </p>
-<p>サイドバーがあると、一つ記事を投稿しただけで、過去のすべての記事のサイドバーも変更される可能性がある。<br>「最近の記事」を表示している場合は当然そうだろうし、新たにタグやカテゴリーを追加した場合、それにカテゴリーや月別アーカイブの記事数が更新される場合も同様に違いない。<br>（JavaScriptを用いていたら大丈夫なのかもしれないが。）</p>
-<p>これをdeployすると、すべての記事を更新することになってしまう。<br>これでは非効率だし、.deploy/.git/objectsの肥大化の原因にもなるはず。<br>サイドバーが下にある場合も同様だろう。</p>
-<p>Github Pagesを使うなら、サイドバーは無い方が良さそうだ。<br>自分のことを思い返してみても、よほど興味のあるキーワードがある時以外は、サイドバーの項目をクリックすることはほとんど無いようだ。</p>
+	  <p>オンラインノートのSimplenoteだけでも十分便利だが、ブラウザを立ち上げずに済むなら尚便利。<br>検索すると「nvPY」というメモ帳ソフトが見つかった。<br>Simplenoteと簡単に同期出来て、しかもLinux、Windows、Mac OS Xなどクロスプラットフォームで利用可能らしい。<br>UbuntuソフトウェアセンターやSynapticからもインストール可能。<br><a href="http://moebuntu.blog48.fc2.com/blog-entry-688.html" target="_blank" rel="external">萌え萌えmoebuntu　SimplenoteクライアントnvPY</a>  </p>
+<p>メニュー→アクセサリから起動すると、  </p>
+<blockquote>
+<p>Could not read any configuration files.<br>See<br>/usr/share/doc/nvpy/examples/nvpy-example.cfg</p>
+</blockquote>
+<p>と注意が表示される。  </p>
+<p>nvpy-example.cfgが設定ファイルのひな形らしい。<br>/usr/share/doc/nvpy/examples内のnvpy-example.cfgを自分のホームディレクトリにコピー。<br>Simplenoteのアカウント（メールアドレス）とパスワードを記入し、nvpy-example.cfgのファイル名を<code>.nvpy.cfg</code>に変更したらSimplenoteとの同期設定は完了。<br>他にも.nvpy.cfgで色々と設定出来るよう。<br>取り敢えずフォントをdroid sans mono、フォントサイズを10に、リストペインのフォントサイズを9にした。  </p>
+<p>nvPYを立ち上げたらすぐに同期してSimplenote上のノートを取り込んでくれた。<br>自動開始アプリケーションにも追加してみたが、PC起動の度に立ち上がっている必要も無さそうなので、クイックランチャーに追加することにした。<br>アイコンは/usr/share/icons/hicolor/256x256/apps/nvpy.png。（青のローバーMINI）  </p>
+<p>autosave、autosyncしてくれるので、ブラウザでSimplenoteを開く必要がない。  </p>
+<p>デフォルトのsort modeでは更新日時での降順（新しいノートが上）。  </p>
+<p>nvPY下部の「Pinned」のチェックボックスにチェックを入れると、そのノートが常に一番上に表示される。  </p>
+<p>右上の「CS」（case-sensitivity）にチェックが入っていたら、検索のときアルファベットの大文字と小文字を区別して検索。  </p>
+<p>search modeのgstyleとregexpは、英語など語句の間にスペースの入った文節を検索した際、対象を完全一致のみ（regexp）にするかどうかのオプションのよう。<br>日本語環境ではデフォルトのgstyleで良さそう。  </p>
+<p>その他、英語だがnvPYのリポジトリに詳しい説明あり。<br><a href="https://github.com/cpbotha/nvpy" target="_blank" rel="external">https://github.com/cpbotha/nvpy</a>  </p>
+<p>欠点はマウス右クリックでのコピーやペーストは出来ず、CTRL＋cやCTRL＋vを使う必要があること。<br>また、nvPY内でなら中クリックでのペーストは可能だが、アプリケーションをまたいでは使えない。  </p>
+<p>ーー<br>（追記）<br>右クリックのコピーペーストが出来ないのがやはり不便なので、結局QupZillaという軽量ブラウザをSimplenote専用とすることにした。<br><a href="http://pagent.github.io/2015/01/31/qupzilla-simplenote/" target="_blank" rel="external">軽量ブラウザQupZillaをSimplenoteアプリとして使う | Pagent</a></p>
 
 	
 	</div>
@@ -307,7 +285,7 @@ $(&quot;.navbar&quot;).fadeTo(100, 0.2);
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/30/sidebar-git/" data-text="Gitリポジトリを利用したブログとサイドバー | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/28/nvpy/" data-text="Simplenoteと簡単に同期出来るメモ帳ソフト「nvPY」 | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -320,14 +298,14 @@ $(&quot;.navbar&quot;).fadeTo(100, 0.2);
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/11/29/page-no-date/" >Hexoの固定ページを日付け無しに</a>
+			<a href="/2015/01/28/simplenote/" >これは便利！シンプルで軽快、おすすめのオンラインメモ帳「Simplenote」</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年11月29日
+	2015年1月28日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -335,17 +313,18 @@ $(&quot;.navbar&quot;).fadeTo(100, 0.2);
 	<div class="col-md-12">
 	  
 	
-	  <p>Hexoでは固定ページを作る際、コマンド<code>hexo new page （ページ名）</code>でsource/（ページ名）下にindex.mdが作成される。<br>tagsやcategoriesは使えないようになっている。<br>コメントを禁止にするには、Front Matterに<code>comments: false</code>を加えれば良い。  </p>
-<p>固定ページでは日付けも表示したくないところだが、<code>date:</code>の項目を消してみるても、ファイルを更新した日付けが表示されてしまう。<br>themes/landscape/layout/page.ejsを見ると、post.ejsと同じ_partial/article.ejsがレイアウトとして使われていた。  </p>
-<p>_partialディレクトリ下のarticle.ejsをarticle-page.ejsという名前でコピー。<br>4行目の  </p>
-<pre><code>&lt;%- partial(&#39;post/date&#39;, {class_name: &#39;article-date&#39;, date_format: null}) %&gt;
-</code></pre><p>を削除。  </p>
-<p>page.ejsの  </p>
-<pre><code>&lt;%- partial(&#39;_partial/article&#39;, {post: page, index: false}) %&gt;
-</code></pre><p>を</p>
-<pre><code>&lt;%- partial(&#39;_partial/article-page&#39;, {post: page, index: false}) %&gt;
-</code></pre><p>に変更した。  </p>
-<p>希望通り、日付けが削除された。</p>
+	  <p>以前はちょっとした文章などをPC間でやり取りするのに、自分宛てにメールを送ったりしていた。<br>あるサイトのURLを別のPCでも開きたい時など。  </p>
+<p>Firefox Syncを使うようになってからはそういうことも無くなったが、それでもちょっとした、それでいて一から文字を入力するのは大変な文章を送りたい時がある。<br>そういう時はGoogleやYahoo!で検索して検索結果のURLをブックマーク、Firefox Syncの同期を利用して別のPCに送るというようなことをしていた。  </p>
+<p>あまりスマートなやり方とは思えないし、文字数が多くなると難しい。<br>なにか良い方法はないものか。<br>Dropboxでテキストファイルをやり取りするというのは大層だし。  </p>
+<p>ずいぶん前にオンラインノートの老舗Evernoteのアカウントは作っていた。<br>長らく放置していたEvernoteをもう一度使ってみようかと思ったが、多機能ゆえか動作が重く、どうにもやりきれない。<br>もっと簡単にちょこちょこっと書いたり、コピペしたりしたいだけなのだ。  </p>
+<p>なにか良いサービスはないかと探してみたら、有りました！  </p>
+<p><a href="https://app.simplenote.com/" target="_blank" rel="external">「Simplenote」</a>  </p>
+<p>とにかく軽い。<br>そしてシンプル。<br>こういうのが欲しかった。  </p>
+<p>（参照サイト）<br><a href="http://allabout.co.jp/matome/cl000000002229/" target="_blank" rel="external">お散歩に持って出ると便利な「オンラインノート」サービス10選｜All About（オールアバウト）</a>  </p>
+<p>管理するアカウントをあまり増やしたくないので、はじめは登録するのを少し躊躇したが、試してみて良かった。  </p>
+<p>これはおすすめです。  </p>
+<p>ーー<br>（追記）<br>Linux、Windows、OS Xなど、クロスプラットフォームで利用可能なメモ帳ソフト「nvPY」というのがあった。（Ubuntu系ならソフトウェアセンターからインストール可能）<br>「nvPY」はSimplenoteと簡単に同期出来て、ブラウザでサイトを開く必要がなくなる。<br><a href="http://pagent.github.io/2015/01/28/nvpy/" target="_blank" rel="external">Simplenoteと簡単に同期出来るメモ帳ソフト「nvPY」 | Pagent</a>    </p>
+<p>あと場所が分かりにくいが、<a href="http://simplenote.com/downloads/" target="_blank" rel="external">Downloads | Simplenote</a>にSimplenoteのアプリ一覧が挙げられていた。<br>Mac OS X用、Windows用、Mobile用などのアプリや、Microsoft Outlook用、Emacs用プラグインなど多数あり。</p>
 
 	
 	</div>
@@ -354,319 +333,7 @@ $(&quot;.navbar&quot;).fadeTo(100, 0.2);
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/29/page-no-date/" data-text="Hexoの固定ページを日付け無しに | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/29/excerpt-separator/" >HexoやOctopressのトップページを全文表示ではなく概要表示にする</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月29日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Hexoでトップページを表示した時、複数の記事の全文がだらだらと表示されているのは見づらいと思い、前半部分を抜粋した概要表示にしてみた。<br>やり方は簡単で、記事ソースの適当な箇所に<code>&lt;!-- more --&gt;</code>というタグを挿入するだけ。  </p>
-<p>WordPressやMovable Typeでは、200文字など決まった文字数で自動的に抜粋してくれたりもするが、その方法はちょっと分からないので、手動で挿入した。<br>タグを挿入すると<code>&lt;!-- more --&gt;</code>より前の部分だけの表示になる。<br>続きを読むためのリンクの文言「Read More」はHexo作業フォルダの_config.ymlではなく、themes/landscape/_config.ymlなどテーマ毎の_config.ymlで変更出来る。  </p>
-<p>Octopressの場合は_config.ymlの<code>excerpt_link:</code>でリンクの文言を変えられる。<br>また_config.ymlの<code>excerpt_link:</code>で、抜粋するためのタグ自体を<code>&lt;!-- more --&gt;</code>から別のものに変更出来るようだ。  </p>
-<p>ーー<br>（追記）<br>概要表示にはしてみたが、全文表示の方が都合の良いことがあったので、あとで全ての記事から<code>&lt;!-- more --&gt;</code>タグを削除した。<br>_postsで端末を開き、下記コマンドですべての.mdファイルから<code>&lt;!-- more --&gt;</code>を一括削除。</p>
-<pre><code>$ perl -p -i.bak -e &#39;s/&lt;!-- more --&gt;//g&#39; *.md
-（すべての.mdファイルに拡張子.bakをつけてバックアップを取り、ファイル内の&lt;!-- more --&gt;を削除）
-</code></pre><p><code>&lt;!-- more --&gt;</code>が正常に削除されたことを確認後、.bakファイルを一括削除した。  </p>
-<pre><code>$ find . -type f -name &quot;*.bak&quot; -delete
-（拡張子が「.bak」のファイルをカレントディレクトリで一括削除）
-</code></pre>
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/29/excerpt-separator/" data-text="HexoやOctopressのトップページを全文表示ではなく概要表示にする | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/28/git-gc/" >.deploy/.git/objectsが大きくなってきたのでgit gcしてみた</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月28日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>それほど記事数は多くないのに、Hexoのサイズが大きくなって来た。<br>最初、数MBだったのが20MB以上になっている。  </p>
-<p>.deploy/.git/objectsが12.4MBあって、一番容量をくっているようだ。<br>ちょこちょこ記事を修正してその度にdeployしているせいだろう。<br>大した容量ではないが、Dropboxの同期に時間が掛かるのが困る。  </p>
-<p>GitHubでは、必要性の低いオブジェクトが多数あったりすると、自動的にパックファイルを作って掃除（pack up）してくれるようだが、<code>git gc</code>コマンドにより手動でpack upすることも出来るらしい。<br><a href="http://heart-shaped-chocolate.hatenablog.jp/entry/2013/04/10/052752" target="_blank" rel="external">.git/objectsについて少し調べてみた - 煙と消えるその前に</a>  </p>
-<p>GitHubではないが、BitbucketのFAQには<code>git gc</code>してもリポジトリに悪い影響はないと書いてあった。<br><a href="https://confluence.atlassian.co.jp/pages/viewpage.action?pageId=35815474" target="_blank" rel="external">私のリポジトリで git gc (保全作業) を実行する必要がありますか？ - Bitbucket ドキュメンテーション - アトラシアン日本語ドキュメント</a>  </p>
-<p>.deployディレクトリで端末を開いて、<code>git gc</code>してみた。  </p>
-<pre><code>$ git gc
-Counting objects: 5328, done.
-Delta compression using up to 8 threads.
-Compressing objects:   5% (153/3046)   
-Compressing objects: 100% (3046/3046), done.
-Writing objects: 100% (5328/5328), done.
-Total 5328 (delta 2157), reused 0 (delta 0)
-</code></pre><p>少し待たないといけなかったが、objects下にたくさんあったフォルダが消えて、4つだけになった。<br>objects/pack内にはpack-〜.idxとpack-〜.packというファイルが出来てる。<br>objectsのサイズは12.4MB→1.8MBに縮小した。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/28/git-gc/" data-text=".deploy/.git/objectsが大きくなってきたのでgit gcしてみた | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/28/metalsmith/" >プログラム音痴がMetalsmithを試してみた</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月28日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>静的サイトジェネレーターは有名なものしか知らなかったが、かなりの数が公開されているようだ。<br><a href="https://staticsitegenerators.net/" target="_blank" rel="external">https://staticsitegenerators.net/</a><br><a href="https://www.staticgen.com/" target="_blank" rel="external">https://www.staticgen.com/</a>  </p>
-<p><a href="https://github.com/segmentio/metalsmith" target="_blank" rel="external">Metalsmith</a>（An extremely simple, pluggable static site generator.）というのが人気急上昇中のようなので、試してみた。<br>Hexo同様、プログラミング言語がJavaScriptなので、早さも期待できる。  </p>
-<p>テストするにあたり、下記サイトを参考にさせて頂いた。<br><a href="http://h2ham.net/metalsmith-static-site-generator" target="_blank" rel="external">Nodeで動作する静的サイトジェネレータ「metalsmith」を使ってみた - HAM MEDIA MEMO</a><br><a href="http://web-layman.com/metalsmith-simple-static-site-generator/" target="_blank" rel="external">metalsmith - シンプルな静的サイトジェネレーター - Layman’s Web Creation.</a>  </p>
-<p>先ずはpackage.json を用意して導入するプラグインを指定、一括インストールするのが良いようなのだが、本体やプラグインのバージョンがよく分からない。<br>なのでmetalsmith-testという作業フォルダを作り、そこで端末を開いて一個一個インストールした。  </p>
-<pre><code>~/metalsmith-test$ npm install metalsmith
-~/metalsmith-test$ npm install metalsmith-templates
-~/metalsmith-test$ npm install swig
-~/metalsmith-test$ npm install metalsmith-markdown
-~/metalsmith-test$ npm install metalsmith-permalinks
-~/metalsmith-test$ npm install metalsmith-sass
-~/metalsmith-test$ npm install metalsmith-watch
-~/metalsmith-test$ npm install metalsmith-drafts
-</code></pre><p>次に作業フォルダ内にmetalsmith.jsonを作成する必要があったが、これはjekyllの構成に倣ったexampleのものをほぼそのまま使わせてもらった。<br><a href="https://github.com/segmentio/metalsmith/blob/master/examples/jekyll/metalsmith.json" target="_blank" rel="external">https://github.com/segmentio/metalsmith/blob/master/examples/jekyll/metalsmith.json</a></p>
-<pre><code>{
-  &quot;source&quot;: &quot;./_posts&quot;,
-  &quot;destination&quot;: &quot;./_site&quot;,
-  &quot;metadata&quot;: {
-    &quot;title&quot;: &quot;My Jekyll-Powered Blog&quot;,
-    &quot;description&quot;: &quot;My second, super-cool, Jekyll-powered blog.&quot;
-  },
-  &quot;plugins&quot;: {
-    &quot;metalsmith-drafts&quot;: {},
-    &quot;metalsmith-markdown&quot;: {},
-    &quot;metalsmith-permalinks&quot;: {
-      &quot;pattern&quot;: &quot;:title&quot;
-    },
-    &quot;metalsmith-sass&quot;: {
-        &quot;outputStyle&quot;: &quot;expanded&quot;
-    },
-    &quot;metalsmith-templates&quot;: {
-      &quot;engine&quot;: &quot;swig&quot;,
-      &quot;directory&quot;: &quot;_layouts&quot;
-    }
-  }
-}
-</code></pre><p>_layoutsフォルダを作り、そこへ下記内容のpost.htmlを配置。  </p>
-<pre><code>&lt;html&gt;
-&lt;head&gt;
-  &lt;title&gt;My Blog&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;プログラム音痴がMetalsmithを試してみた&lt;/h1&gt;
-  &lt;time&gt;2014-11-28&lt;/time&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre><p>_postsフォルダを作り、テスト用の記事test-post-1.mdを配置。  </p>
-<pre><code>---
-template: post.html
-title: テスト投稿１
-date: 2014-11-28
----
-##今日の天気
-本日は晴天なり。
-</code></pre><p><code>node node_modules/.bin/metalsmith</code>とコマンドを打つと、自動的に_siteフォルダ、その下にtest-post-1フォルダ、その中にindex.htmlが生成された。  </p>
-<pre><code>&lt;html&gt;
-&lt;head&gt;
-  &lt;title&gt;My Blog&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;テスト投稿&lt;/h1&gt;
-  &lt;time&gt;2014-11-28&lt;/time&gt;
-  &lt;h2 id=&quot;-&quot;&gt;今日の天気&lt;/h2&gt;
-&lt;p&gt;本日は晴天なり。&lt;/p&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre><p>ローカルホスト上でプレビューを可能にするプラグインmetalsmith-serveというのがあったのでインストールしたが、どう使えばいいのかよく分からない。  </p>
-<p>metalsmith.jsonの<code>&quot;plugins&quot;:</code>の箇所に無理やり  </p>
-<pre><code>    &quot;metalsmith-serve&quot;: {
-      &quot;port&quot;: &quot;8081&quot;,
-      &quot;verbose&quot;: &quot;true&quot;
-    }
-</code></pre><p>と加えてみたら、<code>node node_modules/.bin/metalsmith</code>のコマンドで、生成と共にローカルホストが立ち上がった。<br>ブラウザで<code>http://localhost:8081/test-post-1/</code>にアクセスすると、CSSは当たっていないが表示はされた。  </p>
-<p>たぶん正しい使い方ではないのだと思うが、プラグインの説明の  </p>
-<pre><code>var metalsmith = require(&#39;metalsmith&#39;);
-var serve = require(&#39;metalsmith-serve&#39;);
-
-metalsmith(__dirname)
-  .use(serve())
-  .build();
-</code></pre><p>というのを何処で設定するのか分からない。  </p>
-<p>トップページの生成の仕方やCSSの当て方なども勉強する必要がありそう。<br>それに、新規記事作成やgenerate、プレビューなど、それぞれコマンドに割り当てて操作したいところ。  </p>
-<p>Metalsmithのサイトの上方に記載してある  </p>
-<pre><code>Metalsmith(__dirname)
-  .use(drafts())
-  .use(markdown())
-  .use(permalinks(&#39;posts/:title&#39;))
-  .use(templates(&#39;handlebars&#39;))
-  .build();
-</code></pre><p>というのも、いったいどこの記載のことなんだか。</p>
-<p>「Everything is a Plugin」と謳われているようにカスタマイズ性は高そうだが、Jekyllの使い方が分からずOctopressに移った自分のようなプログラム音痴には、少々ハードルが高そうだ。<br>静的サイトジェネレーターの仕組みを勉強するには良さそうだが。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/28/metalsmith/" data-text="プログラム音痴がMetalsmithを試してみた | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/27/hexo-china/" >Hexoは中国製のようだ</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月27日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>しばらく前に静的サイトジェネレーターをOctopressからHexoに乗り換えた。<br>カスタマイズもわりと容易だしgenerateも早いし、気に入って使っている。  </p>
-<p>公開されているカスタムテーマを見ていて、なぜかデモサイトに中国語が多いなと不信に思っていが、オフィシャルテーマ３つのLICENSEを見ると３つとも中国人っぽい名前が記載されている。  </p>
-<p>よく見ると、リポジトリもオフィシャルサイトもこの中国人らしい人のものだった。<br>なんとHexoは中国製だったんだね。</p>
-<p>中国と聞くと正直ちょっと心配になってしまう。<br>中国製のパソコンに不正プログラムが入っていたなんてニュースもあったし。<br>ただ、cloneしてくるHexoのソースはGitHub上で公開されているものだし、大丈夫なのだろう。  </p>
-<p>中国人、なかなかやるね。<br>ちょっとくやしい気がする。  </p>
-<p>日本製の秀逸な静的サイトジェネレーターが出てきてくれないものだろうか。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/27/hexo-china/" data-text="Hexoは中国製のようだ | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/26/filename-case/" >Hexo新規記事作成時のタイトル大文字アルファベットを小文字のファイル名に</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月26日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Hexoのデフォルト設定で新規記事を作成する際、記事タイトルに大文字アルファベットを使うと、そのままファイル名としてソースが作成される。</p>
-<pre><code>$ hexo new New-Post
-[info] File created at /.../source/_posts/2014-11-26-New-Post.md
-</code></pre><p>URLに大文字アルファベットが入ってしまう。  </p>
-<p>URLに大文字は使いたくないので、Octopressのように大文字→小文字でファイル出力して欲しい。  </p>
-<p>_config.ymlのWritingの項目<code>filename_case:</code>の値をデフォルトの「0」から「1」に変更することで設定出来た。  </p>
-<pre><code>$ hexo new New-Post
-[info] File created at /.../source/_posts/2014-11-26-new-post.md
-</code></pre><p>filename_case: 0（そのまま出力。New-Post→New-Post）  </p>
-<p>filename_case: 1（大文字を小文字に変換。New-Post→new-post.md）  </p>
-<p>filename_case: 2（すべて大文字に変換。New-Post→NEW-POST.md）  </p>
-<p>ーー<br>（追記）<br>出来たと思ったら、generateした際にtagsまでがすべて小文字になってしまった。<br>これでは困るので、<code>filename_case: 0</code>に戻した。<br>当面、大文字のファイル名は手作業で小文字にするしかなさそうだ。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/26/filename-case/" data-text="Hexo新規記事作成時のタイトル大文字アルファベットを小文字のファイル名に | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/28/simplenote/" data-text="これは便利！シンプルで軽快、おすすめのオンラインメモ帳「Simplenote」 | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -748,35 +415,35 @@ metalsmith(__dirname)
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
-		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>11</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
 			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
-		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
 		
 			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
 		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
 			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
 		
 		
 		</ul>

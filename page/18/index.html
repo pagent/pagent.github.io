@@ -1,0 +1,604 @@
+<!DOCTYPE HTML><!-- _partial/head -->
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Page 18 | Pagent</title>
+  <meta name="author" content="Pagent">
+  
+  <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="Pagent"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+    <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
+  
+  
+    <link href="/favicon.ico" rel="icon">
+  
+
+  
+  <link rel="stylesheet" href="/css/bootstrap.cerulean.min.css" media="screen" type="text/css">
+  
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  <!-- _partial/post/google_analytics -->
+
+
+
+</head>
+
+<body>
+  <!-- _partial/navigation -->
+<nav id="main-nav" class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">Pagent</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class="fa fa-tags"></i>Tags
+			</a>
+		  </li>
+		  
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+		  <li><a href="/atom.xml" title="Atom feed"><i class="fa fa-rss"></i>Feed</a></li>
+		</ul>
+		<form class="navbar-form navbar-right" action="//google.com/search" method="get" accept-charset="utf-8">
+		    <input type="search" name="q" results="0" placeholder="Search" class="form-control">
+		    <input type="hidden" name="hq" value="site:pagent.github.io">
+		</form>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 <!-- index -->
+<div class="jumbotron page-header bg-primary">
+  <h2>静的サイトジェネレーターとGitリポジトリでブログ</h2>
+</div>
+
+<!-- _partial/index -->
+<div class="row page">
+
+	
+	<div class="col-md-9">
+	
+
+		<div class="slogan lead">
+    <i class="fa fa-github"></i>
+    行き当たりばったり
+</div>
+
+
+		<div class="mypage">
+
+			<!-- title and entry -->
+			<div class="panel panel-default">
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/12/05/hexo-vs-octopress/" >HexoとOctopressの比較</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年12月5日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>どちらもブログとしての体裁が整っていて、導入したらすぐ始められるHexoとOctopress。<br>しばらくHexoを使ってみて、Octopressと比較しての感想。（あくまで私見）  </p>
+<h3 id="長所">長所</h3>
+<h4 id="・generateが早い">・generateが早い</h4>
+<p>Hexoの長所はなんと言ってもこれだろう。<br>手動での計測だが、30程の記事ソースからgenerateするのに要した時間は、Octopressの12.5秒に対して、Hexoは2.3秒と5分の1以下だった。<br>今後、記事数や使っているタグ、カテゴリーが増えれば、Octopressの遅さはかなりのマイナス要因になると思われる。<br>Hexoはプレビュー時の変更の反映も早い。  </p>
+<h4 id="・デフォルトで日本語のタグ名（カテゴリー名）を使える">・デフォルトで日本語のタグ名（カテゴリー名）を使える</h4>
+<p>URLがパーセントエンコーディングされると長くなるし何の記事か分からなくなるので、パーマリンクに日本語を使おうとは思わないが、タグやカテゴリーに日本語を使えるのはとても助かる。  </p>
+<p>Octopressでもカスタマイズすれば日本語のカテゴリー名を使えるようだが、デフォルト状態では漢字は中国語読みらしきローマ字表記に変換される。（たとえば、「未分類」は「wei-fen-lei」に。）<br>仮名はほぼ正しくローマ字表記に変換されるが、何故か「の」は「false」に。「の（no）」をyes・noの「no」と判断するためか。  </p>
+<h4 id="・Windowsで使える">・Windowsで使える</h4>
+<p>あくまで自分の環境でだが、WindowsではRuby（Octopressのプログラミング言語）が正常に動作しなかった。<br>一方、Hexo（JavaScript使用）はWindowsで使用可能だった。<br>検索するとWindowsにJekyllをインストールする方法も紹介されているので、環境によってはOctopressもWindows上で使えるのかもしれない。  </p>
+<h4 id="・コマンドが簡単">・コマンドが簡単</h4>
+<p><code>hexo new</code>→<code>hexo n</code>、<code>hexo generate</code>→<code>hexo g</code>、<code>hexo server</code>→<code>hexo s</code>、<code>hexo deploy</code>→<code>hexo d</code>のようにコマンドの省略が可能。<br>辞書登録すればあまり関係無いが。  </p>
+<h3 id="短所">短所</h3>
+<h4 id="・SEO">・SEO</h4>
+<p>Octopressはデフォルト状態でもsitemap.xmlとrobots.txtを生成してくれるが、Hexoでは導入が必要。<br>ただ、Sitemapを作ってくれるプラグインは有り、導入も容易。  </p>
+<h4 id="・中国製？">・中国製？</h4>
+<p>どうやら中国製のよう。<br>ソースはGitHub上で公開されていることだし、安全性に問題は無いと思われる。  </p>
+<h4 id="・FrontMatterの書式がOctopressと違う">・FrontMatterの書式がOctopressと違う</h4>
+<p>他の静的サイトジェネレーターでも、FrontMatter下部だけではなく上部にも<code>---</code>が入るのが一般的のよう。<br>この先、他の静的サイトジェネレーターに移行する可能性を考えると、ここは合わせて欲しかった。  </p>
+<h4 id="・ユーザー数が少ない">・ユーザー数が少ない</h4>
+<p><a href="https://staticsitegenerators.net/" target="_blank" rel="external">Static Site Generators</a>のStars（「いいね」みたいなものの）は、2014年12月5日時点で、Octopressの8522に対しHexoは3430とOctopressの半分以下。<br>（1位はOctopressの本家Jekyllが17578と圧倒的）<br>何か調べ物をする時にも、特に日本語では、参考になるドキュメントは少なくなる。<br>Octopressより後発なので、今後増える可能性はある。  </p>
+<h4 id="・コマンドがかっこ悪い">・コマンドがかっこ悪い</h4>
+<p>ことある毎に<code>hexo</code>と連呼しないといけないのが、ちょっとかっこ悪い。  </p>
+<h3 id="引き分け">引き分け</h3>
+<h4 id="・テーマの豊富さ">・テーマの豊富さ</h4>
+<p>自分の知る限りでは大差はない。<br>テーマの変更や微修正の容易さでは、Hexoに分があるよう。  </p>
+<h4 id="・カテゴリーとタグのあつかい">・カテゴリーとタグのあつかい</h4>
+<p>Octopressの”categories”はHexoでは”tags”に相当する。<br>複数設定した際、階層ではなく並列になる点からすると、”tags”としてあつかうHexoの方が自然な気はする。  </p>
+<h3 id="結論">結論</h3>
+<p>Hexoのgenerateの早さはやはり魅力的なので、今後プログラミング言語がRuby製の静的サイトジェネレーターに積極的に移ろうという気はしない。<br>他に面白そうな静的サイトジェネレーターが出てこない限り、今後もHexoを使うことになりそうだ。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/05/hexo-vs-octopress/" data-text="HexoとOctopressの比較 | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/12/04/git-non-fast-forward/" >Gitで”non-fast-forward”</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年12月4日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>HexoのソースをBitbucketにcommitしようとしたら、  </p>
+<pre><code>Your branch and &#39;bitbucket/master&#39; have diverged,
+and have 1 and 1 different commit each, respectively.
+  (use &quot;git pull&quot; to merge the remote branch into yours)
+
+nothing to commit, working directory clean
+</code></pre><p>と警告が出た。  </p>
+<p>かまわずpushしたら、”master -&gt; master (non-fast-forward)”といってrejectされた。   </p>
+<p>“git pull”を使え、ということのようなのでやってみたが、次の画面でなにをすれば良いのか分からない。  </p>
+<p>なにもせず「CTRL」+「X」で終了して、もう一度addから試してみようとしたら、  </p>
+<pre><code>このブランチは &#39;bitbucket/master&#39; よりも2コミット進んでいます。
+  (use &quot;git push&quot; to publish your local commits)
+</code></pre><p>とのこと。<br>言われた通り”git push”したら、今度はpush出来た。<br>「non-fast-forward」というのも検索してみたが、読んでもなんのことだかさっぱり。</p>
+<p>便利なんだが、Gitは本当によく分からない。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/04/git-non-fast-forward/" data-text="Gitで”non-fast-forward” | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/12/04/bootstrap-in-page-anchor-link/" >Bootstrapでページ内リンク先がナビゲーションバーに隠れる</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年12月4日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>タグ一覧ページで、特定のタグをクリックしてページ内リンク先に移動すると、先頭部分がナビゲーションバーに隠れてしまっていた。  </p>
+<p>検索すると下記記事が見つかった。</p>
+<p><a href="http://blog.livedoor.jp/sonots/archives/28928405.html" target="_blank" rel="external">bootstrap の固定ナビゲーションとページ内アンカー問題 - sonots:blog</a>  </p>
+<p>難しそうなのでナビゲーションバーを上部に固定（<code>navbar-fixed-top</code>）しているのをやめようかと思ったが、リンクされていたGithub上のissueを見るとCSSを使った対処法が紹介されていた。  </p>
+<p><a href="https://github.com/twbs/bootstrap/issues/1768#issuecomment-46519033" target="_blank" rel="external">Navbar hides initial content when jumping to in-page anchor · Issue #1768 · twbs/bootstrap</a>  </p>
+<p>その通りstyle.cssに追記すると、リンク先の先頭部分は表示されるようになったが、使っているナビゲーションバーの高さが狭いせいか、一つ前のタグの下の部分が少し表示されている。  </p>
+<p>navbarのmin-heightに合わせて、-75px、75pxの箇所を-50px、50pxにしたら、ちょうど良い具合になった。  </p>
+<pre><code>*[id]:before {
+  display: block;
+  content: &quot; &quot;;
+  margin-top: -50px;
+  height: 50px;
+  visibility: hidden;
+}
+</code></pre><p>ーー<br>（追記）<br>その後<code>navbar-fixed-top</code>はやめました。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/04/bootstrap-in-page-anchor-link/" data-text="Bootstrapでページ内リンク先がナビゲーションバーに隠れる | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/12/03/hexo-image/" >Hexoで記事に画像を挿入する</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年12月3日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Hexoで画像を挿入する場合、画像を表示するためのタグはOctopressと同様で、  </p>
+<pre><code>{(半角の%) img (class名) (画像へのパス) (幅) (高さ) (タイトル) %}
+</code></pre><p>例えば  </p>
+<pre><code>{(半角の%) img /images/a0960_005150_r.jpg 480 360 コスモス %}  #class名は省略
+</code></pre><p>で良いようだ。<br>代わりに下記のようなhtmlタグを使っても良い。  </p>
+<pre><code>&lt;a href=&quot;/images/a0960_005150_r.jpg&quot; target=_blank&gt;&lt;img src=&quot;/images/a0960_005150_r.jpg&quot; alt=&quot;コスモス&quot; width=&quot;480&quot; height=&quot;360&quot;&gt;&lt;/a&gt;
+</code></pre><p>OctopressではMarkdown式のタグだと、画像をクリックしたら原寸大で表示というのが出来なかったので、htmlタグの方が良いかと思ったが、Hexoの場合、Markdownタグで画像クリック→原寸大表示が出来るようだ。  </p>
+<p>Hexoでは_config.ymlのWritingの箇所で<code>post_asset_folder</code>の値を<code>true</code>にするようを推奨している。<br><a href="http://hexo.io/docs/writing.html#Asset_Folder" target="_blank" rel="external">Writing | Hexo</a>  </p>
+<p>説明通り<code>post_asset_folder: true</code>にして新規postを作ると、postフォルダ内に.mdファイルと同名のフォルダが作成される。<br>このフォルダに画像ファイルを入れよということらしい。<br>画像を多用する場合は整理に便利なのかもしれないが、ほとんど画像を使わない場合はかえって煩雑なので、source下にimagenなどのフォルダを作ってそこへ入れた方が便利そうだ。  </p>
+<p>ーー<br>（追記）<br>テーマをFreewillにしたら画像が強制的に最大表示になってしまったので、freewill/source/css/style.cssのimgの箇所で<code>width: auto;</code>、<code>height: auto;</code>を削除した。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/03/hexo-image/" data-text="Hexoで記事に画像を挿入する | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/12/03/hexo-freewill-monthly-archives/" >HexoのテーマFreewillに月別アーカイブ</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年12月3日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>サイドバーの種類にもよるが、Gitリポジトリを使ったブログにサイドバーを付けると、新規記事をdeployする際に更新するファイルが増えてしまって良くないように思う。  </p>
+<p>先日入れたテーマFreewillはその辺を考慮してか、ページネーションのページ等どうしても更新せざるを得ないページにはサイドバーを置き、個別記事のページではサイドバー領域に投稿日やタグなどを表示するよう工夫されている。<br>実際、新規記事をdeployしても、過去の記事はcommitされていないようだ。  </p>
+<p>ところで、Freewillには月別アーカイブが無かったので、入れることにした。  </p>
+<p>デフォルトテーマのLandscapeのarchive.ejsをそのままfreewill/layout/_widget内にコピペすると、西暦の後ろに投稿数が隙間無しにくっついていて、見栄えが良くない。  </p>
+<p>archive.ejsを修正、  </p>
+<pre><code>&lt;% if (site.posts.length){ %&gt;
+    &lt;div class=&quot;widget&quot;&gt;
+        &lt;h4&gt;&lt;%= __(&#39;Monthly Archives&#39;) %&gt;&lt;/h4&gt;
+        &lt;ul class=&quot;archive-list inline list-unstyled&quot;&gt;
+        &lt;%- list_archives() %&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;% } %&gt;
+</code></pre><p>freewill/source/css/style.cssにもスタイルを加えた。  </p>
+<pre><code>/* Monthly Archives
+---------------------------- */
+
+.archive-list ul {
+  padding:0 3px;
+  list-style-type: none;
+  line-height: 20px;
+}
+.archive-list-count {
+    color: #888;
+}
+.archive-list-count:before {
+    content: &quot; (&quot;;
+}
+.archive-list-count:after {
+    content: &quot;)&quot;;
+}
+</code></pre><p>ちゃんとした知識が無く、見よう見まねなので、あまり良い記述ではないと思うが、自分としては十分満足。  </p>
+<p>ーー<br>（追記）<br>Githubのコミット歴をよく見てみたら、同じタグを使っている過去記事も更新されるようだ。<br>個別記事ページのタグの箇所にそのタグを使っている記事数が表示されているせいだろう。  </p>
+<p>タグクラウドやタグ一覧ページは良いとして、個別記事ページのタグには記事数は無い方が良さそうだ。  </p>
+<p>freewill/layout/_partial/post/tag.ejsの5行目から<code>&lt;span&gt;&#39; + tag.length  + &#39;&lt;/span&gt;</code>を削除して、タグ名だけにした。  </p>
+<pre><code>tags.push(&#39;&lt;li&gt;&lt;a href=&quot;&#39; + config.root + tag.path + &#39;&quot;&gt;&#39; + tag.name + &#39;&lt;/a&gt;&lt;/li&gt;&#39;);
+</code></pre><p>これで様子を見てみようと思う。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/03/hexo-freewill-monthly-archives/" data-text="HexoのテーマFreewillに月別アーカイブ | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+
+			</div>
+
+			<!-- pagination -->
+			<div>
+	  		<center>
+			<!-- _partial/index_pagination -->
+<div class="pagination">
+<ul class="pagination">
+	 
+		
+    	<li class="prev"><a href="/page/17/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i> Prev</a></li>
+  		
+
+        <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+
+		
+		   <li class="next"> <a href="/page/19/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a> </li>
+        
+	
+</ul>
+</div>
+
+	  		</center>
+			</div>
+	</div>
+
+	</div> <!-- col-md-9 -->
+
+	
+		<!-- _partial/sidebar -->
+<div class="col-md-3">
+	<div id="sidebar">
+	
+			<!-- _widget/recent_posts -->
+
+<div class="widget">
+  <h4>Recent Posts</h4>
+  <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/04/03/nemo-compare-action/" ><i class="fa fa-file-o"></i>nemoの右クリックメニューに「比較」を追加</a>
+      </li>
+    
+      <li>
+        <a href="/2015/04/03/nemo-compare-failed/" ><i class="fa fa-file-o"></i>nemo-compareが動かない</a>
+      </li>
+    
+      <li>
+        <a href="/2015/04/03/nemo-open-in-terminal/" ><i class="fa fa-file-o"></i>nemoの「端末で開く」が機能しない</a>
+      </li>
+    
+      <li>
+        <a href="/2015/04/02/fcitx-qt-program/" ><i class="fa fa-file-o"></i>Qtベースのプログラムで日本語入力（fcitx-mozc）</a>
+      </li>
+    
+      <li>
+        <a href="/2015/04/01/xfce4-appearance-settings-crash/" ><i class="fa fa-file-o"></i>Xfce4設定の外観~フォントをFixedにしたらクラ...</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+		
+			<!-- _widget/category -->
+
+
+		
+			<!-- _widget/tagcloud -->
+
+	<div class="widget">
+		<h4>Tag Cloud</h4>
+		<ul class="tag_box inline list-unstyled">
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+		
+		
+		</ul>
+	</div>
+
+
+		
+			
+	<div class="widget">
+		<h4>Monthly Archives</h4>
+		<ul class="archive-list inline list-unstyled">
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		</ul>
+	</div>
+
+		
+			<!-- _widget/links -->
+
+
+		
+	</div> <!-- sidebar -->
+</div> <!-- col-md-3 -->
+
+	
+
+</div> <!-- row-fluid -->
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+    <footer> <!-- _partial/footer -->
+<p>
+  &copy; 2015 Pagent
+  &nbsp;
+  <span class="text-muted">Powered by:
+    <a class="text-muted" href="http://zespia.tw/hexo/" target="_blank">Hexo</a>,
+    <a class="text-muted" href="http://github.com/yieme/hexo-theme-freewill/">Freewill</a>
+    &amp;
+    <a class="text-muted" href="http://bootswatch.com/" target="_blank">Bootswatch <small>v3.2</small></a>
+  </span>
+</p>
+ </footer>
+  </div> <!-- container-narrow -->
+  <!-- _partial/after_footer -->
+<a id="gotop" href="#">
+  <span>▲</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'pagents';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<script type="text/javascript">
+<!--
+var acCODE;
+acCODE = "<img width='0' height='0' src='http://a.pagent.org/xeno_git/xenoLogger.php?" + 
+"PID="+ escape(document.location.href)+ "&" + 
+"PTITLE=" +escape(document.title)+ "&" + 
+"PPID=" +escape(document.referrer)+ "' ";
+// -->
+</script>
+<script type="text/javascript" src="http://a.pagent.org/xeno_git/xenoLogger.js"></script>
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//a.pagent.org/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//a.pagent.org/piwik/piwik.php?idsite=2" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+
+</body>
+</html>

@@ -112,14 +112,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/10/23/octopress-customize/" >Octopressのカスタマイズ</a>
+			<a href="/2014/12/28/dropbox-behavior/" >Dropboxでのファイル・フォルダの移動や名称変更時の挙動</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年10月23日
+	2014年12月28日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -127,48 +127,11 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>ブログをリニューアルするにあたって、またOctopressを少しカスタマイズした。  </p>
-<p>以前と同じく、<a href="http://tantant.jp/blog/Octopress/configuring-octopress/#paragraph07" target="_blank" rel="external">Octopressの初期設定時に気にしておきたい9箇所 – tantant</a>と<a href="http://rcmdnk.github.io/blog/2013/10/01/blog-octopress/" target="_blank" rel="external">月間アーカイブ for Octopress – rcmdnk’s blog</a>の通り、カテゴリ別アーカイブと月別アーカイブを追加した。  </p>
-<p>テーマは<a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes" target="_blank" rel="external">3rd Party Octopress Themes · imathis/octopress Wiki</a>で探してみたが、やっぱりデフォルトの方がよいかと思い、sass/custom/_styles.scssを下記に編集したのみ。  </p>
-<pre><code>// This File is imported last, and will override other styles in the cascade
-// Add styles here to make changes without digging in too much
-
-body &gt; header {
-    padding-top: 1.3em;
-    padding-bottom: 1.1em;
-}
-
-body &gt; header h1 {
-    font-size: 2.0em;
-    font-family: &quot;PT Serif&quot;,&quot;Georgia&quot;,&quot;Helvetica Neue&quot;,Arial,sans-serif;
-}
-
-body &gt; header h2 {
-    font-size: 0.9em;
-    color: #AAA;
-}
-
-.entry-title {
-    font-size: 1.5em !important;
-}
-
-h2, section h1 {
-    font-size: 1.2em;
-}
-
-#blog-archives article h1 a {
-    font-size: 1.0em !important;
-}
-
-p {
-    font-size:  92%;
-}
-
-article blockquote {
-    font-size:  105%;
-}
-</code></pre><p>日付け表記は英語式ではなく日本語式がよかったので、<code>_config.yml</code>で<code>date_format: &quot;%Y年%-m月%-d日&quot;</code><br>としたが、なぜかデフォルトのテーマでは反映されず。<br>source/_includes/post/date.htmlをoctostrap3の<a href="https://github.com/kAworu/octostrap3/blob/master/source/_includes/post/date.html" target="_blank" rel="external">date.html</a>と入れ替えたら反映された。<br>よく分からないが、デフォルトテーマのdate.htmlの記述に問題があるらしい。  </p>
-<p>あと、記事タイトルやカテゴリー名に漢字を使うと中国語読みみたいになってしまうが、これはたぶんOctopressがベースとしているJekyllの仕様なのだろう。<br>WordPressのようにスラッグを指定出きれば良いのだが、やり方が分からないのでこの辺は我慢しないとしょうが無いようだ。</p>
+	  <p>Dropboxを利用するのに、Ubuntuのアプリケーションnautilus-dropboxを使っている。<br>ローカルのDropboxフォルダとウェブ上のDropboxを同期させてくれるので便利なのだが、ファイルやフォルダを移動する際の振る舞いは、あまり賢いとは言えないようだ。  </p>
+<p>ローカルでファイル・フォルダを移動させてから同期させると、ウェブ上では移動するのではなく、元ディレクトリから一旦削除し、移動先ディレクトリにファイルやフォルダを追加してしまう。<br>ウェブ上で移動させたら大丈夫かと思ったが、今度はローカル側で削除と追加をしてしまいダウンロードに時間が掛かってしまう。  </p>
+<p>移動は移動として処理してくれると有難いのだが。<br>WindowsやMac用のクライアントではどうなのだろう。  </p>
+<p>ーー<br>（追記）<br>Dropboxサイト上の操作でも、フォルダの名称変更が、削除と追加になってしまったりする。<br>アプリケーションの問題ではなく、Dropboxの仕様なのかもしれない。<br>ただ、名称変更がちゃんと「変更」として取り扱われる場合もある。<br>どういう時に削除と追加になり、どういう時に「変更」として扱われるのか、よく分からない。  </p>
+<p>いずれにせよ、Dropboxではフォルダの移動や名称変更は極力控えた方が良さそうだ。</p>
 
 	
 	</div>
@@ -177,7 +140,7 @@ article blockquote {
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/10/23/octopress-customize/" data-text="Octopressのカスタマイズ | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/28/dropbox-behavior/" data-text="Dropboxでのファイル・フォルダの移動や名称変更時の挙動 | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -190,14 +153,14 @@ article blockquote {
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/10/23/site-renewal/" >Octopressのソース消失</a>
+			<a href="/2014/12/26/seesaa-sp-page-ad/" >記事タイトル下のテキスト広告だけはやめて欲しい（Seesaaブログのスマホ用ページ）</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年10月23日
+	2014年12月26日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -205,53 +168,16 @@ article blockquote {
 	<div class="col-md-12">
 	  
 	
-	  <p>deployのやり方が分からずFTPでのアップロードだったが、独自ドメインでもOctopressを使ってブログを書いていた。<br>先日、PCのhomeディレクトリを移動する際に誤ってhomeディレクトリをすべて削除してしまい、結局Linux（Xubuntu）を再インストールした。<br>ブログ自体は残っているが、sourceを消失してしまったので、更新するためにはかつての記事をOctopressのsource内に取り込む必要が有りそう。<br>htmlファイルを一つ一つmarkdown形式に復元するのは骨が折れそうなのでかつての記事は諦めることにして、今度はレンタルサーバーではなくGithubを使って新しく始めることにした。<br>Githubでも独自ドメインを使えるようだがそれはせず、.github.ioのサブドメインを使わせてもらうことにした。  </p>
-<p>静的サイトジェネレーターはソースが手元にあるのでバックアップ不要と安心していたが、ソースを消失してしまうとどうしようも無いと痛感。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/10/23/site-renewal/" data-text="Octopressのソース消失 | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/10/23/io/" >Githubへのdeployエラーとインド洋のイギリス領（.io）</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年10月23日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>OctopressブログをGithubのリポジトリにdeployしようとしても、エラーになってなかなか上手くいかなかった。  </p>
-<p>どうやら、リポジトリ名を（username）.github.comにしたのが原因だった様子。<br>新しく（username）.github.ioでリポジトリを作りなおしたら、すんなりdeploy出来た。<br>Githubがリポジトリを.github.comから.github.ioに移行したのが関係しているのだろうか。  </p>
-<p>.ioというのは見慣れないドメインだったが、最近はIT分野で好まれているのだとか。</p>
+	  <p>Seesaaブログでもブログを書いている。<br>再構築が遅かったり、コメントのRSSが無かったりと色々不満はあるが、１ヶ月以上更新が無くても広告が表示されないし、けっこう気に入っている。  </p>
+<p>先日アクセス解析「Piwik」を見ていると、<code>http://rd.ane.yahoo.co.jp/rd?ep=...</code>という見慣れない外部リンクへの移動があるようだった。<br>そういうリンクを貼った記事は探しても見つからないし、不審に思っていたが、どうやらスマートフォン用ページの広告のようだった。<br>スマホ用のページは滅多に確認しないし、ブラウザにアドオンのAdblock PlusとGhosteryが入っているので、これまでまったく気が付かなかったようだ。  </p>
+<p>Adblock PlusとGhosteryを無効にしてUser Agent Switcherでスマホ用ページを見てみると、けっこう広告が挿入されている。<br>Seesaaにとって広告は重要な収入源だろうし、無料で利用させてもらっている身としては仕方の無いことだが、記事タイトルと記事本文の間のテキスト広告はちょっと酷いんじゃないだろうか。  </p>
+<p>タイトルと本文の間に、しかもテキスト広告。<br>文字の大きさは違うが、本文と勘違いする人もいるかもしれない。<br>イメージバナー広告だったらまだまし。<br>FC2ブログでもここまで酷くはないようだ。  </p>
+<p>検索すると、スタイルシートに加筆して広告を非表示にする方法もあるようだが、<a href="http://kiyaku.seesaa.net/category/548013-1.html" target="_blank" rel="external">Seesaaブログ利用規約</a>の禁止事項2に該当するようだ。  </p>
 <blockquote>
-<p>.ioは国別コードトップレベルドメイン（ccTLD）の一つで、イギリス領インド洋地域(Indian Ocean Territory)に割り当てられている。</p>
-<p>入出力のI/O（Input/Output）やI/Oポートを表すとして、ウェブアプリケーションを始めとするコンピュータサイエンスの分野では近年.ioドメインが好まれている。2013年4月にGitHubはプロジェクトページの全ドメインを「github.io」に移行した。</p>
+<p>2.Seesaaが表示する広告を不正に移動、改変、削除または不正表示させる行為</p>
 </blockquote>
-<p><a href="http://ja.wikipedia.org/wiki/.io" target="_blank" rel="external">.io - Wikipedia</a>  </p>
-<p>イギリスという国がいまだにインド洋に領有地（植民地）を持っている、ということに驚いた。</p>
+<p>いきなりブログを削除されてもかなわないし。<br>ちょっとゲンナリ。  </p>
+<p>スマホの人もAdblockを使ってくれるといいんだが。</p>
 
 	
 	</div>
@@ -260,7 +186,7 @@ article blockquote {
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/10/23/io/" data-text="Githubへのdeployエラーとインド洋のイギリス領（.io） | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/26/seesaa-sp-page-ad/" data-text="記事タイトル下のテキスト広告だけはやめて欲しい（Seesaaブログのスマホ用ページ） | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -273,14 +199,14 @@ article blockquote {
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/10/21/test/" >テスト投稿</a>
+			<a href="/2014/12/25/sitemap/" >Hexoのsitemap.xmlを変更してみた</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年10月21日
+	2014年12月25日
 </div>
 <div class="panel-body">
   <div class="row">
@@ -288,7 +214,20 @@ article blockquote {
 	<div class="col-md-12">
 	  
 	
-	  <p>テスト投稿</p>
+	  <p>検索エンジンにインデックスされにくいようなのでrobots.txtを置いてみたが、sitemap.xmlの内容も少し修正してみた。<br>プラグインで導入したsitemap.xmlには個別記事のURLしか記載されていないが、Octopressのサイトマップを見てみるとブログのルートURLやrobots.txt、/archives/も記載されている。  </p>
+<p>node_modules/hexo-generator-sitemap/sitemap.ejsの<code>&lt;urlset&gt;</code>内に下記を追記してみた。  </p>
+<pre><code>  &lt;url&gt;
+    &lt;loc&gt;http://pagent.github.io/&lt;/loc&gt;
+  &lt;/url&gt;
+  &lt;url&gt;
+    &lt;loc&gt;http://pagent.github.io/robots.txt&lt;/loc&gt;
+  &lt;/url&gt;
+  &lt;url&gt;
+    &lt;loc&gt;http://pagent.github.io/archives/&lt;/loc&gt;
+  &lt;/url&gt;
+</code></pre><p>URLを取得するための変数が分からないので、<code>&lt;loc&gt;</code>の箇所は手動で記載。<br><code>&lt;lastmod&gt;</code>は入れたかったが、これもどうやれば良いのか分からないし、省略可能とのことなので省略した。  </p>
+<p>Octopressでは個別記事の<code>&lt;lastmod&gt;</code>は、最終更新日時ではなく投稿日時のよう。つまり後から修正しても変更は無い。<br>一方Hexoのサイトマップでは最終的に変更された日時が記載され、それが上位に来ている。<br>どちらが良いのか分からないが、しばらく様子を見てみようと思う。  </p>
+<p>それから、Octopressのサイトマップでは<code>&lt;priority&gt;</code>や<code>&lt;changefreq&gt;</code>も記載されている。<br>SEO的にはOctopressの方が丁寧に作られているかもしれない。<br>generateが断然早いので、なるべくHexoを使いたいところだが。</p>
 
 	
 	</div>
@@ -297,7 +236,107 @@ article blockquote {
 </div>
 	
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/10/21/test/" data-text="テスト投稿 | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/25/sitemap/" data-text="Hexoのsitemap.xmlを変更してみた | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/12/24/robots-txt/" >Hexoで書いているGitHub Pagesのブログにrobots.txtを置いてみた</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年12月24日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>記事がなかなか検索エンジンにインデックスされない。古い記事がインデックスされず新しいのがインデックスされたりしているようだ。<br>プラグインでsitemap.xmlは導入しているが、ちゃんと読んでくれているのか疑問。  </p>
+<p>sitemapとは別にクローラーに各種の指定をするrobots.txtというのがあるようなので、GitHub Pagesに置いてみた。<br>SeesaaやFC2などのブログサービスでは自動的に用意してくれているようだ。  </p>
+<p>sourceフォルダ直下にrobots.txtを新規作成。<br>generateするとちゃんとpublicフォルダ内にもrobots.txtが生成された。<br>deployし、ブラウザで<code>http://pagent.github.io/robots.txt</code>にアクセスしが、何故か404エラーだった。GitHub Pagesのレポジトリには追加されていたが。<br>反映に時間がかかるようでしばらくするとアクセス出来た。  </p>
+<p>robots.txtの内容は下記のようにした。  </p>
+<pre><code>User-agent: *
+Disallow: /css/
+Disallow: /*.js$
+
+Sitemap: http://pagent.github.io/sitemap.xml
+
+User-agent: bingbot
+Crawl-delay: 30
+
+User-agent: MSNBOT
+Crawl-delay: 30
+</code></pre><p>大して効果は無いのかもしれないが、おかしなことを書かない限りデメリットはないだろうし、無いよりはましだろう。  </p>
+<p>ーー<br>（追記）<br>robots.txtを置いてから、わりと早く検索エンジンにインデックスされるようになった気がする。<br>Octopressではデフォルトでsitemap.xmlとrobots.txtを生成してくれるようだ。<br>この点、HexoよりOctopressの方がSEO的に優れているかもしれない。  </p>
+<p>ーー<br>（再追記）<br>Google ウェブマスターツールのヘルプによると、「robots.txt ファイルが必要になるのは、Google などの検索エンジンのインデックスに登録したくないコンテンツがある場合のみ」らしい。<br><a href="https://support.google.com/webmasters/answer/6062608?hl=ja&amp;rd=1" target="_blank" rel="external">robots.txt ファイルについて - ウェブマスター ツール ヘルプ</a>  </p>
+<p>SEO上どうしても必要なものではないようだ。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/24/robots-txt/" data-text="Hexoで書いているGitHub Pagesのブログにrobots.txtを置いてみた | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/12/24/google-site-search/" >Googleを利用したサイト内検索が出来ない</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年12月24日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>いつの間にかHexoを使って書いているブログで、Googleを利用したサイト内検索が出来なくなっていた。<br>検索してもブログ全体のインデックス状況（<code>site:pagent.github.io</code>を検索した結果）が表示されるだけ。  </p>
+<p>OctopressのブログではただのGoogle検索になってしまっている。<br>Googleでなんらかの変更があったのだろうか。  </p>
+<p>検索ボックスのレイアウト  </p>
+<pre><code>&lt;input type=&quot;search&quot; name=&quot;q&quot; results=&quot;0&quot; placeholder=&quot;&lt;%= __(&#39;search&#39;) %&gt;&quot; class=&quot;form-control&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;q&quot; value=&quot;site:&lt;%- config.url.replace(/^https?:\/\//, &#39;&#39;) %&gt;&quot;&gt;
+</code></pre><p>の<code>value=</code>でサイトURLを指定している方（下の方）の<code>name=&quot;q&quot;</code>を<code>name=&quot;hq&quot;</code>に修正し、  </p>
+<pre><code>&lt;input type=&quot;search&quot; name=&quot;q&quot; results=&quot;0&quot; placeholder=&quot;&lt;%= __(&#39;search&#39;) %&gt;&quot; class=&quot;form-control&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;hq&quot; value=&quot;site:&lt;%- config.url.replace(/^https?:\/\//, &#39;&#39;) %&gt;&quot;&gt;
+</code></pre><p>にしたら、一応サイト内検索が出来るようになった。<br>Octopressの方でも同様だった。<br>その内サイトジェネレーターやそのテーマの方でも修正されるのだろう。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/24/google-site-search/" data-text="Googleを利用したサイト内検索が出来ない | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
@@ -321,7 +360,7 @@ article blockquote {
         <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
 
 		
-          <li class="next disabled"><a>Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"> <a href="/page/15/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a> </li>
         
 	
 </ul>
@@ -379,17 +418,27 @@ article blockquote {
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
@@ -397,17 +446,7 @@ article blockquote {
 		
 			<li><a href="/tags/Git/">Git<span>11</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
 			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
 		
 		
 		</ul>
