@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-04-03T05:28:46.038Z</updated>
+  <updated>2015-04-03T05:31:58.626Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -97,10 +97,10 @@ Unable to update the static FcBlanks: 0x0602
     <link href="http://pagent.github.io/2015/04/01/nemo-fileroller/"/>
     <id>http://pagent.github.io/2015/04/01/nemo-fileroller/</id>
     <published>2015-04-01T00:10:04.000Z</published>
-    <updated>2015-04-03T05:28:17.763Z</updated>
+    <updated>2015-04-03T05:31:47.196Z</updated>
     <content type="html"><![CDATA[<p>Arch Linux（Xfce4デスクトップ）にもファイルマネージャーnemoを入れている。<br>Xubuntuの時にはnemoの右クリックに「圧縮…」や「ここに展開する」というのがあったのだが、何故かこれが無い。<br>どうやらエクステンションとしてnemo-filerollerを入れないといけないらしい。<br><a href="https://archlinuxjp.kusakata.com/wiki/Nemo?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DNemo_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno" target="_blank" rel="external">Nemo - ArchWiki</a>  </p>
 <p>pacmanでインストール出来た。  </p>
-<p><a href="https://github.com/linuxmint/nemo-extensions" target="_blank" rel="external">linuxmint/nemo-extensions · GitHub</a>を見ると他にも、nemo-terminal、nemo-dropbox、またnemo-compare、nemo-repairerなど色々あるよう。</p>
+<p><a href="https://github.com/linuxmint/nemo-extensions" target="_blank" rel="external">linuxmint/nemo-extensions · GitHub</a>を見ると他にも、nemo-terminal、nemo-dropbox、またnemo-compare、nemo-repairerなど様々な拡張機能があるようだ。<br>また今度試してみようと思う。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Arch Linux（Xfce4デスクトップ）にもファイルマネージャーnemoを入れている。<br>Xubuntuの時にはnemoの右クリックに「圧縮…」や「ここに展開する」というのがあったのだが、何故かこれが無い。<br>どうやらエクステンションとしてnemo-filer]]>
