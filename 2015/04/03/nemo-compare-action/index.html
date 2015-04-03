@@ -111,8 +111,8 @@
 	<!-- content -->
 	<div class="mypage">
 	    <p>nemoの拡張機能nemo-compareのインストールが上手く行かなかったので、手動で導入した。  </p>
-<p>（参考記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>  </p>
-<p>まず、meld、python2-dbus、dbus-glib（導入済みだった）をインストール。  </p>
+<p>（参照記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>  </p>
+<p>まず、meld、python2-dbus、dbus-glib（これは導入済みだった）をインストール。  </p>
 <pre><code>$ sudo pacman -S meld python2-dbus
 </code></pre><p>~/.local/share/nemo/actions下にcompare-save-for-later.nemo_action、compare-with-saved.nemo_action、compare.shの３つのファイルを作成。  </p>
 <pre><code>compare-save-for-later.nemo_action
@@ -152,7 +152,7 @@ fi
 </code></pre><p>compare.shはファイルマネージャーもしくはコマンドで実行可能にしておく。  </p>
 <pre><code>$ chmod +x compare.sh
 </code></pre><p>nemoの右クリックメニューに「比較する」「あとで比較する」が追加された。  </p>
-<p>ファイル内容だけではなくフォルダの内容も比較出来るので、なにかと重宝しそう。</p>
+<p>ファイル内容だけではなくフォルダの内容も比較出来る。<br>なにかと重宝しそうだ。</p>
 
 	</div>
 
