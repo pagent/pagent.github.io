@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-04-03T05:31:58.626Z</updated>
+  <updated>2015-04-03T07:49:31.832Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,27 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[nemoの「端末で開く」が機能しない]]></title>
+    <link href="http://pagent.github.io/2015/04/03/nemo-open-in-terminal/"/>
+    <id>http://pagent.github.io/2015/04/03/nemo-open-in-terminal/</id>
+    <published>2015-04-03T07:39:39.000Z</published>
+    <updated>2015-04-03T07:48:31.027Z</updated>
+    <content type="html"><![CDATA[<p>Arch Linuxにインストールしたnemoで右クリックメニューの「端末で開く」が機能しなかった。  </p>
+<p><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>を参考に、  </p>
+<pre><code>$ gsettings set org.cinnamon.desktop.default-applications.terminal exec xfce4-terminal
+</code></pre><p>を実行したら機能するようになった。  </p>
+<p>「端末で開く」で起動するターミナルエミュレーターを変更したい時も同様に端末名を指定すれば良いようだ。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Arch Linuxにインストールしたnemoで右クリックメニューの「端末で開く」が機能しなかった。  </p>
+<p><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="ext]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Qtベースのプログラムで日本語入力（fcitx-mozc）]]></title>
@@ -529,32 +550,6 @@ Server = http://repo.archlinux.fr/$arch
     <summary type="html">
     <![CDATA[<p>Dellの古いノートパソコンVOSTRO1000にArch Linuxを入れてみた。<br>（NECのLavie Liteは、kernelが3.10台を超えると不具合が出る問題がArch Linuxでは解決出来ず、諦めた。）</p>
 <p>インストールには、グラフィカルイン]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[update-grubで"options:not found"のエラー]]></title>
-    <link href="http://pagent.github.io/2015/03/01/update-grub-error/"/>
-    <id>http://pagent.github.io/2015/03/01/update-grub-error/</id>
-    <published>2015-02-28T19:17:07.000Z</published>
-    <updated>2015-02-28T19:21:23.000Z</updated>
-    <content type="html"><![CDATA[<p>/etc/default/grubを編集して<code>update-grub</code>しようとしたら、  </p>
-<blockquote>
-<p>/usr/sbin/grub-mkconfig: 6: /etc/default/grub: options: not found</p>
-</blockquote>
-<p>とエラーになった。  </p>
-<p>意味がよく分からず、grub2を再度インストールしてみたが、やはりエラーになる。  </p>
-<p>grubファイルをよく見ると編集した箇所、GRUB_DEFAULT=”Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.16.0-30-generic”のダブルクォーテーションが全角の「”」になっていた。<br>半角に直したらアップデート出来た。<br>エラーメッセージの”6”はgrubファイルの6行目ということらしい。  </p>
-<p>“line 6”と言ってくれたら親切なんだが。<br>“options: not found”も”invalid”等の方が分かりやすい。  </p>
-<p>自分の不注意は棚に上げてだが。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>/etc/default/grubを編集して<code>update-grub</code>しようとしたら、  </p>
-<blockquote>
-<p>/usr/sbin/grub-mkconfig: 6: /etc/default/grub: options: not ]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>

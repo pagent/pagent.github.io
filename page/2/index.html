@@ -112,6 +112,57 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/03/14/truecrypt-already-running/" >TrueCryptを起動しようとすると&quot;TrueCrypt is already running&quot;と表示される</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年3月14日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Arch LinuxにTrueCryptをインストールした。  </p>
+<p>pacmanからインストールすると、guiツールが無くcuiツールのみのようなので、ネットでtruecrypt-7.1aを探しダウンロード、インストールした。<br>（TrueCryptの最終バージョン7.2は解読機能のみで、新たに暗号化ボリュームを作れない。）  </p>
+<p>ちゃんと使用出来たが、いったんPCを終了して、その後TrueCryptを起動しようとすると、”TrueCrypt is already running”とのみ表示され、guiツールが表示されなくなってしまった。<br>コマンドラインからだと使用出来るようだが、使い勝手が悪い。  </p>
+<p>暗号化ボリュームをアンマウントせずにPCをシャットダウンしたせいらしい。  </p>
+<p>ホームディレクトリに.TrueCrypt-lock-(ユーザー名)という隠しファイルが残っており、これを削除するとguiのTrueCryptを起動出来た。<br><a href="http://sebs-blog.de/truecrypt-is-already-running-what-to-do.html" target="_blank" rel="external">‘TrueCrypt is already running’ what to do? | Seb’s Blog</a>  </p>
+<p>暗号化ボリュームをアンマウントせずにPCを終了してしまうことはよくあるし、なんとか自動的にアンマウントしたいところ。  </p>
+<p>検索したら、Arch Linuxのwikiに自動アンマウントの方法が紹介されていた。<br><a href="https://wiki.archlinux.org/index.php/TrueCrypt#Safely_unmount_and_unmap_volumes_.28on_shutdown.29" target="_blank" rel="external">TrueCrypt - ArchWiki</a>  </p>
+<p>/etc内にrc.local.shutdownファイルを新規作成。<br>下記内容で保存。  </p>
+<pre><code>if (/usr/bin/truecrypt --text --list)
+then {
+/usr/bin/truecrypt -d
+sleep 3
+}
+fi
+</code></pre><p>PC終了時に自動的に暗号化ボリュームがアンマウントされるようになった。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/14/truecrypt-already-running/" data-text="TrueCryptを起動しようとすると&quot;TrueCrypt is already running&quot;と表示される | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/03/14/keepass2-font/" >Keepass2のフォントを日本語化</a>
 		</h3>
 	
@@ -544,51 +595,6 @@ Server = http://repo.archlinux.fr/$arch
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/03/01/update-grub-error/" >update-grubで&quot;options:not found&quot;のエラー</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年3月1日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>/etc/default/grubを編集して<code>update-grub</code>しようとしたら、  </p>
-<blockquote>
-<p>/usr/sbin/grub-mkconfig: 6: /etc/default/grub: options: not found</p>
-</blockquote>
-<p>とエラーになった。  </p>
-<p>意味がよく分からず、grub2を再度インストールしてみたが、やはりエラーになる。  </p>
-<p>grubファイルをよく見ると編集した箇所、GRUB_DEFAULT=”Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.16.0-30-generic”のダブルクォーテーションが全角の「”」になっていた。<br>半角に直したらアップデート出来た。<br>エラーメッセージの”6”はgrubファイルの6行目ということらしい。  </p>
-<p>“line 6”と言ってくれたら親切なんだが。<br>“options: not found”も”invalid”等の方が分かりやすい。  </p>
-<p>自分の不注意は棚に上げてだが。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/01/update-grub-error/" data-text="update-grubで&quot;options:not found&quot;のエラー | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -630,6 +636,10 @@ Server = http://repo.archlinux.fr/$arch
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2015/04/03/nemo-open-in-terminal/" ><i class="fa fa-file-o"></i>nemoの「端末で開く」が機能しない</a>
+      </li>
+    
+      <li>
         <a href="/2015/04/02/fcitx-qt-program/" ><i class="fa fa-file-o"></i>Qtベースのプログラムで日本語入力（fcitx-mozc）</a>
       </li>
     
@@ -643,10 +653,6 @@ Server = http://repo.archlinux.fr/$arch
     
       <li>
         <a href="/2015/04/01/nemo-fileroller/" ><i class="fa fa-file-o"></i>nemoの右クリックメニューに「圧縮...」「ここに展...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/04/01/xfce4-terminal-browser/" ><i class="fa fa-file-o"></i>Xfce4 terminal内のリンクを開くブラウザを...</a>
       </li>
     
   </ul>
@@ -664,35 +670,35 @@ Server = http://repo.archlinux.fr/$arch
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>48</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
 			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
 			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>49</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 		
 		</ul>
@@ -704,7 +710,7 @@ Server = http://repo.archlinux.fr/$arch
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

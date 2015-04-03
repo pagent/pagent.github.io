@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Qtベースのプログラムで日本語入力（fcitx-mozc） | Pagent</title>
+  <title>nemoの「端末で開く」が機能しない | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Qtベースのプログラムで日本語入力（fcitx-mozc）"/>
+  <meta property="og:title" content="nemoの「端末で開く」が機能しない"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -94,7 +94,7 @@
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> Qtベースのプログラムで日本語入力（fcitx-mozc）</h1>
+			<h1> nemoの「端末で開く」が機能しない</h1>
 		</div>
 	
 
@@ -110,18 +110,11 @@
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>iBusのプロパティパネル採用以降、iBusをやめて日本語入力にfcitx-mozcを使っている。  </p>
-<p>Xubuntuでは特に問題無く使えていたが、Arch LinuxでQtベースのプログラムを使用する際、日本語入力が有効にならず困っていた。<br>Simplenote専用にするのにうってつけの軽量ブラウザ「QupZilla」や、markdownファイル編集の際プレビューが出来て便利な「ReText」など、日本語入力出来ないと不便。  </p>
-<p>モジュールのfcitx-qt4、fcitx-qt5はインストールしたが、何故かインプットメソッドがオンにならない。<br>（fcitx-qt5はあまり必要無いようだが、念の為インストール）<br>fcitx-configtool（Qt 設定ツール）で、デフォルトのインプットメソッドをfcitxに変更したが、効果が無い。  </p>
-<p><code>fcitx-diagnose</code>を実行してフロントエンド設定の項目を確認すると、XMODIFIERS、QT_IM_MODULEが正しく設定されていないようで、「設定されていません」という表示だったり空欄だったりする。  </p>
-<p>ホームディレクトリに.xprofileを新規作成し、下記内容で保存。<br>（ディスプレイマネージャにSLiMを使っている場合は、~/.xprofileではなく~/.xinitrcに記載するらしい）  </p>
-<pre><code>export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=&quot;@im=fcitx&quot;
-</code></pre><p>再起動したら、QupZilla、ReTextともに日本語入力が可能になった。  </p>
-<p>（参照記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Fcitx?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DFcitx_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno" target="_blank" rel="external">Fcitx - ArchWiki</a>  </p>
-<p>再度<code>fcitx-diagnose</code>で見てみると、「環境変数 XMODIFIERS は “{$2}” に正しく設定されています。」「環境変数 QT_IM_MODULE は “{$2}” に正しく設定されています。」となっていた。  </p>
-<p>fcitx-configtoolのデフォルトのインプットメソッドはximのままでも問題無いようだった。</p>
+	    <p>Arch Linuxにインストールしたnemoで右クリックメニューの「端末で開く」が機能しなかった。  </p>
+<p><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>を参考に、  </p>
+<pre><code>$ gsettings set org.cinnamon.desktop.default-applications.terminal exec xfce4-terminal
+</code></pre><p>を実行したら機能するようになった。  </p>
+<p>「端末で開く」で起動するターミナルエミュレーターを変更したい時も同様に端末名を指定すれば良いようだ。</p>
 
 	</div>
 
@@ -137,13 +130,13 @@ export XMODIFIERS=&quot;@im=fcitx&quot;
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2015/04/03/nemo-open-in-terminal/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2015/04/01/xfce4-appearance-settings-crash/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2015/04/02/fcitx-qt-program/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -177,7 +170,7 @@ export XMODIFIERS=&quot;@im=fcitx&quot;
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2015年4月2日
+	2015年4月3日
 	</div>
 	
 
