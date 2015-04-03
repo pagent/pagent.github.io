@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-04-03T12:14:58.858Z</updated>
+  <updated>2015-04-03T12:59:20.932Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/04/03/nemo-compare-action/"/>
     <id>http://pagent.github.io/2015/04/03/nemo-compare-action/</id>
     <published>2015-04-03T08:31:01.000Z</published>
-    <updated>2015-04-03T09:08:45.714Z</updated>
+    <updated>2015-04-03T12:58:53.843Z</updated>
     <content type="html"><![CDATA[<p>nemoの拡張機能nemo-compareのインストールが上手く行かなかったので、手動で導入した。  </p>
 <p>（参考記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>  </p>
 <p>まず、meld、python2-dbus、dbus-glib（導入済みだった）をインストール。  </p>
