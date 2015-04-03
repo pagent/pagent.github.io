@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-04-03T07:54:20.748Z</updated>
+  <updated>2015-04-03T08:01:13.791Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -135,8 +135,8 @@ Unable to update the static FcBlanks: 0x0602
     <link href="http://pagent.github.io/2015/04/01/nemo-fileroller/"/>
     <id>http://pagent.github.io/2015/04/01/nemo-fileroller/</id>
     <published>2015-04-01T00:10:04.000Z</published>
-    <updated>2015-04-03T05:31:47.196Z</updated>
-    <content type="html"><![CDATA[<p>Arch Linux（Xfce4デスクトップ）にもファイルマネージャーnemoを入れている。<br>Xubuntuの時にはnemoの右クリックに「圧縮…」や「ここに展開する」というのがあったのだが、何故かこれが無い。<br>どうやらエクステンションとしてnemo-filerollerを入れないといけないらしい。<br><a href="https://archlinuxjp.kusakata.com/wiki/Nemo?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DNemo_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno" target="_blank" rel="external">Nemo - ArchWiki</a>  </p>
+    <updated>2015-04-03T07:55:11.447Z</updated>
+    <content type="html"><![CDATA[<p>Arch Linux（Xfce4デスクトップ）にもファイルマネージャーnemoを入れている。<br>Xubuntuの時にはnemoの右クリックに「圧縮…」や「ここに展開する」というのがあったのだが、何故かこれが無い。<br>どうやらエクステンションとしてnemo-filerollerを入れないといけないらしい。<br><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>  </p>
 <p>pacmanでインストール出来た。  </p>
 <p><a href="https://github.com/linuxmint/nemo-extensions" target="_blank" rel="external">linuxmint/nemo-extensions · GitHub</a>を見ると他にも、nemo-terminal、nemo-dropbox、またnemo-compare、nemo-repairerなど様々な拡張機能があるようだ。<br>また今度試してみようと思う。</p>
 ]]></content>
@@ -345,14 +345,14 @@ fi
     <link href="http://pagent.github.io/2015/03/12/xfce-nemo-icon/"/>
     <id>http://pagent.github.io/2015/03/12/xfce-nemo-icon/</id>
     <published>2015-03-12T13:46:32.000Z</published>
-    <updated>2015-03-12T14:09:16.000Z</updated>
+    <updated>2015-04-03T07:56:25.207Z</updated>
     <content type="html"><![CDATA[<p>Arch Linux+Xfceにファイルマネージャーnemoをインストールしたら、デスクトップ上のアイコンが二重に表示されるようになってしまった。  </p>
 <p>さらにはファイルマネージャーでデスクトップを開くとファイルがあるのにデスクトップにはなにも表示されていなかったり、デスクトップ上右クリックからのアプリケーションメニューが消えてしまったり。  </p>
 <p>Xfce標準のファイルマネージャーThunarに加え、nemoもデスクトップを管理しようとするためこうなってしまうようだ。<br>確かにnemoをインストールする時にcinnamon-desktopも依存関係から同時にインストールされていた。  </p>
 <p>Xubuntuではどういう設定なのかこういうことは無いし、Arch Linux+LXDEにnemoをインストールしてもデスクトップアイコンが二重に表示されることはない。  </p>
 <p>このままでは使い勝手が悪いので、XfceをあきらめてLXDEにしようかと思ったが、Arch Linuxのwikiにnemoによるデスクトップアイコンを非表示にする方法があった。  </p>
 <pre><code>$ gsettings set org.nemo.desktop show-desktop-icons false
-</code></pre><p><a href="https://archlinuxjp.kusakata.com/wiki/Nemo?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DNemo_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno" target="_blank" rel="external">Nemo - ArchWiki</a>  </p>
+</code></pre><p><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>  </p>
 <p>nemoによるデスクトップアイコンが消えて、デスクトップ上右クリックでのアプリケーションメニューも復活した。</p>
 ]]></content>
     <summary type="html">
@@ -413,9 +413,9 @@ fi
     <link href="http://pagent.github.io/2015/03/08/yaourt/"/>
     <id>http://pagent.github.io/2015/03/08/yaourt/</id>
     <published>2015-03-08T06:53:26.000Z</published>
-    <updated>2015-03-11T15:48:29.000Z</updated>
+    <updated>2015-04-03T07:57:17.151Z</updated>
     <content type="html"><![CDATA[<p>AUR (Arch User Repository)のパッケージをインストールするため、pacmanラッパーYaourtを入れた。  </p>
-<p><a href="https://archlinuxjp.kusakata.com/wiki/Yaourt?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DYaourt_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno" target="_blank" rel="external">Yaourt - ArchWiki</a>  </p>
+<p><a href="https://archlinuxjp.kusakata.com/wiki/Yaourt" target="_blank" rel="external">Yaourt - ArchWiki</a>  </p>
 <p>「まず package-query をインストール」とのことだが、pacmanからpackage-queryをインストールしようとしても、見つからないと言われるので、/etc/pacman.confに下記記述を加えた。  </p>
 <pre><code>[archlinuxfr]
 SigLevel = Never
@@ -430,7 +430,7 @@ Server = http://repo.archlinux.fr/$arch
 </code></pre>]]></content>
     <summary type="html">
     <![CDATA[<p>AUR (Arch User Repository)のパッケージをインストールするため、pacmanラッパーYaourtを入れた。  </p>
-<p><a href="https://archlinuxjp.kusakata.com/wiki/Yaourt?rdfrom=h]]>
+<p><a href="https://archlinuxjp.kusakata.com/wiki/Yaourt" target=]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
