@@ -153,6 +153,43 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/04/03/nemo-compare-failed/" >nemo-compareが動かない</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年4月3日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>nemo-compare</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/03/nemo-compare-failed/" data-text="nemo-compareが動かない | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/04/02/fcitx-qt-program/" >Qtベースのプログラムで日本語入力（fcitx-mozc）</a>
 		</h3>
 	
@@ -177,7 +214,7 @@
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=&quot;@im=fcitx&quot;
 </code></pre><p>再起動したら、QupZilla、ReTextともに日本語入力が可能になった。  </p>
-<p>（参照記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Fcitx?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DFcitx_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno" target="_blank" rel="external">Fcitx - ArchWiki</a>  </p>
+<p>（参照記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Fcitx" target="_blank" rel="external">Fcitx - ArchWiki</a>  </p>
 <p>再度<code>fcitx-diagnose</code>で見てみると、「環境変数 XMODIFIERS は “{$2}” に正しく設定されています。」「環境変数 QT_IM_MODULE は “{$2}” に正しく設定されています。」となっていた。  </p>
 <p>fcitx-configtoolのデフォルトのインプットメソッドはximのままでも問題無いようだった。</p>
 
@@ -509,61 +546,6 @@ E: _cache-&gt;open() failed, please report.
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/03/14/hexo-283-install/" >Hexo 2.8.3をインストール</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年3月14日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>XubuntuでHexoを使っていたが、Arch Linuxにもインストールした。<br>いつの間にかHexoのバージョンが上がっていたようで、Arch LinuxにはHexo 3.0.0がインストールされた。  </p>
-<p>CLIがメインモジュールから分離されたりと、かなり大幅な変更があるようだ。<br><a href="https://github.com/hexojs/hexo/wiki/Breaking-Changes-in-Hexo-3.0" target="_blank" rel="external">Breaking Changes in Hexo 3.0 · hexojs/hexo Wiki</a><br>サーバー機能もHexo本体とは別になっていて、hexo-serverをインストールしないと<code>hexo server</code>コマンドが使えない。  </p>
-<p>XubuntuのHexo 2.8.3をアップグレードして、これまでの作業フォルダ（WindowsのDドライブに置いてある）を使おうと思ったが、Hexo 3へのアップグレードがうまく行かない。  </p>
-<p>そこでArch Linuxにも旧バージョンのHexo 2.8.3をインストールすることにした。  </p>
-<p>Hexoの公式サイトには旧バージョンのインストール方法が見あたらなかったが、幸い検索で見つかった。<br>下記コマンドで良いようだ。  </p>
-<pre><code>$ npm install hexo@2.8.3 -g
-</code></pre><p><a href="http://sandylaw.tk/2015/03/07/hexo3to2/" target="_blank" rel="external">Hexo降级 3.0 to 2.8 | Sandy’s Blog</a>  </p>
-<p>Hexo 3はCLIが分離されてロードがさらに早くなったりといろいろ機能が進化しているようだが、旧バージョンでも特に不満は無いし、当面はこのままHexo 2.8.3を使う予定。  </p>
-<p>アップグレードにはまた今度挑戦してみようと思う。  </p>
-<p>ーー<br>（追記）<br>Hexo 2.8.3の元で<code>hexo init blog-name</code>によりブログを新規作成した場合、<code>npm install</code>の後実際Hexoを使おうとすると、コマンドがことごとく下記のようなエラーになる。  </p>
-<pre><code>$ hexo server
-[error] HexoError: Process failed: _posts/hello-world.md
-TypeError: Cannot read property &#39;config&#39; of null
-at ...
-</code></pre><p><code>npm install</code>でインストールされるhexo-renderer-markedとhexo-renderer-stylusのバージョンが0.2の為らしい。<br>バージョン0.1をインストールするとエラー無しに動作した。  </p>
-<pre><code>$ npm install hexo-renderer-marked@0.1 --save
-
-$ npm install hexo-renderer-stylus@0.1 --save
-</code></pre><p><a href="https://github.com/hexojs/hexo/issues/1094#issuecomment-77796845" target="_blank" rel="external">“hexo server” not work · Issue #1094 · hexojs/hexo</a></p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/14/hexo-283-install/" data-text="Hexo 2.8.3をインストール | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -609,6 +591,10 @@ $ npm install hexo-renderer-stylus@0.1 --save
       </li>
     
       <li>
+        <a href="/2015/04/03/nemo-compare-failed/" ><i class="fa fa-file-o"></i>nemo-compareが動かない</a>
+      </li>
+    
+      <li>
         <a href="/2015/04/02/fcitx-qt-program/" ><i class="fa fa-file-o"></i>Qtベースのプログラムで日本語入力（fcitx-mozc）</a>
       </li>
     
@@ -618,10 +604,6 @@ $ npm install hexo-renderer-stylus@0.1 --save
     
       <li>
         <a href="/2015/04/01/infinality/" ><i class="fa fa-file-o"></i>Arch LinuxのフォントレンダリングをInfin...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/04/01/nemo-fileroller/" ><i class="fa fa-file-o"></i>nemoの右クリックメニューに「圧縮...」「ここに展...</a>
       </li>
     
   </ul>
@@ -639,35 +621,35 @@ $ npm install hexo-renderer-stylus@0.1 --save
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
 		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
 			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>49</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>50</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
 			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
 		
 		
 		</ul>
@@ -679,7 +661,7 @@ $ npm install hexo-renderer-stylus@0.1 --save
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

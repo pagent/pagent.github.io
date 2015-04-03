@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-04-03T07:49:31.832Z</updated>
+  <updated>2015-04-03T07:53:04.927Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -36,11 +36,28 @@
   </entry>
   
   <entry>
+    <title><![CDATA[nemo-compareが動かない]]></title>
+    <link href="http://pagent.github.io/2015/04/03/nemo-compare-failed/"/>
+    <id>http://pagent.github.io/2015/04/03/nemo-compare-failed/</id>
+    <published>2015-04-03T07:33:51.000Z</published>
+    <updated>2015-04-03T07:51:09.468Z</updated>
+    <content type="html"><![CDATA[<p>nemo-compare</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>nemo-compare</p>
+]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Qtベースのプログラムで日本語入力（fcitx-mozc）]]></title>
     <link href="http://pagent.github.io/2015/04/02/fcitx-qt-program/"/>
     <id>http://pagent.github.io/2015/04/02/fcitx-qt-program/</id>
     <published>2015-04-02T03:57:36.000Z</published>
-    <updated>2015-04-03T04:12:45.986Z</updated>
+    <updated>2015-04-03T07:52:41.877Z</updated>
     <content type="html"><![CDATA[<p>iBusのプロパティパネル採用以降、iBusをやめて日本語入力にfcitx-mozcを使っている。  </p>
 <p>Xubuntuでは特に問題無く使えていたが、Arch LinuxでQtベースのプログラムを使用する際、日本語入力が有効にならず困っていた。<br>Simplenote専用にするのにうってつけの軽量ブラウザ「QupZilla」や、markdownファイル編集の際プレビューが出来て便利な「ReText」など、日本語入力出来ないと不便。  </p>
 <p>モジュールのfcitx-qt4、fcitx-qt5はインストールしたが、何故かインプットメソッドがオンにならない。<br>（fcitx-qt5はあまり必要無いようだが、念の為インストール）<br>fcitx-configtool（Qt 設定ツール）で、デフォルトのインプットメソッドをfcitxに変更したが、効果が無い。  </p>
@@ -50,7 +67,7 @@
 export QT_IM_MODULE=fcitx
 export XMODIFIERS=&quot;@im=fcitx&quot;
 </code></pre><p>再起動したら、QupZilla、ReTextともに日本語入力が可能になった。  </p>
-<p>（参照記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Fcitx?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DFcitx_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno" target="_blank" rel="external">Fcitx - ArchWiki</a>  </p>
+<p>（参照記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Fcitx" target="_blank" rel="external">Fcitx - ArchWiki</a>  </p>
 <p>再度<code>fcitx-diagnose</code>で見てみると、「環境変数 XMODIFIERS は “{$2}” に正しく設定されています。」「環境変数 QT_IM_MODULE は “{$2}” に正しく設定されています。」となっていた。  </p>
 <p>fcitx-configtoolのデフォルトのインプットメソッドはximのままでも問題無いようだった。</p>
 ]]></content>
@@ -513,46 +530,6 @@ Server = http://repo.archlinux.fr/$arch
     </summary>
     
       <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Arch Linuxをインストールした。（ビデオドライバーはATIでうまく行った）]]></title>
-    <link href="http://pagent.github.io/2015/03/01/arch-ati-video-driver/"/>
-    <id>http://pagent.github.io/2015/03/01/arch-ati-video-driver/</id>
-    <published>2015-03-01T08:57:24.000Z</published>
-    <updated>2015-03-01T10:31:22.000Z</updated>
-    <content type="html"><![CDATA[<p>Dellの古いノートパソコンVOSTRO1000にArch Linuxを入れてみた。<br>（NECのLavie Liteは、kernelが3.10台を超えると不具合が出る問題がArch Linuxでは解決出来ず、諦めた。）</p>
-<p>インストールには、グラフィカルインストールが可能なArchbootを使った。（archlinux-2015.01-1-archboot.iso）<br>Ubuntu等のインストーラーほど懇切丁寧ではないが、コマンドラインでのインストールよりは楽だった。  </p>
-<p>ネット上の紹介記事を参考に進めたら、それ程迷うこともなかったが、最後ブートローダーのインストールで、GRUB2を選択すると、インストール先をMBRにしか出来なかったので、SysLinuxをインストールした。<br>無線LANの設定も後から苦労するよりはと、ぽちぽちパスワードを入力した。  </p>
-<p>一応インストールは完了したが、デスクトップ環境の導入で躓いてしまった。  </p>
-<p>最初LXDEを入れてみたが、画面がザラザラで何も見えない。<br>PC起動時にLXDEを自動開始するよう設定してしまったようで、コマンドラインにも戻れない。<br>修正の仕方も分からず困ったが、幸いインストール後の状態をClonezillaでバックアップしていたので、これをリストアした。  </p>
-<p>LXDEでダメならと、次はXfceでチャレンジしてみた。  </p>
-<p>ほぼ下記記事の説明の通りに進めた。<br><a href="http://elfcobe.hateblo.jp/entry/2014/05/11/015243" target="_blank" rel="external">Windows で VirtualBox + Arch Linux (Xfce + Slim) - けいれん現象の幽玄美よ</a>  </p>
-<p>Xorg、グラフィックドライバー（xf86-video-vesa）、Xfceをインストールしたが、<code>startxfce4</code>とコマンドを打ってデスクトップに入ろうとしても、X serverが落ちてしまう。  </p>
-<p>エラーメッセージは「ビデオドライバーが無い」というような内容だった。<br>LXDEの時もこのせいで画面がザラザラだったのかもしれない。  </p>
-<p>デュアルブートのLubuntuで<code>xrandr</code>してみると、  </p>
-<blockquote>
-<p>VGA-0 disconnected… LVDS connected</p>
-</blockquote>
-<p>と返ってくる。  </p>
-<p><code>lspci</code>をしてみると、  </p>
-<blockquote>
-<p>VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] RS482/RS485 [Radeon Xpress 1100/1150]</p>
-</blockquote>
-<p>何のドライバーが必要なのか、よく分からない。  </p>
-<p>Puppy linux派生のLxpupを起動してみると、クイックセットアップのGraphicsのところに「現在はATIビデオドライバーを使用している」というようなことが書いてあった。  </p>
-<p>「ATI video driver Arch」で検索すると、Arch Linuxの日本語wikiページが見つかった。<br><a href="https://wiki.archlinux.org/index.php/ATI_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29" target="_blank" rel="external">ATI (日本語)  ArchWiki</a>  </p>
-<p><code>pacman -S xf86-video-ati</code>でxf86-video-atiをインストールしたら、ようやくXfceのデスクトップに入ることが出来た。  </p>
-<p>日本語環境がまだだったり、全体的にフォントがザラザラで汚かったりで、環境はまだ全然だが、いちおう一段落は付けられた。  </p>
-<p>それにしても、XubuntuやLubuntuなどUbuntu派生ディストリビューションの楽ちんさは、本当に有難いと痛感した。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Dellの古いノートパソコンVOSTRO1000にArch Linuxを入れてみた。<br>（NECのLavie Liteは、kernelが3.10台を超えると不具合が出る問題がArch Linuxでは解決出来ず、諦めた。）</p>
-<p>インストールには、グラフィカルイン]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
     
   </entry>
   
