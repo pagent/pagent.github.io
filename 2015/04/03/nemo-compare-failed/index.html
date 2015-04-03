@@ -110,7 +110,19 @@
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>nemo-compare</p>
+	    <p>nemoの右クリックで２つのファイル（フォルダ）の内容を比較出来るnemo-compareをインストールした。<br>yaourtでインストール出来たが、右クリックのメニューに「compare」が出てこない。<br>検索すると同様の事例が見つかった。  </p>
+<p><a href="https://github.com/linuxmint/nemo-extensions/issues/24" target="_blank" rel="external">nemo-compare not in the right-click context menu · Issue #24 · linuxmint/nemo-extensions · GitHub</a>  </p>
+<p><a href="https://github.com/linuxmint/nemo-extensions/issues/18#issuecomment-21617918" target="_blank" rel="external">Symbolic link needed in LMDE 64-bit · Issue #18 · linuxmint/nemo-extensions · GitHub</a>  </p>
+<p>上記トピックを参考にnemoを再起動してみると、確かにシンボリックリンクが存在しないのが原因のようだった。</p>
+<pre><code>$ nemo -q &amp;&amp; nemo
+
+(nemo:6939): Nemo-Python-WARNING **: g_module_open libpython failed: /usr/lib/i386-linux-gnu//libpython2.7.so.1.0: 共有オブジェクトファイルを開けません: そのようなファイルやディレクトリはありません
+ImportError: could not import gobject (error was: &#39;/usr/lib/python2.7/site-packages/gi/_gi.so: undefined symbol: _Py_ZeroStruct&#39;)
+
+(nemo:6939): Nemo-Python-WARNING **: pygobject initialization failed
+</code></pre><p>だが、これを修正するリンクの作成が上手く行かない。<br>共有オブジェクトファイルのパスでスラッシュが２つ重なり<code>//</code>となっている箇所があるのも奇妙。<br>yaourtでのビルド中、”/usr/lib/yaourt/util.sh: 行 197: PKGBUILD: コマンドが見つかりません”と表示されていたのが関係しているのだろうか。  </p>
+<p>ArchWikiによると、右クリックメニューに「比較する」を追加するのは手動でも可能のようだったので、nemo-compareは断念し、手動で導入することにした。 </p>
+<p><a href="http://pagent.github.io/2015/04/03/nemo-compare-action/" target="_blank" rel="external">nemoの右クリックメニューに「比較」を追加</a></p>
 
 	</div>
 
@@ -126,13 +138,13 @@
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2015/04/03/nemo-open-in-terminal/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+    	<li class="prev"><a href="/2015/04/03/nemo-compare-action/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
   		
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2015/04/02/fcitx-qt-program/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2015/04/03/nemo-open-in-terminal/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>

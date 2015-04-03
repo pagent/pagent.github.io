@@ -112,6 +112,63 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/12/02/hexo-tweetbutton/" >Hexoの記事一覧ページにツイートボタン設置</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年12月2日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>HexoのテーマをFreewill変えて、Disqusウィジェット内の「Share」にはTwitterのツイートボタンはあるが、それだと<code>http://disq.us/…</code>というDisqus経由の短縮URLになる様子。<br>普通のツイートボタンを設置したかったので、<a href="https://about.twitter.com/ja/resources/buttons" target="_blank" rel="external">Twitter公式のツイートボタン</a>を入れることにした。  </p>
+<p>個別の記事への設置は、Twitterサイトで「ページのURLを使う」の設定で作成したコードを/layout/_partial/article.ejsの<code>&lt;%- item.content %&gt;</code>の下あたりに追記したら問題なく表示された。 　</p>
+<p>だがページネーションの方はlayout/_partial/post/entry.ejsにコードを挿入しても、タイトル名と一覧ページのURLしか取得出来ない。  </p>
+<p>URLとツイート本文を自分でカスタマイズする設定でコードを作成し、excerptリンクに倣って、それぞれ<code>&lt;%- config.root %&gt;&lt;%= item.path %&gt;</code>、<code>&lt;%= item.title %&gt;</code>で挿入したが、これだと記事タイトルのみでURLが表示されない。<br><code>&lt;%- config.root %&gt;</code>でブログトップのURLを取得出来ないようだ。<br>「Read More」（続きを読む）の部分では、ちゃんと変換されているんだが。  </p>
+<p><del>ブログトップのURLをパスではなく直接記載したら上手くいった。</del>  </p>
+<p>ーーーー<br>（<strong>追記</strong>）<br>個別記事URLへのパスは<code>&lt;%- item.permalink %&gt;</code>一つで良いようだ。<br>ーーーー  </p>
+<p>記事を概要表示にしている時は「Read More」。全文表示にしている時はツイートボタンを表示することにして、read_moreの箇所を下記に変更した。  </p>
+<pre><code>&lt;% if (item.excerpt &amp;&amp; index) { %&gt;
+  &lt;a type=&quot;button&quot; href=&quot;&lt;%- config.root %&gt;&lt;%- item.path %&gt;#more&quot; class=&quot;btn btn-default more&quot;&gt;&lt;%= __(&#39;read_more&#39;) %&gt;&lt;/a&gt;
+&lt;% } else { %&gt;
+&lt;div class=&quot;tweet-button&quot;&gt;
+  &lt;a href=&quot;https://twitter.com/share&quot; class=&quot;twitter-share-button&quot; data-url=&quot;&lt;%- item.permalink %&gt;&quot; data-text=&quot;&lt;%= item.title %&gt; | &lt;%= config.title %&gt;&quot; data-lang=&quot;ja&quot;&gt;ツイート&lt;/a&gt;
+&lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?&#39;http&#39;:&#39;https&#39;;if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+&#39;://platform.twitter.com/widgets.js&#39;;fjs.parentNode.insertBefore(js,fjs);}}(document, &#39;script&#39;, &#39;twitter-wjs&#39;);&lt;/script&gt;
+&lt;/div&gt;
+&lt;% } %&gt;
+</code></pre><p>ツイートボタンに対しては、source/css/style.cssに下記を追記、  </p>
+<pre><code>.tweet-button {
+  padding: 8px 0;
+}
+</code></pre><p>位置を調整した。  </p>
+<p>（参照記事）<br><a href="http://imaizu.me/program/twbtn-on-jekyll-post.html" target="_blank" rel="external">jekyllのブログで投稿一覧ページにtwitterのボタンを置く - Taught by Myself</a></p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/02/hexo-tweetbutton/" data-text="Hexoの記事一覧ページにツイートボタン設置 | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/12/01/git-add-directory/" >Gitリポジトリにディレクトリを追加</a>
 		</h3>
 	
@@ -616,109 +673,6 @@ metalsmith(__dirname)
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/26/hexo-bitbucket/" >HexoのソースをBitbucketに置く</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月26日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Hexoの作業フォルダはWindows領域のDropboxフォルダに置き、他のPCとも同期をとっている。<br>これでソースを消失してしまう危険はかなり低いと思うが、Dropboxと同期する際、結構時間がかかってしまう。<br>普段はDropboxを起動しておらず時々立ち上げる、という形をとっているせいもあるかもしれない。  </p>
-<p>Bitbucketにソースを置いたらpushするのはそれほど時間は掛からないだろうし、過去の履歴も残ってくれてやはり便利だろうと思い、HexoのソースをBitbucketに置くことにした。  </p>
-<p>OctopressのソースをBitbucketに置いた時と同様、Bitbucketにhexoという名前のリポジトリを作り、  </p>
-<pre><code>$ git remote add bitbucket git@bitbucket.org:ユーザー名/hexo.git
-$ git push -u bitbucket source
-</code></pre><p>とやったが、エラーになる。  </p>
-<p>新規リポジトリを作成後に表示されたRepository setupの指示に倣い、  </p>
-<pre><code>$ git init
-$ git remote add bitbucket git@bitbucket.org:ユーザー名/hexo.git
-$ echo &quot;ユーザー名&quot; &gt;&gt; contributors.txt
-$ git add contributors.txt
-$ git commit -m &#39;Initial commit with contributors&#39;
-$ git push -u bitbucket source
-</code></pre><p>としても、やはり  </p>
-<pre><code>error: src refspec source does not match any.
-error: failed to push some refs to &#39;git@bitbucket.org:ユーザー名/hexo.git&#39;
-</code></pre><p>とエラーになる。  </p>
-<p>pushするbranchをsourceではなく、masterにしてみた。  </p>
-<pre><code>$ git push -u bitbucket master
-Counting objects: 3, done.
-Writing objects: 100% (3/3), 239 bytes | 0 bytes/s, done.
-Total 3 (delta 0), reused 0 (delta 0)
-To git@bitbucket.org:ユーザー名/hexo.git
- * [new branch]      master -&gt; master
-Branch master set up to track remote branch master from bitbucket.
-</code></pre><p>上手く行ったようだ。  </p>
-<p>だが、その後も  </p>
-<pre><code>$ git add .
-warning: You ran &#39;git add&#39; with neither &#39;-A (--all)&#39; or &#39;--ignore-removal&#39;,
-whose behaviour will change in Git 2.0 with respect to paths you removed.
-Paths like &#39;contributors.txt&#39; that are
-removed from your working tree are ignored with this version of Git.
-
-* &#39;git add --ignore-removal &lt;pathspec&gt;&#39;, which is the current default,
-  ignores paths you removed from your working tree.
-
-* &#39;git add --all &lt;pathspec&gt;&#39; will let you also record the removals.
-
-Run &#39;git status&#39; to check the paths you removed from your working tree.
-</code></pre><p>と言われたり、  </p>
-<pre><code>$ git push
-warning: push.default is unset; its implicit value is changing in
-Git 2.0 from &#39;matching&#39; to &#39;simple&#39;. To squelch this message
-and maintain the current behavior after the default changes, use:
-
-  git config --global push.default matching
-
-To squelch this message and adopt the new behavior now, use:
-
-  git config --global push.default simple
-
-When push.default is set to &#39;matching&#39;, git will push local branches
-to the remote branches that already exist with the same name.
-
-In Git 2.0, Git will default to the more conservative &#39;simple&#39;
-behavior, which only pushes the current branch to the corresponding
-remote branch that &#39;git pull&#39; uses to update the current branch.
-
-See &#39;git help config&#39; and search for &#39;push.default&#39; for further information.
-(the &#39;simple&#39; mode was introduced in Git 1.7.11. Use the similar mode
-&#39;current&#39; instead of &#39;simple&#39; if you sometimes use older versions of Git)
-</code></pre><p>と言われたり。  </p>
-<p><code>git add .</code>は使われなくなったので<code>git add -A</code>にしないといけないということか？<br><code>git add .</code>でもすんなり通る時もあるのは、状況の違いからだろうか。<br>（追記：そう言えば、Initial commitの時に作成されたcontributors.txtという中身が自分のユーザー名だけのファイルを、リポジトリとHexoの作業フォルダ両方から手動で削除したんだった。<br>これのせいだったのかもしれない。）</p>
-<p>push.defaultもmatchingにした。  </p>
-<pre><code>  $ git config --global push.default matching
-</code></pre><p>これでようやくpush出来るようになった。  </p>
-<p>gitの仕組みがいまいちよく分からない。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/26/hexo-bitbucket/" data-text="HexoのソースをBitbucketに置く | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -760,11 +714,15 @@ See &#39;git help config&#39; and search for &#39;push.default&#39; for further 
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2015/04/03/nemo-open-in-terminal/" ><i class="fa fa-file-o"></i>nemoの「端末で開く」が機能しない</a>
+        <a href="/2015/04/03/nemo-compare-action/" ><i class="fa fa-file-o"></i>nemoの右クリックメニューに「比較」を追加</a>
       </li>
     
       <li>
         <a href="/2015/04/03/nemo-compare-failed/" ><i class="fa fa-file-o"></i>nemo-compareが動かない</a>
+      </li>
+    
+      <li>
+        <a href="/2015/04/03/nemo-open-in-terminal/" ><i class="fa fa-file-o"></i>nemoの「端末で開く」が機能しない</a>
       </li>
     
       <li>
@@ -773,10 +731,6 @@ See &#39;git help config&#39; and search for &#39;push.default&#39; for further 
     
       <li>
         <a href="/2015/04/01/xfce4-appearance-settings-crash/" ><i class="fa fa-file-o"></i>Xfce4設定の外観~フォントをFixedにしたらクラ...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/04/01/infinality/" ><i class="fa fa-file-o"></i>Arch LinuxのフォントレンダリングをInfin...</a>
       </li>
     
   </ul>
@@ -794,33 +748,33 @@ See &#39;git help config&#39; and search for &#39;push.default&#39; for further 
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
 		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>50</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
 		
@@ -834,7 +788,7 @@ See &#39;git help config&#39; and search for &#39;push.default&#39; for further 
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

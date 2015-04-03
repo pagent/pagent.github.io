@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-04-03T08:01:13.791Z</updated>
+  <updated>2015-04-03T09:14:20.917Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,94 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[nemoの右クリックメニューに「比較」を追加]]></title>
+    <link href="http://pagent.github.io/2015/04/03/nemo-compare-action/"/>
+    <id>http://pagent.github.io/2015/04/03/nemo-compare-action/</id>
+    <published>2015-04-03T08:31:01.000Z</published>
+    <updated>2015-04-03T09:08:45.714Z</updated>
+    <content type="html"><![CDATA[<p>nemoの拡張機能nemo-compareのインストールが上手く行かなかったので、手動で導入した。  </p>
+<p>（参考記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>  </p>
+<p>まず、meld、python2-dbus、dbus-glib（導入済みだった）をインストール。  </p>
+<pre><code>$ sudo pacman -S meld python2-dbus
+</code></pre><p>~/.local/share/nemo/actions下にcompare-save-for-later.nemo_action、compare-with-saved.nemo_action、compare.shの３つのファイルを作成。  </p>
+<pre><code>compare-save-for-later.nemo_action
+---------------------------------------
+[Nemo Action]
+Active=true
+Name=Compare later
+Name[ja]=あとで比較する
+Comment=Save file for comparison later.
+Exec=&lt;compare.sh save %F&gt;
+Icon-Name=meld
+Selection=S
+Extensions=any
+</code></pre><p></p><p></p><p></p>
+<pre><code>compare-with-saved.nemo_action
+---------------------------------------
+[Nemo Action]
+Active=true
+Name=Compare with saved element
+Name[ja]=比較する
+Comment=Compare %F saved file or directory.
+Exec=&lt;compare.sh compare %F&gt;
+Icon-Name=meld
+Selection=S
+Extensions=any
+</code></pre><p></p><p></p><p></p>
+<pre><code>compare.sh
+---------------------------------------
+#!/bin/bash
+savedfile=/var/tmp/compare-save-for-later.$USER
+comparator=meld
+if [ &quot;$1&quot; == &quot;save&quot; ]; then
+    echo &quot;$2&quot; &gt; &quot;$savedfile&quot;
+else
+    &quot;$comparator&quot; $(cat &quot;$savedfile&quot;) &quot;$2&quot;
+fi
+</code></pre><p>compare.shはファイルマネージャーもしくはコマンドで実行可能にしておく。  </p>
+<pre><code>$ chmod +x compare.sh
+</code></pre><p>nemoの右クリックメニューに「比較する」「あとで比較する」が追加された。  </p>
+<p>ファイル内容だけではなくフォルダの内容も比較出来るので、なにかと重宝しそう。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>nemoの拡張機能nemo-compareのインストールが上手く行かなかったので、手動で導入した。  </p>
+<p>（参考記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank"]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[nemo-compareが動かない]]></title>
+    <link href="http://pagent.github.io/2015/04/03/nemo-compare-failed/"/>
+    <id>http://pagent.github.io/2015/04/03/nemo-compare-failed/</id>
+    <published>2015-04-03T08:23:51.000Z</published>
+    <updated>2015-04-03T09:12:27.324Z</updated>
+    <content type="html"><![CDATA[<p>nemoの右クリックで２つのファイル（フォルダ）の内容を比較出来るnemo-compareをインストールした。<br>yaourtでインストール出来たが、右クリックのメニューに「compare」が出てこない。<br>検索すると同様の事例が見つかった。  </p>
+<p><a href="https://github.com/linuxmint/nemo-extensions/issues/24" target="_blank" rel="external">nemo-compare not in the right-click context menu · Issue #24 · linuxmint/nemo-extensions · GitHub</a>  </p>
+<p><a href="https://github.com/linuxmint/nemo-extensions/issues/18#issuecomment-21617918" target="_blank" rel="external">Symbolic link needed in LMDE 64-bit · Issue #18 · linuxmint/nemo-extensions · GitHub</a>  </p>
+<p>上記トピックを参考にnemoを再起動してみると、確かにシンボリックリンクが存在しないのが原因のようだった。</p>
+<pre><code>$ nemo -q &amp;&amp; nemo
+
+(nemo:6939): Nemo-Python-WARNING **: g_module_open libpython failed: /usr/lib/i386-linux-gnu//libpython2.7.so.1.0: 共有オブジェクトファイルを開けません: そのようなファイルやディレクトリはありません
+ImportError: could not import gobject (error was: &#39;/usr/lib/python2.7/site-packages/gi/_gi.so: undefined symbol: _Py_ZeroStruct&#39;)
+
+(nemo:6939): Nemo-Python-WARNING **: pygobject initialization failed
+</code></pre><p>だが、これを修正するリンクの作成が上手く行かない。<br>共有オブジェクトファイルのパスでスラッシュが２つ重なり<code>//</code>となっている箇所があるのも奇妙。<br>yaourtでのビルド中、”/usr/lib/yaourt/util.sh: 行 197: PKGBUILD: コマンドが見つかりません”と表示されていたのが関係しているのだろうか。  </p>
+<p>ArchWikiによると、右クリックメニューに「比較する」を追加するのは手動でも可能のようだったので、nemo-compareは断念し、手動で導入することにした。 </p>
+<p><a href="http://pagent.github.io/2015/04/03/nemo-compare-action/" target="_blank" rel="external">nemoの右クリックメニューに「比較」を追加</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>nemoの右クリックで２つのファイル（フォルダ）の内容を比較出来るnemo-compareをインストールした。<br>yaourtでインストール出来たが、右クリックのメニューに「compare」が出てこない。<br>検索すると同様の事例が見つかった。  </p>
+<p><a]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[nemoの「端末で開く」が機能しない]]></title>
@@ -29,23 +117,6 @@
     <summary type="html">
     <![CDATA[<p>Arch Linuxにインストールしたnemoで右クリックメニューの「端末で開く」が機能しなかった。  </p>
 <p><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="ext]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[nemo-compareが動かない]]></title>
-    <link href="http://pagent.github.io/2015/04/03/nemo-compare-failed/"/>
-    <id>http://pagent.github.io/2015/04/03/nemo-compare-failed/</id>
-    <published>2015-04-03T07:33:51.000Z</published>
-    <updated>2015-04-03T07:51:09.468Z</updated>
-    <content type="html"><![CDATA[<p>nemo-compare</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>nemo-compare</p>
-]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
@@ -474,59 +545,6 @@ Server = http://repo.archlinux.fr/$arch
     <summary type="html">
     <![CDATA[<p>Clonezillaでバックアップしたパーティションのイメージを、元とは違う別のパーティションにリストアした。<br>（下記はsda1からバックアップしたArch Linuxをsda6にリストアした例）  </p>
 <p>・バックアップしたイメージフォルダ内のpartsファ]]>
-    </summary>
-    
-      <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[isoファイルを置くだけでUSBマルチブート可能な「Easy2Boot」]]></title>
-    <link href="http://pagent.github.io/2015/03/02/easy2boot/"/>
-    <id>http://pagent.github.io/2015/03/02/easy2boot/</id>
-    <published>2015-03-02T02:31:03.000Z</published>
-    <updated>2015-03-03T10:41:19.000Z</updated>
-    <content type="html"><![CDATA[<p>isoファイルからブータブルUSBメモリを作成出来るツールは多々あるが、「Easy2Boot」は作成した領域にisoファイルをコピーペーストするだけで、マルチブート可能になるようだ。  </p>
-<p>公式サイト（英語）以外には解説が見当たらず、その公式サイトも「Easy2Boot」のダウンロードやインストール方法など、どこに記載があるのか分かりづらかった。<br>だが使ってみると、配置したisoファイルは自動的にブートメニューに追加されるし、とても便利だった。  </p>
-<h3 id="Linux環境でのインストール">Linux環境でのインストール</h3>
-<p>まず、<a href="http://www.easy2boot.com/download/" target="_blank" rel="external">Downloads</a>からEasy2Boot_v1.62.zipをダウンロードし、解凍。  </p>
-<p>Linux環境で作業したので、<a href="http://www.rmprepusb.com/tutorials/114" target="_blank" rel="external">114 - How to make an Easy2Boot (grub4dos) USB Flash drive using linux - RMPrepUSB</a>を参照したが、解凍して出て来たフォルダ内にも同様の解説があった。<br>_ISO/docs/linux_utils/ReadMe_fmt.sh.txt  </p>
-<p>（Windows用の解説は_ISO/docs/Make_E2B_USB_Drive/ReadMe.txt）  </p>
-<p>linux_utilsフォルダ内で端末を開き、  </p>
-<pre><code>sudo chmod 777 *
-</code></pre><p>フォルダ内のすべてのファイルのパーティションを777に変更し、その後  </p>
-<pre><code>sudo ./fmt.sh
-</code></pre><p>インストール先を聞かれるので、OKなら「y」。<br>違う場合は「n」の後、自分で指定。<br>（外付けHDDにもインストール可能で、さらに2番目以降のパーティションにもインストール可。）  </p>
-<p>フォーマットして良いか聞かれるので、良ければ「y」。  </p>
-<p>指定したパーティションに「Easy2Boot」がコピーされ、ブートローダーもインストールされた。  </p>
-<h3 id="起動とデフラグ">起動とデフラグ</h3>
-<p>使い方は簡単で、_ISO内の空いてるフォルダ（LINUXやWINなど）にisoファイルを追加するだけ。  </p>
-<p>今回は_ISO/LINUX内にLxPup-15.02.1-s-nopae.iso、_ISO/BACKUP内にclonezilla-live-2.1.2-43-i686-pae.isoを配置した。  </p>
-<p>ブートすると、LxPupは起動出来たが、clonezillaは「ファイルがcontiguous（隣接）じゃない」と言われ、上手く起動出来なかった。<br>どうやら断片化しているからデフラグが必要ということらしい。  </p>
-<p>isoファイルから直接ブートする際には、ちょっとした断片化でも起動出来ないようで、「Easy2Boot」ではいろいろ対策が用意されている。  </p>
-<p>defragfs.pl（_ISO/docs/linux_utils内）やWINCONTIG（_ISO/docs/内）の他、特にLinuxユーザーの為に_ISO内にCONTIG.ISOというファイルが同梱されている。  </p>
-<p>CONTIG.ISOは、isoファイルに断片化があった際に自動的にデフラグ操作を行うためのものらしい。<br>サイズが500MBに設定されていて、Easy2Bootインストール直後の状態でのほとんど全ての容量にあたる。<br>clonezillaが上手く起動出来なかったのもフリーズしていた訳ではなく、CONTIG.ISOがデフラグ操作を行っていたのかもしれない。<br>ただかなり時間が掛かるようだし、サイズが500MB以上のisoファイルをデフラグするためには、CONTIG.ISOもそれ以上のサイズにリサイズしておく必要があるようだ。  </p>
-<p>defragfs.plはなぜか機能しなかったが、Windows用のWinContigでデフラグしたらclonezillaも起動出来るようになった。  </p>
-<p>WinContigはWindows 7を起動して使用したが、Windows PE（Windows プレインストール環境）やHiren’s BootCDの「Mini Windows Xp」など、Windows環境を提供するisoファイルをEasy2Bootに入れておけば、Easy2BootによるブートでWinContigを利用出来る。<br>この場合はCONTIG.ISOは必要ないので、削除してしまっても良いようだ。  </p>
-<h3 id="フォーマットをNTSFにする">フォーマットをNTSFにする</h3>
-<p>4GBを超えるファイルを利用するためには、Easy2Boot領域をFat32ではなく、NTSFもしくはext3、ext4にしておく必要があるが、なるべくなら4GB以上のファイルも扱いたい。  </p>
-<p>Easy2Bootインストール時に領域がFat32にフォーマットされてしまうが、_ISO/docs/linux_utils内のfmt.shファイルの131行目の  </p>
-<pre><code>/sbin/mkfs.vfat -F32 -n &quot;$label&quot; $device
-</code></pre><p>を</p>
-<pre><code>/sbin/mkfs.ntfs -n &quot;$label&quot; $device
-</code></pre><p>に変更することでNTSFにすることが出来た。  </p>
-<p>後からファイルを保持したままFat32をNTSFに変換することも可能のようなので、それでも良いかもしれない。  </p>
-<h3 id="よく分からないトラブル">よく分からないトラブル</h3>
-<p>外付けHDDではこれで上手く行ったが、USBメモリではEasy2Bootを起動しようとしたら、パーティションの「パーティションのlast sectorをチェックしている」というような表示のまま止まってしまった。  </p>
-<p>USBメモリを一旦抜き、再度挿入してconstinue。<br>ブートメニュー画面で”Install Grub4dos…”を選択したら、その後は起動出来るようになった。  </p>
-<p>理由はよく分からないままだが、使用したUSBメモリの特性やインストール方法などにもよるのかもしれない。  </p>
-<h3 id="感想">感想</h3>
-<p>以上、少しややこしかったが、配置するだけで（正確にはデフラグの必要があったりするが）isoファイルを起動出来る「Easy2Boot」はなかなか便利だ。<br>Linuxディストリビューションを試してみたい時にもDVD-RWなどに焼く必要が無くなる。<br>導入がもう少し簡単だったらとは思うが、isoファイルを直接起動するためには仕方が無いのだろう。  </p>
-<p>ーー<br>（追記）<br>Windowsの場合はRMPrepUSBを使って、もっと簡単にEasy2Bootをインストール出来るようだ。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>isoファイルからブータブルUSBメモリを作成出来るツールは多々あるが、「Easy2Boot」は作成した領域にisoファイルをコピーペーストするだけで、マルチブート可能になるようだ。  </p>
-<p>公式サイト（英語）以外には解説が見当たらず、その公式サイトも「Easy2]]>
     </summary>
     
       <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>

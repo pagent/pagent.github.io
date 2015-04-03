@@ -112,6 +112,45 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/02/11/kde-plasma-netbook/" >Kubuntuのネットブック向けデスクトップ「Plasma Netbook」を通常のデスクトップに</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月11日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Kubuntuのネットブック向けデスクトップは「Plasma Netbook」というそうで、ディスプレイの小さいネットブックで使う分には、これはこれで便利そうなのだが、FirefoxやQupzillaなどのアプリケーションでメニューバーを表示出来ないという不便さがある。<br>特にQupzillaでは設定画面に行けず、Qupzillaの設定を変更出来ない。</p>
+<p>「KDEシステム設定」→「ワークスペースの挙動」→「Workspace」でWorkspace typeをNetbookからDesktopにしたら、通常のデスクトップに変更出来た。  </p>
+<p>ーー<br>ネットブックでKubuntuは厳しいのではないかと思ったが、ログインしてからの動作は許容範囲内。<br>Xubuntuと較べると、もっさり感はぬぐえないが。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/11/kde-plasma-netbook/" data-text="Kubuntuのネットブック向けデスクトップ「Plasma Netbook」を通常のデスクトップに | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/02/11/kubuntu-blanck-screen/" >Kubuntu14.04で画面が真っ暗</a>
 		</h3>
 	
@@ -582,53 +621,6 @@ find -type l
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/02/03/dolphin-directory-files/" >Dolphinが.directoryファイルを生成するのを止める</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年2月3日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>ファイルマネージャーDolphinを使っていて、あちこちのディレクトリに.directoryというファイルがあることに気付いた。  </p>
-<p>内容は以下のようなもの。  </p>
-<blockquote>
-<p>[Dolphin]<br>Timestamp=2015,2,2,22,45,9<br>Version=3<br>ViewMode=2</p>
-<p>[Settings]<br>HiddenFilesShown=true</p>
-</blockquote>
-<p>Dolphinでアイコン表示、詳細表示などの表示モードやソート基準を変更をしたり、隠しファイルを表示したりすると、この.directoryファイルが自動生成されるようだ。<br>（/etc等、所有者がrootのディレクトリには作成されない。）  </p>
-<p>多くのファイルマネージャーでは隠しファイルの表示・非表示をディレクトリ毎に設定出来ないが、Dolphinでは.directoryファイルのおかげでディレクトリ毎に設定可能になっている。  </p>
-<p>便利と言えば便利なのだが、静的サイトジェネレーターHexoの作業フォルダ内にこの.directoryファイルを作られるのはまずい気がする。<br>deployやgitコマンドの際に不具合が出るかもしれない。  </p>
-<p>Dolphinの設定→全般→動作タブで、「フォルダごとにビューのプロパティを保存する」から「すべてのフォルダに共通のプロバティを使う」に変更したら、.directoryファイルは生成されなくなった。<br><a href="https://forum.kde.org/viewtopic.php?f=223&amp;t=119876" target="_blank" rel="external">.directory files • KDE Community Forums</a>  </p>
-<p>だが、表示モードやソート基準も全フォルダで共通になってしまった。<br>使い勝手が悪く、これならnemoの方が便利だ。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/03/dolphin-directory-files/" data-text="Dolphinが.directoryファイルを生成するのを止める | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -670,11 +662,15 @@ find -type l
   <ul class="entry list-unstyled">
     
       <li>
-        <a href="/2015/04/03/nemo-open-in-terminal/" ><i class="fa fa-file-o"></i>nemoの「端末で開く」が機能しない</a>
+        <a href="/2015/04/03/nemo-compare-action/" ><i class="fa fa-file-o"></i>nemoの右クリックメニューに「比較」を追加</a>
       </li>
     
       <li>
         <a href="/2015/04/03/nemo-compare-failed/" ><i class="fa fa-file-o"></i>nemo-compareが動かない</a>
+      </li>
+    
+      <li>
+        <a href="/2015/04/03/nemo-open-in-terminal/" ><i class="fa fa-file-o"></i>nemoの「端末で開く」が機能しない</a>
       </li>
     
       <li>
@@ -683,10 +679,6 @@ find -type l
     
       <li>
         <a href="/2015/04/01/xfce4-appearance-settings-crash/" ><i class="fa fa-file-o"></i>Xfce4設定の外観~フォントをFixedにしたらクラ...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/04/01/infinality/" ><i class="fa fa-file-o"></i>Arch LinuxのフォントレンダリングをInfin...</a>
       </li>
     
   </ul>
@@ -704,35 +696,35 @@ find -type l
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
 			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>50</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
 		
 		</ul>
@@ -744,7 +736,7 @@ find -type l
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
