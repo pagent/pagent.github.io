@@ -116,9 +116,9 @@
 <p>$ sudo rm /usr/share/mime/packages/kde.xml<br>$ sudo update-mime-database /usr/share/mime</p>
 </blockquote>
 <p>とすれば良いようだ。<br>だが、なんのためのファイルか知らないが、いきなりkde.xmlを削除するのも気が引けるので、  </p>
-<pre><code>$ sudo mv /usr/share/mime/packages/kde.xml /usr/share/mime/packages/kde.xml.bak
+<pre><code>$ sudo mv <span class="regexp">/usr/</span>share<span class="regexp">/mime/</span>packages<span class="regexp">/kde.xml /</span>usr<span class="regexp">/share/mim</span>e<span class="regexp">/packages/</span>kde.xml.bak
 </code></pre><p>とリネームしてから</p>
-<pre><code>$ sudo update-mime-database /usr/share/mime
+<pre><code>$ sudo <span class="operator"><span class="keyword">update</span>-mime-<span class="keyword">database</span> /usr/<span class="keyword">share</span>/mime</span>
 </code></pre><p>としてみた。  </p>
 <p>今のところ「Unknown media type in type …」は出てないし、特に不具合も無いようだ。</p>
 

@@ -131,9 +131,9 @@
 <p>“Scanning  for changes”→”Processing .. items”→”Downloading File List”ときて、その後また”Scanning  for changes”→”Processing .. items”と延々処理が続き、いつまで経っても同期が終わらない。<br>さらに起動しても”Logging In”のまま固まってしまうようになった。  </p>
 <p>まともに機能しない状態なので、非公式レポジトリのクライアントはアンインストールし、<a href="https://www.copy.com/install/" target="_blank" rel="external">Copy.comのダウンロードページ</a>から落としたクライアントをインストールし直した。<br>インストールといっても、ダウンロードした圧縮ファイルを展開し、任意のディレクトリに配置しただけだが。  </p>
 <p>追加アプリケーションを配置するためのディレクトリ/optに配置した。  </p>
-<pre><code>cd ~/Desktop
-tar zxvf copy_agent-1.48.0456.tgz
-sudo cp -r copy/x86_64 /opt/copy
+<pre><code><span class="keyword">cd</span> ~/Desktop
+tar zxvf copy_agent-<span class="number">1.48</span>.<span class="number">0456</span>.tgz
+sudo <span class="keyword">cp</span> -<span class="keyword">r</span> <span class="built_in">copy</span>/x86_64 /<span class="keyword">opt</span>/<span class="built_in">copy</span>
 </code></pre><p>コマンドなど使わずファイルマネージャーで「ここに展開」し、/optを「Rootとして開く」してからコピペでも問題無い。  </p>
 <p>端末から<code>/opt/copy/CopyAgent</code>で起動。<br>一応ちゃんと動いてくれているようだ。<br><code>/opt/copy/CopyConsole</code>なら端末で動作する。  </p>
 <p>簡便のためコマンド<code>/opt/copy/CopyAgent</code>をメニューに追加した。</p>
@@ -216,9 +216,9 @@ sudo cp -r copy/x86_64 /opt/copy
 	  <p>Xubuntu14.04にDropboxに似たオンラインストレージ「Copy」のクライアントを導入した。<br>クライアントはcopy.comからダウンロードしたものではなく、下記サイトを参考にUbuntu向けのものをインストールした。<br><a href="http://kometchtech.blog.fc2.com/blog-entry-1542.html" target="_blank" rel="external">いつか、そのとき、あの場所で。 | [Ubuntu][自分用メモ]　Copy.com クライアントのインストール方法。</a>  </p>
 <p>インストール後、メニュー→アクセサリ→Copyで起動し、64bitのPCでは問題なく使用出来た。<br>だが32bitのPCではログインする際、「curl failed to post data」とエラーになり、終了してしまう。  </p>
 <p>端末から  </p>
-<pre><code>$ /opt/copy-client/CopyAgent
+<pre><code>$ /<span class="keyword">opt</span>/<span class="built_in">copy</span>-client/CopyAgent
 </code></pre><p>とコマンド入力して起動させても、  </p>
-<pre><code>QGtkStyle was unable to detect the current GTK+ theme.
+<pre><code>QGtkStyle was unable <span class="built_in">to</span> detect <span class="operator">the</span> current GTK+ theme.
 </code></pre><p>というエラー表示が出て、やはりログイン出来ない。  </p>
 <p>QGtkStyleとかGTK+とか、なんのことかよく分からなかったが、どうやら<code>libgnomeui</code>をインストールする必要があるらしい。<br><a href="https://wiki.archlinux.org/index.php/Uniform_Look_for_Qt_and_GTK_Applications_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29#Qt_.E3.82.A2.E3.83.97.E3.83.AA.E3.82.B1.E3.83.BC.E3.82.B7.E3.83.A7.E3.83.B3.E3.81.8C_QGtkStyle_.E3.82.92.E4.BD.BF.E3.82.8F.E3.81.AA.E3.81.84" target="_blank" rel="external">Uniform Look for Qt and GTK Applications (日本語) - ArchWiki</a>  </p>
 <p>さらに検索してみると、Ubuntuでは以前からCopy.com クライアント利用にあたっての不具合が報告されているようだ。<br><a href="http://ubuntuforums.org/showthread.php?t=2217713&amp;page=2&amp;p=12993324#post12993324" target="_blank" rel="external">Copy.com indicator problem with Ubuntu 14.04 - Page 2</a>  </p>
@@ -384,35 +384,35 @@ sudo cp -r copy/x86_64 /opt/copy
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
 			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
 			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 		
 		</ul>

@@ -113,11 +113,11 @@
 	    <p>いつの間にかHexoを使って書いているブログで、Googleを利用したサイト内検索が出来なくなっていた。<br>検索してもブログ全体のインデックス状況（<code>site:pagent.github.io</code>を検索した結果）が表示されるだけ。  </p>
 <p>OctopressのブログではただのGoogle検索になってしまっている。<br>Googleでなんらかの変更があったのだろうか。  </p>
 <p>検索ボックスのレイアウト  </p>
-<pre><code>&lt;input type=&quot;search&quot; name=&quot;q&quot; results=&quot;0&quot; placeholder=&quot;&lt;%= __(&#39;search&#39;) %&gt;&quot; class=&quot;form-control&quot;&gt;
-&lt;input type=&quot;hidden&quot; name=&quot;q&quot; value=&quot;site:&lt;%- config.url.replace(/^https?:\/\//, &#39;&#39;) %&gt;&quot;&gt;
+<pre><code>&lt;input <span class="variable">type=</span><span class="string">"search"</span> <span class="variable">name=</span><span class="string">"q"</span> <span class="variable">results=</span><span class="string">"0"</span> <span class="variable">placeholder=</span><span class="string">"&lt;%= __('search') %&gt;"</span> <span class="variable">class=</span><span class="string">"form-control"</span>&gt;
+&lt;input <span class="variable">type=</span><span class="string">"hidden"</span> <span class="variable">name=</span><span class="string">"q"</span> <span class="variable">value=</span><span class="string">"site:&lt;%- config.url.replace(/^https?:\/\//, '') %&gt;"</span>&gt;
 </code></pre><p>の<code>value=</code>でサイトURLを指定している方（下の方）の<code>name=&quot;q&quot;</code>を<code>name=&quot;hq&quot;</code>に修正し、  </p>
-<pre><code>&lt;input type=&quot;search&quot; name=&quot;q&quot; results=&quot;0&quot; placeholder=&quot;&lt;%= __(&#39;search&#39;) %&gt;&quot; class=&quot;form-control&quot;&gt;
-&lt;input type=&quot;hidden&quot; name=&quot;hq&quot; value=&quot;site:&lt;%- config.url.replace(/^https?:\/\//, &#39;&#39;) %&gt;&quot;&gt;
+<pre><code>&lt;input <span class="variable">type=</span><span class="string">"search"</span> <span class="variable">name=</span><span class="string">"q"</span> <span class="variable">results=</span><span class="string">"0"</span> <span class="variable">placeholder=</span><span class="string">"&lt;%= __('search') %&gt;"</span> <span class="variable">class=</span><span class="string">"form-control"</span>&gt;
+&lt;input <span class="variable">type=</span><span class="string">"hidden"</span> <span class="variable">name=</span><span class="string">"hq"</span> <span class="variable">value=</span><span class="string">"site:&lt;%- config.url.replace(/^https?:\/\//, '') %&gt;"</span>&gt;
 </code></pre><p>にしたら、一応サイト内検索が出来るようになった。<br>Octopressの方でも同様だった。<br>その内サイトジェネレーターやそのテーマの方でも修正されるのだろう。</p>
 
 	</div>

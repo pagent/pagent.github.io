@@ -115,7 +115,7 @@
 <p>/etc/modprobe.d内にath9k.confというファイルを作りそこに<code>options ath9k nohwcrypt=1</code>と記載したり、ath9kをロードし直したりしてみたが改善しない。<br>NdisWrapperでWindows Xp用のドライバーを使えば良いかと思いやってみたが、これも満足に動作しない。  </p>
 <p>Xubuntu 14.04.1にLinux 3.2や3.8カーネルをコンパイルしてインストールすれば良いのかもしれないが、自分の力量を超えているので断念。<br>（カーネルのコンパイルをしなくても、Ubuntu 12.04 Preciseのリポジトリを追加してLinux 3.2カーネルをインストールすれば良かったのかもしれない。<a href="/2014/11/18/debian-wheezy-nemo/">Debian WheezyにNemoをインストール</a>）  </p>
 <p>結局Xubuntu 12.04をインストールしそれを14.04.1にアップグレード、起動カーネルをLinux 3.2にすることで無線LANも安定した。  </p>
-<pre><code>GRUB_DEFAULT=&quot;Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.2.0-58-generic&quot;
+<pre><code><span class="constant">GRUB_DEFAULT</span>=<span class="string">"Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.2.0-58-generic"</span>
 </code></pre><p>古いPCでもLinuxは利用出来ると言われるが、Linuxも新しい機器への対応を進める一方、古いPCは切り捨てられていくのだろうか。<br>使い勝手はUbuntu派生ディストリに劣るかもしれないが、今度Debian+Xfceも試してみようと思う。  </p>
 <p>ーー<br>（追記）<br>lshwコマンドで見たところ、Xubuntu 12.04（Linux 3.2カーネル）でもAR9285に使われているドライバーはath9kだった。<br>なぜXubuntu 14.04.1の場合は無線が安定しないのだろう？<br>「disabling IRQ #9」回避のため、起動オプションに「pci=noacpi」を付けていたからだろうか。  </p>
 <p>ーー<br>（再追記）<br>Xubuntuのアップデートで、カーネルが更新される度にgrubが書き換えられてはかなわないので、/etc/default/grubのパーミッションで、所有者rootのアクセス権が「読み書き」だったのを「読み込み専用」にした。<br>変更が必要な時はまたアクセス権を変更しないといけないが、これで意図に反してgrubが書き換えらるのを防ぐことが出来る。</p>

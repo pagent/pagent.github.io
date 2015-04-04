@@ -114,10 +114,10 @@
 <p>Firefoxで「システムフォント」等を検索したが、/etc/fonts/conf.d内のファイルにはそれらしい記述は見当たらず。<br>「外観」のデフォルトフォントはシステムフォントとは別物らしい。  </p>
 <p><a href="https://archlinuxjp.kusakata.com/wiki/GTK%2B" target="_blank" rel="external">GTK+ - ArchWiki</a>を見て、~/.gtkrc-2.0を探したが、そんなファイルは無い。<br>自作してみたが効果なし。  </p>
 <p>ホームディレクトリ内を探しまわって、ようやく~/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xmlに記述を見つけた。  </p>
-<pre><code>  &lt;property name=&quot;Gtk&quot; type=&quot;empty&quot;&gt;
-    ...
-    &lt;property name=&quot;FontName&quot; type=&quot;string&quot; value=&quot;Fixed Medium 10&quot;/&gt;
-    ...
+<pre><code>  &lt;property name=<span class="string">"Gtk"</span> type=<span class="string">"empty"</span>&gt;
+    <span class="keyword">...</span>
+    &lt;property name=<span class="string">"FontName"</span> type=<span class="string">"string"</span> value=<span class="string">"Fixed Medium 10"</span>/&gt;
+    <span class="keyword">...</span>
 </code></pre><p>「Fixed」を「Droid Sans」に変更。<br>再起動すると無事復旧した。  </p>
 <p>デスクトップ上右クリックからアプリケーションを起動出来るXfce4で助かった。</p>
 

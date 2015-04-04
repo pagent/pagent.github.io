@@ -118,12 +118,12 @@
 <p>暗号化ボリュームをアンマウントせずにPCを終了してしまうことはよくあるし、なんとか自動的にアンマウントしたいところ。  </p>
 <p>検索したら、Arch Linuxのwikiに自動アンマウントの方法が紹介されていた。<br><a href="https://wiki.archlinux.org/index.php/TrueCrypt#Safely_unmount_and_unmap_volumes_.28on_shutdown.29" target="_blank" rel="external">TrueCrypt - ArchWiki</a>  </p>
 <p>/etc内にrc.local.shutdownファイルを新規作成。<br>下記内容で保存。  </p>
-<pre><code>if (/usr/bin/truecrypt --text --list)
-then {
-/usr/bin/truecrypt -d
-sleep 3
+<pre><code><span class="keyword">if</span> (/usr/bin/truecrypt --text --list)
+<span class="keyword">then</span> {
+/usr/bin/truecrypt <span class="operator">-d</span>
+sleep <span class="number">3</span>
 }
-fi
+<span class="keyword">fi</span>
 </code></pre><p>PC終了時に自動的に暗号化ボリュームがアンマウントされるようになった。</p>
 
 	</div>

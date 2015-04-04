@@ -112,15 +112,15 @@
 	<div class="mypage">
 	    <p>検索エンジンにインデックスされにくいようなのでrobots.txtを置いてみたが、sitemap.xmlの内容も少し修正してみた。<br>プラグインで導入したsitemap.xmlには個別記事のURLしか記載されていないが、Octopressのサイトマップを見てみるとブログのルートURLやrobots.txt、/archives/も記載されている。  </p>
 <p>node_modules/hexo-generator-sitemap/sitemap.ejsの<code>&lt;urlset&gt;</code>内に下記を追記してみた。  </p>
-<pre><code>  &lt;url&gt;
-    &lt;loc&gt;http://pagent.github.io/&lt;/loc&gt;
-  &lt;/url&gt;
-  &lt;url&gt;
-    &lt;loc&gt;http://pagent.github.io/robots.txt&lt;/loc&gt;
-  &lt;/url&gt;
-  &lt;url&gt;
-    &lt;loc&gt;http://pagent.github.io/archives/&lt;/loc&gt;
-  &lt;/url&gt;
+<pre><code>  <span class="tag">&lt;<span class="title">url</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">loc</span>&gt;</span>http://pagent.github.io/<span class="tag">&lt;/<span class="title">loc</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">url</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">url</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">loc</span>&gt;</span>http://pagent.github.io/robots.txt<span class="tag">&lt;/<span class="title">loc</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">url</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">url</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">loc</span>&gt;</span>http://pagent.github.io/archives/<span class="tag">&lt;/<span class="title">loc</span>&gt;</span>
+  <span class="tag">&lt;/<span class="title">url</span>&gt;</span>
 </code></pre><p>URLを取得するための変数が分からないので、<code>&lt;loc&gt;</code>の箇所は手動で記載。<br><code>&lt;lastmod&gt;</code>は入れたかったが、これもどうやれば良いのか分からないし、省略可能とのことなので省略した。  </p>
 <p>Octopressでは個別記事の<code>&lt;lastmod&gt;</code>は、最終更新日時ではなく投稿日時のよう。つまり後から修正しても変更は無い。<br>一方Hexoのサイトマップでは最終的に変更された日時が記載され、それが上位に来ている。<br>どちらが良いのか分からないが、しばらく様子を見てみようと思う。  </p>
 <p>それから、Octopressのサイトマップでは<code>&lt;priority&gt;</code>や<code>&lt;changefreq&gt;</code>も記載されている。<br>SEO的にはOctopressの方が丁寧に作られているかもしれない。<br>generateが断然早いので、なるべくHexoを使いたいところだが。</p>

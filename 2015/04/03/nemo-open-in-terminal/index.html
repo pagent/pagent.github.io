@@ -112,7 +112,7 @@
 	<div class="mypage">
 	    <p>Arch Linuxにインストールしたnemoで右クリックメニューの「端末で開く」が機能しなかった。  </p>
 <p><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>を参考に、  </p>
-<pre><code>$ gsettings set org.cinnamon.desktop.default-applications.terminal exec xfce4-terminal
+<pre><code>$ gsettings <span class="operator"><span class="keyword">set</span> org.cinnamon.desktop.<span class="keyword">default</span>-applications.terminal <span class="keyword">exec</span> xfce4-terminal</span>
 </code></pre><p>を実行したら機能するようになった。  </p>
 <p>「端末で開く」で起動するターミナルエミュレーターを変更したい時も同様に端末名を指定すれば良いようだ。</p>
 

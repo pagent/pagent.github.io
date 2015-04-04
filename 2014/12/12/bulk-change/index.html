@@ -112,18 +112,18 @@
 	<div class="mypage">
 	    <p>repositoryは「リポジトリ」と表記するのが順当のよう。<br>「レポジトリ」としていた表記を「リポジトリ」に改めるため、ブログ投稿内で「レポジトリ」を用いているものを調べてみた。  </p>
 <p>source/_postsで端末を開き、下記コマンドで抽出。  </p>
-<pre><code>$ grep &quot;レポジトリ&quot; *
+<pre><code>$ <span class="keyword">grep</span> <span class="string">"レポジトリ"</span> *
 </code></pre><p><code>*</code>ですべてのファイルを検索対象に。<br>.mdファイルのみを対象にするなら<code>*.md</code>に。  </p>
 <p>（参考：<a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20060228/231140/" target="_blank" rel="external">Linuxコマンド逆引き大全 - 【 ファイルから文字列を検索する 】：ITpro</a>）  </p>
 <p>たくさんあって手作業で修正するのは大変そうなので、下記コマンドですべての.mdファイル内の「レポジトリ」を「リポジトリ」に一括変換。（元ファイルは拡張子.bakを付けてバックアップ）  </p>
-<pre><code>$ perl -p -i.bak -e &#39;s/レポジトリ/リポジトリ/g&#39; *.md
+<pre><code>$ perl -p -i.bak <span class="operator">-e</span> <span class="string">'s/レポジトリ/リポジトリ/g'</span> *.md
 </code></pre><p>正常に変換されたことを確認後、.bakファイルを一括削除。  </p>
-<pre><code>$ find ./ -type f -name &quot;*.bak&quot; -delete
+<pre><code>$ <span class="keyword">find</span> ./ -<span class="built_in">type</span> <span class="keyword">f</span> -name <span class="string">"*.bak"</span> -<span class="built_in">delete</span>
 </code></pre><p>もし不具合があれば、特定のファイルに対しては下記で復帰可能。<br>（example.md.bakをexample.mdに名称変更し上書き）  </p>
-<pre><code>$ mv example.md.bak example.md
+<pre><code><span class="variable">$ </span>mv example.md.bak example.md
 </code></pre><p>ただし、mvコマンドは複数のファイル名の一括変換は出来ないようなので、すべてのファイルを元に戻す場合は、一旦すべての.mdファイルを削除してから、すべての.md.bakファイルの拡張子を.mdに変換。<br>（renameコマンドは上書きは出来ないようなので）  </p>
-<pre><code>$ find ./ -type f -name &quot;*.md&quot; -delete
-$ rename &#39;s/.md.bak/.md/&#39; *.bak
+<pre><code>$ <span class="keyword">find</span> ./ -<span class="built_in">type</span> <span class="keyword">f</span> -name <span class="string">"*.md"</span> -<span class="built_in">delete</span>
+$ <span class="built_in">rename</span> <span class="string">'s/.md.bak/.md/'</span> *.bak
 </code></pre>
 	</div>
 

@@ -112,17 +112,17 @@
 	<div class="mypage">
 	    <p>Hexoのテーマをデフォルトのものから、Bootstrap準拠の<a href="https://github.com/yieme/hexo-theme-freewill" target="_blank" rel="external">Freewill</a>にした。<br>BootstrapのテーマBootswatchというものを採用しているようで、外観を簡単に変更出来る。  </p>
 <p>他のテーマ同様  </p>
-<pre><code>git clone https://github.com/yieme/hexo-theme-freewill.git themes/freewill
+<pre><code>git clone http<span class="variable">s:</span>//github.<span class="keyword">com</span>/yieme/hexo-theme-freewill.git themes/freewill
 </code></pre><p>でインストール。  </p>
 <p>Freewillの_config.ymlで<code>bootswatch:</code>で種々のBootswatchテーマに変更出来る。<br>Bootswatchのナビゲーションバーには、テーマ毎に2種類のカラーバリエーションがあり、freewill/layout/_partial/navigation.ejsの2行目で<code>navbar-default</code>と<code>navbar-inverse</code>（逆の配色）のどちらかに切り替え可能。  </p>
 <p>デフォルトの設定では画面をスクロールしたりマウスが離れると、ナビゲーションバーがフェードアウト、マウスを合わせるとフェードインする仕様になっていた。<br>出たり消えたりがかえって邪魔だったので、themes/freewill/source/js/main.jsの7、10、17、22行目の  </p>
-<pre><code>$(&quot;.navbar&quot;).stop().fadeTo(333, 0.2);
+<pre><code><span class="variable">$(</span><span class="string">".navbar"</span>).stop().fadeTo(<span class="number">333</span>, <span class="number">0</span>.<span class="number">2</span>);
 
-$(&quot;.navbar&quot;).stop().fadeTo(333, 1);
+<span class="variable">$(</span><span class="string">".navbar"</span>).stop().fadeTo(<span class="number">333</span>, <span class="number">1</span>);
 
-$(&quot;.navbar&quot;).fadeTo(100, 1);
+<span class="variable">$(</span><span class="string">".navbar"</span>).fadeTo(<span class="number">100</span>, <span class="number">1</span>);
 
-$(&quot;.navbar&quot;).fadeTo(100, 0.2);
+<span class="variable">$(</span><span class="string">".navbar"</span>).fadeTo(<span class="number">100</span>, <span class="number">0</span>.<span class="number">2</span>);
 </code></pre><p>を削除したら、フェードアウトしなくなった。  </p>
 <p>navigation.ejs2行目の<code>navbar-fixed-top</code>を削除すると、スクロールとともにナビゲーションバーが上方に移動。  </p>
 <p>_config.ymlの表示不要な項目は先頭に<code>#</code>を付けてコメントアウト。  </p>

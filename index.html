@@ -130,44 +130,20 @@
 	  <p>nemoの拡張機能nemo-compareのインストールが上手く行かなかったので、手動で導入した。  </p>
 <p>（参照記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>  </p>
 <p>まず、meld、python2-dbus、dbus-glib（これは導入済みだった）をインストール。  </p>
-<pre><code>$ sudo pacman -S meld python2-dbus
+<pre><code>$ <span class="built_in">sudo</span> pacman -S meld python2-dbus
 </code></pre><p>~/.local/share/nemo/actions下にcompare-save-for-later.nemo_action、compare-with-saved.nemo_action、compare.shの３つのファイルを作成。  </p>
-<pre><code>compare-save-for-later.nemo_action
----------------------------------------
-[Nemo Action]
-Active=true
-Name=Compare later
-Name[ja]=あとで比較する
-Comment=Save file for comparison later.
-Exec=&lt;compare.sh save %F&gt;
-Icon-Name=meld
-Selection=S
-Extensions=any
-</code></pre><p></p><p></p><p></p>
-<pre><code>compare-with-saved.nemo_action
----------------------------------------
-[Nemo Action]
-Active=true
-Name=Compare with saved element
-Name[ja]=比較する
-Comment=Compare %F saved file or directory.
-Exec=&lt;compare.sh compare %F&gt;
-Icon-Name=meld
-Selection=S
-Extensions=any
-</code></pre><p></p><p></p><p></p>
-<pre><code>compare.sh
----------------------------------------
-#!/bin/bash
-savedfile=/var/tmp/compare-save-for-later.$USER
-comparator=meld
-if [ &quot;$1&quot; == &quot;save&quot; ]; then
-    echo &quot;$2&quot; &gt; &quot;$savedfile&quot;
-else
-    &quot;$comparator&quot; $(cat &quot;$savedfile&quot;) &quot;$2&quot;
-fi
-</code></pre><p>compare.shはファイルマネージャーもしくはコマンドで実行可能にしておく。  </p>
-<pre><code>$ chmod +x compare.sh
+<figure class="highlight plain"><figcaption><span>compare-save-for-later.nemo_action</span></figcaption><pre><div class="line">[Nemo Action]</div><div class="line">Active=true</div><div class="line">Name=Compare later</div><div class="line">Name[ja]=あとで比較する</div><div class="line">Comment=Save file for comparison later.</div><div class="line">Exec=<compare.sh save="" %f=""></compare.sh></div><div class="line">Icon-Name=meld</div><div class="line">Selection=S</div><div class="line">Extensions=any</div></pre></figure>
+
+
+
+<figure class="highlight plain"><figcaption><span>compare-with-saved.nemo_action</span></figcaption><pre><div class="line">[Nemo Action]</div><div class="line">Active=true</div><div class="line">Name=Compare with saved element</div><div class="line">Name[ja]=比較する</div><div class="line">Comment=Compare %F saved file or directory.</div><div class="line">Exec=<compare.sh compare="" %f=""></compare.sh></div><div class="line">Icon-Name=meld</div><div class="line">Selection=S</div><div class="line">Extensions=any</div></pre></figure>
+
+
+
+<figure class="highlight shellscript"><figcaption><span>compare.sh</span></figcaption><pre><div class="line"><span class="shebang">#!/bin/bash</span></div><div class="line">savedfile=/var/tmp/compare-save-for-later.<span class="variable">$USER</span></div><div class="line">comparator=meld</div><div class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$1</span>"</span> == <span class="string">"save"</span> ]; <span class="keyword">then</span></div><div class="line">    <span class="built_in">echo</span> <span class="string">"<span class="variable">$2</span>"</span> &gt; <span class="string">"<span class="variable">$savedfile</span>"</span></div><div class="line"><span class="keyword">else</span></div><div class="line">    <span class="string">"<span class="variable">$comparator</span>"</span> $(cat <span class="string">"<span class="variable">$savedfile</span>"</span>) <span class="string">"<span class="variable">$2</span>"</span></div><div class="line"><span class="keyword">fi</span></div></pre></figure>
+
+<p>compare.shはファイルマネージャーもしくはコマンドで実行可能にしておく。  </p>
+<pre><code>$ chmod +<span class="keyword">x</span> compare.<span class="keyword">sh</span>
 </code></pre><p>nemoの右クリックメニューに「比較する」「あとで比較する」が追加された。  </p>
 <p>ファイル内容だけではなくフォルダの内容も比較出来る。<br>なにかと重宝しそうだ。</p>
 
@@ -212,10 +188,10 @@ fi
 <p>上記トピックを参考にnemoを再起動してみると、確かにシンボリックリンクが存在しないのが原因のようだった。</p>
 <pre><code>$ nemo -q &amp;&amp; nemo
 
-(nemo:6939): Nemo-Python-WARNING **: g_module_open libpython failed: /usr/lib/i386-linux-gnu//libpython2.7.so.1.0: 共有オブジェクトファイルを開けません: そのようなファイルやディレクトリはありません
-ImportError: could not import gobject (error was: &#39;/usr/lib/python2.7/site-packages/gi/_gi.so: undefined symbol: _Py_ZeroStruct&#39;)
+(nemo:<span class="number">6939</span>): Nemo-Python-WARNING **: g_module_open libpython failed: /usr/lib/i386-linux-gnu<span class="comment">//libpython2.7.so.1.0: 共有オブジェクトファイルを開けません: そのようなファイルやディレクトリはありません</span>
+ImportError: could not <span class="keyword">import</span> g<span class="class"><span class="keyword">object</span> <span class="params">(error was: '/usr/lib/python2.7/site-packages/gi/_gi.so: undefined symbol: _Py_ZeroStruct')</span></span>
 
-(nemo:6939): Nemo-Python-WARNING **: pygobject initialization failed
+(nemo:<span class="number">6939</span>): Nemo-Python-WARNING **: pyg<span class="class"><span class="keyword">object</span> <span class="title">initialization</span> <span class="title">failed</span></span>
 </code></pre><p>だが、これを修正するリンクの作成が上手く行かない。<br>共有オブジェクトファイルのパスでスラッシュが２つ重なり<code>//</code>となっている箇所があるのも奇妙。<br>yaourtでのビルド中、”/usr/lib/yaourt/util.sh: 行 197: PKGBUILD: コマンドが見つかりません”と表示されていたのが関係しているのだろうか。  </p>
 <p>ArchWikiによると、右クリックメニューに「比較する」を追加するのは手動でも可能のようだったので、nemo-compareは断念し、手動で導入することにした。 </p>
 <p><a href="http://pagent.github.io/2015/04/03/nemo-compare-action/" target="_blank" rel="external">nemoの右クリックメニューに「比較」を追加</a></p>
@@ -257,7 +233,7 @@ ImportError: could not import gobject (error was: &#39;/usr/lib/python2.7/site-p
 	
 	  <p>Arch Linuxにインストールしたnemoで右クリックメニューの「端末で開く」が機能しなかった。  </p>
 <p><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>を参考に、  </p>
-<pre><code>$ gsettings set org.cinnamon.desktop.default-applications.terminal exec xfce4-terminal
+<pre><code>$ gsettings <span class="operator"><span class="keyword">set</span> org.cinnamon.desktop.<span class="keyword">default</span>-applications.terminal <span class="keyword">exec</span> xfce4-terminal</span>
 </code></pre><p>を実行したら機能するようになった。  </p>
 <p>「端末で開く」で起動するターミナルエミュレーターを変更したい時も同様に端末名を指定すれば良いようだ。</p>
 
@@ -301,9 +277,9 @@ ImportError: could not import gobject (error was: &#39;/usr/lib/python2.7/site-p
 <p>モジュールのfcitx-qt4、fcitx-qt5はインストールしたが、何故かインプットメソッドがオンにならない。<br>（fcitx-qt5はあまり必要無いようだが、念の為インストール）<br>fcitx-configtool（Qt 設定ツール）で、デフォルトのインプットメソッドをfcitxに変更したが、効果が無い。  </p>
 <p><code>fcitx-diagnose</code>を実行してフロントエンド設定の項目を確認すると、XMODIFIERS、QT_IM_MODULEが正しく設定されていないようで、「設定されていません」という表示だったり空欄だったりする。  </p>
 <p>ホームディレクトリに.xprofileを新規作成し、下記内容で保存。<br>（ディスプレイマネージャにSLiMを使っている場合は、~/.xprofileではなく~/.xinitrcに記載するらしい）  </p>
-<pre><code>export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=&quot;@im=fcitx&quot;
+<pre><code><span class="keyword">export</span> GTK_IM_MODULE=fcitx
+<span class="keyword">export</span> QT_IM_MODULE=fcitx
+<span class="keyword">export</span> XMODIFIERS=<span class="string">"@im=fcitx"</span>
 </code></pre><p>再起動したら、QupZilla、ReTextともに日本語入力が可能になった。  </p>
 <p>（参照記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Fcitx" target="_blank" rel="external">Fcitx - ArchWiki</a>  </p>
 <p>再度<code>fcitx-diagnose</code>で見てみると、「環境変数 XMODIFIERS は “{$2}” に正しく設定されています。」「環境変数 QT_IM_MODULE は “{$2}” に正しく設定されています。」となっていた。  </p>
@@ -348,10 +324,10 @@ export XMODIFIERS=&quot;@im=fcitx&quot;
 <p>Firefoxで「システムフォント」等を検索したが、/etc/fonts/conf.d内のファイルにはそれらしい記述は見当たらず。<br>「外観」のデフォルトフォントはシステムフォントとは別物らしい。  </p>
 <p><a href="https://archlinuxjp.kusakata.com/wiki/GTK%2B" target="_blank" rel="external">GTK+ - ArchWiki</a>を見て、~/.gtkrc-2.0を探したが、そんなファイルは無い。<br>自作してみたが効果なし。  </p>
 <p>ホームディレクトリ内を探しまわって、ようやく~/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xmlに記述を見つけた。  </p>
-<pre><code>  &lt;property name=&quot;Gtk&quot; type=&quot;empty&quot;&gt;
-    ...
-    &lt;property name=&quot;FontName&quot; type=&quot;string&quot; value=&quot;Fixed Medium 10&quot;/&gt;
-    ...
+<pre><code>  &lt;property name=<span class="string">"Gtk"</span> type=<span class="string">"empty"</span>&gt;
+    <span class="keyword">...</span>
+    &lt;property name=<span class="string">"FontName"</span> type=<span class="string">"string"</span> value=<span class="string">"Fixed Medium 10"</span>/&gt;
+    <span class="keyword">...</span>
 </code></pre><p>「Fixed」を「Droid Sans」に変更。<br>再起動すると無事復旧した。  </p>
 <p>デスクトップ上右クリックからアプリケーションを起動出来るXfce4で助かった。</p>
 
@@ -413,35 +389,35 @@ export XMODIFIERS=&quot;@im=fcitx&quot;
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
 		
 		
 		</ul>

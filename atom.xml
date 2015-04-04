@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-04-04T07:01:14.710Z</updated>
+  <updated>2015-04-04T12:32:37.097Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,48 +19,24 @@
     <link href="http://pagent.github.io/2015/04/03/nemo-compare-action/"/>
     <id>http://pagent.github.io/2015/04/03/nemo-compare-action/</id>
     <published>2015-04-03T08:31:01.000Z</published>
-    <updated>2015-04-03T13:17:16.208Z</updated>
+    <updated>2015-04-04T12:25:33.044Z</updated>
     <content type="html"><![CDATA[<p>nemoの拡張機能nemo-compareのインストールが上手く行かなかったので、手動で導入した。  </p>
 <p>（参照記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>  </p>
 <p>まず、meld、python2-dbus、dbus-glib（これは導入済みだった）をインストール。  </p>
-<pre><code>$ sudo pacman -S meld python2-dbus
+<pre><code>$ <span class="built_in">sudo</span> pacman -S meld python2-dbus
 </code></pre><p>~/.local/share/nemo/actions下にcompare-save-for-later.nemo_action、compare-with-saved.nemo_action、compare.shの３つのファイルを作成。  </p>
-<pre><code>compare-save-for-later.nemo_action
----------------------------------------
-[Nemo Action]
-Active=true
-Name=Compare later
-Name[ja]=あとで比較する
-Comment=Save file for comparison later.
-Exec=&lt;compare.sh save %F&gt;
-Icon-Name=meld
-Selection=S
-Extensions=any
-</code></pre><p></p><p></p><p></p>
-<pre><code>compare-with-saved.nemo_action
----------------------------------------
-[Nemo Action]
-Active=true
-Name=Compare with saved element
-Name[ja]=比較する
-Comment=Compare %F saved file or directory.
-Exec=&lt;compare.sh compare %F&gt;
-Icon-Name=meld
-Selection=S
-Extensions=any
-</code></pre><p></p><p></p><p></p>
-<pre><code>compare.sh
----------------------------------------
-#!/bin/bash
-savedfile=/var/tmp/compare-save-for-later.$USER
-comparator=meld
-if [ &quot;$1&quot; == &quot;save&quot; ]; then
-    echo &quot;$2&quot; &gt; &quot;$savedfile&quot;
-else
-    &quot;$comparator&quot; $(cat &quot;$savedfile&quot;) &quot;$2&quot;
-fi
-</code></pre><p>compare.shはファイルマネージャーもしくはコマンドで実行可能にしておく。  </p>
-<pre><code>$ chmod +x compare.sh
+<figure class="highlight plain"><figcaption><span>compare-save-for-later.nemo_action</span></figcaption><pre><div class="line">[Nemo Action]</div><div class="line">Active=true</div><div class="line">Name=Compare later</div><div class="line">Name[ja]=あとで比較する</div><div class="line">Comment=Save file for comparison later.</div><div class="line">Exec=<compare.sh save="" %f=""></compare.sh></div><div class="line">Icon-Name=meld</div><div class="line">Selection=S</div><div class="line">Extensions=any</div></pre></figure>
+
+
+
+<figure class="highlight plain"><figcaption><span>compare-with-saved.nemo_action</span></figcaption><pre><div class="line">[Nemo Action]</div><div class="line">Active=true</div><div class="line">Name=Compare with saved element</div><div class="line">Name[ja]=比較する</div><div class="line">Comment=Compare %F saved file or directory.</div><div class="line">Exec=<compare.sh compare="" %f=""></compare.sh></div><div class="line">Icon-Name=meld</div><div class="line">Selection=S</div><div class="line">Extensions=any</div></pre></figure>
+
+
+
+<figure class="highlight shellscript"><figcaption><span>compare.sh</span></figcaption><pre><div class="line"><span class="shebang">#!/bin/bash</span></div><div class="line">savedfile=/var/tmp/compare-save-for-later.<span class="variable">$USER</span></div><div class="line">comparator=meld</div><div class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$1</span>"</span> == <span class="string">"save"</span> ]; <span class="keyword">then</span></div><div class="line">    <span class="built_in">echo</span> <span class="string">"<span class="variable">$2</span>"</span> &gt; <span class="string">"<span class="variable">$savedfile</span>"</span></div><div class="line"><span class="keyword">else</span></div><div class="line">    <span class="string">"<span class="variable">$comparator</span>"</span> $(cat <span class="string">"<span class="variable">$savedfile</span>"</span>) <span class="string">"<span class="variable">$2</span>"</span></div><div class="line"><span class="keyword">fi</span></div></pre></figure>
+
+<p>compare.shはファイルマネージャーもしくはコマンドで実行可能にしておく。  </p>
+<pre><code>$ chmod +<span class="keyword">x</span> compare.<span class="keyword">sh</span>
 </code></pre><p>nemoの右クリックメニューに「比較する」「あとで比較する」が追加された。  </p>
 <p>ファイル内容だけではなくフォルダの内容も比較出来る。<br>なにかと重宝しそうだ。</p>
 ]]></content>
@@ -85,10 +61,10 @@ fi
 <p>上記トピックを参考にnemoを再起動してみると、確かにシンボリックリンクが存在しないのが原因のようだった。</p>
 <pre><code>$ nemo -q &amp;&amp; nemo
 
-(nemo:6939): Nemo-Python-WARNING **: g_module_open libpython failed: /usr/lib/i386-linux-gnu//libpython2.7.so.1.0: 共有オブジェクトファイルを開けません: そのようなファイルやディレクトリはありません
-ImportError: could not import gobject (error was: &#39;/usr/lib/python2.7/site-packages/gi/_gi.so: undefined symbol: _Py_ZeroStruct&#39;)
+(nemo:<span class="number">6939</span>): Nemo-Python-WARNING **: g_module_open libpython failed: /usr/lib/i386-linux-gnu<span class="comment">//libpython2.7.so.1.0: 共有オブジェクトファイルを開けません: そのようなファイルやディレクトリはありません</span>
+ImportError: could not <span class="keyword">import</span> g<span class="class"><span class="keyword">object</span> <span class="params">(error was: '/usr/lib/python2.7/site-packages/gi/_gi.so: undefined symbol: _Py_ZeroStruct')</span></span>
 
-(nemo:6939): Nemo-Python-WARNING **: pygobject initialization failed
+(nemo:<span class="number">6939</span>): Nemo-Python-WARNING **: pyg<span class="class"><span class="keyword">object</span> <span class="title">initialization</span> <span class="title">failed</span></span>
 </code></pre><p>だが、これを修正するリンクの作成が上手く行かない。<br>共有オブジェクトファイルのパスでスラッシュが２つ重なり<code>//</code>となっている箇所があるのも奇妙。<br>yaourtでのビルド中、”/usr/lib/yaourt/util.sh: 行 197: PKGBUILD: コマンドが見つかりません”と表示されていたのが関係しているのだろうか。  </p>
 <p>ArchWikiによると、右クリックメニューに「比較する」を追加するのは手動でも可能のようだったので、nemo-compareは断念し、手動で導入することにした。 </p>
 <p><a href="http://pagent.github.io/2015/04/03/nemo-compare-action/" target="_blank" rel="external">nemoの右クリックメニューに「比較」を追加</a></p>
@@ -110,7 +86,7 @@ ImportError: could not import gobject (error was: &#39;/usr/lib/python2.7/site-p
     <updated>2015-04-03T07:48:31.027Z</updated>
     <content type="html"><![CDATA[<p>Arch Linuxにインストールしたnemoで右クリックメニューの「端末で開く」が機能しなかった。  </p>
 <p><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>を参考に、  </p>
-<pre><code>$ gsettings set org.cinnamon.desktop.default-applications.terminal exec xfce4-terminal
+<pre><code>$ gsettings <span class="operator"><span class="keyword">set</span> org.cinnamon.desktop.<span class="keyword">default</span>-applications.terminal <span class="keyword">exec</span> xfce4-terminal</span>
 </code></pre><p>を実行したら機能するようになった。  </p>
 <p>「端末で開く」で起動するターミナルエミュレーターを変更したい時も同様に端末名を指定すれば良いようだ。</p>
 ]]></content>
@@ -134,9 +110,9 @@ ImportError: could not import gobject (error was: &#39;/usr/lib/python2.7/site-p
 <p>モジュールのfcitx-qt4、fcitx-qt5はインストールしたが、何故かインプットメソッドがオンにならない。<br>（fcitx-qt5はあまり必要無いようだが、念の為インストール）<br>fcitx-configtool（Qt 設定ツール）で、デフォルトのインプットメソッドをfcitxに変更したが、効果が無い。  </p>
 <p><code>fcitx-diagnose</code>を実行してフロントエンド設定の項目を確認すると、XMODIFIERS、QT_IM_MODULEが正しく設定されていないようで、「設定されていません」という表示だったり空欄だったりする。  </p>
 <p>ホームディレクトリに.xprofileを新規作成し、下記内容で保存。<br>（ディスプレイマネージャにSLiMを使っている場合は、~/.xprofileではなく~/.xinitrcに記載するらしい）  </p>
-<pre><code>export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
-export XMODIFIERS=&quot;@im=fcitx&quot;
+<pre><code><span class="keyword">export</span> GTK_IM_MODULE=fcitx
+<span class="keyword">export</span> QT_IM_MODULE=fcitx
+<span class="keyword">export</span> XMODIFIERS=<span class="string">"@im=fcitx"</span>
 </code></pre><p>再起動したら、QupZilla、ReTextともに日本語入力が可能になった。  </p>
 <p>（参照記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Fcitx" target="_blank" rel="external">Fcitx - ArchWiki</a>  </p>
 <p>再度<code>fcitx-diagnose</code>で見てみると、「環境変数 XMODIFIERS は “{$2}” に正しく設定されています。」「環境変数 QT_IM_MODULE は “{$2}” に正しく設定されています。」となっていた。  </p>
@@ -161,10 +137,10 @@ export XMODIFIERS=&quot;@im=fcitx&quot;
 <p>Firefoxで「システムフォント」等を検索したが、/etc/fonts/conf.d内のファイルにはそれらしい記述は見当たらず。<br>「外観」のデフォルトフォントはシステムフォントとは別物らしい。  </p>
 <p><a href="https://archlinuxjp.kusakata.com/wiki/GTK%2B" target="_blank" rel="external">GTK+ - ArchWiki</a>を見て、~/.gtkrc-2.0を探したが、そんなファイルは無い。<br>自作してみたが効果なし。  </p>
 <p>ホームディレクトリ内を探しまわって、ようやく~/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xmlに記述を見つけた。  </p>
-<pre><code>  &lt;property name=&quot;Gtk&quot; type=&quot;empty&quot;&gt;
-    ...
-    &lt;property name=&quot;FontName&quot; type=&quot;string&quot; value=&quot;Fixed Medium 10&quot;/&gt;
-    ...
+<pre><code>  &lt;property name=<span class="string">"Gtk"</span> type=<span class="string">"empty"</span>&gt;
+    <span class="keyword">...</span>
+    &lt;property name=<span class="string">"FontName"</span> type=<span class="string">"string"</span> value=<span class="string">"Fixed Medium 10"</span>/&gt;
+    <span class="keyword">...</span>
 </code></pre><p>「Fixed」を「Droid Sans」に変更。<br>再起動すると無事復旧した。  </p>
 <p>デスクトップ上右クリックからアプリケーションを起動出来るXfce4で助かった。</p>
 ]]></content>
@@ -184,9 +160,9 @@ export XMODIFIERS=&quot;@im=fcitx&quot;
     <updated>2015-04-03T07:54:02.966Z</updated>
     <content type="html"><![CDATA[<p>Arch Linuxでのフォントが汚く見づらかったので、フォントレンダリング「Infinality」（<a href="https://archlinuxjp.kusakata.com/wiki/Infinality" target="_blank" rel="external">Infinality - ArchWiki</a>）をインストールした。  </p>
 <p>途中、</p>
-<pre><code>Unable to update the static FcBlanks: 0x0600
-Unable to update the static FcBlanks: 0x0601
-Unable to update the static FcBlanks: 0x0602
+<pre><code>Unable <span class="keyword">to</span> <span class="keyword">update</span> the static FcBlank<span class="variable">s:</span> <span class="number">0</span>x0600
+Unable <span class="keyword">to</span> <span class="keyword">update</span> the static FcBlank<span class="variable">s:</span> <span class="number">0</span>x0601
+Unable <span class="keyword">to</span> <span class="keyword">update</span> the static FcBlank<span class="variable">s:</span> <span class="number">0</span>x0602
 …
 </code></pre><p>というエラーが出たが、下記トピックを参考に、<code>sudo pacman -S fontconfig-infinality-ultimate</code>でfontconfig-iu-compを削除した。<br><a href="https://bbs.archlinux.org/viewtopic.php?id=195198" target="_blank" rel="external">[SOLVED] Font cache: Unable to update the static FcBlanks / Newbie Corner / Arch Linux Forums</a>  </p>
 <p>首尾よくフォントが綺麗になったのだが、その後一部の漢字フォントが縦に潰れたようになってしまった。<br>（もしかすると、気づいたのが最近だっただけで、以前から潰れたフォントがあったのかもしれない。）</p>
@@ -230,8 +206,8 @@ Unable to update the static FcBlanks: 0x0602
 <p>~/.config/mimeapps.listの[Added Associations]の箇所に下記を追記した。  </p>
 <pre><code>text/vcard=firefox.desktop;
 text/html=firefox.desktop;
-x-scheme-handler/http=firefox.desktop;
-x-scheme-handler/https=firefox.desktop;
+x-scheme-<span class="operator"><span class="keyword">handler</span>/http=firefox.desktop;</span>
+x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firefox.desktop;</span>
 </code></pre><p>Xfce4 terminal内のリンクがFirefoxで開くようになった。</p>
 ]]></content>
     <summary type="html">
@@ -249,21 +225,21 @@ x-scheme-handler/https=firefox.desktop;
     <published>2015-03-31T14:42:55.000Z</published>
     <updated>2015-03-31T15:07:21.907Z</updated>
     <content type="html"><![CDATA[<p>Lubuntu14.04をアップデート中に  </p>
-<pre><code>run-parts: executing /etc/kernel/postinst.d/zz-update-grub 3.16.0-33-generic /boot/vmlinuz-3.16.0-33-generic
+<pre><code>run-parts: executing <span class="regexp">/etc/</span>kernel<span class="regexp">/postinst.d/</span>zz-update-grub <span class="number">3.16</span>.<span class="number">0</span>-<span class="number">33</span>-generic <span class="regexp">/boot/</span>vmlinuz-<span class="number">3.16</span>.<span class="number">0</span>-<span class="number">33</span>-generic
 </code></pre><p>の表示のところでフリーズしてしまった。<br>カーネルのアップデート中だったので嫌な予感がしたが、やむなく強制終了した。<br>起動しようとすると、案の定  </p>
-<pre><code>buffer i/o error on device sda4
+<pre><code><span class="title">buffer</span> i/o <span class="built_in">error</span> <span class="built_in">on</span> device sda4
 </code></pre><p>と延々エラーを吐いて起動してくれない。  </p>
 <p>sda4はswapに当てていたので、隣のArch Linuxを起動して、sda4を再度swapでフォーマットし直したら起動できるようになった。<br>（fstabの記載はUUIDではなくデバイス名にしていた）  </p>
 <p>起動は出来たが、今度はSynapticを使おうとすると、  </p>
-<pre><code>E: dpkg は中断されました。問題を修正するには &#39;dpkg --configure -a&#39; を手動で実行する必要があります。
-E: _cache-&gt;open() failed, please report.
+<pre><code><span class="attribute">E</span>: <span class="string">dpkg は中断されました。問題を修正するには 'dpkg --configure -a' を手動で実行する必要があります。</span>
+<span class="attribute">E</span>: <span class="string">_cache-&gt;open() failed, please report.</span>
 </code></pre><p>という表示が出る。<br>言われたとおり<code>dpkg --configure -a</code>を実行すると、中断した箇所からアップデートが再開された。  </p>
 <p>今度はアップデートも無事終了。  </p>
 <p>意味はよく分かってはいないが、ネットの情報の助けがあれば、エラー表示はとても助かる。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Lubuntu14.04をアップデート中に  </p>
-<pre><code>run-parts: executing /etc/kernel/postinst.d/zz-update-grub 3.16.0-33-generic /boot/vmlinuz-3.16.0-]]>
+<pre><code>run-parts: executing <span class="regexp">/etc/</span>kernel<span class="regexp">/postinst.d/</spa]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
@@ -331,19 +307,19 @@ E: _cache-&gt;open() failed, please report.
 <p>XubuntuのHexo 2.8.3をアップグレードして、これまでの作業フォルダ（WindowsのDドライブに置いてある）を使おうと思ったが、Hexo 3へのアップグレードがうまく行かない。  </p>
 <p>そこでArch Linuxにも旧バージョンのHexo 2.8.3をインストールすることにした。  </p>
 <p>Hexoの公式サイトには旧バージョンのインストール方法が見あたらなかったが、幸い検索で見つかった。<br>下記コマンドで良いようだ。  </p>
-<pre><code>$ npm install hexo@2.8.3 -g
+<pre><code><span class="variable">$ </span>npm install hexo<span class="variable">@2</span>.<span class="number">8.3</span> -g
 </code></pre><p><a href="http://sandylaw.tk/2015/03/07/hexo3to2/" target="_blank" rel="external">Hexo降级 3.0 to 2.8 | Sandy’s Blog</a>  </p>
 <p>Hexo 3はCLIが分離されてロードがさらに早くなったりといろいろ機能が進化しているようだが、旧バージョンでも特に不満は無いし、当面はこのままHexo 2.8.3を使う予定。  </p>
 <p>アップグレードにはまた今度挑戦してみようと思う。  </p>
 <p>ーー<br>（追記）<br>Hexo 2.8.3の元で<code>hexo init blog-name</code>によりブログを新規作成した場合、<code>npm install</code>の後実際Hexoを使おうとすると、コマンドがことごとく下記のようなエラーになる。  </p>
 <pre><code>$ hexo server
 [error] HexoError: Process failed: _posts/hello-world.md
-TypeError: Cannot read property &#39;config&#39; of null
-at ...
+TypeError: Cannot read property <span class="string">'config'</span> of null
+at <span class="keyword">...</span>
 </code></pre><p><code>npm install</code>でインストールされるhexo-renderer-markedとhexo-renderer-stylusのバージョンが0.2の為らしい。<br>バージョン0.1をインストールするとエラー無しに動作した。  </p>
-<pre><code>$ npm install hexo-renderer-marked@0.1 --save
+<pre><code><span class="variable">$ </span>npm install hexo-renderer-marked<span class="variable">@0</span>.<span class="number">1</span> --save
 
-$ npm install hexo-renderer-stylus@0.1 --save
+<span class="variable">$ </span>npm install hexo-renderer-stylus<span class="variable">@0</span>.<span class="number">1</span> --save
 </code></pre><p><a href="https://github.com/hexojs/hexo/issues/1094#issuecomment-77796845" target="_blank" rel="external">“hexo server” not work · Issue #1094 · hexojs/hexo</a></p>
 ]]></content>
     <summary type="html">
@@ -369,12 +345,12 @@ $ npm install hexo-renderer-stylus@0.1 --save
 <p>暗号化ボリュームをアンマウントせずにPCを終了してしまうことはよくあるし、なんとか自動的にアンマウントしたいところ。  </p>
 <p>検索したら、Arch Linuxのwikiに自動アンマウントの方法が紹介されていた。<br><a href="https://wiki.archlinux.org/index.php/TrueCrypt#Safely_unmount_and_unmap_volumes_.28on_shutdown.29" target="_blank" rel="external">TrueCrypt - ArchWiki</a>  </p>
 <p>/etc内にrc.local.shutdownファイルを新規作成。<br>下記内容で保存。  </p>
-<pre><code>if (/usr/bin/truecrypt --text --list)
-then {
-/usr/bin/truecrypt -d
-sleep 3
+<pre><code><span class="keyword">if</span> (/usr/bin/truecrypt --text --list)
+<span class="keyword">then</span> {
+/usr/bin/truecrypt <span class="operator">-d</span>
+sleep <span class="number">3</span>
 }
-fi
+<span class="keyword">fi</span>
 </code></pre><p>PC終了時に自動的に暗号化ボリュームがアンマウントされるようになった。</p>
 ]]></content>
     <summary type="html">
@@ -422,7 +398,7 @@ fi
 <p>Xfce標準のファイルマネージャーThunarに加え、nemoもデスクトップを管理しようとするためこうなってしまうようだ。<br>確かにnemoをインストールする時にcinnamon-desktopも依存関係から同時にインストールされていた。  </p>
 <p>Xubuntuではどういう設定なのかこういうことは無いし、Arch Linux+LXDEにnemoをインストールしてもデスクトップアイコンが二重に表示されることはない。  </p>
 <p>このままでは使い勝手が悪いので、XfceをあきらめてLXDEにしようかと思ったが、Arch Linuxのwikiにnemoによるデスクトップアイコンを非表示にする方法があった。  </p>
-<pre><code>$ gsettings set org.nemo.desktop show-desktop-icons false
+<pre><code>$ gsettings <span class="operator"><span class="keyword">set</span> org.nemo.desktop <span class="keyword">show</span>-desktop-icons <span class="literal">false</span></span>
 </code></pre><p><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>  </p>
 <p>nemoによるデスクトップアイコンが消えて、デスクトップ上右クリックでのアプリケーションメニューも復活した。</p>
 ]]></content>
@@ -467,7 +443,7 @@ fi
 <p>アイコンは下記サイトでダウンロード数が一番多かったMistにした。<br><a href="http://xfce-look.org/index.php?xsortmode=high&amp;page=0&amp;xcontentmode=430" target="_blank" rel="external">Eyecandy for your Xfce-Desktop - Xfce-Look.org</a>  </p>
 <p>ダウンロードしたファイルを展開し、出て来たMistフォルダを/usr/share/iconsに移動。<br>だがこれだけでは「設定」→「外観」→「アイコン」に表示されない。<br>アイコンテーマ毎にキャッシュファイルを生成しないといけないようだ。<br><a href="http://docs.xfce.org/xfce/xfce4-settings/4.10/appearance#icon_cache" target="_blank" rel="external">xfce:xfce4-settings:4.10:appearance [Xfce Docs]</a>    </p>
 <p>端末でコマンドを入力しキャッシュファイルを生成。  </p>
-<pre><code>sudo gtk-update-icon-cache /usr/share/icons/Mist
+<pre><code>sudo gtk-<span class="operator"><span class="keyword">update</span>-icon-<span class="keyword">cache</span> /usr/<span class="keyword">share</span>/icons/Mist</span>
 </code></pre><p>アイコンの設定に表示され、選択可能になった。</p>
 ]]></content>
     <summary type="html">
@@ -489,15 +465,15 @@ fi
 <p><a href="https://archlinuxjp.kusakata.com/wiki/Yaourt" target="_blank" rel="external">Yaourt - ArchWiki</a>  </p>
 <p>「まず package-query をインストール」とのことだが、pacmanからpackage-queryをインストールしようとしても、見つからないと言われるので、/etc/pacman.confに下記記述を加えた。  </p>
 <pre><code>[archlinuxfr]
-SigLevel = Never
-Server = http://repo.archlinux.fr/$arch
+<span class="constant">SigLevel</span> = Never
+<span class="constant">Server</span> = http:<span class="comment">//repo.archlinux.fr/$arch</span>
 </code></pre><p>その後  </p>
-<pre><code>sudo pacman --sync --refresh yaourt
+<pre><code><span class="comment">sudo</span> <span class="comment">pacman</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">sync</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">refresh</span> <span class="comment">yaourt</span>
 </code></pre><p>GlipperなどもYaourtからインストール出来るようになった。  </p>
-<pre><code>yaourt -S glipper
+<pre><code><span class="title">yaourt</span> -S glipper
 </code></pre><p>クリップボードマネージャーは色々あるが、Glipperはログアウト時に履歴を消去出来るので気に入っている。  </p>
 <p>ーー<br>（追記）<br>Xfceデスクトップに標準で入っていたClipmanでも、「終了時に保存する」のチェックボックスを外せば履歴を消去出来るようだ。<br>Glipperのアイコンが正常に表示されないこともあり、結局Clipmanを使うことにしてGlipperをアンインストールした。  </p>
-<pre><code>yaourt -Rs glipper
+<pre><code><span class="title">yaourt</span> -Rs glipper
 </code></pre>]]></content>
     <summary type="html">
     <![CDATA[<p>AUR (Arch User Repository)のパッケージをインストールするため、pacmanラッパーYaourtを入れた。  </p>
@@ -516,7 +492,7 @@ Server = http://repo.archlinux.fr/$arch
     <updated>2015-03-08T06:50:47.000Z</updated>
     <content type="html"><![CDATA[<p>Arch LinuxにXfceデスクトップを入れたが、ログアウト時に大音量のビープ音がして不快なので、鳴らないようにした。  </p>
 <p>/etc/modprobe.d内にnobeep.confファイルを作成し、<code>blacklist pcspkr</code>と記述して保存。<br>もしくは下記コマンドを実行。  </p>
-<pre><code># echo &quot;blacklist pcspkr&quot; &gt; /etc/modprobe.d/nobeep.conf
+<pre><code># <span class="keyword">echo</span> <span class="string">"blacklist pcspkr"</span> &gt; /etc/modprobe.<span class="keyword">d</span>/nobeep.<span class="keyword">conf</span>
 </code></pre><p><a href="https://archlinuxjp.kusakata.com/wiki/PC_%E3%82%B9%E3%83%94%E3%83%BC%E3%82%AB%E3%83%BC%E3%81%AE%E3%83%93%E3%83%BC%E3%83%97%E9%9F%B3%E3%81%AE%E7%84%A1%E5%8A%B9%E5%8C%96?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DDisable_PC_Speaker_Beep_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno#.E3.82.B0.E3.83.AD.E3.83.BC.E3.83.90.E3.83.AB.E7.92.B0.E5.A2.83" target="_blank" rel="external">PC スピーカーのビープ音の無効化 - ArchWiki</a>  </p>
 ]]></content>
     <summary type="html">

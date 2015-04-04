@@ -323,18 +323,18 @@
 	
 	  <p>Puppy Linux5.7.1のパッケージマネージャにDropboxクライアントが見当たらないので、コマンドラインでインストールした。<br><a href="https://www.dropbox.com/install?os=lnx" target="_blank" rel="external">Linux マシンに Dropbox をインストール</a>  </p>
 <p>コマンドを入力すると、サーバー証明書エラーになった。  </p>
-<pre><code>cd ~ &amp;&amp; wget -O - &quot;https://www.dropbox.com/download?plat=lnx.x86&quot; | tar xzf -
+<pre><code>cd ~ &amp;&amp; wget -O - "https://www.dropbox.com/download?plat=lnx.x86" | tar xzf -
 
-...
-エラー: cannot verify www.dropbox.com&#39;s certificate, issued by `/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert SHA2 Extended Validation Server CA&#39;:
-  発行者の権限を検証できませんでした。
-www.dropbox.com に安全の確認をしないで接続するには、`--no-check-certificate&#39; を使ってください。
+<span class="bullet">...
+</span>エラー: cannot verify www.dropbox.com's certificate, issued by <span class="smartquote">`/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert SHA2 Extended Validation Server CA'</span>:
+<span class="code">  発行者の権限を検証できませんでした。</span>
+www.dropbox.com に安全の確認をしないで接続するには、<span class="smartquote">`--no-check-certificate'</span> を使ってください。
 
 gzip: stdin: unexpected end of file
 tar: Child returned status 1
 tar: エラーを回復できません: 直ちに終了します
 </code></pre><p>原因がよく分からないがdropbox.comは安全だろうと、`—no-check-certificate’のオプションを付けてインストールした。  </p>
-<pre><code>cd ~ &amp;&amp; wget --no-check-certificate -O - &quot;https://www.dropbox.com/download?plat=lnx.x86&quot; | tar xzf -
+<pre><code><span class="title">cd</span> <span class="regexp">~ &amp;&amp;</span> wget --<span class="built_in">no</span>-check-certificate -O - <span class="string">"https://www.dropbox.com/download?plat=lnx.x86"</span> | tar xzf -
 </code></pre><p>インストールは無事完了し、<code>~/.dropbox-dist/dropboxd</code>で起動出来た。  </p>
 <p>後になって気がついたが、Puppy Linuxのタスクトレイの時刻がおかしい。<br>約9時間遅れている。  </p>
 <p>そういえば、Puppy Linuxを起動してすぐに表示される国とタイムゾーンの設定を、面倒臭くて飛ばしていたんだった。<br>このせいでエラーが出ていたんだろうか。</p>
@@ -397,35 +397,35 @@ tar: エラーを回復できません: 直ちに終了します
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
-		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
 		
 		
 		</ul>

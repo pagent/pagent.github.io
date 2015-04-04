@@ -112,12 +112,12 @@
 	<div class="mypage">
 	    <p>Hexoのデフォルト設定で新規記事を作成する際、記事タイトルに大文字アルファベットを使うと、そのままファイル名としてソースが作成される。</p>
 <pre><code>$ hexo new New-Post
-[info] File created at /.../source/_posts/2014-11-26-New-Post.md
+[info] File created at /<span class="keyword">...</span>/<span class="keyword">source</span>/_posts/<span class="number">2014</span>-<span class="number">11</span>-<span class="number">26</span>-New-Post.md
 </code></pre><p>URLに大文字アルファベットが入ってしまう。  </p>
 <p>URLに大文字は使いたくないので、Octopressのように大文字→小文字でファイル出力して欲しい。  </p>
 <p>_config.ymlのWritingの項目<code>filename_case:</code>の値をデフォルトの「0」から「1」に変更することで設定出来た。  </p>
 <pre><code>$ hexo new New-Post
-[info] File created at /.../source/_posts/2014-11-26-new-post.md
+[info] File created at /<span class="keyword">...</span>/<span class="keyword">source</span>/_posts/<span class="number">2014</span>-<span class="number">11</span>-<span class="number">26</span>-new-post.md
 </code></pre><p>filename_case: 0（そのまま出力。New-Post→New-Post）  </p>
 <p>filename_case: 1（大文字を小文字に変換。New-Post→new-post.md）  </p>
 <p>filename_case: 2（すべて大文字に変換。New-Post→NEW-POST.md）  </p>

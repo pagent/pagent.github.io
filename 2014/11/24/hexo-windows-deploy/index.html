@@ -113,15 +113,15 @@
 	    <p>Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来ると思っていた。<br>だがdeployしようとすると、  </p>
 <pre><code>Run
 
-  git config --global user.email &quot;you@example.com&quot;
-  git config --global user.name &quot;Your Name&quot;
+  git config --global <span class="literal">user</span>.email <span class="string">"you@example.com"</span>
+  git config --global <span class="literal">user</span>.name <span class="string">"Your Name"</span>
 </code></pre><p>と言われてしまった。  </p>
 <p>メールアドレスとGithubユーザー名を設定して、再度deployしようとしたが、  </p>
 <pre><code>Permission denied (publickey).
-fatal: Could not read from remote repository.
+fatal: Could <span class="operator">not</span> <span class="built_in">read</span> <span class="built_in">from</span> remote repository.
 
-Please make sure you have the correct access rights
-and the repository exists.
+Please make sure you have <span class="operator">the</span> correct access rights
+<span class="operator">and</span> <span class="operator">the</span> repository exists.
 </code></pre><p>とrejectされる。<br>よく考えたら当たり前だが、WindowsでもSSHキーの設定が必要らしい。  </p>
 <p>Linuxで設定したSSH秘密鍵と公開鍵の両方を<code>C:\Users\（ユーザー名）\.ssh</code>内にコピペしたら、ようやくdeploy出来た。  </p>
 <p>これで無事WindowsでもHexoを使えるようになった。  </p>

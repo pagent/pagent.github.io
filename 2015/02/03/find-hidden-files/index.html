@@ -112,28 +112,28 @@
 	<div class="mypage">
 	    <p>Dolphinが自動生成した.directoryファイルを削除しようと、ファイルマネージャーで”.directory”を検索したが、ファイルが見つからない。<br>“directory”でも該当無し。<br>確かにあるのだが、ファイルマネージャーの機能では隠しファイルを検索出来ないらしい。</p>
 <p>端末でfindコマンドを使ったらヒットした。  </p>
-<pre><code>find ~/ -name .directory
-// ~/ディレクトリ以下で名前に&quot;.directory&quot;を含むファイル・ディレクトリを再帰的に検索
+<pre><code><span class="keyword">find</span> ~/ -name .directory
+// ~/ディレクトリ以下で名前に<span class="string">".directory"</span>を含むファイル・ディレクトリを再帰的に検索
 </code></pre><p>ーー<br>以下、findコマンドについて  </p>
 <p><strong>Linuxではディレクトリを省略すると、カレントディレクトリ以下で検索</strong><br>（他のUNIXでは<code>.</code>が必要。）</p>
-<pre><code>find -name .directory
-find . -name .directory
+<pre><code><span class="keyword">find</span> -name .directory
+<span class="keyword">find</span> . -name .directory
 </code></pre><p><strong>-typeオプションで検索対象の種類を指定（ファイル、ディレクトリ、リンク）</strong>  </p>
-<pre><code>find -type f
-find -type d
-find -type l
+<pre><code><span class="keyword">find</span> -<span class="built_in">type</span> <span class="keyword">f</span>
+<span class="keyword">find</span> -<span class="built_in">type</span> <span class="keyword">d</span>
+<span class="keyword">find</span> -<span class="built_in">type</span> <span class="keyword">l</span>
 </code></pre><p><strong>名前の前後にワイルドカード<code>*</code>を付けての検索が可能</strong>  </p>
-<pre><code>find -type f -name &quot;*.pdf&quot;
+<pre><code><span class="keyword">find</span> -<span class="built_in">type</span> <span class="keyword">f</span> -name <span class="string">"*.pdf"</span>
 </code></pre><p>（名前にワイルドカードを付ける場合は、半角ダブルクォーテーション<code>&quot;</code>で囲った方が良いらしい。 「find: パス名は評価式の前に置かなければいけません」とエラーになることがある。） </p>
 <p><strong>-sizeオプションでサイズを指定</strong>  </p>
-<pre><code>find -type f -name &quot;*.JPG&quot; -size +1000k
+<pre><code><span class="keyword">find</span> -<span class="built_in">type</span> <span class="keyword">f</span> -name <span class="string">"*.JPG"</span> -size +<span class="number">1000</span><span class="keyword">k</span>
 </code></pre><p>（1000KB以上の.JPGファイルを検索。JPGとjpgは区別される。）</p>
 <p><strong>-deleteオプションで該当ファイルを削除</strong>  </p>
-<pre><code>find -type f -name &quot;*.hogehoge&quot; -delete
+<pre><code><span class="keyword">find</span> -<span class="built_in">type</span> <span class="keyword">f</span> -name <span class="string">"*.hogehoge"</span> -<span class="built_in">delete</span>
 </code></pre><p>など。  </p>
 <p>（参照）<br><a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20060227/230777/" target="_blank" rel="external">Linuxコマンド集 - 【 find 】 ファイルやディレクトリを検索する：ITpro</a><br><a href="http://x68000.q-e-d.net/~68user/unix/pickup?find" target="_blank" rel="external">UNIXの部屋 コマンド検索:find (*BSD/Linux)</a>  </p>
 <p>またディレクトリにワイルドカード<code>*</code>を付けると検索結果が異なる様子。  </p>
-<pre><code>find ~/* -name .directory
+<pre><code><span class="keyword">find</span> ~/* -name .directory
 </code></pre><p>~/.kde/share/apps/dolphin/view_properties/global/.directory<br>~/.kde/share/apps/dolphin/view_properties/local/usr/.directory<br>などがリストアップされなかった。  </p>
 <p>隠しフォルダ内が検索対象から外れるのかとも思ったが、自作した隠しフォルダは検索された。<br>この辺はよく分からない。</p>
 

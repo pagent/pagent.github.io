@@ -115,10 +115,10 @@
 <p>タグを挿入すると<code>&lt;!-- more --&gt;</code>より前の部分と続きを読むためのリンクの表示になる。<br>リンクの文言「Read More」はHexo作業フォルダ直下の_config.ymlではなく、themes/landscape/_config.ymlなどテーマ毎の_config.ymlで変更出来る。  </p>
 <p>Octopressの場合は_config.ymlの<code>excerpt_link:</code>でリンクの文言を変えられる。<br>また_config.ymlの<code>excerpt_link:</code>で、抜粋するためのタグ自体を<code>&lt;!-- more --&gt;</code>から別のものに変更出来るようだ。  </p>
 <p>ーー<br>（追記）<br>概要表示にはしてみたが、全文表示の方が都合の良いことがあったので、あとで全ての記事から<code>&lt;!-- more --&gt;</code>タグを削除した。<br>_postsフォルダで端末を開き、下記コマンドですべての.mdファイルから<code>&lt;!-- more --&gt;</code>を一括削除。</p>
-<pre><code>$ perl -p -i.bak -e &#39;s/&lt;!-- more --&gt;//g&#39; *.md
-（すべての.mdファイルに拡張子.bakをつけてバックアップを取り、ファイル内の&lt;!-- more --&gt;を削除）
+<pre><code>$ perl -p -i.bak -e 's/<span class="comment">&lt;!-- more --&gt;</span>//g' *.md
+（すべての.mdファイルに拡張子.bakをつけてバックアップを取り、ファイル内の<span class="comment">&lt;!-- more --&gt;</span>を削除）
 </code></pre><p><code>&lt;!-- more --&gt;</code>が正常に削除されたことを確認後、.bakファイルを一括削除した。  </p>
-<pre><code>$ find . -type f -name &quot;*.bak&quot; -delete
+<pre><code>$ <span class="keyword">find</span> . -<span class="built_in">type</span> <span class="keyword">f</span> -name <span class="string">"*.bak"</span> -<span class="built_in">delete</span>
 （拡張子が.bakのファイルをカレントディレクトリで一括削除）
 </code></pre>
 	</div>

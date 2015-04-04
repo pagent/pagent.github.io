@@ -264,15 +264,15 @@
 	
 	  <p>オープンソースのアクセス解析ツールPiwikを導入している。<br>管理画面へのログイン時には「次回の入力を省略」にチェックを入れているが、頻回にパスワード入力を求められる。<br>FirefoxのアドオンFirebugでログイン時のリクエストヘッダーを見てみると、クッキーの有効期限が2週間しかないようだ。  </p>
 <p>Piwikのログイン・クッキー有効期限がどこで設定されているのか、あちこちファイルを見まわって、ようやくpiwik/config/global.ini.phpの210行目に見つけた。  </p>
-<pre><code>; login cookie expiration (14 days)
-login_cookie_expire = 1209600
+<pre><code><span class="comment">; login cookie expiration (14 days)</span>
+<span class="setting">login_cookie_expire = <span class="value"><span class="number">1209600</span></span></span>
 </code></pre><p>だが、global.ini.phpの冒頭には下記のように書いてある。  </p>
 <blockquote>
 <p>; If you want to change some of these default values, the best practise is to override<br>; them in your configuration file in config/config.ini.php. If you directly edit this file,<br>; you will lose your changes when you upgrade Piwik.<br>; For example if you want to override action_title_category_delimiter,<br>; edit config/config.ini.php and add the following:<br>; [General]<br>; action_title_category_delimiter = “-“</p>
 </blockquote>
 <p>global.ini.phpを直接編集しても、Piwikをアップグレードした際に元に戻ってしまうから、変更したい挙動はconfig/config.ini.phpに加筆して設定を上書きせよ、ということらしい。  </p>
 <p>自分の環境ではconfig.ini.phpの所有者はApacheになっていて、そのままではファイルを変更出来なかったので、パーミッションを644から646に変更。<br>クッキー有効期限を180日（15552000秒）にすることにして、config.ini.phpの[General]の箇所に  </p>
-<pre><code>login_cookie_expire = 15552000
+<pre><code><span class="attribute">login_cookie_expire </span>=<span class="string"> 15552000</span>
 </code></pre><p>を加筆した。  </p>
 <p>Piwikにログインし直し、Firebugで確認すると、”Set-Cookie…expires=Fri, 31-Jul-2015 11:30:24”と、クッキーの有効期限が延長されていた。<br>ファイルのパーミッションを644に戻して作業終了。</p>
 
@@ -317,7 +317,7 @@ login_cookie_expire = 1209600
 <p>他に良いブラウザは無いかと、Ubuntuソフトウェアセンターで片っ端からインストールしてみた。<br>あまり有名ではないと思うが、QupZillaというのが目的にピッタリだった。<br><a href="http://www.qupzilla.com/" target="_blank" rel="external">QupZilla - マルチプラットフォーム対応、軽量ブラウザ</a>  </p>
 <p>起動速度、サイト表示が早い。<br>設定→ブラウジング→Web設定でデフォルトのズーム率も任意に設定出来る。  </p>
 <p>小さめの倍率にし、ナビゲーションツールバーとブックマークツールバーを非表示に。<br>設定→タブで「タブが1つだけの時タブバーを非表示」にチェックを入れたら、許容範囲内のコンパクトさになってくれた。<br>ランチャーにコマンドを登録して完了。  </p>
-<pre><code>qupzilla https://app.simplenote.com/
+<pre><code>qupzilla http<span class="variable">s:</span>//app.simplenote.<span class="keyword">com</span>/
 </code></pre><p>まるでメモ帳ソフトのようになった。  </p>
 <p>QupZillaにはFirefoxのようなアドオンこそ無いが、機能もそこそこ充実していて癖のない作り。<br>普段使いのブラウザとしても、軽快に活躍してくれそうだ。<br>Linuxのほか、Windows、Mac OS Xでも使えるというのも良い。  </p>
 <p>Simplenote専用にしておくのは、ちょっともったいないような気もする。</p>
@@ -380,35 +380,35 @@ login_cookie_expire = 1209600
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
-		
 			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
 			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
 		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
+		
 			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 		
 		</ul>

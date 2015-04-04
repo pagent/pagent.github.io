@@ -111,17 +111,17 @@
 	<!-- content -->
 	<div class="mypage">
 	    <p>HexoのソースをBitbucketにcommitしようとしたら、  </p>
-<pre><code>Your branch and &#39;bitbucket/master&#39; have diverged,
-and have 1 and 1 different commit each, respectively.
-  (use &quot;git pull&quot; to merge the remote branch into yours)
+<pre><code>Your branch <span class="operator">and</span> <span class="string">'bitbucket/master'</span> have diverged,
+<span class="operator">and</span> have <span class="number">1</span> <span class="operator">and</span> <span class="number">1</span> different commit <span class="keyword">each</span>, respectively.
+  (use <span class="string">"git pull"</span> <span class="built_in">to</span> <span class="built_in">merge</span> <span class="operator">the</span> remote branch <span class="keyword">into</span> yours)
 
-nothing to commit, working directory clean
+nothing <span class="built_in">to</span> commit, working <span class="built_in">directory</span> clean
 </code></pre><p>と警告が出た。  </p>
 <p>かまわずpushしたら、”master -&gt; master (non-fast-forward)”といってrejectされた。   </p>
 <p>“git pull”を使え、ということのようなのでやってみたが、次の画面でなにをすれば良いのか分からない。  </p>
 <p>なにもせず「CTRL」+「X」で終了して、もう一度addから試してみようとしたら、  </p>
-<pre><code>このブランチは &#39;bitbucket/master&#39; よりも2コミット進んでいます。
-  (use &quot;git push&quot; to publish your local commits)
+<pre><code>このブランチは 'bitbucket/master' よりも2コミット進んでいます。
+  (<span class="operator"><span class="keyword">use</span> <span class="string">"git push"</span> <span class="keyword">to</span> publish your <span class="keyword">local</span> commits)</span>
 </code></pre><p>とのこと。<br>言われた通り”git push”したら、今度はpush出来た。<br>「non-fast-forward」というのも検索してみたが、読んでもなんのことだかさっぱり。</p>
 <p>便利なんだが、Gitは本当によく分からない。</p>
 

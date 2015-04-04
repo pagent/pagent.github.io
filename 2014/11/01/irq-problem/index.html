@@ -117,8 +117,8 @@
 <p>このままでも使えるが、ソフトウェアの更新がしょっちゅうカーネルを更新するよう言ってくるし、カーネル3.13で起動できないかやってみた。  </p>
 <p>まず起動時にOS選択画面が出なかったが、他に起動できるOSがない場合grub2はOS選択画面をスキップしてしまうためらしい。<br><a href="http://www.serendip.ws/archives/3534" target="_blank" rel="external">Grub2 で起動時に選択リストを表示させる : Serendip - Webデザイン・プログラミング</a>  </p>
 <p>上記記事の通り</p>
-<pre><code>#GRUB_HIDDEN_TIMEOUT=0
-GRUB_HIDDEN_TIMEOUT_QUIET=false
+<pre><code><span class="comment">#GRUB_HIDDEN_TIMEOUT=0</span>
+<span class="variable">GRUB_HIDDEN_TIMEOUT_QUIET=</span><span class="constant">false</span>
 </code></pre><p>にしたらOS選択画面が出た。  </p>
 <p>試してみる起動オプションは下記記事を参考にさせて頂いた。<br><a href="http://kiddushin.jugem.jp/?eid=264" target="_blank" rel="external">Disabling IRQ (起動には成功の巻) | おもしろきこともなき世をおもしろく</a>  </p>
 <p>OS選択画面の「Advanced options for Ubuntu」で「Ubuntu, with Linux 3.13.0-39-generic」を選択し「e」キーでオプション編集画面へ。<br>linux /boot/vmlinuz-3.13.0-39…で始まる行の最後quiet nosplashのあとに半角スペースに続けてオプションを追加、「F10」キーで起動。<br>（参照記事：<a href="https://wiki.ubuntulinux.jp/UbuntuTips/Others/BootOptions#A.2BMKQw8zC5MMgw.2FDDrbggwfzC3MLkwxjDgMG6Nd1LVMKow1zC3MOcw8zCSTgBmQnaEMGtZCWb0MFkwizBrMG8-" target="_blank" rel="external">UbuntuTips/Others/BootOptions - Ubuntu Japanese Wiki</a>）  </p>
@@ -129,12 +129,12 @@ GRUB_HIDDEN_TIMEOUT_QUIET=false
 <p>irqpoll<br>上に同じく真っ暗。  </p>
 <p>上記とは別にpci=routeirqというオプションも見かけたのでやってみたが、これは「disabling IRQ #9」で起動できず。  </p>
 <p>pci=noacpiを起動オプションに加えることにしたので、/etc/default/grubで</p>
-<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet nosplash pci=noacpi&quot;
+<pre><code><span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"quiet nosplash pci=noacpi"</span>
 </code></pre><p>とし、<code>sudo update-grub</code>した。  </p>
 <p>ーー<br>（追記）<br>最初から「pci=noacpi」のオプションを付けてXubuntu14.04.1をインストールすることも可能だった。<br><a href="http://pagent.github.io/blog/2014/11/11/xubuntu-install-option/" target="_blank" rel="external">起動オプションを付けてXubuntu14.04.1をインストール - Pagent</a>  </p>
 <p>この場合grubの記述は</p>
-<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;
-GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
+<pre><code><span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"quiet splash"</span>
+<span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"pci=noacpi"</span>
 </code></pre><p>となっていた。<br>スペース区切りで一行で書いても、改行してあらたにオプションを記述してもどちらでもいいようだ。</p>
 
 	</div>

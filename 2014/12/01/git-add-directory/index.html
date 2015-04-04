@@ -111,20 +111,20 @@
 	<!-- content -->
 	<div class="mypage">
 	    <p>HexoのソースはBitbucketで管理しているが、Hexoのテーマを変えたところ、commit出来なくなった。  </p>
-<pre><code>Changes not staged for commit:
-  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
-  (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
-  (commit or discard the untracked or modified content in submodules)
+<pre><code>Changes not staged for <span class="operator"><span class="keyword">commit</span>:
+  (<span class="keyword">use</span> <span class="string">"git add &lt;file&gt;..."</span> <span class="keyword">to</span> <span class="keyword">update</span> what will be committed)
+  (<span class="keyword">use</span> <span class="string">"git checkout -- &lt;file&gt;..."</span> <span class="keyword">to</span> discard changes <span class="keyword">in</span> working directory)
+  (<span class="keyword">commit</span> <span class="keyword">or</span> discard the untracked <span class="keyword">or</span> modified content <span class="keyword">in</span> submodules)
 
     modified:   themes/freewill (modified content, untracked content)
 
-no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+<span class="keyword">no</span> changes added <span class="keyword">to</span> <span class="keyword">commit</span> (<span class="keyword">use</span> <span class="string">"git add"</span> <span class="keyword">and</span>/<span class="keyword">or</span> <span class="string">"git commit -a"</span>)</span>
 </code></pre><p>と表示される。  </p>
 <p>Bitbucketのソースを見ると、新しいテーマのディレクトリthemes/freewillは追加はされているが、クリックして開くことが出来ない。<br>何度かやり直してみたが、うまく行かない。  </p>
 <p>ためしに適当なファイルを一つpushしたらどうかと、  </p>
-<pre><code>$ git add themes/freewill/LICENSE
-$ git commit -m &#39;修正&#39;
-$ git push
+<pre><code><span class="variable">$ </span>git add themes/freewill/<span class="constant">LICENSE</span>
+<span class="variable">$ </span>git commit -m <span class="string">'修正'</span>
+<span class="variable">$ </span>git push
 </code></pre><p>とやったらLICENSEが追加され、freewillを開くことが出来た。<br>その後もう一度<code>git add .</code>し、commit、pushしたら、他のファイルやディレクトリも追加された。  </p>
 <p>そう言えばリポジトリに初めてcommitした時も、一度contributors.txtというファイルをpushしてからでないとうまく行かなかった。<br>Gitというのはいきなりディレクトリ全体を追加するのは出来ない仕様なのかもしれない。</p>
 

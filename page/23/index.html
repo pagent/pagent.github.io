@@ -128,12 +128,12 @@
 	  
 	
 	  <p>DropboxでOctopressのフォルダを同期し、2台目のPCでもrake new_postやrake generateは出来るようになったが、rake deployが出来ない。<br>gitが入ってなかったので<code>sudo apt-get install git</code>し、<code>rake setup_github_pages</code>でセットアップしたが、  </p>
-<pre><code>! [rejected]        master -&gt; master (non-fast-forward)
+<pre><code><span class="input"><span class="prompt">! [rejected]        master -&gt;</span> master (non-fast-forward)</span>
 </code></pre><p>とエラーになる。<br>SSHの公開鍵も設定したのだが。  </p>
 <p>検索したところ、Octopressで突然deploy出来なくなった時には、Rakefileを編集するという対処法があるらしい。<br><a href="http://qiita.com/takuma7/items/2d6f6e786eb6c0afbefb" target="_blank" rel="external">Octopressでrake deployした際にrejectedされた場合の対処 - Qiita</a>  </p>
 <p>どうやら強制的にdeployするものらしい。  </p>
 <p>上記記事の通り、Rakefileの268行目の<code>#</code>の前に<code>+</code>を付けて  </p>
-<pre><code>Bundler.with_clean_env { system &quot;git push origin +#{deploy_branch}&quot; }
+<pre><code><span class="constant">Bundler</span>.with_clean_env { system <span class="string">"git push origin +<span class="subst">#{deploy_branch}</span>"</span> }
 </code></pre><p>にすると、deploy出来た。  </p>
 <p>元記事によると、deploy出来るようになった後は、Rakefileの編集を元に戻しておいた方がいいらしい。<br><a href="http://stackoverflow.com/questions/17609453/rake-gen-deploy-rejected-in-octopress" target="_blank" rel="external">rake gen_deploy rejected in Octopress - Stack Overflow</a>  </p>
 <p>いったんdeploy出来るようになったら、その後はRakefileを元に戻してもdeploy出来る。  </p>
@@ -177,14 +177,14 @@
 	
 	  <p>OctopressのフォルダをDropboxに置くことにしたので、メインで使っているPCではなく古いネットブックにインストールしたXubuntuからDropbox上のOctopressを使えるかどうか試してみた。<br>だがrake previewしようとしたら、エラーになってしまった。<br>Octopressを使う環境が整っていないので当然といえば当然。  </p>
 <p>環境を整えるにあたり、bundle installで行き詰まってしまった。<br>途中    </p>
-<pre><code>Installing libv8 (3.16.14.7)
+<pre><code><span class="title">Installing</span> libv8 (<span class="number">3.16.14.7</span>)
 </code></pre><p>の表示のところで動かない。<br>フリーズしたのかと思ったが検索したところ、libv8のインストールには時間が掛かるらしい。<br>確かにCPUの使用率も100%で、頑張ってはいるようだ。  </p>
 <p>非力なマシンのせいか結局30分くらい掛かったろうか。<br>もう一度パスワード入力を求められ、その後またtherubyracer (0.12.1)のところで少し時間が掛かったが、ようやくYour bundle is complete!<br>Octopressを使えるようになった。  </p>
 <p>ーー<br>使えるようになったと思ったら、deployが出来ない。  </p>
 <pre><code>$ rake deploy
-cp -r source/images/.gitkeeper public/images/.gitkeeper
-## Deploying branch to Github Pages 
-## Pulling any updates from Github Pages 
+cp -r source/images/.gitkeeper <span class="keyword">public</span>/images/.gitkeeper
+<span class="preprocessor">## Deploying branch to Github Pages </span>
+<span class="preprocessor">## Pulling any updates from Github Pages </span>
 cd _deploy
 cd -
 rm -rf _deploy/assets
@@ -199,16 +199,16 @@ rm -rf _deploy/robots.txt
 rm -rf _deploy/sitemap.xml
 rm -rf _deploy/stylesheets
 
-## Copying public to _deploy
-cp -r public/. _deploy
+<span class="preprocessor">## Copying public to _deploy</span>
+cp -r <span class="keyword">public</span>/. _deploy
 cd _deploy
 
-## Committing: Site updated at 2014-11-19 11:02:25 UTC
-sh: 1: git: not found
+<span class="preprocessor">## Committing: Site updated at 2014-11-19 11:02:25 UTC</span>
+sh: <span class="number">1</span>: git: not found
 
-## Pushing generated _deploy website
+<span class="preprocessor">## Pushing generated _deploy website</span>
 
-## Github Pages deploy complete
+<span class="preprocessor">## Github Pages deploy complete</span>
 cd -
 </code></pre><p>拒否はされてないみたいだが、記事を投稿出来ない。<br>どこに問題があるのか、よく分からない。<br>generateもやたら遅いし、ちょっとしんどいかな。  </p>
 <p>ーー<br>gitがインストールされてない？</p>
@@ -251,10 +251,10 @@ cd -
 	  <p>ネットブックLaVie LightにDebian Wheezyをインストールした。<br>ウィンドウマネージャはXfceが好みなので、debian-7.7.0-i386-netinst.isoでインストールする際、”Advanced options” 、”Alternate desktop environments”でXfceを選択した。  </p>
 <p>ファイルやフォルダを簡単に管理者権限で操作したいので、XfceデフォルトのファイルマネージャーThunarのアクションに「rootで開く」を追加し、gksuもインストールした。<br>だがrootで開こうとしても、認証画面は表示されるものの、フォルダやファイルを管理者権限で開くことが出来ない。  </p>
 <p>代わりにNemoをインストールしようとしたら、リポジトリにNemoが無かった。PCManFMも確かrootで開くメニューがあったのでインストールしてみたが、なぜかrootで開くメニューが無い。<br>困ってしまったが、Ubuntu 12.04 Preciseのリポジトリを追加することで、Nemoをインストール出来た。  </p>
-<pre><code>echo &quot;deb http://ppa.launchpad.net/noobslab/mint/ubuntu precise main&quot; | sudo tee -a /etc/apt/sources.list
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys F59EAE4D
-sudo apt-get update
-sudo apt-get install nemo
+<pre><code><span class="keyword">echo</span> <span class="string">"deb http://ppa.launchpad.net/noobslab/mint/ubuntu precise main"</span> | sudo tee -<span class="keyword">a</span> /etc/apt/sources.<span class="keyword">list</span>
+sudo apt-key adv --keyserver keyserver.ubuntu.<span class="keyword">com</span> --recv-<span class="built_in">keys</span> F59EAE4D
+sudo apt-<span class="built_in">get</span> <span class="keyword">update</span>
+sudo apt-<span class="built_in">get</span> install nemo
 </code></pre><p><a href="http://www.techlw.com/2013/12/install-nemo-file-manager-with.html" target="_blank" rel="external">Install Nemo file Manager with Extensions in Debian 7 Wheezy and its derivatives | Technology Linux World</a>  </p>
 <p>Ubuntu 14.04 Trustyのリポジトリを入れた方が、Nemoのバージョンが新しくて良いかと思いやってみたが、「壊れたパッケージを修復出来ない」とかでNemoをインストール出来なかった。  </p>
 <p>それと、Nemoを起動すると、デスクトップ上の右クリックでアプリケーションメニューを表示するのが出来なくなってしまう。<br>これでは少々不便なので、普段はThunarを使った方が良いかもしれない。</p>
@@ -299,7 +299,7 @@ sudo apt-get install nemo
 <p>/etc/modprobe.d内にath9k.confというファイルを作りそこに<code>options ath9k nohwcrypt=1</code>と記載したり、ath9kをロードし直したりしてみたが改善しない。<br>NdisWrapperでWindows Xp用のドライバーを使えば良いかと思いやってみたが、これも満足に動作しない。  </p>
 <p>Xubuntu 14.04.1にLinux 3.2や3.8カーネルをコンパイルしてインストールすれば良いのかもしれないが、自分の力量を超えているので断念。<br>（カーネルのコンパイルをしなくても、Ubuntu 12.04 Preciseのリポジトリを追加してLinux 3.2カーネルをインストールすれば良かったのかもしれない。<a href="/2014/11/18/debian-wheezy-nemo/">Debian WheezyにNemoをインストール</a>）  </p>
 <p>結局Xubuntu 12.04をインストールしそれを14.04.1にアップグレード、起動カーネルをLinux 3.2にすることで無線LANも安定した。  </p>
-<pre><code>GRUB_DEFAULT=&quot;Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.2.0-58-generic&quot;
+<pre><code><span class="constant">GRUB_DEFAULT</span>=<span class="string">"Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.2.0-58-generic"</span>
 </code></pre><p>古いPCでもLinuxは利用出来ると言われるが、Linuxも新しい機器への対応を進める一方、古いPCは切り捨てられていくのだろうか。<br>使い勝手はUbuntu派生ディストリに劣るかもしれないが、今度Debian+Xfceも試してみようと思う。  </p>
 <p>ーー<br>（追記）<br>lshwコマンドで見たところ、Xubuntu 12.04（Linux 3.2カーネル）でもAR9285に使われているドライバーはath9kだった。<br>なぜXubuntu 14.04.1の場合は無線が安定しないのだろう？<br>「disabling IRQ #9」回避のため、起動オプションに「pci=noacpi」を付けていたからだろうか。  </p>
 <p>ーー<br>（再追記）<br>Xubuntuのアップデートで、カーネルが更新される度にgrubが書き換えられてはかなわないので、/etc/default/grubのパーミッションで、所有者rootのアクセス権が「読み書き」だったのを「読み込み専用」にした。<br>変更が必要な時はまたアクセス権を変更しないといけないが、これで意図に反してgrubが書き換えらるのを防ぐことが出来る。</p>
@@ -342,9 +342,9 @@ sudo apt-get install nemo
 	  <p>NECのネットブックLaVie Light BL300/TにXubuntu14.04.1を再インストールした。<br>以前もXubuntu14.04.1をインストールしたがその時は<code>disabling IRQ #9</code>でインストールDVDを起動出来ず、いったんXubuntu13.04をインストールしてから、その後Xubuntu14.04.1にアップグレードしていた。<br>だが、起動オプションに<code>pci=noacpi</code>を加えれば、Linuxカーネル3.13.0-39でも起動出来るようだったので、起動オプションを付けてXubuntu14.04.1をインストールした。  </p>
 <p>Xubuntu14.04.1のインストールDVDを入れ、起動後「shift」キーを押し続けてオプションを表示。言語を日本語にした後「F6」キーで「その他のオプション」を表示。<br><code>acpi=off</code>、<code>noapic</code>、<code>nolapic</code>、<code>edd=on</code>、<code>nodmraid</code>、<code>nomodeset</code>等の起動オプションが選択出来るが、なにも選ばず「ESC」キーで選択画面を終了。（<code>acpi=off</code>では解像度が800×600に固定されてしまい、他のオプションでは<code>disabling IRQ #9</code>でインストールDVDを起動出来ない。）<br>下部に「起動オプション」の欄があり、キーボードで任意にオプションを入力出来るので、<code>quiet splash --</code>に続けて<code>pci=noacpi</code>と入力し「ENTER」で起動。<br>問題なくXubuntu14.04.1をインストール出来た。  </p>
 <p>インストール後再起動すると、/etc/default/grubの</p>
-<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;
+<pre><code><span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"quiet splash"</span>
 </code></pre><p>の下にちゃんと</p>
-<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
+<pre><code><span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"pci=noacpi"</span>
 </code></pre><p>の記載が加わっている。</p>
 <p>Xubuntuの前にLubuntu14.04.1も試してみたが、確かにXubuntuに較べて動作はやや軽いような気はした。<br>だがLubuntuソフトウェアセンターというのが検索も出来ず使いづらいし、お気に入りアプリケーションの登録も不便だったりと、カスタマイズの容易さではXubuntuに劣るようだ。</p>
 
@@ -406,35 +406,35 @@ sudo apt-get install nemo
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
-		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>11</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
+		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 		
 		</ul>

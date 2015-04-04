@@ -114,9 +114,9 @@
 <p>“Scanning  for changes”→”Processing .. items”→”Downloading File List”ときて、その後また”Scanning  for changes”→”Processing .. items”と延々処理が続き、いつまで経っても同期が終わらない。<br>さらに起動しても”Logging In”のまま固まってしまうようになった。  </p>
 <p>まともに機能しない状態なので、非公式レポジトリのクライアントはアンインストールし、<a href="https://www.copy.com/install/" target="_blank" rel="external">Copy.comのダウンロードページ</a>から落としたクライアントをインストールし直した。<br>インストールといっても、ダウンロードした圧縮ファイルを展開し、任意のディレクトリに配置しただけだが。  </p>
 <p>追加アプリケーションを配置するためのディレクトリ/optに配置した。  </p>
-<pre><code>cd ~/Desktop
-tar zxvf copy_agent-1.48.0456.tgz
-sudo cp -r copy/x86_64 /opt/copy
+<pre><code><span class="keyword">cd</span> ~/Desktop
+tar zxvf copy_agent-<span class="number">1.48</span>.<span class="number">0456</span>.tgz
+sudo <span class="keyword">cp</span> -<span class="keyword">r</span> <span class="built_in">copy</span>/x86_64 /<span class="keyword">opt</span>/<span class="built_in">copy</span>
 </code></pre><p>コマンドなど使わずファイルマネージャーで「ここに展開」し、/optを「Rootとして開く」してからコピペでも問題無い。  </p>
 <p>端末から<code>/opt/copy/CopyAgent</code>で起動。<br>一応ちゃんと動いてくれているようだ。<br><code>/opt/copy/CopyConsole</code>なら端末で動作する。  </p>
 <p>簡便のためコマンド<code>/opt/copy/CopyAgent</code>をメニューに追加した。</p>

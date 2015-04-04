@@ -113,9 +113,9 @@
 	    <p>Xubuntu14.04にDropboxに似たオンラインストレージ「Copy」のクライアントを導入した。<br>クライアントはcopy.comからダウンロードしたものではなく、下記サイトを参考にUbuntu向けのものをインストールした。<br><a href="http://kometchtech.blog.fc2.com/blog-entry-1542.html" target="_blank" rel="external">いつか、そのとき、あの場所で。 | [Ubuntu][自分用メモ]　Copy.com クライアントのインストール方法。</a>  </p>
 <p>インストール後、メニュー→アクセサリ→Copyで起動し、64bitのPCでは問題なく使用出来た。<br>だが32bitのPCではログインする際、「curl failed to post data」とエラーになり、終了してしまう。  </p>
 <p>端末から  </p>
-<pre><code>$ /opt/copy-client/CopyAgent
+<pre><code>$ /<span class="keyword">opt</span>/<span class="built_in">copy</span>-client/CopyAgent
 </code></pre><p>とコマンド入力して起動させても、  </p>
-<pre><code>QGtkStyle was unable to detect the current GTK+ theme.
+<pre><code>QGtkStyle was unable <span class="built_in">to</span> detect <span class="operator">the</span> current GTK+ theme.
 </code></pre><p>というエラー表示が出て、やはりログイン出来ない。  </p>
 <p>QGtkStyleとかGTK+とか、なんのことかよく分からなかったが、どうやら<code>libgnomeui</code>をインストールする必要があるらしい。<br><a href="https://wiki.archlinux.org/index.php/Uniform_Look_for_Qt_and_GTK_Applications_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29#Qt_.E3.82.A2.E3.83.97.E3.83.AA.E3.82.B1.E3.83.BC.E3.82.B7.E3.83.A7.E3.83.B3.E3.81.8C_QGtkStyle_.E3.82.92.E4.BD.BF.E3.82.8F.E3.81.AA.E3.81.84" target="_blank" rel="external">Uniform Look for Qt and GTK Applications (日本語) - ArchWiki</a>  </p>
 <p>さらに検索してみると、Ubuntuでは以前からCopy.com クライアント利用にあたっての不具合が報告されているようだ。<br><a href="http://ubuntuforums.org/showthread.php?t=2217713&amp;page=2&amp;p=12993324#post12993324" target="_blank" rel="external">Copy.com indicator problem with Ubuntu 14.04 - Page 2</a>  </p>

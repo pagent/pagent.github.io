@@ -114,17 +114,17 @@
 <p>sitemapとは別にクローラーに各種の指定をするrobots.txtというのがあるようなので、GitHub Pagesに置いてみた。<br>SeesaaやFC2などのブログサービスでは自動的に用意してくれているようだ。  </p>
 <p>sourceフォルダ直下にrobots.txtを新規作成。<br>generateするとちゃんとpublicフォルダ内にもrobots.txtが生成された。<br>deployし、ブラウザで<code>http://pagent.github.io/robots.txt</code>にアクセスしが、何故か404エラーだった。GitHub Pagesのレポジトリには追加されていたが。<br>反映に時間がかかるようでしばらくするとアクセス出来た。  </p>
 <p>robots.txtの内容は下記のようにした。  </p>
-<pre><code>User-agent: *
-Disallow: /css/
-Disallow: /*.js$
+<pre><code><span class="attribute">User-agent</span>: <span class="string">*</span>
+<span class="attribute">Disallow</span>: <span class="string">/css/</span>
+<span class="attribute">Disallow</span>: <span class="string">/*.js$</span>
 
-Sitemap: http://pagent.github.io/sitemap.xml
+<span class="http"><span class="attribute">Sitemap</span>: <span class="string">http://pagent.github.io/sitemap.xml</span>
 
-User-agent: bingbot
-Crawl-delay: 30
+<span class="http"><span class="attribute">User-agent</span>: <span class="string">bingbot</span>
+<span class="attribute">Crawl-delay</span>: <span class="string">30</span>
 
-User-agent: MSNBOT
-Crawl-delay: 30
+<span class="http"><span class="attribute">User-agent</span>: <span class="string">MSNBOT</span>
+<span class="attribute">Crawl-delay</span>: <span class="string">30</span></span></span></span>
 </code></pre><p>大して効果は無いのかもしれないが、おかしなことを書かない限りデメリットはないだろうし、無いよりはましだろう。  </p>
 <p>ーー<br>（追記）<br>robots.txtを置いてから、わりと早く検索エンジンにインデックスされるようになった気がする。<br>Octopressではデフォルトでsitemap.xmlとrobots.txtを生成してくれるようだ。<br>この点、HexoよりOctopressの方がSEO的に優れているかもしれない。  </p>
 <p>ーー<br>（再追記）<br>Google ウェブマスターツールのヘルプによると、「robots.txt ファイルが必要になるのは、Google などの検索エンジンのインデックスに登録したくないコンテンツがある場合のみ」らしい。<br><a href="https://support.google.com/webmasters/answer/6062608?hl=ja&amp;rd=1" target="_blank" rel="external">robots.txt ファイルについて - ウェブマスター ツール ヘルプ</a>  </p>

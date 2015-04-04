@@ -129,9 +129,9 @@
 	
 	  <p>Arch Linuxでのフォントが汚く見づらかったので、フォントレンダリング「Infinality」（<a href="https://archlinuxjp.kusakata.com/wiki/Infinality" target="_blank" rel="external">Infinality - ArchWiki</a>）をインストールした。  </p>
 <p>途中、</p>
-<pre><code>Unable to update the static FcBlanks: 0x0600
-Unable to update the static FcBlanks: 0x0601
-Unable to update the static FcBlanks: 0x0602
+<pre><code>Unable <span class="keyword">to</span> <span class="keyword">update</span> the static FcBlank<span class="variable">s:</span> <span class="number">0</span>x0600
+Unable <span class="keyword">to</span> <span class="keyword">update</span> the static FcBlank<span class="variable">s:</span> <span class="number">0</span>x0601
+Unable <span class="keyword">to</span> <span class="keyword">update</span> the static FcBlank<span class="variable">s:</span> <span class="number">0</span>x0602
 …
 </code></pre><p>というエラーが出たが、下記トピックを参考に、<code>sudo pacman -S fontconfig-infinality-ultimate</code>でfontconfig-iu-compを削除した。<br><a href="https://bbs.archlinux.org/viewtopic.php?id=195198" target="_blank" rel="external">[SOLVED] Font cache: Unable to update the static FcBlanks / Newbie Corner / Arch Linux Forums</a>  </p>
 <p>首尾よくフォントが綺麗になったのだが、その後一部の漢字フォントが縦に潰れたようになってしまった。<br>（もしかすると、気づいたのが最近だっただけで、以前から潰れたフォントがあったのかもしれない。）</p>
@@ -217,8 +217,8 @@ Unable to update the static FcBlanks: 0x0602
 <p>~/.config/mimeapps.listの[Added Associations]の箇所に下記を追記した。  </p>
 <pre><code>text/vcard=firefox.desktop;
 text/html=firefox.desktop;
-x-scheme-handler/http=firefox.desktop;
-x-scheme-handler/https=firefox.desktop;
+x-scheme-<span class="operator"><span class="keyword">handler</span>/http=firefox.desktop;</span>
+x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firefox.desktop;</span>
 </code></pre><p>Xfce4 terminal内のリンクがFirefoxで開くようになった。</p>
 
 	
@@ -257,14 +257,14 @@ x-scheme-handler/https=firefox.desktop;
 	  
 	
 	  <p>Lubuntu14.04をアップデート中に  </p>
-<pre><code>run-parts: executing /etc/kernel/postinst.d/zz-update-grub 3.16.0-33-generic /boot/vmlinuz-3.16.0-33-generic
+<pre><code>run-parts: executing <span class="regexp">/etc/</span>kernel<span class="regexp">/postinst.d/</span>zz-update-grub <span class="number">3.16</span>.<span class="number">0</span>-<span class="number">33</span>-generic <span class="regexp">/boot/</span>vmlinuz-<span class="number">3.16</span>.<span class="number">0</span>-<span class="number">33</span>-generic
 </code></pre><p>の表示のところでフリーズしてしまった。<br>カーネルのアップデート中だったので嫌な予感がしたが、やむなく強制終了した。<br>起動しようとすると、案の定  </p>
-<pre><code>buffer i/o error on device sda4
+<pre><code><span class="title">buffer</span> i/o <span class="built_in">error</span> <span class="built_in">on</span> device sda4
 </code></pre><p>と延々エラーを吐いて起動してくれない。  </p>
 <p>sda4はswapに当てていたので、隣のArch Linuxを起動して、sda4を再度swapでフォーマットし直したら起動できるようになった。<br>（fstabの記載はUUIDではなくデバイス名にしていた）  </p>
 <p>起動は出来たが、今度はSynapticを使おうとすると、  </p>
-<pre><code>E: dpkg は中断されました。問題を修正するには &#39;dpkg --configure -a&#39; を手動で実行する必要があります。
-E: _cache-&gt;open() failed, please report.
+<pre><code><span class="attribute">E</span>: <span class="string">dpkg は中断されました。問題を修正するには 'dpkg --configure -a' を手動で実行する必要があります。</span>
+<span class="attribute">E</span>: <span class="string">_cache-&gt;open() failed, please report.</span>
 </code></pre><p>という表示が出る。<br>言われたとおり<code>dpkg --configure -a</code>を実行すると、中断した箇所からアップデートが再開された。  </p>
 <p>今度はアップデートも無事終了。  </p>
 <p>意味はよく分かってはいないが、ネットの情報の助けがあれば、エラー表示はとても助かる。</p>
@@ -366,35 +366,35 @@ E: _cache-&gt;open() failed, please report.
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
 		
 		
 		</ul>

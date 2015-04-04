@@ -117,18 +117,18 @@
 <p><del>ブログトップのURLをパスではなく直接記載したら上手くいった。</del>  </p>
 <p>ーーーー<br>（<strong>追記</strong>）<br>個別記事URLへのパスは<code>&lt;%- item.permalink %&gt;</code>一つで良いようだ。<br>ーーーー  </p>
 <p>記事を概要表示にしている時は「Read More」。全文表示にしている時はツイートボタンを表示することにして、read_moreの箇所を下記に変更した。  </p>
-<pre><code>&lt;% if (item.excerpt &amp;&amp; index) { %&gt;
-  &lt;a type=&quot;button&quot; href=&quot;&lt;%- config.root %&gt;&lt;%- item.path %&gt;#more&quot; class=&quot;btn btn-default more&quot;&gt;&lt;%= __(&#39;read_more&#39;) %&gt;&lt;/a&gt;
-&lt;% } else { %&gt;
-&lt;div class=&quot;tweet-button&quot;&gt;
-  &lt;a href=&quot;https://twitter.com/share&quot; class=&quot;twitter-share-button&quot; data-url=&quot;&lt;%- item.permalink %&gt;&quot; data-text=&quot;&lt;%= item.title %&gt; | &lt;%= config.title %&gt;&quot; data-lang=&quot;ja&quot;&gt;ツイート&lt;/a&gt;
-&lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?&#39;http&#39;:&#39;https&#39;;if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+&#39;://platform.twitter.com/widgets.js&#39;;fjs.parentNode.insertBefore(js,fjs);}}(document, &#39;script&#39;, &#39;twitter-wjs&#39;);&lt;/script&gt;
-&lt;/div&gt;
-&lt;% } %&gt;
+<pre><code><span class="vbscript">&lt;% <span class="keyword">if</span> (item.excerpt &amp;&amp; index) { %&gt;</span>
+  <span class="tag">&lt;<span class="title">a</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">href</span>=<span class="value">"&lt;%- config.root %&gt;&lt;%- item.path %&gt;#more"</span> <span class="attribute">class</span>=<span class="value">"btn btn-default more"</span>&gt;</span><span class="vbscript">&lt;%= __(<span class="comment">'read_more') %&gt;</span></span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+<span class="vbscript">&lt;% } <span class="keyword">else</span> { %&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"tweet-button"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"https://twitter.com/share"</span> <span class="attribute">class</span>=<span class="value">"twitter-share-button"</span> <span class="attribute">data-url</span>=<span class="value">"&lt;%- item.permalink %&gt;"</span> <span class="attribute">data-text</span>=<span class="value">"&lt;%= item.title %&gt; | &lt;%= config.title %&gt;"</span> <span class="attribute">data-lang</span>=<span class="value">"ja"</span>&gt;</span>ツイート<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">!<span class="function"><span class="keyword">function</span><span class="params">(d,s,id)</span></span>{<span class="keyword">var</span> js,fjs=d.getElementsByTagName(s)[<span class="number">0</span>],p=<span class="regexp">/^http:/</span>.test(d.location)?<span class="string">'http'</span>:<span class="string">'https'</span>;<span class="keyword">if</span>(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+<span class="string">'://platform.twitter.com/widgets.js'</span>;fjs.parentNode.insertBefore(js,fjs);}}(<span class="built_in">document</span>, <span class="string">'script'</span>, <span class="string">'twitter-wjs'</span>);</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="vbscript">&lt;% } %&gt;</span>
 </code></pre><p>ツイートボタンに対しては、source/css/style.cssに下記を追記、  </p>
-<pre><code>.tweet-button {
-  padding: 8px 0;
-}
+<pre><code><span class="class">.tweet-button</span> <span class="rules">{
+  <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">8px</span> <span class="number">0</span></span></span>;
+<span class="rule">}</span></span>
 </code></pre><p>位置を調整した。  </p>
 <p>（参照記事）<br><a href="http://imaizu.me/program/twbtn-on-jekyll-post.html" target="_blank" rel="external">jekyllのブログで投稿一覧ページにtwitterのボタンを置く - Taught by Myself</a></p>
 

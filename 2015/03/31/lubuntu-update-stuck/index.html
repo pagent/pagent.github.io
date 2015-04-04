@@ -111,14 +111,14 @@
 	<!-- content -->
 	<div class="mypage">
 	    <p>Lubuntu14.04をアップデート中に  </p>
-<pre><code>run-parts: executing /etc/kernel/postinst.d/zz-update-grub 3.16.0-33-generic /boot/vmlinuz-3.16.0-33-generic
+<pre><code>run-parts: executing <span class="regexp">/etc/</span>kernel<span class="regexp">/postinst.d/</span>zz-update-grub <span class="number">3.16</span>.<span class="number">0</span>-<span class="number">33</span>-generic <span class="regexp">/boot/</span>vmlinuz-<span class="number">3.16</span>.<span class="number">0</span>-<span class="number">33</span>-generic
 </code></pre><p>の表示のところでフリーズしてしまった。<br>カーネルのアップデート中だったので嫌な予感がしたが、やむなく強制終了した。<br>起動しようとすると、案の定  </p>
-<pre><code>buffer i/o error on device sda4
+<pre><code><span class="title">buffer</span> i/o <span class="built_in">error</span> <span class="built_in">on</span> device sda4
 </code></pre><p>と延々エラーを吐いて起動してくれない。  </p>
 <p>sda4はswapに当てていたので、隣のArch Linuxを起動して、sda4を再度swapでフォーマットし直したら起動できるようになった。<br>（fstabの記載はUUIDではなくデバイス名にしていた）  </p>
 <p>起動は出来たが、今度はSynapticを使おうとすると、  </p>
-<pre><code>E: dpkg は中断されました。問題を修正するには &#39;dpkg --configure -a&#39; を手動で実行する必要があります。
-E: _cache-&gt;open() failed, please report.
+<pre><code><span class="attribute">E</span>: <span class="string">dpkg は中断されました。問題を修正するには 'dpkg --configure -a' を手動で実行する必要があります。</span>
+<span class="attribute">E</span>: <span class="string">_cache-&gt;open() failed, please report.</span>
 </code></pre><p>という表示が出る。<br>言われたとおり<code>dpkg --configure -a</code>を実行すると、中断した箇所からアップデートが再開された。  </p>
 <p>今度はアップデートも無事終了。  </p>
 <p>意味はよく分かってはいないが、ネットの情報の助けがあれば、エラー表示はとても助かる。</p>

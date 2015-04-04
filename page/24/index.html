@@ -209,40 +209,40 @@
 	
 	  <p>Gyaoで動画を観るとき背景が白く、明る過ぎてまぶしいので、FirefoxのアドオンStylishで背景を黒くした。  </p>
 <p>Stylishに下記スタイルを適当な名前で追加した。</p>
-<pre><code>@namespace url(http://www.w3.org/1999/xhtml);
-@-moz-document domain(&quot;gyao.yahoo.co.jp&quot;)
-,domain(&quot;youtube.com&quot;) 
-{
+<pre><code><span class="at_rule">@<span class="keyword">namespace</span> <span class="function">url</span>(http://www.w3.org/<span class="number">1999</span>/xhtml)</span>;
+<span class="at_rule">@<span class="keyword">-moz-document</span> <span class="function">domain</span>(<span class="string">"gyao.yahoo.co.jp"</span>)
+,<span class="function">domain</span>(<span class="string">"youtube.com"</span>) 
+</span>{
 
-body {
-    background-color:#000;
-}
-#playerModule {
-    border: 1px solid #080808;
-}
-.wrapperText h1 {
-    color:#BBB;
-}
+<span class="tag">body</span> <span class="rules">{
+    <span class="rule"><span class="attribute">background-color</span>:<span class="value"><span class="hexcolor">#000</span></span></span>;
+<span class="rule">}</span></span>
+<span class="id">#playerModule</span> <span class="rules">{
+    <span class="rule"><span class="attribute">border</span>:<span class="value"> <span class="number">1px</span> solid <span class="hexcolor">#080808</span></span></span>;
+<span class="rule">}</span></span>
+<span class="class">.wrapperText</span> <span class="tag">h1</span> <span class="rules">{
+    <span class="rule"><span class="attribute">color</span>:<span class="value"><span class="hexcolor">#BBB</span></span></span>;
+<span class="rule">}</span></span>
 }
 </code></pre><p>YouTubeの背景はそれ程まぶしいと感じたことは無かったが、一応YouTubeのドメインも加えた。<br>ずいぶんと目にやさしくなった。</p>
 <p>Stylishは対象のドメインを指定してスタイルを変えられるので、なにかと重宝している。  </p>
 <p>ーー<br>（追記）<br>下記記事で紹介されているStylishのスタイル、<a href="https://userstyles.org/styles/23516/midnight-surfing-global-dark-style" target="_blank" rel="external">Midnight Surfing - Global Dark Style</a>というのが、とてもきれいに表示ページの背景を黒くしてくれる。<br><a href="http://www.xmisao.com/2014/08/08/dark-firefox.html" target="_blank" rel="external">Firefoxを徹底的に黒くする テーマ / Stylish / Vimperator — ぺけみさお</a>  </p>
 <p>（本当はツールバーやサイドバーなどFirefox自体の見た目も黒くなるはずらしいが、Firefox自体までは黒くならない。最近のバージョンのFirefoxではFirefox自体のスタイルを変更するには「完全テーマ」で変更する必要があるようだ。）  </p>
 <p>ただ、導入するとすべてのページが黒くなってしまうので、Gyao、YouTube等のドメインだけを指定。<br>Midnight Surfingの書き出し部分  </p>
-<pre><code>@namespace html url(http://www.w3.org/1999/xhtml);
-@namespace xul url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+<pre><code><span class="at_rule">@<span class="keyword">namespace</span> html <span class="function">url</span>(http://www.w3.org/<span class="number">1999</span>/xhtml)</span>;
+<span class="at_rule">@<span class="keyword">namespace</span> xul <span class="function">url</span>(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul)</span>;
 
-/* Browser Background */
-browser[type=&quot;content-primary&quot;] {background-color: #141414 !important;}
+<span class="comment">/* Browser Background */</span>
+<span class="tag">browser</span><span class="attr_selector">[type="content-primary"]</span> <span class="rules">{<span class="rule"><span class="attribute">background-color</span>:<span class="value"> <span class="hexcolor">#141414</span> <span class="important">!important</span></span></span>;<span class="rule">}</span></span>
 
-@-moz-document url-prefix(http://), url-prefix(https://), url-prefix(ftp://), url-prefix(file://) {
+<span class="at_rule">@<span class="keyword">-moz-document</span> <span class="function">url-prefix</span>(http://), <span class="function">url-prefix</span>(https://), <span class="function">url-prefix</span>(ftp://), <span class="function">url-prefix</span>(file://) </span>{
 </code></pre><p>の箇所を下記に修正した。</p>
-<pre><code>@namespace html url(http://www.w3.org/1999/xhtml);
-@-moz-document domain(&quot;gyao.yahoo.co.jp&quot;)
-,domain(&quot;youtube.com&quot;)
-,domain(&quot;nicovideo.jp&quot;)
-,domain(&quot;video.fc2.com&quot;)
-{
+<pre><code><span class="at_rule">@<span class="keyword">namespace</span> html <span class="function">url</span>(http://www.w3.org/<span class="number">1999</span>/xhtml)</span>;
+<span class="at_rule">@<span class="keyword">-moz-document</span> <span class="function">domain</span>(<span class="string">"gyao.yahoo.co.jp"</span>)
+,<span class="function">domain</span>(<span class="string">"youtube.com"</span>)
+,<span class="function">domain</span>(<span class="string">"nicovideo.jp"</span>)
+,<span class="function">domain</span>(<span class="string">"video.fc2.com"</span>)
+</span>{
 </code></pre><p>Gyaoの背景をまぶしく感じている人にはおすすめです。  </p>
 <p>というわけで、自分で書いたスタイルは必要なくなった。   </p>
 <p>（追記2）<br>Solarized Dark Everywhereというスタイルも黒板っぽい色で落ち着く。<br>目が疲れた時のウェブ閲覧に良さそうだ。</p>
@@ -285,9 +285,9 @@ browser[type=&quot;content-primary&quot;] {background-color: #141414 !important;
 	  <p>Xubuntu起動時のモニター輝度を少し下げてみた。  </p>
 <p>やり方は、/etc/default/grubで設定する方法、/etc/rc.localで設定する方法、xbacklightを使う方法などがあるようだ。<br><a href="https://sites.google.com/site/tetsuroweb/home/software/ubuntu/tips/display-brightness" target="_blank" rel="external">起動時の画面輝度を調整する (Ubuntu 12.04 - 14.04) - 哲朗web</a>  </p>
 <p>まず、/etc/rc.localで設定する方法を試してみた。<br>現在の輝度を変更するコマンドは<code>&gt;</code>の表示のまま止まってしまうので、</p>
-<pre><code>$ sudo -i
+<pre><code><span class="input"><span class="prompt">$ sudo -i
 
-# echo 6 &gt; /sys/class/backlight/acpi_video0/brightness
+# echo 6 &gt;</span> /sys/<span class="class"><span class="keyword">class</span>/<span class="title">backlight</span>/<span class="title">acpi_video0</span>/<span class="title">brightness</span></span></span>
 </code></pre><p>としないといけなかったが、それ以外は参照記事に記載してある通りの方法で、起動時のモニター輝度を変更できた。  </p>
 <p>これで十分だったのだが、試しにxbacklightを入れてみたら、これがかなり便利な代物だった。<br><a href="http://x1japan.wordpress.com/2013/08/23/linux-keep-brightness-setting/" target="_blank" rel="external">目に優しい、LinuxMintやubuntuでモニター輝度を起動時に落とす設定。 | Woishin Journal</a>  </p>
 <p>自動開始アプリケーションに<code>xbacklight -set 80</code>のようにコマンドを登録しておけば反映されるし、変更したい時も簡単に変更できる。  </p>
@@ -336,8 +336,8 @@ browser[type=&quot;content-primary&quot;] {background-color: #141414 !important;
 <p>このままでも使えるが、ソフトウェアの更新がしょっちゅうカーネルを更新するよう言ってくるし、カーネル3.13で起動できないかやってみた。  </p>
 <p>まず起動時にOS選択画面が出なかったが、他に起動できるOSがない場合grub2はOS選択画面をスキップしてしまうためらしい。<br><a href="http://www.serendip.ws/archives/3534" target="_blank" rel="external">Grub2 で起動時に選択リストを表示させる : Serendip - Webデザイン・プログラミング</a>  </p>
 <p>上記記事の通り</p>
-<pre><code>#GRUB_HIDDEN_TIMEOUT=0
-GRUB_HIDDEN_TIMEOUT_QUIET=false
+<pre><code><span class="comment">#GRUB_HIDDEN_TIMEOUT=0</span>
+<span class="variable">GRUB_HIDDEN_TIMEOUT_QUIET=</span><span class="constant">false</span>
 </code></pre><p>にしたらOS選択画面が出た。  </p>
 <p>試してみる起動オプションは下記記事を参考にさせて頂いた。<br><a href="http://kiddushin.jugem.jp/?eid=264" target="_blank" rel="external">Disabling IRQ (起動には成功の巻) | おもしろきこともなき世をおもしろく</a>  </p>
 <p>OS選択画面の「Advanced options for Ubuntu」で「Ubuntu, with Linux 3.13.0-39-generic」を選択し「e」キーでオプション編集画面へ。<br>linux /boot/vmlinuz-3.13.0-39…で始まる行の最後quiet nosplashのあとに半角スペースに続けてオプションを追加、「F10」キーで起動。<br>（参照記事：<a href="https://wiki.ubuntulinux.jp/UbuntuTips/Others/BootOptions#A.2BMKQw8zC5MMgw.2FDDrbggwfzC3MLkwxjDgMG6Nd1LVMKow1zC3MOcw8zCSTgBmQnaEMGtZCWb0MFkwizBrMG8-" target="_blank" rel="external">UbuntuTips/Others/BootOptions - Ubuntu Japanese Wiki</a>）  </p>
@@ -348,12 +348,12 @@ GRUB_HIDDEN_TIMEOUT_QUIET=false
 <p>irqpoll<br>上に同じく真っ暗。  </p>
 <p>上記とは別にpci=routeirqというオプションも見かけたのでやってみたが、これは「disabling IRQ #9」で起動できず。  </p>
 <p>pci=noacpiを起動オプションに加えることにしたので、/etc/default/grubで</p>
-<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet nosplash pci=noacpi&quot;
+<pre><code><span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"quiet nosplash pci=noacpi"</span>
 </code></pre><p>とし、<code>sudo update-grub</code>した。  </p>
 <p>ーー<br>（追記）<br>最初から「pci=noacpi」のオプションを付けてXubuntu14.04.1をインストールすることも可能だった。<br><a href="http://pagent.github.io/blog/2014/11/11/xubuntu-install-option/" target="_blank" rel="external">起動オプションを付けてXubuntu14.04.1をインストール - Pagent</a>  </p>
 <p>この場合grubの記述は</p>
-<pre><code>GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;
-GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
+<pre><code><span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"quiet splash"</span>
+<span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"pci=noacpi"</span>
 </code></pre><p>となっていた。<br>スペース区切りで一行で書いても、改行してあらたにオプションを記述してもどちらでもいいようだ。</p>
 
 	
@@ -414,35 +414,35 @@ GRUB_CMDLINE_LINUX_DEFAULT=&quot;pci=noacpi&quot;
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
 		
 		
 		</ul>

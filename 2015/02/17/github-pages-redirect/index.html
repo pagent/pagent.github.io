@@ -116,16 +116,16 @@
 <p>全ての記事の基本レイアウトで転送設定する訳にはいかないので、publicフォルダ内に転送元となるindex.htmlを作り、転送タグを記載。<br>generateの際に消えてしまわないよう所有者をrootに変更し、さらにパーミッションも444に変更した。<br>だが、この状態でgenerateするとエラーになってしまう。  </p>
 <p>なにか良い方法は無いかと検索したら、転送元となるindex.htmlを自動生成してくれるプラグインが見つかった。<br><a href="https://www.npmjs.com/package/hexo-generator-alias" target="_blank" rel="external">hexo-generator-alias</a>  </p>
 <p>Hexoの作業フォルダ内で端末を開き  </p>
-<pre><code>$ npm install hexo-generator-alias --save
+<pre><code><span class="variable">$ </span>npm install hexo-generator-<span class="keyword">alias</span> --save
 </code></pre><p>とコマンドを打つとインストール完了。<br>node_modulesフォルダにhexo-generator-aliasが追加される。  </p>
 <p>転送先の記事ソースのFrontMatterに<code>alias: （転送元のパス）</code>を追加しgenerateすると、publicフォルダ内に転送元となるindex.htmlを生成してくれる。  </p>
 <p>自分の例では、転送先の2015-02-06-lxpup-lxqtpup.mdのFrontMatterに<code>alias: 2015/02/06/lxpup-LxQtPup/index.html</code>を追記。（<code>alias: 2015/02/06/lxpup-LxQtPup/</code>でも良いよう）<br>generateすると、public/2015/02/06/lxpup-LxQtPup/index.htmlが生成された。<br>ファイルの中身は転送指定のみの簡潔なもの。  </p>
-<pre><code>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;title&gt;Redirecting...&lt;/title&gt;&lt;link rel=&quot;canonical&quot; href=&quot;/2015/02/06/lxpup-lxqtpup/index.html&quot;&gt;&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0; url=/2015/02/06/lxpup-lxqtpup/index.html&quot;&gt;&lt;/head&gt;&lt;/html&gt;
+<pre><code><span class="doctype">&lt;!DOCTYPE html&gt;</span><span class="tag">&lt;<span class="title">html</span>&gt;</span><span class="tag">&lt;<span class="title">head</span>&gt;</span><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span><span class="tag">&lt;<span class="title">title</span>&gt;</span>Redirecting...<span class="tag">&lt;/<span class="title">title</span>&gt;</span><span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"canonical"</span> <span class="attribute">href</span>=<span class="value">"/2015/02/06/lxpup-lxqtpup/index.html"</span>&gt;</span><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"refresh"</span> <span class="attribute">content</span>=<span class="value">"0; url=/2015/02/06/lxpup-lxqtpup/index.html"</span>&gt;</span><span class="tag">&lt;/<span class="title">head</span>&gt;</span><span class="tag">&lt;/<span class="title">html</span>&gt;</span>
 </code></pre><p>旧URL <a href="http://pagent.github.io/2015/02/06/lxpup-LxQtPup/" target="_blank" rel="external">http://pagent.github.io/2015/02/06/lxpup-LxQtPup/</a> にアクセスすると、ちゃんと新URLに転送された。  </p>
 <p>Jekyllにも同様のプラグインがあり、Octopressでも使えるようだ。<br><a href="http://rawsyntax.com/blog/blogging-on-jekyll-url-redirects/" target="_blank" rel="external">Blogging on Jekyll: URL Redirects - Raw Syntax</a>  </p>
 <p>GitHub Pagesでの転送は以前は諦めていたが、これで一安心。  </p>
 <p>ーー<br>（追記）<br>過去の記事から転送指定しているものを探すには、source/_posts内で端末を開き下記コマンド  </p>
-<pre><code>grep &quot;alias:&quot; *.md
+<pre><code><span class="title">grep</span> <span class="string">"alias:"</span> <span class="regexp">*.md</span>
 </code></pre><p>すべての.mdファイルから「alias:」を含むファイルを抽出。</p>
 
 	</div>

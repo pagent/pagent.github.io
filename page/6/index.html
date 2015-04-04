@@ -173,9 +173,9 @@
 <p>XBOOTでいったん先頭のパーティション（sdb1）にPuppyとClonezillaのisoファイルをインストール。<br>その後そのデータを第2パーティション（sdb2）にコピー。<br>だが、これではUSBが起動しなくなってしまうので、syslinuxとMBRを再度インストールする必要があった。  </p>
 <p>下記サイトからsyslinuxの圧縮ファイルをダウンロード。<br>（syslinux-4.04を用いたが、現時点での最新版はsyslinux-6.03のよう）<br><a href="https://www.kernel.org/pub/linux/utils/boot/syslinux/" target="_blank" rel="external">Index of /pub/linux/utils/boot/syslinux</a>  </p>
 <p>syslinux-4.04.tar.bz2を解凍。syslinux-4.04/linuxフォルダ内で端末を開き、下記コマンドでsdb2（環境によってはsdc2など）にsyslinuxをインストール。  </p>
-<pre><code>syslinux /dev/sdb2
+<pre><code>syslinux <span class="regexp">/dev/</span>sdb2
 </code></pre><p>さらにsdbにMBRを再インストール。  </p>
-<pre><code>dd bs=440 count=1 conv=notrunc if=~/Desktop/syslinux-4.04/mbr/mbr.bin of=/dev/sdb
+<pre><code>dd <span class="variable">bs=</span><span class="number">440</span> <span class="variable">count=</span><span class="number">1</span> <span class="variable">conv=</span>notrunc <span class="variable">if=</span>~/Desktop/syslinux-<span class="number">4.04</span>/mbr/mbr.bin <span class="variable">of=</span>/dev/sdb
 </code></pre><p>（デスクトップ上で解凍したので上記のパスになっているが、if=やof=以下のパスは状況に応じて。）  </p>
 <p>USBメモリの2番目のパーティションsdb2から起動出来るようになった。  </p>
 <p>ーー<br>（参照記事）<br><a href="http://www.server-world.info/query?os=Other&amp;p=knoppix&amp;f=2" target="_blank" rel="external">KNOPPIX - 複数パーティション構成のUSBメモリから起動する ： Server World</a><br><a href="https://wiki.archlinux.org/index.php/Syslinux_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29#.E6.89.8B.E5.8B.95.E3.82.A4.E3.83.B3.E3.82.B9.E3.83.88.E3.83.BC.E3.83.AB" target="_blank" rel="external">Syslinux (日本語) - ArchWiki</a></p>
@@ -221,16 +221,16 @@
 <p>全ての記事の基本レイアウトで転送設定する訳にはいかないので、publicフォルダ内に転送元となるindex.htmlを作り、転送タグを記載。<br>generateの際に消えてしまわないよう所有者をrootに変更し、さらにパーミッションも444に変更した。<br>だが、この状態でgenerateするとエラーになってしまう。  </p>
 <p>なにか良い方法は無いかと検索したら、転送元となるindex.htmlを自動生成してくれるプラグインが見つかった。<br><a href="https://www.npmjs.com/package/hexo-generator-alias" target="_blank" rel="external">hexo-generator-alias</a>  </p>
 <p>Hexoの作業フォルダ内で端末を開き  </p>
-<pre><code>$ npm install hexo-generator-alias --save
+<pre><code><span class="variable">$ </span>npm install hexo-generator-<span class="keyword">alias</span> --save
 </code></pre><p>とコマンドを打つとインストール完了。<br>node_modulesフォルダにhexo-generator-aliasが追加される。  </p>
 <p>転送先の記事ソースのFrontMatterに<code>alias: （転送元のパス）</code>を追加しgenerateすると、publicフォルダ内に転送元となるindex.htmlを生成してくれる。  </p>
 <p>自分の例では、転送先の2015-02-06-lxpup-lxqtpup.mdのFrontMatterに<code>alias: 2015/02/06/lxpup-LxQtPup/index.html</code>を追記。（<code>alias: 2015/02/06/lxpup-LxQtPup/</code>でも良いよう）<br>generateすると、public/2015/02/06/lxpup-LxQtPup/index.htmlが生成された。<br>ファイルの中身は転送指定のみの簡潔なもの。  </p>
-<pre><code>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;title&gt;Redirecting...&lt;/title&gt;&lt;link rel=&quot;canonical&quot; href=&quot;/2015/02/06/lxpup-lxqtpup/index.html&quot;&gt;&lt;meta http-equiv=&quot;refresh&quot; content=&quot;0; url=/2015/02/06/lxpup-lxqtpup/index.html&quot;&gt;&lt;/head&gt;&lt;/html&gt;
+<pre><code><span class="doctype">&lt;!DOCTYPE html&gt;</span><span class="tag">&lt;<span class="title">html</span>&gt;</span><span class="tag">&lt;<span class="title">head</span>&gt;</span><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span><span class="tag">&lt;<span class="title">title</span>&gt;</span>Redirecting...<span class="tag">&lt;/<span class="title">title</span>&gt;</span><span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"canonical"</span> <span class="attribute">href</span>=<span class="value">"/2015/02/06/lxpup-lxqtpup/index.html"</span>&gt;</span><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"refresh"</span> <span class="attribute">content</span>=<span class="value">"0; url=/2015/02/06/lxpup-lxqtpup/index.html"</span>&gt;</span><span class="tag">&lt;/<span class="title">head</span>&gt;</span><span class="tag">&lt;/<span class="title">html</span>&gt;</span>
 </code></pre><p>旧URL <a href="http://pagent.github.io/2015/02/06/lxpup-LxQtPup/" target="_blank" rel="external">http://pagent.github.io/2015/02/06/lxpup-LxQtPup/</a> にアクセスすると、ちゃんと新URLに転送された。  </p>
 <p>Jekyllにも同様のプラグインがあり、Octopressでも使えるようだ。<br><a href="http://rawsyntax.com/blog/blogging-on-jekyll-url-redirects/" target="_blank" rel="external">Blogging on Jekyll: URL Redirects - Raw Syntax</a>  </p>
 <p>GitHub Pagesでの転送は以前は諦めていたが、これで一安心。  </p>
 <p>ーー<br>（追記）<br>過去の記事から転送指定しているものを探すには、source/_posts内で端末を開き下記コマンド  </p>
-<pre><code>grep &quot;alias:&quot; *.md
+<pre><code><span class="title">grep</span> <span class="string">"alias:"</span> <span class="regexp">*.md</span>
 </code></pre><p>すべての.mdファイルから「alias:」を含むファイルを抽出。</p>
 
 	
@@ -378,35 +378,35 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 		
 		</ul>

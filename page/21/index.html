@@ -130,68 +130,68 @@
 	  <p>Hexoの作業フォルダはWindows領域のDropboxフォルダに置き、他のPCとも同期をとっている。<br>これでソースを消失してしまう危険はかなり低いと思うが、Dropboxと同期する際、結構時間がかかってしまう。<br>普段はDropboxを起動しておらず時々立ち上げる、という形をとっているせいもあるかもしれない。  </p>
 <p>Bitbucketにソースを置いたらpushするのはそれほど時間は掛からないだろうし、過去の履歴も残ってくれてやはり便利だろうと思い、HexoのソースをBitbucketに置くことにした。  </p>
 <p>OctopressのソースをBitbucketに置いた時と同様、Bitbucketにhexoという名前のリポジトリを作り、  </p>
-<pre><code>$ git remote add bitbucket git@bitbucket.org:ユーザー名/hexo.git
-$ git push -u bitbucket source
+<pre><code>$ git remote <span class="built_in">add</span> bitbucket git@bitbucket.<span class="built_in">or</span><span class="variable">g:</span>ユーザー名/hexo.git
+$ git push -<span class="keyword">u</span> bitbucket <span class="keyword">source</span>
 </code></pre><p>とやったが、エラーになる。  </p>
 <p>新規リポジトリを作成後に表示されたRepository setupの指示に倣い、  </p>
-<pre><code>$ git init
-$ git remote add bitbucket git@bitbucket.org:ユーザー名/hexo.git
-$ echo &quot;ユーザー名&quot; &gt;&gt; contributors.txt
-$ git add contributors.txt
-$ git commit -m &#39;Initial commit with contributors&#39;
-$ git push -u bitbucket source
+<pre><code><span class="variable">$ </span>git init
+<span class="variable">$ </span>git remote add bitbucket git<span class="variable">@bitbucket</span>.<span class="symbol">org:</span>ユーザー名/hexo.git
+<span class="variable">$ </span>echo <span class="string">"ユーザー名"</span> &gt;&gt; contributors.txt
+<span class="variable">$ </span>git add contributors.txt
+<span class="variable">$ </span>git commit -m <span class="string">'Initial commit with contributors'</span>
+<span class="variable">$ </span>git push -u bitbucket source
 </code></pre><p>としても、やはり  </p>
-<pre><code>error: src refspec source does not match any.
-error: failed to push some refs to &#39;git@bitbucket.org:ユーザー名/hexo.git&#39;
+<pre><code><span class="keyword">error</span>: src refspec source <span class="keyword">does</span> <span class="keyword">not</span> match any.
+<span class="keyword">error</span>: failed <span class="keyword">to</span> push <span class="keyword">some</span> refs <span class="keyword">to</span> 'git@bitbucket.org:ユーザー名/hexo.git'
 </code></pre><p>とエラーになる。  </p>
 <p>pushするbranchをsourceではなく、masterにしてみた。  </p>
-<pre><code>$ git push -u bitbucket master
-Counting objects: 3, done.
-Writing objects: 100% (3/3), 239 bytes | 0 bytes/s, done.
-Total 3 (delta 0), reused 0 (delta 0)
-To git@bitbucket.org:ユーザー名/hexo.git
- * [new branch]      master -&gt; master
-Branch master set up to track remote branch master from bitbucket.
+<pre><code>$ git push -<span class="keyword">u</span> bitbucket master
+Counting object<span class="variable">s:</span> <span class="number">3</span>, done.
+Writing object<span class="variable">s:</span> <span class="number">100</span>% (<span class="number">3</span>/<span class="number">3</span>), <span class="number">239</span> bytes | <span class="number">0</span> bytes/<span class="keyword">s</span>, done.
+Total <span class="number">3</span> (delta <span class="number">0</span>), reused <span class="number">0</span> (delta <span class="number">0</span>)
+To git@bitbucket.<span class="built_in">or</span><span class="variable">g:</span>ユーザー名/hexo.git
+ * [<span class="keyword">new</span> branch]      master -&gt; master
+Branch master <span class="keyword">set</span> <span class="keyword">up</span> <span class="keyword">to</span> track remote branch master from bitbucket.
 </code></pre><p>上手く行ったようだ。  </p>
 <p>だが、その後も  </p>
 <pre><code>$ git add .
-warning: You ran &#39;git add&#39; with neither &#39;-A (--all)&#39; or &#39;--ignore-removal&#39;,
-whose behaviour will change in Git 2.0 with respect to paths you removed.
-Paths like &#39;contributors.txt&#39; that are
-removed from your working tree are ignored with this version of Git.
+warning: You ran 'git add' with neither '-A (<span class="comment">--all)' or '--ignore-removal',</span>
+whose behaviour will <span class="operator"><span class="keyword">change</span> <span class="keyword">in</span> Git <span class="number">2.0</span> <span class="keyword">with</span> respect <span class="keyword">to</span> paths you removed.
+Paths <span class="keyword">like</span> <span class="string">'contributors.txt'</span> that <span class="keyword">are</span>
+removed <span class="keyword">from</span> your working tree <span class="keyword">are</span> ignored <span class="keyword">with</span> this <span class="keyword">version</span> <span class="keyword">of</span> Git.
 
-* &#39;git add --ignore-removal &lt;pathspec&gt;&#39;, which is the current default,
-  ignores paths you removed from your working tree.
+* <span class="string">'git add --ignore-removal &lt;pathspec&gt;'</span>, which <span class="keyword">is</span> the <span class="keyword">current</span> <span class="keyword">default</span>,
+  ignores paths you removed <span class="keyword">from</span> your working tree.
 
-* &#39;git add --all &lt;pathspec&gt;&#39; will let you also record the removals.
+* <span class="string">'git add --all &lt;pathspec&gt;'</span> will let you also record the removals.
 
-Run &#39;git status&#39; to check the paths you removed from your working tree.
+Run <span class="string">'git status'</span> <span class="keyword">to</span> <span class="keyword">check</span> the paths you removed <span class="keyword">from</span> your working tree.</span>
 </code></pre><p>と言われたり、  </p>
 <pre><code>$ git push
-warning: push.default is unset; its implicit value is changing in
-Git 2.0 from &#39;matching&#39; to &#39;simple&#39;. To squelch this message
-and maintain the current behavior after the default changes, use:
+warning: push.<span class="keyword">default</span> <span class="keyword">is</span> unset; its implicit value <span class="keyword">is</span> changing <span class="keyword">in</span>
+Git <span class="number">2.0</span> from <span class="attribute">'matching</span>' <span class="keyword">to</span> <span class="attribute">'simple</span>'. <span class="keyword">To</span> squelch this message
+<span class="keyword">and</span> maintain the current behavior <span class="keyword">after</span> the <span class="keyword">default</span> changes, <span class="keyword">use</span>:
 
-  git config --global push.default matching
+  git config <span class="comment">--global push.default matching</span>
 
-To squelch this message and adopt the new behavior now, use:
+<span class="keyword">To</span> squelch this message <span class="keyword">and</span> adopt the <span class="keyword">new</span> behavior now, <span class="keyword">use</span>:
 
-  git config --global push.default simple
+  git config <span class="comment">--global push.default simple</span>
 
-When push.default is set to &#39;matching&#39;, git will push local branches
-to the remote branches that already exist with the same name.
+<span class="keyword">When</span> push.<span class="keyword">default</span> <span class="keyword">is</span> set <span class="keyword">to</span> <span class="attribute">'matching</span>', git will push local branches
+<span class="keyword">to</span> the remote branches that already exist <span class="keyword">with</span> the same name.
 
-In Git 2.0, Git will default to the more conservative &#39;simple&#39;
-behavior, which only pushes the current branch to the corresponding
-remote branch that &#39;git pull&#39; uses to update the current branch.
+<span class="keyword">In</span> Git <span class="number">2.0</span>, Git will <span class="keyword">default</span> <span class="keyword">to</span> the more conservative <span class="attribute">'simple</span>'
+behavior, which only pushes the current branch <span class="keyword">to</span> the corresponding
+remote branch that <span class="attribute">'git</span> pull' uses <span class="keyword">to</span> update the current branch.
 
-See &#39;git help config&#39; and search for &#39;push.default&#39; for further information.
-(the &#39;simple&#39; mode was introduced in Git 1.7.11. Use the similar mode
-&#39;current&#39; instead of &#39;simple&#39; if you sometimes use older versions of Git)
+See <span class="attribute">'git</span> help config' <span class="keyword">and</span> search <span class="keyword">for</span> <span class="attribute">'push</span>.<span class="keyword">default</span>' <span class="keyword">for</span> further information.
+(the <span class="attribute">'simple</span>' mode was introduced <span class="keyword">in</span> Git <span class="number">1.7</span><span class="number">.11</span>. <span class="keyword">Use</span> the similar mode
+<span class="attribute">'current</span>' instead <span class="keyword">of</span> <span class="attribute">'simple</span>' <span class="keyword">if</span> you sometimes <span class="keyword">use</span> older versions <span class="keyword">of</span> Git)
 </code></pre><p>と言われたり。  </p>
 <p><code>git add .</code>は使われなくなったので<code>git add -A</code>にしないといけないということか？<br><code>git add .</code>でもすんなり通る時もあるのは、状況の違いからだろうか。<br>（追記：そう言えば、Initial commitの時に作成されたcontributors.txtという中身が自分のユーザー名だけのファイルを、リポジトリとHexoの作業フォルダ両方から手動で削除したんだった。<br>これのせいだったのかもしれない。）</p>
 <p>push.defaultもmatchingにした。  </p>
-<pre><code>  $ git config --global push.default matching
+<pre><code>  $ git config --<span class="keyword">global</span> push.<span class="keyword">default</span> <span class="keyword">matching</span>
 </code></pre><p>これでようやくpush出来るようになった。  </p>
 <p>gitの仕組みがいまいちよく分からない。</p>
 
@@ -232,15 +232,15 @@ See &#39;git help config&#39; and search for &#39;push.default&#39; for further 
 	
 	  <p>HexoからOctopressに記事ソースを変換するrubyスクリプト<a href="https://github.com/ciffel/Hexo-to-Octopress-Converter" target="_blank" rel="external">「Hexo to Octopress Converter」</a>を試してみた。  </p>
 <p>「Download ZIP」からzipファイルをダウンロードし展開。converterファイルを作業したい場所に移し、端末から操作。  </p>
-<pre><code>$ ./converter &lt;hexo_posts_dir&gt; &lt;octopress_posts_dir&gt;
+<pre><code><span class="input"><span class="prompt">$ ./converter &lt;hexo_posts_dir&gt;</span> &lt;octopress_posts_dir&gt;</span>
 </code></pre><p>で変換出来る。<br><code>&lt;octopress_posts_dir&gt;</code>は適当に作ったフォルダでも可。  </p>
 <p>変換が終了すると、ファイル名に日付けが付加されたものがOctopressのフォルダに出力される。（拡張子は.mdのまま。）<br>出力されたファイルのFront Matter部分は<code>tags:</code>が<code>categories:</code>に変換されており、また上部の<code>---</code>および<code>layout: post</code>、<code>comments: true</code>が追加される。  </p>
 <p>だが、Octopressのソースを「hexo-migrator-octopress」などでHexoに取り込んでいた場合は、Front Matter上部に既に<code>---</code>が<br>ついている。<br>この状態からだと<code>tags:</code>が<code>categories:</code>に変換されないので、上部の<code>---</code>を消しておく必要がある。  </p>
 <p>また<code>title:</code>の項目で記事タイトルが「”」で挟まれていると、さらに「”」で挟まれ<code>title: &quot;&quot;（記事タイトル）&quot;&quot;</code>のようになってしまう。<br>これではOctopressでgenerateする際エラーになってしまうので、これも削除し、  </p>
 <pre><code>title:
 date:
-tags:
----
+<span class="header">tags:
+---</span>
 </code></pre><p>のような形にしておく必要がある。<br><a href="/2014/11/25/hexo-migrator-octopress/">Octopress→Hexo移行のプラグイン「hexo-migrator-octopress」を試してみた </a>  </p>
 <p>なお、変換出力されるのは拡張子が.mdのものだけで、.markdownのもの（Octopressのソースをコピペで取り込んだような場合）は変換出力されず無視される。  </p>
 <p>変換後のファイル名には日付けが付加されるので、Hexoの運用をOctopress式に日付けをつけたファイル名で行っている場合は、日付けが2重になってしまう。  </p>
@@ -291,58 +291,58 @@ tags:
 <p>Octopressの記事ソースをHexoに取り込む<a href="https://github.com/sailxjx/hexo-migrator-octopress" target="_blank" rel="external">「hexo-migrator-octopress」</a>というHexo用プラグインがあったので、試してみた。<br>（Hexoの記事ソースをOctopress用に変換するスクリプト「Hexo to Octopress Converter」とは逆向き。）  </p>
 <p>デスクトップ上にhexo-test（Hexoフォルダ）とoctopress-test（Octopressフォルダ）を作った。  </p>
 <p>hexo-testで端末を開き、プラグインをインストール。  </p>
-<pre><code>$ npm install hexo-migrator-octopress
+<pre><code><span class="variable">$ </span>npm install hexo-migrator-octopress
 </code></pre><p>コマンド<code>hexo migrate octopress &lt;source&gt;</code>で記事ソースが変換され、Hexoに取り込まれる。（<code>&lt;source&gt;</code>はOctopressフォルダへのパス）<br>今回のテスト環境では</p>
-<pre><code>$ hexo migrate octopress ~/Desktop/octopress-test
+<pre><code><span class="variable">$ </span>hexo migrate octopress ~<span class="regexp">/Desktop/octopress</span>-test
 </code></pre><p>octopress-test/source/_posts/2014-10-25-cosmos.markdownがhexo-test/source/_posts/cosmos.mdとして取り込まれた。<br>（Hexoのデフォルト設定に従い、日付けが削除さるようだ。）  </p>
 <p>Front MatterはOctopressの  </p>
-<pre><code>---
-layout: post
-title: &quot;畑一面のコスモスはなぜ？&quot;
+<pre><code><span class="bullet">---
+</span>layout: post
+title: "畑一面のコスモスはなぜ？"
 date: 2014-10-25 15:41:22 +0900
 comments: true
 categories:
-- 未分類
-- 写真
----
+<span class="bullet">- </span>未分類
+<span class="header">- 写真
+---</span>
 </code></pre><p>から  </p>
-<pre><code>---
-layout: post
-title: &quot;畑一面のコスモスはなぜ？&quot;
+<pre><code><span class="bullet">---
+</span>layout: post
+title: "畑一面のコスモスはなぜ？"
 date: 2014-10-25 15:41:22 +0900
 comments: true
 tags:
-- 未分類
-- 写真
----
+<span class="bullet">- </span>未分類
+<span class="header">- 写真
+---</span>
 </code></pre><p>に変換されたが、変更は<code>categories:</code>が<code>tags:</code>になっただけのようだ。  </p>
 <p>この状態でもHexoで使えるのだが、これを「Hexo to Octopress Converter」でOctopress用に再変換すると  </p>
-<pre><code>---
+<pre><code><span class="bullet">---
+</span>layout: post
+<span class="header">comments: true
+---</span>
 layout: post
-comments: true
----
-layout: post
-title: &quot;畑一面のコスモスはなぜ？&quot;
+title: "畑一面のコスモスはなぜ？"
 date: 2014-10-25 15:41:22 +0900
 comments: true
 tags:
-- 未分類
-- 写真
----
+<span class="bullet">- </span>未分類
+<span class="header">- 写真
+---</span>
 </code></pre><p>となってしまい、<code>tags:</code>が<code>categories:</code>に変換されない。  </p>
 <p>上部の<code>---</code>を削除しておくと<code>categories:</code>に変換はされたが、タイトルの部分が<code>title: &quot;&quot;畑一面のコスモスはなぜ？&quot;&quot;</code>と「”」が重複しまい、rake generateでエラーになる。  </p>
 <p>結局、Octopress用に再変換する場合には、「hexo-migrator-octopress」でHexo用に変換したものを手作業で  </p>
 <pre><code>title: 畑一面のコスモスはなぜ？
 date: 2014-10-25 15:41:22 +0900
 tags:
-- 未分類
-- 写真
----
+<span class="bullet">- </span>未分類
+<span class="header">- 写真
+---</span>
 </code></pre><p>のように変更しておく必要がありそうだ。<br>それにOctopressでcategoriesとtagsを両方使っていた場合は変換後<code>tags:</code>が重複してしまう。  </p>
 <p>それから、Hexoの新規記事ソースはデフォルトでは日付けがつかないが、_config.ymlの<code>new_post_name:</code>で日付けをつけることが出来る。<br>日付けがあった方が同じタイトルの記事を複数書けたり、過去記事編集の際に探し易かったりと、なにかと都合が良い。  </p>
 <p>Octopressの方のファイル拡張子が.markdownではなく.mdなら「Hexo to Octopress Converter」で変換しても日付けが削除されないので、前もって.mdに変えておいた方が良いかもしれない。<br>拡張子が.mdでも<code>tags:</code>は<code>categories:</code>に変換される。  </p>
 <p>拡張子の一括変換は/_postsディレクトリで  </p>
-<pre><code>$ rename &#39;s/.markdown/.md/&#39; *.markdown
+<pre><code>$ <span class="built_in">rename</span> <span class="string">'s/.markdown/.md/'</span> *.markdown
 </code></pre><p>とするか、ファイルマネージャーThunarを使えば簡単のようだ。  </p>
 <p>ーー<br>（関連記事）<br><a href="/2014/11/25/Hexo-to-Octopress-Converter/">Hexo→Octopress変換スクリプト「Hexo to Octopress Converter」</a></p>
 
@@ -384,15 +384,15 @@ tags:
 	  <p>Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来ると思っていた。<br>だがdeployしようとすると、  </p>
 <pre><code>Run
 
-  git config --global user.email &quot;you@example.com&quot;
-  git config --global user.name &quot;Your Name&quot;
+  git config --global <span class="literal">user</span>.email <span class="string">"you@example.com"</span>
+  git config --global <span class="literal">user</span>.name <span class="string">"Your Name"</span>
 </code></pre><p>と言われてしまった。  </p>
 <p>メールアドレスとGithubユーザー名を設定して、再度deployしようとしたが、  </p>
 <pre><code>Permission denied (publickey).
-fatal: Could not read from remote repository.
+fatal: Could <span class="operator">not</span> <span class="built_in">read</span> <span class="built_in">from</span> remote repository.
 
-Please make sure you have the correct access rights
-and the repository exists.
+Please make sure you have <span class="operator">the</span> correct access rights
+<span class="operator">and</span> <span class="operator">the</span> repository exists.
 </code></pre><p>とrejectされる。<br>よく考えたら当たり前だが、WindowsでもSSHキーの設定が必要らしい。  </p>
 <p>Linuxで設定したSSH秘密鍵と公開鍵の両方を<code>C:\Users\（ユーザー名）\.ssh</code>内にコピペしたら、ようやくdeploy出来た。  </p>
 <p>これで無事WindowsでもHexoを使えるようになった。  </p>
@@ -443,37 +443,37 @@ and the repository exists.
 <p>Windowsでgitを使うため<a href="http://msysgit.github.io/" target="_blank" rel="external">msysgit</a>をインストールした。<br>インストールオプションは下記サイトを参考にさせて頂いた。<br><a href="http://d.hatena.ne.jp/xyk/20130920/1379659991" target="_blank" rel="external">Windows に msysgit をインストールして git 環境を作る - xykの日記</a>  </p>
 <p>「Select Components」ではすべてのチェックを外した。<br>「Adjusting your PATH environment」は上から2番目の「Run Git from the Windows Command Prompt」。  </p>
 <p>「Configuring the line ending conversions」は上から2番目の「Checkout as-is, commit Unix-style line endings」でインストールしが、あとで実際にdeployする際、  </p>
-<pre><code>warning: LF will be replaced by CRLF in css/style.css.
-The file will have its original line endings in your working directory.
-warning: LF will be replaced by CRLF in fancybox/helpers/jquery.fancybox-buttons.css.
-The file will have its original line endings in your working directory.
-warning: LF will be replaced by CRLF in fancybox/helpers/jquery.fancybox-buttons.js.
-The file will have its original line endings in your working directory.
+<pre><code>warning: LF will be replaced <span class="keyword">by</span> <span class="constant">CRLF</span> <span class="operator">in</span> css/style.css.
+The <span class="built_in">file</span> will have its original <span class="built_in">line</span> endings <span class="operator">in</span> your working <span class="built_in">directory</span>.
+warning: LF will be replaced <span class="keyword">by</span> <span class="constant">CRLF</span> <span class="operator">in</span> fancybox/helpers/jquery.fancybox-buttons.css.
+The <span class="built_in">file</span> will have its original <span class="built_in">line</span> endings <span class="operator">in</span> your working <span class="built_in">directory</span>.
+warning: LF will be replaced <span class="keyword">by</span> <span class="constant">CRLF</span> <span class="operator">in</span> fancybox/helpers/jquery.fancybox-buttons.js.
+The <span class="built_in">file</span> will have its original <span class="built_in">line</span> endings <span class="operator">in</span> your working <span class="built_in">directory</span>.
 ...
 </code></pre><p>と、改行コードが変更されるという警告が大量に表示されたので、結局上から3番目のオプション「Checkout as-is, commit as-is」（autocrlf = false）にした。<br>Windowsでしか使わないのであれば、あまり気にしなくても良さそう。<br>後から<code>C:\Users\（ユーザー名）\.gitconfig</code>で変更することも可能。  </p>
 <h3 id="Hexoのインストール">Hexoのインストール</h3>
 <p>コマンドプロンプトを開き、</p>
-<pre><code>&gt;npm install hexo -g
+<pre><code>&gt;npm <span class="keyword">install</span> hexo -g
 </code></pre><p>でインストール。</p>
 <p>Linuxの時と同様、  </p>
-<pre><code>npm WARN optional dep failed, continuing fsevents@0.2.0
+<pre><code>npm WARN <span class="keyword">optional</span> dep failed, continuing fsevents@<span class="number">0.2</span>.<span class="number">0</span>
 </code></pre><p>という警告が出たが、インストール完了。  </p>
 <p>テスト用にHexoの作業フォルダを作成。<br>任意のフォルダを選択した状態で「SHIFT」キーを押しながら右クリック。<br>「コマンド ウィンドウをここで開く」でコマンドウィンドウを立ち上げ、  </p>
 <pre><code>&gt;hexo init hexo-win
-&gt;cd hexo-win
+&gt;<span class="built_in">cd</span> hexo-win
 &gt;npm install
 
 &gt;hexo g
 &gt;hexo s
 </code></pre><p>ローカルホストに無事、新規ブログが立ち上がった。  </p>
 <p>2回目の<code>hexo g</code>からは、なぜか  </p>
-<pre><code>[delete] Deleted: archives\2014\11\index.html
+<pre><code>[delete] Deleted: archives\<span class="number">2014</span>\<span class="number">11</span>\index.html
 [delete] Deleted: archives\index.html
-...
+<span class="keyword">...</span>
 
 [create] Generated: archives/index.html (124ms)
-[create] Generated: archives/2014/index.html (63ms)
-...
+[create] Generated: archives/<span class="number">2014</span>/index.html (63ms)
+<span class="keyword">...</span>
 </code></pre><p>と、一旦すべてのファイルを削除してからまたファイルを生成したというメッセージが表示される。<br>あまり気持ち良くはないが、実用上問題は無さそう。  </p>
 <p>この後deployで少し躓いてしまったが、WindowsでHexoを使うことが出来た。  </p>
 <p>ーー<br>（関連記事）<br><a href="http://pagent.github.io/2014/11/24/hexo-windows-deploy/" target="_blank" rel="external">WindowsでHexoを使う（deploy） | Pagent</a></p>
@@ -536,35 +536,35 @@ The file will have its original line endings in your working directory.
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
-		
 			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
 		
 			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
 		
 		
 		</ul>

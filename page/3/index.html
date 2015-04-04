@@ -184,19 +184,19 @@
 <p>XubuntuのHexo 2.8.3をアップグレードして、これまでの作業フォルダ（WindowsのDドライブに置いてある）を使おうと思ったが、Hexo 3へのアップグレードがうまく行かない。  </p>
 <p>そこでArch Linuxにも旧バージョンのHexo 2.8.3をインストールすることにした。  </p>
 <p>Hexoの公式サイトには旧バージョンのインストール方法が見あたらなかったが、幸い検索で見つかった。<br>下記コマンドで良いようだ。  </p>
-<pre><code>$ npm install hexo@2.8.3 -g
+<pre><code><span class="variable">$ </span>npm install hexo<span class="variable">@2</span>.<span class="number">8.3</span> -g
 </code></pre><p><a href="http://sandylaw.tk/2015/03/07/hexo3to2/" target="_blank" rel="external">Hexo降级 3.0 to 2.8 | Sandy’s Blog</a>  </p>
 <p>Hexo 3はCLIが分離されてロードがさらに早くなったりといろいろ機能が進化しているようだが、旧バージョンでも特に不満は無いし、当面はこのままHexo 2.8.3を使う予定。  </p>
 <p>アップグレードにはまた今度挑戦してみようと思う。  </p>
 <p>ーー<br>（追記）<br>Hexo 2.8.3の元で<code>hexo init blog-name</code>によりブログを新規作成した場合、<code>npm install</code>の後実際Hexoを使おうとすると、コマンドがことごとく下記のようなエラーになる。  </p>
 <pre><code>$ hexo server
 [error] HexoError: Process failed: _posts/hello-world.md
-TypeError: Cannot read property &#39;config&#39; of null
-at ...
+TypeError: Cannot read property <span class="string">'config'</span> of null
+at <span class="keyword">...</span>
 </code></pre><p><code>npm install</code>でインストールされるhexo-renderer-markedとhexo-renderer-stylusのバージョンが0.2の為らしい。<br>バージョン0.1をインストールするとエラー無しに動作した。  </p>
-<pre><code>$ npm install hexo-renderer-marked@0.1 --save
+<pre><code><span class="variable">$ </span>npm install hexo-renderer-marked<span class="variable">@0</span>.<span class="number">1</span> --save
 
-$ npm install hexo-renderer-stylus@0.1 --save
+<span class="variable">$ </span>npm install hexo-renderer-stylus<span class="variable">@0</span>.<span class="number">1</span> --save
 </code></pre><p><a href="https://github.com/hexojs/hexo/issues/1094#issuecomment-77796845" target="_blank" rel="external">“hexo server” not work · Issue #1094 · hexojs/hexo</a></p>
 
 	
@@ -242,12 +242,12 @@ $ npm install hexo-renderer-stylus@0.1 --save
 <p>暗号化ボリュームをアンマウントせずにPCを終了してしまうことはよくあるし、なんとか自動的にアンマウントしたいところ。  </p>
 <p>検索したら、Arch Linuxのwikiに自動アンマウントの方法が紹介されていた。<br><a href="https://wiki.archlinux.org/index.php/TrueCrypt#Safely_unmount_and_unmap_volumes_.28on_shutdown.29" target="_blank" rel="external">TrueCrypt - ArchWiki</a>  </p>
 <p>/etc内にrc.local.shutdownファイルを新規作成。<br>下記内容で保存。  </p>
-<pre><code>if (/usr/bin/truecrypt --text --list)
-then {
-/usr/bin/truecrypt -d
-sleep 3
+<pre><code><span class="keyword">if</span> (/usr/bin/truecrypt --text --list)
+<span class="keyword">then</span> {
+/usr/bin/truecrypt <span class="operator">-d</span>
+sleep <span class="number">3</span>
 }
-fi
+<span class="keyword">fi</span>
 </code></pre><p>PC終了時に自動的に暗号化ボリュームがアンマウントされるようになった。</p>
 
 	
@@ -335,7 +335,7 @@ fi
 <p>Xfce標準のファイルマネージャーThunarに加え、nemoもデスクトップを管理しようとするためこうなってしまうようだ。<br>確かにnemoをインストールする時にcinnamon-desktopも依存関係から同時にインストールされていた。  </p>
 <p>Xubuntuではどういう設定なのかこういうことは無いし、Arch Linux+LXDEにnemoをインストールしてもデスクトップアイコンが二重に表示されることはない。  </p>
 <p>このままでは使い勝手が悪いので、XfceをあきらめてLXDEにしようかと思ったが、Arch Linuxのwikiにnemoによるデスクトップアイコンを非表示にする方法があった。  </p>
-<pre><code>$ gsettings set org.nemo.desktop show-desktop-icons false
+<pre><code>$ gsettings <span class="operator"><span class="keyword">set</span> org.nemo.desktop <span class="keyword">show</span>-desktop-icons <span class="literal">false</span></span>
 </code></pre><p><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>  </p>
 <p>nemoによるデスクトップアイコンが消えて、デスクトップ上右クリックでのアプリケーションメニューも復活した。</p>
 
@@ -397,33 +397,33 @@ fi
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>11</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
-		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		

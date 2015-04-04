@@ -116,12 +116,12 @@
 <p>GitHubではないが、BitbucketのFAQには<code>git gc</code>してもリポジトリに悪い影響はないと書いてあった。<br><a href="https://confluence.atlassian.co.jp/pages/viewpage.action?pageId=35815474" target="_blank" rel="external">私のリポジトリで git gc (保全作業) を実行する必要がありますか？ - Bitbucket ドキュメンテーション - アトラシアン日本語ドキュメント</a>  </p>
 <p>.deployディレクトリで端末を開いて、<code>git gc</code>してみた。  </p>
 <pre><code>$ git gc
-Counting objects: 5328, done.
-Delta compression using up to 8 threads.
-Compressing objects:   5% (153/3046)   
-Compressing objects: 100% (3046/3046), done.
-Writing objects: 100% (5328/5328), done.
-Total 5328 (delta 2157), reused 0 (delta 0)
+Counting object<span class="variable">s:</span> <span class="number">5328</span>, done.
+Delta compression using <span class="keyword">up</span> <span class="keyword">to</span> <span class="number">8</span> threads.
+Compressing object<span class="variable">s:</span>   <span class="number">5</span>% (<span class="number">153</span>/<span class="number">3046</span>)   
+Compressing object<span class="variable">s:</span> <span class="number">100</span>% (<span class="number">3046</span>/<span class="number">3046</span>), done.
+Writing object<span class="variable">s:</span> <span class="number">100</span>% (<span class="number">5328</span>/<span class="number">5328</span>), done.
+Total <span class="number">5328</span> (delta <span class="number">2157</span>), reused <span class="number">0</span> (delta <span class="number">0</span>)
 </code></pre><p>少し待たないといけなかったが、objects下にたくさんあったフォルダが消えて、4つだけになった。<br>objects/pack内にはpack-〜.idxとpack-〜.packというファイルが出来てる。<br>objectsのサイズは12.4MB→1.8MBに縮小した。</p>
 
 	</div>

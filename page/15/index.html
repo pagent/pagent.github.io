@@ -174,20 +174,20 @@
 	
 	  <p>ScrapBookなどでローカルに保存したページにStylishのスタイルを適用するには、対象ドメインを指定する箇所に<code>,url-prefix(file://)</code>を追記すれば良い。  </p>
 <p>たとえば、Amebaブログのアメーバヘッダーと記事下部の有名人ブログ広告を削除するスタイルに追加する場合は下記。  </p>
-<pre><code>@namespace url(http://www.w3.org/1999/xhtml);
-@-moz-document domain(&quot;ameblo.jp&quot;)
-,url-prefix(file://)
-{
+<pre><code><span class="at_rule">@<span class="keyword">namespace</span> <span class="function">url</span>(http://www.w3.org/<span class="number">1999</span>/xhtml)</span>;
+<span class="at_rule">@<span class="keyword">-moz-document</span> <span class="function">domain</span>(<span class="string">"ameblo.jp"</span>)
+,<span class="function">url-prefix</span>(file://)
+</span>{
 
-#ambHeader {
-    display: none;
-}
-html.fixed body {
-    padding-top: 0px !important;
-}
-#rc_module2 {
-    display: none;
-}
+<span class="id">#ambHeader</span> <span class="rules">{
+    <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;
+<span class="rule">}</span></span>
+<span class="tag">html</span><span class="class">.fixed</span> <span class="tag">body</span> <span class="rules">{
+    <span class="rule"><span class="attribute">padding-top</span>:<span class="value"> <span class="number">0px</span> <span class="important">!important</span></span></span>;
+<span class="rule">}</span></span>
+<span class="id">#rc_module2</span> <span class="rules">{
+    <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;
+<span class="rule">}</span></span>
 
 }
 </code></pre><p>ScrapBookに保存したページも見やすくなった。</p>
@@ -410,35 +410,35 @@ html.fixed body {
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
 			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
 		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
 			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
 		
 		
 		</ul>

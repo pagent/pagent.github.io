@@ -173,7 +173,7 @@
 <p>アイコンは下記サイトでダウンロード数が一番多かったMistにした。<br><a href="http://xfce-look.org/index.php?xsortmode=high&amp;page=0&amp;xcontentmode=430" target="_blank" rel="external">Eyecandy for your Xfce-Desktop - Xfce-Look.org</a>  </p>
 <p>ダウンロードしたファイルを展開し、出て来たMistフォルダを/usr/share/iconsに移動。<br>だがこれだけでは「設定」→「外観」→「アイコン」に表示されない。<br>アイコンテーマ毎にキャッシュファイルを生成しないといけないようだ。<br><a href="http://docs.xfce.org/xfce/xfce4-settings/4.10/appearance#icon_cache" target="_blank" rel="external">xfce:xfce4-settings:4.10:appearance [Xfce Docs]</a>    </p>
 <p>端末でコマンドを入力しキャッシュファイルを生成。  </p>
-<pre><code>sudo gtk-update-icon-cache /usr/share/icons/Mist
+<pre><code>sudo gtk-<span class="operator"><span class="keyword">update</span>-icon-<span class="keyword">cache</span> /usr/<span class="keyword">share</span>/icons/Mist</span>
 </code></pre><p>アイコンの設定に表示され、選択可能になった。</p>
 
 	
@@ -215,15 +215,15 @@
 <p><a href="https://archlinuxjp.kusakata.com/wiki/Yaourt" target="_blank" rel="external">Yaourt - ArchWiki</a>  </p>
 <p>「まず package-query をインストール」とのことだが、pacmanからpackage-queryをインストールしようとしても、見つからないと言われるので、/etc/pacman.confに下記記述を加えた。  </p>
 <pre><code>[archlinuxfr]
-SigLevel = Never
-Server = http://repo.archlinux.fr/$arch
+<span class="constant">SigLevel</span> = Never
+<span class="constant">Server</span> = http:<span class="comment">//repo.archlinux.fr/$arch</span>
 </code></pre><p>その後  </p>
-<pre><code>sudo pacman --sync --refresh yaourt
+<pre><code><span class="comment">sudo</span> <span class="comment">pacman</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">sync</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">refresh</span> <span class="comment">yaourt</span>
 </code></pre><p>GlipperなどもYaourtからインストール出来るようになった。  </p>
-<pre><code>yaourt -S glipper
+<pre><code><span class="title">yaourt</span> -S glipper
 </code></pre><p>クリップボードマネージャーは色々あるが、Glipperはログアウト時に履歴を消去出来るので気に入っている。  </p>
 <p>ーー<br>（追記）<br>Xfceデスクトップに標準で入っていたClipmanでも、「終了時に保存する」のチェックボックスを外せば履歴を消去出来るようだ。<br>Glipperのアイコンが正常に表示されないこともあり、結局Clipmanを使うことにしてGlipperをアンインストールした。  </p>
-<pre><code>yaourt -Rs glipper
+<pre><code><span class="title">yaourt</span> -Rs glipper
 </code></pre>
 	
 	</div>
@@ -262,7 +262,7 @@ Server = http://repo.archlinux.fr/$arch
 	
 	  <p>Arch LinuxにXfceデスクトップを入れたが、ログアウト時に大音量のビープ音がして不快なので、鳴らないようにした。  </p>
 <p>/etc/modprobe.d内にnobeep.confファイルを作成し、<code>blacklist pcspkr</code>と記述して保存。<br>もしくは下記コマンドを実行。  </p>
-<pre><code># echo &quot;blacklist pcspkr&quot; &gt; /etc/modprobe.d/nobeep.conf
+<pre><code># <span class="keyword">echo</span> <span class="string">"blacklist pcspkr"</span> &gt; /etc/modprobe.<span class="keyword">d</span>/nobeep.<span class="keyword">conf</span>
 </code></pre><p><a href="https://archlinuxjp.kusakata.com/wiki/PC_%E3%82%B9%E3%83%94%E3%83%BC%E3%82%AB%E3%83%BC%E3%81%AE%E3%83%93%E3%83%BC%E3%83%97%E9%9F%B3%E3%81%AE%E7%84%A1%E5%8A%B9%E5%8C%96?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DDisable_PC_Speaker_Beep_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno#.E3.82.B0.E3.83.AD.E3.83.BC.E3.83.90.E3.83.AB.E7.92.B0.E5.A2.83" target="_blank" rel="external">PC スピーカーのビープ音の無効化 - ArchWiki</a>  </p>
 
 	
@@ -366,35 +366,35 @@ Server = http://repo.archlinux.fr/$arch
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
-		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
 		
 			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
 		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 		
 		</ul>

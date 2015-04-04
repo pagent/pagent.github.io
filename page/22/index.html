@@ -129,22 +129,22 @@
 	
 	  <p>Hexoで新規記事を作ると、初期状態ではtitle、date、tagsの項目しか無いが、categoriesも使いたいので変更。<br>/scaffolds/post.mdに項目を追加するだけで出来た。<br>（<code>---</code>で区画された部分は「Front Matter」と言うらしい。）  </p>
 <p>またOctopressに戻ることもあるかもしれないので、Octopressの書式に倣ってlayout、commentsも加えた。  </p>
-<pre><code>---
-layout: post
+<pre><code><span class="bullet">---
+</span>layout: post
 title: ｛｛ title ｝｝      ## ｛｛  ｝｝は実際には半角英数
 date: ｛｛ date ｝｝
 comments: true
 tags: 
-categories: 
----
+<span class="header">categories: 
+---</span>
 </code></pre><p><code>hexo n test</code>すると下記内容のファイルが生成された。  </p>
 <pre><code>layout: post
 title: test
 comments: true
 date: 2014-11-23 09:15:51
 tags:
-categories:
----
+<span class="header">categories:
+---</span>
 </code></pre><p>Octopressでは<code>comments: true</code>が無いとDisqusが表示されない。<br>Hexoではcommentsの項目が無くてもDisqusは表示されるが、<code>comments: false</code>にするとその記事だけDisqusの表示は消える。<br>記事によってコメント禁止にする時に便利かもしれない。  </p>
 <p>/scaffolds/post.mdで上部にも<code>---</code>を加えたが、生成ファイルでは下部にしか<code>---</code>が無い。<br>これだとOctopressでは記事をちゃんとgenerate出来ないようだが、上部に<code>---</code>を付ける方法が分からない。<br>もしまたOctopressに戻ることがあったら、手作業するしかなさそうだ。  </p>
 <p>ーー<br>（追記）<br>Hexoの/source/_posts内の記事ソースをOctopress形式のFront Matterに変換出力するスクリプトが公開されていた。<br><a href="https://github.com/ciffel/Hexo-to-Octopress-Converter" target="_blank" rel="external">ciffel/Hexo-to-Octopress-Converter</a>  </p>
@@ -152,8 +152,8 @@ categories:
 <p>なので/scaffolds/post.mdは元の記載に戻した。  </p>
 <pre><code>title: Hexoの新規記事テンプレートを変更
 date: Sun Nov 23 2014 08:20:38 GMT+0900 (JST)
-tags:
----
+<span class="header">tags:
+---</span>
 </code></pre><p>OctopressからHexoへの移行には下記プラグインが対応していて、これを使うとOctopressのソースの<code>categories:</code>が<code>tags:</code>に変換される。<br><a href="https://github.com/sailxjx/hexo-migrator-octopress" target="_blank" rel="external">hexo-migrator-octopress</a>  </p>
 <p>骨折り損だったが、Hexoでコメント禁止にしたい時は<code>comments: false</code>を加えれば良いというのが分かったのが収穫だった。<br>早めに気がついて良かった。</p>
 
@@ -194,21 +194,21 @@ tags:
 	
 	  <p>HexoのArchivesや各カテゴリーのページはデフォルトでは記事全文を表示するようになっている。<br>リスト表示の方が一覧を俯瞰出来て便利なので好みなのだが、カスタマイズの仕方がなかなか分からなかった。  </p>
 <p>結局は_config.ymlのArchivesの項目で  </p>
-<pre><code># Archives
-## 2: Enable pagination
-## 1: Disable pagination
-## 0: Fully Disable
-archive: 2
-category: 2
-tag: 2
+<pre><code><span class="preprocessor"># Archives</span>
+<span class="preprocessor">## 2: Enable pagination</span>
+<span class="preprocessor">## 1: Disable pagination</span>
+<span class="preprocessor">## 0: Fully Disable</span>
+archive: <span class="number">2</span>
+category: <span class="number">2</span>
+tag: <span class="number">2</span>
 </code></pre><p>となっているところの値を、2から1に変更。  </p>
-<pre><code># Archives
-## 2: Enable pagination
-## 1: Disable pagination
-## 0: Fully Disable
-archive: 1
-category: 1
-tag: 1
+<pre><code><span class="preprocessor"># Archives</span>
+<span class="preprocessor">## 2: Enable pagination</span>
+<span class="preprocessor">## 1: Disable pagination</span>
+<span class="preprocessor">## 0: Fully Disable</span>
+archive: <span class="number">1</span>
+category: <span class="number">1</span>
+tag: <span class="number">1</span>
 </code></pre><p>簡単にリスト表示（タイル形式）になった。</p>
 
 	
@@ -290,10 +290,10 @@ tag: 1
 	  <p>Github Pagesのブログに使っている静的サイトジェネレーターをOctopressからHexoに変更してみた。  </p>
 <p>Octopressの/source/_posts内の記事ソースをそのままHexoの/source/_postsにコピーしたら、generateした時にパーマリンクが<code>http://.../2014/10/24/2014-10-24-xubuntu-blank-menu/</code>のように日付けが重複してしまった。<br>Hexoはデフォルトでは、新しく記事を作った時には日付けがつかず、生成する時に日付けを付加するようになっているらしい。  </p>
 <p>_config.ymlの  </p>
-<pre><code># Writing
-new_post_name: :title.md # File name of new posts
+<pre><code><span class="comment"># Writing</span>
+<span class="symbol">new_post_name:</span> <span class="symbol">:title</span>.md <span class="comment"># File name of new posts</span>
 </code></pre><p>のところを  </p>
-<pre><code>new_post_name: :year-:month-:day-:title.md
+<pre><code><span class="symbol">new_post_name:</span> <span class="symbol">:year-</span><span class="symbol">:month-</span><span class="symbol">:day-</span><span class="symbol">:title</span>.md
 </code></pre><p>に変更したら良いようだ。<br><a href="http://hexo.io/docs/migration.html" target="_blank" rel="external">Migration | Hexo</a>  </p>
 <p>Octopressでは記事が/blogディレクトリ下に配置されるパーマリンクを使っていたが、今後はHexoのデフォルトの通りルート下に:year/:month/:day/:title/というパーマリンクを使うことにした。この方がシンプルで好みだし。<br>Githubでは.htaccessファイルを使ったリダイレクトが使用不可のようなので、以前の記事がリンク切れになるのは仕方がない。  </p>
 <p>あと、下記記事を参考に、FeedとSitemapのプラグインを入れた。<br>プラグインの導入はとても簡単だった。<br><a href="http://liginc.co.jp/web/programming/server/104594" target="_blank" rel="external">所要時間3分!? Github PagesとHEXOで爆速ブログ構築してみよう！ | 株式会社LIG</a>  </p>
@@ -342,17 +342,17 @@ new_post_name: :title.md # File name of new posts
 <p>導入には下記サイトなどを参考にさせて頂いた。<br><a href="http://tech.admax.ninja/2014/09/11/environment-of-hexo/" target="_blank" rel="external">【Node.js】Hexoでブログを書くための環境構築 | AdMax Tech Blog</a>  </p>
 <p>概ね上記サイトの通りに進めたらいいようだったが、Xubuntu14.04の環境では若干うまく行かないところがあった。  </p>
 <p>nodeにパスを通す際、~/.bash_profileというファイルが見つからなかったので、~/.profileに  </p>
-<pre><code>if [[ -s ~/.nvm/nvm.sh ]];
-then source ~/.nvm/nvm.sh
+<pre><code><span class="keyword">if</span> <span class="string">[[ -s ~/.nvm/nvm.sh ]]</span>;
+<span class="keyword">then</span> source ~/.nvm/nvm.sh
 fi
 </code></pre><p>を追記したが、これでは駄目なようで、ターミナルを起動する度にnvmというコマンドが見つからないと言われる。  </p>
 <p>どうやら~/.bashrcに追記しないと駄目なようだった。<br><a href="http://d.hatena.ne.jp/white_chi/20111101/1320097898" target="_blank" rel="external">Ubuntu11.10で、nvmからnode.jsをインストールする - ホワイトぼーど</a>  </p>
 <p>Hexoをインストールするところで  </p>
-<pre><code>npm WARN optional dep failed, continuing fsevents@0.2.0
+<pre><code>npm WARN <span class="keyword">optional</span> dep failed, continuing fsevents@<span class="number">0.2</span>.<span class="number">0</span>
 </code></pre><p>と言われたが、問題なく使えるようだ。<br>途中うまく行かないので、下記サイトを参考に  </p>
-<pre><code>curl -sL https://deb.nodesource.com/setup | sudo bash -
+<pre><code>curl -sL http<span class="variable">s:</span>//<span class="keyword">deb</span>.nodesource.<span class="keyword">com</span>/setup | sudo bash -
 
-sudo apt-get install -y nodejs
+sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</span> nodejs
 </code></pre><p>とやったりしたが、果たしてこれが必要な操作だったのかどうかは不明。<br><a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager" target="_blank" rel="external">Installing Node.js via package manager · joyent/node Wiki</a>  </p>
 <p>しばらく試用してみて良ささそうだったら、Octopressから乗り換えるかもしれない。</p>
 
@@ -414,35 +414,35 @@ sudo apt-get install -y nodejs
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>51</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
 		
 		
 		</ul>

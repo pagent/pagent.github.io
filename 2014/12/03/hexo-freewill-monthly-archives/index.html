@@ -115,37 +115,37 @@
 <p>ところで、Freewillには月別アーカイブが無かったので、入れることにした。  </p>
 <p>デフォルトテーマのLandscapeのarchive.ejsをそのままfreewill/layout/_widget内にコピペすると、西暦の後ろに投稿数が隙間無しにくっついていて、見栄えが良くない。  </p>
 <p>archive.ejsを修正、  </p>
-<pre><code>&lt;% if (site.posts.length){ %&gt;
-    &lt;div class=&quot;widget&quot;&gt;
-        &lt;h4&gt;&lt;%= __(&#39;Monthly Archives&#39;) %&gt;&lt;/h4&gt;
-        &lt;ul class=&quot;archive-list inline list-unstyled&quot;&gt;
-        &lt;%- list_archives() %&gt;
-        &lt;/ul&gt;
-    &lt;/div&gt;
-&lt;% } %&gt;
+<pre><code><span class="vbscript">&lt;% <span class="keyword">if</span> (site.posts.length){ %&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"widget"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">h4</span>&gt;</span><span class="vbscript">&lt;%= __(<span class="comment">'Monthly Archives') %&gt;</span></span><span class="tag">&lt;/<span class="title">h4</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"archive-list inline list-unstyled"</span>&gt;</span>
+        <span class="vbscript">&lt;%- list_archives() %&gt;</span>
+        <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="vbscript">&lt;% } %&gt;</span>
 </code></pre><p>freewill/source/css/style.cssにもスタイルを加えた。  </p>
-<pre><code>/* Monthly Archives
----------------------------- */
+<pre><code><span class="comment">/* Monthly Archives
+---------------------------- */</span>
 
-.archive-list ul {
-  padding:0 3px;
-  list-style-type: none;
-  line-height: 20px;
-}
-.archive-list-count {
-    color: #888;
-}
-.archive-list-count:before {
-    content: &quot; (&quot;;
-}
-.archive-list-count:after {
-    content: &quot;)&quot;;
-}
+<span class="class">.archive-list</span> <span class="tag">ul</span> <span class="rules">{
+  <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">0</span> <span class="number">3px</span></span></span>;
+  <span class="rule"><span class="attribute">list-style-type</span>:<span class="value"> none</span></span>;
+  <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">20px</span></span></span>;
+<span class="rule">}</span></span>
+<span class="class">.archive-list-count</span> <span class="rules">{
+    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#888</span></span></span>;
+<span class="rule">}</span></span>
+<span class="class">.archive-list-count</span><span class="pseudo">:before</span> <span class="rules">{
+    <span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="string">" ("</span></span></span>;
+<span class="rule">}</span></span>
+<span class="class">.archive-list-count</span><span class="pseudo">:after</span> <span class="rules">{
+    <span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="string">")"</span></span></span>;
+<span class="rule">}</span></span>
 </code></pre><p>ちゃんとした知識が無く、見よう見まねなので、あまり良い記述ではないと思うが、自分としては十分満足。  </p>
 <p>ーー<br>（追記）<br>Githubのコミット歴をよく見てみたら、同じタグを使っている過去記事も更新されるようだ。<br>個別記事ページのタグの箇所にそのタグを使っている記事数が表示されているせいだろう。  </p>
 <p>タグクラウドやタグ一覧ページは良いとして、個別記事ページのタグには記事数は無い方が良さそうだ。  </p>
 <p>freewill/layout/_partial/post/tag.ejsの5行目から<code>&lt;span&gt;&#39; + tag.length  + &#39;&lt;/span&gt;</code>を削除して、タグ名だけにした。  </p>
-<pre><code>tags.push(&#39;&lt;li&gt;&lt;a href=&quot;&#39; + config.root + tag.path + &#39;&quot;&gt;&#39; + tag.name + &#39;&lt;/a&gt;&lt;/li&gt;&#39;);
+<pre><code><span class="keyword">tags</span>.push(<span class="string">'&lt;li&gt;&lt;a href="'</span> + config.root + <span class="keyword">tag</span>.path + <span class="string">'"&gt;'</span> + <span class="keyword">tag</span>.name + <span class="string">'&lt;/a&gt;&lt;/li&gt;'</span>);
 </code></pre><p>これで様子を見てみようと思う。</p>
 
 	</div>

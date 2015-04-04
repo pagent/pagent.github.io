@@ -112,9 +112,9 @@
 	<div class="mypage">
 	    <p>Arch Linuxでのフォントが汚く見づらかったので、フォントレンダリング「Infinality」（<a href="https://archlinuxjp.kusakata.com/wiki/Infinality" target="_blank" rel="external">Infinality - ArchWiki</a>）をインストールした。  </p>
 <p>途中、</p>
-<pre><code>Unable to update the static FcBlanks: 0x0600
-Unable to update the static FcBlanks: 0x0601
-Unable to update the static FcBlanks: 0x0602
+<pre><code>Unable <span class="keyword">to</span> <span class="keyword">update</span> the static FcBlank<span class="variable">s:</span> <span class="number">0</span>x0600
+Unable <span class="keyword">to</span> <span class="keyword">update</span> the static FcBlank<span class="variable">s:</span> <span class="number">0</span>x0601
+Unable <span class="keyword">to</span> <span class="keyword">update</span> the static FcBlank<span class="variable">s:</span> <span class="number">0</span>x0602
 …
 </code></pre><p>というエラーが出たが、下記トピックを参考に、<code>sudo pacman -S fontconfig-infinality-ultimate</code>でfontconfig-iu-compを削除した。<br><a href="https://bbs.archlinux.org/viewtopic.php?id=195198" target="_blank" rel="external">[SOLVED] Font cache: Unable to update the static FcBlanks / Newbie Corner / Arch Linux Forums</a>  </p>
 <p>首尾よくフォントが綺麗になったのだが、その後一部の漢字フォントが縦に潰れたようになってしまった。<br>（もしかすると、気づいたのが最近だっただけで、以前から潰れたフォントがあったのかもしれない。）</p>

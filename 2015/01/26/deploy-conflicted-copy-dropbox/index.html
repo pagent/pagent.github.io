@@ -111,7 +111,7 @@
 	<!-- content -->
 	<div class="mypage">
 	    <p>Dropbpx上に置いてあるHexoフォルダ直下にdb (… の競合コピー 2015-01-25).jsonというファイルが出来てしまった。<br>deployしようとすると  </p>
-<pre><code>fatal: Reference has invalid format: &#39;refs/heads/master (... の競合コピ ー 2015-01-25)&#39;
+<pre><code>fata<span class="variable">l:</span> Reference <span class="built_in">has</span> invalid forma<span class="variable">t:</span> <span class="string">'refs/heads/master (... の競合コピ ー 2015-01-25)'</span>
 </code></pre><p>というエラー表示が出る。  </p>
 <p>Dropbpxでは１つのファイルに対して複数のPCで同時に変更があった場合、「競合コピー」というのが出来るらしい。<br>hexo/.deploy/.git/refs/heads内にも競合コピーが出来てしまい、これのせいで上手くdeploy出来ないようだ。<br><a href="http://rcmdnk.github.io/blog/2013/05/12/computer-octopress-git-github-dropbox/" target="_blank" rel="external">Git + Dropbox使用時の注意点</a>  </p>
 <p>競合コピーを削除したらエラーが出なくなった。  </p>

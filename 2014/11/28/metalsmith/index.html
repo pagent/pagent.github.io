@@ -114,91 +114,91 @@
 <p><a href="https://github.com/segmentio/metalsmith" target="_blank" rel="external">Metalsmith</a>（An extremely simple, pluggable static site generator.）というのが人気急上昇中のようなので、試してみた。<br>Hexo同様、プログラミング言語がJavaScriptなので、早さも期待できる。  </p>
 <p>テストするにあたり、下記サイトを参考にさせて頂いた。<br><a href="http://h2ham.net/metalsmith-static-site-generator" target="_blank" rel="external">Nodeで動作する静的サイトジェネレータ「metalsmith」を使ってみた - HAM MEDIA MEMO</a><br><a href="http://web-layman.com/metalsmith-simple-static-site-generator/" target="_blank" rel="external">metalsmith - シンプルな静的サイトジェネレーター - Layman’s Web Creation.</a>  </p>
 <p>先ずはpackage.json を用意して導入するプラグインを指定、一括インストールするのが良いようなのだが、本体やプラグインのバージョンがよく分からない。<br>なのでmetalsmith-testという作業フォルダを作り、そこで端末を開いて一個一個インストールした。  </p>
-<pre><code>~/metalsmith-test$ npm install metalsmith
-~/metalsmith-test$ npm install metalsmith-templates
-~/metalsmith-test$ npm install swig
-~/metalsmith-test$ npm install metalsmith-markdown
-~/metalsmith-test$ npm install metalsmith-permalinks
-~/metalsmith-test$ npm install metalsmith-sass
-~/metalsmith-test$ npm install metalsmith-watch
-~/metalsmith-test$ npm install metalsmith-drafts
+<pre><code>~/metalsmith-<span class="keyword">test</span>$ npm install metalsmith
+~/metalsmith-<span class="keyword">test</span>$ npm install metalsmith-templates
+~/metalsmith-<span class="keyword">test</span>$ npm install swig
+~/metalsmith-<span class="keyword">test</span>$ npm install metalsmith-markdown
+~/metalsmith-<span class="keyword">test</span>$ npm install metalsmith-permalinks
+~/metalsmith-<span class="keyword">test</span>$ npm install metalsmith-sass
+~/metalsmith-<span class="keyword">test</span>$ npm install metalsmith-watch
+~/metalsmith-<span class="keyword">test</span>$ npm install metalsmith-drafts
 </code></pre><p>次に作業フォルダ内にmetalsmith.jsonを作成する必要があったが、これはjekyllの構成に倣ったexampleのものをほぼそのまま使わせてもらった。<br><a href="https://github.com/segmentio/metalsmith/blob/master/examples/jekyll/metalsmith.json" target="_blank" rel="external">https://github.com/segmentio/metalsmith/blob/master/examples/jekyll/metalsmith.json</a></p>
 <pre><code>{
-  &quot;source&quot;: &quot;./_posts&quot;,
-  &quot;destination&quot;: &quot;./_site&quot;,
-  &quot;metadata&quot;: {
-    &quot;title&quot;: &quot;My Jekyll-Powered Blog&quot;,
-    &quot;description&quot;: &quot;My second, super-cool, Jekyll-powered blog.&quot;
-  },
-  &quot;plugins&quot;: {
-    &quot;metalsmith-drafts&quot;: {},
-    &quot;metalsmith-markdown&quot;: {},
-    &quot;metalsmith-permalinks&quot;: {
-      &quot;pattern&quot;: &quot;:title&quot;
-    },
-    &quot;metalsmith-sass&quot;: {
-        &quot;outputStyle&quot;: &quot;expanded&quot;
-    },
-    &quot;metalsmith-templates&quot;: {
-      &quot;engine&quot;: &quot;swig&quot;,
-      &quot;directory&quot;: &quot;_layouts&quot;
-    }
-  }
-}
+  "<span class="attribute">source</span>": <span class="value"><span class="string">"./_posts"</span></span>,
+  "<span class="attribute">destination</span>": <span class="value"><span class="string">"./_site"</span></span>,
+  "<span class="attribute">metadata</span>": <span class="value">{
+    "<span class="attribute">title</span>": <span class="value"><span class="string">"My Jekyll-Powered Blog"</span></span>,
+    "<span class="attribute">description</span>": <span class="value"><span class="string">"My second, super-cool, Jekyll-powered blog."</span>
+  </span>}</span>,
+  "<span class="attribute">plugins</span>": <span class="value">{
+    "<span class="attribute">metalsmith-drafts</span>": <span class="value">{}</span>,
+    "<span class="attribute">metalsmith-markdown</span>": <span class="value">{}</span>,
+    "<span class="attribute">metalsmith-permalinks</span>": <span class="value">{
+      "<span class="attribute">pattern</span>": <span class="value"><span class="string">":title"</span>
+    </span>}</span>,
+    "<span class="attribute">metalsmith-sass</span>": <span class="value">{
+        "<span class="attribute">outputStyle</span>": <span class="value"><span class="string">"expanded"</span>
+    </span>}</span>,
+    "<span class="attribute">metalsmith-templates</span>": <span class="value">{
+      "<span class="attribute">engine</span>": <span class="value"><span class="string">"swig"</span></span>,
+      "<span class="attribute">directory</span>": <span class="value"><span class="string">"_layouts"</span>
+    </span>}
+  </span>}
+</span>}
 </code></pre><p>_layoutsフォルダを作り、そこへ下記内容のpost.htmlを配置。  </p>
-<pre><code>&lt;html&gt;
-&lt;head&gt;
-  &lt;title&gt;My Blog&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;プログラム音痴がMetalsmithを試してみた&lt;/h1&gt;
-  &lt;time&gt;2014-11-28&lt;/time&gt;
+<pre><code><span class="tag">&lt;<span class="title">html</span>&gt;</span>
+<span class="tag">&lt;<span class="title">head</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">title</span>&gt;</span>My Blog<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">h1</span>&gt;</span>プログラム音痴がMetalsmithを試してみた<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">time</span>&gt;</span>2014-11-28<span class="tag">&lt;/<span class="title">time</span>&gt;</span>
 
-&lt;/body&gt;
-&lt;/html&gt;
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
 </code></pre><p>_postsフォルダを作り、テスト用の記事test-post-1.mdを配置。  </p>
 <pre><code>---
-template: post.html
+<span class="keyword">template</span>: post.html
 title: テスト投稿１
-date: 2014-11-28
+date: <span class="number">2014</span>-<span class="number">11</span>-<span class="number">28</span>
 ---
-##今日の天気
+<span class="comment">##今日の天気</span>
 本日は晴天なり。
 </code></pre><p><code>node node_modules/.bin/metalsmith</code>とコマンドを打つと、自動的に_siteフォルダ、その下にtest-post-1フォルダ、その中にindex.htmlが生成された。  </p>
-<pre><code>&lt;html&gt;
-&lt;head&gt;
-  &lt;title&gt;My Blog&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;h1&gt;テスト投稿&lt;/h1&gt;
-  &lt;time&gt;2014-11-28&lt;/time&gt;
-  &lt;h2 id=&quot;-&quot;&gt;今日の天気&lt;/h2&gt;
-&lt;p&gt;本日は晴天なり。&lt;/p&gt;
+<pre><code><span class="tag">&lt;<span class="title">html</span>&gt;</span>
+<span class="tag">&lt;<span class="title">head</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">title</span>&gt;</span>My Blog<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">h1</span>&gt;</span>テスト投稿<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">time</span>&gt;</span>2014-11-28<span class="tag">&lt;/<span class="title">time</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">h2</span> <span class="attribute">id</span>=<span class="value">"-"</span>&gt;</span>今日の天気<span class="tag">&lt;/<span class="title">h2</span>&gt;</span>
+<span class="tag">&lt;<span class="title">p</span>&gt;</span>本日は晴天なり。<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
 
-&lt;/body&gt;
-&lt;/html&gt;
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
 </code></pre><p>ローカルホスト上でプレビューを可能にするプラグインmetalsmith-serveというのがあったのでインストールしたが、どう使えばいいのかよく分からない。  </p>
 <p>metalsmith.jsonの<code>&quot;plugins&quot;:</code>の箇所に無理やり  </p>
-<pre><code>    &quot;metalsmith-serve&quot;: {
-      &quot;port&quot;: &quot;8081&quot;,
-      &quot;verbose&quot;: &quot;true&quot;
+<pre><code>    <span class="string">"metalsmith-serve"</span>: {
+      <span class="string">"port"</span>: <span class="string">"8081"</span>,
+      <span class="string">"verbose"</span>: <span class="string">"true"</span>
     }
 </code></pre><p>と加えてみたら、<code>node node_modules/.bin/metalsmith</code>のコマンドで、生成と共にローカルホストが立ち上がった。<br>ブラウザで<code>http://localhost:8081/test-post-1/</code>にアクセスすると、CSSは当たっていないが表示はされた。  </p>
 <p>たぶん正しい使い方ではないのだと思うが、プラグインの説明の  </p>
-<pre><code>var metalsmith = require(&#39;metalsmith&#39;);
-var serve = require(&#39;metalsmith-serve&#39;);
+<pre><code><span class="keyword">var</span> metalsmith = <span class="keyword">require</span>(<span class="string">'metalsmith'</span>);
+<span class="keyword">var</span> serve = <span class="keyword">require</span>(<span class="string">'metalsmith-serve'</span>);
 
 metalsmith(__dirname)
-  .use(serve())
+  .<span class="keyword">use</span>(serve())
   .build();
 </code></pre><p>というのを何処で設定するのか分からない。  </p>
 <p>トップページの生成の仕方やCSSの当て方なども勉強する必要がありそう。<br>それに、新規記事作成やgenerate、プレビューなど、それぞれコマンドに割り当てて操作したいところ。  </p>
 <p>Metalsmithのサイトの上方に記載してある  </p>
-<pre><code>Metalsmith(__dirname)
-  .use(drafts())
-  .use(markdown())
-  .use(permalinks(&#39;posts/:title&#39;))
-  .use(templates(&#39;handlebars&#39;))
+<pre><code>Metalsmith(<span class="number">__</span>dirname)
+  .<span class="keyword">use</span>(drafts())
+  .<span class="keyword">use</span>(markdown())
+  .<span class="keyword">use</span>(permalinks('posts/:title'))
+  .<span class="keyword">use</span>(templates('handlebars'))
   .build();
 </code></pre><p>というのも、いったいどこの記載のことなんだか。</p>
 <p>「Everything is a Plugin」と謳われているようにカスタマイズ性は高そうだが、Jekyllの使い方が分からずOctopressに移った自分のようなプログラム音痴には、少々ハードルが高そうだ。<br>静的サイトジェネレーターの仕組みを勉強するには良さそうだが。</p>

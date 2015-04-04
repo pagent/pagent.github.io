@@ -114,15 +114,15 @@
 <p><a href="https://archlinuxjp.kusakata.com/wiki/Yaourt" target="_blank" rel="external">Yaourt - ArchWiki</a>  </p>
 <p>「まず package-query をインストール」とのことだが、pacmanからpackage-queryをインストールしようとしても、見つからないと言われるので、/etc/pacman.confに下記記述を加えた。  </p>
 <pre><code>[archlinuxfr]
-SigLevel = Never
-Server = http://repo.archlinux.fr/$arch
+<span class="constant">SigLevel</span> = Never
+<span class="constant">Server</span> = http:<span class="comment">//repo.archlinux.fr/$arch</span>
 </code></pre><p>その後  </p>
-<pre><code>sudo pacman --sync --refresh yaourt
+<pre><code><span class="comment">sudo</span> <span class="comment">pacman</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">sync</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">refresh</span> <span class="comment">yaourt</span>
 </code></pre><p>GlipperなどもYaourtからインストール出来るようになった。  </p>
-<pre><code>yaourt -S glipper
+<pre><code><span class="title">yaourt</span> -S glipper
 </code></pre><p>クリップボードマネージャーは色々あるが、Glipperはログアウト時に履歴を消去出来るので気に入っている。  </p>
 <p>ーー<br>（追記）<br>Xfceデスクトップに標準で入っていたClipmanでも、「終了時に保存する」のチェックボックスを外せば履歴を消去出来るようだ。<br>Glipperのアイコンが正常に表示されないこともあり、結局Clipmanを使うことにしてGlipperをアンインストールした。  </p>
-<pre><code>yaourt -Rs glipper
+<pre><code><span class="title">yaourt</span> -Rs glipper
 </code></pre>
 	</div>
 

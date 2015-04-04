@@ -117,9 +117,9 @@
 <p>Linux環境で作業したので、<a href="http://www.rmprepusb.com/tutorials/114" target="_blank" rel="external">114 - How to make an Easy2Boot (grub4dos) USB Flash drive using linux - RMPrepUSB</a>を参照したが、展開して出て来たフォルダ内にも同様の解説があった。<br>_ISO/docs/linux_utils/ReadMe_fmt.sh.txt  </p>
 <p>（Windows用の解説は_ISO/docs/Make_E2B_USB_Drive/ReadMe.txt）  </p>
 <p>linux_utilsフォルダ内で端末を開き、フォルダ内のすべてのファイルのパーティションを777に変更。  </p>
-<pre><code>sudo chmod 777 *
+<pre><code><span class="built_in">sudo</span> chmod <span class="number">777</span> *
 </code></pre><p>その後fmt.shを実行。    </p>
-<pre><code>sudo ./fmt.sh
+<pre><code><span class="built_in">sudo</span> ./fmt.sh
 </code></pre><p>インストール先を聞かれるので、OKなら「y」。<br>違う場合は「n」の後、自分で指定。<br>（外付けHDDにもインストール可能で、また2番目以降のパーティションにもインストール出来る。）  </p>
 <p>フォーマットして良いか聞かれるので、良ければ「y」。  </p>
 <p>指定したパーティションに「Easy2Boot」がコピーされ、ブートローダーがインストールされる。  </p>
@@ -135,9 +135,9 @@
 <h3 id="フォーマットをNTSFにする">フォーマットをNTSFにする</h3>
 <p>4GBを超えるファイルを利用するためには、Easy2Boot領域をFat32ではなく、NTSFもしくはext3、ext4にしておく必要があるが、なるべくなら4GB以上のファイルも扱いたい。  </p>
 <p>Easy2Bootインストール時に領域がFat32にフォーマットされてしまうが、_ISO/docs/linux_utils内のfmt.shファイルの131行目の  </p>
-<pre><code>/sbin/mkfs.vfat -F32 -n &quot;$label&quot; $device
+<pre><code>/sbin/mkfs.vfat -F32 -n <span class="string">"<span class="variable">$label</span>"</span> <span class="variable">$device</span>
 </code></pre><p>を</p>
-<pre><code>/sbin/mkfs.ntfs -n &quot;$label&quot; $device
+<pre><code>/sbin/mkfs.ntfs -n <span class="string">"<span class="variable">$label</span>"</span> <span class="variable">$device</span>
 </code></pre><p>に変更することでNTSFにすることが出来た。  </p>
 <p>後からファイルを保持したままFat32をNTSFに変換することも可能のようなので、それでも良いかもしれない。  </p>
 <h3 id="よく分からないトラブル">よく分からないトラブル</h3>
