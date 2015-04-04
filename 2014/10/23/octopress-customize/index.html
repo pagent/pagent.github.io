@@ -113,44 +113,9 @@
 	    <p>ブログをリニューアルするにあたって、またOctopressを少しカスタマイズした。  </p>
 <p>以前と同じく、<a href="http://tantant.jp/blog/Octopress/configuring-octopress/#paragraph07" target="_blank" rel="external">Octopressの初期設定時に気にしておきたい9箇所 – tantant</a>と<a href="http://rcmdnk.github.io/blog/2013/10/01/blog-octopress/" target="_blank" rel="external">月間アーカイブ for Octopress – rcmdnk’s blog</a>の通り、カテゴリ別アーカイブと月別アーカイブを追加した。  </p>
 <p>テーマは<a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes" target="_blank" rel="external">3rd Party Octopress Themes · imathis/octopress Wiki</a>で探してみたが、やっぱりデフォルトの方がよいかと思い、sass/custom/_styles.scssを下記に編集したのみ。  </p>
-<pre><code><span class="comment">// This File is imported last, and will override other styles in the cascade</span>
-<span class="comment">// Add styles here to make changes without digging in too much</span>
+<figure class="highlight plain"><figcaption><span>_styles.scss</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">body > header {</div><div class="line">    padding-top: 1.3em;</div><div class="line">    padding-bottom: 1.1em;</div><div class="line">}</div><div class="line">body > header h1 {</div><div class="line">    font-size: 2.0em;</div><div class="line">    font-family: "PT Serif","Georgia","Helvetica Neue",Arial,sans-serif;</div><div class="line">}</div><div class="line">body > header h2 {</div><div class="line">    font-size: 0.9em;</div><div class="line">    color: #AAA;</div><div class="line">}</div><div class="line">.entry-title {</div><div class="line">    font-size: 1.5em !important;</div><div class="line">}</div><div class="line">h2, section h1 {</div><div class="line">    font-size: 1.2em;</div><div class="line">}</div><div class="line">#blog-archives article h1 a {</div><div class="line">    font-size: 1.0em !important;</div><div class="line">}</div><div class="line">p {</div><div class="line">    font-size:  92%;</div><div class="line">}</div><div class="line">article blockquote {</div><div class="line">    font-size:  105%;</div><div class="line">}</div></pre></td></tr></table></figure>
 
-<span class="tag">body</span> &gt; <span class="tag">header</span> {
-    <span class="attribute">padding-top</span><span class="value">: <span class="number">1.3em</span>;</span>
-    <span class="attribute">padding-bottom</span><span class="value">: <span class="number">1.1em</span>;</span>
-}
-
-<span class="tag">body</span> &gt; <span class="tag">header</span> <span class="tag">h1</span> {
-    <span class="attribute">font-size</span><span class="value">: <span class="number">2.0em</span>;</span>
-    <span class="attribute">font-family</span><span class="value">: <span class="string">"PT Serif"</span>,<span class="string">"Georgia"</span>,<span class="string">"Helvetica Neue"</span>,Arial,sans-serif;</span>
-}
-
-<span class="tag">body</span> &gt; <span class="tag">header</span> <span class="tag">h2</span> {
-    <span class="attribute">font-size</span><span class="value">: <span class="number">0.9em</span>;</span>
-    <span class="attribute">color</span><span class="value">: <span class="hexcolor">#AAA</span>;</span>
-}
-
-<span class="class">.entry-title</span> {
-    <span class="attribute">font-size</span><span class="value">: <span class="number">1.5em</span> <span class="important">!important</span>;</span>
-}
-
-<span class="tag">h2</span>, <span class="tag">section</span> <span class="tag">h1</span> {
-    <span class="attribute">font-size</span><span class="value">: <span class="number">1.2em</span>;</span>
-}
-
-<span class="id">#blog-archives</span> <span class="tag">article</span> <span class="tag">h1</span> <span class="tag">a</span> {
-    <span class="attribute">font-size</span><span class="value">: <span class="number">1.0em</span> <span class="important">!important</span>;</span>
-}
-
-<span class="tag">p</span> {
-    <span class="attribute">font-size</span><span class="value">:  <span class="number">92%</span>;</span>
-}
-
-<span class="tag">article</span> <span class="tag">blockquote</span> {
-    <span class="attribute">font-size</span><span class="value">:  <span class="number">105%</span>;</span>
-}
-</code></pre><p>日付け表記は英語式ではなく日本語式がよかったので、<code>_config.yml</code>で<code>date_format: &quot;%Y年%-m月%-d日&quot;</code><br>としたが、なぜかデフォルトのテーマでは反映されず。<br>source/_includes/post/date.htmlをoctostrap3の<a href="https://github.com/kAworu/octostrap3/blob/master/source/_includes/post/date.html" target="_blank" rel="external">date.html</a>と入れ替えたら反映された。<br>よく分からないが、デフォルトテーマのdate.htmlの記述に問題があるらしい。  </p>
+<p>日付け表記は英語式ではなく日本語式がよかったので、<code>_config.yml</code>で<code>date_format: &quot;%Y年%-m月%-d日&quot;</code><br>としたが、なぜかデフォルトのテーマでは反映されず。<br>source/_includes/post/date.htmlをoctostrap3の<a href="https://github.com/kAworu/octostrap3/blob/master/source/_includes/post/date.html" target="_blank" rel="external">date.html</a>と入れ替えたら反映された。<br>よく分からないが、デフォルトテーマのdate.htmlの記述に問題があるらしい。  </p>
 <p>あと、記事タイトルやカテゴリー名に漢字を使うと中国語読みみたいになってしまうが、これはたぶんOctopressがベースとしているJekyllの仕様なのだろう。<br>WordPressのようにスラッグを指定出きれば良いのだが、やり方が分からないのでこの辺は我慢しないとしょうが無いようだ。</p>
 
 	</div>

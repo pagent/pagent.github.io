@@ -113,10 +113,9 @@
 	    <p>Xubuntuで間違ってhomeディレクトリを削除してしまい、過去記事のmarkdownファイルもろともOctopressのsourceを消失させてしまうという失敗をしてしまった。<br>ここはOctopressの作業フォルダをDropboxに置いておいた方がよいかと思いやってみた。  </p>
 <p>いちおう動作はしてdeployも出来るが、どこから出てきたか下層にあるはずのフォルダやファイルが勝手に作られていたりする。<br>通信状況が良くないのか、使い勝手がいまいち。<br>Dropboxはあくまでバックアップ用にすることにした。  </p>
 <p>Octopressの作業フォルダは、Xubuntuで共有しているWindowsのDドライブに置き、homeディレクトリにはそこへのリンクを置いているので前よりは安全だろう。  </p>
-<p>DドライブはXubuntu起動時に自分が所有者としてマウントされるよう、/etc/fstabで下記に設定している。  </p>
-<pre><code><span class="variable">umask=</span><span class="number">002</span>,<span class="variable">uid=</span><span class="number">1000</span>,<span class="variable">gid=</span><span class="number">1000</span> <span class="number">0</span>       <span class="number">0</span>
-</code></pre><p>dumpとpassを0にしたのは何か理由があってのことだったと思うが、思い出せない。  </p>
-<p>とにかくこれで、Xubuntuでおかしなことをしてしまっても、Dドライブをいじらない限りは大丈夫なはず。  </p>
+<p>DドライブはXubuntu起動時に自分が所有者としてマウントされるよう、optionsを下記で/etc/fstabに記載している。  </p>
+<p><code>defaults,umask=002,uid=1000,gid=1000</code></p>
+<p>これでXubuntuでおかしなことをしてしまっても、Dドライブをいじらない限りは大丈夫なはず。  </p>
 <p>ーー<br>（追記）<br>使い方がよく分かってなかっただけで、やっぱりDropboxは便利かもしれない。<br>他のPCと作業を同期出来るし。<br>間違ってフィルを削除してしまっても、Dropboxのキャッシュから復元出来るし。</p>
 
 	</div>
