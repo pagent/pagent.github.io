@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-04-05T12:53:15.012Z</updated>
+  <updated>2015-04-05T12:55:00.504Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/04/05/puppy-automount-fstab/"/>
     <id>http://pagent.github.io/2015/04/05/puppy-automount-fstab/</id>
     <published>2015-04-05T11:40:13.000Z</published>
-    <updated>2015-04-05T12:52:24.000Z</updated>
+    <updated>2015-04-05T12:54:32.000Z</updated>
     <content type="html"><![CDATA[<p>Puppy Linux起動時にパーティションを自動マウントしたかったのだが、少々苦戦した。</p>
 <h3 id="LxPup_15-02">LxPup 15.02</h3>
 <p>LxPupでは、あらかじめマウントポイントとなるデレクトリを作成さえしておけば、fstab通りに自動マウント可能だった。<br>Xubuntu等では確か、デレクトリが無ければ自動生成してくれていたと思うので、うっかりしていた。</p>
@@ -48,7 +48,7 @@
 <p>LxPupでは、あらかじめマウントポイントとなるデレクトリを作成さえしておけば、fstab通]]>
     </summary>
     
-      <category term="-Linux" scheme="http://pagent.github.io/tags/-Linux/"/>
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
     
   </entry>
   
