@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>nemoの右クリックメニューに「比較」を追加 | Pagent</title>
+  <title>Puppy Linux起動時にfstabで自動マウント | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="nemoの右クリックメニューに「比較」を追加"/>
+  <meta property="og:title" content="Puppy Linux起動時にfstabで自動マウント"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -94,7 +94,7 @@
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> nemoの右クリックメニューに「比較」を追加</h1>
+			<h1> Puppy Linux起動時にfstabで自動マウント</h1>
 		</div>
 	
 
@@ -110,25 +110,27 @@
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>nemoの拡張機能nemo-compareのインストールが上手く行かなかったので、手動で導入した。  </p>
-<p>（参照記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>  </p>
-<p>まず、meld、python2-dbus、dbus-glib（これは導入済みだった）をインストール。  </p>
-<pre><code>$ <span class="built_in">sudo</span> pacman -S meld python2-dbus
-</code></pre><p>~/.local/share/nemo/actions下にcompare-save-for-later.nemo_action、compare-with-saved.nemo_action、compare.shの３つのファイルを作成。  </p>
-<figure class="highlight plain"><figcaption><span>compare-save-for-later.nemo_action</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[Nemo Action]</div><div class="line">Active=true</div><div class="line">Name=Compare later</div><div class="line">Name[ja]=あとで比較する</div><div class="line">Comment=Save file for comparison later.</div><div class="line">Exec=<compare.sh save="" %f=""></compare.sh></div><div class="line">Icon-Name=meld</div><div class="line">Selection=S</div><div class="line">Extensions=any</div></pre></td></tr></table></figure>
+	    <p>Puppy Linux起動時にパーティションを自動マウントしたかったのだが、少々苦戦した。</p>
+<h3 id="LxPup_15-02">LxPup 15.02</h3>
+<p>LxPupでは、あらかじめマウントポイントとなるデレクトリを作成さえしておけば、fstab通りに自動マウント可能だった。<br>Xubuntu等では確か、デレクトリが無ければ自動生成してくれていたと思うので、うっかりしていた。</p>
+<figure class="highlight plain"><figcaption><span>fstab</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">/dev/sda1 /mnt/win  ntfs  defaults 0 0</div><div class="line"></div><div class="line">/dev/sda5 /mnt/sda5  ext4  defaults 0 0</div></pre></td></tr></table></figure>
 
+<p>ntfsに−3gをつけなくても大丈夫だった。</p>
+<h3 id="Puppy_Linux_Precise_571_JP">Puppy Linux Precise 571 JP</h3>
+<p>Precise571JPは、デフォルト状態ではfstabが機能していなかった。<br>/etc/rc.d/rc.localファイルで<code>mount -a</code>コマンドを実行することで、fstabをロードしてくれた。<br><a href="http://blog.livedoor.jp/yagiyagi_shun/archives/51926344.html" target="_blank" rel="external">やぎやぎブログ:[Fedora 16]rc.localの罠 - livedoor Blog（ブログ）</a>  </p>
+<figure class="highlight shellscript"><figcaption><span>rc.local</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="shebang">#!/bin/sh</span></div><div class="line">    </div><div class="line">mount <span class="operator">-a</span></div></pre></td></tr></table></figure>
 
+<p>rc.localは実行可能にしておく必要がある。  </p>
+<pre><code><span class="comment"># chmod a+x /etc/rc.d/rc.local</span>
+</code></pre><p>／etc内にリンクを作成する必要は無かった。</p>
+<p>LxPupを参考にすると、<code>mount -a</code>は/etc/rc.d/rc.sysinitに記載しても自動マウント出来た。  </p>
+<p>rc.sysinitの318行目あたり、VERSION UPDATEの上に記載</p>
+<figure class="highlight plain"><figcaption><span>rc.sysinit</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">status_func $STATUS</div><div class="line">    </div><div class="line">#Load fstab entries</div><div class="line">mount -a</div><div class="line">    </div><div class="line">#######################VERSION UPDATE##########################</div><div class="line">...</div></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><figcaption><span>compare-with-saved.nemo_action</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[Nemo Action]</div><div class="line">Active=true</div><div class="line">Name=Compare with saved element</div><div class="line">Name[ja]=比較する</div><div class="line">Comment=Compare %F saved file or directory.</div><div class="line">Exec=<compare.sh compare="" %f=""></compare.sh></div><div class="line">Icon-Name=meld</div><div class="line">Selection=S</div><div class="line">Extensions=any</div></pre></td></tr></table></figure>
+<h3 id="fstabを用いずに自動マウント">fstabを用いずに自動マウント</h3>
+<p>なお、fstabを用いず、/etc/rc.d/rc.localで個別にマウント指定しても自動マウント可能だった。<br><a href="http://www.murga-linux.com/puppy/viewtopic.php?p=822315&amp;sid=0256b63fbae1b190f96d18652edba1b1" target="_blank" rel="external">Puppy Linux Discussion Forum :: View topic - How to auto-mount drives at startup?</a>  </p>
+<figure class="highlight plain"><figcaption><span>rc.local</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#!/bin/sh</div><div class="line">    </div><div class="line">mount -t ntfs -o defaults /dev/sda2 /mnt/vol</div><div class="line">mount -o defaults /dev/sda5 /mnt/sda5</div></pre></td></tr></table></figure>
 
-
-
-<figure class="highlight shellscript"><figcaption><span>compare.sh</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="shebang">#!/bin/bash</span></div><div class="line">savedfile=/var/tmp/compare-save-for-later.<span class="variable">$USER</span></div><div class="line">comparator=meld</div><div class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$1</span>"</span> == <span class="string">"save"</span> ]; <span class="keyword">then</span></div><div class="line">    <span class="built_in">echo</span> <span class="string">"<span class="variable">$2</span>"</span> &gt; <span class="string">"<span class="variable">$savedfile</span>"</span></div><div class="line"><span class="keyword">else</span></div><div class="line">    <span class="string">"<span class="variable">$comparator</span>"</span> $(cat <span class="string">"<span class="variable">$savedfile</span>"</span>) <span class="string">"<span class="variable">$2</span>"</span></div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure>
-
-<p>compare.shはファイルマネージャーもしくはコマンドで実行可能にしておく。  </p>
-<pre><code>$ chmod +<span class="keyword">x</span> compare.<span class="keyword">sh</span>
-</code></pre><p>nemoの右クリックメニューに「比較する」「あとで比較する」が追加された。  </p>
-<p>ファイル内容だけではなくフォルダの内容も比較出来る。<br>なにかと重宝しそうだ。</p>
 
 	</div>
 
@@ -144,13 +146,13 @@
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2015/04/05/puppy-automount-fstab/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2015/04/03/nemo-compare-failed/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2015/04/03/nemo-compare-action/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -184,7 +186,7 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2015年4月3日
+	2015年4月5日
 	</div>
 	
 
@@ -198,7 +200,7 @@
     <ul id="tags" class="tag_box list-unstyled collapse in">
 	    <!-- _partial/post/tag -->
   
-  <li><a href="/tags/Linux/">Linux</a></li>
+  <li><a href="/tags/-Linux/">-Linux</a></li>
 
     </ul>
 	</div>
