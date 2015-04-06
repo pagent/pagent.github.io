@@ -124,7 +124,7 @@
 <pre><code><span class="comment"># chmod a+x /etc/rc.d/rc.local</span>
 </code></pre><p>／etc内にリンクを作成する必要は無かった。</p>
 <p>LxPupを参考にすると、<code>mount -a</code>は/etc/rc.d/rc.sysinitに記載しても自動マウント出来た。  </p>
-<p>rc.sysinitの316行目VERSION UPDATEのすぐ上に記載。</p>
+<p>rc.sysinitの316行目「VERSION UPDATE」のすぐ上に記載。</p>
 <figure class="highlight plain"><figcaption><span>rc.sysinit</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">status_func $STATUS</div><div class="line">    </div><div class="line">#Load fstab entries</div><div class="line">mount -a</div><div class="line">    </div><div class="line">#######################VERSION UPDATE##########################</div><div class="line">...</div></pre></td></tr></table></figure>
 
 <h3 id="fstabを用いずに自動マウント">fstabを用いずに自動マウント</h3>
