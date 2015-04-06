@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-04-06T00:26:01.551Z</updated>
+  <updated>2015-04-06T05:10:30.555Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -142,11 +142,11 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
     <link href="http://pagent.github.io/2015/04/02/fcitx-qt-program/"/>
     <id>http://pagent.github.io/2015/04/02/fcitx-qt-program/</id>
     <published>2015-04-02T03:57:36.000Z</published>
-    <updated>2015-04-03T07:52:41.000Z</updated>
+    <updated>2015-04-06T05:10:05.000Z</updated>
     <content type="html"><![CDATA[<p>iBusのプロパティパネル採用以降、iBusをやめて日本語入力にfcitx-mozcを使っている。  </p>
 <p>Xubuntuでは特に問題無く使えていたが、Arch LinuxでQtベースのプログラムを使用する際、日本語入力が有効にならず困っていた。<br>Simplenote専用にするのにうってつけの軽量ブラウザ「QupZilla」や、markdownファイル編集の際プレビューが出来て便利な「ReText」など、日本語入力出来ないと不便。  </p>
 <p>モジュールのfcitx-qt4、fcitx-qt5はインストールしたが、何故かインプットメソッドがオンにならない。<br>（fcitx-qt5はあまり必要無いようだが、念の為インストール）<br>fcitx-configtool（Qt 設定ツール）で、デフォルトのインプットメソッドをfcitxに変更したが、効果が無い。  </p>
-<p><code>fcitx-diagnose</code>を実行してフロントエンド設定の項目を確認すると、XMODIFIERS、QT_IM_MODULEが正しく設定されていないようで、「設定されていません」という表示だったり空欄だったりする。  </p>
+<p><code>fcitx-diagnose</code>を実行してフロントエンド設定の項目を確認すると、空欄だったり「設定されていません」という表示だったりする。<br>XMODIFIERS、QT_IM_MODULEがちゃんとロードされていないらしい。  </p>
 <p>ホームディレクトリに.xprofileを新規作成し、下記内容で保存。<br>（ディスプレイマネージャにSLiMを使っている場合は、~/.xprofileではなく~/.xinitrcに記載するらしい）  </p>
 <pre><code><span class="keyword">export</span> GTK_IM_MODULE=fcitx
 <span class="keyword">export</span> QT_IM_MODULE=fcitx
