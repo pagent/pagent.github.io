@@ -117,7 +117,8 @@
 <p>検索したところ、同様のケースが見つかった。<br><a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=752253" target="_blank" rel="external">#752253 - roxterm: Segmentation Fault with the copy of default profile - Debian Bug report logs</a>  </p>
 <p>“empty profile file”が原因とのことだが、~/.config/roxterm.sourceforge.net/Profiles内のDefault01を開くと、確かに何も書かれておらず真っ白だった。  </p>
 <p>Default01に一行 </p>
-<p> [roxterm profile]</p>
+<figure class="highlight plain"><figcaption><span>Default01</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[roxterm profile]</div></pre></td></tr></table></figure>
+
 <p>と書くと、無事起動出来た。</p>
 
 	</div>
