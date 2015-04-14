@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-04-07T05:34:15.122Z</updated>
+  <updated>2015-04-14T10:58:38.183Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/04/05/puppy-automount-fstab/"/>
     <id>http://pagent.github.io/2015/04/05/puppy-automount-fstab/</id>
     <published>2015-04-05T11:40:13.000Z</published>
-    <updated>2015-04-06T00:25:22.000Z</updated>
+    <updated>2015-04-06T00:25:22.911Z</updated>
     <content type="html"><![CDATA[<p>Puppy Linux起動時にパーティションを自動マウントしたかったのだが、少々苦戦した。</p>
 <h3 id="LxPup_15-02">LxPup 15.02</h3>
 <p>LxPupでは、あらかじめマウントポイントとなるデレクトリを作成さえしておけば、fstab通りに自動マウント可能だった。<br>Xubuntu等では確か、デレクトリが無ければ自動生成してくれていたと思うので、うっかりしていた。</p>
@@ -57,7 +57,7 @@
     <link href="http://pagent.github.io/2015/04/03/nemo-compare-action/"/>
     <id>http://pagent.github.io/2015/04/03/nemo-compare-action/</id>
     <published>2015-04-03T08:31:01.000Z</published>
-    <updated>2015-04-04T13:11:54.000Z</updated>
+    <updated>2015-04-04T13:11:54.406Z</updated>
     <content type="html"><![CDATA[<p>nemoの拡張機能nemo-compareのインストールが上手く行かなかったので、手動で導入した。  </p>
 <p>（参照記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>  </p>
 <p>まず、meld、python2-dbus、dbus-glib（これは導入済みだった）をインストール。  </p>
@@ -92,7 +92,7 @@
     <link href="http://pagent.github.io/2015/04/03/nemo-compare-failed/"/>
     <id>http://pagent.github.io/2015/04/03/nemo-compare-failed/</id>
     <published>2015-04-03T08:23:51.000Z</published>
-    <updated>2015-04-03T09:12:27.000Z</updated>
+    <updated>2015-04-03T09:12:27.324Z</updated>
     <content type="html"><![CDATA[<p>nemoの右クリックで２つのファイル（フォルダ）の内容を比較出来るnemo-compareをインストールした。<br>yaourtでインストール出来たが、右クリックのメニューに「compare」が出てこない。<br>検索すると同様の事例が見つかった。  </p>
 <p><a href="https://github.com/linuxmint/nemo-extensions/issues/24" target="_blank" rel="external">nemo-compare not in the right-click context menu · Issue #24 · linuxmint/nemo-extensions · GitHub</a>  </p>
 <p><a href="https://github.com/linuxmint/nemo-extensions/issues/18#issuecomment-21617918" target="_blank" rel="external">Symbolic link needed in LMDE 64-bit · Issue #18 · linuxmint/nemo-extensions · GitHub</a>  </p>
@@ -121,7 +121,7 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
     <link href="http://pagent.github.io/2015/04/03/nemo-open-in-terminal/"/>
     <id>http://pagent.github.io/2015/04/03/nemo-open-in-terminal/</id>
     <published>2015-04-03T07:39:39.000Z</published>
-    <updated>2015-04-03T07:48:31.000Z</updated>
+    <updated>2015-04-03T07:48:31.027Z</updated>
     <content type="html"><![CDATA[<p>Arch Linuxにインストールしたnemoで右クリックメニューの「端末で開く」が機能しなかった。  </p>
 <p><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>を参考に、  </p>
 <pre><code>$ gsettings <span class="operator"><span class="keyword">set</span> org.cinnamon.desktop.<span class="keyword">default</span>-applications.terminal <span class="keyword">exec</span> xfce4-terminal</span>
@@ -142,7 +142,7 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
     <link href="http://pagent.github.io/2015/04/02/fcitx-qt-program/"/>
     <id>http://pagent.github.io/2015/04/02/fcitx-qt-program/</id>
     <published>2015-04-02T03:57:36.000Z</published>
-    <updated>2015-04-06T05:10:05.000Z</updated>
+    <updated>2015-04-06T05:10:05.119Z</updated>
     <content type="html"><![CDATA[<p>iBusのプロパティパネル採用以降、iBusをやめて日本語入力にfcitx-mozcを使っている。  </p>
 <p>Xubuntuでは特に問題無く使えていたが、Arch LinuxでQtベースのプログラムを使用する際、日本語入力が有効にならず困っていた。<br>Simplenote専用にするのにうってつけの軽量ブラウザ「QupZilla」や、markdownファイル編集の際プレビューが出来て便利な「ReText」など、日本語入力出来ないと不便。  </p>
 <p>モジュールのfcitx-qt4、fcitx-qt5はインストールしたが、何故かインプットメソッドがオンにならない。<br>（fcitx-qt5はあまり必要無いようだが、念の為インストール）<br>fcitx-configtool（Qt 設定ツール）で、デフォルトのインプットメソッドをfcitxに変更したが、効果が無い。  </p>
@@ -170,7 +170,7 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
     <link href="http://pagent.github.io/2015/04/01/xfce4-appearance-settings-crash/"/>
     <id>http://pagent.github.io/2015/04/01/xfce4-appearance-settings-crash/</id>
     <published>2015-04-01T04:05:49.000Z</published>
-    <updated>2015-04-01T04:49:41.000Z</updated>
+    <updated>2015-04-01T04:49:41.822Z</updated>
     <content type="html"><![CDATA[<p>Xfce4の設定で「外観」（appearance）→「フォント」のデフォルトフォントをFixedにしたら、クラッシュして、パネルが消えてしまった。<br>デスクトップ上右クリック→アプリケーションから再び「外観」を呼び出そうとしても、一瞬現れて瞬時に消えてしまう。設定マネージャーも起動せず。<br>「設定」→「パネル」でパネルは「キオスクモード」とかでなんとか立ち上げることが出来たが、これもファイルマネージャーを開くと消えてしまう。  </p>
 <p>Firefoxで「システムフォント」等を検索したが、/etc/fonts/conf.d内のファイルにはそれらしい記述は見当たらず。<br>「外観」のデフォルトフォントはシステムフォントとは別物らしい。  </p>
 <p><a href="https://archlinuxjp.kusakata.com/wiki/GTK%2B" target="_blank" rel="external">GTK+ - ArchWiki</a>を見て、~/.gtkrc-2.0を探したが、そんなファイルは無い。<br>自作してみたが効果なし。  </p>
@@ -195,7 +195,7 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
     <link href="http://pagent.github.io/2015/04/01/infinality/"/>
     <id>http://pagent.github.io/2015/04/01/infinality/</id>
     <published>2015-04-01T02:40:37.000Z</published>
-    <updated>2015-04-03T07:54:02.000Z</updated>
+    <updated>2015-04-14T10:58:17.875Z</updated>
     <content type="html"><![CDATA[<p>Arch Linuxでのフォントが汚く見づらかったので、フォントレンダリング「Infinality」（<a href="https://archlinuxjp.kusakata.com/wiki/Infinality" target="_blank" rel="external">Infinality - ArchWiki</a>）をインストールした。  </p>
 <p>途中、</p>
 <pre><code>Unable <span class="keyword">to</span> <span class="keyword">update</span> the static FcBlank<span class="variable">s:</span> <span class="number">0</span>x0600
@@ -203,7 +203,7 @@ Unable <span class="keyword">to</span> <span class="keyword">update</span> the s
 Unable <span class="keyword">to</span> <span class="keyword">update</span> the static FcBlank<span class="variable">s:</span> <span class="number">0</span>x0602
 …
 </code></pre><p>というエラーが出たが、下記トピックを参考に、<code>sudo pacman -S fontconfig-infinality-ultimate</code>でfontconfig-iu-compを削除した。<br><a href="https://bbs.archlinux.org/viewtopic.php?id=195198" target="_blank" rel="external">[SOLVED] Font cache: Unable to update the static FcBlanks / Newbie Corner / Arch Linux Forums</a>  </p>
-<p>首尾よくフォントが綺麗になったのだが、その後一部の漢字フォントが縦に潰れたようになってしまった。<br>（もしかすると、気づいたのが最近だっただけで、以前から潰れたフォントがあったのかもしれない。）</p>
+<p>首尾よくフォントが綺麗になったのだが、その後一部の漢字フォントが縦に細く潰れたようになってしまった。<br>（もしかすると、気づいたのが最近だっただけで、以前から潰れたフォントがあったのかもしれない。）</p>
 <p>フォントレンダリングをUbuntuのものに変えようかとも思ったが、ArchWikiに記載のあったibfonts-meta-extendedをインストールしたら治った。<br>IPA Pゴシックなどでは、依然、一部漢字フォントが潰れているが。  </p>
 <p>どうしても具合が悪いようだったら、Ubuntuのフォントレンダリングに変更してみようと思う。</p>
 ]]></content>
@@ -220,7 +220,7 @@ Unable <span class="keyword">to</span> <span class="keyword">update</span> the s
     <link href="http://pagent.github.io/2015/04/01/nemo-fileroller/"/>
     <id>http://pagent.github.io/2015/04/01/nemo-fileroller/</id>
     <published>2015-04-01T00:10:04.000Z</published>
-    <updated>2015-04-03T07:55:11.000Z</updated>
+    <updated>2015-04-03T07:55:11.447Z</updated>
     <content type="html"><![CDATA[<p>Arch Linux（Xfce4デスクトップ）にもファイルマネージャーnemoを入れている。<br>Xubuntuの時にはnemoの右クリックに「圧縮…」や「ここに展開する」というのがあったのだが、何故かこれが無い。<br>どうやらエクステンションとしてnemo-filerollerを入れないといけないらしい。<br><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>  </p>
 <p>pacmanでインストール出来た。  </p>
 <p><a href="https://github.com/linuxmint/nemo-extensions" target="_blank" rel="external">linuxmint/nemo-extensions · GitHub</a>を見ると他にも、nemo-terminal、nemo-dropbox、またnemo-compare、nemo-repairerなど様々な拡張機能があるようだ。<br>また今度試してみようと思う。</p>
@@ -238,7 +238,7 @@ Unable <span class="keyword">to</span> <span class="keyword">update</span> the s
     <link href="http://pagent.github.io/2015/04/01/xfce4-terminal-browser/"/>
     <id>http://pagent.github.io/2015/04/01/xfce4-terminal-browser/</id>
     <published>2015-03-31T15:27:13.000Z</published>
-    <updated>2015-03-31T23:51:52.000Z</updated>
+    <updated>2015-03-31T23:51:52.215Z</updated>
     <content type="html"><![CDATA[<p>「お気に入りのアプリケーション」のブラウザをFirefoxにしていて、これまでXfce4 terminal内のリンクを開く時もFirefoxで開けていた。<br>だが、Chromiumをインストールしてから、リンクがChromiumで開くようになってしまった。<br>Xfce4 terminalの設定ではブラウザを指定出来ない。  </p>
 <p>検索すると下記トピックが見つかった。<br><a href="https://bbs.archlinux.org/viewtopic.php?id=191547" target="_blank" rel="external">[SOLVED] Xfce terminal open links with wrong browser. / Applications &amp; Desktop Environments / Arch Linux Forums</a>  </p>
 <p>~/.config/mimeapps.listの[Added Associations]の箇所に下記を追記した。  </p>
@@ -261,7 +261,7 @@ x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firef
     <link href="http://pagent.github.io/2015/03/31/lubuntu-update-stuck/"/>
     <id>http://pagent.github.io/2015/03/31/lubuntu-update-stuck/</id>
     <published>2015-03-31T14:42:55.000Z</published>
-    <updated>2015-03-31T15:07:21.000Z</updated>
+    <updated>2015-03-31T15:07:21.907Z</updated>
     <content type="html"><![CDATA[<p>Lubuntu14.04をアップデート中に  </p>
 <pre><code>run-parts: executing <span class="regexp">/etc/</span>kernel<span class="regexp">/postinst.d/</span>zz-update-grub <span class="number">3.16</span>.<span class="number">0</span>-<span class="number">33</span>-generic <span class="regexp">/boot/</span>vmlinuz-<span class="number">3.16</span>.<span class="number">0</span>-<span class="number">33</span>-generic
 </code></pre><p>の表示のところでフリーズしてしまった。<br>カーネルのアップデート中だったので嫌な予感がしたが、やむなく強制終了した。<br>起動しようとすると、案の定  </p>
@@ -289,7 +289,7 @@ x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firef
     <link href="http://pagent.github.io/2015/03/31/gyao-cm-skip/"/>
     <id>http://pagent.github.io/2015/03/31/gyao-cm-skip/</id>
     <published>2015-03-31T00:30:24.000Z</published>
-    <updated>2015-03-31T00:48:26.000Z</updated>
+    <updated>2015-03-31T00:48:26.539Z</updated>
     <content type="html"><![CDATA[<p>LinuxではFirefoxでGyaoを見られなくなったので、ChromiumでGyaoを見ている。<br>（FirefoxにPepper Flashのwrapperを入れたら、Firefoxでも見られるようだが）<br>Firefoxの時は、動画を一時停止してその後再開すると、読み込み中のマークが回り続けて消えなかったが、Chromium+PPAPIだとFlashのバージョンが17.0のためか、そういう不具合も無く快適。  </p>
 <p>もう一つ気付いたのが、拡張機能<a href="https://chrome.google.com/webstore/detail/adblock/gighmmpiobklfepjocnamgkkbiglidom?hl=ja" target="_blank" rel="external">AdBlock</a>を入れると、GyaoのCMをスキップ出来るようだ。<br>Adblock Plusだとスキップ出来ない。  </p>
 <p>Adblock Plusでも、AdBlockでブロックしているフィルタを追加したらCMをスキップ出来るのだと思うが、どのフィルタなのかは確認していない。</p>
@@ -307,7 +307,7 @@ x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firef
     <link href="http://pagent.github.io/2015/03/19/gyao-chromium-ppapi/"/>
     <id>http://pagent.github.io/2015/03/19/gyao-chromium-ppapi/</id>
     <published>2015-03-19T00:00:39.000Z</published>
-    <updated>2015-04-02T07:10:55.000Z</updated>
+    <updated>2015-04-02T07:10:55.454Z</updated>
     <content type="html"><![CDATA[<p>GyaoはWindows、Mac以外のOSでの視聴を制限している。  </p>
 <p>これまでFirefoxのアドオンUser Agent Switcherで、OSをWindowsもしくはMac OS Xと宣言することで、LinuxでもGyaoの視聴が出来ていた。<br>一部の動画はFlashのバージョンが足りてないらしく見られなかったが、ほとんどの動画は視聴可能だった。  </p>
 <p>だが今週初めから、上記の方法ではGyaoの全ての動画が視聴出来なくなった。<br>Gyaoの動作環境が全動画で「Adobe Flash Player 15 以上」に引き上げられたためらしい。<br>（Linux用Adobe Flash Playerは11.2までで終了）  </p>
@@ -339,7 +339,7 @@ x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firef
     <link href="http://pagent.github.io/2015/03/14/hexo-283-install/"/>
     <id>http://pagent.github.io/2015/03/14/hexo-283-install/</id>
     <published>2015-03-14T13:33:52.000Z</published>
-    <updated>2015-03-17T12:33:59.000Z</updated>
+    <updated>2015-03-17T12:33:59.685Z</updated>
     <content type="html"><![CDATA[<p>XubuntuでHexoを使っていたが、Arch Linuxにもインストールした。<br>いつの間にかHexoのバージョンが上がっていたようで、Arch LinuxにはHexo 3.0.0がインストールされた。  </p>
 <p>CLIがメインモジュールから分離されたりと、かなり大幅な変更があるようだ。<br><a href="https://github.com/hexojs/hexo/wiki/Breaking-Changes-in-Hexo-3.0" target="_blank" rel="external">Breaking Changes in Hexo 3.0 · hexojs/hexo Wiki</a><br>サーバー機能もHexo本体とは別になっていて、hexo-serverをインストールしないと<code>hexo server</code>コマンドが使えない。  </p>
 <p>XubuntuのHexo 2.8.3をアップグレードして、これまでの作業フォルダ（WindowsのDドライブに置いてある）を使おうと思ったが、Hexo 3へのアップグレードがうまく行かない。  </p>
@@ -374,7 +374,7 @@ at <span class="keyword">...</span>
     <link href="http://pagent.github.io/2015/03/14/truecrypt-already-running/"/>
     <id>http://pagent.github.io/2015/03/14/truecrypt-already-running/</id>
     <published>2015-03-14T01:57:05.000Z</published>
-    <updated>2015-03-14T13:24:22.000Z</updated>
+    <updated>2015-03-14T13:24:22.623Z</updated>
     <content type="html"><![CDATA[<p>Arch LinuxにTrueCryptをインストールした。  </p>
 <p>pacmanからインストールすると、guiツールが無くcuiツールのみのようなので、ネットでtruecrypt-7.1aを探しダウンロード、インストールした。<br>（TrueCryptの最終バージョン7.2は解読機能のみで、新たに暗号化ボリュームを作れない。）  </p>
 <p>ちゃんと使用出来たが、いったんPCを終了して、その後TrueCryptを起動しようとすると、”TrueCrypt is already running”とのみ表示され、guiツールが表示されなくなってしまった。<br>コマンドラインからだと使用出来るようだが、使い勝手が悪い。  </p>
@@ -405,7 +405,7 @@ sleep <span class="number">3</span>
     <link href="http://pagent.github.io/2015/03/14/keepass2-font/"/>
     <id>http://pagent.github.io/2015/03/14/keepass2-font/</id>
     <published>2015-03-13T22:47:05.000Z</published>
-    <updated>2015-04-03T03:52:42.000Z</updated>
+    <updated>2015-04-03T03:52:42.535Z</updated>
     <content type="html"><![CDATA[<p>Windowsではパスワード管理ソフトとして、長らくIDMを使っていた。  </p>
 <p>IDMはとても便利で長らくお世話になったが、Linuxでは使えない。<br>OSをWindowsからLinuxに乗り換える際、パスワード管理ソフトをクロスプラットフォームのKeepass2（KeePass Password Safe）に変更した。  </p>
 <p>Keepass2の日本語化は、Xubuntuでは<a href="http://keepass.info/translations.html" target="_blank" rel="external">Translations - KeePass</a>からKeePass-2.28-Japanese.zipをダウンロードし解凍。<br>Japanese.lngxをJapanese.lngxを/usr/lib/keepass2内にコピー。<br>Keepass2のView→Change LanguageからJapaneseを選択したら日本語化出来た。  </p>
@@ -430,7 +430,7 @@ sleep <span class="number">3</span>
     <link href="http://pagent.github.io/2015/03/12/xfce-nemo-icon/"/>
     <id>http://pagent.github.io/2015/03/12/xfce-nemo-icon/</id>
     <published>2015-03-12T13:46:32.000Z</published>
-    <updated>2015-04-03T07:56:25.000Z</updated>
+    <updated>2015-04-03T07:56:25.207Z</updated>
     <content type="html"><![CDATA[<p>Arch Linux+Xfceにファイルマネージャーnemoをインストールしたら、デスクトップ上のアイコンが二重に表示されるようになってしまった。  </p>
 <p>さらにはファイルマネージャーでデスクトップを開くとファイルがあるのにデスクトップにはなにも表示されていなかったり、デスクトップ上右クリックからのアプリケーションメニューが消えてしまったり。  </p>
 <p>Xfce標準のファイルマネージャーThunarに加え、nemoもデスクトップを管理しようとするためこうなってしまうようだ。<br>確かにnemoをインストールする時にcinnamon-desktopも依存関係から同時にインストールされていた。  </p>
@@ -476,7 +476,7 @@ sleep <span class="number">3</span>
     <link href="http://pagent.github.io/2015/03/08/xfce-icon-theme/"/>
     <id>http://pagent.github.io/2015/03/08/xfce-icon-theme/</id>
     <published>2015-03-08T13:14:50.000Z</published>
-    <updated>2015-04-03T15:27:28.000Z</updated>
+    <updated>2015-04-03T15:27:28.719Z</updated>
     <content type="html"><![CDATA[<p>Arch LinuxのXfceのアイコンがgnomeで少しやぼったい感じだったので、新しいアイコンを入れた。  </p>
 <p>アイコンは下記サイトでダウンロード数が一番多かったMistにした。<br><a href="http://xfce-look.org/index.php?xsortmode=high&amp;page=0&amp;xcontentmode=430" target="_blank" rel="external">Eyecandy for your Xfce-Desktop - Xfce-Look.org</a>  </p>
 <p>ダウンロードしたファイルを展開し、出て来たMistフォルダを/usr/share/iconsに移動。<br>だがこれだけでは「設定」→「外観」→「アイコン」に表示されない。<br>アイコンテーマ毎にキャッシュファイルを生成しないといけないようだ。<br><a href="http://docs.xfce.org/xfce/xfce4-settings/4.10/appearance#icon_cache" target="_blank" rel="external">xfce:xfce4-settings:4.10:appearance [Xfce Docs]</a>    </p>
@@ -498,7 +498,7 @@ sleep <span class="number">3</span>
     <link href="http://pagent.github.io/2015/03/08/yaourt/"/>
     <id>http://pagent.github.io/2015/03/08/yaourt/</id>
     <published>2015-03-08T06:53:26.000Z</published>
-    <updated>2015-04-03T07:57:17.000Z</updated>
+    <updated>2015-04-03T07:57:17.151Z</updated>
     <content type="html"><![CDATA[<p>AUR (Arch User Repository)のパッケージをインストールするため、pacmanラッパーYaourtを入れた。  </p>
 <p><a href="https://archlinuxjp.kusakata.com/wiki/Yaourt" target="_blank" rel="external">Yaourt - ArchWiki</a>  </p>
 <p>「まず package-query をインストール」とのことだが、pacmanからpackage-queryをインストールしようとしても、見つからないと言われるので、/etc/pacman.confに下記記述を加えた。  </p>
