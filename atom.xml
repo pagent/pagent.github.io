@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-04-16T08:06:07.766Z</updated>
+  <updated>2015-04-16T08:39:05.195Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -18,8 +18,8 @@
     <title><![CDATA[nemoの右クリックメニューに「完全消去」を追加]]></title>
     <link href="http://pagent.github.io/2015/04/16/nemo-action-shred/"/>
     <id>http://pagent.github.io/2015/04/16/nemo-action-shred/</id>
-    <published>2015-04-16T07:47:30.000Z</published>
-    <updated>2015-04-16T08:04:39.657Z</updated>
+    <published>2015-04-16T08:27:30.000Z</published>
+    <updated>2015-04-16T08:38:49.618Z</updated>
     <content type="html"><![CDATA[<p>rmコマンドでファイルを消去してもデータの内容自体はディスク上に残っており、復旧できる可能性があるようだ。<br>完全に消去するにはshredコマンドを使えばいいらしい。<br><a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20140310/542304/" target="_blank" rel="external">Linuxコマンド集 - 【shred】ファイルを上書きし、完全に消去する：ITpro</a>  </p>
 <pre><code><span class="variable">$ </span>shred -u sample
 </code></pre><p>コマンドを入力するのは面倒なので、nemoの右クリックメニューに「完全消去」を追加した。  </p>
