@@ -113,8 +113,9 @@
 	<!-- content -->
 	<div class="mypage">
 	    <p>rmコマンドでファイルを消去してもデータの内容自体はディスク上に残っており、復旧できる可能性があるようだ。<br>完全に消去するにはshredコマンドを使えばいいらしい。<br><a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20140310/542304/" target="_blank" rel="external">Linuxコマンド集 - 【shred】ファイルを上書きし、完全に消去する：ITpro</a>  </p>
-<pre><code><span class="variable">$ </span>shred -u sample
-</code></pre><p>コマンドを入力するのは面倒なので、nemoの右クリックメニューに「完全消去」を追加した。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ shred -u sample</div></pre></td></tr></table></figure>
+
+<p>コマンドを入力するのは面倒なので、nemoの右クリックメニューに「完全消去」を追加した。  </p>
 <p>~/.local/share/nemo/actions/内にshred.nemo_actionファイルを作成。  </p>
 <figure class="highlight plain"><figcaption><span>shred.nemo_action</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[Nemo Action]</div><div class="line">Name=Shred files</div><div class="line">Name[ja]=完全消去</div><div class="line">Comment=Shred the selected files</div><div class="line">Exec=shred -u -n 1 %F</div><div class="line">Icon-Name=gtk-execute</div><div class="line">Selection=notnone</div><div class="line">Extensions=nodirs;</div><div class="line">Quote=double</div><div class="line">Dependencies=shred</div></pre></td></tr></table></figure>
 
@@ -135,8 +136,8 @@
 <ul class="pagination">
 	 
 		
-          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-        
+    	<li class="prev"><a href="/2015/04/17/wine-msfonts/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+  		
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 

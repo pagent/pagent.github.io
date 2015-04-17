@@ -114,6 +114,53 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/02/08/scrapbook-error/" >突然ScrapBookの保存データが消えた</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月8日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Firfoxで何だったかを見ていたら、突然、英文の警告がポップアップされた。  </p>
+<blockquote>
+<p>ERROR: Failed to initialize datasource.</p>
+<p>[Exception… “Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsILocalFile.create]”  nsresult: “0x80004005 (NS_ERROR_FAILURE)”  location: “JS frame :: resource://scrapbook-modules/utils.jsm :: SBU_getScrapBookDir :: line 24”  data: no]</p>
+</blockquote>
+<p>ページを保存するアドオンScrapBookのもの。<br>気付くとサイドバーのScrapBookのツリーが真っ白で、保存してあったページが無くなっている。  </p>
+<p>「code: 0x80004005」を検索してみたが、Windows起動時のエラーとかVirtualBoxのエラーとか、「0x80004005」はプログラム関係で広く使われているエラーコードらしい。  </p>
+<p>肝心のScrapBookの対処法は見つからなかったが、ScrapBookの「ツール」を開くと、一番下に「緊急時の修復ツール」というのがあった。<br>backupのscrap.rdfファイルからツリーを復元するものらしい。  </p>
+<p>これで復元出来るかと思ったが、バックアップのファイルも見当たらず。<br>ついてない。  </p>
+<p>ーー<br>（追記）<br>よく考えたら、Xubuntu側のScrapBookの保存先は、マルチブート下のWindows 7のSsrapbookフォルダに設定して、共有しているんだった。<br>少し前にWindowsのマウント先を変えたから、それでリンクが切れてしまっただけのようだ。  </p>
+<p>データ保存先を設定し直したら、ちゃんと表示された。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/08/scrapbook-error/" data-text="突然ScrapBookの保存データが消えた | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/02/06/lxpup-lxqtpup/" >Puppy Linux派生。Puppy本家より扱いやすい「LxPup」と「LxQtPup」</a>
 		</h3>
 	
@@ -346,54 +393,6 @@ tar: エラーを回復できません: 直ちに終了します
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/02/04/elementary-os/" >elementary OS（Luna）をインストールしてみた</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年2月4日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>軽量Linuxにelementary OSというのがあるらしいので、Windows Xp時代のネットブックにインストールしてみた。<br><a href="http://mogi2fruits.net/blog/os-software/linux/elementary-os/2772/" target="_blank" rel="external">elementary OS – 軽い！キレイ！日本語OK！ な Ubuntu ベースの軽量Linux | mogi2fruitsどっとねっと</a>  </p>
-<p>ダウンロードリンクに”$10.00”と書いてあり、「有料か？」と躊躇したが、参照サイトにある通り強制的なものではない。  </p>
-<p>Ubuntu12.04ベースらしく、インストールは戸惑うこと無く終了。  </p>
-<p>XubuntuやLubuntuとは違って随分おしゃれな外観。<br>視覚効果もなかなか凝っている。  </p>
-<p>デフォルトではScrachという聞いたこともないテキストエディターと、名前も分からないファイルマネージャーが入っていたが、それぞれGeditとnemoに変更。  </p>
-<p>Dropboxクライアントも入れようと、Ubuntuソフトウェアセンターから試みたが途中でフリーズ。<br>中途半端にインストールされたせいか、その後Synapticやsudo apt-get updateが使えなくなってしまった。  </p>
-<p>少々焦ったが、２ちゃんねるの書き込みを参考に、nautilus-dropboxを削除したら復旧した。<br><a href="http://hayabusa6.2ch.net/test/read.cgi/linux/1412604392/301" target="_blank" rel="external">【人気一位】Linux Mint 15</a>  </p>
-<p>nautilus-dropboxのインストールでの不具合はUbuntu12.04特有のバグらしい。<br>Dropbox公式サイトの記載通り、コマンドラインでインストールしたら無事にインストール出来た。<br><a href="https://www.dropbox.com/install?os=lnx" target="_blank" rel="external">Linux マシンに Dropbox をインストール</a>  </p>
-<p>elementary OSのメインメニューはクラシックなドロップダウンタイプではなく最近流行りの板状のもの。<br>デフォルトではメニュー編集のツールも無く、カスタマイズ性は高くはないようだ。<br>AlacarteとMenuLibleを入れてみたが、Alacarteは起動はするがメニューを編集しても反映されず、MenuLibleは起動も出来なかった。</p>
-<p>下部にあるDock内のアイコンは、クリックするとぴょーんと跳ねるので、クリックし損なったかと何度もクリックしてしまう恐れは少ない。<br>また既に立ち上げているアプリケーションは基本、新規ウィンドウで開かず既存のウィンドウにフォーカスしてくれる。Dock内のアイコンも跳ねない。<br>Dockを下部ではなく横配置に出来たらもっと有難いんだが。  </p>
-<p>システムモニターのみ開き、他のアプリケーションを起動していない状態でリソースを見ると、消費メモリは240MiB程度。<br>システムフォントのサイズも小さ目で、モニター画面の小さなネットブックには調度良い。  </p>
-<p>好みに合わせてカスタマイズするにはあまり向いていないようだが、優雅さが印象的なOSだ。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/04/elementary-os/" data-text="elementary OS（Luna）をインストールしてみた | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -438,35 +437,35 @@ tar: エラーを回復できません: 直ちに終了します
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
 			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
 		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>53</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>53</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
 			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 		
 		</ul>
@@ -479,6 +478,10 @@ tar: エラーを回復できません: 直ちに終了します
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/04/17/wine-msfonts/" ><i class="fa fa-file-o"></i>Wineで豆腐状態の文字化け</a>
+      </li>
     
       <li>
         <a href="/2015/04/16/nemo-action-shred/" ><i class="fa fa-file-o"></i>nemoの右クリックメニューに「完全消去」を追加</a>
@@ -496,10 +499,6 @@ tar: エラーを回復できません: 直ちに終了します
         <a href="/2015/04/03/nemo-compare-failed/" ><i class="fa fa-file-o"></i>nemo-compareが動かない</a>
       </li>
     
-      <li>
-        <a href="/2015/04/03/nemo-open-in-terminal/" ><i class="fa fa-file-o"></i>nemoの「端末で開く」が機能しない</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -509,7 +508,7 @@ tar: エラーを回復できません: 直ちに終了します
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

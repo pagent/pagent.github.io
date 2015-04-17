@@ -114,6 +114,51 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/03/01/update-grub-error/" >update-grubで&quot;options:not found&quot;のエラー</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年3月1日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>/etc/default/grubを編集して<code>update-grub</code>しようとしたら、  </p>
+<blockquote>
+<p>/usr/sbin/grub-mkconfig: 6: /etc/default/grub: options: not found</p>
+</blockquote>
+<p>とエラーになった。  </p>
+<p>意味がよく分からず、grub2を再度インストールしてみたが、やはりエラーになる。  </p>
+<p>grubファイルをよく見ると編集した箇所、GRUB_DEFAULT=”Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.16.0-30-generic”のダブルクォーテーションが全角の「”」になっていた。<br>半角に直したらアップデート出来た。<br>エラーメッセージの”6”はgrubファイルの6行目ということらしい。  </p>
+<p>“line 6”と言ってくれたら親切なんだが。<br>“options: not found”も”invalid”等の方が分かりやすい。  </p>
+<p>自分の不注意は棚に上げてだが。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/01/update-grub-error/" data-text="update-grubで&quot;options:not found&quot;のエラー | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/02/27/linkchecker/" >dead-link-checkerがあまりに遅いので「LinkChecker」を使ってみた（リンク切れチェック）</a>
 		</h3>
 	
@@ -286,59 +331,6 @@ $ sudo apt-<span class="built_in">get</span> install nemo-terminal
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/02/17/github-pages-redirect/" >GitHub Pagesのブログでリダイレクト「hexo-generator-alias」</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年2月17日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>先日書いた記事のURLが、一部大文字のアルファベットになっていたので小文字に変更したら、当然のごとくリンク切れになってしまった。  </p>
-<p>以前、.htaccessを使って301リダイレクトをしようと試みたことがあったが、.htaccessのファイルをdeployすることは出来たものの効果は無かった。<br>GitHub Pagesでは.htaccessを使えないらしい。  </p>
-<p>meta refreshタグなら使えるのではないかと思い、やってみた。</p>
-<p>全ての記事の基本レイアウトで転送設定する訳にはいかないので、publicフォルダ内に転送元となるindex.htmlを作り、転送タグを記載。<br>generateの際に消えてしまわないよう所有者をrootに変更し、さらにパーミッションも444に変更した。<br>だが、この状態でgenerateするとエラーになってしまう。  </p>
-<p>なにか良い方法は無いかと検索したら、転送元となるindex.htmlを自動生成してくれるプラグインが見つかった。<br><a href="https://www.npmjs.com/package/hexo-generator-alias" target="_blank" rel="external">hexo-generator-alias</a>  </p>
-<p>Hexoの作業フォルダ内で端末を開き  </p>
-<pre><code><span class="variable">$ </span>npm install hexo-generator-<span class="keyword">alias</span> --save
-</code></pre><p>とコマンドを打つとインストール完了。<br>node_modulesフォルダにhexo-generator-aliasが追加される。  </p>
-<p>転送先の記事ソースのFrontMatterに<code>alias: （転送元のパス）</code>を追加しgenerateすると、publicフォルダ内に転送元となるindex.htmlを生成してくれる。  </p>
-<p>自分の例では、転送先の2015-02-06-lxpup-lxqtpup.mdのFrontMatterに<code>alias: 2015/02/06/lxpup-LxQtPup/index.html</code>を追記。（<code>alias: 2015/02/06/lxpup-LxQtPup/</code>でも良いよう）<br>generateすると、public/2015/02/06/lxpup-LxQtPup/index.htmlが生成された。<br>ファイルの中身は転送指定のみの簡潔なもの。  </p>
-<pre><code><span class="doctype">&lt;!DOCTYPE html&gt;</span><span class="tag">&lt;<span class="title">html</span>&gt;</span><span class="tag">&lt;<span class="title">head</span>&gt;</span><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span><span class="tag">&lt;<span class="title">title</span>&gt;</span>Redirecting...<span class="tag">&lt;/<span class="title">title</span>&gt;</span><span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"canonical"</span> <span class="attribute">href</span>=<span class="value">"/2015/02/06/lxpup-lxqtpup/index.html"</span>&gt;</span><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"refresh"</span> <span class="attribute">content</span>=<span class="value">"0; url=/2015/02/06/lxpup-lxqtpup/index.html"</span>&gt;</span><span class="tag">&lt;/<span class="title">head</span>&gt;</span><span class="tag">&lt;/<span class="title">html</span>&gt;</span>
-</code></pre><p>旧URL <a href="http://pagent.github.io/2015/02/06/lxpup-LxQtPup/" target="_blank" rel="external">http://pagent.github.io/2015/02/06/lxpup-LxQtPup/</a> にアクセスすると、ちゃんと新URLに転送された。  </p>
-<p>Jekyllにも同様のプラグインがあり、Octopressでも使えるようだ。<br><a href="http://rawsyntax.com/blog/blogging-on-jekyll-url-redirects/" target="_blank" rel="external">Blogging on Jekyll: URL Redirects - Raw Syntax</a>  </p>
-<p>GitHub Pagesでの転送は以前は諦めていたが、これで一安心。  </p>
-<p>ーー<br>（追記）<br>過去の記事から転送指定しているものを探すには、source/_posts内で端末を開き下記コマンド  </p>
-<pre><code><span class="title">grep</span> <span class="string">"alias:"</span> <span class="regexp">*.md</span>
-</code></pre><p>すべての.mdファイルから「alias:」を含むファイルを抽出。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/17/github-pages-redirect/" data-text="GitHub Pagesのブログでリダイレクト「hexo-generator-alias」 | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -383,33 +375,33 @@ $ sudo apt-<span class="built_in">get</span> install nemo-terminal
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>53</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>11</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>53</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
 			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
@@ -424,6 +416,10 @@ $ sudo apt-<span class="built_in">get</span> install nemo-terminal
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/04/17/wine-msfonts/" ><i class="fa fa-file-o"></i>Wineで豆腐状態の文字化け</a>
+      </li>
     
       <li>
         <a href="/2015/04/16/nemo-action-shred/" ><i class="fa fa-file-o"></i>nemoの右クリックメニューに「完全消去」を追加</a>
@@ -441,10 +437,6 @@ $ sudo apt-<span class="built_in">get</span> install nemo-terminal
         <a href="/2015/04/03/nemo-compare-failed/" ><i class="fa fa-file-o"></i>nemo-compareが動かない</a>
       </li>
     
-      <li>
-        <a href="/2015/04/03/nemo-open-in-terminal/" ><i class="fa fa-file-o"></i>nemoの「端末で開く」が機能しない</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -454,7 +446,7 @@ $ sudo apt-<span class="built_in">get</span> install nemo-terminal
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
