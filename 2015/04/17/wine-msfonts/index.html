@@ -114,7 +114,7 @@
 	<div class="mypage">
 	    <p>Wineでアプリケーションをインストールしようとしたら、豆腐状態に文字化けしていた。<br>どうやらMSフォントが入っていないためらしい。<br><a href="https://archlinuxjp.kusakata.com/wiki/Wine#.E3.83.95.E3.82.A9.E3.83.B3.E3.83.88" target="_blank" rel="external">Wine - ArchWiki</a>  </p>
 <p>Windowsのパーティションを/mnt/win7にマウントしていたので、  シンボリックリンクを張り、fontconfig のキャッシュを再生成した。  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> ln <span class="operator">-s</span> /mnt/win7/Windows/Fonts /usr/share/fonts/WindowsFonts</div><div class="line"></div><div class="line">$ <span class="built_in">sudo</span> fc-cache</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> ln <span class="operator">-s</span> /mnt/win7/Windows/Fonts /usr/share/fonts/WindowsFonts</div><div class="line">$ <span class="built_in">sudo</span> fc-cache</div></pre></td></tr></table></figure>
 
 <p><a href="https://archlinuxjp.kusakata.com/wiki/MS_%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88" target="_blank" rel="external">MS フォント - ArchWiki</a>  </p>
 <p>Wineの文字化けは直ったが、今度はRetextやxfce4-terminalでのフォントがおかしくなってしまった。<br>明朝体のようになり、文字が薄く、また「、」や「。」が中央の高さに表示されてしまう。  </p>
