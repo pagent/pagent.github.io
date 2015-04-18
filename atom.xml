@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-04-18T09:15:46.882Z</updated>
+  <updated>2015-04-18T10:21:26.245Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,19 +15,18 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[デフォルトのPDFビューワーを「Wine」+「PDF-XChange Viewer」にした]]></title>
+    <title><![CDATA[デフォルトのPDFビューアを「Wine」+「PDF-XChange Viewer」にした]]></title>
     <link href="http://pagent.github.io/2015/04/18/pdf-xchange-viewer/"/>
     <id>http://pagent.github.io/2015/04/18/pdf-xchange-viewer/</id>
     <published>2015-04-18T08:42:38.000Z</published>
-    <updated>2015-04-18T09:15:15.803Z</updated>
-    <content type="html"><![CDATA[<p>Ubuntu標準のPDFビューワーEvinceで、日本語のフォントが表示されなかったり、文字化けしたりしていた。<br>poppler-dataをインストールしたり、fonts.confファイルを作成してみたが、正常に表示されない。　<br>Evinceを諦めてOkularとXpdfを試してみたが、これらも駄目。  </p>
-<p>Firefoxでならちゃんと表示されるが、単独のPDFビューワーでも閲覧したい。<br>LibreOffice Drawで表示出来なくもないが、こちらは起動に時間が掛かるし、PDFビューワーとしては使い勝手が悪い。  </p>
+    <updated>2015-04-18T10:21:10.909Z</updated>
+    <content type="html"><![CDATA[<p>Ubuntu標準のPDFビューアEvinceで、日本語のフォントが表示されなかったり、文字化けしたりしていた。<br>poppler-dataをインストールしたり、fonts.confファイルを作成してみたが、正常に表示されない。　<br>Evinceを諦めてOkularとXpdfを試してみたが、これらも駄目。  </p>
+<p>Firefoxでならちゃんと表示されるが、単独のPDFビューアでも閲覧したい。<br>LibreOffice Drawで表示出来なくもないが、こちらは起動に時間が掛かるし、PDFビューアとしては使い勝手が悪い。  </p>
 <p>Windowsで使っていたPDF-XChange Viewer（無料体験版）をWineでインストールしたら、文字化け無しにちゃんと表示された。  </p>
-<p>デフォルトのPDFビューワーをWine上でというのには少し抵抗もあるが、軽快で使い勝手も良いし、悪くない。  </p>
-<p>Linux用のビューワーで他に良いものがあれば、それでもいいのだが。</p>
+<p>デフォルトのPDFビューアをWine上でというのには少し抵抗もあるが、軽快で使い勝手も良いし、悪くない。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Ubuntu標準のPDFビューワーEvinceで、日本語のフォントが表示されなかったり、文字化けしたりしていた。<br>poppler-dataをインストールしたり、fonts.confファイルを作成してみたが、正常に表示されない。　<br>Evinceを諦めてOkular]]>
+    <![CDATA[<p>Ubuntu標準のPDFビューアEvinceで、日本語のフォントが表示されなかったり、文字化けしたりしていた。<br>poppler-dataをインストールしたり、fonts.confファイルを作成してみたが、正常に表示されない。　<br>Evinceを諦めてOkularと]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
