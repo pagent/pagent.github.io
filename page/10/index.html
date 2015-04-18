@@ -114,6 +114,53 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/02/03/dolphin-directory-files/" >Dolphinが.directoryファイルを生成するのを止める</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月3日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>ファイルマネージャーDolphinを使っていて、あちこちのディレクトリに.directoryというファイルがあることに気付いた。  </p>
+<p>内容は以下のようなもの。  </p>
+<blockquote>
+<p>[Dolphin]<br>Timestamp=2015,2,2,22,45,9<br>Version=3<br>ViewMode=2</p>
+<p>[Settings]<br>HiddenFilesShown=true</p>
+</blockquote>
+<p>Dolphinでアイコン表示、詳細表示などの表示モードやソート基準を変更をしたり、隠しファイルを表示したりすると、この.directoryファイルが自動生成されるようだ。<br>（/etc等、所有者がrootのディレクトリには作成されない。）  </p>
+<p>多くのファイルマネージャーでは隠しファイルの表示・非表示をディレクトリ毎に設定出来ないが、Dolphinでは.directoryファイルのおかげでディレクトリ毎に設定可能になっている。  </p>
+<p>便利と言えば便利なのだが、静的サイトジェネレーターHexoの作業フォルダ内にこの.directoryファイルを作られるのはまずい気がする。<br>deployやgitコマンドの際に不具合が出るかもしれない。  </p>
+<p>Dolphinの設定→全般→動作タブで、「フォルダごとにビューのプロパティを保存する」から「すべてのフォルダに共通のプロバティを使う」に変更したら、.directoryファイルは生成されなくなった。<br><a href="https://forum.kde.org/viewtopic.php?f=223&amp;t=119876" target="_blank" rel="external">.directory files • KDE Community Forums</a>  </p>
+<p>だが、表示モードやソート基準も全フォルダで共通になってしまった。<br>使い勝手が悪く、これならnemoの方が便利だ。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/03/dolphin-directory-files/" data-text="Dolphinが.directoryファイルを生成するのを止める | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/02/03/xubuntu-dolphin-root-actions/" >XubuntuにインストールしたDolphinでRootで開く</a>
 		</h3>
 	
@@ -291,52 +338,6 @@
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/01/30/xubuntu-copy-client/" >Xubuntuで非公式レポジトリのCopyクライアントが不調</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年1月30日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Xubuntu14.04に、非公式レポジトリからCopyクライアントをインストールしたが、調子が良くない。  </p>
-<p>“Scanning  for changes”→”Processing .. items”→”Downloading File List”ときて、その後また”Scanning  for changes”→”Processing .. items”と延々処理が続き、いつまで経っても同期が終わらない。<br>さらに起動しても”Logging In”のまま固まってしまうようになった。  </p>
-<p>まともに機能しない状態なので、非公式レポジトリのクライアントはアンインストールし、<a href="https://www.copy.com/install/" target="_blank" rel="external">Copy.comのダウンロードページ</a>から落としたクライアントをインストールし直した。<br>インストールといっても、ダウンロードした圧縮ファイルを展開し、任意のディレクトリに配置しただけだが。  </p>
-<p>追加アプリケーションを配置するためのディレクトリ/optに配置した。  </p>
-<pre><code><span class="keyword">cd</span> ~/Desktop
-tar zxvf copy_agent-<span class="number">1.48</span>.<span class="number">0456</span>.tgz
-sudo <span class="keyword">cp</span> -<span class="keyword">r</span> <span class="built_in">copy</span>/x86_64 /<span class="keyword">opt</span>/<span class="built_in">copy</span>
-</code></pre><p>コマンドなど使わずファイルマネージャーで「ここに展開」し、/optを「Rootとして開く」してからコピペでも問題無い。  </p>
-<p>端末から<code>/opt/copy/CopyAgent</code>で起動。<br>一応ちゃんと動いてくれているようだ。<br><code>/opt/copy/CopyConsole</code>なら端末で動作する。  </p>
-<p>簡便のためコマンド<code>/opt/copy/CopyAgent</code>をメニューに追加した。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/30/xubuntu-copy-client/" data-text="Xubuntuで非公式レポジトリのCopyクライアントが不調 | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -381,35 +382,35 @@ sudo <span class="keyword">cp</span> -<span class="keyword">r</span> <span class
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>55</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>56</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 		
 		</ul>
@@ -422,6 +423,10 @@ sudo <span class="keyword">cp</span> -<span class="keyword">r</span> <span class
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/04/19/paccache-pkgcacheclean/" ><i class="fa fa-file-o"></i>不要なパッケージキャッシュの削除。paccacheとp...</a>
+      </li>
     
       <li>
         <a href="/2015/04/18/pdf-xchange-viewer/" ><i class="fa fa-file-o"></i>PDFファイルの日本語フォント文字化け対策として「Wi...</a>
@@ -439,10 +444,6 @@ sudo <span class="keyword">cp</span> -<span class="keyword">r</span> <span class
         <a href="/2015/04/05/puppy-automount-fstab/" ><i class="fa fa-file-o"></i>Puppy Linux起動時にfstabで自動マウント</a>
       </li>
     
-      <li>
-        <a href="/2015/04/03/nemo-compare-action/" ><i class="fa fa-file-o"></i>nemoの右クリックメニューに「比較」を追加</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -452,7 +453,7 @@ sudo <span class="keyword">cp</span> -<span class="keyword">r</span> <span class
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

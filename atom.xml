@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-04-18T11:16:58.817Z</updated>
+  <updated>2015-04-18T15:50:40.698Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,34 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[不要なパッケージキャッシュの削除。paccacheとpkgcacheclean]]></title>
+    <link href="http://pagent.github.io/2015/04/19/paccache-pkgcacheclean/"/>
+    <id>http://pagent.github.io/2015/04/19/paccache-pkgcacheclean/</id>
+    <published>2015-04-18T15:13:35.000Z</published>
+    <updated>2015-04-18T15:49:39.286Z</updated>
+    <content type="html"><![CDATA[<p>Arch Linuxを使っていると、pacmanでダウンロードした古いパッケージキャッシュが/var/cache/pacman/pkg/ に溜まってくるらしい。<br><a href="https://archlinuxjp.kusakata.com/wiki/Pacman?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DPacman_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno#.E3.83.91.E3.83.83.E3.82.B1.E3.83.BC.E3.82.B8.E3.82.AD.E3.83.A3.E3.83.83.E3.82.B7.E3.83.A5.E3.81.AE.E5.89.8A.E9.99.A4" target="_blank" rel="external">pacman - ArchWiki</a>  </p>
+<p>以前<code>paccache -r</code>および<code>paccache -ruk0</code>を行って不要なキャッシュを削除したが、今回はpkgcachecleanを利用してみた。<br>Yaourtからインストールしたが、インストール容量もたった0.02MiBだった。  </p>
+<p>pkgcachecleanを実行  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> pkgcacheclean</div></pre></td></tr></table></figure>
+
+<p>メッセージなどが出ることもなく、一瞬で終了。<br>やや拍子抜けした。  </p>
+<p>だが/var/cache/pacman/pkg/のサイズは、実行前の2.4GBから1.9GBにちゃんと減量出来ていた。  </p>
+<p>このあと、試しにpaccacheしてみると、</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ paccache -r</div><div class="line">==&gt; no candidate packages found <span class="keyword">for</span> pruning</div><div class="line">$ paccache -ruk0</div><div class="line">==&gt; no candidate packages found <span class="keyword">for</span> pruning</div></pre></td></tr></table></figure>
+
+<p>もう削る必要のあるパッケージは無いようだ。  </p>
+<p>pkgcachecleanのページのコメントを見ると、paccacheが.partや.delta filesを扱わない一方、pkgcachecleanではこれらも対象になるようだ。<br><a href="https://aur.archlinux.org/packages/pkgcacheclean/" target="_blank" rel="external">AUR (en) - pkgcacheclean</a>  </p>
+<p>何のことかよく分からないが、コマンドが一つで済むことだし、pkgcachecleanの方が良さそうだ。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Arch Linuxを使っていると、pacmanでダウンロードした古いパッケージキャッシュが/var/cache/pacman/pkg/ に溜まってくるらしい。<br><a href="https://archlinuxjp.kusakata.com/wiki/Pacman]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[PDFファイルの日本語フォント文字化け対策として「Wine」+「PDF-XChange Viewer」]]></title>
@@ -512,28 +540,6 @@ sleep <span class="number">3</span>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[DELL Vostro1000（Xp機）のビデオドライバー]]></title>
-    <link href="http://pagent.github.io/2015/03/09/vostro1000-video-driver/"/>
-    <id>http://pagent.github.io/2015/03/09/vostro1000-video-driver/</id>
-    <published>2015-03-09T09:03:24.000Z</published>
-    <updated>2015-03-09T09:30:33.000Z</updated>
-    <content type="html"><![CDATA[<p>DELLの古いノートパソコンVostro1000（プリインストールOSはXpSP2）をLinux専用にしていたのだが、WineでKindle for PCを使ってみたくなったので、Windows Xp再インストールした。  </p>
-<p>Kindle for PCを利用するためにはWindows Media Playerのバージョン11以上が必要という情報を見たので、<a href="http://www.microsoft.com/ja-jp/download/windows-media-player-details.aspx?id=8163" target="_blank" rel="external">Windows Media Player 11</a>とついでに<a href="http://www.microsoft.com/ja-jp/download/details.aspx?id=24" target="_blank" rel="external">Windows XP SP3</a>もダウンロード、インストールした。<br>（Windows XPはネットに繋がない方が良いかと思い、ダウンロードはLinuxで行った。）  </p>
-<p>Kindle for PCは無事インストール出来、Wineを使ってLinuxでも使用可能になった。  </p>
-<p>これで良いと言えば良いのだが、Xpの方の解像度が本来は1024×800のはずが1024×768しか選択出来ない。<br>普段Xpを使うことは無いと思うが、あまり気持ち良くはない。  </p>
-<p>付属していたResourceCDからビデオドライバーR156746をインストールしようとしたが、「システムにインストールされているディスプレイアダプタと互換性がない」と言われて、インストールが失敗する。  </p>
-<p><a href="http://www.dell.com/support/home/jp/ja/jppad1/product-support/product/vostro-1000/drivers" target="_blank" rel="external">製品サポート | Dell 日本</a>からR168684.EXEをダウンロードしたら、インストール出来た。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>DELLの古いノートパソコンVostro1000（プリインストールOSはXpSP2）をLinux専用にしていたのだが、WineでKindle for PCを使ってみたくなったので、Windows Xp再インストールした。  </p>
-<p>Kindle for PCを利用す]]>
-    </summary>
-    
-      <category term="Windows" scheme="http://pagent.github.io/tags/Windows/"/>
     
   </entry>
   

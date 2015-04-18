@@ -114,6 +114,55 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/04/19/paccache-pkgcacheclean/" >不要なパッケージキャッシュの削除。paccacheとpkgcacheclean</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年4月19日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Arch Linuxを使っていると、pacmanでダウンロードした古いパッケージキャッシュが/var/cache/pacman/pkg/ に溜まってくるらしい。<br><a href="https://archlinuxjp.kusakata.com/wiki/Pacman?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DPacman_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno#.E3.83.91.E3.83.83.E3.82.B1.E3.83.BC.E3.82.B8.E3.82.AD.E3.83.A3.E3.83.83.E3.82.B7.E3.83.A5.E3.81.AE.E5.89.8A.E9.99.A4" target="_blank" rel="external">pacman - ArchWiki</a>  </p>
+<p>以前<code>paccache -r</code>および<code>paccache -ruk0</code>を行って不要なキャッシュを削除したが、今回はpkgcachecleanを利用してみた。<br>Yaourtからインストールしたが、インストール容量もたった0.02MiBだった。  </p>
+<p>pkgcachecleanを実行  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> pkgcacheclean</div></pre></td></tr></table></figure>
+
+<p>メッセージなどが出ることもなく、一瞬で終了。<br>やや拍子抜けした。  </p>
+<p>だが/var/cache/pacman/pkg/のサイズは、実行前の2.4GBから1.9GBにちゃんと減量出来ていた。  </p>
+<p>このあと、試しにpaccacheしてみると、</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ paccache -r</div><div class="line">==&gt; no candidate packages found <span class="keyword">for</span> pruning</div><div class="line">$ paccache -ruk0</div><div class="line">==&gt; no candidate packages found <span class="keyword">for</span> pruning</div></pre></td></tr></table></figure>
+
+<p>もう削る必要のあるパッケージは無いようだ。  </p>
+<p>pkgcachecleanのページのコメントを見ると、paccacheが.partや.delta filesを扱わない一方、pkgcachecleanではこれらも対象になるようだ。<br><a href="https://aur.archlinux.org/packages/pkgcacheclean/" target="_blank" rel="external">AUR (en) - pkgcacheclean</a>  </p>
+<p>何のことかよく分からないが、コマンドが一つで済むことだし、pkgcachecleanの方が良さそうだ。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/19/paccache-pkgcacheclean/" data-text="不要なパッケージキャッシュの削除。paccacheとpkgcacheclean | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/04/18/pdf-xchange-viewer/" >PDFファイルの日本語フォント文字化け対策として「Wine」+「PDF-XChange Viewer」</a>
 		</h3>
 	
@@ -293,61 +342,6 @@
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/04/03/nemo-compare-action/" >nemoの右クリックメニューに「比較」を追加</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年4月3日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>nemoの拡張機能nemo-compareのインストールが上手く行かなかったので、手動で導入した。  </p>
-<p>（参照記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>  </p>
-<p>まず、meld、python2-dbus、dbus-glib（これは導入済みだった）をインストール。  </p>
-<pre><code>$ <span class="built_in">sudo</span> pacman -S meld python2-dbus
-</code></pre><p>~/.local/share/nemo/actions下にcompare-save-for-later.nemo_action、compare-with-saved.nemo_action、compare.shの３つのファイルを作成。  </p>
-<figure class="highlight plain"><figcaption><span>compare-save-for-later.nemo_action</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[Nemo Action]</div><div class="line">Active=true</div><div class="line">Name=Compare later</div><div class="line">Name[ja]=あとで比較する</div><div class="line">Comment=Save file for comparison later.</div><div class="line">Exec=<compare.sh save="" %f=""></compare.sh></div><div class="line">Icon-Name=meld</div><div class="line">Selection=S</div><div class="line">Extensions=any</div></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight plain"><figcaption><span>compare-with-saved.nemo_action</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[Nemo Action]</div><div class="line">Active=true</div><div class="line">Name=Compare with saved element</div><div class="line">Name[ja]=比較する</div><div class="line">Comment=Compare %F saved file or directory.</div><div class="line">Exec=<compare.sh compare="" %f=""></compare.sh></div><div class="line">Icon-Name=meld</div><div class="line">Selection=S</div><div class="line">Extensions=any</div></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight shellscript"><figcaption><span>compare.sh</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="shebang">#!/bin/bash</span></div><div class="line">savedfile=/var/tmp/compare-save-for-later.<span class="variable">$USER</span></div><div class="line">comparator=meld</div><div class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$1</span>"</span> == <span class="string">"save"</span> ]; <span class="keyword">then</span></div><div class="line">    <span class="built_in">echo</span> <span class="string">"<span class="variable">$2</span>"</span> &gt; <span class="string">"<span class="variable">$savedfile</span>"</span></div><div class="line"><span class="keyword">else</span></div><div class="line">    <span class="string">"<span class="variable">$comparator</span>"</span> $(cat <span class="string">"<span class="variable">$savedfile</span>"</span>) <span class="string">"<span class="variable">$2</span>"</span></div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure>
-
-<p>compare.shはファイルマネージャーもしくはコマンドで実行可能にしておく。  </p>
-<pre><code>$ chmod +<span class="keyword">x</span> compare.<span class="keyword">sh</span>
-</code></pre><p>nemoの右クリックメニューに「比較する」「あとで比較する」が追加された。  </p>
-<p>ファイル内容だけではなくフォルダの内容も比較出来る。<br>なにかと重宝しそうだ。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/03/nemo-compare-action/" data-text="nemoの右クリックメニューに「比較」を追加 | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -392,35 +386,35 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>55</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>56</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
 		
 		
 		</ul>
@@ -433,6 +427,10 @@
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/04/19/paccache-pkgcacheclean/" ><i class="fa fa-file-o"></i>不要なパッケージキャッシュの削除。paccacheとp...</a>
+      </li>
     
       <li>
         <a href="/2015/04/18/pdf-xchange-viewer/" ><i class="fa fa-file-o"></i>PDFファイルの日本語フォント文字化け対策として「Wi...</a>
@@ -450,10 +448,6 @@
         <a href="/2015/04/05/puppy-automount-fstab/" ><i class="fa fa-file-o"></i>Puppy Linux起動時にfstabで自動マウント</a>
       </li>
     
-      <li>
-        <a href="/2015/04/03/nemo-compare-action/" ><i class="fa fa-file-o"></i>nemoの右クリックメニューに「比較」を追加</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -463,7 +457,7 @@
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
