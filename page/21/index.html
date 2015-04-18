@@ -114,6 +114,55 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/11/28/git-gc/" >.deploy/.git/objectsが大きくなってきたのでgit gcしてみた</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月28日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>それほど記事数は多くないのに、Hexoのサイズが大きくなって来た。<br>最初、数MBだったのが20MB以上になっている。  </p>
+<p>.deploy/.git/objectsが12.4MBあって、一番容量をくっているようだ。<br>ちょこちょこ記事を修正してその度にdeployしているせいだろう。<br>大した容量ではないが、Dropboxの同期に時間が掛かるのが困る。  </p>
+<p>GitHubでは、必要性の低いオブジェクトが多数あったりすると、自動的にパックファイルを作って掃除（pack up）してくれるようだが、<code>git gc</code>コマンドにより手動でpack upすることも出来るらしい。<br><a href="http://heart-shaped-chocolate.hatenablog.jp/entry/2013/04/10/052752" target="_blank" rel="external">.git/objectsについて少し調べてみた - 煙と消えるその前に</a>  </p>
+<p>GitHubではないが、BitbucketのFAQには<code>git gc</code>してもリポジトリに悪い影響はないと書いてあった。<br><a href="https://confluence.atlassian.co.jp/pages/viewpage.action?pageId=35815474" target="_blank" rel="external">私のリポジトリで git gc (保全作業) を実行する必要がありますか？ - Bitbucket ドキュメンテーション - アトラシアン日本語ドキュメント</a>  </p>
+<p>.deployディレクトリで端末を開いて、<code>git gc</code>してみた。  </p>
+<pre><code>$ git gc
+Counting object<span class="variable">s:</span> <span class="number">5328</span>, done.
+Delta compression using <span class="keyword">up</span> <span class="keyword">to</span> <span class="number">8</span> threads.
+Compressing object<span class="variable">s:</span>   <span class="number">5</span>% (<span class="number">153</span>/<span class="number">3046</span>)   
+Compressing object<span class="variable">s:</span> <span class="number">100</span>% (<span class="number">3046</span>/<span class="number">3046</span>), done.
+Writing object<span class="variable">s:</span> <span class="number">100</span>% (<span class="number">5328</span>/<span class="number">5328</span>), done.
+Total <span class="number">5328</span> (delta <span class="number">2157</span>), reused <span class="number">0</span> (delta <span class="number">0</span>)
+</code></pre><p>少し待たないといけなかったが、objects下にたくさんあったフォルダが消えて、4つだけになった。<br>objects/pack内にはpack-〜.idxとpack-〜.packというファイルが出来てる。<br>objectsのサイズは12.4MB→1.8MBに縮小した。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/28/git-gc/" data-text=".deploy/.git/objectsが大きくなってきたのでgit gcしてみた | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/11/28/metalsmith/" >プログラム音痴がMetalsmithを試してみた</a>
 		</h3>
 	
@@ -429,63 +478,6 @@ See <span class="attribute">'git</span> help config' <span class="keyword">and</
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/25/hexo-to-octopress-converter/" >Hexo→Octopress変換スクリプト「Hexo to Octopress Converter」</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月25日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>HexoからOctopressに記事ソースを変換するrubyスクリプト<a href="https://github.com/ciffel/Hexo-to-Octopress-Converter" target="_blank" rel="external">「Hexo to Octopress Converter」</a>を試してみた。  </p>
-<p>「Download ZIP」からzipファイルをダウンロードし展開。converterファイルを作業したい場所に移し、端末から操作。  </p>
-<pre><code><span class="input"><span class="prompt">$ ./converter &lt;hexo_posts_dir&gt;</span> &lt;octopress_posts_dir&gt;</span>
-</code></pre><p>で変換出来る。<br><code>&lt;octopress_posts_dir&gt;</code>は適当に作ったフォルダでも可。  </p>
-<p>変換が終了すると、ファイル名に日付けが付加されたものがOctopressのフォルダに出力される。（拡張子は.mdのまま。）<br>出力されたファイルのFront Matter部分は<code>tags:</code>が<code>categories:</code>に変換されており、また上部の<code>---</code>および<code>layout: post</code>、<code>comments: true</code>が追加される。  </p>
-<p>だが、Octopressのソースを「hexo-migrator-octopress」などでHexoに取り込んでいた場合は、Front Matter上部に既に<code>---</code>が<br>ついている。<br>この状態からだと<code>tags:</code>が<code>categories:</code>に変換されないので、上部の<code>---</code>を消しておく必要がある。  </p>
-<p>また<code>title:</code>の項目で記事タイトルが「”」で挟まれていると、さらに「”」で挟まれ<code>title: &quot;&quot;（記事タイトル）&quot;&quot;</code>のようになってしまう。<br>これではOctopressでgenerateする際エラーになってしまうので、これも削除し、  </p>
-<pre><code>title:
-date:
-<span class="header">tags:
----</span>
-</code></pre><p>のような形にしておく必要がある。<br><a href="/2014/11/25/hexo-migrator-octopress/">Octopress→Hexo移行のプラグイン「hexo-migrator-octopress」を試してみた </a>  </p>
-<p>なお、変換出力されるのは拡張子が.mdのものだけで、.markdownのもの（Octopressのソースをコピペで取り込んだような場合）は変換出力されず無視される。  </p>
-<p>変換後のファイル名には日付けが付加されるので、Hexoの運用をOctopress式に日付けをつけたファイル名で行っている場合は、日付けが2重になってしまう。  </p>
-<p>この場合はconverterファイルをエディタで開き、41行目  </p>
-<p>  file_name = “#{prefix}-#{base_name}”</p>
-<p>の<code>#{prefix}-</code>を削除し、  </p>
-<p>  file_name = “#{base_name}”</p>
-<p>にしておくと、日付けが付加されない。  </p>
-<p>それから、Hexoは漢字、ひらがな含め日本語のURLやtagsを使用可能だが、Octopressはデフォルトの状態では日本語を使用できない。<br>HexoからOctopressに移行する際には、この点も注意が必要。</p>
-<p>ーー<br>HexoもOctopressも、共にmarkdown形式のファイルをhtmlに変換するという点では同じなのだが、細かいところが微妙に違っていて少し不便。<br>記事ソースの形式くらいは合わせられなかったものだろうか。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/25/hexo-to-octopress-converter/" data-text="Hexo→Octopress変換スクリプト「Hexo to Octopress Converter」 | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -530,35 +522,35 @@ date:
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>54</span></a></li>
-		
 			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
 		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>55</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
 		
 		</ul>
@@ -571,6 +563,10 @@ date:
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/04/18/pdf-xchange-viewer/" ><i class="fa fa-file-o"></i>デフォルトのPDFビューワーを「Wine」+「PDF-...</a>
+      </li>
     
       <li>
         <a href="/2015/04/17/wine-msfonts/" ><i class="fa fa-file-o"></i>Wineで豆腐状態の文字化け</a>
@@ -588,10 +584,6 @@ date:
         <a href="/2015/04/03/nemo-compare-action/" ><i class="fa fa-file-o"></i>nemoの右クリックメニューに「比較」を追加</a>
       </li>
     
-      <li>
-        <a href="/2015/04/03/nemo-compare-failed/" ><i class="fa fa-file-o"></i>nemo-compareが動かない</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -601,7 +593,7 @@ date:
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-04-18T05:41:51.848Z</updated>
+  <updated>2015-04-18T09:15:46.882Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,26 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[デフォルトのPDFビューワーを「Wine」+「PDF-XChange Viewer」にした]]></title>
+    <link href="http://pagent.github.io/2015/04/18/pdf-xchange-viewer/"/>
+    <id>http://pagent.github.io/2015/04/18/pdf-xchange-viewer/</id>
+    <published>2015-04-18T08:42:38.000Z</published>
+    <updated>2015-04-18T09:15:15.803Z</updated>
+    <content type="html"><![CDATA[<p>Ubuntu標準のPDFビューワーEvinceで、日本語のフォントが表示されなかったり、文字化けしたりしていた。<br>poppler-dataをインストールしたり、fonts.confファイルを作成してみたが、正常に表示されない。　<br>Evinceを諦めてOkularとXpdfを試してみたが、これらも駄目。  </p>
+<p>Firefoxでならちゃんと表示されるが、単独のPDFビューワーでも閲覧したい。<br>LibreOffice Drawで表示出来なくもないが、こちらは起動に時間が掛かるし、PDFビューワーとしては使い勝手が悪い。  </p>
+<p>Windowsで使っていたPDF-XChange Viewer（無料体験版）をWineでインストールしたら、文字化け無しにちゃんと表示された。  </p>
+<p>デフォルトのPDFビューワーをWine上でというのには少し抵抗もあるが、軽快で使い勝手も良いし、悪くない。  </p>
+<p>Linux用のビューワーで他に良いものがあれば、それでもいいのだが。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Ubuntu標準のPDFビューワーEvinceで、日本語のフォントが表示されなかったり、文字化けしたりしていた。<br>poppler-dataをインストールしたり、fonts.confファイルを作成してみたが、正常に表示されない。　<br>Evinceを諦めてOkular]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Wineで豆腐状態の文字化け]]></title>
@@ -514,28 +534,6 @@ sleep <span class="number">3</span>
     </summary>
     
       <category term="Windows" scheme="http://pagent.github.io/tags/Windows/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Xfceに新しいアイコンテーマをインストール]]></title>
-    <link href="http://pagent.github.io/2015/03/08/xfce-icon-theme/"/>
-    <id>http://pagent.github.io/2015/03/08/xfce-icon-theme/</id>
-    <published>2015-03-08T13:14:50.000Z</published>
-    <updated>2015-04-03T15:27:28.719Z</updated>
-    <content type="html"><![CDATA[<p>Arch LinuxのXfceのアイコンがgnomeで少しやぼったい感じだったので、新しいアイコンを入れた。  </p>
-<p>アイコンは下記サイトでダウンロード数が一番多かったMistにした。<br><a href="http://xfce-look.org/index.php?xsortmode=high&amp;page=0&amp;xcontentmode=430" target="_blank" rel="external">Eyecandy for your Xfce-Desktop - Xfce-Look.org</a>  </p>
-<p>ダウンロードしたファイルを展開し、出て来たMistフォルダを/usr/share/iconsに移動。<br>だがこれだけでは「設定」→「外観」→「アイコン」に表示されない。<br>アイコンテーマ毎にキャッシュファイルを生成しないといけないようだ。<br><a href="http://docs.xfce.org/xfce/xfce4-settings/4.10/appearance#icon_cache" target="_blank" rel="external">xfce:xfce4-settings:4.10:appearance [Xfce Docs]</a>    </p>
-<p>端末でコマンドを入力しキャッシュファイルを生成。  </p>
-<pre><code>sudo gtk-<span class="operator"><span class="keyword">update</span>-icon-<span class="keyword">cache</span> /usr/<span class="keyword">share</span>/icons/Mist</span>
-</code></pre><p>アイコンの設定に表示され、選択可能になった。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Arch LinuxのXfceのアイコンがgnomeで少しやぼったい感じだったので、新しいアイコンを入れた。  </p>
-<p>アイコンは下記サイトでダウンロード数が一番多かったMistにした。<br><a href="http://xfce-look.org/index.]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
     
   </entry>
   

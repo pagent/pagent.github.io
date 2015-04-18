@@ -114,6 +114,48 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/03/08/xfce-icon-theme/" >Xfceに新しいアイコンテーマをインストール</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年3月8日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Arch LinuxのXfceのアイコンがgnomeで少しやぼったい感じだったので、新しいアイコンを入れた。  </p>
+<p>アイコンは下記サイトでダウンロード数が一番多かったMistにした。<br><a href="http://xfce-look.org/index.php?xsortmode=high&amp;page=0&amp;xcontentmode=430" target="_blank" rel="external">Eyecandy for your Xfce-Desktop - Xfce-Look.org</a>  </p>
+<p>ダウンロードしたファイルを展開し、出て来たMistフォルダを/usr/share/iconsに移動。<br>だがこれだけでは「設定」→「外観」→「アイコン」に表示されない。<br>アイコンテーマ毎にキャッシュファイルを生成しないといけないようだ。<br><a href="http://docs.xfce.org/xfce/xfce4-settings/4.10/appearance#icon_cache" target="_blank" rel="external">xfce:xfce4-settings:4.10:appearance [Xfce Docs]</a>    </p>
+<p>端末でコマンドを入力しキャッシュファイルを生成。  </p>
+<pre><code>sudo gtk-<span class="operator"><span class="keyword">update</span>-icon-<span class="keyword">cache</span> /usr/<span class="keyword">share</span>/icons/Mist</span>
+</code></pre><p>アイコンの設定に表示され、選択可能になった。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/08/xfce-icon-theme/" data-text="Xfceに新しいアイコンテーマをインストール | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/03/08/yaourt/" >Yaourtをインストール</a>
 		</h3>
 	
@@ -315,66 +357,6 @@
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/03/01/arch-ati-video-driver/" >Arch Linuxをインストールした。（ビデオドライバーはATIでうまく行った）</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年3月1日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Dellの古いノートパソコンVOSTRO1000にArch Linuxを入れてみた。<br>（NECのLavie Liteは、kernelが3.10台を超えると不具合が出る問題がArch Linuxでは解決出来ず、諦めた。）</p>
-<p>インストールには、グラフィカルインストールが可能なArchbootを使った。（archlinux-2015.01-1-archboot.iso）<br>Ubuntu等のインストーラーほど懇切丁寧ではないが、コマンドラインでのインストールよりは楽だった。  </p>
-<p>ネット上の紹介記事を参考に進めたら、それ程迷うこともなかったが、最後ブートローダーのインストールで、GRUB2を選択すると、インストール先をMBRにしか出来なかったので、SysLinuxをインストールした。<br>無線LANの設定も後から苦労するよりはと、ぽちぽちパスワードを入力した。  </p>
-<p>一応インストールは完了したが、デスクトップ環境の導入で躓いてしまった。  </p>
-<p>最初LXDEを入れてみたが、画面がザラザラで何も見えない。<br>PC起動時にLXDEを自動開始するよう設定してしまったようで、コマンドラインにも戻れない。<br>修正の仕方も分からず困ったが、幸いインストール後の状態をClonezillaでバックアップしていたので、これをリストアした。  </p>
-<p>LXDEでダメならと、次はXfceでチャレンジしてみた。  </p>
-<p>ほぼ下記記事の説明の通りに進めた。<br><a href="http://elfcobe.hateblo.jp/entry/2014/05/11/015243" target="_blank" rel="external">Windows で VirtualBox + Arch Linux (Xfce + Slim) - けいれん現象の幽玄美よ</a>  </p>
-<p>Xorg、グラフィックドライバー（xf86-video-vesa）、Xfceをインストールしたが、<code>startxfce4</code>とコマンドを打ってデスクトップに入ろうとしても、X serverが落ちてしまう。  </p>
-<p>エラーメッセージは「ビデオドライバーが無い」というような内容だった。<br>LXDEの時もこのせいで画面がザラザラだったのかもしれない。  </p>
-<p>デュアルブートのLubuntuで<code>xrandr</code>してみると、  </p>
-<blockquote>
-<p>VGA-0 disconnected… LVDS connected</p>
-</blockquote>
-<p>と返ってくる。  </p>
-<p><code>lspci</code>をしてみると、  </p>
-<blockquote>
-<p>VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] RS482/RS485 [Radeon Xpress 1100/1150]</p>
-</blockquote>
-<p>何のドライバーが必要なのか、よく分からない。  </p>
-<p>Puppy linux派生のLxpupを起動してみると、クイックセットアップのGraphicsのところに「現在はATIビデオドライバーを使用している」というようなことが書いてあった。  </p>
-<p>「ATI video driver Arch」で検索すると、Arch Linuxの日本語wikiページが見つかった。<br><a href="https://wiki.archlinux.org/index.php/ATI_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29" target="_blank" rel="external">ATI - ArchWiki (日本語)</a>  </p>
-<p><code>pacman -S xf86-video-ati</code>でxf86-video-atiをインストールしたら、ようやくXfceのデスクトップに入ることが出来た。  </p>
-<p>日本語環境がまだだったり、全体的にフォントがザラザラで汚かったりで、環境はまだ全然だが、いちおう一段落は付けられた。  </p>
-<p>それにしても、XubuntuやLubuntuなどUbuntu派生ディストリビューションの楽ちんさは、本当に有難いと痛感した。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/01/arch-ati-video-driver/" data-text="Arch Linuxをインストールした。（ビデオドライバーはATIでうまく行った） | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -419,35 +401,35 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>55</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>54</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
 		
 			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
 		
 			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
 		
 		</ul>
@@ -460,6 +442,10 @@
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/04/18/pdf-xchange-viewer/" ><i class="fa fa-file-o"></i>デフォルトのPDFビューワーを「Wine」+「PDF-...</a>
+      </li>
     
       <li>
         <a href="/2015/04/17/wine-msfonts/" ><i class="fa fa-file-o"></i>Wineで豆腐状態の文字化け</a>
@@ -477,10 +463,6 @@
         <a href="/2015/04/03/nemo-compare-action/" ><i class="fa fa-file-o"></i>nemoの右クリックメニューに「比較」を追加</a>
       </li>
     
-      <li>
-        <a href="/2015/04/03/nemo-compare-failed/" ><i class="fa fa-file-o"></i>nemo-compareが動かない</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -490,7 +472,7 @@
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

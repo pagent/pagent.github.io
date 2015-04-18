@@ -114,6 +114,47 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/01/23/lubuntu-desktop-manager/" >Lubuntuで 「デスクトップマネージャはアクティブではありません」のエラー表示</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年1月23日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>13.04から14.04にアップグレードしたLubuntuで、いつのまにかデスクトップの壁紙が表示されなくなっていた。  </p>
+<p>壁紙を設定しようと「メニュー」→「設定」→「デスクトップの設定」と進んでも、「！ デスクトップマネージャはアクティブではありません。」とエラー表示が出て設定出来ない。<br>デスクトップ上での右クリックから「デスクトップの設定」を選択してもナシのつぶて。  </p>
+<p>Lubuntu14.04でのデスクトップの設定にはPCManFMが使われているようなので、「LXSessionのデフォルトのアプリケーション」でデフォルトのファイルマネージャーをnemoからPCManFMに戻してみたが、それでもデスクトップの設定が出来ない。  </p>
+<p>最終的には下記を参考に、SynapticからPCManFMを再インストールすることで、「デスクトップの設定」を正常に起動出来た｡<br><a href="http://ubuntuforums.org/showthread.php?t=2218084&amp;p=13090056#post13090056" target="_blank" rel="external">[lubuntu] message:desktop manager is not active</a>  </p>
+<p>自分の環境では、回答前段に書いてあるコマンドは行わず、PCManFMの再インストールだけで大丈夫だった。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/23/lubuntu-desktop-manager/" data-text="Lubuntuで 「デスクトップマネージャはアクティブではありません」のエラー表示 | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/01/22/windows10-free/" >7や8からWindows 10へのアップグレードは無料</a>
 		</h3>
 	
@@ -279,47 +320,6 @@ key<span class="variable">s:</span>■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ 
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/01/14/lubuntu-pavucontrol/" >LubuntuにPulseAudio Volume Controlを導入。音量が小さい時にも便利</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年1月14日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Lubuntu14.04には元々ボリュームコントローラーとしてalsamixerが入っているが、完全にGUIのツールではなく使いづらい。<br>そこで、Xubuntuに標準で入っているPulseAudio Volume Control (pavucontrol)をインストールした。  </p>
-<p>Synapticやソフトウェアセンター、もしくは下記コマンドで導入。</p>
-<pre><code><span class="built_in">sudo</span> apt-get install pavucontrol
-</code></pre><p>インストール後は自然に通知領域での設定がPulseAudio Volume Controlに変更される。  </p>
-<p>スピーカーからの出力を 153%（11.00dB）まで上げられるので、音量が小さくて困る時などにもなにかと便利。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/14/lubuntu-pavucontrol/" data-text="LubuntuにPulseAudio Volume Controlを導入。音量が小さい時にも便利 | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -364,35 +364,35 @@ key<span class="variable">s:</span>■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ 
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
 			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>54</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
 			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
 			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
 			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>55</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
 		
 		</ul>
@@ -405,6 +405,10 @@ key<span class="variable">s:</span>■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ 
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/04/18/pdf-xchange-viewer/" ><i class="fa fa-file-o"></i>デフォルトのPDFビューワーを「Wine」+「PDF-...</a>
+      </li>
     
       <li>
         <a href="/2015/04/17/wine-msfonts/" ><i class="fa fa-file-o"></i>Wineで豆腐状態の文字化け</a>
@@ -422,10 +426,6 @@ key<span class="variable">s:</span>■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ 
         <a href="/2015/04/03/nemo-compare-action/" ><i class="fa fa-file-o"></i>nemoの右クリックメニューに「比較」を追加</a>
       </li>
     
-      <li>
-        <a href="/2015/04/03/nemo-compare-failed/" ><i class="fa fa-file-o"></i>nemo-compareが動かない</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -435,7 +435,7 @@ key<span class="variable">s:</span>■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ 
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
