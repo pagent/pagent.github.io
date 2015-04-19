@@ -120,7 +120,9 @@
 <figure class="highlight plain"><figcaption><span>shred.nemo_action</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[Nemo Action]</div><div class="line">Name=Shred files</div><div class="line">Name[ja]=完全消去</div><div class="line">Comment=Shred the selected files</div><div class="line">Exec=shred -u -n 1 %F</div><div class="line">Icon-Name=gtk-execute</div><div class="line">Selection=notnone</div><div class="line">Extensions=nodirs;</div><div class="line">Quote=double</div><div class="line">Dependencies=shred</div></pre></td></tr></table></figure>
 
 <p>（参照記事）<br><a href="https://github.com/linuxmint/nemo/issues/210#issuecomment-29847315" target="_blank" rel="external">[Feature Request] wipe files · Issue #210 · linuxmint/nemo · GitHub</a>  </p>
-<p>対象はファイルのみでフォルダは「完全消去」出来ないが、少し便利になった。</p>
+<p>対象はファイルのみでフォルダは「完全消去」出来ないが、少し便利になった。  </p>
+<p>ーー<br>（追記）<br>他の右クリックアクションを選択したい時、間違って「完全消去」してしまわないか気になって来た。<br>Zenityを使えば「本当に削除しますか？」のような確認ダイアログを表示出来るようだが、Zenityの使用法がまだ分からない。  </p>
+<p>「完全消去」の右クリックメニューは一旦保留とし、<code>shred -u</code>を辞書登録するにとどめた。</p>
 
 	</div>
 
