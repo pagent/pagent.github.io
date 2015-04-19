@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-04-19T00:42:05.658Z</updated>
+  <updated>2015-04-19T08:13:26.309Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -47,15 +47,14 @@
     <link href="http://pagent.github.io/2015/04/18/pdf-xchange-viewer/"/>
     <id>http://pagent.github.io/2015/04/18/pdf-xchange-viewer/</id>
     <published>2015-04-18T08:42:38.000Z</published>
-    <updated>2015-04-18T11:16:30.394Z</updated>
-    <content type="html"><![CDATA[<p>Ubuntu標準のPDFビューアEvinceで、日本語のフォントが表示されなかったり、文字化けしたりしていた。<br>poppler-dataをインストールしたり、fonts.confファイルを作成してみたが、正常に表示されない。  </p>
-<p>Evinceを諦めてOkular、Xpdf、ePDFviewer、qpdfviewなど試してみたが、やはり駄目。<br>日本語フォントが文字化けするのは、PDFファイルに日本語フォントが埋め込まれていないのが原因のようだが、対策が上手く行かない。  </p>
-<p>Firefoxならちゃんと表示されるが、PDFビューアとしては使い勝手は良くない。<br>LibreOffice Drawで表示出来なくもないが、起動に時間が掛かる。  </p>
-<p>Windowsで使っていたPDF-XChange Viewer（無料体験版）をWineでインストールしたら、文字化け無しにちゃんと表示された。<br>無料版でも多機能だし、けっこう便利。<br>デフォルトで使うのではなく文字化け対策としてなら、申し分無い。</p>
+    <updated>2015-04-19T08:12:58.839Z</updated>
+    <content type="html"><![CDATA[<p>Ubuntu標準のPDFビューアEvinceで、日本語のフォントが表示されなかったり、文字化けしたりしていた。<br>poppler-dataをインストールしたり、fonts.confファイルを作成してみたが、正常に表示されない。<br>Evinceを諦めてOkular、Xpdf、ePDFviewer、qpdfviewなど試してみたが、やはり駄目。  </p>
+<p>日本語フォントが文字化けするのは、該当のPDFファイルに日本語フォントが埋め込まれていないのが原因のようだ。<br>それでも代替フォントがちゃんと利用されていれば正常に表示されるのだと思うが、その設定が上手く行かない。  </p>
+<p>FirefoxまたはLibreOffice Drawならちゃんと表示されるが、PDFビューアとしての使い勝手は良くない。  </p>
+<p>そこで、Windowsで使っていたPDF-XChange Viewer（無料体験版）をWineでインストールしたら、文字化け無しにちゃんと表示された。<br>無料版でも多機能だし、けっこう便利だ。<br>初回起動時には少々もたつくが、デフォルトで使うのではなく文字化けした時の緊急用として使う分には、申し分無い。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Ubuntu標準のPDFビューアEvinceで、日本語のフォントが表示されなかったり、文字化けしたりしていた。<br>poppler-dataをインストールしたり、fonts.confファイルを作成してみたが、正常に表示されない。  </p>
-<p>Evinceを諦めてOk]]>
+    <![CDATA[<p>Ubuntu標準のPDFビューアEvinceで、日本語のフォントが表示されなかったり、文字化けしたりしていた。<br>poppler-dataをインストールしたり、fonts.confファイルを作成してみたが、正常に表示されない。<br>Evinceを諦めてOkular、X]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
