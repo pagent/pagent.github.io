@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-04-20T02:39:16.331Z</updated>
+  <updated>2015-04-20T02:42:09.111Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/04/20/jd-problem-after-archlinux-upgrade/"/>
     <id>http://pagent.github.io/2015/04/20/jd-problem-after-archlinux-upgrade/</id>
     <published>2015-04-20T00:45:44.000Z</published>
-    <updated>2015-04-20T02:38:56.707Z</updated>
+    <updated>2015-04-20T02:41:58.805Z</updated>
     <content type="html"><![CDATA[<p>Arch Linuxをアップグレードしたら、2ちゃんねる専用ブラウザJDが起動しなくなった。  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ jd</div><div class="line">jd: error <span class="keyword">while</span> loading shared libraries: libgnutls.so.<span class="number">28</span>: cannot open shared object file: No such file or directory</div></pre></td></tr></table></figure>
 
@@ -30,10 +30,10 @@
 <p>だが今度はlibnettle.so.4が無いと言われる。  </p>
 <p>JDではないが、今回のアップグレードでLibreofficeやopenconnectを使用する際にも同様の問題があるようだった。<br><a href="https://bugs.archlinux.org/task/44645" target="_blank" rel="external">FS#44645 : libreoffice-fresh [error while loading shared libraries: libgnutls.so.28]</a><br><a href="https://bbs.archlinux.org/viewtopic.php?id=196314" target="_blank" rel="external">[solved] openconnect broken after upgrading gnutls and nettle / Pacman &amp; Package Upgrade Issues / Arch Linux Forums</a>  </p>
 <p>libnettle.so.4はnettleをダウングレードしたら良いようだったが、/var/cache/pacman/pkg内にnettleの旧パッケージが見つからない。<br>lib32-nettleをインストールしてみたが、依然libnettle.so.4が見つからないとかでJDを起動出来ない。  </p>
-<p>上記openconnectについてのフォーラムコメントにもあったが、そもそもArch Linuxではダウングレード（部分的なアップグレード）は推奨されないようだ。<br><a href="https://archlinuxjp.kusakata.com/wiki/Pacman?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DPacman_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno#.E9.83.A8.E5.88.86.E7.9A.84.E3.81.AA.E3.82.A2.E3.83.83.E3.83.97.E3.82.B0.E3.83.AC.E3.83.BC.E3.83.89.E3.81.AF.E3.82.B5.E3.83.9D.E3.83.BC.E3.83.88.E3.81.95.E3.82.8C.E3.81.A6.E3.81.84.E3.81.BE.E3.81.9B.E3.82.93" target="_blank" rel="external">pacman - ArchWiki</a>  </p>
+<p>上記openconnectについてのフォーラムコメントにもあったが、そもそもArch Linuxではパッケージのダウングレード（部分的なアップグレード）は推奨されないようだ。<br><a href="https://archlinuxjp.kusakata.com/wiki/Pacman?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DPacman_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno#.E9.83.A8.E5.88.86.E7.9A.84.E3.81.AA.E3.82.A2.E3.83.83.E3.83.97.E3.82.B0.E3.83.AC.E3.83.BC.E3.83.89.E3.81.AF.E3.82.B5.E3.83.9D.E3.83.BC.E3.83.88.E3.81.95.E3.82.8C.E3.81.A6.E3.81.84.E3.81.BE.E3.81.9B.E3.82.93" target="_blank" rel="external">pacman - ArchWiki</a>  </p>
 <p>JDの方で修正しないといけないのかもしれないが、どうすれば良いのかよく分からない。  </p>
 <p>幸い先日、ClonezillaでArch Linuxのバックアップをとっていたので、これをリストアすることにした。  </p>
-<p>他のアプリケーションもアップデート出来なくなるが、当面アップグレードせずに、このまま使用しようと思う。</p>
+<p>他のアプリケーションもアップデート出来なくなるが、当面システムのアップグレードはせずに、このまま使用しようと思う。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Arch Linuxをアップグレードしたら、2ちゃんねる専用ブラウザJDが起動しなくなった。  </p>
