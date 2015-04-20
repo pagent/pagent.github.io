@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-04-20T02:50:58.381Z</updated>
+  <updated>2015-04-20T02:55:13.706Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/04/20/jd-problem-after-archlinux-upgrade/"/>
     <id>http://pagent.github.io/2015/04/20/jd-problem-after-archlinux-upgrade/</id>
     <published>2015-04-20T00:45:44.000Z</published>
-    <updated>2015-04-20T02:49:34.529Z</updated>
+    <updated>2015-04-20T02:54:37.956Z</updated>
     <content type="html"><![CDATA[<p>Arch Linuxをアップグレードしたら、2ちゃんねる専用ブラウザJDが起動しなくなった。  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ jd</div><div class="line">jd: error <span class="keyword">while</span> loading shared libraries: libgnutls.so.<span class="number">28</span>: cannot open shared object file: No such file or directory</div></pre></td></tr></table></figure>
 
