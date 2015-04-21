@@ -114,6 +114,53 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/04/16/nemo-action-shred/" >nemoの右クリックメニューに「完全消去」を追加</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年4月16日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>rmコマンドでファイルを消去してもデータの内容自体はディスク上に残っており、復旧できる可能性があるようだ。<br>完全に消去するにはshredコマンドを使えばいいらしい。<br><a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20140310/542304/" target="_blank" rel="external">Linuxコマンド集 - 【shred】ファイルを上書きし、完全に消去する：ITpro</a>  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ shred -u sample</div></pre></td></tr></table></figure>
+
+<p>コマンドを入力するのは面倒なので、nemoの右クリックメニューに「完全消去」を追加した。  </p>
+<p>~/.local/share/nemo/actions/内にshred.nemo_actionファイルを作成。  </p>
+<figure class="highlight plain"><figcaption><span>shred.nemo_action</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[Nemo Action]</div><div class="line">Name=Shred files</div><div class="line">Name[ja]=完全消去</div><div class="line">Comment=Shred the selected files</div><div class="line">Exec=shred -u -n 1 %F</div><div class="line">Icon-Name=gtk-execute</div><div class="line">Selection=notnone</div><div class="line">Extensions=nodirs;</div><div class="line">Quote=double</div><div class="line">Dependencies=shred</div></pre></td></tr></table></figure>
+
+<p>（参照記事）<br><a href="https://github.com/linuxmint/nemo/issues/210#issuecomment-29847315" target="_blank" rel="external">[Feature Request] wipe files · Issue #210 · linuxmint/nemo · GitHub</a>  </p>
+<p>対象はファイルのみでフォルダは「完全消去」出来ないが、少し便利になった。  </p>
+<p>ーー<br>（追記）<br>他の右クリックアクションを選択したい時、間違って「完全消去」してしまわないか気になって来た。<br>Zenityを使えば「本当に削除しますか？」のような確認ダイアログを表示出来るようだが、Zenityの使用法がまだ分からない。  </p>
+<p>「完全消去」の右クリックメニューは一旦保留とし、<code>shred -u</code>を辞書登録するにとどめた。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/16/nemo-action-shred/" data-text="nemoの右クリックメニューに「完全消去」を追加 | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/04/05/puppy-automount-fstab/" >Puppy Linux起動時にfstabで自動マウント</a>
 		</h3>
 	
@@ -310,54 +357,6 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/04/02/fcitx-qt-program/" >Qtベースのプログラムで日本語入力（fcitx-mozc）</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年4月2日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>iBusのプロパティパネル採用以降、iBusをやめて日本語入力にfcitx-mozcを使っている。  </p>
-<p>Xubuntuでは特に問題無く使えていたが、Arch LinuxでQtベースのプログラムを使用する際、日本語入力が有効にならず困っていた。<br>Simplenote専用にするのにうってつけの軽量ブラウザ「QupZilla」や、markdownファイル編集の際プレビューが出来て便利な「ReText」など、日本語入力出来ないと不便。  </p>
-<p>モジュールのfcitx-qt4、fcitx-qt5はインストールしたが、何故かインプットメソッドがオンにならない。<br>（fcitx-qt5はあまり必要無いようだが、念の為インストール）<br>fcitx-configtool（Qt 設定ツール）で、デフォルトのインプットメソッドをfcitxに変更したが、効果が無い。  </p>
-<p><code>fcitx-diagnose</code>を実行してフロントエンド設定の項目を確認すると、空欄だったり「設定されていません」という表示だったりする。<br>XMODIFIERS、QT_IM_MODULEがちゃんとロードされていないらしい。  </p>
-<p>ホームディレクトリに.xprofileを新規作成し、下記内容で保存。<br>（ディスプレイマネージャにSLiMを使っている場合は、~/.xprofileではなく~/.xinitrcに記載するらしい）  </p>
-<pre><code><span class="keyword">export</span> GTK_IM_MODULE=fcitx
-<span class="keyword">export</span> QT_IM_MODULE=fcitx
-<span class="keyword">export</span> XMODIFIERS=<span class="string">"@im=fcitx"</span>
-</code></pre><p>再起動したら、QupZilla、ReTextともに日本語入力が可能になった。  </p>
-<p>（参照記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Fcitx" target="_blank" rel="external">Fcitx - ArchWiki</a>  </p>
-<p>再度<code>fcitx-diagnose</code>で見てみると、「環境変数 XMODIFIERS は “{$2}” に正しく設定されています。」「環境変数 QT_IM_MODULE は “{$2}” に正しく設定されています。」となっていた。  </p>
-<p>fcitx-configtoolのデフォルトのインプットメソッドはximのままでも問題無いようだった。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/02/fcitx-qt-program/" data-text="Qtベースのプログラムで日本語入力（fcitx-mozc） | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -402,35 +401,35 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
 		
 			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
 		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>58</span></a></li>
+		
 			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
 			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>57</span></a></li>
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 		
 		</ul>
@@ -443,6 +442,10 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/04/21/connection-refused-repo-archlinux-fr/" ><i class="fa fa-file-o"></i>Yaourtのリポジトリに接続を拒否される</a>
+      </li>
     
       <li>
         <a href="/2015/04/20/jd-problem-after-archlinux-upgrade/" ><i class="fa fa-file-o"></i>Arch Linuxアップグレード後JDが起動出来ない</a>
@@ -460,10 +463,6 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
         <a href="/2015/04/17/wine-msfonts/" ><i class="fa fa-file-o"></i>Wineで豆腐状態の文字化け</a>
       </li>
     
-      <li>
-        <a href="/2015/04/16/nemo-action-shred/" ><i class="fa fa-file-o"></i>nemoの右クリックメニューに「完全消去」を追加</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -473,7 +472,7 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

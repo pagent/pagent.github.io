@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-04-20T03:26:14.113Z</updated>
+  <updated>2015-04-21T02:42:11.824Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,11 +15,63 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Yaourtのリポジトリに接続を拒否される]]></title>
+    <link href="http://pagent.github.io/2015/04/21/connection-refused-repo-archlinux-fr/"/>
+    <id>http://pagent.github.io/2015/04/21/connection-refused-repo-archlinux-fr/</id>
+    <published>2015-04-20T23:23:22.000Z</published>
+    <updated>2015-04-21T00:17:54.416Z</updated>
+    <content type="html"><![CDATA[<p>いつの間にかArch Linuxのシステム更新の際、エラーが表示されるようになっていた。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> pacman -Syu</div><div class="line">:: パッケージデータベースの同期中...</div><div class="line"> core は最新です</div><div class="line"> extra は最新です</div><div class="line"> community は最新です</div><div class="line"> multilib は最新です</div><div class="line">エラー: ファイル <span class="string">'archlinuxfr.db'</span> を repo.archlinux.fr から取得するのに失敗しました : Failed to connect to repo.archlinux.fr port <span class="number">80</span>: 接続を拒否されました</div><div class="line">エラー: archlinuxfr の更新に失敗しました (ダウンロードライブラリエラー)</div></pre></td></tr></table></figure>
+
+<p>Yaourtのリポジトリのようだ。  </p>
+<p>検索すると、同様のトピックが1件だけ見つかった。<br><a href="https://forums.archlinux.fr/viewtopic.php?t=16714" target="_blank" rel="external">[repo.archlinux.fr] Failed to connect to repo.archlinux.fr port 80: Connexion refusée - Archlinux.fr [Forums]</a>  </p>
+<p>フランス語らしいのでGoogle翻訳で翻訳した。<br>（よく分からないが一部修正）  </p>
+<blockquote>
+<p>こんにちは、</p>
+<p>レポarchlinux.frに問題があるように表示されます。<br>エラー：ファイルのリカバリ失敗」archlinuxfr.db」repo.archlinux.fr以来：ポート80をrepo.archlinux.frへの接続に失敗しました接続が拒否されました</p>
+<p>誰かが見てすることができますか？<br>この種のpbm（problem？）の正式な報告チャンネルはありますか？</p>
+<p>ありがとう</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>私は全く同じ悩みを持っている。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>私は、サーバーがダウンしていることに昨晩気づいた（受信側かサーバか正確には分からない…）。</p>
+<p>だから、辛抱強く彼の悩みを取ると待機する必要があります^^（ヨーグルトをインストールしたかった私は、今日逃している）</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>それはとても忍耐に戻って日付とあなたのスタッフに感謝している。</p>
+<p>編集：さらに調査保留中、Skunnykが配置されています。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>すばらしい、感謝！</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>私の側で[OK]をクリックしUPD</p>
+</blockquote>
+<p>どうやらYaourtのサーバーがダウンしているたようだ。<br>4月6日のトピックだが、これまで気が付かなかったし、不安定で時々ダウンしているのだろうか？  </p>
+<p>それにしてもGoogle翻訳の便利さには感謝する。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>いつの間にかArch Linuxのシステム更新の際、エラーが表示されるようになっていた。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1<]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Arch Linuxアップグレード後JDが起動出来ない]]></title>
     <link href="http://pagent.github.io/2015/04/20/jd-problem-after-archlinux-upgrade/"/>
     <id>http://pagent.github.io/2015/04/20/jd-problem-after-archlinux-upgrade/</id>
     <published>2015-04-20T00:45:44.000Z</published>
-    <updated>2015-04-20T03:25:50.438Z</updated>
+    <updated>2015-04-21T02:40:44.182Z</updated>
     <content type="html"><![CDATA[<p>Arch Linuxをアップグレードしたら、2ちゃんねる専用ブラウザJDが起動しなくなった。  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ jd</div><div class="line">jd: error <span class="keyword">while</span> loading shared libraries: libgnutls.so.<span class="number">28</span>: cannot open shared object file: No such file or directory</div></pre></td></tr></table></figure>
 
@@ -36,7 +88,10 @@
 <p>libnettle.so.4はnettleをダウングレードしたら良いようだったが、/var/cache/pacman/pkg内にnettleの旧パッケージが見つからない。<br>lib32-nettleをインストールしてみたが、依然libnettle.so.4が見つからないとかでJDを起動出来ない。  </p>
 <p>上記openconnectについてのフォーラムコメントにもあったが、Arch Linuxではパッケージのダウングレード（部分的なアップグレード）は推奨されないようだ。<br><a href="https://archlinuxjp.kusakata.com/wiki/Pacman?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DPacman_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno#.E9.83.A8.E5.88.86.E7.9A.84.E3.81.AA.E3.82.A2.E3.83.83.E3.83.97.E3.82.B0.E3.83.AC.E3.83.BC.E3.83.89.E3.81.AF.E3.82.B5.E3.83.9D.E3.83.BC.E3.83.88.E3.81.95.E3.82.8C.E3.81.A6.E3.81.84.E3.81.BE.E3.81.9B.E3.82.93" target="_blank" rel="external">pacman - ArchWiki</a>  </p>
 <p>バグなのかJD側の問題なのかよく分からないが、幸い先日ClonezillaでArch Linuxのバックアップをとっていたので、これをリストアすることにした。  </p>
-<p>当面システムのアップグレードはせず、このまま使用しようと思う。</p>
+<p>当面システムのアップグレードはせず、このまま使用しようと思う。  </p>
+<p>ーー<br>（追記）<br>JDを一旦削除、その後再インストールしても駄目だったが、JDをちゃんとアンインストール出来なかったのが原因のようだ。<br>(<code>yaourut -R jd</code>でアンインストールしてもメニューに表示されており、コマンド<code>jd</code>でlibgnutls.so.28が無いと表示されていた。）  </p>
+<p><code>yaourt -Rd --nodeps jd</code>でもアンインストール出来なかったので、/userディレクトリで”jd”を検索。<br>/usr/local/bin/jdと/usr/local/share/applications/jd.desktopを手動で削除した。  </p>
+<p>その後再インストールしたら、エラーになることもなく起動出来た。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Arch Linuxをアップグレードしたら、2ちゃんねる専用ブラウザJDが起動しなくなった。  </p>
@@ -522,31 +577,6 @@ sleep <span class="number">3</span>
     <summary type="html">
     <![CDATA[<p>Arch LinuxにTrueCryptをインストールした。  </p>
 <p>pacmanからインストールすると、guiツールが無くcuiツールのみのようなので、ネットでtruecrypt-7.1aを探しダウンロード、インストールした。<br>（TrueCryptの最終バ]]>
-    </summary>
-    
-      <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Keepass2のフォントを日本語化]]></title>
-    <link href="http://pagent.github.io/2015/03/14/keepass2-font/"/>
-    <id>http://pagent.github.io/2015/03/14/keepass2-font/</id>
-    <published>2015-03-13T22:47:05.000Z</published>
-    <updated>2015-04-03T03:52:42.535Z</updated>
-    <content type="html"><![CDATA[<p>Windowsではパスワード管理ソフトとして、長らくIDMを使っていた。  </p>
-<p>IDMはとても便利で長らくお世話になったが、Linuxでは使えない。<br>OSをWindowsからLinuxに乗り換える際、パスワード管理ソフトをクロスプラットフォームのKeepass2（KeePass Password Safe）に変更した。  </p>
-<p>Keepass2の日本語化は、Xubuntuでは<a href="http://keepass.info/translations.html" target="_blank" rel="external">Translations - KeePass</a>からKeePass-2.28-Japanese.zipをダウンロードし解凍。<br>Japanese.lngxをJapanese.lngxを/usr/lib/keepass2内にコピー。<br>Keepass2のView→Change LanguageからJapaneseを選択したら日本語化出来た。  </p>
-<p>今回、Arch LinuxにもKeepass2をインストールした。<br><code>sudo pacman -S keepass</code>でkeepass-2.28-2がインストールされた。  </p>
-<p>Arch LinuxではKeePass.exeは/usr/lib/keepass2ではなく/usr/share/keepass内にあるので、ここへJapanese.lngxをコピー。<br>日本語化しようとしたが、文字化けしてしまい豆腐状態。  </p>
-<p>Tools→options→Interface→Serect List Fontで、IPA Pゴシック、Takao Pゴシックなど日本語フォントに変更すると、パスワード管理している項目は日本語化されたが、メニューは依然文字化けしたまま。<br>ネットで検索し、システムフォントを日本語フォントに変更してみたが、それでも豆腐状態が治らない。  </p>
-<p>Keepass2のoptions→Interfaceのチェックボックスリスト内に”Force using system font(Unix only)”「強制的にシステムフォントを使用(Unixのみ)」という項目があり、これにチェックが入っていたので、チェックを外してみたらようやくメニューも日本語化出来た。  </p>
-<p>XubuntuのKeepass2を見てみると、「強制的にシステムフォントを使用(Unixのみ)」のチェックが入ったままで日本語化出来ている。<br>同じLinuxでもディストリビューションによって色々と挙動、設定が違うようだ。  </p>
-<p>ーー<br>（追記）<br>その後Keepass2のツールバーの項目がショートカットキーしか表示されなくなってしまった。<br>今度は「強制的にシステムフォントを使用(Unixのみ)」のチェックを入れると、ちゃんと日本語表示された。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Windowsではパスワード管理ソフトとして、長らくIDMを使っていた。  </p>
-<p>IDMはとても便利で長らくお世話になったが、Linuxでは使えない。<br>OSをWindowsからLinuxに乗り換える際、パスワード管理ソフトをクロスプラットフォームのKeepa]]>
     </summary>
     
       <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
