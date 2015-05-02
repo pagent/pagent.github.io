@@ -114,6 +114,50 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/04/01/xfce4-terminal-browser/" >Xfce4 terminal内のリンクを開くブラウザをFirefoxに</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年4月1日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>「お気に入りのアプリケーション」のブラウザをFirefoxにしていて、これまでXfce4 terminal内のリンクを開く時もFirefoxで開けていた。<br>だが、Chromiumをインストールしてから、リンクがChromiumで開くようになってしまった。<br>Xfce4 terminalの設定ではブラウザを指定出来ない。  </p>
+<p>検索すると下記トピックが見つかった。<br><a href="https://bbs.archlinux.org/viewtopic.php?id=191547" target="_blank" rel="external">[SOLVED] Xfce terminal open links with wrong browser. / Applications &amp; Desktop Environments / Arch Linux Forums</a>  </p>
+<p>~/.config/mimeapps.listの[Added Associations]の箇所に下記を追記した。  </p>
+<pre><code>text/vcard=firefox.desktop;
+text/html=firefox.desktop;
+x-scheme-<span class="operator"><span class="keyword">handler</span>/http=firefox.desktop;</span>
+x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firefox.desktop;</span>
+</code></pre><p>Xfce4 terminal内のリンクがFirefoxで開くようになった。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/01/xfce4-terminal-browser/" data-text="Xfce4 terminal内のリンクを開くブラウザをFirefoxに | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/03/31/lubuntu-update-stuck/" >Lubuntuのアップデート中にフリーズ</a>
 		</h3>
 	
@@ -302,57 +346,6 @@ at <span class="keyword">...</span>
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/03/14/truecrypt-already-running/" >TrueCryptを起動しようとすると&quot;TrueCrypt is already running&quot;と表示される</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年3月14日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Arch LinuxにTrueCryptをインストールした。  </p>
-<p>pacmanからインストールすると、guiツールが無くcuiツールのみのようなので、ネットでtruecrypt-7.1aを探しダウンロード、インストールした。<br>（TrueCryptの最終バージョン7.2は解読機能のみで、新たに暗号化ボリュームを作れない。）  </p>
-<p>ちゃんと使用出来たが、いったんPCを終了して、その後TrueCryptを起動しようとすると、”TrueCrypt is already running”とのみ表示され、guiツールが表示されなくなってしまった。<br>コマンドラインからだと使用出来るようだが、使い勝手が悪い。  </p>
-<p>暗号化ボリュームをアンマウントせずにPCをシャットダウンしたせいらしい。  </p>
-<p>ホームディレクトリに.TrueCrypt-lock-(ユーザー名)という隠しファイルが残っており、これを削除するとguiのTrueCryptを起動出来た。<br><a href="http://sebs-blog.de/truecrypt-is-already-running-what-to-do.html" target="_blank" rel="external">‘TrueCrypt is already running’ what to do? | Seb’s Blog</a>  </p>
-<p>暗号化ボリュームをアンマウントせずにPCを終了してしまうことはよくあるし、なんとか自動的にアンマウントしたいところ。  </p>
-<p>検索したら、Arch Linuxのwikiに自動アンマウントの方法が紹介されていた。<br><a href="https://wiki.archlinux.org/index.php/TrueCrypt#Safely_unmount_and_unmap_volumes_.28on_shutdown.29" target="_blank" rel="external">TrueCrypt - ArchWiki</a>  </p>
-<p>/etc内にrc.local.shutdownファイルを新規作成。<br>下記内容で保存。  </p>
-<pre><code><span class="keyword">if</span> (/usr/bin/truecrypt --text --list)
-<span class="keyword">then</span> {
-/usr/bin/truecrypt <span class="operator">-d</span>
-sleep <span class="number">3</span>
-}
-<span class="keyword">fi</span>
-</code></pre><p>PC終了時に自動的に暗号化ボリュームがアンマウントされるようになった。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/14/truecrypt-already-running/" data-text="TrueCryptを起動しようとすると&quot;TrueCrypt is already running&quot;と表示される | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -397,15 +390,17 @@ sleep <span class="number">3</span>
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>8</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
 			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
 		
 			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
@@ -415,17 +410,15 @@ sleep <span class="number">3</span>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
 			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 		
 		</ul>
@@ -438,6 +431,10 @@ sleep <span class="number">3</span>
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/05/02/higan/" ><i class="fa fa-file-o"></i>higanでファミコン、スーパーファミコン</a>
+      </li>
     
       <li>
         <a href="/2015/04/21/connection-refused-repo-archlinux-fr/" ><i class="fa fa-file-o"></i>Yaourtのリポジトリに接続を拒否される</a>
@@ -455,10 +452,6 @@ sleep <span class="number">3</span>
         <a href="/2015/04/18/pdf-xchange-viewer/" ><i class="fa fa-file-o"></i>PDFファイルの日本語フォント文字化け対策として「Wi...</a>
       </li>
     
-      <li>
-        <a href="/2015/04/17/wine-msfonts/" ><i class="fa fa-file-o"></i>Wineで豆腐状態の文字化け</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -468,7 +461,7 @@ sleep <span class="number">3</span>
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

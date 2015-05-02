@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-05-02T02:04:59.167Z</updated>
+  <updated>2015-05-02T05:10:52.067Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,31 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[higanでファミコン、スーパーファミコン]]></title>
+    <link href="http://pagent.github.io/2015/05/02/higan/"/>
+    <id>http://pagent.github.io/2015/05/02/higan/</id>
+    <published>2015-05-02T04:36:54.000Z</published>
+    <updated>2015-05-02T05:10:25.926Z</updated>
+    <content type="html"><![CDATA[<p>ファミコン、スーパーファミコンなどのエミュレーターhiganをインストールした。<br>他のエミュレーターと較べても再現性は高いそうだ。  </p>
+<p>実際ゲームをする際はキーボードでは操作しづらいので、<a href="http://buffalo.jp/product/input/gamepad/bsgp801/" target="_blank" rel="external">BUFFALOのUSBゲームパッド</a>を購入した。<br>懐かしいスーファミのコントローラーそっくりで値段も安価。<br>Windows用となっていたがLinuxでも使用出来た。<br>（簡単なのでjoypadをインストールした。）  </p>
+<p>USBポートに挿すとゲームパッド自体は認識しているようだったが、higanで反応しない。<br>入力方法のMappingを設定しないといけないようだ。  </p>
+<p>Setting→Configuration→InputタブでFamicom等のハードを選択。<br>「Up」等の項目をダブルクリックすると入力待機状態に。<br>ゲームパッドの上矢印を押すとそのキーが設定される。<br>Aボタン、Startボタンなども同様に設定。  </p>
+<p>ゲームが出来るようになったが、いつの間にかゲームパッドの操作でマウスポインターも動いてしまうようになった。  </p>
+<p><code>xinput</code>コマンドで見ると、自分の環境ではゲームパッドはid=11に登録されているようだったので、これを無効化した。</p>
+<pre><code><span class="comment">$</span> <span class="comment">xinput</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">disable</span> <span class="comment">11</span>
+</code></pre><p>ただ起動の度に無効化する必要があるようだったので、自動開始アプリケーションにコマンドを登録した。  </p>
+<p>（参照記事）<br><a href="http://nomad-blacky.hatenablog.com/entry/2013/03/21/025253" target="_blank" rel="external">ゲームパッドの操作でマウスポインタが動いてしまう＠Ubuntu - ぶらっ記ぃ</a><br><a href="https://archlinuxjp.kusakata.com/wiki/Xorg?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DXorg_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno#.E5.BF.85.E8.A6.81.E3.81.AB.E5.BF.9C.E3.81.98.E3.81.A6.E5.85.A5.E5.8A.9B.E3.82.BD.E3.83.BC.E3.82.B9.E3.82.92.E6.9C.89.E5.8A.B9.E5.8C.96.E3.83.BB.E7.84.A1.E5.8A.B9.E5.8C.96" target="_blank" rel="external">必要に応じて入力ソースを有効化・無効化 - Xorg - ArchWiki</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>ファミコン、スーパーファミコンなどのエミュレーターhiganをインストールした。<br>他のエミュレーターと較べても再現性は高いそうだ。  </p>
+<p>実際ゲームをする際はキーボードでは操作しづらいので、<a href="http://buffalo.jp/produc]]>
+    </summary>
+    
+      <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Yaourtのリポジトリに接続を拒否される]]></title>
@@ -550,37 +575,6 @@ at <span class="keyword">...</span>
     </summary>
     
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[TrueCryptを起動しようとすると"TrueCrypt is already running"と表示される]]></title>
-    <link href="http://pagent.github.io/2015/03/14/truecrypt-already-running/"/>
-    <id>http://pagent.github.io/2015/03/14/truecrypt-already-running/</id>
-    <published>2015-03-14T01:57:05.000Z</published>
-    <updated>2015-03-14T13:24:22.623Z</updated>
-    <content type="html"><![CDATA[<p>Arch LinuxにTrueCryptをインストールした。  </p>
-<p>pacmanからインストールすると、guiツールが無くcuiツールのみのようなので、ネットでtruecrypt-7.1aを探しダウンロード、インストールした。<br>（TrueCryptの最終バージョン7.2は解読機能のみで、新たに暗号化ボリュームを作れない。）  </p>
-<p>ちゃんと使用出来たが、いったんPCを終了して、その後TrueCryptを起動しようとすると、”TrueCrypt is already running”とのみ表示され、guiツールが表示されなくなってしまった。<br>コマンドラインからだと使用出来るようだが、使い勝手が悪い。  </p>
-<p>暗号化ボリュームをアンマウントせずにPCをシャットダウンしたせいらしい。  </p>
-<p>ホームディレクトリに.TrueCrypt-lock-(ユーザー名)という隠しファイルが残っており、これを削除するとguiのTrueCryptを起動出来た。<br><a href="http://sebs-blog.de/truecrypt-is-already-running-what-to-do.html" target="_blank" rel="external">‘TrueCrypt is already running’ what to do? | Seb’s Blog</a>  </p>
-<p>暗号化ボリュームをアンマウントせずにPCを終了してしまうことはよくあるし、なんとか自動的にアンマウントしたいところ。  </p>
-<p>検索したら、Arch Linuxのwikiに自動アンマウントの方法が紹介されていた。<br><a href="https://wiki.archlinux.org/index.php/TrueCrypt#Safely_unmount_and_unmap_volumes_.28on_shutdown.29" target="_blank" rel="external">TrueCrypt - ArchWiki</a>  </p>
-<p>/etc内にrc.local.shutdownファイルを新規作成。<br>下記内容で保存。  </p>
-<pre><code><span class="keyword">if</span> (/usr/bin/truecrypt --text --list)
-<span class="keyword">then</span> {
-/usr/bin/truecrypt <span class="operator">-d</span>
-sleep <span class="number">3</span>
-}
-<span class="keyword">fi</span>
-</code></pre><p>PC終了時に自動的に暗号化ボリュームがアンマウントされるようになった。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Arch LinuxにTrueCryptをインストールした。  </p>
-<p>pacmanからインストールすると、guiツールが無くcuiツールのみのようなので、ネットでtruecrypt-7.1aを探しダウンロード、インストールした。<br>（TrueCryptの最終バ]]>
-    </summary>
-    
-      <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
     
   </entry>
   

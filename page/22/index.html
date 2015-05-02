@@ -114,6 +114,134 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/11/28/metalsmith/" >プログラム音痴がMetalsmithを試してみた</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月28日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>静的サイトジェネレーターは有名なものしか知らなかったが、かなりの数が公開されているようだ。<br><a href="https://staticsitegenerators.net/" target="_blank" rel="external">https://staticsitegenerators.net/</a><br><a href="https://www.staticgen.com/" target="_blank" rel="external">https://www.staticgen.com/</a>  </p>
+<p><a href="https://github.com/segmentio/metalsmith" target="_blank" rel="external">Metalsmith</a>（An extremely simple, pluggable static site generator.）というのが人気急上昇中のようなので、試してみた。<br>Hexo同様、プログラミング言語がJavaScriptなので、早さも期待できる。  </p>
+<p>テストするにあたり、下記サイトを参考にさせて頂いた。<br><a href="http://h2ham.net/metalsmith-static-site-generator" target="_blank" rel="external">Nodeで動作する静的サイトジェネレータ「metalsmith」を使ってみた - HAM MEDIA MEMO</a><br><a href="http://web-layman.com/metalsmith-simple-static-site-generator/" target="_blank" rel="external">metalsmith - シンプルな静的サイトジェネレーター - Layman’s Web Creation.</a>  </p>
+<p>先ずはpackage.json を用意して導入するプラグインを指定、一括インストールするのが良いようなのだが、本体やプラグインのバージョンがよく分からない。<br>なのでmetalsmith-testという作業フォルダを作り、そこで端末を開いて一個一個インストールした。  </p>
+<pre><code>~/metalsmith-<span class="keyword">test</span>$ npm install metalsmith
+~/metalsmith-<span class="keyword">test</span>$ npm install metalsmith-templates
+~/metalsmith-<span class="keyword">test</span>$ npm install swig
+~/metalsmith-<span class="keyword">test</span>$ npm install metalsmith-markdown
+~/metalsmith-<span class="keyword">test</span>$ npm install metalsmith-permalinks
+~/metalsmith-<span class="keyword">test</span>$ npm install metalsmith-sass
+~/metalsmith-<span class="keyword">test</span>$ npm install metalsmith-watch
+~/metalsmith-<span class="keyword">test</span>$ npm install metalsmith-drafts
+</code></pre><p>次に作業フォルダ内にmetalsmith.jsonを作成する必要があったが、これはjekyllの構成に倣ったexampleのものをほぼそのまま使わせてもらった。<br><a href="https://github.com/segmentio/metalsmith/blob/master/examples/jekyll/metalsmith.json" target="_blank" rel="external">https://github.com/segmentio/metalsmith/blob/master/examples/jekyll/metalsmith.json</a></p>
+<pre><code>{
+  "<span class="attribute">source</span>": <span class="value"><span class="string">"./_posts"</span></span>,
+  "<span class="attribute">destination</span>": <span class="value"><span class="string">"./_site"</span></span>,
+  "<span class="attribute">metadata</span>": <span class="value">{
+    "<span class="attribute">title</span>": <span class="value"><span class="string">"My Jekyll-Powered Blog"</span></span>,
+    "<span class="attribute">description</span>": <span class="value"><span class="string">"My second, super-cool, Jekyll-powered blog."</span>
+  </span>}</span>,
+  "<span class="attribute">plugins</span>": <span class="value">{
+    "<span class="attribute">metalsmith-drafts</span>": <span class="value">{}</span>,
+    "<span class="attribute">metalsmith-markdown</span>": <span class="value">{}</span>,
+    "<span class="attribute">metalsmith-permalinks</span>": <span class="value">{
+      "<span class="attribute">pattern</span>": <span class="value"><span class="string">":title"</span>
+    </span>}</span>,
+    "<span class="attribute">metalsmith-sass</span>": <span class="value">{
+        "<span class="attribute">outputStyle</span>": <span class="value"><span class="string">"expanded"</span>
+    </span>}</span>,
+    "<span class="attribute">metalsmith-templates</span>": <span class="value">{
+      "<span class="attribute">engine</span>": <span class="value"><span class="string">"swig"</span></span>,
+      "<span class="attribute">directory</span>": <span class="value"><span class="string">"_layouts"</span>
+    </span>}
+  </span>}
+</span>}
+</code></pre><p>_layoutsフォルダを作り、そこへ下記内容のpost.htmlを配置。  </p>
+<pre><code><span class="tag">&lt;<span class="title">html</span>&gt;</span>
+<span class="tag">&lt;<span class="title">head</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">title</span>&gt;</span>My Blog<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">h1</span>&gt;</span>プログラム音痴がMetalsmithを試してみた<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">time</span>&gt;</span>2014-11-28<span class="tag">&lt;/<span class="title">time</span>&gt;</span>
+
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><p>_postsフォルダを作り、テスト用の記事test-post-1.mdを配置。  </p>
+<pre><code>---
+<span class="keyword">template</span>: post.html
+title: テスト投稿１
+date: <span class="number">2014</span>-<span class="number">11</span>-<span class="number">28</span>
+---
+<span class="comment">##今日の天気</span>
+本日は晴天なり。
+</code></pre><p><code>node node_modules/.bin/metalsmith</code>とコマンドを打つと、自動的に_siteフォルダ、その下にtest-post-1フォルダ、その中にindex.htmlが生成された。  </p>
+<pre><code><span class="tag">&lt;<span class="title">html</span>&gt;</span>
+<span class="tag">&lt;<span class="title">head</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">title</span>&gt;</span>My Blog<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
+<span class="tag">&lt;<span class="title">body</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">h1</span>&gt;</span>テスト投稿<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">time</span>&gt;</span>2014-11-28<span class="tag">&lt;/<span class="title">time</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">h2</span> <span class="attribute">id</span>=<span class="value">"-"</span>&gt;</span>今日の天気<span class="tag">&lt;/<span class="title">h2</span>&gt;</span>
+<span class="tag">&lt;<span class="title">p</span>&gt;</span>本日は晴天なり。<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+
+<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><p>ローカルホスト上でプレビューを可能にするプラグインmetalsmith-serveというのがあったのでインストールしたが、どう使えばいいのかよく分からない。  </p>
+<p>metalsmith.jsonの<code>&quot;plugins&quot;:</code>の箇所に無理やり  </p>
+<pre><code>    <span class="string">"metalsmith-serve"</span>: {
+      <span class="string">"port"</span>: <span class="string">"8081"</span>,
+      <span class="string">"verbose"</span>: <span class="string">"true"</span>
+    }
+</code></pre><p>と加えてみたら、<code>node node_modules/.bin/metalsmith</code>のコマンドで、生成と共にローカルホストが立ち上がった。<br>ブラウザで<code>http://localhost:8081/test-post-1/</code>にアクセスすると、CSSは当たっていないが表示はされた。  </p>
+<p>たぶん正しい使い方ではないのだと思うが、プラグインの説明の  </p>
+<pre><code><span class="keyword">var</span> metalsmith = <span class="keyword">require</span>(<span class="string">'metalsmith'</span>);
+<span class="keyword">var</span> serve = <span class="keyword">require</span>(<span class="string">'metalsmith-serve'</span>);
+
+metalsmith(__dirname)
+  .<span class="keyword">use</span>(serve())
+  .build();
+</code></pre><p>というのを何処で設定するのか分からない。  </p>
+<p>トップページの生成の仕方やCSSの当て方なども勉強する必要がありそう。<br>それに、新規記事作成やgenerate、プレビューなど、それぞれコマンドに割り当てて操作したいところ。  </p>
+<p>Metalsmithのサイトの上方に記載してある  </p>
+<pre><code>Metalsmith(<span class="number">__</span>dirname)
+  .<span class="keyword">use</span>(drafts())
+  .<span class="keyword">use</span>(markdown())
+  .<span class="keyword">use</span>(permalinks('posts/:title'))
+  .<span class="keyword">use</span>(templates('handlebars'))
+  .build();
+</code></pre><p>というのも、いったいどこの記載のことなんだか。</p>
+<p>「Everything is a Plugin」と謳われているようにカスタマイズ性は高そうだが、Jekyllの使い方が分からずOctopressに移った自分のようなプログラム音痴には、少々ハードルが高そうだ。<br>静的サイトジェネレーターの仕組みを勉強するには良さそうだが。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/28/metalsmith/" data-text="プログラム音痴がMetalsmithを試してみた | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/11/27/hexo-china/" >Hexoは中国製のようだ</a>
 		</h3>
 	
@@ -358,100 +486,6 @@ date:
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/25/hexo-migrator-octopress/" >Octopress→Hexo移行のプラグイン「hexo-migrator-octopress」を試してみた</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月25日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>OctopressとHexoでは記事ソースのファイルの形式やFront Matter（<code>---</code>で区切られた、title、dateなどの部分）が微妙に異なる。<br>OctopressのcategoriesはHexoではtagsに相当したり。  </p>
-<p>Octopressの記事ソースをHexoに取り込む<a href="https://github.com/sailxjx/hexo-migrator-octopress" target="_blank" rel="external">「hexo-migrator-octopress」</a>というHexo用プラグインがあったので、試してみた。<br>（Hexoの記事ソースをOctopress用に変換するスクリプト「Hexo to Octopress Converter」とは逆向き。）  </p>
-<p>デスクトップ上にhexo-test（Hexoフォルダ）とoctopress-test（Octopressフォルダ）を作った。  </p>
-<p>hexo-testで端末を開き、プラグインをインストール。  </p>
-<pre><code><span class="variable">$ </span>npm install hexo-migrator-octopress
-</code></pre><p>コマンド<code>hexo migrate octopress &lt;source&gt;</code>で記事ソースが変換され、Hexoに取り込まれる。（<code>&lt;source&gt;</code>はOctopressフォルダへのパス）<br>今回のテスト環境では</p>
-<pre><code><span class="variable">$ </span>hexo migrate octopress ~<span class="regexp">/Desktop/octopress</span>-test
-</code></pre><p>octopress-test/source/_posts/2014-10-25-cosmos.markdownがhexo-test/source/_posts/cosmos.mdとして取り込まれた。<br>（Hexoのデフォルト設定に従い、日付けが削除さるようだ。）  </p>
-<p>Front MatterはOctopressの  </p>
-<pre><code><span class="bullet">---
-</span>layout: post
-title: "畑一面のコスモスはなぜ？"
-date: 2014-10-25 15:41:22 +0900
-comments: true
-categories:
-<span class="bullet">- </span>未分類
-<span class="header">- 写真
----</span>
-</code></pre><p>から  </p>
-<pre><code><span class="bullet">---
-</span>layout: post
-title: "畑一面のコスモスはなぜ？"
-date: 2014-10-25 15:41:22 +0900
-comments: true
-tags:
-<span class="bullet">- </span>未分類
-<span class="header">- 写真
----</span>
-</code></pre><p>に変換されたが、変更は<code>categories:</code>が<code>tags:</code>になっただけのようだ。  </p>
-<p>この状態でもHexoで使えるのだが、これを「Hexo to Octopress Converter」でOctopress用に再変換すると  </p>
-<pre><code><span class="bullet">---
-</span>layout: post
-<span class="header">comments: true
----</span>
-layout: post
-title: "畑一面のコスモスはなぜ？"
-date: 2014-10-25 15:41:22 +0900
-comments: true
-tags:
-<span class="bullet">- </span>未分類
-<span class="header">- 写真
----</span>
-</code></pre><p>となってしまい、<code>tags:</code>が<code>categories:</code>に変換されない。  </p>
-<p>上部の<code>---</code>を削除しておくと<code>categories:</code>に変換はされたが、タイトルの部分が<code>title: &quot;&quot;畑一面のコスモスはなぜ？&quot;&quot;</code>と「”」が重複しまい、rake generateでエラーになる。  </p>
-<p>結局、Octopress用に再変換する場合には、「hexo-migrator-octopress」でHexo用に変換したものを手作業で  </p>
-<pre><code>title: 畑一面のコスモスはなぜ？
-date: 2014-10-25 15:41:22 +0900
-tags:
-<span class="bullet">- </span>未分類
-<span class="header">- 写真
----</span>
-</code></pre><p>のように変更しておく必要がありそうだ。<br>それにOctopressでcategoriesとtagsを両方使っていた場合は変換後<code>tags:</code>が重複してしまう。  </p>
-<p>それから、Hexoの新規記事ソースはデフォルトでは日付けがつかないが、_config.ymlの<code>new_post_name:</code>で日付けをつけることが出来る。<br>日付けがあった方が同じタイトルの記事を複数書けたり、過去記事編集の際に探し易かったりと、なにかと都合が良い。  </p>
-<p>Octopressの方のファイル拡張子が.markdownではなく.mdなら「Hexo to Octopress Converter」で変換しても日付けが削除されないので、前もって.mdに変えておいた方が良いかもしれない。<br>拡張子が.mdでも<code>tags:</code>は<code>categories:</code>に変換される。  </p>
-<p>拡張子の一括変換は/_postsディレクトリで  </p>
-<pre><code>$ <span class="built_in">rename</span> <span class="string">'s/.markdown/.md/'</span> *.markdown
-</code></pre><p>とするか、ファイルマネージャーThunarを使えば簡単のようだ。  </p>
-<p>ーー<br>（関連記事）<br><a href="/2014/11/25/Hexo-to-Octopress-Converter/">Hexo→Octopress変換スクリプト「Hexo to Octopress Converter」</a></p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/25/hexo-migrator-octopress/" data-text="Octopress→Hexo移行のプラグイン「hexo-migrator-octopress」を試してみた | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -496,35 +530,35 @@ tags:
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>8</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>11</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>58</span></a></li>
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
 			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>58</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
 		
 		
 		</ul>
@@ -537,6 +571,10 @@ tags:
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/05/02/higan/" ><i class="fa fa-file-o"></i>higanでファミコン、スーパーファミコン</a>
+      </li>
     
       <li>
         <a href="/2015/04/21/connection-refused-repo-archlinux-fr/" ><i class="fa fa-file-o"></i>Yaourtのリポジトリに接続を拒否される</a>
@@ -554,10 +592,6 @@ tags:
         <a href="/2015/04/18/pdf-xchange-viewer/" ><i class="fa fa-file-o"></i>PDFファイルの日本語フォント文字化け対策として「Wi...</a>
       </li>
     
-      <li>
-        <a href="/2015/04/17/wine-msfonts/" ><i class="fa fa-file-o"></i>Wineで豆腐状態の文字化け</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -567,7 +601,7 @@ tags:
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Bootstrap | Pagent</title>
+  <title>higanでファミコン、スーパーファミコン | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
@@ -13,7 +13,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
+  <meta property="og:title" content="higanでファミコン、スーパーファミコン"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -85,155 +85,129 @@
 
   <div class="container">
   	<div class="content">
-    	 <!-- tag -->
-<!-- _partial/archive -->
+    	 <!-- post -->
 
 
-<!-- archive.title -->
-<div class="page-header">
-  <h1 class="archive-title-tag archive-title-Bootstrap">Bootstrap</h1>
-</div>
+<!-- _partial/article -->
 
-<div class="row page">
-  <!-- cols -->
-  
-  <div class="col-md-9">
+<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+  <!-- display as page -->
+		<div class="page-header">
+			<h1> higanでファミコン、スーパーファミコン</h1>
+		</div>
 	
 
-	  
-	  <!-- display as list -->
-	  <div class="archive">
+</div>
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div class="col-md-9">
+	
+
+	
+
+	<!-- content -->
+	<div class="mypage">
+	    <p>ファミコン、スーパーファミコンなどのエミュレーターhiganをインストールした。<br>他のエミュレーターと較べても再現性は高いそうだ。  </p>
+<p>実際ゲームをする際はキーボードでは操作しづらいので、<a href="http://buffalo.jp/product/input/gamepad/bsgp801/" target="_blank" rel="external">BUFFALOのUSBゲームパッド</a>を購入した。<br>懐かしいスーファミのコントローラーそっくりで値段も安価。<br>Windows用となっていたがLinuxでも使用出来た。<br>（簡単なのでjoypadをインストールした。）  </p>
+<p>USBポートに挿すとゲームパッド自体は認識しているようだったが、higanで反応しない。<br>入力方法のMappingを設定しないといけないようだ。  </p>
+<p>Setting→Configuration→InputタブでFamicom等のハードを選択。<br>「Up」等の項目をダブルクリックすると入力待機状態に。<br>ゲームパッドの上矢印を押すとそのキーが設定される。<br>Aボタン、Startボタンなども同様に設定。  </p>
+<p>ゲームが出来るようになったが、いつの間にかゲームパッドの操作でマウスポインターも動いてしまうようになった。  </p>
+<p><code>xinput</code>コマンドで見ると、自分の環境ではゲームパッドはid=11に登録されているようだったので、これを無効化した。</p>
+<pre><code><span class="comment">$</span> <span class="comment">xinput</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">disable</span> <span class="comment">11</span>
+</code></pre><p>ただ起動の度に無効化する必要があるようだったので、自動開始アプリケーションにコマンドを登録した。  </p>
+<p>（参照記事）<br><a href="http://nomad-blacky.hatenablog.com/entry/2013/03/21/025253" target="_blank" rel="external">ゲームパッドの操作でマウスポインタが動いてしまう＠Ubuntu - ぶらっ記ぃ</a><br><a href="https://archlinuxjp.kusakata.com/wiki/Xorg?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DXorg_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno#.E5.BF.85.E8.A6.81.E3.81.AB.E5.BF.9C.E3.81.98.E3.81.A6.E5.85.A5.E5.8A.9B.E3.82.BD.E3.83.BC.E3.82.B9.E3.82.92.E6.9C.89.E5.8A.B9.E5.8C.96.E3.83.BB.E7.84.A1.E5.8A.B9.E5.8C.96" target="_blank" rel="external">必要に応じて入力ソースを有効化・無効化 - Xorg - ArchWiki</a></p>
+
+	</div>
+
+	<div class="tweet-button">
+	<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+	<div>
+  	<center>
+	<!-- _partial/post/pagination -->
+<div class="pagination">
+<ul class="pagination">
+	 
 		
-		
-		
-			
-			
-			<h4 class="archive-ul" data-toggle="collapse" data-target="#2014">2014<b class="caret"></b></h4>
-			<ul id="2014" class="collapse in">
-			
-		
-<li class="listing-item">
-  <span class="date_class"> 2014-12-04 </span> &raquo;
-  
-  <span class="title"><a href="/2014/12/04/bootstrap-in-page-anchor-link/" >Bootstrapでページ内リンク先がナビゲーションバーに隠れる</a></span>
-  
-</li>
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		
-<li class="listing-item">
-  <span class="date_class"> 2014-12-01 </span> &raquo;
-  
-  <span class="title"><a href="/2014/12/01/hexo-bootstrap/" >HexoのテーマをBootstrap準拠のFreewillにした</a></span>
-  
-</li>
-
+		   <li class="next"><a href="/2015/04/21/connection-refused-repo-archlinux-fr/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+        
+	
 </ul>
 </div>
 
+  	</center>
+	</div>
 
-</div> <!-- col-md-9/col-md-12 -->
+	<!-- comment -->
+	<!-- _partial/post/comment -->
+
+<section id="comment">
+  <h2 class="title">Comments</h2>
+
+  
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  
+</section>
 
 
-<!-- _partial/sidebar -->
-<div class="col-md-3">
-	<div id="sidebar">
+
+	</div> <!-- col-md-9/col-md-12 -->
+
 	
-			<!-- _widget/category -->
+		<!-- _partial/post/meta -->
+<div class="col-md-3"> 
 
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2015年5月2日
+	</div>
+	
 
-		
-			<!-- _widget/tagcloud -->
+	<!-- categories -->
+    
 
-	<div class="widget">
-		<h4>Tag Cloud</h4>
-		<ul class="tag_box inline list-unstyled">
-		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>8</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>58</span></a></li>
-		
-		
-		</ul>
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>
+    <ul id="tags" class="tag_box list-unstyled collapse in">
+	    <!-- _partial/post/tag -->
+  
+  <li><a href="/tags/ユーティリティ/">ユーティリティ</a></li>
+
+    </ul>
+	</div>
+	
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
 	</div>
 
+    <hr>
 
-		
-			<!-- _widget/recent_posts -->
+</div><!-- col-md-3 -->
 
-<div class="widget">
-  <h4>Recent Posts</h4>
-  <ul class="entry list-unstyled">
-    
-      <li>
-        <a href="/2015/05/02/higan/" ><i class="fa fa-file-o"></i>higanでファミコン、スーパーファミコン</a>
-      </li>
-    
-      <li>
-        <a href="/2015/04/21/connection-refused-repo-archlinux-fr/" ><i class="fa fa-file-o"></i>Yaourtのリポジトリに接続を拒否される</a>
-      </li>
-    
-      <li>
-        <a href="/2015/04/20/jd-problem-after-archlinux-upgrade/" ><i class="fa fa-file-o"></i>Arch Linuxアップグレード後JDが起動出来ない</a>
-      </li>
-    
-      <li>
-        <a href="/2015/04/19/paccache-pkgcacheclean/" ><i class="fa fa-file-o"></i>不要なパッケージキャッシュの削除。paccacheとp...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/04/18/pdf-xchange-viewer/" ><i class="fa fa-file-o"></i>PDFファイルの日本語フォント文字化け対策として「Wi...</a>
-      </li>
-    
-  </ul>
-</div>
+	
 
-
-		
-			
-	<div class="widget">
-		<h4>Monthly Archives</h4>
-		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
-		</ul>
-	</div>
-
-		
-			<!-- _widget/links -->
-
-
-		
-	</div> <!-- sidebar -->
-</div> <!-- col-md-3 -->
-
-
-</div>
+</div><!-- row -->
 
 
 	</div>
@@ -270,7 +244,7 @@ var disqus_shortname = 'pagents';
   var dsq = document.createElement('script');
   dsq.type = 'text/javascript';
   dsq.async = true;
-  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 }());
 </script>

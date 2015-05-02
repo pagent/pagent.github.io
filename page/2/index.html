@@ -114,6 +114,49 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/04/17/wine-msfonts/" >Wineで豆腐状態の文字化け</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年4月17日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Wineでアプリケーションをインストールしようとしたら、豆腐状態に文字化けしていた。<br>どうやらMSフォントが入っていないためらしい。<br><a href="https://archlinuxjp.kusakata.com/wiki/Wine#.E3.83.95.E3.82.A9.E3.83.B3.E3.83.88" target="_blank" rel="external">Wine - ArchWiki</a>  </p>
+<p>Windowsのパーティションを/mnt/win7にマウントしていたので、  シンボリックリンクを張り、fontconfig のキャッシュを再生成した。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> ln <span class="operator">-s</span> /mnt/win7/Windows/Fonts /usr/share/fonts/WindowsFonts</div><div class="line">$ <span class="built_in">sudo</span> fc-cache</div></pre></td></tr></table></figure>
+
+<p><a href="https://archlinuxjp.kusakata.com/wiki/MS_%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88" target="_blank" rel="external">MS フォント - ArchWiki</a>  </p>
+<p>Wineの文字化けは直ったが、今度はRetextやxfce4-terminalでのフォントがおかしくなってしまった。<br>明朝体のようになり、文字が薄く、また「、」や「。」が中央の高さに表示されてしまう。  </p>
+<p>シンボリックリンクを削除し、/usr/share/fonts/（もしくは~/.local/share/fonts/）にWindowsFontsフォルダを作成。<br>Windowsからmsgothic.ttcのみをコピーしたら良い具合になった。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/17/wine-msfonts/" data-text="Wineで豆腐状態の文字化け | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/04/16/nemo-action-shred/" >nemoの右クリックメニューに「完全消去」を追加</a>
 		</h3>
 	
@@ -317,47 +360,6 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/04/03/nemo-open-in-terminal/" >nemoの「端末で開く」が機能しない</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年4月3日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Arch Linuxにインストールしたnemoで右クリックメニューの「端末で開く」が機能しなかった。  </p>
-<p><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>を参考に、  </p>
-<pre><code>$ gsettings <span class="operator"><span class="keyword">set</span> org.cinnamon.desktop.<span class="keyword">default</span>-applications.terminal <span class="keyword">exec</span> xfce4-terminal</span>
-</code></pre><p>を実行したら機能するようになった。  </p>
-<p>「端末で開く」で起動するターミナルエミュレーターを変更したい時も同様に端末名を指定すれば良いようだ。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/03/nemo-open-in-terminal/" data-text="nemoの「端末で開く」が機能しない | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -402,35 +404,35 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>7</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
 		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>58</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>8</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
 			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>58</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
 		
 		</ul>
@@ -443,6 +445,10 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/05/02/higan/" ><i class="fa fa-file-o"></i>higanでファミコン、スーパーファミコン</a>
+      </li>
     
       <li>
         <a href="/2015/04/21/connection-refused-repo-archlinux-fr/" ><i class="fa fa-file-o"></i>Yaourtのリポジトリに接続を拒否される</a>
@@ -460,10 +466,6 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
         <a href="/2015/04/18/pdf-xchange-viewer/" ><i class="fa fa-file-o"></i>PDFファイルの日本語フォント文字化け対策として「Wi...</a>
       </li>
     
-      <li>
-        <a href="/2015/04/17/wine-msfonts/" ><i class="fa fa-file-o"></i>Wineで豆腐状態の文字化け</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -473,7 +475,7 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
