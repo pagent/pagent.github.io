@@ -114,6 +114,46 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/04/18/pdf-xchange-viewer/" >PDFファイルの日本語フォント文字化け対策として「Wine」+「PDF-XChange Viewer」</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年4月18日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Ubuntu標準のPDFビューアEvinceで、日本語のフォントが表示されなかったり、文字化けしたりしていた。<br>poppler-dataをインストールしたり、fonts.confファイルを作成してみたが、正常に表示されない。<br>Evinceを諦めてOkular、Xpdf、ePDFviewer、qpdfviewなど試してみたが、やはり駄目。  </p>
+<p>日本語フォントが文字化けするのは、該当のPDFファイルに日本語フォントが埋め込まれていないのが原因のようだ。<br>それでも代替フォントがちゃんと利用されていれば正常に表示されるのだと思うが、その設定が上手く行かない。  </p>
+<p>FirefoxまたはLibreOffice Drawならちゃんと表示されるが、PDFビューアとしての使い勝手は良くない。  </p>
+<p>そこで、Windowsで使っていたPDF-XChange Viewer（無料体験版）をWineでインストールしたら、文字化け無しにちゃんと表示された。<br>無料版でも多機能だし、けっこう便利だ。<br>初回起動時には少々もたつくが、デフォルトで使うのではなく文字化けした時の緊急用として使う分には、申し分無い。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/18/pdf-xchange-viewer/" data-text="PDFファイルの日本語フォント文字化け対策として「Wine」+「PDF-XChange Viewer」 | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/04/17/wine-msfonts/" >Wineで豆腐状態の文字化け</a>
 		</h3>
 	
@@ -311,55 +351,6 @@
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/04/03/nemo-compare-failed/" >nemo-compareが動かない</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年4月3日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>nemoの右クリックで２つのファイル（フォルダ）の内容を比較出来るnemo-compareをインストールした。<br>yaourtでインストール出来たが、右クリックのメニューに「compare」が出てこない。<br>検索すると同様の事例が見つかった。  </p>
-<p><a href="https://github.com/linuxmint/nemo-extensions/issues/24" target="_blank" rel="external">nemo-compare not in the right-click context menu · Issue #24 · linuxmint/nemo-extensions · GitHub</a>  </p>
-<p><a href="https://github.com/linuxmint/nemo-extensions/issues/18#issuecomment-21617918" target="_blank" rel="external">Symbolic link needed in LMDE 64-bit · Issue #18 · linuxmint/nemo-extensions · GitHub</a>  </p>
-<p>上記トピックを参考にnemoを再起動してみると、確かにシンボリックリンクが存在しないのが原因のようだった。</p>
-<pre><code>$ nemo -q &amp;&amp; nemo
-
-(nemo:<span class="number">6939</span>): Nemo-Python-WARNING **: g_module_open libpython failed: /usr/lib/i386-linux-gnu<span class="comment">//libpython2.7.so.1.0: 共有オブジェクトファイルを開けません: そのようなファイルやディレクトリはありません</span>
-ImportError: could not <span class="keyword">import</span> g<span class="class"><span class="keyword">object</span> <span class="params">(error was: '/usr/lib/python2.7/site-packages/gi/_gi.so: undefined symbol: _Py_ZeroStruct')</span></span>
-
-(nemo:<span class="number">6939</span>): Nemo-Python-WARNING **: pyg<span class="class"><span class="keyword">object</span> <span class="title">initialization</span> <span class="title">failed</span></span>
-</code></pre><p>だが、これを修正するリンクの作成が上手く行かない。<br>共有オブジェクトファイルのパスでスラッシュが２つ重なり<code>//</code>となっている箇所があるのも奇妙。<br>yaourtでのビルド中、”/usr/lib/yaourt/util.sh: 行 197: PKGBUILD: コマンドが見つかりません”と表示されていたのが関係しているのだろうか。  </p>
-<p>ArchWikiによると、右クリックメニューに「比較する」を追加するのは手動でも可能のようだったので、nemo-compareは断念し、手動で導入することにした。 </p>
-<p><a href="http://pagent.github.io/2015/04/03/nemo-compare-action/" target="_blank" rel="external">nemoの右クリックメニューに「比較」を追加</a></p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/03/nemo-compare-failed/" data-text="nemo-compareが動かない | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -404,35 +395,35 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>8</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>11</span></a></li>
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
 			<li><a href="/tags/Linux/">Linux<span>58</span></a></li>
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>11</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>8</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 		
 		</ul>
@@ -445,6 +436,10 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/05/09/firefox-yahoo-search/" ><i class="fa fa-file-o"></i>FirefoxにYahoo! JAPANの検索エンジン...</a>
+      </li>
     
       <li>
         <a href="/2015/05/02/higan/" ><i class="fa fa-file-o"></i>higanでファミコン、スーパーファミコン</a>
@@ -462,10 +457,6 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
         <a href="/2015/04/19/paccache-pkgcacheclean/" ><i class="fa fa-file-o"></i>不要なパッケージキャッシュの削除。paccacheとp...</a>
       </li>
     
-      <li>
-        <a href="/2015/04/18/pdf-xchange-viewer/" ><i class="fa fa-file-o"></i>PDFファイルの日本語フォント文字化け対策として「Wi...</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -475,7 +466,7 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

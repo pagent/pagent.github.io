@@ -114,6 +114,61 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/03/14/hexo-283-install/" >Hexo 2.8.3をインストール</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年3月14日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>XubuntuでHexoを使っていたが、Arch Linuxにもインストールした。<br>いつの間にかHexoのバージョンが上がっていたようで、Arch LinuxにはHexo 3.0.0がインストールされた。  </p>
+<p>CLIがメインモジュールから分離されたりと、かなり大幅な変更があるようだ。<br><a href="https://github.com/hexojs/hexo/wiki/Breaking-Changes-in-Hexo-3.0" target="_blank" rel="external">Breaking Changes in Hexo 3.0 · hexojs/hexo Wiki</a><br>サーバー機能もHexo本体とは別になっていて、hexo-serverをインストールしないと<code>hexo server</code>コマンドが使えない。  </p>
+<p>XubuntuのHexo 2.8.3をアップグレードして、これまでの作業フォルダ（WindowsのDドライブに置いてある）を使おうと思ったが、Hexo 3へのアップグレードがうまく行かない。  </p>
+<p>そこでArch Linuxにも旧バージョンのHexo 2.8.3をインストールすることにした。  </p>
+<p>Hexoの公式サイトには旧バージョンのインストール方法が見あたらなかったが、幸い検索で見つかった。<br>下記コマンドで良いようだ。  </p>
+<pre><code><span class="variable">$ </span>npm install hexo<span class="variable">@2</span>.<span class="number">8.3</span> -g
+</code></pre><p><a href="http://sandylaw.tk/2015/03/07/hexo3to2/" target="_blank" rel="external">Hexo降级 3.0 to 2.8 | Sandy’s Blog</a>  </p>
+<p>Hexo 3はCLIが分離されてロードがさらに早くなったりといろいろ機能が進化しているようだが、旧バージョンでも特に不満は無いし、当面はこのままHexo 2.8.3を使う予定。  </p>
+<p>アップグレードにはまた今度挑戦してみようと思う。  </p>
+<p>ーー<br>（追記）<br>Hexo 2.8.3の元で<code>hexo init blog-name</code>によりブログを新規作成した場合、<code>npm install</code>の後実際Hexoを使おうとすると、コマンドがことごとく下記のようなエラーになる。  </p>
+<pre><code>$ hexo server
+[error] HexoError: Process failed: _posts/hello-world.md
+TypeError: Cannot read property <span class="string">'config'</span> of null
+at <span class="keyword">...</span>
+</code></pre><p><code>npm install</code>でインストールされるhexo-renderer-markedとhexo-renderer-stylusのバージョンが0.2の為らしい。<br>バージョン0.1をインストールするとエラー無しに動作した。  </p>
+<pre><code><span class="variable">$ </span>npm install hexo-renderer-marked<span class="variable">@0</span>.<span class="number">1</span> --save
+
+<span class="variable">$ </span>npm install hexo-renderer-stylus<span class="variable">@0</span>.<span class="number">1</span> --save
+</code></pre><p><a href="https://github.com/hexojs/hexo/issues/1094#issuecomment-77796845" target="_blank" rel="external">“hexo server” not work · Issue #1094 · hexojs/hexo</a></p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/14/hexo-283-install/" data-text="Hexo 2.8.3をインストール | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/03/14/truecrypt-already-running/" >TrueCryptを起動しようとすると&quot;TrueCrypt is already running&quot;と表示される</a>
 		</h3>
 	
@@ -290,48 +345,6 @@ sleep <span class="number">3</span>
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/03/08/xfce-icon-theme/" >Xfceに新しいアイコンテーマをインストール</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年3月8日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Arch LinuxのXfceのアイコンがgnomeで少しやぼったい感じだったので、新しいアイコンを入れた。  </p>
-<p>アイコンは下記サイトでダウンロード数が一番多かったMistにした。<br><a href="http://xfce-look.org/index.php?xsortmode=high&amp;page=0&amp;xcontentmode=430" target="_blank" rel="external">Eyecandy for your Xfce-Desktop - Xfce-Look.org</a>  </p>
-<p>ダウンロードしたファイルを展開し、出て来たMistフォルダを/usr/share/iconsに移動。<br>だがこれだけでは「設定」→「外観」→「アイコン」に表示されない。<br>アイコンテーマ毎にキャッシュファイルを生成しないといけないようだ。<br><a href="http://docs.xfce.org/xfce/xfce4-settings/4.10/appearance#icon_cache" target="_blank" rel="external">xfce:xfce4-settings:4.10:appearance [Xfce Docs]</a>    </p>
-<p>端末でコマンドを入力しキャッシュファイルを生成。  </p>
-<pre><code>sudo gtk-<span class="operator"><span class="keyword">update</span>-icon-<span class="keyword">cache</span> /usr/<span class="keyword">share</span>/icons/Mist</span>
-</code></pre><p>アイコンの設定に表示され、選択可能になった。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/08/xfce-icon-theme/" data-text="Xfceに新しいアイコンテーマをインストール | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -376,33 +389,33 @@ sleep <span class="number">3</span>
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>58</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>8</span></a></li>
-		
 			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>58</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>11</span></a></li>
+		
 			<li><a href="/tags/Git/">Git<span>11</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>8</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
@@ -417,6 +430,10 @@ sleep <span class="number">3</span>
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/05/09/firefox-yahoo-search/" ><i class="fa fa-file-o"></i>FirefoxにYahoo! JAPANの検索エンジン...</a>
+      </li>
     
       <li>
         <a href="/2015/05/02/higan/" ><i class="fa fa-file-o"></i>higanでファミコン、スーパーファミコン</a>
@@ -434,10 +451,6 @@ sleep <span class="number">3</span>
         <a href="/2015/04/19/paccache-pkgcacheclean/" ><i class="fa fa-file-o"></i>不要なパッケージキャッシュの削除。paccacheとp...</a>
       </li>
     
-      <li>
-        <a href="/2015/04/18/pdf-xchange-viewer/" ><i class="fa fa-file-o"></i>PDFファイルの日本語フォント文字化け対策として「Wi...</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -447,7 +460,7 @@ sleep <span class="number">3</span>
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

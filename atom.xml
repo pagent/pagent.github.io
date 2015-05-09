@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-05-02T05:10:52.067Z</updated>
+  <updated>2015-05-09T10:51:29.064Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,13 +15,32 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[FirefoxにYahoo! JAPANの検索エンジンが見当たらない]]></title>
+    <link href="http://pagent.github.io/2015/05/09/firefox-yahoo-search/"/>
+    <id>http://pagent.github.io/2015/05/09/firefox-yahoo-search/</id>
+    <published>2015-05-09T10:30:58.000Z</published>
+    <updated>2015-05-09T10:50:54.857Z</updated>
+    <content type="html"><![CDATA[<p>Firefoxを更新して以降、検索窓でのYahoo!検索が<code>search.yahoo.co.jp</code>ではなく、<code>search.yahoo.com</code>になってしまっている。<br>「検索設定を変更」→「検索エンジンを追加…」から探してみても、Yahoo! Vietnam、Yahoo! India、Yahoo! Canada、またYahoo Japan! Mail Notifierなどはあるが、Yahoo! JAPANの検索エンジンが見つからない。  </p>
+<p><a href="https://addons.mozilla.org/ja/firefox/addon/yahoo%E5%8F%B3%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E6%A4%9C%E7%B4%A2%E3%82%A2%E3%82%B7%E3%82%B9%E3%83%88/?src=search" target="_blank" rel="external">「Yahoo!右クリック検索アシスト」</a>というアドオンがあるようだったので入れてみた。  </p>
+<p>表示ページで文言を選択、右クリックするとメニューの一番下に「Yahooで検索」が追加された。<br>デフォルトの検索エンジンでの検索メニューもちゃんとある。  </p>
+<p>少し不便ではあるが、わざわざYahoo! JAPANのサイトに行くよりは手間が省ける。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Firefoxを更新して以降、検索窓でのYahoo!検索が<code>search.yahoo.co.jp</code>ではなく、<code>search.yahoo.com</code>になってしまっている。<br>「検索設定を変更」→「検索エンジンを追加…」から探してみ]]>
+    </summary>
+    
+      <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[higanでファミコン、スーパーファミコン]]></title>
     <link href="http://pagent.github.io/2015/05/02/higan/"/>
     <id>http://pagent.github.io/2015/05/02/higan/</id>
     <published>2015-05-02T04:36:54.000Z</published>
-    <updated>2015-05-02T05:10:25.926Z</updated>
+    <updated>2015-05-09T10:10:17.412Z</updated>
     <content type="html"><![CDATA[<p>ファミコン、スーパーファミコンなどのエミュレーターhiganをインストールした。<br>他のエミュレーターと較べても再現性は高いそうだ。  </p>
-<p>実際ゲームをする際はキーボードでは操作しづらいので、<a href="http://buffalo.jp/product/input/gamepad/bsgp801/" target="_blank" rel="external">BUFFALOのUSBゲームパッド</a>を購入した。<br>懐かしいスーファミのコントローラーそっくりで値段も安価。<br>Windows用となっていたがLinuxでも使用出来た。<br>（簡単なのでjoypadをインストールした。）  </p>
+<p>実際ゲームをする際はキーボードでは操作しづらいので、BUFFALOのUSBゲームパッド<a href="http://buffalo.jp/product/input/gamepad/bsgp801/" target="_blank" rel="external">BSGP801</a>を購入した。<br>懐かしいスーファミのコントローラーそっくりで値段も安価。<br>Windows用となっていたがLinuxでも使用出来た。<br>（簡単なのでjoypadをインストールした。）  </p>
 <p>USBポートに挿すとゲームパッド自体は認識しているようだったが、higanで反応しない。<br>入力方法のMappingを設定しないといけないようだ。  </p>
 <p>Setting→Configuration→InputタブでFamicom等のハードを選択。<br>「Up」等の項目をダブルクリックすると入力待機状態に。<br>ゲームパッドの上矢印を押すとそのキーが設定される。<br>Aボタン、Startボタンなども同様に設定。  </p>
 <p>ゲームが出来るようになったが、いつの間にかゲームパッドの操作でマウスポインターも動いてしまうようになった。  </p>
@@ -32,7 +51,7 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<p>ファミコン、スーパーファミコンなどのエミュレーターhiganをインストールした。<br>他のエミュレーターと較べても再現性は高いそうだ。  </p>
-<p>実際ゲームをする際はキーボードでは操作しづらいので、<a href="http://buffalo.jp/produc]]>
+<p>実際ゲームをする際はキーボードでは操作しづらいので、BUFFALOのUSBゲームパッド<a href="http://]]>
     </summary>
     
       <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
@@ -540,41 +559,6 @@ x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firef
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hexo 2.8.3をインストール]]></title>
-    <link href="http://pagent.github.io/2015/03/14/hexo-283-install/"/>
-    <id>http://pagent.github.io/2015/03/14/hexo-283-install/</id>
-    <published>2015-03-14T13:33:52.000Z</published>
-    <updated>2015-03-17T12:33:59.685Z</updated>
-    <content type="html"><![CDATA[<p>XubuntuでHexoを使っていたが、Arch Linuxにもインストールした。<br>いつの間にかHexoのバージョンが上がっていたようで、Arch LinuxにはHexo 3.0.0がインストールされた。  </p>
-<p>CLIがメインモジュールから分離されたりと、かなり大幅な変更があるようだ。<br><a href="https://github.com/hexojs/hexo/wiki/Breaking-Changes-in-Hexo-3.0" target="_blank" rel="external">Breaking Changes in Hexo 3.0 · hexojs/hexo Wiki</a><br>サーバー機能もHexo本体とは別になっていて、hexo-serverをインストールしないと<code>hexo server</code>コマンドが使えない。  </p>
-<p>XubuntuのHexo 2.8.3をアップグレードして、これまでの作業フォルダ（WindowsのDドライブに置いてある）を使おうと思ったが、Hexo 3へのアップグレードがうまく行かない。  </p>
-<p>そこでArch Linuxにも旧バージョンのHexo 2.8.3をインストールすることにした。  </p>
-<p>Hexoの公式サイトには旧バージョンのインストール方法が見あたらなかったが、幸い検索で見つかった。<br>下記コマンドで良いようだ。  </p>
-<pre><code><span class="variable">$ </span>npm install hexo<span class="variable">@2</span>.<span class="number">8.3</span> -g
-</code></pre><p><a href="http://sandylaw.tk/2015/03/07/hexo3to2/" target="_blank" rel="external">Hexo降级 3.0 to 2.8 | Sandy’s Blog</a>  </p>
-<p>Hexo 3はCLIが分離されてロードがさらに早くなったりといろいろ機能が進化しているようだが、旧バージョンでも特に不満は無いし、当面はこのままHexo 2.8.3を使う予定。  </p>
-<p>アップグレードにはまた今度挑戦してみようと思う。  </p>
-<p>ーー<br>（追記）<br>Hexo 2.8.3の元で<code>hexo init blog-name</code>によりブログを新規作成した場合、<code>npm install</code>の後実際Hexoを使おうとすると、コマンドがことごとく下記のようなエラーになる。  </p>
-<pre><code>$ hexo server
-[error] HexoError: Process failed: _posts/hello-world.md
-TypeError: Cannot read property <span class="string">'config'</span> of null
-at <span class="keyword">...</span>
-</code></pre><p><code>npm install</code>でインストールされるhexo-renderer-markedとhexo-renderer-stylusのバージョンが0.2の為らしい。<br>バージョン0.1をインストールするとエラー無しに動作した。  </p>
-<pre><code><span class="variable">$ </span>npm install hexo-renderer-marked<span class="variable">@0</span>.<span class="number">1</span> --save
-
-<span class="variable">$ </span>npm install hexo-renderer-stylus<span class="variable">@0</span>.<span class="number">1</span> --save
-</code></pre><p><a href="https://github.com/hexojs/hexo/issues/1094#issuecomment-77796845" target="_blank" rel="external">“hexo server” not work · Issue #1094 · hexojs/hexo</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>XubuntuでHexoを使っていたが、Arch Linuxにもインストールした。<br>いつの間にかHexoのバージョンが上がっていたようで、Arch LinuxにはHexo 3.0.0がインストールされた。  </p>
-<p>CLIがメインモジュールから分離されたりと、]]>
-    </summary>
-    
-      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
   </entry>
   

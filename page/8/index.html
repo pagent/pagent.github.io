@@ -114,6 +114,54 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/02/20/usb-multiboot-2nd-partition/" >USBメモリの第2パーティションからisoファイルをマルチブート</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月20日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>USBメモリからPuppy LinuxとClonezillaの両方を起動出来たら、便利そうだ。<br>GpartedとClonezillaの両方を同梱したLive CDがあればいいが、そういうのが見つからない。<br>かつてはGParted-Clonezilla LiveCDというのがあったようだが、既に開発終了してしまっているようだ。  </p>
+<p>複数のisoファイルをUSBメモリ起動させるツールはいくつかあるようだったが、Windows用のXBOOTというのがサイズがコンパクトで手軽。使い勝手も良かった。  </p>
+<p>XBOOTで唯一の不満は、isoファイルをUSBメモリの2番目以降のパーティションにインストール出来ないこと。<br>やはりパーティションは分けた方がデータを整理しやすい。<br>Windowsでは1番目のパーティションしか見えないので、データの保存は第1パーティション、isoファイルの起動は第2パーティションにしたいところ。  </p>
+<p>XBOOTでいったん先頭のパーティション（sdb1）にPuppyとClonezillaのisoファイルをインストール。<br>その後そのデータを第2パーティション（sdb2）にコピー。<br>だが、これではUSBが起動しなくなってしまうので、syslinuxとMBRを再度インストールする必要があった。  </p>
+<p>下記サイトからsyslinuxの圧縮ファイルをダウンロード。<br>（syslinux-4.04を用いたが、現時点での最新版はsyslinux-6.03のよう）<br><a href="https://www.kernel.org/pub/linux/utils/boot/syslinux/" target="_blank" rel="external">Index of /pub/linux/utils/boot/syslinux</a>  </p>
+<p>syslinux-4.04.tar.bz2を解凍。syslinux-4.04/linuxフォルダ内で端末を開き、下記コマンドでsdb2（環境によってはsdc2など）にsyslinuxをインストール。  </p>
+<pre><code>syslinux <span class="regexp">/dev/</span>sdb2
+</code></pre><p>さらにsdbにMBRを再インストール。  </p>
+<pre><code>dd <span class="variable">bs=</span><span class="number">440</span> <span class="variable">count=</span><span class="number">1</span> <span class="variable">conv=</span>notrunc <span class="variable">if=</span>~/Desktop/syslinux-<span class="number">4.04</span>/mbr/mbr.bin <span class="variable">of=</span>/dev/sdb
+</code></pre><p>（デスクトップ上で解凍したので上記のパスになっているが、if=やof=以下のパスは状況に応じて。）  </p>
+<p>USBメモリの2番目のパーティションsdb2から起動出来るようになった。  </p>
+<p>ーー<br>（参照記事）<br><a href="http://www.server-world.info/query?os=Other&amp;p=knoppix&amp;f=2" target="_blank" rel="external">KNOPPIX - 複数パーティション構成のUSBメモリから起動する ： Server World</a><br><a href="https://wiki.archlinux.org/index.php/Syslinux_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29#.E6.89.8B.E5.8B.95.E3.82.A4.E3.83.B3.E3.82.B9.E3.83.88.E3.83.BC.E3.83.AB" target="_blank" rel="external">Syslinux (日本語) - ArchWiki</a></p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/20/usb-multiboot-2nd-partition/" data-text="USBメモリの第2パーティションからisoファイルをマルチブート | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/02/17/github-pages-redirect/" >GitHub Pagesのブログでリダイレクト「hexo-generator-alias」</a>
 		</h3>
 	
@@ -287,49 +335,6 @@
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/02/11/kubuntu-blanck-screen/" >Kubuntu14.04で画面が真っ暗</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年2月11日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>ネットブックLavie LiteにインストールしたKubuntu。<br>新しいkernelだとディスプレイや無線LANに不具合が出るので、旧kernelを使うため、12.04から14.04にアップグレードしたもの。<br>アップグレード後いったんは正常にログイン出来たが、その後再度起動すると、ログイン後に画面が真っ暗になり、マウスポインターのみが表示されている状態になってしまった。<br>左上の隅にポインターを合わせると青く光る。<br>（なぜかGuestアカウントではデスクトップが表示される。）  </p>
-<p>検索すると似たような事例が多く見つかった。  </p>
-<p><a href="https://forums.ubuntulinux.jp/viewtopic.php?id=5996" target="_blank" rel="external">Ubuntu日本語フォーラム / KDEログアウト後に画面が真っ暗になり操作不能</a><br><a href="http://192168111.blog71.fc2.com/category1-1.html" target="_blank" rel="external">俺の覚書 Linux/Unix</a><br><a href="https://www.kubuntuforums.net/showthread.php?66592-Black-screen-after-login&amp;p=360188&amp;viewfull=1#post360188" target="_blank" rel="external">[DESKTOP] Black screen after login - Kubuntu Forums</a>  </p>
-<p>「CTRL」+「ALT」+「F2」でコンソール画面に行き、ディスプレイマネージャーをkdmからgdmに変える方法、<code>sudo apt-get update</code>、<code>sudo apt-get upupgrade</code>する方法、また自分のホームディレクトリの.kdmをリネームして新規に生成させる方法など試してみたが、どれも効果なし。<br>コマンドに不慣れで、/ver/log以下のログを確認するのも上手く行かない。  </p>
-<p>諦めかけたが、KDEならショートカットキーで出し入れ出来る端末エミュレーターYakuakeがインストールされているのではないかと思い、Yakuakeで<code>xrandr</code>コマンドを使えばディスプレイの状態を確認出来るかと、真っ暗な画面で「F12」キーを押してみた。  </p>
-<p>するとデスクトップが現れた。<br>Kubuntu12.04の時と違い、ディスプレイの小さな端末向けのUnityみたいに画面だが。<br>（Yakuakeはインストールされていないのか、出て来なかった。）  </p>
-<p>なぜ復活したのかはまったく謎。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/11/kubuntu-blanck-screen/" data-text="Kubuntu14.04で画面が真っ暗 | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -374,25 +379,19 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>10</span></a></li>
+			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>11</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>58</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>8</span></a></li>
-		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
 			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
@@ -400,9 +399,15 @@
 		
 			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>8</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>58</span></a></li>
 		
 		
 		</ul>
@@ -415,6 +420,10 @@
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/05/09/firefox-yahoo-search/" ><i class="fa fa-file-o"></i>FirefoxにYahoo! JAPANの検索エンジン...</a>
+      </li>
     
       <li>
         <a href="/2015/05/02/higan/" ><i class="fa fa-file-o"></i>higanでファミコン、スーパーファミコン</a>
@@ -432,10 +441,6 @@
         <a href="/2015/04/19/paccache-pkgcacheclean/" ><i class="fa fa-file-o"></i>不要なパッケージキャッシュの削除。paccacheとp...</a>
       </li>
     
-      <li>
-        <a href="/2015/04/18/pdf-xchange-viewer/" ><i class="fa fa-file-o"></i>PDFファイルの日本語フォント文字化け対策として「Wi...</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -445,7 +450,7 @@
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
