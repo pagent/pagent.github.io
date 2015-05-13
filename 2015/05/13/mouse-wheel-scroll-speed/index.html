@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>FirefoxにYahoo! JAPANの検索エンジンが見当たらない | Pagent</title>
+  <title>imwheelでマウスホイールのスクロール移動量（スピード）を大きく | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
@@ -13,7 +13,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="FirefoxにYahoo! JAPANの検索エンジンが見当たらない"/>
+  <meta property="og:title" content="imwheelでマウスホイールのスクロール移動量（スピード）を大きく"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -96,7 +96,7 @@
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> FirefoxにYahoo! JAPANの検索エンジンが見当たらない</h1>
+			<h1> imwheelでマウスホイールのスクロール移動量（スピード）を大きく</h1>
 		</div>
 	
 
@@ -112,11 +112,21 @@
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>Firefoxを更新して以降、検索窓でのYahoo!検索がsearch.yahoo.co.jpではなく、search.yahoo.comになってしまっている。<br>「検索設定を変更」→「検索エンジンを追加…」から探してみても、Yahoo! Vietnam、Yahoo! India、Yahoo! Canada、またYahoo Japan! Mail Notifierなどはあるが、Yahoo! JAPANの検索エンジンが見つからない。  </p>
-<p><a href="https://addons.mozilla.org/ja/firefox/addon/yahoo%E5%8F%B3%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E6%A4%9C%E7%B4%A2%E3%82%A2%E3%82%B7%E3%82%B9%E3%83%88/?src=search" target="_blank" rel="external">「Yahoo!右クリック検索アシスト」</a>というアドオンがあるようだったので入れてみた。  </p>
-<p>表示ページで文言を選択、右クリックするとメニューの一番下に「Yahooで検索」が追加された。<br>デフォルトの検索エンジンでの検索メニューもちゃんとある。  </p>
-<p>少し不便ではあるが、わざわざYahoo! JAPANのサイトに行くよりは手間が省ける。</p>
-<p>ーー<br>（追記）<br>アドオンをインストールすると、ツールバーにYahoo Japan!へのリンクが追加されてしまったので、これは隠すようにした。</p>
+	    <p>Linuxでマウスホイールでのスクロール移動量（スピード）が小さく疲れるので、大きくした。  </p>
+<p>まず下記記事を参考に、xorgの設定で試みた。<br><a href="http://ishikuro.hateblo.jp/entry/2013/12/08/190527" target="_blank" rel="external">Linuxでマウスホイール移動量調整 - ishn’s diary</a>  </p>
+<p><code>xinput</code>コマンドで確認すると、USB Optical Mouseはid=12だったので、</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ xinput <span class="keyword">set</span>-prop <span class="string">'12'</span> <span class="string">'Evdev Wheel Emulation Inertia'</span> <span class="number">200</span></div></pre></td></tr></table></figure>
+
+<p><code>xinput list-props 12</code>で確認すると、確かにEvdev Wheel Emulation Inertiaの値は200になっているのだが、スクロール量に変化がない。<br>USBマウスを抜き差ししても変化なし。<br>移動の上下の向きなどは反映されるのだが、スクロール量はxinputでは設定出来ないらしい。  </p>
+<p>Firefoxのみで良いなら、about:configでmousewheel.default.delta_multiplier_yの値を変更すれば良いようだ。<br><a href="http://blog.ueshu.net/it/2013/06/19/1769.html" target="_blank" rel="external">ubuntuのFirefoxのマウスホイールのスクロール速度を変更する</a>  </p>
+<p>だが他のアプリケーションでもスクロール量を変更したかったので、imwheelを導入した。<br>Arch Linuxの場合はAURなので、Yaourtでインストール。</p>
+<p>~/.imwheelrcファイルを作成し、下記内容で保存。</p>
+<figure class="highlight plain"><figcaption><span>.imwheelrc</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">".*"</div><div class="line">None,      Up,   Button4, 3</div><div class="line">None,      Down, Button5, 3</div></pre></td></tr></table></figure>
+
+<p>「Up,   Button4」、「Down, Button5」の値で変更出来る。<br>「3」で設定したが、デフォルトの値は「1」のよう。  </p>
+<p><code>imwheel</code>コマンドを実行すると反映された。<br>（リスタートは<code>killall imwheel &amp;&amp; imwheel</code>）  </p>
+<p>コマンド<code>imwheel</code>を自動開始アプリケーションに登録して完了。  </p>
+<p>（参照記事）<br><a href="http://askubuntu.com/questions/285689/increase-mouse-wheel-scroll-speed" target="_blank" rel="external">Increase mouse wheel scroll speed - Ask Ubuntu</a><br><a href="https://wiki.archlinux.org/index.php/Imwheel" target="_blank" rel="external">imwheel - ArchWiki</a></p>
 
 	</div>
 
@@ -132,13 +142,13 @@
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2015/05/13/mouse-wheel-scroll-speed/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2015/05/02/higan/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2015/05/09/firefox-yahoo-search/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -172,7 +182,7 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2015年5月9日
+	2015年5月13日
 	</div>
 	
 
@@ -186,7 +196,7 @@
     <ul id="tags" class="tag_box list-unstyled collapse in">
 	    <!-- _partial/post/tag -->
   
-  <li><a href="/tags/ブラウザ/">ブラウザ</a></li>
+  <li><a href="/tags/Linux/">Linux</a></li>
 
     </ul>
 	</div>

@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-05-09T15:40:19.547Z</updated>
+  <updated>2015-05-13T01:14:09.653Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,37 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[imwheelでマウスホイールのスクロール移動量（スピード）を大きく]]></title>
+    <link href="http://pagent.github.io/2015/05/13/mouse-wheel-scroll-speed/"/>
+    <id>http://pagent.github.io/2015/05/13/mouse-wheel-scroll-speed/</id>
+    <published>2015-05-12T23:53:49.000Z</published>
+    <updated>2015-05-13T01:08:27.512Z</updated>
+    <content type="html"><![CDATA[<p>Linuxでマウスホイールでのスクロール移動量（スピード）が小さく疲れるので、大きくした。  </p>
+<p>まず下記記事を参考に、xorgの設定で試みた。<br><a href="http://ishikuro.hateblo.jp/entry/2013/12/08/190527" target="_blank" rel="external">Linuxでマウスホイール移動量調整 - ishn’s diary</a>  </p>
+<p><code>xinput</code>コマンドで確認すると、USB Optical Mouseはid=12だったので、</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ xinput <span class="keyword">set</span>-prop <span class="string">'12'</span> <span class="string">'Evdev Wheel Emulation Inertia'</span> <span class="number">200</span></div></pre></td></tr></table></figure>
+
+<p><code>xinput list-props 12</code>で確認すると、確かにEvdev Wheel Emulation Inertiaの値は200になっているのだが、スクロール量に変化がない。<br>USBマウスを抜き差ししても変化なし。<br>移動の上下の向きなどは反映されるのだが、スクロール量はxinputでは設定出来ないらしい。  </p>
+<p>Firefoxのみで良いなら、about:configでmousewheel.default.delta_multiplier_yの値を変更すれば良いようだ。<br><a href="http://blog.ueshu.net/it/2013/06/19/1769.html" target="_blank" rel="external">ubuntuのFirefoxのマウスホイールのスクロール速度を変更する</a>  </p>
+<p>だが他のアプリケーションでもスクロール量を変更したかったので、imwheelを導入した。<br>Arch Linuxの場合はAURなので、Yaourtでインストール。</p>
+<p>~/.imwheelrcファイルを作成し、下記内容で保存。</p>
+<figure class="highlight plain"><figcaption><span>.imwheelrc</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">".*"</div><div class="line">None,      Up,   Button4, 3</div><div class="line">None,      Down, Button5, 3</div></pre></td></tr></table></figure>
+
+<p>「Up,   Button4」、「Down, Button5」の値で変更出来る。<br>「3」で設定したが、デフォルトの値は「1」のよう。  </p>
+<p><code>imwheel</code>コマンドを実行すると反映された。<br>（リスタートは<code>killall imwheel &amp;&amp; imwheel</code>）  </p>
+<p>コマンド<code>imwheel</code>を自動開始アプリケーションに登録して完了。  </p>
+<p>（参照記事）<br><a href="http://askubuntu.com/questions/285689/increase-mouse-wheel-scroll-speed" target="_blank" rel="external">Increase mouse wheel scroll speed - Ask Ubuntu</a><br><a href="https://wiki.archlinux.org/index.php/Imwheel" target="_blank" rel="external">imwheel - ArchWiki</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Linuxでマウスホイールでのスクロール移動量（スピード）が小さく疲れるので、大きくした。  </p>
+<p>まず下記記事を参考に、xorgの設定で試みた。<br><a href="http://ishikuro.hateblo.jp/entry/2013/12/08/19]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[FirefoxにYahoo! JAPANの検索エンジンが見当たらない]]></title>
@@ -528,38 +559,6 @@ x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firef
     </summary>
     
       <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Chromium+Pepper Plugin API（PPAPI）でGyaoを視聴]]></title>
-    <link href="http://pagent.github.io/2015/03/19/gyao-chromium-ppapi/"/>
-    <id>http://pagent.github.io/2015/03/19/gyao-chromium-ppapi/</id>
-    <published>2015-03-19T00:00:39.000Z</published>
-    <updated>2015-04-02T07:10:55.454Z</updated>
-    <content type="html"><![CDATA[<p>GyaoはWindows、Mac以外のOSでの視聴を制限している。  </p>
-<p>これまでFirefoxのアドオンUser Agent Switcherで、OSをWindowsもしくはMac OS Xと宣言することで、LinuxでもGyaoの視聴が出来ていた。<br>一部の動画はFlashのバージョンが足りてないらしく見られなかったが、ほとんどの動画は視聴可能だった。  </p>
-<p>だが今週初めから、上記の方法ではGyaoの全ての動画が視聴出来なくなった。<br>Gyaoの動作環境が全動画で「Adobe Flash Player 15 以上」に引き上げられたためらしい。<br>（Linux用Adobe Flash Playerは11.2までで終了）  </p>
-<p>Linuxでバージョン15以上のFlash Playerを使用する方法はいくつかあるようだったが、ChromiumでPPAPI（Pepper Plugin API）を利用するのが最も簡便だった。<br><a href="http://gihyo.jp/admin/serial/01/ubuntu-recipe/0340" target="_blank" rel="external">第340回　Firefoxで最新バージョンのFlashを使用するには：Ubuntu Weekly Recipe｜gihyo.jp … 技術評論社</a>  </p>
-<p>Ubuntu等のDebian系ディストリビューションならSynapticから”pepperflashplugin-nonfree”をインストール可能。<br>“nonfree” とあるが、Adobeに所有権があるというだけで、無料で使用出来る。<br><a href="https://wiki.ubuntulinux.jp/UbuntuTips/Application/Chromium/Getting-Flash" target="_blank" rel="external">UbuntuTips/Application/Chromium/Getting-Flash - Ubuntu Japanese Wiki</a>  </p>
-<p>“pepperflashplugin-nonfree”をインストールし、Chromiumのアドレス欄に<code>chrome://plugins</code>と入れて確認すると、2015年3月19日現在では、”Adobe Flash Player - バージョン: 17.0.0.134 Shockwave Flash 17.0 r0”と表示されている。  </p>
-<p>User-Agent Switcherも入れて、OSをWindowsもしくはMacと宣言することで、Gyaoの視聴が可能になった。  </p>
-<p>User-Agent Switcherに元から入っている「Chome on Mac」での指定はChomeのバージョンが古いようで（Chrome 27.0）、Googleの検索結果も古い形式で表示される。<br>「Chrome 41.0 on Windows」「Chrome 41.0 on Mac」および「Safari 8」を追加した。  </p>
-<ul>
-<li><p>Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36  </p>
-</li>
-<li><p>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10) AppleWebKit/538.44 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36  </p>
-</li>
-<li><p>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10) AppleWebKit/538.44 (KHTML, like Gecko) Version/8.0 Safari/538.44</p>
-</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>GyaoはWindows、Mac以外のOSでの視聴を制限している。  </p>
-<p>これまでFirefoxのアドオンUser Agent Switcherで、OSをWindowsもしくはMac OS Xと宣言することで、LinuxでもGyaoの視聴が出来ていた。<br>一]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
     
   </entry>
   
