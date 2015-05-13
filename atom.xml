@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-05-13T09:26:22.058Z</updated>
+  <updated>2015-05-13T10:13:15.441Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,19 +19,19 @@
     <link href="http://pagent.github.io/2015/05/13/mouse-wheel-scroll-speed/"/>
     <id>http://pagent.github.io/2015/05/13/mouse-wheel-scroll-speed/</id>
     <published>2015-05-12T23:53:49.000Z</published>
-    <updated>2015-05-13T09:26:02.034Z</updated>
+    <updated>2015-05-13T10:12:52.138Z</updated>
     <content type="html"><![CDATA[<p>Linuxでマウスホイールでのスクロール移動量（スピード）が小さく疲れるので、大きくした。  </p>
 <p>まず下記記事を参考に、xorgの設定で試みた。<br><a href="http://ishikuro.hateblo.jp/entry/2013/12/08/190527" target="_blank" rel="external">Linuxでマウスホイール移動量調整 - ishn’s diary</a>  </p>
 <p><code>xinput</code>コマンドで確認すると、USB Optical Mouseはid=12だったので、</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ xinput <span class="keyword">set</span>-prop <span class="string">'12'</span> <span class="string">'Evdev Wheel Emulation Inertia'</span> <span class="number">200</span></div></pre></td></tr></table></figure>
 
-<p><code>xinput list-props 12</code>で確認すると、確かにEvdev Wheel Emulation Inertiaの値は200になっているのだが、スクロール量に変化がない。<br>USBマウスを抜き差ししても変化なし。<br>移動の上下の向きなどは反映されるのだが、スクロール量はxinputでは設定出来ないらしい。  </p>
-<p>Firefoxのみで良いなら、about:configでmousewheel.default.delta_multiplier_yの値を変更すれば良いようだ。<br><a href="http://blog.ueshu.net/it/2013/06/19/1769.html" target="_blank" rel="external">ubuntuのFirefoxのマウスホイールのスクロール速度を変更する</a>  </p>
+<p>とした。<br>ところがスクロール量に変化がない。<br><code>xinput list-props 12</code>で確認すると、確かにEvdev Wheel Emulation Inertiaの値は200になっているのだが。<br>USBマウスを抜き差ししても変化なし。<br>移動の上下の向きなどは反映されるのだが、スクロール量はxinputでは設定出来ないようだ。  </p>
+<p>Firefoxだけで良いなら、about:configでmousewheel.default.delta_multiplier_yの値を変更すれば良いようだ。<br><a href="http://blog.ueshu.net/it/2013/06/19/1769.html" target="_blank" rel="external">ubuntuのFirefoxのマウスホイールのスクロール速度を変更する</a>  </p>
 <p>だが他のアプリケーションでもスクロール量を変更したかったので、imwheelを導入した。<br>Arch Linuxの場合はAURなので、Yaourtでインストール。</p>
-<p>~/.imwheelrcファイルを作成し、下記内容で保存。</p>
+<p>その後、~/.imwheelrcファイルを作成し、下記内容で保存。</p>
 <figure class="highlight plain"><figcaption><span>.imwheelrc</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">".*"</div><div class="line">None,      Up,   Button4, 2</div><div class="line">None,      Down, Button5, 2</div></pre></td></tr></table></figure>
 
-<p>「Up,   Button4」、「Down, Button5」の値で変更出来る。<br>「2」で設定したが、デフォルトの値は「1」のよう。  </p>
+<p>「Up,   Button4」、「Down, Button5」に続く値で変更出来る。<br>「2」で設定したが、デフォルトの値は「1」のよう。  </p>
 <p><code>imwheel</code>コマンドを実行すると反映された。<br>（リスタートは<code>killall imwheel &amp;&amp; imwheel</code>）  </p>
 <p>コマンド<code>imwheel</code>を自動開始アプリケーションに登録して完了。  </p>
 <p>（参照記事）<br><a href="http://askubuntu.com/questions/285689/increase-mouse-wheel-scroll-speed" target="_blank" rel="external">Increase mouse wheel scroll speed - Ask Ubuntu</a><br><a href="https://wiki.archlinux.org/index.php/Imwheel" target="_blank" rel="external">imwheel - ArchWiki</a></p>
