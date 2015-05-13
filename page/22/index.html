@@ -114,6 +114,53 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/11/29/page-no-date/" >Hexoの固定ページを日付け無しに</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月29日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Hexoでは固定ページを作る際、コマンド<code>hexo new page （ページ名）</code>でsource/（ページ名）下にindex.mdが作成される。<br>tagsやcategoriesは使えないようになっている。<br>コメントを禁止にするには、Front Matterに<code>comments: false</code>を加えれば良い。  </p>
+<p>固定ページでは日付けも表示したくないところだが、<code>date:</code>の項目を消してみるても、ファイルを更新した日付けが表示されてしまう。<br>themes/landscape/layout/page.ejsを見ると、post.ejsと同じ_partial/article.ejsがレイアウトとして使われていた。  </p>
+<p>_partialディレクトリ下のarticle.ejsをarticle-page.ejsという名前でコピー。<br>4行目の  </p>
+<pre><code>&lt;%- <span class="keyword">partial</span>(<span class="string">'post/date'</span>, {class_name: <span class="string">'article-date'</span>, date_format: <span class="keyword">null</span>}) %&gt;
+</code></pre><p>を削除。  </p>
+<p>page.ejsの  </p>
+<pre><code>&lt;%- <span class="keyword">partial</span>(<span class="string">'_partial/article'</span>, {post: page, index: <span class="keyword">false</span>}) %&gt;
+</code></pre><p>を</p>
+<pre><code>&lt;%- <span class="keyword">partial</span>(<span class="string">'_partial/article-page'</span>, {post: page, index: <span class="keyword">false</span>}) %&gt;
+</code></pre><p>に変更した。  </p>
+<p>希望通り、日付けが削除された。</p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/29/page-no-date/" data-text="Hexoの固定ページを日付け無しに | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/11/29/excerpt-separator/" >HexoやOctopressのトップページを全文表示ではなく概要表示にする</a>
 		</h3>
 	
@@ -373,54 +420,6 @@ metalsmith(__dirname)
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/26/filename-case/" >Hexo新規記事作成時のタイトル大文字アルファベットを小文字のファイル名に</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月26日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Hexoのデフォルト設定で新規記事を作成する際、記事タイトルに大文字アルファベットを使うと、そのままファイル名としてソースが作成される。</p>
-<pre><code>$ hexo new New-Post
-[info] File created at /<span class="keyword">...</span>/<span class="keyword">source</span>/_posts/<span class="number">2014</span>-<span class="number">11</span>-<span class="number">26</span>-New-Post.md
-</code></pre><p>URLに大文字アルファベットが入ってしまう。  </p>
-<p>URLに大文字は使いたくないので、Octopressのように大文字→小文字でファイル出力して欲しい。  </p>
-<p>_config.ymlのWritingの項目<code>filename_case:</code>の値をデフォルトの「0」から「1」に変更することで設定出来た。  </p>
-<pre><code>$ hexo new New-Post
-[info] File created at /<span class="keyword">...</span>/<span class="keyword">source</span>/_posts/<span class="number">2014</span>-<span class="number">11</span>-<span class="number">26</span>-new-post.md
-</code></pre><p>filename_case: 0（そのまま出力。New-Post→New-Post）  </p>
-<p>filename_case: 1（大文字を小文字に変換。New-Post→new-post.md）  </p>
-<p>filename_case: 2（すべて大文字に変換。New-Post→NEW-POST.md）  </p>
-<p>ーー<br>（追記）<br>出来たと思ったら、generateした際にtagsまでがすべて小文字になってしまった。<br>これでは困るので、<code>filename_case: 0</code>に戻した。<br>当面、大文字のファイル名は手作業で小文字にするしかなさそうだ。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/26/filename-case/" data-text="Hexo新規記事作成時のタイトル大文字アルファベットを小文字のファイル名に | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
-
-</div>
-				
 
 			</div>
 
@@ -465,35 +464,35 @@ metalsmith(__dirname)
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>11</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>9</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>59</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>11</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>59</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>11</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>8</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>11</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
 		
 		
 		</ul>
@@ -506,6 +505,10 @@ metalsmith(__dirname)
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/05/14/truecrypt-failed/" ><i class="fa fa-file-o"></i>Truecryptのマウントで「Failed to s...</a>
+      </li>
     
       <li>
         <a href="/2015/05/13/mouse-wheel-scroll-speed/" ><i class="fa fa-file-o"></i>imwheelでマウスホイールのスクロール移動量（スピ...</a>
@@ -523,10 +526,6 @@ metalsmith(__dirname)
         <a href="/2015/04/21/connection-refused-repo-archlinux-fr/" ><i class="fa fa-file-o"></i>Yaourtのリポジトリに接続を拒否される</a>
       </li>
     
-      <li>
-        <a href="/2015/04/20/jd-problem-after-archlinux-upgrade/" ><i class="fa fa-file-o"></i>Arch Linuxアップグレード後JDが起動出来ない</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -536,7 +535,7 @@ metalsmith(__dirname)
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
