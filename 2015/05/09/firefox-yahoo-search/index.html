@@ -113,10 +113,23 @@
 	<!-- content -->
 	<div class="mypage">
 	    <p>Firefoxを更新して以降、検索窓でのYahoo!検索がsearch.yahoo.co.jpではなく、search.yahoo.comになってしまっている。<br>「検索設定を変更」→「検索エンジンを追加…」から探してみても、Yahoo! Vietnam、Yahoo! India、Yahoo! Canada、またYahoo Japan! Mail Notifierなどはあるが、Yahoo! JAPANの検索エンジンが見つからない。  </p>
+<h3 id="検索アシストアドオンによる対症療法">検索アシストアドオンによる対症療法</h3>
 <p><a href="https://addons.mozilla.org/ja/firefox/addon/yahoo%E5%8F%B3%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E6%A4%9C%E7%B4%A2%E3%82%A2%E3%82%B7%E3%82%B9%E3%83%88/?src=search" target="_blank" rel="external">「Yahoo!右クリック検索アシスト」</a>というアドオンがあるようだったので入れてみた。  </p>
-<p>表示ページで文言を選択、右クリックするとメニューの一番下に「Yahooで検索」が追加された。<br>デフォルトの検索エンジンでの検索メニューもちゃんとある。  </p>
-<p>少し不便ではあるが、わざわざYahoo! JAPANのサイトに行くよりは手間が省ける。</p>
-<p>ーー<br>（追記）<br>アドオンをインストールすると、ツールバーにYahoo Japan!へのリンクが追加されてしまったので、これは隠すようにした。</p>
+<p>表示ページで文言を選択、右クリックするとメニューの一番下に「Yahooで検索」が追加される。<br>少し不便ではあるが、わざわざYahoo! JAPANのサイトに行くよりは手間が省ける。<br>アドオンをインストールすると、ツールバーにYahoo Japan!へのリンクが追加されてしまうので、これは隠すようにした。  </p>
+<h3 id="別の端末にあったものを追加（推奨）">別の端末にあったものを追加（推奨）</h3>
+<p>別の端末には、追加の検索エンジンとしての「Yahoo! JAPAN検索」があったのでこれを移植した。  </p>
+<p>~/.mozilla/firefox/（プロファイル１）/searchplugins内にあったyahoo-japan.xmlファイルを~/.mozilla/firefox/（プロファイル２）/searchplugins内にコピペ。<br>下記内容でyahoo-japan.xmlファイルを新規作成しても良い。  </p>
+<pre><code>&lt;<span class="type">SearchPlugin</span> xmlns=<span class="string">"http://www.mozilla.org/2006/browser/search/"</span> xmlns:os=<span class="string">"http://a9.com/-/spec/opensearch/1.1/"</span>&gt;
+&lt;os:<span class="type">ShortName</span>&gt;<span class="type">Yahoo</span>! <span class="type">JAPAN</span>&lt;/os:<span class="type">ShortName</span>&gt;
+&lt;os:<span class="type">Description</span>&gt;<span class="type">Yahoo</span>! <span class="type">JAPAN</span>で検索&lt;/os:<span class="type">Description</span>&gt;
+&lt;os:<span class="type">InputEncoding</span>&gt;<span class="type">UTF</span>-<span class="number">8</span>&lt;/os:<span class="type">InputEncoding</span>&gt;
+&lt;os:<span class="type">Url</span> <span class="keyword">type</span>=<span class="string">"text/html"</span> <span class="keyword">method</span>=<span class="string">"GET"</span> <span class="keyword">template</span>=<span class="string">"http://search.yahoo.co.jp/search?p={searchTerms}&amp;amp;ei=UTF-8&amp;amp;fr=opsrch"</span> resultDomain=<span class="string">"search.yahoo.co.jp"</span>&gt;
+&lt;/os:<span class="type">Url</span>&gt;&lt;os:<span class="type">Url</span> <span class="keyword">type</span>=<span class="string">"application/x-suggestions+json"</span> <span class="keyword">method</span>=<span class="string">"GET"</span> <span class="keyword">template</span>=<span class="string">"http://search.yahooapis.jp/AssistSearchService/V2/webassistSearch?p={searchTerms}&amp;amp;appid=oQsoxcyxg66enp0TYoirkKoryq6rF8bK76mW0KYxZ0v0WPLtn.Lix6wy8F_LwGWHUII-&amp;amp;output=iejson&amp;amp;src=srch&amp;amp;fr=opsrch"</span> resultDomain=<span class="string">"search.yahooapis.jp"</span>&gt;
+&lt;/os:<span class="type">Url</span>&gt;
+&lt;/<span class="type">SearchPlugin</span>&gt;
+</code></pre><p>アイコンは空白だったりただの虫めがねだったりするが、ちゃんとYahoo! JAPANの検索エンジンが追加される。  </p>
+<p>デフォルトの検索エンジンは/usr/lib/firefox/browser/searchpluginsに格納されているので、ここへ追加しても良いかもしれない。  </p>
+<p>Yahoo! JAPANの検索エンジンが復活したので、アドオン「Yahoo!右クリック検索アシスト」は不要となった。</p>
 
 	</div>
 
