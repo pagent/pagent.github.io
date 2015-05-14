@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-05-14T19:59:37.779Z</updated>
+  <updated>2015-05-14T20:01:25.177Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -63,7 +63,7 @@
     <link href="http://pagent.github.io/2015/05/13/mouse-wheel-scroll-speed/"/>
     <id>http://pagent.github.io/2015/05/13/mouse-wheel-scroll-speed/</id>
     <published>2015-05-12T23:53:49.000Z</published>
-    <updated>2015-05-14T19:58:51.246Z</updated>
+    <updated>2015-05-14T20:01:15.671Z</updated>
     <content type="html"><![CDATA[<p>Linuxでマウスホイールのスクロール移動量（スピード）が小さくて疲れるので、これを大きくした。  </p>
 <p>まず下記記事を参考に、xorgの設定で試みた。<br><a href="http://ishikuro.hateblo.jp/entry/2013/12/08/190527" target="_blank" rel="external">Linuxでマウスホイール移動量調整 - ishn’s diary</a>  </p>
 <p><code>xinput</code>コマンドで確認すると、USB Optical Mouseはid=12だったので、</p>
@@ -75,7 +75,7 @@
 <p>その後、~/.imwheelrcファイルを作成し、下記内容で保存。</p>
 <figure class="highlight plain"><figcaption><span>.imwheelrc</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">".*"</div><div class="line">None,      Up,   Button4, 3</div><div class="line">None,      Down, Button5, 2</div></pre></td></tr></table></figure>
 
-<p>「Up,   Button4」、「Down, Button5」に続く値で変更出来る。<br>上に戻る時は早い方が良いかと思い、Up「3」、Down「2」で設定してみた。<br>（デフォルトの値は「1」のよう。）  </p>
+<p>「Up,   Button4」、「Down, Button5」に続く値で変更出来る。<br>上に戻る時はより早い方が良いかと思い、Up「3」、Down「2」で設定してみた。<br>（デフォルトの値は「1」のよう。）  </p>
 <p><code>imwheel</code>コマンドを実行すると反映される。<br>（設定値を変更してリスタートする時は<code>killall imwheel &amp;&amp; imwheel</code>）  </p>
 <p>コマンド<code>imwheel</code>を自動開始アプリケーションに登録して完了。<br>スクロールが楽になった。  </p>
 <p>気に入った移動量に簡単に変更出来、また上昇・下降で違う値を設定することも可能なので、かなりオススメ。</p>
