@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-05-13T17:01:49.957Z</updated>
+  <updated>2015-05-14T05:04:11.373Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,31 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[000webhost.comで挿入される解析コード]]></title>
+    <link href="http://pagent.github.io/2015/05/14/hosting24-analytics-code/"/>
+    <id>http://pagent.github.io/2015/05/14/hosting24-analytics-code/</id>
+    <published>2015-05-14T04:28:08.000Z</published>
+    <updated>2015-05-14T05:03:31.185Z</updated>
+    <content type="html"><![CDATA[<p>今は放置しているが、無料レンタルサーバー「000webhost.com」のアカウントを取っている。<br>久しぶりに「000webhost.com」に置いてあるサイトを見てみると、すべてのページのソース下部に、下記のようなコードが挿入されている。  </p>
+<pre><code><span class="comment">&lt;!-- Hosting24 Analytics Code --&gt;</span>
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"http://stats.hosting24.com/count.php"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="comment">&lt;!-- End Of Analytics Code --&gt;</span>
+</code></pre><p>「000webhost」が管理している解析コードで、アカウントがアクティブか非アクティブかを判別するためのものらしい。<br>他にも利用者にstatsとvisitors reportを提供するために利用されるとのことだが、statsやvisitors reportが何なのかはよく分からない。  </p>
+<p>Firefoxでは「Stray start tag “script”.」とかで赤字で表示されており、少々気になる。  </p>
+<p>不要な場合は、<a href="http://members.000webhost.com/analytics.php" target="_blank" rel="external">http://members.000webhost.com/analytics.php</a>から設定。<br>Domain欄に<code>www.</code>や<code>http://</code>を除いた利用ドメイン名を記入。<br>Password欄はFTPのパスワード。<br>Manage analytics codeで「Disable Code」を選択しSubmitで非表示に出来る。  </p>
+<p>非表示にしているとアカウントを削除されやすいのでは？という気がしなくもないが。  </p>
+<p>（参照記事）<br><a href="http://www.habschned.com/000webhost-com-disable-analytics-code-1/" target="_blank" rel="external">000webhost.com - How to disable Analytics Code #1 - Habschneds Odds and Ends</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>今は放置しているが、無料レンタルサーバー「000webhost.com」のアカウントを取っている。<br>久しぶりに「000webhost.com」に置いてあるサイトを見てみると、すべてのページのソース下部に、下記のようなコードが挿入されている。  </p>
+<pre><c]]>
+    </summary>
+    
+      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Truecryptのマウントで「Failed to set up a loop device:」のエラー]]></title>
@@ -529,34 +554,6 @@ x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firef
 ]]></content>
     <summary type="html">
     <![CDATA[<p>「お気に入りのアプリケーション」のブラウザをFirefoxにしていて、これまでXfce4 terminal内のリンクを開く時もFirefoxで開けていた。<br>だが、Chromiumをインストールしてから、リンクがChromiumで開くようになってしまった。<br>Xfc]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Lubuntuのアップデート中にフリーズ]]></title>
-    <link href="http://pagent.github.io/2015/03/31/lubuntu-update-stuck/"/>
-    <id>http://pagent.github.io/2015/03/31/lubuntu-update-stuck/</id>
-    <published>2015-03-31T14:42:55.000Z</published>
-    <updated>2015-03-31T15:07:21.907Z</updated>
-    <content type="html"><![CDATA[<p>Lubuntu14.04をアップデート中に  </p>
-<pre><code>run-parts: executing <span class="regexp">/etc/</span>kernel<span class="regexp">/postinst.d/</span>zz-update-grub <span class="number">3.16</span>.<span class="number">0</span>-<span class="number">33</span>-generic <span class="regexp">/boot/</span>vmlinuz-<span class="number">3.16</span>.<span class="number">0</span>-<span class="number">33</span>-generic
-</code></pre><p>の表示のところでフリーズしてしまった。<br>カーネルのアップデート中だったので嫌な予感がしたが、やむなく強制終了した。<br>起動しようとすると、案の定  </p>
-<pre><code><span class="title">buffer</span> i/o <span class="built_in">error</span> <span class="built_in">on</span> device sda4
-</code></pre><p>と延々エラーを吐いて起動してくれない。  </p>
-<p>sda4はswapに当てていたので、隣のArch Linuxを起動して、sda4を再度swapでフォーマットし直したら起動できるようになった。<br>（fstabの記載はUUIDではなくデバイス名にしていた）  </p>
-<p>起動は出来たが、今度はSynapticを使おうとすると、  </p>
-<pre><code><span class="attribute">E</span>: <span class="string">dpkg は中断されました。問題を修正するには 'dpkg --configure -a' を手動で実行する必要があります。</span>
-<span class="attribute">E</span>: <span class="string">_cache-&gt;open() failed, please report.</span>
-</code></pre><p>という表示が出る。<br>言われたとおり<code>dpkg --configure -a</code>を実行すると、中断した箇所からアップデートが再開された。  </p>
-<p>今度はアップデートも無事終了。  </p>
-<p>意味はよく分かってはいないが、ネットの情報の助けがあれば、エラー表示はとても助かる。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Lubuntu14.04をアップデート中に  </p>
-<pre><code>run-parts: executing <span class="regexp">/etc/</span>kernel<span class="regexp">/postinst.d/</spa]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
