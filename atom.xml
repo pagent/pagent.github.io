@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-05-14T23:27:42.171Z</updated>
+  <updated>2015-05-17T07:56:08.761Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -100,13 +100,13 @@
     <link href="http://pagent.github.io/2015/05/09/firefox-yahoo-search/"/>
     <id>http://pagent.github.io/2015/05/09/firefox-yahoo-search/</id>
     <published>2015-05-09T10:30:58.000Z</published>
-    <updated>2015-05-14T23:27:30.045Z</updated>
-    <content type="html"><![CDATA[<p>Firefoxを更新して以降、検索窓でのYahoo!検索がsearch.yahoo.co.jpではなく、search.yahoo.comになってしまっている。<br>「検索設定を変更」→「検索エンジンを追加…」から探してみても、Yahoo! Vietnam、Yahoo! India、Yahoo! Canada、またYahoo Japan! Mail Notifierなどはあるが、Yahoo! JAPANの検索エンジンが見つからない。  </p>
+    <updated>2015-05-17T07:55:48.913Z</updated>
+    <content type="html"><![CDATA[<p>Firefoxを更新して以降、検索窓でのYahoo!検索がsearch.yahoo.co.jpではなく、search.yahoo.comでの検索になってしまっている。<br>「検索設定を変更」→「検索エンジンを追加…」から探してみても、Yahoo! Vietnam、Yahoo! India、Yahoo! Canadaなどや、Yahoo Japan! Mail Notifierはあるが、Yahoo! JAPANの検索エンジンが見つからない。  </p>
 <h3 id="検索アシストアドオンによる対症療法">検索アシストアドオンによる対症療法</h3>
 <p><a href="https://addons.mozilla.org/ja/firefox/addon/yahoo%E5%8F%B3%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E6%A4%9C%E7%B4%A2%E3%82%A2%E3%82%B7%E3%82%B9%E3%83%88/?src=search" target="_blank" rel="external">「Yahoo!右クリック検索アシスト」</a>というアドオンがあるようだったので入れてみた。  </p>
-<p>表示ページで文言を選択、右クリックするとメニューの一番下に「Yahooで検索」が追加される。<br>少し不便ではあるが、わざわざYahoo! JAPANのサイトに行くよりは手間が省ける。<br>アドオンをインストールすると、ツールバーにYahoo Japan!へのリンクが追加されてしまうので、これは隠すようにした。  </p>
+<p>表示しているページで文言を選択、右クリックするとメニューの一番下に「Yahooで検索」が追加される。<br>検索窓からの検索は出来ないので少し不便ではあるが、わざわざYahoo! JAPANのサイトに行くよりは手間が省ける。  </p>
 <h3 id="searchpluginsフォルダ内にyahoo-japan-xmlファイルを追加（推奨）">searchpluginsフォルダ内にyahoo-japan.xmlファイルを追加（推奨）</h3>
-<p>幸い別の端末に、追加の検索エンジンとしての「Yahoo! JAPAN検索」（yahoo-japan.xmlファイル）があったので、これを利用した。  </p>
+<p>幸い別の端末に、Yahoo! JAPAN検索のためのxmlファイル（yahoo-japan.xml）があったので、これを手動で追加した。  </p>
 <p>~/.mozilla/firefox/(プロファイル名)/searchplugins内にyahoo-japan.xmlファイルをコピペ。<br>下記内容でファイルを新規作成しても良い。  </p>
 <figure class="highlight xml"><figcaption><span>yahoo-japan.xml</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">SearchPlugin</span> <span class="attribute">xmlns</span>=<span class="value">"http://www.mozilla.org/2006/browser/search/"</span> <span class="attribute">xmlns:os</span>=<span class="value">"http://a9.com/-/spec/opensearch/1.1/"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:ShortName</span>&gt;</span>Yahoo! JAPAN<span class="tag">&lt;/<span class="title">os:ShortName</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Description</span>&gt;</span>Yahoo! JAPANで検索<span class="tag">&lt;/<span class="title">os:Description</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:InputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">os:InputEncoding</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Url</span> <span class="attribute">type</span>=<span class="value">"text/html"</span> <span class="attribute">method</span>=<span class="value">"GET"</span> <span class="attribute">template</span>=<span class="value">"http://search.yahoo.co.jp/search?p={searchTerms}&amp;ei=UTF-8&amp;fr=opsrch"</span> <span class="attribute">resultDomain</span>=<span class="value">"search.yahoo.co.jp"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">os:Url</span>&gt;</span><span class="tag">&lt;<span class="title">os:Url</span> <span class="attribute">type</span>=<span class="value">"application/x-suggestions+json"</span> <span class="attribute">method</span>=<span class="value">"GET"</span> <span class="attribute">template</span>=<span class="value">"http://search.yahooapis.jp/AssistSearchService/V2/webassistSearch?p={searchTerms}&amp;appid=oQsoxcyxg66enp0TYoirkKoryq6rF8bK76mW0KYxZ0v0WPLtn.Lix6wy8F_LwGWHUII-&amp;output=iejson&amp;src=srch&amp;fr=opsrch"</span> <span class="attribute">resultDomain</span>=<span class="value">"search.yahooapis.jp"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">os:Url</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">SearchPlugin</span>&gt;</span></div></pre></td></tr></table></figure>
 
@@ -114,7 +114,7 @@
 <p>Yahoo! JAPANの検索エンジンが復活したので、アドオン「Yahoo!右クリック検索アシスト」は不要となった。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Firefoxを更新して以降、検索窓でのYahoo!検索がsearch.yahoo.co.jpではなく、search.yahoo.comになってしまっている。<br>「検索設定を変更」→「検索エンジンを追加…」から探してみても、Yahoo! Vietnam、Yahoo! I]]>
+    <![CDATA[<p>Firefoxを更新して以降、検索窓でのYahoo!検索がsearch.yahoo.co.jpではなく、search.yahoo.comでの検索になってしまっている。<br>「検索設定を変更」→「検索エンジンを追加…」から探してみても、Yahoo! Vietnam、Yaho]]>
     </summary>
     
       <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
