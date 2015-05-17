@@ -113,7 +113,7 @@
 	<!-- content -->
 	<div class="mypage">
 	    <p>iBusのプロパティパネル採用以降、iBusをやめて日本語入力にfcitx-mozcを使っている。  </p>
-<p>Xubuntuでは特に問題無く使えていたが、Arch LinuxでQtベースのプログラムを使用する際、日本語入力が有効にならず困っていた。<br>「QupZilla」（Simplenote専用にするのにうってつけの軽量ブラウザ）や「ReText」（プレビューが出来て便利なmarkdownファイルエディター）など、日本語入力出来ないと不便。  </p>
+<p>Xubuntuでは特に問題無く使えていたが、Arch LinuxでQtベースのプログラムを使用する際、日本語入力が有効にならず困っていた。<br>「QupZilla」（Simplenote専用にするのにうってつけの軽量ブラウザ）や「ReText」（プレビューが出来て便利なmarkdownファイルエディター）など、日本語入力が出来ないと不便。  </p>
 <p>モジュールのfcitx-qt4、fcitx-qt5はインストールしたが、何故かインプットメソッドがオンにならない。<br>fcitx-configtool（Qt 設定ツール）で、デフォルトのインプットメソッドをfcitxに変更したが、効果が無い。  </p>
 <p><code>fcitx-diagnose</code>を実行してフロントエンド設定の項目を確認すると、空欄だったり「設定されていません」という表示だったりする。<br>XMODIFIERSとQT_IM_MODULEがちゃんとロードされていないらしい。  </p>
 <p>ホームディレクトリに.xprofileを新規作成し、下記内容で保存。<br>（ディスプレイマネージャにSLiMを使っている場合は、~/.xprofileではなく~/.xinitrcに記載するらしい）  </p>
