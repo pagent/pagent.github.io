@@ -130,17 +130,17 @@
 	  
 	
 	  <p>iBusのプロパティパネル採用以降、iBusをやめて日本語入力にfcitx-mozcを使っている。  </p>
-<p>Xubuntuでは特に問題無く使えていたが、Arch LinuxでQtベースのプログラムを使用する際、日本語入力が有効にならず困っていた。<br>Simplenote専用にするのにうってつけの軽量ブラウザ「QupZilla」や、markdownファイル編集の際プレビューが出来て便利な「ReText」など、日本語入力出来ないと不便。  </p>
-<p>モジュールのfcitx-qt4、fcitx-qt5はインストールしたが、何故かインプットメソッドがオンにならない。<br>（fcitx-qt5はあまり必要無いようだが、念の為インストール）<br>fcitx-configtool（Qt 設定ツール）で、デフォルトのインプットメソッドをfcitxに変更したが、効果が無い。  </p>
-<p><code>fcitx-diagnose</code>を実行してフロントエンド設定の項目を確認すると、空欄だったり「設定されていません」という表示だったりする。<br>XMODIFIERS、QT_IM_MODULEがちゃんとロードされていないらしい。  </p>
+<p>Xubuntuでは特に問題無く使えていたが、Arch LinuxでQtベースのプログラムを使用する際、日本語入力が有効にならず困っていた。<br>軽量ブラウザ「QupZilla」（Simplenote専用にするのにうってつけ）や、markdownファイル編集の際プレビューが出来て便利な「ReText」（プレビューが出来て便利なmarkdownファイルエディター）など、日本語入力出来ないと不便。  </p>
+<p>モジュールのfcitx-qt4、fcitx-qt5はインストールしたが、何故かインプットメソッドがオンにならない。<br>fcitx-configtool（Qt 設定ツール）で、デフォルトのインプットメソッドをfcitxに変更したが、効果が無い。  </p>
+<p><code>fcitx-diagnose</code>を実行してフロントエンド設定の項目を確認すると、空欄だったり「設定されていません」という表示だったりする。<br>XMODIFIERSとQT_IM_MODULEがちゃんとロードされていないらしい。  </p>
 <p>ホームディレクトリに.xprofileを新規作成し、下記内容で保存。<br>（ディスプレイマネージャにSLiMを使っている場合は、~/.xprofileではなく~/.xinitrcに記載するらしい）  </p>
 <pre><code><span class="keyword">export</span> GTK_IM_MODULE=fcitx
 <span class="keyword">export</span> QT_IM_MODULE=fcitx
 <span class="keyword">export</span> XMODIFIERS=<span class="string">"@im=fcitx"</span>
 </code></pre><p>再起動したら、QupZilla、ReTextともに日本語入力が可能になった。  </p>
-<p>（参照記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Fcitx" target="_blank" rel="external">Fcitx - ArchWiki</a>  </p>
 <p>再度<code>fcitx-diagnose</code>で見てみると、「環境変数 XMODIFIERS は “{$2}” に正しく設定されています。」「環境変数 QT_IM_MODULE は “{$2}” に正しく設定されています。」となっていた。  </p>
-<p>fcitx-configtoolのデフォルトのインプットメソッドはximのままでも問題無いようだった。</p>
+<p>fcitx-configtoolのデフォルトのインプットメソッドはximのままでも問題無いようだった。  </p>
+<p>（参照記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Fcitx" target="_blank" rel="external">Fcitx - ArchWiki</a></p>
 
 	
 	</div>
@@ -375,35 +375,35 @@ x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firef
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Linux/">Linux<span>59</span></a></li>
-		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>11</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>11</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>59</span></a></li>
 		
 			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>9</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>12</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 		
 		</ul>
