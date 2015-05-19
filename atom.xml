@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-05-19T13:33:49.725Z</updated>
+  <updated>2015-05-19T13:37:04.477Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,16 +15,16 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[Hexoブログに「はてなブックマークボタン」を設置]]></title>
+    <title><![CDATA[Hexoブログに「はてなブックマーク」ボタンを設置]]></title>
     <link href="http://pagent.github.io/2015/05/19/hexo-hatena-button/"/>
     <id>http://pagent.github.io/2015/05/19/hexo-hatena-button/</id>
     <published>2015-05-19T12:56:11.000Z</published>
-    <updated>2015-05-19T13:29:23.650Z</updated>
+    <updated>2015-05-19T13:36:35.262Z</updated>
     <content type="html"><![CDATA[<p>Hexoで作っているこのブログに「はてブ」ボタンを設置した。  </p>
 <p>Octopressでの設置例を参考にやってみたが上手く行かなかったので、はてな公式サイトのボタン作成ページでコードを作成した。<br><a href="http://b.hatena.ne.jp/guide/bbutton" target="_blank" rel="external">はてなブックマークボタンの作成・設置について - はてなブックマーク</a>  </p>
-<p>「ページのアドレス」「ページのタイトル」の欄は仮に「アドレス」「タイトル」とし、後からこれをHexoでのパスに入れ替えた。<br>出来たコードは下記。  </p>
+<p>「ページのアドレス」「ページのタイトル」の欄は仮に「アドレス」「タイトル」とし、後からこれをHexoでのパス<code>&lt;%- item.permalink %&gt;</code>および<code>&lt;%= item.title %&gt;</code>に入れ替えた。<br>出来たコードは下記。  </p>
 <pre><code>&lt;a <span class="variable">href=</span><span class="string">"http://b.hatena.ne.jp/entry/&lt;%- item.permalink %&gt;"</span> <span class="variable">class=</span><span class="string">"hatena-bookmark-button"</span> <span class="variable">data-hatena-bookmark-title=</span><span class="string">"&lt;%= item.title %&gt;"</span> <span class="variable">data-hatena-bookmark-layout=</span><span class="string">"standard-balloon"</span> <span class="variable">data-hatena-bookmark-lang=</span><span class="string">"ja"</span> <span class="variable">title=</span><span class="string">"このエントリーをはてなブックマークに追加"</span>&gt;&lt;img <span class="variable">src=</span><span class="string">"https://b.st-hatena.com/images/entry-button/button-only@2x.png"</span> <span class="variable">alt=</span><span class="string">"このエントリーをはてなブックマークに追加"</span> <span class="variable">width=</span><span class="string">"20"</span> <span class="variable">height=</span><span class="string">"20"</span> <span class="variable">style=</span><span class="string">"border: none;"</span> /&gt;&lt;/a&gt;&lt;script <span class="variable">type=</span><span class="string">"text/javascript"</span> <span class="variable">src=</span><span class="string">"https://b.st-hatena.com/js/bookmark_button.js"</span> <span class="variable">charset=</span><span class="string">"utf-8"</span> <span class="variable">async=</span><span class="string">"async"</span>&gt;&lt;/script&gt;
-</code></pre><p>これを個別の記事のレイアウト（/layout/_partial/article.ejs）、ページネーションページのレイアウト（layout/_partial/post/entry.ejs）に追加。  </p>
+</code></pre><p>これを個別記事のレイアウト（/layout/_partial/article.ejs）、ページネーションページのレイアウト（layout/_partial/post/entry.ejs）に追加。  </p>
 <p>追加する箇所は先に設置していたツイッターボタン用のdiv属性内にした。  </p>
 <pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"tweet-button"</span>&gt;
 （ツイートボタン用コード）
