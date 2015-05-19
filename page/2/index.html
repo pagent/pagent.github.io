@@ -114,6 +114,55 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/05/02/higan/" >higanでファミコン、スーパーファミコン</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年5月2日
+</div>
+<div class="panel-body">
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>ファミコン、スーパーファミコンなどのエミュレーターhiganをインストールした。<br>他のエミュレーターと較べても再現性は高いそうだ。  </p>
+<p>実際ゲームをする際はキーボードでは操作しづらいので、BUFFALOのUSBゲームパッド<a href="http://buffalo.jp/product/input/gamepad/bsgp801/" target="_blank" rel="external">BSGP801</a>を購入した。<br>懐かしいスーファミのコントローラーそっくりで値段も安価。<br>Windows用となっていたがLinuxでも使用出来た。<br>（簡単なのでjoypadをインストールした。）  </p>
+<p>USBポートに挿すとゲームパッド自体は認識しているようだったが、higanで反応しない。<br>入力方法のMappingを設定しないといけないようだ。  </p>
+<p>Setting→Configuration→InputタブでFamicom等のハードを選択。<br>「Up」等の項目をダブルクリックすると入力待機状態に。<br>ゲームパッドの上矢印を押すとそのキーが設定される。<br>Aボタン、Startボタンなども同様に設定。  </p>
+<p>ゲームが出来るようになったが、いつの間にかゲームパッドの操作でマウスポインターも動いてしまうようになった。  </p>
+<p><code>xinput</code>コマンドで見ると、自分の環境ではゲームパッドはid=11に登録されているようだったので、これを無効化した。</p>
+<pre><code><span class="comment">$</span> <span class="comment">xinput</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">disable</span> <span class="comment">11</span>
+</code></pre><p>ただ起動の度に無効化する必要があるようだったので、自動開始アプリケーションにコマンドを登録した。  </p>
+<p>（参照記事）<br><a href="http://nomad-blacky.hatenablog.com/entry/2013/03/21/025253" target="_blank" rel="external">ゲームパッドの操作でマウスポインタが動いてしまう＠Ubuntu - ぶらっ記ぃ</a><br><a href="https://archlinuxjp.kusakata.com/wiki/Xorg?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DXorg_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno#.E5.BF.85.E8.A6.81.E3.81.AB.E5.BF.9C.E3.81.98.E3.81.A6.E5.85.A5.E5.8A.9B.E3.82.BD.E3.83.BC.E3.82.B9.E3.82.92.E6.9C.89.E5.8A.B9.E5.8C.96.E3.83.BB.E7.84.A1.E5.8A.B9.E5.8C.96" target="_blank" rel="external">必要に応じて入力ソースを有効化・無効化 - Xorg - ArchWiki</a></p>
+
+	
+	</div>
+	
+
+</div>
+	
+	<div class="tweet-button">
+
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/05/02/higan/" data-text="higanでファミコン、スーパーファミコン | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/05/02/higan/" class="hatena-bookmark-button" data-hatena-bookmark-title="higanでファミコン、スーパーファミコン" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
+	</div>
+	
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/04/21/connection-refused-repo-archlinux-fr/" >Yaourtのリポジトリに接続を拒否される</a>
 		</h3>
 	
@@ -173,8 +222,12 @@
 </div>
 	
 	<div class="tweet-button">
+
 	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/21/connection-refused-repo-archlinux-fr/" data-text="Yaourtのリポジトリに接続を拒否される | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/21/connection-refused-repo-archlinux-fr/" class="hatena-bookmark-button" data-hatena-bookmark-title="Yaourtのリポジトリに接続を拒否される" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
 	</div>
 	
 
@@ -229,8 +282,12 @@
 </div>
 	
 	<div class="tweet-button">
+
 	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/20/jd-problem-after-archlinux-upgrade/" data-text="Arch Linuxアップグレード後JDが起動出来ない | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/20/jd-problem-after-archlinux-upgrade/" class="hatena-bookmark-button" data-hatena-bookmark-title="Arch Linuxアップグレード後JDが起動出来ない" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
 	</div>
 	
 
@@ -278,8 +335,12 @@
 </div>
 	
 	<div class="tweet-button">
+
 	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/19/paccache-pkgcacheclean/" data-text="不要なパッケージキャッシュの削除。paccacheとpkgcacheclean | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/19/paccache-pkgcacheclean/" class="hatena-bookmark-button" data-hatena-bookmark-title="不要なパッケージキャッシュの削除。paccacheとpkgcacheclean" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+
 	</div>
 	
 
@@ -318,51 +379,12 @@
 </div>
 	
 	<div class="tweet-button">
+
 	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/18/pdf-xchange-viewer/" data-text="PDFファイルの日本語フォント文字化け対策として「Wine」+「PDF-XChange Viewer」 | Pagent" data-lang="ja">ツイート</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-	</div>
-	
 
-</div>
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/18/pdf-xchange-viewer/" class="hatena-bookmark-button" data-hatena-bookmark-title="PDFファイルの日本語フォント文字化け対策として「Wine」+「PDF-XChange Viewer」" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/04/17/wine-msfonts/" >Wineで豆腐状態の文字化け</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年4月17日
-</div>
-<div class="panel-body">
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Wineでアプリケーションをインストールしようとしたら、豆腐状態に文字化けしていた。<br>どうやらMSフォントが入っていないためらしい。<br><a href="https://archlinuxjp.kusakata.com/wiki/Wine#.E3.83.95.E3.82.A9.E3.83.B3.E3.83.88" target="_blank" rel="external">Wine - ArchWiki</a>  </p>
-<p>Windowsのパーティションを/mnt/win7にマウントしていたので、  シンボリックリンクを張り、fontconfig のキャッシュを再生成した。  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> ln <span class="operator">-s</span> /mnt/win7/Windows/Fonts /usr/share/fonts/WindowsFonts</div><div class="line">$ <span class="built_in">sudo</span> fc-cache</div></pre></td></tr></table></figure>
-
-<p><a href="https://archlinuxjp.kusakata.com/wiki/MS_%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88" target="_blank" rel="external">MS フォント - ArchWiki</a>  </p>
-<p>Wineの文字化けは直ったが、今度はRetextやxfce4-terminalでのフォントがおかしくなってしまった。<br>明朝体のようになり、文字が薄く、また「、」や「。」が中央の高さに表示されてしまう。  </p>
-<p>シンボリックリンクを削除し、/usr/share/fonts/（もしくは~/.local/share/fonts/）にWindowsFontsフォルダを作成。<br>Windowsからmsgothic.ttcのみをコピーしたら良い具合になった。</p>
-
-	
-	</div>
-	
-
-</div>
-	
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/17/wine-msfonts/" data-text="Wineで豆腐状態の文字化け | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
 	
 
@@ -412,35 +434,35 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
 			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>11</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>25</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+			<li><a href="/tags/Git/">Git<span>11</span></a></li>
 		
 			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>9</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>59</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>11</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>26</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>11</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>12</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>59</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 		
 		</ul>
@@ -453,6 +475,10 @@
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/05/19/hexo-hatena-button/" ><i class="fa fa-file-o"></i>Hexoブログに「はてなブックマークボタン」を設置</a>
+      </li>
     
       <li>
         <a href="/2015/05/14/hosting24-analytics-code/" ><i class="fa fa-file-o"></i>000webhost.comで挿入される解析コード</a>
@@ -470,10 +496,6 @@
         <a href="/2015/05/09/firefox-yahoo-search/" ><i class="fa fa-file-o"></i>FirefoxにYahoo! JAPANの検索エンジン...</a>
       </li>
     
-      <li>
-        <a href="/2015/05/02/higan/" ><i class="fa fa-file-o"></i>higanでファミコン、スーパーファミコン</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -483,7 +505,7 @@
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

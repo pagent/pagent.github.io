@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>XubuntuにインストールしたDolphinでRootで開く | Pagent</title>
+  <title>Hexoブログに「はてなブックマークボタン」を設置 | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
@@ -13,7 +13,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="XubuntuにインストールしたDolphinでRootで開く"/>
+  <meta property="og:title" content="Hexoブログに「はてなブックマークボタン」を設置"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -96,7 +96,7 @@
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> XubuntuにインストールしたDolphinでRootで開く</h1>
+			<h1> Hexoブログに「はてなブックマークボタン」を設置</h1>
 		</div>
 	
 
@@ -112,17 +112,17 @@
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>Xubuntu14.04にKDEのファイルマネージャーDolphinをインストールしたが、Rootで開くためのRoot Actionsで手こずった。  </p>
-<ul>
-<li>Dolphinの設定の「新しいサービスをダウンロード」からインストールする方法  </li>
-<li>rootactions_servicemenuのtar.gzファイルをダウンロードし、メニューファイルとスクリプトを手動で配置する方法  </li>
-</ul>
-<p>2通り試したが、どちらも上手くいかない。<br>パズワード入力画面までは行くが、パスワードを入れても何も起こらない。  </p>
-<p>最終的にはLinux Mint用のdebパッケージをインストールして解決した。  </p>
-<p>下記サイトの「All arch deb package」というリンクからrootactions-servicemenu_2.7.3-0mint1_all.debをダウンロード。<br><a href="http://www.ubuntuupdates.org/package/mint_main/olivia/main/base/rootactions-servicemenu" target="_blank" rel="external">UbuntuUpdates - Package “rootactions-servicemenu” (olivia )</a>  </p>
-<p>クリックするとUbuntuソフトウェアセンターが立ち上がるので、いつも通りにインストール。<br>“Open as Text”は既定のテキストエディターがKateでないと機能しないが、フォルダはちゃんとRootで開くことが出来た。  </p>
-<p>（参照サイト）<br><a href="http://ubuntuforums.org/showthread.php?t=2157705&amp;p=12707272#post12707272" target="_blank" rel="external">[gnome] “Root Actions” in dolphin not available</a>  </p>
-<p>ーー<br>（追記）<br>Ubuntuソフトウェアセンターの履歴を見ると、rootactions-servicemenu以外にkdesudoもインストールされていた。<br>手動でのインストールでもkdesudoがあれば機能していたのかもしれない。</p>
+	    <p>Hexoで作っているこのブログに「はてブ」ボタンを設置した。  </p>
+<p>Octopressでの設置例を参考にやってみたが上手く行かなかったので、はてな公式サイトのボタン作成ページでコードを作成した。<br><a href="http://b.hatena.ne.jp/guide/bbutton" target="_blank" rel="external">はてなブックマークボタンの作成・設置について - はてなブックマーク</a>  </p>
+<p>「ページのアドレス」「ページのタイトル」の欄は仮に「アドレス」「タイトル」とし、後からこれをHexoでのパスに入れ替えた。<br>出来たコードは下記。  </p>
+<pre><code>&lt;a <span class="variable">href=</span><span class="string">"http://b.hatena.ne.jp/entry/&lt;%- item.permalink %&gt;"</span> <span class="variable">class=</span><span class="string">"hatena-bookmark-button"</span> <span class="variable">data-hatena-bookmark-title=</span><span class="string">"&lt;%= item.title %&gt;"</span> <span class="variable">data-hatena-bookmark-layout=</span><span class="string">"standard-balloon"</span> <span class="variable">data-hatena-bookmark-lang=</span><span class="string">"ja"</span> <span class="variable">title=</span><span class="string">"このエントリーをはてなブックマークに追加"</span>&gt;&lt;img <span class="variable">src=</span><span class="string">"https://b.st-hatena.com/images/entry-button/button-only@2x.png"</span> <span class="variable">alt=</span><span class="string">"このエントリーをはてなブックマークに追加"</span> <span class="variable">width=</span><span class="string">"20"</span> <span class="variable">height=</span><span class="string">"20"</span> <span class="variable">style=</span><span class="string">"border: none;"</span> /&gt;&lt;/a&gt;&lt;script <span class="variable">type=</span><span class="string">"text/javascript"</span> <span class="variable">src=</span><span class="string">"https://b.st-hatena.com/js/bookmark_button.js"</span> <span class="variable">charset=</span><span class="string">"utf-8"</span> <span class="variable">async=</span><span class="string">"async"</span>&gt;&lt;/script&gt;
+</code></pre><p>これを個別の記事のレイアウト（/layout/_partial/article.ejs）、ページネーションページのレイアウト（layout/_partial/post/entry.ejs）に追加。  </p>
+<p>追加する箇所は先に設置していたツイッターボタン用のdiv属性内にした。  </p>
+<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"tweet-button"</span>&gt;
+（ツイートボタン用コード）
+（今回作成した「はてブ」用コード）
+&lt;/<span class="keyword">div</span>&gt;
+</code></pre><p></p><p></p><br>（関連記事）<br><a href="http://pagent.github.io/2014/12/02/hexo-tweetbutton/" target="_blank" rel="external">Hexoの記事一覧ページにツイートボタン設置 | Pagent</a><p></p>
 
 	</div>
 
@@ -130,7 +130,7 @@
 	<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/03/xubuntu-dolphin-root-actions/" class="hatena-bookmark-button" data-hatena-bookmark-title="XubuntuにインストールしたDolphinでRootで開く" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/05/19/hexo-hatena-button/" class="hatena-bookmark-button" data-hatena-bookmark-title="Hexoブログに「はてなブックマークボタン」を設置" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 
 	</div>
 
@@ -141,13 +141,13 @@
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2015/02/03/dolphin-directory-files/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2015/02/02/xubuntu-kate/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2015/05/14/hosting24-analytics-code/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -181,7 +181,7 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2015年2月3日
+	2015年5月19日
 	</div>
 	
 
@@ -195,7 +195,7 @@
     <ul id="tags" class="tag_box list-unstyled collapse in">
 	    <!-- _partial/post/tag -->
   
-  <li><a href="/tags/Linux/">Linux</a></li>
+  <li><a href="/tags/Hexo/">Hexo</a></li>
 
     </ul>
 	</div>

@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-05-17T08:31:11.216Z</updated>
+  <updated>2015-05-19T13:31:53.799Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,33 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Hexoブログに「はてなブックマークボタン」を設置]]></title>
+    <link href="http://pagent.github.io/2015/05/19/hexo-hatena-button/"/>
+    <id>http://pagent.github.io/2015/05/19/hexo-hatena-button/</id>
+    <published>2015-05-19T12:56:11.000Z</published>
+    <updated>2015-05-19T13:29:23.650Z</updated>
+    <content type="html"><![CDATA[<p>Hexoで作っているこのブログに「はてブ」ボタンを設置した。  </p>
+<p>Octopressでの設置例を参考にやってみたが上手く行かなかったので、はてな公式サイトのボタン作成ページでコードを作成した。<br><a href="http://b.hatena.ne.jp/guide/bbutton" target="_blank" rel="external">はてなブックマークボタンの作成・設置について - はてなブックマーク</a>  </p>
+<p>「ページのアドレス」「ページのタイトル」の欄は仮に「アドレス」「タイトル」とし、後からこれをHexoでのパスに入れ替えた。<br>出来たコードは下記。  </p>
+<pre><code>&lt;a <span class="variable">href=</span><span class="string">"http://b.hatena.ne.jp/entry/&lt;%- item.permalink %&gt;"</span> <span class="variable">class=</span><span class="string">"hatena-bookmark-button"</span> <span class="variable">data-hatena-bookmark-title=</span><span class="string">"&lt;%= item.title %&gt;"</span> <span class="variable">data-hatena-bookmark-layout=</span><span class="string">"standard-balloon"</span> <span class="variable">data-hatena-bookmark-lang=</span><span class="string">"ja"</span> <span class="variable">title=</span><span class="string">"このエントリーをはてなブックマークに追加"</span>&gt;&lt;img <span class="variable">src=</span><span class="string">"https://b.st-hatena.com/images/entry-button/button-only@2x.png"</span> <span class="variable">alt=</span><span class="string">"このエントリーをはてなブックマークに追加"</span> <span class="variable">width=</span><span class="string">"20"</span> <span class="variable">height=</span><span class="string">"20"</span> <span class="variable">style=</span><span class="string">"border: none;"</span> /&gt;&lt;/a&gt;&lt;script <span class="variable">type=</span><span class="string">"text/javascript"</span> <span class="variable">src=</span><span class="string">"https://b.st-hatena.com/js/bookmark_button.js"</span> <span class="variable">charset=</span><span class="string">"utf-8"</span> <span class="variable">async=</span><span class="string">"async"</span>&gt;&lt;/script&gt;
+</code></pre><p>これを個別の記事のレイアウト（/layout/_partial/article.ejs）、ページネーションページのレイアウト（layout/_partial/post/entry.ejs）に追加。  </p>
+<p>追加する箇所は先に設置していたツイッターボタン用のdiv属性内にした。  </p>
+<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"tweet-button"</span>&gt;
+（ツイートボタン用コード）
+（今回作成した「はてブ」用コード）
+&lt;/<span class="keyword">div</span>&gt;
+</code></pre><p></p><p></p><br>（関連記事）<br><a href="http://pagent.github.io/2014/12/02/hexo-tweetbutton/" target="_blank" rel="external">Hexoの記事一覧ページにツイートボタン設置 | Pagent</a><p></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Hexoで作っているこのブログに「はてブ」ボタンを設置した。  </p>
+<p>Octopressでの設置例を参考にやってみたが上手く行かなかったので、はてな公式サイトのボタン作成ページでコードを作成した。<br><a href="http://b.hatena.ne.jp]]>
+    </summary>
+    
+      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[000webhost.comで挿入される解析コード]]></title>
@@ -543,29 +570,6 @@ Unable <span class="keyword">to</span> <span class="keyword">update</span> the s
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Arch Linux（Xfce4デスクトップ）にもファイルマネージャーnemoを入れている。<br>Xubuntuの時にはnemoの右クリックに「圧縮…」や「ここに展開する」というのがあったのだが、何故かこれが無い。<br>どうやらエクステンションとしてnemo-filer]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Xfce4 terminal内のリンクを開くブラウザをFirefoxに]]></title>
-    <link href="http://pagent.github.io/2015/04/01/xfce4-terminal-browser/"/>
-    <id>http://pagent.github.io/2015/04/01/xfce4-terminal-browser/</id>
-    <published>2015-03-31T15:27:13.000Z</published>
-    <updated>2015-03-31T23:51:52.215Z</updated>
-    <content type="html"><![CDATA[<p>「お気に入りのアプリケーション」のブラウザをFirefoxにしていて、これまでXfce4 terminal内のリンクを開く時もFirefoxで開けていた。<br>だが、Chromiumをインストールしてから、リンクがChromiumで開くようになってしまった。<br>Xfce4 terminalの設定ではブラウザを指定出来ない。  </p>
-<p>検索すると下記トピックが見つかった。<br><a href="https://bbs.archlinux.org/viewtopic.php?id=191547" target="_blank" rel="external">[SOLVED] Xfce terminal open links with wrong browser. / Applications &amp; Desktop Environments / Arch Linux Forums</a>  </p>
-<p>~/.config/mimeapps.listの[Added Associations]の箇所に下記を追記した。  </p>
-<pre><code>text/vcard=firefox.desktop;
-text/html=firefox.desktop;
-x-scheme-<span class="operator"><span class="keyword">handler</span>/http=firefox.desktop;</span>
-x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firefox.desktop;</span>
-</code></pre><p>Xfce4 terminal内のリンクがFirefoxで開くようになった。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>「お気に入りのアプリケーション」のブラウザをFirefoxにしていて、これまでXfce4 terminal内のリンクを開く時もFirefoxで開けていた。<br>だが、Chromiumをインストールしてから、リンクがChromiumで開くようになってしまった。<br>Xfc]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
