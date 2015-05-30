@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2015/05/30/twitter-appearances-dm/</loc>
+    <lastmod>2015-05-30T01:52:54.381Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2015/05/02/higan/</loc>
     <lastmod>2015-05-27T23:45:08.791Z</lastmod>
   </url>
@@ -587,11 +592,6 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/11/23/hexo-post-template/</loc>
-    <lastmod>2014-12-11T21:42:34.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://pagent.github.io/2014/10/28/octopress-source-bitbucket/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
@@ -672,12 +672,12 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/10/23/io/</loc>
+    <loc>http://pagent.github.io/2014/10/25/cosmos/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/10/25/cosmos/</loc>
+    <loc>http://pagent.github.io/2014/10/23/io/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   
@@ -733,6 +733,11 @@
   
   <url>
     <loc>http://pagent.github.io/2014/11/23/hexo-archive-category/</loc>
+    <lastmod>2014-12-11T21:42:34.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2014/11/23/hexo-post-template/</loc>
     <lastmod>2014-12-11T21:42:34.000Z</lastmod>
   </url>
   

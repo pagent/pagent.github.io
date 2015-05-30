@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-05-27T23:45:48.522Z</updated>
+  <updated>2015-05-30T01:53:35.582Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,28 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[ツイッターの外観変更とDM非表示]]></title>
+    <link href="http://pagent.github.io/2015/05/30/twitter-appearances-dm/"/>
+    <id>http://pagent.github.io/2015/05/30/twitter-appearances-dm/</id>
+    <published>2015-05-30T01:31:27.000Z</published>
+    <updated>2015-05-30T01:52:54.381Z</updated>
+    <content type="html"><![CDATA[<p>Twitterの表示形式変更後、プロフィールページで最新のツイートなどがやたらとデカく表示されるのが嫌で、Firefoxのアドオン「Stylish」を使って他のツイートと同様の大きさに表示されるようにしていた（DMも見ないので、DMも非表示に）。  </p>
+<p>見やすくて良かったのだが、最近またツイッターの方で文字サイズを指定する要素が変わったようで、大きく表示されてしまっていた。  </p>
+<p>新たに<code>.TweetTextSize.TweetTextSize--26px</code>の指定を追加して下記のようにした。  </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="at_rule">@<span class="keyword">namespace</span> <span class="function">url</span>(http://www.w3.org/<span class="number">1999</span>/xhtml)</span>;</div><div class="line"><span class="at_rule">@<span class="keyword">-moz-document</span> <span class="function">domain</span>(<span class="string">"twitter.com"</span>)</span></div><div class="line">{</div><div class="line"></div><div class="line"><span class="class">.ProfileTweet-text</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">14px</span> <span class="important">!important</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">20px</span> <span class="important">!important</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="class">.DMButton</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">display</span>:<span class="value"> none <span class="important">!important</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="class">.dm-nav</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">display</span>:<span class="value"> none <span class="important">!important</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="class">.TweetTextSize</span><span class="class">.TweetTextSize--26px</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">14px</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">20px</span> <span class="important">!important</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>もしかすると<code>.ProfileTweet-text</code>の要素は使われなくなっているのかも知れないが、念の為置いておいた。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Twitterの表示形式変更後、プロフィールページで最新のツイートなどがやたらとデカく表示されるのが嫌で、Firefoxのアドオン「Stylish」を使って他のツイートと同様の大きさに表示されるようにしていた（DMも見ないので、DMも非表示に）。  </p>
+<p>見やすく]]>
+    </summary>
+    
+      <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Hexoブログに「はてなブックマーク」ボタンを設置]]></title>
@@ -553,24 +575,6 @@ Unable <span class="keyword">to</span> <span class="keyword">update</span> the s
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Arch Linuxでのフォントが汚く見づらかったので、フォントレンダリング「Infinality」（<a href="https://archlinuxjp.kusakata.com/wiki/Infinality" target="_blank" rel="extern]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[nemoの右クリックメニューに「圧縮...」「ここに展開する」を追加]]></title>
-    <link href="http://pagent.github.io/2015/04/01/nemo-fileroller/"/>
-    <id>http://pagent.github.io/2015/04/01/nemo-fileroller/</id>
-    <published>2015-04-01T00:10:04.000Z</published>
-    <updated>2015-04-03T07:55:11.447Z</updated>
-    <content type="html"><![CDATA[<p>Arch Linux（Xfce4デスクトップ）にもファイルマネージャーnemoを入れている。<br>Xubuntuの時にはnemoの右クリックに「圧縮…」や「ここに展開する」というのがあったのだが、何故かこれが無い。<br>どうやらエクステンションとしてnemo-filerollerを入れないといけないらしい。<br><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>  </p>
-<p>pacmanでインストール出来た。  </p>
-<p><a href="https://github.com/linuxmint/nemo-extensions" target="_blank" rel="external">linuxmint/nemo-extensions · GitHub</a>を見ると他にも、nemo-terminal、nemo-dropbox、またnemo-compare、nemo-repairerなど様々な拡張機能があるようだ。<br>また今度試してみようと思う。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Arch Linux（Xfce4デスクトップ）にもファイルマネージャーnemoを入れている。<br>Xubuntuの時にはnemoの右クリックに「圧縮…」や「ここに展開する」というのがあったのだが、何故かこれが無い。<br>どうやらエクステンションとしてnemo-filer]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
