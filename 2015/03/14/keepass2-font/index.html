@@ -114,7 +114,7 @@
 	<div class="mypage">
 	    <p>Windowsではパスワード管理ソフトとして、長らくIDMを使っていた。  </p>
 <p>IDMはとても便利で長らくお世話になったが、Linuxでは使えない。<br>OSをWindowsからLinuxに乗り換える際、パスワード管理ソフトをクロスプラットフォームのKeepass2（KeePass Password Safe）に変更した。  </p>
-<p>Keepass2の日本語化は、Xubuntuでは<a href="http://keepass.info/translations.html" target="_blank" rel="external">Translations - KeePass</a>からKeePass-2.28-Japanese.zipをダウンロードし解凍。<br>Japanese.lngxをJapanese.lngxを/usr/lib/keepass2内にコピー。<br>Keepass2のView→Change LanguageからJapaneseを選択したら日本語化出来た。  </p>
+<p>Keepass2の日本語化は、Xubuntuでは<a href="http://keepass.info/translations.html" target="_blank" rel="external">Translations - KeePass</a>からKeePass-2.28-Japanese.zipをダウンロードし解凍。<br>Japanese.lngxを/usr/lib/keepass2内にコピー。<br>Keepass2のView→Change LanguageからJapaneseを選択したら日本語化出来た。  </p>
 <p>今回、Arch LinuxにもKeepass2をインストールした。<br><code>sudo pacman -S keepass</code>でkeepass-2.28-2がインストールされた。  </p>
 <p>Arch LinuxではKeePass.exeは/usr/lib/keepass2ではなく/usr/share/keepass内にあるので、ここへJapanese.lngxをコピー。<br>日本語化しようとしたが、文字化けしてしまい豆腐状態。  </p>
 <p>Tools→options→Interface→Serect List Fontで、IPA Pゴシック、Takao Pゴシックなど日本語フォントに変更すると、パスワード管理している項目は日本語化されたが、メニューは依然文字化けしたまま。<br>ネットで検索し、システムフォントを日本語フォントに変更してみたが、それでも豆腐状態が治らない。  </p>
