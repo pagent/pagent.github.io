@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-05-31T06:01:13.341Z</updated>
+  <updated>2015-05-31T06:03:10.960Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -384,10 +384,10 @@
     <link href="http://pagent.github.io/2015/04/05/puppy-automount-fstab/"/>
     <id>http://pagent.github.io/2015/04/05/puppy-automount-fstab/</id>
     <published>2015-04-05T11:40:13.000Z</published>
-    <updated>2015-05-31T05:57:53.146Z</updated>
+    <updated>2015-05-31T06:02:25.404Z</updated>
     <content type="html"><![CDATA[<p>Puppy Linux起動時にパーティションを自動マウントしたかったのだが、少々苦戦した。</p>
 <h3 id="LxPup_15-02">LxPup 15.02</h3>
-<p>LxPupでは、あらかじめマウントポイントとなるデレクトリを作成さえしておけば、fstabの指定通りに自動マウント可能だった。<br>Xubuntu等では確か、デレクトリが無ければ自動生成してくれていたと思うので、うっかりしていた。</p>
+<p>LxPupでは、あらかじめマウントポイントとなるデレクトリを作成さえしておけば、fstabでの指定通りに自動マウント可能だった。<br>Xubuntu等では確か、デレクトリが無ければ自動生成してくれていたと思うので、うっかりしていた。</p>
 <figure class="highlight plain"><figcaption><span>fstab</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/dev/sda1 /mnt/win  ntfs  defaults 0 0</div><div class="line">/dev/sda5 /mnt/sda5  ext4  defaults 0 0</div></pre></td></tr></table></figure>
 
 <p>ntfsに−3gをつけなくても大丈夫だった。</p>
@@ -411,7 +411,7 @@
     <summary type="html">
     <![CDATA[<p>Puppy Linux起動時にパーティションを自動マウントしたかったのだが、少々苦戦した。</p>
 <h3 id="LxPup_15-02">LxPup 15.02</h3>
-<p>LxPupでは、あらかじめマウントポイントとなるデレクトリを作成さえしておけば、fstabの]]>
+<p>LxPupでは、あらかじめマウントポイントとなるデレクトリを作成さえしておけば、fstabで]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>

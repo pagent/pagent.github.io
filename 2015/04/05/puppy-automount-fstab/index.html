@@ -114,7 +114,7 @@
 	<div class="mypage">
 	    <p>Puppy Linux起動時にパーティションを自動マウントしたかったのだが、少々苦戦した。</p>
 <h3 id="LxPup_15-02">LxPup 15.02</h3>
-<p>LxPupでは、あらかじめマウントポイントとなるデレクトリを作成さえしておけば、fstabの指定通りに自動マウント可能だった。<br>Xubuntu等では確か、デレクトリが無ければ自動生成してくれていたと思うので、うっかりしていた。</p>
+<p>LxPupでは、あらかじめマウントポイントとなるデレクトリを作成さえしておけば、fstabでの指定通りに自動マウント可能だった。<br>Xubuntu等では確か、デレクトリが無ければ自動生成してくれていたと思うので、うっかりしていた。</p>
 <figure class="highlight plain"><figcaption><span>fstab</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/dev/sda1 /mnt/win  ntfs  defaults 0 0</div><div class="line">/dev/sda5 /mnt/sda5  ext4  defaults 0 0</div></pre></td></tr></table></figure>
 
 <p>ntfsに−3gをつけなくても大丈夫だった。</p>
