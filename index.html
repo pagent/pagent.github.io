@@ -134,8 +134,13 @@
 <p>新たに<code>.TweetTextSize.TweetTextSize--26px</code>の指定を追加して下記のようにした。  </p>
 <figure class="highlight css"><figcaption><span>ツイッターシンプル・DM非表示</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="at_rule">@<span class="keyword">namespace</span> <span class="function">url</span>(http://www.w3.org/<span class="number">1999</span>/xhtml)</span>;</div><div class="line"><span class="at_rule">@<span class="keyword">-moz-document</span> <span class="function">domain</span>(<span class="string">"twitter.com"</span>)</span></div><div class="line">{</div><div class="line"><span class="class">.ProfileTweet-text</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">14px</span> <span class="important">!important</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">20px</span> <span class="important">!important</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="class">.DMButton</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">display</span>:<span class="value"> none <span class="important">!important</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="class">.dm-nav</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">display</span>:<span class="value"> none <span class="important">!important</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="class">.TweetTextSize</span><span class="class">.TweetTextSize--26px</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">14px</span> <span class="important">!important</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">20px</span> <span class="important">!important</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line">}</div></pre></td></tr></table></figure>
 
-<p>もしかすると<code>.ProfileTweet-text</code>の要素は使われなくなっているのかも知れないが、念の為置いておいた。</p>
-
+<p>もしかすると<code>.ProfileTweet-text</code>の要素は使われなくなっているのかも知れないが、念の為置いておいた。  </p>
+<p>ーー<br>（追記）<br>どデカくはないけど、そこそこ大きく表示されるツイートも通常の大きさに表示するには、<code>.TweetTextSize.TweetTextSize--16px</code>も追加する必要がありました。<br><a href="https://twitter.com/frypangsan/status/604608279042351104" target="_blank" rel="external">@frypangsanさんのツイート</a></p>
+<pre><code><span class="class">.TweetTextSize</span><span class="class">.TweetTextSize--16px</span> <span class="rules">{
+    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">14px</span> <span class="important">!important</span></span></span>;
+    <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">20px</span> <span class="important">!important</span></span></span>;
+<span class="rule">}</span></span>
+</code></pre>
 	
 	</div>
 	
@@ -401,23 +406,27 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>9</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>26</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>59</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>12</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>9</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>26</span></a></li>
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>11</span></a></li>
 		
@@ -425,11 +434,7 @@
 		
 			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
 		
 		
 		</ul>
