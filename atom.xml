@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-06-01T19:58:02.081Z</updated>
+  <updated>2015-06-02T13:25:03.652Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,31 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[縦の三点リーダーがあったのか！ これは便利！]]></title>
+    <link href="http://pagent.github.io/2015/06/02/vertical-dotted-line/"/>
+    <id>http://pagent.github.io/2015/06/02/vertical-dotted-line/</id>
+    <published>2015-06-02T13:03:11.000Z</published>
+    <updated>2015-06-02T13:24:33.590Z</updated>
+    <content type="html"><![CDATA[<p>三点リーダーを表示しようと、キーボードで「・（/）」キーを3回叩いて変換していて、縦の三点リーダーがあることに気がついた。  </p>
+<p>「︙」    </p>
+<p>入力メソッドはLinux上のMozc。WindowsのMS-IMEやGoogle日本語入力などではどうなのかは未検証。<br>常識なのかもしれないが、今まで知らなかった。  </p>
+<p>縦向きに省略したい時に、超便利だ。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">︙</div><div class="line">3.</div><div class="line">4.</div><div class="line">5.</div><div class="line">︙</div></pre></td></tr></table></figure>
+
+<p></p><p></p><br>全然知らなかった。  <p></p>
+<p>常識なのかもしれないが。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>三点リーダーを表示しようと、キーボードで「・（/）」キーを3回叩いて変換していて、縦の三点リーダーがあることに気がついた。  </p>
+<p>「︙」    </p>
+<p>入力メソッドはLinux上のMozc。WindowsのMS-IMEやGoogle日本語入力などではどう]]>
+    </summary>
+    
+      <category term="小ネタ" scheme="http://pagent.github.io/tags/%E5%B0%8F%E3%83%8D%E3%82%BF/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[ツイッターの外観変更とDM非表示]]></title>
@@ -551,31 +576,6 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Xfce4の設定で「外観」（appearance）→「フォント」のデフォルトフォントをFixedにしたら、クラッシュして、パネルが消えてしまった。<br>デスクトップ上右クリック→アプリケーションから再び「外観」を呼び出そうとしても、一瞬現れて瞬時に消えてしまう。設定マネー]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Arch LinuxのフォントレンダリングをInfinalityにした]]></title>
-    <link href="http://pagent.github.io/2015/04/01/infinality/"/>
-    <id>http://pagent.github.io/2015/04/01/infinality/</id>
-    <published>2015-04-01T02:40:37.000Z</published>
-    <updated>2015-04-14T10:58:17.875Z</updated>
-    <content type="html"><![CDATA[<p>Arch Linuxでのフォントが汚く見づらかったので、フォントレンダリング「Infinality」（<a href="https://archlinuxjp.kusakata.com/wiki/Infinality" target="_blank" rel="external">Infinality - ArchWiki</a>）をインストールした。  </p>
-<p>途中、</p>
-<pre><code>Unable <span class="keyword">to</span> <span class="keyword">update</span> the static FcBlank<span class="variable">s:</span> <span class="number">0</span>x0600
-Unable <span class="keyword">to</span> <span class="keyword">update</span> the static FcBlank<span class="variable">s:</span> <span class="number">0</span>x0601
-Unable <span class="keyword">to</span> <span class="keyword">update</span> the static FcBlank<span class="variable">s:</span> <span class="number">0</span>x0602
-…
-</code></pre><p>というエラーが出たが、下記トピックを参考に、<code>sudo pacman -S fontconfig-infinality-ultimate</code>でfontconfig-iu-compを削除した。<br><a href="https://bbs.archlinux.org/viewtopic.php?id=195198" target="_blank" rel="external">[SOLVED] Font cache: Unable to update the static FcBlanks / Newbie Corner / Arch Linux Forums</a>  </p>
-<p>首尾よくフォントが綺麗になったのだが、その後一部の漢字フォントが縦に細く潰れたようになってしまった。<br>（もしかすると、気づいたのが最近だっただけで、以前から潰れたフォントがあったのかもしれない。）</p>
-<p>フォントレンダリングをUbuntuのものに変えようかとも思ったが、ArchWikiに記載のあったibfonts-meta-extendedをインストールしたら治った。<br>IPA Pゴシックなどでは、依然、一部漢字フォントが潰れているが。  </p>
-<p>どうしても具合が悪いようだったら、Ubuntuのフォントレンダリングに変更してみようと思う。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Arch Linuxでのフォントが汚く見づらかったので、フォントレンダリング「Infinality」（<a href="https://archlinuxjp.kusakata.com/wiki/Infinality" target="_blank" rel="extern]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
