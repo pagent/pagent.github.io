@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-06-04T11:20:13.264Z</updated>
+  <updated>2015-06-30T14:19:20.181Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,34 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[ツイッター検索でURL付きのツイートが表示されない]]></title>
+    <link href="http://pagent.github.io/2015/06/30/twitter-search-result-probrem/"/>
+    <id>http://pagent.github.io/2015/06/30/twitter-search-result-probrem/</id>
+    <published>2015-06-30T13:32:34.000Z</published>
+    <updated>2015-06-30T14:18:56.057Z</updated>
+    <content type="html"><![CDATA[<h3 id="自分のツイートだけが表示されない">自分のツイートだけが表示されない</h3>
+<p>ニュース記事やブログなどに設置してあるツイート数表示をクリックした時に表示されるページ（URLをツイッター検索した結果のページ）に自分のツイートだけが表示されなくなっていた。「トップ」から「ライブ」のタブに切り替えても表示されない。  </p>
+<p>これではツイートを見てもらう機会が減ってしまい困るので、下記ページから問題の報告を行った。<br><a href="https://support.twitter.com/forms/feature_report?feature=tweets" target="_blank" rel="external">Twitterヘルプセンター</a>  </p>
+<p>「問題の詳細」の箇所は英文で書いた方が良いらしいので、見様見真似で下記のようにした。  </p>
+<p>Regarding: Search/Trends<br>Subject: I’m not a spam!!<br>Description of problem:<br>My tweets that contain URLs are not displayed in search results. Can you permit me to display my tweets in the search? I use Twitter generally. I’m not spam. Please clear your information about spam. Kind regards.  </p>
+<p>「返信できませんが、いただいた情報はTwitterの改善に役立たせていただきます」とのことだったが、１日くらいで改善された。  </p>
+<h3 id="自分のブログ記事のツイッター検索の結果が１件しか表示されない">自分のブログ記事のツイッター検索の結果が１件しか表示されない</h3>
+<p>その後、別で書いている自分のブログでのことだが、上記同様ツイート数表示をクリックした時に表示されるページ（URLをツイッター検索した結果のページ）で、何人かツイートしてくれている人がいるのに、ツイートが１件しか表示されない状態になっていた。「トップ」でも「ライブ」でも１件のみ。誰のツイートが表示されるかは、リツイート数の多いツイートだったり、最新のツイートだったり。<br>これではツイートしてくれる人も意欲を削がれるに違いない。  </p>
+<p>上記の「Twitterヘルプセンター」から日本語で報告してみたが、１日待っても変化が無い。<br>再度下手くそな英語で報告してみた。  </p>
+<p>Regarding: Search/Trends<br>Subject: About search result<br>Description of problem:<br>Reasntly, several tweets exist that contain the URL(<a href="http://pagent.seesaa.net/article/421338174.html" target="_blank" rel="external">http://pagent.seesaa.net/article/421338174.html</a>). But only one tweet is displayed in search result, even in “Live” tab.<br>Can you adjust this probrem?  </p>
+<p>１〜２時間ほどすると、ほぼすべてのツイートが表示される状態に改善した。  </p>
+<p>英語が苦手でも、やってみるものだと実感した。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="自分のツイートだけが表示されない">自分のツイートだけが表示されない</h3>
+<p>ニュース記事やブログなどに設置してあるツイート数表示をクリックした時に表示されるページ（URLをツイッター検索した結果のページ）に自分のツイートだけが表示されなくなっていた。「ト]]>
+    </summary>
+    
+      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[GitHubが「ギットハブ・ジャパン」を設立したそうだ]]></title>
@@ -545,34 +573,6 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
     <summary type="html">
     <![CDATA[<p>Arch Linuxにインストールしたnemoで右クリックメニューの「端末で開く」が機能しなかった。  </p>
 <p><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="ext]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Qtベースのプログラムで日本語入力（fcitx-mozc）]]></title>
-    <link href="http://pagent.github.io/2015/04/02/fcitx-qt-program/"/>
-    <id>http://pagent.github.io/2015/04/02/fcitx-qt-program/</id>
-    <published>2015-04-02T03:57:36.000Z</published>
-    <updated>2015-05-17T08:31:04.331Z</updated>
-    <content type="html"><![CDATA[<p>iBusのプロパティパネル採用以降、iBusをやめて日本語入力にfcitx-mozcを使っている。  </p>
-<p>Xubuntuでは特に問題無く使えていたが、Arch LinuxでQtベースのプログラムを使用する際、日本語入力が有効にならず困っていた。<br>「QupZilla」（Simplenote専用にするのにうってつけの軽量ブラウザ）や「ReText」（プレビューが出来て便利なmarkdownファイルエディター）など、日本語入力が出来ないと不便。  </p>
-<p>モジュールのfcitx-qt4、fcitx-qt5はインストールしたが、何故かインプットメソッドがオンにならない。<br>fcitx-configtool（Qt 設定ツール）で、デフォルトのインプットメソッドをfcitxに変更したが、効果が無い。  </p>
-<p><code>fcitx-diagnose</code>を実行してフロントエンド設定の項目を確認すると、空欄だったり「設定されていません」という表示だったりする。<br>XMODIFIERSとQT_IM_MODULEがちゃんとロードされていないらしい。  </p>
-<p>ホームディレクトリに.xprofileを新規作成し、下記内容で保存。<br>（ディスプレイマネージャにSLiMを使っている場合は、~/.xprofileではなく~/.xinitrcに記載するらしい）  </p>
-<pre><code><span class="keyword">export</span> GTK_IM_MODULE=fcitx
-<span class="keyword">export</span> QT_IM_MODULE=fcitx
-<span class="keyword">export</span> XMODIFIERS=<span class="string">"@im=fcitx"</span>
-</code></pre><p>再起動したら、QupZilla、ReTextともに日本語入力が可能になった。  </p>
-<p>再度<code>fcitx-diagnose</code>で見てみると、「環境変数 XMODIFIERS は “{$2}” に正しく設定されています。」「環境変数 QT_IM_MODULE は “{$2}” に正しく設定されています。」となっていた。  </p>
-<p>fcitx-configtoolのデフォルトのインプットメソッドはximのままでも問題無いようだった。  </p>
-<p>（参照記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Fcitx" target="_blank" rel="external">Fcitx - ArchWiki</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>iBusのプロパティパネル採用以降、iBusをやめて日本語入力にfcitx-mozcを使っている。  </p>
-<p>Xubuntuでは特に問題無く使えていたが、Arch LinuxでQtベースのプログラムを使用する際、日本語入力が有効にならず困っていた。<br>「QupZ]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
