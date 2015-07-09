@@ -114,6 +114,58 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/11/22/hexo-theme/" >Hexoのテーマを変更したら、元に戻せなくなった</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月22日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Hexoにはいろいろテーマがあるようで有難い。<br><a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">Themes · hexojs/hexo Wiki</a><br>（デモサイトはなぜか中国語が多い。）</p>
+<p>元々入っていたデフォルトのテーマは「Landscape」だったので、とりあえずそれとは別のOfficial Themes、「Phase」と「Light」を試してみた。<br>試したはいいが、「Light」を入れてから元のテーマに戻そうとしたら戻せなくなってしまった。<br>「Light」が崩れたようなスタイルから変更出来ない。  </p>
+<p><code>hexo h</code>でヘルプを見ると、<code>clean</code>（Remove generated files and the cache）というコマンドオプションがあったので、<code>hexo clean</code>をしてみた。<br>書いてある通り/publicフォルダ自体も消えてしまったが、その後<code>hexo g</code>したらテーマも無事直った。  </p>
+<p>消したのに、カウント数が(0)のまま表示されているカテゴリやタグも、<code>hexo clean</code>で直るようだ。  </p>
+<p>ーー<br>テーマのCSSをカスタマイズする際にも、ローカルでの確認では問題ないが、いざdeployすると反映されていないようだ。<br>この時もいったん<code>hexo clean</code>すると良いようだ。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/22/hexo-theme/" data-text="Hexoのテーマを変更したら、元に戻せなくなった | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/11/22/hexo-theme/" class="hatena-bookmark-button" data-hatena-bookmark-title="Hexoのテーマを変更したら、元に戻せなくなった" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Hexo/">Hexo</a></li></ul>
+	</div>
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/11/22/octopress-hexo/" >サイトジェネレーターをOctopressからHexoに変更</a>
 		</h3>
 	
@@ -377,63 +429,6 @@ cd -
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/18/debian-wheezy-nemo/" >Debian WheezyにNemoをインストール</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月18日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>ネットブックLaVie LightにDebian Wheezyをインストールした。<br>ウィンドウマネージャはXfceが好みなので、debian-7.7.0-i386-netinst.isoでインストールする際、”Advanced options” 、”Alternate desktop environments”でXfceを選択した。  </p>
-<p>ファイルやフォルダを簡単に管理者権限で操作したいので、XfceデフォルトのファイルマネージャーThunarのアクションに「rootで開く」を追加し、gksuもインストールした。<br>だがrootで開こうとしても、認証画面は表示されるものの、フォルダやファイルを管理者権限で開くことが出来ない。  </p>
-<p>代わりにNemoをインストールしようとしたら、リポジトリにNemoが無かった。PCManFMも確かrootで開くメニューがあったのでインストールしてみたが、なぜかrootで開くメニューが無い。<br>困ってしまったが、Ubuntu 12.04 Preciseのリポジトリを追加することで、Nemoをインストール出来た。  </p>
-<pre><code><span class="keyword">echo</span> <span class="string">"deb http://ppa.launchpad.net/noobslab/mint/ubuntu precise main"</span> | sudo tee -<span class="keyword">a</span> /etc/apt/sources.<span class="keyword">list</span>
-sudo apt-key adv --keyserver keyserver.ubuntu.<span class="keyword">com</span> --recv-<span class="built_in">keys</span> F59EAE4D
-sudo apt-<span class="built_in">get</span> <span class="keyword">update</span>
-sudo apt-<span class="built_in">get</span> install nemo
-</code></pre><p><a href="http://www.techlw.com/2013/12/install-nemo-file-manager-with.html" target="_blank" rel="external">Install Nemo file Manager with Extensions in Debian 7 Wheezy and its derivatives | Technology Linux World</a>  </p>
-<p>Ubuntu 14.04 Trustyのリポジトリを入れた方が、Nemoのバージョンが新しくて良いかと思いやってみたが、「壊れたパッケージを修復出来ない」とかでNemoをインストール出来なかった。  </p>
-<p>それと、Nemoを起動すると、デスクトップ上の右クリックでアプリケーションメニューを表示するのが出来なくなってしまう。<br>これでは少々不便なので、普段はThunarを使った方が良いかもしれない。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/18/debian-wheezy-nemo/" data-text="Debian WheezyにNemoをインストール | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/11/18/debian-wheezy-nemo/" class="hatena-bookmark-button" data-hatena-bookmark-title="Debian WheezyにNemoをインストール" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Linux/">Linux</a></li></ul>
-	</div>
-
-</div>
-				
 
 			</div>
 
@@ -478,37 +473,37 @@ sudo apt-<span class="built_in">get</span> install nemo
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Hexo/">Hexo<span>26</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>12</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>14</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>59</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>12</span></a></li>
-		
 			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>9</span></a></li>
 		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+			<li><a href="/tags/ネット/">ネット<span>15</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>12</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>59</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>26</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>12</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
 		
 		
 		</ul>
@@ -521,6 +516,10 @@ sudo apt-<span class="built_in">get</span> install nemo
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/07/09/fictional-email-addresses/" ><i class="fa fa-file-o"></i>架空のメールアドレスを使う</a>
+      </li>
     
       <li>
         <a href="/2015/06/30/twitter-search-result-probrem/" ><i class="fa fa-file-o"></i>ツイッター検索でURL付きのツイートが表示されない</a>
@@ -538,10 +537,6 @@ sudo apt-<span class="built_in">get</span> install nemo
         <a href="/2015/05/30/twitter-appearances-dm/" ><i class="fa fa-file-o"></i>ツイッターの外観変更とDM非表示</a>
       </li>
     
-      <li>
-        <a href="/2015/05/19/hexo-hatena-button/" ><i class="fa fa-file-o"></i>Hexoブログに「はてなブックマーク」ボタンを設置</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -551,7 +546,7 @@ sudo apt-<span class="built_in">get</span> install nemo
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

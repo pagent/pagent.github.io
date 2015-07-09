@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-07-09T06:58:58.816Z</updated>
+  <updated>2015-07-09T07:20:12.419Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,24 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[架空のメールアドレスを使う]]></title>
+    <link href="http://pagent.github.io/2015/07/09/fictional-email-addresses/"/>
+    <id>http://pagent.github.io/2015/07/09/fictional-email-addresses/</id>
+    <published>2015-07-09T07:03:50.000Z</published>
+    <updated>2015-07-09T07:19:25.073Z</updated>
+    <content type="html"><![CDATA[<p>ネットを利用していて、例えばメール欄が必須になっているブログにコメントしたい時など、これまでは正直に実際のメールアドレスを記載していた。（メインのではなく、サブのアドレスを使うことが多かったが。）<br>だが、よく考えてみると、返信が必要のない場合は実際のものではなく、架空のメールアドレスを使っても問題なさそうだ。  </p>
+<p>存在するかもしれないメールアドレスを適当に使ってしまうと、迷惑を掛けてしまうかもしれないが、３つのサンプル用ドメイン（example.com、example.org、 example.net）なら、大丈夫なはず。  </p>
+<p>そう考えて、適当な架空のメールアドレスとして、<code>anonymous@example.net</code>を使うようにした。<br>なんとなく<code>.net</code>が格好良いので。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>ネットを利用していて、例えばメール欄が必須になっているブログにコメントしたい時など、これまでは正直に実際のメールアドレスを記載していた。（メインのではなく、サブのアドレスを使うことが多かったが。）<br>だが、よく考えてみると、返信が必要のない場合は実際のものではなく、架空]]>
+    </summary>
+    
+      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[ツイッター検索でURL付きのツイートが表示されない]]></title>
@@ -552,27 +570,6 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
     <summary type="html">
     <![CDATA[<p>nemoの右クリックで２つのファイル（フォルダ）の内容を比較出来るnemo-compareをインストールした。<br>yaourtでインストール出来たが、右クリックのメニューに「compare」が出てこない。<br>検索すると同様の事例が見つかった。  </p>
 <p><a]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[nemoの「端末で開く」が機能しない]]></title>
-    <link href="http://pagent.github.io/2015/04/03/nemo-open-in-terminal/"/>
-    <id>http://pagent.github.io/2015/04/03/nemo-open-in-terminal/</id>
-    <published>2015-04-03T07:39:39.000Z</published>
-    <updated>2015-04-03T07:48:31.027Z</updated>
-    <content type="html"><![CDATA[<p>Arch Linuxにインストールしたnemoで右クリックメニューの「端末で開く」が機能しなかった。  </p>
-<p><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>を参考に、  </p>
-<pre><code>$ gsettings <span class="operator"><span class="keyword">set</span> org.cinnamon.desktop.<span class="keyword">default</span>-applications.terminal <span class="keyword">exec</span> xfce4-terminal</span>
-</code></pre><p>を実行したら機能するようになった。  </p>
-<p>「端末で開く」で起動するターミナルエミュレーターを変更したい時も同様に端末名を指定すれば良いようだ。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Arch Linuxにインストールしたnemoで右クリックメニューの「端末で開く」が機能しなかった。  </p>
-<p><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="ext]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
