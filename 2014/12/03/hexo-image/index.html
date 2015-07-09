@@ -117,8 +117,9 @@
 </code></pre><p>例えば  </p>
 <pre><code>{(半角の%) img <span class="regexp">/images/</span>a0960_005150_r.jpg <span class="number">480</span> <span class="number">360</span> コスモス %}  #<span class="keyword">class</span>名は省略
 </code></pre><p>で良いようだ。<br>代わりに下記のようなhtmlタグを使っても良い。  </p>
-<pre><code>&lt;a <span class="variable">href=</span><span class="string">"/images/a0960_005150_r.jpg"</span> <span class="variable">target=</span>_blank&gt;&lt;img <span class="variable">src=</span><span class="string">"/images/a0960_005150_r.jpg"</span> <span class="variable">alt=</span><span class="string">"コスモス"</span> <span class="variable">width=</span><span class="string">"480"</span> <span class="variable">height=</span><span class="string">"360"</span>&gt;&lt;/a&gt;
-</code></pre><p>OctopressではMarkdown式のタグだと、画像をクリックしたら原寸大で表示というのが出来なかったので、htmlタグの方が良いかと思ったが、Hexoの場合、Markdownタグで画像クリック→原寸大表示が出来るようだ。  </p>
+<pre><code>&lt;img <span class="variable">src=</span><span class="string">"/images/a0960_005150_r.jpg"</span> <span class="variable">alt=</span><span class="string">"コスモス"</span> <span class="variable">width=</span><span class="string">"320"</span> <span class="variable">height=</span><span class="string">"240"</span>&gt;
+</code></pre><p><img src="/images/a0960_005150_r.jpg" alt="コスモス" width="320" height="240"></p>
+<p>OctopressではMarkdown式のタグだと、画像をクリックしたら原寸大で表示というのが出来なかったので、htmlタグの方が良いかと思ったが、Hexoの場合、Markdownタグで画像クリック→原寸大表示が出来るようだ。  </p>
 <p>Hexoでは_config.ymlのWritingの箇所で<code>post_asset_folder</code>の値を<code>true</code>にするようを推奨している。<br><a href="http://hexo.io/docs/writing.html#Asset_Folder" target="_blank" rel="external">Writing | Hexo</a>  </p>
 <p>説明通り<code>post_asset_folder: true</code>にして新規postを作ると、postフォルダ内に.mdファイルと同名のフォルダが作成される。<br>このフォルダに画像ファイルを入れよということらしい。<br>画像を多用する場合は整理に便利なのかもしれないが、ほとんど画像を使わない場合はかえって煩雑なので、source下にimagenなどのフォルダを作ってそこへ入れた方が便利そうだ。  </p>
 <p>ーー<br>（追記）<br>テーマをFreewillにしたら画像が強制的に最大表示になってしまったので、freewill/source/css/style.cssのimgの箇所で<code>width: auto;</code>、<code>height: auto;</code>を削除した。</p>
