@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-08-14T23:42:20.604Z</updated>
+  <updated>2015-08-18T22:19:53.730Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -38,10 +38,10 @@
     <link href="http://pagent.github.io/2015/07/09/fictional-email-addresses/"/>
     <id>http://pagent.github.io/2015/07/09/fictional-email-addresses/</id>
     <published>2015-07-09T07:03:50.000Z</published>
-    <updated>2015-07-09T07:21:49.483Z</updated>
+    <updated>2015-08-18T22:18:03.847Z</updated>
     <content type="html"><![CDATA[<p>ネットを利用していて、例えばメール欄が必須になっているブログにコメントしたい時など、これまでは正直に実際のメールアドレスを記載していた。（メインのではなく、サブのアドレスを使うことが多かったが）<br>だが、よく考えてみると、返信が必要のない場合は実際のものではなく、架空のメールアドレスを使っても問題なさそうだ。  </p>
 <p>存在するかもしれないメールアドレスを適当に使ってしまうと迷惑を掛けてしまうかもしれないが、３つのサンプル用ドメイン（example.com、example.org、 example.net）なら、大丈夫なはず。  </p>
-<p>そう考えて、適当な架空のメールアドレスとして<code>anonymous@example.net</code>を使うようにした。<br>なんとなく<code>.net</code>が格好良いので。</p>
+<p>そう考えて、適当な架空のメールアドレスとして<code>mail@example.net</code>を使うようにした。<br>なんとなく<code>.net</code>が格好良いので。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>ネットを利用していて、例えばメール欄が必須になっているブログにコメントしたい時など、これまでは正直に実際のメールアドレスを記載していた。（メインのではなく、サブのアドレスを使うことが多かったが）<br>だが、よく考えてみると、返信が必要のない場合は実際のものではなく、架空の]]>
