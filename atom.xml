@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-08-18T22:22:16.004Z</updated>
+  <updated>2015-08-20T00:20:58.030Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,25 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Firefoxに「Googleニュース検索」を追加]]></title>
+    <link href="http://pagent.github.io/2015/08/20/google-news-search/"/>
+    <id>http://pagent.github.io/2015/08/20/google-news-search/</id>
+    <published>2015-08-19T23:57:14.000Z</published>
+    <updated>2015-08-20T00:18:50.153Z</updated>
+    <content type="html"><![CDATA[<p>Firefoxの検索エンジンに「Googleニュース検索」を追加した。<br>アドオンの検索では日本語用のものが見つからなかったので、いったん<a href="https://addons.mozilla.org/ja/firefox/addon/googlenews-ita/?src=search" target="_blank" rel="external">Google News (Italia)</a>をインストール。<br>~/.mozilla/firefox/(プロファイル名)/searchplugins内のgooglenews-ita.xmlをgooglenews-ja.xmlにリネーム。<br>ファイルの内容を下記に変更した。  </p>
+<figure class="highlight xml"><figcaption><span>googlenews-ja.xml</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">SearchPlugin</span> <span class="attribute">xmlns</span>=<span class="value">"http://www.mozilla.org/2006/browser/search/"</span> <span class="attribute">xmlns:os</span>=<span class="value">"http://a9.com/-/spec/opensearch/1.1/"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:ShortName</span>&gt;</span>Google ニュース<span class="tag">&lt;/<span class="title">os:ShortName</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Description</span>&gt;</span>Google ニュース検索<span class="tag">&lt;/<span class="title">os:Description</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:InputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">os:InputEncoding</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Image</span> <span class="attribute">width</span>=<span class="value">"16"</span> <span class="attribute">height</span>=<span class="value">"16"</span>&gt;</span>data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAPAKAADwCgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAArKSaGLywqTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1MzB3SkdF/1RST/5FQj/sR0VCdzIvLAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3NjRXR0VC/ZGQj/++vr3/oaCf/2xqaP9QTkviSEZDeDIvLA4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlIyE/QD489mRiYf/ExMP/ymVO/8mXi//Hx8f/rq6t/25sav9UUlDgQ0A9YTIvLAkAAAAAAAAAAAAAAAA7OTdPQkE/9FdUUv+jo6L/0Ly3/8s0Ev/QxsP/qaqp/7Ozs//Pz87/rKyr/2BdW/pPTUrOMi8sJQAAAAA0MjBiNzU0+IWEgf9mZGL/1NTU/85VOv/RgW//09PS/4SFhP+EhYT/mZmY/8zMzP/W1tb/kI+N/0lHRPQlIyFiS0lH+4qKiP9DQD3/v769/9V6Zf/MNRP/39XT/6jX4f+rsrL/iYqJ/4SFhP+Jion/wsLC/97e3f+Afn3/JSMhDjc1M4hHRUP2iYiG/+rq6f/YfWn/1nFa/3nd8/8K0v7/F9P9/3rR5f+kqan/hIWE/4SFhP/Jycj/amhm9AAAAAAyLyw4ZmRi8aGh2/9BQdP/k5Ph/+PZ4P994ff/GNT9/wrS/v8K0v7/Jtb8/6LZ5f+xsbH/vby6/1RRT9kAAAAAOjc1852bmv+9ve3/Tk7W/zY20f9BQtb/f4Dl/9Pf9v+B5fv/J9b9/wrS/v8K0v7/q+n5/2lmZPtOTElTAAAAADIvLD1eXFnSdHJw+s/Ozf+zs+7/T0/b/zc42/83Od//goPt/83O+f+j7v//cuP9/5+dnP9VU1C6Mi8sBQAAAAAAAAAAMi8sDEdEQmJaWFXWfXt5+cTDw/+vr+3/aWvo/zg75f84POn/j5H1/7y7uv9FQkDuMi8sEAAAAAAAAAAAAAAAAAAAAAAAAAAAMi8sCDIvLE1QTUvNdHJw9Le2tf/JyfT/g4Xy/8PDzf9qaGbqMi8sLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIvLDxHRELCQT479XJwbv9QTkvzU1BOSwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIvLA8yLyxjMi8sHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/P8AAPgf8L/wBwAA4AEAAMAAAACAAAAAAAAAAAAAAACAAAAAgAAAAIAAAADAAQAA8AP///4H////jwAA//8AAA%3D%3D<span class="tag">&lt;/<span class="title">os:Image</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Url</span> <span class="attribute">type</span>=<span class="value">"text/html"</span> <span class="attribute">method</span>=<span class="value">"GET"</span> <span class="attribute">template</span>=<span class="value">"https://news.google.co.jp/news/search?q={searchTerms}"</span> <span class="attribute">resultDomain</span>=<span class="value">"news.google.co.jp"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">os:Url</span>&gt;</span><span class="tag">&lt;<span class="title">os:Url</span> <span class="attribute">type</span>=<span class="value">"application/x-suggestions+json"</span> <span class="attribute">method</span>=<span class="value">"GET"</span> <span class="attribute">template</span>=<span class="value">"http://suggestqueries.google.com/complete/search?output=firefox&amp;client=firefox&amp;hl=ja&amp;q={searchTerms}"</span> <span class="attribute">resultDomain</span>=<span class="value">"suggestqueries.google.com"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">os:Url</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">SearchPlugin</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<p>~/.mozilla/firefox/(プロファイル名)/searchplugins内に上記ファイルを新規作成しても良いと思う。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Firefoxの検索エンジンに「Googleニュース検索」を追加した。<br>アドオンの検索では日本語用のものが見つからなかったので、いったん<a href="https://addons.mozilla.org/ja/firefox/addon/googlenews-it]]>
+    </summary>
+    
+      <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[右クリックからの検索を拡張する「Context Search」が便利]]></title>
@@ -525,41 +544,6 @@
     <![CDATA[<p>Puppy Linux起動時にパーティションを自動マウントしたかったのだが、少々苦戦した。</p>
 <h3 id="LxPup_15-02">LxPup 15.02</h3>
 <p>LxPupでは、あらかじめマウントポイントとなるデレクトリを作成さえしておけば、fstabで]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[nemoの右クリックメニューに「比較」を追加]]></title>
-    <link href="http://pagent.github.io/2015/04/03/nemo-compare-action/"/>
-    <id>http://pagent.github.io/2015/04/03/nemo-compare-action/</id>
-    <published>2015-04-03T08:31:01.000Z</published>
-    <updated>2015-04-04T13:11:54.406Z</updated>
-    <content type="html"><![CDATA[<p>nemoの拡張機能nemo-compareのインストールが上手く行かなかったので、手動で導入した。  </p>
-<p>（参照記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>  </p>
-<p>まず、meld、python2-dbus、dbus-glib（これは導入済みだった）をインストール。  </p>
-<pre><code>$ <span class="built_in">sudo</span> pacman -S meld python2-dbus
-</code></pre><p>~/.local/share/nemo/actions下にcompare-save-for-later.nemo_action、compare-with-saved.nemo_action、compare.shの３つのファイルを作成。  </p>
-<figure class="highlight plain"><figcaption><span>compare-save-for-later.nemo_action</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[Nemo Action]</div><div class="line">Active=true</div><div class="line">Name=Compare later</div><div class="line">Name[ja]=あとで比較する</div><div class="line">Comment=Save file for comparison later.</div><div class="line">Exec=<compare.sh save="" %f=""></compare.sh></div><div class="line">Icon-Name=meld</div><div class="line">Selection=S</div><div class="line">Extensions=any</div></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight plain"><figcaption><span>compare-with-saved.nemo_action</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[Nemo Action]</div><div class="line">Active=true</div><div class="line">Name=Compare with saved element</div><div class="line">Name[ja]=比較する</div><div class="line">Comment=Compare %F saved file or directory.</div><div class="line">Exec=<compare.sh compare="" %f=""></compare.sh></div><div class="line">Icon-Name=meld</div><div class="line">Selection=S</div><div class="line">Extensions=any</div></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight shellscript"><figcaption><span>compare.sh</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="shebang">#!/bin/bash</span></div><div class="line">savedfile=/var/tmp/compare-save-for-later.<span class="variable">$USER</span></div><div class="line">comparator=meld</div><div class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$1</span>"</span> == <span class="string">"save"</span> ]; <span class="keyword">then</span></div><div class="line">    <span class="built_in">echo</span> <span class="string">"<span class="variable">$2</span>"</span> &gt; <span class="string">"<span class="variable">$savedfile</span>"</span></div><div class="line"><span class="keyword">else</span></div><div class="line">    <span class="string">"<span class="variable">$comparator</span>"</span> $(cat <span class="string">"<span class="variable">$savedfile</span>"</span>) <span class="string">"<span class="variable">$2</span>"</span></div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure>
-
-<p>compare.shはファイルマネージャーもしくはコマンドで実行可能にしておく。  </p>
-<pre><code>$ chmod +<span class="keyword">x</span> compare.<span class="keyword">sh</span>
-</code></pre><p>nemoの右クリックメニューに「比較する」「あとで比較する」が追加された。  </p>
-<p>ファイル内容だけではなくフォルダの内容も比較出来る。<br>なにかと重宝しそうだ。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>nemoの拡張機能nemo-compareのインストールが上手く行かなかったので、手動で導入した。  </p>
-<p>（参照記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank"]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
