@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-08-20T00:20:58.030Z</updated>
+  <updated>2015-08-21T12:27:04.596Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,33 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[rekonqのデフォルト検索エンジンを設定出来ない]]></title>
+    <link href="http://pagent.github.io/2015/08/21/rekonq-default-search-engine/"/>
+    <id>http://pagent.github.io/2015/08/21/rekonq-default-search-engine/</id>
+    <published>2015-08-21T11:55:28.000Z</published>
+    <updated>2015-08-21T12:25:54.379Z</updated>
+    <content type="html"><![CDATA[<p>Arch LinuxでサブのブラウザとしてMidoriを使っているが、お気に入りが消えてしまったりと調子が悪かったので、rekonqを入れてみた。  </p>
+<p>サイドバーは有る方が好みなので、レンチアイコンの設定からPanels→Bookmarks Panelをチェック。<br>広告除去は、Tools→Ad block。<br>EasyListだけでは依然、広告が邪魔な状態だったので、EasyList without element hidingも有効にした。  </p>
+<p>快適に使えるようになったかと思ったが、起動の度に、デフォルトの検索エンジンを設定するよう、上部に注意表示される。  </p>
+<blockquote>
+<p>you do not have a default search engine set. without it …</p>
+</blockquote>
+<p>確かにアドレスバーに語句を入力しても検索出来ない。<br>注意表示の「Set it」をクリックしてもなにも起こらないし、設定のSearch Enginesの箇所は、モジュールが無いようで灰色、設定出来ない。  </p>
+<p>Konquerorをインストールしたら良いという情報があったので、インストールしてみた。<br><a href="https://bbs.archlinux.org/viewtopic.php?pid=1241664#p1241664" target="_blank" rel="external">cannot set the default search engine in rekonq 1.0 / Applications &amp; Desktop Environments / Arch Linux Forums</a>  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> pacman -S kdebase-konqueror</div></pre></td></tr></table></figure>
+
+<p>検索エンジンを設定出来るようになった。<br>Konquerorは使わないようだったら削除してしまっても良いようだ。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Arch LinuxでサブのブラウザとしてMidoriを使っているが、お気に入りが消えてしまったりと調子が悪かったので、rekonqを入れてみた。  </p>
+<p>サイドバーは有る方が好みなので、レンチアイコンの設定からPanels→Bookmarks Panelをチェッ]]>
+    </summary>
+    
+      <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Firefoxに「Googleニュース検索」を追加]]></title>
@@ -505,45 +532,6 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<p>rmコマンドでファイルを消去してもデータの内容自体はディスク上に残っており、復旧できる可能性があるようだ。<br>完全に消去するにはshredコマンドを使えばいいらしい。<br><a href="http://itpro.nikkeibp.co.jp/article/COL]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Puppy Linux起動時にfstabで自動マウント]]></title>
-    <link href="http://pagent.github.io/2015/04/05/puppy-automount-fstab/"/>
-    <id>http://pagent.github.io/2015/04/05/puppy-automount-fstab/</id>
-    <published>2015-04-05T11:40:13.000Z</published>
-    <updated>2015-05-31T06:04:38.077Z</updated>
-    <content type="html"><![CDATA[<p>Puppy Linux起動時にパーティションを自動マウントしたかったのだが、少々苦戦した。</p>
-<h3 id="LxPup_15-02">LxPup 15.02</h3>
-<p>LxPupでは、あらかじめマウントポイントとなるデレクトリを作成さえしておけば、fstabでの指定通りに自動マウント可能だった。<br>Xubuntu等では確か、デレクトリが無ければ自動生成してくれていたと思うので、うっかりしていた。</p>
-<figure class="highlight plain"><figcaption><span>fstab</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/dev/sda1 /mnt/win  ntfs  defaults 0 0</div><div class="line">/dev/sda5 /mnt/sda5  ext4  defaults 0 0</div></pre></td></tr></table></figure>
-
-<p>ntfsに−3gをつけなくても大丈夫だった。</p>
-<h3 id="Puppy_Linux_Precise_571_JP">Puppy Linux Precise 571 JP</h3>
-<p>Precise571JPは、デフォルト状態ではfstabが機能していなかった。<br>/etc/rc.d/rc.localファイルで<code>mount -a</code>コマンドを実行することで、fstabをロードしてくれた。<br><a href="http://blog.livedoor.jp/yagiyagi_shun/archives/51926344.html" target="_blank" rel="external">やぎやぎブログ:[Fedora 16]rc.localの罠 - livedoor Blog（ブログ）</a>  </p>
-<figure class="highlight shellscript"><figcaption><span>rc.local</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="shebang">#!/bin/sh</span></div><div class="line">    </div><div class="line">mount <span class="operator">-a</span></div></pre></td></tr></table></figure>
-
-<p>rc.localは実行可能にしておく必要がある。  </p>
-<pre><code><span class="comment"># chmod a+x /etc/rc.d/rc.local</span>
-</code></pre><p>/etc内にリンクを作成する必要は無かった。</p>
-<p>LxPupでは<code>mount -a</code>は/etc/rc.d/rc.sysinitに記載されているようで、こちらに記載しても自動マウント可能。</p>
-<p>rc.sysinitの316行目「VERSION UPDATE」のすぐ上に記載。</p>
-<figure class="highlight plain"><figcaption><span>rc.sysinit</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">status_func $STATUS</div><div class="line">    </div><div class="line">#Load fstab entries</div><div class="line">mount -a</div><div class="line">    </div><div class="line">#######################VERSION UPDATE##########################</div><div class="line">...</div></pre></td></tr></table></figure>
-
-<p>マウントポイントとなるデレクトリをあらかじめ作成しておかないといけないのは同様。  </p>
-<h3 id="fstabを用いずに自動マウント">fstabを用いずに自動マウント</h3>
-<p>なお、fstabを用いず、/etc/rc.d/rc.localで個別にマウント指定しても自動マウント可能だった。<br><a href="http://www.murga-linux.com/puppy/viewtopic.php?p=822315&amp;sid=0256b63fbae1b190f96d18652edba1b1" target="_blank" rel="external">Puppy Linux Discussion Forum :: View topic - How to auto-mount drives at startup?</a>  </p>
-<figure class="highlight plain"><figcaption><span>rc.local</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#!/bin/sh</div><div class="line">    </div><div class="line">mount -t ntfs -o defaults /dev/sda2 /mnt/vol</div><div class="line">mount -o defaults /dev/sda5 /mnt/sda5</div></pre></td></tr></table></figure>
-
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Puppy Linux起動時にパーティションを自動マウントしたかったのだが、少々苦戦した。</p>
-<h3 id="LxPup_15-02">LxPup 15.02</h3>
-<p>LxPupでは、あらかじめマウントポイントとなるデレクトリを作成さえしておけば、fstabで]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
