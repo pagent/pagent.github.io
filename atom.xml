@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-08-21T12:27:04.596Z</updated>
+  <updated>2015-08-21T14:29:58.402Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/08/21/rekonq-default-search-engine/"/>
     <id>http://pagent.github.io/2015/08/21/rekonq-default-search-engine/</id>
     <published>2015-08-21T11:55:28.000Z</published>
-    <updated>2015-08-21T12:25:54.379Z</updated>
+    <updated>2015-08-21T14:29:29.523Z</updated>
     <content type="html"><![CDATA[<p>Arch LinuxでサブのブラウザとしてMidoriを使っているが、お気に入りが消えてしまったりと調子が悪かったので、rekonqを入れてみた。  </p>
 <p>サイドバーは有る方が好みなので、レンチアイコンの設定からPanels→Bookmarks Panelをチェック。<br>広告除去は、Tools→Ad block。<br>EasyListだけでは依然、広告が邪魔な状態だったので、EasyList without element hidingも有効にした。  </p>
 <p>快適に使えるようになったかと思ったが、起動の度に、デフォルトの検索エンジンを設定するよう、上部に注意表示される。  </p>
@@ -30,7 +30,8 @@
 <p>Konquerorをインストールしたら良いという情報があったので、インストールしてみた。<br><a href="https://bbs.archlinux.org/viewtopic.php?pid=1241664#p1241664" target="_blank" rel="external">cannot set the default search engine in rekonq 1.0 / Applications &amp; Desktop Environments / Arch Linux Forums</a>  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> pacman -S kdebase-konqueror</div></pre></td></tr></table></figure>
 
-<p>検索エンジンを設定出来るようになった。<br>Konquerorは使わないようだったら削除してしまっても良いようだ。</p>
+<p>検索エンジンを設定出来るようになった。<br>Konquerorは使わないようだったら<del>削除してしまっても良いようだ。</del>  </p>
+<p>Konquerorをアンインストールすると、検索エンジンのモジュールも削除されてしまうようだ。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Arch LinuxでサブのブラウザとしてMidoriを使っているが、お気に入りが消えてしまったりと調子が悪かったので、rekonqを入れてみた。  </p>
