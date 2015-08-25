@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2014/12/12/bulk-change/</loc>
+    <lastmod>2015-08-25T07:03:14.764Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2015/08/21/rekonq-default-search-engine/</loc>
     <lastmod>2015-08-21T14:29:29.523Z</lastmod>
   </url>
@@ -314,11 +319,6 @@
   <url>
     <loc>http://pagent.github.io/2015/03/06/clonezilla-restore-different-partition/</loc>
     <lastmod>2015-03-06T11:27:41.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2014/12/12/bulk-change/</loc>
-    <lastmod>2015-03-03T01:46:59.000Z</lastmod>
   </url>
   
   <url>
