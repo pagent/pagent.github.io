@@ -114,6 +114,65 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/04/02/fcitx-qt-program/" >Qtベースのプログラムで日本語入力（fcitx-mozc）</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年4月2日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>iBusのプロパティパネル採用以降、iBusをやめて日本語入力にfcitx-mozcを使っている。  </p>
+<p>Xubuntuでは特に問題無く使えていたが、Arch LinuxでQtベースのプログラムを使用する際、日本語入力が有効にならず困っていた。<br>「QupZilla」（Simplenote専用にするのにうってつけの軽量ブラウザ）や「ReText」（プレビューが出来て便利なmarkdownファイルエディター）など、日本語入力が出来ないと不便。  </p>
+<p>モジュールのfcitx-qt4、fcitx-qt5はインストールしたが、何故かインプットメソッドがオンにならない。<br>fcitx-configtool（Qt 設定ツール）で、デフォルトのインプットメソッドをfcitxに変更したが、効果が無い。  </p>
+<p><code>fcitx-diagnose</code>を実行してフロントエンド設定の項目を確認すると、空欄だったり「設定されていません」という表示だったりする。<br>XMODIFIERSとQT_IM_MODULEがちゃんとロードされていないらしい。  </p>
+<p>ホームディレクトリに.xprofileを新規作成し、下記内容で保存。<br>（ディスプレイマネージャにSLiMを使っている場合は、~/.xprofileではなく~/.xinitrcに記載するらしい）  </p>
+<pre><code><span class="keyword">export</span> GTK_IM_MODULE=fcitx
+<span class="keyword">export</span> QT_IM_MODULE=fcitx
+<span class="keyword">export</span> XMODIFIERS=<span class="string">"@im=fcitx"</span>
+</code></pre><p>再起動したら、QupZilla、ReTextともに日本語入力が可能になった。  </p>
+<p>再度<code>fcitx-diagnose</code>で見てみると、「環境変数 XMODIFIERS は “{$2}” に正しく設定されています。」「環境変数 QT_IM_MODULE は “{$2}” に正しく設定されています。」となっていた。  </p>
+<p>fcitx-configtoolのデフォルトのインプットメソッドはximのままでも問題無いようだった。  </p>
+<p>（参照記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Fcitx" target="_blank" rel="external">Fcitx - ArchWiki</a></p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/02/fcitx-qt-program/" data-text="Qtベースのプログラムで日本語入力（fcitx-mozc） | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/02/fcitx-qt-program/" class="hatena-bookmark-button" data-hatena-bookmark-title="Qtベースのプログラムで日本語入力（fcitx-mozc）" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/04/01/xfce4-appearance-settings-crash/" >Xfce4設定の外観~フォントをFixedにしたらクラッシュした</a>
 		</h3>
 	
@@ -327,65 +386,6 @@ x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firef
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/03/31/lubuntu-update-stuck/" >Lubuntuのアップデート中にフリーズ</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年3月31日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Lubuntu14.04をアップデート中に  </p>
-<pre><code>run-parts: executing <span class="regexp">/etc/</span>kernel<span class="regexp">/postinst.d/</span>zz-update-grub <span class="number">3.16</span>.<span class="number">0</span>-<span class="number">33</span>-generic <span class="regexp">/boot/</span>vmlinuz-<span class="number">3.16</span>.<span class="number">0</span>-<span class="number">33</span>-generic
-</code></pre><p>の表示のところでフリーズしてしまった。<br>カーネルのアップデート中だったので嫌な予感がしたが、やむなく強制終了した。<br>起動しようとすると、案の定  </p>
-<pre><code><span class="title">buffer</span> i/o <span class="built_in">error</span> <span class="built_in">on</span> device sda4
-</code></pre><p>と延々エラーを吐いて起動してくれない。  </p>
-<p>sda4はswapに当てていたので、隣のArch Linuxを起動して、sda4を再度swapでフォーマットし直したら起動できるようになった。<br>（fstabの記載はUUIDではなくデバイス名にしていた）  </p>
-<p>起動は出来たが、今度はSynapticを使おうとすると、  </p>
-<pre><code><span class="attribute">E</span>: <span class="string">dpkg は中断されました。問題を修正するには 'dpkg --configure -a' を手動で実行する必要があります。</span>
-<span class="attribute">E</span>: <span class="string">_cache-&gt;open() failed, please report.</span>
-</code></pre><p>という表示が出る。<br>言われたとおり<code>dpkg --configure -a</code>を実行すると、中断した箇所からアップデートが再開された。  </p>
-<p>今度はアップデートも無事終了。  </p>
-<p>意味はよく分かってはいないが、ネットの情報の助けがあれば、エラー表示はとても助かる。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/31/lubuntu-update-stuck/" data-text="Lubuntuのアップデート中にフリーズ | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/03/31/lubuntu-update-stuck/" class="hatena-bookmark-button" data-hatena-bookmark-title="Lubuntuのアップデート中にフリーズ" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Linux/">Linux</a></li></ul>
-	</div>
-
-</div>
-				
 
 			</div>
 
@@ -430,37 +430,39 @@ x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firef
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
-			<li><a href="/tags/ネット/">ネット<span>15</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>59</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+			<li><a href="/tags/ネット/">ネット<span>15</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>12</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>15</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>9</span></a></li>
 		
 			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
 		
 			<li><a href="/tags/Hexo/">Hexo<span>26</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>9</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>12</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>59</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+			<li><a href="/tags/hexo/">hexo<span>1</span></a></li>
 		
 		
 		</ul>
@@ -473,6 +475,10 @@ x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firef
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/08/28/hexo-sound/" ><i class="fa fa-file-o"></i>Github Pages+Hexoのブログに音声ファイ...</a>
+      </li>
     
       <li>
         <a href="/2015/08/21/rekonq-default-search-engine/" ><i class="fa fa-file-o"></i>rekonqのデフォルト検索エンジンを設定出来ない</a>
@@ -490,10 +496,6 @@ x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firef
         <a href="/2015/07/09/fictional-email-addresses/" ><i class="fa fa-file-o"></i>架空のメールアドレスを使う</a>
       </li>
     
-      <li>
-        <a href="/2015/06/30/twitter-search-result-probrem/" ><i class="fa fa-file-o"></i>ツイッター検索でURL付きのツイートが表示されない</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -503,7 +505,7 @@ x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firef
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

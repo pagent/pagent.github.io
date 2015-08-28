@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>rekonqのデフォルト検索エンジンを設定出来ない | Pagent</title>
+  <title>Github Pages+Hexoのブログに音声ファイルの埋め込み | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
@@ -13,7 +13,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="rekonqのデフォルト検索エンジンを設定出来ない"/>
+  <meta property="og:title" content="Github Pages+Hexoのブログに音声ファイルの埋め込み"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -96,7 +96,7 @@
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> rekonqのデフォルト検索エンジンを設定出来ない</h1>
+			<h1> Github Pages+Hexoのブログに音声ファイルの埋め込み</h1>
 		</div>
 	
 
@@ -112,18 +112,31 @@
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>Arch LinuxでサブのブラウザとしてMidoriを使っているが、お気に入りが消えてしまったりと調子が悪かったので、rekonqを入れてみた。  </p>
-<p>サイドバーは有る方が好みなので、レンチアイコンの設定からPanels→Bookmarks Panelをチェック。<br>広告除去は、Tools→Ad block。<br>EasyListだけでは依然、広告が邪魔な状態だったので、EasyList without element hidingも有効にした。  </p>
-<p>快適に使えるようになったかと思ったが、起動の度に、デフォルトの検索エンジンを設定するよう、上部に注意表示される。  </p>
-<blockquote>
-<p>you do not have a default search engine set. without it …</p>
-</blockquote>
-<p>確かにアドレスバーに語句を入力しても検索出来ない。<br>注意表示の「Set it」をクリックしてもなにも起こらないし、設定のSearch Enginesの箇所は、モジュールが無いようで灰色、設定出来ない。  </p>
-<p>Konquerorをインストールしたら良いという情報があったので、インストールしてみた。<br><a href="https://bbs.archlinux.org/viewtopic.php?pid=1241664#p1241664" target="_blank" rel="external">cannot set the default search engine in rekonq 1.0 / Applications &amp; Desktop Environments / Arch Linux Forums</a>  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> pacman -S kdebase-konqueror</div></pre></td></tr></table></figure>
+	    <p>hexo/source直下にsoundsディレクトリを作成し、そこへ音声ファイルを配置。<br>以下のHTMLタグで埋め込み。  </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">audio</span> <span class="attribute">src</span>=<span class="value">"example.mp3"</span> <span class="attribute">autoplay</span> <span class="attribute">loop</span>&gt;</span><span class="tag">&lt;/<span class="title">audio</span>&gt;</span></div></pre></td></tr></table></figure>
 
-<p>検索エンジンを設定出来るようになった。<br>Konquerorは使わないようだったら<del>削除してしまっても良いようだ。</del>  </p>
-<p>Konquerorをアンインストールすると、検索エンジンのモジュールも削除されてしまうようだ。</p>
+<p><code>autoplay</code>で自動再生。<code>loop</code>でリピート再生。  </p>
+<p>下記では音は鳴るが、プレイヤーが表示されない。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">audio</span> <span class="attribute">src</span>=<span class="value">"/sounds/bell.oga"</span> <span class="attribute">autoplay</span>&gt;</span><span class="tag">&lt;/<span class="title">audio</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<p><code>controls</code>を加えれば良いようだ。  </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">audio</span> <span class="attribute">src</span>=<span class="value">"/sounds/bell.oga"</span> <span class="attribute">controls</span>&gt;</span><span class="tag">&lt;/<span class="title">audio</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<audio src="/sounds/bell.oga" controls></audio>
+
+
+<p>下記のようなタグを用いても良いらしい。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">audio</span> <span class="attribute">preload</span>=<span class="value">"metadata"</span> <span class="attribute">controls</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"example.m4a"</span> <span class="attribute">type</span>=<span class="value">"audio/aac"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"example.mp3"</span> <span class="attribute">type</span>=<span class="value">"audio/mp3"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"example.ogg"</span> <span class="attribute">type</span>=<span class="value">"audio/ogg"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">audio</span>&gt;</span></div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">audio</span> <span class="attribute">preload</span>=<span class="value">"metadata"</span> <span class="attribute">controls</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"/sounds/bell.oga"</span> <span class="attribute">type</span>=<span class="value">"audio/ogg"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">audio</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<audio preload="metadata" controls><br><source src="/sounds/bell.oga" type="audio/ogg"><br></audio>
+
+<p>Githubでは1ファイルあたり50MBまでという推奨があるらしい。<br>（100MB以上は制限によりプッシュ出来ないとのこと。）  </p>
+<p>mp3よりファイルサイズが小さくて済むoggを使うのが良さそう。</p>
+<p>（参照サイト）<br><a href="http://www.tagindex.com/html5/embed/audio.html" target="_blank" rel="external">HTML5/埋め込み/audio要素 プラグインを使わずに音声を再生する - TAG index Webサイト</a><br><a href="http://huguma.hatenablog.com/entry/2014/10/03/184232" target="_blank" rel="external">GitHubの各種サイズ上限とファイル削除の方法 - huguma’s blog (仮)</a></p>
 
 	</div>
 
@@ -131,7 +144,7 @@
 	<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/08/21/rekonq-default-search-engine/" class="hatena-bookmark-button" data-hatena-bookmark-title="rekonqのデフォルト検索エンジンを設定出来ない" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/08/28/hexo-sound/" class="hatena-bookmark-button" data-hatena-bookmark-title="Github Pages+Hexoのブログに音声ファイルの埋め込み" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 
 <div class="clear"></div>
@@ -143,13 +156,13 @@
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2015/08/28/hexo-sound/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2015/08/20/google-news-search/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2015/08/21/rekonq-default-search-engine/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -183,7 +196,7 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2015年8月21日
+	2015年8月28日
 	</div>
 	
 
@@ -197,7 +210,7 @@
     <ul id="tags" class="tag_box list-unstyled collapse in">
 	    <!-- _partial/post/tag -->
   
-  <li><a href="/tags/ブラウザ/">ブラウザ</a></li>
+  <li><a href="/tags/hexo/">hexo</a></li>
 
     </ul>
 	</div>
