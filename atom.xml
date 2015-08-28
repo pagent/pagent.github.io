@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-08-28T10:33:53.402Z</updated>
+  <updated>2015-08-28T10:35:46.012Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/08/28/hexo-video/"/>
     <id>http://pagent.github.io/2015/08/28/hexo-video/</id>
     <published>2015-08-28T10:17:42.000Z</published>
-    <updated>2015-08-28T10:33:12.774Z</updated>
+    <updated>2015-08-28T10:35:30.318Z</updated>
     <content type="html"><![CDATA[<p>hexo/source直下にvideosディレクトリを作成し、そこへ動画ファイルを配置。<br>以下のHTMLタグで埋め込み。 </p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">video</span> <span class="attribute">src</span>=<span class="value">"/videos/dango.webm"</span> <span class="attribute">width</span>=<span class="value">"480"</span> <span class="attribute">height</span>=<span class="value">"360"</span> <span class="attribute">controls</span>&gt;</span><span class="tag">&lt;/<span class="title">video</span>&gt;</span></div></pre></td></tr></table></figure>
 
@@ -30,6 +30,7 @@
 
 <video preload="metadata" width="480" height="360" controls><br><source src="/videos/dango.webm" type="video/webm"><br><source src="/videos/dango.ogv" type="video/ogg"><br><source src="/videos/dango.mp4" type="video/mp4"><br></video>
 
+<p>（参照サイト）<br><a href="http://www.tagindex.com/html5/embed/video.html" target="_blank" rel="external">HTML5/埋め込み/video要素 プラグインを使わずに動画を再生する - TAG index Webサイト</a></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>hexo/source直下にvideosディレクトリを作成し、そこへ動画ファイルを配置。<br>以下のHTMLタグで埋め込み。 </p>
