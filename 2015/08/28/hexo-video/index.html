@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Github Pages+Hexoのブログに音声ファイルの埋め込み | Pagent</title>
+  <title>Github Pages+Hexoのブログに動画ファイルの埋め込み | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
@@ -13,7 +13,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Github Pages+Hexoのブログに音声ファイルの埋め込み"/>
+  <meta property="og:title" content="Github Pages+Hexoのブログに動画ファイルの埋め込み"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -96,7 +96,7 @@
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> Github Pages+Hexoのブログに音声ファイルの埋め込み</h1>
+			<h1> Github Pages+Hexoのブログに動画ファイルの埋め込み</h1>
 		</div>
 	
 
@@ -112,29 +112,16 @@
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>hexo/source直下にsoundsディレクトリを作成し、そこへ音声ファイルを配置。<br>以下のHTMLタグで埋め込み。  </p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">audio</span> <span class="attribute">src</span>=<span class="value">"example.mp3"</span> <span class="attribute">autoplay</span> <span class="attribute">loop</span>&gt;</span><span class="tag">&lt;/<span class="title">audio</span>&gt;</span></div></pre></td></tr></table></figure>
+	    <p>hexo/source直下にvideosディレクトリを作成し、そこへ動画ファイルを配置。<br>以下のHTMLタグで埋め込み。 </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">video</span> <span class="attribute">src</span>=<span class="value">"/videos/dango.webm"</span> <span class="attribute">width</span>=<span class="value">"480"</span> <span class="attribute">height</span>=<span class="value">"360"</span> <span class="attribute">controls</span>&gt;</span><span class="tag">&lt;/<span class="title">video</span>&gt;</span></div></pre></td></tr></table></figure>
 
-<p><code>autoplay</code>で自動再生。<code>loop</code>でリピート再生。  </p>
-<p>下記では音は鳴るが、インターフェースが表示されない。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">audio</span> <span class="attribute">src</span>=<span class="value">"/sounds/bell.oga"</span> <span class="attribute">autoplay</span>&gt;</span><span class="tag">&lt;/<span class="title">audio</span>&gt;</span></div></pre></td></tr></table></figure>
+<video src="/videos/dango.webm" width="480" height="360" controls></video>
 
-<p><code>controls</code>を加えれば良いようだ。  </p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">audio</span> <span class="attribute">src</span>=<span class="value">"/sounds/bell.oga"</span> <span class="attribute">controls</span>&gt;</span><span class="tag">&lt;/<span class="title">audio</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>多くのブラウザに対応するため数種類の形式を用意する場合は下記。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">video</span> <span class="attribute">preload</span>=<span class="value">"metadata"</span> <span class="attribute">width</span>=<span class="value">"480"</span> <span class="attribute">height</span>=<span class="value">"360"</span> <span class="attribute">controls</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"/videos/dango.webm"</span> <span class="attribute">type</span>=<span class="value">"video/webm"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"/videos/dango.ogv"</span> <span class="attribute">type</span>=<span class="value">"video/ogg"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"/videos/dango.mp4"</span> <span class="attribute">type</span>=<span class="value">"video/mp4"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">video</span>&gt;</span></div></pre></td></tr></table></figure>
 
-<audio src="/sounds/bell.oga" controls></audio>
+<video preload="metadata" width="480" height="360" controls><br><source src="/videos/dango.webm" type="video/webm"><br><source src="/videos/dango.ogv" type="video/ogg"><br><source src="/videos/dango.mp4" type="video/mp4"><br></video>
 
-<p>数種類の形式を用意する場合は下記。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">audio</span> <span class="attribute">preload</span>=<span class="value">"metadata"</span> <span class="attribute">controls</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"example.m4a"</span> <span class="attribute">type</span>=<span class="value">"audio/aac"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"example.mp3"</span> <span class="attribute">type</span>=<span class="value">"audio/mp3"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"example.ogg"</span> <span class="attribute">type</span>=<span class="value">"audio/ogg"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">audio</span>&gt;</span></div></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">audio</span> <span class="attribute">preload</span>=<span class="value">"metadata"</span> <span class="attribute">controls</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"/sounds/bell.aac"</span> <span class="attribute">type</span>=<span class="value">"audio/aac"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"/sounds/bell.mp3"</span> <span class="attribute">type</span>=<span class="value">"audio/mp3"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"/sounds/bell.oga"</span> <span class="attribute">type</span>=<span class="value">"audio/ogg"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">audio</span>&gt;</span></div></pre></td></tr></table></figure>
-
-<audio preload="metadata" controls><br><source src="/sounds/bell.aac" type="audio/aac"><br><source src="/sounds/bell.mp3" type="audio/mp3"><br><source src="/sounds/bell.oga" type="audio/ogg"><br></audio>
-
-<p>Githubでは1ファイルあたり50MBまでという推奨があるらしい。<br>（100MB以上は制限によりプッシュ出来ないとのこと。）  </p>
-<p>（参照サイト）<br><a href="http://www.tagindex.com/html5/embed/audio.html" target="_blank" rel="external">HTML5/埋め込み/audio要素 プラグインを使わずに音声を再生する - TAG index Webサイト</a><br><a href="http://huguma.hatenablog.com/entry/2014/10/03/184232" target="_blank" rel="external">GitHubの各種サイズ上限とファイル削除の方法 - huguma’s blog (仮)</a></p>
 
 	</div>
 
@@ -142,7 +129,7 @@
 	<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/08/28/hexo-sound/" class="hatena-bookmark-button" data-hatena-bookmark-title="Github Pages+Hexoのブログに音声ファイルの埋め込み" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/08/28/hexo-video/" class="hatena-bookmark-button" data-hatena-bookmark-title="Github Pages+Hexoのブログに動画ファイルの埋め込み" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 
 <div class="clear"></div>
@@ -154,13 +141,13 @@
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2015/08/28/hexo-video/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2015/08/21/rekonq-default-search-engine/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2015/08/28/hexo-sound/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
