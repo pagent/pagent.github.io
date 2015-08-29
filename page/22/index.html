@@ -114,6 +114,58 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/12/10/weather-news/" >Linuxで「天気予報 - ウェザーニュース」が重すぎる</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年12月10日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>見やすいし、週間天気予報や台風情報などもあって便利なので、ネットで天気予報を見る時は<a href="http://weathernews.jp/map/" target="_blank" rel="external">「天気予報 - ウェザーニュース」</a>を利用して来た。  </p>
+<p>だがLinuxに移ってから、Firefoxで「ウェザーニュース」を開くと、とたんに重くなりFirefoxがフリーズする。<br>システムモニターを見ると、メモリ7.7GiBを使い果たしスワップを利用している。  </p>
+<p>Flashを使っているからといって、なぜこんなに重くなるのだろうか。<br>動画サイトでもこんなことはないのに。  </p>
+<p>Windowsでは大丈夫なので、Linux（Xubuntu）のFlash Playerのバージョンの問題かもしれない。  </p>
+<p>仕方がないので「ウェザーニュース」は諦めて、<a href="http://www.tenki.jp/" target="_blank" rel="external">「日本気象協会 tenki.jp」</a>を使うことにした。<br>いちおう<a href="http://www.tenki.jp/week/" target="_blank" rel="external">「10日間天気」</a>というのもあるし。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/10/weather-news/" data-text="Linuxで「天気予報 - ウェザーニュース」が重すぎる | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/12/10/weather-news/" class="hatena-bookmark-button" data-hatena-bookmark-title="Linuxで「天気予報 - ウェザーニュース」が重すぎる" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ネット/">ネット</a></li></ul>
+	</div>
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/12/09/casio/" >50桁まで計算出来るカシオのフリー計算がすごい</a>
 		</h3>
 	
@@ -341,67 +393,6 @@
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/12/04/git-non-fast-forward/" >Gitで”non-fast-forward”</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年12月4日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>HexoのソースをBitbucketにcommitしようとしたら、  </p>
-<pre><code>Your branch <span class="operator">and</span> <span class="string">'bitbucket/master'</span> have diverged,
-<span class="operator">and</span> have <span class="number">1</span> <span class="operator">and</span> <span class="number">1</span> different commit <span class="keyword">each</span>, respectively.
-  (use <span class="string">"git pull"</span> <span class="built_in">to</span> <span class="built_in">merge</span> <span class="operator">the</span> remote branch <span class="keyword">into</span> yours)
-
-nothing <span class="built_in">to</span> commit, working <span class="built_in">directory</span> clean
-</code></pre><p>と警告が出た。  </p>
-<p>かまわずpushしたら、”master -&gt; master (non-fast-forward)”といってrejectされた。   </p>
-<p>“git pull”を使え、ということのようなのでやってみたが、次の画面でなにをすれば良いのか分からない。  </p>
-<p>なにもせず「CTRL」+「X」で終了して、もう一度addから試してみようとしたら、  </p>
-<pre><code>このブランチは 'bitbucket/master' よりも2コミット進んでいます。
-  (<span class="operator"><span class="keyword">use</span> <span class="string">"git push"</span> <span class="keyword">to</span> publish your <span class="keyword">local</span> commits)</span>
-</code></pre><p>とのこと。<br>言われた通り”git push”したら、今度はpush出来た。<br>「non-fast-forward」というのも検索してみたが、読んでもなんのことだかさっぱり。</p>
-<p>便利なんだが、Gitは本当によく分からない。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/04/git-non-fast-forward/" data-text="Gitで”non-fast-forward” | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/12/04/git-non-fast-forward/" class="hatena-bookmark-button" data-hatena-bookmark-title="Gitで”non-fast-forward”" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Git/">Git</a></li></ul>
-	</div>
-
-</div>
-				
 
 			</div>
 
@@ -446,37 +437,37 @@ nothing <span class="built_in">to</span> commit, working <span class="built_in">
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>9</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>12</span></a></li>
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>59</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
-		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>15</span></a></li>
 		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>15</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>9</span></a></li>
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>59</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>6</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 		
 		</ul>
@@ -489,6 +480,10 @@ nothing <span class="built_in">to</span> commit, working <span class="built_in">
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/08/29/windows10-privacy/" ><i class="fa fa-file-o"></i>Windows 10はスパイウェア？</a>
+      </li>
     
       <li>
         <a href="/2015/08/28/hexo-video/" ><i class="fa fa-file-o"></i>Github Pages+Hexoのブログに動画ファイ...</a>
@@ -506,10 +501,6 @@ nothing <span class="built_in">to</span> commit, working <span class="built_in">
         <a href="/2015/08/20/google-news-search/" ><i class="fa fa-file-o"></i>Firefoxに「Googleニュース検索」を追加</a>
       </li>
     
-      <li>
-        <a href="/2015/08/15/context-search/" ><i class="fa fa-file-o"></i>右クリックからの検索を拡張する「Context Sea...</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -519,7 +510,7 @@ nothing <span class="built_in">to</span> commit, working <span class="built_in">
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

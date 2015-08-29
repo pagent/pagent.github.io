@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-08-28T11:47:35.982Z</updated>
+  <updated>2015-08-29T09:48:10.329Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,36 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Windows 10はスパイウェア？]]></title>
+    <link href="http://pagent.github.io/2015/08/29/windows10-privacy/"/>
+    <id>http://pagent.github.io/2015/08/29/windows10-privacy/</id>
+    <published>2015-08-29T09:24:31.000Z</published>
+    <updated>2015-08-29T09:47:36.826Z</updated>
+    <content type="html"><![CDATA[<p>Windows 10にアップグレードするのは危険だという情報を目にする。<br>設定でプライバシーに関する情報の収集・送信を無効にしても、完全には止められないそうだ。<br><a href="http://it.srad.jp/story/15/08/15/2122239/" target="_blank" rel="external">Windows 10のプライバシー設定をすべてオフにしても、Microsoftとの通信は止められない？ | スラド IT</a>  </p>
+<p>Microsoftの「プライバシーに関する声明」には、個人情報の収集と利用について書かれている。<br>収集された個人情報は行政機関に提供される可能性もあるようだ。  </p>
+<blockquote>
+<p><strong>収集されるデータ</strong></p>
+<p>収集されるデータには、お客様の名前とメール アドレス、お客様の優先事項と興味に関する情報、位置、閲覧、検索、ファイルの履歴、電話による通話、SMS データ、デバイスの構成とセンサー データ、音声入力、テキスト入力、手書き入力、アプリケーションの使用状況などがあります。</p>
+<p><strong>データの収集方法</strong></p>
+<p>プログラムのソフトウェアやサービスに組み込まれていて、Microsoft に情報を送信する、インターネットに接続可能な機能。</p>
+<p><strong>データ転送の制御</strong></p>
+<p>Microsoft にデータを送信する多くの機能は、自動的に有効になります。プログラムのソフトウェアやサービスの特定の機能については、データ転送を無効にするオプションがない場合があります。 </p>
+<p><strong>データの開示</strong></p>
+<p>以下の目的で、お客様に関する情報のアクセス、開示、保持が必要であると合理的に判断できる場合、Microsoft はそれらの情報のアクセス、開示、保持を行う場合があります。</p>
+<p>1.適用される法令に準拠する場合、または所轄官庁 (法執行機関や他の政府機関など) の正当な法的手続きに対する責任を果たす場合。</p>
+</blockquote>
+<p><a href="http://windows.microsoft.com/ja-jp/windows/preview-privacy-statement" target="_blank" rel="external">Windows 10 Technical Preview のプライバシーに関する声明 - Microsoft Windows</a>  </p>
+<p>Windows 7、Windows 8からは無料でアップグレード可能ということで、喜んでアップグレードしてしまいそうだが、よくよく考えた方が良さそうだ。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Windows 10にアップグレードするのは危険だという情報を目にする。<br>設定でプライバシーに関する情報の収集・送信を無効にしても、完全には止められないそうだ。<br><a href="http://it.srad.jp/story/15/08/15/2122239/]]>
+    </summary>
+    
+      <category term="Windows" scheme="http://pagent.github.io/tags/Windows/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Github Pages+Hexoのブログに動画ファイルの埋め込み]]></title>
@@ -528,25 +558,6 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Arch Linuxを使っていると、pacmanでダウンロードした古いパッケージキャッシュが/var/cache/pacman/pkg/ に溜まってくるらしい。<br><a href="https://archlinuxjp.kusakata.com/wiki/Pacman]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[PDFファイルの日本語フォント文字化け対策として「Wine」+「PDF-XChange Viewer」]]></title>
-    <link href="http://pagent.github.io/2015/04/18/pdf-xchange-viewer/"/>
-    <id>http://pagent.github.io/2015/04/18/pdf-xchange-viewer/</id>
-    <published>2015-04-18T08:42:38.000Z</published>
-    <updated>2015-04-19T08:12:58.839Z</updated>
-    <content type="html"><![CDATA[<p>Ubuntu標準のPDFビューアEvinceで、日本語のフォントが表示されなかったり、文字化けしたりしていた。<br>poppler-dataをインストールしたり、fonts.confファイルを作成してみたが、正常に表示されない。<br>Evinceを諦めてOkular、Xpdf、ePDFviewer、qpdfviewなど試してみたが、やはり駄目。  </p>
-<p>日本語フォントが文字化けするのは、該当のPDFファイルに日本語フォントが埋め込まれていないのが原因のようだ。<br>それでも代替フォントがちゃんと利用されていれば正常に表示されるのだと思うが、その設定が上手く行かない。  </p>
-<p>FirefoxまたはLibreOffice Drawならちゃんと表示されるが、PDFビューアとしての使い勝手は良くない。  </p>
-<p>そこで、Windowsで使っていたPDF-XChange Viewer（無料体験版）をWineでインストールしたら、文字化け無しにちゃんと表示された。<br>無料版でも多機能だし、けっこう便利だ。<br>初回起動時には少々もたつくが、デフォルトで使うのではなく文字化けした時の緊急用として使う分には、申し分無い。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Ubuntu標準のPDFビューアEvinceで、日本語のフォントが表示されなかったり、文字化けしたりしていた。<br>poppler-dataをインストールしたり、fonts.confファイルを作成してみたが、正常に表示されない。<br>Evinceを諦めてOkular、X]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>

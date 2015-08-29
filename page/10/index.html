@@ -114,6 +114,77 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/03/01/arch-ati-video-driver/" >Arch Linuxをインストールした。（ビデオドライバーはATIでうまく行った）</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年3月1日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Dellの古いノートパソコンVOSTRO1000にArch Linuxを入れてみた。<br>（NECのLavie Liteは、kernelが3.10台を超えると不具合が出る問題がArch Linuxでは解決出来ず、諦めた。）</p>
+<p>インストールには、グラフィカルインストールが可能なArchbootを使った。（archlinux-2015.01-1-archboot.iso）<br>Ubuntu等のインストーラーほど懇切丁寧ではないが、コマンドラインでのインストールよりは楽だった。  </p>
+<p>ネット上の紹介記事を参考に進めたら、それ程迷うこともなかったが、最後ブートローダーのインストールで、GRUB2を選択すると、インストール先をMBRにしか出来なかったので、SysLinuxをインストールした。<br>無線LANの設定も後から苦労するよりはと、ぽちぽちパスワードを入力した。  </p>
+<p>一応インストールは完了したが、デスクトップ環境の導入で躓いてしまった。  </p>
+<p>最初LXDEを入れてみたが、画面がザラザラで何も見えない。<br>PC起動時にLXDEを自動開始するよう設定してしまったようで、コマンドラインにも戻れない。<br>修正の仕方も分からず困ったが、幸いインストール後の状態をClonezillaでバックアップしていたので、これをリストアした。  </p>
+<p>LXDEでダメならと、次はXfceでチャレンジしてみた。  </p>
+<p>ほぼ下記記事の説明の通りに進めた。<br><a href="http://elfcobe.hateblo.jp/entry/2014/05/11/015243" target="_blank" rel="external">Windows で VirtualBox + Arch Linux (Xfce + Slim) - けいれん現象の幽玄美よ</a>  </p>
+<p>Xorg、グラフィックドライバー（xf86-video-vesa）、Xfceをインストールしたが、<code>startxfce4</code>とコマンドを打ってデスクトップに入ろうとしても、X serverが落ちてしまう。  </p>
+<p>エラーメッセージは「ビデオドライバーが無い」というような内容だった。<br>LXDEの時もこのせいで画面がザラザラだったのかもしれない。  </p>
+<p>デュアルブートのLubuntuで<code>xrandr</code>してみると、  </p>
+<blockquote>
+<p>VGA-0 disconnected… LVDS connected</p>
+</blockquote>
+<p>と返ってくる。  </p>
+<p><code>lspci</code>をしてみると、  </p>
+<blockquote>
+<p>VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] RS482/RS485 [Radeon Xpress 1100/1150]</p>
+</blockquote>
+<p>何のドライバーが必要なのか、よく分からない。  </p>
+<p>Puppy linux派生のLxpupを起動してみると、クイックセットアップのGraphicsのところに「現在はATIビデオドライバーを使用している」というようなことが書いてあった。  </p>
+<p>「ATI video driver Arch」で検索すると、Arch Linuxの日本語wikiページが見つかった。<br><a href="https://wiki.archlinux.org/index.php/ATI_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29" target="_blank" rel="external">ATI - ArchWiki (日本語)</a>  </p>
+<p><code>pacman -S xf86-video-ati</code>でxf86-video-atiをインストールしたら、ようやくXfceのデスクトップに入ることが出来た。  </p>
+<p>日本語環境がまだだったり、全体的にフォントがザラザラで汚かったりで、環境はまだ全然だが、いちおう一段落は付けられた。  </p>
+<p>それにしても、XubuntuやLubuntuなどUbuntu派生ディストリビューションの楽ちんさは、本当に有難いと痛感した。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/01/arch-ati-video-driver/" data-text="Arch Linuxをインストールした。（ビデオドライバーはATIでうまく行った） | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/03/01/arch-ati-video-driver/" class="hatena-bookmark-button" data-hatena-bookmark-title="Arch Linuxをインストールした。（ビデオドライバーはATIでうまく行った）" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/03/01/update-grub-error/" >update-grubで&quot;options:not found&quot;のエラー</a>
 		</h3>
 	
@@ -327,65 +398,6 @@ $ sudo apt-<span class="built_in">get</span> install nemo-terminal
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/02/20/usb-multiboot-2nd-partition/" >USBメモリの第2パーティションからisoファイルをマルチブート</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年2月20日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>USBメモリからPuppy LinuxとClonezillaの両方を起動出来たら、便利そうだ。<br>GpartedとClonezillaの両方を同梱したLive CDがあればいいが、そういうのが見つからない。<br>かつてはGParted-Clonezilla LiveCDというのがあったようだが、既に開発終了してしまっているようだ。  </p>
-<p>複数のisoファイルをUSBメモリ起動させるツールはいくつかあるようだったが、Windows用のXBOOTというのがサイズがコンパクトで手軽。使い勝手も良かった。  </p>
-<p>XBOOTで唯一の不満は、isoファイルをUSBメモリの2番目以降のパーティションにインストール出来ないこと。<br>やはりパーティションは分けた方がデータを整理しやすい。<br>Windowsでは1番目のパーティションしか見えないので、データの保存は第1パーティション、isoファイルの起動は第2パーティションにしたいところ。  </p>
-<p>XBOOTでいったん先頭のパーティション（sdb1）にPuppyとClonezillaのisoファイルをインストール。<br>その後そのデータを第2パーティション（sdb2）にコピー。<br>だが、これではUSBが起動しなくなってしまうので、syslinuxとMBRを再度インストールする必要があった。  </p>
-<p>下記サイトからsyslinuxの圧縮ファイルをダウンロード。<br>（syslinux-4.04を用いたが、現時点での最新版はsyslinux-6.03のよう）<br><a href="https://www.kernel.org/pub/linux/utils/boot/syslinux/" target="_blank" rel="external">Index of /pub/linux/utils/boot/syslinux</a>  </p>
-<p>syslinux-4.04.tar.bz2を解凍。syslinux-4.04/linuxフォルダ内で端末を開き、下記コマンドでsdb2（環境によってはsdc2など）にsyslinuxをインストール。  </p>
-<pre><code>syslinux <span class="regexp">/dev/</span>sdb2
-</code></pre><p>さらにsdbにMBRを再インストール。  </p>
-<pre><code>dd <span class="variable">bs=</span><span class="number">440</span> <span class="variable">count=</span><span class="number">1</span> <span class="variable">conv=</span>notrunc <span class="variable">if=</span>~/Desktop/syslinux-<span class="number">4.04</span>/mbr/mbr.bin <span class="variable">of=</span>/dev/sdb
-</code></pre><p>（デスクトップ上で解凍したので上記のパスになっているが、if=やof=以下のパスは状況に応じて。）  </p>
-<p>USBメモリの2番目のパーティションsdb2から起動出来るようになった。  </p>
-<p>ーー<br>（参照記事）<br><a href="http://www.server-world.info/query?os=Other&amp;p=knoppix&amp;f=2" target="_blank" rel="external">KNOPPIX - 複数パーティション構成のUSBメモリから起動する ： Server World</a><br><a href="https://wiki.archlinux.org/index.php/Syslinux_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29#.E6.89.8B.E5.8B.95.E3.82.A4.E3.83.B3.E3.82.B9.E3.83.88.E3.83.BC.E3.83.AB" target="_blank" rel="external">Syslinux (日本語) - ArchWiki</a></p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/20/usb-multiboot-2nd-partition/" data-text="USBメモリの第2パーティションからisoファイルをマルチブート | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/20/usb-multiboot-2nd-partition/" class="hatena-bookmark-button" data-hatena-bookmark-title="USBメモリの第2パーティションからisoファイルをマルチブート" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/ユーティリティ/">ユーティリティ</a></li></ul>
-	</div>
-
-</div>
-				
 
 			</div>
 
@@ -430,37 +442,37 @@ $ sudo apt-<span class="built_in">get</span> install nemo-terminal
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>9</span></a></li>
-		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>15</span></a></li>
-		
 			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>59</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>12</span></a></li>
 		
 			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>5</span></a></li>
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>6</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>15</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>15</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>59</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>9</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>12</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>15</span></a></li>
 		
 		
 		</ul>
@@ -473,6 +485,10 @@ $ sudo apt-<span class="built_in">get</span> install nemo-terminal
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/08/29/windows10-privacy/" ><i class="fa fa-file-o"></i>Windows 10はスパイウェア？</a>
+      </li>
     
       <li>
         <a href="/2015/08/28/hexo-video/" ><i class="fa fa-file-o"></i>Github Pages+Hexoのブログに動画ファイ...</a>
@@ -490,10 +506,6 @@ $ sudo apt-<span class="built_in">get</span> install nemo-terminal
         <a href="/2015/08/20/google-news-search/" ><i class="fa fa-file-o"></i>Firefoxに「Googleニュース検索」を追加</a>
       </li>
     
-      <li>
-        <a href="/2015/08/15/context-search/" ><i class="fa fa-file-o"></i>右クリックからの検索を拡張する「Context Sea...</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -503,7 +515,7 @@ $ sudo apt-<span class="built_in">get</span> install nemo-terminal
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
