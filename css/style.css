@@ -210,6 +210,7 @@ img {
 #gotop span{
   display:block;
   color:#dddddd;
+  line-height: 30px;
 }
 #gotop span:hover{
   color:#cccccc;
