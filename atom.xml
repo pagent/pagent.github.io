@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-08-30T08:39:01.902Z</updated>
+  <updated>2015-08-31T23:16:36.524Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[Windows 10はスパイウェア？]]></title>
+    <title><![CDATA[危険なスパイウェアWindows 10はプライバシー情報を収集する]]></title>
     <link href="http://pagent.github.io/2015/08/29/windows10-privacy/"/>
     <id>http://pagent.github.io/2015/08/29/windows10-privacy/</id>
     <published>2015-08-29T09:24:31.000Z</published>
-    <updated>2015-08-29T09:47:36.826Z</updated>
+    <updated>2015-08-31T23:15:21.998Z</updated>
     <content type="html"><![CDATA[<p>Windows 10にアップグレードするのは危険だという情報を目にする。<br>設定でプライバシーに関する情報の収集・送信を無効にしても、完全には止められないそうだ。<br><a href="http://it.srad.jp/story/15/08/15/2122239/" target="_blank" rel="external">Windows 10のプライバシー設定をすべてオフにしても、Microsoftとの通信は止められない？ | スラド IT</a>  </p>
 <p>Microsoftの「プライバシーに関する声明」には、個人情報の収集と利用について書かれている。<br>収集された個人情報は行政機関に提供される可能性もあるようだ。  </p>
 <blockquote>
