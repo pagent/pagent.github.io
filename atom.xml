@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-08-31T23:16:36.524Z</updated>
+  <updated>2015-09-01T01:55:16.746Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,24 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[ハイパーリンクになっていないURLを開く]]></title>
+    <link href="http://pagent.github.io/2015/09/01/open-unclickable-url/"/>
+    <id>http://pagent.github.io/2015/09/01/open-unclickable-url/</id>
+    <published>2015-09-01T01:26:18.000Z</published>
+    <updated>2015-09-01T01:54:28.052Z</updated>
+    <content type="html"><![CDATA[<p>ハイパーリンクになっておらず、クリック出来ないURLを開く時には、URLをアドレス欄にコピペすれば良いが、少し面倒。Firefoxのアドオンに<a href="https://addons.mozilla.org/ja/firefox/addon/text-link/" target="_blank" rel="external">テキストリンク (Text Link)</a>というのがあると知り、インストールしてみた。<br>現在のバージョンのFirefoxには対応していないようだが、開発版を入れると機能した。<br>だが「テキストリンク」の説明にURI文字列を開く通常の方法として、”選択された文字列をFirefoxのタブバーにドラッグ＆ドロップする”というのが書いてあったのでやってみた。  </p>
+<p>確かにURI文字列を選択してタブバーに持って行くと<code>タブの中央にドロップするとそのタブを置き換え、タブの両サイドにドロップするとその位置に新しいタブとして読み込まれます</code>というツールチップが表示され、そのままドロップするとURLを開いてくれる。こんな方法があるとは全然知らなかった。<br>URLの選択は大抵の場合トリプルクリックで簡単に出来るので、この方法でも良さそう。  </p>
+<p>右クリックメニューがあまり増えるのも嫌なので、結局「テキストリンク」はアンインストールした。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>ハイパーリンクになっておらず、クリック出来ないURLを開く時には、URLをアドレス欄にコピペすれば良いが、少し面倒。Firefoxのアドオンに<a href="https://addons.mozilla.org/ja/firefox/addon/text-link/" t]]>
+    </summary>
+    
+      <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[危険なスパイウェアWindows 10はプライバシー情報を収集する]]></title>
@@ -530,34 +548,6 @@
     <summary type="html">
     <![CDATA[<p>Arch Linuxをアップグレードしたら、2ちゃんねる専用ブラウザJDが起動しなくなった。  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[不要なパッケージキャッシュの削除。paccacheとpkgcacheclean]]></title>
-    <link href="http://pagent.github.io/2015/04/19/paccache-pkgcacheclean/"/>
-    <id>http://pagent.github.io/2015/04/19/paccache-pkgcacheclean/</id>
-    <published>2015-04-18T15:13:35.000Z</published>
-    <updated>2015-04-18T15:49:39.286Z</updated>
-    <content type="html"><![CDATA[<p>Arch Linuxを使っていると、pacmanでダウンロードした古いパッケージキャッシュが/var/cache/pacman/pkg/ に溜まってくるらしい。<br><a href="https://archlinuxjp.kusakata.com/wiki/Pacman?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DPacman_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno#.E3.83.91.E3.83.83.E3.82.B1.E3.83.BC.E3.82.B8.E3.82.AD.E3.83.A3.E3.83.83.E3.82.B7.E3.83.A5.E3.81.AE.E5.89.8A.E9.99.A4" target="_blank" rel="external">pacman - ArchWiki</a>  </p>
-<p>以前<code>paccache -r</code>および<code>paccache -ruk0</code>を行って不要なキャッシュを削除したが、今回はpkgcachecleanを利用してみた。<br>Yaourtからインストールしたが、インストール容量もたった0.02MiBだった。  </p>
-<p>pkgcachecleanを実行  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> pkgcacheclean</div></pre></td></tr></table></figure>
-
-<p>メッセージなどが出ることもなく、一瞬で終了。<br>やや拍子抜けした。  </p>
-<p>だが/var/cache/pacman/pkg/のサイズは、実行前の2.4GBから1.9GBにちゃんと減量出来ていた。  </p>
-<p>このあと、試しにpaccacheしてみると、</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ paccache -r</div><div class="line">==&gt; no candidate packages found <span class="keyword">for</span> pruning</div><div class="line">$ paccache -ruk0</div><div class="line">==&gt; no candidate packages found <span class="keyword">for</span> pruning</div></pre></td></tr></table></figure>
-
-<p>もう削る必要のあるパッケージは無いようだ。  </p>
-<p>pkgcachecleanのページのコメントを見ると、paccacheが.partや.delta filesを扱わない一方、pkgcachecleanではこれらも対象になるようだ。<br><a href="https://aur.archlinux.org/packages/pkgcacheclean/" target="_blank" rel="external">AUR (en) - pkgcacheclean</a>  </p>
-<p>何のことかよく分からないが、コマンドが一つで済むことだし、pkgcachecleanの方が良さそうだ。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Arch Linuxを使っていると、pacmanでダウンロードした古いパッケージキャッシュが/var/cache/pacman/pkg/ に溜まってくるらしい。<br><a href="https://archlinuxjp.kusakata.com/wiki/Pacman]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
