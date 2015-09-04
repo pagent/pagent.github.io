@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-09-03T21:37:03.503Z</updated>
+  <updated>2015-09-04T21:14:32.121Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/09/03/socket-connection-failure/"/>
     <id>http://pagent.github.io/2015/09/03/socket-connection-failure/</id>
     <published>2015-09-03T06:23:19.000Z</published>
-    <updated>2015-09-03T06:43:09.000Z</updated>
+    <updated>2015-09-03T06:43:09.123Z</updated>
     <content type="html"><![CDATA[<p>Arch Linux+Xfceで起動時に  </p>
 <blockquote>
 <p>設定サーバーに接続できませんでした<br>Failed to connect to socket /tmp/dbus-…</p>
@@ -44,7 +44,7 @@
     <link href="http://pagent.github.io/2015/09/01/open-unclickable-url/"/>
     <id>http://pagent.github.io/2015/09/01/open-unclickable-url/</id>
     <published>2015-09-01T01:26:18.000Z</published>
-    <updated>2015-09-01T01:54:28.000Z</updated>
+    <updated>2015-09-01T01:54:28.052Z</updated>
     <content type="html"><![CDATA[<p>ハイパーリンクになっておらず、クリック出来ないURLを開く時には、URLをアドレス欄にコピペすれば良いが、少し面倒。Firefoxのアドオンに<a href="https://addons.mozilla.org/ja/firefox/addon/text-link/" target="_blank" rel="external">テキストリンク (Text Link)</a>というのがあると知り、インストールしてみた。<br>現在のバージョンのFirefoxには対応していないようだが、開発版を入れると機能した。<br>だが「テキストリンク」の説明にURI文字列を開く通常の方法として、”選択された文字列をFirefoxのタブバーにドラッグ＆ドロップする”というのが書いてあったのでやってみた。  </p>
 <p>確かにURI文字列を選択してタブバーに持って行くと<code>タブの中央にドロップするとそのタブを置き換え、タブの両サイドにドロップするとその位置に新しいタブとして読み込まれます</code>というツールチップが表示され、そのままドロップするとURLを開いてくれる。こんな方法があるとは全然知らなかった。<br>URLの選択は大抵の場合トリプルクリックで簡単に出来るので、この方法でも良さそう。  </p>
 <p>右クリックメニューがあまり増えるのも嫌なので、結局「テキストリンク」はアンインストールした。</p>
@@ -62,7 +62,7 @@
     <link href="http://pagent.github.io/2015/08/29/windows10-privacy/"/>
     <id>http://pagent.github.io/2015/08/29/windows10-privacy/</id>
     <published>2015-08-29T09:24:31.000Z</published>
-    <updated>2015-09-03T21:36:40.000Z</updated>
+    <updated>2015-09-03T21:36:40.337Z</updated>
     <content type="html"><![CDATA[<p>Windows 10にアップグレードするのは危険だという情報を目にする。<br>設定でプライバシーに関する情報の収集・送信を無効にしても、完全には止められないそうだ。<br><a href="http://it.srad.jp/story/15/08/15/2122239/" target="_blank" rel="external">Windows 10のプライバシー設定をすべてオフにしても、Microsoftとの通信は止められない？ | スラド IT</a>  </p>
 <p>Microsoftの「プライバシーに関する声明」には、個人情報の収集と利用について書かれている。<br>収集された個人情報は行政機関に提供される可能性もあるようだ。  </p>
 <blockquote>
@@ -93,7 +93,7 @@
     <link href="http://pagent.github.io/2015/08/28/hexo-video/"/>
     <id>http://pagent.github.io/2015/08/28/hexo-video/</id>
     <published>2015-08-28T10:17:42.000Z</published>
-    <updated>2015-08-28T10:51:14.000Z</updated>
+    <updated>2015-08-28T10:51:14.582Z</updated>
     <content type="html"><![CDATA[<p>hexo/source直下にvideosディレクトリを作成し、そこへ動画ファイルを配置。<br>以下のHTMLタグで埋め込み。 </p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">video</span> <span class="attribute">src</span>=<span class="value">"/videos/dango.webm"</span> <span class="attribute">width</span>=<span class="value">"480"</span> <span class="attribute">height</span>=<span class="value">"360"</span> <span class="attribute">controls</span>&gt;</span><span class="tag">&lt;/<span class="title">video</span>&gt;</span></div></pre></td></tr></table></figure>
 
@@ -120,7 +120,7 @@
     <link href="http://pagent.github.io/2015/08/28/hexo-sound/"/>
     <id>http://pagent.github.io/2015/08/28/hexo-sound/</id>
     <published>2015-08-28T07:00:18.000Z</published>
-    <updated>2015-08-28T11:47:17.000Z</updated>
+    <updated>2015-08-28T11:47:17.868Z</updated>
     <content type="html"><![CDATA[<p>hexo/source直下にsoundsディレクトリを作成し、そこへ音声ファイルを配置。<br>以下のHTMLタグで埋め込み。  </p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">audio</span> <span class="attribute">src</span>=<span class="value">"example.mp3"</span> <span class="attribute">autoplay</span> <span class="attribute">loop</span>&gt;</span><span class="tag">&lt;/<span class="title">audio</span>&gt;</span></div></pre></td></tr></table></figure>
 
@@ -155,7 +155,7 @@
     <link href="http://pagent.github.io/2015/08/21/rekonq-default-search-engine/"/>
     <id>http://pagent.github.io/2015/08/21/rekonq-default-search-engine/</id>
     <published>2015-08-21T11:55:28.000Z</published>
-    <updated>2015-08-21T14:29:29.000Z</updated>
+    <updated>2015-08-21T14:29:29.523Z</updated>
     <content type="html"><![CDATA[<p>Arch LinuxでサブのブラウザとしてMidoriを使っているが、お気に入りが消えてしまったりと調子が悪かったので、rekonqを入れてみた。  </p>
 <p>サイドバーは有る方が好みなので、レンチアイコンの設定からPanels→Bookmarks Panelをチェック。<br>広告除去は、Tools→Ad block。<br>EasyListだけでは依然、広告が邪魔な状態だったので、EasyList without element hidingも有効にした。  </p>
 <p>快適に使えるようになったかと思ったが、起動の度に、デフォルトの検索エンジンを設定するよう、上部に注意表示される。  </p>
@@ -183,7 +183,7 @@
     <link href="http://pagent.github.io/2015/08/20/google-news-search/"/>
     <id>http://pagent.github.io/2015/08/20/google-news-search/</id>
     <published>2015-08-19T23:57:14.000Z</published>
-    <updated>2015-08-20T00:18:50.000Z</updated>
+    <updated>2015-08-20T00:18:50.153Z</updated>
     <content type="html"><![CDATA[<p>Firefoxの検索エンジンに「Googleニュース検索」を追加した。<br>アドオンの検索では日本語用のものが見つからなかったので、いったん<a href="https://addons.mozilla.org/ja/firefox/addon/googlenews-ita/?src=search" target="_blank" rel="external">Google News (Italia)</a>をインストール。<br>~/.mozilla/firefox/(プロファイル名)/searchplugins内のgooglenews-ita.xmlをgooglenews-ja.xmlにリネーム。<br>ファイルの内容を下記に変更した。  </p>
 <figure class="highlight xml"><figcaption><span>googlenews-ja.xml</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">SearchPlugin</span> <span class="attribute">xmlns</span>=<span class="value">"http://www.mozilla.org/2006/browser/search/"</span> <span class="attribute">xmlns:os</span>=<span class="value">"http://a9.com/-/spec/opensearch/1.1/"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:ShortName</span>&gt;</span>Google ニュース<span class="tag">&lt;/<span class="title">os:ShortName</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Description</span>&gt;</span>Google ニュース検索<span class="tag">&lt;/<span class="title">os:Description</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:InputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">os:InputEncoding</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Image</span> <span class="attribute">width</span>=<span class="value">"16"</span> <span class="attribute">height</span>=<span class="value">"16"</span>&gt;</span>data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAPAKAADwCgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAArKSaGLywqTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1MzB3SkdF/1RST/5FQj/sR0VCdzIvLAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3NjRXR0VC/ZGQj/++vr3/oaCf/2xqaP9QTkviSEZDeDIvLA4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlIyE/QD489mRiYf/ExMP/ymVO/8mXi//Hx8f/rq6t/25sav9UUlDgQ0A9YTIvLAkAAAAAAAAAAAAAAAA7OTdPQkE/9FdUUv+jo6L/0Ly3/8s0Ev/QxsP/qaqp/7Ozs//Pz87/rKyr/2BdW/pPTUrOMi8sJQAAAAA0MjBiNzU0+IWEgf9mZGL/1NTU/85VOv/RgW//09PS/4SFhP+EhYT/mZmY/8zMzP/W1tb/kI+N/0lHRPQlIyFiS0lH+4qKiP9DQD3/v769/9V6Zf/MNRP/39XT/6jX4f+rsrL/iYqJ/4SFhP+Jion/wsLC/97e3f+Afn3/JSMhDjc1M4hHRUP2iYiG/+rq6f/YfWn/1nFa/3nd8/8K0v7/F9P9/3rR5f+kqan/hIWE/4SFhP/Jycj/amhm9AAAAAAyLyw4ZmRi8aGh2/9BQdP/k5Ph/+PZ4P994ff/GNT9/wrS/v8K0v7/Jtb8/6LZ5f+xsbH/vby6/1RRT9kAAAAAOjc1852bmv+9ve3/Tk7W/zY20f9BQtb/f4Dl/9Pf9v+B5fv/J9b9/wrS/v8K0v7/q+n5/2lmZPtOTElTAAAAADIvLD1eXFnSdHJw+s/Ozf+zs+7/T0/b/zc42/83Od//goPt/83O+f+j7v//cuP9/5+dnP9VU1C6Mi8sBQAAAAAAAAAAMi8sDEdEQmJaWFXWfXt5+cTDw/+vr+3/aWvo/zg75f84POn/j5H1/7y7uv9FQkDuMi8sEAAAAAAAAAAAAAAAAAAAAAAAAAAAMi8sCDIvLE1QTUvNdHJw9Le2tf/JyfT/g4Xy/8PDzf9qaGbqMi8sLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIvLDxHRELCQT479XJwbv9QTkvzU1BOSwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIvLA8yLyxjMi8sHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/P8AAPgf8L/wBwAA4AEAAMAAAACAAAAAAAAAAAAAAACAAAAAgAAAAIAAAADAAQAA8AP///4H////jwAA//8AAA%3D%3D<span class="tag">&lt;/<span class="title">os:Image</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Url</span> <span class="attribute">type</span>=<span class="value">"text/html"</span> <span class="attribute">method</span>=<span class="value">"GET"</span> <span class="attribute">template</span>=<span class="value">"https://news.google.co.jp/news/search?q={searchTerms}"</span> <span class="attribute">resultDomain</span>=<span class="value">"news.google.co.jp"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">os:Url</span>&gt;</span><span class="tag">&lt;<span class="title">os:Url</span> <span class="attribute">type</span>=<span class="value">"application/x-suggestions+json"</span> <span class="attribute">method</span>=<span class="value">"GET"</span> <span class="attribute">template</span>=<span class="value">"http://suggestqueries.google.com/complete/search?output=firefox&amp;client=firefox&amp;hl=ja&amp;q={searchTerms}"</span> <span class="attribute">resultDomain</span>=<span class="value">"suggestqueries.google.com"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">os:Url</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">SearchPlugin</span>&gt;</span></div></pre></td></tr></table></figure>
 
@@ -202,7 +202,7 @@
     <link href="http://pagent.github.io/2015/08/15/context-search/"/>
     <id>http://pagent.github.io/2015/08/15/context-search/</id>
     <published>2015-08-14T23:20:14.000Z</published>
-    <updated>2015-08-14T23:41:44.000Z</updated>
+    <updated>2015-08-14T23:41:44.579Z</updated>
     <content type="html"><![CDATA[<p>右クリックからの検索は便利だが、検索エンジンがデフォルトのものに固定されてしまっている。<br>普段はGoogleを使っているが、安全のためStartPageやDuckDuckGoを使いたい時、またツイッター検索をしたい時などがある。そんな時、キーワードをいちいち検索欄にコピペするのはちょっと面倒。  </p>
 <p>そんな人にお勧めしたいのが<a href="https://addons.mozilla.org/ja/firefox/addon/context-search/?src=search" target="_blank" rel="external">Context Search</a></p>
 <p>インストールすると、右クリックの「”〜” をGoogleで検索(s)」などが「”〜” を検索(s)」になり、種々の検索エンジンがリスト表示される。<br>特に設定の必要も無し。  </p>
@@ -221,7 +221,7 @@
     <link href="http://pagent.github.io/2015/07/09/fictional-email-addresses/"/>
     <id>http://pagent.github.io/2015/07/09/fictional-email-addresses/</id>
     <published>2015-07-09T07:03:50.000Z</published>
-    <updated>2015-08-18T22:21:17.000Z</updated>
+    <updated>2015-08-18T22:21:17.567Z</updated>
     <content type="html"><![CDATA[<p>ネットを利用していて、例えばメール欄が必須になっているブログにコメントしたい時など、これまでは正直に実際のメールアドレスを記載していた。（メインのではなく、サブのアドレスを使うことが多かったが）<br>だが、よく考えてみると、返信が必要のない場合は実際のものではなく、架空のメールアドレスを使っても問題なさそうだ。  </p>
 <p>存在するかもしれないメールアドレスを適当に使ってしまうと迷惑を掛けてしまうかもしれないが、３つのサンプル用ドメイン（example.com、example.org、 example.net）なら、大丈夫なはず。  </p>
 <p>そう考えて、適当な架空のメールアドレスとして<code>mail@example.net</code>を使うようにした。</p>
@@ -239,7 +239,7 @@
     <link href="http://pagent.github.io/2015/06/30/twitter-search-result-probrem/"/>
     <id>http://pagent.github.io/2015/06/30/twitter-search-result-probrem/</id>
     <published>2015-06-30T13:32:34.000Z</published>
-    <updated>2015-06-30T14:25:23.000Z</updated>
+    <updated>2015-06-30T14:25:23.806Z</updated>
     <content type="html"><![CDATA[<h3 id="自分のツイートだけが表示されない">自分のツイートだけが表示されない</h3>
 <p>ニュース記事やブログなどに設置してあるツイート数表示をクリックした時に表示されるページ（URLをツイッター検索した結果のページ）に自分のツイートだけが表示されなくなっていた。「トップ」から「ライブ」のタブに切り替えても表示されない。  </p>
 <p>これではツイートを見てもらう機会が減ってしまい困るので、下記ページから問題の報告を行った。<br><a href="https://support.twitter.com/forms/feature_report?feature=tweets" target="_blank" rel="external">Twitterヘルプセンター</a>  </p>
@@ -267,7 +267,7 @@
     <link href="http://pagent.github.io/2015/06/04/github-japan/"/>
     <id>http://pagent.github.io/2015/06/04/github-japan/</id>
     <published>2015-06-04T10:30:54.000Z</published>
-    <updated>2015-06-04T11:19:46.000Z</updated>
+    <updated>2015-06-04T11:19:46.818Z</updated>
     <content type="html"><![CDATA[<p>ITmediaのニュースによると、Gitによるバージョン管理サービスの老舗「GitHub」が日本法人「ギットハブ・ジャパン」を設立したそうだ。<br><a href="http://www.itmedia.co.jp/news/articles/1506/04/news133.html" target="_blank" rel="external">GitHubが日本法人「ギットハブ・ジャパン」設立　日本語テクニカルサポートで法人向け導入を促進 (1/2) - ITmedia ニュース</a>  </p>
 <p>ギットハブ・ジャパンは企業向けのツール「GitHub Enterprise」の販売とサポート提供が主な目的のよう。<br>“github”を検索してみたら、すぐにGitHub Japanのサイトが見つかった。<br><a href="http://github.co.jp/" target="_blank" rel="external">http://github.co.jp/</a>  </p>
 <p>どうやらすぐにgithub.comに日本語ページが用意されるということではないようだが、英語サイトの「GitHub Enterprise」は”github.com”のサブドメイン”enterprise.github.com”で提供されているようだし、もしかするとそのうちgithub.comを日本語で利用出来るようになるのだろうか？<br>（類似のサービスを提供している「Bitbucket」はすでに英語だけでなく、日本語、ドイツ語、フランス語、ロシア語、中国語、ヒンズー語など、計９つの言語で利用可能になっている。）</p>
@@ -289,7 +289,7 @@
     <link href="http://pagent.github.io/2015/06/02/vertical-dotted-line/"/>
     <id>http://pagent.github.io/2015/06/02/vertical-dotted-line/</id>
     <published>2015-06-02T13:03:11.000Z</published>
-    <updated>2015-06-02T13:24:33.000Z</updated>
+    <updated>2015-06-02T13:24:33.590Z</updated>
     <content type="html"><![CDATA[<p>三点リーダーを表示しようと、キーボードで「・（/）」キーを3回叩いて変換していて、縦の三点リーダーがあることに気がついた。  </p>
 <p>「︙」    </p>
 <p>入力メソッドはLinux上のMozc。WindowsのMS-IMEやGoogle日本語入力などではどうなのかは未検証。<br>常識なのかもしれないが、今まで知らなかった。  </p>
@@ -314,7 +314,7 @@
     <link href="http://pagent.github.io/2015/05/30/twitter-appearances-dm/"/>
     <id>http://pagent.github.io/2015/05/30/twitter-appearances-dm/</id>
     <published>2015-05-30T01:31:27.000Z</published>
-    <updated>2015-06-01T12:47:10.000Z</updated>
+    <updated>2015-06-01T12:47:10.733Z</updated>
     <content type="html"><![CDATA[<p>Twitterの表示形式変更後、プロフィールページで最新のツイートなどがやたらとデカく表示されるのが嫌で、Firefoxのアドオン「Stylish」を使って他のツイートと同様の大きさに表示されるようにしていた（DMも見ないので、DMアイコンは非表示に）。  </p>
 <p>見やすくて良かったのだが、最近またツイッターの方で文字サイズを指定する要素が変わったようで、大きく表示されてしまっていた。  </p>
 <p>新たに<code>.TweetTextSize.TweetTextSize--26px</code>の指定を追加して下記のようにした。  </p>
@@ -337,7 +337,7 @@
     <link href="http://pagent.github.io/2015/05/19/hexo-hatena-button/"/>
     <id>http://pagent.github.io/2015/05/19/hexo-hatena-button/</id>
     <published>2015-05-19T12:56:11.000Z</published>
-    <updated>2015-05-19T13:36:35.000Z</updated>
+    <updated>2015-05-19T13:36:35.262Z</updated>
     <content type="html"><![CDATA[<p>Hexoで作っているこのブログに「はてブ」ボタンを設置した。  </p>
 <p>Octopressでの設置例を参考にやってみたが上手く行かなかったので、はてな公式サイトのボタン作成ページでコードを作成した。<br><a href="http://b.hatena.ne.jp/guide/bbutton" target="_blank" rel="external">はてなブックマークボタンの作成・設置について - はてなブックマーク</a>  </p>
 <p>「ページのアドレス」「ページのタイトル」の欄は仮に「アドレス」「タイトル」とし、後からこれをHexoでのパス<code>&lt;%- item.permalink %&gt;</code>および<code>&lt;%= item.title %&gt;</code>に入れ替えた。<br>出来たコードは下記。  </p>
@@ -364,7 +364,7 @@
     <link href="http://pagent.github.io/2015/05/14/hosting24-analytics-code/"/>
     <id>http://pagent.github.io/2015/05/14/hosting24-analytics-code/</id>
     <published>2015-05-14T04:28:08.000Z</published>
-    <updated>2015-05-14T05:03:31.000Z</updated>
+    <updated>2015-05-14T05:03:31.185Z</updated>
     <content type="html"><![CDATA[<p>今は放置しているが、無料レンタルサーバー「000webhost.com」のアカウントを取っている。<br>久しぶりに「000webhost.com」に置いてあるサイトを見てみると、すべてのページのソース下部に、下記のようなコードが挿入されている。  </p>
 <pre><code><span class="comment">&lt;!-- Hosting24 Analytics Code --&gt;</span>
 <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"http://stats.hosting24.com/count.php"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
@@ -389,7 +389,7 @@
     <link href="http://pagent.github.io/2015/05/14/truecrypt-failed/"/>
     <id>http://pagent.github.io/2015/05/14/truecrypt-failed/</id>
     <published>2015-05-13T16:49:55.000Z</published>
-    <updated>2015-05-13T17:01:24.000Z</updated>
+    <updated>2015-05-13T17:01:24.411Z</updated>
     <content type="html"><![CDATA[<p>Truecryptのボリュームをマウントしようとしたら、「Failed to set up a loop device:」と表示されるのみで、マウント出来なくなってしまった。<br>パスワードは正確に入力しているはずだが、何度やっても同じエラー。  </p>
 <p>大事なファイルもあるので一瞬焦ったが、検索したらなんのことはない、Arch Linuxのカーネルをlinux-4.0.2-1に更新してから再起動していないのが原因だった。<br><a href="https://wiki.archlinux.org/index.php/TrueCrypt#Failed_to_set_up_a_loop_device" target="_blank" rel="external">TrueCrypt - ArchWiki</a>  </p>
 <p>再起動したら無事マウント出来るようになった。</p>
@@ -408,7 +408,7 @@
     <link href="http://pagent.github.io/2015/05/13/mouse-wheel-scroll-speed/"/>
     <id>http://pagent.github.io/2015/05/13/mouse-wheel-scroll-speed/</id>
     <published>2015-05-12T23:53:49.000Z</published>
-    <updated>2015-05-14T20:29:02.000Z</updated>
+    <updated>2015-09-04T21:13:20.291Z</updated>
     <content type="html"><![CDATA[<p>Linuxでマウスホイールでの上下スクロールをする際、移動量（スピード）が小さくて疲れるので、移動量を大きくした。  </p>
 <h3 id="Xorgで設定（上手くいかず）">Xorgで設定（上手くいかず）</h3>
 <p>まず下記記事を参考に、xorgの設定で試みた。<br><a href="http://ishikuro.hateblo.jp/entry/2013/12/08/190527" target="_blank" rel="external">Linuxでマウスホイール移動量調整 - ishn’s diary</a>  </p>
@@ -427,7 +427,7 @@
 <p>1行目の「”.*”」ですべてのアプリケーションを対象とするようにしているが、記載の仕方によりアプリケーション毎に違う挙動をさせることも出来るようだ。</p>
 <p><code>imwheel</code>コマンドを実行すると反映される。<br>（設定値を変更してリスタートする時は<code>killall imwheel &amp;&amp; imwheel</code>）  </p>
 <p>コマンド<code>imwheel</code>を自動開始アプリケーションに登録して完了。<br>スクロールが楽になった。  </p>
-<p>気に入った移動量に簡単に変更出来、また上昇・下降にそれぞれ違う値を設定することも可能なので、かなりオススメ。</p>
+<p>簡単に移動量を変更出来て、また上昇・下降にそれぞれ違う値を設定することも可能なので、かなりオススメ。</p>
 <p>（参照記事）<br><a href="http://askubuntu.com/questions/285689/increase-mouse-wheel-scroll-speed" target="_blank" rel="external">Increase mouse wheel scroll speed - Ask Ubuntu</a><br><a href="https://wiki.archlinux.org/index.php/Imwheel" target="_blank" rel="external">imwheel - ArchWiki</a></p>
 ]]></content>
     <summary type="html">
@@ -445,7 +445,7 @@
     <link href="http://pagent.github.io/2015/05/09/firefox-yahoo-search/"/>
     <id>http://pagent.github.io/2015/05/09/firefox-yahoo-search/</id>
     <published>2015-05-09T10:30:58.000Z</published>
-    <updated>2015-05-17T08:00:45.000Z</updated>
+    <updated>2015-05-17T08:00:45.404Z</updated>
     <content type="html"><![CDATA[<p>Firefoxを更新して以降、検索窓でのYahoo!検索がsearch.yahoo.co.jpではなく、英語のsearch.yahoo.comになってしまっている。<br>「検索設定を変更」→「検索エンジンを追加…」から探してみても、Yahoo! Vietnam、Yahoo! India、Yahoo! Canadaなどや、Yahoo Japan! Mail Notifierはあるが、Yahoo! JAPANの検索エンジンが見つからない。  </p>
 <h3 id="検索アシストアドオンによる対症療法">検索アシストアドオンによる対症療法</h3>
 <p><a href="https://addons.mozilla.org/ja/firefox/addon/yahoo%E5%8F%B3%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E6%A4%9C%E7%B4%A2%E3%82%A2%E3%82%B7%E3%82%B9%E3%83%88/?src=search" target="_blank" rel="external">「Yahoo!右クリック検索アシスト」</a>というアドオンがあるようだったので入れてみた。  </p>
@@ -471,7 +471,7 @@
     <link href="http://pagent.github.io/2015/05/02/higan/"/>
     <id>http://pagent.github.io/2015/05/02/higan/</id>
     <published>2015-05-02T04:36:54.000Z</published>
-    <updated>2015-05-27T23:45:08.000Z</updated>
+    <updated>2015-05-27T23:45:08.791Z</updated>
     <content type="html"><![CDATA[<p>ファミコン、スーパーファミコンなどのエミュレーターhiganをインストールした。<br>他のエミュレーターと較べても再現性は高いそうだ。  </p>
 <p>実際ゲームをする際はキーボードでは操作しづらいので、BUFFALOのUSBゲームパッド<a href="http://buffalo.jp/product/input/gamepad/bsgp801/" target="_blank" rel="external">BSGP801</a>を購入した。<br>懐かしいスーファミのコントローラーそっくりで値段も安価。<br>Windows用となっていたがLinuxでも使用出来た。<br>（簡単なのでjoypadをインストールした。）  </p>
 <p>USBポートに挿すとゲームパッド自体は認識しているようだったが、higanで反応しない。<br>入力方法のMappingを設定しないといけないようだ。  </p>
@@ -497,7 +497,7 @@
     <link href="http://pagent.github.io/2015/04/21/connection-refused-repo-archlinux-fr/"/>
     <id>http://pagent.github.io/2015/04/21/connection-refused-repo-archlinux-fr/</id>
     <published>2015-04-20T23:23:22.000Z</published>
-    <updated>2015-04-21T00:17:54.000Z</updated>
+    <updated>2015-04-21T00:17:54.416Z</updated>
     <content type="html"><![CDATA[<p>いつの間にかArch Linuxのシステム更新の際、エラーが表示されるようになっていた。  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> pacman -Syu</div><div class="line">:: パッケージデータベースの同期中...</div><div class="line"> core は最新です</div><div class="line"> extra は最新です</div><div class="line"> community は最新です</div><div class="line"> multilib は最新です</div><div class="line">エラー: ファイル <span class="string">'archlinuxfr.db'</span> を repo.archlinux.fr から取得するのに失敗しました : Failed to connect to repo.archlinux.fr port <span class="number">80</span>: 接続を拒否されました</div><div class="line">エラー: archlinuxfr の更新に失敗しました (ダウンロードライブラリエラー)</div></pre></td></tr></table></figure>
 
