@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-09-05T05:07:19.838Z</updated>
+  <updated>2015-09-05T05:10:38.514Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -408,10 +408,10 @@
     <link href="http://pagent.github.io/2015/05/13/mouse-wheel-scroll-speed/"/>
     <id>http://pagent.github.io/2015/05/13/mouse-wheel-scroll-speed/</id>
     <published>2015-05-12T23:53:49.000Z</published>
-    <updated>2015-09-05T05:06:33.470Z</updated>
+    <updated>2015-09-05T05:10:29.841Z</updated>
     <content type="html"><![CDATA[<p>Linuxでマウスホイールでの上下スクロールをする際、移動量（スピード）が小さくて疲れるので、移動量を大きくした。  </p>
 <h3 id="imwheelを使って設定">imwheelを使って設定</h3>
-<p>「imwheel」を導入した。<br>Arch Linuxの場合はAURなので、Yaourtでインストール。  </p>
+<p>マウスの挙動を調整するツール「imwheel」を導入した。<br>Arch Linuxの場合はAURにあるので、Yaourtでインストール。  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yaourt -S imwheel</div></pre></td></tr></table></figure>
 
 <p>その後、~/.imwheelrcファイルを作成し、下記内容で保存。</p>
@@ -435,7 +435,7 @@
     <summary type="html">
     <![CDATA[<p>Linuxでマウスホイールでの上下スクロールをする際、移動量（スピード）が小さくて疲れるので、移動量を大きくした。  </p>
 <h3 id="imwheelを使って設定">imwheelを使って設定</h3>
-<p>「imwheel」を導入した。<br>Arch Linu]]>
+<p>マウスの挙動を調整するツール「imwheel」を導入した]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
