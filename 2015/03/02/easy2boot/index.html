@@ -132,7 +132,7 @@
 <p>defragfs.pl（_ISO/docs/linux_utils内）やWINCONTIG（_ISO/docs/内）の他、特にLinuxユーザーの為に_ISO内にCONTIG.ISOというファイルが同梱されている。  </p>
 <p>CONTIG.ISOは、isoファイルに断片化があった際に自動的にデフラグ操作を行うためのものらしい。<br>サイズが500MBに設定されていて、Easy2Bootインストール直後の状態でのほとんど全ての容量にあたる。<br>clonezillaが上手く起動出来なかったのもフリーズしていた訳ではなく、CONTIG.ISOがデフラグ操作を行っていたのかもしれない。<br>ただかなり時間が掛かるようだし、サイズが500MB以上のisoファイルをデフラグするためには、CONTIG.ISOもそれ以上のサイズにリサイズしておく必要があるようだ。<br>CONTIG.ISOを使わないのであれば、削除してしまっても良いとのこと。  </p>
 <p>defragfs.plはなぜか機能しなかったが、Windows用のWinContigでデフラグしたらclonezillaも起動出来るようになった。<br>WinContigはWindows 7を起動して使用したが、Windows PE（Windows プレインストール環境）やHiren’s BootCDの「Mini Windows Xp」など、Windows環境を提供するisoファイルをEasy2Bootに入れておけば、Easy2BootによるブートでWinContigを利用出来そうだ。  </p>
-<h3 id="フォーマットをNTSFにする">フォーマットをNTSFにする</h3>
+<h3 id="フォーマットをNTSFにする（不要かも）">フォーマットをNTSFにする（不要かも）</h3>
 <p>4GBを超えるファイルを利用するためには、Easy2Boot領域をFat32ではなく、NTSFもしくはext3、ext4にしておく必要があるが、なるべくなら4GB以上のファイルも扱いたい。  </p>
 <p>Easy2Bootインストール時に領域がFat32にフォーマットされてしまうが、_ISO/docs/linux_utils内のfmt.shファイルの131行目の  </p>
 <pre><code>/sbin/mkfs.vfat -F32 -n <span class="string">"<span class="variable">$label</span>"</span> <span class="variable">$device</span>
