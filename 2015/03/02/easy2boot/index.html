@@ -126,14 +126,12 @@
 <p>フォーマットして良いか聞かれるので、良ければ「y」。  </p>
 <p>指定したパーティションに「Easy2Boot」がコピーされ、ブートローダーがインストールされる。  </p>
 <h3 id="起動とデフラグ">起動とデフラグ</h3>
-<p>使い方は至って簡単で、_ISO内の空いてるフォルダ（LINUXやWINなど）にisoファイルを追加するだけ。  </p>
-<p>今回は_ISO/LINUX内にLxPup-15.02.1-s-nopae.iso、_ISO/BACKUP内にclonezilla-live-2.1.2-43-i686-pae.isoを配置した。  </p>
+<p>使い方は至って簡単で、_ISO内の空いてるフォルダ（LINUXやWINなど）にisoファイルを追加するだけ。<br>今回は_ISO/LINUX内にLxPup-15.02.1-s-nopae.isoを、_ISO/BACKUP内にclonezilla-live-2.1.2-43-i686-pae.isoを配置した。  </p>
 <p>ブートすると、LxPupは起動出来たが、clonezillaは「ファイルがcontiguous（隣接）じゃない」と言われ、上手く起動出来なかった。<br>どうやら断片化しているからデフラグが必要ということらしい。  </p>
 <p>isoファイルから直接ブートする際には、ちょっとした断片化でも起動出来ないようで、「Easy2Boot」ではいろいろ対策が用意されている。  </p>
 <p>defragfs.pl（_ISO/docs/linux_utils内）やWINCONTIG（_ISO/docs/内）の他、特にLinuxユーザーの為に_ISO内にCONTIG.ISOというファイルが同梱されている。  </p>
-<p>CONTIG.ISOは、isoファイルに断片化があった際に自動的にデフラグ操作を行うためのものらしい。<br>サイズが500MBに設定されていて、Easy2Bootインストール直後の状態でのほとんど全ての容量にあたる。<br>clonezillaが上手く起動出来なかったのもフリーズしていた訳ではなく、CONTIG.ISOがデフラグ操作を行っていたのかもしれない。<br>ただかなり時間が掛かるようだし、サイズが500MB以上のisoファイルをデフラグするためには、CONTIG.ISOもそれ以上のサイズにリサイズしておく必要があるようだ。  </p>
-<p>defragfs.plはなぜか機能しなかったが、Windows用のWinContigでデフラグしたらclonezillaも起動出来るようになった。  </p>
-<p>WinContigはWindows 7を起動して使用したが、Windows PE（Windows プレインストール環境）やHiren’s BootCDの「Mini Windows Xp」など、Windows環境を提供するisoファイルをEasy2Bootに入れておけば、Easy2BootによるブートでWinContigを利用出来る。<br>CONTIG.ISOを使わないのであれば、削除してしまっても良いようだ。  </p>
+<p>CONTIG.ISOは、isoファイルに断片化があった際に自動的にデフラグ操作を行うためのものらしい。<br>サイズが500MBに設定されていて、Easy2Bootインストール直後の状態でのほとんど全ての容量にあたる。<br>clonezillaが上手く起動出来なかったのもフリーズしていた訳ではなく、CONTIG.ISOがデフラグ操作を行っていたのかもしれない。<br>ただかなり時間が掛かるようだし、サイズが500MB以上のisoファイルをデフラグするためには、CONTIG.ISOもそれ以上のサイズにリサイズしておく必要があるようだ。<br>CONTIG.ISOを使わないのであれば、削除してしまっても良いとのこと。  </p>
+<p>defragfs.plはなぜか機能しなかったが、Windows用のWinContigでデフラグしたらclonezillaも起動出来るようになった。<br>WinContigはWindows 7を起動して使用したが、Windows PE（Windows プレインストール環境）やHiren’s BootCDの「Mini Windows Xp」など、Windows環境を提供するisoファイルをEasy2Bootに入れておけば、Easy2BootによるブートでWinContigを利用出来そうだ。  </p>
 <h3 id="フォーマットをNTSFにする">フォーマットをNTSFにする</h3>
 <p>4GBを超えるファイルを利用するためには、Easy2Boot領域をFat32ではなく、NTSFもしくはext3、ext4にしておく必要があるが、なるべくなら4GB以上のファイルも扱いたい。  </p>
 <p>Easy2Bootインストール時に領域がFat32にフォーマットされてしまうが、_ISO/docs/linux_utils内のfmt.shファイルの131行目の  </p>
@@ -148,8 +146,8 @@
 <p>理由はよく分からないが、使用したUSBメモリの特性やインストール方法などにもよるのかもしれない。  </p>
 <h3 id="感想">感想</h3>
 <p>以上、少しややこしかったが、配置するだけで（正確にはデフラグの必要があったりするが）isoファイルを直接起動出来る「Easy2Boot」はかなり優秀なツールだ。  </p>
-<p>Linuxディストリビューションを試してみたい時にもDVD-RWなどに焼く必要が無くなる。<br>またClonezillaでシステムのバックアップを取るときにも、外付けHDDの先頭パーティションにEasy2BootとClonezillaを入れ、２番目のパーティションにバックアップするようにすれば、ClonezillaのCDが必要無くなる。<br>しかもCDに較べて起動が早い。  </p>
-<p>導入がもう少し簡単だったらとは思うがとても便利なので、試して損は無いと思う。  </p>
+<p>Linuxディストリビューションを試してみたい時にもDVD-RWなどに焼く必要が無くなる。<br>またClonezillaでシステムのバックアップを取る時にも、外付けHDDの先頭パーティションにEasy2BootとClonezillaを入れ、２番目のパーティションにバックアップするようにすれば、Clonezillaのlive-CDが不要になる。<br>しかもCDに較べて起動が早い。  </p>
+<p>導入がもう少し簡単だったらとは思うが、とても便利なので試して損は無いと思う。  </p>
 <p>ーー<br>（追記）<br>Windowsの場合はRMPrepUSBを使って、もっと簡単にEasy2Bootをインストール出来るようだ。</p>
 
 	</div>
