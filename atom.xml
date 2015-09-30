@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-09-29T01:46:05.509Z</updated>
+  <updated>2015-09-30T09:54:19.979Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,25 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[スノーデン氏、Twitterを始める]]></title>
+    <link href="http://pagent.github.io/2015/09/30/snowden-twitter/"/>
+    <id>http://pagent.github.io/2015/09/30/snowden-twitter/</id>
+    <published>2015-09-30T09:28:10.000Z</published>
+    <updated>2015-09-30T09:53:28.435Z</updated>
+    <content type="html"><![CDATA[<p>ロシアに亡命中の元CIA職員スノーデン氏が9月29日にTwitterを始めたそうだ。<br><a href="http://www.itmedia.co.jp/news/articles/1509/30/news144.html" target="_blank" rel="external">スノーデン氏、Twitterを始める - ITmedia ニュース</a>  </p>
+<p>彼がフォローしているのは米国家安全保障局（NSA）のみだそうで、実際に彼のアカウント<a href="https://twitter.com/Snowden" target="_blank" rel="external">@Snowden</a>を見てみると確かにそうなっている。<br>現在のフォロワー数は９０万人程。始めて間もないせいもあるかも知れないが、意外と少ない気がする。  </p>
+<p>スノーデン氏と言えばアメリカ政府による数々の諜報活動を暴露した人物。<br>そのスノーデン氏が何ゆえ今頃Twitterを始める気になったのだろうか？<br>FacebookよりTwitterの方が安全なのかもしれないが、でもなぜ今？  </p>
+<p>英語が苦手なのでフォローする気は無いが、ちょっと気になる。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>ロシアに亡命中の元CIA職員スノーデン氏が9月29日にTwitterを始めたそうだ。<br><a href="http://www.itmedia.co.jp/news/articles/1509/30/news144.html" target="_blank" rel="]]>
+    </summary>
+    
+      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Xfce起動時に「設定サーバーに接続できませんでした」と表示される]]></title>
@@ -492,58 +511,6 @@
     </summary>
     
       <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Yaourtのリポジトリに接続を拒否される]]></title>
-    <link href="http://pagent.github.io/2015/04/21/connection-refused-repo-archlinux-fr/"/>
-    <id>http://pagent.github.io/2015/04/21/connection-refused-repo-archlinux-fr/</id>
-    <published>2015-04-20T23:23:22.000Z</published>
-    <updated>2015-04-21T00:17:54.000Z</updated>
-    <content type="html"><![CDATA[<p>いつの間にかArch Linuxのシステム更新の際、エラーが表示されるようになっていた。  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> pacman -Syu</div><div class="line">:: パッケージデータベースの同期中...</div><div class="line"> core は最新です</div><div class="line"> extra は最新です</div><div class="line"> community は最新です</div><div class="line"> multilib は最新です</div><div class="line">エラー: ファイル <span class="string">'archlinuxfr.db'</span> を repo.archlinux.fr から取得するのに失敗しました : Failed to connect to repo.archlinux.fr port <span class="number">80</span>: 接続を拒否されました</div><div class="line">エラー: archlinuxfr の更新に失敗しました (ダウンロードライブラリエラー)</div></pre></td></tr></table></figure>
-
-<p>Yaourtのリポジトリのようだ。  </p>
-<p>検索すると、同様のトピックが1件だけ見つかった。<br><a href="https://forums.archlinux.fr/viewtopic.php?t=16714" target="_blank" rel="external">[repo.archlinux.fr] Failed to connect to repo.archlinux.fr port 80: Connexion refusée - Archlinux.fr [Forums]</a>  </p>
-<p>フランス語らしいのでGoogle翻訳で翻訳した。<br>（よく分からないが一部修正）  </p>
-<blockquote>
-<p>こんにちは、</p>
-<p>レポarchlinux.frに問題があるように表示されます。<br>エラー：ファイルのリカバリ失敗」archlinuxfr.db」repo.archlinux.fr以来：ポート80をrepo.archlinux.frへの接続に失敗しました接続が拒否されました</p>
-<p>誰かが見てすることができますか？<br>この種のpbm（problem？）の正式な報告チャンネルはありますか？</p>
-<p>ありがとう</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>私は全く同じ悩みを持っている。</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>私は、サーバーがダウンしていることに昨晩気づいた（受信側かサーバか正確には分からない…）。</p>
-<p>だから、辛抱強く彼の悩みを取ると待機する必要があります^^（ヨーグルトをインストールしたかった私は、今日逃している）</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>それはとても忍耐に戻って日付とあなたのスタッフに感謝している。</p>
-<p>編集：さらに調査保留中、Skunnykが配置されています。</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>すばらしい、感謝！</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>私の側で[OK]をクリックしUPD</p>
-</blockquote>
-<p>どうやらYaourtのサーバーがダウンしているたようだ。<br>4月6日のトピックだが、これまで気が付かなかったし、不安定で時々ダウンしているのだろうか？  </p>
-<p>それにしてもGoogle翻訳の便利さには感謝する。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>いつの間にかArch Linuxのシステム更新の際、エラーが表示されるようになっていた。  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1<]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
     
   </entry>
   
