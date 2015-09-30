@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-09-30T10:15:14.469Z</updated>
+  <updated>2015-09-30T23:52:54.452Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -427,7 +427,7 @@
     <link href="http://pagent.github.io/2015/05/13/mouse-wheel-scroll-speed/"/>
     <id>http://pagent.github.io/2015/05/13/mouse-wheel-scroll-speed/</id>
     <published>2015-05-12T23:53:49.000Z</published>
-    <updated>2015-09-30T10:13:52.159Z</updated>
+    <updated>2015-09-30T23:51:46.037Z</updated>
     <content type="html"><![CDATA[<p>Linuxでマウスホイールでの上下スクロールをする際、移動量（スピード）が小さくて疲れるので、移動量を大きくした。  </p>
 <h3 id="imwheelを使って設定">imwheelを使って設定</h3>
 <p>マウスの挙動を調整するツール「imwheel」を導入した。<br>Arch Linuxの場合はAURにあるので、Yaourtでインストール。  </p>
@@ -439,7 +439,7 @@
 
 <p>「Up,   Button4」、「Down, Button5」の後ろの値で変更出来る。Up「3」、Down「2」で設定してみた。（デフォルトの値は「1」のよう。）<br>上に戻る時に早い方が良いし、この設定なら上下を繰り返すことで微調整も出来る。  </p>
 <p>1行目の「”.*”」ですべてのアプリケーションを対象とするようにしているが、記載の仕方によりアプリケーション毎に違う挙動をさせることも出来るようだ。</p>
-<p>imwheelrcファイル作成後<code>imwheel</code>コマンドを実行すると反映される。<br>（設定値を変更してリスタートする時は<code>killall imwheel &amp;&amp; imwheel</code>）  </p>
+<p>その後<code>imwheel</code>コマンドを実行すると反映される。<br>（設定値を変更してリスタートする時は<code>killall imwheel &amp;&amp; imwheel</code>）  </p>
 <p>コマンド<code>imwheel</code>を自動開始アプリケーションに登録して完了。<br>スクロールが楽になった。  </p>
 <p>簡単に移動量を変更出来て、また上昇・下降にそれぞれ違う値を設定することも可能なので、かなりオススメ。</p>
 <p>（参照記事）<br><a href="http://askubuntu.com/questions/285689/increase-mouse-wheel-scroll-speed" target="_blank" rel="external">Increase mouse wheel scroll speed - Ask Ubuntu</a><br><a href="https://wiki.archlinux.org/index.php/Imwheel" target="_blank" rel="external">imwheel - ArchWiki</a>  </p>
