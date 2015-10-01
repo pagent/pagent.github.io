@@ -133,7 +133,7 @@
 <p>CONTIG.ISOは、isoファイルに断片化があった際に自動的にデフラグ操作を行うためのものらしい。<br>サイズが500MBに設定されていて、Easy2Bootインストール直後の状態でのほとんど全ての容量にあたる。<br>clonezillaが上手く起動出来なかったのもフリーズしていた訳ではなく、CONTIG.ISOがデフラグ操作を行っていたのかもしれない。<br>ただかなり時間が掛かるようだし、サイズが500MB以上のisoファイルをデフラグするためには、CONTIG.ISOもそれ以上のサイズにリサイズしておく必要があるようだ。<br>CONTIG.ISOを使わないのであれば、削除してしまっても良いとのこと。  </p>
 <p>defragfs.plはなぜか機能しなかったが、Windows用のWinContigでデフラグしたらclonezillaも起動出来るようになった。<br>WinContigはWindows 7を起動して使用したが、Windows PE（Windows プレインストール環境）やHiren’s BootCDの「Mini Windows Xp」など、Windows環境を提供するisoファイルをEasy2Bootに入れておけば、Easy2BootによるブートでWinContigを利用出来そうだ。  </p>
 <h3 id="フォーマットをNTSFにする（不要かも）">フォーマットをNTSFにする（不要かも）</h3>
-<p>4GBを超えるファイルを利用するためには、Easy2Boot領域をFat32ではなく、NTSFもしくはext3、ext4にしておく必要があるが、なるべくなら4GB以上のファイルも扱いたい。  </p>
+<p>4GBを超えるファイルを利用するためには、Easy2Boot領域をFat32ではなく、NTSFもしくはext3、ext4にしておく必要があるが、なるべくなら4GB以上のisoファイルも扱いたい。  </p>
 <p>Easy2Bootインストール時に領域がFat32にフォーマットされてしまうが、_ISO/docs/linux_utils内のfmt.shファイルの131行目の  </p>
 <pre><code>/sbin/mkfs.vfat -F32 -n <span class="string">"<span class="variable">$label</span>"</span> <span class="variable">$device</span>
 </code></pre><p>を</p>
@@ -141,12 +141,12 @@
 </code></pre><p>に変更することでNTSFにすることが出来た。<br>後からファイルを保持したままFat32をNTSFに変換することも可能のよう。  </p>
 <p>（その後は結局Fat32でフォーマットしたものを使っている。Fat32のままで良さそう。）  </p>
 <h3 id="よく分からないトラブル">よく分からないトラブル</h3>
-<p>外付けHDDではこれで上手く行ったが、USBメモリではEasy2Bootを起動しようとしたら、「パーティションのlast sectorをチェックしている」というような表示のまま止まってしまった。  </p>
+<p>外付けHDDではこれで上手く行ったが、USBメモリではEasy2Bootを起動しようとしたら、「パーティションのlast sectorをチェックしている」という内容の表示のまま止まってしまった。  </p>
 <p>そのまま電源を落とさずUSBメモリを一旦抜き、再度挿入して”continue”。<br>ブートメニュー画面で”Install Grub4dos…”を選択したら、その後は起動出来るようになった。  </p>
 <p>理由はよく分からないが、使用したUSBメモリの特性やインストール方法などにもよるのかもしれない。  </p>
 <h3 id="感想">感想</h3>
 <p>以上、少しややこしかったが、配置するだけで（正確にはデフラグの必要があったりするが）isoファイルを直接起動出来る「Easy2Boot」はかなり優秀なツールだ。  </p>
-<p>Linuxディストリビューションを試してみたい時にもDVD-RWなどに焼く必要が無くなる。<br>またClonezillaでシステムのバックアップを取る時にも、外付けHDDの先頭パーティションにEasy2BootとClonezillaを入れ、２番目のパーティションにバックアップするようにすれば、Clonezillaのlive-CDが不要になる。<br>しかもCDに較べて起動が早い。  </p>
+<p>Linuxディストリビューションを試してみたい時にもDVD-RWなどに焼く必要が無くなる。<br>またClonezillaでシステムのバックアップを取る時にも、外付けHDDの先頭パーティションをEasy2Boot領域としてClonezillaを入れ、２番目のパーティションにバックアップするようにすれば、Clonezillaのlive-CDが不要になる。live-CDに較べて起動も早い。  </p>
 <p>導入がもう少し簡単だったらとは思うが、とても便利なので試して損は無いと思う。  </p>
 <p>ーー<br>（追記）<br>Windowsの場合はRMPrepUSBを使って、もっと簡単にEasy2Bootをインストール出来るようだ。</p>
 
