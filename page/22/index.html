@@ -114,6 +114,68 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/12/12/bulk-change/" >特定語句を含むファイルの抽出とその一括変換</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年12月12日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>repositoryは「リポジトリ」と表記するのが順当のよう。<br>「レポジトリ」としていた表記を「リポジトリ」に改めるため、ブログ投稿内で「レポジトリ」を用いているものを調べてみた。  </p>
+<p>source/_postsで端末を開き、下記コマンドで抽出。  </p>
+<pre><code>$ <span class="keyword">grep</span> <span class="string">"レポジトリ"</span> *
+</code></pre><p><code>*</code>ですべてのファイルを検索対象に。<br>.mdファイルのみを対象にするなら<code>*.md</code>に。<br>またサブディレクトリ以下を再帰的に検索する場合は  </p>
+<pre><code>$ <span class="keyword">grep</span> -<span class="keyword">r</span> <span class="string">"検索ワード"</span> *
+</code></pre><p>（参考：<a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20060228/231140/" target="_blank" rel="external">Linuxコマンド逆引き大全 - 【 ファイルから文字列を検索する 】：ITpro</a>）  </p>
+<p>たくさんあって手作業で修正するのは大変そうなので、下記コマンドですべての.mdファイル内の「レポジトリ」を「リポジトリ」に一括変換。（元ファイルは拡張子.bakを付けてバックアップ）  </p>
+<pre><code>$ perl -p -i.bak <span class="operator">-e</span> <span class="string">'s/レポジトリ/リポジトリ/g'</span> *.md
+</code></pre><p>正常に変換されたことを確認後、.bakファイルを一括削除。  </p>
+<pre><code>$ <span class="keyword">find</span> ./ -<span class="built_in">type</span> <span class="keyword">f</span> -name <span class="string">"*.bak"</span> -<span class="built_in">delete</span>
+</code></pre><p>もし不具合があれば、特定のファイルに対しては下記で復帰可能。<br>（example.md.bakをexample.mdに名称変更し上書き）  </p>
+<pre><code><span class="variable">$ </span>mv example.md.bak example.md
+</code></pre><p>ただし、mvコマンドは複数のファイル名の一括変換は出来ないようなので、すべてのファイルを元に戻す場合は、一旦すべての.mdファイルを削除してから、すべての.md.bakファイルの拡張子を.mdに変換。<br>（renameコマンドは上書きは出来ないようなので）  </p>
+<pre><code>$ <span class="keyword">find</span> ./ -<span class="built_in">type</span> <span class="keyword">f</span> -name <span class="string">"*.md"</span> -<span class="built_in">delete</span>
+$ <span class="built_in">rename</span> <span class="string">'s/.md.bak/.md/'</span> *.bak
+</code></pre>
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/12/bulk-change/" data-text="特定語句を含むファイルの抽出とその一括変換 | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/12/12/bulk-change/" class="hatena-bookmark-button" data-hatena-bookmark-title="特定語句を含むファイルの抽出とその一括変換" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/コマンド/">コマンド</a></li></ul>
+	</div>
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/12/12/repository/" >repositoryは「リポジトリ」？「レポジトリ」？</a>
 		</h3>
 	
@@ -326,64 +388,6 @@
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/12/09/casio/" >50桁まで計算出来るカシオのフリー計算がすごい</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年12月9日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>普通の計算機で表示出来るのは10桁くらいまでだが、カシオのフリー計算はなんと50桁まで表示される。<br><a href="http://keisan.casio.jp/calculator" target="_blank" rel="external">高精度な高等関数が使えるフリー計算</a>  </p>
-<p>たとえば、ヒトヨヒトヨニヒトミゴロの√2も  </p>
-<pre><code>1.4142135623730950488016887242096980785696718753769
-</code></pre><p>と表示される。<br>（普通にはコピペ出来ず、「要素を調査」しないとコピペ出来なかったが。）  </p>
-<p>ヒトナミニオゴレヤ（√3）  </p>
-<pre><code>1.7320508075688772935274463415058723669428052538104
-</code></pre><p>フジサンロク（に）オオムナク（√5）も  </p>
-<pre><code>2.2360679774997896964091736687312762354406183596115
-</code></pre><p>他にも色々な計算が出来るようだ。<br>日常では必要無いと言えば無いのだが。  </p>
-<p>生まれて初めて見た電子計算機（電卓）も、もちろんカシオだった。<br>起動時に点滅する緑色の液晶が滅茶苦茶かっこ良かった。  </p>
-<p>やっぱりカシオはすごい。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/09/casio/" data-text="50桁まで計算出来るカシオのフリー計算がすごい | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/12/09/casio/" class="hatena-bookmark-button" data-hatena-bookmark-title="50桁まで計算出来るカシオのフリー計算がすごい" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/ネット/">ネット</a></li></ul>
-	</div>
-
-</div>
-				
 
 			</div>
 
@@ -428,35 +432,35 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>16</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>16</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>12</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+			<li><a href="/tags/ネット/">ネット<span>16</span></a></li>
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>61</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>6</span></a></li>
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>60</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>16</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>6</span></a></li>
 		
 			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
 			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>9</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
@@ -471,6 +475,10 @@
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/10/04/aur-update-yaourt/" ><i class="fa fa-file-o"></i>YaourtでAURのパッケージをアップデート</a>
+      </li>
     
       <li>
         <a href="/2015/09/30/snowden-twitter/" ><i class="fa fa-file-o"></i>元CIA職員スノーデン氏がTwitterを開始</a>
@@ -488,10 +496,6 @@
         <a href="/2015/08/29/windows10-privacy/" ><i class="fa fa-file-o"></i>危険なスパイウェアWindows 10はプライバシー情...</a>
       </li>
     
-      <li>
-        <a href="/2015/08/28/hexo-video/" ><i class="fa fa-file-o"></i>Github Pages+Hexoのブログに動画ファイ...</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -501,7 +505,7 @@
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

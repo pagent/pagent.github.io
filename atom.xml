@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-10-03T23:37:38.504Z</updated>
+  <updated>2015-10-04T01:12:39.266Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,38 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[YaourtでAURのパッケージをアップデート]]></title>
+    <link href="http://pagent.github.io/2015/10/04/aur-update-yaourt/"/>
+    <id>http://pagent.github.io/2015/10/04/aur-update-yaourt/</id>
+    <published>2015-10-04T00:48:39.000Z</published>
+    <updated>2015-10-04T01:12:11.962Z</updated>
+    <content type="html"><![CDATA[<p>Arch LinuxでMarkdownファイルのエディターとして使っているretextが起動しなくなった。<br>新しいバージョンのretextが出ているようなので、Yaourtでアップデートした。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yaourt -Syua</div></pre></td></tr></table></figure>
+
+<p>これまでAURのパッケージはほったらかしだったので、他にも数個アップデートされた。<br>retextを起動出来た。  </p>
+<p>AURのパッケージも時々アップデートした方が良さそうなので、デスクトップにランチャーとしてyaourt -Syua.desktopファイルを作成。  </p>
+<figure class="highlight plain"><figcaption><span>yaourt -Syua.desktop</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[Desktop Entry]</div><div class="line">Version=1.0</div><div class="line">Type=Application</div><div class="line">Name=yaourt -Syua</div><div class="line">Comment=</div><div class="line">Exec=yaourt -Syua</div><div class="line">Icon=</div><div class="line">Path=</div><div class="line">Terminal=true</div><div class="line">StartupNotify=false</div></pre></td></tr></table></figure>
+
+<p>システムのアップデートにはpacman -Syu.desktopファイルを使っている。  </p>
+<figure class="highlight plain"><figcaption><span>pacman -Syu.desktop</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[Desktop Entry]</div><div class="line">Type=Application</div><div class="line">Name=pacman-Syu</div><div class="line">Exec=sudo pacman -Syu</div><div class="line">Terminal=true</div><div class="line">Name[ja_JP.utf8]=pacman -Syu</div></pre></td></tr></table></figure>
+
+<p>クリックでアップデート出来るのでちょっと便利。  </p>
+<p>（参照記事）  </p>
+<ul>
+<li><a href="http://archlinux-blogger.blogspot.jp/2014/12/yaourt-arch-linux-yaourt-aur.html" target="_blank" rel="external">普段使いのArch Linux: yaourtの使い方 | Arch Linux, yaourt, AUR, オプション, パッケージ管理</a>  </li>
+<li><a href="https://wiki.archlinuxjp.org/index.php/Yaourt" target="_blank" rel="external">Yaourt - ArchWiki</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Arch LinuxでMarkdownファイルのエディターとして使っているretextが起動しなくなった。<br>新しいバージョンのretextが出ているようなので、Yaourtでアップデートした。  </p>
+<figure class="highlight bash">]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[元CIA職員スノーデン氏がTwitterを開始]]></title>
@@ -485,32 +517,6 @@
     </summary>
     
       <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[higanでファミコン、スーパーファミコン]]></title>
-    <link href="http://pagent.github.io/2015/05/02/higan/"/>
-    <id>http://pagent.github.io/2015/05/02/higan/</id>
-    <published>2015-05-02T04:36:54.000Z</published>
-    <updated>2015-05-27T23:45:08.000Z</updated>
-    <content type="html"><![CDATA[<p>ファミコン、スーパーファミコンなどのエミュレーターhiganをインストールした。<br>他のエミュレーターと較べても再現性は高いそうだ。  </p>
-<p>実際ゲームをする際はキーボードでは操作しづらいので、BUFFALOのUSBゲームパッド<a href="http://buffalo.jp/product/input/gamepad/bsgp801/" target="_blank" rel="external">BSGP801</a>を購入した。<br>懐かしいスーファミのコントローラーそっくりで値段も安価。<br>Windows用となっていたがLinuxでも使用出来た。<br>（簡単なのでjoypadをインストールした。）  </p>
-<p>USBポートに挿すとゲームパッド自体は認識しているようだったが、higanで反応しない。<br>入力方法のMappingを設定しないといけないようだ。  </p>
-<p>Setting→Configuration→InputタブでFamicom等のハードを選択。<br>「Up」等の項目をダブルクリックすると入力待機状態に。<br>ゲームパッドの上矢印を押すとそのキーが設定される。<br>Aボタン、Startボタンなども同様に設定。  </p>
-<p>ゲームが出来るようになったが、いつの間にかゲームパッドの操作でマウスポインターも動いてしまうようになった。  </p>
-<p><code>xinput</code>コマンドで見ると、自分の環境ではゲームパッドはid=11に登録されているようだったので、これを無効化した。</p>
-<pre><code><span class="comment">$</span> <span class="comment">xinput</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">disable</span> <span class="comment">11</span>
-</code></pre><p>ただ起動の度に無効化する必要があるようだったので、自動開始アプリケーションにコマンドを登録した。  </p>
-<p>（参照記事）<br><a href="http://nomad-blacky.hatenablog.com/entry/2013/03/21/025253" target="_blank" rel="external">ゲームパッドの操作でマウスポインタが動いてしまう＠Ubuntu - ぶらっ記ぃ</a><br><a href="https://archlinuxjp.kusakata.com/wiki/Xorg?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DXorg_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno#.E5.BF.85.E8.A6.81.E3.81.AB.E5.BF.9C.E3.81.98.E3.81.A6.E5.85.A5.E5.8A.9B.E3.82.BD.E3.83.BC.E3.82.B9.E3.82.92.E6.9C.89.E5.8A.B9.E5.8C.96.E3.83.BB.E7.84.A1.E5.8A.B9.E5.8C.96" target="_blank" rel="external">必要に応じて入力ソースを有効化・無効化 - Xorg - ArchWiki</a></p>
-<p>ーー<br>（追記）<br>USBポートからゲームパッドを外すとxinputのid=11がAT Translated Set 2 keyboardに変わっており、キーボードが反応しなくなってしまった。当初原因が分からずとても困った。<br><code>xinput --disable 11</code>を自動開始アプリケーションに登録する時は注意が必要。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>ファミコン、スーパーファミコンなどのエミュレーターhiganをインストールした。<br>他のエミュレーターと較べても再現性は高いそうだ。  </p>
-<p>実際ゲームをする際はキーボードでは操作しづらいので、BUFFALOのUSBゲームパッド<a href="http://]]>
-    </summary>
-    
-      <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
     
   </entry>
   

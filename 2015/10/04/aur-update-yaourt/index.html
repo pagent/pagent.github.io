@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>元CIA職員スノーデン氏がTwitterを開始 | Pagent</title>
+  <title>YaourtでAURのパッケージをアップデート | Pagent</title>
   <meta name="author" content="Pagent">
   
   <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
@@ -13,7 +13,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="元CIA職員スノーデン氏がTwitterを開始"/>
+  <meta property="og:title" content="YaourtでAURのパッケージをアップデート"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -96,7 +96,7 @@
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> 元CIA職員スノーデン氏がTwitterを開始</h1>
+			<h1> YaourtでAURのパッケージをアップデート</h1>
 		</div>
 	
 
@@ -112,10 +112,22 @@
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>ロシアに亡命中の元CIA職員スノーデン氏が9月29日にTwitterを始めたそうだ。<br><a href="http://www.itmedia.co.jp/news/articles/1509/30/news144.html" target="_blank" rel="external">スノーデン氏、Twitterを始める - ITmedia ニュース</a>  </p>
-<p>彼がフォローしているのは米国家安全保障局（NSA）のみだそうで、実際に彼のアカウント<a href="https://twitter.com/Snowden" target="_blank" rel="external">@Snowden</a>を見てみると確かにそうなっている。<br>現在のフォロワー数は９０万人程。始めて間もないせいもあるかも知れないが、意外と少ない気がする。  </p>
-<p>スノーデン氏と言えばアメリカ政府による数々の諜報活動を暴露した人物。<br>そのスノーデン氏が何ゆえ今頃Twitterを始める気になったのだろうか？<br>FacebookよりTwitterの方が安全なのかもしれないが、でもなぜ今？  </p>
-<p>英語が苦手なのでフォローする気は無いが、ちょっと気になる。</p>
+	    <p>Arch LinuxでMarkdownファイルのエディターとして使っているretextが起動しなくなった。<br>新しいバージョンのretextが出ているようなので、Yaourtでアップデートした。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yaourt -Syua</div></pre></td></tr></table></figure>
+
+<p>これまでAURのパッケージはほったらかしだったので、他にも数個アップデートされた。<br>retextを起動出来た。  </p>
+<p>AURのパッケージも時々アップデートした方が良さそうなので、デスクトップにランチャーとしてyaourt -Syua.desktopファイルを作成。  </p>
+<figure class="highlight plain"><figcaption><span>yaourt -Syua.desktop</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[Desktop Entry]</div><div class="line">Version=1.0</div><div class="line">Type=Application</div><div class="line">Name=yaourt -Syua</div><div class="line">Comment=</div><div class="line">Exec=yaourt -Syua</div><div class="line">Icon=</div><div class="line">Path=</div><div class="line">Terminal=true</div><div class="line">StartupNotify=false</div></pre></td></tr></table></figure>
+
+<p>システムのアップデートにはpacman -Syu.desktopファイルを使っている。  </p>
+<figure class="highlight plain"><figcaption><span>pacman -Syu.desktop</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[Desktop Entry]</div><div class="line">Type=Application</div><div class="line">Name=pacman-Syu</div><div class="line">Exec=sudo pacman -Syu</div><div class="line">Terminal=true</div><div class="line">Name[ja_JP.utf8]=pacman -Syu</div></pre></td></tr></table></figure>
+
+<p>クリックでアップデート出来るのでちょっと便利。  </p>
+<p>（参照記事）  </p>
+<ul>
+<li><a href="http://archlinux-blogger.blogspot.jp/2014/12/yaourt-arch-linux-yaourt-aur.html" target="_blank" rel="external">普段使いのArch Linux: yaourtの使い方 | Arch Linux, yaourt, AUR, オプション, パッケージ管理</a>  </li>
+<li><a href="https://wiki.archlinuxjp.org/index.php/Yaourt" target="_blank" rel="external">Yaourt - ArchWiki</a></li>
+</ul>
 
 	</div>
 
@@ -123,7 +135,7 @@
 	<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/09/30/snowden-twitter/" class="hatena-bookmark-button" data-hatena-bookmark-title="元CIA職員スノーデン氏がTwitterを開始" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/10/04/aur-update-yaourt/" class="hatena-bookmark-button" data-hatena-bookmark-title="YaourtでAURのパッケージをアップデート" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 
 <div class="clear"></div>
@@ -135,13 +147,13 @@
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2015/10/04/aur-update-yaourt/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2015/09/03/socket-connection-failure/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2015/09/30/snowden-twitter/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -175,7 +187,7 @@
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2015年9月30日
+	2015年10月4日
 	</div>
 	
 
@@ -189,7 +201,7 @@
     <ul id="tags" class="tag_box list-unstyled collapse in">
 	    <!-- _partial/post/tag -->
   
-  <li><a href="/tags/ネット/">ネット</a></li>
+  <li><a href="/tags/Linux/">Linux</a></li>
 
     </ul>
 	</div>

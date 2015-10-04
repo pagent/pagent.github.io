@@ -114,6 +114,60 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/10/24/doropbox/" >Dropbox。やっぱり便利だね</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年10月24日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Xubuntuで間違ってhomeディレクトリを削除してしまい、過去記事のmarkdownファイルもろともOctopressのsourceを消失させてしまうという失敗をしてしまった。<br>ここはOctopressの作業フォルダをDropboxに置いておいた方がよいかと思いやってみた。  </p>
+<p>いちおう動作はしてdeployも出来るが、どこから出てきたか下層にあるはずのフォルダやファイルが勝手に作られていたりする。<br>通信状況が良くないのか、使い勝手がいまいち。<br>Dropboxはあくまでバックアップ用にすることにした。  </p>
+<p>Octopressの作業フォルダは、Xubuntuで共有しているWindowsのDドライブに置き、homeディレクトリにはそこへのリンクを置いているので前よりは安全だろう。  </p>
+<p>DドライブはXubuntu起動時に自分が所有者としてマウントされるよう、optionsを下記で/etc/fstabに記載している。  </p>
+<p><code>defaults,umask=002,uid=1000,gid=1000</code></p>
+<p>これでXubuntuでおかしなことをしてしまっても、Dドライブをいじらない限りは大丈夫なはず。  </p>
+<p>ーー<br>（追記）<br>使い方がよく分かってなかっただけで、やっぱりDropboxは便利かもしれない。<br>他のPCと作業を同期出来るし。<br>間違ってフィルを削除してしまっても、Dropboxのキャッシュから復元出来るし。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/10/24/doropbox/" data-text="Dropbox。やっぱり便利だね | Pagent" data-lang="ja">ツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/10/24/doropbox/" class="hatena-bookmark-button" data-hatena-bookmark-title="Dropbox。やっぱり便利だね" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ネット/">ネット</a></li> <li><a href="/tags/blog/">blog</a></li></ul>
+	</div>
+
+</div>
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/10/24/xubuntu-blank-menu/" >Xubuntuでメニューが表示されず真っ白</a>
 		</h3>
 	
@@ -331,62 +385,6 @@
 
 </div>
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/10/23/io/" >Githubへのdeployエラーとインド洋のイギリス領（.io）</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年10月23日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>OctopressブログをGithubのリポジトリにdeployしようとしても、エラーになってなかなか上手くいかなかった。  </p>
-<p>どうやら、リポジトリ名を（username）.github.comにしたのが原因だった様子。<br>新しく（username）.github.ioでリポジトリを作りなおしたら、すんなりdeploy出来た。<br>Githubがリポジトリを.github.comから.github.ioに移行したのが関係しているのだろうか。  </p>
-<p>.ioというのは見慣れないドメインだったが、最近はIT分野で好まれているのだとか。</p>
-<blockquote>
-<p>.ioは国別コードトップレベルドメイン（ccTLD）の一つで、イギリス領インド洋地域(Indian Ocean Territory)に割り当てられている。</p>
-<p>入出力のI/O（Input/Output）やI/Oポートを表すとして、ウェブアプリケーションを始めとするコンピュータサイエンスの分野では近年.ioドメインが好まれている。2013年4月にGitHubはプロジェクトページの全ドメインを「github.io」に移行した。</p>
-</blockquote>
-<p><a href="http://ja.wikipedia.org/wiki/.io" target="_blank" rel="external">.io - Wikipedia</a>  </p>
-<p>イギリスという国がいまだにインド洋に領有地（植民地）を持っている、ということに驚いた。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/10/23/io/" data-text="Githubへのdeployエラーとインド洋のイギリス領（.io） | Pagent" data-lang="ja">ツイート</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/10/23/io/" class="hatena-bookmark-button" data-hatena-bookmark-title="Githubへのdeployエラーとインド洋のイギリス領（.io）" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/ネット/">ネット</a></li></ul>
-	</div>
-
-</div>
-				
 
 			</div>
 
@@ -431,37 +429,37 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+			<li><a href="/tags/Git/">Git<span>12</span></a></li>
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>16</span></a></li>
 		
 			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>16</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
 			<li><a href="/tags/Windows/">Windows<span>6</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>60</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>61</span></a></li>
 		
 			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>9</span></a></li>
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>12</span></a></li>
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>16</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 		
 		</ul>
@@ -474,6 +472,10 @@
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/10/04/aur-update-yaourt/" ><i class="fa fa-file-o"></i>YaourtでAURのパッケージをアップデート</a>
+      </li>
     
       <li>
         <a href="/2015/09/30/snowden-twitter/" ><i class="fa fa-file-o"></i>元CIA職員スノーデン氏がTwitterを開始</a>
@@ -491,10 +493,6 @@
         <a href="/2015/08/29/windows10-privacy/" ><i class="fa fa-file-o"></i>危険なスパイウェアWindows 10はプライバシー情...</a>
       </li>
     
-      <li>
-        <a href="/2015/08/28/hexo-video/" ><i class="fa fa-file-o"></i>Github Pages+Hexoのブログに動画ファイ...</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -504,7 +502,7 @@
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
