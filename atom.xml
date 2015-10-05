@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-10-04T01:12:39.266Z</updated>
+  <updated>2015-10-05T05:16:08.103Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -459,14 +459,14 @@
     <link href="http://pagent.github.io/2015/05/13/mouse-wheel-scroll-speed/"/>
     <id>http://pagent.github.io/2015/05/13/mouse-wheel-scroll-speed/</id>
     <published>2015-05-12T23:53:49.000Z</published>
-    <updated>2015-09-30T23:51:46.037Z</updated>
+    <updated>2015-10-05T05:15:43.671Z</updated>
     <content type="html"><![CDATA[<p>Linuxでマウスホイールでの上下スクロールをする際、移動量（スピード）が小さくて疲れるので、移動量を大きくした。  </p>
 <h3 id="imwheelを使って設定">imwheelを使って設定</h3>
 <p>マウスの挙動を調整するツール「imwheel」を導入した。<br>Arch Linuxの場合はAURにあるので、Yaourtでインストール。  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yaourt -S imwheel</div></pre></td></tr></table></figure>
 
 <p>UbuntuならUbuntuソフトウェアセンターまたはSynapticから。  </p>
-<p>インストール後、~/.imwheelrcファイルを作成し、下記内容で保存。</p>
+<p>インストール後、~/.imwheelrcファイルを作成（/home/ユーザー名下に.imwheelrcファイル）。下記内容で保存。</p>
 <figure class="highlight plain"><figcaption><span>.imwheelrc</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">".*"</div><div class="line">None,      Up,   Button4, 3</div><div class="line">None,      Down, Button5, 2</div></pre></td></tr></table></figure>
 
 <p>「Up,   Button4」、「Down, Button5」の後ろの値で変更出来る。Up「3」、Down「2」で設定してみた。（デフォルトの値は「1」のよう。）<br>上に戻る時に早い方が良いし、この設定なら上下を繰り返すことで微調整も出来る。  </p>
