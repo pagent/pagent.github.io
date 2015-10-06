@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-10-06T22:18:03.612Z</updated>
+  <updated>2015-10-06T22:20:30.692Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/10/04/aur-update-yaourt/"/>
     <id>http://pagent.github.io/2015/10/04/aur-update-yaourt/</id>
     <published>2015-10-04T00:48:39.000Z</published>
-    <updated>2015-10-06T21:05:12.490Z</updated>
+    <updated>2015-10-06T22:20:19.906Z</updated>
     <content type="html"><![CDATA[<p>Arch LinuxでMarkdownファイルのエディターとして使っているretextが起動しなくなった。<br>新しいバージョンのretextが出ているようなので、Yaourtでアップデートした。  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yaourt -Syua</div></pre></td></tr></table></figure>
 
@@ -27,7 +27,7 @@
 <p>AURのパッケージも時々アップデートした方が良さそうなので、デスクトップにランチャーとしてyaourt -Syua.desktopファイルを作成。  </p>
 <figure class="highlight plain"><figcaption><span>yaourt -Syua.desktop</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[Desktop Entry]</div><div class="line">Version=1.0</div><div class="line">Type=Application</div><div class="line">Name=yaourt -Syua</div><div class="line">Comment=</div><div class="line">Exec=yaourt -Syua</div><div class="line">Icon=</div><div class="line">Path=</div><div class="line">Terminal=true</div><div class="line">StartupNotify=false</div></pre></td></tr></table></figure>
 
-<p>システムのパッケージをアップデートするのに、これまで下記pacman -Syu.desktopファイルを使っていたが、yaourt -Syua.desktopでそれも含めてアップデート出来る。  </p>
+<p>システムのパッケージをアップデートするのに、これまで下記のpacman -Syu.desktopファイルを使っていたが、yaourt -Syua.desktopでそれらも含めてアップデート出来る。  </p>
 <figure class="highlight plain"><figcaption><span>pacman -Syu.desktop</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[Desktop Entry]</div><div class="line">Type=Application</div><div class="line">Name=pacman-Syu</div><div class="line">Exec=sudo pacman -Syu</div><div class="line">Terminal=true</div><div class="line">Name[ja_JP.utf8]=pacman -Syu</div></pre></td></tr></table></figure>
 
 
