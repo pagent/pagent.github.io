@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-10-06T22:15:41.496Z</updated>
+  <updated>2015-10-06T22:18:03.612Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -361,11 +361,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[ツイッターの外観変更とDM非表示]]></title>
+    <title><![CDATA[ツイッターの外観（文字サイズ）変更とDM非表示]]></title>
     <link href="http://pagent.github.io/2015/05/30/twitter-appearances-dm/"/>
     <id>http://pagent.github.io/2015/05/30/twitter-appearances-dm/</id>
     <published>2015-05-30T01:31:27.000Z</published>
-    <updated>2015-10-06T22:13:28.591Z</updated>
+    <updated>2015-10-06T22:17:50.113Z</updated>
     <content type="html"><![CDATA[<p>Twitterの表示形式変更後、プロフィールページで最新のツイートなどがやたらとデカく表示される。見づらいので、Firefoxのアドオン「Stylish」を使って他のツイートと同じ大きさで表示させるようにしていた（DMも見ないので、DMアイコンは非表示に）。  </p>
 <p>見やすくて良かったのだが、最近またツイッターの方で文字サイズを指定する要素が変更されたようで、一部のツイートが大きく表示されてしまっていた。  </p>
 <p>新たに<code>.TweetTextSize.TweetTextSize--26px</code>の指定を追加して下記のようにした。  </p>
