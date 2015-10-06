@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-10-06T22:06:02.373Z</updated>
+  <updated>2015-10-06T22:08:30.463Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -365,8 +365,8 @@
     <link href="http://pagent.github.io/2015/05/30/twitter-appearances-dm/"/>
     <id>http://pagent.github.io/2015/05/30/twitter-appearances-dm/</id>
     <published>2015-05-30T01:31:27.000Z</published>
-    <updated>2015-10-06T22:05:46.107Z</updated>
-    <content type="html"><![CDATA[<p>Twitterの表示形式変更後、プロフィールページで最新のツイートなどがやたらとデカく表示される。見づらいのでFirefoxのアドオン「Stylish」を使って他のツイートと同じ大きさで表示するようにしていた（DMも見ないので、DMアイコンは非表示に）。  </p>
+    <updated>2015-10-06T22:08:19.827Z</updated>
+    <content type="html"><![CDATA[<p>Twitterの表示形式変更後、プロフィールページで最新のツイートなどがやたらとデカく表示される。見づらいので、Firefoxのアドオン「Stylish」を使って他のツイートと同じ大きさで表示されるようにしていた（DMも見ないので、DMアイコンは非表示に）。  </p>
 <p>見やすくて良かったのだが、最近またツイッターの方で文字サイズを指定する要素が変更されたようで、大きく表示されてしまっていた。  </p>
 <p>新たに<code>.TweetTextSize.TweetTextSize--26px</code>の指定を追加して下記のようにした。  </p>
 <figure class="highlight css"><figcaption><span>ツイッターシンプル・DM非表示</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="at_rule">@<span class="keyword">namespace</span> <span class="function">url</span>(http://www.w3.org/<span class="number">1999</span>/xhtml)</span>;</div><div class="line"><span class="at_rule">@<span class="keyword">-moz-document</span> <span class="function">domain</span>(<span class="string">"twitter.com"</span>)</span></div><div class="line">{</div><div class="line"><span class="class">.ProfileTweet-text</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">14px</span> <span class="important">!important</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">20px</span> <span class="important">!important</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="class">.DMButton</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">display</span>:<span class="value"> none <span class="important">!important</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="class">.dm-nav</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">display</span>:<span class="value"> none <span class="important">!important</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="class">.TweetTextSize</span><span class="class">.TweetTextSize--26px</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">14px</span> <span class="important">!important</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">20px</span> <span class="important">!important</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="comment">/* --- 追記に記載した追加部分 --- */</span></div><div class="line"><span class="class">.TweetTextSize</span><span class="class">.TweetTextSize--16px</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">14px</span> <span class="important">!important</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">20px</span> <span class="important">!important</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="comment">/* ------- ここまで追加 -------- */</span></div><div class="line">}</div></pre></td></tr></table></figure>
@@ -375,8 +375,8 @@
 <p>ーー<br>（追記）<br>どデカくはないけど、そこそこ大きく表示されるツイートもあるようで、これも通常の大きさで表示するには<code>.TweetTextSize.TweetTextSize--16px</code>を指定する必要がありました。<br><a href="https://twitter.com/frypangsan/status/604608279042351104" target="_blank" rel="external">@frypangsanさんのツイート</a></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Twitterの表示形式変更後、プロフィールページで最新のツイートなどがやたらとデカく表示される。見づらいのでFirefoxのアドオン「Stylish」を使って他のツイートと同じ大きさで表示するようにしていた（DMも見ないので、DMアイコンは非表示に）。  </p>
-<p>]]>
+    <![CDATA[<p>Twitterの表示形式変更後、プロフィールページで最新のツイートなどがやたらとデカく表示される。見づらいので、Firefoxのアドオン「Stylish」を使って他のツイートと同じ大きさで表示されるようにしていた（DMも見ないので、DMアイコンは非表示に）。  </p>
+<]]>
     </summary>
     
       <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
