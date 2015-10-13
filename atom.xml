@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-10-06T22:41:23.303Z</updated>
+  <updated>2015-10-13T00:43:43.140Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2015/10/04/aur-update-yaourt/"/>
     <id>http://pagent.github.io/2015/10/04/aur-update-yaourt/</id>
     <published>2015-10-04T00:48:39.000Z</published>
-    <updated>2015-10-06T22:20:19.906Z</updated>
+    <updated>2015-10-06T22:20:19.000Z</updated>
     <content type="html"><![CDATA[<p>Arch LinuxでMarkdownファイルのエディターとして使っているretextが起動しなくなった。<br>新しいバージョンのretextが出ているようなので、Yaourtでアップデートした。  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yaourt -Syua</div></pre></td></tr></table></figure>
 
@@ -51,7 +51,7 @@
     <link href="http://pagent.github.io/2015/09/30/snowden-twitter/"/>
     <id>http://pagent.github.io/2015/09/30/snowden-twitter/</id>
     <published>2015-09-30T09:28:10.000Z</published>
-    <updated>2015-10-03T23:37:17.840Z</updated>
+    <updated>2015-10-03T23:37:17.000Z</updated>
     <content type="html"><![CDATA[<p>ロシアに亡命中の元CIA職員スノーデン氏が9月29日にTwitterを始めたそうだ。<br><a href="http://www.itmedia.co.jp/news/articles/1509/30/news144.html" target="_blank" rel="external">スノーデン氏、Twitterを始める - ITmedia ニュース</a>  </p>
 <p>彼がフォローしているのは米国家安全保障局（NSA）のみだそうで、実際に彼のアカウント<a href="https://twitter.com/Snowden" target="_blank" rel="external">@Snowden</a>を見てみると確かにそうなっている。<br>現在のフォロワー数は９０万人程。始めて間もないせいもあるかも知れないが、意外と少ない気がする。  </p>
 <p>スノーデン氏と言えばアメリカ政府による数々の諜報活動を暴露した人物。<br>そのスノーデン氏が何ゆえ今頃Twitterを始める気になったのだろうか？<br>FacebookよりTwitterの方が安全なのかもしれないが、でもなぜ今？  </p>
@@ -365,7 +365,7 @@
     <link href="http://pagent.github.io/2015/05/30/twitter-appearances-dm/"/>
     <id>http://pagent.github.io/2015/05/30/twitter-appearances-dm/</id>
     <published>2015-05-30T01:31:27.000Z</published>
-    <updated>2015-10-06T22:22:30.659Z</updated>
+    <updated>2015-10-06T22:22:30.000Z</updated>
     <content type="html"><![CDATA[<p>Twitterの表示形式変更後、プロフィールページで最新のツイートなどがやたらとデカく表示される。見づらいので、Firefoxのアドオン「Stylish」を使って他のツイートと同じ大きさで表示させるようにしていた（DMも見ないので、DMアイコンは非表示に）。  </p>
 <p>見やすくて良かったのだが、最近またツイッターの方で文字サイズを指定する要素が変更されたようで、一部のツイートが大きく表示されてしまっていた。  </p>
 <p>新たに<code>.TweetTextSize.TweetTextSize--26px</code>の指定を追加して下記のようにした。  </p>
@@ -459,7 +459,7 @@
     <link href="http://pagent.github.io/2015/05/13/mouse-wheel-scroll-speed/"/>
     <id>http://pagent.github.io/2015/05/13/mouse-wheel-scroll-speed/</id>
     <published>2015-05-12T23:53:49.000Z</published>
-    <updated>2015-10-05T05:15:43.671Z</updated>
+    <updated>2015-10-05T05:15:43.000Z</updated>
     <content type="html"><![CDATA[<p>Linuxでマウスホイールでの上下スクロールをする際、移動量（スピード）が小さくて疲れるので、移動量を大きくした。  </p>
 <h3 id="imwheelを使って設定">imwheelを使って設定</h3>
 <p>マウスの挙動を調整するツール「imwheel」を導入した。<br>Arch Linuxの場合はAURにあるので、Yaourtでインストール。  </p>
