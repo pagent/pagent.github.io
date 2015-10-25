@@ -117,10 +117,10 @@
 <p>まず、/etc/rc.localで設定する方法を試してみた。<br>現在の輝度を変更するコマンドは<code>&gt;</code>の表示のまま止まってしまうので、管理者権限でコマンドを実行した。</p>
 <pre><code><span class="input"><span class="prompt"># echo 6 &gt;</span> /sys/<span class="class"><span class="keyword">class</span>/<span class="title">backlight</span>/<span class="title">acpi_video0</span>/<span class="title">brightness</span></span></span>
 </code></pre><p>起動時のモニター輝度を変更できた。  </p>
-<p>これで十分だったのだが、試しにxbacklightを入れてみたら、これがかなり便利な代物だった。<br><a href="http://x1japan.wordpress.com/2013/08/23/linux-keep-brightness-setting/" target="_blank" rel="external">目に優しい、LinuxMintやubuntuでモニター輝度を起動時に落とす設定。 | Woishin Journal</a>  </p>
-<p>自動開始アプリケーションに<code>xbacklight -set 80</code>のようにコマンドを登録しておけば反映されるし、変更したい時も簡単に変更できる。  </p>
+<p>これで十分だったのだが、試しにxbacklightを入れてみたら、これがなかなか便利な代物だった。<br><a href="http://x1japan.wordpress.com/2013/08/23/linux-keep-brightness-setting/" target="_blank" rel="external">目に優しい、LinuxMintやubuntuでモニター輝度を起動時に落とす設定。 | Woishin Journal</a>  </p>
+<p>自動開始アプリケーションに<code>xbacklight -set 80</code>のようにコマンドを登録しておけば起動時に反映されるし、変更したい時も簡単に変更可能。  </p>
 <p>輝度は0から100（パーセント）で設定するようなのだが、<code>xbacklight</code>と打って輝度を確認したところ、決まった値に近い切り下げ値にしかならないようだった。<br>自分の環境では、「14.285714」「28.571429」「42.857143」…と、およそ14の倍数になっていた。  </p>
-<p>複数のアプリケーションをひとまとめに表示するクイックランチャー（外部）をパネルに追加し、コマンド<code>xbacklight -inc 15</code>、<code>xbacklight -dec 14</code>を追加したら、マウスクリックで簡単に輝度を上げ下げ出来るようになった。</p>
+<p>複数のアプリケーションをひとまとめに表示する「クイックランチャー（外部）」をパネルに追加し、コマンド<code>xbacklight -inc 15</code>、<code>xbacklight -dec 14</code>を追加したら、マウスによるクリックで簡単に輝度を上げ下げ出来るようになった。</p>
 
 	</div>
 
