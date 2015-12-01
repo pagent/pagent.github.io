@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-12-01T07:07:00.441Z</updated>
+  <updated>2015-12-01T10:02:37.699Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,40 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[ツイート数表示のAPIが廃止されたので、代わりにURLのツイッター検索画面に飛ぶリンク「List」を設置]]></title>
+    <link href="http://pagent.github.io/2015/12/01/twitter-search-list/"/>
+    <id>http://pagent.github.io/2015/12/01/twitter-search-list/</id>
+    <published>2015-12-01T09:03:34.000Z</published>
+    <updated>2015-12-01T10:02:05.096Z</updated>
+    <content type="html"><![CDATA[<p>Twitterのツイート数を表示するAPIが11月21日に廃止されたそうで、ツイートボタン横のカウント表示が無くなってしまった。  </p>
+<p>「count.jsoon」または「widgetoon.js」を導入すればこれまで通りツイート数を表示出来るようなのだが。<br><a href="http://getnews.jp/archives/1264136" target="_blank" rel="external">【衝撃】突然Twitterのツイート数が表示されなくなって大混乱！ 表示されるようにする方法 / count.jsoon ｜ ガジェット通信</a><br>登録が必要のようで面倒。  </p>
+<p>サイトによってはツイート数の代わりに記事URLのツイッター検索画面に飛ぶ「List」というリンクが設置されていたりする。<br>せめて、シェアしてくれた人のツイートが検索画面に表示されているか、他にどんな人がツイートしているかを確認出来るよう、この「List」というリンクを設置することにした。  </p>
+<p><strong>Hexoの場合</strong></p>
+<p>記事一覧（layout/_partial/post/entry.ejs）、個別記事（layout/_partial/article.ejs）のレイアウトのツイートボタンscriptの後に  </p>
+<p><code>&lt;a href=&quot;https://twitter.com/search?q=&lt;%- item.permalink %&gt;&quot;&gt;List&lt;/a&gt;</code>  </p>
+<p>を追記。<br>「List」というリンクが追加された。  </p>
+<p><strong>Seesaaブログの場合</strong></p>
+<p>別で書いてるSeesaaブログにもこの「List」を追加した。（Seesaaブログではスマホ用ページのHTMLはいじれないので、PC用ページのみ。）  </p>
+<p>ソーシャルボタンのHTMLは直接編集出来ないので、設定→ソーシャルボタン→PCの「Twitter」のチェックを外す。<br>公式のツイートボタンのコードを取得。（<a href="https://about.twitter.com/ja/resources/buttons#tweet" target="_blank" rel="external">Twitterボタン | About</a>）<br>「URLを共有」、「ツイート本文」にそれぞれSeesaaブログの環境変数<code>&lt;% article.page_url %&gt;</code>、<code>&lt;% article.subject %&gt;</code>を入れる。  </p>
+<p>作成されたコードを、Seesaaの設定→デザイン→PC→コンテンツ→記事のHTML編集でソーシャルボタンの箇所（<code>&lt;% if:blog.bookmark_service %&gt;</code>）の前後いずれかに追記。<br>コードの後ろに検索画面に飛ぶためのリンク<br><code>&lt;a href=&quot;https://twitter.com/search?q=&lt;% article.page_url %&gt;&quot;&gt;List&lt;/a&gt;</code><br>を追加。（CSSで位置を調節出来るよう全体を<code>&lt;div class=twitter&gt;``&lt;/div&gt;</code>で囲った。）  </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">--- ここから ---</div><div class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">twitter</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"https://twitter.com/share"</span> <span class="attribute">class</span>=<span class="value">"twitter-share-button"</span><span class="value">{count}</span> <span class="attribute">data-url</span>=<span class="value">"&lt;% article.page_url %&gt;"</span> <span class="attribute">data-text</span>=<span class="value">"&lt;% article.subject %&gt;"</span>&gt;</span>Tweet<span class="tag">&lt;/<span class="title">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">!<span class="function"><span class="keyword">function</span><span class="params">(d,s,id)</span></span>{<span class="keyword">var</span> js,fjs=d.getElementsByTagName(s)[<span class="number">0</span>],p=<span class="regexp">/^http:/</span>.test(d.location)?<span class="string">'http'</span>:<span class="string">'https'</span>;<span class="keyword">if</span>(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+<span class="string">'://platform.twitter.com/widgets.js'</span>;fjs.parentNode.insertBefore(js,fjs);}}(<span class="built_in">document</span>, <span class="string">'script'</span>, <span class="string">'twitter-wjs'</span>);</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"https://twitter.com/search?q=&lt;% article.page_url %&gt;"</span>&gt;</span>List<span class="tag">&lt;/<span class="title">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">--- ここまで ---</div><div class="line"><span class="vbscript">&lt;% <span class="keyword">if</span>:blog.bookmark_service %&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"bookmark"</span> <span class="attribute">data-url</span>=<span class="value">"&lt;% article.page_url %&gt;"</span> <span class="attribute">data-subject</span>=<span class="value">"&lt;% article.subject | remove_emoji | nl2br | tag_strip | html %&gt;"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line"><span class="vbscript">&lt;% /<span class="keyword">if</span> %&gt;</span></div></pre></td></tr></table></figure>
+
+<p>その後デザイン設定でCSSに</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class">.twitter</span> <span class="rules">{ </span></div><div class="line">	<span class="rule"><span class="attribute">margin-left</span>:<span class="value"><span class="number">5px</span></span></span>;</div><div class="line">	<span class="rule"><span class="attribute">margin-top</span>:<span class="value"><span class="number">5px</span></span></span>;</div><div class="line"><span class="rule">}</span></div></pre></td></tr></table></figure>
+
+<p>を追記した。  </p>
+<p>それにしても、ツイート数の表示廃止でTwitterの魅力がかなり損なわれた。<br>いったい何をしたいのだろう？<br>終わりたいのか？Twitter</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Twitterのツイート数を表示するAPIが11月21日に廃止されたそうで、ツイートボタン横のカウント表示が無くなってしまった。  </p>
+<p>「count.jsoon」または「widgetoon.js」を導入すればこれまで通りツイート数を表示出来るようなのだが。<br]]>
+    </summary>
+    
+      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[YaourtでAURのパッケージをアップデート]]></title>
@@ -491,32 +525,6 @@
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[FirefoxにYahoo! JAPANの検索エンジンが見当たらない]]></title>
-    <link href="http://pagent.github.io/2015/05/09/firefox-yahoo-search/"/>
-    <id>http://pagent.github.io/2015/05/09/firefox-yahoo-search/</id>
-    <published>2015-05-09T10:30:58.000Z</published>
-    <updated>2015-05-17T08:00:45.404Z</updated>
-    <content type="html"><![CDATA[<p>Firefoxを更新して以降、検索窓でのYahoo!検索がsearch.yahoo.co.jpではなく、英語のsearch.yahoo.comになってしまっている。<br>「検索設定を変更」→「検索エンジンを追加…」から探してみても、Yahoo! Vietnam、Yahoo! India、Yahoo! Canadaなどや、Yahoo Japan! Mail Notifierはあるが、Yahoo! JAPANの検索エンジンが見つからない。  </p>
-<h3 id="検索アシストアドオンによる対症療法">検索アシストアドオンによる対症療法</h3>
-<p><a href="https://addons.mozilla.org/ja/firefox/addon/yahoo%E5%8F%B3%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E6%A4%9C%E7%B4%A2%E3%82%A2%E3%82%B7%E3%82%B9%E3%83%88/?src=search" target="_blank" rel="external">「Yahoo!右クリック検索アシスト」</a>というアドオンがあるようだったので入れてみた。  </p>
-<p>表示しているページで文言を選択、右クリックするとメニューの一番下に「Yahooで検索」が追加される。<br>検索窓からの検索は出来ないので少し不便ではあるが、わざわざYahoo! JAPANのサイトに行くよりは手間が省ける。  </p>
-<h3 id="searchpluginsフォルダ内にyahoo-japan-xmlファイルを追加（推奨）">searchpluginsフォルダ内にyahoo-japan.xmlファイルを追加（推奨）</h3>
-<p>幸い別の端末に、Yahoo! JAPAN検索のためのxmlファイル（yahoo-japan.xml）があったので、これを手動で追加した。  </p>
-<p>~/.mozilla/firefox/(プロファイル名)/searchplugins内にyahoo-japan.xmlファイルをコピペ。<br>下記内容でファイルを新規作成しても良い。  </p>
-<figure class="highlight xml"><figcaption><span>yahoo-japan.xml</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">SearchPlugin</span> <span class="attribute">xmlns</span>=<span class="value">"http://www.mozilla.org/2006/browser/search/"</span> <span class="attribute">xmlns:os</span>=<span class="value">"http://a9.com/-/spec/opensearch/1.1/"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:ShortName</span>&gt;</span>Yahoo! JAPAN<span class="tag">&lt;/<span class="title">os:ShortName</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Description</span>&gt;</span>Yahoo! JAPANで検索<span class="tag">&lt;/<span class="title">os:Description</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:InputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">os:InputEncoding</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Url</span> <span class="attribute">type</span>=<span class="value">"text/html"</span> <span class="attribute">method</span>=<span class="value">"GET"</span> <span class="attribute">template</span>=<span class="value">"http://search.yahoo.co.jp/search?p={searchTerms}&amp;ei=UTF-8&amp;fr=opsrch"</span> <span class="attribute">resultDomain</span>=<span class="value">"search.yahoo.co.jp"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">os:Url</span>&gt;</span><span class="tag">&lt;<span class="title">os:Url</span> <span class="attribute">type</span>=<span class="value">"application/x-suggestions+json"</span> <span class="attribute">method</span>=<span class="value">"GET"</span> <span class="attribute">template</span>=<span class="value">"http://search.yahooapis.jp/AssistSearchService/V2/webassistSearch?p={searchTerms}&amp;appid=oQsoxcyxg66enp0TYoirkKoryq6rF8bK76mW0KYxZ0v0WPLtn.Lix6wy8F_LwGWHUII-&amp;output=iejson&amp;src=srch&amp;fr=opsrch"</span> <span class="attribute">resultDomain</span>=<span class="value">"search.yahooapis.jp"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">os:Url</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">SearchPlugin</span>&gt;</span></div></pre></td></tr></table></figure>
-
-<p>アイコンは空白だったりただの虫めがねだったりするが、ちゃんとYahoo! JAPANの検索エンジンが追加される。<br>デフォルトの検索エンジンは/usr/lib/firefox/browser/searchpluginsに格納されているようなので、ここへ追加しても良いかもしれない。  </p>
-<p>Yahoo! JAPANの検索エンジンが復活したので、アドオン「Yahoo!右クリック検索アシスト」は不要となった。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Firefoxを更新して以降、検索窓でのYahoo!検索がsearch.yahoo.co.jpではなく、英語のsearch.yahoo.comになってしまっている。<br>「検索設定を変更」→「検索エンジンを追加…」から探してみても、Yahoo! Vietnam、Yahoo]]>
-    </summary>
-    
-      <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
     
   </entry>
   
