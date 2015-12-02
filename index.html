@@ -141,7 +141,7 @@
 <p><strong>Seesaaブログの場合</strong></p>
 <p>別で書いてるSeesaaブログにもこの「List」を追加した。（Seesaaブログではスマホ用ページのHTMLはいじれないので、PC用ページのみ。）  </p>
 <p>ソーシャルボタンのHTMLは直接編集出来ないので、設定→ソーシャルボタン→PCの「Twitter」のチェックを外す。<br>公式のツイートボタンのコードを取得。（<a href="https://about.twitter.com/ja/resources/buttons#tweet" target="_blank" rel="external">Twitterボタン | About</a>）<br>「URLを共有」、「ツイート本文」にそれぞれSeesaaブログの環境変数<code>&lt;% article.page_url %&gt;</code>、<code>&lt;% article.subject %&gt;</code>を入れる。  </p>
-<p>作成されたコードを、Seesaaの設定→デザイン→PC→コンテンツ→記事のHTML編集でソーシャルボタンの箇所（<code>&lt;% if:blog.bookmark_service %&gt;...</code>）の前後いずれかに追記。<br>コードの後ろに検索画面に飛ぶためのリンク<br><code>&lt;a href=&quot;https://twitter.com/search?q=&lt;% article.page_url %&gt;&quot;&gt;List&lt;/a&gt;</code><br>を追加。（CSSで位置を調節出来るよう全体を<code>&lt;div class=twitter&gt;``&lt;/div&gt;</code>で囲った。）  </p>
+<p>作成されたコードを、Seesaaの設定→デザイン→PC→コンテンツ→記事のHTML編集でソーシャルボタンの箇所（<code>&lt;% if:blog.bookmark_service %&gt;...</code>）の前後いずれかに追記。<br>コードの後ろに記事URL検索画面に飛ぶためのリンク<br><code>&lt;a href=&quot;https://twitter.com/search?q=&lt;% article.page_url %&gt;&quot;&gt;List&lt;/a&gt;</code><br>を追加。（CSSで位置を調節出来るよう全体を<code>&lt;div class=twitter&gt;``&lt;/div&gt;</code>で囲った。）  </p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">--- ここから ---</div><div class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">twitter</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"https://twitter.com/share"</span> <span class="attribute">class</span>=<span class="value">"twitter-share-button"</span><span class="value">{count}</span> <span class="attribute">data-url</span>=<span class="value">"&lt;% article.page_url %&gt;"</span> <span class="attribute">data-text</span>=<span class="value">"&lt;% article.subject %&gt;"</span>&gt;</span>Tweet<span class="tag">&lt;/<span class="title">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">!<span class="function"><span class="keyword">function</span><span class="params">(d,s,id)</span></span>{<span class="keyword">var</span> js,fjs=d.getElementsByTagName(s)[<span class="number">0</span>],p=<span class="regexp">/^http:/</span>.test(d.location)?<span class="string">'http'</span>:<span class="string">'https'</span>;<span class="keyword">if</span>(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+<span class="string">'://platform.twitter.com/widgets.js'</span>;fjs.parentNode.insertBefore(js,fjs);}}(<span class="built_in">document</span>, <span class="string">'script'</span>, <span class="string">'twitter-wjs'</span>);</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"https://twitter.com/search?q=&lt;% article.page_url %&gt;"</span>&gt;</span>List<span class="tag">&lt;/<span class="title">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">--- ここまで ---</div><div class="line"><span class="vbscript">&lt;% <span class="keyword">if</span>:blog.bookmark_service %&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"bookmark"</span> <span class="attribute">data-url</span>=<span class="value">"&lt;% article.page_url %&gt;"</span> <span class="attribute">data-subject</span>=<span class="value">"&lt;% article.subject | remove_emoji | nl2br | tag_strip | html %&gt;"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line"><span class="vbscript">&lt;% /<span class="keyword">if</span> %&gt;</span></div></pre></td></tr></table></figure>
 
 <p>その後デザイン設定でCSSに</p>
@@ -460,37 +460,37 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>16</span></a></li>
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
 			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>9</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
 			<li><a href="/tags/Git/">Git<span>12</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>61</span></a></li>
 		
+			<li><a href="/tags/Windows/">Windows<span>6</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
 			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
 		
-			<li><a href="/tags/ネット/">ネット<span>17</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>16</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>6</span></a></li>
+			<li><a href="/tags/ネット/">ネット<span>17</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 		
 		</ul>
