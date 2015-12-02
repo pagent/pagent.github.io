@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-12-02T06:54:08.381Z</updated>
+  <updated>2015-12-02T07:09:10.662Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,10 +19,11 @@
     <link href="http://pagent.github.io/2015/12/01/twitter-search-list/"/>
     <id>http://pagent.github.io/2015/12/01/twitter-search-list/</id>
     <published>2015-12-01T09:03:34.000Z</published>
-    <updated>2015-12-02T06:53:29.801Z</updated>
+    <updated>2015-12-02T07:08:58.035Z</updated>
     <content type="html"><![CDATA[<p>Twitterのツイート数を表示するAPIが11月21日に廃止されたそうで、ツイートボタン横のカウント表示が無くなってしまった。  </p>
-<p>「count.jsoon」または「widgetoon.js」を導入すればこれまで通りツイート数を表示出来るようなのだが。<br><a href="http://getnews.jp/archives/1264136" target="_blank" rel="external">【衝撃】突然Twitterのツイート数が表示されなくなって大混乱！ 表示されるようにする方法 / count.jsoon ｜ ガジェット通信</a><br>登録が必要のようで面倒。  </p>
-<p>サイトによってはツイート数の代わりに記事URLのツイッター検索画面に飛ぶ「List」というリンクが設置されていたりする。<br>せめて、シェアしてくれた人のツイートが検索画面に表示されているか、他にどんな人がツイートしているかを確認出来るよう、この「List」というリンクを設置することにした。  </p>
+<p>「count.jsoon」または「widgetoon.js」を導入すればこれまで通りツイート数を表示出来るようなのだが。<br><a href="http://getnews.jp/archives/1264136" target="_blank" rel="external">【衝撃】突然Twitterのツイート数が表示されなくなって大混乱！ 表示されるようにする方法 / count.jsoon ｜ ガジェット通信</a>  </p>
+<p>登録が必要のようで面倒。  </p>
+<p>サイトによってはツイート数の代わりに記事URLのツイッター検索画面に飛ぶ「List」というリンクが設置されていたりする。<br>せめて、シェアしてくれた人のツイートが検索画面に表示されているか、他にどんな人がツイートしているかを確認出来るよう、また自分がツイートするのではなくリツイートしたい時もあるだろうと思い、この「List」というリンクを設置することにした。  </p>
 <p><strong>Hexoの場合</strong></p>
 <p>記事一覧（layout/_partial/post/entry.ejs）、個別記事（layout/_partial/article.ejs）のレイアウトのツイートボタンscriptの後に  </p>
 <p><code>&lt;a href=&quot;https://twitter.com/search?q=&lt;%- item.permalink %&gt;&quot;&gt;List&lt;/a&gt;</code>  </p>
