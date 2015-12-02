@@ -436,3 +436,45 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .panel-body {
     padding: 0px 15px 25px;
 }
+
+/* ツイートボタンListふきだし
+---------------------------- */
+.arrow_box {
+border-radius: 2px;
+display: inline-block;
+font-size: 12px;
+height: auto;
+line-height: 18px;
+margin-left: 2px;
+min-width: 15px;
+padding: 0px 5px;
+text-align: center;
+vertical-align: top;
+white-space: nowrap;
+    position: relative;
+	background: #fff;
+	border: 1px solid #ccc;
+}
+.arrow_box:after, .arrow_box:before {
+	right: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-right-color: #fff;
+	border-width: 3px;
+	margin-top: -3px;
+}
+.arrow_box:before {
+	border-color: rgba(204, 204, 204, 0);
+	border-right-color: #ccc;
+	border-width: 4px;
+	margin-top: -4px;
+}
