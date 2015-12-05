@@ -114,6 +114,61 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/09/01/open-unclickable-url/" >ハイパーリンクになっていないURLを開く</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年9月1日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>ハイパーリンクになっておらず、クリック出来ないURLを開く時には、URLをアドレス欄にコピペすれば良いが、少し面倒。Firefoxのアドオンに<a href="https://addons.mozilla.org/ja/firefox/addon/text-link/" target="_blank" rel="external">テキストリンク (Text Link)</a>というのがあると知り、インストールしてみた。<br>現在のバージョンのFirefoxには対応していないようだが、開発版を入れると機能した。<br>だが「テキストリンク」の説明にURI文字列を開く通常の方法として、”選択された文字列をFirefoxのタブバーにドラッグ＆ドロップする”というのが書いてあったのでやってみた。  </p>
+<p>確かにURI文字列を選択してタブバーに持って行くと<code>タブの中央にドロップするとそのタブを置き換え、タブの両サイドにドロップするとその位置に新しいタブとして読み込まれます</code>というツールチップが表示され、そのままドロップするとURLを開いてくれる。こんな方法があるとは全然知らなかった。<br>URLの選択は大抵の場合トリプルクリックで簡単に出来るので、この方法でも良さそう。  </p>
+<p>右クリックメニューがあまり増えるのも嫌なので、結局「テキストリンク」はアンインストールした。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/09/01/open-unclickable-url/" data-text="ハイパーリンクになっていないURLを開く | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/09/01/open-unclickable-url/" style="color:#5f5f5f; text-decoration:none;">List</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/09/01/open-unclickable-url/" class="hatena-bookmark-button" data-hatena-bookmark-title="ハイパーリンクになっていないURLを開く" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ブラウザ/">ブラウザ</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/08/29/windows10-privacy/" >危険なスパイウェアWindows 10はプライバシー情報を収集する</a>
 		</h3>
 	
@@ -374,62 +429,6 @@
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/08/20/google-news-search/" >Firefoxに「Googleニュース検索」を追加</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年8月20日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Firefoxの検索エンジンに「Googleニュース検索」を追加した。<br>アドオンの検索では日本語用のものが見つからなかったので、いったん<a href="https://addons.mozilla.org/ja/firefox/addon/googlenews-ita/?src=search" target="_blank" rel="external">Google News (Italia)</a>をインストール。<br>~/.mozilla/firefox/(プロファイル名)/searchplugins内のgooglenews-ita.xmlをgooglenews-ja.xmlにリネーム。<br>ファイルの内容を下記に変更した。  </p>
-<figure class="highlight xml"><figcaption><span>googlenews-ja.xml</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">SearchPlugin</span> <span class="attribute">xmlns</span>=<span class="value">"http://www.mozilla.org/2006/browser/search/"</span> <span class="attribute">xmlns:os</span>=<span class="value">"http://a9.com/-/spec/opensearch/1.1/"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:ShortName</span>&gt;</span>Google ニュース<span class="tag">&lt;/<span class="title">os:ShortName</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Description</span>&gt;</span>Google ニュース検索<span class="tag">&lt;/<span class="title">os:Description</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:InputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">os:InputEncoding</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Image</span> <span class="attribute">width</span>=<span class="value">"16"</span> <span class="attribute">height</span>=<span class="value">"16"</span>&gt;</span>data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAPAKAADwCgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAArKSaGLywqTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1MzB3SkdF/1RST/5FQj/sR0VCdzIvLAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3NjRXR0VC/ZGQj/++vr3/oaCf/2xqaP9QTkviSEZDeDIvLA4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlIyE/QD489mRiYf/ExMP/ymVO/8mXi//Hx8f/rq6t/25sav9UUlDgQ0A9YTIvLAkAAAAAAAAAAAAAAAA7OTdPQkE/9FdUUv+jo6L/0Ly3/8s0Ev/QxsP/qaqp/7Ozs//Pz87/rKyr/2BdW/pPTUrOMi8sJQAAAAA0MjBiNzU0+IWEgf9mZGL/1NTU/85VOv/RgW//09PS/4SFhP+EhYT/mZmY/8zMzP/W1tb/kI+N/0lHRPQlIyFiS0lH+4qKiP9DQD3/v769/9V6Zf/MNRP/39XT/6jX4f+rsrL/iYqJ/4SFhP+Jion/wsLC/97e3f+Afn3/JSMhDjc1M4hHRUP2iYiG/+rq6f/YfWn/1nFa/3nd8/8K0v7/F9P9/3rR5f+kqan/hIWE/4SFhP/Jycj/amhm9AAAAAAyLyw4ZmRi8aGh2/9BQdP/k5Ph/+PZ4P994ff/GNT9/wrS/v8K0v7/Jtb8/6LZ5f+xsbH/vby6/1RRT9kAAAAAOjc1852bmv+9ve3/Tk7W/zY20f9BQtb/f4Dl/9Pf9v+B5fv/J9b9/wrS/v8K0v7/q+n5/2lmZPtOTElTAAAAADIvLD1eXFnSdHJw+s/Ozf+zs+7/T0/b/zc42/83Od//goPt/83O+f+j7v//cuP9/5+dnP9VU1C6Mi8sBQAAAAAAAAAAMi8sDEdEQmJaWFXWfXt5+cTDw/+vr+3/aWvo/zg75f84POn/j5H1/7y7uv9FQkDuMi8sEAAAAAAAAAAAAAAAAAAAAAAAAAAAMi8sCDIvLE1QTUvNdHJw9Le2tf/JyfT/g4Xy/8PDzf9qaGbqMi8sLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIvLDxHRELCQT479XJwbv9QTkvzU1BOSwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIvLA8yLyxjMi8sHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/P8AAPgf8L/wBwAA4AEAAMAAAACAAAAAAAAAAAAAAACAAAAAgAAAAIAAAADAAQAA8AP///4H////jwAA//8AAA%3D%3D<span class="tag">&lt;/<span class="title">os:Image</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Url</span> <span class="attribute">type</span>=<span class="value">"text/html"</span> <span class="attribute">method</span>=<span class="value">"GET"</span> <span class="attribute">template</span>=<span class="value">"https://news.google.co.jp/news/search?q={searchTerms}"</span> <span class="attribute">resultDomain</span>=<span class="value">"news.google.co.jp"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">os:Url</span>&gt;</span><span class="tag">&lt;<span class="title">os:Url</span> <span class="attribute">type</span>=<span class="value">"application/x-suggestions+json"</span> <span class="attribute">method</span>=<span class="value">"GET"</span> <span class="attribute">template</span>=<span class="value">"http://suggestqueries.google.com/complete/search?output=firefox&amp;client=firefox&amp;hl=ja&amp;q={searchTerms}"</span> <span class="attribute">resultDomain</span>=<span class="value">"suggestqueries.google.com"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">os:Url</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">SearchPlugin</span>&gt;</span></div></pre></td></tr></table></figure>
-
-<p>~/.mozilla/firefox/(プロファイル名)/searchplugins内に上記ファイルを新規作成しても良いと思う。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/08/20/google-news-search/" data-text="Firefoxに「Googleニュース検索」を追加 | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/08/20/google-news-search/" style="color:#5f5f5f; text-decoration:none;">List</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/08/20/google-news-search/" class="hatena-bookmark-button" data-hatena-bookmark-title="Firefoxに「Googleニュース検索」を追加" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/ブラウザ/">ブラウザ</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -474,37 +473,37 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>6</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>61</span></a></li>
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
-			<li><a href="/tags/ネット/">ネット<span>17</span></a></li>
-		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>12</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
 			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>9</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>17</span></a></li>
 		
 			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>16</span></a></li>
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>6</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>17</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>61</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>12</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 		
 		</ul>
@@ -517,6 +516,10 @@
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/12/06/firefox-private-chromium-secret/" ><i class="fa fa-file-o"></i>Firefox、Chromiumをプライベート（シーク...</a>
+      </li>
     
       <li>
         <a href="/2015/12/01/twitter-search-list/" ><i class="fa fa-file-o"></i>ツイート数表示のAPIが廃止されたので、代わりにURL...</a>
@@ -534,10 +537,6 @@
         <a href="/2015/09/03/socket-connection-failure/" ><i class="fa fa-file-o"></i>Xfce起動時に「設定サーバーに接続できませんでした」...</a>
       </li>
     
-      <li>
-        <a href="/2015/09/01/open-unclickable-url/" ><i class="fa fa-file-o"></i>ハイパーリンクになっていないURLを開く</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -547,7 +546,7 @@
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

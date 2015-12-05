@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-12-05T21:52:05.795Z</updated>
+  <updated>2015-12-05T23:25:28.808Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,30 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Firefox、Chromiumをプライベート（シークレット）ウィンドウで起動する]]></title>
+    <link href="http://pagent.github.io/2015/12/06/firefox-private-chromium-secret/"/>
+    <id>http://pagent.github.io/2015/12/06/firefox-private-chromium-secret/</id>
+    <published>2015-12-05T23:07:47.000Z</published>
+    <updated>2015-12-05T23:25:10.594Z</updated>
+    <content type="html"><![CDATA[<p>Firefox、Chromium（Google Chrome）とも、プライベートウィンドウ（シークレットウィンドウ）を開くには、一度通常モードで起動して設定画面から行う必要があるが、最初からプライベートウィンドウを開けたら便利。  </p>
+<p>コマンド<code>firefox -private-window</code>と<code>chromium --incognito</code>をアプリケーションメニューに追加した。  </p>
+<p>（参照記事）</p>
+<ul>
+<li><a href="http://winaero.com/blog/how-to-run-firefox-in-private-browsing-mode-from-the-command-line-or-a-shortcut/" title="How to run Firefox in private browsing mode from the command line or a shortcut" target="_blank" rel="external">How to run Firefox in private browsing mode from the command line or a shortcut</a>  </li>
+<li><a href="http://www.openspc2.org/reibun/GoogleChrome/2.0/setting/secret/0001/" title="シークレットモードで起動するようにする" target="_blank" rel="external">シークレットモードで起動するようにする</a>  </li>
+</ul>
+<p>（余談）<br>“incognito”は「匿名」という意味らしい。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Firefox、Chromium（Google Chrome）とも、プライベートウィンドウ（シークレットウィンドウ）を開くには、一度通常モードで起動して設定画面から行う必要があるが、最初からプライベートウィンドウを開けたら便利。  </p>
+<p>コマンド<code>fir]]>
+    </summary>
+    
+      <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[ツイート数表示のAPIが廃止されたので、代わりにURLのツイッター検索画面に飛ぶリンク「List」を設置]]></title>
@@ -486,46 +510,6 @@
     </summary>
     
       <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[「imwheel」でマウスホイールのスクロール移動量（スピード）を大きく]]></title>
-    <link href="http://pagent.github.io/2015/05/13/mouse-wheel-scroll-speed/"/>
-    <id>http://pagent.github.io/2015/05/13/mouse-wheel-scroll-speed/</id>
-    <published>2015-05-12T23:53:49.000Z</published>
-    <updated>2015-10-05T05:15:43.671Z</updated>
-    <content type="html"><![CDATA[<p>Linuxでマウスホイールでの上下スクロールをする際、移動量（スピード）が小さくて疲れるので、移動量を大きくした。  </p>
-<h3 id="imwheelを使って設定">imwheelを使って設定</h3>
-<p>マウスの挙動を調整するツール「imwheel」を導入した。<br>Arch Linuxの場合はAURにあるので、Yaourtでインストール。  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yaourt -S imwheel</div></pre></td></tr></table></figure>
-
-<p>UbuntuならUbuntuソフトウェアセンターまたはSynapticから。  </p>
-<p>インストール後、~/.imwheelrcファイルを作成（/home/ユーザー名下に.imwheelrcファイル）。下記内容で保存。</p>
-<figure class="highlight plain"><figcaption><span>.imwheelrc</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">".*"</div><div class="line">None,      Up,   Button4, 3</div><div class="line">None,      Down, Button5, 2</div></pre></td></tr></table></figure>
-
-<p>「Up,   Button4」、「Down, Button5」の後ろの値で変更出来る。Up「3」、Down「2」で設定してみた。（デフォルトの値は「1」のよう。）<br>上に戻る時に早い方が良いし、この設定なら上下を繰り返すことで微調整も出来る。  </p>
-<p>1行目の「”.*”」ですべてのアプリケーションを対象とするようにしているが、記載の仕方によりアプリケーション毎に違う挙動をさせることも出来るようだ。</p>
-<p>その後<code>imwheel</code>コマンドを実行すると反映される。<br>（設定値を変更してリスタートする時は<code>killall imwheel &amp;&amp; imwheel</code>）  </p>
-<p>コマンド<code>imwheel</code>を自動開始アプリケーションに登録して完了。<br>スクロールが楽になった。  </p>
-<p>簡単に移動量を変更出来て、また上昇・下降にそれぞれ違う値を設定することも可能なので、かなりオススメ。</p>
-<p>（参照記事）<br><a href="http://askubuntu.com/questions/285689/increase-mouse-wheel-scroll-speed" target="_blank" rel="external">Increase mouse wheel scroll speed - Ask Ubuntu</a><br><a href="https://wiki.archlinux.org/index.php/Imwheel" target="_blank" rel="external">imwheel - ArchWiki</a>  </p>
-<h3 id="Xorgで設定（上手くいかず）">Xorgで設定（上手くいかず）</h3>
-<p>下記記事を参考に、xorgの設定でスクロール量の変更を試みた。<br><a href="http://ishikuro.hateblo.jp/entry/2013/12/08/190527" target="_blank" rel="external">Linuxでマウスホイール移動量調整 - ishn’s diary</a>  </p>
-<p><code>xinput</code>コマンドで確認すると、USB Optical Mouseはid=12だったので、</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ xinput <span class="keyword">set</span>-prop <span class="string">'12'</span> <span class="string">'Evdev Wheel Emulation Inertia'</span> <span class="number">200</span></div></pre></td></tr></table></figure>
-
-<p>とした。<br>ところがスクロール量に変化がない。<br><code>xinput list-props 12</code>で確認すると、確かにEvdev Wheel Emulation Inertiaの値は200になっているのだが。<br>USBマウスを抜き差ししても変化なし。<br>移動の上下の「向き」などは反映されるのだが、スクロール量はxinputでは設定出来ないようだ。  </p>
-<h3 id="Firefoxのみ設定">Firefoxのみ設定</h3>
-<p>Firefoxだけで良いなら、about:configでmousewheel.default.delta_multiplier_yの値を変更すれば良いようだ。<br><a href="http://blog.ueshu.net/it/2013/06/19/1769.html" target="_blank" rel="external">ubuntuのFirefoxのマウスホイールのスクロール速度を変更する</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Linuxでマウスホイールでの上下スクロールをする際、移動量（スピード）が小さくて疲れるので、移動量を大きくした。  </p>
-<h3 id="imwheelを使って設定">imwheelを使って設定</h3>
-<p>マウスの挙動を調整するツール「imwheel」を導入した]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
     
   </entry>
   
