@@ -129,7 +129,7 @@
 <p>上記openconnectについてのフォーラムコメントにもあったが、Arch Linuxではパッケージのダウングレード（部分的なアップグレード）は推奨されないようだ。<br><a href="https://archlinuxjp.kusakata.com/wiki/Pacman?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DPacman_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno#.E9.83.A8.E5.88.86.E7.9A.84.E3.81.AA.E3.82.A2.E3.83.83.E3.83.97.E3.82.B0.E3.83.AC.E3.83.BC.E3.83.89.E3.81.AF.E3.82.B5.E3.83.9D.E3.83.BC.E3.83.88.E3.81.95.E3.82.8C.E3.81.A6.E3.81.84.E3.81.BE.E3.81.9B.E3.82.93" target="_blank" rel="external">pacman - ArchWiki</a>  </p>
 <p>バグなのかJD側の問題なのかよく分からないが、幸い先日ClonezillaでArch Linuxのバックアップをとっていたので、これをリストアすることにした。  </p>
 <p>当面システムのアップグレードはせず、このまま使用しようと思う。  </p>
-<p>ーー<br>（追記）<br>JDを一旦削除、その後再インストールしても駄目だったが、JDをちゃんとアンインストール出来なかったのが原因のようだ。<br>(<code>yaourut -R jd</code>でアンインストールしてもメニューに表示されており、コマンド<code>jd</code>でlibgnutls.so.28が無いと表示されていた。）  </p>
+<p>ーー<br>（追記）<br>JDを一旦削除、その後再インストールしても駄目だったが、JDをちゃんとアンインストール出来なかったのが原因のようだ。<br>(<code>yaourt -R jd</code>でアンインストールしてもメニューに表示されており、コマンド<code>jd</code>でlibgnutls.so.28が無いと表示されていた。）  </p>
 <p><code>yaourt -Rd --nodeps jd</code>でもアンインストール出来なかったので、/userディレクトリで”jd”を検索。<br>/usr/local/bin/jdと/usr/local/share/applications/jd.desktopを手動で削除した。  </p>
 <p>その後再インストールしたら、エラーになることもなく起動出来た。</p>
 
