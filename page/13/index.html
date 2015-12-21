@@ -114,6 +114,69 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/02/14/mbr-gpt/" >パーティションテーブルをMBRからGPTに書き換えてしまった</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月14日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>サブマシンのネットブックでArch Linuxを試してみようと思ったが、ブートローダーのGRUBをインストールするところで、BIOS（MBR形式）ではなくUEFI（GPT）を選択してしまった。<br>そのせいでMBRが壊れてしまったようで、起動出来なくなってしまった。<br>MBM（Multiple Boot Manager）を再インストールしてみたが、ディスク全体が”unknown”と表示されるのみ。  </p>
+<p>「TestDisk」というフリーソフトでパーティションテーブルを修復出来るようだった。  </p>
+<p>「TestDisk」は「Ultimate Boot CD」に同梱されてるという情報を見かけたが、どうやら現在は「Ultimate Boot CD」には同梱されていないようで、見つからなかった。<br>「SystemRescueCd」に入っていたので、こちらから利用した。<br>「SystemRescueCd」でブート。入力出来る状態になった後、<code>testdisk</code>とコマンドを打つと起動した。  </p>
+<p>使い方は最初はよく分からなかったが、サーチで表示されたリストの内、テーブルに書き込みたいものをキードードの左右のキーで設定し、緑色にしたら良いらしい。<br>リストは「p」キーでリストの内容を確認しながら選べば良いので、要領が分かれば簡単。<br>「q」で前の画面に戻る。</p>
+<p>使い方は下記サイトの解説が分かりやすかった。<br><a href="http://uiuicy.cs.land.to/testdisk1.html" target="_blank" rel="external">【TestDisk】について</a>  </p>
+<p>「Deeper Search」にはけっこう時間が掛かり、またせっかく「Deeper Search」が終わったリストを、途中で「ENTER」を押してしまって戻れなくなり、また最初から「Deeper Search」ということもあったが。  </p>
+<p>パーティションテーブルは一応復旧出来て、起動も出来るようになったが、どうやらGPTでのパーティショニングの痕跡が依然残っている様子。<br>GpartedもGPTでパーティショニングされていると判断するようで、なにかパーティションの操作をすると、また起動出来なくなる。  </p>
+<p>これでは不便だし安心感も持てないが、「AOMEI Partition Assistant Standard Edition」というWindows用のフリーソフトでディスクの内容を保持したままGPTとMBRの変換が出来るようなので、試してみることにした。  </p>
+<p>「AOMEI Partition Assistant」を試す前にパーティションのバックアップをしようと思ったが、Clonezillaもパーティションテーブルを読めないらしい。<br>仕方が無いので下記サイトを参考に、<code>dd</code>コマンドでバックアップすることにした。<br><a href="http://takuya-1st.hatenablog.jp/entry/20101025/1288002819" target="_blank" rel="external">dd でディスクをコピーするよく使う例 - それマグで！</a>  </p>
+<p>ーー<br>（追記）<br>「AOMEI Partition Assistant」はWindows XpではMBRに変換出来ないようで、結局ハードディスクのデータを全消去してパーティションテーブルをMBRで作り直し、ddでバックアップしたものをリストアしてようやく復旧した。  </p>
+<p>復旧後、拡張パーティションにあるLinuxが起動しなかったが、SystemRescueCdの”Boot an existing Linux system installed on the disk”で起動させ、<code>sudo grub-install --force /dev/sda6</code>でgrub2を再インストール。<code>sudo update-grub</code>で起動出来るようになった。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/14/mbr-gpt/" data-text="パーティションテーブルをMBRからGPTに書き換えてしまった | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/02/14/mbr-gpt/" style="color:#5f5f5f; text-decoration:none;">List</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/14/mbr-gpt/" class="hatena-bookmark-button" data-hatena-bookmark-title="パーティションテーブルをMBRからGPTに書き換えてしまった" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/02/11/kde-plasma-netbook/" >Kubuntuのネットブック向けデスクトップ「Plasma Netbook」を通常のデスクトップに</a>
 		</h3>
 	
@@ -365,75 +428,6 @@
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/02/06/puppy-dropbox/" >Puppy LinuxにDropboxクライアントをインストール</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年2月6日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Puppy Linux5.7.1のパッケージマネージャにDropboxクライアントが見当たらないので、コマンドラインでインストールした。<br><a href="https://www.dropbox.com/install?os=lnx" target="_blank" rel="external">Linux マシンに Dropbox をインストール</a>  </p>
-<p>コマンドを入力すると、サーバー証明書エラーになった。  </p>
-<pre><code>cd ~ &amp;&amp; wget -O - "https://www.dropbox.com/download?plat=lnx.x86" | tar xzf -
-
-<span class="bullet">...
-</span>エラー: cannot verify www.dropbox.com's certificate, issued by <span class="smartquote">`/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert SHA2 Extended Validation Server CA'</span>:
-<span class="code">  発行者の権限を検証できませんでした。</span>
-www.dropbox.com に安全の確認をしないで接続するには、<span class="smartquote">`--no-check-certificate'</span> を使ってください。
-
-gzip: stdin: unexpected end of file
-tar: Child returned status 1
-tar: エラーを回復できません: 直ちに終了します
-</code></pre><p>原因がよく分からないがdropbox.comは安全だろうと、`—no-check-certificate’のオプションを付けてインストールした。  </p>
-<pre><code><span class="title">cd</span> <span class="regexp">~ &amp;&amp;</span> wget --<span class="built_in">no</span>-check-certificate -O - <span class="string">"https://www.dropbox.com/download?plat=lnx.x86"</span> | tar xzf -
-</code></pre><p>インストールは無事完了し、<code>~/.dropbox-dist/dropboxd</code>で起動出来た。  </p>
-<p>後になって気がついたが、Puppy Linuxのタスクトレイの時刻がおかしい。<br>約9時間遅れている。  </p>
-<p>そういえば、Puppy Linuxを起動してすぐに表示される国とタイムゾーンの設定を、面倒臭くて飛ばしていたんだった。<br>このせいでエラーが出ていたんだろうか。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/06/puppy-dropbox/" data-text="Puppy LinuxにDropboxクライアントをインストール | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/02/06/puppy-dropbox/" style="color:#5f5f5f; text-decoration:none;">List</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/06/puppy-dropbox/" class="hatena-bookmark-button" data-hatena-bookmark-title="Puppy LinuxにDropboxクライアントをインストール" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Linux/">Linux</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -478,37 +472,37 @@ tar: エラーを回復できません: 直ちに終了します
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>9</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
 		
 			<li><a href="/tags/Windows/">Windows<span>6</span></a></li>
 		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>61</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>17</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>10</span></a></li>
 		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>17</span></a></li>
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>17</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>12</span></a></li>
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>61</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
 		
 		</ul>
@@ -521,6 +515,10 @@ tar: エラーを回復できません: 直ちに終了します
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/12/21/truecrypt-downgrade/" ><i class="fa fa-file-o"></i>TrueCryptでボリュームをマウント出来ない→ダウ...</a>
+      </li>
     
       <li>
         <a href="/2015/12/06/firefox-private-chromium-secret/" ><i class="fa fa-file-o"></i>Firefox、Chromiumをプライベート（シーク...</a>
@@ -538,10 +536,6 @@ tar: エラーを回復できません: 直ちに終了します
         <a href="/2015/09/30/snowden-twitter/" ><i class="fa fa-file-o"></i>元CIA職員スノーデン氏がTwitterを開始</a>
       </li>
     
-      <li>
-        <a href="/2015/09/03/socket-connection-failure/" ><i class="fa fa-file-o"></i>Xfce起動時に「設定サーバーに接続できませんでした」...</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -551,7 +545,7 @@ tar: エラーを回復できません: 直ちに終了します
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

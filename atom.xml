@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-12-18T20:47:11.745Z</updated>
+  <updated>2015-12-21T14:14:02.577Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,36 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[TrueCryptでボリュームをマウント出来ない→ダウングレードで解決]]></title>
+    <link href="http://pagent.github.io/2015/12/21/truecrypt-downgrade/"/>
+    <id>http://pagent.github.io/2015/12/21/truecrypt-downgrade/</id>
+    <published>2015-12-21T13:29:15.000Z</published>
+    <updated>2015-12-21T14:12:20.719Z</updated>
+    <content type="html"><![CDATA[<p>先日からArch LinuxでTrueCryptのボリュームを開けなくなってしまった。正しいパスワードを入力しても”Invalid characters encountered”や”fuse: bad mount point…No such file or directory”と表示される。Xubuntuでは通常通り開くことが出来るのだが。  </p>
+<p>2015年12月10日に「C++ ABI」が変更されて以降、truecrypt-1:7.1a-3はボリュームをマウント出来なくなっており、旧バージョンのtruecrypt-1:7.1a-2だと正常に動作するようだ。<br><a href="https://wiki.archlinux.org/index.php/TrueCrypt" title="TrueCrypt - ArchWiki" target="_blank" rel="external">TrueCrypt - ArchWiki</a>  </p>
+<p>pacmanのキャッシュフォルダ/var/cache/pacman/pkg内にtruecrypt-1:7.1a-2があったので、ダウングレードした。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> pacman -U /var/cache/pacman/pkg/truecrypt-<span class="number">1</span>:<span class="number">7.1</span>a-<span class="number">2</span>-x86_64.pkg.tar.xz</div></pre></td></tr></table></figure>
+
+<p>無事マウント出来るようになった。  </p>
+<p>/var/cache/pacman/pkgにtruecrypt-1:7.1a-2が無い場合は下記からダウンロード出来るよう。<br><a href="http://ala.seblu.net/packages/t/truecrypt/" title="Index of /packages/t/truecrypt/" target="_blank" rel="external">Index of /packages/t/truecrypt/</a>  </p>
+<p>このままだと<code>pacman -Syu</code>の時にまたtruecrypt-1:7.1a-3に更新されてしまうので、/etc/pacman.confでIgnorePkgにtruecryptを追加した。  </p>
+<figure class="highlight plain"><figcaption><span>pacman.conf</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">IgnorePkg   = nodejs truecrypt</div></pre></td></tr></table></figure>
+
+<p>（参照記事）  </p>
+<ul>
+<li><a href="https://bugs.archlinux.org/task/47325" title="FS#47325 : [truecrypt] 1:7.1a-3: Mount: Invalid characters encountered" target="_blank" rel="external">FS#47325 : [truecrypt] 1:7.1a-3: Mount: Invalid characters encountered</a>  </li>
+<li><a href="https://wiki.archlinuxjp.org/index.php/%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%81%AE%E3%83%80%E3%82%A6%E3%83%B3%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89#.E3.83.91.E3.83.83.E3.82.B1.E3.83.BC.E3.82.B8.E3.82.92.E3.83.80.E3.82.A6.E3.83.B3.E3.82.B0.E3.83.AC.E3.83.BC.E3.83.89.E3.81.99.E3.82.8B.E6.96.B9.E6.B3.95" title="パッケージのダウングレード - ArchWiki" target="_blank" rel="external">パッケージのダウングレード - ArchWiki</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>先日からArch LinuxでTrueCryptのボリュームを開けなくなってしまった。正しいパスワードを入力しても”Invalid characters encountered”や”fuse: bad mount point…No such file or director]]>
+    </summary>
+    
+      <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Firefox、Chromiumをプライベート（シークレット）ウィンドウで起動する]]></title>
@@ -491,25 +521,6 @@
     </summary>
     
       <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Truecryptのマウントで「Failed to set up a loop device:」のエラー]]></title>
-    <link href="http://pagent.github.io/2015/05/14/truecrypt-failed/"/>
-    <id>http://pagent.github.io/2015/05/14/truecrypt-failed/</id>
-    <published>2015-05-13T16:49:55.000Z</published>
-    <updated>2015-05-13T17:01:24.411Z</updated>
-    <content type="html"><![CDATA[<p>Truecryptのボリュームをマウントしようとしたら、「Failed to set up a loop device:」と表示されるのみで、マウント出来なくなってしまった。<br>パスワードは正確に入力しているはずだが、何度やっても同じエラー。  </p>
-<p>大事なファイルもあるので一瞬焦ったが、検索したらなんのことはない、Arch Linuxのカーネルをlinux-4.0.2-1に更新してから再起動していないのが原因だった。<br><a href="https://wiki.archlinux.org/index.php/TrueCrypt#Failed_to_set_up_a_loop_device" target="_blank" rel="external">TrueCrypt - ArchWiki</a>  </p>
-<p>再起動したら無事マウント出来るようになった。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Truecryptのボリュームをマウントしようとしたら、「Failed to set up a loop device:」と表示されるのみで、マウント出来なくなってしまった。<br>パスワードは正確に入力しているはずだが、何度やっても同じエラー。  </p>
-<p>大事なフ]]>
-    </summary>
-    
-      <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
     
   </entry>
   

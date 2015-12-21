@@ -114,6 +114,92 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/12/16/web-analyze/" >GitHub Pagesのブログでアクセス解析</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年12月16日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Githubではgraphs→trafficでトラフィックを見られるが、これはリポジトリへのアクセス状況などを見るもので、GitHub Pagesを利用したブログに対してのアクセス解析ではないようだ。<br>ブログのどのページにどれくらいアクセスがあったか等を確認するには、他のブログ同様なんらかのアクセス解析ツールを導入する必要がある。<br>（GitHub Pagesにサーバーログ型のアクセス解析は設置出来ないだろうから、AWStatsなどは対象外とした。）</p>
+<h4 id="アクセス解析サービスを利用する">アクセス解析サービスを利用する</h4>
+<p>登録してすぐ利用出来るので簡便。しかも高機能なサービスが多い。<br>Google Analytics等は無料で広告も入らない。  </p>
+<ul>
+<li><p><strong>Google Analytics</strong><br>OctopressでもHexoでも、Google Analyticsを使うことを想定している様だが、なんでもかんでもGoogleというのはちょっと嫌な気がする。<br>それに、DisconnectやGhosteryなどトラッカーをブロックするアドオンがブラウザに導入されていたら、その訪問は解析出来ない。（導入している人はそれほど多くはないかもしれないが。）<br>（補記）<br>FirefoxのトラッカーブロックアドオンGhosteryのリストには、Google Analyticsの他、Yahoo Analytics、Pt engine、Ninja Access Analysisなども挙げられている。<br>FC2アクセス解析は現在のところ何故かリストに入っていない。</p>
+</li>
+<li><p><strong>Yahoo!アクセス解析</strong><br>検索エンジンではGoogleと提携していることだし、わざわざ使おうという気にはならない。  </p>
+</li>
+<li><p><strong>Pt engine</strong><br>Google Analyticsにヒートマップ機能を追加したようなもので、かなり高機能らしい。大企業での導入も多数実績がある様子。<br>無料版で解析できるドメイン（サイト）は一つだけのようで、有料版だととたんに高額になる。  </p>
+</li>
+<li><p><strong>他のアクセス解析サービス</strong><br>忍者アクセス解析やFC2アクセス解析など色々あるが、無料だと広告などが入るという難点がある。<br>QLOOKはバナーが上部でチカチカ点滅したりしないのでそれほど気にならないが、それでも広告バナーは表示される。  </p>
+</li>
+</ul>
+<h4 id="サーバー設置型のアクセス解析ツールを導入する">サーバー設置型のアクセス解析ツールを導入する</h4>
+<p>レンタルサーバーにアクセス解析ツールを導入してブログに解析タグを貼れば、無料で利用出来て広告も入らないツールが多々ある。<br>上記のようなアクセス解析サービスの利用と違って、解析サービス会社に情報を渡さずに済むというのもメリットかもしれない。<br>それほど多くは試してないが、利用経験のあるものは下記。  </p>
+<p>（データベース不要のもの）  </p>
+<ul>
+<li><p><strong>futomiの高機能アクセス解析CGI</strong><br>無料版（Standard版）では自分のアクセスを除外出来ないという致命的な欠点がある。  </p>
+</li>
+<li><p><strong>w3Analyzer</strong><br>動作は軽快だが、解析出来る項目はやや少ない。  </p>
+</li>
+<li><p><strong>XenoLogger</strong><br>現在は開発は終了していて「ミスター アクセス解析」に統合されている模様だが、XenoLoggerも依然ダウンロード可能。<br>データベースを使わないタイプなので、見た目の派手さはないが、充分な機能を備えている。<br>管理画面がコンパクト（文字や行間が小さめ）なので、ノートパソコンでの利用に向いている。<br>おすすめ。  </p>
+</li>
+</ul>
+<p>（データベースが必要なもの）  </p>
+<ul>
+<li><p><strong>Research Artisan Lite</strong><br>高機能でページ内のリンククリック歴も解析してくれる。<br>悪くないのだが、管理画面が縦方向に大きいので、縦の狭いノートパソコンでの利用時はスクロールがしんどい。 　<br>検索エンジンのクローラーが来てくれてるかどうかの解析は精度が高いように思う。  </p>
+</li>
+<li><p><strong>Piwik</strong><br>オープンソースのソフト。<br>リアルタイムでの解析などもあり高機能。さらにプラグインでの拡張も可能。<br>これもリンククリックの解析あり。リンククリック解析にはデータベースが必要なのだろうか。<br>導入や使いこなしの難易度はやや高い印象だが、かなり有用なツール。  </p>
+</li>
+</ul>
+<h4 id="結論">結論</h4>
+<p>他にも多々あると思うが、普通はたぶんGoogle Analyticsを利用するのが順当なのだろう。Google嫌いの人はPt engineだろうか。<br>個人的には、他のブログでも利用していて使い慣れているXenoLogger（ミスター アクセス解析）が今のところ一押し。<br>Piwikは使いこなせればかなり有用かもしれない。<br>あと、Pt engineは使用経験が無いが、少し興味をそそられる。  </p>
+<p>ーー<br>（追記）<br>GhosteryのブロックリストにはPiwikも入っているようだ。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/16/web-analyze/" data-text="GitHub Pagesのブログでアクセス解析 | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/12/16/web-analyze/" style="color:#5f5f5f; text-decoration:none;">List</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/12/16/web-analyze/" class="hatena-bookmark-button" data-hatena-bookmark-title="GitHub Pagesのブログでアクセス解析" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/blog/">blog</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/12/14/fc2-access-ranking/" >FC2アクセスランキングの集計が止まってる？</a>
 		</h3>
 	
@@ -340,69 +426,6 @@ $ <span class="built_in">rename</span> <span class="string">'s/.md.bak/.md/'</sp
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/12/11/github-pages-server-down/" >GitHub Pagesがサーバーメンテナンス</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年12月11日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>今日何度か、GitHub Pagesのこのブログが表示されなかった。  </p>
-<blockquote>
-<p>GitHub Pages is temporarily down for maintenance.</p>
-</blockquote>
-<p>と表示されていて、サーバーのメンテナンスのよう。  </p>
-<p><a href="http://www.downforeveryoneorjustme.com/" target="_blank" rel="external">Down For Everyone Or Just Me -&gt; Check if your website is down or up?</a>で調べた時には回復していた。  </p>
-<p>pingコマンドでもサーバーの疎通を確認出来るようだ。<br>コマンドを実行すると延々pingが送信されるが、「CTRL」+「C」キーで停止すると結果が表示されるらしい。<br><a href="http://webkaru.net/linux/ping-command/" target="_blank" rel="external">Linuxコマンド【 ping 】ホストとの接続を確認 - Linux入門 - Webkaru</a>  </p>
-<p>確認した時には「0% packet loss」だった。  </p>
-<p>初めてだったので驚いたが、GitHub Pagesもメンテナンスするんだね。  </p>
-<p>ーー<br>（追記）<br>その後も落ちたり回復したりの繰り返し。また、見られないページがあったり、Font Awesomeが文字化けしたりと不安定。<br>静的ページだし、信頼してたのに。  </p>
-<p>大丈夫なんだろうか。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/11/github-pages-server-down/" data-text="GitHub Pagesがサーバーメンテナンス | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/12/11/github-pages-server-down/" style="color:#5f5f5f; text-decoration:none;">List</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/12/11/github-pages-server-down/" class="hatena-bookmark-button" data-hatena-bookmark-title="GitHub Pagesがサーバーメンテナンス" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Git/">Git</a></li> <li><a href="/tags/blog/">blog</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -447,37 +470,37 @@ $ <span class="built_in">rename</span> <span class="string">'s/.md.bak/.md/'</sp
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>9</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>6</span></a></li>
-		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>61</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
-			<li><a href="/tags/ネット/">ネット<span>17</span></a></li>
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
 		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>17</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>61</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>10</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>12</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+			<li><a href="/tags/ネット/">ネット<span>17</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>6</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>17</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 		
 		</ul>
@@ -490,6 +513,10 @@ $ <span class="built_in">rename</span> <span class="string">'s/.md.bak/.md/'</sp
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2015/12/21/truecrypt-downgrade/" ><i class="fa fa-file-o"></i>TrueCryptでボリュームをマウント出来ない→ダウ...</a>
+      </li>
     
       <li>
         <a href="/2015/12/06/firefox-private-chromium-secret/" ><i class="fa fa-file-o"></i>Firefox、Chromiumをプライベート（シーク...</a>
@@ -507,10 +534,6 @@ $ <span class="built_in">rename</span> <span class="string">'s/.md.bak/.md/'</sp
         <a href="/2015/09/30/snowden-twitter/" ><i class="fa fa-file-o"></i>元CIA職員スノーデン氏がTwitterを開始</a>
       </li>
     
-      <li>
-        <a href="/2015/09/03/socket-connection-failure/" ><i class="fa fa-file-o"></i>Xfce起動時に「設定サーバーに接続できませんでした」...</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -520,7 +543,7 @@ $ <span class="built_in">rename</span> <span class="string">'s/.md.bak/.md/'</sp
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">September 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">August 2015</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">July 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 
