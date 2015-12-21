@@ -118,8 +118,8 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> pacman -U /var/cache/pacman/pkg/truecrypt-<span class="number">1</span>:<span class="number">7.1</span>a-<span class="number">2</span>-x86_64.pkg.tar.xz</div></pre></td></tr></table></figure>
 
 <p>無事マウント出来るようになった。  </p>
-<p>/var/cache/pacman/pkgにtruecrypt-1:7.1a-2が無い場合は下記からダウンロード出来るよう。<br><a href="http://ala.seblu.net/packages/t/truecrypt/" title="Index of /packages/t/truecrypt/" target="_blank" rel="external">Index of /packages/t/truecrypt/</a>  </p>
-<p>このままだと<code>pacman -Syu</code>の時にまたtruecrypt-1:7.1a-3に更新されてしまうので、/etc/pacman.confでIgnorePkgにtruecryptを追加した。  </p>
+<p>キャッシュフォルダにtruecrypt-1:7.1a-2が無い場合は下記からダウンロード可能。<br><a href="http://ala.seblu.net/packages/t/truecrypt/" title="Index of /packages/t/truecrypt/" target="_blank" rel="external">Index of /packages/t/truecrypt/</a>  </p>
+<p>このままだと<code>pacman -Syu</code>の時にまたtruecrypt-1:7.1a-3に更新されてしまうので、/etc/pacman.confのIgnorePkgにtruecryptを追加した。  </p>
 <figure class="highlight plain"><figcaption><span>pacman.conf</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">IgnorePkg   = nodejs truecrypt</div></pre></td></tr></table></figure>
 
 <p>（参照記事）  </p>
