@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-12-23T20:33:00.042Z</updated>
+  <updated>2015-12-23T22:31:02.574Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,9 +19,9 @@
     <link href="http://pagent.github.io/2015/12/21/truecrypt-downgrade/"/>
     <id>http://pagent.github.io/2015/12/21/truecrypt-downgrade/</id>
     <published>2015-12-21T13:29:15.000Z</published>
-    <updated>2015-12-21T14:22:13.572Z</updated>
+    <updated>2015-12-23T20:40:45.574Z</updated>
     <content type="html"><![CDATA[<p>先日からArch LinuxでTrueCryptのボリュームを開けなくなってしまった。正しいパスワードを入力しても”Invalid characters encountered”や”fuse: bad mount point…No such file or directory”と表示される。Xubuntuだと通常通りマウント出来るのだが。  </p>
-<p>2015年12月10日に「C++ ABI」が変更されて以降、truecrypt-1:7.1a-3はボリュームをマウント出来なくなっており、旧バージョンのtruecrypt-1:7.1a-2だと正常に動作するようだ。<br><a href="https://wiki.archlinux.org/index.php/TrueCrypt" title="TrueCrypt - ArchWiki" target="_blank" rel="external">TrueCrypt - ArchWiki</a>  </p>
+<p>2015年12月10日にC++ ABIが変更されて以降、truecrypt-1:7.1a-3はボリュームをマウント出来なくなっており、旧バージョンのtruecrypt-1:7.1a-2だと正常に動作するようだ。<br><a href="https://wiki.archlinux.org/index.php/TrueCrypt" title="TrueCrypt - ArchWiki" target="_blank" rel="external">TrueCrypt - ArchWiki</a>  </p>
 <p>pacmanのキャッシュフォルダ/var/cache/pacman/pkg内にtruecrypt-1:7.1a-2があったので、ダウングレードした。  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> pacman -U /var/cache/pacman/pkg/truecrypt-<span class="number">1</span>:<span class="number">7.1</span>a-<span class="number">2</span>-x86_64.pkg.tar.xz</div></pre></td></tr></table></figure>
 
