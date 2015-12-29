@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2015-12-26T21:07:22.351Z</updated>
+  <updated>2015-12-29T20:35:27.580Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -338,18 +338,18 @@
   </entry>
   
   <entry>
-    <title><![CDATA[右クリックからの検索を拡張する「Context Search」が便利]]></title>
+    <title><![CDATA[右クリックからの検索を拡張するFirefoxアドオン「Context Search」が便利]]></title>
     <link href="http://pagent.github.io/2015/08/15/context-search/"/>
     <id>http://pagent.github.io/2015/08/15/context-search/</id>
     <published>2015-08-14T23:20:14.000Z</published>
-    <updated>2015-08-14T23:41:44.579Z</updated>
-    <content type="html"><![CDATA[<p>右クリックからの検索は便利だが、検索エンジンがデフォルトのものに固定されてしまっている。<br>普段はGoogleを使っているが、安全のためStartPageやDuckDuckGoを使いたい時、またツイッター検索をしたい時などがある。そんな時、キーワードをいちいち検索欄にコピペするのはちょっと面倒。  </p>
-<p>そんな人にお勧めしたいのが<a href="https://addons.mozilla.org/ja/firefox/addon/context-search/?src=search" target="_blank" rel="external">Context Search</a></p>
+    <updated>2015-12-29T20:35:05.857Z</updated>
+    <content type="html"><![CDATA[<p>Firefoxで右クリックからの検索は便利だが、検索エンジンがデフォルトのものに固定されてしまっている。<br>普段はGoogleを使っているが、安全のためStartPageやDuckDuckGoを使いたい時、またツイッター検索をしたい時などがある。そんな時、キーワードをいちいち検索欄にコピペするのはちょっと面倒。  </p>
+<p>そんな人にお勧めしたいアドオンが<a href="https://addons.mozilla.org/ja/firefox/addon/context-search/?src=search" target="_blank" rel="external">Context Search</a></p>
 <p>インストールすると、右クリックの「”〜” をGoogleで検索(s)」などが「”〜” を検索(s)」になり、種々の検索エンジンがリスト表示される。<br>特に設定の必要も無し。  </p>
 <p>ちょっとしたことだが、とても便利。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>右クリックからの検索は便利だが、検索エンジンがデフォルトのものに固定されてしまっている。<br>普段はGoogleを使っているが、安全のためStartPageやDuckDuckGoを使いたい時、またツイッター検索をしたい時などがある。そんな時、キーワードをいちいち検索欄にコ]]>
+    <![CDATA[<p>Firefoxで右クリックからの検索は便利だが、検索エンジンがデフォルトのものに固定されてしまっている。<br>普段はGoogleを使っているが、安全のためStartPageやDuckDuckGoを使いたい時、またツイッター検索をしたい時などがある。そんな時、キーワードをい]]>
     </summary>
     
       <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
