@@ -401,7 +401,7 @@
 </code></pre><p>起動時のモニター輝度を変更できた。  </p>
 <p>これで十分だったのだが、試しにxbacklightを入れてみたら、これがなかなか便利な代物だった。<br><a href="http://x1japan.wordpress.com/2013/08/23/linux-keep-brightness-setting/" target="_blank" rel="external">目に優しい、LinuxMintやubuntuでモニター輝度を起動時に落とす設定。 | Woishin Journal</a>  </p>
 <p>自動開始アプリケーションに<code>xbacklight -set 80</code>のようにコマンドを登録しておけば起動時に反映されるし、変更したい時も簡単に変更可能。  </p>
-<p>輝度は0から100（パーセント）で設定するようなのだが、<code>xbacklight</code>と打って輝度を確認したところ、決まった値に近い切り下げ値にしかならないようだった。<br>自分の環境では、「14.285714」「28.571429」「42.857143」…と、およそ14の倍数になっていた。  </p>
+<p>輝度は0から100（パーセント）で設定するようなのだが、<code>xbacklight</code>と打って輝度を確認したところ、<del>決まった値に近い切り下げ値にしかならないようだった。</del><br><del>自分の環境では、「14.285714」「28.571429」「42.857143」…と、およそ14の倍数になっていた。</del>  </p>
 <p>複数のアプリケーションをひとまとめに表示する「クイックランチャー（外部）」をパネルに追加し、コマンド<code>xbacklight -inc 15</code>、<code>xbacklight -dec 14</code>を追加したら、マウスによるクリックで簡単に輝度を上げ下げ出来るようになった。</p>
 
 	
@@ -476,37 +476,37 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>12</span></a></li>
+			<li><a href="/tags/ネット/">ネット<span>17</span></a></li>
 		
 			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>6</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>17</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>60</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>17</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>11</span></a></li>
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
+			<li><a href="/tags/blog/">blog<span>12</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>17</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>6</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
 			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>12</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>11</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>60</span></a></li>
 		
 		
 		</ul>
@@ -571,7 +571,7 @@
   <div class="container-narrow">
     <footer> <!-- _partial/footer -->
 <p>
-  &copy; 2015 Pagent
+  &copy; 2016 Pagent
   &nbsp;
   <span class="text-muted">Powered by:
     <a class="text-muted" href="http://zespia.tw/hexo/" target="_blank">Hexo</a>,
