@@ -114,6 +114,64 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/11/27/hexo-china/" >Hexoは中国製のようだ</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月27日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>しばらく前に静的サイトジェネレーターをOctopressからHexoに乗り換えた。<br>カスタマイズもわりと容易だしgenerateも早いし、気に入って使っている。  </p>
+<p>公開されているカスタムテーマを見ていて、なぜかデモサイトに中国語が多いなと不信に思っていが、オフィシャルテーマ３つのLICENSEを見ると３つとも中国人っぽい名前が記載されている。  </p>
+<p>よく見ると、リポジトリもオフィシャルサイトもこの中国人らしい人のものだった。<br>なんとHexoは中国製だったんだね。</p>
+<p>中国と聞くと正直ちょっと心配になってしまう。<br>中国製のパソコンに不正プログラムが入っていたなんてニュースもあったし。<br>ただ、cloneしてくるHexoのソースはGitHub上で公開されているものだし、大丈夫なのだろう。  </p>
+<p>中国人、なかなかやるね。<br>ちょっとくやしい気がする。  </p>
+<p>日本製の秀逸な静的サイトジェネレーターが出てきてくれないものだろうか。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/27/hexo-china/" data-text="Hexoは中国製のようだ | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/11/27/hexo-china/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/11/27/hexo-china/" class="hatena-bookmark-button" data-hatena-bookmark-title="Hexoは中国製のようだ" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Hexo/">Hexo</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/11/26/filename-case/" >Hexo新規記事作成時のタイトル大文字アルファベットを小文字のファイル名に</a>
 		</h3>
 	
@@ -474,75 +532,6 @@ tags:
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/24/hexo-windows-deploy/" >WindowsでHexoを使う（deploy）</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月24日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来ると思っていた。<br>だがdeployしようとすると、  </p>
-<pre><code>Run
-
-  git config --global <span class="literal">user</span>.email <span class="string">"you@example.com"</span>
-  git config --global <span class="literal">user</span>.name <span class="string">"Your Name"</span>
-</code></pre><p>と言われてしまった。  </p>
-<p>メールアドレスとGithubユーザー名を設定して、再度deployしようとしたが、  </p>
-<pre><code>Permission denied (publickey).
-fatal: Could <span class="operator">not</span> <span class="built_in">read</span> <span class="built_in">from</span> remote repository.
-
-Please make sure you have <span class="operator">the</span> correct access rights
-<span class="operator">and</span> <span class="operator">the</span> repository exists.
-</code></pre><p>とrejectされる。<br>よく考えたら当たり前だが、WindowsでもSSHキーの設定が必要らしい。  </p>
-<p>Linuxで設定したSSH秘密鍵と公開鍵の両方を<code>C:\Users\（ユーザー名）\.ssh</code>内にコピペしたら、ようやくdeploy出来た。  </p>
-<p>これで無事WindowsでもHexoを使えるようになった。  </p>
-<p>Hexoにはローカルホストで使う管理画面プラグインもあるようなので、もう少し導入が簡単になればWindowsユーザーにも静的サイトジェネレーターが広まる可能性があるんじゃないだろうか。  </p>
-<p>ーー<br>（関連記事）<br><a href="http://pagent.github.io/2014/11/24/hexo-windows/" target="_blank" rel="external">WindowsでHexoを使う（インストール） | Pagent</a></p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/24/hexo-windows-deploy/" data-text="WindowsでHexoを使う（deploy） | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/11/24/hexo-windows-deploy/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/11/24/hexo-windows-deploy/" class="hatena-bookmark-button" data-hatena-bookmark-title="WindowsでHexoを使う（deploy）" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Hexo/">Hexo</a></li> <li><a href="/tags/Windows/">Windows</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -587,37 +576,37 @@ Please make sure you have <span class="operator">the</span> correct access right
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>11</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>12</span></a></li>
 		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>17</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>18</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 			<li><a href="/tags/Windows/">Windows<span>6</span></a></li>
 		
 			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
 		
-			<li><a href="/tags/ネット/">ネット<span>17</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>60</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>12</span></a></li>
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>17</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>11</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>60</span></a></li>
 		
 		
 		</ul>
@@ -630,6 +619,10 @@ Please make sure you have <span class="operator">the</span> correct access right
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2016/02/21/peeep-us-google-account/" ><i class="fa fa-file-o"></i>Google accountでのログインが必要になって...</a>
+      </li>
     
       <li>
         <a href="/2015/12/21/truecrypt-downgrade/" ><i class="fa fa-file-o"></i>TrueCryptでボリュームをマウント出来ない→ダウ...</a>
@@ -647,10 +640,6 @@ Please make sure you have <span class="operator">the</span> correct access right
         <a href="/2015/10/04/aur-update-yaourt/" ><i class="fa fa-file-o"></i>YaourtでAURのパッケージをアップデート</a>
       </li>
     
-      <li>
-        <a href="/2015/09/30/snowden-twitter/" ><i class="fa fa-file-o"></i>元CIA職員スノーデン氏がTwitterを開始</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -660,7 +649,7 @@ Please make sure you have <span class="operator">the</span> correct access right
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">13</span></li></ul>
 		</ul>
 	</div>
 

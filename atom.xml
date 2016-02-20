@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-02-10T12:04:53.764Z</updated>
+  <updated>2016-02-20T17:18:18.607Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,28 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Google accountでのログインが必要になってしまった「Peeep.us」]]></title>
+    <link href="http://pagent.github.io/2016/02/21/peeep-us-google-account/"/>
+    <id>http://pagent.github.io/2016/02/21/peeep-us-google-account/</id>
+    <published>2016-02-20T16:50:59.000Z</published>
+    <updated>2016-02-20T17:17:28.575Z</updated>
+    <content type="html"><![CDATA[<p>海外のアーカイブサービスの一つ「Peeep.us」。<br>元URLからの検索機能が無いのが難点だったが、元ページに近い魚拓が得られ、それなりに便利だった。  </p>
+<p>昨年サイトが閉鎖されたかと思われたそのPeeep.usが、いつの間にか復活していた。  </p>
+<p>ところが、魚拓を取ろうと「submit」をクリックすると、Google Accountのログイン画面が表示される。以前はログイン不要だったはずなんだが。  </p>
+<p>Googleからの支援を受けての復活だったのだろうか？  </p>
+<p>要ログインだと使いづらいので、今後お世話になることは無いと思う。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>海外のアーカイブサービスの一つ「Peeep.us」。<br>元URLからの検索機能が無いのが難点だったが、元ページに近い魚拓が得られ、それなりに便利だった。  </p>
+<p>昨年サイトが閉鎖されたかと思われたそのPeeep.usが、いつの間にか復活していた。  </p>
+]]>
+    </summary>
+    
+      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[TrueCryptでボリュームをマウント出来ない→ダウングレードで解決]]></title>
@@ -496,31 +518,6 @@
     </summary>
     
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[000webhost.comで挿入される解析コード]]></title>
-    <link href="http://pagent.github.io/2015/05/14/hosting24-analytics-code/"/>
-    <id>http://pagent.github.io/2015/05/14/hosting24-analytics-code/</id>
-    <published>2015-05-14T04:28:08.000Z</published>
-    <updated>2015-05-14T05:03:31.185Z</updated>
-    <content type="html"><![CDATA[<p>今は放置しているが、無料レンタルサーバー「000webhost.com」のアカウントを取っている。<br>久しぶりに「000webhost.com」に置いてあるサイトを見てみると、すべてのページのソース下部に、下記のようなコードが挿入されている。  </p>
-<pre><code><span class="comment">&lt;!-- Hosting24 Analytics Code --&gt;</span>
-<span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"http://stats.hosting24.com/count.php"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-<span class="comment">&lt;!-- End Of Analytics Code --&gt;</span>
-</code></pre><p>「000webhost」が管理している解析コードで、アカウントがアクティブか非アクティブかを判別するためのものらしい。<br>他にも利用者にstatsとvisitors reportを提供するために利用されるとのことだが、statsやvisitors reportが何なのかはよく分からない。  </p>
-<p>Firefoxでは「Stray start tag “script”.」とかで赤字で表示されており、少々気になる。  </p>
-<p>不要な場合は、<a href="http://members.000webhost.com/analytics.php" target="_blank" rel="external">http://members.000webhost.com/analytics.php</a>から設定。<br>Domain欄に<code>www.</code>や<code>http://</code>を除いた利用ドメイン名を記入。<br>Password欄はFTPのパスワード。<br>Manage analytics codeで「Disable Code」を選択しSubmitで非表示に出来る。  </p>
-<p>非表示にしているとアカウントを削除されやすいのでは？という気がしなくもないが。  </p>
-<p>（参照記事）<br><a href="http://www.habschned.com/000webhost-com-disable-analytics-code-1/" target="_blank" rel="external">000webhost.com - How to disable Analytics Code #1 - Habschneds Odds and Ends</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>今は放置しているが、無料レンタルサーバー「000webhost.com」のアカウントを取っている。<br>久しぶりに「000webhost.com」に置いてあるサイトを見てみると、すべてのページのソース下部に、下記のようなコードが挿入されている。  </p>
-<pre><c]]>
-    </summary>
-    
-      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
     
   </entry>
   
