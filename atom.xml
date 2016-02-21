@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-02-20T17:18:18.607Z</updated>
+  <updated>2016-02-21T05:49:30.471Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[Google accountでのログインが必要になってしまった「Peeep.us」]]></title>
+    <title><![CDATA[「Peeep.us」Google accountでのログインが必要に]]></title>
     <link href="http://pagent.github.io/2016/02/21/peeep-us-google-account/"/>
     <id>http://pagent.github.io/2016/02/21/peeep-us-google-account/</id>
     <published>2016-02-20T16:50:59.000Z</published>
-    <updated>2016-02-20T17:17:28.575Z</updated>
+    <updated>2016-02-21T05:48:24.123Z</updated>
     <content type="html"><![CDATA[<p>海外のアーカイブサービスの一つ「Peeep.us」。<br>元URLからの検索機能が無いのが難点だったが、元ページに近い魚拓が得られ、それなりに便利だった。  </p>
 <p>昨年サイトが閉鎖されたかと思われたそのPeeep.usが、いつの間にか復活していた。  </p>
 <p>ところが、魚拓を取ろうと「submit」をクリックすると、Google Accountのログイン画面が表示される。以前はログイン不要だったはずなんだが。  </p>
