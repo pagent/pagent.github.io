@@ -208,10 +208,10 @@ Please make sure you have <span class="operator">the</span> correct access right
 	
 	  <p>以前、静的サイトジェネレーターnanocをWindowsにインストールしたが、なんとかインストールは出来たものの、compile（generate）してhtmlファイルを生成する際、エラーになり使えなかった。<br>最近使い始めたHexoは、nanocやOctopressと違い、RubyではなくJavaScript（Node.js）を用いているそうなので、Windowsでも使えるかもしれないと思い、試してみた。  </p>
 <p>結果、Windowsで実用可能だった。</p>
-<h3 id="Node-jsのインストール">Node.jsのインストール</h3>
+<p>###Node.jsのインストール</p>
 <p>Node.jsは下記からWindows用インストーラー付きのWindows Installer (.msi)をダウンロードし、デフォルトの設定のままインストールした。<br><a href="http://nodejs.org/download/" target="_blank" rel="external">http://nodejs.org/download/</a>  </p>
 <p>インストールされたバージョンはXubuntuに入れたのと同じv0.10.33だった。  </p>
-<h3 id="msysgitのインストール">msysgitのインストール</h3>
+<p>###msysgitのインストール</p>
 <p>Windowsでgitを使うため<a href="http://msysgit.github.io/" target="_blank" rel="external">msysgit</a>をインストールした。<br>インストールオプションは下記サイトを参考にさせて頂いた。<br><a href="http://d.hatena.ne.jp/xyk/20130920/1379659991" target="_blank" rel="external">Windows に msysgit をインストールして git 環境を作る - xykの日記</a>  </p>
 <p>「Select Components」ではすべてのチェックを外した。<br>「Adjusting your PATH environment」は上から2番目の「Run Git from the Windows Command Prompt」。  </p>
 <p>「Configuring the line ending conversions」は上から2番目の「Checkout as-is, commit Unix-style line endings」でインストールしが、あとで実際にdeployする際、  </p>
@@ -223,8 +223,7 @@ warning: LF will be replaced <span class="keyword">by</span> <span class="consta
 The <span class="built_in">file</span> will have its original <span class="built_in">line</span> endings <span class="operator">in</span> your working <span class="built_in">directory</span>.
 ...
 </code></pre><p>と、改行コードが変更されるという警告が大量に表示されたので、結局上から3番目のオプション「Checkout as-is, commit as-is」（autocrlf = false）にした。<br>Windowsでしか使わないのであれば、あまり気にしなくても良さそう。<br>後から<code>C:\Users\（ユーザー名）\.gitconfig</code>で変更することも可能。  </p>
-<h3 id="Hexoのインストール">Hexoのインストール</h3>
-<p>コマンドプロンプトを開き、</p>
+<p>###Hexoのインストール<br>コマンドプロンプトを開き、</p>
 <pre><code>&gt;npm <span class="keyword">install</span> hexo -g
 </code></pre><p>でインストール。</p>
 <p>Linuxの時と同様、  </p>
@@ -526,39 +525,39 @@ tag: <span class="number">1</span>
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+			<li><a href="/tags/ネット/">ネット<span>36</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>28</span></a></li>
 		
-			<li><a href="/tags/ネット/">ネット<span>36</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
-		
 			<li><a href="/tags/サーバー/">サーバー<span>7</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>16</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>37</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
 		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>37</span></a></li>
+		
 			<li><a href="/tags/Git/">Git<span>13</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>16</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 		
 		</ul>
