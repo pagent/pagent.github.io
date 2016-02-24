@@ -1,0 +1,284 @@
+<!DOCTYPE HTML><!-- _partial/head -->
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="ja"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <title>サーバー設置型でデータベース不要のアクセス解析ツール、「xenologger」と「w3Analyzer」 | Pagent</title>
+  <meta name="author" content="Pagent">
+  
+  <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="サーバー設置型でデータベース不要のアクセス解析ツール、「xenologger」と「w3Analyzer」"/>
+  <meta property="og:site_name" content="Pagent"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+    <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
+  
+  
+    <link href="/favicon.ico" rel="icon">
+  
+
+  
+  <link rel="stylesheet" href="/css/bootstrap.cerulean.min.css" media="screen" type="text/css">
+  
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  <!-- _partial/post/google_analytics -->
+
+
+
+</head>
+
+<body>
+  <!-- _partial/navigation -->
+<nav id="main-nav" class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">Pagent</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class="fa fa-folder"></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class="fa fa-tags"></i>Tags
+			</a>
+		  </li>
+		  
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+		  <li><a href="/atom.xml" title="Atom feed"><i class="fa fa-rss"></i>Feed</a></li>
+		</ul>
+		<form class="navbar-form navbar-right" action="//google.com/search" method="get" accept-charset="utf-8">
+		    <input type="search" name="q" results="0" placeholder="Search" class="form-control">
+		    <input type="hidden" name="hq" value="site:pagent.github.io">
+		</form>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 <!-- post -->
+
+
+<!-- _partial/article -->
+
+<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+  <!-- display as page -->
+		<div class="page-header">
+			<h1> サーバー設置型でデータベース不要のアクセス解析ツール、「xenologger」と「w3Analyzer」</h1>
+		</div>
+	
+
+</div>
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div class="col-md-9">
+	
+
+	
+
+	<!-- content -->
+	<div class="mypage">
+	    <p>無料アクセス解析は、登録が必要なものだと、高機能なものが色々とある。ただ、あまり目立ちたくはない。<br>このタイプのものはQLOOKしか使ったことがないが、QLOOKはカウンターを兼ねた広告が入るものの、上部でバナーがチカチカしたりしないので、それほど煩わしくはなかった。<br>解析結果も詳細で満足いくものだった。<br>現在はせっかくサーバーを借りているので、良いツールがあれば導入したい。</p>
+<p>サーバー設置型でデータベース不要のアクセス解析ツールとして、以前futomiの「高機能アクセス解析 CGI Standard 版」を試したが、自分のアクセスを除外出来なくて断念した。</p>
+<p>その後も無料、広告無し、データベース不要という条件でサーバー設置型のアクセス解析ソフトを探し、２つ使用してみた。<br>「xenologger」と「w3Analyzer」。</p>
+<p><a href="http://www.xenobee.net/xenologger/" target="_blank" rel="external">「xenologger」</a>は既に開発は終了していて現在は「ミスター アクセス解析」に統合されている様子だが、依然サイトでダウンロード可能。「xenologger」と「ミスター アクセス解析」の両方をインストールしてみたが、内容はほぼ同じだった。<br>（「ミスター アクセス解析」の方はCookieでログイン時のパスワードを記憶出来るようになっている。）</p>
+<p>「w3Analyzer」の方も開発は終了しており、本家（OASAKA PHP）からも消えているが、下記サイトから文字コードをUTF-8化したものをダウンロードさせて頂いた。<br><a href="http://erabikata.info/w3analyzer-utf8.html" target="_blank" rel="external">w3Analyzer UTF-8版 | 選ばれし謎の何か</a></p>
+<p>使用感としては、「xenologger」の方が「滞在時間」「入り口ページ」「出口ページ」「直帰率」などの項目があり、分析結果が詳しい。<br>使っていないのでよく分からないが、他にもURLやキーワードを登録することでインデックス数、被リンク数、キーワードの検索順位などを保存、チャート化する機能があるようだ。</p>
+<p>「w3Analyzer」の方は、解析結果も管理画面の見た目もシンプルな印象だが、そのぶん動作がとても軽快。</p>
+<p>データベースを使うタイプのものだとより高機能なアクセス解析ツールも色々あるようだが、あまりデータベースというものに馴染めないので、当面はこの２つを使っていこうと思う。</p>
+<p>ーー<br>（追記）<br>Octopressの場合、サイドバーの背景が白ではなく灰色のせいか「w3Analyzer」の解析タグの位置に白い小さなポッチが見えていた。<br>（背景が白の別ブログでは、ポッチの見えているものと見えていないものがあった。）</p>
+<p>解析タグの</p>
+<pre><code>document.write('&lt;img <span class="variable">src=</span><span class="string">"http://（ツールを設置しているディレクトリ）/w3a/writelog.php?ref='+$r+'&amp;pttl='+$t+'"</span> <span class="variable">width=</span><span class="string">"1"</span> <span class="variable">height=</span><span class="string">"1"</span> &gt;');
+</code></pre><p>のところで、「width=“0” height=“0”」にしても消えなかったが、この箇所に「style=”visibility:hidden”」を加えて</p>
+<pre><code>document.write('&lt;img <span class="variable">src=</span><span class="string">"http://（ツールを設置しているディレクトリ）/w3a/writelog.php?ref='+$r+'&amp;pttl='+$t+'"</span> <span class="variable">style=</span><span class="string">"visibility:hidden"</span> <span class="variable">width=</span><span class="string">"1"</span> <span class="variable">height=</span><span class="string">"1"</span> &gt;');
+</code></pre><p>のようにすると白いポッチが消えた。<br>編集をした後もちゃんと解析出来ていた。</p>
+<p>「xenologger」のときにも白いポッチを消した覚えがある。<br>たしか、xenoLogger.jsというファイルで「var __BEACON;」の「visibility」の値を「visible」から「hidden」に変えたような覚えがあるが、詳細は覚えていない。</p>
+
+	</div>
+
+	<div class="tweet-button">
+	<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/23/access-analyze/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/23/access-analyze/" class="hatena-bookmark-button" data-hatena-bookmark-title="サーバー設置型でデータベース不要のアクセス解析ツール、「xenologger」と「w3Analyzer」" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+
+<div class="clear"></div>
+
+	<div>
+  	<center>
+	<!-- _partial/post/pagination -->
+<div class="pagination">
+<ul class="pagination">
+	 
+		
+    	<li class="prev"><a href="/2014/04/23/facebook-origin/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+  		
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
+
+		
+		   <li class="next"><a href="/2014/04/23/blankscreen-off/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+        
+	
+</ul>
+</div>
+
+  	</center>
+	</div>
+
+	<!-- comment -->
+	<!-- _partial/post/comment -->
+
+<section id="comment">
+  <h2 class="title">Comments</h2>
+
+  
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  
+</section>
+
+
+
+	</div> <!-- col-md-9/col-md-12 -->
+
+	
+		<!-- _partial/post/meta -->
+<div class="col-md-3"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2014年4月23日
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>
+    <ul id="tags" class="tag_box list-unstyled collapse in">
+	    <!-- _partial/post/tag -->
+  
+  <li><a href="/tags/ユーティリティ/">ユーティリティ</a></li>
+
+    </ul>
+	</div>
+	
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+
+    <hr>
+
+</div><!-- col-md-3 -->
+
+	
+
+</div><!-- row -->
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+    <footer> <!-- _partial/footer -->
+<p>
+  &copy; 2016 Pagent
+  &nbsp;
+  <span class="text-muted">Powered by:
+    <a class="text-muted" href="http://zespia.tw/hexo/" target="_blank">Hexo</a>,
+    <a class="text-muted" href="http://github.com/yieme/hexo-theme-freewill/">Freewill</a>
+    &amp;
+    <a class="text-muted" href="http://bootswatch.com/" target="_blank">Bootswatch <small>v3.2</small></a>
+  </span>
+</p>
+ </footer>
+  </div> <!-- container-narrow -->
+  <!-- _partial/after_footer -->
+<a id="gotop" href="#">
+  <span>▲</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'pagents';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>

@@ -65,6 +65,12 @@
 		  </li>
 		  
 		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class="fa fa-folder"></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
 			<a href="/tags" title="All the tags.">
 			  <i class="fa fa-tags"></i>Tags
 			</a>
@@ -248,8 +254,7 @@
 	  
 	
 	  <p>Linuxでマウスホイールでの上下スクロールをする際、移動量（スピード）が小さくて疲れるので、移動量を大きくした。  </p>
-<h3 id="imwheelを使って設定">imwheelを使って設定</h3>
-<p>マウスの挙動を調整するツール「imwheel」を導入した。<br>Arch Linuxの場合はAURにあるので、Yaourtでインストール。  </p>
+<p>###imwheelを使って設定<br>マウスの挙動を調整するツール「imwheel」を導入した。<br>Arch Linuxの場合はAURにあるので、Yaourtでインストール。  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yaourt -S imwheel</div></pre></td></tr></table></figure>
 
 <p>UbuntuならUbuntuソフトウェアセンターまたはSynapticから。  </p>
@@ -262,14 +267,13 @@
 <p>コマンド<code>imwheel</code>を自動開始アプリケーションに登録して完了。<br>スクロールが楽になった。  </p>
 <p>簡単に移動量を変更出来て、また上昇・下降にそれぞれ違う値を設定することも可能なので、かなりオススメ。</p>
 <p>（参照記事）<br><a href="http://askubuntu.com/questions/285689/increase-mouse-wheel-scroll-speed" target="_blank" rel="external">Increase mouse wheel scroll speed - Ask Ubuntu</a><br><a href="https://wiki.archlinux.org/index.php/Imwheel" target="_blank" rel="external">imwheel - ArchWiki</a>  </p>
-<h3 id="Xorgで設定（上手くいかず）">Xorgで設定（上手くいかず）</h3>
+<p>###Xorgで設定（上手くいかず）  </p>
 <p>下記記事を参考に、xorgの設定でスクロール量の変更を試みた。<br><a href="http://ishikuro.hateblo.jp/entry/2013/12/08/190527" target="_blank" rel="external">Linuxでマウスホイール移動量調整 - ishn’s diary</a>  </p>
 <p><code>xinput</code>コマンドで確認すると、USB Optical Mouseはid=12だったので、</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ xinput <span class="keyword">set</span>-prop <span class="string">'12'</span> <span class="string">'Evdev Wheel Emulation Inertia'</span> <span class="number">200</span></div></pre></td></tr></table></figure>
 
 <p>とした。<br>ところがスクロール量に変化がない。<br><code>xinput list-props 12</code>で確認すると、確かにEvdev Wheel Emulation Inertiaの値は200になっているのだが。<br>USBマウスを抜き差ししても変化なし。<br>移動の上下の「向き」などは反映されるのだが、スクロール量はxinputでは設定出来ないようだ。  </p>
-<h3 id="Firefoxのみ設定">Firefoxのみ設定</h3>
-<p>Firefoxだけで良いなら、about:configでmousewheel.default.delta_multiplier_yの値を変更すれば良いようだ。<br><a href="http://blog.ueshu.net/it/2013/06/19/1769.html" target="_blank" rel="external">ubuntuのFirefoxのマウスホイールのスクロール速度を変更する</a></p>
+<p>###Firefoxのみ設定<br>Firefoxだけで良いなら、about:configでmousewheel.default.delta_multiplier_yの値を変更すれば良いようだ。<br><a href="http://blog.ueshu.net/it/2013/06/19/1769.html" target="_blank" rel="external">ubuntuのFirefoxのマウスホイールのスクロール速度を変更する</a></p>
 
 	
 	</div>
@@ -323,11 +327,9 @@
 	  
 	
 	  <p>Firefoxを更新して以降、検索窓でのYahoo!検索がsearch.yahoo.co.jpではなく、英語のsearch.yahoo.comになってしまっている。<br>「検索設定を変更」→「検索エンジンを追加…」から探してみても、Yahoo! Vietnam、Yahoo! India、Yahoo! Canadaなどや、Yahoo Japan! Mail Notifierはあるが、Yahoo! JAPANの検索エンジンが見つからない。  </p>
-<h3 id="検索アシストアドオンによる対症療法">検索アシストアドオンによる対症療法</h3>
-<p><a href="https://addons.mozilla.org/ja/firefox/addon/yahoo%E5%8F%B3%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E6%A4%9C%E7%B4%A2%E3%82%A2%E3%82%B7%E3%82%B9%E3%83%88/?src=search" target="_blank" rel="external">「Yahoo!右クリック検索アシスト」</a>というアドオンがあるようだったので入れてみた。  </p>
+<p>###検索アシストアドオンによる対症療法<br><a href="https://addons.mozilla.org/ja/firefox/addon/yahoo%E5%8F%B3%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E6%A4%9C%E7%B4%A2%E3%82%A2%E3%82%B7%E3%82%B9%E3%83%88/?src=search" target="_blank" rel="external">「Yahoo!右クリック検索アシスト」</a>というアドオンがあるようだったので入れてみた。  </p>
 <p>表示しているページで文言を選択、右クリックするとメニューの一番下に「Yahooで検索」が追加される。<br>検索窓からの検索は出来ないので少し不便ではあるが、わざわざYahoo! JAPANのサイトに行くよりは手間が省ける。  </p>
-<h3 id="searchpluginsフォルダ内にyahoo-japan-xmlファイルを追加（推奨）">searchpluginsフォルダ内にyahoo-japan.xmlファイルを追加（推奨）</h3>
-<p>幸い別の端末に、Yahoo! JAPAN検索のためのxmlファイル（yahoo-japan.xml）があったので、これを手動で追加した。  </p>
+<p>###searchpluginsフォルダ内にyahoo-japan.xmlファイルを追加（推奨）<br>幸い別の端末に、Yahoo! JAPAN検索のためのxmlファイル（yahoo-japan.xml）があったので、これを手動で追加した。  </p>
 <p>~/.mozilla/firefox/(プロファイル名)/searchplugins内にyahoo-japan.xmlファイルをコピペ。<br>下記内容でファイルを新規作成しても良い。  </p>
 <figure class="highlight xml"><figcaption><span>yahoo-japan.xml</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">SearchPlugin</span> <span class="attribute">xmlns</span>=<span class="value">"http://www.mozilla.org/2006/browser/search/"</span> <span class="attribute">xmlns:os</span>=<span class="value">"http://a9.com/-/spec/opensearch/1.1/"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:ShortName</span>&gt;</span>Yahoo! JAPAN<span class="tag">&lt;/<span class="title">os:ShortName</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Description</span>&gt;</span>Yahoo! JAPANで検索<span class="tag">&lt;/<span class="title">os:Description</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:InputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">os:InputEncoding</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Url</span> <span class="attribute">type</span>=<span class="value">"text/html"</span> <span class="attribute">method</span>=<span class="value">"GET"</span> <span class="attribute">template</span>=<span class="value">"http://search.yahoo.co.jp/search?p={searchTerms}&amp;ei=UTF-8&amp;fr=opsrch"</span> <span class="attribute">resultDomain</span>=<span class="value">"search.yahoo.co.jp"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">os:Url</span>&gt;</span><span class="tag">&lt;<span class="title">os:Url</span> <span class="attribute">type</span>=<span class="value">"application/x-suggestions+json"</span> <span class="attribute">method</span>=<span class="value">"GET"</span> <span class="attribute">template</span>=<span class="value">"http://search.yahooapis.jp/AssistSearchService/V2/webassistSearch?p={searchTerms}&amp;appid=oQsoxcyxg66enp0TYoirkKoryq6rF8bK76mW0KYxZ0v0WPLtn.Lix6wy8F_LwGWHUII-&amp;output=iejson&amp;src=srch&amp;fr=opsrch"</span> <span class="attribute">resultDomain</span>=<span class="value">"search.yahooapis.jp"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">os:Url</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">SearchPlugin</span>&gt;</span></div></pre></td></tr></table></figure>
 
@@ -458,47 +460,45 @@
 <div class="col-md-3">
 	<div id="sidebar">
 	
-			<!-- _widget/category -->
-
-
-		
 			<!-- _widget/tagcloud -->
 
 	<div class="widget">
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>17</span></a></li>
+			<li><a href="/tags/blog/">blog<span>37</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>12</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>11</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>18</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>60</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>6</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/サーバー/">サーバー<span>7</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>16</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>36</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>28</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 		
 		</ul>
@@ -541,13 +541,9 @@
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">4</span></li></ul>
 		</ul>
 	</div>
-
-
-		
-			<!-- _widget/links -->
 
 
 		

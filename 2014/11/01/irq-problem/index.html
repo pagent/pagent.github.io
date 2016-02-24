@@ -65,6 +65,12 @@
 		  </li>
 		  
 		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class="fa fa-folder"></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
 			<a href="/tags" title="All the tags.">
 			  <i class="fa fa-tags"></i>Tags
 			</a>
@@ -112,10 +118,8 @@
 
 	<!-- content -->
 	<div class="mypage">
-	    <h4 id="環境">環境</h4>
-<p>ハード：NECのネットブックLaVie Light BL300/T<br>OS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  </p>
-<h4 id="現状と対応">現状と対応</h4>
-<p>Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出来なかった。<br>そのため、いったんXubuntu13.04をインストールしてから14.04.1にアップグレードしていた。<br>アップグレード中にもdisabling IRQで起動できなくなり、/etc/default/grubでGRUB_DEFAULT=”Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.8.0-19-generic”にして、デフォルトの起動カーネルを3.8.0-19にしていた。  </p>
+	    <p>####環境<br>ハード：NECのネットブックLaVie Light BL300/T<br>OS：購入時のWindows Xpは削除していてXubuntu14.04.1のみ  </p>
+<p>####現状と対応<br>Xubuntu14.04.1のインストールの際にも「disabling IRQ #9」でインストールDVDが起動できず。起動オプションで「acpi=off」を選択したらインストールは出来たものの、解像度が800×600以外に選択出来なかった。<br>そのため、いったんXubuntu13.04をインストールしてから14.04.1にアップグレードしていた。<br>アップグレード中にもdisabling IRQで起動できなくなり、/etc/default/grubでGRUB_DEFAULT=”Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.8.0-19-generic”にして、デフォルトの起動カーネルを3.8.0-19にしていた。  </p>
 <p>このままでも使えるが、ソフトウェアの更新がしょっちゅうカーネルを更新するよう言ってくるし、カーネル3.13で起動できないかやってみた。  </p>
 <p>まず起動時にOS選択画面が出なかったが、他に起動できるOSがない場合grub2はOS選択画面をスキップしてしまうためらしい。<br><a href="http://www.serendip.ws/archives/3534" target="_blank" rel="external">Grub2 で起動時に選択リストを表示させる : Serendip - Webデザイン・プログラミング</a>  </p>
 <p>上記記事の通り</p>
@@ -124,8 +128,7 @@
 </code></pre><p>にしたらOS選択画面が出た。  </p>
 <p>試してみる起動オプションは下記記事を参考にさせて頂いた。<br><a href="http://kiddushin.jugem.jp/?eid=264" target="_blank" rel="external">Disabling IRQ (起動には成功の巻) | おもしろきこともなき世をおもしろく</a>  </p>
 <p>OS選択画面の「Advanced options for Ubuntu」で「Ubuntu, with Linux 3.13.0-39-generic」を選択し「e」キーでオプション編集画面へ。<br>linux /boot/vmlinuz-3.13.0-39…で始まる行の最後quiet nosplashのあとに半角スペースに続けてオプションを追加、「F10」キーで起動。<br>（参照記事：<a href="https://wiki.ubuntulinux.jp/UbuntuTips/Others/BootOptions#A.2BMKQw8zC5MMgw.2FDDrbggwfzC3MLkwxjDgMG6Nd1LVMKow1zC3MOcw8zCSTgBmQnaEMGtZCWb0MFkwizBrMG8-" target="_blank" rel="external">UbuntuTips/Others/BootOptions - Ubuntu Japanese Wiki</a>）  </p>
-<h4 id="結果">結果</h4>
-<p>acpi=off<br>起動は出来るが、画面が横に引き伸ばされてしまい、モニタの設定でも他の解像度を選べず。<br>シャットダウン時には「System halted」のスプラッシュ画面で止まってしまう。    </p>
+<p>####結果<br>acpi=off<br>起動は出来るが、画面が横に引き伸ばされてしまい、モニタの設定でも他の解像度を選べず。<br>シャットダウン時には「System halted」のスプラッシュ画面で止まってしまう。    </p>
 <p>pci=noacpi<br>良好。<br>問題なく使えそう。  </p>
 <p>acpi=noirq<br>一瞬起動できるかと思ったが画面が真っ暗のまま。  </p>
 <p>irqpoll<br>上に同じく真っ暗。  </p>

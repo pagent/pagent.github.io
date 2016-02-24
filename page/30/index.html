@@ -65,6 +65,12 @@
 		  </li>
 		  
 		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class="fa fa-folder"></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
 			<a href="/tags" title="All the tags.">
 			  <i class="fa fa-tags"></i>Tags
 			</a>
@@ -383,7 +389,7 @@
 }
 </code></pre><p>YouTubeの背景はそれ程まぶしいと感じたことは無かったが、一応YouTubeのドメインも加えた。<br>ずいぶんと目にやさしくなった。</p>
 <p>Stylishは対象のドメインを指定してスタイルを変えられるので、なにかと重宝している。  </p>
-<p>ーー<br>（追記）<br>下記記事で紹介されているStylishのスタイル、<a href="https://userstyles.org/styles/23516/midnight-surfing-global-dark-style" target="_blank" rel="external">Midnight Surfing - Global Dark Style</a>というのが、とてもきれいに表示ページの背景を黒くしてくれる。<br><a href="http://www.xmisao.com/2014/08/08/dark-firefox.html" target="_blank" rel="external">Firefoxを徹底的に黒くする テーマ / Stylish / Vimperator — ぺけみさお</a>  </p>
+<p>ーー<br>（追記）<br>下記記事で紹介されているStylishのスタイル、<a href="https://userstyles.org/styles/23516/midnight-surfing-global-dark-style" target="_blank" rel="external">Midnight Surfing - Global Dark Style</a>というのが、とてもきれいに表示ページの背景を黒くしてくれる。<br><a href="http://www.xmisao.com/2014/08/08/dark-firefox.html" target="_blank" rel="external">Firefoxを徹底的に黒くする テーマ / Stylish / Vimperator – ぺけみさお</a>  </p>
 <p>（本当はツールバーやサイドバーなどFirefox自体の見た目も黒くなるはずらしいが、Firefox自体までは黒くならない。最近のバージョンのFirefoxではFirefox自体のスタイルを変更するには「完全テーマ」で変更する必要があるようだ。）  </p>
 <p>ただ、導入するとすべてのページが黒くなってしまうので、Gyao、YouTube等のドメインだけを指定。<br>Midnight Surfingの書き出し部分  </p>
 <pre><code><span class="at_rule">@<span class="keyword">namespace</span> html <span class="function">url</span>(http://www.w3.org/<span class="number">1999</span>/xhtml)</span>;
@@ -466,47 +472,45 @@
 <div class="col-md-3">
 	<div id="sidebar">
 	
-			<!-- _widget/category -->
-
-
-		
 			<!-- _widget/tagcloud -->
 
 	<div class="widget">
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>17</span></a></li>
+			<li><a href="/tags/ネット/">ネット<span>36</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>28</span></a></li>
 		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>60</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>12</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>11</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>12</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+			<li><a href="/tags/blog/">blog<span>37</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
-			<li><a href="/tags/ネット/">ネット<span>18</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>11</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>6</span></a></li>
-		
 			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>16</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/サーバー/">サーバー<span>7</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
 		
 		
 		</ul>
@@ -549,13 +553,9 @@
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">13</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">4</span></li></ul>
 		</ul>
 	</div>
-
-
-		
-			<!-- _widget/links -->
 
 
 		

@@ -1,0 +1,397 @@
+<!DOCTYPE HTML><!-- _partial/head -->
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="ja"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <title>Seesaaブログのコメント表示を降順に | Pagent</title>
+  <meta name="author" content="Pagent">
+  
+  <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Seesaaブログのコメント表示を降順に"/>
+  <meta property="og:site_name" content="Pagent"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+    <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
+  
+  
+    <link href="/favicon.ico" rel="icon">
+  
+
+  
+  <link rel="stylesheet" href="/css/bootstrap.cerulean.min.css" media="screen" type="text/css">
+  
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  <!-- _partial/post/google_analytics -->
+
+
+
+</head>
+
+<body>
+  <!-- _partial/navigation -->
+<nav id="main-nav" class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">Pagent</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class="fa fa-folder"></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class="fa fa-tags"></i>Tags
+			</a>
+		  </li>
+		  
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+		  <li><a href="/atom.xml" title="Atom feed"><i class="fa fa-rss"></i>Feed</a></li>
+		</ul>
+		<form class="navbar-form navbar-right" action="//google.com/search" method="get" accept-charset="utf-8">
+		    <input type="search" name="q" results="0" placeholder="Search" class="form-control">
+		    <input type="hidden" name="hq" value="site:pagent.github.io">
+		</form>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 <!-- post -->
+
+
+<!-- _partial/article -->
+
+<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+  <!-- display as page -->
+		<div class="page-header">
+			<h1> Seesaaブログのコメント表示を降順に</h1>
+		</div>
+	
+
+</div>
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div class="col-md-9">
+	
+
+	
+
+	<!-- content -->
+	<div class="mypage">
+	    <p>ブログで投稿してもらったコメント数が多いと、新しいコメントを見るのにずっと下の方までスクロールしないといけない。<br>サービスによってはコメントを降順に表示出来るものもあるが、残念ながら現在のところSeesaaブログではこの機能は実装されていない。</p>
+<p>なんとかカスタマイズ出来ないかと調べてみたら、下記サイトにコメントを降順に並べる方法が紹介されていた。<br>JavaScriptを使用するものらしい。<br><a href="http://yf-blog-lab-3.seesaa.net/article/186272154.html" target="_blank" rel="external">コメントを降順に表示させる－－方法２－－: ブログカスタマイズ実験室３（わいずふぁくとりい）</a></p>
+<p>「コンテンツPC」の「記事」で記事のHTMLを下記のように編集。</p>
+<pre><code><span class="vbscript">&lt;% content.header -%&gt;</span>
+
+（★★★この箇所に下記コード［１］を挿入★★★）
+
+<span class="comment">&lt;!-- Content --&gt;</span>
+
+（中略）
+
+<span class="vbscript">&lt;% <span class="keyword">if</span>:page_name eq <span class="comment">'article' -%&gt;</span></span>
+<span class="vbscript">&lt;% <span class="keyword">if</span>:individual_article.accept_comment_show -%&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"comments"</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">a</span> <span class="attribute">name</span>=<span class="value">"comment"</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"comments-head"</span>&gt;</span>この記事へのコメント<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+（★★★この箇所に下記コード［２］を挿入★★★）
+
+<span class="vbscript">&lt;% <span class="keyword">loop</span>:list_individual_article_children -%&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"comments-body"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"text"</span>&gt;</span><span class="vbscript">&lt;% comment.body | html | tag_strip | nl2br | clickable(<span class="comment">'target="_blank" rel="nofollow"') %&gt;</span></span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"comments-post"</span>&gt;</span>Posted by <span class="vbscript">&lt;% <span class="keyword">if</span>:comment.homepage %&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"&lt;% comment.homepage | html | tag_strip %&gt;"</span> <span class="attribute">target</span>=<span class="value">"_blank"</span> <span class="attribute">rel</span>=<span class="value">"nofollow"</span>&gt;</span><span class="vbscript">&lt;% comment.writer | html | tag_strip %&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="vbscript">&lt;% <span class="keyword">else</span> %&gt;</span><span class="vbscript">&lt;% comment.writer | html | tag_strip %&gt;</span><span class="vbscript">&lt;% /<span class="keyword">if</span> %&gt;</span> at <span class="vbscript">&lt;% comment.createstamp | date_format(<span class="comment">'%Y年%m月%d日 %H:%M') %&gt;</span></span><span class="tag">&lt;<span class="title">br</span> /&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="vbscript">&lt;% /<span class="keyword">loop</span> -%&gt;</span>
+
+（★★★この箇所に下記コード［３］を挿入★★★）
+
+<span class="comment">&lt;!-- ↓↓コメント入力フォームここから↓↓ --&gt;</span>
+<span class="vbscript">&lt;% <span class="keyword">if</span>:individual_article.accept_comment_catch -%&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"comments-head"</span>&gt;</span>コメントを書く<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">form</span> <span class="attribute">action</span>=<span class="value">"&lt;% blog.page_url %&gt;pages/user/comments2/regist/input"</span> <span class="attribute">method</span>=<span class="value">"post"</span> <span class="attribute">name</span>=<span class="value">"comment-form"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"comments-body"</span>&gt;</span>
+お名前: <span class="vbscript">&lt;% <span class="keyword">if</span>:blog.ignore_setting.fill_writer %&gt;</span>[必須入力]<span class="vbscript">&lt;% /<span class="keyword">if</span> %&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"article_child__writer"</span> <span class="attribute">size</span>=<span class="value">"50"</span> <span class="attribute">value</span>=<span class="value">""</span> /&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+メールアドレス: <span class="vbscript">&lt;% <span class="keyword">if</span>:blog.ignore_setting.fill_email %&gt;</span>[必須入力]<span class="vbscript">&lt;% /<span class="keyword">if</span> %&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"article_child__email"</span> <span class="attribute">size</span>=<span class="value">"50"</span> <span class="attribute">value</span>=<span class="value">""</span> /&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+ホームページアドレス: <span class="vbscript">&lt;% <span class="keyword">if</span>:blog.ignore_setting.fill_homepage %&gt;</span>[必須入力]<span class="vbscript">&lt;% /<span class="keyword">if</span> %&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"article_child__homepage"</span> <span class="attribute">size</span>=<span class="value">"50"</span> <span class="attribute">value</span>=<span class="value">""</span> /&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+コメント: <span class="vbscript">&lt;% <span class="keyword">if</span>:blog.ignore_setting.fill_body %&gt;</span>[必須入力]<span class="vbscript">&lt;% /<span class="keyword">if</span> %&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">textarea</span> <span class="attribute">name</span>=<span class="value">"article_child__body"</span> <span class="attribute">rows</span>=<span class="value">"10"</span> <span class="attribute">cols</span>=<span class="value">"45"</span>&gt;</span><span class="tag">&lt;/<span class="title">textarea</span>&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"hidden"</span> <span class="attribute">name</span>=<span class="value">"article_child__article_id"</span> <span class="attribute">value</span>=<span class="value">"&lt;% individual_article.id %&gt;"</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"hidden"</span> <span class="attribute">name</span>=<span class="value">"article_id"</span> <span class="attribute">value</span>=<span class="value">"&lt;% individual_article.id %&gt;"</span> /&gt;</span>
+<span class="vbscript">&lt;% <span class="keyword">if</span>:blog.ignore_setting.captcha_comment -%&gt;</span>
+認証コード: [必須入力]<span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"&lt;% blog.ignore_setting.page_url_captcha_comment -%&gt;"</span> /&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"captcha_comment"</span> <span class="attribute">size</span>=<span class="value">"50"</span> <span class="attribute">value</span>=<span class="value">""</span> /&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+※画像の中の文字を半角で入力してください。<span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+<span class="vbscript">&lt;% /<span class="keyword">if</span> -%&gt;</span>
+<span class="vbscript">&lt;% <span class="keyword">if</span>:individual_article.accept_comment_permission_mode -%&gt;</span>
+※ブログオーナーが承認したコメントのみ表示されます。<span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+<span class="vbscript">&lt;% /<span class="keyword">if</span> -%&gt;</span>
+<span class="vbscript">&lt;% <span class="keyword">if</span>:blog.ignore_setting.banascii_comment -%&gt;</span>
+<span class="vbscript">&lt;% /<span class="keyword">if</span> -%&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"need_confirm"</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">class</span>=<span class="value">"input-submit"</span>  <span class="attribute">value</span>=<span class="value">"確認する"</span> /&gt;</span><span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"posted"</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">class</span>=<span class="value">"input-submit"</span>  <span class="attribute">value</span>=<span class="value">"書き込む"</span> /&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">form</span>&gt;</span>
+<span class="vbscript">&lt;% /<span class="keyword">if</span> -%&gt;</span>
+<span class="comment">&lt;!-- ↑↑コメント入力フォームここまで↑↑ --&gt;</span>
+
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="vbscript">&lt;% /<span class="keyword">if</span> -%&gt;</span>
+
+<span class="vbscript">&lt;% <span class="keyword">if</span>:individual_article.accept_tb_show -%&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"trackback"</span>&gt;</span>
+
+（以下略）
+</code></pre><p>上記HTMLの該当箇所に下記コードを挿入。</p>
+<p>コード［１］↓</p>
+<pre><code><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">language</span>=<span class="value">"javascript"</span>&gt;</span><span class="javascript">
+&lt;!--
+<span class="keyword">var</span> lc = <span class="number">0</span>;
+<span class="keyword">var</span> sarray = <span class="keyword">new</span> <span class="built_in">Array</span>();
+
+<span class="function"><span class="keyword">function</span> <span class="title">setText</span><span class="params">(s)</span></span>{
+    sarray[lc] = s;
+    lc++;
+}
+
+<span class="function"><span class="keyword">function</span> <span class="title">writeText</span><span class="params">()</span></span>{
+    <span class="keyword">var</span> L = sarray.length;
+    <span class="keyword">for</span>(i=<span class="number">0</span>;L-i&gt;<span class="number">0</span>;i++){
+        <span class="built_in">document</span>.write(sarray[L-i-<span class="number">1</span>]);
+    }
+}
+
+<span class="function"><span class="keyword">function</span> <span class="title">initText</span><span class="params">()</span></span>{
+    lc = <span class="number">0</span>;
+    sarray = <span class="keyword">new</span> <span class="built_in">Array</span>();
+}
+--&gt;
+</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+</code></pre><p>コード［２］↓</p>
+<pre><code><span class="subst">&lt;</span>script <span class="keyword">type</span><span class="subst">=</span><span class="string">"text/javascript"</span> language<span class="subst">=</span><span class="string">"javascript"</span><span class="subst">&gt;</span>
+<span class="subst">&lt;!--</span>
+  initText();
+  <span class="subst">&lt;%</span> <span class="keyword">loop</span>:list_individual_article_children <span class="subst">-%&gt;</span>
+    <span class="built_in">var</span> s <span class="subst">=</span> <span class="string">'&lt;div class="comments-body"&gt;'</span>;
+    s <span class="subst">+=</span> <span class="string">'&lt;div class="text"&gt;'</span>;
+    s <span class="subst">+=</span> <span class="string">'&lt;% comment.body | html | tag_strip | nl2br | clickable('</span>target<span class="subst">=</span><span class="string">"_blank"</span> rel<span class="subst">=</span><span class="string">"nofollow"</span><span class="string">') %&gt;'</span>;
+    s <span class="subst">+=</span> <span class="string">'&lt;/div&gt;'</span>;
+    s <span class="subst">+=</span> <span class="string">'&lt;div class="comments-post"&gt;'</span>;
+    s <span class="subst">+=</span> <span class="string">'Posted by '</span>;
+    <span class="subst">&lt;%</span> <span class="keyword">if</span>:comment<span class="built_in">.</span>homepage <span class="subst">%&gt;</span>
+    s <span class="subst">+=</span> <span class="string">'&lt;a href="'</span>;
+    s <span class="subst">+=</span> <span class="string">'&lt;% comment.homepage | html | tag_strip %&gt;"'</span>;
+    s <span class="subst">+=</span> <span class="string">'target="_blank" rel="nofollow"&gt;'</span>;
+    s <span class="subst">+=</span> <span class="string">'&lt;% comment.writer | html | tag_strip %&gt;&lt;/a&gt;'</span>;
+    <span class="subst">&lt;%</span> <span class="keyword">else</span> <span class="subst">%&gt;</span>
+    s <span class="subst">+=</span> <span class="string">'&lt;% comment.writer | html | tag_strip %&gt;'</span>;
+    <span class="subst">&lt;%</span> /<span class="keyword">if</span> <span class="subst">%&gt;</span>
+    s <span class="subst">+=</span> <span class="string">' at '</span>;
+    s <span class="subst">+=</span> <span class="string">'&lt;% comment.createstamp | date_format('</span><span class="subst">%</span>Y年<span class="subst">%</span>m月<span class="subst">%</span>d日 <span class="subst">%</span>H:<span class="subst">%</span>M<span class="string">') %&gt;'</span>;
+    s <span class="subst">+=</span> <span class="string">'&lt;br /&gt;&lt;/div&gt;'</span>;
+    s <span class="subst">+=</span> <span class="string">'&lt;/div&gt;'</span>;
+    setText(s);
+  <span class="subst">&lt;%</span> /<span class="keyword">loop</span> <span class="subst">-%&gt;</span>
+  writeText();
+<span class="comment">// --&gt;</span>
+<span class="subst">&lt;</span>/script<span class="subst">&gt;</span>
+<span class="subst">&lt;</span>noscript<span class="subst">&gt;</span>
+</code></pre><p>コード［３］↓</p>
+<pre><code><span class="tag">&lt;/<span class="title">noscript</span>&gt;</span>
+</code></pre><p>このままだとコメントを入力する時にも下の方までスクロールしないといけないので、「コメント入力フォーム」の箇所をコード［２］の2行上<code>&lt;a name=&quot;comment&quot;&gt;&lt;/a&gt;</code>の直上に移動さた。<br>このすぐ下に<code>&lt;br /&gt;</code>を２、３個入れて、下に空白を空けた方がしっくり来る。</p>
+<p>HTML編集の際、画面が小さいと見づらくてやりにくいので、エキスパートモードでやるか、テキストエディタを使ったほうが良いだろう。<br>失敗して今までのカスタマイズをおじゃんにしてしまったら辛いので、テキストファイルなどの形でバックアップも取っておいた方が無難だと思う。</p>
+<p>なおJavaScriptを使用しているそうなので、閲覧者がNoScriptのようなアドオンを用いていたら表示に不具合があるのかもしれない。</p>
+
+	</div>
+
+	<div class="tweet-button">
+	<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+	
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/08/27/seesaa-coments-sort/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/08/27/seesaa-coments-sort/" class="hatena-bookmark-button" data-hatena-bookmark-title="Seesaaブログのコメント表示を降順に" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+
+<div class="clear"></div>
+
+	<div>
+  	<center>
+	<!-- _partial/post/pagination -->
+<div class="pagination">
+<ul class="pagination">
+	 
+		
+    	<li class="prev"><a href="/2014/08/28/seesaa-coments-url-unclickable/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+  		
+
+        <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
+
+		
+		   <li class="next"><a href="/2014/08/26/expand-shortened-url/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+        
+	
+</ul>
+</div>
+
+  	</center>
+	</div>
+
+	<!-- comment -->
+	<!-- _partial/post/comment -->
+
+<section id="comment">
+  <h2 class="title">Comments</h2>
+
+  
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+  
+</section>
+
+
+
+	</div> <!-- col-md-9/col-md-12 -->
+
+	
+		<!-- _partial/post/meta -->
+<div class="col-md-3"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2014年8月27日
+	</div>
+	
+
+	<!-- categories -->
+    
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>
+    <ul id="tags" class="tag_box list-unstyled collapse in">
+	    <!-- _partial/post/tag -->
+  
+  <li><a href="/tags/blog/">blog</a></li>
+
+    </ul>
+	</div>
+	
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+
+    <hr>
+
+</div><!-- col-md-3 -->
+
+	
+
+</div><!-- row -->
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+    <footer> <!-- _partial/footer -->
+<p>
+  &copy; 2016 Pagent
+  &nbsp;
+  <span class="text-muted">Powered by:
+    <a class="text-muted" href="http://zespia.tw/hexo/" target="_blank">Hexo</a>,
+    <a class="text-muted" href="http://github.com/yieme/hexo-theme-freewill/">Freewill</a>
+    &amp;
+    <a class="text-muted" href="http://bootswatch.com/" target="_blank">Bootswatch <small>v3.2</small></a>
+  </span>
+</p>
+ </footer>
+  </div> <!-- container-narrow -->
+  <!-- _partial/after_footer -->
+<a id="gotop" href="#">
+  <span>▲</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'pagents';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+</body>
+</html>
