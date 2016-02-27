@@ -114,6 +114,305 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/08/28/seesaa-coments-url-unclickable/" >コメント内URLの非ハイパーリンク化（Seesaaブログ）</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年8月28日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>閲覧者には少々不便なのかもしれないが、コメント内のURLがハイパーリンクになるのは好みではないので、Seesaaブログの方ではコメント内のURLがハイパーリンクにならないように（クリック出来ないように）していた。<br>かつては２ちゃんねるでも、URLを貼る時には先頭の「h」を抜いて記載することも普通に行われていたし。</p>
+<p>昨日、コメントの表示を降順にカスタマイズしたら（<a href="http://s.pagent.org/static/2014/08/27/seesaa-coments-sort/" target="_blank" rel="external">「Seesaaブログのコメント表示を降順に」</a>）、コメント内のURLがまたハイパーリンクになっていた。<br>カスタマイズで挿入したスクリプトで、コメント内URLが「clickable」に指定されているためらしい。</p>
+<p>以前に非ハイパーリンク化した時と同様、昨日記載のコード［２］の</p>
+<pre><code>&lt;% comment.body | html | tag_strip | nl2br | clickable('<span class="variable">target=</span><span class="string">"_blank"</span> <span class="variable">rel=</span><span class="string">"nofollow"</span>') %&gt;
+</code></pre><p>の「html」と「clickable」の部分を削除して</p>
+<pre><code>&lt;<span class="comment">% comment.body | tag_strip | nl2br %&gt;</span>
+</code></pre><p>にしたらハイパーリンクではなくなった。</p>
+<p>念のため元のコードを残しておきたい時は下記のようにしてもよい。</p>
+<pre><code><span class="comment">&lt;!--&lt;% comment.body | html | tag_strip | nl2br | clickable('target="_blank" rel="nofollow"') %&gt;--&gt;</span><span class="vbscript">&lt;% comment.body | tag_strip | nl2br %&gt;</span>
+</code></pre>
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/08/28/seesaa-coments-url-unclickable/" data-text="コメント内URLの非ハイパーリンク化（Seesaaブログ） | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/08/28/seesaa-coments-url-unclickable/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/08/28/seesaa-coments-url-unclickable/" class="hatena-bookmark-button" data-hatena-bookmark-title="コメント内URLの非ハイパーリンク化（Seesaaブログ）" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/blog/">blog</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/08/27/seesaa-coments-sort/" >Seesaaブログのコメント表示を降順に</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年8月27日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>ブログで投稿してもらったコメント数が多いと、新しいコメントを見るのにずっと下の方までスクロールしないといけない。<br>サービスによってはコメントを降順に表示出来るものもあるが、残念ながら現在のところSeesaaブログではこの機能は実装されていない。</p>
+<p>なんとかカスタマイズ出来ないかと調べてみたら、下記サイトにコメントを降順に並べる方法が紹介されていた。<br>JavaScriptを使用するものらしい。<br><a href="http://yf-blog-lab-3.seesaa.net/article/186272154.html" target="_blank" rel="external">コメントを降順に表示させる－－方法２－－: ブログカスタマイズ実験室３（わいずふぁくとりい）</a></p>
+<p>「コンテンツPC」の「記事」で記事のHTMLを下記のように編集。</p>
+<pre><code><span class="vbscript">&lt;% content.header -%&gt;</span>
+
+（★★★この箇所に下記コード［１］を挿入★★★）
+
+<span class="comment">&lt;!-- Content --&gt;</span>
+
+（中略）
+
+<span class="vbscript">&lt;% <span class="keyword">if</span>:page_name eq <span class="comment">'article' -%&gt;</span></span>
+<span class="vbscript">&lt;% <span class="keyword">if</span>:individual_article.accept_comment_show -%&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"comments"</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">a</span> <span class="attribute">name</span>=<span class="value">"comment"</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"comments-head"</span>&gt;</span>この記事へのコメント<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+（★★★この箇所に下記コード［２］を挿入★★★）
+
+<span class="vbscript">&lt;% <span class="keyword">loop</span>:list_individual_article_children -%&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"comments-body"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"text"</span>&gt;</span><span class="vbscript">&lt;% comment.body | html | tag_strip | nl2br | clickable(<span class="comment">'target="_blank" rel="nofollow"') %&gt;</span></span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"comments-post"</span>&gt;</span>Posted by <span class="vbscript">&lt;% <span class="keyword">if</span>:comment.homepage %&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"&lt;% comment.homepage | html | tag_strip %&gt;"</span> <span class="attribute">target</span>=<span class="value">"_blank"</span> <span class="attribute">rel</span>=<span class="value">"nofollow"</span>&gt;</span><span class="vbscript">&lt;% comment.writer | html | tag_strip %&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="vbscript">&lt;% <span class="keyword">else</span> %&gt;</span><span class="vbscript">&lt;% comment.writer | html | tag_strip %&gt;</span><span class="vbscript">&lt;% /<span class="keyword">if</span> %&gt;</span> at <span class="vbscript">&lt;% comment.createstamp | date_format(<span class="comment">'%Y年%m月%d日 %H:%M') %&gt;</span></span><span class="tag">&lt;<span class="title">br</span> /&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="vbscript">&lt;% /<span class="keyword">loop</span> -%&gt;</span>
+
+（★★★この箇所に下記コード［３］を挿入★★★）
+
+<span class="comment">&lt;!-- ↓↓コメント入力フォームここから↓↓ --&gt;</span>
+<span class="vbscript">&lt;% <span class="keyword">if</span>:individual_article.accept_comment_catch -%&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"comments-head"</span>&gt;</span>コメントを書く<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">form</span> <span class="attribute">action</span>=<span class="value">"&lt;% blog.page_url %&gt;pages/user/comments2/regist/input"</span> <span class="attribute">method</span>=<span class="value">"post"</span> <span class="attribute">name</span>=<span class="value">"comment-form"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"comments-body"</span>&gt;</span>
+お名前: <span class="vbscript">&lt;% <span class="keyword">if</span>:blog.ignore_setting.fill_writer %&gt;</span>[必須入力]<span class="vbscript">&lt;% /<span class="keyword">if</span> %&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"article_child__writer"</span> <span class="attribute">size</span>=<span class="value">"50"</span> <span class="attribute">value</span>=<span class="value">""</span> /&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+メールアドレス: <span class="vbscript">&lt;% <span class="keyword">if</span>:blog.ignore_setting.fill_email %&gt;</span>[必須入力]<span class="vbscript">&lt;% /<span class="keyword">if</span> %&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"article_child__email"</span> <span class="attribute">size</span>=<span class="value">"50"</span> <span class="attribute">value</span>=<span class="value">""</span> /&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+ホームページアドレス: <span class="vbscript">&lt;% <span class="keyword">if</span>:blog.ignore_setting.fill_homepage %&gt;</span>[必須入力]<span class="vbscript">&lt;% /<span class="keyword">if</span> %&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"article_child__homepage"</span> <span class="attribute">size</span>=<span class="value">"50"</span> <span class="attribute">value</span>=<span class="value">""</span> /&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+コメント: <span class="vbscript">&lt;% <span class="keyword">if</span>:blog.ignore_setting.fill_body %&gt;</span>[必須入力]<span class="vbscript">&lt;% /<span class="keyword">if</span> %&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">textarea</span> <span class="attribute">name</span>=<span class="value">"article_child__body"</span> <span class="attribute">rows</span>=<span class="value">"10"</span> <span class="attribute">cols</span>=<span class="value">"45"</span>&gt;</span><span class="tag">&lt;/<span class="title">textarea</span>&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"hidden"</span> <span class="attribute">name</span>=<span class="value">"article_child__article_id"</span> <span class="attribute">value</span>=<span class="value">"&lt;% individual_article.id %&gt;"</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"hidden"</span> <span class="attribute">name</span>=<span class="value">"article_id"</span> <span class="attribute">value</span>=<span class="value">"&lt;% individual_article.id %&gt;"</span> /&gt;</span>
+<span class="vbscript">&lt;% <span class="keyword">if</span>:blog.ignore_setting.captcha_comment -%&gt;</span>
+認証コード: [必須入力]<span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"&lt;% blog.ignore_setting.page_url_captcha_comment -%&gt;"</span> /&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"captcha_comment"</span> <span class="attribute">size</span>=<span class="value">"50"</span> <span class="attribute">value</span>=<span class="value">""</span> /&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+※画像の中の文字を半角で入力してください。<span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+<span class="vbscript">&lt;% /<span class="keyword">if</span> -%&gt;</span>
+<span class="vbscript">&lt;% <span class="keyword">if</span>:individual_article.accept_comment_permission_mode -%&gt;</span>
+※ブログオーナーが承認したコメントのみ表示されます。<span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+<span class="vbscript">&lt;% /<span class="keyword">if</span> -%&gt;</span>
+<span class="vbscript">&lt;% <span class="keyword">if</span>:blog.ignore_setting.banascii_comment -%&gt;</span>
+<span class="vbscript">&lt;% /<span class="keyword">if</span> -%&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"need_confirm"</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">class</span>=<span class="value">"input-submit"</span>  <span class="attribute">value</span>=<span class="value">"確認する"</span> /&gt;</span><span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"posted"</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">class</span>=<span class="value">"input-submit"</span>  <span class="attribute">value</span>=<span class="value">"書き込む"</span> /&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">form</span>&gt;</span>
+<span class="vbscript">&lt;% /<span class="keyword">if</span> -%&gt;</span>
+<span class="comment">&lt;!-- ↑↑コメント入力フォームここまで↑↑ --&gt;</span>
+
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="vbscript">&lt;% /<span class="keyword">if</span> -%&gt;</span>
+
+<span class="vbscript">&lt;% <span class="keyword">if</span>:individual_article.accept_tb_show -%&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"trackback"</span>&gt;</span>
+
+（以下略）
+</code></pre><p>上記HTMLの該当箇所に下記コードを挿入。</p>
+<p>コード［１］↓</p>
+<pre><code><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">language</span>=<span class="value">"javascript"</span>&gt;</span><span class="javascript">
+&lt;!--
+<span class="keyword">var</span> lc = <span class="number">0</span>;
+<span class="keyword">var</span> sarray = <span class="keyword">new</span> <span class="built_in">Array</span>();
+
+<span class="function"><span class="keyword">function</span> <span class="title">setText</span><span class="params">(s)</span></span>{
+    sarray[lc] = s;
+    lc++;
+}
+
+<span class="function"><span class="keyword">function</span> <span class="title">writeText</span><span class="params">()</span></span>{
+    <span class="keyword">var</span> L = sarray.length;
+    <span class="keyword">for</span>(i=<span class="number">0</span>;L-i&gt;<span class="number">0</span>;i++){
+        <span class="built_in">document</span>.write(sarray[L-i-<span class="number">1</span>]);
+    }
+}
+
+<span class="function"><span class="keyword">function</span> <span class="title">initText</span><span class="params">()</span></span>{
+    lc = <span class="number">0</span>;
+    sarray = <span class="keyword">new</span> <span class="built_in">Array</span>();
+}
+--&gt;
+</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+</code></pre><p>コード［２］↓</p>
+<pre><code><span class="subst">&lt;</span>script <span class="keyword">type</span><span class="subst">=</span><span class="string">"text/javascript"</span> language<span class="subst">=</span><span class="string">"javascript"</span><span class="subst">&gt;</span>
+<span class="subst">&lt;!--</span>
+  initText();
+  <span class="subst">&lt;%</span> <span class="keyword">loop</span>:list_individual_article_children <span class="subst">-%&gt;</span>
+    <span class="built_in">var</span> s <span class="subst">=</span> <span class="string">'&lt;div class="comments-body"&gt;'</span>;
+    s <span class="subst">+=</span> <span class="string">'&lt;div class="text"&gt;'</span>;
+    s <span class="subst">+=</span> <span class="string">'&lt;% comment.body | html | tag_strip | nl2br | clickable('</span>target<span class="subst">=</span><span class="string">"_blank"</span> rel<span class="subst">=</span><span class="string">"nofollow"</span><span class="string">') %&gt;'</span>;
+    s <span class="subst">+=</span> <span class="string">'&lt;/div&gt;'</span>;
+    s <span class="subst">+=</span> <span class="string">'&lt;div class="comments-post"&gt;'</span>;
+    s <span class="subst">+=</span> <span class="string">'Posted by '</span>;
+    <span class="subst">&lt;%</span> <span class="keyword">if</span>:comment<span class="built_in">.</span>homepage <span class="subst">%&gt;</span>
+    s <span class="subst">+=</span> <span class="string">'&lt;a href="'</span>;
+    s <span class="subst">+=</span> <span class="string">'&lt;% comment.homepage | html | tag_strip %&gt;"'</span>;
+    s <span class="subst">+=</span> <span class="string">'target="_blank" rel="nofollow"&gt;'</span>;
+    s <span class="subst">+=</span> <span class="string">'&lt;% comment.writer | html | tag_strip %&gt;&lt;/a&gt;'</span>;
+    <span class="subst">&lt;%</span> <span class="keyword">else</span> <span class="subst">%&gt;</span>
+    s <span class="subst">+=</span> <span class="string">'&lt;% comment.writer | html | tag_strip %&gt;'</span>;
+    <span class="subst">&lt;%</span> /<span class="keyword">if</span> <span class="subst">%&gt;</span>
+    s <span class="subst">+=</span> <span class="string">' at '</span>;
+    s <span class="subst">+=</span> <span class="string">'&lt;% comment.createstamp | date_format('</span><span class="subst">%</span>Y年<span class="subst">%</span>m月<span class="subst">%</span>d日 <span class="subst">%</span>H:<span class="subst">%</span>M<span class="string">') %&gt;'</span>;
+    s <span class="subst">+=</span> <span class="string">'&lt;br /&gt;&lt;/div&gt;'</span>;
+    s <span class="subst">+=</span> <span class="string">'&lt;/div&gt;'</span>;
+    setText(s);
+  <span class="subst">&lt;%</span> /<span class="keyword">loop</span> <span class="subst">-%&gt;</span>
+  writeText();
+<span class="comment">// --&gt;</span>
+<span class="subst">&lt;</span>/script<span class="subst">&gt;</span>
+<span class="subst">&lt;</span>noscript<span class="subst">&gt;</span>
+</code></pre><p>コード［３］↓</p>
+<pre><code><span class="tag">&lt;/<span class="title">noscript</span>&gt;</span>
+</code></pre><p>このままだとコメントを入力する時にも下の方までスクロールしないといけないので、「コメント入力フォーム」の箇所をコード［２］の2行上<code>&lt;a name=&quot;comment&quot;&gt;&lt;/a&gt;</code>の直上に移動さた。<br>このすぐ下に<code>&lt;br /&gt;</code>を２、３個入れて、下に空白を空けた方がしっくり来る。</p>
+<p>HTML編集の際、画面が小さいと見づらくてやりにくいので、エキスパートモードでやるか、テキストエディタを使ったほうが良いだろう。<br>失敗して今までのカスタマイズをおじゃんにしてしまったら辛いので、テキストファイルなどの形でバックアップも取っておいた方が無難だと思う。</p>
+<p>なおJavaScriptを使用しているそうなので、閲覧者がNoScriptのようなアドオンを用いていたら表示に不具合があるのかもしれない。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/08/27/seesaa-coments-sort/" data-text="Seesaaブログのコメント表示を降順に | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/08/27/seesaa-coments-sort/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/08/27/seesaa-coments-sort/" class="hatena-bookmark-button" data-hatena-bookmark-title="Seesaaブログのコメント表示を降順に" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/blog/">blog</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/08/26/expand-shortened-url/" >短縮URLを元のURLに展開するおすすめサービス</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年8月26日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Twitterを見ているとURLの短縮されたリンクをよく見掛ける。<br>140文字という字数制限のある中で文字数を節約するには便利なので、私もたまにURL短縮サービスを使ったりする。<br>日本語版のWikipediaのように日本語URLが使われていると、パーセントエンコーディングされていて貼り付けたときURLがとても長かったりするので。</p>
+<p>でも短縮URLだとリンク先がなんのサイトなのか分からないので、踏むのをためらってしまう。<br>短縮URLはリダイレクトを使っているので実際、URLを隠蔽してフィッシング詐欺などを行う例もあるらしい。<br>私は短縮URLを使うときには、「（Xubuntuをアップグレードしてみた – Static）」などのように、なるべくリンク先の説明を書き添えるようにしているが、そういう人はあまり多数派ではないようだ。</p>
+<p>短縮URLを元のURLに戻すサービスがないか調べてみたら、そういうサービスが多数あるようだった。</p>
+<p>いくつか試した中で良さそうだったのは、「短縮URLチェッカー」(<a href="http://x-1.jp/)と「GetLinkInfo」(http://www.getlinkinfo.com/)だった。" target="_blank" rel="external">http://x-1.jp/)と「GetLinkInfo」(http://www.getlinkinfo.com/)だった。</a></p>
+<p>他のサービスでは最終的なリダイレクト先しか教えてくれないところが多かったが、上記のサービスはどちらも、途中何度かリダイレクトされている場合には途中の経路も表示してくれる。<br>（これまで気が付かなかったが、途中何度かリダイレクトされていることも結構あるのだと初めて知った。）<br>さらに「短縮URLチェッカー」の方はリンク先ページの内容をプレーンテキストで表示してくれる。</p>
+<p>たんびたんび短縮URLを展開しないといけないが、これでかなり安心してリンクをクリック出来そうだ。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/08/26/expand-shortened-url/" data-text="短縮URLを元のURLに展開するおすすめサービス | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/08/26/expand-shortened-url/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/08/26/expand-shortened-url/" class="hatena-bookmark-button" data-hatena-bookmark-title="短縮URLを元のURLに展開するおすすめサービス" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ネット/">ネット</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/08/25/midori/" >サブのブラウザとして「Midori」</a>
 		</h3>
 	
@@ -331,189 +630,6 @@
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/08/21/blog-ranking/" >にほんブログ村のアンケートに答えてみた</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年8月21日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>このブログもブログランキング（にほんブログ村）に参加している。<br>ランキングサイトは他にも大手のところがいくつかあり、複数のランキングバナーを貼ってる人も多く見掛けるが、何個もクリックしてもらうのは申し訳ないとも思うので、「にほんブログ村」だけにしている。</p>
-<p>にほんブログ村は１つのアカウントで３つまでブログを登録出来るので、複数のブログを運営しているものとしては有難い。<br>「トラコミュ」や「注目記事」といった変わった機能があるのもおもしろい。<br>（「注目記事」の選考基準には？が付くことも多いが。）</p>
-<p>ブログ村ではしばらく前からアンケートを募集している。<br>もうじき10周年を迎え、10周年記念リニューアルに着手し始めているとのことなので、アンケートに答えがてら、以下の内容で要望を送ってみた。</p>
-<blockquote>
-<p>日本ブログ村　担当者様</p>
-<p>残暑お見舞い申し上げます。建国10周年おめでとうございます。</p>
-<p>ブログ村に限らないことですが、ランキングサイトの上位ブログは大抵どこも固定してしまっていて、面白味に欠けていると常々感じております。<br>ランキングがマンネリで興味を失くすブロガーも相当数存在することと思います。</p>
-<p>当然、上位ブログにはそれだけ多くの支持者がいるということもあるかと思いますが、中には上位にランクされていることに疑問を抱かざるを得ないブログも存在します。</p>
-<p>プログラムを使って仲間同士でクリックし合う行為は大抵のランキングサイトで違反事項とされているようですが、かなりの事例が存在しているのではないでしょうか？<br>他のランキングサイトの話ですが、半年以上も全く更新されていないブログが未だにそこそこの順位に表示されている、という奇妙な事例もあります。</p>
-<p>不正プログラムを用いた投票行為を判別するのはなかなか難しいのかも知れませんが、同一IPアドレスから短時間に多数の投票が行われていて、しかもある投票から別の投票への経過時間が一定している、といったようなことなどから判別出来ないものでしょうか？<br>さらには不正を行った投票が確認された場合、そのIPアドレスを投票無効リストに追加することとし、その旨周知するというの&gt;も抑止効果が期待出来るかもしれません。</p>
-<p>活気のあるおもしろいランキングサイトであってほしいと思いますので、よろしくお願い致します。</p>
-<p>それでは、日本ブログ村さまのますますのご発展をお祈り致します。</p>
-<p>追伸</p>
-<p>手間の問題で投票が減ってしまう可能性があるかもしれませんが、投票時に数字などの入力または選択をしないと投票出来ないようにするという方法も、テスト的にでも一度ご検討頂けたら幸いです。</p>
-</blockquote>
-<p>あまり順位を気にしても仕方がないが、ランキングサイトに参加していると心穏やかではいられなくなったりしてしまうんだよね。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/08/21/blog-ranking/" data-text="にほんブログ村のアンケートに答えてみた | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/08/21/blog-ranking/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/08/21/blog-ranking/" class="hatena-bookmark-button" data-hatena-bookmark-title="にほんブログ村のアンケートに答えてみた" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/blog/">blog</a></li></ul>
-	</div>
-
-</div>
-
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/08/13/nemo-thunar/" >やはりThunarよりnemoがいい</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年8月13日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Xubuntu12.04を14.04.1にアップグレードしたら「nemo」が削除されてしまったので、Xfce標準の「Thunar」を使っていこうと思ったが、やはりThunarよりnemoの方が使い勝手がいい。</p>
-<p>nemoではフォルダ内のファイルの表示方法を「アイコン」、「詳細」などフォルダ毎に変更出来てそれが記憶されているが、Thunarだとファイル表示方法を変更するとその表示がすべてのフォルダに適応されてしまう。</p>
-<p>Ubuntuソフトウェアセンターからnemoをインストールしようとしたが、nemoの名前はあるものの依存関係を解決出来ないとかでインストール出来ない。<br>Synapticからインストールを試みたが、レポジトリが足りないようなことを言われる。</p>
-<p>Synapticの「設定」「リポジトリ」「他のソフトウェア」を見たら、「trustyへのアップグレード時に無効化されました」と書かれた項目が２つあったのでこれにチェックを入れたら無事「nemo」をインストール出来た。</p>
-<p>やっぱりnemoがいい。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/08/13/nemo-thunar/" data-text="やはりThunarよりnemoがいい | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/08/13/nemo-thunar/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/08/13/nemo-thunar/" class="hatena-bookmark-button" data-hatena-bookmark-title="やはりThunarよりnemoがいい" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Linux/">Linux</a></li></ul>
-	</div>
-
-</div>
-
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/08/13/xubuntu14-04-1/" >Xubuntu12.04を14.04.1にアップグレードしてみた</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年8月13日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>数日前からXubuntu12.04のアップデートマネージャーに「Xubuntu14.04.1にアップグレード可能です」と表示されていたので、アップグレードしてみた。<br>本当はクリーンインストールした方が良いらしいが、また一からソフトを入れ直したり、せっかくカスタマイズした設定をまたやったりするのは気が遠くなりそうだったので。<br>以前別のPCで14.04にアップグレードした時は、Xubuntu12.04→12.10→13.10→14.04と３回アップグレードしないといけなかったが、14.04.1へは直接アップグレード出来た。</p>
-<p>２時間あまり掛かったが、途中「ファイルを置換していいか」と聞いてきたりするので寝ている間にというわけにはいかなかった。<br>端末のところにインストールするときのような画面が出て「OK」を押さないと先に進めないところがあって、マウスでクリックしても反応が無くて困ったが、「TAB」キーを押したらカーソルが「OK」に移動して進めることが出来た。</p>
-<p>アップグレード後再起動したら無事に起動。<br>以前のアップグレード同様、「rootで開く」が使えて重宝していたファイルマネージャー「nemo」がアンインストールされてしまったので、「Thunar」を使うことにした。</p>
-<p>困ったのは文字の入力切換で、12.04の時は「ALT」キーでも半角英数とひらがなの切り替えが出来ていたのだが、「半／全」キーでしか出来なくなっていた。<br>Mozcのキー設定で「ALT」キーでも出来るようエントリーを追加しようとしたが、入力キーのところで「ALT」をおしても反応が無い。<br>キーボードレイアウトの設定の問題かもしれないが、キーボード設定のレイアウトオプションの一覧に「109キーボード」というのが無い。<br>仕方がないので「半／全」キーだけで我慢しようと思う。</p>
-<p>他は特に大きく変わった印象が無い。<br>デフォルトでモニター下部に見え隠れしていたパネル０が無くなったそうだが、元から使ってなかったし。<br>全体的にメニューが明るくなって少し見やすくなったかな。</p>
-<p>なんにせよアップグレードが無事に済んで良かった。<br>これで３年間安心してお世話になれそうだ。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/08/13/xubuntu14-04-1/" data-text="Xubuntu12.04を14.04.1にアップグレードしてみた | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/08/13/xubuntu14-04-1/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/08/13/xubuntu14-04-1/" class="hatena-bookmark-button" data-hatena-bookmark-title="Xubuntu12.04を14.04.1にアップグレードしてみた" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Linux/">Linux</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -554,41 +670,45 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>38</span></a></li>
-		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
-		
 			<li><a href="/tags/サーバー/">サーバー<span>7</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>35</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+			<li><a href="/tags/短歌/">短歌<span>1</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>16</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>14</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>35</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>4</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/食/">食<span>4</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
 		
 			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>36</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/SEO/">SEO<span>4</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
 		
 		
 		</ul>
@@ -631,7 +751,7 @@
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">4</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">2013年12月</a><span class="archive-list-count">1</span></li></ul>
 		</ul>
 	</div>
 

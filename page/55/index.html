@@ -1,0 +1,633 @@
+<!DOCTYPE HTML><!-- _partial/head -->
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="ja"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <title>Page 55 | Pagent</title>
+  <meta name="author" content="Pagent">
+  
+  <meta name="description" content="静的サイトジェネレーターとGitリポジトリでブログ">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+  <meta property="og:site_name" content="Pagent"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  
+    <link rel="alternate" href="/atom.xml" title="Pagent" type="application/atom+xml">
+  
+  
+    <link href="/favicon.ico" rel="icon">
+  
+
+  
+  <link rel="stylesheet" href="/css/bootstrap.cerulean.min.css" media="screen" type="text/css">
+  
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  <!-- _partial/post/google_analytics -->
+
+
+
+</head>
+
+<body>
+  <!-- _partial/navigation -->
+<nav id="main-nav" class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">Pagent</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class="fa fa-archive"></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class="fa fa-tags"></i>Tags
+			</a>
+		  </li>
+		  
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+		  <li><a href="/atom.xml" title="Atom feed"><i class="fa fa-rss"></i>Feed</a></li>
+		</ul>
+		<form class="navbar-form navbar-right" action="//google.com/search" method="get" accept-charset="utf-8">
+		    <input type="search" name="q" results="0" placeholder="Search" class="form-control">
+		    <input type="hidden" name="hq" value="site:pagent.github.io">
+		</form>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 <!-- index -->
+<div class="jumbotron page-header bg-primary">
+  <h2>静的サイトジェネレーターとGitリポジトリでブログ</h2>
+</div>
+
+<!-- _partial/index -->
+<div class="row page">
+
+	
+	<div class="col-md-9">
+	
+
+		<div class="slogan lead">
+    <i class="fa fa-github"></i>
+    行き当たりばったり
+</div>
+
+
+		<div class="mypage">
+
+			<!-- title and entry -->
+			<div class="panel panel-default">
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/01/22/comment-link/" >Seesaaブログのコメント内URLを非リンク化</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年1月22日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>別で書いているSeesaaブログで、コメント内のURLが自動的にリンクになるのが以前から気になっていた。</p>
+<p>「rel=nofollow」という属性が付いていて被リンク効果を与えるものではないようだけど、読者がうっかりクリックする可能性もある。コメント内のURLを本当に訪れたい場合にはブラウザのアドレス欄にコピペしてもらった方が安全のためにも良いと思っていた。</p>
+<p><code>http://</code>を禁止ワードに設定するとURL欄に自身のサイトを記載しているコメントまでもブロックしてしまう。</p>
+<p>仕方なく、長らく「出所不明のURL貼付はご遠慮ください」と注意書きをすることで対処していたが、下記記事を参考にしてコメント内のURLを非リンク化することが出来た。</p>
+<p>話題が尽きないSeesaaBlogのカスタマイズ(^_^;)<br><a href="http://seoblo.seesaa.net/article/5167120.html" target="_blank" rel="external"></a><a href="http://seoblo.seesaa.net/article/5167120.html" target="_blank" rel="external">http://seoblo.seesaa.net/article/5167120.html</a></p>
+<p>PC用コンテンツの「記事」のHTML編集で</p>
+<p><code>&lt;div class=&quot;text&quot;&gt;&lt;% comment.body | html | tag_strip | nl2br | clickable(&#39;target=&quot;_blank&quot; rel=&quot;nofollow&quot;&#39;) %&gt;&lt;/div&gt;</code></p>
+<p>の<code>| clickable(&#39;target=&quot;_blank&quot; rel=&quot;nofollow&quot;&#39;)</code>の部分を削除して</p>
+<p><code>&lt;div class=&quot;text&quot;&gt;&lt;% comment.body | tag_strip | nl2br %&gt;&lt;/div&gt;</code></p>
+<p>とすることでリンクではなくなった。</p>
+<p>コメント確認画面の方でも非リンク化する場合は、PC用のHTMLの方で、上記と同様に</p>
+<p><code>&lt;% article_child__body | html | nl2br | clickable(&#39;target=&quot;_blank&quot; rel=&quot;nofollow&quot;&#39;) %&gt;</code></p>
+<p>を</p>
+<p><code>&lt;% article_child__body | html | nl2br %&gt;</code></p>
+<p>とすれば良い。</p>
+<p>どちらもHTMLの編集画面でキーボードの「CTRL」＋「F」で検索窓を出し、「clickable」を検索したら該当箇所が探せると思います。</p>
+<p>削除する部分は念のため残しておきたい時は、<code>&lt;!--</code>と<code>--&gt;</code>で囲んでおけば無効化出来る。</p>
+<p>なかなかカスタマイズ方法を探せなかったので書いておきます。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/01/22/comment-link/" data-text="Seesaaブログのコメント内URLを非リンク化 | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/01/22/comment-link/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/01/22/comment-link/" class="hatena-bookmark-button" data-hatena-bookmark-title="Seesaaブログのコメント内URLを非リンク化" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/blog/">blog</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/01/22/post_4/" >「さようなら」の語源。「さ」と「そ」について</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年1月22日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>別れの挨拶「さようなら」の語源について気になったので考えてみました。</p>
+<p>「さようなら」＋「語源」で検索して、下記の記事とそれへのコメントが参考になりました。</p>
+<p>きょうのことばメモ: 「さようなら」の語源と意味<br><a href="http://yeemar.seesaa.net/article/15451525.html" target="_blank" rel="external">http://yeemar.seesaa.net/article/15451525.html</a></p>
+<p>「さようなら」は漢字では通常「左様なら」と書きますが、本来の語源からいうと「それなら」あるいは「そうであるなら」から来ている、と考えるのがおそらく正しいと思います。<br>「左」は当て字と考えた方が良いのかもしれません。</p>
+<p>で、「それ」や「そう」がどこから来ているのかが疑問で類似のことば「そこ」、「その」、「そいつ」などに思いをめぐらしてみて、気がつきました。</p>
+<p>「そいつ」を丁寧にいうと「そのもの」あるいは「そのお方」で、「そのもの」や「そのお方」はたぶん「さる（去る？）もの」あるいは「さる（去る？）お方」と関連があるのだろうと。</p>
+<p>ただ、「さ」と「そ」にも違いはあるのだろうと思います。<br>おそらく、</p>
+<p>「さ」は既に去っていて<br>「そ」は距離はあるがまだ去っていない</p>
+<p>「さ」と「そ」について、まだ十分には考え尽くせてはいないと思いますが、思ったところを書いてみました。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/01/22/post_4/" data-text="「さようなら」の語源。「さ」と「そ」について | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/01/22/post_4/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/01/22/post_4/" class="hatena-bookmark-button" data-hatena-bookmark-title="「さようなら」の語源。「さ」と「そ」について" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ことば/">ことば</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/01/22/post_5/" >「米」は日本の主食「こめ」であって「アメリカ」ではない。</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年1月22日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>「米」と書けばそれは日本人の主食「こめ」のことなのに、昨今ほとんどのニュース記事では「アメリカ合衆国」を示すことばとして使われている。<br>「米スポーツ紙」、「米有力議員」などと使われているが、本来は「米国スポーツ紙」、「米国有力議員」と書くべきだろう。</p>
+<p>「米」で「アメリカ」を示すのは「米国」や「日米」、「南米」といった用法に限るべきだと思う。「米」一字で「アメリカ」を表そうとするこの奇妙な表記はいったい何時から始まったのだろう。<br>果てはアメリカに遠慮して「こめ」を「コメ」と書く始末だ。</p>
+<p>「こめ」を表すのにちゃんと「米」と書いているメディアは私の知る限り「日本農業新聞」くらいのもの。</p>
+<p>日本農業新聞 ｅ農ネット<br><a href="http://www.agrinews.co.jp/" target="_blank" rel="external">http://www.agrinews.co.jp/</a></p>
+<p>その日本農業新聞の記事の中にも「米国議会」ではなく「米議会」などと書いているものがあり、日本語の乱れを憂慮せざるを得ない。</p>
+<p>ことばには魂がやどっており、現実に大きな影響を及ぼすもの。<br>「米」を「コメ」などと書いていたら、今に日本で手に入る米は、外来語よろしくアメリカ産の「コメ」になってしまいかねない。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/01/22/post_5/" data-text="「米」は日本の主食「こめ」であって「アメリカ」ではない。 | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/01/22/post_5/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/01/22/post_5/" class="hatena-bookmark-button" data-hatena-bookmark-title="「米」は日本の主食「こめ」であって「アメリカ」ではない。" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ことば/">ことば</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/01/19/post_3/" >「～へ」と「～に」の違いについて</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年1月19日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>「～へ」と「～に」は似ているようでぜんぜん違うものです。<br>同じような状況で使われたりもしますがよくよく考えてみると、そこに大きな違いがあることがわかります。</p>
+<p>結論から言うと</p>
+<p>「～へ」はある方向を示すもの。<br>「～に」はそれ自体に到達点を内包するもの（たとえそれが予測されるものであるにせよ）。</p>
+<p>ということ。</p>
+<p>分かりやすい例としては、過去のこととして、面と向かって誰か「に」1円玉を手渡した場合。<br>この場合、普通は</p>
+<p>「～へ1円玉をわたした。」</p>
+<p>とは言わずに</p>
+<p>「～に1円玉をわたした。」</p>
+<p>と言います。</p>
+<p>「～へ1円玉をわたした。」と言うこともある、と主張するのは間違い。それは誤用です。<br>言う方も聞く方もしっくり来ないことと思います。<br>日本語として正しくは「～に1円玉をわたした。」と言わなければなりません。</p>
+<p>さらに言うと、</p>
+<p>「カラスに油揚げをさらわれた。」</p>
+<p>とは言いますが、</p>
+<p>「カラスへ油揚げをさらわれた。」</p>
+<p>とは決して言わないでしょう。<br>これは油揚げが既にカラスに持って行かれておそらくカラスの胃袋に「到達」しているはずだから。</p>
+<p>一方、たとえば神様にお供え物を捧げる場合は</p>
+<p>「神様にお饅頭をお供えした。」<br>「神様へお饅頭をお供えした。」</p>
+<p>のどちらも有り得ますが、これはお供え物がまだ神様に到達していないから。</p>
+<p>このように、「～へ」は方向は示すが対象とは離れている場合、「～に」は到達していることをも意味していて対象と同じ場所にある場合、ということが分かります。</p>
+<p>「～へ」と「～に」の違いについて思う処を書いてみました。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/01/19/post_3/" data-text="「～へ」と「～に」の違いについて | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/01/19/post_3/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/01/19/post_3/" class="hatena-bookmark-button" data-hatena-bookmark-title="「～へ」と「～に」の違いについて" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ことば/">ことば</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/01/18/xubuntu/" >Windows XPのパソコンをXubuntu専用機にした</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年1月18日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>3年くらい前のパソコン、今年の4月8日でWindows XPがサポート終了になるのに備えてXPを消去してXubuntuをインストールした。<br>全然使ってないのだけど捨てるのはもったいないし、かといってXPのまま使い続けるのは危険だろうし。</p>
+<p>以前はWindows XPとXubuntuのデュアルブートにしていたのだが、使える状態だとついXPも使ってしまいそうなのでXubuntu専用機ということにした。</p>
+<p>Xubuntuのヴァージョンは今のところ一番サポートの長い12.04 LTS。（2015年4月まで）<br><a href="http://ja.wikipedia.org/wiki/Xubuntu#.E3.83.AA.E3.83.AA.E3.83.BC.E3.82.B9.E5.B1.A5.E6.AD.B4" target="_blank" rel="external">Xubuntu リリース履歴（Wikipedia）</a></p>
+<p>軽快でとても良い感じ。</p>
+<p>普段はWindows用ソフトの便利さに負けてしまってWindows７しか使わないし出番は早々無いとは思うのだけど、Windows７の調子が悪くなった時のために一応置いておこうと思う。</p>
+<p>本当は全面的にLinuxに移行出来たらいいのにとは思うけど、少なくともWindows７のサポート終了まではおそらくこのままWindowsを使うことになりそうだ。<br>そういえば、以前は「Windows XPのサポート終了に合わせてLinuxに移行するぞ」と意気込んでいたこともあったっけ。<br>Windows８が出る前スタート画面がタイル式と知ってそれがあまりに嫌で慌てて今メインで使っているWindows７のPCを買ってしまったんだった。</p>
+<p>おのれ、Microsoftめ。今にきっとおさらばしてやる。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/01/18/xubuntu/" data-text="Windows XPのパソコンをXubuntu専用機にした | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/01/18/xubuntu/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/01/18/xubuntu/" class="hatena-bookmark-button" data-hatena-bookmark-title="Windows XPのパソコンをXubuntu専用機にした" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+
+			</div>
+
+			<!-- pagination -->
+			<div>
+	  		<center>
+			<!-- _partial/index_pagination -->
+<div class="pagination">
+<ul class="pagination">
+	 
+		
+    	<li class="prev"><a href="/page/54/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i> Prev</a></li>
+  		
+
+        <li><a href="/"><i class="fa fa-home"></i>Home</a></li>
+
+		
+		   <li class="next"> <a href="/page/56/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a> </li>
+        
+	
+</ul>
+</div>
+
+	  		</center>
+			</div>
+	</div>
+
+	</div> <!-- col-md-9 -->
+
+	
+		<!-- _partial/sidebar -->
+<div class="col-md-3">
+	<div id="sidebar">
+	
+			<!-- _widget/tagcloud -->
+
+	<div class="widget">
+		<h4>Tag Cloud</h4>
+		<ul class="tag_box inline list-unstyled">
+		
+			<li><a href="/tags/サーバー/">サーバー<span>7</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+		
+			<li><a href="/tags/SEO/">SEO<span>4</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
+			<li><a href="/tags/短歌/">短歌<span>1</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>4</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>14</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
+		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/食/">食<span>4</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>36</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>35</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+		
+		</ul>
+	</div>
+
+
+		
+			<!-- _widget/recent_posts -->
+
+<div class="widget">
+  <h4>Recent Posts</h4>
+  <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2016/02/21/peeep-us-google-account/" ><i class="fa fa-file-o"></i>「Peeep.us」Google accountでのロ...</a>
+      </li>
+    
+      <li>
+        <a href="/2015/12/21/truecrypt-downgrade/" ><i class="fa fa-file-o"></i>TrueCryptでボリュームをマウント出来ない→ダウ...</a>
+      </li>
+    
+      <li>
+        <a href="/2015/12/06/firefox-private-chromium-secret/" ><i class="fa fa-file-o"></i>Firefox、Chromiumをプライベート（シーク...</a>
+      </li>
+    
+      <li>
+        <a href="/2015/12/01/twitter-search-list/" ><i class="fa fa-file-o"></i>ツイート数表示のAPIが廃止されたので、代わりにURL...</a>
+      </li>
+    
+      <li>
+        <a href="/2015/10/04/aur-update-yaourt/" ><i class="fa fa-file-o"></i>YaourtでAURのパッケージをアップデート</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+		
+			
+	<div class="widget">
+		<h4>Monthly Archives</h4>
+		<ul class="archive-list inline list-unstyled">
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">2013年12月</a><span class="archive-list-count">1</span></li></ul>
+		</ul>
+	</div>
+
+
+		
+	</div> <!-- sidebar -->
+</div> <!-- col-md-3 -->
+
+	
+
+</div> <!-- row-fluid -->
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+    <footer> <!-- _partial/footer -->
+<p>
+  &copy; 2016 Pagent
+  &nbsp;
+  <span class="text-muted">Powered by:
+    <a class="text-muted" href="http://zespia.tw/hexo/" target="_blank">Hexo</a>,
+    <a class="text-muted" href="http://github.com/yieme/hexo-theme-freewill/">Freewill</a>
+    &amp;
+    <a class="text-muted" href="http://bootswatch.com/" target="_blank">Bootswatch <small>v3.2</small></a>
+  </span>
+</p>
+ </footer>
+  </div> <!-- container-narrow -->
+  <!-- _partial/after_footer -->
+<a id="gotop" href="#">
+  <span>▲</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'pagents';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["trackPageView"]);
+  _paq.push(["enableLinkTracking"]);
+
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://pagent.netii.net/piwik/";
+    _paq.push(["setTrackerUrl", u+"piwik.php"]);
+    _paq.push(["setSiteId", "2"]);
+    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+    g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Piwik Code -->
+
+</body>
+</html>
