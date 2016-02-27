@@ -114,14 +114,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/04/18/nemo/" >使いやすいLinux用ファイルマネージャー「nemo」</a>
+			<a href="/2014/04/20/mozc/" >日本語入力は「Mozc（Google日本語入力）」が便利　「バイドゥ」は危険</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年4月18日
+	2014年4月20日
 </div>
 
 <div class="panel-body">
@@ -131,13 +131,12 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>Windowsの時には、ファイルマネージャーは標準のWindowsエクスプローラを使っていた。<br>Xpの時には「MDIE」というタブ型多機能ファイラーを使ったりもしたが、開発が止まっていてWindows7ではちゃんと動作しなかった。<br>他のファイラーを試したりもしたが、どれもしっくり来ず結局エクスプローラだった。</p>
-<p>Linuxには色々なファイルマネージャーがある。</p>
-<p>Xubuntu標準のファイルマネージャーは「Thunar」だが、それはほとんど使わず「nemo」というファイルマネージャーを愛用している。<br>「nemo」はGNOME標準の「Nautilus」から派生したものらしい。<br>「nemo」にあって「Thunar」には無い機能の中で外せないのが、右クリックメニューにある「Rootとして開く」だ。<br><code>fstab</code>などroot権限が必要なファイルの編集にとても重宝する。<br>由緒正しいLinux使いの人からしたら、こういうことはターミナルとviエディタでやるのが正しい道なのだと思うが、コマンド入力に慣れない身としては少々敷居が高いので「nemo」と「gedit」でやってしまう。</p>
-<p>root権限でファイルやフォルダを操作出来るファイルマネージャーとして「nemo」とは別に、LXDEの標準ファイルマネージャー「PCManFM」というのもあって、これも動作は軽いし悪くはない。<br>だが「PCManFM」は、通常のユーザー権限で開いているフォルダか、root権限で開いているフォルダか、見た目が同じで分かりづらかったりする。<br>気付かずにroot権限でファイルやフォルダを作ってしまったりすると、あとで操作が必要な時や削除する時に面倒くさいことになってしまったりする。<br>その点「nemo」だと、root権限で開いているフォルダの場合は上部に「権限昇格」と書かれた赤い帯が出てくれて一目で分かるので有難い。</p>
-<p>私同様コマンド入力に慣れない方はぜひ一度「nemo」を使ってみて下さい。<br>名前は可愛らしいですが、とても便利な優れものです。</p>
-<p>ーー<br>（追記）<br>その後知りましたが、Xfce標準のファイルマネージャー「Thunar」でも簡単なカスタマイズでrootとしてフォルダ・ファイルを開くことが出来るようです。<br><a href="/2014/05/02/thunar-root/">ファイルマネージャー「Thunar」で「rootで開く」 – Static</a></p>
-<p>（関連記事）<br><a href="/2014/08/13/nemo-thunar/">やはりThunarよりnemoがいい</a></p>
+	  <p>Linuxでの日本語入力にはデフォルトの「Anthy」ではなく「Mozc」を使っている。<br>変換の精度も良いし、予測して候補を表示してくれる「サジェスト機能」はとても便利だ。<br>よく使う言葉は１文字入力しただけでも表示してくれたりする。<br>「Mozc」は「Google日本語入力」のオープンソース版ということだが、WindowsでもGoogle日本語入力を使っていたのでその時のユーザー辞書をインポートしている。</p>
+<p>Google日本語入力をインストールしたときには「利用状況をGoogleに送信するか」というようなことを聞かれ、あまりいい気持ちがしなかったのでオフにしてインストールしたが、どうやらそれは入力した文字や数字などではなく、打鍵数などの統計情報やクラッシュレポートなどで、プライバシー上危険ということもないようだ。</p>
+<p>日本語入力について検索していて「バイドゥ（百度）日本語入力」というのをよく見かけた。<br>中国製のソフトらしいが、こちらは文字情報を無断で送信していたらしい。<br><a href="http://archive.today/a6nip" target="_blank" rel="external">バイドゥＩＭＥ使用、２９府県市…ＰＣ１千台超 : ニュース : ネット＆デジタル : YOMIURI ONLINE（ウェブ魚拓 ）</a></p>
+<p>２９もの自治体のパソコンにインストールされていたらしく、「なぜこんなものを」と思ってしまうが、どうやらフリーのソフトをインストールした際に気付かずに「バイドゥ日本語入力」もインストールしてしまうようだ。</p>
+<p>バイドゥ社は「通信は安全だった」、「インストールされてるPCで不要なファイル操作やデータの書き込みはしなかった」という検証結果で弁明してる。<br><a href="http://www.zaikei.co.jp/releases/161827/" target="_blank" rel="external">Baidu IME 3.5.2.17におけるIntertek安全性検証結果のご案内-財経新聞</a></p>
+<p>でも、「勝手に情報集めてましたけど他には漏れてません」と言われてもね。<br>これはいけませんね。</p>
 
 	
 	</div>
@@ -147,14 +146,81 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/04/18/nemo/" data-text="使いやすいLinux用ファイルマネージャー「nemo」 | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/04/20/mozc/" data-text="日本語入力は「Mozc（Google日本語入力）」が便利　「バイドゥ」は危険 | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/18/nemo/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/20/mozc/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/18/nemo/" class="hatena-bookmark-button" data-hatena-bookmark-title="使いやすいLinux用ファイルマネージャー「nemo」" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/20/mozc/" class="hatena-bookmark-button" data-hatena-bookmark-title="日本語入力は「Mozc（Google日本語入力）」が便利　「バイドゥ」は危険" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ユーティリティ/">ユーティリティ</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/04/19/grub2-skip/" >Grub2のOS選択画面をスキップする方法</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年4月19日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>メインで使っているPCはWindows7とXubuntuのデュアルブートにしているが、起動時のOS選択はMBM（Multiple Boot Manager）を使っているので、XubuntuのブートローダーGrub2のOS選択画面は出来ればスキップしたい。</p>
+<p>以前、<code>/etc/default/</code>フォルダ内の<code>grub</code>で</p>
+<pre><code><span class="attribute">GRUB_TIMEOUT</span>=<span class="string">0  </span>
+</code></pre><p>と、タイムアウトを0（ゼロ）に設定してみたのだがうまくいかなかった。<br>編集後ちゃんと</p>
+<pre><code><span class="built_in">sudo</span> update-grub
+</code></pre><p>をしたがなぜか反映されず、10秒もかかってしまう始末。<br>仕方がないので長らく「GRUB_TIMEOUT=1」にして使っていた。</p>
+<p>タイムアウト1秒でもエンターキーを押さないといけないことが多いので、今回再度挑戦してみた。<br><code>grub</code>内の2つの項目</p>
+<pre><code><span class="preprocessor">#GRUB_HIDDEN_TIMEOUT=0  </span>
+<span class="preprocessor">#GRUB_HIDDEN_TIMEOUT_QUIET=true  </span>
+</code></pre><p>のコメントアウト（#）を外してみたり、値を1やfalseに変えてみたりと色々やってみたが、やっぱりうまくいかない。<br>「update-grub」で<code>/boot/grub</code>に生成される<code>grub.cfg</code>でも「set timeout=0」になっているのに。</p>
+<p>煮え詰まって</p>
+<pre><code><span class="attribute">GRUB_TIMEOUT</span>=<span class="string">0.1  </span>
+</code></pre><p>にしてみたら、なぜかOS選択画面をスキップ出来た。<br>もしかして、スキップではなく0.1秒間表示されているのだろうか。そんな感じも無いのだが。<br>（GRUB_TIMEOUTの値は「0.1」ではなく「00」でも同様にOS選択画面をスキップ出来た。）</p>
+<p>Grub2の説明にも書いてないし正統なやり方ではないのだとは思うが、望み通りにスキップ出来たのでとても満足。<br>Grub2のOS選択画面をスキップ出来なくてお困りの方は試してみてはいかがでしょうか。</p>
+<p><code>grub</code>編集後に「update-grub」するのをお忘れなく。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/04/19/grub2-skip/" data-text="Grub2のOS選択画面をスキップする方法 | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/19/grub2-skip/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/19/grub2-skip/" class="hatena-bookmark-button" data-hatena-bookmark-title="Grub2のOS選択画面をスキップする方法" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
@@ -173,14 +239,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/04/17/facebook-phishing/" >Facebook 「安全の確保」とフィッシング</a>
+			<a href="/2014/04/19/permalink/" >パーマリンクを変更出来ない無料ブログは最強のパーマリンクかもしれない</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年4月17日
+	2014年4月19日
 </div>
 
 <div class="panel-body">
@@ -190,15 +256,17 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>以前Facebookに不正アクセスがあったとメールが来た。<br>「安全を確保するため至急下記リンクにアクセスするように」というのでリンクをクリックしてしまったが、「移動先は安全ではない可能性があります」とブラウザの警告があったのでアクセスせずにすんだ。<br>リンク先は偽のログインページに誘い込むものだったのだろうと思う。メールの送信者はFacebookのように見えたが偽装されていた可能性がある。</p>
-<p>それまで短いパスワードを使っていたので長いものに変更したが、その後も</p>
-<blockquote>
-<p>パスワードの再設定がリクエストされました。心当たりが無い場合は至急下記リンクにアクセスして安全を確保して下さい。</p>
-</blockquote>
-<p>というような内容のメールが何度か届いた。<br>「心当たりが無い場合は、無視して下さい」というのが通常だろうし、やはり怪しいサイトに導いてパスワードを盗もうとするフィッシングだったのだろう。</p>
-<p>Facebookはほとんど使ってなかったので、結局Facebookアカウントを閉鎖した。<br>「安全を確保」するにはFacebookを利用しないのが一番だと思った次第。</p>
-<p>ところで、詐欺のフィッシングの綴りは「fishing」かと思っていたら「phishing」のよう。でも語源はやはり「fishing」なんですね。<br><a href="http://ja.wikipedia.org/wiki/%E3%83%95%E3%82%A3%E3%83%83%E3%82%B7%E3%83%B3%E3%82%B0_%28%E8%A9%90%E6%AC%BA%29" target="_blank" rel="external">フィッシング (詐欺) – Wikipedia</a><br>２チャンネル用語みたいなものなんだろうか。</p>
-<p>なにはともあれ、みなさんも「安全を確保するように」と言ってリンクを踏まそうとするメールにはご注意下さい。</p>
+	  <p>MovableTypeのブログでまたパーマリンクを変更した。<br>独自ドメインでブログを書き始めてからまだ4ヶ月にもならないのだが、確かこれで4度目の変更になる。<br>より理想的と思われるパーマリンクに変更したり、ブログの公開ディレクトリを変更したためだったり。</p>
+<p>今回の変更はそれまでの<br><code>/201404191728</code>というような「/年月日時分」という形から<code>/2014/04/19/curry_soba/</code>といったOctopress（Jekyll）と同様の「/年/月/日/キーワード/」という形への変更。<br>これなら将来的にMovableType〜Octopress間での移行がスムーズにいきそうだし、以前の投稿時刻が丸見えなパーマリンクもちょっと嫌だった。<br>でも結局は移行しないかもしれないしその可能性の方が高いのではないかという気もする。</p>
+<p>これまでのパーマリンク変更でリダイレクトを指定している最中で検索エンジンのインデックスもまだ移行途中のようなのだが、<code>.htaccess</code>によるディレクトリ一括でのリダイレクト先からさらに、メタタグ<code>&lt;meta http-equiv=&quot;refresh&quot; 〜&gt;</code>を使ったリダイレクトをするという二重のリダイレクトをすることになってしまった。<br>記事数がまだ少なかったからそれ程手間はかからなかったし、いちおうちゃんと新URLに飛んではくれる。<br>だがこういうのはあまり宜しくはなさそうだ。</p>
+<p>新URLのいくつかがインデックスされないくらいならまだいいが、検索エンジンからペナルティというやつを受けてしまったりしたら洒落にならない。<br>「そんなことになったらどうしよう」と少しビビりながら、パーマリンクの違いでそれ程SEO的に違いも無いだろうとも思いつつ、それでもやめられない。パーマリンクの変更。</p>
+<p>自由というのは本当にやっかいなものだと思う。<br>端からパーマリンクが変更出来なかったら、「理想的なパーマリンク」についてあれこれ悩んだりせずに済むし、変更する手間も要らないし、リンク切れにもならないし、ましてやパーマリンク変更の不手際によるペナルティなどということとも無縁のはず。</p>
+<p>パーマリンクを変更出来ない無料ブログはひょっとすると「最強のパーマリンク」を持っているのかもしれない、と思ってみたりする。</p>
+<p>ーー<br>（追記）<br>ページ毎のリダイレクトもメタタグを使うより<code>.htaccess</code>で</p>
+<pre><code><span class="keyword"><span class="common">Options</span></span> +FollowSymLinks
+<span class="keyword"><span class="common">RewriteEngine</span></span> <span class="literal">on</span>
+<span class="keyword"><span class="common">RewriteRule</span></span> ^old.html http://example.com/new.html<span class="sqbracket"> [L,R=301]</span>
+</code></pre><p>とした方が簡単だし、その方が推奨されているそうですね。</p>
 
 	
 	</div>
@@ -208,68 +276,14 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/04/17/facebook-phishing/" data-text="Facebook 「安全の確保」とフィッシング | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/04/19/permalink/" data-text="パーマリンクを変更出来ない無料ブログは最強のパーマリンクかもしれない | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/17/facebook-phishing/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/19/permalink/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/17/facebook-phishing/" class="hatena-bookmark-button" data-hatena-bookmark-title="Facebook 「安全の確保」とフィッシング" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/ネット/">ネット</a></li></ul>
-	</div>
-
-</div>
-
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/04/17/subdomain-subdirecrory/" >サブドメイン対サブディレクトリ</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年4月17日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>独自ドメインの元で複数のサイト（ブログ）を運営する際、サブドメイン形式にした方が良いのか、それともサブディレクトリ形式の方が良いのか。<br>考え方次第で、どちらが正解でどちらが間違いというものでもないようだが、検索した限りではサブディレクトリでの運用の方がドメインからの恩恵を受けやすいらしい。<br>ただこの場合、ペナルティを受けた時にドメインごと巻き込まれるという危険もある様子。</p>
-<p>自分の場合は初めてドメインを取った際、ものめずらしさから幾つかサブドメインを作ったりもしたが、結局一つのサブドメイン内でディレクトリを分けて複数のブログを運用している。<br>運用していると言っても放置状態だったりしますが。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/04/17/subdomain-subdirecrory/" data-text="サブドメイン対サブディレクトリ | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/17/subdomain-subdirecrory/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/17/subdomain-subdirecrory/" class="hatena-bookmark-button" data-hatena-bookmark-title="サブドメイン対サブディレクトリ" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/19/permalink/" class="hatena-bookmark-button" data-hatena-bookmark-title="パーマリンクを変更出来ない無料ブログは最強のパーマリンクかもしれない" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
@@ -288,14 +302,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/04/17/ping/" >Ping送信をメニューリストに追加</a>
+			<a href="/2014/04/19/free-server/" >無料サーバーは試用には良いが、それほど特をするわけでもない</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年4月17日
+	2014年4月19日
 </div>
 
 <div class="panel-body">
@@ -305,13 +319,19 @@
 	<div class="col-md-12">
 	  
 	
-	  <p><a href="/2014/04/06/ping/">静的サイトでping送信</a>のつづき。</p>
-<p>pingを送信する度にターミナルを立ち上げてコマンド入力するのが面倒なので、メニューに追加出来ないかやってみたら簡単に出来た。<br>以下Xubuntu12.04の場合。</p>
-<p>「アプリケーションメニュー」→「設定」→「メイン・メニュー」と進んで、「インターネット」など適当なカテゴリーで「新しいアイテム」ボタンをクリック。<br>「ping送信」等の名前を入力。<br>コマンド欄横のフォルダのアイコンをクリックして、ping送信のためのRubyスクリプトを選択。<br>（自分の場合Octopressブログ用に新たにファイル<code>send_ping_octopress.rb</code>を作成している）<br>コマンド欄の頭に「ruby」と半角スペースを追加。</p>
-<pre><code><span class="keyword">ruby</span> /home/（スクリプトを置いているディレクトリ）/send_ping_octopress.rb
-</code></pre><p>「オプション」の「ターミナルで実行する」をチェックし、「作成」。</p>
-<p>「アプリケーションメニュー」→「インターネット」に新たに追加された「ping送信」をクリックするだけでpingを送信出来た。</p>
-<p>ubuntuベースのLinuxなら同様に設定出来るのではないかと思います。</p>
+	  <p>p&gt;無料レンタルサーバーを２つ借りてみた。  </p>
+<p>「000webhost」と「未来サーバー」。  </p>
+<p>借りた理由は、WordPress、MovableType以外のJoomla!等のCMSを試しに触ってみたかったから。  </p>
+<p>今ここを運営しているレンタルサーバーでもJoomla!をインストール出来るが、万が一おかしなことをしてしまって他に悪影響が出てしまっては困ると思ったので。  </p>
+<p>あと無料でもいけそうならそのうち無料サーバーに移ろうかと、ちらっと考えたりもした。</p>
+<p>どちらもほとんど広告は入らないし、WordPress、Joomla!、Drupal、concrete5などもインストール出来る。<br>接続不良も思ったほど酷くはないしそれなりには使えるが、結局放置状態にある。<br>一番の原因は管理画面の操作感に馴染めなかったことだろうか。</p>
+<p>それにセキュリティー面で無料サーバーの場合、SFTPやFTPSに対応していないところがほとんどのようで、通常のFTPではパスワードも平文で流れてしまうらしいしので、安全上不安が残る。<br>さらに「いつアカウントが閉鎖されるか」と怯えながらでは運営する意欲も損なわれる。<br>ある程度労力をつぎ込んだところでいきなりアカウントを閉鎖されたりしては目も当てられない。</p>
+<p>無料サーバーは、レンタルサーバーで自身のウェブサイトを運営してみようかと思案中の段階で、試しにやってみるには良いと思う。<br>また複数の独自ドメインを所持していて、それほど重要ではないドメインの仮置き場としての利用も考えられる。<br>ネットに詳しい人ならもっと良い活用法もあるのかもしれない。</p>
+<p>だが、ある程度意欲を持って運営するつもりなら、たとえ格安でもお金を払った方が良さそうだという結論に達した。<br>その方が管理画面の操作性が格段に良いし、なにかトラブルがあった際のサポートも多少は期待できる。<br>また無料サーバーだとWordPressの自動更新が出来ず、手動で更新しないといけなかったりするのが、かなり辛い。<br>けっこう頻回にあるし。</p>
+<p>無料レンタルサーバーは「お試し期間が無制限でそのかわり機能が制限されているレンタルサーバー」くらいに考えた方が良さそうだ。</p>
+<p>借りた無料サーバーは２つとも退会すれば良いのだが、ものを捨てるのが苦手な性格のためか、なかなか退会しようという気になれずにいる。<br>何かの時に役に立つかもしれないし。</p>
+<p>ーー<br>（追記）<br>その後、未来サーバーは放置して3ヶ月後くらいでアカウントを削除した旨のメールが来た。<br>確か削除の前に、アカウントを凍結したので必要ならアクティベートするように、という内容のメールも来ていたと思う。</p>
+<p>000webhostの方は半年ぶりにサイトを見てみたら、いちおう健在だったが広告が表示されるようになっていた。<br>サイトの画面前面に表示されていて、「✕」印をクリックして消さないといけないタイプの広告。<br>000webhostの管理画面から広告を非表示に設定できた。<br><a href="http://pagent.netii.net/wordpress/2014/10/04/000webhost-advertisement/" target="_blank" rel="external">海外の無料サーバー「000webhost」で広告が表示される</a></p>
 
 	
 	</div>
@@ -321,21 +341,21 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/04/17/ping/" data-text="Ping送信をメニューリストに追加 | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/04/19/free-server/" data-text="無料サーバーは試用には良いが、それほど特をするわけでもない | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/17/ping/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/19/free-server/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/17/ping/" class="hatena-bookmark-button" data-hatena-bookmark-title="Ping送信をメニューリストに追加" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/19/free-server/" class="hatena-bookmark-button" data-hatena-bookmark-title="無料サーバーは試用には良いが、それほど特をするわけでもない" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
 	<div class="meta-widget pull-right">
 <span style="color:#555;"><i class="fa fa-tags"></i></span>
 <ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Linux/">Linux</a></li></ul>
+  <li><a href="/tags/サーバー/">サーバー</a></li></ul>
 	</div>
 
 </div>
@@ -347,14 +367,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/04/14/faked_pagerank/" >Octopressのブログで「偽装」判定</a>
+			<a href="/2014/04/19/curry_soba/" >「カレーうどん」があるのに「カレーそば」が無い理由の考察</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年4月14日
+	2014年4月19日
 </div>
 
 <div class="panel-body">
@@ -364,11 +384,13 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>自サイトのページランク、インデックス数などが簡単に見られて便利なので時々<a href="http://seocheki.net/" target="_blank" rel="external">「SEOチェキ! 無料で使えるSEOツール」</a>で自サイトの情報を見ている。</p>
-<p>昨日このブログを見てみると「ページランク偽装チェック」で「Warning！ 偽装の可能性あり」と表示されていた。<br>さらに見ると「ttp://s.pagent.org/static/ は ttp://s.pagent.org/static に偽装されている可能性があります」とのこと。</p>
-<p>偽装した覚えなどさらさら無いのだが、ページのソースを見てみると確かに「link rel=“canonical”」で指定しているURLにはスラッシュが無い。<br>どうやらOctopressは初期状態で、実際のパーマリンクはスラッシュ有りなのに「link rel=”canonical”」ではスラッシュ無しで表示してしまうらしい。<br><a href="http://hamasyou.com/blog/2014/02/15/octopress-canonical/" target="_blank" rel="external">Octopress の rel=“canonical” の設定がおかしい件 – それはBooks</a></p>
-<p>参照記事の通り<code>_includes/head.html</code>の「link rel=“canonical」の項目にスラッシュを追記することで改善出来た。</p>
-<p>ーー<br>（追記）<br>「link rel=“canonical”」を修正した結果、チェキ!での偽装判定もほどなく改善しました。</p>
+	  <p>「カレーうどん」はあるのに「カレーそば」は一般的には無い。<br>それは何故か？</p>
+<p>「カレー」といえば真っ先に思い付くのは「カレーライス」と思われるが、「カレーうどん」と「カレーライス」の共通点は何か？<br>「ごはん」も「うどん」も色が白い。さらには「カレーパン」も外側は油で揚げてあってきつね色だが、中のパンはどちらかというと白い。</p>
+<p>であれば、色が白いものとカレーは合わせるが、色がくすんでいるそばとカレーは合わせない、ということだろうか？</p>
+<p>だが、「カレーうどん」の場合はうどんがカレーに浸かっていて白い色はあまり際立ってはいない。</p>
+<p>色以外で、「ごはん」と「うどん」に共通していて「そば」とは異なる点。それは「ごはん」も「うどん」それ自体の味は際立ってはいない、ということ。<br>一方「そば」の場合は独特の風味があり、それが「そば」のおいしさにとって重要な要件でもある。<br>カレーと合わせてしまっては「そば」の風味が損なわれてしまってもったいない、というのが「カレーそば」が無い理由かもしれない。</p>
+<p>だが、ラーメンの麺にもあまり際立った風味は無いと思われるが、「カレーラーメン」というのもあまり一般的ではない。（カレーヌードルは確かに存在するが）<br>この点はさらに考察を加える必要がありそうだ。</p>
+<p>少々お腹が空いた。 </p>
 
 	
 	</div>
@@ -378,21 +400,21 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/04/14/faked_pagerank/" data-text="Octopressのブログで「偽装」判定 | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/04/19/curry_soba/" data-text="「カレーうどん」があるのに「カレーそば」が無い理由の考察 | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/14/faked_pagerank/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/19/curry_soba/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/14/faked_pagerank/" class="hatena-bookmark-button" data-hatena-bookmark-title="Octopressのブログで「偽装」判定" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/19/curry_soba/" class="hatena-bookmark-button" data-hatena-bookmark-title="「カレーうどん」があるのに「カレーそば」が無い理由の考察" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
 	<div class="meta-widget pull-right">
 <span style="color:#555;"><i class="fa fa-tags"></i></span>
 <ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Octopress/">Octopress</a></li></ul>
+  <li><a href="/tags/食/">食</a></li></ul>
 	</div>
 
 </div>
@@ -438,39 +460,41 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
-		
 			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
-		
-			<li><a href="/tags/サーバー/">サーバー<span>7</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>2</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>38</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>18</span></a></li>
+			<li><a href="/tags/サーバー/">サーバー<span>7</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
+			<li><a href="/tags/食/">食<span>4</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
 			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
 		
+			<li><a href="/tags/短歌・俳句等/">短歌・俳句等<span>2</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>16</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
+		
 			<li><a href="/tags/ネット/">ネット<span>35</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
 		
 		
 		</ul>
@@ -513,7 +537,7 @@
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">40</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">4</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">4</span></li></ul>
 		</ul>
 	</div>
 

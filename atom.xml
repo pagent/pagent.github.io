@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-02-26T13:45:03.631Z</updated>
+  <updated>2016-02-27T00:25:43.730Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2016/02/21/peeep-us-google-account/"/>
     <id>http://pagent.github.io/2016/02/21/peeep-us-google-account/</id>
     <published>2016-02-20T16:50:59.000Z</published>
-    <updated>2016-02-21T05:48:24.123Z</updated>
+    <updated>2016-02-24T14:12:29.000Z</updated>
     <content type="html"><![CDATA[<p>海外のアーカイブサービスの一つ「Peeep.us」。<br>元URLからの検索機能が無いのが難点だったが、元ページに近い魚拓が得られ、それなりに便利だった。  </p>
 <p>昨年サイトが閉鎖されたかと思われたそのPeeep.usが、いつの間にか復活していた。  </p>
 <p>ところが、魚拓を取ろうと「submit」をクリックすると、Google Accountのログイン画面が表示される。以前はログイン不要だったはずなんだが。  </p>
@@ -41,7 +41,7 @@
     <link href="http://pagent.github.io/2015/12/21/truecrypt-downgrade/"/>
     <id>http://pagent.github.io/2015/12/21/truecrypt-downgrade/</id>
     <published>2015-12-21T13:29:15.000Z</published>
-    <updated>2015-12-23T20:40:45.574Z</updated>
+    <updated>2016-02-24T14:12:29.000Z</updated>
     <content type="html"><![CDATA[<p>先日からArch LinuxでTrueCryptのボリュームを開けなくなってしまった。正しいパスワードを入力しても”Invalid characters encountered”や”fuse: bad mount point…No such file or directory”と表示される。Xubuntuだと通常通りマウント出来るのだが。  </p>
 <p>2015年12月10日にC++ ABIが変更されて以降、truecrypt-1:7.1a-3はボリュームをマウント出来なくなっており、旧バージョンのtruecrypt-1:7.1a-2だと正常に動作するようだ。<br><a href="https://wiki.archlinux.org/index.php/TrueCrypt" title="TrueCrypt - ArchWiki" target="_blank" rel="external">TrueCrypt - ArchWiki</a>  </p>
 <p>pacmanのキャッシュフォルダ/var/cache/pacman/pkg内にtruecrypt-1:7.1a-2があったので、ダウングレードした。  </p>
@@ -71,7 +71,7 @@
     <link href="http://pagent.github.io/2015/12/06/firefox-private-chromium-secret/"/>
     <id>http://pagent.github.io/2015/12/06/firefox-private-chromium-secret/</id>
     <published>2015-12-05T23:07:47.000Z</published>
-    <updated>2015-12-05T23:25:10.594Z</updated>
+    <updated>2016-02-24T14:12:29.000Z</updated>
     <content type="html"><![CDATA[<p>Firefox、Chromium（Google Chrome）とも、プライベートウィンドウ（シークレットウィンドウ）を開くには、一度通常モードで起動して設定画面から行う必要があるが、最初からプライベートウィンドウを開けたら便利。  </p>
 <p>コマンド<code>firefox -private-window</code>と<code>chromium --incognito</code>をアプリケーションメニューに追加した。  </p>
 <p>（参照記事）</p>
@@ -95,7 +95,7 @@
     <link href="http://pagent.github.io/2015/12/01/twitter-search-list/"/>
     <id>http://pagent.github.io/2015/12/01/twitter-search-list/</id>
     <published>2015-12-01T09:03:34.000Z</published>
-    <updated>2015-12-02T08:15:27.536Z</updated>
+    <updated>2016-02-24T14:12:29.000Z</updated>
     <content type="html"><![CDATA[<p>Twitterのツイート数を表示するAPIが11月21日に廃止されたそうで、ツイートボタン横のカウント表示が無くなってしまった。  </p>
 <p>「count.jsoon」または「widgetoon.js」を導入すればこれまで通りツイート数を表示出来るようなのだが。<br><a href="http://getnews.jp/archives/1264136" target="_blank" rel="external">【衝撃】突然Twitterのツイート数が表示されなくなって大混乱！ 表示されるようにする方法 / count.jsoon ｜ ガジェット通信</a>  </p>
 <p>登録が必要のようで面倒。  </p>
@@ -130,7 +130,7 @@
     <link href="http://pagent.github.io/2015/10/04/aur-update-yaourt/"/>
     <id>http://pagent.github.io/2015/10/04/aur-update-yaourt/</id>
     <published>2015-10-04T00:48:39.000Z</published>
-    <updated>2015-10-06T22:20:19.906Z</updated>
+    <updated>2016-02-24T14:12:29.000Z</updated>
     <content type="html"><![CDATA[<p>Arch LinuxでMarkdownファイルのエディターとして使っているretextが起動しなくなった。<br>新しいバージョンのretextが出ているようなので、Yaourtでアップデートした。  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yaourt -Syua</div></pre></td></tr></table></figure>
 
@@ -162,7 +162,7 @@
     <link href="http://pagent.github.io/2015/09/30/snowden-twitter/"/>
     <id>http://pagent.github.io/2015/09/30/snowden-twitter/</id>
     <published>2015-09-30T09:28:10.000Z</published>
-    <updated>2015-10-03T23:37:17.840Z</updated>
+    <updated>2016-02-24T14:12:29.000Z</updated>
     <content type="html"><![CDATA[<p>ロシアに亡命中の元CIA職員スノーデン氏が9月29日にTwitterを始めたそうだ。<br><a href="http://www.itmedia.co.jp/news/articles/1509/30/news144.html" target="_blank" rel="external">スノーデン氏、Twitterを始める - ITmedia ニュース</a>  </p>
 <p>彼がフォローしているのは米国家安全保障局（NSA）のみだそうで、実際に彼のアカウント<a href="https://twitter.com/Snowden" target="_blank" rel="external">@Snowden</a>を見てみると確かにそうなっている。<br>現在のフォロワー数は９０万人程。始めて間もないせいもあるかも知れないが、意外と少ない気がする。  </p>
 <p>スノーデン氏と言えばアメリカ政府による数々の諜報活動を暴露した人物。<br>そのスノーデン氏が何ゆえ今頃Twitterを始める気になったのだろうか？<br>FacebookよりTwitterの方が安全なのかもしれないが、でもなぜ今？  </p>
@@ -181,7 +181,7 @@
     <link href="http://pagent.github.io/2015/09/03/socket-connection-failure/"/>
     <id>http://pagent.github.io/2015/09/03/socket-connection-failure/</id>
     <published>2015-09-03T06:23:19.000Z</published>
-    <updated>2015-09-03T06:43:09.123Z</updated>
+    <updated>2016-02-24T14:12:29.000Z</updated>
     <content type="html"><![CDATA[<p>Arch Linux+Xfceで起動時に  </p>
 <blockquote>
 <p>設定サーバーに接続できませんでした<br>Failed to connect to socket /tmp/dbus-…</p>
@@ -206,7 +206,7 @@
     <link href="http://pagent.github.io/2015/09/01/open-unclickable-url/"/>
     <id>http://pagent.github.io/2015/09/01/open-unclickable-url/</id>
     <published>2015-09-01T01:26:18.000Z</published>
-    <updated>2015-09-01T01:54:28.052Z</updated>
+    <updated>2016-02-24T14:12:29.000Z</updated>
     <content type="html"><![CDATA[<p>ハイパーリンクになっておらず、クリック出来ないURLを開く時には、URLをアドレス欄にコピペすれば良いが、少し面倒。Firefoxのアドオンに<a href="https://addons.mozilla.org/ja/firefox/addon/text-link/" target="_blank" rel="external">テキストリンク (Text Link)</a>というのがあると知り、インストールしてみた。<br>現在のバージョンのFirefoxには対応していないようだが、開発版を入れると機能した。<br>だが「テキストリンク」の説明にURI文字列を開く通常の方法として、”選択された文字列をFirefoxのタブバーにドラッグ＆ドロップする”というのが書いてあったのでやってみた。  </p>
 <p>確かにURI文字列を選択してタブバーに持って行くと<code>タブの中央にドロップするとそのタブを置き換え、タブの両サイドにドロップするとその位置に新しいタブとして読み込まれます</code>というツールチップが表示され、そのままドロップするとURLを開いてくれる。こんな方法があるとは全然知らなかった。<br>URLの選択は大抵の場合トリプルクリックで簡単に出来るので、この方法でも良さそう。  </p>
 <p>右クリックメニューがあまり増えるのも嫌なので、結局「テキストリンク」はアンインストールした。</p>
@@ -224,7 +224,7 @@
     <link href="http://pagent.github.io/2015/08/29/windows10-privacy/"/>
     <id>http://pagent.github.io/2015/08/29/windows10-privacy/</id>
     <published>2015-08-29T09:24:31.000Z</published>
-    <updated>2015-09-03T21:36:40.337Z</updated>
+    <updated>2016-02-24T14:12:29.000Z</updated>
     <content type="html"><![CDATA[<p>Windows 10にアップグレードするのは危険だという情報を目にする。<br>設定でプライバシーに関する情報の収集・送信を無効にしても、完全には止められないそうだ。<br><a href="http://it.srad.jp/story/15/08/15/2122239/" target="_blank" rel="external">Windows 10のプライバシー設定をすべてオフにしても、Microsoftとの通信は止められない？ | スラド IT</a>  </p>
 <p>Microsoftの「プライバシーに関する声明」には、個人情報の収集と利用について書かれている。<br>収集された個人情報は行政機関に提供される可能性もあるようだ。  </p>
 <blockquote>
@@ -255,7 +255,7 @@
     <link href="http://pagent.github.io/2015/08/28/hexo-video/"/>
     <id>http://pagent.github.io/2015/08/28/hexo-video/</id>
     <published>2015-08-28T10:17:42.000Z</published>
-    <updated>2015-08-28T10:51:14.582Z</updated>
+    <updated>2016-02-24T14:12:29.000Z</updated>
     <content type="html"><![CDATA[<p>hexo/source直下にvideosディレクトリを作成し、そこへ動画ファイルを配置。<br>以下のHTMLタグで埋め込み。 </p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">video</span> <span class="attribute">src</span>=<span class="value">"/videos/dango.webm"</span> <span class="attribute">width</span>=<span class="value">"480"</span> <span class="attribute">height</span>=<span class="value">"360"</span> <span class="attribute">controls</span>&gt;</span><span class="tag">&lt;/<span class="title">video</span>&gt;</span></div></pre></td></tr></table></figure>
 
@@ -282,7 +282,7 @@
     <link href="http://pagent.github.io/2015/08/28/hexo-sound/"/>
     <id>http://pagent.github.io/2015/08/28/hexo-sound/</id>
     <published>2015-08-28T07:00:18.000Z</published>
-    <updated>2015-08-28T11:47:17.868Z</updated>
+    <updated>2016-02-24T14:12:29.000Z</updated>
     <content type="html"><![CDATA[<p>hexo/source直下にsoundsディレクトリを作成し、そこへ音声ファイルを配置。<br>以下のHTMLタグで埋め込み。  </p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">audio</span> <span class="attribute">src</span>=<span class="value">"example.mp3"</span> <span class="attribute">autoplay</span> <span class="attribute">loop</span>&gt;</span><span class="tag">&lt;/<span class="title">audio</span>&gt;</span></div></pre></td></tr></table></figure>
 
@@ -317,7 +317,7 @@
     <link href="http://pagent.github.io/2015/08/21/rekonq-default-search-engine/"/>
     <id>http://pagent.github.io/2015/08/21/rekonq-default-search-engine/</id>
     <published>2015-08-21T11:55:28.000Z</published>
-    <updated>2015-08-21T14:29:29.523Z</updated>
+    <updated>2016-02-24T14:12:29.000Z</updated>
     <content type="html"><![CDATA[<p>Arch LinuxでサブのブラウザとしてMidoriを使っているが、お気に入りが消えてしまったりと調子が悪かったので、rekonqを入れてみた。  </p>
 <p>サイドバーは有る方が好みなので、レンチアイコンの設定からPanels→Bookmarks Panelをチェック。<br>広告除去は、Tools→Ad block。<br>EasyListだけでは依然、広告が邪魔な状態だったので、EasyList without element hidingも有効にした。  </p>
 <p>快適に使えるようになったかと思ったが、起動の度に、デフォルトの検索エンジンを設定するよう、上部に注意表示される。  </p>
@@ -345,7 +345,7 @@
     <link href="http://pagent.github.io/2015/08/20/google-news-search/"/>
     <id>http://pagent.github.io/2015/08/20/google-news-search/</id>
     <published>2015-08-19T23:57:14.000Z</published>
-    <updated>2015-08-20T00:18:50.153Z</updated>
+    <updated>2016-02-24T14:12:29.000Z</updated>
     <content type="html"><![CDATA[<p>Firefoxの検索エンジンに「Googleニュース検索」を追加した。<br>アドオンの検索では日本語用のものが見つからなかったので、いったん<a href="https://addons.mozilla.org/ja/firefox/addon/googlenews-ita/?src=search" target="_blank" rel="external">Google News (Italia)</a>をインストール。<br>~/.mozilla/firefox/(プロファイル名)/searchplugins内のgooglenews-ita.xmlをgooglenews-ja.xmlにリネーム。<br>ファイルの内容を下記に変更した。  </p>
 <figure class="highlight xml"><figcaption><span>googlenews-ja.xml</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">SearchPlugin</span> <span class="attribute">xmlns</span>=<span class="value">"http://www.mozilla.org/2006/browser/search/"</span> <span class="attribute">xmlns:os</span>=<span class="value">"http://a9.com/-/spec/opensearch/1.1/"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:ShortName</span>&gt;</span>Google ニュース<span class="tag">&lt;/<span class="title">os:ShortName</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Description</span>&gt;</span>Google ニュース検索<span class="tag">&lt;/<span class="title">os:Description</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:InputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">os:InputEncoding</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Image</span> <span class="attribute">width</span>=<span class="value">"16"</span> <span class="attribute">height</span>=<span class="value">"16"</span>&gt;</span>data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAPAKAADwCgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAArKSaGLywqTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1MzB3SkdF/1RST/5FQj/sR0VCdzIvLAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3NjRXR0VC/ZGQj/++vr3/oaCf/2xqaP9QTkviSEZDeDIvLA4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlIyE/QD489mRiYf/ExMP/ymVO/8mXi//Hx8f/rq6t/25sav9UUlDgQ0A9YTIvLAkAAAAAAAAAAAAAAAA7OTdPQkE/9FdUUv+jo6L/0Ly3/8s0Ev/QxsP/qaqp/7Ozs//Pz87/rKyr/2BdW/pPTUrOMi8sJQAAAAA0MjBiNzU0+IWEgf9mZGL/1NTU/85VOv/RgW//09PS/4SFhP+EhYT/mZmY/8zMzP/W1tb/kI+N/0lHRPQlIyFiS0lH+4qKiP9DQD3/v769/9V6Zf/MNRP/39XT/6jX4f+rsrL/iYqJ/4SFhP+Jion/wsLC/97e3f+Afn3/JSMhDjc1M4hHRUP2iYiG/+rq6f/YfWn/1nFa/3nd8/8K0v7/F9P9/3rR5f+kqan/hIWE/4SFhP/Jycj/amhm9AAAAAAyLyw4ZmRi8aGh2/9BQdP/k5Ph/+PZ4P994ff/GNT9/wrS/v8K0v7/Jtb8/6LZ5f+xsbH/vby6/1RRT9kAAAAAOjc1852bmv+9ve3/Tk7W/zY20f9BQtb/f4Dl/9Pf9v+B5fv/J9b9/wrS/v8K0v7/q+n5/2lmZPtOTElTAAAAADIvLD1eXFnSdHJw+s/Ozf+zs+7/T0/b/zc42/83Od//goPt/83O+f+j7v//cuP9/5+dnP9VU1C6Mi8sBQAAAAAAAAAAMi8sDEdEQmJaWFXWfXt5+cTDw/+vr+3/aWvo/zg75f84POn/j5H1/7y7uv9FQkDuMi8sEAAAAAAAAAAAAAAAAAAAAAAAAAAAMi8sCDIvLE1QTUvNdHJw9Le2tf/JyfT/g4Xy/8PDzf9qaGbqMi8sLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIvLDxHRELCQT479XJwbv9QTkvzU1BOSwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIvLA8yLyxjMi8sHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/P8AAPgf8L/wBwAA4AEAAMAAAACAAAAAAAAAAAAAAACAAAAAgAAAAIAAAADAAQAA8AP///4H////jwAA//8AAA%3D%3D<span class="tag">&lt;/<span class="title">os:Image</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Url</span> <span class="attribute">type</span>=<span class="value">"text/html"</span> <span class="attribute">method</span>=<span class="value">"GET"</span> <span class="attribute">template</span>=<span class="value">"https://news.google.co.jp/news/search?q={searchTerms}"</span> <span class="attribute">resultDomain</span>=<span class="value">"news.google.co.jp"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">os:Url</span>&gt;</span><span class="tag">&lt;<span class="title">os:Url</span> <span class="attribute">type</span>=<span class="value">"application/x-suggestions+json"</span> <span class="attribute">method</span>=<span class="value">"GET"</span> <span class="attribute">template</span>=<span class="value">"http://suggestqueries.google.com/complete/search?output=firefox&amp;client=firefox&amp;hl=ja&amp;q={searchTerms}"</span> <span class="attribute">resultDomain</span>=<span class="value">"suggestqueries.google.com"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">os:Url</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">SearchPlugin</span>&gt;</span></div></pre></td></tr></table></figure>
 
@@ -364,7 +364,7 @@
     <link href="http://pagent.github.io/2015/08/15/context-search/"/>
     <id>http://pagent.github.io/2015/08/15/context-search/</id>
     <published>2015-08-14T23:20:14.000Z</published>
-    <updated>2015-12-29T20:35:05.857Z</updated>
+    <updated>2016-02-24T14:12:29.000Z</updated>
     <content type="html"><![CDATA[<p>Firefoxで右クリックからの検索は便利だが、検索エンジンがデフォルトのものに固定されてしまっている。<br>普段はGoogleを使っているが、安全のためStartPageやDuckDuckGoを使いたい時、またツイッター検索をしたい時などがある。そんな時、キーワードをいちいち検索欄にコピペするのはちょっと面倒。  </p>
 <p>そんな人にお勧めしたいアドオンが<a href="https://addons.mozilla.org/ja/firefox/addon/context-search/?src=search" target="_blank" rel="external">Context Search</a></p>
 <p>インストールすると、右クリックの「”〜” をGoogleで検索(s)」などが「”〜” を検索(s)」になり、種々の検索エンジンがリスト表示される。<br>特に設定の必要も無し。  </p>
@@ -383,7 +383,7 @@
     <link href="http://pagent.github.io/2015/07/09/fictional-email-addresses/"/>
     <id>http://pagent.github.io/2015/07/09/fictional-email-addresses/</id>
     <published>2015-07-09T07:03:50.000Z</published>
-    <updated>2015-08-18T22:21:17.567Z</updated>
+    <updated>2016-02-24T14:12:29.000Z</updated>
     <content type="html"><![CDATA[<p>ネットを利用していて、例えばメール欄が必須になっているブログにコメントしたい時など、これまでは正直に実際のメールアドレスを記載していた。（メインのではなく、サブのアドレスを使うことが多かったが）<br>だが、よく考えてみると、返信が必要のない場合は実際のものではなく、架空のメールアドレスを使っても問題なさそうだ。  </p>
 <p>存在するかもしれないメールアドレスを適当に使ってしまうと迷惑を掛けてしまうかもしれないが、３つのサンプル用ドメイン（example.com、example.org、 example.net）なら、大丈夫なはず。  </p>
 <p>そう考えて、適当な架空のメールアドレスとして<code>mail@example.net</code>を使うようにした。</p>
@@ -401,7 +401,7 @@
     <link href="http://pagent.github.io/2015/06/30/twitter-search-result-probrem/"/>
     <id>http://pagent.github.io/2015/06/30/twitter-search-result-probrem/</id>
     <published>2015-06-30T13:32:34.000Z</published>
-    <updated>2015-06-30T14:25:23.806Z</updated>
+    <updated>2016-02-24T14:12:29.000Z</updated>
     <content type="html"><![CDATA[<p>###自分のツイートだけが表示されない</p>
 <p>ニュース記事やブログなどに設置してあるツイート数表示をクリックした時に表示されるページ（URLをツイッター検索した結果のページ）に自分のツイートだけが表示されなくなっていた。「トップ」から「ライブ」のタブに切り替えても表示されない。  </p>
 <p>これではツイートを見てもらう機会が減ってしまい困るので、下記ページから問題の報告を行った。<br><a href="https://support.twitter.com/forms/feature_report?feature=tweets" target="_blank" rel="external">Twitterヘルプセンター</a>  </p>
@@ -429,7 +429,7 @@
     <link href="http://pagent.github.io/2015/06/04/github-japan/"/>
     <id>http://pagent.github.io/2015/06/04/github-japan/</id>
     <published>2015-06-04T10:30:54.000Z</published>
-    <updated>2015-06-04T11:19:46.818Z</updated>
+    <updated>2016-02-24T14:12:29.000Z</updated>
     <content type="html"><![CDATA[<p>ITmediaのニュースによると、Gitによるバージョン管理サービスの老舗「GitHub」が日本法人「ギットハブ・ジャパン」を設立したそうだ。<br><a href="http://www.itmedia.co.jp/news/articles/1506/04/news133.html" target="_blank" rel="external">GitHubが日本法人「ギットハブ・ジャパン」設立　日本語テクニカルサポートで法人向け導入を促進 (1/2) - ITmedia ニュース</a>  </p>
 <p>ギットハブ・ジャパンは企業向けのツール「GitHub Enterprise」の販売とサポート提供が主な目的のよう。<br>“github”を検索してみたら、すぐにGitHub Japanのサイトが見つかった。<br><a href="http://github.co.jp/" target="_blank" rel="external">http://github.co.jp/</a>  </p>
 <p>どうやらすぐにgithub.comに日本語ページが用意されるということではないようだが、英語サイトの「GitHub Enterprise」は”github.com”のサブドメイン”enterprise.github.com”で提供されているようだし、もしかするとそのうちgithub.comを日本語で利用出来るようになるのだろうか？<br>（類似のサービスを提供している「Bitbucket」はすでに英語だけでなく、日本語、ドイツ語、フランス語、ロシア語、中国語、ヒンズー語など、計９つの言語で利用可能になっている。）</p>
@@ -447,11 +447,46 @@
   </entry>
   
   <entry>
+    <title><![CDATA[2015年6月2日のツイートまとめ]]></title>
+    <link href="http://pagent.github.io/2015/06/03/tweets/"/>
+    <id>http://pagent.github.io/2015/06/03/tweets/</id>
+    <published>2015-06-02T17:42:25.000Z</published>
+    <updated>2016-02-27T00:25:12.161Z</updated>
+    <content type="html"><![CDATA[<p>（リツイート・リプライ含む。短縮URLリンク先は元URLに補正。）  </p>
+<div style="line-height:2.0em;" class="box">ぱじぇんと @su_da<em>chi</em>　<a href="https://twitter.com/su_da_chi_/status/605692855923785728" target="_blank" rel="external">2015-06-02 20:10:04</a><br>アメリカ人は「慰安婦問題」などには関心が無いのだろう <a href="http://pagent.seesaa.net/article/420016936.html" target="_blank" rel="external">pagent.seesaa.net/article/420016936.html …</a>  </div>  
+
+
+<div style="line-height:2.0em;" class="box">ライフハッカー［日本版］ @lifehackerjapan　<a href="https://twitter.com/lifehackerjapan/status/605694668177854464" target="_blank" rel="external">2015-06-02 20:17:16</a><br>情けは人のためならず。人を助けると自分の能力が磨かれる <a href="http://www.lifehacker.jp/2015/06/150602_Helping_others.html" target="_blank" rel="external">ift.tt/1BGvdca</a>  </div>  
+
+
+<div style="line-height:2.0em;" class="box">励まし　元気　癒し　BOT @genkismile_bot　<a href="https://twitter.com/genkismile_bot/status/605316946154823681" target="_blank" rel="external">2015-06-01 19:16:20</a><br>光が多いところでは、影も強くなる。  </div>  
+
+
+<div style="line-height:2.0em;" class="box">tak_aramata @tkbee777　<a href="https://twitter.com/tkbee777/status/601961052788555776" target="_blank" rel="external">2015-05-23 13:01:13</a><br>無駄な人生を歩むことで、人生が豊かになる。 | 魅力的な人になる30の方法 | HappyLifeStyle<br><a href="https://happylifestyle.com/4672" target="_blank" rel="external">happylifestyle.com/4672</a>  </div>  
+
+
+<div style="line-height:2.0em;" class="box">ぱじぇんと @su_da<em>chi</em>　<a href="https://twitter.com/su_da_chi_/status/605711370915479552" target="_blank" rel="external">2015-06-02 21:23:39</a><br>@RinnosukeOusaki 無効か無効じゃないかにかかわらず「要らないからやめる」でもいいように思うんですが。  </div>  
+
+
+<div style="line-height:2.0em;" class="box">ぱじぇんと @su_da<em>chi</em>　<a href="https://twitter.com/su_da_chi_/status/605718662259998722" target="_blank" rel="external">2015-06-02 21:52:37</a><br>黙っていても伝わらない。思ったことは口に出した方がいい7つの理由 ｜ ライフハッカー <a href="http://www.lifehacker.jp/2015/06/150602your_opinion.html" target="_blank" rel="external">lifehacker.jp/2015/06/150602…</a> @lifehackerjapanさんから<br>︙<br>3. 議論を進められる<br>4. 間違っていても、その理由を学べる<br>5. 実は多数派かもしれない<br>︙  </div>  
+
+
+<div style="line-height:2.0em;" class="box">ぱじぇんと @su_da<em>chi</em> <a href="https://twitter.com/su_da_chi_/status/605737931479728129" target="_blank" rel="external">2015-06-02 23:09:11</a><br>Stand Stare State  </div>]]></content>
+    <summary type="html">
+    <![CDATA[<p>（リツイート・リプライ含む。短縮URLリンク先は元URLに補正。）  </p>
+<div style="line-height:2.0em;" class="box">ぱじぇんと @su_da<em>chi</em>　<a href="https://twitter.com]]>
+    </summary>
+    
+      <category term="未分類" scheme="http://pagent.github.io/tags/%E6%9C%AA%E5%88%86%E9%A1%9E/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[縦の三点リーダーがあったのか！ これは便利！]]></title>
     <link href="http://pagent.github.io/2015/06/02/vertical-dotted-line/"/>
     <id>http://pagent.github.io/2015/06/02/vertical-dotted-line/</id>
     <published>2015-06-02T13:03:11.000Z</published>
-    <updated>2015-06-02T13:24:33.590Z</updated>
+    <updated>2016-02-24T14:12:29.000Z</updated>
     <content type="html"><![CDATA[<p>三点リーダーを表示しようと、キーボードで「・（/）」キーを3回叩いて変換していて、縦の三点リーダーがあることに気がついた。  </p>
 <p>「︙」    </p>
 <p>入力メソッドはLinux上のMozc。WindowsのMS-IMEやGoogle日本語入力などではどうなのかは未検証。<br>常識なのかもしれないが、今まで知らなかった。  </p>
@@ -476,7 +511,7 @@
     <link href="http://pagent.github.io/2015/05/30/twitter-appearances-dm/"/>
     <id>http://pagent.github.io/2015/05/30/twitter-appearances-dm/</id>
     <published>2015-05-30T01:31:27.000Z</published>
-    <updated>2015-10-21T08:08:56.181Z</updated>
+    <updated>2016-02-24T14:12:29.000Z</updated>
     <content type="html"><![CDATA[<p>Twitterの表示形式変更後、プロフィールページで最新のツイートなどがやたらとデカく表示される。見づらいので、Firefoxのアドオン「Stylish」を使って他のツイートと同じ大きさで表示させるようにしていた（DMも見ないので、DMアイコンは非表示に）。  </p>
 <p>見やすくて良かったのだが、最近またツイッターの方で文字サイズを指定する要素が変更されたようで、一部のツイートが大きく表示されてしまっていた。  </p>
 <p>新たに<code>.TweetTextSize.TweetTextSize--26px</code>の指定を追加して下記のようにした。  </p>
@@ -491,33 +526,6 @@
     </summary>
     
       <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Hexoブログに「はてなブックマーク」ボタンを設置]]></title>
-    <link href="http://pagent.github.io/2015/05/19/hexo-hatena-button/"/>
-    <id>http://pagent.github.io/2015/05/19/hexo-hatena-button/</id>
-    <published>2015-05-19T12:56:11.000Z</published>
-    <updated>2015-05-19T13:36:35.262Z</updated>
-    <content type="html"><![CDATA[<p>Hexoで作っているこのブログに「はてブ」ボタンを設置した。  </p>
-<p>Octopressでの設置例を参考にやってみたが上手く行かなかったので、はてな公式サイトのボタン作成ページでコードを作成した。<br><a href="http://b.hatena.ne.jp/guide/bbutton" target="_blank" rel="external">はてなブックマークボタンの作成・設置について - はてなブックマーク</a>  </p>
-<p>「ページのアドレス」「ページのタイトル」の欄は仮に「アドレス」「タイトル」とし、後からこれをHexoでのパス<code>&lt;%- item.permalink %&gt;</code>および<code>&lt;%= item.title %&gt;</code>に入れ替えた。<br>出来たコードは下記。  </p>
-<pre><code>&lt;a <span class="variable">href=</span><span class="string">"http://b.hatena.ne.jp/entry/&lt;%- item.permalink %&gt;"</span> <span class="variable">class=</span><span class="string">"hatena-bookmark-button"</span> <span class="variable">data-hatena-bookmark-title=</span><span class="string">"&lt;%= item.title %&gt;"</span> <span class="variable">data-hatena-bookmark-layout=</span><span class="string">"standard-balloon"</span> <span class="variable">data-hatena-bookmark-lang=</span><span class="string">"ja"</span> <span class="variable">title=</span><span class="string">"このエントリーをはてなブックマークに追加"</span>&gt;&lt;img <span class="variable">src=</span><span class="string">"https://b.st-hatena.com/images/entry-button/button-only@2x.png"</span> <span class="variable">alt=</span><span class="string">"このエントリーをはてなブックマークに追加"</span> <span class="variable">width=</span><span class="string">"20"</span> <span class="variable">height=</span><span class="string">"20"</span> <span class="variable">style=</span><span class="string">"border: none;"</span> /&gt;&lt;/a&gt;&lt;script <span class="variable">type=</span><span class="string">"text/javascript"</span> <span class="variable">src=</span><span class="string">"https://b.st-hatena.com/js/bookmark_button.js"</span> <span class="variable">charset=</span><span class="string">"utf-8"</span> <span class="variable">async=</span><span class="string">"async"</span>&gt;&lt;/script&gt;
-</code></pre><p>これを個別記事のレイアウト（/layout/_partial/article.ejs）、ページネーションページのレイアウト（layout/_partial/post/entry.ejs）に追加。  </p>
-<p>追加する箇所は先に設置していたツイッターボタン用のdiv属性内にした。  </p>
-<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"tweet-button"</span>&gt;
-（ツイートボタン用コード）
-（今回作成した「はてブ」用コード）
-&lt;/<span class="keyword">div</span>&gt;
-</code></pre><p></p><p></p><br>（関連記事）<br><a href="http://pagent.github.io/2014/12/02/hexo-tweetbutton/" target="_blank" rel="external">Hexoの記事一覧ページにツイートボタン設置 | Pagent</a><p></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Hexoで作っているこのブログに「はてブ」ボタンを設置した。  </p>
-<p>Octopressでの設置例を参考にやってみたが上手く行かなかったので、はてな公式サイトのボタン作成ページでコードを作成した。<br><a href="http://b.hatena.ne.jp]]>
-    </summary>
-    
-      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
   </entry>
   
