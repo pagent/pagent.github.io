@@ -114,6 +114,140 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/05/13/mouse-wheel-scroll-speed/" >「imwheel」でマウスホイールのスクロール移動量（スピード）を大きく</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年5月13日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Linuxでマウスホイールでの上下スクロールをする際、移動量（スピード）が小さくて疲れるので、移動量を大きくした。  </p>
+<p>###imwheelを使って設定<br>マウスの挙動を調整するツール「imwheel」を導入した。<br>Arch Linuxの場合はAURにあるので、Yaourtでインストール。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yaourt -S imwheel</div></pre></td></tr></table></figure>
+
+<p>UbuntuならUbuntuソフトウェアセンターまたはSynapticから。  </p>
+<p>インストール後、~/.imwheelrcファイルを作成（/home/ユーザー名/下に.imwheelrcファイル）。下記内容で保存。</p>
+<figure class="highlight plain"><figcaption><span>.imwheelrc</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">".*"</div><div class="line">None,      Up,   Button4, 3</div><div class="line">None,      Down, Button5, 2</div></pre></td></tr></table></figure>
+
+<p>「Up,   Button4」、「Down, Button5」の後ろの値で変更出来る。Up「3」、Down「2」で設定してみた。（デフォルトの値は「1」のよう。）<br>上に戻る時に早い方が良いし、この設定なら上下を繰り返すことで微調整も出来る。  </p>
+<p>1行目の「”.*”」ですべてのアプリケーションを対象とするようにしているが、記載の仕方によりアプリケーション毎に違う挙動をさせることも出来るようだ。</p>
+<p>その後<code>imwheel</code>コマンドを実行すると反映される。<br>（設定値を変更してリスタートする時は<code>killall imwheel &amp;&amp; imwheel</code>）  </p>
+<p>コマンド<code>imwheel</code>を自動開始アプリケーションに登録して完了。<br>スクロールが楽になった。  </p>
+<p>簡単に移動量を変更出来て、また上昇・下降にそれぞれ違う値を設定することも可能なので、かなりオススメ。</p>
+<p>（参照記事）<br><a href="http://askubuntu.com/questions/285689/increase-mouse-wheel-scroll-speed" target="_blank" rel="external">Increase mouse wheel scroll speed - Ask Ubuntu</a><br><a href="https://wiki.archlinux.org/index.php/Imwheel" target="_blank" rel="external">imwheel - ArchWiki</a>  </p>
+<p>###Xorgで設定（上手くいかず）  </p>
+<p>下記記事を参考に、xorgの設定でスクロール量の変更を試みた。<br><a href="http://ishikuro.hateblo.jp/entry/2013/12/08/190527" target="_blank" rel="external">Linuxでマウスホイール移動量調整 - ishn’s diary</a>  </p>
+<p><code>xinput</code>コマンドで確認すると、USB Optical Mouseはid=12だったので、</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ xinput <span class="keyword">set</span>-prop <span class="string">'12'</span> <span class="string">'Evdev Wheel Emulation Inertia'</span> <span class="number">200</span></div></pre></td></tr></table></figure>
+
+<p>とした。<br>ところがスクロール量に変化がない。<br><code>xinput list-props 12</code>で確認すると、確かにEvdev Wheel Emulation Inertiaの値は200になっているのだが。<br>USBマウスを抜き差ししても変化なし。<br>移動の上下の「向き」などは反映されるのだが、スクロール量はxinputでは設定出来ないようだ。  </p>
+<p>###Firefoxのみ設定<br>Firefoxだけで良いなら、about:configでmousewheel.default.delta_multiplier_yの値を変更すれば良いようだ。<br><a href="http://blog.ueshu.net/it/2013/06/19/1769.html" target="_blank" rel="external">ubuntuのFirefoxのマウスホイールのスクロール速度を変更する</a></p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/05/13/mouse-wheel-scroll-speed/" data-text="「imwheel」でマウスホイールのスクロール移動量（スピード）を大きく | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/05/13/mouse-wheel-scroll-speed/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/05/13/mouse-wheel-scroll-speed/" class="hatena-bookmark-button" data-hatena-bookmark-title="「imwheel」でマウスホイールのスクロール移動量（スピード）を大きく" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/05/09/firefox-yahoo-search/" >FirefoxにYahoo! JAPANの検索エンジンが見当たらない</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年5月9日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Firefoxを更新して以降、検索窓でのYahoo!検索がsearch.yahoo.co.jpではなく、英語のsearch.yahoo.comになってしまっている。<br>「検索設定を変更」→「検索エンジンを追加…」から探してみても、Yahoo! Vietnam、Yahoo! India、Yahoo! Canadaなどや、Yahoo Japan! Mail Notifierはあるが、Yahoo! JAPANの検索エンジンが見つからない。  </p>
+<p>###検索アシストアドオンによる対症療法<br><a href="https://addons.mozilla.org/ja/firefox/addon/yahoo%E5%8F%B3%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E6%A4%9C%E7%B4%A2%E3%82%A2%E3%82%B7%E3%82%B9%E3%83%88/?src=search" target="_blank" rel="external">「Yahoo!右クリック検索アシスト」</a>というアドオンがあるようだったので入れてみた。  </p>
+<p>表示しているページで文言を選択、右クリックするとメニューの一番下に「Yahooで検索」が追加される。<br>検索窓からの検索は出来ないので少し不便ではあるが、わざわざYahoo! JAPANのサイトに行くよりは手間が省ける。  </p>
+<p>###searchpluginsフォルダ内にyahoo-japan.xmlファイルを追加（推奨）<br>幸い別の端末に、Yahoo! JAPAN検索のためのxmlファイル（yahoo-japan.xml）があったので、これを手動で追加した。  </p>
+<p>~/.mozilla/firefox/(プロファイル名)/searchplugins内にyahoo-japan.xmlファイルをコピペ。<br>下記内容でファイルを新規作成しても良い。  </p>
+<figure class="highlight xml"><figcaption><span>yahoo-japan.xml</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">SearchPlugin</span> <span class="attribute">xmlns</span>=<span class="value">"http://www.mozilla.org/2006/browser/search/"</span> <span class="attribute">xmlns:os</span>=<span class="value">"http://a9.com/-/spec/opensearch/1.1/"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:ShortName</span>&gt;</span>Yahoo! JAPAN<span class="tag">&lt;/<span class="title">os:ShortName</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Description</span>&gt;</span>Yahoo! JAPANで検索<span class="tag">&lt;/<span class="title">os:Description</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:InputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">os:InputEncoding</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Url</span> <span class="attribute">type</span>=<span class="value">"text/html"</span> <span class="attribute">method</span>=<span class="value">"GET"</span> <span class="attribute">template</span>=<span class="value">"http://search.yahoo.co.jp/search?p={searchTerms}&amp;ei=UTF-8&amp;fr=opsrch"</span> <span class="attribute">resultDomain</span>=<span class="value">"search.yahoo.co.jp"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">os:Url</span>&gt;</span><span class="tag">&lt;<span class="title">os:Url</span> <span class="attribute">type</span>=<span class="value">"application/x-suggestions+json"</span> <span class="attribute">method</span>=<span class="value">"GET"</span> <span class="attribute">template</span>=<span class="value">"http://search.yahooapis.jp/AssistSearchService/V2/webassistSearch?p={searchTerms}&amp;appid=oQsoxcyxg66enp0TYoirkKoryq6rF8bK76mW0KYxZ0v0WPLtn.Lix6wy8F_LwGWHUII-&amp;output=iejson&amp;src=srch&amp;fr=opsrch"</span> <span class="attribute">resultDomain</span>=<span class="value">"search.yahooapis.jp"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">os:Url</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">SearchPlugin</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<p>アイコンは空白だったりただの虫めがねだったりするが、ちゃんとYahoo! JAPANの検索エンジンが追加される。<br>デフォルトの検索エンジンは/usr/lib/firefox/browser/searchpluginsに格納されているようなので、ここへ追加しても良いかもしれない。  </p>
+<p>Yahoo! JAPANの検索エンジンが復活したので、アドオン「Yahoo!右クリック検索アシスト」は不要となった。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/05/09/firefox-yahoo-search/" data-text="FirefoxにYahoo! JAPANの検索エンジンが見当たらない | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/05/09/firefox-yahoo-search/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/05/09/firefox-yahoo-search/" class="hatena-bookmark-button" data-hatena-bookmark-title="FirefoxにYahoo! JAPANの検索エンジンが見当たらない" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ブラウザ/">ブラウザ</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/05/02/higan/" >higanでファミコン、スーパーファミコン</a>
 		</h3>
 	
@@ -330,129 +464,6 @@
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/04/19/paccache-pkgcacheclean/" >不要なパッケージキャッシュの削除。paccacheとpkgcacheclean</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年4月19日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Arch Linuxを使っていると、pacmanでダウンロードした古いパッケージキャッシュが/var/cache/pacman/pkg/ に溜まってくるらしい。<br><a href="https://archlinuxjp.kusakata.com/wiki/Pacman?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DPacman_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno#.E3.83.91.E3.83.83.E3.82.B1.E3.83.BC.E3.82.B8.E3.82.AD.E3.83.A3.E3.83.83.E3.82.B7.E3.83.A5.E3.81.AE.E5.89.8A.E9.99.A4" target="_blank" rel="external">pacman - ArchWiki</a>  </p>
-<p>以前<code>paccache -r</code>および<code>paccache -ruk0</code>を行って不要なキャッシュを削除したが、今回はpkgcachecleanを利用してみた。<br>Yaourtでインストール  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yaourt -S pkgcacheclean</div></pre></td></tr></table></figure>
-
-<p>インストール容量もたった0.02MiBだった。<br>pkgcachecleanを実行  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> pkgcacheclean</div></pre></td></tr></table></figure>
-
-<p>メッセージ等が出ることもなく、一瞬で終了。<br>やや拍子抜けした。  </p>
-<p>だが/var/cache/pacman/pkg/のサイズは、実行前の2.4GBから1.9GBにちゃんと減量出来ていた。  </p>
-<p>このあと、試しにpaccacheしてみると、</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ paccache -r</div><div class="line">==&gt; no candidate packages found <span class="keyword">for</span> pruning</div><div class="line">$ paccache -ruk0</div><div class="line">==&gt; no candidate packages found <span class="keyword">for</span> pruning</div></pre></td></tr></table></figure>
-
-<p>もう削る必要のあるパッケージは無いようだ。  </p>
-<p>pkgcachecleanのページのコメントを見ると、paccacheが.partや.delta filesを扱わない一方、pkgcachecleanではこれらも対象になるようだ。<br><a href="https://aur.archlinux.org/packages/pkgcacheclean/" target="_blank" rel="external">AUR (en) - pkgcacheclean</a>  </p>
-<p>何のことかよく分からないが、コマンドが一つで済むことだし、pkgcachecleanの方が良さそうだ。簡単で有難い。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/19/paccache-pkgcacheclean/" data-text="不要なパッケージキャッシュの削除。paccacheとpkgcacheclean | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/19/paccache-pkgcacheclean/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/19/paccache-pkgcacheclean/" class="hatena-bookmark-button" data-hatena-bookmark-title="不要なパッケージキャッシュの削除。paccacheとpkgcacheclean" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Linux/">Linux</a></li></ul>
-	</div>
-
-</div>
-
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/04/18/pdf-xchange-viewer/" >PDFファイルの日本語フォント文字化け対策として「Wine」+「PDF-XChange Viewer」</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年4月18日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Ubuntu標準のPDFビューアEvinceで、日本語のフォントが表示されなかったり、文字化けしたりしていた。<br>poppler-dataをインストールしたり、fonts.confファイルを作成してみたが、正常に表示されない。<br>Evinceを諦めてOkular、Xpdf、ePDFviewer、qpdfviewなど試してみたが、やはり駄目。  </p>
-<p>日本語フォントが文字化けするのは、該当のPDFファイルに日本語フォントが埋め込まれていないのが原因のようだ。<br>それでも代替フォントがちゃんと利用されていれば正常に表示されるのだと思うが、その設定が上手く行かない。  </p>
-<p>FirefoxまたはLibreOffice Drawならちゃんと表示されるが、PDFビューアとしての使い勝手は良くない。  </p>
-<p>そこで、Windowsで使っていたPDF-XChange Viewer（無料体験版）をWineでインストールしたら、文字化け無しにちゃんと表示された。<br>無料版でも多機能だし、けっこう便利だ。<br>初回起動時には少々もたつくが、デフォルトで使うのではなく文字化けした時の緊急用として使う分には、申し分無い。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/18/pdf-xchange-viewer/" data-text="PDFファイルの日本語フォント文字化け対策として「Wine」+「PDF-XChange Viewer」 | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/18/pdf-xchange-viewer/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/18/pdf-xchange-viewer/" class="hatena-bookmark-button" data-hatena-bookmark-title="PDFファイルの日本語フォント文字化け対策として「Wine」+「PDF-XChange Viewer」" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Linux/">Linux</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -493,43 +504,43 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
-		
 			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
-		
-			<li><a href="/tags/SEO/">SEO<span>4</span></a></li>
-		
 			<li><a href="/tags/Git/">Git<span>13</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>14</span></a></li>
-		
-			<li><a href="/tags/サーバー/">サーバー<span>7</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>4</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>36</span></a></li>
 		
 			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
 		
-			<li><a href="/tags/ネット/">ネット<span>35</span></a></li>
+			<li><a href="/tags/サーバー/">サーバー<span>9</span></a></li>
+		
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
 		
 			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
 		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>14</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
+		
+			<li><a href="/tags/SEO/">SEO<span>4</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>35</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>4</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
+		
+			<li><a href="/tags/食/">食<span>4</span></a></li>
 		
 		
 		</ul>
@@ -544,6 +555,14 @@
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2016/02/27/000webhost-dadabase-error1045/" ><i class="fa fa-file-o"></i>000webhostでphpMyadminにログイン出...</a>
+      </li>
+    
+      <li>
+        <a href="/2016/02/27/000webhost-security/" ><i class="fa fa-file-o"></i>無料レンタルサーバー000webhostで情報漏洩</a>
+      </li>
+    
+      <li>
         <a href="/2016/02/21/peeep-us-google-account/" ><i class="fa fa-file-o"></i>「Peeep.us」Google accountでのロ...</a>
       </li>
     
@@ -555,14 +574,6 @@
         <a href="/2015/12/06/firefox-private-chromium-secret/" ><i class="fa fa-file-o"></i>Firefox、Chromiumをプライベート（シーク...</a>
       </li>
     
-      <li>
-        <a href="/2015/12/01/twitter-search-list/" ><i class="fa fa-file-o"></i>ツイート数表示のAPIが廃止されたので、代わりにURL...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/10/04/aur-update-yaourt/" ><i class="fa fa-file-o"></i>YaourtでAURのパッケージをアップデート</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -572,7 +583,7 @@
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">2013年12月</a><span class="archive-list-count">1</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">2013年12月</a><span class="archive-list-count">1</span></li></ul>
 		</ul>
 	</div>
 

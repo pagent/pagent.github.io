@@ -114,6 +114,118 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/04/06/monthly_archives/" >Octopressサイドバーに月別アーカイブリスト</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年4月6日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>まだ記事数も少ないが、Octopressのサイドバーに月別アーカイブリストを追加した。</p>
+<p>製作者さんのサイト<a href="http://rcmdnk.github.io/blog/2013/10/01/blog-octopress/" target="_blank" rel="external">月間アーカイブ for Octopress – rcmdnk’s blog</a>の通り、GitHubにあるファイル一式を所定のディレクトリに配置。<br><code>_config.yml</code>の<code>default_asdies</code>に<code>dcustom/asides/monthly_archive.html</code>を追加したところ、ちゃんとサイドバーに月別アーカイブリストが表示された。</p>
+<p>月の表示は英語式より数字の方が好みだったので<code>source/_includes/custom/asides</code>の<code>monthly_archive.html</code>デフォルトの<br><code>month_format:JAN</code>を<code>month_format:01</code>に変更した。</p>
+<p>アーカイブページのタイトルも<code>_config.yml</code>で変更出来るようなのだが、どうやればよいのかわからず。<br>やみくもに<code>monthly_format:01</code>等と追記してみたがコンパイルエラーになったりしてうまくいかない。<br>基本的なことがわかっておらず、コピペでしかカスタマイズ出来ない自分にはこれ以上は無理のようなので断念。</p>
+<p>それでも数段ブログらしくなりました。<br>製作者さんに感謝です。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/04/06/monthly_archives/" data-text="Octopressサイドバーに月別アーカイブリスト | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/06/monthly_archives/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/06/monthly_archives/" class="hatena-bookmark-button" data-hatena-bookmark-title="Octopressサイドバーに月別アーカイブリスト" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li> <li><a href="/tags/blog/">blog</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/04/06/category_list/" >Octopressサイドバーにカテゴリーリスト</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年4月6日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Octopressのサイドバーにカテゴリーリストを追加した。<br>下記サイトを参考にさせて頂いた。<br><a href="http://tantant.jp/blog/Octopress/configuring-octopress/#paragraph07" target="_blank" rel="external">Octopressの初期設定時に気にしておきたい9箇所 – tantant</a></p>
+<p>記事の通り<a href="https://github.com/tokkonopapa/octopress-tagcloud" target="_blank" rel="external">tokkonopapa/octopress-tagcloud</a>から<code>tag_cloud.rb</code>、<code>category_list.html</code>、<code>tag_cloud.html</code>を拝借して来て、/plugins と /source/_includes/custom/asides の元に配置した。<br><code>_config.yml</code>の「default_asides: 」欄にcustom/asides/category_list.htmlとcustom/asides/tag_cloud.htmlを追加してプレビューしたら、カテゴリーリストは正常に表示された。</p>
+<p>タグクラウドの方はカテゴリーをタグとして扱うもののようでカテゴリーと同じ項目が表示されていたが、リンク先が変でクリックしても真っ白な画面しか表示されない。<br>Octopressをサブディレクトリに配置しているのが関係しているのかもしれないが、対処法は分からず。<br>どちらかしか使わないのでカテゴリーリストのみ使用させて頂くことにした。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/04/06/category_list/" data-text="Octopressサイドバーにカテゴリーリスト | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/06/category_list/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/06/category_list/" class="hatena-bookmark-button" data-hatena-bookmark-title="Octopressサイドバーにカテゴリーリスト" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Octopress/">Octopress</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/04/04/disqus/" >コメントサービス「Disqus」の安全性は？</a>
 		</h3>
 	
@@ -300,133 +412,6 @@
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/04/03/edit-scss/" >Octopressの外観の変更</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年4月3日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Octopressの外観を変更したかったので、下記ページで色々テーマをインストールして試してみた。<br><a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes" target="_blank" rel="external">3rd Party Octopress Themes · imathis/octopress Wiki</a></p>
-<p>テーマごとに導入方法の説明が書いてあるが、大抵は</p>
-<pre><code>git <span class="keyword">clone</span> http:<span class="comment">//github.com〜 .themes/テーマ名</span>
-rake install[<span class="string">"テーマ名"</span>]
-</code></pre><p>でよいようだ。</p>
-<p>導入は簡単で良かったのだがやっぱり元に戻そうとしたところ、戻し方がわからず。<br>幸い少し前に作業フォルダごと圧縮保存してあったので、それを戻して事無きを得た。</p>
-<p>ただ少しは外観を変えたい。ヘッダーの色とか、サイト名のフォントの大きさとか。</p>
-<p>stylesheetsフォルダ内の<code>screen.css</code>を見てみると、スタイルに関するらしきことが改行も無しにすごい勢いで書いてある。<br>検索するとOctopressではSassとCompassというのが導入されていてsass/custom/以下のファイルを編集すればいいらしい。<br><a href="http://tokkonopapa.github.io/blog/2012/01/03/customizing-octopress-styles/" target="_blank" rel="external">Octopressのスタイル設定とカスタマイズ – T.I.D.</a></p>
-<p>ファイル内の記述冒頭の「//」はコメントアウトを意味するようだ。<br><code>_colors.scss</code>でヘッダーの色を少し変えて<code>_layout.scss</code>のheader-font-sizeを0.8emに変更した。<br>これだけでずいぶん好みの外観になった。</p>
-<p><code>_styles.scss</code>は再構築の際に最後にインポートされて上書きしてくれるから、好きな設定をあまり詰め込まずに追加すればよいらしい。<br>記事タイトルも少し小さくしたかったので、よく分からないのだけどここに</p>
-<pre><code><span class="tag">h1</span><span class="rules">{<span class="rule"><span class="attribute">font-size</span>:<span class="value">〇〇em</span></span>;<span class="rule"><span class="attribute">line-height</span>:<span class="value">☓☓em</span></span></span>}
-<span class="tag">article</span> <span class="tag">header</span> <span class="tag">h1</span> <span class="tag">a</span> <span class="rules">{<span class="rule"><span class="attribute">font-size</span>:<span class="value">△△em</span></span>;<span class="rule"><span class="attribute">line-height</span>:<span class="value">□□em</span></span></span>}
-</code></pre><p>を足したらちゃんと小さくなってくれた。</p>
-<p>めでたしめでたし。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/04/03/edit-scss/" data-text="Octopressの外観の変更 | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/03/edit-scss/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/03/edit-scss/" class="hatena-bookmark-button" data-hatena-bookmark-title="Octopressの外観の変更" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Octopress/">Octopress</a></li></ul>
-	</div>
-
-</div>
-
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/04/02/octopress_to_subdirectory/" >Octopressをサブディレクトリに置く</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年4月2日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>昨日、Octopressのブログをサブディレクトリ下に置けたと思ったんですが、rake previewしてプレビューするとスタイルシートがあたっておらず、Archivesなどのリンク先もルート直下になっていて not found になってしまう。</p>
-<p>Octopress公式サイトの説明を読むと、どうやら<code>_config.yml</code>内の「root: /」を書きかえるだけではダメで<code>config.rb</code>と<code>Rakefile</code>も編集しないといけないらしい。<br><a href="http://octopress.org/docs/deploying/subdir/" target="_blank" rel="external">Deploying to a Subdirectory – Octopress</a></p>
-<p>ドメイン下のstaticというサブディレクトリで公開したかったので、説明の通り</p>
-<pre><code>rake <span class="keyword">set</span>_root_dir[/static] 
-</code></pre><p>とコマンドを入れてみた。<br>すると、<code>_config.yml</code>、<code>config.rb</code>、<code>Rakefile</code>内にある種々のパス指定が自動的に書き変わっていた。</p>
-<p>すごい。</p>
-<p>だが、プレビューすると画面が真っ白。<br>しばらく右往左往したが、ブラウザでアクセスする先はこれまでの ttp://localhost:4000 ではなく、 ttp://localhost:4000/static でなければいけないのかも知れないと気がついた。</p>
-<p>ttp://localhost:4000/static にアクセスすると、ちゃんと表示された。</p>
-<p>プレビュー中に記事を編集するとそれがpublicフォルダ内に自動的に生成されてブラウザでのプレビューにも反映する、というのにも感心してしまった。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/04/02/octopress_to_subdirectory/" data-text="Octopressをサブディレクトリに置く | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/02/octopress_to_subdirectory/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/02/octopress_to_subdirectory/" class="hatena-bookmark-button" data-hatena-bookmark-title="Octopressをサブディレクトリに置く" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Octopress/">Octopress</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -467,43 +452,43 @@ rake install[<span class="string">"テーマ名"</span>]
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/blog/">blog<span>36</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>35</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
-		
-			<li><a href="/tags/SEO/">SEO<span>4</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
 			<li><a href="/tags/未分類/">未分類<span>4</span></a></li>
 		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+			<li><a href="/tags/blog/">blog<span>36</span></a></li>
 		
 			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>14</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+			<li><a href="/tags/ネット/">ネット<span>35</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>13</span></a></li>
 		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/サーバー/">サーバー<span>7</span></a></li>
-		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
+			<li><a href="/tags/食/">食<span>4</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
+		
+			<li><a href="/tags/SEO/">SEO<span>4</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/サーバー/">サーバー<span>9</span></a></li>
+		
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
 		
 		
 		</ul>
@@ -518,6 +503,14 @@ rake install[<span class="string">"テーマ名"</span>]
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2016/02/27/000webhost-dadabase-error1045/" ><i class="fa fa-file-o"></i>000webhostでphpMyadminにログイン出...</a>
+      </li>
+    
+      <li>
+        <a href="/2016/02/27/000webhost-security/" ><i class="fa fa-file-o"></i>無料レンタルサーバー000webhostで情報漏洩</a>
+      </li>
+    
+      <li>
         <a href="/2016/02/21/peeep-us-google-account/" ><i class="fa fa-file-o"></i>「Peeep.us」Google accountでのロ...</a>
       </li>
     
@@ -529,14 +522,6 @@ rake install[<span class="string">"テーマ名"</span>]
         <a href="/2015/12/06/firefox-private-chromium-secret/" ><i class="fa fa-file-o"></i>Firefox、Chromiumをプライベート（シーク...</a>
       </li>
     
-      <li>
-        <a href="/2015/12/01/twitter-search-list/" ><i class="fa fa-file-o"></i>ツイート数表示のAPIが廃止されたので、代わりにURL...</a>
-      </li>
-    
-      <li>
-        <a href="/2015/10/04/aur-update-yaourt/" ><i class="fa fa-file-o"></i>YaourtでAURのパッケージをアップデート</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -546,7 +531,7 @@ rake install[<span class="string">"テーマ名"</span>]
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">2013年12月</a><span class="archive-list-count">1</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">2013年12月</a><span class="archive-list-count">1</span></li></ul>
 		</ul>
 	</div>
 
