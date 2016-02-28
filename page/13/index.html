@@ -110,6 +110,67 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/02/26/nemo-terminal/" >nemoの拡張機能「nemo-terminal」がちょっと便利</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月26日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>ファイルマネージャーnemoに端末を追加する拡張機能「nemo-terminal」を入れた。  </p>
+<pre><code>$ sudo <span class="built_in">add</span>-apt-repository <span class="keyword">pp</span><span class="variable">a:webupd8team</span>/nemo
+
+$ sudo apt-<span class="built_in">get</span> <span class="keyword">update</span>
+
+$ sudo apt-<span class="built_in">get</span> install nemo-terminal
+</code></pre><p>nemoの上部に端末画面が追加される。  </p>
+<p>「F4」キーで端末画面の表示・非表示を切り替え。<br>端末での階層はnemoで開いているフォルダと同期されるので、コマンド操作する時に便利。  </p>
+<p>別途「dconfエディター」も入れておけば、端末画面の高さなども調節出来る。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/26/nemo-terminal/" data-text="nemoの拡張機能「nemo-terminal」がちょっと便利 | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/02/26/nemo-terminal/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/26/nemo-terminal/" class="hatena-bookmark-button" data-hatena-bookmark-title="nemoの拡張機能「nemo-terminal」がちょっと便利" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/02/25/clonezilla-architecture-speed/" >Clonezillaのアーキテクチャとバックアップスピード</a>
 		</h3>
 	
@@ -350,69 +411,6 @@
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/02/14/mbr-gpt/" >パーティションテーブルをMBRからGPTに書き換えてしまった</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年2月14日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>サブマシンのネットブックでArch Linuxを試してみようと思ったが、ブートローダーのGRUBをインストールするところで、BIOS（MBR形式）ではなくUEFI（GPT）を選択してしまった。<br>そのせいでMBRが壊れてしまったようで、起動出来なくなってしまった。<br>MBM（Multiple Boot Manager）を再インストールしてみたが、ディスク全体が”unknown”と表示されるのみ。  </p>
-<p>「TestDisk」というフリーソフトでパーティションテーブルを修復出来るようだった。  </p>
-<p>「TestDisk」は「Ultimate Boot CD」に同梱されてるという情報を見かけたが、どうやら現在は「Ultimate Boot CD」には同梱されていないようで、見つからなかった。<br>「SystemRescueCd」に入っていたので、こちらから利用した。<br>「SystemRescueCd」でブート。入力出来る状態になった後、<code>testdisk</code>とコマンドを打つと起動した。  </p>
-<p>使い方は最初はよく分からなかったが、サーチで表示されたリストの内、テーブルに書き込みたいものをキードードの左右のキーで設定し、緑色にしたら良いらしい。<br>リストは「p」キーでリストの内容を確認しながら選べば良いので、要領が分かれば簡単。<br>「q」で前の画面に戻る。</p>
-<p>使い方は下記サイトの解説が分かりやすかった。<br><a href="http://uiuicy.cs.land.to/testdisk1.html" target="_blank" rel="external">【TestDisk】について</a>  </p>
-<p>「Deeper Search」にはけっこう時間が掛かり、またせっかく「Deeper Search」が終わったリストを、途中で「ENTER」を押してしまって戻れなくなり、また最初から「Deeper Search」ということもあったが。  </p>
-<p>パーティションテーブルは一応復旧出来て、起動も出来るようになったが、どうやらGPTでのパーティショニングの痕跡が依然残っている様子。<br>GpartedもGPTでパーティショニングされていると判断するようで、なにかパーティションの操作をすると、また起動出来なくなる。  </p>
-<p>これでは不便だし安心感も持てないが、「AOMEI Partition Assistant Standard Edition」というWindows用のフリーソフトでディスクの内容を保持したままGPTとMBRの変換が出来るようなので、試してみることにした。  </p>
-<p>「AOMEI Partition Assistant」を試す前にパーティションのバックアップをしようと思ったが、Clonezillaもパーティションテーブルを読めないらしい。<br>仕方が無いので下記サイトを参考に、<code>dd</code>コマンドでバックアップすることにした。<br><a href="http://takuya-1st.hatenablog.jp/entry/20101025/1288002819" target="_blank" rel="external">dd でディスクをコピーするよく使う例 - それマグで！</a>  </p>
-<p>ーー<br>（追記）<br>「AOMEI Partition Assistant」はWindows XpではMBRに変換出来ないようで、結局ハードディスクのデータを全消去してパーティションテーブルをMBRで作り直し、ddでバックアップしたものをリストアしてようやく復旧した。  </p>
-<p>復旧後、拡張パーティションにあるLinuxが起動しなかったが、SystemRescueCdの”Boot an existing Linux system installed on the disk”で起動させ、<code>sudo grub-install --force /dev/sda6</code>でgrub2を再インストール。<code>sudo update-grub</code>で起動出来るようになった。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/14/mbr-gpt/" data-text="パーティションテーブルをMBRからGPTに書き換えてしまった | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/02/14/mbr-gpt/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/14/mbr-gpt/" class="hatena-bookmark-button" data-hatena-bookmark-title="パーティションテーブルをMBRからGPTに書き換えてしまった" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Linux/">Linux</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -453,43 +451,43 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+			<li><a href="/tags/SEO/">SEO<span>4</span></a></li>
+		
+			<li><a href="/tags/食/">食<span>4</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
 		
 			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
 		
 			<li><a href="/tags/サーバー/">サーバー<span>9</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
-		
-			<li><a href="/tags/SEO/">SEO<span>4</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
-		
 			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>14</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>35</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>4</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
 		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
 		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>36</span></a></li>
+			<li><a href="/tags/ネット/">ネット<span>36</span></a></li>
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>4</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>37</span></a></li>
 		
 		
 		</ul>
@@ -502,6 +500,10 @@
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2016/02/28/modify-twitter-cards/" ><i class="fa fa-file-o"></i>Twitterカードを後から修正</a>
+      </li>
     
       <li>
         <a href="/2016/02/27/000webhost-dadabase-error1045/" ><i class="fa fa-file-o"></i>000webhostでphpMyadminにログイン出...</a>
@@ -519,10 +521,6 @@
         <a href="/2015/12/21/truecrypt-downgrade/" ><i class="fa fa-file-o"></i>TrueCryptでボリュームをマウント出来ない→ダウ...</a>
       </li>
     
-      <li>
-        <a href="/2015/12/06/firefox-private-chromium-secret/" ><i class="fa fa-file-o"></i>Firefox、Chromiumをプライベート（シーク...</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -532,7 +530,7 @@
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">2013年12月</a><span class="archive-list-count">1</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12/">2013年12月</a><span class="archive-list-count">1</span></li></ul>
 		</ul>
 	</div>
 

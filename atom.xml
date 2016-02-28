@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-02-27T12:59:25.402Z</updated>
+  <updated>2016-02-28T05:38:35.117Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,11 +15,34 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Twitterカードを後から修正]]></title>
+    <link href="http://pagent.github.io/2016/02/28/modify-twitter-cards/"/>
+    <id>http://pagent.github.io/2016/02/28/modify-twitter-cards/</id>
+    <published>2016-02-28T05:17:17.000Z</published>
+    <updated>2016-02-28T05:37:22.175Z</updated>
+    <content type="html"><![CDATA[<p>Twitterカードを設定していると、ページの概要を画像付きで表示してくれて、有難い。だが後から記事タイトルを変更したり、画像の無かった記事に画像を追加したりすることがよくある。<br>ツイードをいったん削除しツイートし直しても修正されていない。  </p>
+<p>これまで諦めていたが、ごく簡単に修正出来た。<br>「Card Validator」で問題のページのURLを入力し「Preview card」をクリックするだけ。  </p>
+<p><a href="https://cards-dev.twitter.com/validator" title="Card Validator | Twitter Developers" target="_blank" rel="external">Card Validator | Twitter Developers</a></p>
+<p>修正内容は即座に反映される。<br>もっと早く知っておけば良かった。  </p>
+<p>（参照記事）<br><a href="http://nelog.jp/how-to-use-twitter-card-validator" title="1度登録したTwitterカード情報（タイトル、アイキャッチなど）を変更する方法" target="_blank" rel="external">1度登録したTwitterカード情報（タイトル、アイキャッチなど）を変更する方法</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Twitterカードを設定していると、ページの概要を画像付きで表示してくれて、有難い。だが後から記事タイトルを変更したり、画像の無かった記事に画像を追加したりすることがよくある。<br>ツイードをいったん削除しツイートし直しても修正されていない。  </p>
+<p>これまで]]>
+    </summary>
+    
+      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
+    
+      <category term="blog" scheme="http://pagent.github.io/tags/blog/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[000webhostでphpMyadminにログイン出来ない Error ＃1045]]></title>
     <link href="http://pagent.github.io/2016/02/27/000webhost-dadabase-error1045/"/>
     <id>http://pagent.github.io/2016/02/27/000webhost-dadabase-error1045/</id>
     <published>2016-02-27T09:26:26.000Z</published>
-    <updated>2016-02-27T10:19:43.000Z</updated>
+    <updated>2016-02-27T10:19:43.481Z</updated>
     <content type="html"><![CDATA[<p>海外の無料ホスティングサービス000webhostでMySQLデータベースを作成したが、<br><q>Error #1045 - Access denied for user ‘＊＊＊＊＊’@’localhost’ (using password: YES)</q><br>というエラー表示になり、何度やってもphpMyadminにログイン出来ない。パスワードは正しいはずなのだが。  </p>
 <p><img src="/images/error1045.png" alt="Error #1045" width="320" height="240" border="2px"></p>
 <p>以前作成したデータベースの方はログイン出来る。  </p>
@@ -38,7 +61,7 @@
     <link href="http://pagent.github.io/2016/02/27/000webhost-security/"/>
     <id>http://pagent.github.io/2016/02/27/000webhost-security/</id>
     <published>2016-02-27T09:14:34.000Z</published>
-    <updated>2016-02-27T09:22:58.000Z</updated>
+    <updated>2016-02-27T09:22:58.336Z</updated>
     <content type="html"><![CDATA[<p>久しぶりに海外無料レンタルサーバーの000webhostにアクセスしたみたが、付属のFilemanagerが開けない。<br>よく見ると上部にパスワードを再設定しろということが書いてあった。<br>言われた通り再設定したところFilemanagerが使用可能になった。  </p>
 <p>おそらく以前に000webhostで情報漏洩事件があったことと関係しているようだ。<br><a href="http://japan.cnet.com/news/business/35072756/" title="000webhost" target="_blank" rel="external">無料ホスティングサービス000webhostで情報漏えい–セキュリティ体制に問題か - CNET Japan</a>  </p>
 <p>しばしばサーバーダウンもあるし、あまり当てにしない方が良いようだ。</p>
@@ -480,41 +503,6 @@
       <category term="Git" scheme="http://pagent.github.io/tags/Git/"/>
     
       <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[2015年6月2日のツイートまとめ]]></title>
-    <link href="http://pagent.github.io/2015/06/03/tweets/"/>
-    <id>http://pagent.github.io/2015/06/03/tweets/</id>
-    <published>2015-06-02T17:42:25.000Z</published>
-    <updated>2016-02-27T00:25:12.000Z</updated>
-    <content type="html"><![CDATA[<p>（リツイート・リプライ含む。短縮URLリンク先は元URLに補正。）  </p>
-<div style="line-height:2.0em;" class="box">ぱじぇんと @su_da<em>chi</em>　<a href="https://twitter.com/su_da_chi_/status/605692855923785728" target="_blank" rel="external">2015-06-02 20:10:04</a><br>アメリカ人は「慰安婦問題」などには関心が無いのだろう <a href="http://pagent.seesaa.net/article/420016936.html" target="_blank" rel="external">pagent.seesaa.net/article/420016936.html …</a>  </div>  
-
-
-<div style="line-height:2.0em;" class="box">ライフハッカー［日本版］ @lifehackerjapan　<a href="https://twitter.com/lifehackerjapan/status/605694668177854464" target="_blank" rel="external">2015-06-02 20:17:16</a><br>情けは人のためならず。人を助けると自分の能力が磨かれる <a href="http://www.lifehacker.jp/2015/06/150602_Helping_others.html" target="_blank" rel="external">ift.tt/1BGvdca</a>  </div>  
-
-
-<div style="line-height:2.0em;" class="box">励まし　元気　癒し　BOT @genkismile_bot　<a href="https://twitter.com/genkismile_bot/status/605316946154823681" target="_blank" rel="external">2015-06-01 19:16:20</a><br>光が多いところでは、影も強くなる。  </div>  
-
-
-<div style="line-height:2.0em;" class="box">tak_aramata @tkbee777　<a href="https://twitter.com/tkbee777/status/601961052788555776" target="_blank" rel="external">2015-05-23 13:01:13</a><br>無駄な人生を歩むことで、人生が豊かになる。 | 魅力的な人になる30の方法 | HappyLifeStyle<br><a href="https://happylifestyle.com/4672" target="_blank" rel="external">happylifestyle.com/4672</a>  </div>  
-
-
-<div style="line-height:2.0em;" class="box">ぱじぇんと @su_da<em>chi</em>　<a href="https://twitter.com/su_da_chi_/status/605711370915479552" target="_blank" rel="external">2015-06-02 21:23:39</a><br>@RinnosukeOusaki 無効か無効じゃないかにかかわらず「要らないからやめる」でもいいように思うんですが。  </div>  
-
-
-<div style="line-height:2.0em;" class="box">ぱじぇんと @su_da<em>chi</em>　<a href="https://twitter.com/su_da_chi_/status/605718662259998722" target="_blank" rel="external">2015-06-02 21:52:37</a><br>黙っていても伝わらない。思ったことは口に出した方がいい7つの理由 ｜ ライフハッカー <a href="http://www.lifehacker.jp/2015/06/150602your_opinion.html" target="_blank" rel="external">lifehacker.jp/2015/06/150602…</a> @lifehackerjapanさんから<br>︙<br>3. 議論を進められる<br>4. 間違っていても、その理由を学べる<br>5. 実は多数派かもしれない<br>︙  </div>  
-
-
-<div style="line-height:2.0em;" class="box">ぱじぇんと @su_da<em>chi</em> <a href="https://twitter.com/su_da_chi_/status/605737931479728129" target="_blank" rel="external">2015-06-02 23:09:11</a><br>Stand Stare State  </div>]]></content>
-    <summary type="html">
-    <![CDATA[<p>（リツイート・リプライ含む。短縮URLリンク先は元URLに補正。）  </p>
-<div style="line-height:2.0em;" class="box">ぱじぇんと @su_da<em>chi</em>　<a href="https://twitter.com]]>
-    </summary>
-    
-      <category term="未分類" scheme="http://pagent.github.io/tags/%E6%9C%AA%E5%88%86%E9%A1%9E/"/>
     
   </entry>
   
