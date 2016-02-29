@@ -110,14 +110,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/06/04/github-japan/" >GitHubが「ギットハブ・ジャパン」を設立したそうだ</a>
+			<a href="/2015/04/02/fcitx-qt-program/" >Qtベースのプログラムで日本語入力（fcitx-mozc）</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年6月4日
+	2015年4月2日
 </div>
 
 <div class="panel-body">
@@ -127,11 +127,18 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>ITmediaのニュースによると、Gitによるバージョン管理サービスの老舗「GitHub」が日本法人「ギットハブ・ジャパン」を設立したそうだ。<br><a href="http://www.itmedia.co.jp/news/articles/1506/04/news133.html" target="_blank" rel="external">GitHubが日本法人「ギットハブ・ジャパン」設立　日本語テクニカルサポートで法人向け導入を促進 (1/2) - ITmedia ニュース</a>  </p>
-<p>ギットハブ・ジャパンは企業向けのツール「GitHub Enterprise」の販売とサポート提供が主な目的のよう。<br>“github”を検索してみたら、すぐにGitHub Japanのサイトが見つかった。<br><a href="http://github.co.jp/" target="_blank" rel="external">http://github.co.jp/</a>  </p>
-<p>どうやらすぐにgithub.comに日本語ページが用意されるということではないようだが、英語サイトの「GitHub Enterprise」は”github.com”のサブドメイン”enterprise.github.com”で提供されているようだし、もしかするとそのうちgithub.comを日本語で利用出来るようになるのだろうか？<br>（類似のサービスを提供している「Bitbucket」はすでに英語だけでなく、日本語、ドイツ語、フランス語、ロシア語、中国語、ヒンズー語など、計９つの言語で利用可能になっている。）</p>
-<p>自分はIT関係には疎くて、GitHub Pagesをブログ代わりに利用させてもらっているだけだが、もしgithub.comを日本語で利用出来るようになれば、今後個人の日本人利用者もさらに増えるのかもしれない。  </p>
-<p>少しでも興味のある人は早めに登録しておいた方が、気に入ったアカウントを取得しやすいかもしれませんね。</p>
+	  <p>iBusのプロパティパネル採用以降、iBusをやめて日本語入力にfcitx-mozcを使っている。  </p>
+<p>Xubuntuでは特に問題無く使えていたが、Arch LinuxでQtベースのプログラムを使用する際、日本語入力が有効にならず困っていた。<br>「QupZilla」（Simplenote専用にするのにうってつけの軽量ブラウザ）や「ReText」（プレビューが出来て便利なmarkdownファイルエディター）など、日本語入力が出来ないと不便。  </p>
+<p>モジュールのfcitx-qt4、fcitx-qt5はインストールしたが、何故かインプットメソッドがオンにならない。<br>fcitx-configtool（Qt 設定ツール）で、デフォルトのインプットメソッドをfcitxに変更したが、効果が無い。  </p>
+<p><code>fcitx-diagnose</code>を実行してフロントエンド設定の項目を確認すると、空欄だったり「設定されていません」という表示だったりする。<br>XMODIFIERSとQT_IM_MODULEがちゃんとロードされていないらしい。  </p>
+<p>ホームディレクトリに.xprofileを新規作成し、下記内容で保存。<br>（ディスプレイマネージャにSLiMを使っている場合は、~/.xprofileではなく~/.xinitrcに記載するらしい）  </p>
+<pre><code><span class="keyword">export</span> GTK_IM_MODULE=fcitx
+<span class="keyword">export</span> QT_IM_MODULE=fcitx
+<span class="keyword">export</span> XMODIFIERS=<span class="string">"@im=fcitx"</span>
+</code></pre><p>再起動したら、QupZilla、ReTextともに日本語入力が可能になった。  </p>
+<p>再度<code>fcitx-diagnose</code>で見てみると、「環境変数 XMODIFIERS は “{$2}” に正しく設定されています。」「環境変数 QT_IM_MODULE は “{$2}” に正しく設定されています。」となっていた。  </p>
+<p>fcitx-configtoolのデフォルトのインプットメソッドはximのままでも問題無いようだった。  </p>
+<p>（参照記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Fcitx" target="_blank" rel="external">Fcitx - ArchWiki</a></p>
 
 	
 	</div>
@@ -141,21 +148,21 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/06/04/github-japan/" data-text="GitHubが「ギットハブ・ジャパン」を設立したそうだ | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/02/fcitx-qt-program/" data-text="Qtベースのプログラムで日本語入力（fcitx-mozc） | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/06/04/github-japan/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/02/fcitx-qt-program/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/06/04/github-japan/" class="hatena-bookmark-button" data-hatena-bookmark-title="GitHubが「ギットハブ・ジャパン」を設立したそうだ" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/02/fcitx-qt-program/" class="hatena-bookmark-button" data-hatena-bookmark-title="Qtベースのプログラムで日本語入力（fcitx-mozc）" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
 	<div class="meta-widget pull-right">
 <span style="color:#555;"><i class="fa fa-tags"></i></span>
 <ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Git/">Git</a></li> <li><a href="/tags/ネット/">ネット</a></li></ul>
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
 	</div>
 
 </div>
@@ -167,14 +174,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/06/03/tweets/" >2015年6月2日のツイートまとめ</a>
+			<a href="/2015/04/01/xfce4-appearance-settings-crash/" >Xfce4設定の外観~フォントをFixedにしたらクラッシュした</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年6月3日
+	2015年4月1日
 </div>
 
 <div class="panel-body">
@@ -184,26 +191,17 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>（リツイート・リプライ含む。短縮URLリンク先は元URLに補正。）  </p>
-<div style="line-height:2.0em;" class="box">ぱじぇんと @su_da<em>chi</em>　<a href="https://twitter.com/su_da_chi_/status/605692855923785728" target="_blank" rel="external">2015-06-02 20:10:04</a><br>アメリカ人は「慰安婦問題」などには関心が無いのだろう <a href="http://pagent.seesaa.net/article/420016936.html" target="_blank" rel="external">pagent.seesaa.net/article/420016936.html …</a>  </div>  
+	  <p>Xfce4の設定で「外観」（appearance）→「フォント」のデフォルトフォントをFixedにしたら、クラッシュして、パネルが消えてしまった。<br>デスクトップ上右クリック→アプリケーションから再び「外観」を呼び出そうとしても、一瞬現れて瞬時に消えてしまう。設定マネージャーも起動せず。<br>「設定」→「パネル」でパネルは「キオスクモード」とかでなんとか立ち上げることが出来たが、これもファイルマネージャーを開くと消えてしまう。  </p>
+<p>Firefoxで「システムフォント」等を検索したが、/etc/fonts/conf.d内のファイルにはそれらしい記述は見当たらず。<br>「外観」のデフォルトフォントはシステムフォントとは別物らしい。  </p>
+<p><a href="https://archlinuxjp.kusakata.com/wiki/GTK%2B" target="_blank" rel="external">GTK+ - ArchWiki</a>を見て、~/.gtkrc-2.0を探したが、そんなファイルは無い。<br>自作してみたが効果なし。  </p>
+<p>ホームディレクトリ内を探しまわって、ようやく~/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xmlに記述を見つけた。  </p>
+<pre><code>  &lt;property name=<span class="string">"Gtk"</span> type=<span class="string">"empty"</span>&gt;
+    <span class="keyword">...</span>
+    &lt;property name=<span class="string">"FontName"</span> type=<span class="string">"string"</span> value=<span class="string">"Fixed Medium 10"</span>/&gt;
+    <span class="keyword">...</span>
+</code></pre><p>「Fixed」を「Droid Sans」に変更。<br>再起動すると無事復旧した。  </p>
+<p>デスクトップ上右クリックからアプリケーションを起動出来るXfce4で助かった。</p>
 
-
-<div style="line-height:2.0em;" class="box">ライフハッカー［日本版］ @lifehackerjapan　<a href="https://twitter.com/lifehackerjapan/status/605694668177854464" target="_blank" rel="external">2015-06-02 20:17:16</a><br>情けは人のためならず。人を助けると自分の能力が磨かれる <a href="http://www.lifehacker.jp/2015/06/150602_Helping_others.html" target="_blank" rel="external">ift.tt/1BGvdca</a>  </div>  
-
-
-<div style="line-height:2.0em;" class="box">励まし　元気　癒し　BOT @genkismile_bot　<a href="https://twitter.com/genkismile_bot/status/605316946154823681" target="_blank" rel="external">2015-06-01 19:16:20</a><br>光が多いところでは、影も強くなる。  </div>  
-
-
-<div style="line-height:2.0em;" class="box">tak_aramata @tkbee777　<a href="https://twitter.com/tkbee777/status/601961052788555776" target="_blank" rel="external">2015-05-23 13:01:13</a><br>無駄な人生を歩むことで、人生が豊かになる。 | 魅力的な人になる30の方法 | HappyLifeStyle<br><a href="https://happylifestyle.com/4672" target="_blank" rel="external">happylifestyle.com/4672</a>  </div>  
-
-
-<div style="line-height:2.0em;" class="box">ぱじぇんと @su_da<em>chi</em>　<a href="https://twitter.com/su_da_chi_/status/605711370915479552" target="_blank" rel="external">2015-06-02 21:23:39</a><br>@RinnosukeOusaki 無効か無効じゃないかにかかわらず「要らないからやめる」でもいいように思うんですが。  </div>  
-
-
-<div style="line-height:2.0em;" class="box">ぱじぇんと @su_da<em>chi</em>　<a href="https://twitter.com/su_da_chi_/status/605718662259998722" target="_blank" rel="external">2015-06-02 21:52:37</a><br>黙っていても伝わらない。思ったことは口に出した方がいい7つの理由 ｜ ライフハッカー <a href="http://www.lifehacker.jp/2015/06/150602your_opinion.html" target="_blank" rel="external">lifehacker.jp/2015/06/150602…</a> @lifehackerjapanさんから<br>︙<br>3. 議論を進められる<br>4. 間違っていても、その理由を学べる<br>5. 実は多数派かもしれない<br>︙  </div>  
-
-
-<div style="line-height:2.0em;" class="box">ぱじぇんと @su_da<em>chi</em> <a href="https://twitter.com/su_da_chi_/status/605737931479728129" target="_blank" rel="external">2015-06-02 23:09:11</a><br>Stand Stare State  </div>
 	
 	</div>
 	
@@ -212,21 +210,21 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/06/03/tweets/" data-text="2015年6月2日のツイートまとめ | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/01/xfce4-appearance-settings-crash/" data-text="Xfce4設定の外観~フォントをFixedにしたらクラッシュした | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/06/03/tweets/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/01/xfce4-appearance-settings-crash/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/06/03/tweets/" class="hatena-bookmark-button" data-hatena-bookmark-title="2015年6月2日のツイートまとめ" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/01/xfce4-appearance-settings-crash/" class="hatena-bookmark-button" data-hatena-bookmark-title="Xfce4設定の外観~フォントをFixedにしたらクラッシュした" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
 	<div class="meta-widget pull-right">
 <span style="color:#555;"><i class="fa fa-tags"></i></span>
 <ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/未分類/">未分類</a></li></ul>
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
 	</div>
 
 </div>
@@ -238,14 +236,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/06/02/vertical-dotted-line/" >縦の三点リーダーがあったのか！ これは便利！</a>
+			<a href="/2015/04/01/infinality/" >Arch LinuxのフォントレンダリングをInfinalityにした</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年6月2日
+	2015年4月1日
 </div>
 
 <div class="panel-body">
@@ -255,14 +253,16 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>三点リーダーを表示しようと、キーボードで「・（/）」キーを3回叩いて変換していて、縦の三点リーダーがあることに気がついた。  </p>
-<p>「︙」    </p>
-<p>入力メソッドはLinux上のMozc。WindowsのMS-IMEやGoogle日本語入力などではどうなのかは未検証。<br>常識なのかもしれないが、今まで知らなかった。  </p>
-<p>縦向きに省略したい時に、超便利だ。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">︙</div><div class="line">3.</div><div class="line">4.</div><div class="line">5.</div><div class="line">︙</div></pre></td></tr></table></figure>
-
-<p></p><p></p><br>全然知らなかった。  <p></p>
-<p>常識なのかもしれないが。</p>
+	  <p>Arch Linuxでのフォントが汚く見づらかったので、フォントレンダリング「Infinality」（<a href="https://archlinuxjp.kusakata.com/wiki/Infinality" target="_blank" rel="external">Infinality - ArchWiki</a>）をインストールした。  </p>
+<p>途中、</p>
+<pre><code>Unable <span class="keyword">to</span> <span class="keyword">update</span> the static FcBlank<span class="variable">s:</span> <span class="number">0</span>x0600
+Unable <span class="keyword">to</span> <span class="keyword">update</span> the static FcBlank<span class="variable">s:</span> <span class="number">0</span>x0601
+Unable <span class="keyword">to</span> <span class="keyword">update</span> the static FcBlank<span class="variable">s:</span> <span class="number">0</span>x0602
+…
+</code></pre><p>というエラーが出たが、下記トピックを参考に、<code>sudo pacman -S fontconfig-infinality-ultimate</code>でfontconfig-iu-compを削除した。<br><a href="https://bbs.archlinux.org/viewtopic.php?id=195198" target="_blank" rel="external">[SOLVED] Font cache: Unable to update the static FcBlanks / Newbie Corner / Arch Linux Forums</a>  </p>
+<p>首尾よくフォントが綺麗になったのだが、その後一部の漢字フォントが縦に細く潰れたようになってしまった。<br>（もしかすると、気づいたのが最近だっただけで、以前から潰れたフォントがあったのかもしれない。）</p>
+<p>フォントレンダリングをUbuntuのものに変えようかとも思ったが、ArchWikiに記載のあったibfonts-meta-extendedをインストールしたら治った。<br>IPA Pゴシックなどでは、依然、一部漢字フォントが潰れているが。  </p>
+<p>どうしても具合が悪いようだったら、Ubuntuのフォントレンダリングに変更してみようと思う。</p>
 
 	
 	</div>
@@ -272,21 +272,21 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/06/02/vertical-dotted-line/" data-text="縦の三点リーダーがあったのか！ これは便利！ | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/01/infinality/" data-text="Arch LinuxのフォントレンダリングをInfinalityにした | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/06/02/vertical-dotted-line/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/01/infinality/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/06/02/vertical-dotted-line/" class="hatena-bookmark-button" data-hatena-bookmark-title="縦の三点リーダーがあったのか！ これは便利！" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/01/infinality/" class="hatena-bookmark-button" data-hatena-bookmark-title="Arch LinuxのフォントレンダリングをInfinalityにした" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
 	<div class="meta-widget pull-right">
 <span style="color:#555;"><i class="fa fa-tags"></i></span>
 <ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/小ネタ/">小ネタ</a></li></ul>
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
 	</div>
 
 </div>
@@ -298,14 +298,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/05/30/twitter-appearances-dm/" >ツイッターの外観（文字サイズ）変更とDM非表示</a>
+			<a href="/2015/04/01/nemo-fileroller/" >nemoの右クリックメニューに「圧縮...」「ここに展開する」を追加</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年5月30日
+	2015年4月1日
 </div>
 
 <div class="panel-body">
@@ -315,13 +315,9 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>Twitterの表示形式変更後、プロフィールページで最新のツイートなどがやたらとデカく表示される。見づらいので、Firefoxのアドオン「Stylish」を使って他のツイートと同じ大きさで表示させるようにしていた（DMも見ないので、DMアイコンは非表示に）。  </p>
-<p>見やすくて良かったのだが、最近またツイッターの方で文字サイズを指定する要素が変更されたようで、一部のツイートが大きく表示されてしまっていた。  </p>
-<p>新たに<code>.TweetTextSize.TweetTextSize--26px</code>の指定を追加して下記のようにした。  </p>
-<figure class="highlight css"><figcaption><span>ツイッターシンプル・DM非表示</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="at_rule">@<span class="keyword">namespace</span> <span class="function">url</span>(http://www.w3.org/<span class="number">1999</span>/xhtml)</span>;</div><div class="line"><span class="at_rule">@<span class="keyword">-moz-document</span> <span class="function">domain</span>(<span class="string">"twitter.com"</span>)</span></div><div class="line">{</div><div class="line"><span class="class">.ProfileTweet-text</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">14px</span> <span class="important">!important</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">20px</span> <span class="important">!important</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="class">.DMButton</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">display</span>:<span class="value"> none <span class="important">!important</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="class">.dm-nav</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">display</span>:<span class="value"> none <span class="important">!important</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="class">.TweetTextSize</span><span class="class">.TweetTextSize--26px</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">14px</span> <span class="important">!important</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">20px</span> <span class="important">!important</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="comment">/* --- 追記に記載した追加部分 --- */</span></div><div class="line"><span class="class">.TweetTextSize</span><span class="class">.TweetTextSize--16px</span> <span class="rules">{</span></div><div class="line">    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">14px</span> <span class="important">!important</span></span></span>;</div><div class="line">    <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">20px</span> <span class="important">!important</span></span></span>;</div><div class="line"><span class="rule">}</span></div><div class="line"><span class="comment">/* ------- ここまで追加 -------- */</span></div><div class="line">}</div></pre></td></tr></table></figure>
-
-<p>もしかすると<code>.ProfileTweet-text</code>の要素は使われなくなっているのかも知れないが、念の為置いておいた。  </p>
-<p>ーー<br>（追記）<br>どデカくはないけど、そこそこ大きく表示されるツイートもあるようで、これも通常の大きさで表示するには<code>.TweetTextSize.TweetTextSize--16px</code>を指定する必要がありました。<br><a href="https://twitter.com/frypangsan/status/604608279042351104" target="_blank" rel="external">@frypangsanさんのツイート</a></p>
+	  <p>Arch Linux（Xfce4デスクトップ）にもファイルマネージャーnemoを入れている。<br>Xubuntuの時にはnemoの右クリックに「圧縮…」や「ここに展開する」というのがあったのだが、何故かこれが無い。<br>どうやらエクステンションとしてnemo-filerollerを入れないといけないらしい。<br><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>  </p>
+<p>pacmanでインストール出来た。  </p>
+<p><a href="https://github.com/linuxmint/nemo-extensions" target="_blank" rel="external">linuxmint/nemo-extensions · GitHub</a>を見ると他にも、nemo-terminal、nemo-dropbox、またnemo-compare、nemo-repairerなど様々な拡張機能があるようだ。<br>また今度試してみようと思う。</p>
 
 	
 	</div>
@@ -331,14 +327,193 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/05/30/twitter-appearances-dm/" data-text="ツイッターの外観（文字サイズ）変更とDM非表示 | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/01/nemo-fileroller/" data-text="nemoの右クリックメニューに「圧縮...」「ここに展開する」を追加 | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/05/30/twitter-appearances-dm/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/01/nemo-fileroller/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/05/30/twitter-appearances-dm/" class="hatena-bookmark-button" data-hatena-bookmark-title="ツイッターの外観（文字サイズ）変更とDM非表示" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/01/nemo-fileroller/" class="hatena-bookmark-button" data-hatena-bookmark-title="nemoの右クリックメニューに「圧縮...」「ここに展開する」を追加" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/04/01/xfce4-terminal-browser/" >Xfce4 terminal内のリンクを開くブラウザをFirefoxに</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年4月1日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>「お気に入りのアプリケーション」のブラウザをFirefoxにしていて、これまでXfce4 terminal内のリンクを開く時もFirefoxで開けていた。<br>だが、Chromiumをインストールしてから、リンクがChromiumで開くようになってしまった。<br>Xfce4 terminalの設定ではブラウザを指定出来ない。  </p>
+<p>検索すると下記トピックが見つかった。<br><a href="https://bbs.archlinux.org/viewtopic.php?id=191547" target="_blank" rel="external">[SOLVED] Xfce terminal open links with wrong browser. / Applications &amp; Desktop Environments / Arch Linux Forums</a>  </p>
+<p>~/.config/mimeapps.listの[Added Associations]の箇所に下記を追記した。  </p>
+<pre><code>text/vcard=firefox.desktop;
+text/html=firefox.desktop;
+x-scheme-<span class="operator"><span class="keyword">handler</span>/http=firefox.desktop;</span>
+x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firefox.desktop;</span>
+</code></pre><p>Xfce4 terminal内のリンクがFirefoxで開くようになった。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/01/xfce4-terminal-browser/" data-text="Xfce4 terminal内のリンクを開くブラウザをFirefoxに | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/01/xfce4-terminal-browser/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/01/xfce4-terminal-browser/" class="hatena-bookmark-button" data-hatena-bookmark-title="Xfce4 terminal内のリンクを開くブラウザをFirefoxに" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/03/31/lubuntu-update-stuck/" >Lubuntuのアップデート中にフリーズ</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年3月31日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Lubuntu14.04をアップデート中に  </p>
+<pre><code>run-parts: executing <span class="regexp">/etc/</span>kernel<span class="regexp">/postinst.d/</span>zz-update-grub <span class="number">3.16</span>.<span class="number">0</span>-<span class="number">33</span>-generic <span class="regexp">/boot/</span>vmlinuz-<span class="number">3.16</span>.<span class="number">0</span>-<span class="number">33</span>-generic
+</code></pre><p>の表示のところでフリーズしてしまった。<br>カーネルのアップデート中だったので嫌な予感がしたが、やむなく強制終了した。<br>起動しようとすると、案の定  </p>
+<pre><code><span class="title">buffer</span> i/o <span class="built_in">error</span> <span class="built_in">on</span> device sda4
+</code></pre><p>と延々エラーを吐いて起動してくれない。  </p>
+<p>sda4はswapに当てていたので、隣のArch Linuxを起動して、sda4を再度swapでフォーマットし直したら起動できるようになった。<br>（fstabの記載はUUIDではなくデバイス名にしていた）  </p>
+<p>起動は出来たが、今度はSynapticを使おうとすると、  </p>
+<pre><code><span class="attribute">E</span>: <span class="string">dpkg は中断されました。問題を修正するには 'dpkg --configure -a' を手動で実行する必要があります。</span>
+<span class="attribute">E</span>: <span class="string">_cache-&gt;open() failed, please report.</span>
+</code></pre><p>という表示が出る。<br>言われたとおり<code>dpkg --configure -a</code>を実行すると、中断した箇所からアップデートが再開された。  </p>
+<p>今度はアップデートも無事終了。  </p>
+<p>意味はよく分かってはいないが、ネットの情報の助けがあれば、エラー表示はとても助かる。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/31/lubuntu-update-stuck/" data-text="Lubuntuのアップデート中にフリーズ | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/03/31/lubuntu-update-stuck/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/03/31/lubuntu-update-stuck/" class="hatena-bookmark-button" data-hatena-bookmark-title="Lubuntuのアップデート中にフリーズ" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/03/31/gyao-cm-skip/" >AdBlockでGyaoのCMをスキップ</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年3月31日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>LinuxではFirefoxでGyaoを見られなくなったので、ChromiumでGyaoを見ている。<br>（FirefoxにPepper Flashのwrapperを入れたら、Firefoxでも見られるようだが）<br>Firefoxの時は、動画を一時停止してその後再開すると、読み込み中のマークが回り続けて消えなかったが、Chromium+PPAPIだとFlashのバージョンが17.0のためか、そういう不具合も無く快適。  </p>
+<p>もう一つ気付いたのが、拡張機能<a href="https://chrome.google.com/webstore/detail/adblock/gighmmpiobklfepjocnamgkkbiglidom?hl=ja" target="_blank" rel="external">AdBlock</a>を入れると、GyaoのCMをスキップ出来るようだ。<br>Adblock Plusだとスキップ出来ない。  </p>
+<p>Adblock Plusでも、AdBlockでブロックしているフィルタを追加したらCMをスキップ出来るのだと思うが、どのフィルタなのかは確認していない。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/31/gyao-cm-skip/" data-text="AdBlockでGyaoのCMをスキップ | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/03/31/gyao-cm-skip/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/03/31/gyao-cm-skip/" class="hatena-bookmark-button" data-hatena-bookmark-title="AdBlockでGyaoのCMをスキップ" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
@@ -357,14 +532,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/05/19/hexo-hatena-button/" >Hexoブログに「はてなブックマーク」ボタンを設置</a>
+			<a href="/2015/03/19/gyao-chromium-ppapi/" >Chromium+Pepper Plugin API（PPAPI）でGyaoを視聴</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年5月19日
+	2015年3月19日
 </div>
 
 <div class="panel-body">
@@ -374,17 +549,22 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>Hexoで作っているこのブログに「はてブ」ボタンを設置した。  </p>
-<p>Octopressでの設置例を参考にやってみたが上手く行かなかったので、はてな公式サイトのボタン作成ページでコードを作成した。<br><a href="http://b.hatena.ne.jp/guide/bbutton" target="_blank" rel="external">はてなブックマークボタンの作成・設置について - はてなブックマーク</a>  </p>
-<p>「ページのアドレス」「ページのタイトル」の欄は仮に「アドレス」「タイトル」とし、後からこれをHexoでのパス<code>&lt;%- item.permalink %&gt;</code>および<code>&lt;%= item.title %&gt;</code>に入れ替えた。<br>出来たコードは下記。  </p>
-<pre><code>&lt;a <span class="variable">href=</span><span class="string">"http://b.hatena.ne.jp/entry/&lt;%- item.permalink %&gt;"</span> <span class="variable">class=</span><span class="string">"hatena-bookmark-button"</span> <span class="variable">data-hatena-bookmark-title=</span><span class="string">"&lt;%= item.title %&gt;"</span> <span class="variable">data-hatena-bookmark-layout=</span><span class="string">"standard-balloon"</span> <span class="variable">data-hatena-bookmark-lang=</span><span class="string">"ja"</span> <span class="variable">title=</span><span class="string">"このエントリーをはてなブックマークに追加"</span>&gt;&lt;img <span class="variable">src=</span><span class="string">"https://b.st-hatena.com/images/entry-button/button-only@2x.png"</span> <span class="variable">alt=</span><span class="string">"このエントリーをはてなブックマークに追加"</span> <span class="variable">width=</span><span class="string">"20"</span> <span class="variable">height=</span><span class="string">"20"</span> <span class="variable">style=</span><span class="string">"border: none;"</span> /&gt;&lt;/a&gt;&lt;script <span class="variable">type=</span><span class="string">"text/javascript"</span> <span class="variable">src=</span><span class="string">"https://b.st-hatena.com/js/bookmark_button.js"</span> <span class="variable">charset=</span><span class="string">"utf-8"</span> <span class="variable">async=</span><span class="string">"async"</span>&gt;&lt;/script&gt;
-</code></pre><p>これを個別記事のレイアウト（/layout/_partial/article.ejs）、ページネーションページのレイアウト（layout/_partial/post/entry.ejs）に追加。  </p>
-<p>追加する箇所は先に設置していたツイッターボタン用のdiv属性内にした。  </p>
-<pre><code>&lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"tweet-button"</span>&gt;
-（ツイートボタン用コード）
-（今回作成した「はてブ」用コード）
-&lt;/<span class="keyword">div</span>&gt;
-</code></pre><p></p><p></p><br>（関連記事）<br><a href="http://pagent.github.io/2014/12/02/hexo-tweetbutton/" target="_blank" rel="external">Hexoの記事一覧ページにツイートボタン設置 | Pagent</a><p></p>
+	  <p>GyaoはWindows、Mac以外のOSでの視聴を制限している。  </p>
+<p>これまでFirefoxのアドオンUser Agent Switcherで、OSをWindowsもしくはMac OS Xと宣言することで、LinuxでもGyaoの視聴が出来ていた。<br>一部の動画はFlashのバージョンが足りてないらしく見られなかったが、ほとんどの動画は視聴可能だった。  </p>
+<p>だが今週初めから、上記の方法ではGyaoの全ての動画が視聴出来なくなった。<br>Gyaoの動作環境が全動画で「Adobe Flash Player 15 以上」に引き上げられたためらしい。<br>（Linux用Adobe Flash Playerは11.2までで終了）  </p>
+<p>Linuxでバージョン15以上のFlash Playerを使用する方法はいくつかあるようだったが、ChromiumでPPAPI（Pepper Plugin API）を利用するのが最も簡便だった。<br><a href="http://gihyo.jp/admin/serial/01/ubuntu-recipe/0340" target="_blank" rel="external">第340回　Firefoxで最新バージョンのFlashを使用するには：Ubuntu Weekly Recipe｜gihyo.jp … 技術評論社</a>  </p>
+<p>Ubuntu等のDebian系ディストリビューションならSynapticから”pepperflashplugin-nonfree”をインストール可能。<br>“nonfree” とあるが、Adobeに所有権があるというだけで、無料で使用出来る。<br><a href="https://wiki.ubuntulinux.jp/UbuntuTips/Application/Chromium/Getting-Flash" target="_blank" rel="external">UbuntuTips/Application/Chromium/Getting-Flash - Ubuntu Japanese Wiki</a>  </p>
+<p>“pepperflashplugin-nonfree”をインストールし、Chromiumのアドレス欄に<code>chrome://plugins</code>と入れて確認すると、2015年3月19日現在では、”Adobe Flash Player - バージョン: 17.0.0.134 Shockwave Flash 17.0 r0”と表示されている。  </p>
+<p>User-Agent Switcherも入れて、OSをWindowsもしくはMacと宣言することで、Gyaoの視聴が可能になった。  </p>
+<p>User-Agent Switcherに元から入っている「Chome on Mac」での指定はChomeのバージョンが古いようで（Chrome 27.0）、Googleの検索結果も古い形式で表示される。<br>「Chrome 41.0 on Windows」「Chrome 41.0 on Mac」および「Safari 8」を追加した。  </p>
+<ul>
+<li><p>Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36  </p>
+</li>
+<li><p>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10) AppleWebKit/538.44 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36  </p>
+</li>
+<li><p>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10) AppleWebKit/538.44 (KHTML, like Gecko) Version/8.0 Safari/538.44</p>
+</li>
+</ul>
 
 	
 	</div>
@@ -394,14 +574,85 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/05/19/hexo-hatena-button/" data-text="Hexoブログに「はてなブックマーク」ボタンを設置 | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/19/gyao-chromium-ppapi/" data-text="Chromium+Pepper Plugin API（PPAPI）でGyaoを視聴 | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/05/19/hexo-hatena-button/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/03/19/gyao-chromium-ppapi/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/05/19/hexo-hatena-button/" class="hatena-bookmark-button" data-hatena-bookmark-title="Hexoブログに「はてなブックマーク」ボタンを設置" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/03/19/gyao-chromium-ppapi/" class="hatena-bookmark-button" data-hatena-bookmark-title="Chromium+Pepper Plugin API（PPAPI）でGyaoを視聴" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/03/14/hexo-283-install/" >Hexo 2.8.3をインストール</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年3月14日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>XubuntuでHexoを使っていたが、Arch Linuxにもインストールした。<br>いつの間にかHexoのバージョンが上がっていたようで、Arch LinuxにはHexo 3.0.0がインストールされた。  </p>
+<p>CLIがメインモジュールから分離されたりと、かなり大幅な変更があるようだ。<br><a href="https://github.com/hexojs/hexo/wiki/Breaking-Changes-in-Hexo-3.0" target="_blank" rel="external">Breaking Changes in Hexo 3.0 · hexojs/hexo Wiki</a><br>サーバー機能もHexo本体とは別になっていて、hexo-serverをインストールしないと<code>hexo server</code>コマンドが使えない。  </p>
+<p>XubuntuのHexo 2.8.3をアップグレードして、これまでの作業フォルダ（WindowsのDドライブに置いてある）を使おうと思ったが、Hexo 3へのアップグレードがうまく行かない。  </p>
+<p>そこでArch Linuxにも旧バージョンのHexo 2.8.3をインストールすることにした。  </p>
+<p>Hexoの公式サイトには旧バージョンのインストール方法が見あたらなかったが、幸い検索で見つかった。<br>下記コマンドで良いようだ。  </p>
+<pre><code><span class="variable">$ </span>npm install hexo<span class="variable">@2</span>.<span class="number">8.3</span> -g
+</code></pre><p><a href="http://sandylaw.tk/2015/03/07/hexo3to2/" target="_blank" rel="external">Hexo降级 3.0 to 2.8 | Sandy’s Blog</a>  </p>
+<p>Hexo 3はCLIが分離されてロードがさらに早くなったりといろいろ機能が進化しているようだが、旧バージョンでも特に不満は無いし、当面はこのままHexo 2.8.3を使う予定。  </p>
+<p>アップグレードにはまた今度挑戦してみようと思う。  </p>
+<p>ーー<br>（追記）<br>Hexo 2.8.3の元で<code>hexo init blog-name</code>によりブログを新規作成した場合、<code>npm install</code>の後実際Hexoを使おうとすると、コマンドがことごとく下記のようなエラーになる。  </p>
+<pre><code>$ hexo server
+[error] HexoError: Process failed: _posts/hello-world.md
+TypeError: Cannot read property <span class="string">'config'</span> of null
+at <span class="keyword">...</span>
+</code></pre><p><code>npm install</code>でインストールされるhexo-renderer-markedとhexo-renderer-stylusのバージョンが0.2の為らしい。<br>バージョン0.1をインストールするとエラー無しに動作した。  </p>
+<pre><code><span class="variable">$ </span>npm install hexo-renderer-marked<span class="variable">@0</span>.<span class="number">1</span> --save
+
+<span class="variable">$ </span>npm install hexo-renderer-stylus<span class="variable">@0</span>.<span class="number">1</span> --save
+</code></pre><p><a href="https://github.com/hexojs/hexo/issues/1094#issuecomment-77796845" target="_blank" rel="external">“hexo server” not work · Issue #1094 · hexojs/hexo</a></p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/14/hexo-283-install/" data-text="Hexo 2.8.3をインストール | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/03/14/hexo-283-install/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/03/14/hexo-283-install/" class="hatena-bookmark-button" data-hatena-bookmark-title="Hexo 2.8.3をインストール" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
@@ -409,6 +660,73 @@
 <span style="color:#555;"><i class="fa fa-tags"></i></span>
 <ul id="tags" class="tag_box list-unstyled collapse in">
   <li><a href="/tags/Hexo/">Hexo</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/03/14/truecrypt-already-running/" >TrueCryptを起動しようとすると&quot;TrueCrypt is already running&quot;と表示される</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年3月14日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Arch LinuxにTrueCryptをインストールした。  </p>
+<p>pacmanからインストールすると、guiツールが無くcuiツールのみのようなので、ネットでtruecrypt-7.1aを探しダウンロード、インストールした。<br>（TrueCryptの最終バージョン7.2は解読機能のみで、新たに暗号化ボリュームを作れない。）  </p>
+<p>ちゃんと使用出来たが、いったんPCを終了して、その後TrueCryptを起動しようとすると、”TrueCrypt is already running”とのみ表示され、guiツールが表示されなくなってしまった。<br>コマンドラインからだと使用出来るようだが、使い勝手が悪い。  </p>
+<p>暗号化ボリュームをアンマウントせずにPCをシャットダウンしたせいらしい。  </p>
+<p>ホームディレクトリに.TrueCrypt-lock-(ユーザー名)という隠しファイルが残っており、これを削除するとguiのTrueCryptを起動出来た。<br><a href="http://sebs-blog.de/truecrypt-is-already-running-what-to-do.html" target="_blank" rel="external">‘TrueCrypt is already running’ what to do? | Seb’s Blog</a>  </p>
+<p>暗号化ボリュームをアンマウントせずにPCを終了してしまうことはよくあるし、なんとか自動的にアンマウントしたいところ。  </p>
+<p>検索したら、Arch Linuxのwikiに自動アンマウントの方法が紹介されていた。<br><a href="https://wiki.archlinux.org/index.php/TrueCrypt#Safely_unmount_and_unmap_volumes_.28on_shutdown.29" target="_blank" rel="external">TrueCrypt - ArchWiki</a>  </p>
+<p>/etc内にrc.local.shutdownファイルを新規作成。<br>下記内容で保存。  </p>
+<pre><code><span class="keyword">if</span> (/usr/bin/truecrypt --text --list)
+<span class="keyword">then</span> {
+/usr/bin/truecrypt <span class="operator">-d</span>
+sleep <span class="number">3</span>
+}
+<span class="keyword">fi</span>
+</code></pre><p>PC終了時に自動的に暗号化ボリュームがアンマウントされるようになった。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/14/truecrypt-already-running/" data-text="TrueCryptを起動しようとすると&quot;TrueCrypt is already running&quot;と表示される | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/03/14/truecrypt-already-running/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/03/14/truecrypt-already-running/" class="hatena-bookmark-button" data-hatena-bookmark-title="TrueCryptを起動しようとすると&quot;TrueCrypt is already running&quot;と表示される" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ユーティリティ/">ユーティリティ</a></li></ul>
 	</div>
 
 </div>
@@ -454,43 +772,43 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>37</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+		
+			<li><a href="/tags/食/">食<span>4</span></a></li>
+		
+			<li><a href="/tags/SEO/">SEO<span>4</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 			<li><a href="/tags/サーバー/">サーバー<span>9</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
-		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
-		
-			<li><a href="/tags/SEO/">SEO<span>4</span></a></li>
-		
 			<li><a href="/tags/Git/">Git<span>13</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>14</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+			<li><a href="/tags/blog/">blog<span>37</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
 		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
 		
 		
 		</ul>

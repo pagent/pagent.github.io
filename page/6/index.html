@@ -110,14 +110,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/05/14/hosting24-analytics-code/" >000webhost.comで挿入される解析コード</a>
+			<a href="/2015/03/14/keepass2-font/" >Keepass2のフォントを日本語化</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年5月14日
+	2015年3月14日
 </div>
 
 <div class="panel-body">
@@ -127,15 +127,15 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>今は放置しているが、無料レンタルサーバー「000webhost.com」のアカウントを取っている。<br>久しぶりに「000webhost.com」に置いてあるサイトを見てみると、すべてのページのソース下部に、下記のようなコードが挿入されている。  </p>
-<pre><code><span class="comment">&lt;!-- Hosting24 Analytics Code --&gt;</span>
-<span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"http://stats.hosting24.com/count.php"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-<span class="comment">&lt;!-- End Of Analytics Code --&gt;</span>
-</code></pre><p>「000webhost」が管理している解析コードで、アカウントがアクティブか非アクティブかを判別するためのものらしい。<br>他にも利用者にstatsとvisitors reportを提供するために利用されるとのことだが、statsやvisitors reportが何なのかはよく分からない。  </p>
-<p>Firefoxでは「Stray start tag “script”.」とかで赤字で表示されており、少々気になる。  </p>
-<p>不要な場合は、<a href="http://members.000webhost.com/analytics.php" target="_blank" rel="external">http://members.000webhost.com/analytics.php</a>から設定。<br>Domain欄に<code>www.</code>や<code>http://</code>を除いた利用ドメイン名を記入。<br>Password欄はFTPのパスワード。<br>Manage analytics codeで「Disable Code」を選択しSubmitで非表示に出来る。  </p>
-<p>非表示にしているとアカウントを削除されやすいのでは？という気がしなくもないが。  </p>
-<p>（参照記事）<br><a href="http://www.habschned.com/000webhost-com-disable-analytics-code-1/" target="_blank" rel="external">000webhost.com - How to disable Analytics Code #1 - Habschneds Odds and Ends</a></p>
+	  <p>Windowsではパスワード管理ソフトとして、長らくIDMを使っていた。  </p>
+<p>IDMはとても便利で長らくお世話になったが、Linuxでは使えない。<br>OSをWindowsからLinuxに乗り換える際、パスワード管理ソフトをクロスプラットフォームのKeepass2（KeePass Password Safe）に変更した。  </p>
+<p>Keepass2の日本語化は、Xubuntuでは<a href="http://keepass.info/translations.html" target="_blank" rel="external">Translations - KeePass</a>からKeePass-2.28-Japanese.zipをダウンロードし解凍。<br>Japanese.lngxを/usr/lib/keepass2内にコピー。<br>Keepass2のView→Change LanguageからJapaneseを選択したら日本語化出来た。  </p>
+<p>今回、Arch LinuxにもKeepass2をインストールした。<br><code>sudo pacman -S keepass</code>でkeepass-2.28-2がインストールされた。  </p>
+<p>Arch LinuxではKeePass.exeは/usr/lib/keepass2ではなく/usr/share/keepass内にあるので、ここへJapanese.lngxをコピー。<br>日本語化しようとしたが、文字化けしてしまい豆腐状態。  </p>
+<p>Tools→options→Interface→Serect List Fontで、IPA Pゴシック、Takao Pゴシックなど日本語フォントに変更すると、パスワード管理している項目は日本語化されたが、メニューは依然文字化けしたまま。<br>ネットで検索し、システムフォントを日本語フォントに変更してみたが、それでも豆腐状態が治らない。  </p>
+<p>Keepass2のoptions→Interfaceのチェックボックスリスト内に”Force using system font(Unix only)”「強制的にシステムフォントを使用(Unixのみ)」という項目があり、これにチェックが入っていたので、チェックを外してみたらようやくメニューも日本語化出来た。  </p>
+<p>XubuntuのKeepass2を見てみると、「強制的にシステムフォントを使用(Unixのみ)」のチェックが入ったままで日本語化出来ている。<br>同じLinuxでもディストリビューションによって色々と挙動、設定が違うようだ。  </p>
+<p>ーー<br>（追記）<br>その後Keepass2のツールバーの項目がショートカットキーしか表示されなくなってしまった。<br>今度は「強制的にシステムフォントを使用(Unixのみ)」のチェックを入れると、ちゃんと日本語表示された。</p>
 
 	
 	</div>
@@ -145,69 +145,14 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/05/14/hosting24-analytics-code/" data-text="000webhost.comで挿入される解析コード | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/14/keepass2-font/" data-text="Keepass2のフォントを日本語化 | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/05/14/hosting24-analytics-code/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/03/14/keepass2-font/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/05/14/hosting24-analytics-code/" class="hatena-bookmark-button" data-hatena-bookmark-title="000webhost.comで挿入される解析コード" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/ネット/">ネット</a></li></ul>
-	</div>
-
-</div>
-
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/05/14/truecrypt-failed/" >Truecryptのマウントで「Failed to set up a loop device:」のエラー</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年5月14日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Truecryptのボリュームをマウントしようとしたら、「Failed to set up a loop device:」と表示されるのみで、マウント出来なくなってしまった。<br>パスワードは正確に入力しているはずだが、何度やっても同じエラー。  </p>
-<p>大事なファイルもあるので一瞬焦ったが、検索したらなんのことはない、Arch Linuxのカーネルをlinux-4.0.2-1に更新してから再起動していないのが原因だった。<br><a href="https://wiki.archlinux.org/index.php/TrueCrypt#Failed_to_set_up_a_loop_device" target="_blank" rel="external">TrueCrypt - ArchWiki</a>  </p>
-<p>再起動したら無事マウント出来るようになった。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/05/14/truecrypt-failed/" data-text="Truecryptのマウントで「Failed to set up a loop device:」のエラー | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/05/14/truecrypt-failed/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/05/14/truecrypt-failed/" class="hatena-bookmark-button" data-hatena-bookmark-title="Truecryptのマウントで「Failed to set up a loop device:」のエラー" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/03/14/keepass2-font/" class="hatena-bookmark-button" data-hatena-bookmark-title="Keepass2のフォントを日本語化" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
@@ -226,14 +171,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/05/13/mouse-wheel-scroll-speed/" >「imwheel」でマウスホイールのスクロール移動量（スピード）を大きく</a>
+			<a href="/2015/03/12/xfce-nemo-icon/" >Arch Linux+Xfce。nemoをインストールして二重に表示されたデスクトップアイコンを消す</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年5月13日
+	2015年3月12日
 </div>
 
 <div class="panel-body">
@@ -243,27 +188,14 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>Linuxでマウスホイールでの上下スクロールをする際、移動量（スピード）が小さくて疲れるので、移動量を大きくした。  </p>
-<p>###imwheelを使って設定<br>マウスの挙動を調整するツール「imwheel」を導入した。<br>Arch Linuxの場合はAURにあるので、Yaourtでインストール。  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yaourt -S imwheel</div></pre></td></tr></table></figure>
-
-<p>UbuntuならUbuntuソフトウェアセンターまたはSynapticから。  </p>
-<p>インストール後、~/.imwheelrcファイルを作成（/home/ユーザー名/下に.imwheelrcファイル）。下記内容で保存。</p>
-<figure class="highlight plain"><figcaption><span>.imwheelrc</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">".*"</div><div class="line">None,      Up,   Button4, 3</div><div class="line">None,      Down, Button5, 2</div></pre></td></tr></table></figure>
-
-<p>「Up,   Button4」、「Down, Button5」の後ろの値で変更出来る。Up「3」、Down「2」で設定してみた。（デフォルトの値は「1」のよう。）<br>上に戻る時に早い方が良いし、この設定なら上下を繰り返すことで微調整も出来る。  </p>
-<p>1行目の「”.*”」ですべてのアプリケーションを対象とするようにしているが、記載の仕方によりアプリケーション毎に違う挙動をさせることも出来るようだ。</p>
-<p>その後<code>imwheel</code>コマンドを実行すると反映される。<br>（設定値を変更してリスタートする時は<code>killall imwheel &amp;&amp; imwheel</code>）  </p>
-<p>コマンド<code>imwheel</code>を自動開始アプリケーションに登録して完了。<br>スクロールが楽になった。  </p>
-<p>簡単に移動量を変更出来て、また上昇・下降にそれぞれ違う値を設定することも可能なので、かなりオススメ。</p>
-<p>（参照記事）<br><a href="http://askubuntu.com/questions/285689/increase-mouse-wheel-scroll-speed" target="_blank" rel="external">Increase mouse wheel scroll speed - Ask Ubuntu</a><br><a href="https://wiki.archlinux.org/index.php/Imwheel" target="_blank" rel="external">imwheel - ArchWiki</a>  </p>
-<p>###Xorgで設定（上手くいかず）  </p>
-<p>下記記事を参考に、xorgの設定でスクロール量の変更を試みた。<br><a href="http://ishikuro.hateblo.jp/entry/2013/12/08/190527" target="_blank" rel="external">Linuxでマウスホイール移動量調整 - ishn’s diary</a>  </p>
-<p><code>xinput</code>コマンドで確認すると、USB Optical Mouseはid=12だったので、</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ xinput <span class="keyword">set</span>-prop <span class="string">'12'</span> <span class="string">'Evdev Wheel Emulation Inertia'</span> <span class="number">200</span></div></pre></td></tr></table></figure>
-
-<p>とした。<br>ところがスクロール量に変化がない。<br><code>xinput list-props 12</code>で確認すると、確かにEvdev Wheel Emulation Inertiaの値は200になっているのだが。<br>USBマウスを抜き差ししても変化なし。<br>移動の上下の「向き」などは反映されるのだが、スクロール量はxinputでは設定出来ないようだ。  </p>
-<p>###Firefoxのみ設定<br>Firefoxだけで良いなら、about:configでmousewheel.default.delta_multiplier_yの値を変更すれば良いようだ。<br><a href="http://blog.ueshu.net/it/2013/06/19/1769.html" target="_blank" rel="external">ubuntuのFirefoxのマウスホイールのスクロール速度を変更する</a></p>
+	  <p>Arch Linux+Xfceにファイルマネージャーnemoをインストールしたら、デスクトップ上のアイコンが二重に表示されるようになってしまった。  </p>
+<p>さらにはファイルマネージャーでデスクトップを開くとファイルがあるのにデスクトップにはなにも表示されていなかったり、デスクトップ上右クリックからのアプリケーションメニューが消えてしまったり。  </p>
+<p>Xfce標準のファイルマネージャーThunarに加え、nemoもデスクトップを管理しようとするためこうなってしまうようだ。<br>確かにnemoをインストールする時にcinnamon-desktopも依存関係から同時にインストールされていた。  </p>
+<p>Xubuntuではどういう設定なのかこういうことは無いし、Arch Linux+LXDEにnemoをインストールしてもデスクトップアイコンが二重に表示されることはない。  </p>
+<p>このままでは使い勝手が悪いので、XfceをあきらめてLXDEにしようかと思ったが、Arch Linuxのwikiにnemoによるデスクトップアイコンを非表示にする方法があった。  </p>
+<pre><code>$ gsettings <span class="operator"><span class="keyword">set</span> org.nemo.desktop <span class="keyword">show</span>-desktop-icons <span class="literal">false</span></span>
+</code></pre><p><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>  </p>
+<p>nemoによるデスクトップアイコンが消えて、デスクトップ上右クリックでのアプリケーションメニューも復活した。</p>
 
 	
 	</div>
@@ -273,14 +205,14 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/05/13/mouse-wheel-scroll-speed/" data-text="「imwheel」でマウスホイールのスクロール移動量（スピード）を大きく | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/12/xfce-nemo-icon/" data-text="Arch Linux+Xfce。nemoをインストールして二重に表示されたデスクトップアイコンを消す | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/05/13/mouse-wheel-scroll-speed/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/03/12/xfce-nemo-icon/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/05/13/mouse-wheel-scroll-speed/" class="hatena-bookmark-button" data-hatena-bookmark-title="「imwheel」でマウスホイールのスクロール移動量（スピード）を大きく" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/03/12/xfce-nemo-icon/" class="hatena-bookmark-button" data-hatena-bookmark-title="Arch Linux+Xfce。nemoをインストールして二重に表示されたデスクトップアイコンを消す" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
@@ -299,14 +231,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/05/09/firefox-yahoo-search/" >FirefoxにYahoo! JAPANの検索エンジンが見当たらない</a>
+			<a href="/2015/03/09/vostro1000-video-driver/" >DELL Vostro1000（Xp機）のビデオドライバー</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年5月9日
+	2015年3月9日
 </div>
 
 <div class="panel-body">
@@ -316,15 +248,12 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>Firefoxを更新して以降、検索窓でのYahoo!検索がsearch.yahoo.co.jpではなく、英語のsearch.yahoo.comになってしまっている。<br>「検索設定を変更」→「検索エンジンを追加…」から探してみても、Yahoo! Vietnam、Yahoo! India、Yahoo! Canadaなどや、Yahoo Japan! Mail Notifierはあるが、Yahoo! JAPANの検索エンジンが見つからない。  </p>
-<p>###検索アシストアドオンによる対症療法<br><a href="https://addons.mozilla.org/ja/firefox/addon/yahoo%E5%8F%B3%E3%82%AF%E3%83%AA%E3%83%83%E3%82%AF%E6%A4%9C%E7%B4%A2%E3%82%A2%E3%82%B7%E3%82%B9%E3%83%88/?src=search" target="_blank" rel="external">「Yahoo!右クリック検索アシスト」</a>というアドオンがあるようだったので入れてみた。  </p>
-<p>表示しているページで文言を選択、右クリックするとメニューの一番下に「Yahooで検索」が追加される。<br>検索窓からの検索は出来ないので少し不便ではあるが、わざわざYahoo! JAPANのサイトに行くよりは手間が省ける。  </p>
-<p>###searchpluginsフォルダ内にyahoo-japan.xmlファイルを追加（推奨）<br>幸い別の端末に、Yahoo! JAPAN検索のためのxmlファイル（yahoo-japan.xml）があったので、これを手動で追加した。  </p>
-<p>~/.mozilla/firefox/(プロファイル名)/searchplugins内にyahoo-japan.xmlファイルをコピペ。<br>下記内容でファイルを新規作成しても良い。  </p>
-<figure class="highlight xml"><figcaption><span>yahoo-japan.xml</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">SearchPlugin</span> <span class="attribute">xmlns</span>=<span class="value">"http://www.mozilla.org/2006/browser/search/"</span> <span class="attribute">xmlns:os</span>=<span class="value">"http://a9.com/-/spec/opensearch/1.1/"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:ShortName</span>&gt;</span>Yahoo! JAPAN<span class="tag">&lt;/<span class="title">os:ShortName</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Description</span>&gt;</span>Yahoo! JAPANで検索<span class="tag">&lt;/<span class="title">os:Description</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:InputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">os:InputEncoding</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Url</span> <span class="attribute">type</span>=<span class="value">"text/html"</span> <span class="attribute">method</span>=<span class="value">"GET"</span> <span class="attribute">template</span>=<span class="value">"http://search.yahoo.co.jp/search?p={searchTerms}&amp;ei=UTF-8&amp;fr=opsrch"</span> <span class="attribute">resultDomain</span>=<span class="value">"search.yahoo.co.jp"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">os:Url</span>&gt;</span><span class="tag">&lt;<span class="title">os:Url</span> <span class="attribute">type</span>=<span class="value">"application/x-suggestions+json"</span> <span class="attribute">method</span>=<span class="value">"GET"</span> <span class="attribute">template</span>=<span class="value">"http://search.yahooapis.jp/AssistSearchService/V2/webassistSearch?p={searchTerms}&amp;appid=oQsoxcyxg66enp0TYoirkKoryq6rF8bK76mW0KYxZ0v0WPLtn.Lix6wy8F_LwGWHUII-&amp;output=iejson&amp;src=srch&amp;fr=opsrch"</span> <span class="attribute">resultDomain</span>=<span class="value">"search.yahooapis.jp"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">os:Url</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">SearchPlugin</span>&gt;</span></div></pre></td></tr></table></figure>
-
-<p>アイコンは空白だったりただの虫めがねだったりするが、ちゃんとYahoo! JAPANの検索エンジンが追加される。<br>デフォルトの検索エンジンは/usr/lib/firefox/browser/searchpluginsに格納されているようなので、ここへ追加しても良いかもしれない。  </p>
-<p>Yahoo! JAPANの検索エンジンが復活したので、アドオン「Yahoo!右クリック検索アシスト」は不要となった。</p>
+	  <p>DELLの古いノートパソコンVostro1000（プリインストールOSはXpSP2）をLinux専用にしていたのだが、WineでKindle for PCを使ってみたくなったので、Windows Xp再インストールした。  </p>
+<p>Kindle for PCを利用するためにはWindows Media Playerのバージョン11以上が必要という情報を見たので、<a href="http://www.microsoft.com/ja-jp/download/windows-media-player-details.aspx?id=8163" target="_blank" rel="external">Windows Media Player 11</a>とついでに<a href="http://www.microsoft.com/ja-jp/download/details.aspx?id=24" target="_blank" rel="external">Windows XP SP3</a>もダウンロード、インストールした。<br>（Windows XPはネットに繋がない方が良いかと思い、ダウンロードはLinuxで行った。）  </p>
+<p>Kindle for PCは無事インストール出来、Wineを使ってLinuxでも使用可能になった。  </p>
+<p>これで良いと言えば良いのだが、Xpの方の解像度が本来は1024×800のはずが1024×768しか選択出来ない。<br>普段Xpを使うことは無いと思うが、あまり気持ち良くはない。  </p>
+<p>付属していたResourceCDからビデオドライバーR156746をインストールしようとしたが、「システムにインストールされているディスプレイアダプタと互換性がない」と言われて、インストールが失敗する。  </p>
+<p><a href="http://www.dell.com/support/home/jp/ja/jppad1/product-support/product/vostro-1000/drivers" target="_blank" rel="external">製品サポート | Dell 日本</a>からR168684.EXEをダウンロードしたら、インストール出来た。</p>
 
 	
 	</div>
@@ -334,21 +263,21 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/05/09/firefox-yahoo-search/" data-text="FirefoxにYahoo! JAPANの検索エンジンが見当たらない | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/09/vostro1000-video-driver/" data-text="DELL Vostro1000（Xp機）のビデオドライバー | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/05/09/firefox-yahoo-search/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/03/09/vostro1000-video-driver/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/05/09/firefox-yahoo-search/" class="hatena-bookmark-button" data-hatena-bookmark-title="FirefoxにYahoo! JAPANの検索エンジンが見当たらない" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/03/09/vostro1000-video-driver/" class="hatena-bookmark-button" data-hatena-bookmark-title="DELL Vostro1000（Xp機）のビデオドライバー" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
 	<div class="meta-widget pull-right">
 <span style="color:#555;"><i class="fa fa-tags"></i></span>
 <ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/ブラウザ/">ブラウザ</a></li></ul>
+  <li><a href="/tags/Windows/">Windows</a></li></ul>
 	</div>
 
 </div>
@@ -360,14 +289,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/05/02/higan/" >higanでファミコン、スーパーファミコン</a>
+			<a href="/2015/03/08/xfce-icon-theme/" >Xfceに新しいアイコンテーマをインストール</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年5月2日
+	2015年3月8日
 </div>
 
 <div class="panel-body">
@@ -377,16 +306,12 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>ファミコン、スーパーファミコンなどのエミュレーターhiganをインストールした。<br>他のエミュレーターと較べても再現性は高いそうだ。  </p>
-<p>実際ゲームをする際はキーボードでは操作しづらいので、BUFFALOのUSBゲームパッド<a href="http://buffalo.jp/product/input/gamepad/bsgp801/" target="_blank" rel="external">BSGP801</a>を購入した。<br>懐かしいスーファミのコントローラーそっくりで値段も安価。<br>Windows用となっていたがLinuxでも使用出来た。<br>（簡単なのでjoypadをインストールした。）  </p>
-<p>USBポートに挿すとゲームパッド自体は認識しているようだったが、higanで反応しない。<br>入力方法のMappingを設定しないといけないようだ。  </p>
-<p>Setting→Configuration→InputタブでFamicom等のハードを選択。<br>「Up」等の項目をダブルクリックすると入力待機状態に。<br>ゲームパッドの上矢印を押すとそのキーが設定される。<br>Aボタン、Startボタンなども同様に設定。  </p>
-<p>ゲームが出来るようになったが、いつの間にかゲームパッドの操作でマウスポインターも動いてしまうようになった。  </p>
-<p><code>xinput</code>コマンドで見ると、自分の環境ではゲームパッドはid=11に登録されているようだったので、これを無効化した。</p>
-<pre><code><span class="comment">$</span> <span class="comment">xinput</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">disable</span> <span class="comment">11</span>
-</code></pre><p>ただ起動の度に無効化する必要があるようだったので、自動開始アプリケーションにコマンドを登録した。  </p>
-<p>（参照記事）<br><a href="http://nomad-blacky.hatenablog.com/entry/2013/03/21/025253" target="_blank" rel="external">ゲームパッドの操作でマウスポインタが動いてしまう＠Ubuntu - ぶらっ記ぃ</a><br><a href="https://archlinuxjp.kusakata.com/wiki/Xorg?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DXorg_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno#.E5.BF.85.E8.A6.81.E3.81.AB.E5.BF.9C.E3.81.98.E3.81.A6.E5.85.A5.E5.8A.9B.E3.82.BD.E3.83.BC.E3.82.B9.E3.82.92.E6.9C.89.E5.8A.B9.E5.8C.96.E3.83.BB.E7.84.A1.E5.8A.B9.E5.8C.96" target="_blank" rel="external">必要に応じて入力ソースを有効化・無効化 - Xorg - ArchWiki</a></p>
-<p>ーー<br>（追記）<br>USBポートからゲームパッドを外すとxinputのid=11がAT Translated Set 2 keyboardに変わっており、キーボードが反応しなくなってしまった。当初原因が分からずとても困った。<br><code>xinput --disable 11</code>を自動開始アプリケーションに登録する時は注意が必要。</p>
+	  <p>Arch LinuxのXfceのアイコンがgnomeで少しやぼったい感じだったので、新しいアイコンを入れた。  </p>
+<p>アイコンは下記サイトで一番人気のMistにした。<br><a href="http://xfce-look.org/index.php?xsortmode=high&amp;page=0&amp;xcontentmode=430" target="_blank" rel="external">Eyecandy for your Xfce-Desktop - Xfce-Look.org</a>  </p>
+<p>ダウンロードしたファイルを展開し、出て来たMistフォルダを/usr/share/iconsに移動。<br>だがこれだけでは「設定」→「外観」→「アイコン」に表示されない。<br>アイコンテーマ毎にキャッシュファイルを生成しないといけないようだ。<br><a href="http://docs.xfce.org/xfce/xfce4-settings/4.10/appearance#icon_cache" target="_blank" rel="external">xfce:xfce4-settings:4.10:appearance [Xfce Docs]</a>    </p>
+<p>端末でコマンドを入力しキャッシュファイルを生成。  </p>
+<pre><code>sudo gtk-<span class="operator"><span class="keyword">update</span>-icon-<span class="keyword">cache</span> /usr/<span class="keyword">share</span>/icons/Mist</span>
+</code></pre><p>アイコンの設定に表示され、選択可能になった。</p>
 
 	
 	</div>
@@ -396,14 +321,194 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/05/02/higan/" data-text="higanでファミコン、スーパーファミコン | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/08/xfce-icon-theme/" data-text="Xfceに新しいアイコンテーマをインストール | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/05/02/higan/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/03/08/xfce-icon-theme/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/05/02/higan/" class="hatena-bookmark-button" data-hatena-bookmark-title="higanでファミコン、スーパーファミコン" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/03/08/xfce-icon-theme/" class="hatena-bookmark-button" data-hatena-bookmark-title="Xfceに新しいアイコンテーマをインストール" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/03/08/yaourt/" >Yaourtをインストール</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年3月8日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>AUR (Arch User Repository)のパッケージをインストールするため、pacmanラッパーYaourtを入れた。  </p>
+<p><a href="https://archlinuxjp.kusakata.com/wiki/Yaourt" target="_blank" rel="external">Yaourt - ArchWiki</a>  </p>
+<p>「まず package-query をインストール」とのことだが、pacmanからpackage-queryをインストールしようとしても、見つからないと言われるので、/etc/pacman.confに下記記述を加えた。  </p>
+<pre><code>[archlinuxfr]
+<span class="constant">SigLevel</span> = Never
+<span class="constant">Server</span> = http:<span class="comment">//repo.archlinux.fr/$arch</span>
+</code></pre><p>その後  </p>
+<pre><code><span class="comment">sudo</span> <span class="comment">pacman</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">sync</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">refresh</span> <span class="comment">yaourt</span>
+</code></pre><p>GlipperなどもYaourtからインストール出来るようになった。  </p>
+<pre><code><span class="title">yaourt</span> -S glipper
+</code></pre><p>クリップボードマネージャーは色々あるが、Glipperはログアウト時に履歴を消去出来るので気に入っている。  </p>
+<p>ーー<br>（追記）<br>Xfceデスクトップに標準で入っていたClipmanでも、「終了時に保存する」のチェックボックスを外せば履歴を消去出来るようだ。<br>Glipperのアイコンが正常に表示されないこともあり、結局Clipmanを使うことにしてGlipperをアンインストールした。  </p>
+<pre><code><span class="title">yaourt</span> -Rs glipper
+</code></pre>
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/08/yaourt/" data-text="Yaourtをインストール | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/03/08/yaourt/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/03/08/yaourt/" class="hatena-bookmark-button" data-hatena-bookmark-title="Yaourtをインストール" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/03/08/xfce-beep/" >Xfceログアウト時のビープ音を消す</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年3月8日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Arch LinuxにXfceデスクトップを入れたが、ログアウト時に大音量のビープ音がして不快なので、鳴らないようにした。  </p>
+<p>/etc/modprobe.d内にnobeep.confファイルを作成し、<code>blacklist pcspkr</code>と記述して保存。<br>もしくは下記コマンドを実行。  </p>
+<pre><code># <span class="keyword">echo</span> <span class="string">"blacklist pcspkr"</span> &gt; /etc/modprobe.<span class="keyword">d</span>/nobeep.<span class="keyword">conf</span>
+</code></pre><p><a href="https://archlinuxjp.kusakata.com/wiki/PC_%E3%82%B9%E3%83%94%E3%83%BC%E3%82%AB%E3%83%BC%E3%81%AE%E3%83%93%E3%83%BC%E3%83%97%E9%9F%B3%E3%81%AE%E7%84%A1%E5%8A%B9%E5%8C%96?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DDisable_PC_Speaker_Beep_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno#.E3.82.B0.E3.83.AD.E3.83.BC.E3.83.90.E3.83.AB.E7.92.B0.E5.A2.83" target="_blank" rel="external">PC スピーカーのビープ音の無効化 - ArchWiki</a>  </p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/08/xfce-beep/" data-text="Xfceログアウト時のビープ音を消す | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/03/08/xfce-beep/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/03/08/xfce-beep/" class="hatena-bookmark-button" data-hatena-bookmark-title="Xfceログアウト時のビープ音を消す" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/03/06/clonezilla-restore-different-partition/" >Clonezillaでバックアップしたイメージを別のパーティションにリストア</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年3月6日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Clonezillaでバックアップしたパーティションのイメージを、元とは違う別のパーティションにリストアした。<br>（下記はsda1からバックアップしたArch Linuxをsda6にリストアした例）  </p>
+<p>・バックアップしたイメージフォルダ内のpartsファイルの記述をsda1からsda6に変更。  </p>
+<p>・バックアップイメージsda1.ext4-ptcl-img.gz.aaをsda6.ext4-ptcl-img.gz.aaに変更。<br>（….gz.ab、….gz.acと複数ある場合はすべて変更）  </p>
+<p>上記で別のパーティションにリストア出来た。  </p>
+<p>ただこれだけではArch Linuxを起動出来ないので、リストアしたsda6内の/etc/fstabと/boot/syslinux/syslinux.cfgの記述を修正。<br>（ブートローダーがGrub2の場合はgrub.cfgの修正でOKか）  </p>
+<p>sda6にリストアしたArch Linuxを起動出来た。  </p>
+<p>ーー<br>（参照記事）<br><a href="http://drbl.org/faq/fine-print.php?path=./2_System/102_restore_image_to_different_partition.faq#102_restore_image_to_different_partition.faq" target="_blank" rel="external">How can I restore an image of a partition to different partition, e.g. restore the image of /dev/sda5 to /dev/sda6? - DRBL - FAQ/Q&amp;A</a></p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/06/clonezilla-restore-different-partition/" data-text="Clonezillaでバックアップしたイメージを別のパーティションにリストア | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/03/06/clonezilla-restore-different-partition/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/03/06/clonezilla-restore-different-partition/" class="hatena-bookmark-button" data-hatena-bookmark-title="Clonezillaでバックアップしたイメージを別のパーティションにリストア" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
@@ -411,6 +516,232 @@
 <span style="color:#555;"><i class="fa fa-tags"></i></span>
 <ul id="tags" class="tag_box list-unstyled collapse in">
   <li><a href="/tags/ユーティリティ/">ユーティリティ</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/03/02/easy2boot/" >isoファイルを置くだけでUSBマルチブート「Easy2Boot」</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年3月2日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>isoファイルからブータブルUSBメモリを作成出来るツールは多々あるが、「Easy2Boot」は作成した領域にisoファイルをコピーペーストするだけでマルチブート可能になる。  </p>
+<p>公式サイト（英語）以外には解説が見当たらず、またその公式サイトも「Easy2Boot」のダウンロードやインストール方法など、どこに記載があるのか分かりづらかった。<br>だが使ってみると、配置したisoファイルが自動的にブートメニューに追加されるし、とても便利な代物だった。  </p>
+<p>###Linux環境下でのインストール</p>
+<p>まず、<a href="http://www.easy2boot.com/download/" target="_blank" rel="external">Downloads</a>からEasy2Boot_v1.62.zipをダウンロードして展開。  </p>
+<p>Linux環境で作業したので、<a href="http://www.rmprepusb.com/tutorials/114" target="_blank" rel="external">114 - How to make an Easy2Boot (grub4dos) USB Flash drive using linux - RMPrepUSB</a>を参照したが、展開して出て来たフォルダ内にも同様の解説があった。<br>_ISO/docs/linux_utils/ReadMe_fmt.sh.txt  </p>
+<p>（Windows用の解説は_ISO/docs/Make_E2B_USB_Drive/ReadMe.txt）  </p>
+<p>linux_utilsフォルダ内で端末を開き、フォルダ内のすべてのファイルのパーミッションを777に変更。  </p>
+<pre><code><span class="built_in">sudo</span> chmod <span class="number">777</span> *
+</code></pre><p>その後fmt.shを実行。    </p>
+<pre><code><span class="built_in">sudo</span> ./fmt.sh
+</code></pre><p>インストール先を聞かれるので、OKなら「y」。<br>違う場合は「n」の後、自分で指定。<br>（外付けHDDにもインストール可能で、また2番目以降のパーティションにもインストール出来る。）  </p>
+<p>フォーマットして良いか聞かれるので、良ければ「y」。  </p>
+<p>指定したパーティションに「Easy2Boot」がコピーされ、ブートローダーがインストールされる。  </p>
+<p>###起動とデフラグ</p>
+<p>使い方は至って簡単で、_ISO内の空いてるフォルダ（LINUXやWINなど）にisoファイルを追加するだけ。<br>今回は_ISO/LINUX内にLxPup-15.02.1-s-nopae.isoを、_ISO/BACKUP内にclonezilla-live-2.1.2-43-i686-pae.isoを配置した。  </p>
+<p>ブートすると、LxPupは起動出来たが、clonezillaは「ファイルがcontiguous（隣接）じゃない」と言われ、上手く起動出来なかった。<br>どうやら断片化しているからデフラグが必要ということらしい。  </p>
+<p>isoファイルから直接ブートする際には、ちょっとした断片化でも起動出来ないようで、「Easy2Boot」ではいろいろ対策が用意されている。  </p>
+<p>defragfs.pl（_ISO/docs/linux_utils内）やWINCONTIG（_ISO/docs/内）の他、特にLinuxユーザーの為に_ISO内にCONTIG.ISOというファイルが同梱されている。  </p>
+<p>CONTIG.ISOは、isoファイルに断片化があった際に自動的にデフラグ操作を行うためのものらしい。<br>サイズが500MBに設定されていて、Easy2Bootインストール直後の状態でのほとんど全ての容量にあたる。<br>clonezillaが上手く起動出来なかったのもフリーズしていた訳ではなく、CONTIG.ISOがデフラグ操作を行っていたのかもしれない。<br>ただかなり時間が掛かるようだし、サイズが500MB以上のisoファイルをデフラグするためには、CONTIG.ISOもそれ以上のサイズにリサイズしておく必要があるようだ。<br>CONTIG.ISOを使わないのであれば、削除してしまっても良いとのこと。  </p>
+<p>defragfs.plはなぜか機能しなかったが、Windows用のWinContigでデフラグしたらclonezillaも起動出来るようになった。<br>WinContigはWindows 7を起動して使用したが、Windows PE（Windows プレインストール環境）やHiren’s BootCDの「Mini Windows Xp」など、Windows環境を提供するisoファイルをEasy2Bootに入れておけば、Easy2BootによるブートでWinContigを利用出来そうだ。  </p>
+<p>###フォーマットをNTSFにする（不要かも）</p>
+<p>4GBを超えるファイルを利用するためには、Easy2Boot領域をFat32ではなく、NTSFもしくはext3、ext4にしておく必要があるが、なるべくなら4GB以上のisoファイルも扱いたい。  </p>
+<p>Easy2Bootインストール時に領域がFat32にフォーマットされてしまうが、_ISO/docs/linux_utils内のfmt.shファイルの131行目の  </p>
+<pre><code>/sbin/mkfs.vfat -F32 -n <span class="string">"<span class="variable">$label</span>"</span> <span class="variable">$device</span>
+</code></pre><p>を</p>
+<pre><code>/sbin/mkfs.ntfs -n <span class="string">"<span class="variable">$label</span>"</span> <span class="variable">$device</span>
+</code></pre><p>に変更することでNTSFにすることが出来た。<br>後からファイルを保持したままFat32をNTSFに変換することも可能のよう。  </p>
+<p>（その後は結局Fat32でフォーマットしたものを使っている。Fat32のままで良さそう。）  </p>
+<p>###よく分からないトラブル</p>
+<p>外付けHDDではこれで上手く行ったが、USBメモリではEasy2Bootを起動しようとしたら、「パーティションのlast sectorをチェックしている」という内容の表示のまま止まってしまった。  </p>
+<p>そのまま電源を落とさずUSBメモリを一旦抜き、再度挿入して”continue”。<br>ブートメニュー画面で”Install Grub4dos…”を選択したら、その後は起動出来るようになった。  </p>
+<p>理由はよく分からないが、使用したUSBメモリの特性やインストール方法などにもよるのかもしれない。  </p>
+<p>###感想</p>
+<p>以上、少しややこしかったが、配置するだけで（正確にはデフラグの必要があったりするが）isoファイルを直接起動出来る「Easy2Boot」はかなり優秀なツールだ。  </p>
+<p>Linuxディストリビューションを試してみたい時にもDVD-RWなどに焼く必要が無くなる。<br>またClonezillaでシステムのバックアップを取る時にも、外付けHDDの先頭パーティションをEasy2Boot領域としてClonezillaを入れ、２番目のパーティションにバックアップするようにすれば、Clonezillaのlive-CDが不要になる。live-CDに較べて起動も早い。  </p>
+<p>導入がもう少し簡単だったらとは思うが、とても便利なので試して損は無いと思う。  </p>
+<p>ーー<br>（追記）<br>Windowsの場合はRMPrepUSBを使って、もっと簡単にEasy2Bootをインストール出来るようだ。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/02/easy2boot/" data-text="isoファイルを置くだけでUSBマルチブート「Easy2Boot」 | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/03/02/easy2boot/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/03/02/easy2boot/" class="hatena-bookmark-button" data-hatena-bookmark-title="isoファイルを置くだけでUSBマルチブート「Easy2Boot」" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ユーティリティ/">ユーティリティ</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/03/01/arch-ati-video-driver/" >Arch Linuxをインストールした。（ビデオドライバーはATIでうまく行った）</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年3月1日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Dellの古いノートパソコンVOSTRO1000にArch Linuxを入れてみた。<br>（NECのLavie Liteは、kernelが3.10台を超えると不具合が出る問題がArch Linuxでは解決出来ず、諦めた。）</p>
+<p>インストールには、グラフィカルインストールが可能なArchbootを使った。（archlinux-2015.01-1-archboot.iso）<br>Ubuntu等のインストーラーほど懇切丁寧ではないが、コマンドラインでのインストールよりは楽だった。  </p>
+<p>ネット上の紹介記事を参考に進めたら、それ程迷うこともなかったが、最後ブートローダーのインストールで、GRUB2を選択すると、インストール先をMBRにしか出来なかったので、SysLinuxをインストールした。<br>無線LANの設定も後から苦労するよりはと、ぽちぽちパスワードを入力した。  </p>
+<p>一応インストールは完了したが、デスクトップ環境の導入で躓いてしまった。  </p>
+<p>最初LXDEを入れてみたが、画面がザラザラで何も見えない。<br>PC起動時にLXDEを自動開始するよう設定してしまったようで、コマンドラインにも戻れない。<br>修正の仕方も分からず困ったが、幸いインストール後の状態をClonezillaでバックアップしていたので、これをリストアした。  </p>
+<p>LXDEでダメならと、次はXfceでチャレンジしてみた。  </p>
+<p>ほぼ下記記事の説明の通りに進めた。<br><a href="http://elfcobe.hateblo.jp/entry/2014/05/11/015243" target="_blank" rel="external">Windows で VirtualBox + Arch Linux (Xfce + Slim) - けいれん現象の幽玄美よ</a>  </p>
+<p>Xorg、グラフィックドライバー（xf86-video-vesa）、Xfceをインストールしたが、<code>startxfce4</code>とコマンドを打ってデスクトップに入ろうとしても、X serverが落ちてしまう。  </p>
+<p>エラーメッセージは「ビデオドライバーが無い」というような内容だった。<br>LXDEの時もこのせいで画面がザラザラだったのかもしれない。  </p>
+<p>デュアルブートのLubuntuで<code>xrandr</code>してみると、  </p>
+<blockquote>
+<p>VGA-0 disconnected… LVDS connected</p>
+</blockquote>
+<p>と返ってくる。  </p>
+<p><code>lspci</code>をしてみると、  </p>
+<blockquote>
+<p>VGA compatible controller: Advanced Micro Devices, Inc. [AMD/ATI] RS482/RS485 [Radeon Xpress 1100/1150]</p>
+</blockquote>
+<p>何のドライバーが必要なのか、よく分からない。  </p>
+<p>Puppy linux派生のLxpupを起動してみると、クイックセットアップのGraphicsのところに「現在はATIビデオドライバーを使用している」というようなことが書いてあった。  </p>
+<p>「ATI video driver Arch」で検索すると、Arch Linuxの日本語wikiページが見つかった。<br><a href="https://wiki.archlinux.org/index.php/ATI_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29" target="_blank" rel="external">ATI - ArchWiki (日本語)</a>  </p>
+<p><code>pacman -S xf86-video-ati</code>でxf86-video-atiをインストールしたら、ようやくXfceのデスクトップに入ることが出来た。  </p>
+<p>日本語環境がまだだったり、全体的にフォントがザラザラで汚かったりで、環境はまだ全然だが、いちおう一段落は付けられた。  </p>
+<p>それにしても、XubuntuやLubuntuなどUbuntu派生ディストリビューションの楽ちんさは、本当に有難いと痛感した。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/01/arch-ati-video-driver/" data-text="Arch Linuxをインストールした。（ビデオドライバーはATIでうまく行った） | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/03/01/arch-ati-video-driver/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/03/01/arch-ati-video-driver/" class="hatena-bookmark-button" data-hatena-bookmark-title="Arch Linuxをインストールした。（ビデオドライバーはATIでうまく行った）" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/03/01/update-grub-error/" >update-grubで&quot;options:not found&quot;のエラー</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年3月1日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>/etc/default/grubを編集して<code>update-grub</code>しようとしたら、  </p>
+<blockquote>
+<p>/usr/sbin/grub-mkconfig: 6: /etc/default/grub: options: not found</p>
+</blockquote>
+<p>とエラーになった。  </p>
+<p>意味がよく分からず、grub2を再度インストールしてみたが、やはりエラーになる。  </p>
+<p>grubファイルをよく見ると編集した箇所、GRUB_DEFAULT=”Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.16.0-30-generic”のダブルクォーテーションが全角の「”」になっていた。<br>半角に直したらアップデート出来た。<br>エラーメッセージの”6”はgrubファイルの6行目ということらしい。  </p>
+<p>“line 6”と言ってくれたら親切なんだが。<br>“options: not found”も”invalid”等の方が分かりやすい。  </p>
+<p>自分の不注意は棚に上げてだが。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/01/update-grub-error/" data-text="update-grubで&quot;options:not found&quot;のエラー | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/03/01/update-grub-error/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/03/01/update-grub-error/" class="hatena-bookmark-button" data-hatena-bookmark-title="update-grubで&quot;options:not found&quot;のエラー" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
 	</div>
 
 </div>
@@ -458,41 +789,41 @@
 		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
-		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
 		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>37</span></a></li>
-		
-			<li><a href="/tags/サーバー/">サーバー<span>9</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
 		
 			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>14</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
 		
 			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
 		
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
+		
+			<li><a href="/tags/食/">食<span>4</span></a></li>
+		
 			<li><a href="/tags/SEO/">SEO<span>4</span></a></li>
 		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+		
+			<li><a href="/tags/サーバー/">サーバー<span>9</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>37</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
 		
 		
 		</ul>

@@ -110,14 +110,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/01/09/old-pc-lubuntu/" >10年以上前の古いPCにLubuntu14.04をインストール</a>
+			<a href="/2014/08/27/seesaa-coments-sort/" >Seesaaブログのコメント表示を降順に</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年1月9日
+	2014年8月27日
 </div>
 
 <div class="panel-body">
@@ -127,12 +127,134 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>古いパソコン、FMV-BIBLO NB50HにXubuntu14.04をインストールしていた。<br>発売が2004年4月のようなので、10年以上前のパソコン。<br>Mobile Intel(R) Celeron(R) CPU 2.40GHz、メモリ480MB RAM、HDD60GB。  </p>
-<p>市販DVDを見るため、Synapticでlibdvdread4がインストール済みなのを確認。その後、</p>
-<pre><code>sudo <span class="regexp">/usr/</span>share<span class="regexp">/doc/</span>libdvdread4<span class="regexp">/install-css.sh</span>
-</code></pre><p>VLCメディアプレーヤーでDVDを開いたが、再生はされるものの動画がカクカクして見られたものではない。<br>SMPlayerも試してみたが、これもカクカクする。  </p>
-<p>Xubuntuより軽いらしいLubuntuだったら見られるかと、Lubuntu14.04をインストールしてみた。  </p>
-<p>結果、Lubuntuだと問題無いレベルでDVDを再生出来た。<br>やはりLubuntuはXubuntuより軽いようだ。</p>
+	  <p>ブログで投稿してもらったコメント数が多いと、新しいコメントを見るのにずっと下の方までスクロールしないといけない。<br>サービスによってはコメントを降順に表示出来るものもあるが、残念ながら現在のところSeesaaブログではこの機能は実装されていない。</p>
+<p>なんとかカスタマイズ出来ないかと調べてみたら、下記サイトにコメントを降順に並べる方法が紹介されていた。<br>JavaScriptを使用するものらしい。<br><a href="http://yf-blog-lab-3.seesaa.net/article/186272154.html" target="_blank" rel="external">コメントを降順に表示させる－－方法２－－: ブログカスタマイズ実験室３（わいずふぁくとりい）</a></p>
+<p>「コンテンツPC」の「記事」で記事のHTMLを下記のように編集。</p>
+<pre><code><span class="vbscript">&lt;% content.header -%&gt;</span>
+
+（★★★この箇所に下記コード［１］を挿入★★★）
+
+<span class="comment">&lt;!-- Content --&gt;</span>
+
+（中略）
+
+<span class="vbscript">&lt;% <span class="keyword">if</span>:page_name eq <span class="comment">'article' -%&gt;</span></span>
+<span class="vbscript">&lt;% <span class="keyword">if</span>:individual_article.accept_comment_show -%&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"comments"</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">a</span> <span class="attribute">name</span>=<span class="value">"comment"</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"comments-head"</span>&gt;</span>この記事へのコメント<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+（★★★この箇所に下記コード［２］を挿入★★★）
+
+<span class="vbscript">&lt;% <span class="keyword">loop</span>:list_individual_article_children -%&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"comments-body"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"text"</span>&gt;</span><span class="vbscript">&lt;% comment.body | html | tag_strip | nl2br | clickable(<span class="comment">'target="_blank" rel="nofollow"') %&gt;</span></span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"comments-post"</span>&gt;</span>Posted by <span class="vbscript">&lt;% <span class="keyword">if</span>:comment.homepage %&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"&lt;% comment.homepage | html | tag_strip %&gt;"</span> <span class="attribute">target</span>=<span class="value">"_blank"</span> <span class="attribute">rel</span>=<span class="value">"nofollow"</span>&gt;</span><span class="vbscript">&lt;% comment.writer | html | tag_strip %&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="vbscript">&lt;% <span class="keyword">else</span> %&gt;</span><span class="vbscript">&lt;% comment.writer | html | tag_strip %&gt;</span><span class="vbscript">&lt;% /<span class="keyword">if</span> %&gt;</span> at <span class="vbscript">&lt;% comment.createstamp | date_format(<span class="comment">'%Y年%m月%d日 %H:%M') %&gt;</span></span><span class="tag">&lt;<span class="title">br</span> /&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="vbscript">&lt;% /<span class="keyword">loop</span> -%&gt;</span>
+
+（★★★この箇所に下記コード［３］を挿入★★★）
+
+<span class="comment">&lt;!-- ↓↓コメント入力フォームここから↓↓ --&gt;</span>
+<span class="vbscript">&lt;% <span class="keyword">if</span>:individual_article.accept_comment_catch -%&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"comments-head"</span>&gt;</span>コメントを書く<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;<span class="title">form</span> <span class="attribute">action</span>=<span class="value">"&lt;% blog.page_url %&gt;pages/user/comments2/regist/input"</span> <span class="attribute">method</span>=<span class="value">"post"</span> <span class="attribute">name</span>=<span class="value">"comment-form"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"comments-body"</span>&gt;</span>
+お名前: <span class="vbscript">&lt;% <span class="keyword">if</span>:blog.ignore_setting.fill_writer %&gt;</span>[必須入力]<span class="vbscript">&lt;% /<span class="keyword">if</span> %&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"article_child__writer"</span> <span class="attribute">size</span>=<span class="value">"50"</span> <span class="attribute">value</span>=<span class="value">""</span> /&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+メールアドレス: <span class="vbscript">&lt;% <span class="keyword">if</span>:blog.ignore_setting.fill_email %&gt;</span>[必須入力]<span class="vbscript">&lt;% /<span class="keyword">if</span> %&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"article_child__email"</span> <span class="attribute">size</span>=<span class="value">"50"</span> <span class="attribute">value</span>=<span class="value">""</span> /&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+ホームページアドレス: <span class="vbscript">&lt;% <span class="keyword">if</span>:blog.ignore_setting.fill_homepage %&gt;</span>[必須入力]<span class="vbscript">&lt;% /<span class="keyword">if</span> %&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"article_child__homepage"</span> <span class="attribute">size</span>=<span class="value">"50"</span> <span class="attribute">value</span>=<span class="value">""</span> /&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+コメント: <span class="vbscript">&lt;% <span class="keyword">if</span>:blog.ignore_setting.fill_body %&gt;</span>[必須入力]<span class="vbscript">&lt;% /<span class="keyword">if</span> %&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">textarea</span> <span class="attribute">name</span>=<span class="value">"article_child__body"</span> <span class="attribute">rows</span>=<span class="value">"10"</span> <span class="attribute">cols</span>=<span class="value">"45"</span>&gt;</span><span class="tag">&lt;/<span class="title">textarea</span>&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"hidden"</span> <span class="attribute">name</span>=<span class="value">"article_child__article_id"</span> <span class="attribute">value</span>=<span class="value">"&lt;% individual_article.id %&gt;"</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"hidden"</span> <span class="attribute">name</span>=<span class="value">"article_id"</span> <span class="attribute">value</span>=<span class="value">"&lt;% individual_article.id %&gt;"</span> /&gt;</span>
+<span class="vbscript">&lt;% <span class="keyword">if</span>:blog.ignore_setting.captcha_comment -%&gt;</span>
+認証コード: [必須入力]<span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">img</span> <span class="attribute">src</span>=<span class="value">"&lt;% blog.ignore_setting.page_url_captcha_comment -%&gt;"</span> /&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">type</span>=<span class="value">"text"</span> <span class="attribute">name</span>=<span class="value">"captcha_comment"</span> <span class="attribute">size</span>=<span class="value">"50"</span> <span class="attribute">value</span>=<span class="value">""</span> /&gt;</span><span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+※画像の中の文字を半角で入力してください。<span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+<span class="vbscript">&lt;% /<span class="keyword">if</span> -%&gt;</span>
+<span class="vbscript">&lt;% <span class="keyword">if</span>:individual_article.accept_comment_permission_mode -%&gt;</span>
+※ブログオーナーが承認したコメントのみ表示されます。<span class="tag">&lt;<span class="title">br</span> /&gt;</span>
+<span class="vbscript">&lt;% /<span class="keyword">if</span> -%&gt;</span>
+<span class="vbscript">&lt;% <span class="keyword">if</span>:blog.ignore_setting.banascii_comment -%&gt;</span>
+<span class="vbscript">&lt;% /<span class="keyword">if</span> -%&gt;</span>
+<span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"need_confirm"</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">class</span>=<span class="value">"input-submit"</span>  <span class="attribute">value</span>=<span class="value">"確認する"</span> /&gt;</span><span class="tag">&lt;<span class="title">input</span> <span class="attribute">name</span>=<span class="value">"posted"</span> <span class="attribute">type</span>=<span class="value">"submit"</span> <span class="attribute">class</span>=<span class="value">"input-submit"</span>  <span class="attribute">value</span>=<span class="value">"書き込む"</span> /&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">form</span>&gt;</span>
+<span class="vbscript">&lt;% /<span class="keyword">if</span> -%&gt;</span>
+<span class="comment">&lt;!-- ↑↑コメント入力フォームここまで↑↑ --&gt;</span>
+
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="vbscript">&lt;% /<span class="keyword">if</span> -%&gt;</span>
+
+<span class="vbscript">&lt;% <span class="keyword">if</span>:individual_article.accept_tb_show -%&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"trackback"</span>&gt;</span>
+
+（以下略）
+</code></pre><p>上記HTMLの該当箇所に下記コードを挿入。</p>
+<p>コード［１］↓</p>
+<pre><code><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">language</span>=<span class="value">"javascript"</span>&gt;</span><span class="javascript">
+&lt;!--
+<span class="keyword">var</span> lc = <span class="number">0</span>;
+<span class="keyword">var</span> sarray = <span class="keyword">new</span> <span class="built_in">Array</span>();
+
+<span class="function"><span class="keyword">function</span> <span class="title">setText</span><span class="params">(s)</span></span>{
+    sarray[lc] = s;
+    lc++;
+}
+
+<span class="function"><span class="keyword">function</span> <span class="title">writeText</span><span class="params">()</span></span>{
+    <span class="keyword">var</span> L = sarray.length;
+    <span class="keyword">for</span>(i=<span class="number">0</span>;L-i&gt;<span class="number">0</span>;i++){
+        <span class="built_in">document</span>.write(sarray[L-i-<span class="number">1</span>]);
+    }
+}
+
+<span class="function"><span class="keyword">function</span> <span class="title">initText</span><span class="params">()</span></span>{
+    lc = <span class="number">0</span>;
+    sarray = <span class="keyword">new</span> <span class="built_in">Array</span>();
+}
+--&gt;
+</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+</code></pre><p>コード［２］↓</p>
+<pre><code><span class="subst">&lt;</span>script <span class="keyword">type</span><span class="subst">=</span><span class="string">"text/javascript"</span> language<span class="subst">=</span><span class="string">"javascript"</span><span class="subst">&gt;</span>
+<span class="subst">&lt;!--</span>
+  initText();
+  <span class="subst">&lt;%</span> <span class="keyword">loop</span>:list_individual_article_children <span class="subst">-%&gt;</span>
+    <span class="built_in">var</span> s <span class="subst">=</span> <span class="string">'&lt;div class="comments-body"&gt;'</span>;
+    s <span class="subst">+=</span> <span class="string">'&lt;div class="text"&gt;'</span>;
+    s <span class="subst">+=</span> <span class="string">'&lt;% comment.body | html | tag_strip | nl2br | clickable('</span>target<span class="subst">=</span><span class="string">"_blank"</span> rel<span class="subst">=</span><span class="string">"nofollow"</span><span class="string">') %&gt;'</span>;
+    s <span class="subst">+=</span> <span class="string">'&lt;/div&gt;'</span>;
+    s <span class="subst">+=</span> <span class="string">'&lt;div class="comments-post"&gt;'</span>;
+    s <span class="subst">+=</span> <span class="string">'Posted by '</span>;
+    <span class="subst">&lt;%</span> <span class="keyword">if</span>:comment<span class="built_in">.</span>homepage <span class="subst">%&gt;</span>
+    s <span class="subst">+=</span> <span class="string">'&lt;a href="'</span>;
+    s <span class="subst">+=</span> <span class="string">'&lt;% comment.homepage | html | tag_strip %&gt;"'</span>;
+    s <span class="subst">+=</span> <span class="string">'target="_blank" rel="nofollow"&gt;'</span>;
+    s <span class="subst">+=</span> <span class="string">'&lt;% comment.writer | html | tag_strip %&gt;&lt;/a&gt;'</span>;
+    <span class="subst">&lt;%</span> <span class="keyword">else</span> <span class="subst">%&gt;</span>
+    s <span class="subst">+=</span> <span class="string">'&lt;% comment.writer | html | tag_strip %&gt;'</span>;
+    <span class="subst">&lt;%</span> /<span class="keyword">if</span> <span class="subst">%&gt;</span>
+    s <span class="subst">+=</span> <span class="string">' at '</span>;
+    s <span class="subst">+=</span> <span class="string">'&lt;% comment.createstamp | date_format('</span><span class="subst">%</span>Y年<span class="subst">%</span>m月<span class="subst">%</span>d日 <span class="subst">%</span>H:<span class="subst">%</span>M<span class="string">') %&gt;'</span>;
+    s <span class="subst">+=</span> <span class="string">'&lt;br /&gt;&lt;/div&gt;'</span>;
+    s <span class="subst">+=</span> <span class="string">'&lt;/div&gt;'</span>;
+    setText(s);
+  <span class="subst">&lt;%</span> /<span class="keyword">loop</span> <span class="subst">-%&gt;</span>
+  writeText();
+<span class="comment">// --&gt;</span>
+<span class="subst">&lt;</span>/script<span class="subst">&gt;</span>
+<span class="subst">&lt;</span>noscript<span class="subst">&gt;</span>
+</code></pre><p>コード［３］↓</p>
+<pre><code><span class="tag">&lt;/<span class="title">noscript</span>&gt;</span>
+</code></pre><p>このままだとコメントを入力する時にも下の方までスクロールしないといけないので、「コメント入力フォーム」の箇所をコード［２］の2行上<code>&lt;a name=&quot;comment&quot;&gt;&lt;/a&gt;</code>の直上に移動さた。<br>このすぐ下に<code>&lt;br /&gt;</code>を２、３個入れて、下に空白を空けた方がしっくり来る。</p>
+<p>HTML編集の際、画面が小さいと見づらくてやりにくいので、エキスパートモードでやるか、テキストエディタを使ったほうが良いだろう。<br>失敗して今までのカスタマイズをおじゃんにしてしまったら辛いので、テキストファイルなどの形でバックアップも取っておいた方が無難だと思う。</p>
+<p>なおJavaScriptを使用しているそうなので、閲覧者がNoScriptのようなアドオンを用いていたら表示に不具合があるのかもしれない。</p>
 
 	
 	</div>
@@ -142,188 +264,14 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/09/old-pc-lubuntu/" data-text="10年以上前の古いPCにLubuntu14.04をインストール | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/08/27/seesaa-coments-sort/" data-text="Seesaaブログのコメント表示を降順に | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/01/09/old-pc-lubuntu/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/08/27/seesaa-coments-sort/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/01/09/old-pc-lubuntu/" class="hatena-bookmark-button" data-hatena-bookmark-title="10年以上前の古いPCにLubuntu14.04をインストール" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Linux/">Linux</a></li></ul>
-	</div>
-
-</div>
-
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/01/09/bloglines-netvibes/" >Bloglinesは終了なのだろうか</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年1月9日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>今月5日に確認したところBloglinesのフィードが見られない。トップページは存在しているが。<br>実際にはその数日前からフィードにアクセス出来ないようだ。  </p>
-<p>去年の9月にもサイトがアクセス不能になることがあってその時も何もアナウンスが無かったが、今回もなんのアナウンスも無いようだ。<br>もはやネットサービスの体をなしていない。<br>Bloglinesもそろそろ終わりなのだろうか。  </p>
-<p>Partner Sitesに挙げられているNetvibesは健在で、Bloglinesのフィードをバックアップすることも可能だし、Netvibesに移った方が良さそうだ。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/09/bloglines-netvibes/" data-text="Bloglinesは終了なのだろうか | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/01/09/bloglines-netvibes/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/01/09/bloglines-netvibes/" class="hatena-bookmark-button" data-hatena-bookmark-title="Bloglinesは終了なのだろうか" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/ネット/">ネット</a></li></ul>
-	</div>
-
-</div>
-
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/12/28/dropbox-behavior/" >Dropboxでのファイル・フォルダの移動や名称変更時の挙動</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年12月28日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Dropboxを利用するのに、Ubuntuのアプリケーションnautilus-dropboxを使っている。<br>ローカルのDropboxフォルダとウェブ上のDropboxを同期させてくれるので便利なのだが、ファイルやフォルダを移動する際の振る舞いは、あまり賢いとは言えないようだ。  </p>
-<p>ローカルでファイル・フォルダを移動させてから同期させると、ウェブ上では移動するのではなく、元ディレクトリから一旦削除し、移動先ディレクトリにファイルやフォルダを追加してしまう。<br>ウェブ上で移動させたら大丈夫かと思ったが、今度はローカル側で削除と追加をしてしまいダウンロードに時間が掛かってしまう。  </p>
-<p>移動は移動として処理してくれると有難いのだが。<br>WindowsやMac用のクライアントではどうなのだろう。  </p>
-<p>ーー<br>（追記）<br>Dropboxサイト上の操作でも、フォルダの名称変更が、削除と追加になってしまったりする。<br>アプリケーションの問題ではなく、Dropboxの仕様なのかもしれない。<br>ただ、名称変更がちゃんと「変更」として取り扱われる場合もある。<br>どういう時に削除と追加になり、どういう時に「変更」として扱われるのか、よく分からない。  </p>
-<p>いずれにせよ、Dropboxではフォルダの移動や名称変更は極力控えた方が良さそうだ。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/28/dropbox-behavior/" data-text="Dropboxでのファイル・フォルダの移動や名称変更時の挙動 | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/12/28/dropbox-behavior/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/12/28/dropbox-behavior/" class="hatena-bookmark-button" data-hatena-bookmark-title="Dropboxでのファイル・フォルダの移動や名称変更時の挙動" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/ネット/">ネット</a></li></ul>
-	</div>
-
-</div>
-
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/12/26/seesaa-sp-page-ad/" >記事タイトル下のテキスト広告だけはやめて欲しい（Seesaaブログのスマホ用ページ）</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年12月26日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Seesaaブログでもブログを書いている。<br>再構築が遅かったり、コメントのRSSが無かったりと色々不満はあるが、１ヶ月以上更新が無くても広告が表示されないし、けっこう気に入っている。  </p>
-<p>先日アクセス解析「Piwik」を見ていると、<code>http://rd.ane.yahoo.co.jp/rd?ep=...</code>という見慣れない外部リンクへの移動があるようだった。<br>そういうリンクを貼った記事は探しても見つからないし、不審に思っていたが、どうやらスマートフォン用ページの広告のようだった。<br>スマホ用のページは滅多に確認しないし、ブラウザにアドオンのAdblock PlusとGhosteryが入っているので、これまでまったく気が付かなかったようだ。  </p>
-<p>Adblock PlusとGhosteryを無効にしてUser Agent Switcherでスマホ用ページを見てみると、けっこう広告が挿入されている。<br>Seesaaにとって広告は重要な収入源だろうし、無料で利用させてもらっている身としては仕方の無いことだが、記事タイトルと記事本文の間のテキスト広告はちょっと酷いんじゃないだろうか。  </p>
-<p>タイトルと本文の間に、しかもテキスト広告。<br>文字の大きさは違うが、本文と勘違いする人もいるかもしれない。<br>イメージバナー広告だったらまだまし。<br>FC2ブログでもここまで酷くはないようだ。  </p>
-<p>検索すると、スタイルシートに加筆して広告を非表示にする方法もあるようだが、<a href="http://kiyaku.seesaa.net/category/548013-1.html" target="_blank" rel="external">Seesaaブログ利用規約</a>の禁止事項2に該当するようだ。  </p>
-<blockquote>
-<p>2.Seesaaが表示する広告を不正に移動、改変、削除または不正表示させる行為</p>
-</blockquote>
-<p>いきなりブログを削除されてもかなわないし。<br>ちょっとゲンナリ。  </p>
-<p>スマホの人もAdblockを使ってくれるといいんだが。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/26/seesaa-sp-page-ad/" data-text="記事タイトル下のテキスト広告だけはやめて欲しい（Seesaaブログのスマホ用ページ） | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/12/26/seesaa-sp-page-ad/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/12/26/seesaa-sp-page-ad/" class="hatena-bookmark-button" data-hatena-bookmark-title="記事タイトル下のテキスト広告だけはやめて欲しい（Seesaaブログのスマホ用ページ）" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/08/27/seesaa-coments-sort/" class="hatena-bookmark-button" data-hatena-bookmark-title="Seesaaブログのコメント表示を降順に" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
@@ -342,14 +290,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/12/25/sitemap/" >Hexoのsitemap.xmlを変更してみた</a>
+			<a href="/2014/08/26/expand-shortened-url/" >短縮URLを元のURLに展開するおすすめサービス</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年12月25日
+	2014年8月26日
 </div>
 
 <div class="panel-body">
@@ -359,20 +307,12 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>検索エンジンにインデックスされにくいようなのでrobots.txtを置いてみたが、sitemap.xmlの内容も少し修正してみた。<br>プラグインで導入したsitemap.xmlには個別記事のURLしか記載されていないが、Octopressのサイトマップを見てみるとブログのルートURLやrobots.txt、/archives/も記載されている。  </p>
-<p>node_modules/hexo-generator-sitemap/sitemap.ejsの<code>&lt;urlset&gt;</code>内に下記を追記してみた。  </p>
-<pre><code>  <span class="tag">&lt;<span class="title">url</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">loc</span>&gt;</span>http://pagent.github.io/<span class="tag">&lt;/<span class="title">loc</span>&gt;</span>
-  <span class="tag">&lt;/<span class="title">url</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">url</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">loc</span>&gt;</span>http://pagent.github.io/robots.txt<span class="tag">&lt;/<span class="title">loc</span>&gt;</span>
-  <span class="tag">&lt;/<span class="title">url</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">url</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">loc</span>&gt;</span>http://pagent.github.io/archives/<span class="tag">&lt;/<span class="title">loc</span>&gt;</span>
-  <span class="tag">&lt;/<span class="title">url</span>&gt;</span>
-</code></pre><p>URLを取得するための変数が分からないので、<code>&lt;loc&gt;</code>の箇所は手動で記載。<br><code>&lt;lastmod&gt;</code>は入れたかったが、これもどうやれば良いのか分からないし、省略可能とのことなので省略した。  </p>
-<p>Octopressでは個別記事の<code>&lt;lastmod&gt;</code>は、最終更新日時ではなく投稿日時のよう。つまり後から修正しても変更は無い。<br>一方Hexoのサイトマップでは最終的に変更された日時が記載され、それが上位に来ている。<br>どちらが良いのか分からないが、しばらく様子を見てみようと思う。  </p>
-<p>それから、Octopressのサイトマップでは<code>&lt;priority&gt;</code>や<code>&lt;changefreq&gt;</code>も記載されている。<br>SEO的にはOctopressの方が丁寧に作られているかもしれない。<br>generateが断然早いので、なるべくHexoを使いたいところだが。</p>
+	  <p>Twitterを見ているとURLの短縮されたリンクをよく見掛ける。<br>140文字という字数制限のある中で文字数を節約するには便利なので、私もたまにURL短縮サービスを使ったりする。<br>日本語版のWikipediaのように日本語URLが使われていると、パーセントエンコーディングされていて貼り付けたときURLがとても長かったりするので。</p>
+<p>でも短縮URLだとリンク先がなんのサイトなのか分からないので、踏むのをためらってしまう。<br>短縮URLはリダイレクトを使っているので実際、URLを隠蔽してフィッシング詐欺などを行う例もあるらしい。<br>私は短縮URLを使うときには、「（Xubuntuをアップグレードしてみた – Static）」などのように、なるべくリンク先の説明を書き添えるようにしているが、そういう人はあまり多数派ではないようだ。</p>
+<p>短縮URLを元のURLに戻すサービスがないか調べてみたら、そういうサービスが多数あるようだった。</p>
+<p>いくつか試した中で良さそうだったのは、「短縮URLチェッカー」(<a href="http://x-1.jp/)と「GetLinkInfo」(http://www.getlinkinfo.com/)だった。" target="_blank" rel="external">http://x-1.jp/)と「GetLinkInfo」(http://www.getlinkinfo.com/)だった。</a></p>
+<p>他のサービスでは最終的なリダイレクト先しか教えてくれないところが多かったが、上記のサービスはどちらも、途中何度かリダイレクトされている場合には途中の経路も表示してくれる。<br>（これまで気が付かなかったが、途中何度かリダイレクトされていることも結構あるのだと初めて知った。）<br>さらに「短縮URLチェッカー」の方はリンク先ページの内容をプレーンテキストで表示してくれる。</p>
+<p>たんびたんび短縮URLを展開しないといけないが、これでかなり安心してリンクをクリック出来そうだ。</p>
 
 	
 	</div>
@@ -382,21 +322,621 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/25/sitemap/" data-text="Hexoのsitemap.xmlを変更してみた | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/08/26/expand-shortened-url/" data-text="短縮URLを元のURLに展開するおすすめサービス | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/12/25/sitemap/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/08/26/expand-shortened-url/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/12/25/sitemap/" class="hatena-bookmark-button" data-hatena-bookmark-title="Hexoのsitemap.xmlを変更してみた" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/08/26/expand-shortened-url/" class="hatena-bookmark-button" data-hatena-bookmark-title="短縮URLを元のURLに展開するおすすめサービス" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
 	<div class="meta-widget pull-right">
 <span style="color:#555;"><i class="fa fa-tags"></i></span>
 <ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/blog/">blog</a></li> <li><a href="/tags/Hexo/">Hexo</a></li></ul>
+  <li><a href="/tags/ネット/">ネット</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/08/25/midori/" >サブのブラウザとして「Midori」</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年8月25日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>サブで使うブラウザとして「rekonq」を使っていたのだが、Xubuntuを12.04から14.04.1にアップグレードしてから、ツイッターのプロフィールページで表示がずれるようになってしまった。スタイルシートがちゃんとあたっていないのだろう。<br>「Chromium」の方はさらにひどくて、メニューやアドレス欄でも表示が変で使い物にならない状態だったので、アンインストールした。</p>
+<p>Ubuntuソフトウェアセンターに「dillo 3.0.3-6」というのがあった。<br>ずいぶん以前に少しだけ触ってみて、使いこなせなくてやめてしまった覚えがある。<br>入れてみたが、文字化けの治し方が分からず、やはり断念。</p>
+<p>仕方が無いのでサブのブラウザとして、放ってあった「Midori」を使うことにした。</p>
+<p>ただ「Midori」はブックマークから開く時シングルクリックでは開かず、ダブルクリックしないといけなかったり、フォントが気に入らなかったりということもあるので、ツイッター以外では「rekonq」も使うことになりそうだ。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/08/25/midori/" data-text="サブのブラウザとして「Midori」 | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/08/25/midori/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/08/25/midori/" class="hatena-bookmark-button" data-hatena-bookmark-title="サブのブラウザとして「Midori」" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ブラウザ/">ブラウザ</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/08/21/stylish/" >Firefoxのアドオン「Stylish」で快適ウェブ閲覧</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年8月21日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>先日、FirefoxのRSSリーダーアドオン「Brief」のCSSをカスタマイズして、取得した記事の文字色を強制的に黒で表示するようにした。<br>色使いの派手なブログはどうにも読みづらいので。</p>
+<p><a href="http://pagent.seesaa.net/article/403809904.html" target="_blank" rel="external">３色ブログの文字色を無効化（Firefoxのアドオン「Brief」をカスタマイズ）｜狂騒のパジェント</a></p>
+<p>これだけでも随分快適になったのだが、ブラウザ自体でも黒で表示出来ないものかと調べてみたら、Firefoxには閲覧ページのCSSを強制指定する「Stylish」というアドオンがあった。</p>
+<h4 id="●多色ブログ対策">●多色ブログ対策</h4>
+<p>Stylishのサイトにあった<a href="https://userstyles.org/styles/43165/theme" target="_blank" rel="external">「ブログの文字をメイリオ化」</a>というスタイルシートをお借りして、以下のように文字色、画像サイズに関する項目を追加した。</p>
+<pre><code><span class="at_rule">@<span class="keyword">namespace</span> <span class="function">url</span>(http://www.w3.org/<span class="number">1999</span>/xhtml)</span>;
+<span class="at_rule">@<span class="keyword">-moz-document</span> <span class="function">domain</span>(<span class="string">"ameblo.jp"</span>)
+,<span class="function">domain</span>(<span class="string">"yaplog.jp"</span>) 
+,<span class="function">domain</span>(<span class="string">"hatena.ne.jp"</span>)
+,<span class="function">domain</span>(<span class="string">"blog.livedoor.jp"</span>)
+,<span class="function">domain</span>(<span class="string">"lomo.jp"</span>)
+,<span class="function">domain</span>(<span class="string">"cocolog-nifty.com"</span>)
+,<span class="function">domain</span>(<span class="string">"air-nifty.com"</span>)
+,<span class="function">domain</span>(<span class="string">"blog.shinobi.jp"</span>) 
+,<span class="function">domain</span>(<span class="string">"blog.excite.co.jp"</span>)
+,<span class="function">domain</span>(<span class="string">"blog.goo.ne.jp"</span>)
+,<span class="function">domain</span>(<span class="string">"blogs.yahoo.co.jp"</span>)
+,<span class="function">domain</span>(<span class="string">"jugem.jp"</span>)
+,<span class="function">domain</span>(<span class="string">"jugem.cc"</span>) 
+,<span class="function">domain</span>(<span class="string">"plaza.rakuten.co.jp"</span>)
+,<span class="function">domain</span>(<span class="string">"blog.animate.tv"</span>)
+,<span class="function">domain</span>(<span class="string">"blog.ocn.ne.jp"</span>)
+,<span class="function">domain</span>(<span class="string">"laff.jp"</span>)
+,<span class="function">domain</span>(<span class="string">"blogspot.com"</span>)
+,<span class="function">domain</span>(<span class="string">"exblog.jp"</span>)
+
+/* -----除外ドメイン--------------------
+,<span class="function">domain</span>(<span class="string">"seesaa.net"</span>)
+,<span class="function">domain</span>(<span class="string">"fc2.com"</span>)
+----------- */
+</span>{
+
+
+*<span class="pseudo">:not(input)</span><span class="rules">{
+   <span class="rule"><span class="attribute">font-family</span>:<span class="value"><span class="string">"メイリオ"</span>,<span class="string">"Meiryo"</span>,sans-serif</span></span>;
+<span class="rule">}</span></span>
+<span class="tag">textarea</span><span class="rules">{
+   <span class="rule"><span class="attribute">width</span>:<span class="value"><span class="number">100%</span><span class="important">!important</span></span></span>;
+   <span class="rule"><span class="attribute">overflow</span>:<span class="value">auto<span class="important">!important</span></span></span>;
+<span class="rule">}</span></span>
+
+<span class="comment">/* -----フォントのサイズと色を固定------ */</span>
+* <span class="rules">{
+        <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">13px</span> <span class="important">!important</span></span></span>;
+        <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#404040</span> <span class="important">!important</span></span></span>;
+<span class="rule">}</span></span>
+
+<span class="tag">a</span><span class="rules">{
+   <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#003b73</span> <span class="important">!important</span></span></span>;
+<span class="rule">}</span></span>
+
+<span class="tag">a</span><span class="pseudo">:visited</span> <span class="rules">{
+   <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#4b667e</span> <span class="important">!important</span></span></span>;
+   <span class="rule"><span class="attribute">text-decoration</span>:<span class="value"> underline</span></span>;  
+<span class="rule">}</span></span>
+
+<span class="tag">a</span><span class="pseudo">:hover</span><span class="rules">{
+<span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#003b73</span> <span class="important">!important</span></span></span>;
+<span class="rule"><span class="attribute">text-decoration</span>:<span class="value">underline <span class="important">!important</span></span></span>;
+<span class="rule"><span class="attribute">color</span>:<span class="value"><span class="hexcolor">#ba2636</span> <span class="important">!important</span></span></span>;
+<span class="rule">}</span></span>
+
+<span class="comment">/* -----文字移動・点滅無効------ */</span>
+<span class="tag">marquee</span><span class="rules">{
+  <span class="rule"><span class="attribute">overflow</span>:<span class="value">visible</span></span>; <span class="rule"><span class="attribute">-moz-binding</span>:<span class="value">none</span></span>;   
+<span class="rule">}</span></span>
+<span class="tag">blink</span><span class="rules">{
+  <span class="rule"><span class="attribute">text-decoration</span>:<span class="value">none</span></span>;
+<span class="rule">}</span></span>
+
+<span class="comment">/* -----画像サイズ制限------ */</span>  
+<span class="tag">img</span> <span class="rules">{
+<span class="rule"><span class="attribute">width</span>:<span class="value"> auto</span></span>;
+<span class="rule"><span class="attribute">max-height</span>:<span class="value"> <span class="number">10px</span></span></span>;
+<span class="rule">}</span></span>
+}
+</code></pre><p>オリジナルでは多数のドメインが指定されており、この状態ではSeesaaで書いているブログの方で、自分の編集作業にも支障を来すようだったので、Seesaaは外した。</p>
+<h4 id="●ツイッターのプロフィール画面をシンプルに">●ツイッターのプロフィール画面をシンプルに</h4>
+<p>Stylishのサイトには他にもニコニコ動画用など色々なスタイルシートがあり、「ツイッター旧スタイル」というもあってちょっと期待したのだが、これはタイムラインのカスタマイズのようだった。</p>
+<p>自分の場合タイムラインも見るには見るが、ブラウザのブックマークに入れてあるユーザーさんのプロフィールページを見に行くことが多いので、大きくなってしまった新プロフィール画面のヘッダーと、どういう基準かは知らないが所々文字が大きくなっているツイートをなんとかしたい処。</p>
+<p>あれこれ設定してみたが、ヘッダーはうまく小さく出来なかったので、ヘッダー無しにしてみた。</p>
+<pre><code><span class="at_rule">@<span class="keyword">namespace</span> <span class="function">url</span>(http://www.w3.org/<span class="number">1999</span>/xhtml)</span>;
+<span class="at_rule">@<span class="keyword">-moz-document</span> <span class="function">domain</span>(<span class="string">"twitter.com"</span>) </span>{
+
+<span class="class">.ProfileTweet-text</span> <span class="rules">{
+   <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">15px</span> <span class="important">!important</span></span></span>;
+<span class="rule">}</span></span>
+
+<span class="class">.ProfileCanopy-header</span><span class="rules">{
+    <span class="rule"><span class="attribute">display</span>:<span class="value"> none</span></span>;
+<span class="rule">}</span></span>
+
+<span class="class">.AppContainer</span> <span class="rules">{
+    <span class="rule"><span class="attribute">margin-top</span>:<span class="value"> -<span class="number">120px</span> <span class="important">!important</span></span></span>;
+<span class="rule">}</span></span>
+
+<span class="comment">/* 下はログイン者以外のプロフィール画面向けのよう */</span>
+<span class="class">.ProfileCanopy--large</span>, <span class="class">.ProfileCanopy--large</span> <span class="class">.ProfileCanopy-header</span> <span class="rules">{
+    <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">175px</span></span></span>;
+<span class="rule">}</span></span>
+}
+</code></pre><p>上手く設定出来たかと思ったが、上部に表示されているはずのフォローするためのボタンやフォロー数、フォロワー数の表示などが消えてしまっていた。</p>
+<p>これではフォローしたりするとき具合が悪いので、ヘッダーは諦めて文字の大きさのみを固定した。</p>
+<pre><code><span class="at_rule">@<span class="keyword">namespace</span> <span class="function">url</span>(http://www.w3.org/<span class="number">1999</span>/xhtml)</span>;
+<span class="at_rule">@<span class="keyword">-moz-document</span> <span class="function">domain</span>(<span class="string">"twitter.com"</span>) </span>{
+
+<span class="class">.ProfileTweet-text</span> <span class="rules">{
+    <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">14px</span> <span class="important">!important</span></span></span>;
+    <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">20px</span> <span class="important">!important</span></span></span>;
+<span class="rule">}</span></span>
+}
+</code></pre><p>これだけでもずいぶんと見やすくなった。</p>
+<p>それにしてもなぜツイッター社はあんなアップデートをしてしまったんだろう。</p>
+<p>改悪としか思えない。</p>
+<p>ーー<br>（関連記事）<br><a href="/2014/09/04/twitter-without-direct-message/">Twitterのダイレクトメッセージを非表示に</a></p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/08/21/stylish/" data-text="Firefoxのアドオン「Stylish」で快適ウェブ閲覧 | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/08/21/stylish/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/08/21/stylish/" class="hatena-bookmark-button" data-hatena-bookmark-title="Firefoxのアドオン「Stylish」で快適ウェブ閲覧" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/blog/">blog</a></li> <li><a href="/tags/ブラウザ/">ブラウザ</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/08/21/blog-ranking/" >にほんブログ村のアンケートに答えてみた</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年8月21日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>このブログもブログランキング（にほんブログ村）に参加している。<br>ランキングサイトは他にも大手のところがいくつかあり、複数のランキングバナーを貼ってる人も多く見掛けるが、何個もクリックしてもらうのは申し訳ないとも思うので、「にほんブログ村」だけにしている。</p>
+<p>にほんブログ村は１つのアカウントで３つまでブログを登録出来るので、複数のブログを運営しているものとしては有難い。<br>「トラコミュ」や「注目記事」といった変わった機能があるのもおもしろい。<br>（「注目記事」の選考基準には？が付くことも多いが。）</p>
+<p>ブログ村ではしばらく前からアンケートを募集している。<br>もうじき10周年を迎え、10周年記念リニューアルに着手し始めているとのことなので、アンケートに答えがてら、以下の内容で要望を送ってみた。</p>
+<blockquote>
+<p>日本ブログ村　担当者様</p>
+<p>残暑お見舞い申し上げます。建国10周年おめでとうございます。</p>
+<p>ブログ村に限らないことですが、ランキングサイトの上位ブログは大抵どこも固定してしまっていて、面白味に欠けていると常々感じております。<br>ランキングがマンネリで興味を失くすブロガーも相当数存在することと思います。</p>
+<p>当然、上位ブログにはそれだけ多くの支持者がいるということもあるかと思いますが、中には上位にランクされていることに疑問を抱かざるを得ないブログも存在します。</p>
+<p>プログラムを使って仲間同士でクリックし合う行為は大抵のランキングサイトで違反事項とされているようですが、かなりの事例が存在しているのではないでしょうか？<br>他のランキングサイトの話ですが、半年以上も全く更新されていないブログが未だにそこそこの順位に表示されている、という奇妙な事例もあります。</p>
+<p>不正プログラムを用いた投票行為を判別するのはなかなか難しいのかも知れませんが、同一IPアドレスから短時間に多数の投票が行われていて、しかもある投票から別の投票への経過時間が一定している、といったようなことなどから判別出来ないものでしょうか？<br>さらには不正を行った投票が確認された場合、そのIPアドレスを投票無効リストに追加することとし、その旨周知するというの&gt;も抑止効果が期待出来るかもしれません。</p>
+<p>活気のあるおもしろいランキングサイトであってほしいと思いますので、よろしくお願い致します。</p>
+<p>それでは、日本ブログ村さまのますますのご発展をお祈り致します。</p>
+<p>追伸</p>
+<p>手間の問題で投票が減ってしまう可能性があるかもしれませんが、投票時に数字などの入力または選択をしないと投票出来ないようにするという方法も、テスト的にでも一度ご検討頂けたら幸いです。</p>
+</blockquote>
+<p>あまり順位を気にしても仕方がないが、ランキングサイトに参加していると心穏やかではいられなくなったりしてしまうんだよね。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/08/21/blog-ranking/" data-text="にほんブログ村のアンケートに答えてみた | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/08/21/blog-ranking/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/08/21/blog-ranking/" class="hatena-bookmark-button" data-hatena-bookmark-title="にほんブログ村のアンケートに答えてみた" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/blog/">blog</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/08/13/nemo-thunar/" >やはりThunarよりnemoがいい</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年8月13日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Xubuntu12.04を14.04.1にアップグレードしたら「nemo」が削除されてしまったので、Xfce標準の「Thunar」を使っていこうと思ったが、やはりThunarよりnemoの方が使い勝手がいい。</p>
+<p>nemoではフォルダ内のファイルの表示方法を「アイコン」、「詳細」などフォルダ毎に変更出来てそれが記憶されているが、Thunarだとファイル表示方法を変更するとその表示がすべてのフォルダに適応されてしまう。</p>
+<p>Ubuntuソフトウェアセンターからnemoをインストールしようとしたが、nemoの名前はあるものの依存関係を解決出来ないとかでインストール出来ない。<br>Synapticからインストールを試みたが、レポジトリが足りないようなことを言われる。</p>
+<p>Synapticの「設定」「リポジトリ」「他のソフトウェア」を見たら、「trustyへのアップグレード時に無効化されました」と書かれた項目が２つあったのでこれにチェックを入れたら無事「nemo」をインストール出来た。</p>
+<p>やっぱりnemoがいい。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/08/13/nemo-thunar/" data-text="やはりThunarよりnemoがいい | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/08/13/nemo-thunar/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/08/13/nemo-thunar/" class="hatena-bookmark-button" data-hatena-bookmark-title="やはりThunarよりnemoがいい" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/08/13/xubuntu14-04-1/" >Xubuntu12.04を14.04.1にアップグレードしてみた</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年8月13日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>数日前からXubuntu12.04のアップデートマネージャーに「Xubuntu14.04.1にアップグレード可能です」と表示されていたので、アップグレードしてみた。<br>本当はクリーンインストールした方が良いらしいが、また一からソフトを入れ直したり、せっかくカスタマイズした設定をまたやったりするのは気が遠くなりそうだったので。<br>以前別のPCで14.04にアップグレードした時は、Xubuntu12.04→12.10→13.10→14.04と３回アップグレードしないといけなかったが、14.04.1へは直接アップグレード出来た。</p>
+<p>２時間あまり掛かったが、途中「ファイルを置換していいか」と聞いてきたりするので寝ている間にというわけにはいかなかった。<br>端末のところにインストールするときのような画面が出て「OK」を押さないと先に進めないところがあって、マウスでクリックしても反応が無くて困ったが、「TAB」キーを押したらカーソルが「OK」に移動して進めることが出来た。</p>
+<p>アップグレード後再起動したら無事に起動。<br>以前のアップグレード同様、「rootで開く」が使えて重宝していたファイルマネージャー「nemo」がアンインストールされてしまったので、「Thunar」を使うことにした。</p>
+<p>困ったのは文字の入力切換で、12.04の時は「ALT」キーでも半角英数とひらがなの切り替えが出来ていたのだが、「半／全」キーでしか出来なくなっていた。<br>Mozcのキー設定で「ALT」キーでも出来るようエントリーを追加しようとしたが、入力キーのところで「ALT」をおしても反応が無い。<br>キーボードレイアウトの設定の問題かもしれないが、キーボード設定のレイアウトオプションの一覧に「109キーボード」というのが無い。<br>仕方がないので「半／全」キーだけで我慢しようと思う。</p>
+<p>他は特に大きく変わった印象が無い。<br>デフォルトでモニター下部に見え隠れしていたパネル０が無くなったそうだが、元から使ってなかったし。<br>全体的にメニューが明るくなって少し見やすくなったかな。</p>
+<p>なんにせよアップグレードが無事に済んで良かった。<br>これで３年間安心してお世話になれそうだ。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/08/13/xubuntu14-04-1/" data-text="Xubuntu12.04を14.04.1にアップグレードしてみた | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/08/13/xubuntu14-04-1/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/08/13/xubuntu14-04-1/" class="hatena-bookmark-button" data-hatena-bookmark-title="Xubuntu12.04を14.04.1にアップグレードしてみた" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/08/10/url-encode-decode/" >パーセント「％」の入ったURLをデコードする</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年8月10日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>アクセス解析を見ていると、パーセント「％」と英数字からなる長い羅列をよく目にする。<br>日本語のウィキペディアのURLを貼り付けるときにもこの文字列になったりする。</p>
+<p>これはURLに使えない漢字や仮名などを使用するための「パーセントエンコーディング」（URLエンコーディングとも）という手法によるものらしい。<br><a href="http://ja.wikipedia.org/wiki/%E3%83%91%E3%83%BC%E3%82%BB%E3%83%B3%E3%83%88%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0" target="_blank" rel="external">http://ja.wikipedia.org/wiki/%E3%83%91%E3%83%BC%E3%82%BB%E3%83%B3%E3%83%88%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0</a><br>（パーセントエンコーディング – Wikipedia）</p>
+<p>URLに日本語が使えて有難いのだが、元の文字がなんだったのか分からない。<br>でも簡単に元の日本語にデコードしてくれる便利なツールも公開されている。</p>
+<p><a href="http://www.tagindex.com/tool/url.html" target="_blank" rel="external">Web便利ツール/URLエンコード・デコードフォーム – TAG index Webサイト</a></p>
+<p>検索してみたら他にも色々あって、<a href="http://urlencode.net/index.html" target="_blank" rel="external">UrlEncode.net URLエンコード</a>というところはコンパクトでいい感じなのだが、デコードの時に文字コードをちゃんと指定しないと文字化けしてしまう。</p>
+<p>その点「TAG index」さんの方は、文字コードを自動判別してくれるので便利。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/08/10/url-encode-decode/" data-text="パーセント「％」の入ったURLをデコードする | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/08/10/url-encode-decode/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/08/10/url-encode-decode/" class="hatena-bookmark-button" data-hatena-bookmark-title="パーセント「％」の入ったURLをデコードする" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ネット/">ネット</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/08/08/speakerdeck-reupload/" >SpeakerDeckのRe-Uploadで固まった</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年8月8日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>既にアップロードしているスライドの一部を修正してSpeakerDeckにRe-Uploadしたらアップロード自体は問題なく経過したが、その後「Processing Your PDF into Slides」の表示のまま固まってしまった。<br>何度かRe-Uploadを繰り返したのが原因だろうか。</p>
+<p>何をやっても変化が無いので仕方なく放置してみたら、４日目にようやくスライドの差し替えが完了した。</p>
+<p>場合によっては一旦削除してアップロードし直した方が早くて良いかもしれない。<br>Views数やStar（「いいね」みたいなもの）はまた一からになってしまうと思うが、ファイル名が同じなら公開URLも引き継げるし。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/08/08/speakerdeck-reupload/" data-text="SpeakerDeckのRe-Uploadで固まった | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/08/08/speakerdeck-reupload/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/08/08/speakerdeck-reupload/" class="hatena-bookmark-button" data-hatena-bookmark-title="SpeakerDeckのRe-Uploadで固まった" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ネット/">ネット</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/08/03/slideshare-speakerdeck/" >スライド共有サービス対決。SlideShare vs.SpeakerDeck</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年8月3日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>スライド共有サイトとして最初に「SlideShare」を知って、そちらで始めたのだが、もう一つ有力なスライド共有サイトとして「SpeakerDeck」というのもあった。<br>登録してみたらこちらも良さそうだった。</p>
+<p>大きな違いとして、「SlideShare」はFlashを使っていて、もう一方の「SpeakerDeck」の方はJavascriptを使っているらしい。</p>
+<iframe src="//www.slideshare.net/slideshow/embed_code/37458126?rel=0" width="342" height="291" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+
+
+
+
+<div style="width: 50%"><script async class="speakerdeck-embed" data-id="591d6dc0fcd80131c46d52d757e5bc8b" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script></div>
+
+<p>特に埋め込みサイズが大きい場合に顕著だが、「SpeakerDeck」の方がスライド間の移動がスムーズ。<br>「SlideShare」は読み込み・移動の際、画面が一瞬チラつくことがある。</p>
+<p>「SlideShare」の利点としては</p>
+<p>1.Twitterのツイート内でスライドの閲覧が可能。<br>（「SpeakerDeck」でのshareはリンクのURLが表示されるだけ。）</p>
+<p>2.スライド内の文章が抽出されてページの下部に表示される。</p>
+<p>3.Twitterのように他のユーザーを「Follow」する機能がある。</p>
+<p>4.他の人が作ったスライドにコメントしたり、「Like」（お気に入り）に入れる機能がある。</p>
+<p>などがありSNSとしての広がりに優れる。<br>またSNS的な要素は不要という場合でも、「1」と「2」の利点は大きい。<br>ツイート内でスライドの閲覧が可能だとスライドを見てもらいやすいだろうし、文章がスライドのページに表示されるのも検索エンジンに登録されやすく、SEO的に有利なはず。</p>
+<p>ただ「SpeakerDeck」の表示のスムーズさも捨てがたい。</p>
+<p>当面は両方を併用しようと思う。</p>
+<p>ーー<br>（追記）<br>「SlideShare」も「SpeakerDeck」も、アップロードする際のファイル名が英語なら公開URLにそれらのアルファベットが用いられる。</p>
+<p>日本語名のファイルをアップロードすると「SlideShare」では<br><code>http://www.slideshare.net/Pagent/ss-37458126</code>のように「ss-」＋８ケタの数字になる。</p>
+<p>一方、「SpeakerDeck」に日本語名のファイルをアップロードすると<br><code>https://speakerdeck.com/pagent/dangokao-dangohahe-gu-oisii</code>のように、ひらがなのローマ字表記＋漢字の中国語読みで長いものになってしまう。</p>
+<p>さらに英語のファイル名でアップロードしても、その後タイトルを変更するとそれに応じて変更の度に公開URLが変わってしまう。リンク切れにならないよう、投稿時にはタイトルを十分考えておく必要がある。（埋め込みタグはURLではなく「data-id」が用いられているので、タイトルを変更しても不変。）</p>
+<p>日本語で長いタイトルを付けたいがURLが長くなるのは嫌という人には「SpeakerDeck」は向いていないかもしれない。</p>
+<p>（追記）<br>ブログなどへの埋め込みの際、「SpeakerDeck」には埋め込みサイズのカスタマイズが用意されていないが、</p>
+<pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">style</span>=<span class="value">"width: 560px"</span>&gt;</span>
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">async</span> <span class="attribute">class</span>=<span class="value">"speakerdeck-embed"</span><span class="value">〜</span>&gt;</span><span class="javascript">〜</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</code></pre><p>のようにdiv要素で指定してやればいいようだ。</p>
+<p>参照記事：<a href="http://qiita.com/udzura/items/095e322a26e85a4af4b9" target="_blank" rel="external">CSS – SpeakerDeck のスライドはりつけが巨大で困る – Qiita</a></p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/08/03/slideshare-speakerdeck/" data-text="スライド共有サービス対決。SlideShare vs.SpeakerDeck | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/08/03/slideshare-speakerdeck/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/08/03/slideshare-speakerdeck/" class="hatena-bookmark-button" data-hatena-bookmark-title="スライド共有サービス対決。SlideShare vs.SpeakerDeck" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ネット/">ネット</a></li></ul>
 	</div>
 
 </div>
@@ -442,41 +982,41 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
-		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>37</span></a></li>
-		
 			<li><a href="/tags/サーバー/">サーバー<span>9</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>14</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
-		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
 		
 			<li><a href="/tags/SEO/">SEO<span>4</span></a></li>
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+		
+			<li><a href="/tags/食/">食<span>4</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>14</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
 		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
 			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
 		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>37</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		

@@ -110,14 +110,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/08/21/rekonq-default-search-engine/" >rekonqのデフォルト検索エンジンを設定出来ない</a>
+			<a href="/2015/04/21/connection-refused-repo-archlinux-fr/" >Yaourtのリポジトリに接続を拒否される</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年8月21日
+	2015年4月21日
 </div>
 
 <div class="panel-body">
@@ -127,18 +127,42 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>Arch LinuxでサブのブラウザとしてMidoriを使っているが、お気に入りが消えてしまったりと調子が悪かったので、rekonqを入れてみた。  </p>
-<p>サイドバーは有る方が好みなので、レンチアイコンの設定からPanels→Bookmarks Panelをチェック。<br>広告除去は、Tools→Ad block。<br>EasyListだけでは依然、広告が邪魔な状態だったので、EasyList without element hidingも有効にした。  </p>
-<p>快適に使えるようになったかと思ったが、起動の度に、デフォルトの検索エンジンを設定するよう、上部に注意表示される。  </p>
+	  <p>いつの間にかArch Linuxのシステム更新の際、エラーが表示されるようになっていた。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> pacman -Syu</div><div class="line">:: パッケージデータベースの同期中...</div><div class="line"> core は最新です</div><div class="line"> extra は最新です</div><div class="line"> community は最新です</div><div class="line"> multilib は最新です</div><div class="line">エラー: ファイル <span class="string">'archlinuxfr.db'</span> を repo.archlinux.fr から取得するのに失敗しました : Failed to connect to repo.archlinux.fr port <span class="number">80</span>: 接続を拒否されました</div><div class="line">エラー: archlinuxfr の更新に失敗しました (ダウンロードライブラリエラー)</div></pre></td></tr></table></figure>
+
+<p>Yaourtのリポジトリのようだ。  </p>
+<p>検索すると、同様のトピックが1件だけ見つかった。<br><a href="https://forums.archlinux.fr/viewtopic.php?t=16714" target="_blank" rel="external">[repo.archlinux.fr] Failed to connect to repo.archlinux.fr port 80: Connexion refusée - Archlinux.fr [Forums]</a>  </p>
+<p>フランス語らしいのでGoogle翻訳で翻訳した。<br>（よく分からないが一部修正）  </p>
 <blockquote>
-<p>you do not have a default search engine set. without it …</p>
+<p>こんにちは、</p>
+<p>レポarchlinux.frに問題があるように表示されます。<br>エラー：ファイルのリカバリ失敗」archlinuxfr.db」repo.archlinux.fr以来：ポート80をrepo.archlinux.frへの接続に失敗しました接続が拒否されました</p>
+<p>誰かが見てすることができますか？<br>この種のpbm（problem？）の正式な報告チャンネルはありますか？</p>
+<p>ありがとう</p>
 </blockquote>
-<p>確かにアドレスバーに語句を入力しても検索出来ない。<br>注意表示の「Set it」をクリックしてもなにも起こらないし、設定のSearch Enginesの箇所は、モジュールが無いようで灰色、設定出来ない。  </p>
-<p>Konquerorをインストールしたら良いという情報があったので、インストールしてみた。<br><a href="https://bbs.archlinux.org/viewtopic.php?pid=1241664#p1241664" target="_blank" rel="external">cannot set the default search engine in rekonq 1.0 / Applications &amp; Desktop Environments / Arch Linux Forums</a>  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> pacman -S kdebase-konqueror</div></pre></td></tr></table></figure>
-
-<p>検索エンジンを設定出来るようになった。<br>Konquerorは使わないようだったら<del>削除してしまっても良いようだ。</del>  </p>
-<p>Konquerorをアンインストールすると、検索エンジンのモジュールも削除されてしまうようだ。</p>
+<hr>
+<blockquote>
+<p>私は全く同じ悩みを持っている。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>私は、サーバーがダウンしていることに昨晩気づいた（受信側かサーバか正確には分からない…）。</p>
+<p>だから、辛抱強く彼の悩みを取ると待機する必要があります^^（ヨーグルトをインストールしたかった私は、今日逃している）</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>それはとても忍耐に戻って日付とあなたのスタッフに感謝している。</p>
+<p>編集：さらに調査保留中、Skunnykが配置されています。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>すばらしい、感謝！</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>私の側で[OK]をクリックしUPD</p>
+</blockquote>
+<p>どうやらYaourtのサーバーがダウンしているたようだ。<br>4月6日のトピックだが、これまで気が付かなかったし、不安定で時々ダウンしているのだろうか？  </p>
+<p>それにしてもGoogle翻訳の便利さには感謝する。</p>
 
 	
 	</div>
@@ -148,21 +172,21 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/08/21/rekonq-default-search-engine/" data-text="rekonqのデフォルト検索エンジンを設定出来ない | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/21/connection-refused-repo-archlinux-fr/" data-text="Yaourtのリポジトリに接続を拒否される | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/08/21/rekonq-default-search-engine/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/21/connection-refused-repo-archlinux-fr/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/08/21/rekonq-default-search-engine/" class="hatena-bookmark-button" data-hatena-bookmark-title="rekonqのデフォルト検索エンジンを設定出来ない" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/21/connection-refused-repo-archlinux-fr/" class="hatena-bookmark-button" data-hatena-bookmark-title="Yaourtのリポジトリに接続を拒否される" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
 	<div class="meta-widget pull-right">
 <span style="color:#555;"><i class="fa fa-tags"></i></span>
 <ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/ブラウザ/">ブラウザ</a></li></ul>
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
 	</div>
 
 </div>
@@ -174,14 +198,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/08/20/google-news-search/" >Firefoxに「Googleニュース検索」を追加</a>
+			<a href="/2015/04/20/jd-problem-after-archlinux-upgrade/" >Arch Linuxアップグレード後JDが起動出来ない</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年8月20日
+	2015年4月20日
 </div>
 
 <div class="panel-body">
@@ -191,10 +215,26 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>Firefoxの検索エンジンに「Googleニュース検索」を追加した。<br>アドオンの検索では日本語用のものが見つからなかったので、いったん<a href="https://addons.mozilla.org/ja/firefox/addon/googlenews-ita/?src=search" target="_blank" rel="external">Google News (Italia)</a>をインストール。<br>~/.mozilla/firefox/(プロファイル名)/searchplugins内のgooglenews-ita.xmlをgooglenews-ja.xmlにリネーム。<br>ファイルの内容を下記に変更した。  </p>
-<figure class="highlight xml"><figcaption><span>googlenews-ja.xml</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">SearchPlugin</span> <span class="attribute">xmlns</span>=<span class="value">"http://www.mozilla.org/2006/browser/search/"</span> <span class="attribute">xmlns:os</span>=<span class="value">"http://a9.com/-/spec/opensearch/1.1/"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:ShortName</span>&gt;</span>Google ニュース<span class="tag">&lt;/<span class="title">os:ShortName</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Description</span>&gt;</span>Google ニュース検索<span class="tag">&lt;/<span class="title">os:Description</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:InputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">os:InputEncoding</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Image</span> <span class="attribute">width</span>=<span class="value">"16"</span> <span class="attribute">height</span>=<span class="value">"16"</span>&gt;</span>data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAPAKAADwCgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAArKSaGLywqTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1MzB3SkdF/1RST/5FQj/sR0VCdzIvLAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3NjRXR0VC/ZGQj/++vr3/oaCf/2xqaP9QTkviSEZDeDIvLA4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlIyE/QD489mRiYf/ExMP/ymVO/8mXi//Hx8f/rq6t/25sav9UUlDgQ0A9YTIvLAkAAAAAAAAAAAAAAAA7OTdPQkE/9FdUUv+jo6L/0Ly3/8s0Ev/QxsP/qaqp/7Ozs//Pz87/rKyr/2BdW/pPTUrOMi8sJQAAAAA0MjBiNzU0+IWEgf9mZGL/1NTU/85VOv/RgW//09PS/4SFhP+EhYT/mZmY/8zMzP/W1tb/kI+N/0lHRPQlIyFiS0lH+4qKiP9DQD3/v769/9V6Zf/MNRP/39XT/6jX4f+rsrL/iYqJ/4SFhP+Jion/wsLC/97e3f+Afn3/JSMhDjc1M4hHRUP2iYiG/+rq6f/YfWn/1nFa/3nd8/8K0v7/F9P9/3rR5f+kqan/hIWE/4SFhP/Jycj/amhm9AAAAAAyLyw4ZmRi8aGh2/9BQdP/k5Ph/+PZ4P994ff/GNT9/wrS/v8K0v7/Jtb8/6LZ5f+xsbH/vby6/1RRT9kAAAAAOjc1852bmv+9ve3/Tk7W/zY20f9BQtb/f4Dl/9Pf9v+B5fv/J9b9/wrS/v8K0v7/q+n5/2lmZPtOTElTAAAAADIvLD1eXFnSdHJw+s/Ozf+zs+7/T0/b/zc42/83Od//goPt/83O+f+j7v//cuP9/5+dnP9VU1C6Mi8sBQAAAAAAAAAAMi8sDEdEQmJaWFXWfXt5+cTDw/+vr+3/aWvo/zg75f84POn/j5H1/7y7uv9FQkDuMi8sEAAAAAAAAAAAAAAAAAAAAAAAAAAAMi8sCDIvLE1QTUvNdHJw9Le2tf/JyfT/g4Xy/8PDzf9qaGbqMi8sLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIvLDxHRELCQT479XJwbv9QTkvzU1BOSwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIvLA8yLyxjMi8sHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/P8AAPgf8L/wBwAA4AEAAMAAAACAAAAAAAAAAAAAAACAAAAAgAAAAIAAAADAAQAA8AP///4H////jwAA//8AAA%3D%3D<span class="tag">&lt;/<span class="title">os:Image</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Url</span> <span class="attribute">type</span>=<span class="value">"text/html"</span> <span class="attribute">method</span>=<span class="value">"GET"</span> <span class="attribute">template</span>=<span class="value">"https://news.google.co.jp/news/search?q={searchTerms}"</span> <span class="attribute">resultDomain</span>=<span class="value">"news.google.co.jp"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">os:Url</span>&gt;</span><span class="tag">&lt;<span class="title">os:Url</span> <span class="attribute">type</span>=<span class="value">"application/x-suggestions+json"</span> <span class="attribute">method</span>=<span class="value">"GET"</span> <span class="attribute">template</span>=<span class="value">"http://suggestqueries.google.com/complete/search?output=firefox&amp;client=firefox&amp;hl=ja&amp;q={searchTerms}"</span> <span class="attribute">resultDomain</span>=<span class="value">"suggestqueries.google.com"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">os:Url</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">SearchPlugin</span>&gt;</span></div></pre></td></tr></table></figure>
+	  <p>Arch Linuxをアップグレードしたら、2ちゃんねる専用ブラウザJDが起動しなくなった。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ jd</div><div class="line">jd: error <span class="keyword">while</span> loading shared libraries: libgnutls.so.<span class="number">28</span>: cannot open shared object file: No such file or directory</div></pre></td></tr></table></figure>
 
-<p>~/.mozilla/firefox/(プロファイル名)/searchplugins内に上記ファイルを新規作成しても良いと思う。</p>
+<p>libgnutls.so.28が見つからないようだ。  </p>
+<p>libgnutls.so.28はgnutlsに含まれているようなので、<a href="https://archlinuxjp.kusakata.com/wiki/%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%81%AE%E3%83%80%E3%82%A6%E3%83%B3%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89" target="_blank" rel="external">パッケージのダウングレード - ArchWiki</a>を参考にgnutlsをダウングレードしてみた。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> pacman -U /var/cache/pacman/pkg/gnutls-<span class="number">3.3</span>.<span class="number">14</span>-<span class="number">2</span>-x86_64.pkg.tar.xz</div></pre></td></tr></table></figure>
+
+<p>だが今度はlibnettle.so.4が無いと言われる。  </p>
+<p>JDではないが、今回のアップグレードでLibreofficeやopenconnectを使用する際にも同様の問題があるようだった。  </p>
+<ul>
+<li><a href="https://bugs.archlinux.org/task/44645" target="_blank" rel="external">FS#44645 : libreoffice-fresh [error while loading shared libraries: libgnutls.so.28]</a>  </li>
+<li><a href="https://bbs.archlinux.org/viewtopic.php?id=196314" target="_blank" rel="external">[solved] openconnect broken after upgrading gnutls and nettle / Pacman &amp; Package Upgrade Issues / Arch Linux Forums</a>  </li>
+</ul>
+<p>libnettle.so.4はnettleをダウングレードしたら良いようだったが、/var/cache/pacman/pkg内にnettleの旧パッケージが見つからない。<br>lib32-nettleをインストールしてみたが、依然libnettle.so.4が見つからないとかでJDを起動出来ない。  </p>
+<p>上記openconnectについてのフォーラムコメントにもあったが、Arch Linuxではパッケージのダウングレード（部分的なアップグレード）は推奨されないようだ。<br><a href="https://archlinuxjp.kusakata.com/wiki/Pacman?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DPacman_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno#.E9.83.A8.E5.88.86.E7.9A.84.E3.81.AA.E3.82.A2.E3.83.83.E3.83.97.E3.82.B0.E3.83.AC.E3.83.BC.E3.83.89.E3.81.AF.E3.82.B5.E3.83.9D.E3.83.BC.E3.83.88.E3.81.95.E3.82.8C.E3.81.A6.E3.81.84.E3.81.BE.E3.81.9B.E3.82.93" target="_blank" rel="external">pacman - ArchWiki</a>  </p>
+<p>バグなのかJD側の問題なのかよく分からないが、幸い先日ClonezillaでArch Linuxのバックアップをとっていたので、これをリストアすることにした。  </p>
+<p>当面システムのアップグレードはせず、このまま使用しようと思う。  </p>
+<p>ーー<br>（追記）<br>JDを一旦削除、その後再インストールしても駄目だったが、JDをちゃんとアンインストール出来なかったのが原因のようだ。<br>(<code>yaourt -R jd</code>でアンインストールしてもメニューに表示されており、コマンド<code>jd</code>でlibgnutls.so.28が無いと表示されていた。）  </p>
+<p><code>yaourt -Rd --nodeps jd</code>でもアンインストール出来なかったので、/userディレクトリで”jd”を検索。<br>/usr/local/bin/jdと/usr/local/share/applications/jd.desktopを手動で削除した。  </p>
+<p>その後再インストールしたら、エラーになることもなく起動出来た。</p>
 
 	
 	</div>
@@ -204,21 +244,21 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/08/20/google-news-search/" data-text="Firefoxに「Googleニュース検索」を追加 | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/20/jd-problem-after-archlinux-upgrade/" data-text="Arch Linuxアップグレード後JDが起動出来ない | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/08/20/google-news-search/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/20/jd-problem-after-archlinux-upgrade/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/08/20/google-news-search/" class="hatena-bookmark-button" data-hatena-bookmark-title="Firefoxに「Googleニュース検索」を追加" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/20/jd-problem-after-archlinux-upgrade/" class="hatena-bookmark-button" data-hatena-bookmark-title="Arch Linuxアップグレード後JDが起動出来ない" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
 	<div class="meta-widget pull-right">
 <span style="color:#555;"><i class="fa fa-tags"></i></span>
 <ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/ブラウザ/">ブラウザ</a></li></ul>
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
 	</div>
 
 </div>
@@ -230,14 +270,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/08/15/context-search/" >右クリックからの検索を拡張するFirefoxアドオン「Context Search」が便利</a>
+			<a href="/2015/04/19/paccache-pkgcacheclean/" >不要なパッケージキャッシュの削除。paccacheとpkgcacheclean</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年8月15日
+	2015年4月19日
 </div>
 
 <div class="panel-body">
@@ -247,10 +287,21 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>Firefoxで右クリックからの検索は便利だが、検索エンジンがデフォルトのものに固定されてしまっている。<br>普段はGoogleを使っているが、安全のためStartPageやDuckDuckGoを使いたい時、またツイッター検索をしたい時などがある。そんな時、キーワードをいちいち検索欄にコピペするのはちょっと面倒。  </p>
-<p>そんな人にお勧めしたいアドオンが<a href="https://addons.mozilla.org/ja/firefox/addon/context-search/?src=search" target="_blank" rel="external">Context Search</a></p>
-<p>インストールすると、右クリックの「”〜” をGoogleで検索(s)」などが「”〜” を検索(s)」になり、種々の検索エンジンがリスト表示される。<br>特に設定の必要も無し。  </p>
-<p>ちょっとしたことだが、とても便利。</p>
+	  <p>Arch Linuxを使っていると、pacmanでダウンロードした古いパッケージキャッシュが/var/cache/pacman/pkg/ に溜まってくるらしい。<br><a href="https://archlinuxjp.kusakata.com/wiki/Pacman?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DPacman_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno#.E3.83.91.E3.83.83.E3.82.B1.E3.83.BC.E3.82.B8.E3.82.AD.E3.83.A3.E3.83.83.E3.82.B7.E3.83.A5.E3.81.AE.E5.89.8A.E9.99.A4" target="_blank" rel="external">pacman - ArchWiki</a>  </p>
+<p>以前<code>paccache -r</code>および<code>paccache -ruk0</code>を行って不要なキャッシュを削除したが、今回はpkgcachecleanを利用してみた。<br>Yaourtでインストール  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yaourt -S pkgcacheclean</div></pre></td></tr></table></figure>
+
+<p>インストール容量もたった0.02MiBだった。<br>pkgcachecleanを実行  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> pkgcacheclean</div></pre></td></tr></table></figure>
+
+<p>メッセージ等が出ることもなく、一瞬で終了。<br>やや拍子抜けした。  </p>
+<p>だが/var/cache/pacman/pkg/のサイズは、実行前の2.4GBから1.9GBにちゃんと減量出来ていた。  </p>
+<p>このあと、試しにpaccacheしてみると、</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ paccache -r</div><div class="line">==&gt; no candidate packages found <span class="keyword">for</span> pruning</div><div class="line">$ paccache -ruk0</div><div class="line">==&gt; no candidate packages found <span class="keyword">for</span> pruning</div></pre></td></tr></table></figure>
+
+<p>もう削る必要のあるパッケージは無いようだ。  </p>
+<p>pkgcachecleanのページのコメントを見ると、paccacheが.partや.delta filesを扱わない一方、pkgcachecleanではこれらも対象になるようだ。<br><a href="https://aur.archlinux.org/packages/pkgcacheclean/" target="_blank" rel="external">AUR (en) - pkgcacheclean</a>  </p>
+<p>何のことかよく分からないが、コマンドが一つで済むことだし、pkgcachecleanの方が良さそうだ。簡単で有難い。</p>
 
 	
 	</div>
@@ -260,21 +311,21 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/08/15/context-search/" data-text="右クリックからの検索を拡張するFirefoxアドオン「Context Search」が便利 | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/19/paccache-pkgcacheclean/" data-text="不要なパッケージキャッシュの削除。paccacheとpkgcacheclean | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/08/15/context-search/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/19/paccache-pkgcacheclean/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/08/15/context-search/" class="hatena-bookmark-button" data-hatena-bookmark-title="右クリックからの検索を拡張するFirefoxアドオン「Context Search」が便利" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/19/paccache-pkgcacheclean/" class="hatena-bookmark-button" data-hatena-bookmark-title="不要なパッケージキャッシュの削除。paccacheとpkgcacheclean" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
 	<div class="meta-widget pull-right">
 <span style="color:#555;"><i class="fa fa-tags"></i></span>
 <ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/ブラウザ/">ブラウザ</a></li></ul>
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
 	</div>
 
 </div>
@@ -286,14 +337,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/07/09/fictional-email-addresses/" >架空のメールアドレスを使う</a>
+			<a href="/2015/04/18/pdf-xchange-viewer/" >PDFファイルの日本語フォント文字化け対策として「Wine」+「PDF-XChange Viewer」</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年7月9日
+	2015年4月18日
 </div>
 
 <div class="panel-body">
@@ -303,9 +354,10 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>ネットを利用していて、例えばメール欄が必須になっているブログにコメントしたい時など、これまでは正直に実際のメールアドレスを記載していた。（メインのではなく、サブのアドレスを使うことが多かったが）<br>だが、よく考えてみると、返信が必要のない場合は実際のものではなく、架空のメールアドレスを使っても問題なさそうだ。  </p>
-<p>存在するかもしれないメールアドレスを適当に使ってしまうと迷惑を掛けてしまうかもしれないが、３つのサンプル用ドメイン（example.com、example.org、 example.net）なら、大丈夫なはず。  </p>
-<p>そう考えて、適当な架空のメールアドレスとして<code>mail@example.net</code>を使うようにした。</p>
+	  <p>Ubuntu標準のPDFビューアEvinceで、日本語のフォントが表示されなかったり、文字化けしたりしていた。<br>poppler-dataをインストールしたり、fonts.confファイルを作成してみたが、正常に表示されない。<br>Evinceを諦めてOkular、Xpdf、ePDFviewer、qpdfviewなど試してみたが、やはり駄目。  </p>
+<p>日本語フォントが文字化けするのは、該当のPDFファイルに日本語フォントが埋め込まれていないのが原因のようだ。<br>それでも代替フォントがちゃんと利用されていれば正常に表示されるのだと思うが、その設定が上手く行かない。  </p>
+<p>FirefoxまたはLibreOffice Drawならちゃんと表示されるが、PDFビューアとしての使い勝手は良くない。  </p>
+<p>そこで、Windowsで使っていたPDF-XChange Viewer（無料体験版）をWineでインストールしたら、文字化け無しにちゃんと表示された。<br>無料版でも多機能だし、けっこう便利だ。<br>初回起動時には少々もたつくが、デフォルトで使うのではなく文字化けした時の緊急用として使う分には、申し分無い。</p>
 
 	
 	</div>
@@ -315,21 +367,21 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/07/09/fictional-email-addresses/" data-text="架空のメールアドレスを使う | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/18/pdf-xchange-viewer/" data-text="PDFファイルの日本語フォント文字化け対策として「Wine」+「PDF-XChange Viewer」 | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/07/09/fictional-email-addresses/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/18/pdf-xchange-viewer/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/07/09/fictional-email-addresses/" class="hatena-bookmark-button" data-hatena-bookmark-title="架空のメールアドレスを使う" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/18/pdf-xchange-viewer/" class="hatena-bookmark-button" data-hatena-bookmark-title="PDFファイルの日本語フォント文字化け対策として「Wine」+「PDF-XChange Viewer」" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
 	<div class="meta-widget pull-right">
 <span style="color:#555;"><i class="fa fa-tags"></i></span>
 <ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/ネット/">ネット</a></li></ul>
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
 	</div>
 
 </div>
@@ -341,14 +393,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/06/30/twitter-search-result-probrem/" >ツイッター検索でURL付きのツイートが表示されない</a>
+			<a href="/2015/04/17/wine-msfonts/" >Wineで豆腐状態の文字化け</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年6月30日
+	2015年4月17日
 </div>
 
 <div class="panel-body">
@@ -358,18 +410,13 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>###自分のツイートだけが表示されない</p>
-<p>ニュース記事やブログなどに設置してあるツイート数表示をクリックした時に表示されるページ（URLをツイッター検索した結果のページ）に自分のツイートだけが表示されなくなっていた。「トップ」から「ライブ」のタブに切り替えても表示されない。  </p>
-<p>これではツイートを見てもらう機会が減ってしまい困るので、下記ページから問題の報告を行った。<br><a href="https://support.twitter.com/forms/feature_report?feature=tweets" target="_blank" rel="external">Twitterヘルプセンター</a>  </p>
-<p>「問題の詳細」の箇所は英文で書いた方が良いらしいので、見様見真似で下記のようにした。  </p>
-<p>Regarding: Search/Trends<br>Subject: I’m not a spam!!<br>Description of problem:<br>My tweets that contain URLs are not displayed in search results. Can you permit me to display my tweets in the search? I use Twitter generally. I’m not spam. Please clear your information about spam. Kind regards.  </p>
-<p>「返信できませんが、いただいた情報はTwitterの改善に役立たせていただきます。」とのことだったが、１日で改善された。  </p>
-<p>###自分のブログ記事のツイッター検索の結果が１件しか表示されない</p>
-<p>その後、別で書いている自分のブログでのことだが、上記同様ツイート数表示をクリックした時に表示されるページ（URLをツイッター検索した結果のページ）で、何人かツイートしてくれている人がいるのに、ツイートが１件しか表示されない状態になっていた。「トップ」でも「ライブ」でも１件のみ。誰のツイートが表示されるかは、リツイート数の多いツイートだったり、最新のツイートだったり。<br>これではツイートしてくれる人も意欲を削がれるに違いない。  </p>
-<p>上記の「Twitterヘルプセンター」から日本語で報告してみたが、しばらく待っても変化が無い。<br>再度下手くそな英語で報告してみた。  </p>
-<p>Regarding: Search/Trends<br>Subject: About search result<br>Description of problem:<br>Reasntly, several tweets exist that contain the URL(<a href="http://pagent.seesaa.net/article/421338174.html" target="_blank" rel="external">http://pagent.seesaa.net/article/421338174.html</a>). But only one tweet is displayed in search result, even in “Live” tab.<br>Can you adjust this probrem?  </p>
-<p>１〜２時間ほどすると、ほぼすべてのツイートが表示される状態に改善した。  </p>
-<p>英語が苦手でも、やってみるものだと実感した。</p>
+	  <p>Wineでアプリケーションをインストールしようとしたら、豆腐状態に文字化けしていた。<br>どうやらMSフォントが入っていないためらしい。<br><a href="https://archlinuxjp.kusakata.com/wiki/Wine#.E3.83.95.E3.82.A9.E3.83.B3.E3.83.88" target="_blank" rel="external">Wine - ArchWiki</a>  </p>
+<p>Windowsのパーティションを/mnt/win7にマウントしていたので、  シンボリックリンクを張り、fontconfig のキャッシュを再生成した。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> ln <span class="operator">-s</span> /mnt/win7/Windows/Fonts /usr/share/fonts/WindowsFonts</div><div class="line">$ <span class="built_in">sudo</span> fc-cache</div></pre></td></tr></table></figure>
+
+<p><a href="https://archlinuxjp.kusakata.com/wiki/MS_%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88" target="_blank" rel="external">MS フォント - ArchWiki</a>  </p>
+<p>Wineの文字化けは直ったが、今度はRetextやxfce4-terminalでのフォントがおかしくなってしまった。<br>明朝体のようになり、文字が薄く、また「、」や「。」が中央の高さに表示されてしまう。  </p>
+<p>シンボリックリンクを削除し、/usr/share/fonts/（もしくは~/.local/share/fonts/）にWindowsFontsフォルダを作成。<br>Windowsからmsgothic.ttcのみをコピーしたら良い具合になった。</p>
 
 	
 	</div>
@@ -379,21 +426,351 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/06/30/twitter-search-result-probrem/" data-text="ツイッター検索でURL付きのツイートが表示されない | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/17/wine-msfonts/" data-text="Wineで豆腐状態の文字化け | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/06/30/twitter-search-result-probrem/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/17/wine-msfonts/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/06/30/twitter-search-result-probrem/" class="hatena-bookmark-button" data-hatena-bookmark-title="ツイッター検索でURL付きのツイートが表示されない" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/17/wine-msfonts/" class="hatena-bookmark-button" data-hatena-bookmark-title="Wineで豆腐状態の文字化け" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
 	<div class="meta-widget pull-right">
 <span style="color:#555;"><i class="fa fa-tags"></i></span>
 <ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/ネット/">ネット</a></li></ul>
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/04/16/nemo-action-shred/" >nemoの右クリックメニューに「完全消去」を追加</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年4月16日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>rmコマンドでファイルを消去してもデータの内容自体はディスク上に残っており、復旧できる可能性があるようだ。<br>完全に消去するにはshredコマンドを使えばいいらしい。<br><a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20140310/542304/" target="_blank" rel="external">Linuxコマンド集 - 【shred】ファイルを上書きし、完全に消去する：ITpro</a>  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ shred -u sample</div></pre></td></tr></table></figure>
+
+<p>コマンドを入力するのは面倒なので、nemoの右クリックメニューに「完全消去」を追加した。  </p>
+<p>~/.local/share/nemo/actions/内にshred.nemo_actionファイルを作成。  </p>
+<figure class="highlight plain"><figcaption><span>shred.nemo_action</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[Nemo Action]</div><div class="line">Name=Shred files</div><div class="line">Name[ja]=完全消去</div><div class="line">Comment=Shred the selected files</div><div class="line">Exec=shred -u -n 1 %F</div><div class="line">Icon-Name=gtk-execute</div><div class="line">Selection=notnone</div><div class="line">Extensions=nodirs;</div><div class="line">Quote=double</div><div class="line">Dependencies=shred</div></pre></td></tr></table></figure>
+
+<p>（参照記事）<br><a href="https://github.com/linuxmint/nemo/issues/210#issuecomment-29847315" target="_blank" rel="external">[Feature Request] wipe files · Issue #210 · linuxmint/nemo · GitHub</a>  </p>
+<p>対象はファイルのみでフォルダは「完全消去」出来ないが、少し便利になった。  </p>
+<p>ーー<br>（追記）<br>他の右クリックアクションを選択したい時、間違って「完全消去」してしまわないか気になって来た。<br>Zenityを使えば「本当に削除しますか？」のような確認ダイアログを表示出来るようだが、Zenityの使用法がまだ分からない。  </p>
+<p>「完全消去」の右クリックメニューは一旦保留とし、<code>shred -u</code>を辞書登録するにとどめた。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/16/nemo-action-shred/" data-text="nemoの右クリックメニューに「完全消去」を追加 | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/16/nemo-action-shred/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/16/nemo-action-shred/" class="hatena-bookmark-button" data-hatena-bookmark-title="nemoの右クリックメニューに「完全消去」を追加" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/04/05/puppy-automount-fstab/" >Puppy Linux起動時にfstabで自動マウント</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年4月5日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Puppy Linux起動時にパーティションを自動マウントしたかったのだが、少々苦戦した。</p>
+<p>###LxPup 15.02</p>
+<p>LxPupでは、あらかじめマウントポイントとなるデレクトリを作成さえしておけば、fstabでの指定通りに自動マウント可能だった。<br>Xubuntu等では確か、デレクトリが無ければ自動生成してくれていたと思うので、うっかりしていた。</p>
+<figure class="highlight plain"><figcaption><span>fstab</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/dev/sda1 /mnt/win  ntfs  defaults 0 0</div><div class="line">/dev/sda5 /mnt/sda5  ext4  defaults 0 0</div></pre></td></tr></table></figure>
+
+<p>ntfsに−3gをつけなくても大丈夫だった。</p>
+<p>###Puppy Linux Precise 571 JP</p>
+<p>Precise571JPは、デフォルト状態ではfstabが機能していなかった。<br>/etc/rc.d/rc.localファイルで<code>mount -a</code>コマンドを実行することで、fstabをロードしてくれた。<br><a href="http://blog.livedoor.jp/yagiyagi_shun/archives/51926344.html" target="_blank" rel="external">やぎやぎブログ:[Fedora 16]rc.localの罠 - livedoor Blog（ブログ）</a>  </p>
+<figure class="highlight shellscript"><figcaption><span>rc.local</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="shebang">#!/bin/sh</span></div><div class="line">    </div><div class="line">mount <span class="operator">-a</span></div></pre></td></tr></table></figure>
+
+<p>rc.localは実行可能にしておく必要がある。  </p>
+<pre><code><span class="comment"># chmod a+x /etc/rc.d/rc.local</span>
+</code></pre><p>/etc内にリンクを作成する必要は無かった。</p>
+<p>LxPupでは<code>mount -a</code>は/etc/rc.d/rc.sysinitに記載されているようで、こちらに記載しても自動マウント可能。</p>
+<p>rc.sysinitの316行目「VERSION UPDATE」のすぐ上に記載。</p>
+<figure class="highlight plain"><figcaption><span>rc.sysinit</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">status_func $STATUS</div><div class="line">    </div><div class="line">#Load fstab entries</div><div class="line">mount -a</div><div class="line">    </div><div class="line">#######################VERSION UPDATE##########################</div><div class="line">...</div></pre></td></tr></table></figure>
+
+<p>マウントポイントとなるデレクトリをあらかじめ作成しておかないといけないのは同様。  </p>
+<p>###fstabを用いずに自動マウント</p>
+<p>なお、fstabを用いず、/etc/rc.d/rc.localで個別にマウント指定しても自動マウント可能だった。<br><a href="http://www.murga-linux.com/puppy/viewtopic.php?p=822315&amp;sid=0256b63fbae1b190f96d18652edba1b1" target="_blank" rel="external">Puppy Linux Discussion Forum :: View topic - How to auto-mount drives at startup?</a>  </p>
+<figure class="highlight plain"><figcaption><span>rc.local</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#!/bin/sh</div><div class="line">    </div><div class="line">mount -t ntfs -o defaults /dev/sda2 /mnt/vol</div><div class="line">mount -o defaults /dev/sda5 /mnt/sda5</div></pre></td></tr></table></figure>
+
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/05/puppy-automount-fstab/" data-text="Puppy Linux起動時にfstabで自動マウント | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/05/puppy-automount-fstab/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/05/puppy-automount-fstab/" class="hatena-bookmark-button" data-hatena-bookmark-title="Puppy Linux起動時にfstabで自動マウント" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/04/03/nemo-compare-action/" >nemoの右クリックメニューに「比較」を追加</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年4月3日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>nemoの拡張機能nemo-compareのインストールが上手く行かなかったので、手動で導入した。  </p>
+<p>（参照記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>  </p>
+<p>まず、meld、python2-dbus、dbus-glib（これは導入済みだった）をインストール。  </p>
+<pre><code>$ <span class="built_in">sudo</span> pacman -S meld python2-dbus
+</code></pre><p>~/.local/share/nemo/actions下にcompare-save-for-later.nemo_action、compare-with-saved.nemo_action、compare.shの３つのファイルを作成。  </p>
+<figure class="highlight plain"><figcaption><span>compare-save-for-later.nemo_action</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[Nemo Action]</div><div class="line">Active=true</div><div class="line">Name=Compare later</div><div class="line">Name[ja]=あとで比較する</div><div class="line">Comment=Save file for comparison later.</div><div class="line">Exec=<compare.sh save="" %f=""></compare.sh></div><div class="line">Icon-Name=meld</div><div class="line">Selection=S</div><div class="line">Extensions=any</div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plain"><figcaption><span>compare-with-saved.nemo_action</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[Nemo Action]</div><div class="line">Active=true</div><div class="line">Name=Compare with saved element</div><div class="line">Name[ja]=比較する</div><div class="line">Comment=Compare %F saved file or directory.</div><div class="line">Exec=<compare.sh compare="" %f=""></compare.sh></div><div class="line">Icon-Name=meld</div><div class="line">Selection=S</div><div class="line">Extensions=any</div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight shellscript"><figcaption><span>compare.sh</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="shebang">#!/bin/bash</span></div><div class="line">savedfile=/var/tmp/compare-save-for-later.<span class="variable">$USER</span></div><div class="line">comparator=meld</div><div class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$1</span>"</span> == <span class="string">"save"</span> ]; <span class="keyword">then</span></div><div class="line">    <span class="built_in">echo</span> <span class="string">"<span class="variable">$2</span>"</span> &gt; <span class="string">"<span class="variable">$savedfile</span>"</span></div><div class="line"><span class="keyword">else</span></div><div class="line">    <span class="string">"<span class="variable">$comparator</span>"</span> $(cat <span class="string">"<span class="variable">$savedfile</span>"</span>) <span class="string">"<span class="variable">$2</span>"</span></div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure>
+
+<p>compare.shはファイルマネージャーもしくはコマンドで実行可能にしておく。  </p>
+<pre><code>$ chmod +<span class="keyword">x</span> compare.<span class="keyword">sh</span>
+</code></pre><p>nemoの右クリックメニューに「比較する」「あとで比較する」が追加された。  </p>
+<p>ファイル内容だけではなくフォルダの内容も比較出来る。<br>なにかと重宝しそうだ。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/03/nemo-compare-action/" data-text="nemoの右クリックメニューに「比較」を追加 | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/03/nemo-compare-action/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/03/nemo-compare-action/" class="hatena-bookmark-button" data-hatena-bookmark-title="nemoの右クリックメニューに「比較」を追加" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/04/03/nemo-compare-failed/" >nemo-compareが動かない</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年4月3日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>nemoの右クリックで２つのファイル（フォルダ）の内容を比較出来るnemo-compareをインストールした。<br>yaourtでインストール出来たが、右クリックのメニューに「compare」が出てこない。<br>検索すると同様の事例が見つかった。  </p>
+<p><a href="https://github.com/linuxmint/nemo-extensions/issues/24" target="_blank" rel="external">nemo-compare not in the right-click context menu · Issue #24 · linuxmint/nemo-extensions · GitHub</a>  </p>
+<p><a href="https://github.com/linuxmint/nemo-extensions/issues/18#issuecomment-21617918" target="_blank" rel="external">Symbolic link needed in LMDE 64-bit · Issue #18 · linuxmint/nemo-extensions · GitHub</a>  </p>
+<p>上記トピックを参考にnemoを再起動してみると、確かにシンボリックリンクが存在しないのが原因のようだった。</p>
+<pre><code>$ nemo -q &amp;&amp; nemo
+
+(nemo:<span class="number">6939</span>): Nemo-Python-WARNING **: g_module_open libpython failed: /usr/lib/i386-linux-gnu<span class="comment">//libpython2.7.so.1.0: 共有オブジェクトファイルを開けません: そのようなファイルやディレクトリはありません</span>
+ImportError: could not <span class="keyword">import</span> g<span class="class"><span class="keyword">object</span> <span class="params">(error was: '/usr/lib/python2.7/site-packages/gi/_gi.so: undefined symbol: _Py_ZeroStruct')</span></span>
+
+(nemo:<span class="number">6939</span>): Nemo-Python-WARNING **: pyg<span class="class"><span class="keyword">object</span> <span class="title">initialization</span> <span class="title">failed</span></span>
+</code></pre><p>だが、これを修正するリンクの作成が上手く行かない。<br>共有オブジェクトファイルのパスでスラッシュが２つ重なり<code>//</code>となっている箇所があるのも奇妙。<br>yaourtでのビルド中、”/usr/lib/yaourt/util.sh: 行 197: PKGBUILD: コマンドが見つかりません”と表示されていたのが関係しているのだろうか。  </p>
+<p>ArchWikiによると、右クリックメニューに「比較する」を追加するのは手動でも可能のようだったので、nemo-compareは断念し、手動で導入することにした。 </p>
+<p><a href="http://pagent.github.io/2015/04/03/nemo-compare-action/" target="_blank" rel="external">nemoの右クリックメニューに「比較」を追加</a></p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/03/nemo-compare-failed/" data-text="nemo-compareが動かない | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/03/nemo-compare-failed/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/03/nemo-compare-failed/" class="hatena-bookmark-button" data-hatena-bookmark-title="nemo-compareが動かない" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/04/03/nemo-open-in-terminal/" >nemoの「端末で開く」が機能しない</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年4月3日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Arch Linuxにインストールしたnemoで右クリックメニューの「端末で開く」が機能しなかった。  </p>
+<p><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>を参考に、  </p>
+<pre><code>$ gsettings <span class="operator"><span class="keyword">set</span> org.cinnamon.desktop.<span class="keyword">default</span>-applications.terminal <span class="keyword">exec</span> xfce4-terminal</span>
+</code></pre><p>を実行したら機能するようになった。  </p>
+<p>「端末で開く」で起動するターミナルエミュレーターを変更したい時も同様に端末名を指定すれば良いようだ。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/03/nemo-open-in-terminal/" data-text="nemoの「端末で開く」が機能しない | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/03/nemo-open-in-terminal/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/03/nemo-open-in-terminal/" class="hatena-bookmark-button" data-hatena-bookmark-title="nemoの「端末で開く」が機能しない" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
 	</div>
 
 </div>
@@ -439,43 +816,43 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
-		
-			<li><a href="/tags/サーバー/">サーバー<span>9</span></a></li>
-		
-			<li><a href="/tags/SEO/">SEO<span>4</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>14</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>37</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
-		
 			<li><a href="/tags/食/">食<span>4</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
 		
+			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
 			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
+			<li><a href="/tags/SEO/">SEO<span>4</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>14</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>37</span></a></li>
+		
+			<li><a href="/tags/サーバー/">サーバー<span>9</span></a></li>
 		
 		
 		</ul>

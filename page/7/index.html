@@ -110,14 +110,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/04/21/connection-refused-repo-archlinux-fr/" >Yaourtのリポジトリに接続を拒否される</a>
+			<a href="/2015/02/27/linkchecker/" >dead-link-checkerがあまりに遅いので「LinkChecker」を使ってみた（リンク切れチェック）</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年4月21日
+	2015年2月27日
 </div>
 
 <div class="panel-body">
@@ -127,42 +127,15 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>いつの間にかArch Linuxのシステム更新の際、エラーが表示されるようになっていた。  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> pacman -Syu</div><div class="line">:: パッケージデータベースの同期中...</div><div class="line"> core は最新です</div><div class="line"> extra は最新です</div><div class="line"> community は最新です</div><div class="line"> multilib は最新です</div><div class="line">エラー: ファイル <span class="string">'archlinuxfr.db'</span> を repo.archlinux.fr から取得するのに失敗しました : Failed to connect to repo.archlinux.fr port <span class="number">80</span>: 接続を拒否されました</div><div class="line">エラー: archlinuxfr の更新に失敗しました (ダウンロードライブラリエラー)</div></pre></td></tr></table></figure>
-
-<p>Yaourtのリポジトリのようだ。  </p>
-<p>検索すると、同様のトピックが1件だけ見つかった。<br><a href="https://forums.archlinux.fr/viewtopic.php?t=16714" target="_blank" rel="external">[repo.archlinux.fr] Failed to connect to repo.archlinux.fr port 80: Connexion refusée - Archlinux.fr [Forums]</a>  </p>
-<p>フランス語らしいのでGoogle翻訳で翻訳した。<br>（よく分からないが一部修正）  </p>
-<blockquote>
-<p>こんにちは、</p>
-<p>レポarchlinux.frに問題があるように表示されます。<br>エラー：ファイルのリカバリ失敗」archlinuxfr.db」repo.archlinux.fr以来：ポート80をrepo.archlinux.frへの接続に失敗しました接続が拒否されました</p>
-<p>誰かが見てすることができますか？<br>この種のpbm（problem？）の正式な報告チャンネルはありますか？</p>
-<p>ありがとう</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>私は全く同じ悩みを持っている。</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>私は、サーバーがダウンしていることに昨晩気づいた（受信側かサーバか正確には分からない…）。</p>
-<p>だから、辛抱強く彼の悩みを取ると待機する必要があります^^（ヨーグルトをインストールしたかった私は、今日逃している）</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>それはとても忍耐に戻って日付とあなたのスタッフに感謝している。</p>
-<p>編集：さらに調査保留中、Skunnykが配置されています。</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>すばらしい、感謝！</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>私の側で[OK]をクリックしUPD</p>
-</blockquote>
-<p>どうやらYaourtのサーバーがダウンしているたようだ。<br>4月6日のトピックだが、これまで気が付かなかったし、不安定で時々ダウンしているのだろうか？  </p>
-<p>それにしてもGoogle翻訳の便利さには感謝する。</p>
+	  <p>ネット上のページは開設者の都合などにより消えることも多いだろうし、SEO的にはそれ程気にしなくても良いのかもしれないが、ページのリンクをクリックしても404エラーだったりするとやはりがっかりする。<br>自分のブログにもリンク切れになっている発リンクが無いか調べてみた。  </p>
+<p>まず、有名どころらしいdead-link-checker.comでチェックしてみたが、とにかく遅い。<br>1600あまりのページのチェックだったが、2時間以上も掛かってしまった。<br>遅すぎて、そのあとリンク切れの修正という気にはとてもなれなかった。  </p>
+<p>ウェブアプリの場合、サーバーの負担を減らす為ある程度遅くなるのは仕方が無いらしい。<br><a href="http://chusho-it.net/post_linkcheck.html" target="_blank" rel="external">サイト全体をチェックできるリンクチェックツール比較</a>  </p>
+<p>というわけで、上記の記事で高評価で紹介されていた<a href="http://wummel.github.io/linkchecker/" target="_blank" rel="external">「LinkChecker」</a>を使ってみた。<br>Linux、Windows、Macで使えるクロスプラットフォームらしい。  </p>
+<p>最新版のlinkchecker-gui_9.3-1_all.debをダウンロードしたが、インストールの際にUbuntuソフトウェアセンターが、少し古いバージョンだったらリポジトリにあると言ってきたので、言われた通りリポジトリのlinkchecker-gui 8.6-2をインストールした。  </p>
+<p>使ってみたらこれが早かった。  </p>
+<p>すべてのページのチェックが5分程で完了。<br>結果は、404や301などの異常の種類やURL等で並び替えが出来るので、その後の修正作業もはかどった。  </p>
+<p>サイズも397.3 kBと小さいし、わざわざ遅いウエブアプリを使うより「LinkChecker」をインストールする方が断然おすすめ。  </p>
+<p>ときにはウェブアプリも便利だったりはするが、リンク切れチェックはソフトをインストールするに限ると痛感。</p>
 
 	
 	</div>
@@ -172,14 +145,75 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/21/connection-refused-repo-archlinux-fr/" data-text="Yaourtのリポジトリに接続を拒否される | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/27/linkchecker/" data-text="dead-link-checkerがあまりに遅いので「LinkChecker」を使ってみた（リンク切れチェック） | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/21/connection-refused-repo-archlinux-fr/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/02/27/linkchecker/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/21/connection-refused-repo-archlinux-fr/" class="hatena-bookmark-button" data-hatena-bookmark-title="Yaourtのリポジトリに接続を拒否される" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/27/linkchecker/" class="hatena-bookmark-button" data-hatena-bookmark-title="dead-link-checkerがあまりに遅いので「LinkChecker」を使ってみた（リンク切れチェック）" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ユーティリティ/">ユーティリティ</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/02/26/nemo-terminal/" >nemoの拡張機能「nemo-terminal」がちょっと便利</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月26日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>ファイルマネージャーnemoに端末を追加する拡張機能「nemo-terminal」を入れた。  </p>
+<pre><code>$ sudo <span class="built_in">add</span>-apt-repository <span class="keyword">pp</span><span class="variable">a:webupd8team</span>/nemo
+
+$ sudo apt-<span class="built_in">get</span> <span class="keyword">update</span>
+
+$ sudo apt-<span class="built_in">get</span> install nemo-terminal
+</code></pre><p>nemoの上部に端末画面が追加される。  </p>
+<p>「F4」キーで端末画面の表示・非表示を切り替え。<br>端末での階層はnemoで開いているフォルダと同期されるので、コマンド操作する時に便利。  </p>
+<p>別途「dconfエディター」も入れておけば、端末画面の高さなども調節出来る。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/26/nemo-terminal/" data-text="nemoの拡張機能「nemo-terminal」がちょっと便利 | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/02/26/nemo-terminal/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/26/nemo-terminal/" class="hatena-bookmark-button" data-hatena-bookmark-title="nemoの拡張機能「nemo-terminal」がちょっと便利" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
@@ -198,14 +232,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/04/20/jd-problem-after-archlinux-upgrade/" >Arch Linuxアップグレード後JDが起動出来ない</a>
+			<a href="/2015/02/25/clonezilla-architecture-speed/" >Clonezillaのアーキテクチャとバックアップスピード</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年4月20日
+	2015年2月25日
 </div>
 
 <div class="panel-body">
@@ -215,26 +249,10 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>Arch Linuxをアップグレードしたら、2ちゃんねる専用ブラウザJDが起動しなくなった。  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ jd</div><div class="line">jd: error <span class="keyword">while</span> loading shared libraries: libgnutls.so.<span class="number">28</span>: cannot open shared object file: No such file or directory</div></pre></td></tr></table></figure>
-
-<p>libgnutls.so.28が見つからないようだ。  </p>
-<p>libgnutls.so.28はgnutlsに含まれているようなので、<a href="https://archlinuxjp.kusakata.com/wiki/%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%81%AE%E3%83%80%E3%82%A6%E3%83%B3%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89" target="_blank" rel="external">パッケージのダウングレード - ArchWiki</a>を参考にgnutlsをダウングレードしてみた。  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> pacman -U /var/cache/pacman/pkg/gnutls-<span class="number">3.3</span>.<span class="number">14</span>-<span class="number">2</span>-x86_64.pkg.tar.xz</div></pre></td></tr></table></figure>
-
-<p>だが今度はlibnettle.so.4が無いと言われる。  </p>
-<p>JDではないが、今回のアップグレードでLibreofficeやopenconnectを使用する際にも同様の問題があるようだった。  </p>
-<ul>
-<li><a href="https://bugs.archlinux.org/task/44645" target="_blank" rel="external">FS#44645 : libreoffice-fresh [error while loading shared libraries: libgnutls.so.28]</a>  </li>
-<li><a href="https://bbs.archlinux.org/viewtopic.php?id=196314" target="_blank" rel="external">[solved] openconnect broken after upgrading gnutls and nettle / Pacman &amp; Package Upgrade Issues / Arch Linux Forums</a>  </li>
-</ul>
-<p>libnettle.so.4はnettleをダウングレードしたら良いようだったが、/var/cache/pacman/pkg内にnettleの旧パッケージが見つからない。<br>lib32-nettleをインストールしてみたが、依然libnettle.so.4が見つからないとかでJDを起動出来ない。  </p>
-<p>上記openconnectについてのフォーラムコメントにもあったが、Arch Linuxではパッケージのダウングレード（部分的なアップグレード）は推奨されないようだ。<br><a href="https://archlinuxjp.kusakata.com/wiki/Pacman?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DPacman_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno#.E9.83.A8.E5.88.86.E7.9A.84.E3.81.AA.E3.82.A2.E3.83.83.E3.83.97.E3.82.B0.E3.83.AC.E3.83.BC.E3.83.89.E3.81.AF.E3.82.B5.E3.83.9D.E3.83.BC.E3.83.88.E3.81.95.E3.82.8C.E3.81.A6.E3.81.84.E3.81.BE.E3.81.9B.E3.82.93" target="_blank" rel="external">pacman - ArchWiki</a>  </p>
-<p>バグなのかJD側の問題なのかよく分からないが、幸い先日ClonezillaでArch Linuxのバックアップをとっていたので、これをリストアすることにした。  </p>
-<p>当面システムのアップグレードはせず、このまま使用しようと思う。  </p>
-<p>ーー<br>（追記）<br>JDを一旦削除、その後再インストールしても駄目だったが、JDをちゃんとアンインストール出来なかったのが原因のようだ。<br>(<code>yaourt -R jd</code>でアンインストールしてもメニューに表示されており、コマンド<code>jd</code>でlibgnutls.so.28が無いと表示されていた。）  </p>
-<p><code>yaourt -Rd --nodeps jd</code>でもアンインストール出来なかったので、/userディレクトリで”jd”を検索。<br>/usr/local/bin/jdと/usr/local/share/applications/jd.desktopを手動で削除した。  </p>
-<p>その後再インストールしたら、エラーになることもなく起動出来た。</p>
+	  <p>古いPCで、新しいkernelだと正常に起動しないが、kernel3.10台までのものなら大丈夫。<br>その条件でなるべく新しいClonezillaを探したら、clonezilla-live-2.1.2-43（もしくはclonezilla-live-20130819-raring）のようだった。  </p>
+<p>どのアーキテクチャのものを使えば良いのか分からず、clonezilla-live-2.1.2-43-i486.isoを使ったら、バックアップが異様に遅かった。100GB中67.1GBを使用中のパーティションをバックアップするのに50分近くかかった。<br>アーキテクチャが合ったものを使わないと遅くなってしまうようだ。  </p>
+<p>clonezilla-live-2.1.2-43-i686-pae.isoをダウンロードして使ったら、18分あまりだった。<br><a href="http://ftp.twaren.net/local-distfiles/clonezilla-live/oldstable/2.1.2-43/" target="_blank" rel="external">Index of /local-distfiles/clonezilla-live/oldstable/2.1.2-43</a><br>clonezilla-live-20130819-raring-i386.isoでも18分あまり。<br><a href="http://ftp.twaren.net/local-distfiles/clonezilla-live/alternative/oldstable/20130819-raring/" target="_blank" rel="external">Index of /local-distfiles/clonezilla-live/alternative/oldstable/20130819-raring</a>  </p>
+<p>ちなみに、amd64となっているものは当然のごとく32bitのPCでは使用出来なかった。</p>
 
 	
 	</div>
@@ -244,14 +262,204 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/20/jd-problem-after-archlinux-upgrade/" data-text="Arch Linuxアップグレード後JDが起動出来ない | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/25/clonezilla-architecture-speed/" data-text="Clonezillaのアーキテクチャとバックアップスピード | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/20/jd-problem-after-archlinux-upgrade/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/02/25/clonezilla-architecture-speed/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/20/jd-problem-after-archlinux-upgrade/" class="hatena-bookmark-button" data-hatena-bookmark-title="Arch Linuxアップグレード後JDが起動出来ない" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/25/clonezilla-architecture-speed/" class="hatena-bookmark-button" data-hatena-bookmark-title="Clonezillaのアーキテクチャとバックアップスピード" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ユーティリティ/">ユーティリティ</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/02/20/usb-multiboot-2nd-partition/" >USBメモリの第2パーティションからisoファイルをマルチブート</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月20日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>USBメモリからPuppy LinuxとClonezillaの両方を起動出来たら、便利そうだ。<br>GpartedとClonezillaの両方を同梱したLive CDがあればいいが、そういうのが見つからない。<br>かつてはGParted-Clonezilla LiveCDというのがあったようだが、既に開発終了してしまっているようだ。  </p>
+<p>複数のisoファイルをUSBメモリ起動させるツールはいくつかあるようだったが、Windows用の「XBOOT」というのがサイズがコンパクトで手軽。使い勝手も良かった。  </p>
+<p>XBOOTで唯一の不満は、isoファイルをUSBメモリの2番目以降のパーティションにインストール出来ないこと。<br>やはりパーティションは分けた方がデータを整理しやすい。<br>Windowsでは1番目のパーティションしか見えないので、データの保存は第1パーティション、isoファイルの起動は第2パーティションにしたいところ。  </p>
+<p>XBOOTでいったん先頭のパーティション（sdb1）にPuppyとClonezillaのisoファイルをインストール。<br>その後そのデータを第2パーティション（sdb2）にコピー。<br>だが、これではUSBが起動しなくなってしまうので、syslinuxとMBRを再度インストールする必要があった。  </p>
+<p>下記サイトからsyslinuxの圧縮ファイルをダウンロード。<br>（syslinux-4.04を用いたが、現時点での最新版はsyslinux-6.03のよう）<br><a href="https://www.kernel.org/pub/linux/utils/boot/syslinux/" target="_blank" rel="external">Index of /pub/linux/utils/boot/syslinux</a>  </p>
+<p>syslinux-4.04.tar.bz2を解凍。syslinux-4.04/linuxフォルダ内で端末を開き、下記コマンドでsdb2（環境によってはsdc2など）にsyslinuxをインストール。  </p>
+<pre><code>syslinux <span class="regexp">/dev/</span>sdb2
+</code></pre><p>さらにsdbにMBRを再インストール。  </p>
+<pre><code>dd <span class="variable">bs=</span><span class="number">440</span> <span class="variable">count=</span><span class="number">1</span> <span class="variable">conv=</span>notrunc <span class="variable">if=</span>~/Desktop/syslinux-<span class="number">4.04</span>/mbr/mbr.bin <span class="variable">of=</span>/dev/sdb
+</code></pre><p>（デスクトップ上で解凍したので上記のパスになっているが、if=やof=以下のパスは状況に応じて。）  </p>
+<p>USBメモリの2番目のパーティションsdb2から起動出来るようになった。  </p>
+<p>ーー<br>（参照記事）<br><a href="http://www.server-world.info/query?os=Other&amp;p=knoppix&amp;f=2" target="_blank" rel="external">KNOPPIX - 複数パーティション構成のUSBメモリから起動する ： Server World</a><br><a href="https://wiki.archlinux.org/index.php/Syslinux_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29#.E6.89.8B.E5.8B.95.E3.82.A4.E3.83.B3.E3.82.B9.E3.83.88.E3.83.BC.E3.83.AB" target="_blank" rel="external">Syslinux (日本語) - ArchWiki</a>  </p>
+<p>（追記）<br>「XBOOT」はブートするisoファイルを変更・追加するためにはインストールし直さないといけないが、「Easy2Boot」は配置するだけで様々なisoファイルをブート出来る。<br><a href="http://pagent.github.io/2015/03/02/easy2boot/" title="isoファイルを置くだけでUSBマルチブート「Easy2Boot」 | Pagent" target="_blank" rel="external">isoファイルを置くだけでUSBマルチブート「Easy2Boot」 | Pagent</a></p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/20/usb-multiboot-2nd-partition/" data-text="USBメモリの第2パーティションからisoファイルをマルチブート | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/02/20/usb-multiboot-2nd-partition/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/20/usb-multiboot-2nd-partition/" class="hatena-bookmark-button" data-hatena-bookmark-title="USBメモリの第2パーティションからisoファイルをマルチブート" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ユーティリティ/">ユーティリティ</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/02/17/github-pages-redirect/" >GitHub Pagesのブログでリダイレクト「hexo-generator-alias」</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月17日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>先日書いた記事のURLが、一部大文字のアルファベットになっていたので小文字に変更したら、当然のごとくリンク切れになってしまった。  </p>
+<p>以前、.htaccessを使って301リダイレクトをしようと試みたことがあったが、.htaccessのファイルをdeployすることは出来たものの効果は無かった。<br>GitHub Pagesでは.htaccessを使えないらしい。  </p>
+<p>meta refreshタグなら使えるのではないかと思い、やってみた。</p>
+<p>全ての記事の基本レイアウトで転送設定する訳にはいかないので、publicフォルダ内に転送元となるindex.htmlを作り、転送タグを記載。<br>generateの際に消えてしまわないよう所有者をrootに変更し、さらにパーミッションも444に変更した。<br>だが、この状態でgenerateするとエラーになってしまう。  </p>
+<p>なにか良い方法は無いかと検索したら、転送元となるindex.htmlを自動生成してくれるプラグインが見つかった。<br><a href="https://www.npmjs.com/package/hexo-generator-alias" target="_blank" rel="external">hexo-generator-alias</a>  </p>
+<p>Hexoの作業フォルダ内で端末を開き  </p>
+<pre><code><span class="variable">$ </span>npm install hexo-generator-<span class="keyword">alias</span> --save
+</code></pre><p>とコマンドを打つとインストール完了。<br>node_modulesフォルダにhexo-generator-aliasが追加される。  </p>
+<p>転送先の記事ソースのFrontMatterに<code>alias: （転送元のパス）</code>を追加しgenerateすると、publicフォルダ内に転送元となるindex.htmlを生成してくれる。  </p>
+<p>自分の例では、転送先の2015-02-06-lxpup-lxqtpup.mdのFrontMatterに<code>alias: 2015/02/06/lxpup-LxQtPup/index.html</code>を追記。（<code>alias: /2015/02/06/lxpup-LxQtPup/</code>あるいは<code>alias: 2015/02/06/lxpup-LxQtPup/</code>でも良いよう）<br>generateすると、public/2015/02/06/lxpup-LxQtPup/index.htmlが生成された。<br>ファイルの中身は転送指定のみの簡潔なもの。  </p>
+<pre><code><span class="doctype">&lt;!DOCTYPE html&gt;</span><span class="tag">&lt;<span class="title">html</span>&gt;</span><span class="tag">&lt;<span class="title">head</span>&gt;</span><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span><span class="tag">&lt;<span class="title">title</span>&gt;</span>Redirecting...<span class="tag">&lt;/<span class="title">title</span>&gt;</span><span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"canonical"</span> <span class="attribute">href</span>=<span class="value">"/2015/02/06/lxpup-lxqtpup/index.html"</span>&gt;</span><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"refresh"</span> <span class="attribute">content</span>=<span class="value">"0; url=/2015/02/06/lxpup-lxqtpup/index.html"</span>&gt;</span><span class="tag">&lt;/<span class="title">head</span>&gt;</span><span class="tag">&lt;/<span class="title">html</span>&gt;</span>
+</code></pre><p>旧URL <a href="http://pagent.github.io/2015/02/06/lxpup-LxQtPup/" target="_blank" rel="external">http://pagent.github.io/2015/02/06/lxpup-LxQtPup/</a> にアクセスすると、ちゃんと新URLに転送された。  </p>
+<p>Jekyllにも同様のプラグインがあり、Octopressでも使えるようだ。<br><a href="http://rawsyntax.com/blog/blogging-on-jekyll-url-redirects/" target="_blank" rel="external">Blogging on Jekyll: URL Redirects - Raw Syntax</a>  </p>
+<p>GitHub Pagesでの転送は以前は諦めていたが、これで一安心。  </p>
+<p>ーー<br>（追記）<br>過去の記事から転送指定しているものを探すには、source/_posts内で端末を開き下記コマンド  </p>
+<pre><code><span class="title">grep</span> <span class="string">"alias:"</span> <span class="regexp">*.md</span>
+</code></pre><p>すべての.mdファイルから「alias:」を含むファイルを抽出。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/17/github-pages-redirect/" data-text="GitHub Pagesのブログでリダイレクト「hexo-generator-alias」 | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/02/17/github-pages-redirect/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/17/github-pages-redirect/" class="hatena-bookmark-button" data-hatena-bookmark-title="GitHub Pagesのブログでリダイレクト「hexo-generator-alias」" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Hexo/">Hexo</a></li> <li><a href="/tags/Git/">Git</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/02/15/stop-kwallet-manager/" >KDEウォレットマネージャーを停止</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月15日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>無線LANのパスワードを設定してから、Kubuntuにログインする度にKDEウォレットマネージャーが起動してくるようになった。<br>パスワードはクロスプラットフォームの管理ソフト「KeePass2」を使う方が便利なので、KDEウォレットマネージャーは不要。  </p>
+<p>Software CenterでKWalletManagerをアンインストールしたのに、それでもしつこく起動してくる。  </p>
+<p>もう一度インストールし、KDEウォレットマネージャーの設定で「KDEウォレットサブシステムを使う。」のチェックを外して、ようやく起動を停止出来た。  </p>
+<p>アンインストールしても起動してくるって、どうなってるんだろう。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/15/stop-kwallet-manager/" data-text="KDEウォレットマネージャーを停止 | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/02/15/stop-kwallet-manager/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/15/stop-kwallet-manager/" class="hatena-bookmark-button" data-hatena-bookmark-title="KDEウォレットマネージャーを停止" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
@@ -270,14 +478,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/04/19/paccache-pkgcacheclean/" >不要なパッケージキャッシュの削除。paccacheとpkgcacheclean</a>
+			<a href="/2015/02/14/mbr-gpt/" >パーティションテーブルをMBRからGPTに書き換えてしまった</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年4月19日
+	2015年2月14日
 </div>
 
 <div class="panel-body">
@@ -287,21 +495,17 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>Arch Linuxを使っていると、pacmanでダウンロードした古いパッケージキャッシュが/var/cache/pacman/pkg/ に溜まってくるらしい。<br><a href="https://archlinuxjp.kusakata.com/wiki/Pacman?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DPacman_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno#.E3.83.91.E3.83.83.E3.82.B1.E3.83.BC.E3.82.B8.E3.82.AD.E3.83.A3.E3.83.83.E3.82.B7.E3.83.A5.E3.81.AE.E5.89.8A.E9.99.A4" target="_blank" rel="external">pacman - ArchWiki</a>  </p>
-<p>以前<code>paccache -r</code>および<code>paccache -ruk0</code>を行って不要なキャッシュを削除したが、今回はpkgcachecleanを利用してみた。<br>Yaourtでインストール  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yaourt -S pkgcacheclean</div></pre></td></tr></table></figure>
-
-<p>インストール容量もたった0.02MiBだった。<br>pkgcachecleanを実行  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> pkgcacheclean</div></pre></td></tr></table></figure>
-
-<p>メッセージ等が出ることもなく、一瞬で終了。<br>やや拍子抜けした。  </p>
-<p>だが/var/cache/pacman/pkg/のサイズは、実行前の2.4GBから1.9GBにちゃんと減量出来ていた。  </p>
-<p>このあと、試しにpaccacheしてみると、</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ paccache -r</div><div class="line">==&gt; no candidate packages found <span class="keyword">for</span> pruning</div><div class="line">$ paccache -ruk0</div><div class="line">==&gt; no candidate packages found <span class="keyword">for</span> pruning</div></pre></td></tr></table></figure>
-
-<p>もう削る必要のあるパッケージは無いようだ。  </p>
-<p>pkgcachecleanのページのコメントを見ると、paccacheが.partや.delta filesを扱わない一方、pkgcachecleanではこれらも対象になるようだ。<br><a href="https://aur.archlinux.org/packages/pkgcacheclean/" target="_blank" rel="external">AUR (en) - pkgcacheclean</a>  </p>
-<p>何のことかよく分からないが、コマンドが一つで済むことだし、pkgcachecleanの方が良さそうだ。簡単で有難い。</p>
+	  <p>サブマシンのネットブックでArch Linuxを試してみようと思ったが、ブートローダーのGRUBをインストールするところで、BIOS（MBR形式）ではなくUEFI（GPT）を選択してしまった。<br>そのせいでMBRが壊れてしまったようで、起動出来なくなってしまった。<br>MBM（Multiple Boot Manager）を再インストールしてみたが、ディスク全体が”unknown”と表示されるのみ。  </p>
+<p>「TestDisk」というフリーソフトでパーティションテーブルを修復出来るようだった。  </p>
+<p>「TestDisk」は「Ultimate Boot CD」に同梱されてるという情報を見かけたが、どうやら現在は「Ultimate Boot CD」には同梱されていないようで、見つからなかった。<br>「SystemRescueCd」に入っていたので、こちらから利用した。<br>「SystemRescueCd」でブート。入力出来る状態になった後、<code>testdisk</code>とコマンドを打つと起動した。  </p>
+<p>使い方は最初はよく分からなかったが、サーチで表示されたリストの内、テーブルに書き込みたいものをキードードの左右のキーで設定し、緑色にしたら良いらしい。<br>リストは「p」キーでリストの内容を確認しながら選べば良いので、要領が分かれば簡単。<br>「q」で前の画面に戻る。</p>
+<p>使い方は下記サイトの解説が分かりやすかった。<br><a href="http://uiuicy.cs.land.to/testdisk1.html" target="_blank" rel="external">【TestDisk】について</a>  </p>
+<p>「Deeper Search」にはけっこう時間が掛かり、またせっかく「Deeper Search」が終わったリストを、途中で「ENTER」を押してしまって戻れなくなり、また最初から「Deeper Search」ということもあったが。  </p>
+<p>パーティションテーブルは一応復旧出来て、起動も出来るようになったが、どうやらGPTでのパーティショニングの痕跡が依然残っている様子。<br>GpartedもGPTでパーティショニングされていると判断するようで、なにかパーティションの操作をすると、また起動出来なくなる。  </p>
+<p>これでは不便だし安心感も持てないが、「AOMEI Partition Assistant Standard Edition」というWindows用のフリーソフトでディスクの内容を保持したままGPTとMBRの変換が出来るようなので、試してみることにした。  </p>
+<p>「AOMEI Partition Assistant」を試す前にパーティションのバックアップをしようと思ったが、Clonezillaもパーティションテーブルを読めないらしい。<br>仕方が無いので下記サイトを参考に、<code>dd</code>コマンドでバックアップすることにした。<br><a href="http://takuya-1st.hatenablog.jp/entry/20101025/1288002819" target="_blank" rel="external">dd でディスクをコピーするよく使う例 - それマグで！</a>  </p>
+<p>ーー<br>（追記）<br>「AOMEI Partition Assistant」はWindows XpではMBRに変換出来ないようで、結局ハードディスクのデータを全消去してパーティションテーブルをMBRで作り直し、ddでバックアップしたものをリストアしてようやく復旧した。  </p>
+<p>復旧後、拡張パーティションにあるLinuxが起動しなかったが、SystemRescueCdの”Boot an existing Linux system installed on the disk”で起動させ、<code>sudo grub-install --force /dev/sda6</code>でgrub2を再インストール。<code>sudo update-grub</code>で起動出来るようになった。</p>
 
 	
 	</div>
@@ -311,14 +515,14 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/19/paccache-pkgcacheclean/" data-text="不要なパッケージキャッシュの削除。paccacheとpkgcacheclean | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/14/mbr-gpt/" data-text="パーティションテーブルをMBRからGPTに書き換えてしまった | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/19/paccache-pkgcacheclean/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/02/14/mbr-gpt/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/19/paccache-pkgcacheclean/" class="hatena-bookmark-button" data-hatena-bookmark-title="不要なパッケージキャッシュの削除。paccacheとpkgcacheclean" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/14/mbr-gpt/" class="hatena-bookmark-button" data-hatena-bookmark-title="パーティションテーブルをMBRからGPTに書き換えてしまった" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
@@ -337,14 +541,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/04/18/pdf-xchange-viewer/" >PDFファイルの日本語フォント文字化け対策として「Wine」+「PDF-XChange Viewer」</a>
+			<a href="/2015/02/11/kde-plasma-netbook/" >Kubuntuのネットブック向けデスクトップ「Plasma Netbook」を通常のデスクトップに</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年4月18日
+	2015年2月11日
 </div>
 
 <div class="panel-body">
@@ -354,10 +558,9 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>Ubuntu標準のPDFビューアEvinceで、日本語のフォントが表示されなかったり、文字化けしたりしていた。<br>poppler-dataをインストールしたり、fonts.confファイルを作成してみたが、正常に表示されない。<br>Evinceを諦めてOkular、Xpdf、ePDFviewer、qpdfviewなど試してみたが、やはり駄目。  </p>
-<p>日本語フォントが文字化けするのは、該当のPDFファイルに日本語フォントが埋め込まれていないのが原因のようだ。<br>それでも代替フォントがちゃんと利用されていれば正常に表示されるのだと思うが、その設定が上手く行かない。  </p>
-<p>FirefoxまたはLibreOffice Drawならちゃんと表示されるが、PDFビューアとしての使い勝手は良くない。  </p>
-<p>そこで、Windowsで使っていたPDF-XChange Viewer（無料体験版）をWineでインストールしたら、文字化け無しにちゃんと表示された。<br>無料版でも多機能だし、けっこう便利だ。<br>初回起動時には少々もたつくが、デフォルトで使うのではなく文字化けした時の緊急用として使う分には、申し分無い。</p>
+	  <p>Kubuntuのネットブック向けデスクトップは「Plasma Netbook」というそうで、ディスプレイの小さいネットブックで使う分には、これはこれで便利そうなのだが、FirefoxやQupzillaなどのアプリケーションでメニューバーを表示出来ないという不便さがある。<br>特にQupzillaでは設定画面に行けず、Qupzillaの設定を変更出来ない。</p>
+<p>「KDEシステム設定」→「ワークスペースの挙動」→「Workspace」でWorkspace typeをNetbookからDesktopにしたら、通常のデスクトップに変更出来た。  </p>
+<p>ーー<br>ネットブックでKubuntuは厳しいのではないかと思ったが、ログインしてからの動作は許容範囲内。<br>Xubuntuと較べると、もっさり感はぬぐえないが。</p>
 
 	
 	</div>
@@ -367,14 +570,14 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/18/pdf-xchange-viewer/" data-text="PDFファイルの日本語フォント文字化け対策として「Wine」+「PDF-XChange Viewer」 | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/11/kde-plasma-netbook/" data-text="Kubuntuのネットブック向けデスクトップ「Plasma Netbook」を通常のデスクトップに | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/18/pdf-xchange-viewer/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/02/11/kde-plasma-netbook/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/18/pdf-xchange-viewer/" class="hatena-bookmark-button" data-hatena-bookmark-title="PDFファイルの日本語フォント文字化け対策として「Wine」+「PDF-XChange Viewer」" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/11/kde-plasma-netbook/" class="hatena-bookmark-button" data-hatena-bookmark-title="Kubuntuのネットブック向けデスクトップ「Plasma Netbook」を通常のデスクトップに" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
@@ -393,14 +596,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/04/17/wine-msfonts/" >Wineで豆腐状態の文字化け</a>
+			<a href="/2015/02/11/kubuntu-blanck-screen/" >Kubuntu14.04で画面が真っ暗</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年4月17日
+	2015年2月11日
 </div>
 
 <div class="panel-body">
@@ -410,13 +613,13 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>Wineでアプリケーションをインストールしようとしたら、豆腐状態に文字化けしていた。<br>どうやらMSフォントが入っていないためらしい。<br><a href="https://archlinuxjp.kusakata.com/wiki/Wine#.E3.83.95.E3.82.A9.E3.83.B3.E3.83.88" target="_blank" rel="external">Wine - ArchWiki</a>  </p>
-<p>Windowsのパーティションを/mnt/win7にマウントしていたので、  シンボリックリンクを張り、fontconfig のキャッシュを再生成した。  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> ln <span class="operator">-s</span> /mnt/win7/Windows/Fonts /usr/share/fonts/WindowsFonts</div><div class="line">$ <span class="built_in">sudo</span> fc-cache</div></pre></td></tr></table></figure>
-
-<p><a href="https://archlinuxjp.kusakata.com/wiki/MS_%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88" target="_blank" rel="external">MS フォント - ArchWiki</a>  </p>
-<p>Wineの文字化けは直ったが、今度はRetextやxfce4-terminalでのフォントがおかしくなってしまった。<br>明朝体のようになり、文字が薄く、また「、」や「。」が中央の高さに表示されてしまう。  </p>
-<p>シンボリックリンクを削除し、/usr/share/fonts/（もしくは~/.local/share/fonts/）にWindowsFontsフォルダを作成。<br>Windowsからmsgothic.ttcのみをコピーしたら良い具合になった。</p>
+	  <p>ネットブックLavie LiteにインストールしたKubuntu。<br>新しいkernelだとディスプレイや無線LANに不具合が出るので、旧kernelを使うため、12.04から14.04にアップグレードしたもの。<br>アップグレード後いったんは正常にログイン出来たが、その後再度起動すると、ログイン後に画面が真っ暗になり、マウスポインターのみが表示されている状態になってしまった。<br>左上の隅にポインターを合わせると青く光る。<br>（なぜかGuestアカウントではデスクトップが表示される。）  </p>
+<p>検索すると似たような事例が多く見つかった。  </p>
+<p><a href="https://forums.ubuntulinux.jp/viewtopic.php?id=5996" target="_blank" rel="external">Ubuntu日本語フォーラム / KDEログアウト後に画面が真っ暗になり操作不能</a><br><a href="http://192168111.blog71.fc2.com/category1-1.html" target="_blank" rel="external">俺の覚書 Linux/Unix</a><br><a href="https://www.kubuntuforums.net/showthread.php?66592-Black-screen-after-login&amp;p=360188&amp;viewfull=1#post360188" target="_blank" rel="external">[DESKTOP] Black screen after login - Kubuntu Forums</a>  </p>
+<p>「CTRL」+「ALT」+「F2」でコンソール画面に行き、ディスプレイマネージャーをkdmからgdmに変える方法、<code>sudo apt-get update</code>、<code>sudo apt-get upupgrade</code>する方法、また自分のホームディレクトリの.kdmをリネームして新規に生成させる方法など試してみたが、どれも効果なし。<br>コマンドに不慣れで、/ver/log以下のログを確認するのも上手く行かない。  </p>
+<p>諦めかけたが、KDEならショートカットキーで出し入れ出来る端末エミュレーターYakuakeがインストールされているのではないかと思い、Yakuakeで<code>xrandr</code>コマンドを使えばディスプレイの状態を確認出来るかと、真っ暗な画面で「F12」キーを押してみた。  </p>
+<p>するとデスクトップが現れた。<br>Kubuntu12.04の時と違い、ディスプレイの小さな端末向けのUnityみたいに画面だが。<br>（Yakuakeはインストールされていないのか、出て来なかった。）  </p>
+<p>なぜ復活したのかはまったく謎。</p>
 
 	
 	</div>
@@ -426,14 +629,14 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/17/wine-msfonts/" data-text="Wineで豆腐状態の文字化け | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/11/kubuntu-blanck-screen/" data-text="Kubuntu14.04で画面が真っ暗 | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/17/wine-msfonts/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/02/11/kubuntu-blanck-screen/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/17/wine-msfonts/" class="hatena-bookmark-button" data-hatena-bookmark-title="Wineで豆腐状態の文字化け" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/11/kubuntu-blanck-screen/" class="hatena-bookmark-button" data-hatena-bookmark-title="Kubuntu14.04で画面が真っ暗" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
@@ -441,6 +644,69 @@
 <span style="color:#555;"><i class="fa fa-tags"></i></span>
 <ul id="tags" class="tag_box list-unstyled collapse in">
   <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/02/08/scrapbook-error/" >突然ScrapBookの保存データが消えた</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月8日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Firfoxで何だったかを見ていたら、突然、英文の警告がポップアップされた。  </p>
+<blockquote>
+<p>ERROR: Failed to initialize datasource.</p>
+<p>[Exception… “Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsILocalFile.create]”  nsresult: “0x80004005 (NS_ERROR_FAILURE)”  location: “JS frame :: resource://scrapbook-modules/utils.jsm :: SBU_getScrapBookDir :: line 24”  data: no]</p>
+</blockquote>
+<p>ページを保存するアドオンScrapBookのもの。<br>気付くとサイドバーのScrapBookのツリーが真っ白で、保存してあったページが無くなっている。  </p>
+<p>「code: 0x80004005」を検索してみたが、Windows起動時のエラーとかVirtualBoxのエラーとか、「0x80004005」はプログラム関係で広く使われているエラーコードらしい。  </p>
+<p>肝心のScrapBookの対処法は見つからなかったが、ScrapBookの「ツール」を開くと、一番下に「緊急時の修復ツール」というのがあった。<br>backupのscrap.rdfファイルからツリーを復元するものらしい。  </p>
+<p>これで復元出来るかと思ったが、バックアップのファイルも見当たらず。<br>ついてない。  </p>
+<p>ーー<br>（追記）<br>よく考えたら、Xubuntu側のScrapBookの保存先は、マルチブート下のWindows 7のSsrapbookフォルダに設定して、共有しているんだった。<br>少し前にWindowsのマウント先を変えたから、それでリンクが切れてしまっただけのようだ。  </p>
+<p>データ保存先を設定し直したら、ちゃんと表示された。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/08/scrapbook-error/" data-text="突然ScrapBookの保存データが消えた | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/02/08/scrapbook-error/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/08/scrapbook-error/" class="hatena-bookmark-button" data-hatena-bookmark-title="突然ScrapBookの保存データが消えた" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ブラウザ/">ブラウザ</a></li></ul>
 	</div>
 
 </div>
@@ -486,43 +752,43 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
-		
-			<li><a href="/tags/SEO/">SEO<span>4</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>37</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
-		
 			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
 		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
+			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>14</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
-		
-			<li><a href="/tags/サーバー/">サーバー<span>9</span></a></li>
+			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>13</span></a></li>
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>14</span></a></li>
+		
+			<li><a href="/tags/サーバー/">サーバー<span>9</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>37</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
 		
 			<li><a href="/tags/食/">食<span>4</span></a></li>
 		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
+		
+			<li><a href="/tags/SEO/">SEO<span>4</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
 		
 		
 		</ul>

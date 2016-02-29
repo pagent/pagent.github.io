@@ -110,14 +110,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/12/21/truecrypt-downgrade/" >TrueCryptでボリュームをマウント出来ない→ダウングレードで解決</a>
+			<a href="/2015/09/03/socket-connection-failure/" >Xfce起動時に「設定サーバーに接続できませんでした」と表示される</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年12月21日
+	2015年9月3日
 </div>
 
 <div class="panel-body">
@@ -127,21 +127,13 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>先日からArch LinuxでTrueCryptのボリュームを開けなくなってしまった。正しいパスワードを入力しても”Invalid characters encountered”や”fuse: bad mount point…No such file or directory”と表示される。Xubuntuだと通常通りマウント出来るのだが。  </p>
-<p>2015年12月10日にC++ ABIが変更されて以降、truecrypt-1:7.1a-3はボリュームをマウント出来なくなっており、旧バージョンのtruecrypt-1:7.1a-2だと正常に動作するようだ。<br><a href="https://wiki.archlinux.org/index.php/TrueCrypt" title="TrueCrypt - ArchWiki" target="_blank" rel="external">TrueCrypt - ArchWiki</a>  </p>
-<p>pacmanのキャッシュフォルダ/var/cache/pacman/pkg内にtruecrypt-1:7.1a-2があったので、ダウングレードした。  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> pacman -U /var/cache/pacman/pkg/truecrypt-<span class="number">1</span>:<span class="number">7.1</span>a-<span class="number">2</span>-x86_64.pkg.tar.xz</div></pre></td></tr></table></figure>
-
-<p>無事マウント出来るようになった。  </p>
-<p>キャッシュフォルダにtruecrypt-1:7.1a-2が無い場合は下記からダウンロード可能。<br><a href="http://ala.seblu.net/packages/t/truecrypt/" title="Index of /packages/t/truecrypt/" target="_blank" rel="external">Index of /packages/t/truecrypt/</a>  </p>
-<p>このままだと<code>pacman -Syu</code>の時にまたtruecrypt-1:7.1a-3に更新されてしまうので、/etc/pacman.confのIgnorePkgにtruecryptを追加した。  </p>
-<figure class="highlight plain"><figcaption><span>pacman.conf</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">IgnorePkg   = nodejs truecrypt</div></pre></td></tr></table></figure>
-
-<p>（参照記事）  </p>
-<ul>
-<li><a href="https://bugs.archlinux.org/task/47325" title="FS#47325 : [truecrypt] 1:7.1a-3: Mount: Invalid characters encountered" target="_blank" rel="external">FS#47325 : [truecrypt] 1:7.1a-3: Mount: Invalid characters encountered</a>  </li>
-<li><a href="https://wiki.archlinuxjp.org/index.php/%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%81%AE%E3%83%80%E3%82%A6%E3%83%B3%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89#.E3.83.91.E3.83.83.E3.82.B1.E3.83.BC.E3.82.B8.E3.82.92.E3.83.80.E3.82.A6.E3.83.B3.E3.82.B0.E3.83.AC.E3.83.BC.E3.83.89.E3.81.99.E3.82.8B.E6.96.B9.E6.B3.95" title="パッケージのダウングレード - ArchWiki" target="_blank" rel="external">パッケージのダウングレード - ArchWiki</a></li>
-</ul>
+	  <p>Arch Linux+Xfceで起動時に  </p>
+<blockquote>
+<p>設定サーバーに接続できませんでした<br>Failed to connect to socket /tmp/dbus-…</p>
+<p>フェイルセーフセッションを読み込めませんでした</p>
+</blockquote>
+<p>等と表示されるようになってしまった。<br>LightDMのログイン画面になり一応ログインは可能だが、パネル等が表示されず使用出来ない状態。<br>何度か再起動をやり直すと正常に起動出来ることもあるが、まちまちで不便。  </p>
+<p>原因はよく分からなかったが、LightDMで設定していた自動ログインを無効にしたら不具合は無くなった。</p>
 
 	
 	</div>
@@ -151,213 +143,14 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/12/21/truecrypt-downgrade/" data-text="TrueCryptでボリュームをマウント出来ない→ダウングレードで解決 | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/09/03/socket-connection-failure/" data-text="Xfce起動時に「設定サーバーに接続できませんでした」と表示される | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/12/21/truecrypt-downgrade/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/09/03/socket-connection-failure/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/12/21/truecrypt-downgrade/" class="hatena-bookmark-button" data-hatena-bookmark-title="TrueCryptでボリュームをマウント出来ない→ダウングレードで解決" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/ユーティリティ/">ユーティリティ</a></li></ul>
-	</div>
-
-</div>
-
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/12/06/firefox-private-chromium-secret/" >Firefox、Chromiumをプライベート（シークレット）ウィンドウで起動する</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年12月6日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Firefox、Chromium（Google Chrome）とも、プライベートウィンドウ（シークレットウィンドウ）を開くには、一度通常モードで起動して設定画面から行う必要があるが、最初からプライベートウィンドウを開けたら便利。  </p>
-<p>コマンド<code>firefox -private-window</code>と<code>chromium --incognito</code>をアプリケーションメニューに追加した。  </p>
-<p>（参照記事）</p>
-<ul>
-<li><a href="http://winaero.com/blog/how-to-run-firefox-in-private-browsing-mode-from-the-command-line-or-a-shortcut/" title="How to run Firefox in private browsing mode from the command line or a shortcut" target="_blank" rel="external">How to run Firefox in private browsing mode from the command line or a shortcut</a>  </li>
-<li><a href="http://www.openspc2.org/reibun/GoogleChrome/2.0/setting/secret/0001/" title="シークレットモードで起動するようにする" target="_blank" rel="external">シークレットモードで起動するようにする</a>  </li>
-</ul>
-<p>（余談）<br>“incognito”は「匿名」という意味らしい。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/12/06/firefox-private-chromium-secret/" data-text="Firefox、Chromiumをプライベート（シークレット）ウィンドウで起動する | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/12/06/firefox-private-chromium-secret/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/12/06/firefox-private-chromium-secret/" class="hatena-bookmark-button" data-hatena-bookmark-title="Firefox、Chromiumをプライベート（シークレット）ウィンドウで起動する" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/ブラウザ/">ブラウザ</a></li></ul>
-	</div>
-
-</div>
-
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/12/01/twitter-search-list/" >ツイート数表示のAPIが廃止されたので、代わりにURLのツイッター検索画面に飛ぶリンク「List」を設置</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年12月1日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Twitterのツイート数を表示するAPIが11月21日に廃止されたそうで、ツイートボタン横のカウント表示が無くなってしまった。  </p>
-<p>「count.jsoon」または「widgetoon.js」を導入すればこれまで通りツイート数を表示出来るようなのだが。<br><a href="http://getnews.jp/archives/1264136" target="_blank" rel="external">【衝撃】突然Twitterのツイート数が表示されなくなって大混乱！ 表示されるようにする方法 / count.jsoon ｜ ガジェット通信</a>  </p>
-<p>登録が必要のようで面倒。  </p>
-<p>サイトによってはツイート数の代わりに記事URLのツイッター検索画面に飛ぶ「List」というリンクが設置されていたりする。<br>せめて、シェアしてくれた人のツイートが検索画面に表示されているか、他にどんな人がツイートしているかを確認出来るよう、また自身がツイートするのではなくリツイートしたい時などのために、この「List」というリンクを設置することにした。  </p>
-<p><strong>Hexoの場合</strong></p>
-<p>記事一覧（layout/_partial/post/entry.ejs）、個別記事（layout/_partial/article.ejs）のレイアウトのツイートボタンscriptの後に  </p>
-<p><code>&lt;a href=&quot;https://twitter.com/search?q=&lt;%- item.permalink %&gt;&quot;&gt;List&lt;/a&gt;</code>  </p>
-<p>を追記。<br>「List」というリンクが追加された。  </p>
-<p><strong>Seesaaブログの場合</strong></p>
-<p>別で書いてるSeesaaブログにもこの「List」を追加した。（Seesaaブログではスマホ用ページのHTMLはいじれないので、PC用ページのみ。）  </p>
-<p>ソーシャルボタンのHTMLは直接編集出来ないので、公式のツイートボタンを導入した。（Seesaaのツイートボタンは設定→ソーシャルボタン→PCの「Twitter」のチェックを外して削除。）<br>公式ツイートボタンのコードを取得。（<a href="https://about.twitter.com/ja/resources/buttons#tweet" target="_blank" rel="external">Twitterボタン | About</a>）<br>「URLを共有」、「ツイート本文」にそれぞれSeesaaブログの環境変数<code>&lt;% article.page_url %&gt;</code>、<code>&lt;% article.subject %&gt;</code>を入れる。  </p>
-<p>作成されたコードを、Seesaaの設定→デザイン→PC→コンテンツ→記事のHTML編集でソーシャルボタンの箇所（<code>&lt;% if:blog.bookmark_service %&gt;...</code>）の前後いずれかに追記。<br>コードの後ろに記事URL検索画面に飛ぶためのリンク<br><code>&lt;a href=&quot;https://twitter.com/search?q=&lt;% article.page_url %&gt;&quot;&gt;List&lt;/a&gt;</code><br>を追加。（CSSで位置を調節出来るよう全体を<code>&lt;div class=twitter&gt;</code>〜<code>&lt;/div&gt;</code>で囲った。）  </p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">--- ここから ---</div><div class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">twitter</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"https://twitter.com/share"</span> <span class="attribute">class</span>=<span class="value">"twitter-share-button"</span><span class="value">{count}</span> <span class="attribute">data-url</span>=<span class="value">"&lt;% article.page_url %&gt;"</span> <span class="attribute">data-text</span>=<span class="value">"&lt;% article.subject %&gt;"</span>&gt;</span>Tweet<span class="tag">&lt;/<span class="title">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">!<span class="function"><span class="keyword">function</span><span class="params">(d,s,id)</span></span>{<span class="keyword">var</span> js,fjs=d.getElementsByTagName(s)[<span class="number">0</span>],p=<span class="regexp">/^http:/</span>.test(d.location)?<span class="string">'http'</span>:<span class="string">'https'</span>;<span class="keyword">if</span>(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+<span class="string">'://platform.twitter.com/widgets.js'</span>;fjs.parentNode.insertBefore(js,fjs);}}(<span class="built_in">document</span>, <span class="string">'script'</span>, <span class="string">'twitter-wjs'</span>);</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"https://twitter.com/search?q=&lt;% article.page_url %&gt;"</span>&gt;</span>List<span class="tag">&lt;/<span class="title">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">--- ここまで ---</div><div class="line"><span class="vbscript">&lt;% <span class="keyword">if</span>:blog.bookmark_service %&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"bookmark"</span> <span class="attribute">data-url</span>=<span class="value">"&lt;% article.page_url %&gt;"</span> <span class="attribute">data-subject</span>=<span class="value">"&lt;% article.subject | remove_emoji | nl2br | tag_strip | html %&gt;"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line"><span class="vbscript">&lt;% /<span class="keyword">if</span> %&gt;</span></div></pre></td></tr></table></figure>
-
-<p>その後デザイン設定でCSSに</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class">.twitter</span> <span class="rules">{ </span></div><div class="line">	<span class="rule"><span class="attribute">margin-left</span>:<span class="value"><span class="number">5px</span></span></span>;</div><div class="line">	<span class="rule"><span class="attribute">margin-top</span>:<span class="value"><span class="number">5px</span></span></span>;</div><div class="line"><span class="rule">}</span></div></pre></td></tr></table></figure>
-
-<p>を追記した。  </p>
-<p>それにしても、ツイート数の表示廃止でTwitterの魅力がかなり損なわれた。<br>いったい何をしたいのだろう？<br>終わりたいのか？Twitter</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/12/01/twitter-search-list/" data-text="ツイート数表示のAPIが廃止されたので、代わりにURLのツイッター検索画面に飛ぶリンク「List」を設置 | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/12/01/twitter-search-list/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/12/01/twitter-search-list/" class="hatena-bookmark-button" data-hatena-bookmark-title="ツイート数表示のAPIが廃止されたので、代わりにURLのツイッター検索画面に飛ぶリンク「List」を設置" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/ネット/">ネット</a></li></ul>
-	</div>
-
-</div>
-
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/10/04/aur-update-yaourt/" >YaourtでAURのパッケージをアップデート</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年10月4日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Arch LinuxでMarkdownファイルのエディターとして使っているretextが起動しなくなった。<br>新しいバージョンのretextが出ているようなので、Yaourtでアップデートした。  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yaourt -Syua</div></pre></td></tr></table></figure>
-
-<p>これまでAURのパッケージはほったらかしだったので、他にも数個アップデートされた。<br>retextを起動出来た。  </p>
-<p>AURのパッケージも時々アップデートした方が良さそうなので、デスクトップにランチャーとしてyaourt -Syua.desktopファイルを作成。  </p>
-<figure class="highlight plain"><figcaption><span>yaourt -Syua.desktop</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[Desktop Entry]</div><div class="line">Version=1.0</div><div class="line">Type=Application</div><div class="line">Name=yaourt -Syua</div><div class="line">Comment=</div><div class="line">Exec=yaourt -Syua</div><div class="line">Icon=</div><div class="line">Path=</div><div class="line">Terminal=true</div><div class="line">StartupNotify=false</div></pre></td></tr></table></figure>
-
-<p>システムのパッケージをアップデートするのに、これまで下記のpacman -Syu.desktopファイルを使っていたが、yaourt -Syua.desktopでそれらも含めてアップデート出来る。  </p>
-<figure class="highlight plain"><figcaption><span>pacman -Syu.desktop</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[Desktop Entry]</div><div class="line">Type=Application</div><div class="line">Name=pacman-Syu</div><div class="line">Exec=sudo pacman -Syu</div><div class="line">Terminal=true</div><div class="line">Name[ja_JP.utf8]=pacman -Syu</div></pre></td></tr></table></figure>
-
-
-<p>（参照記事）  </p>
-<ul>
-<li><a href="http://archlinux-blogger.blogspot.jp/2014/12/yaourt-arch-linux-yaourt-aur.html" target="_blank" rel="external">普段使いのArch Linux: yaourtの使い方 | Arch Linux, yaourt, AUR, オプション, パッケージ管理</a>  </li>
-<li><a href="https://wiki.archlinuxjp.org/index.php/Yaourt" target="_blank" rel="external">Yaourt - ArchWiki</a></li>
-</ul>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/10/04/aur-update-yaourt/" data-text="YaourtでAURのパッケージをアップデート | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/10/04/aur-update-yaourt/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/10/04/aur-update-yaourt/" class="hatena-bookmark-button" data-hatena-bookmark-title="YaourtでAURのパッケージをアップデート" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/09/03/socket-connection-failure/" class="hatena-bookmark-button" data-hatena-bookmark-title="Xfce起動時に「設定サーバーに接続できませんでした」と表示される" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
@@ -376,14 +169,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/09/30/snowden-twitter/" >元CIA職員スノーデン氏がTwitterを開始</a>
+			<a href="/2015/09/01/open-unclickable-url/" >ハイパーリンクになっていないURLを開く</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年9月30日
+	2015年9月1日
 </div>
 
 <div class="panel-body">
@@ -393,10 +186,9 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>ロシアに亡命中の元CIA職員スノーデン氏が9月29日にTwitterを始めたそうだ。<br><a href="http://www.itmedia.co.jp/news/articles/1509/30/news144.html" target="_blank" rel="external">スノーデン氏、Twitterを始める - ITmedia ニュース</a>  </p>
-<p>彼がフォローしているのは米国家安全保障局（NSA）のみだそうで、実際に彼のアカウント<a href="https://twitter.com/Snowden" target="_blank" rel="external">@Snowden</a>を見てみると確かにそうなっている。<br>現在のフォロワー数は９０万人程。始めて間もないせいもあるかも知れないが、意外と少ない気がする。  </p>
-<p>スノーデン氏と言えばアメリカ政府による数々の諜報活動を暴露した人物。<br>そのスノーデン氏が何ゆえ今頃Twitterを始める気になったのだろうか？<br>FacebookよりTwitterの方が安全なのかもしれないが、でもなぜ今？  </p>
-<p>英語が苦手なのでフォローする気は無いが、ちょっと気になる。</p>
+	  <p>ハイパーリンクになっておらず、クリック出来ないURLを開く時には、URLをアドレス欄にコピペすれば良いが、少し面倒。Firefoxのアドオンに<a href="https://addons.mozilla.org/ja/firefox/addon/text-link/" target="_blank" rel="external">テキストリンク (Text Link)</a>というのがあると知り、インストールしてみた。<br>現在のバージョンのFirefoxには対応していないようだが、開発版を入れると機能した。<br>だが「テキストリンク」の説明にURI文字列を開く通常の方法として、”選択された文字列をFirefoxのタブバーにドラッグ＆ドロップする”というのが書いてあったのでやってみた。  </p>
+<p>確かにURI文字列を選択してタブバーに持って行くと<code>タブの中央にドロップするとそのタブを置き換え、タブの両サイドにドロップするとその位置に新しいタブとして読み込まれます</code>というツールチップが表示され、そのままドロップするとURLを開いてくれる。こんな方法があるとは全然知らなかった。<br>URLの選択は大抵の場合トリプルクリックで簡単に出来るので、この方法でも良さそう。  </p>
+<p>右クリックメニューがあまり増えるのも嫌なので、結局「テキストリンク」はアンインストールした。</p>
 
 	
 	</div>
@@ -406,14 +198,511 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/09/30/snowden-twitter/" data-text="元CIA職員スノーデン氏がTwitterを開始 | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/09/01/open-unclickable-url/" data-text="ハイパーリンクになっていないURLを開く | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/09/30/snowden-twitter/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/09/01/open-unclickable-url/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/09/30/snowden-twitter/" class="hatena-bookmark-button" data-hatena-bookmark-title="元CIA職員スノーデン氏がTwitterを開始" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/09/01/open-unclickable-url/" class="hatena-bookmark-button" data-hatena-bookmark-title="ハイパーリンクになっていないURLを開く" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ブラウザ/">ブラウザ</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/08/29/windows10-privacy/" >危険なスパイウェアWindows 10はプライバシー情報を収集する</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年8月29日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Windows 10にアップグレードするのは危険だという情報を目にする。<br>設定でプライバシーに関する情報の収集・送信を無効にしても、完全には止められないそうだ。<br><a href="http://it.srad.jp/story/15/08/15/2122239/" target="_blank" rel="external">Windows 10のプライバシー設定をすべてオフにしても、Microsoftとの通信は止められない？ | スラド IT</a>  </p>
+<p>Microsoftの「プライバシーに関する声明」には、個人情報の収集と利用について書かれている。<br>収集された個人情報は行政機関に提供される可能性もあるようだ。  </p>
+<blockquote>
+<p><strong>収集されるデータ</strong></p>
+<p>収集されるデータには、お客様の名前とメール アドレス、お客様の優先事項と興味に関する情報、位置、閲覧、検索、ファイルの履歴、電話による通話、SMS データ、デバイスの構成とセンサー データ、音声入力、テキスト入力、手書き入力、アプリケーションの使用状況などがあります。</p>
+<p><strong>データの収集方法</strong></p>
+<p>プログラムのソフトウェアやサービスに組み込まれていて、Microsoft に情報を送信する、インターネットに接続可能な機能。</p>
+<p><strong>データ転送の制御</strong></p>
+<p>Microsoft にデータを送信する多くの機能は、自動的に有効になります。プログラムのソフトウェアやサービスの特定の機能については、データ転送を無効にするオプションがない場合があります。 </p>
+<p><strong>データの開示</strong></p>
+<p>以下の目的で、お客様に関する情報のアクセス、開示、保持が必要であると合理的に判断できる場合、Microsoft はそれらの情報のアクセス、開示、保持を行う場合があります。</p>
+<p>1.適用される法令に準拠する場合、または所轄官庁 (法執行機関や他の政府機関など) の正当な法的手続きに対する責任を果たす場合。</p>
+</blockquote>
+<p><a href="http://windows.microsoft.com/ja-jp/windows/preview-privacy-statement" target="_blank" rel="external">Windows 10 Technical Preview のプライバシーに関する声明 - Microsoft Windows</a>  </p>
+<p>Windows 7、Windows 8からは無料でアップグレード可能ということで、喜んでアップグレードしてしまいそうだが、よくよく考えた方が良さそうだ。  </p>
+<p>ーー<br>（追記）<br>上記はテクニカルプレビュー版（テスト版）の声明だが、通常版のプライバシー声明でも「法律により要求される、または法的手続きに対応する際に、…個人情報を共有します。」と記載されている。<br><a href="http://www.microsoft.com/ja-jp/privacystatement/default.aspx" target="_blank" rel="external">Microsoftのプライバシーに関する声明</a></p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/08/29/windows10-privacy/" data-text="危険なスパイウェアWindows 10はプライバシー情報を収集する | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/08/29/windows10-privacy/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/08/29/windows10-privacy/" class="hatena-bookmark-button" data-hatena-bookmark-title="危険なスパイウェアWindows 10はプライバシー情報を収集する" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Windows/">Windows</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/08/28/hexo-video/" >Github Pages+Hexoのブログに動画ファイルの埋め込み</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年8月28日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>hexo/source直下にvideosディレクトリを作成し、そこへ動画ファイルを配置。<br>以下のHTMLタグで埋め込み。 </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">video</span> <span class="attribute">src</span>=<span class="value">"/videos/dango.webm"</span> <span class="attribute">width</span>=<span class="value">"480"</span> <span class="attribute">height</span>=<span class="value">"360"</span> <span class="attribute">controls</span>&gt;</span><span class="tag">&lt;/<span class="title">video</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<video src="/videos/dango.webm" width="480" height="360" controls></video>
+
+<p>多くのブラウザに対応するため数種類の形式を用意する場合は下記。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">video</span> <span class="attribute">poster</span>=<span class="value">"/images/dango.png"</span> <span class="attribute">preload</span>=<span class="value">"metadata"</span> <span class="attribute">width</span>=<span class="value">"480"</span> <span class="attribute">height</span>=<span class="value">"360"</span> <span class="attribute">controls</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"/videos/dango.webm"</span> <span class="attribute">type</span>=<span class="value">"video/webm"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"/videos/dango.ogv"</span> <span class="attribute">type</span>=<span class="value">"video/ogg"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"/videos/dango.mp4"</span> <span class="attribute">type</span>=<span class="value">"video/mp4"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">video</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<video poster="/images/dango.png" preload="metadata" width="480" height="360" controls><br><source src="/videos/dango.webm" type="video/webm"><br><source src="/videos/dango.ogv" type="video/ogg"><br><source src="/videos/dango.mp4" type="video/mp4"><br></video>
+
+<p>（参照サイト）<br><a href="http://www.tagindex.com/html5/embed/video.html" target="_blank" rel="external">HTML5/埋め込み/video要素 プラグインを使わずに動画を再生する - TAG index Webサイト</a></p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/08/28/hexo-video/" data-text="Github Pages+Hexoのブログに動画ファイルの埋め込み | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/08/28/hexo-video/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/08/28/hexo-video/" class="hatena-bookmark-button" data-hatena-bookmark-title="Github Pages+Hexoのブログに動画ファイルの埋め込み" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Hexo/">Hexo</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/08/28/hexo-sound/" >Github Pages+Hexoのブログに音声ファイルの埋め込み</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年8月28日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>hexo/source直下にsoundsディレクトリを作成し、そこへ音声ファイルを配置。<br>以下のHTMLタグで埋め込み。  </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">audio</span> <span class="attribute">src</span>=<span class="value">"example.mp3"</span> <span class="attribute">autoplay</span> <span class="attribute">loop</span>&gt;</span><span class="tag">&lt;/<span class="title">audio</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<p><code>autoplay</code>で自動再生。<code>loop</code>でリピート再生。  </p>
+<p>下記では音は鳴るが、インターフェースが表示されない。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">audio</span> <span class="attribute">src</span>=<span class="value">"/sounds/bell.oga"</span> <span class="attribute">autoplay</span>&gt;</span><span class="tag">&lt;/<span class="title">audio</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<p><code>controls</code>を加えれば良いようだ。  </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">audio</span> <span class="attribute">src</span>=<span class="value">"/sounds/bell.oga"</span> <span class="attribute">controls</span>&gt;</span><span class="tag">&lt;/<span class="title">audio</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<audio src="/sounds/bell.oga" controls></audio>
+
+<p>数種類の形式を用意する場合は下記。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">audio</span> <span class="attribute">preload</span>=<span class="value">"metadata"</span> <span class="attribute">controls</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"/sounds/bell.aac"</span> <span class="attribute">type</span>=<span class="value">"audio/aac"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"/sounds/bell.mp3"</span> <span class="attribute">type</span>=<span class="value">"audio/mp3"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"/sounds/bell.oga"</span> <span class="attribute">type</span>=<span class="value">"audio/ogg"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">audio</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<audio preload="metadata" controls><br><source src="/sounds/bell.aac" type="audio/aac"><br><source src="/sounds/bell.mp3" type="audio/mp3"><br><source src="/sounds/bell.oga" type="audio/ogg"><br></audio>
+
+<p>Githubでは1ファイルあたり50MBまでという推奨があるらしい。<br>（100MB以上は制限によりプッシュ出来ないとのこと。）  </p>
+<p>（参照サイト）<br><a href="http://www.tagindex.com/html5/embed/audio.html" target="_blank" rel="external">HTML5/埋め込み/audio要素 プラグインを使わずに音声を再生する - TAG index Webサイト</a><br><a href="http://huguma.hatenablog.com/entry/2014/10/03/184232" target="_blank" rel="external">GitHubの各種サイズ上限とファイル削除の方法 - huguma’s blog (仮)</a></p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/08/28/hexo-sound/" data-text="Github Pages+Hexoのブログに音声ファイルの埋め込み | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/08/28/hexo-sound/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/08/28/hexo-sound/" class="hatena-bookmark-button" data-hatena-bookmark-title="Github Pages+Hexoのブログに音声ファイルの埋め込み" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Hexo/">Hexo</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/08/21/rekonq-default-search-engine/" >rekonqのデフォルト検索エンジンを設定出来ない</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年8月21日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Arch LinuxでサブのブラウザとしてMidoriを使っているが、お気に入りが消えてしまったりと調子が悪かったので、rekonqを入れてみた。  </p>
+<p>サイドバーは有る方が好みなので、レンチアイコンの設定からPanels→Bookmarks Panelをチェック。<br>広告除去は、Tools→Ad block。<br>EasyListだけでは依然、広告が邪魔な状態だったので、EasyList without element hidingも有効にした。  </p>
+<p>快適に使えるようになったかと思ったが、起動の度に、デフォルトの検索エンジンを設定するよう、上部に注意表示される。  </p>
+<blockquote>
+<p>you do not have a default search engine set. without it …</p>
+</blockquote>
+<p>確かにアドレスバーに語句を入力しても検索出来ない。<br>注意表示の「Set it」をクリックしてもなにも起こらないし、設定のSearch Enginesの箇所は、モジュールが無いようで灰色、設定出来ない。  </p>
+<p>Konquerorをインストールしたら良いという情報があったので、インストールしてみた。<br><a href="https://bbs.archlinux.org/viewtopic.php?pid=1241664#p1241664" target="_blank" rel="external">cannot set the default search engine in rekonq 1.0 / Applications &amp; Desktop Environments / Arch Linux Forums</a>  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> pacman -S kdebase-konqueror</div></pre></td></tr></table></figure>
+
+<p>検索エンジンを設定出来るようになった。<br>Konquerorは使わないようだったら<del>削除してしまっても良いようだ。</del>  </p>
+<p>Konquerorをアンインストールすると、検索エンジンのモジュールも削除されてしまうようだ。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/08/21/rekonq-default-search-engine/" data-text="rekonqのデフォルト検索エンジンを設定出来ない | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/08/21/rekonq-default-search-engine/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/08/21/rekonq-default-search-engine/" class="hatena-bookmark-button" data-hatena-bookmark-title="rekonqのデフォルト検索エンジンを設定出来ない" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ブラウザ/">ブラウザ</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/08/20/google-news-search/" >Firefoxに「Googleニュース検索」を追加</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年8月20日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Firefoxの検索エンジンに「Googleニュース検索」を追加した。<br>アドオンの検索では日本語用のものが見つからなかったので、いったん<a href="https://addons.mozilla.org/ja/firefox/addon/googlenews-ita/?src=search" target="_blank" rel="external">Google News (Italia)</a>をインストール。<br>~/.mozilla/firefox/(プロファイル名)/searchplugins内のgooglenews-ita.xmlをgooglenews-ja.xmlにリネーム。<br>ファイルの内容を下記に変更した。  </p>
+<figure class="highlight xml"><figcaption><span>googlenews-ja.xml</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">SearchPlugin</span> <span class="attribute">xmlns</span>=<span class="value">"http://www.mozilla.org/2006/browser/search/"</span> <span class="attribute">xmlns:os</span>=<span class="value">"http://a9.com/-/spec/opensearch/1.1/"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:ShortName</span>&gt;</span>Google ニュース<span class="tag">&lt;/<span class="title">os:ShortName</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Description</span>&gt;</span>Google ニュース検索<span class="tag">&lt;/<span class="title">os:Description</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:InputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">os:InputEncoding</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Image</span> <span class="attribute">width</span>=<span class="value">"16"</span> <span class="attribute">height</span>=<span class="value">"16"</span>&gt;</span>data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAPAKAADwCgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAArKSaGLywqTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1MzB3SkdF/1RST/5FQj/sR0VCdzIvLAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3NjRXR0VC/ZGQj/++vr3/oaCf/2xqaP9QTkviSEZDeDIvLA4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlIyE/QD489mRiYf/ExMP/ymVO/8mXi//Hx8f/rq6t/25sav9UUlDgQ0A9YTIvLAkAAAAAAAAAAAAAAAA7OTdPQkE/9FdUUv+jo6L/0Ly3/8s0Ev/QxsP/qaqp/7Ozs//Pz87/rKyr/2BdW/pPTUrOMi8sJQAAAAA0MjBiNzU0+IWEgf9mZGL/1NTU/85VOv/RgW//09PS/4SFhP+EhYT/mZmY/8zMzP/W1tb/kI+N/0lHRPQlIyFiS0lH+4qKiP9DQD3/v769/9V6Zf/MNRP/39XT/6jX4f+rsrL/iYqJ/4SFhP+Jion/wsLC/97e3f+Afn3/JSMhDjc1M4hHRUP2iYiG/+rq6f/YfWn/1nFa/3nd8/8K0v7/F9P9/3rR5f+kqan/hIWE/4SFhP/Jycj/amhm9AAAAAAyLyw4ZmRi8aGh2/9BQdP/k5Ph/+PZ4P994ff/GNT9/wrS/v8K0v7/Jtb8/6LZ5f+xsbH/vby6/1RRT9kAAAAAOjc1852bmv+9ve3/Tk7W/zY20f9BQtb/f4Dl/9Pf9v+B5fv/J9b9/wrS/v8K0v7/q+n5/2lmZPtOTElTAAAAADIvLD1eXFnSdHJw+s/Ozf+zs+7/T0/b/zc42/83Od//goPt/83O+f+j7v//cuP9/5+dnP9VU1C6Mi8sBQAAAAAAAAAAMi8sDEdEQmJaWFXWfXt5+cTDw/+vr+3/aWvo/zg75f84POn/j5H1/7y7uv9FQkDuMi8sEAAAAAAAAAAAAAAAAAAAAAAAAAAAMi8sCDIvLE1QTUvNdHJw9Le2tf/JyfT/g4Xy/8PDzf9qaGbqMi8sLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIvLDxHRELCQT479XJwbv9QTkvzU1BOSwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIvLA8yLyxjMi8sHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/P8AAPgf8L/wBwAA4AEAAMAAAACAAAAAAAAAAAAAAACAAAAAgAAAAIAAAADAAQAA8AP///4H////jwAA//8AAA%3D%3D<span class="tag">&lt;/<span class="title">os:Image</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Url</span> <span class="attribute">type</span>=<span class="value">"text/html"</span> <span class="attribute">method</span>=<span class="value">"GET"</span> <span class="attribute">template</span>=<span class="value">"https://news.google.co.jp/news/search?q={searchTerms}"</span> <span class="attribute">resultDomain</span>=<span class="value">"news.google.co.jp"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">os:Url</span>&gt;</span><span class="tag">&lt;<span class="title">os:Url</span> <span class="attribute">type</span>=<span class="value">"application/x-suggestions+json"</span> <span class="attribute">method</span>=<span class="value">"GET"</span> <span class="attribute">template</span>=<span class="value">"http://suggestqueries.google.com/complete/search?output=firefox&amp;client=firefox&amp;hl=ja&amp;q={searchTerms}"</span> <span class="attribute">resultDomain</span>=<span class="value">"suggestqueries.google.com"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">os:Url</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">SearchPlugin</span>&gt;</span></div></pre></td></tr></table></figure>
+
+<p>~/.mozilla/firefox/(プロファイル名)/searchplugins内に上記ファイルを新規作成しても良いと思う。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/08/20/google-news-search/" data-text="Firefoxに「Googleニュース検索」を追加 | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/08/20/google-news-search/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/08/20/google-news-search/" class="hatena-bookmark-button" data-hatena-bookmark-title="Firefoxに「Googleニュース検索」を追加" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ブラウザ/">ブラウザ</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/08/15/context-search/" >右クリックからの検索を拡張するFirefoxアドオン「Context Search」が便利</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年8月15日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Firefoxで右クリックからの検索は便利だが、検索エンジンがデフォルトのものに固定されてしまっている。<br>普段はGoogleを使っているが、安全のためStartPageやDuckDuckGoを使いたい時、またツイッター検索をしたい時などがある。そんな時、キーワードをいちいち検索欄にコピペするのはちょっと面倒。  </p>
+<p>そんな人にお勧めしたいアドオンが<a href="https://addons.mozilla.org/ja/firefox/addon/context-search/?src=search" target="_blank" rel="external">Context Search</a></p>
+<p>インストールすると、右クリックの「”〜” をGoogleで検索(s)」などが「”〜” を検索(s)」になり、種々の検索エンジンがリスト表示される。<br>特に設定の必要も無し。  </p>
+<p>ちょっとしたことだが、とても便利。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/08/15/context-search/" data-text="右クリックからの検索を拡張するFirefoxアドオン「Context Search」が便利 | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/08/15/context-search/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/08/15/context-search/" class="hatena-bookmark-button" data-hatena-bookmark-title="右クリックからの検索を拡張するFirefoxアドオン「Context Search」が便利" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ブラウザ/">ブラウザ</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/07/09/fictional-email-addresses/" >架空のメールアドレスを使う</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年7月9日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>ネットを利用していて、例えばメール欄が必須になっているブログにコメントしたい時など、これまでは正直に実際のメールアドレスを記載していた。（メインのではなく、サブのアドレスを使うことが多かったが）<br>だが、よく考えてみると、返信が必要のない場合は実際のものではなく、架空のメールアドレスを使っても問題なさそうだ。  </p>
+<p>存在するかもしれないメールアドレスを適当に使ってしまうと迷惑を掛けてしまうかもしれないが、３つのサンプル用ドメイン（example.com、example.org、 example.net）なら、大丈夫なはず。  </p>
+<p>そう考えて、適当な架空のメールアドレスとして<code>mail@example.net</code>を使うようにした。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/07/09/fictional-email-addresses/" data-text="架空のメールアドレスを使う | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/07/09/fictional-email-addresses/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/07/09/fictional-email-addresses/" class="hatena-bookmark-button" data-hatena-bookmark-title="架空のメールアドレスを使う" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ネット/">ネット</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/06/30/twitter-search-result-probrem/" >ツイッター検索でURL付きのツイートが表示されない</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年6月30日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>###自分のツイートだけが表示されない</p>
+<p>ニュース記事やブログなどに設置してあるツイート数表示をクリックした時に表示されるページ（URLをツイッター検索した結果のページ）に自分のツイートだけが表示されなくなっていた。「トップ」から「ライブ」のタブに切り替えても表示されない。  </p>
+<p>これではツイートを見てもらう機会が減ってしまい困るので、下記ページから問題の報告を行った。<br><a href="https://support.twitter.com/forms/feature_report?feature=tweets" target="_blank" rel="external">Twitterヘルプセンター</a>  </p>
+<p>「問題の詳細」の箇所は英文で書いた方が良いらしいので、見様見真似で下記のようにした。  </p>
+<p>Regarding: Search/Trends<br>Subject: I’m not a spam!!<br>Description of problem:<br>My tweets that contain URLs are not displayed in search results. Can you permit me to display my tweets in the search? I use Twitter generally. I’m not spam. Please clear your information about spam. Kind regards.  </p>
+<p>「返信できませんが、いただいた情報はTwitterの改善に役立たせていただきます。」とのことだったが、１日で改善された。  </p>
+<p>###自分のブログ記事のツイッター検索の結果が１件しか表示されない</p>
+<p>その後、別で書いている自分のブログでのことだが、上記同様ツイート数表示をクリックした時に表示されるページ（URLをツイッター検索した結果のページ）で、何人かツイートしてくれている人がいるのに、ツイートが１件しか表示されない状態になっていた。「トップ」でも「ライブ」でも１件のみ。誰のツイートが表示されるかは、リツイート数の多いツイートだったり、最新のツイートだったり。<br>これではツイートしてくれる人も意欲を削がれるに違いない。  </p>
+<p>上記の「Twitterヘルプセンター」から日本語で報告してみたが、しばらく待っても変化が無い。<br>再度下手くそな英語で報告してみた。  </p>
+<p>Regarding: Search/Trends<br>Subject: About search result<br>Description of problem:<br>Reasntly, several tweets exist that contain the URL(<a href="http://pagent.seesaa.net/article/421338174.html" target="_blank" rel="external">http://pagent.seesaa.net/article/421338174.html</a>). But only one tweet is displayed in search result, even in “Live” tab.<br>Can you adjust this probrem?  </p>
+<p>１〜２時間ほどすると、ほぼすべてのツイートが表示される状態に改善した。  </p>
+<p>英語が苦手でも、やってみるものだと実感した。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/06/30/twitter-search-result-probrem/" data-text="ツイッター検索でURL付きのツイートが表示されない | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/06/30/twitter-search-result-probrem/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/06/30/twitter-search-result-probrem/" class="hatena-bookmark-button" data-hatena-bookmark-title="ツイッター検索でURL付きのツイートが表示されない" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
@@ -466,43 +755,43 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>14</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
-		
-			<li><a href="/tags/サーバー/">サーバー<span>9</span></a></li>
-		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>37</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
 		
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+		
 			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
+			<li><a href="/tags/食/">食<span>4</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>37</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
+		
+			<li><a href="/tags/サーバー/">サーバー<span>9</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>14</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
 		
 			<li><a href="/tags/SEO/">SEO<span>4</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 		
 		</ul>

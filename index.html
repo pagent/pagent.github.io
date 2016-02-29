@@ -386,6 +386,328 @@
 </div>
 
 				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/12/21/truecrypt-downgrade/" >TrueCryptでボリュームをマウント出来ない→ダウングレードで解決</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年12月21日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>先日からArch LinuxでTrueCryptのボリュームを開けなくなってしまった。正しいパスワードを入力しても”Invalid characters encountered”や”fuse: bad mount point…No such file or directory”と表示される。Xubuntuだと通常通りマウント出来るのだが。  </p>
+<p>2015年12月10日にC++ ABIが変更されて以降、truecrypt-1:7.1a-3はボリュームをマウント出来なくなっており、旧バージョンのtruecrypt-1:7.1a-2だと正常に動作するようだ。<br><a href="https://wiki.archlinux.org/index.php/TrueCrypt" title="TrueCrypt - ArchWiki" target="_blank" rel="external">TrueCrypt - ArchWiki</a>  </p>
+<p>pacmanのキャッシュフォルダ/var/cache/pacman/pkg内にtruecrypt-1:7.1a-2があったので、ダウングレードした。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> pacman -U /var/cache/pacman/pkg/truecrypt-<span class="number">1</span>:<span class="number">7.1</span>a-<span class="number">2</span>-x86_64.pkg.tar.xz</div></pre></td></tr></table></figure>
+
+<p>無事マウント出来るようになった。  </p>
+<p>キャッシュフォルダにtruecrypt-1:7.1a-2が無い場合は下記からダウンロード可能。<br><a href="http://ala.seblu.net/packages/t/truecrypt/" title="Index of /packages/t/truecrypt/" target="_blank" rel="external">Index of /packages/t/truecrypt/</a>  </p>
+<p>このままだと<code>pacman -Syu</code>の時にまたtruecrypt-1:7.1a-3に更新されてしまうので、/etc/pacman.confのIgnorePkgにtruecryptを追加した。  </p>
+<figure class="highlight plain"><figcaption><span>pacman.conf</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">IgnorePkg   = nodejs truecrypt</div></pre></td></tr></table></figure>
+
+<p>（参照記事）  </p>
+<ul>
+<li><a href="https://bugs.archlinux.org/task/47325" title="FS#47325 : [truecrypt] 1:7.1a-3: Mount: Invalid characters encountered" target="_blank" rel="external">FS#47325 : [truecrypt] 1:7.1a-3: Mount: Invalid characters encountered</a>  </li>
+<li><a href="https://wiki.archlinuxjp.org/index.php/%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%81%AE%E3%83%80%E3%82%A6%E3%83%B3%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89#.E3.83.91.E3.83.83.E3.82.B1.E3.83.BC.E3.82.B8.E3.82.92.E3.83.80.E3.82.A6.E3.83.B3.E3.82.B0.E3.83.AC.E3.83.BC.E3.83.89.E3.81.99.E3.82.8B.E6.96.B9.E6.B3.95" title="パッケージのダウングレード - ArchWiki" target="_blank" rel="external">パッケージのダウングレード - ArchWiki</a></li>
+</ul>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/12/21/truecrypt-downgrade/" data-text="TrueCryptでボリュームをマウント出来ない→ダウングレードで解決 | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/12/21/truecrypt-downgrade/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/12/21/truecrypt-downgrade/" class="hatena-bookmark-button" data-hatena-bookmark-title="TrueCryptでボリュームをマウント出来ない→ダウングレードで解決" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ユーティリティ/">ユーティリティ</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/12/06/firefox-private-chromium-secret/" >Firefox、Chromiumをプライベート（シークレット）ウィンドウで起動する</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年12月6日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Firefox、Chromium（Google Chrome）とも、プライベートウィンドウ（シークレットウィンドウ）を開くには、一度通常モードで起動して設定画面から行う必要があるが、最初からプライベートウィンドウを開けたら便利。  </p>
+<p>コマンド<code>firefox -private-window</code>と<code>chromium --incognito</code>をアプリケーションメニューに追加した。  </p>
+<p>（参照記事）</p>
+<ul>
+<li><a href="http://winaero.com/blog/how-to-run-firefox-in-private-browsing-mode-from-the-command-line-or-a-shortcut/" title="How to run Firefox in private browsing mode from the command line or a shortcut" target="_blank" rel="external">How to run Firefox in private browsing mode from the command line or a shortcut</a>  </li>
+<li><a href="http://www.openspc2.org/reibun/GoogleChrome/2.0/setting/secret/0001/" title="シークレットモードで起動するようにする" target="_blank" rel="external">シークレットモードで起動するようにする</a>  </li>
+</ul>
+<p>（余談）<br>“incognito”は「匿名」という意味らしい。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/12/06/firefox-private-chromium-secret/" data-text="Firefox、Chromiumをプライベート（シークレット）ウィンドウで起動する | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/12/06/firefox-private-chromium-secret/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/12/06/firefox-private-chromium-secret/" class="hatena-bookmark-button" data-hatena-bookmark-title="Firefox、Chromiumをプライベート（シークレット）ウィンドウで起動する" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ブラウザ/">ブラウザ</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/12/01/twitter-search-list/" >ツイート数表示のAPIが廃止されたので、代わりにURLのツイッター検索画面に飛ぶリンク「List」を設置</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年12月1日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Twitterのツイート数を表示するAPIが11月21日に廃止されたそうで、ツイートボタン横のカウント表示が無くなってしまった。  </p>
+<p>「count.jsoon」または「widgetoon.js」を導入すればこれまで通りツイート数を表示出来るようなのだが。<br><a href="http://getnews.jp/archives/1264136" target="_blank" rel="external">【衝撃】突然Twitterのツイート数が表示されなくなって大混乱！ 表示されるようにする方法 / count.jsoon ｜ ガジェット通信</a>  </p>
+<p>登録が必要のようで面倒。  </p>
+<p>サイトによってはツイート数の代わりに記事URLのツイッター検索画面に飛ぶ「List」というリンクが設置されていたりする。<br>せめて、シェアしてくれた人のツイートが検索画面に表示されているか、他にどんな人がツイートしているかを確認出来るよう、また自身がツイートするのではなくリツイートしたい時などのために、この「List」というリンクを設置することにした。  </p>
+<p><strong>Hexoの場合</strong></p>
+<p>記事一覧（layout/_partial/post/entry.ejs）、個別記事（layout/_partial/article.ejs）のレイアウトのツイートボタンscriptの後に  </p>
+<p><code>&lt;a href=&quot;https://twitter.com/search?q=&lt;%- item.permalink %&gt;&quot;&gt;List&lt;/a&gt;</code>  </p>
+<p>を追記。<br>「List」というリンクが追加された。  </p>
+<p><strong>Seesaaブログの場合</strong></p>
+<p>別で書いてるSeesaaブログにもこの「List」を追加した。（Seesaaブログではスマホ用ページのHTMLはいじれないので、PC用ページのみ。）  </p>
+<p>ソーシャルボタンのHTMLは直接編集出来ないので、公式のツイートボタンを導入した。（Seesaaのツイートボタンは設定→ソーシャルボタン→PCの「Twitter」のチェックを外して削除。）<br>公式ツイートボタンのコードを取得。（<a href="https://about.twitter.com/ja/resources/buttons#tweet" target="_blank" rel="external">Twitterボタン | About</a>）<br>「URLを共有」、「ツイート本文」にそれぞれSeesaaブログの環境変数<code>&lt;% article.page_url %&gt;</code>、<code>&lt;% article.subject %&gt;</code>を入れる。  </p>
+<p>作成されたコードを、Seesaaの設定→デザイン→PC→コンテンツ→記事のHTML編集でソーシャルボタンの箇所（<code>&lt;% if:blog.bookmark_service %&gt;...</code>）の前後いずれかに追記。<br>コードの後ろに記事URL検索画面に飛ぶためのリンク<br><code>&lt;a href=&quot;https://twitter.com/search?q=&lt;% article.page_url %&gt;&quot;&gt;List&lt;/a&gt;</code><br>を追加。（CSSで位置を調節出来るよう全体を<code>&lt;div class=twitter&gt;</code>〜<code>&lt;/div&gt;</code>で囲った。）  </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">--- ここから ---</div><div class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">twitter</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"https://twitter.com/share"</span> <span class="attribute">class</span>=<span class="value">"twitter-share-button"</span><span class="value">{count}</span> <span class="attribute">data-url</span>=<span class="value">"&lt;% article.page_url %&gt;"</span> <span class="attribute">data-text</span>=<span class="value">"&lt;% article.subject %&gt;"</span>&gt;</span>Tweet<span class="tag">&lt;/<span class="title">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">!<span class="function"><span class="keyword">function</span><span class="params">(d,s,id)</span></span>{<span class="keyword">var</span> js,fjs=d.getElementsByTagName(s)[<span class="number">0</span>],p=<span class="regexp">/^http:/</span>.test(d.location)?<span class="string">'http'</span>:<span class="string">'https'</span>;<span class="keyword">if</span>(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+<span class="string">'://platform.twitter.com/widgets.js'</span>;fjs.parentNode.insertBefore(js,fjs);}}(<span class="built_in">document</span>, <span class="string">'script'</span>, <span class="string">'twitter-wjs'</span>);</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"https://twitter.com/search?q=&lt;% article.page_url %&gt;"</span>&gt;</span>List<span class="tag">&lt;/<span class="title">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">--- ここまで ---</div><div class="line"><span class="vbscript">&lt;% <span class="keyword">if</span>:blog.bookmark_service %&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"bookmark"</span> <span class="attribute">data-url</span>=<span class="value">"&lt;% article.page_url %&gt;"</span> <span class="attribute">data-subject</span>=<span class="value">"&lt;% article.subject | remove_emoji | nl2br | tag_strip | html %&gt;"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line"><span class="vbscript">&lt;% /<span class="keyword">if</span> %&gt;</span></div></pre></td></tr></table></figure>
+
+<p>その後デザイン設定でCSSに</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class">.twitter</span> <span class="rules">{ </span></div><div class="line">	<span class="rule"><span class="attribute">margin-left</span>:<span class="value"><span class="number">5px</span></span></span>;</div><div class="line">	<span class="rule"><span class="attribute">margin-top</span>:<span class="value"><span class="number">5px</span></span></span>;</div><div class="line"><span class="rule">}</span></div></pre></td></tr></table></figure>
+
+<p>を追記した。  </p>
+<p>それにしても、ツイート数の表示廃止でTwitterの魅力がかなり損なわれた。<br>いったい何をしたいのだろう？<br>終わりたいのか？Twitter</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/12/01/twitter-search-list/" data-text="ツイート数表示のAPIが廃止されたので、代わりにURLのツイッター検索画面に飛ぶリンク「List」を設置 | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/12/01/twitter-search-list/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/12/01/twitter-search-list/" class="hatena-bookmark-button" data-hatena-bookmark-title="ツイート数表示のAPIが廃止されたので、代わりにURLのツイッター検索画面に飛ぶリンク「List」を設置" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ネット/">ネット</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/10/04/aur-update-yaourt/" >YaourtでAURのパッケージをアップデート</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年10月4日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Arch LinuxでMarkdownファイルのエディターとして使っているretextが起動しなくなった。<br>新しいバージョンのretextが出ているようなので、Yaourtでアップデートした。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yaourt -Syua</div></pre></td></tr></table></figure>
+
+<p>これまでAURのパッケージはほったらかしだったので、他にも数個アップデートされた。<br>retextを起動出来た。  </p>
+<p>AURのパッケージも時々アップデートした方が良さそうなので、デスクトップにランチャーとしてyaourt -Syua.desktopファイルを作成。  </p>
+<figure class="highlight plain"><figcaption><span>yaourt -Syua.desktop</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[Desktop Entry]</div><div class="line">Version=1.0</div><div class="line">Type=Application</div><div class="line">Name=yaourt -Syua</div><div class="line">Comment=</div><div class="line">Exec=yaourt -Syua</div><div class="line">Icon=</div><div class="line">Path=</div><div class="line">Terminal=true</div><div class="line">StartupNotify=false</div></pre></td></tr></table></figure>
+
+<p>システムのパッケージをアップデートするのに、これまで下記のpacman -Syu.desktopファイルを使っていたが、yaourt -Syua.desktopでそれらも含めてアップデート出来る。  </p>
+<figure class="highlight plain"><figcaption><span>pacman -Syu.desktop</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[Desktop Entry]</div><div class="line">Type=Application</div><div class="line">Name=pacman-Syu</div><div class="line">Exec=sudo pacman -Syu</div><div class="line">Terminal=true</div><div class="line">Name[ja_JP.utf8]=pacman -Syu</div></pre></td></tr></table></figure>
+
+
+<p>（参照記事）  </p>
+<ul>
+<li><a href="http://archlinux-blogger.blogspot.jp/2014/12/yaourt-arch-linux-yaourt-aur.html" target="_blank" rel="external">普段使いのArch Linux: yaourtの使い方 | Arch Linux, yaourt, AUR, オプション, パッケージ管理</a>  </li>
+<li><a href="https://wiki.archlinuxjp.org/index.php/Yaourt" target="_blank" rel="external">Yaourt - ArchWiki</a></li>
+</ul>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/10/04/aur-update-yaourt/" data-text="YaourtでAURのパッケージをアップデート | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/10/04/aur-update-yaourt/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/10/04/aur-update-yaourt/" class="hatena-bookmark-button" data-hatena-bookmark-title="YaourtでAURのパッケージをアップデート" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/09/30/snowden-twitter/" >元CIA職員スノーデン氏がTwitterを開始</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年9月30日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>ロシアに亡命中の元CIA職員スノーデン氏が9月29日にTwitterを始めたそうだ。<br><a href="http://www.itmedia.co.jp/news/articles/1509/30/news144.html" target="_blank" rel="external">スノーデン氏、Twitterを始める - ITmedia ニュース</a>  </p>
+<p>彼がフォローしているのは米国家安全保障局（NSA）のみだそうで、実際に彼のアカウント<a href="https://twitter.com/Snowden" target="_blank" rel="external">@Snowden</a>を見てみると確かにそうなっている。<br>現在のフォロワー数は９０万人程。始めて間もないせいもあるかも知れないが、意外と少ない気がする。  </p>
+<p>スノーデン氏と言えばアメリカ政府による数々の諜報活動を暴露した人物。<br>そのスノーデン氏が何ゆえ今頃Twitterを始める気になったのだろうか？<br>FacebookよりTwitterの方が安全なのかもしれないが、でもなぜ今？  </p>
+<p>英語が苦手なのでフォローする気は無いが、ちょっと気になる。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/09/30/snowden-twitter/" data-text="元CIA職員スノーデン氏がTwitterを開始 | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/09/30/snowden-twitter/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/09/30/snowden-twitter/" class="hatena-bookmark-button" data-hatena-bookmark-title="元CIA職員スノーデン氏がTwitterを開始" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ネット/">ネット</a></li></ul>
+	</div>
+
+</div>
+
+				
 
 			</div>
 
@@ -426,43 +748,43 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>37</span></a></li>
-		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
-		
 			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
+			<li><a href="/tags/SEO/">SEO<span>4</span></a></li>
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
 		
 			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
 		
+			<li><a href="/tags/blog/">blog<span>37</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
+		
 			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
 		
 			<li><a href="/tags/サーバー/">サーバー<span>9</span></a></li>
 		
-			<li><a href="/tags/SEO/">SEO<span>4</span></a></li>
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>14</span></a></li>
 		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+			<li><a href="/tags/食/">食<span>4</span></a></li>
 		
 		
 		</ul>

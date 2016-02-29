@@ -110,14 +110,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/04/16/nemo-action-shred/" >nemoの右クリックメニューに「完全消去」を追加</a>
+			<a href="/2015/02/06/lxpup-lxqtpup/" >Puppy Linux派生。本家より扱いやすい「LxPup」と「LxQtPup」</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年4月16日
+	2015年2月6日
 </div>
 
 <div class="panel-body">
@@ -127,17 +127,34 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>rmコマンドでファイルを消去してもデータの内容自体はディスク上に残っており、復旧できる可能性があるようだ。<br>完全に消去するにはshredコマンドを使えばいいらしい。<br><a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20140310/542304/" target="_blank" rel="external">Linuxコマンド集 - 【shred】ファイルを上書きし、完全に消去する：ITpro</a>  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ shred -u sample</div></pre></td></tr></table></figure>
-
-<p>コマンドを入力するのは面倒なので、nemoの右クリックメニューに「完全消去」を追加した。  </p>
-<p>~/.local/share/nemo/actions/内にshred.nemo_actionファイルを作成。  </p>
-<figure class="highlight plain"><figcaption><span>shred.nemo_action</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[Nemo Action]</div><div class="line">Name=Shred files</div><div class="line">Name[ja]=完全消去</div><div class="line">Comment=Shred the selected files</div><div class="line">Exec=shred -u -n 1 %F</div><div class="line">Icon-Name=gtk-execute</div><div class="line">Selection=notnone</div><div class="line">Extensions=nodirs;</div><div class="line">Quote=double</div><div class="line">Dependencies=shred</div></pre></td></tr></table></figure>
-
-<p>（参照記事）<br><a href="https://github.com/linuxmint/nemo/issues/210#issuecomment-29847315" target="_blank" rel="external">[Feature Request] wipe files · Issue #210 · linuxmint/nemo · GitHub</a>  </p>
-<p>対象はファイルのみでフォルダは「完全消去」出来ないが、少し便利になった。  </p>
-<p>ーー<br>（追記）<br>他の右クリックアクションを選択したい時、間違って「完全消去」してしまわないか気になって来た。<br>Zenityを使えば「本当に削除しますか？」のような確認ダイアログを表示出来るようだが、Zenityの使用法がまだ分からない。  </p>
-<p>「完全消去」の右クリックメニューは一旦保留とし、<code>shred -u</code>を辞書登録するにとどめた。</p>
+	  <p>Puppy Linuxのデスクトップ環境について調べ物をしていたら、”LxPup - Puppy Linux + LXDE”というページがあった。<br><a href="http://sourceforge.jp/projects/sfnet_lxpup/releases/" target="_blank" rel="external">LxPup - Puppy Linux + LXDE プロジェクト - SourceForge.JP</a>  </p>
+<p>Puppy LinuxをLXDEデスクトップにアレンジしたものらしい。  </p>
+<p>早速、LxPup-15.02.2のPAE版と非PAE版、それとLxQtPup（非PAE）をダウンロードした。<br>いずれもSlacko Puppy 5.9.3がベースのもの。<br>（LxQtPupは上記リンク先Other/LxQtPup内）  </p>
+<p>LxQtPupのデスクトップ環境「LXQt」というのは、「LXDE-QtとRazor-qtの成果物を統合したデスクトップ環境」で「Qtに移行したLXDEの後継バージョン」とのこと。<br><a href="http://ja.wikipedia.org/wiki/LXDE" target="_blank" rel="external">LXDE - Wikipedia</a><br>LXDEよりさらに軽いということか。  </p>
+<p>###試用してみての感想</p>
+<p><strong>「LxPup」</strong></p>
+<p>ブートCDを焼き起動すると、PAEのLxPupはいきなり「Disabling IRQ #9」と出て、その後なんとか「Loading　kernel 　modules…」までは進んだが、そこでフリーズ。<br>非PAEの方で起動すると、無事デスクトップが表示された。  </p>
+<p>デスクトップに子犬の姿は無かったが、開始時に表示される言語やタイムゾーン、モニターなどの設定ウィンドウを閉じると、「ワン！ワン！」と元気に迎えてくれる。  </p>
+<p>本家Puppyよりすっきりした外観。<br>そして動作の軽快さは、まさにPuppy Linux。</p>
+<p>ファイルマネージャーにはPcmanfmが入っていた。とても有難い。<br>Puppy標準のROX-Filerは、コピーしようと思ってファイルをドラッグ＆ドロップすると、コピーではなくリンクを作ってしまったり、右クリックでコピーしようとするとコピー先のパスを入力させられたりで、使い勝手が悪い。  </p>
+<p>ブラウザはFirefoxで、これも有難い。<br>起動はやはり多少もたつくが、Firefoxにはそれに勝る便利さがある。  </p>
+<p>端末はPuppyデフォルトのrxvtに加えLXTerminalが入っている。<br>右クリックでのコピーペーストが出来て便利。  </p>
+<p>LxPup。<br>Puppy Linuxの軽快さと、LXDEの快適性を上手く融合させている。  </p>
+<p><strong>「LxQtPup」</strong>  </p>
+<p>LxQtPupの方はというと、起動も起動後の操作も、ややもっさり感が否めない。<br>実際、タスクマネージャーだけを開いた状態での消費メモリは、LxPupの68MBに対し、LxQtPupは135MBと倍の差。  </p>
+<p>だが、LxQtPupの外観はとても丁寧に作りこまれていて、「本当にこれがパピーか？」と驚愕を覚える。<br>特にメニュー周りなど、LxPupがPuppy Linuxの素朴さ（ごちゃごちゃ感）を残しているのに対し、LxQtPupには精錬された美しさがある。<br>もはやPuppyの域を超えていて、外観だけを見れば全く別のディストリビューションと思えるほど。  </p>
+<p>凄いです。    </p>
+<p>###LxPupをFrugalインストール  </p>
+<p>LxPupをHDDにインストールしようと思ったら、ユニバーサルインストーラーはあるが、どこを探してもFrugalインストーラーが見当たらない。<br>参照させて頂いた下記サイトでも、ユニバーサルインストーラーを使ってのFullインストールが紹介されていた。<br><a href="http://no-windows.blog.jp/archives/8229193.html" target="_blank" rel="external">LxPupのインストールからインターネット接続のまとめ : Windowsはもういらない</a>  </p>
+<p>既にPuppy Linux5.7.1をFrugalインストールしているし、出来れば同じパーティション内にFrugalインストールしたいところ。<br>FrugalインストールしてこそのPuppy Linuxとも思える。  </p>
+<p>Frugalインストールは必要なファイルをコピーして、その後Grub４Dosブートローダーをインストールしているだけのようだし、最後のGrub４Dosブートローダーの設定さえちゃんとやれば、ファイルのコピーは手動でも良さそう。<br>やってみた結果、ちゃんとFrugalインストール出来た。  </p>
+<p>まず、インストールするパーティション内に「lxpup1502」等、適当な名前でフォルダを作成。<br>（名前はなるべく入力しやすいものが良い。後に個人保存ファイルを複数作成した場合、個人保存ファイルへのフルパス入力を求められる。）  </p>
+<p>LxPup-15.02.2を例にとると、ブートCD内には12個のファイルがあるが、そのうち必要なのは下記の４つ。  </p>
+<p>initrd.gz<br>vmlinuz<br>puppy_lxpup_15.02.sfs<br>zdrv_lxpup_15.02.sfs</p>
+<p>これら４つのファイルをあらかじめ作っておいたlxpup1502フォルダにコピー。<br>後は「メインメニュー」→「Setup」→「Grub4Dos bootloader config」からGrub４Dosブートローダーをインストールすれば良い。  </p>
+<p>シャットダウンの際、個人保存ファイルの作成を促されるから、好みの形で作成。<br>ブートCDを取り出して再起動すればLxPupの画面が現れる。  </p>
+<p>日本語化は上記参照サイトの方法で簡単に出来た。  </p>
+<p>LxPup、LxQtPup、いずれもノーマルのPuppy Linuxより親しみやすいアレンジになっているので、初心者からベテランまで、ぜひ一度触れてみてもらいたい優れたディストリビューションだ。</p>
 
 	
 	</div>
@@ -147,14 +164,14 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/16/nemo-action-shred/" data-text="nemoの右クリックメニューに「完全消去」を追加 | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/06/lxpup-lxqtpup/" data-text="Puppy Linux派生。本家より扱いやすい「LxPup」と「LxQtPup」 | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/16/nemo-action-shred/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/02/06/lxpup-lxqtpup/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/16/nemo-action-shred/" class="hatena-bookmark-button" data-hatena-bookmark-title="nemoの右クリックメニューに「完全消去」を追加" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/06/lxpup-lxqtpup/" class="hatena-bookmark-button" data-hatena-bookmark-title="Puppy Linux派生。本家より扱いやすい「LxPup」と「LxQtPup」" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
@@ -173,14 +190,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/04/05/puppy-automount-fstab/" >Puppy Linux起動時にfstabで自動マウント</a>
+			<a href="/2015/02/06/puppy-dropbox/" >Puppy LinuxにDropboxクライアントをインストール</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年4月5日
+	2015年2月6日
 </div>
 
 <div class="panel-body">
@@ -190,28 +207,23 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>Puppy Linux起動時にパーティションを自動マウントしたかったのだが、少々苦戦した。</p>
-<p>###LxPup 15.02</p>
-<p>LxPupでは、あらかじめマウントポイントとなるデレクトリを作成さえしておけば、fstabでの指定通りに自動マウント可能だった。<br>Xubuntu等では確か、デレクトリが無ければ自動生成してくれていたと思うので、うっかりしていた。</p>
-<figure class="highlight plain"><figcaption><span>fstab</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/dev/sda1 /mnt/win  ntfs  defaults 0 0</div><div class="line">/dev/sda5 /mnt/sda5  ext4  defaults 0 0</div></pre></td></tr></table></figure>
+	  <p>Puppy Linux5.7.1のパッケージマネージャにDropboxクライアントが見当たらないので、コマンドラインでインストールした。<br><a href="https://www.dropbox.com/install?os=lnx" target="_blank" rel="external">Linux マシンに Dropbox をインストール</a>  </p>
+<p>コマンドを入力すると、サーバー証明書エラーになった。  </p>
+<pre><code>cd ~ &amp;&amp; wget -O - "https://www.dropbox.com/download?plat=lnx.x86" | tar xzf -
 
-<p>ntfsに−3gをつけなくても大丈夫だった。</p>
-<p>###Puppy Linux Precise 571 JP</p>
-<p>Precise571JPは、デフォルト状態ではfstabが機能していなかった。<br>/etc/rc.d/rc.localファイルで<code>mount -a</code>コマンドを実行することで、fstabをロードしてくれた。<br><a href="http://blog.livedoor.jp/yagiyagi_shun/archives/51926344.html" target="_blank" rel="external">やぎやぎブログ:[Fedora 16]rc.localの罠 - livedoor Blog（ブログ）</a>  </p>
-<figure class="highlight shellscript"><figcaption><span>rc.local</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="shebang">#!/bin/sh</span></div><div class="line">    </div><div class="line">mount <span class="operator">-a</span></div></pre></td></tr></table></figure>
+<span class="bullet">...
+</span>エラー: cannot verify www.dropbox.com's certificate, issued by <span class="smartquote">`/C=US/O=DigiCert Inc/OU=www.digicert.com/CN=DigiCert SHA2 Extended Validation Server CA'</span>:
+<span class="code">  発行者の権限を検証できませんでした。</span>
+www.dropbox.com に安全の確認をしないで接続するには、<span class="smartquote">`--no-check-certificate'</span> を使ってください。
 
-<p>rc.localは実行可能にしておく必要がある。  </p>
-<pre><code><span class="comment"># chmod a+x /etc/rc.d/rc.local</span>
-</code></pre><p>/etc内にリンクを作成する必要は無かった。</p>
-<p>LxPupでは<code>mount -a</code>は/etc/rc.d/rc.sysinitに記載されているようで、こちらに記載しても自動マウント可能。</p>
-<p>rc.sysinitの316行目「VERSION UPDATE」のすぐ上に記載。</p>
-<figure class="highlight plain"><figcaption><span>rc.sysinit</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">status_func $STATUS</div><div class="line">    </div><div class="line">#Load fstab entries</div><div class="line">mount -a</div><div class="line">    </div><div class="line">#######################VERSION UPDATE##########################</div><div class="line">...</div></pre></td></tr></table></figure>
-
-<p>マウントポイントとなるデレクトリをあらかじめ作成しておかないといけないのは同様。  </p>
-<p>###fstabを用いずに自動マウント</p>
-<p>なお、fstabを用いず、/etc/rc.d/rc.localで個別にマウント指定しても自動マウント可能だった。<br><a href="http://www.murga-linux.com/puppy/viewtopic.php?p=822315&amp;sid=0256b63fbae1b190f96d18652edba1b1" target="_blank" rel="external">Puppy Linux Discussion Forum :: View topic - How to auto-mount drives at startup?</a>  </p>
-<figure class="highlight plain"><figcaption><span>rc.local</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#!/bin/sh</div><div class="line">    </div><div class="line">mount -t ntfs -o defaults /dev/sda2 /mnt/vol</div><div class="line">mount -o defaults /dev/sda5 /mnt/sda5</div></pre></td></tr></table></figure>
-
+gzip: stdin: unexpected end of file
+tar: Child returned status 1
+tar: エラーを回復できません: 直ちに終了します
+</code></pre><p>原因がよく分からないがdropbox.comは安全だろうと、`–no-check-certificate’のオプションを付けてインストールした。  </p>
+<pre><code><span class="title">cd</span> <span class="regexp">~ &amp;&amp;</span> wget --<span class="built_in">no</span>-check-certificate -O - <span class="string">"https://www.dropbox.com/download?plat=lnx.x86"</span> | tar xzf -
+</code></pre><p>インストールは無事完了し、<code>~/.dropbox-dist/dropboxd</code>で起動出来た。  </p>
+<p>後になって気がついたが、Puppy Linuxのタスクトレイの時刻がおかしい。<br>約9時間遅れている。  </p>
+<p>そういえば、Puppy Linuxを起動してすぐに表示される国とタイムゾーンの設定を、面倒臭くて飛ばしていたんだった。<br>このせいでエラーが出ていたんだろうか。</p>
 
 	
 	</div>
@@ -221,14 +233,14 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/05/puppy-automount-fstab/" data-text="Puppy Linux起動時にfstabで自動マウント | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/06/puppy-dropbox/" data-text="Puppy LinuxにDropboxクライアントをインストール | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/05/puppy-automount-fstab/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/02/06/puppy-dropbox/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/05/puppy-automount-fstab/" class="hatena-bookmark-button" data-hatena-bookmark-title="Puppy Linux起動時にfstabで自動マウント" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/06/puppy-dropbox/" class="hatena-bookmark-button" data-hatena-bookmark-title="Puppy LinuxにDropboxクライアントをインストール" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
@@ -247,14 +259,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/04/03/nemo-compare-action/" >nemoの右クリックメニューに「比較」を追加</a>
+			<a href="/2015/02/05/roxterm-segmentation-fault/" >Roxtermにプロファイルを追加したら、&quot;Segmentation fault&quot;で起動出来なくなった</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年4月3日
+	2015年2月5日
 </div>
 
 <div class="panel-body">
@@ -264,25 +276,16 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>nemoの拡張機能nemo-compareのインストールが上手く行かなかったので、手動で導入した。  </p>
-<p>（参照記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>  </p>
-<p>まず、meld、python2-dbus、dbus-glib（これは導入済みだった）をインストール。  </p>
-<pre><code>$ <span class="built_in">sudo</span> pacman -S meld python2-dbus
-</code></pre><p>~/.local/share/nemo/actions下にcompare-save-for-later.nemo_action、compare-with-saved.nemo_action、compare.shの３つのファイルを作成。  </p>
-<figure class="highlight plain"><figcaption><span>compare-save-for-later.nemo_action</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[Nemo Action]</div><div class="line">Active=true</div><div class="line">Name=Compare later</div><div class="line">Name[ja]=あとで比較する</div><div class="line">Comment=Save file for comparison later.</div><div class="line">Exec=<compare.sh save="" %f=""></compare.sh></div><div class="line">Icon-Name=meld</div><div class="line">Selection=S</div><div class="line">Extensions=any</div></pre></td></tr></table></figure>
+	  <p>Puppy Linux5.7.1には、デフォルトのターミナルミュレーターとしてurxvtというのが入っていたが、右クリックでのコピーペーストが出来ず不便。<br>Puppyパッケージマネージャで他のを探すと、Roxtermというのが見つかった。  </p>
+<p>右クリックでのコピーペーストが可能でかなり軽量。<br>Ubuntuソフトウェアセンターにもあったので、Xubuntuにもインストールしてみた。  </p>
+<p>カスタマイズのためDefaultのプロフィールをコピーし、Default01を作成した。<br>プロフィールをDefault01に切り替えたところ、突然終了。<br>その後、Roxtermを起動出来なくなってしまった。  </p>
+<p>メニューからアイコンをクリックしても反応は無いし、xfce4-terminalで<code>roxterm</code>とコマンドを打つと、”Segmentation fault”と返ってくる。  </p>
+<p>検索したところ、同様のケースが見つかった。<br><a href="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=752253" target="_blank" rel="external">#752253 - roxterm: Segmentation Fault with the copy of default profile - Debian Bug report logs</a>  </p>
+<p>“empty profile file”が原因とのことだが、~/.config/roxterm.sourceforge.net/Profiles内のDefault01を開くと、確かに何も書かれておらず真っ白だった。  </p>
+<p>Default01に一行 </p>
+<figure class="highlight plain"><figcaption><span>Default01</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[roxterm profile]</div></pre></td></tr></table></figure>
 
-
-
-<figure class="highlight plain"><figcaption><span>compare-with-saved.nemo_action</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[Nemo Action]</div><div class="line">Active=true</div><div class="line">Name=Compare with saved element</div><div class="line">Name[ja]=比較する</div><div class="line">Comment=Compare %F saved file or directory.</div><div class="line">Exec=<compare.sh compare="" %f=""></compare.sh></div><div class="line">Icon-Name=meld</div><div class="line">Selection=S</div><div class="line">Extensions=any</div></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight shellscript"><figcaption><span>compare.sh</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="shebang">#!/bin/bash</span></div><div class="line">savedfile=/var/tmp/compare-save-for-later.<span class="variable">$USER</span></div><div class="line">comparator=meld</div><div class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$1</span>"</span> == <span class="string">"save"</span> ]; <span class="keyword">then</span></div><div class="line">    <span class="built_in">echo</span> <span class="string">"<span class="variable">$2</span>"</span> &gt; <span class="string">"<span class="variable">$savedfile</span>"</span></div><div class="line"><span class="keyword">else</span></div><div class="line">    <span class="string">"<span class="variable">$comparator</span>"</span> $(cat <span class="string">"<span class="variable">$savedfile</span>"</span>) <span class="string">"<span class="variable">$2</span>"</span></div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure>
-
-<p>compare.shはファイルマネージャーもしくはコマンドで実行可能にしておく。  </p>
-<pre><code>$ chmod +<span class="keyword">x</span> compare.<span class="keyword">sh</span>
-</code></pre><p>nemoの右クリックメニューに「比較する」「あとで比較する」が追加された。  </p>
-<p>ファイル内容だけではなくフォルダの内容も比較出来る。<br>なにかと重宝しそうだ。</p>
+<p>と書くと、無事起動出来た。</p>
 
 	
 	</div>
@@ -292,14 +295,14 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/03/nemo-compare-action/" data-text="nemoの右クリックメニューに「比較」を追加 | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/05/roxterm-segmentation-fault/" data-text="Roxtermにプロファイルを追加したら、&quot;Segmentation fault&quot;で起動出来なくなった | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/03/nemo-compare-action/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/02/05/roxterm-segmentation-fault/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/03/nemo-compare-action/" class="hatena-bookmark-button" data-hatena-bookmark-title="nemoの右クリックメニューに「比較」を追加" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/05/roxterm-segmentation-fault/" class="hatena-bookmark-button" data-hatena-bookmark-title="Roxtermにプロファイルを追加したら、&quot;Segmentation fault&quot;で起動出来なくなった" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
@@ -318,14 +321,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/04/03/nemo-compare-failed/" >nemo-compareが動かない</a>
+			<a href="/2015/02/04/puppy-grub4dos-error/" >Puppy LinuxのGrub４Dosインストール時に「要素が欠けています。」のエラー</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年4月3日
+	2015年2月4日
 </div>
 
 <div class="panel-body">
@@ -335,19 +338,44 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>nemoの右クリックで２つのファイル（フォルダ）の内容を比較出来るnemo-compareをインストールした。<br>yaourtでインストール出来たが、右クリックのメニューに「compare」が出てこない。<br>検索すると同様の事例が見つかった。  </p>
-<p><a href="https://github.com/linuxmint/nemo-extensions/issues/24" target="_blank" rel="external">nemo-compare not in the right-click context menu · Issue #24 · linuxmint/nemo-extensions · GitHub</a>  </p>
-<p><a href="https://github.com/linuxmint/nemo-extensions/issues/18#issuecomment-21617918" target="_blank" rel="external">Symbolic link needed in LMDE 64-bit · Issue #18 · linuxmint/nemo-extensions · GitHub</a>  </p>
-<p>上記トピックを参考にnemoを再起動してみると、確かにシンボリックリンクが存在しないのが原因のようだった。</p>
-<pre><code>$ nemo -q &amp;&amp; nemo
-
-(nemo:<span class="number">6939</span>): Nemo-Python-WARNING **: g_module_open libpython failed: /usr/lib/i386-linux-gnu<span class="comment">//libpython2.7.so.1.0: 共有オブジェクトファイルを開けません: そのようなファイルやディレクトリはありません</span>
-ImportError: could not <span class="keyword">import</span> g<span class="class"><span class="keyword">object</span> <span class="params">(error was: '/usr/lib/python2.7/site-packages/gi/_gi.so: undefined symbol: _Py_ZeroStruct')</span></span>
-
-(nemo:<span class="number">6939</span>): Nemo-Python-WARNING **: pyg<span class="class"><span class="keyword">object</span> <span class="title">initialization</span> <span class="title">failed</span></span>
-</code></pre><p>だが、これを修正するリンクの作成が上手く行かない。<br>共有オブジェクトファイルのパスでスラッシュが２つ重なり<code>//</code>となっている箇所があるのも奇妙。<br>yaourtでのビルド中、”/usr/lib/yaourt/util.sh: 行 197: PKGBUILD: コマンドが見つかりません”と表示されていたのが関係しているのだろうか。  </p>
-<p>ArchWikiによると、右クリックメニューに「比較する」を追加するのは手動でも可能のようだったので、nemo-compareは断念し、手動で導入することにした。 </p>
-<p><a href="http://pagent.github.io/2015/04/03/nemo-compare-action/" target="_blank" rel="external">nemoの右クリックメニューに「比較」を追加</a></p>
+	  <p>ネットブックLaVie Light BL300/TにPrecise Puppy 5.7.1日本語版をFrugalインストールした。  </p>
+<p>既存のOS領域にもインストール出来るらしいが、Gpartedで新たにパーティションを用意。<br>ファイルのコピーは順調に進んだが、Grub４Dosのインストールでつまづいてしまった。  </p>
+<p>「Grub４Dosブートローダーの設定」で「PBSも表示」をクリックし、Grub４Dosをインストールする場所をPuppy用のパーティションに指定。  </p>
+<p>追加オプションの「ブートレコードを書き換えない」をマウスオーバーすると、  </p>
+<blockquote>
+<p>すでにあるMBRを変更したくないときにのみチェックしてください。<br>現在grldrが起動できるようになっていることが前提です。　フロッピーでは無効</p>
+</blockquote>
+<p>というツールチップが表示された。  </p>
+<p>MBRにはすでにMBM（Multiple Boot Manager）が入っているので、「ブートレコードを書き換えない」にチェック。<br>個人保存ファイルの設定を終え再起動したが、”Invalid boot record”とエラーになり、起動出来ない。  </p>
+<p>怪訝に思いながらも「ブートレコードを書き換えない」をチェックせずに、再度Grub４Dosをインストールし直した。  </p>
+<p>すると今度は</p>
+<blockquote>
+<p>この機能を実行するにはいくつかの要素が欠けています。　:/usr/lib/grub4dos/chain.c32, extlinux/syslinux(version &gt; =  4.0)</p>
+</blockquote>
+<p>と警告。  </p>
+<p>構わずOKをクリックして進めると、</p>
+<blockquote>
+<p>不明のエラーが生じました。<br>See /tmp/grub4dosconfig/grub4dosconfig.log</p>
+</blockquote>
+<p>とエラー。  </p>
+<p>grub4dosconfig.logは下記だった。 </p>
+<blockquote>
+<p>/usr/sbin/grub4dosconfig PBS<br>version 1.9.1<br>2015年  2月  4日 水曜日 04:09:01 JST<br>Writing… /initrd/mnt/dev_save/menu.lst<br>Installing grldr …<br><code>/usr/lib/grub4dos/grldr&#39; -&gt;</code>/initrd/mnt/dev_save/grldr’</p>
+</blockquote>
+<p>“Error”とは特に書いていないので再起動してみたが、やはり起動出来ない。  </p>
+<p>Grub４Dosのエラーについて検索すると、下記のディスカッションが見つかった。<br><a href="http://www.murga-linux.com/puppy/viewtopic.php?t=91838" target="_blank" rel="external">Puppy Linux Discussion Forum :: View topic - slacko 5.6, Grub4Dos doesn’t install</a>  </p>
+<p>どうやらext4でフォーマットされたパーティションにGrub４Dosをインストールするには、chain.c32およびバージョン4.0以上のextlinuxが必要らしい。<br>Puppy Linux用のパーティションをext4でフォーマットしていたのが原因だったようだ。  </p>
+<p>パーティションをext3でフォーマットし直し、再度Puppyをインストール。  </p>
+<p>Grub４Dosの設定では「ブートレコードを書き換えない」のチェックを入れて試みたが駄目で、チェックを外してGrub４Dosを入れ直して、ようやくハードディスクからPuppy Linuxを起動出来た。   </p>
+<p>MBM→各PBSのブートレコード→各OSの起動、という形でマルチブートしているので、「ブートレコードを書き換えない」のツールチップの説明が少し分かりにくかった。  </p>
+<p>インストールに成功した際のgrub4dosconfig.logは下記。  </p>
+<blockquote>
+<p>/usr/sbin/grub4dosconfig PBS<br>version 1.8.9<br>2015年  2月  4日 水曜日 05:03:13 JST<br>Writing… /mnt/sda9/menu.lst<br>Installing grldr …<br><code>/usr/lib/grub4dos/grldr&#39; -&gt;</code>/mnt/sda9/grldr’<br>Installing bootloader on /dev/sda9(PBS)…</p>
+<p>Filesystem type is EXT2.</p>
+<p>Success.</p>
+</blockquote>
+<p>（Grub4DosをPuppy Linux 5.5のUSBメモリーからインストールし直したので、versionは1.8.9。）</p>
+<p>“Filesystem type is EXT2.”となっているが、MBMでもext3やext4をext2と認識しているようだし、問題無いのだろう。</p>
 
 	
 	</div>
@@ -357,14 +385,14 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/03/nemo-compare-failed/" data-text="nemo-compareが動かない | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/04/puppy-grub4dos-error/" data-text="Puppy LinuxのGrub４Dosインストール時に「要素が欠けています。」のエラー | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/03/nemo-compare-failed/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/02/04/puppy-grub4dos-error/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/03/nemo-compare-failed/" class="hatena-bookmark-button" data-hatena-bookmark-title="nemo-compareが動かない" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/04/puppy-grub4dos-error/" class="hatena-bookmark-button" data-hatena-bookmark-title="Puppy LinuxのGrub４Dosインストール時に「要素が欠けています。」のエラー" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
@@ -383,14 +411,14 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/04/03/nemo-open-in-terminal/" >nemoの「端末で開く」が機能しない</a>
+			<a href="/2015/02/04/elementary-os/" >elementary OS（Luna）をインストールしてみた</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年4月3日
+	2015年2月4日
 </div>
 
 <div class="panel-body">
@@ -400,11 +428,18 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
 	<div class="col-md-12">
 	  
 	
-	  <p>Arch Linuxにインストールしたnemoで右クリックメニューの「端末で開く」が機能しなかった。  </p>
-<p><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>を参考に、  </p>
-<pre><code>$ gsettings <span class="operator"><span class="keyword">set</span> org.cinnamon.desktop.<span class="keyword">default</span>-applications.terminal <span class="keyword">exec</span> xfce4-terminal</span>
-</code></pre><p>を実行したら機能するようになった。  </p>
-<p>「端末で開く」で起動するターミナルエミュレーターを変更したい時も同様に端末名を指定すれば良いようだ。</p>
+	  <p>軽量Linuxにelementary OSというのがあるらしいので、Windows Xp時代のネットブックにインストールしてみた。<br><a href="http://mogi2fruits.net/blog/os-software/linux/elementary-os/2772/" target="_blank" rel="external">elementary OS – 軽い！キレイ！日本語OK！ な Ubuntu ベースの軽量Linux | mogi2fruitsどっとねっと</a>  </p>
+<p>ダウンロードリンクに”$10.00”と書いてあり、「有料か？」と躊躇したが、参照サイトにある通り強制的なものではない。  </p>
+<p>Ubuntu12.04ベースらしく、インストールは戸惑うこと無く終了。  </p>
+<p>XubuntuやLubuntuとは違って随分おしゃれな外観。<br>視覚効果もなかなか凝っている。  </p>
+<p>デフォルトではScrachという聞いたこともないテキストエディターと、名前も分からないファイルマネージャーが入っていたが、それぞれGeditとnemoに変更。  </p>
+<p>Dropboxクライアントも入れようと、Ubuntuソフトウェアセンターから試みたが途中でフリーズ。<br>中途半端にインストールされたせいか、その後Synapticやsudo apt-get updateが使えなくなってしまった。  </p>
+<p>少々焦ったが、２ちゃんねるの書き込みを参考に、nautilus-dropboxを削除したら復旧した。<br><a href="http://hayabusa6.2ch.net/test/read.cgi/linux/1412604392/301" target="_blank" rel="external">【人気一位】Linux Mint 15</a>  </p>
+<p>nautilus-dropboxのインストールでの不具合はUbuntu12.04特有のバグらしい。<br>Dropbox公式サイトの記載通り、コマンドラインでインストールしたら無事にインストール出来た。<br><a href="https://www.dropbox.com/install?os=lnx" target="_blank" rel="external">Linux マシンに Dropbox をインストール</a>  </p>
+<p>elementary OSのメインメニューはクラシックなドロップダウンタイプではなく最近流行りの板状のもの。<br>デフォルトではメニュー編集のツールも無く、カスタマイズ性は高くはないようだ。<br>AlacarteとMenuLibleを入れてみたが、Alacarteは起動はするがメニューを編集しても反映されず、MenuLibleは起動も出来なかった。</p>
+<p>下部にあるDock内のアイコンは、クリックするとぴょーんと跳ねるので、クリックし損なったかと何度もクリックしてしまう恐れは少ない。<br>また既に立ち上げているアプリケーションは基本、新規ウィンドウで開かず既存のウィンドウにフォーカスしてくれる。Dock内のアイコンも跳ねない。<br>Dockを下部ではなく横配置に出来たらもっと有難いんだが。  </p>
+<p>システムモニターのみ開き、他のアプリケーションを起動していない状態でリソースを見ると、消費メモリは240MiB程度。<br>システムフォントのサイズも小さ目で、モニター画面の小さなネットブックには調度良い。  </p>
+<p>好みに合わせてカスタマイズするにはあまり向いていないようだが、優雅さが印象的なOSだ。</p>
 
 	
 	</div>
@@ -414,14 +449,329 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/03/nemo-open-in-terminal/" data-text="nemoの「端末で開く」が機能しない | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/04/elementary-os/" data-text="elementary OS（Luna）をインストールしてみた | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/03/nemo-open-in-terminal/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/02/04/elementary-os/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/03/nemo-open-in-terminal/" class="hatena-bookmark-button" data-hatena-bookmark-title="nemoの「端末で開く」が機能しない" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/04/elementary-os/" class="hatena-bookmark-button" data-hatena-bookmark-title="elementary OS（Luna）をインストールしてみた" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/02/03/lubuntu-look-and-feel/" >Lubuntuで解像度が低いと思ったら、ルックアンドフィールのフォントサイズだった</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月3日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>ネットブックにインストールしたLubuntu14.04.1で、ブラウザーでもファイルマネージャーでもデカデカと大きく表示される。<br>モニターの解像度は確かに低いが、マルチブートで入れているXubuntuの方はそうでもない。<br>解像度の設定のせいかとも思ったが、ディスプレイの設定ではちゃんと解像度1024×600、リフレッシュシート60.0になっている。<br>xrandrコマンドで見ても正常のよう。<br>あちこち設定を見てようやくルックアンドフィールの設定だと分かった。  </p>
+<p>メニュー→設定→ルックアンドフィールを設定します<br>ウィジェットでデフォルトのフォントが11になっていたのを10に変更。<br>ウィンドウ境界→タイトルバーの「アクティブウィンドウのタイトルのフォント」、「非アクティブウィンドウのタイトルのフォント」も10に。<br>標準的な表示になった。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/03/lubuntu-look-and-feel/" data-text="Lubuntuで解像度が低いと思ったら、ルックアンドフィールのフォントサイズだった | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/02/03/lubuntu-look-and-feel/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/03/lubuntu-look-and-feel/" class="hatena-bookmark-button" data-hatena-bookmark-title="Lubuntuで解像度が低いと思ったら、ルックアンドフィールのフォントサイズだった" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/02/03/find-hidden-files/" >隠しファイルの検索など（findコマンド）</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月3日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Dolphinが自動生成した.directoryファイルを削除しようと、ファイルマネージャーで”.directory”を検索したが、ファイルが見つからない。<br>“directory”でも該当無し。<br>確かにあるのだが、ファイルマネージャーの機能では隠しファイルを検索出来ないらしい。</p>
+<p>端末でfindコマンドを使ったらヒットした。  </p>
+<pre><code><span class="keyword">find</span> ~/ -name .directory
+// ~/ディレクトリ以下で名前に<span class="string">".directory"</span>を含むファイル・ディレクトリを再帰的に検索
+</code></pre><p>ーー<br>以下、findコマンドについて  </p>
+<p><strong>Linuxではディレクトリを省略すると、カレントディレクトリ以下で検索</strong><br>（他のUNIXでは<code>.</code>が必要。）</p>
+<pre><code><span class="keyword">find</span> -name .directory
+（<span class="keyword">find</span> . -name .directory）
+</code></pre><p><strong>-typeオプションで検索対象の種類を指定（ファイル、ディレクトリ、リンク）</strong>  </p>
+<pre><code><span class="keyword">find</span> -<span class="built_in">type</span> <span class="keyword">f</span>
+<span class="keyword">find</span> -<span class="built_in">type</span> <span class="keyword">d</span>
+<span class="keyword">find</span> -<span class="built_in">type</span> <span class="keyword">l</span>
+</code></pre><p><strong>名前の前後にワイルドカード<code>*</code>を付けての検索が可能</strong>  </p>
+<pre><code><span class="keyword">find</span> -<span class="built_in">type</span> <span class="keyword">f</span> -name <span class="string">"*.pdf"</span>
+</code></pre><p>（名前にワイルドカードを付ける場合は、半角ダブルクォーテーション<code>&quot;</code>で囲った方が良いらしい。 付けないと「find: パス名は評価式の前に置かなければいけません」とエラーになることがある。） </p>
+<p><strong>-sizeオプションでサイズを指定</strong>  </p>
+<pre><code><span class="keyword">find</span> -<span class="built_in">type</span> <span class="keyword">f</span> -name <span class="string">"*.JPG"</span> -size +<span class="number">1000</span><span class="keyword">k</span>
+</code></pre><p>（1000KB以上の.JPGファイルを検索。JPGとjpgは区別される。）</p>
+<p><strong>-deleteオプションで該当ファイルを削除</strong>  </p>
+<pre><code><span class="keyword">find</span> -<span class="built_in">type</span> <span class="keyword">f</span> -name <span class="string">"*.hogehoge"</span> -<span class="built_in">delete</span>
+</code></pre><p>など。  </p>
+<p>（参照）<br><a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20060227/230777/" target="_blank" rel="external">Linuxコマンド集 - 【 find 】 ファイルやディレクトリを検索する：ITpro</a><br><a href="http://x68000.q-e-d.net/~68user/unix/pickup?find" target="_blank" rel="external">UNIXの部屋 コマンド検索:find (*BSD/Linux)</a>  </p>
+<p>ーー<br>（補記）<br>検索対象のディレクトリにワイルドカード<code>*</code>を付けると、結果が異なる様子。  </p>
+<pre><code><span class="keyword">find</span> ~/* -name .directory
+</code></pre><p>~/.kde/share/apps/dolphin/view_properties/global/.directory<br>~/.kde/share/apps/dolphin/view_properties/local/usr/.directory<br>などがリストアップされなかった。  </p>
+<p>隠しフォルダ内が検索対象から外れるのかとも思ったが、自作した隠しフォルダ内は検索された。<br>よく分からない。<br>（デスクトップ下のみが検索対象？）</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/03/find-hidden-files/" data-text="隠しファイルの検索など（findコマンド） | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/02/03/find-hidden-files/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/03/find-hidden-files/" class="hatena-bookmark-button" data-hatena-bookmark-title="隠しファイルの検索など（findコマンド）" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/コマンド/">コマンド</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/02/03/dolphin-directory-files/" >Dolphinが.directoryファイルを生成するのを止める</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月3日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>ファイルマネージャーDolphinを使っていて、あちこちのディレクトリに.directoryというファイルがあることに気付いた。  </p>
+<p>内容は以下のようなもの。  </p>
+<blockquote>
+<p>[Dolphin]<br>Timestamp=2015,2,2,22,45,9<br>Version=3<br>ViewMode=2</p>
+<p>[Settings]<br>HiddenFilesShown=true</p>
+</blockquote>
+<p>Dolphinでアイコン表示、詳細表示などの表示モードやソート基準を変更をしたり、隠しファイルを表示したりすると、この.directoryファイルが自動生成されるようだ。<br>（/etc等、所有者がrootのディレクトリには作成されない。）  </p>
+<p>多くのファイルマネージャーでは隠しファイルの表示・非表示をディレクトリ毎に設定出来ないが、Dolphinでは.directoryファイルのおかげでディレクトリ毎に設定可能になっている。  </p>
+<p>便利と言えば便利なのだが、静的サイトジェネレーターHexoの作業フォルダ内にこの.directoryファイルを作られるのはまずい気がする。<br>deployやgitコマンドの際に不具合が出るかもしれない。  </p>
+<p>Dolphinの設定→全般→動作タブで、「フォルダごとにビューのプロパティを保存する」から「すべてのフォルダに共通のプロバティを使う」に変更したら、.directoryファイルは生成されなくなった。<br><a href="https://forum.kde.org/viewtopic.php?f=223&amp;t=119876" target="_blank" rel="external">.directory files • KDE Community Forums</a>  </p>
+<p>だが、表示モードやソート基準も全フォルダで共通になってしまった。<br>使い勝手が悪く、これならnemoの方が便利だ。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/03/dolphin-directory-files/" data-text="Dolphinが.directoryファイルを生成するのを止める | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/02/03/dolphin-directory-files/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/03/dolphin-directory-files/" class="hatena-bookmark-button" data-hatena-bookmark-title="Dolphinが.directoryファイルを生成するのを止める" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/02/03/xubuntu-dolphin-root-actions/" >XubuntuにインストールしたDolphinでRootで開く</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月3日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Xubuntu14.04にKDEのファイルマネージャーDolphinをインストールしたが、Rootで開くためのRoot Actionsで手こずった。  </p>
+<ul>
+<li>Dolphinの設定の「新しいサービスをダウンロード」からインストールする方法  </li>
+<li>rootactions_servicemenuのtar.gzファイルをダウンロードし、メニューファイルとスクリプトを手動で配置する方法  </li>
+</ul>
+<p>2通り試したが、どちらも上手くいかない。<br>パズワード入力画面までは行くが、パスワードを入れても何も起こらない。  </p>
+<p>最終的にはLinux Mint用のdebパッケージをインストールして解決した。  </p>
+<p>下記サイトの「All arch deb package」というリンクからrootactions-servicemenu_2.7.3-0mint1_all.debをダウンロード。<br><a href="http://www.ubuntuupdates.org/package/mint_main/olivia/main/base/rootactions-servicemenu" target="_blank" rel="external">UbuntuUpdates - Package “rootactions-servicemenu” (olivia )</a>  </p>
+<p>クリックするとUbuntuソフトウェアセンターが立ち上がるので、いつも通りにインストール。<br>“Open as Text”は既定のテキストエディターがKateでないと機能しないが、フォルダはちゃんとRootで開くことが出来た。  </p>
+<p>（参照サイト）<br><a href="http://ubuntuforums.org/showthread.php?t=2157705&amp;p=12707272#post12707272" target="_blank" rel="external">[gnome] “Root Actions” in dolphin not available</a>  </p>
+<p>ーー<br>（追記）<br>Ubuntuソフトウェアセンターの履歴を見ると、rootactions-servicemenu以外にkdesudoもインストールされていた。<br>手動でのインストールでもkdesudoがあれば機能していたのかもしれない。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/03/xubuntu-dolphin-root-actions/" data-text="XubuntuにインストールしたDolphinでRootで開く | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/02/03/xubuntu-dolphin-root-actions/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/03/xubuntu-dolphin-root-actions/" class="hatena-bookmark-button" data-hatena-bookmark-title="XubuntuにインストールしたDolphinでRootで開く" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/02/02/xubuntu-kate/" >XubuntuでKDEのテキストエディターKate</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月2日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Xubuntu14.04でテキストエディターとしてMousepadやLeafpadを使っているが、先に開いて編集作業をしていたファイルを再度開くと、新たなウィンドウで開いてしまう。<br>その後、別の作業をしてまたファイルの編集作業に戻ったりすると、どちらのウィンドウが新しい編集だったか分かりづらい。<br>ウィンドウを閉じる時、「この文書は外部から変更されています。このまま保存しますか?」と警告は出るが、両方のウィンドウで編集作業をしてしまっていることもしばしば。  </p>
+<p>KDEのテキストエディター「Kate」をインストールしてみた。  </p>
+<p>複数のファイルを開いてもウィンドウが１つ。<br>だがデフォルト状態ではタブも無く、サイドバーの「文書」で開いているファイルをツリー表示してくれるのみ。<br>これでは使いづらいので使用を諦めようかと思ったが、設定→Kateを設定→プラグイン→タブバー、でタブ表示出来た。<br><a href="http://news.mynavi.jp/articles/2012/05/15/kate/003.html" target="_blank" rel="external">【レビュー】世界のテキストエディターから - KDEの優秀なテキストエディター「Kate」 (4) 「Kate」を使いこなすTips | マイナビニュース</a>  </p>
+<p>既に開いているファイルを開くとそのウィンドウ（タブ）にフォーカスが移る。<br>これでいくつもウィンドウを開かずに済みそうだ。<br>「Projects」や「セッション」はよく分からないが、デザインも精錬されている。  </p>
+<p>ーー<br>（追記）<br>Ubuntu標準のテキストエディターGeditもタブ表示可能で、同一ファイルを複数のウィンドウで開かずに済むようだ。<br>だが変更のあるタブを含むウィンドウを閉じようとした際、Geditは「ドキュメント“…”で変更した内容を閉じる前に保存しますか?」という文章のみの警告なのに対し、Kateはチェックボックス付きのリスト表示をしてくれて分かりやすい。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/02/xubuntu-kate/" data-text="XubuntuでKDEのテキストエディターKate | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/02/02/xubuntu-kate/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/02/xubuntu-kate/" class="hatena-bookmark-button" data-hatena-bookmark-title="XubuntuでKDEのテキストエディターKate" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
@@ -474,43 +824,43 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
-		
-			<li><a href="/tags/サーバー/">サーバー<span>9</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
-		
-			<li><a href="/tags/SEO/">SEO<span>4</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>14</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+			<li><a href="/tags/blog/">blog<span>37</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>13</span></a></li>
 		
+			<li><a href="/tags/SEO/">SEO<span>4</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>14</span></a></li>
+		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>37</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
+		
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+		
+			<li><a href="/tags/サーバー/">サーバー<span>9</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
+		
+			<li><a href="/tags/食/">食<span>4</span></a></li>
 		
 		
 		</ul>

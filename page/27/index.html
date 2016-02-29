@@ -110,14 +110,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/11/30/sidebar-git/" >Gitリポジトリを利用したブログとサイドバー</a>
+			<a href="/2014/04/04/octopress-sidebar/" >Octopressサイドバーのカスタマイズ</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年11月30日
+	2014年4月4日
 </div>
 
 <div class="panel-body">
@@ -127,13 +127,16 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>これまで、無料レンタルブログやWordPress、Octopressなどを使ったブログ含めて、ずっと右サイドバーの2コラムを好んで使って来た。  </p>
-<p>ブログを始めた頃は今のように、サイドバーの無いブログはあまり見かけなかったし、サイドバーはあるのが当たり前と思っていた。<br>訪問者がサイドバーを見て他の記事も読んでくれるかもしれないし。  </p>
-<p>普段使っているノートパソコンの右側にテンキーが付いていて、左に寄ってパソコンに向かうことになるので、記事が正面に来るよう、右サイドバーが都合が良かった。<br>両側サイドバーの3コラムは少しごちゃごちゃしている感じがして、好みではなかった。。  </p>
-<p>スマホに合わせるといっても、レスポンシブルデザインならサイドバーが下に回ってくれるし、レンタルブログサービスではスマホ用のページも用意してくれている。<br>サイドバーの無いブログを見ても、正直なにが良いのかよく分からなかった。<br>だが、静的サイトジェネレーターで作ったブログをGithub Pagesにdeployするようになって、考えが変わって来た。  </p>
-<p>サイドバーがあると、一つ記事を投稿しただけで、過去のすべての記事のサイドバーも変更される可能性がある。<br>「最近の記事」を表示している場合は当然そうだろうし、新たにタグやカテゴリーを追加した場合、それにカテゴリーや月別アーカイブの記事数が更新される場合も同様に違いない。<br>（JavaScriptを用いていたら大丈夫なのかもしれないが。）</p>
-<p>これをdeployすると、すべての記事を更新することになってしまう。<br>これでは非効率だし、.deploy/.git/objectsの肥大化の原因にもなるはず。<br>サイドバーが下にある場合も同様だろう。</p>
-<p>Github Pagesを使うなら、サイドバーは無い方が良さそうだ。<br>自分のことを思い返してみても、よほど興味のあるキーワードがある時以外は、サイドバーの項目をクリックすることはほとんど無いようだ。</p>
+	  <p>Octopressのサイドバーのカスタマイズは下記サイトに分かりやすく紹介されていた。</p>
+<p>Ruby – Octopressでサイドバーに簡易プロフィールを表示させよう！ – Qiita<br><a href="http://qiita.com/fakestarbaby/items/ac729ec076f477f05ac6" target="_blank" rel="external">http://qiita.com/fakestarbaby/items/ac729ec076f477f05ac6</a></p>
+<p>初めからアバウトページがsource/_includes/custom/asides内に<code>about.html</code>として用意されているので、これを編集する。<br>サイドバーに表示させるには、Octopressメインフォルダ下<code>_config.yml</code>内の「Jekyll &amp; Plugins 」の項のdefault_asidesの欄に下記のように/source以下のパスとしてcustom/asides/about.htmlを追加すればよいらしい。（私は一番後尾に追加）</p>
+<pre><code>default_asides: [asides<span class="regexp">/recent_posts.html, asides/gi</span>thub.html, asides<span class="regexp">/delicious.html, asides/</span>pinboard.html, asides<span class="regexp">/googleplus.html, custom/</span>asides<span class="regexp">/about.html]</span>
+</code></pre><p>サイドバーに自作の項目「hogehoge」を追加する時は同様に、source/_includes/custom/asides 内にabout.htmlの要領で<code>hogehoge.html</code>を作り内容を編集</p>
+<pre><code><span class="tag">&lt;<span class="title">section</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">h1</span>&gt;</span>hogehoge<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">p</span>&gt;</span>ほげほげ<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">section</span>&gt;</span>
+</code></pre><p><code>_config.yml</code>のdefault_asides欄にcustom/asides/hogehoge.htmlを追加すればちゃんと表示された。</p>
 
 	
 	</div>
@@ -143,21 +146,21 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/30/sidebar-git/" data-text="Gitリポジトリを利用したブログとサイドバー | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/04/04/octopress-sidebar/" data-text="Octopressサイドバーのカスタマイズ | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/11/30/sidebar-git/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/04/octopress-sidebar/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/11/30/sidebar-git/" class="hatena-bookmark-button" data-hatena-bookmark-title="Gitリポジトリを利用したブログとサイドバー" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/04/octopress-sidebar/" class="hatena-bookmark-button" data-hatena-bookmark-title="Octopressサイドバーのカスタマイズ" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
 	<div class="meta-widget pull-right">
 <span style="color:#555;"><i class="fa fa-tags"></i></span>
 <ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/blog/">blog</a></li> <li><a href="/tags/Git/">Git</a></li></ul>
+  <li><a href="/tags/Octopress/">Octopress</a></li></ul>
 	</div>
 
 </div>
@@ -169,14 +172,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/11/29/page-no-date/" >Hexoの固定ページを日付け無しに</a>
+			<a href="/2014/04/03/octopress-new-page/" >Octopressで固定ページ</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年11月29日
+	2014年4月3日
 </div>
 
 <div class="panel-body">
@@ -186,17 +189,18 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>Hexoでは固定ページを作る際、コマンド<code>hexo new page （ページ名）</code>でsource/（ページ名）下にindex.mdが作成される。<br>tagsやcategoriesは使えないようになっている。<br>コメントを禁止にするには、Front Matterに<code>comments: false</code>を加えれば良い。  </p>
-<p>固定ページでは日付けも表示したくないところだが、<code>date:</code>の項目を消してみるても、ファイルを更新した日付けが表示されてしまう。<br>themes/landscape/layout/page.ejsを見ると、post.ejsと同じ_partial/article.ejsがレイアウトとして使われていた。  </p>
-<p>_partialディレクトリ下のarticle.ejsをarticle-page.ejsという名前でコピー。<br>4行目の  </p>
-<pre><code>&lt;%- <span class="keyword">partial</span>(<span class="string">'post/date'</span>, {class_name: <span class="string">'article-date'</span>, date_format: <span class="keyword">null</span>}) %&gt;
-</code></pre><p>を削除。  </p>
-<p>page.ejsの  </p>
-<pre><code>&lt;%- <span class="keyword">partial</span>(<span class="string">'_partial/article'</span>, {post: page, index: <span class="keyword">false</span>}) %&gt;
-</code></pre><p>を</p>
-<pre><code>&lt;%- <span class="keyword">partial</span>(<span class="string">'_partial/article-page'</span>, {post: page, index: <span class="keyword">false</span>}) %&gt;
-</code></pre><p>に変更した。  </p>
-<p>希望通り、日付けが削除された。</p>
+	  <p>下記コマンドでsource下に「title」というフォルダとそのなかに<code>index.markdown</code>が生成される。</p>
+<pre><code><span class="title">rake</span> new_page[<span class="string">"title"</span>] 
+</code></pre><p>コメントやツイートボタンを表示したくない時は<code>index.markdown</code>のcomments、sharingを false とすればよい。</p>
+<p>固定ページ「other blogs」を作ってみた。<br>これをナビゲーションバーに表示させるには、source/_includes/custom内のnavigation.htmlに追記すれば良いようだ。</p>
+<pre><code><span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"/static/other-blogs"</span>&gt;</span>Other Blogs<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+</code></pre><p>を追加してみた。</p>
+<pre><code><span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"main-navigation"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"/static/"</span>&gt;</span>Blog<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"/blog/archives"</span>&gt;</span>Archives<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">li</span>&gt;</span><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"/static/other-blogs"</span>&gt;</span>Other Blogs<span class="tag">&lt;/<span class="title">a</span>&gt;</span><span class="tag">&lt;/<span class="title">li</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+</code></pre><p>ナビゲーションバーに「Other Blogs」が追加された。</p>
 
 	
 	</div>
@@ -206,21 +210,21 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/29/page-no-date/" data-text="Hexoの固定ページを日付け無しに | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/04/03/octopress-new-page/" data-text="Octopressで固定ページ | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/11/29/page-no-date/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/03/octopress-new-page/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/11/29/page-no-date/" class="hatena-bookmark-button" data-hatena-bookmark-title="Hexoの固定ページを日付け無しに" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/03/octopress-new-page/" class="hatena-bookmark-button" data-hatena-bookmark-title="Octopressで固定ページ" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
 	<div class="meta-widget pull-right">
 <span style="color:#555;"><i class="fa fa-tags"></i></span>
 <ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Hexo/">Hexo</a></li></ul>
+  <li><a href="/tags/Octopress/">Octopress</a></li></ul>
 	</div>
 
 </div>
@@ -232,14 +236,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/11/29/excerpt-separator/" >HexoやOctopressのトップページを全文表示ではなく概要表示にする</a>
+			<a href="/2014/04/03/edit-scss/" >Octopressの外観の変更</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年11月29日
+	2014年4月3日
 </div>
 
 <div class="panel-body">
@@ -249,17 +253,21 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>Hexoでトップページを表示した時、複数の記事の全文がだらだらと表示されているのは見づらいと思い、冒頭部分を抜粋した概要表示にしてみた。<br>やり方は簡単で、記事ソースの適当な箇所に<code>&lt;!-- more --&gt;</code>というタグを挿入するだけ。  </p>
-<p>WordPressやMovable Typeでは、200文字など決まった文字数で自動的に抜粋してくれたりもするが、Hexoでの方法は分からないので手動で挿入した。  </p>
-<p>タグを挿入すると<code>&lt;!-- more --&gt;</code>より前の部分と続きを読むためのリンクの表示になる。<br>リンクの文言「Read More」はHexo作業フォルダ直下の_config.ymlではなく、themes/landscape/_config.ymlなどテーマ毎の_config.ymlで変更出来る。  </p>
-<p>Octopressの場合は_config.ymlの<code>excerpt_link:</code>でリンクの文言を変えられる。<br>また_config.ymlの<code>excerpt_link:</code>で、抜粋するためのタグ自体を<code>&lt;!-- more --&gt;</code>から別のものに変更出来るようだ。  </p>
-<p>ーー<br>（追記）<br>概要表示にはしてみたが、全文表示の方が都合の良いことがあったので、あとで全ての記事から<code>&lt;!-- more --&gt;</code>タグを削除した。<br>_postsフォルダで端末を開き、下記コマンドですべての.mdファイルから<code>&lt;!-- more --&gt;</code>を一括削除。</p>
-<pre><code>$ perl -p -i.bak -e 's/<span class="comment">&lt;!-- more --&gt;</span>//g' *.md
-（すべての.mdファイルに拡張子.bakをつけてバックアップを取り、ファイル内の<span class="comment">&lt;!-- more --&gt;</span>を削除）
-</code></pre><p><code>&lt;!-- more --&gt;</code>が正常に削除されたことを確認後、.bakファイルを一括削除した。  </p>
-<pre><code>$ <span class="keyword">find</span> . -<span class="built_in">type</span> <span class="keyword">f</span> -name <span class="string">"*.bak"</span> -<span class="built_in">delete</span>
-（拡張子が.bakのファイルをカレントディレクトリで一括削除）
-</code></pre>
+	  <p>Octopressの外観を変更したかったので、下記ページで色々テーマをインストールして試してみた。<br><a href="https://github.com/imathis/octopress/wiki/3rd-Party-Octopress-Themes" target="_blank" rel="external">3rd Party Octopress Themes · imathis/octopress Wiki</a></p>
+<p>テーマごとに導入方法の説明が書いてあるが、大抵は</p>
+<pre><code>git <span class="keyword">clone</span> http:<span class="comment">//github.com〜 .themes/テーマ名</span>
+rake install[<span class="string">"テーマ名"</span>]
+</code></pre><p>でよいようだ。</p>
+<p>導入は簡単で良かったのだがやっぱり元に戻そうとしたところ、戻し方がわからず。<br>幸い少し前に作業フォルダごと圧縮保存してあったので、それを戻して事無きを得た。</p>
+<p>ただ少しは外観を変えたい。ヘッダーの色とか、サイト名のフォントの大きさとか。</p>
+<p>stylesheetsフォルダ内の<code>screen.css</code>を見てみると、スタイルに関するらしきことが改行も無しにすごい勢いで書いてある。<br>検索するとOctopressではSassとCompassというのが導入されていてsass/custom/以下のファイルを編集すればいいらしい。<br><a href="http://tokkonopapa.github.io/blog/2012/01/03/customizing-octopress-styles/" target="_blank" rel="external">Octopressのスタイル設定とカスタマイズ – T.I.D.</a></p>
+<p>ファイル内の記述冒頭の「//」はコメントアウトを意味するようだ。<br><code>_colors.scss</code>でヘッダーの色を少し変えて<code>_layout.scss</code>のheader-font-sizeを0.8emに変更した。<br>これだけでずいぶん好みの外観になった。</p>
+<p><code>_styles.scss</code>は再構築の際に最後にインポートされて上書きしてくれるから、好きな設定をあまり詰め込まずに追加すればよいらしい。<br>記事タイトルも少し小さくしたかったので、よく分からないのだけどここに</p>
+<pre><code><span class="tag">h1</span><span class="rules">{<span class="rule"><span class="attribute">font-size</span>:<span class="value">〇〇em</span></span>;<span class="rule"><span class="attribute">line-height</span>:<span class="value">☓☓em</span></span></span>}
+<span class="tag">article</span> <span class="tag">header</span> <span class="tag">h1</span> <span class="tag">a</span> <span class="rules">{<span class="rule"><span class="attribute">font-size</span>:<span class="value">△△em</span></span>;<span class="rule"><span class="attribute">line-height</span>:<span class="value">□□em</span></span></span>}
+</code></pre><p>を足したらちゃんと小さくなってくれた。</p>
+<p>めでたしめでたし。</p>
+
 	
 	</div>
 	
@@ -268,21 +276,21 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/29/excerpt-separator/" data-text="HexoやOctopressのトップページを全文表示ではなく概要表示にする | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/04/03/edit-scss/" data-text="Octopressの外観の変更 | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/11/29/excerpt-separator/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/03/edit-scss/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/11/29/excerpt-separator/" class="hatena-bookmark-button" data-hatena-bookmark-title="HexoやOctopressのトップページを全文表示ではなく概要表示にする" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/03/edit-scss/" class="hatena-bookmark-button" data-hatena-bookmark-title="Octopressの外観の変更" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
 	<div class="meta-widget pull-right">
 <span style="color:#555;"><i class="fa fa-tags"></i></span>
 <ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Hexo/">Hexo</a></li> <li><a href="/tags/Octopress/">Octopress</a></li></ul>
+  <li><a href="/tags/Octopress/">Octopress</a></li></ul>
 	</div>
 
 </div>
@@ -294,14 +302,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/11/28/git-gc/" >.deploy/.git/objectsが大きくなってきたのでgit gcしてみた</a>
+			<a href="/2014/04/02/octopress_to_subdirectory/" >Octopressをサブディレクトリに置く</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年11月28日
+	2014年4月2日
 </div>
 
 <div class="panel-body">
@@ -311,19 +319,15 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>それほど記事数は多くないのに、Hexoのサイズが大きくなって来た。<br>最初、数MBだったのが20MB以上になっている。  </p>
-<p>.deploy/.git/objectsが12.4MBあって、一番容量をくっているようだ。<br>ちょこちょこ記事を修正してその度にdeployしているせいだろう。<br>大した容量ではないが、Dropboxの同期に時間が掛かるのが困る。  </p>
-<p>GitHubでは、必要性の低いオブジェクトが多数あったりすると、自動的にパックファイルを作って掃除（pack up）してくれるようだが、<code>git gc</code>コマンドにより手動でpack upすることも出来るらしい。<br><a href="http://heart-shaped-chocolate.hatenablog.jp/entry/2013/04/10/052752" target="_blank" rel="external">.git/objectsについて少し調べてみた - 煙と消えるその前に</a>  </p>
-<p>GitHubではないが、BitbucketのFAQには<code>git gc</code>してもリポジトリに悪い影響はないと書いてあった。<br><a href="https://confluence.atlassian.co.jp/pages/viewpage.action?pageId=35815474" target="_blank" rel="external">私のリポジトリで git gc (保全作業) を実行する必要がありますか？ - Bitbucket ドキュメンテーション - アトラシアン日本語ドキュメント</a>  </p>
-<p>.deployディレクトリで端末を開いて、<code>git gc</code>してみた。  </p>
-<pre><code>$ git gc
-Counting object<span class="variable">s:</span> <span class="number">5328</span>, done.
-Delta compression using <span class="keyword">up</span> <span class="keyword">to</span> <span class="number">8</span> threads.
-Compressing object<span class="variable">s:</span>   <span class="number">5</span>% (<span class="number">153</span>/<span class="number">3046</span>)   
-Compressing object<span class="variable">s:</span> <span class="number">100</span>% (<span class="number">3046</span>/<span class="number">3046</span>), done.
-Writing object<span class="variable">s:</span> <span class="number">100</span>% (<span class="number">5328</span>/<span class="number">5328</span>), done.
-Total <span class="number">5328</span> (delta <span class="number">2157</span>), reused <span class="number">0</span> (delta <span class="number">0</span>)
-</code></pre><p>少し待たないといけなかったが、objects下にたくさんあったフォルダが消えて、4つだけになった。<br>objects/pack内にはpack-〜.idxとpack-〜.packというファイルが出来てる。<br>objectsのサイズは12.4MB→1.8MBに縮小した。</p>
+	  <p>昨日、Octopressのブログをサブディレクトリ下に置けたと思ったんですが、rake previewしてプレビューするとスタイルシートがあたっておらず、Archivesなどのリンク先もルート直下になっていて not found になってしまう。</p>
+<p>Octopress公式サイトの説明を読むと、どうやら<code>_config.yml</code>内の「root: /」を書きかえるだけではダメで<code>config.rb</code>と<code>Rakefile</code>も編集しないといけないらしい。<br><a href="http://octopress.org/docs/deploying/subdir/" target="_blank" rel="external">Deploying to a Subdirectory – Octopress</a></p>
+<p>ドメイン下のstaticというサブディレクトリで公開したかったので、説明の通り</p>
+<pre><code>rake <span class="keyword">set</span>_root_dir[/static] 
+</code></pre><p>とコマンドを入れてみた。<br>すると、<code>_config.yml</code>、<code>config.rb</code>、<code>Rakefile</code>内にある種々のパス指定が自動的に書き変わっていた。</p>
+<p>すごい。</p>
+<p>だが、プレビューすると画面が真っ白。<br>しばらく右往左往したが、ブラウザでアクセスする先はこれまでの ttp://localhost:4000 ではなく、 ttp://localhost:4000/static でなければいけないのかも知れないと気がついた。</p>
+<p>ttp://localhost:4000/static にアクセスすると、ちゃんと表示された。</p>
+<p>プレビュー中に記事を編集するとそれがpublicフォルダ内に自動的に生成されてブラウザでのプレビューにも反映する、というのにも感心してしまった。</p>
 
 	
 	</div>
@@ -333,21 +337,21 @@ Total <span class="number">5328</span> (delta <span class="number">2157</span>),
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/28/git-gc/" data-text=".deploy/.git/objectsが大きくなってきたのでgit gcしてみた | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/04/02/octopress_to_subdirectory/" data-text="Octopressをサブディレクトリに置く | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/11/28/git-gc/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/02/octopress_to_subdirectory/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/11/28/git-gc/" class="hatena-bookmark-button" data-hatena-bookmark-title=".deploy/.git/objectsが大きくなってきたのでgit gcしてみた" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/02/octopress_to_subdirectory/" class="hatena-bookmark-button" data-hatena-bookmark-title="Octopressをサブディレクトリに置く" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
 	<div class="meta-widget pull-right">
 <span style="color:#555;"><i class="fa fa-tags"></i></span>
 <ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Git/">Git</a></li></ul>
+  <li><a href="/tags/Octopress/">Octopress</a></li></ul>
 	</div>
 
 </div>
@@ -359,14 +363,14 @@ Total <span class="number">5328</span> (delta <span class="number">2157</span>),
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/11/28/metalsmith/" >プログラム音痴がMetalsmithを試してみた</a>
+			<a href="/2014/04/01/octopress_start/" >Octopressをスタート</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2014年11月28日
+	2014年4月1日
 </div>
 
 <div class="panel-body">
@@ -376,98 +380,11 @@ Total <span class="number">5328</span> (delta <span class="number">2157</span>),
 	<div class="col-md-12">
 	  
 	
-	  <p>静的サイトジェネレーターは有名なものしか知らなかったが、かなりの数が公開されているようだ。<br><a href="https://staticsitegenerators.net/" target="_blank" rel="external">https://staticsitegenerators.net/</a><br><a href="https://www.staticgen.com/" target="_blank" rel="external">https://www.staticgen.com/</a>  </p>
-<p><a href="https://github.com/segmentio/metalsmith" target="_blank" rel="external">Metalsmith</a>（An extremely simple, pluggable static site generator.）というのが人気急上昇中のようなので、試してみた。<br>Hexo同様、プログラミング言語がJavaScriptなので、早さも期待できる。  </p>
-<p>テストするにあたり、下記サイトを参考にさせて頂いた。<br><a href="http://h2ham.net/metalsmith-static-site-generator" target="_blank" rel="external">Nodeで動作する静的サイトジェネレータ「metalsmith」を使ってみた - HAM MEDIA MEMO</a><br><a href="http://web-layman.com/metalsmith-simple-static-site-generator/" target="_blank" rel="external">metalsmith - シンプルな静的サイトジェネレーター - Layman’s Web Creation.</a>  </p>
-<p>先ずはpackage.json を用意して導入するプラグインを指定、一括インストールするのが良いようなのだが、本体やプラグインのバージョンがよく分からない。<br>なのでmetalsmith-testという作業フォルダを作り、そこで端末を開いて一個一個インストールした。  </p>
-<pre><code>~/metalsmith-<span class="keyword">test</span>$ npm install metalsmith
-~/metalsmith-<span class="keyword">test</span>$ npm install metalsmith-templates
-~/metalsmith-<span class="keyword">test</span>$ npm install swig
-~/metalsmith-<span class="keyword">test</span>$ npm install metalsmith-markdown
-~/metalsmith-<span class="keyword">test</span>$ npm install metalsmith-permalinks
-~/metalsmith-<span class="keyword">test</span>$ npm install metalsmith-sass
-~/metalsmith-<span class="keyword">test</span>$ npm install metalsmith-watch
-~/metalsmith-<span class="keyword">test</span>$ npm install metalsmith-drafts
-</code></pre><p>次に作業フォルダ内にmetalsmith.jsonを作成する必要があったが、これはjekyllの構成に倣ったexampleのものをほぼそのまま使わせてもらった。<br><a href="https://github.com/segmentio/metalsmith/blob/master/examples/jekyll/metalsmith.json" target="_blank" rel="external">https://github.com/segmentio/metalsmith/blob/master/examples/jekyll/metalsmith.json</a></p>
-<pre><code>{
-  "<span class="attribute">source</span>": <span class="value"><span class="string">"./_posts"</span></span>,
-  "<span class="attribute">destination</span>": <span class="value"><span class="string">"./_site"</span></span>,
-  "<span class="attribute">metadata</span>": <span class="value">{
-    "<span class="attribute">title</span>": <span class="value"><span class="string">"My Jekyll-Powered Blog"</span></span>,
-    "<span class="attribute">description</span>": <span class="value"><span class="string">"My second, super-cool, Jekyll-powered blog."</span>
-  </span>}</span>,
-  "<span class="attribute">plugins</span>": <span class="value">{
-    "<span class="attribute">metalsmith-drafts</span>": <span class="value">{}</span>,
-    "<span class="attribute">metalsmith-markdown</span>": <span class="value">{}</span>,
-    "<span class="attribute">metalsmith-permalinks</span>": <span class="value">{
-      "<span class="attribute">pattern</span>": <span class="value"><span class="string">":title"</span>
-    </span>}</span>,
-    "<span class="attribute">metalsmith-sass</span>": <span class="value">{
-        "<span class="attribute">outputStyle</span>": <span class="value"><span class="string">"expanded"</span>
-    </span>}</span>,
-    "<span class="attribute">metalsmith-templates</span>": <span class="value">{
-      "<span class="attribute">engine</span>": <span class="value"><span class="string">"swig"</span></span>,
-      "<span class="attribute">directory</span>": <span class="value"><span class="string">"_layouts"</span>
-    </span>}
-  </span>}
-</span>}
-</code></pre><p>_layoutsフォルダを作り、そこへ下記内容のpost.htmlを配置。  </p>
-<pre><code><span class="tag">&lt;<span class="title">html</span>&gt;</span>
-<span class="tag">&lt;<span class="title">head</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">title</span>&gt;</span>My Blog<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
-<span class="tag">&lt;<span class="title">body</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">h1</span>&gt;</span>プログラム音痴がMetalsmithを試してみた<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">time</span>&gt;</span>2014-11-28<span class="tag">&lt;/<span class="title">time</span>&gt;</span>
-
-<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
-</code></pre><p>_postsフォルダを作り、テスト用の記事test-post-1.mdを配置。  </p>
-<pre><code>---
-<span class="keyword">template</span>: post.html
-title: テスト投稿１
-date: <span class="number">2014</span>-<span class="number">11</span>-<span class="number">28</span>
----
-<span class="comment">##今日の天気</span>
-本日は晴天なり。
-</code></pre><p><code>node node_modules/.bin/metalsmith</code>とコマンドを打つと、自動的に_siteフォルダ、その下にtest-post-1フォルダ、その中にindex.htmlが生成された。  </p>
-<pre><code><span class="tag">&lt;<span class="title">html</span>&gt;</span>
-<span class="tag">&lt;<span class="title">head</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">title</span>&gt;</span>My Blog<span class="tag">&lt;/<span class="title">title</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">head</span>&gt;</span>
-<span class="tag">&lt;<span class="title">body</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">h1</span>&gt;</span>テスト投稿<span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">time</span>&gt;</span>2014-11-28<span class="tag">&lt;/<span class="title">time</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">h2</span> <span class="attribute">id</span>=<span class="value">"-"</span>&gt;</span>今日の天気<span class="tag">&lt;/<span class="title">h2</span>&gt;</span>
-<span class="tag">&lt;<span class="title">p</span>&gt;</span>本日は晴天なり。<span class="tag">&lt;/<span class="title">p</span>&gt;</span>
-
-<span class="tag">&lt;/<span class="title">body</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">html</span>&gt;</span>
-</code></pre><p>ローカルホスト上でプレビューを可能にするプラグインmetalsmith-serveというのがあったのでインストールしたが、どう使えばいいのかよく分からない。  </p>
-<p>metalsmith.jsonの<code>&quot;plugins&quot;:</code>の箇所に無理やり  </p>
-<pre><code>    <span class="string">"metalsmith-serve"</span>: {
-      <span class="string">"port"</span>: <span class="string">"8081"</span>,
-      <span class="string">"verbose"</span>: <span class="string">"true"</span>
-    }
-</code></pre><p>と加えてみたら、<code>node node_modules/.bin/metalsmith</code>のコマンドで、生成と共にローカルホストが立ち上がった。<br>ブラウザで<code>http://localhost:8081/test-post-1/</code>にアクセスすると、CSSは当たっていないが表示はされた。  </p>
-<p>たぶん正しい使い方ではないのだと思うが、プラグインの説明の  </p>
-<pre><code><span class="keyword">var</span> metalsmith = <span class="keyword">require</span>(<span class="string">'metalsmith'</span>);
-<span class="keyword">var</span> serve = <span class="keyword">require</span>(<span class="string">'metalsmith-serve'</span>);
-
-metalsmith(__dirname)
-  .<span class="keyword">use</span>(serve())
-  .build();
-</code></pre><p>というのを何処で設定するのか分からない。  </p>
-<p>トップページの生成の仕方やCSSの当て方なども勉強する必要がありそう。<br>それに、新規記事作成やgenerate、プレビューなど、それぞれコマンドに割り当てて操作したいところ。  </p>
-<p>Metalsmithのサイトの上方に記載してある  </p>
-<pre><code>Metalsmith(<span class="number">__</span>dirname)
-  .<span class="keyword">use</span>(drafts())
-  .<span class="keyword">use</span>(markdown())
-  .<span class="keyword">use</span>(permalinks('posts/:title'))
-  .<span class="keyword">use</span>(templates('handlebars'))
-  .build();
-</code></pre><p>というのも、いったいどこの記載のことなんだか。</p>
-<p>「Everything is a Plugin」と謳われているようにカスタマイズ性は高そうだが、Jekyllの使い方が分からずOctopressに移った自分のようなプログラム音痴には、少々ハードルが高そうだ。<br>静的サイトジェネレーターの仕組みを勉強するには良さそうだが。</p>
+	  <p>最近、静的サイトジェネレーターというのを知ってそのシンプルさに惹かれ、nanocというのを使い始めました。</p>
+<p>nanocでアーカイブページや最近の記事リスト、RSS配信などを導入しようとしたんですが、知識が足りず上手くいかないので別の静的サイトジェネレーターのJekyllを使ってみることにしました。Jekyllには便利なフレームワークがあるということなので。</p>
+<p>Jekyll-Bootstrapというフレームワークを使ってJekyllをやり始めて、RSS配信出来るしコメント欄もあるしけっこう良さそうだったんですが、ブログをルート下ではなくサブディレクトリ下に置きたかったのに 「BASE_PATH」を何度設定してもどうしても上手くいかない。<br>仕方がないので今度はOctopressというのを使ってみることにしました。</p>
+<p>デフォルトではコメント欄が無いみたいだし、なぜタコなのか不明ですが、なんとかサブディレクトリ下に置けたのでこれでやってみようと思います。</p>
+<p>これから勉強して徐々にカスタマイズしていく予定です。</p>
 
 	
 	</div>
@@ -477,21 +394,327 @@ metalsmith(__dirname)
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/28/metalsmith/" data-text="プログラム音痴がMetalsmithを試してみた | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/04/01/octopress_start/" data-text="Octopressをスタート | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/11/28/metalsmith/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/01/octopress_start/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/11/28/metalsmith/" class="hatena-bookmark-button" data-hatena-bookmark-title="プログラム音痴がMetalsmithを試してみた" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/01/octopress_start/" class="hatena-bookmark-button" data-hatena-bookmark-title="Octopressをスタート" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
 	<div class="meta-widget pull-right">
 <span style="color:#555;"><i class="fa fa-tags"></i></span>
 <ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Metalsmith/">Metalsmith</a></li></ul>
+  <li><a href="/tags/Octopress/">Octopress</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/03/31/winxp-linux/" >Windows XPのパソコンはLinuxにしましょう</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年3月31日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>WindowsXPがまもなくサポート終了をむかえる。2014年4月8日（日本時間では2014年4月9日）</p>
+<p>登場したのが2001年10月らしいので12年以上、干支も一周するという長寿でした。おもえば私が初めて購入したパソコンもWindowsXPでした。<br>感謝とともに、「保守管理が大丈夫ならまだまだ現役でいけるのに」という残念さもあります。<br>ですがXPとはおさらばした方が良いです。</p>
+<p>どうしてもかつてのWindowsXPパソコンを使いたいという人はオープンソースのOS、Linuxにしましょう。<br>Linuxも昔とは比較にならないくらい敷居が低くなっています。<br>インストールも簡単だし、インストール時に言語を日本語で選択すれば最初からほとんど日本語化されてるし、無線LANアダプターも大抵自動で認識してくれます。</p>
+<p>Linuxにもいろんなディストリビューションがありますが、ぜひおすすめしたいのは、軽さと利便性の両方を求めるならUbuntu派生の「<a href="http://xubuntu.org/" target="_blank" rel="external">Xubuntu</a>」と「<a href="http://linuxmint.com/" target="_blank" rel="external">LinuxMint</a>」です。<br>Ubuntuのフォーラムは日本でも盛んなようで日本語の情報も多いので、なにか困ったことがあっても検索で解決策を探しやすいです。<br>（Ubuntuそのものでも良いのかも知れませんが、以前Ubuntuが採用している「Unity」というタブレット志向のインターフェースに馴染めず、それ以来遠ちょっと敬遠しています。）</p>
+<p>マシンパワーがあって、見た目の流麗さにもこだわりたいのであれば「<a href="http://www.netrunner-os.com/" target="_blank" rel="external">netrunner</a>」がおすすめです。<br>優雅さとかっこ良さと利便性を兼ね備えた秀逸なディストリビューションなんですが、動作にややモッサリ感があります。</p>
+<p>Windows向けのソフトには便利なものがたくさんあり、なかなか捨てがたいというのはありますが、Linuxにもそれらを代替するソフトは豊富にあるし、XPを使い続けるのは危険です。</p>
+<p>WindowsXPのサポート終了を機にぜひLinuxに触れてみてください。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/03/31/winxp-linux/" data-text="Windows XPのパソコンはLinuxにしましょう | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/03/31/winxp-linux/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/03/31/winxp-linux/" class="hatena-bookmark-button" data-hatena-bookmark-title="Windows XPのパソコンはLinuxにしましょう" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li> <li><a href="/tags/Windows/">Windows</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/03/30/futomis-analyzer/" >エラーメッセージの親切な「futomi高機能アクセス解析」</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年3月30日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>無料ブログサービスで外部のアクセス解析ツールをつけるなら「忍者アクセス解析」とか「FC2アクセス解析」などが有名ですが、訪問した際バナーがチカチカ点滅するのでなんとなく警戒してしまう。「QLOOKアクセス解析」のバナーは点滅はしないけどバナーを消すのは有料。<br>「Googleアナリティクス」は無料だし広告も入らないが、あんまりGoogleに頼りすぎるのも嫌な気がする。</p>
+<p>WordPressにはアクセス解析のプラグインが豊富にあってどれを使ったらいいか迷うほどなのだが、同じドメインの別ディレクトリで使っているMTOSとnanocにはそんな便利なものは無い様子。</p>
+<p>レンタルサーバーにもアクセス解析が付属していてそれなりに詳しいのだが少し見づらく、自分のアクセスを除外出来なかったり、と使い勝手がいまひとつ。</p>
+<p>CGI可能なサーバーなら、有限会社futomiのアクセス解析が設置出来るらしいのでやってみた。<br>フリーのStandard版の方。<br><a href="http://www.futomi.com/library/acc.html" target="_blank" rel="external">高機能アクセス解析CGIシリーズ – futomi’s CGI Cafe</a></p>
+<p>マニュアル通り、config.cgiファイルなどを編集してサーバーにアップロード。パーミッションを変更して、いざ「ログ生成の動作テスト」をしてみたところ、なぜかエラー。<br>しかし、エラーメッセージが親切だった。</p>
+<blockquote>
+<p>Software error:</p>
+<p>syntax error at ./conf/config.cgi line 118, near “[.”<br>Compilation failed in require at /home/〇〇/☓☓/acc/acclog.cgi line 25.</p>
+<p>For help, please send mail to the webmaster (admin), giving this error message and the time and date of the error.</p>
+</blockquote>
+<p>メッセージの言うようにconfig.cgiファイルの118行目を見ると、どうやら自分のアクセスを除外しようとした際にミスをしたらしい。<br>説明をよくみると除外したいホスト名やIPアドレスは[‘hoge.com’, ‘10.1.1.’]のようにアポストロフィー「’」で囲まないといけなかったようだ。</p>
+<p>「’」で囲むとエラーにならずちゃんと白い画面が表示された。<br>（Firefoxだと白ではなく黒い画面だった。）</p>
+<p>ちゃんとログインも出来たし、管理画面も見やすいし、自分のアクセス除外もできるし、無料版なのにけっこう使い勝手が良さそうだ。</p>
+<p>その後も解析タグの記載を</p>
+<pre><code><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"http://www.example.jp/acc/acctag.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+</code></pre><p>と書かないといけないところを「acctag.js」ではなく「acclog.cgi」にしてしまったりとミスをしたが、なんとか全部のブログのページに解析タグを記載した。</p>
+<p>それにしても、つれないエラーメッセージに泣かされることが多いなか、どのファイルのなん行目の「どの辺」がおかしいかまで教えてくれるエラーメッセージは初めて見た。</p>
+<p>親切設計に感激です。</p>
+<p>ーー<br>（追記）<br>自分のアクセス除外を設定すると全く解析しない様子。<br>「自アクセス除外機能」がProfessional版の説明にだけあってStandard版には記載が見当たらないところを見るとProfessional版だけの限定機能なのかも知れません。</p>
+<p>config.cgiファイルには「Standard版（設定ファイル）」とあって、自アクセス除外の設定の説明まで書いてあるのに。<br>自アクセス除外はどうしてもほしい機能なので、がっかり。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/03/30/futomis-analyzer/" data-text="エラーメッセージの親切な「futomi高機能アクセス解析」 | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/03/30/futomis-analyzer/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/03/30/futomis-analyzer/" class="hatena-bookmark-button" data-hatena-bookmark-title="エラーメッセージの親切な「futomi高機能アクセス解析」" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/SEO/">SEO</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/03/16/2column/" >２コラム右サイドバーはゆずれない</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年3月16日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>ブログデザインを選択する際、何をおいても「２コラム右サイドバー」はゆずれない。</p>
+<p>両側にサイドバーがあるのはあまりすっきりしていなくて好きではないのだが、「右サイドバー」もどうしてもゆずれない。以前はそうでもなかったのだけど。<br>たぶん自分がテンキー付きの横長ワイド画面のノートパソコンを使っているからだと思う。</p>
+<p>テンキー以外の文字が左側に寄っているのでキーボードを打つとき自分の正面はどうしてもディスプレイの左よりになってしまう。正面にはやはりサイドバーではなくメインコラムがあって欲しい。<br>結果的に右サイドバーということになる。<br>なので、あくまで書く側の都合のことであって、他のブログを見る時には左サイドバーでもそれ程違和感はありません。</p>
+<p>テンキーはほとんど使わないし、以前のもう少し縦幅のあるノートパソコンの方が使い勝手が良いのだけど。縦スクロールもそれ程しなくていいし。</p>
+<p>時代の流れかもしれませんが、もう少し縦長のノートパソコンが欲しい。<br>そういう人も少なくないと思う。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/03/16/2column/" data-text="２コラム右サイドバーはゆずれない | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/03/16/2column/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/03/16/2column/" class="hatena-bookmark-button" data-hatena-bookmark-title="２コラム右サイドバーはゆずれない" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/blog/">blog</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/03/15/noscript/" >FireFoxの挙動がおかしいと思ったら、NoScriptのせいだった</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年3月15日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Seesaaブログの方でFC2カウンターを使っているのだが、数日前から調子がおかしい。<br>カウンターが表示されるはずの場所になにも表示されない。</p>
+<p>FC2カウンターの管理画面でもカウンターの設定が出来ず挙動がおかしい。<br>数日様子をみていたが改善する様子は無く、カウンターのHTMLタグを貼り直してみても一向に改善しない。</p>
+<p>しょうがないので別の無料アクセスカウンターを設置した。</p>
+<p>3カウンター / 無料のアクセスカウンター 3 カウンター<br><a href="http://www.3counters.net/" target="_blank" rel="external">http://www.3counters.net/</a></p>
+<p>FC2ブログの方でも、記事編集エディタが正常に動作しない。</p>
+<p>ブラウザーのFireFoxがおかしいのだろうか、と思いIEで見てみると、Seesaaブログの方でもFC2カウンターが表示されている！</p>
+<p>FireFoxの不具合を改善しなければならないが、とりあえず現状を投稿。</p>
+<p>－－<br>（追記）<br>FireFoxのアドオン、NoScriptを無効化したら治った。<br>そういえば最近NoScriptが数回自動更新されていたみたいだった。</p>
+<p>安全のためには入れておきたいのだが、仕方ないのでしばらくは使わないでおくことにした。</p>
+<p>FC2カウンターはおかしくなかったようなのでまた戻しましたが、3カウンターもシンプルで登録も要らないのでなかなか良い感じだった。<br>また機会があったら利用させて頂こうと思います。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/03/15/noscript/" data-text="FireFoxの挙動がおかしいと思ったら、NoScriptのせいだった | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/03/15/noscript/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/03/15/noscript/" class="hatena-bookmark-button" data-hatena-bookmark-title="FireFoxの挙動がおかしいと思ったら、NoScriptのせいだった" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ブラウザ/">ブラウザ</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/03/09/suku_nai/" >「すくない」（少ない）の語源について</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年3月9日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>「多い」の反対は「少ない」なのだと思うのだけれでも、「すくない」（少ない）に「ない」（無い？）が付いているのは何故なのだろうか。決して「少い」（すくい）とは言わないのに。<br>「すく」（あるいは「すきく」）+「無い」＝「すくない」（少ない）なのではないだろうか。</p>
+<p>「すく」をPCで変換すると「空く」、「漉く」、「梳く」、「好く」が出た。</p>
+<p>一方、「すき」を変換すると、「好き」、「空き」、「透き」、「酸き」、「隙」、「鋤」、「数寄」など。</p>
+<p>上記で「少い」の意に当てはまるのは・・・？</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/03/09/suku_nai/" data-text="「すくない」（少ない）の語源について | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/03/09/suku_nai/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/03/09/suku_nai/" class="hatena-bookmark-button" data-hatena-bookmark-title="「すくない」（少ない）の語源について" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ことば/">ことば</a></li></ul>
 	</div>
 
 </div>
@@ -537,43 +760,43 @@ metalsmith(__dirname)
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/blog/">blog<span>37</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
-		
 			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>14</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
 		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
 			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
 		
+			<li><a href="/tags/サーバー/">サーバー<span>9</span></a></li>
+		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>37</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>14</span></a></li>
 		
 			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
 		
 			<li><a href="/tags/SEO/">SEO<span>4</span></a></li>
 		
-			<li><a href="/tags/サーバー/">サーバー<span>9</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
-		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
-		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
+			<li><a href="/tags/食/">食<span>4</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
 		
 		
 		</ul>

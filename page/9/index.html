@@ -110,14 +110,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/04/02/fcitx-qt-program/" >Qtベースのプログラムで日本語入力（fcitx-mozc）</a>
+			<a href="/2015/02/01/piwik-login-cookie-expiration/" >Piwikのログイン・クッキー有効期限を延長する</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年4月2日
+	2015年2月1日
 </div>
 
 <div class="panel-body">
@@ -127,18 +127,19 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>iBusのプロパティパネル採用以降、iBusをやめて日本語入力にfcitx-mozcを使っている。  </p>
-<p>Xubuntuでは特に問題無く使えていたが、Arch LinuxでQtベースのプログラムを使用する際、日本語入力が有効にならず困っていた。<br>「QupZilla」（Simplenote専用にするのにうってつけの軽量ブラウザ）や「ReText」（プレビューが出来て便利なmarkdownファイルエディター）など、日本語入力が出来ないと不便。  </p>
-<p>モジュールのfcitx-qt4、fcitx-qt5はインストールしたが、何故かインプットメソッドがオンにならない。<br>fcitx-configtool（Qt 設定ツール）で、デフォルトのインプットメソッドをfcitxに変更したが、効果が無い。  </p>
-<p><code>fcitx-diagnose</code>を実行してフロントエンド設定の項目を確認すると、空欄だったり「設定されていません」という表示だったりする。<br>XMODIFIERSとQT_IM_MODULEがちゃんとロードされていないらしい。  </p>
-<p>ホームディレクトリに.xprofileを新規作成し、下記内容で保存。<br>（ディスプレイマネージャにSLiMを使っている場合は、~/.xprofileではなく~/.xinitrcに記載するらしい）  </p>
-<pre><code><span class="keyword">export</span> GTK_IM_MODULE=fcitx
-<span class="keyword">export</span> QT_IM_MODULE=fcitx
-<span class="keyword">export</span> XMODIFIERS=<span class="string">"@im=fcitx"</span>
-</code></pre><p>再起動したら、QupZilla、ReTextともに日本語入力が可能になった。  </p>
-<p>再度<code>fcitx-diagnose</code>で見てみると、「環境変数 XMODIFIERS は “{$2}” に正しく設定されています。」「環境変数 QT_IM_MODULE は “{$2}” に正しく設定されています。」となっていた。  </p>
-<p>fcitx-configtoolのデフォルトのインプットメソッドはximのままでも問題無いようだった。  </p>
-<p>（参照記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Fcitx" target="_blank" rel="external">Fcitx - ArchWiki</a></p>
+	  <p>オープンソースのアクセス解析ツールPiwikを導入している。<br>管理画面へのログイン時には「次回の入力を省略」にチェックを入れているが、頻回にパスワード入力を求められる。<br>FirefoxのアドオンFirebugでログイン時のリクエストヘッダーを見てみると、クッキーの有効期限が2週間しかないようだ。  </p>
+<p>Piwikのログイン・クッキー有効期限がどこで設定されているのか、あちこちファイルを見て回って、ようやくpiwik/config/global.ini.phpの210行目に見つけた。  </p>
+<pre><code><span class="comment">; login cookie expiration (14 days)</span>
+<span class="setting">login_cookie_expire = <span class="value"><span class="number">1209600</span></span></span>
+</code></pre><p>だが、global.ini.phpの冒頭には下記のように書いてある。  </p>
+<blockquote>
+<p>; If you want to change some of these default values, the best practise is to override<br>; them in your configuration file in config/config.ini.php. If you directly edit this file,<br>; you will lose your changes when you upgrade Piwik.<br>; For example if you want to override action_title_category_delimiter,<br>; edit config/config.ini.php and add the following:<br>; [General]<br>; action_title_category_delimiter = “-“</p>
+</blockquote>
+<p>global.ini.phpを直接編集しても、Piwikをアップグレードした際に元に戻ってしまうから、変更したい設定はconfig/config.ini.phpに加筆して設定を上書きせよ、ということらしい。config.ini.phpでの設定が優先されるようだ。  </p>
+<p>自分の環境ではconfig.ini.phpの所有者はApacheになっていて、そのままではファイルを変更出来なかったので、パーミッションを644から646に変更。<br>クッキー有効期限を180日（15552000秒）にすることにして、config.ini.phpの[General]の箇所に  </p>
+<pre><code><span class="attribute">login_cookie_expire </span>=<span class="string"> 15552000</span>
+</code></pre><p>を加筆した。  </p>
+<p>Piwikにログインし直し、Firebugで確認すると、”Set-Cookie…expires=Fri, 31-Jul-2015 11:30:24”と、クッキーの有効期限が延長されていた。<br>ファイルのパーミッションを644に戻して作業終了。</p>
 
 	
 	</div>
@@ -148,14 +149,138 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/02/fcitx-qt-program/" data-text="Qtベースのプログラムで日本語入力（fcitx-mozc） | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/01/piwik-login-cookie-expiration/" data-text="Piwikのログイン・クッキー有効期限を延長する | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/02/fcitx-qt-program/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/02/01/piwik-login-cookie-expiration/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/02/fcitx-qt-program/" class="hatena-bookmark-button" data-hatena-bookmark-title="Qtベースのプログラムで日本語入力（fcitx-mozc）" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/01/piwik-login-cookie-expiration/" class="hatena-bookmark-button" data-hatena-bookmark-title="Piwikのログイン・クッキー有効期限を延長する" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/SEO/">SEO</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/01/31/qupzilla-simplenote/" >軽量ブラウザQupZillaをSimplenoteアプリとして使う</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年1月31日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>オンラインノートSimplenoteと同期出来るメモ帳アプリnvPY。<br>良いかと思ったが、マウス右クリックでのコピー・ペーストが出来ないというのが、やはり致命的に使いづらい。<br>かといってわざわざFirefoxを起動してブックマークからサイトを開いて、というのももどかしい。  </p>
+<p>そこで、適当なブラウザをSimplenote専用にし、ランチャーに登録しようと考えた。<br>まず候補に上がったのがキーボードで操作するブラウザLuakit。  </p>
+<p>ところが、起動からSimplenoteのサイト表示までが、期待したほど早くない。<br>それに起動時に縮小表示してコンパクトにしたいところだが、それも難しいようだ。  </p>
+<p>他に良いブラウザは無いかと、Ubuntuソフトウェアセンターで片っ端からインストールしてみた。<br>あまり有名ではないと思うが、QupZillaというのが目的にピッタリだった。<br><a href="http://www.qupzilla.com/" target="_blank" rel="external">QupZilla - マルチプラットフォーム対応、軽量ブラウザ</a>  </p>
+<p>起動速度、サイト表示が早い。<br>設定→ブラウジング→Web設定でデフォルトのズーム率も任意に設定出来る。  </p>
+<p>小さめの倍率にし、ナビゲーションツールバーとブックマークツールバーを非表示に。<br>設定→タブで「タブが1つだけの時タブバーを非表示」にチェックを入れたら、許容範囲内のコンパクトさになってくれた。<br>ランチャーにコマンドを登録して完了。  </p>
+<pre><code>qupzilla http<span class="variable">s:</span>//app.simplenote.<span class="keyword">com</span>/
+</code></pre><p>まるでメモ帳ソフトのようになった。  </p>
+<p>QupZillaにはFirefoxのようなアドオンこそ無いが、機能もそこそこ充実していて癖のない作り。<br>普段使いのブラウザとしても、軽快に活躍してくれそうだ。<br>Linuxのほか、Windows、Mac OS Xでも使えるというのも良い。  </p>
+<p>Simplenote専用にしておくのは、ちょっともったいないような気もする。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/31/qupzilla-simplenote/" data-text="軽量ブラウザQupZillaをSimplenoteアプリとして使う | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/01/31/qupzilla-simplenote/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/01/31/qupzilla-simplenote/" class="hatena-bookmark-button" data-hatena-bookmark-title="軽量ブラウザQupZillaをSimplenoteアプリとして使う" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ブラウザ/">ブラウザ</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/01/30/xubuntu-copy-client/" >Xubuntuで非公式レポジトリのCopyクライアントが不調</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年1月30日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Xubuntu14.04に、非公式レポジトリからCopyクライアントをインストールしたが、調子が良くない。  </p>
+<p>“Scanning  for changes”→”Processing .. items”→”Downloading File List”ときて、その後また”Scanning  for changes”→”Processing .. items”と延々処理が続き、いつまで経っても同期が終わらない。<br>さらに起動しても”Logging In”のまま固まってしまうようになった。  </p>
+<p>まともに機能しない状態なので、非公式レポジトリのクライアントはアンインストールし、<a href="https://www.copy.com/install/" target="_blank" rel="external">Copy.comのダウンロードページ</a>から落としたクライアントをインストールし直した。<br>インストールといっても、ダウンロードした圧縮ファイルを展開し、任意のディレクトリに配置しただけだが。  </p>
+<p>追加アプリケーションを配置するためのディレクトリ/optに配置した。  </p>
+<pre><code><span class="keyword">cd</span> ~/Desktop
+tar zxvf copy_agent-<span class="number">1.48</span>.<span class="number">0456</span>.tgz
+sudo <span class="keyword">cp</span> -<span class="keyword">r</span> <span class="built_in">copy</span>/x86_64 /<span class="keyword">opt</span>/<span class="built_in">copy</span>
+</code></pre><p>コマンドなど使わずファイルマネージャーで「ここに展開」し、/optを「Rootとして開く」してからコピペでも問題無い。  </p>
+<p>端末から<code>/opt/copy/CopyAgent</code>で起動。<br>一応ちゃんと動いてくれているようだ。<br><code>/opt/copy/CopyConsole</code>なら端末で動作する。  </p>
+<p>簡便のためコマンド<code>/opt/copy/CopyAgent</code>をメニューに追加した。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/30/xubuntu-copy-client/" data-text="Xubuntuで非公式レポジトリのCopyクライアントが不調 | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/01/30/xubuntu-copy-client/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/01/30/xubuntu-copy-client/" class="hatena-bookmark-button" data-hatena-bookmark-title="Xubuntuで非公式レポジトリのCopyクライアントが不調" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
@@ -174,14 +299,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/04/01/xfce4-appearance-settings-crash/" >Xfce4設定の外観~フォントをFixedにしたらクラッシュした</a>
+			<a href="/2015/01/29/dropbox-number-of-files/" >Dropbox サイズだけではなくファイル数も問題</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年4月1日
+	2015年1月29日
 </div>
 
 <div class="panel-body">
@@ -191,16 +316,10 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>Xfce4の設定で「外観」（appearance）→「フォント」のデフォルトフォントをFixedにしたら、クラッシュして、パネルが消えてしまった。<br>デスクトップ上右クリック→アプリケーションから再び「外観」を呼び出そうとしても、一瞬現れて瞬時に消えてしまう。設定マネージャーも起動せず。<br>「設定」→「パネル」でパネルは「キオスクモード」とかでなんとか立ち上げることが出来たが、これもファイルマネージャーを開くと消えてしまう。  </p>
-<p>Firefoxで「システムフォント」等を検索したが、/etc/fonts/conf.d内のファイルにはそれらしい記述は見当たらず。<br>「外観」のデフォルトフォントはシステムフォントとは別物らしい。  </p>
-<p><a href="https://archlinuxjp.kusakata.com/wiki/GTK%2B" target="_blank" rel="external">GTK+ - ArchWiki</a>を見て、~/.gtkrc-2.0を探したが、そんなファイルは無い。<br>自作してみたが効果なし。  </p>
-<p>ホームディレクトリ内を探しまわって、ようやく~/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xmlに記述を見つけた。  </p>
-<pre><code>  &lt;property name=<span class="string">"Gtk"</span> type=<span class="string">"empty"</span>&gt;
-    <span class="keyword">...</span>
-    &lt;property name=<span class="string">"FontName"</span> type=<span class="string">"string"</span> value=<span class="string">"Fixed Medium 10"</span>/&gt;
-    <span class="keyword">...</span>
-</code></pre><p>「Fixed」を「Droid Sans」に変更。<br>再起動すると無事復旧した。  </p>
-<p>デスクトップ上右クリックからアプリケーションを起動出来るXfce4で助かった。</p>
+	  <p>独自ドメイン運用のサーバーからダウンロードしたファイル一式をDropboxのフォルダに置いたら、同期に時間が掛かるようになってしまった。<br>いったん同期が済み、なにも更新が無い時でも、Dropboxクライアント起動後のファイルリストのダウンロードとインデックス作成に10分以上掛かる。<br>どうやらファイル数が多いためらしい。<br>同期にはファイルサイズだけではなく、ファイル数も影響するのだとか。<br><a href="http://www.iodata.jp/support/qanda/answer/nas_dropbox.html#a4" target="_blank" rel="external">Dropbox制限事項Q&amp;A</a>  </p>
+<p>サーバーのファイルの数は数万の単位だったので、これを圧縮ファイルにして１つのファイルにしたところ、同期時間を大幅に短縮出来た。  </p>
+<p>圧縮前はファイル数が60000以上、Dropboxフォルダの総サイズが約500MB。なにも更新がない状態でDropboxクライアントを起動し、同期が完了するのに約12分掛かった。<br>圧縮後はファイル数が約5500、サイズは約300MB。同期は約1分で完了した。  </p>
+<p>Hexo（Octopressに似た静的サイトジェネレーター）のフォルダもDropboxフォルダに置いているが、.deploy/.git/objectsや.git/objects下にフォルダ・ファイルが多数生成されてしまうので、同期前には<code>git gc</code>するようにしている。</p>
 
 	
 	</div>
@@ -210,14 +329,78 @@
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/01/xfce4-appearance-settings-crash/" data-text="Xfce4設定の外観~フォントをFixedにしたらクラッシュした | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/29/dropbox-number-of-files/" data-text="Dropbox サイズだけではなくファイル数も問題 | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/01/xfce4-appearance-settings-crash/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/01/29/dropbox-number-of-files/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/01/xfce4-appearance-settings-crash/" class="hatena-bookmark-button" data-hatena-bookmark-title="Xfce4設定の外観~フォントをFixedにしたらクラッシュした" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/01/29/dropbox-number-of-files/" class="hatena-bookmark-button" data-hatena-bookmark-title="Dropbox サイズだけではなくファイル数も問題" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ネット/">ネット</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/01/29/xubuntu-copy-error-qgtkstyle/" >Xubuntu14.04にインストールしたCopy.com クライアントで「QGtkStyle was unable to detect the current GTK+ theme.」のエラー</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年1月29日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Xubuntu14.04にDropboxに似たオンラインストレージ「Copy」のクライアントを導入した。<br>クライアントはcopy.comからダウンロードしたものではなく、下記サイトを参考にUbuntu向けのものをインストールした。<br><a href="http://kometchtech.blog.fc2.com/blog-entry-1542.html" target="_blank" rel="external">いつか、そのとき、あの場所で。 | [Ubuntu][自分用メモ]　Copy.com クライアントのインストール方法。</a>  </p>
+<p>インストール後、メニュー→アクセサリ→Copyで起動し、64bitのPCでは問題なく使用出来た。<br>だが32bitのPCではログインする際、「curl failed to post data」とエラーになり、終了してしまう。  </p>
+<p>端末から  </p>
+<pre><code>$ /<span class="keyword">opt</span>/<span class="built_in">copy</span>-client/CopyAgent
+</code></pre><p>とコマンド入力して起動させても、  </p>
+<pre><code>QGtkStyle was unable <span class="built_in">to</span> detect <span class="operator">the</span> current GTK+ theme.
+</code></pre><p>というエラー表示が出て、やはりログイン出来ない。  </p>
+<p>QGtkStyleとかGTK+とか、なんのことかよく分からなかったが、どうやら<code>libgnomeui</code>をインストールする必要があるらしい。<br><a href="https://wiki.archlinux.org/index.php/Uniform_Look_for_Qt_and_GTK_Applications_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29#Qt_.E3.82.A2.E3.83.97.E3.83.AA.E3.82.B1.E3.83.BC.E3.82.B7.E3.83.A7.E3.83.B3.E3.81.8C_QGtkStyle_.E3.82.92.E4.BD.BF.E3.82.8F.E3.81.AA.E3.81.84" target="_blank" rel="external">Uniform Look for Qt and GTK Applications (日本語) - ArchWiki</a>  </p>
+<p>さらに検索してみると、Ubuntuでは以前からCopy.com クライアント利用にあたっての不具合が報告されているようだ。<br><a href="http://ubuntuforums.org/showthread.php?t=2217713&amp;page=2&amp;p=12993324#post12993324" target="_blank" rel="external">Copy.com indicator problem with Ubuntu 14.04 - Page 2</a>  </p>
+<p>インジケーター問題の修正はインストール時に行った（最新バージョンでは修正済か？）が、この回答を参考に、Synapticから<code>libgnomeui-0</code>をインストールした。<br>無事Copy.com クライアントを使用出来るようになった。  </p>
+<p>回答にあった「canberra-gtk-module」のエラーは出なかった。  </p>
+<p>ーー<br>（追記）<br>64bitのPCでもCopy.com クライアントを起動した際、”Logging In”の状態でギクシャクすることがあるので、こちらにも<code>libgnomeui-0</code>をインストールした。<br>だがその後も不調が続いたので、結局Copy.comのサイトからダウンロードしたクライアントを入れなおした。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/29/xubuntu-copy-error-qgtkstyle/" data-text="Xubuntu14.04にインストールしたCopy.com クライアントで「QGtkStyle was unable to detect the current GTK+ theme.」のエラー | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/01/29/xubuntu-copy-error-qgtkstyle/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/01/29/xubuntu-copy-error-qgtkstyle/" class="hatena-bookmark-button" data-hatena-bookmark-title="Xubuntu14.04にインストールしたCopy.com クライアントで「QGtkStyle was unable to detect the current GTK+ theme.」のエラー" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
@@ -236,14 +419,14 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/04/01/infinality/" >Arch LinuxのフォントレンダリングをInfinalityにした</a>
+			<a href="/2015/01/28/nvpy/" >Simplenoteと簡単に同期出来るメモ帳ソフト「nvPY」</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年4月1日
+	2015年1月28日
 </div>
 
 <div class="panel-body">
@@ -253,16 +436,22 @@
 	<div class="col-md-12">
 	  
 	
-	  <p>Arch Linuxでのフォントが汚く見づらかったので、フォントレンダリング「Infinality」（<a href="https://archlinuxjp.kusakata.com/wiki/Infinality" target="_blank" rel="external">Infinality - ArchWiki</a>）をインストールした。  </p>
-<p>途中、</p>
-<pre><code>Unable <span class="keyword">to</span> <span class="keyword">update</span> the static FcBlank<span class="variable">s:</span> <span class="number">0</span>x0600
-Unable <span class="keyword">to</span> <span class="keyword">update</span> the static FcBlank<span class="variable">s:</span> <span class="number">0</span>x0601
-Unable <span class="keyword">to</span> <span class="keyword">update</span> the static FcBlank<span class="variable">s:</span> <span class="number">0</span>x0602
-…
-</code></pre><p>というエラーが出たが、下記トピックを参考に、<code>sudo pacman -S fontconfig-infinality-ultimate</code>でfontconfig-iu-compを削除した。<br><a href="https://bbs.archlinux.org/viewtopic.php?id=195198" target="_blank" rel="external">[SOLVED] Font cache: Unable to update the static FcBlanks / Newbie Corner / Arch Linux Forums</a>  </p>
-<p>首尾よくフォントが綺麗になったのだが、その後一部の漢字フォントが縦に細く潰れたようになってしまった。<br>（もしかすると、気づいたのが最近だっただけで、以前から潰れたフォントがあったのかもしれない。）</p>
-<p>フォントレンダリングをUbuntuのものに変えようかとも思ったが、ArchWikiに記載のあったibfonts-meta-extendedをインストールしたら治った。<br>IPA Pゴシックなどでは、依然、一部漢字フォントが潰れているが。  </p>
-<p>どうしても具合が悪いようだったら、Ubuntuのフォントレンダリングに変更してみようと思う。</p>
+	  <p>オンラインノートのSimplenoteだけでも十分便利だが、ブラウザを立ち上げずに済むなら尚便利。<br>検索すると「nvPY」というメモ帳ソフトが見つかった。<br>Simplenoteと簡単に同期出来て、しかもLinux、Windows、Mac OS Xなどクロスプラットフォームで利用可能らしい。<br>UbuntuソフトウェアセンターやSynapticからもインストール可能。<br><a href="http://moebuntu.blog48.fc2.com/blog-entry-688.html" target="_blank" rel="external">萌え萌えmoebuntu　SimplenoteクライアントnvPY</a>  </p>
+<p>メニュー→アクセサリから起動すると、  </p>
+<blockquote>
+<p>Could not read any configuration files.<br>See<br>/usr/share/doc/nvpy/examples/nvpy-example.cfg</p>
+</blockquote>
+<p>と注意が表示される。  </p>
+<p>nvpy-example.cfgが設定ファイルのひな形らしい。<br>/usr/share/doc/nvpy/examples内のnvpy-example.cfgを自分のホームディレクトリにコピー。<br>Simplenoteのアカウント（メールアドレス）とパスワードを記入し、nvpy-example.cfgのファイル名を<code>.nvpy.cfg</code>に変更したらSimplenoteとの同期設定は完了。<br>他にも.nvpy.cfgで色々と設定出来るよう。<br>取り敢えずフォントをdroid sans mono、フォントサイズを10に、リストペインのフォントサイズを9にした。  </p>
+<p>nvPYを立ち上げたらすぐに同期してSimplenote上のノートを取り込んでくれた。<br>自動開始アプリケーションにも追加してみたが、PC起動の度に立ち上がっている必要も無さそうなので、クイックランチャーに追加することにした。<br>アイコンは/usr/share/icons/hicolor/256x256/apps/nvpy.png。（青のローバーMINI）  </p>
+<p>autosave、autosyncしてくれるので、ブラウザでSimplenoteを開く必要がない。  </p>
+<p>デフォルトのsort modeでは更新日時での降順（新しいノートが上）。  </p>
+<p>nvPY下部の「Pinned」のチェックボックスにチェックを入れると、そのノートが常に一番上に表示される。  </p>
+<p>右上の「CS」（case-sensitivity）にチェックが入っていたら、検索のときアルファベットの大文字と小文字を区別して検索。  </p>
+<p>search modeのgstyleとregexpは、英語など語句の間にスペースの入った文節を検索した際、対象を完全一致のみ（regexp）にするかどうかのオプションのよう。<br>日本語環境ではデフォルトのgstyleで良さそう。  </p>
+<p>その他、英語だがnvPYのリポジトリに詳しい説明あり。<br><a href="https://github.com/cpbotha/nvpy" target="_blank" rel="external">https://github.com/cpbotha/nvpy</a>  </p>
+<p>欠点はマウス右クリックでのコピーやペーストは出来ず、CTRL＋cやCTRL＋vを使う必要があること。<br>また、nvPY内でなら中クリックでのペーストは可能だが、アプリケーションをまたいでは使えない。  </p>
+<p>ーー<br>（追記）<br>右クリックによるコピーペーストが出来ないのはやはり不便なので、結局QupZillaという軽量ブラウザをSimplenote専用とすることにした。<br><a href="http://pagent.github.io/2015/01/31/qupzilla-simplenote/" target="_blank" rel="external">軽量ブラウザQupZillaをSimplenoteアプリとして使う | Pagent</a></p>
 
 	
 	</div>
@@ -272,14 +461,137 @@ Unable <span class="keyword">to</span> <span class="keyword">update</span> the s
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/01/infinality/" data-text="Arch LinuxのフォントレンダリングをInfinalityにした | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/28/nvpy/" data-text="Simplenoteと簡単に同期出来るメモ帳ソフト「nvPY」 | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/01/infinality/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/01/28/nvpy/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/01/infinality/" class="hatena-bookmark-button" data-hatena-bookmark-title="Arch LinuxのフォントレンダリングをInfinalityにした" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/01/28/nvpy/" class="hatena-bookmark-button" data-hatena-bookmark-title="Simplenoteと簡単に同期出来るメモ帳ソフト「nvPY」" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ユーティリティ/">ユーティリティ</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/01/28/simplenote/" >これは便利！シンプルで軽快「Simplenote」おすすめのオンラインメモ帳</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年1月28日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>以前はちょっとした文章などをPC間でやり取りするのに、自分宛てにメールを送ったりしていた。<br>あるサイトのURLを別のPCでも開きたい時など。  </p>
+<p>Firefox Syncを使うようになってからはそういうことも無くなったが、それでもちょっとした、それでいて一から文字を入力するのは大変な文章を送りたい時がある。<br>そういう時はGoogleやYahoo!で検索して検索結果のURLをブックマーク、Firefox Syncの同期を利用して別のPCに送るというようなことをしていた。  </p>
+<p>あまりスマートなやり方とは思えないし、文字数が多くなると難しい。<br>なにか良い方法はないものか。<br>Dropboxでテキストファイルをやり取りするというのは大層だし。  </p>
+<p>ずいぶん前にオンラインノートの老舗Evernoteのアカウントは作っていた。<br>長らく放置していたEvernoteをもう一度使ってみようかと思ったが、多機能ゆえか動作が重く、どうにもやりきれない。<br>もっと簡単にちょこちょこっと書いたり、コピペしたりしたいだけなのだ。  </p>
+<p>なにか良いサービスはないかと探してみたら、有りました！  </p>
+<p><a href="https://app.simplenote.com/" target="_blank" rel="external">「Simplenote」</a>  </p>
+<p>とにかく軽い。<br>そしてシンプル。<br>こういうのが欲しかった。  </p>
+<p>（参照サイト）<br><a href="http://allabout.co.jp/matome/cl000000002229/" target="_blank" rel="external">お散歩に持って出ると便利な「オンラインノート」サービス10選｜All About（オールアバウト）</a>  </p>
+<p>管理するアカウントをあまり増やしたくないので、はじめは登録するのを少し躊躇したが、試してみて良かった。  </p>
+<p>これはおすすめです。  </p>
+<p>ーー<br>（追記）<br>Linux、Windows、OS Xなど、クロスプラットフォームで利用可能なメモ帳ソフト「nvPY」というのがあった。（Ubuntu系ならソフトウェアセンターからインストール可能）<br>「nvPY」はSimplenoteと簡単に同期出来て、ブラウザでサイトを開く必要がなくなる。<br><a href="http://pagent.github.io/2015/01/28/nvpy/" target="_blank" rel="external">Simplenoteと簡単に同期出来るメモ帳ソフト「nvPY」 | Pagent</a>    </p>
+<p>あと場所が分かりにくいが、<a href="http://simplenote.com/downloads/" target="_blank" rel="external">Downloads | Simplenote</a>にSimplenoteのアプリ一覧が挙げられていた。<br>Mac OS X用、Windows用、Mobile用などのアプリや、Microsoft Outlook用、Emacs用プラグインなど多数あり。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/28/simplenote/" data-text="これは便利！シンプルで軽快「Simplenote」おすすめのオンラインメモ帳 | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/01/28/simplenote/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/01/28/simplenote/" class="hatena-bookmark-button" data-hatena-bookmark-title="これは便利！シンプルで軽快「Simplenote」おすすめのオンラインメモ帳" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ネット/">ネット</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/01/26/numlockx/" >Xubuntu14.04で常にNumlockオンで起動する</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年1月26日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>PC起動時にNumlockが有効になっていると、すぐにテンキーで数字を入力出来るので少しだけ助かる。<br>オフになっていてもNumlockキーを押せばいいだけではあるが。  </p>
+<p>Xubuntu14.04の設定マネージャーを見ていると「設定エディター」というのがあった。<br>マウスを合わせるとツールチップで「Xfconf のグラフィカル設定エディターです」と説明が出ているもの。<br>何の気無しにクリックしてみると、keyboadsのところが開いていてNumlockについての設定のようだった。<br>「値」の処にチェックは入っていない。  </p>
+<p>試しにチェックを入れてみたら良かったのだが、説明らしい説明が無かったので躊躇してしまい、「Numlock」+「Ubuntu」で検索してnumlockxをインストールした。<br>だがこれだけだと、Numlockがオフの状態でPCを終了して再起動すると、Numlockオフで起動してしまう。<br>Ubuntuソフトウェアセンターの説明には「本パッケージは、セッション開始時に numlock を有効化するセッションスクリプト を自動的にインストールします。」とあるのだが。  </p>
+<p>/etc/lightdm/lightdm.confに「greeter-setup-script=/usr/bin/numlockx on」を追記するよう解説しているサイトがあったのでやってみたが、これもうまく行かない。<br>さっきの「設定エディター」でチェックを入れても、オフ状態でPCを終了するとNumlockオフで起動する。  </p>
+<p>結局、「セッションと起動」の自動開始アプリケーションにコマンド<code>numlockx</code>の項目を追加することで、「常にNumlockオンで起動」させることが出来た。  </p>
+<p>ーー<br>（追記）<br>自動開始アプリケーションに追加するコマンドは<code>numlockx</code>だけでも大丈夫だったが、<code>/usr/bin/numlockx on</code>もしくは<code>/usr/bin/numlockx</code>とするのがLinuxの正統な作法のようだ。<br>（自動開始アプリケーションに追加されていた他の項目を見ると、どれも/usr/bin/…という記法になっている。）  </p>
+<p>「<code>numlockx</code>だけで実行出来る」＝「パスが通っている」ということらしいので、どちらでも良いのだろう。<br><a href="http://www.obenri.com/_operation/path_through.html" target="_blank" rel="external">◇”パスが通っている”とは？◇初心者のためのLinuxサーバー構築講座(CentOS 自宅サーバー対応)☆お便利サーバー.com☆</a></p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/26/numlockx/" data-text="Xubuntu14.04で常にNumlockオンで起動する | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/01/26/numlockx/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/01/26/numlockx/" class="hatena-bookmark-button" data-hatena-bookmark-title="Xubuntu14.04で常にNumlockオンで起動する" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
@@ -298,14 +610,14 @@ Unable <span class="keyword">to</span> <span class="keyword">update</span> the s
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/04/01/nemo-fileroller/" >nemoの右クリックメニューに「圧縮...」「ここに展開する」を追加</a>
+			<a href="/2015/01/26/deploy-conflicted-copy-dropbox/" >Dropbpx上のHexoでdeploy時「競合コピ ー」のためエラーになる</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年4月1日
+	2015年1月26日
 </div>
 
 <div class="panel-body">
@@ -315,9 +627,12 @@ Unable <span class="keyword">to</span> <span class="keyword">update</span> the s
 	<div class="col-md-12">
 	  
 	
-	  <p>Arch Linux（Xfce4デスクトップ）にもファイルマネージャーnemoを入れている。<br>Xubuntuの時にはnemoの右クリックに「圧縮…」や「ここに展開する」というのがあったのだが、何故かこれが無い。<br>どうやらエクステンションとしてnemo-filerollerを入れないといけないらしい。<br><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>  </p>
-<p>pacmanでインストール出来た。  </p>
-<p><a href="https://github.com/linuxmint/nemo-extensions" target="_blank" rel="external">linuxmint/nemo-extensions · GitHub</a>を見ると他にも、nemo-terminal、nemo-dropbox、またnemo-compare、nemo-repairerなど様々な拡張機能があるようだ。<br>また今度試してみようと思う。</p>
+	  <p>Dropbpx上に置いてあるHexoフォルダ直下にdb (… の競合コピー 2015-01-25).jsonというファイルが出来てしまった。<br>deployしようとすると  </p>
+<pre><code>fata<span class="variable">l:</span> Reference <span class="built_in">has</span> invalid forma<span class="variable">t:</span> <span class="string">'refs/heads/master (... の競合コピ ー 2015-01-25)'</span>
+</code></pre><p>というエラー表示が出る。  </p>
+<p>Dropbpxでは１つのファイルに対して複数のPCで同時に変更があった場合、「競合コピー」というのが出来るらしい。<br>hexo/.deploy/.git/refs/heads内にも競合コピーが出来てしまい、これのせいで上手くdeploy出来ないようだ。<br><a href="http://rcmdnk.github.io/blog/2013/05/12/computer-octopress-git-github-dropbox/" target="_blank" rel="external">Git + Dropbox使用時の注意点</a>  </p>
+<p>競合コピーを削除したらエラーが出なくなった。  </p>
+<p>Hexoフォルダ内を「競合コピー」で検索したら計４つ見つかったので、すべて削除した。</p>
 
 	
 	</div>
@@ -327,21 +642,21 @@ Unable <span class="keyword">to</span> <span class="keyword">update</span> the s
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/01/nemo-fileroller/" data-text="nemoの右クリックメニューに「圧縮...」「ここに展開する」を追加 | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/26/deploy-conflicted-copy-dropbox/" data-text="Dropbpx上のHexoでdeploy時「競合コピ ー」のためエラーになる | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/01/nemo-fileroller/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/01/26/deploy-conflicted-copy-dropbox/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/01/nemo-fileroller/" class="hatena-bookmark-button" data-hatena-bookmark-title="nemoの右クリックメニューに「圧縮...」「ここに展開する」を追加" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/01/26/deploy-conflicted-copy-dropbox/" class="hatena-bookmark-button" data-hatena-bookmark-title="Dropbpx上のHexoでdeploy時「競合コピ ー」のためエラーになる" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
 	<div class="meta-widget pull-right">
 <span style="color:#555;"><i class="fa fa-tags"></i></span>
 <ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Linux/">Linux</a></li></ul>
+  <li><a href="/tags/Git/">Git</a></li> <li><a href="/tags/ネット/">ネット</a></li></ul>
 	</div>
 
 </div>
@@ -353,14 +668,14 @@ Unable <span class="keyword">to</span> <span class="keyword">update</span> the s
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2015/04/01/xfce4-terminal-browser/" >Xfce4 terminal内のリンクを開くブラウザをFirefoxに</a>
+			<a href="/2015/01/25/facebookmail-spam/" >宅配業者からの不在通知を装ったスパムメール（info@…facebookmail.com）</a>
 		</h3>
 	
 
 </div>
 					<!-- _partial/post/entry -->
 <div class="asset-meta text-muted pull-right">
-	2015年4月1日
+	2015年1月25日
 </div>
 
 <div class="panel-body">
@@ -370,14 +685,17 @@ Unable <span class="keyword">to</span> <span class="keyword">update</span> the s
 	<div class="col-md-12">
 	  
 	
-	  <p>「お気に入りのアプリケーション」のブラウザをFirefoxにしていて、これまでXfce4 terminal内のリンクを開く時もFirefoxで開けていた。<br>だが、Chromiumをインストールしてから、リンクがChromiumで開くようになってしまった。<br>Xfce4 terminalの設定ではブラウザを指定出来ない。  </p>
-<p>検索すると下記トピックが見つかった。<br><a href="https://bbs.archlinux.org/viewtopic.php?id=191547" target="_blank" rel="external">[SOLVED] Xfce terminal open links with wrong browser. / Applications &amp; Desktop Environments / Arch Linux Forums</a>  </p>
-<p>~/.config/mimeapps.listの[Added Associations]の箇所に下記を追記した。  </p>
-<pre><code>text/vcard=firefox.desktop;
-text/html=firefox.desktop;
-x-scheme-<span class="operator"><span class="keyword">handler</span>/http=firefox.desktop;</span>
-x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firefox.desktop;</span>
-</code></pre><p>Xfce4 terminal内のリンクがFirefoxで開くようになった。</p>
+	  <p>今年になってから突然、サブのメールアドレスに迷惑メールが来るようになった。  </p>
+<p>ほとんどは卑猥な文言のひと目でスパムと分かるものだったが、一見スパムと分かりづらいメールもあった。<br><code>ペリカン配送 &lt;info@…facebookmail.com&gt;</code>を名乗る差出人からのもので、件名は<code>【ペリカン配送より不在通知】</code>となっている。  </p>
+<blockquote>
+<p>↓コチラから確認↓↓<br>http://…</p>
+<p>↓↓送付停止は下記より↓↓</p>
+<p>http://…</p>
+</blockquote>
+<p>という内容で、迷惑メールフィルタでも振り分けられていなかった。  </p>
+<p>スパムメールが来るようになった時期とちょうど重なっていたから「あやしい」と気付いたが、そうでなかったら本当の「不在通知」と思い込み、うっかりリンクをクリックしていた可能性がある。<br>不在通知が郵便受けにではなくメールで来るなんて、冷静に考えたらおかしいのだが。  </p>
+<p>間違ってリンクをクリックしていたら悪質なサイトに誘導されていたのだろう。<br>また「生きているアドレス」と判断されて、さらに大量のスパムメールが来ることになっていたかもしれない。  </p>
+<p>検索してみると、facebookmail.comからスパムメールが来るというのは結構あるらしい。<br>みなさんもお気をつけ下さい。</p>
 
 	
 	</div>
@@ -387,21 +705,21 @@ x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firef
 	
 
 	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/01/xfce4-terminal-browser/" data-text="Xfce4 terminal内のリンクを開くブラウザをFirefoxに | Pagent" data-lang="ja">ツイート</a>
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/25/facebookmail-spam/" data-text="宅配業者からの不在通知を装ったスパムメール（info@…facebookmail.com） | Pagent" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/01/xfce4-terminal-browser/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/01/25/facebookmail-spam/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/01/xfce4-terminal-browser/" class="hatena-bookmark-button" data-hatena-bookmark-title="Xfce4 terminal内のリンクを開くブラウザをFirefoxに" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/01/25/facebookmail-spam/" class="hatena-bookmark-button" data-hatena-bookmark-title="宅配業者からの不在通知を装ったスパムメール（info@…facebookmail.com）" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 	
 
 	<div class="meta-widget pull-right">
 <span style="color:#555;"><i class="fa fa-tags"></i></span>
 <ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Linux/">Linux</a></li></ul>
+  <li><a href="/tags/ネット/">ネット</a></li></ul>
 	</div>
 
 </div>
@@ -447,43 +765,43 @@ x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firef
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/SEO/">SEO<span>4</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
-		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
-		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
 		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
 			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>14</span></a></li>
-		
-			<li><a href="/tags/サーバー/">サーバー<span>9</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>37</span></a></li>
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>13</span></a></li>
 		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>14</span></a></li>
+		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
+		
+			<li><a href="/tags/サーバー/">サーバー<span>9</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
+		
+			<li><a href="/tags/食/">食<span>4</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
 		
-			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>37</span></a></li>
+		
+			<li><a href="/tags/SEO/">SEO<span>4</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
 		
 		
 		</ul>
