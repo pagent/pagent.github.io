@@ -118,8 +118,7 @@ sitemapとは別にクローラーに各種の指定をするrobots.txtという
 <p>sourceフォルダ直下にrobots.txtを新規作成。<br>generateするとちゃんとpublicフォルダ内にもrobots.txtが生成された。<br>deployし、ブラウザで<code>http://pagent.github.io/robots.txt</code>にアクセスしが、何故か404エラーだった。GitHub Pagesのレポジトリには追加されていたが。<br>反映に時間がかかるようでしばらくするとアクセス出来た。  </p>
 <p>robots.txtの内容は下記のようにした。  </p>
 <pre><code><span class="attribute">User-agent</span>: <span class="string">*</span>
-<span class="attribute">Disallow</span>: <span class="string">/css/</span>
-<span class="attribute">Disallow</span>: <span class="string">/*.js$</span>
+<span class="attribute">Disallow</span>: <span class="string"></span>
 
 <span class="http"><span class="attribute">Sitemap</span>: <span class="string">http://pagent.github.io/sitemap.xml</span>
 
@@ -209,7 +208,7 @@ sitemapとは別にクローラーに各種の指定をするrobots.txtという
     <ul id="tags" class="tag_box list-unstyled collapse in">
 	    <!-- _partial/post/tag -->
   
-  <li><a href="/tags/blog/">blog</a></li> <li><a href="/tags/Hexo/">Hexo</a></li>
+  <li><a href="/tags/blog/">blog</a></li> <li><a href="/tags/SEO/">SEO</a></li> <li><a href="/tags/Hexo/">Hexo</a></li>
 
     </ul>
 	</div>
@@ -294,6 +293,6 @@ var disqus_shortname = 'pagents';
   })();
 </script>
 <!-- End Piwik Code -->
-
+<?php @include_once("/home/a2092133/public_html/w3a_git/writelog.php"); ?>
 </body>
 </html>

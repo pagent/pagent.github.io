@@ -396,7 +396,7 @@
 	<div class="meta-widget pull-right">
 <span style="color:#555;"><i class="fa fa-tags"></i></span>
 <ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/blog/">blog</a></li> <li><a href="/tags/Hexo/">Hexo</a></li></ul>
+  <li><a href="/tags/blog/">blog</a></li> <li><a href="/tags/SEO/">SEO</a></li> <li><a href="/tags/Hexo/">Hexo</a></li></ul>
 	</div>
 
 </div>
@@ -430,8 +430,7 @@
 <p>sourceフォルダ直下にrobots.txtを新規作成。<br>generateするとちゃんとpublicフォルダ内にもrobots.txtが生成された。<br>deployし、ブラウザで<code>http://pagent.github.io/robots.txt</code>にアクセスしが、何故か404エラーだった。GitHub Pagesのレポジトリには追加されていたが。<br>反映に時間がかかるようでしばらくするとアクセス出来た。  </p>
 <p>robots.txtの内容は下記のようにした。  </p>
 <pre><code><span class="attribute">User-agent</span>: <span class="string">*</span>
-<span class="attribute">Disallow</span>: <span class="string">/css/</span>
-<span class="attribute">Disallow</span>: <span class="string">/*.js$</span>
+<span class="attribute">Disallow</span>: <span class="string"></span>
 
 <span class="http"><span class="attribute">Sitemap</span>: <span class="string">http://pagent.github.io/sitemap.xml</span>
 
@@ -467,7 +466,7 @@
 	<div class="meta-widget pull-right">
 <span style="color:#555;"><i class="fa fa-tags"></i></span>
 <ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/blog/">blog</a></li> <li><a href="/tags/Hexo/">Hexo</a></li></ul>
+  <li><a href="/tags/blog/">blog</a></li> <li><a href="/tags/SEO/">SEO</a></li> <li><a href="/tags/Hexo/">Hexo</a></li></ul>
 	</div>
 
 </div>
@@ -766,43 +765,43 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
-		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>37</span></a></li>
-		
 			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
-		
-			<li><a href="/tags/サーバー/">サーバー<span>9</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>14</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
 		
-			<li><a href="/tags/SEO/">SEO<span>4</span></a></li>
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>14</span></a></li>
 		
 			<li><a href="/tags/食/">食<span>4</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
+		
+			<li><a href="/tags/サーバー/">サーバー<span>9</span></a></li>
+		
+			<li><a href="/tags/SEO/">SEO<span>6</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>37</span></a></li>
+		
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
 		
 		
 		</ul>
@@ -924,6 +923,6 @@ var disqus_shortname = 'pagents';
   })();
 </script>
 <!-- End Piwik Code -->
-
+<?php @include_once("/home/a2092133/public_html/w3a_git/writelog.php"); ?>
 </body>
 </html>
