@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-03-01T11:13:44.858Z</updated>
+  <updated>2016-03-01T12:40:39.806Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2016/03/01/gthumb-hidden-comments-folder/"/>
     <id>http://pagent.github.io/2016/03/01/gthumb-hidden-comments-folder/</id>
     <published>2016-03-01T11:12:03.000Z</published>
-    <updated>2016-03-01T11:12:45.341Z</updated>
+    <updated>2016-03-01T12:39:52.897Z</updated>
     <content type="html"><![CDATA[<p>ここ最近、画像を開いたディレクトリに.commentsという隠しフォルダが作成されるようになってしまっていた。<br>フォルダ内には(画像ファイル名).xmlというファイルが複数入っている。  </p>
 <p>簡単な画像編集も出来て便利なのでgThumbという画像ビューアを使っているが、このgThumbが自動的に作成しているらしい。  </p>
 <p>煩わしいのでこれを止めたい。  </p>
@@ -27,7 +27,7 @@
 <li>gThumbを起動し左上のアイコンから「Preferences」へ。  </li>
 <li>「拡張機能」中ほど「コメントとタグ」の項目を「オフ」に。  </li>
 </ol>
-<p><img src="/images/gthumb-preferences.png" alt="gthumb preferences.png" height="240" align="left" style="margin-right:10px;"><img src="/images/gthumb-extensions.png" alt="gthumb extensions.png" height="200" align="left"><br clear="left"></p>
+<p><img src="/images/gthumb-preferences.png" alt="gthumb preferences.png" height="240" align="left" style="margin-right:30px;"><img src="/images/gthumb-extensions.png" alt="gthumb extensions.png" height="200" align="left"><br clear="left"></p>
 <p>.commentsフォルダの作成を回避出来た。  </p>
 <p>（参照記事）<br><a href="http://lukas-prokop.at/blog/2013/09/gthumb-and-the-annoying-comments-folder/" title="gThumb and the annoying .comments folder – Lukas&#39; Weblog" target="_blank" rel="external">gThumb and the annoying .comments folder – Lukas’ Weblog</a></p>
 ]]></content>
