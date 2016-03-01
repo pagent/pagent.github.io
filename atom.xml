@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-03-01T03:41:02.102Z</updated>
+  <updated>2016-03-01T11:13:44.858Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,32 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[画像ビューア「gThumb」が.commentsフォルダを作成するのを停止する]]></title>
+    <link href="http://pagent.github.io/2016/03/01/gthumb-hidden-comments-folder/"/>
+    <id>http://pagent.github.io/2016/03/01/gthumb-hidden-comments-folder/</id>
+    <published>2016-03-01T11:12:03.000Z</published>
+    <updated>2016-03-01T11:12:45.341Z</updated>
+    <content type="html"><![CDATA[<p>ここ最近、画像を開いたディレクトリに.commentsという隠しフォルダが作成されるようになってしまっていた。<br>フォルダ内には(画像ファイル名).xmlというファイルが複数入っている。  </p>
+<p>簡単な画像編集も出来て便利なのでgThumbという画像ビューアを使っているが、このgThumbが自動的に作成しているらしい。  </p>
+<p>煩わしいのでこれを止めたい。  </p>
+<ol>
+<li>gThumbを起動し左上のアイコンから「Preferences」へ。  </li>
+<li>「拡張機能」中ほど「コメントとタグ」の項目を「オフ」に。  </li>
+</ol>
+<p><img src="/images/gthumb-preferences.png" alt="gthumb preferences.png" height="240" align="left" style="margin-right:10px;"><img src="/images/gthumb-extensions.png" alt="gthumb extensions.png" height="200" align="left"><br clear="left"></p>
+<p>.commentsフォルダの作成を回避出来た。  </p>
+<p>（参照記事）<br><a href="http://lukas-prokop.at/blog/2013/09/gthumb-and-the-annoying-comments-folder/" title="gThumb and the annoying .comments folder – Lukas&#39; Weblog" target="_blank" rel="external">gThumb and the annoying .comments folder – Lukas’ Weblog</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>ここ最近、画像を開いたディレクトリに.commentsという隠しフォルダが作成されるようになってしまっていた。<br>フォルダ内には(画像ファイル名).xmlというファイルが複数入っている。  </p>
+<p>簡単な画像編集も出来て便利なのでgThumbという画像ビューアを]]>
+    </summary>
+    
+      <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Bloglinesがひっそりと終了していた模様]]></title>
@@ -100,12 +126,14 @@
     <link href="http://pagent.github.io/2016/02/21/peeep-us-google-account/"/>
     <id>http://pagent.github.io/2016/02/21/peeep-us-google-account/</id>
     <published>2016-02-20T16:50:59.000Z</published>
-    <updated>2016-02-24T14:12:29.000Z</updated>
+    <updated>2016-03-01T06:08:46.038Z</updated>
     <content type="html"><![CDATA[<p>海外のアーカイブサービスの一つ「Peeep.us」。<br>元URLからの検索機能が無いのが難点だったが、元ページに近い魚拓が得られ、それなりに便利だった。  </p>
 <p>昨年サイトが閉鎖されたかと思われたそのPeeep.usが、いつの間にか復活していた。  </p>
-<p>ところが、魚拓を取ろうと「submit」をクリックすると、Google Accountのログイン画面が表示される。以前はログイン不要だったはずなんだが。  </p>
-<p>Googleからの支援を受けての復活だったのだろうか？  </p>
-<p>要ログインだと使いづらいので、今後お世話になることは無いと思う。</p>
+<p>ところが、魚拓を取ろうと「submit」をクリックすると、Google Accountのログイン画面が表示される。以前はログイン不要だったはずなんだが。<br>Googleからの支援を受けての復活だったのだろうか？  </p>
+<p>要ログインだと使いづらいので、今後お世話になることは無いと思う。<br>日本の「ウェブ魚拓」も魚拓の削除、IPアドレスの開示など、あまり使う気にはなれないが、他にも色々あるし。  </p>
+<p><a href="http://archive.org/web/" title="Internet Archive: Wayback Machine" target="_blank" rel="external">Wayback Machine</a>  </p>
+<p><a href="http://archive.is/" title="archive" target="_blank" rel="external">archive.is</a>  </p>
+<p>あと、あまり有名ではないが、<a href="http://www.webcitation.org/archive" title="WebCite archive page" target="_blank" rel="external">WebCite</a>もけっこう便利なので、たまに利用している。<br>アーカイブ取得時にメールアドレスを入力する必要があるが、mail@example.netなど適当なものでもOK。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>海外のアーカイブサービスの一つ「Peeep.us」。<br>元URLからの検索機能が無いのが難点だったが、元ページに近い魚拓が得られ、それなりに便利だった。  </p>
@@ -471,34 +499,6 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<p>ネットを利用していて、例えばメール欄が必須になっているブログにコメントしたい時など、これまでは正直に実際のメールアドレスを記載していた。（メインのではなく、サブのアドレスを使うことが多かったが）<br>だが、よく考えてみると、返信が必要のない場合は実際のものではなく、架空の]]>
-    </summary>
-    
-      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[ツイッター検索でURL付きのツイートが表示されない]]></title>
-    <link href="http://pagent.github.io/2015/06/30/twitter-search-result-probrem/"/>
-    <id>http://pagent.github.io/2015/06/30/twitter-search-result-probrem/</id>
-    <published>2015-06-30T13:32:34.000Z</published>
-    <updated>2016-02-29T15:10:17.060Z</updated>
-    <content type="html"><![CDATA[<h3 id="自分のツイートだけが表示されない">自分のツイートだけが表示されない</h3>
-<p>ニュース記事やブログなどに設置してあるツイート数表示をクリックした時に表示されるページ（URLをツイッター検索した結果のページ）に自分のツイートだけが表示されなくなっていた。「トップ」から「ライブ」のタブに切り替えても表示されない。  </p>
-<p>これではツイートを見てもらう機会が減ってしまい困るので、下記ページから問題の報告を行った。<br><a href="https://support.twitter.com/forms/feature_report?feature=tweets" target="_blank" rel="external">Twitterヘルプセンター</a>  </p>
-<p>「問題の詳細」の箇所は英文で書いた方が良いらしいので、見様見真似で下記のようにした。  </p>
-<p>Regarding: Search/Trends<br>Subject: I’m not a spam!!<br>Description of problem:<br>My tweets that contain URLs are not displayed in search results. Can you permit me to display my tweets in the search? I use Twitter generally. I’m not spam. Please clear your information about spam. Kind regards.  </p>
-<p>「返信できませんが、いただいた情報はTwitterの改善に役立たせていただきます。」とのことだったが、１日で改善された。  </p>
-<h3 id="自分のブログ記事のツイッター検索の結果が１件しか表示されない">自分のブログ記事のツイッター検索の結果が１件しか表示されない</h3>
-<p>その後、別で書いている自分のブログでのことだが、上記同様ツイート数表示をクリックした時に表示されるページ（URLをツイッター検索した結果のページ）で、何人かツイートしてくれている人がいるのに、ツイートが１件しか表示されない状態になっていた。「トップ」でも「ライブ」でも１件のみ。誰のツイートが表示されるかは、リツイート数の多いツイートだったり、最新のツイートだったり。<br>これではツイートしてくれる人も意欲を削がれるに違いない。  </p>
-<p>上記の「Twitterヘルプセンター」から日本語で報告してみたが、しばらく待っても変化が無い。<br>再度下手くそな英語で報告してみた。  </p>
-<p>Regarding: Search/Trends<br>Subject: About search result<br>Description of problem:<br>Reasntly, several tweets exist that contain the URL(<a href="http://pagent.seesaa.net/article/421338174.html" target="_blank" rel="external">http://pagent.seesaa.net/article/421338174.html</a>). But only one tweet is displayed in search result, even in “Live” tab.<br>Can you adjust this probrem?  </p>
-<p>１〜２時間ほどすると、ほぼすべてのツイートが表示される状態に改善した。  </p>
-<p>英語が苦手でも、やってみるものだと実感した。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="自分のツイートだけが表示されない">自分のツイートだけが表示されない</h3>
-<p>ニュース記事やブログなどに設置してあるツイート数表示をクリックした時に表示されるページ（URLをツイッター検索した結果のページ）に自分のツイートだけが表示されなくなっていた。「ト]]>
     </summary>
     
       <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>

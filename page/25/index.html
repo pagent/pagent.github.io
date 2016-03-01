@@ -110,6 +110,69 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/04/19/permalink/" >パーマリンクを変更出来ない無料ブログは最強のパーマリンクかもしれない</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年4月19日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>MovableTypeのブログでまたパーマリンクを変更した。<br>独自ドメインでブログを書き始めてからまだ4ヶ月にもならないのだが、確かこれで4度目の変更になる。<br>より理想的と思われるパーマリンクに変更したり、ブログの公開ディレクトリを変更したためだったり。</p>
+<p>今回の変更はそれまでの<br><code>/201404191728</code>というような「/年月日時分」という形から<code>/2014/04/19/curry_soba/</code>といったOctopress（Jekyll）と同様の「/年/月/日/キーワード/」という形への変更。<br>これなら将来的にMovableType〜Octopress間での移行がスムーズにいきそうだし、以前の投稿時刻が丸見えなパーマリンクもちょっと嫌だった。<br>でも結局は移行しないかもしれないしその可能性の方が高いのではないかという気もする。</p>
+<p>これまでのパーマリンク変更でリダイレクトを指定している最中で検索エンジンのインデックスもまだ移行途中のようなのだが、<code>.htaccess</code>によるディレクトリ一括でのリダイレクト先からさらに、メタタグ<code>&lt;meta http-equiv=&quot;refresh&quot; 〜&gt;</code>を使ったリダイレクトをするという二重のリダイレクトをすることになってしまった。<br>記事数がまだ少なかったからそれ程手間はかからなかったし、いちおうちゃんと新URLに飛んではくれる。<br>だがこういうのはあまり宜しくはなさそうだ。</p>
+<p>新URLのいくつかがインデックスされないくらいならまだいいが、検索エンジンからペナルティというやつを受けてしまったりしたら洒落にならない。<br>「そんなことになったらどうしよう」と少しビビりながら、パーマリンクの違いでそれ程SEO的に違いも無いだろうとも思いつつ、それでもやめられない。パーマリンクの変更。</p>
+<p>自由というのは本当にやっかいなものだと思う。<br>端からパーマリンクが変更出来なかったら、「理想的なパーマリンク」についてあれこれ悩んだりせずに済むし、変更する手間も要らないし、リンク切れにもならないし、ましてやパーマリンク変更の不手際によるペナルティなどということとも無縁のはず。</p>
+<p>パーマリンクを変更出来ない無料ブログはひょっとすると「最強のパーマリンク」を持っているのかもしれない、と思ってみたりする。</p>
+<p>ーー<br>（追記）<br>ページ毎のリダイレクトもメタタグを使うより<code>.htaccess</code>で</p>
+<pre><code><span class="keyword"><span class="common">Options</span></span> +FollowSymLinks
+<span class="keyword"><span class="common">RewriteEngine</span></span> <span class="literal">on</span>
+<span class="keyword"><span class="common">RewriteRule</span></span> ^old.html http://example.com/new.html<span class="sqbracket"> [L,R=301]</span>
+</code></pre><p>とした方が簡単だし、その方が推奨されているそうですね。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/04/19/permalink/" data-text="パーマリンクを変更出来ない無料ブログは最強のパーマリンクかもしれない | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/19/permalink/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/19/permalink/" class="hatena-bookmark-button" data-hatena-bookmark-title="パーマリンクを変更出来ない無料ブログは最強のパーマリンクかもしれない" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/blog/">blog</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/04/19/free-server/" >無料サーバーは試用には良いが、それほど特をするわけでもない</a>
 		</h3>
 	
@@ -421,60 +484,6 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
-			<a href="/2014/04/17/subdomain-subdirecrory/" >サブドメイン対サブディレクトリ</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年4月17日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>独自ドメインの元で複数のサイト（ブログ）を運営する際、サブドメイン形式にした方が良いのか、それともサブディレクトリ形式の方が良いのか。<br>考え方次第で、どちらが正解でどちらが間違いというものでもないようだが、検索した限りではサブディレクトリでの運用の方がドメインからの恩恵を受けやすいらしい。<br>ただこの場合、ペナルティを受けた時にドメインごと巻き込まれるという危険もある様子。</p>
-<p>自分の場合は初めてドメインを取った際、ものめずらしさから幾つかサブドメインを作ったりもしたが、結局一つのサブドメイン内でディレクトリを分けて複数のブログを運用している。<br>運用していると言っても放置状態だったりしますが。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/04/17/subdomain-subdirecrory/" data-text="サブドメイン対サブディレクトリ | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/17/subdomain-subdirecrory/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/17/subdomain-subdirecrory/" class="hatena-bookmark-button" data-hatena-bookmark-title="サブドメイン対サブディレクトリ" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/blog/">blog</a></li></ul>
-	</div>
-
-</div>
-
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
 			<a href="/2014/04/17/ping/" >Ping送信をメニューリストに追加</a>
 		</h3>
 	
@@ -523,6 +532,60 @@
 <span style="color:#555;"><i class="fa fa-tags"></i></span>
 <ul id="tags" class="tag_box list-unstyled collapse in">
   <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/04/17/subdomain-subdirecrory/" >サブドメイン対サブディレクトリ</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年4月17日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>独自ドメインの元で複数のサイト（ブログ）を運営する際、サブドメイン形式にした方が良いのか、それともサブディレクトリ形式の方が良いのか。<br>考え方次第で、どちらが正解でどちらが間違いというものでもないようだが、検索した限りではサブディレクトリでの運用の方がドメインからの恩恵を受けやすいらしい。<br>ただこの場合、ペナルティを受けた時にドメインごと巻き込まれるという危険もある様子。</p>
+<p>自分の場合は初めてドメインを取った際、ものめずらしさから幾つかサブドメインを作ったりもしたが、結局一つのサブドメイン内でディレクトリを分けて複数のブログを運用している。<br>運用していると言っても放置状態だったりしますが。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/04/17/subdomain-subdirecrory/" data-text="サブドメイン対サブディレクトリ | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/17/subdomain-subdirecrory/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/17/subdomain-subdirecrory/" class="hatena-bookmark-button" data-hatena-bookmark-title="サブドメイン対サブディレクトリ" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/blog/">blog</a></li></ul>
 	</div>
 
 </div>
@@ -640,62 +703,6 @@
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/04/11/rentalserver-deproy/" >「デプロイ」がわからないので</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年4月11日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>このブログはOctopressで書いてはいるが、静的サイトジェネレーターを解説しているサイトでよく目にする「Github Pages」というのは使っておらず、普通のレンタルサーバーに置いている。<br>サーバーにはMTOSを使っているブログもあってそれも継続させたいし、なるべく一元的に管理したいということもあるが、「デプロイ」というのがよくわからないというのも大きな理由だったりする。</p>
-<p>レンタルサーバーに記事をアップロードするのにもFTPクライアントを使っていて、記事を書いて生成したら、更新されていそうなファイルだけを選んで「新しかったら上書き」という条件でアップロードしているので、少々面倒臭いことは面倒臭い。<br>「デプロイ」なら更新されているファイルだけリモート先も更新してくれそうに思えるので、とてもスマートだし便利そうではある。<br>Jekyll-Bootstrapをどうしてもうまくサブディレクトリに置けなかったのもデプロイではなくFTPを使っているからなのだろうか。</p>
-<p>レンタルサーバーでもRuby、RubyGems、Gitなどが使えたらデプロイ出来るようなので、いずれは挑戦してみたいとは思う。<br>まずはネット上の情報を参考にして、試しにGithub Pagesにデプロイしてみればいいのかもしれない。</p>
-<p>そうは思いながらも、FTPでアップロードという全然スマートじゃないやり方でも一応更新出来ているので、ついずるずるとどんくさいやり方を続けてしまっている。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/04/11/rentalserver-deproy/" data-text="「デプロイ」がわからないので | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/11/rentalserver-deproy/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/11/rentalserver-deproy/" class="hatena-bookmark-button" data-hatena-bookmark-title="「デプロイ」がわからないので" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Octopress/">Octopress</a></li> <li><a href="/tags/Git/">Git</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -736,43 +743,43 @@
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>37</span></a></li>
-		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
-		
 			<li><a href="/tags/SEO/">SEO<span>6</span></a></li>
-		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
 		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>37</span></a></li>
+		
 			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>14</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
 		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/サーバー/">サーバー<span>9</span></a></li>
 		
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+		
+			<li><a href="/tags/食/">食<span>4</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
 			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>15</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
 		
 		
 		</ul>
@@ -785,6 +792,10 @@
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2016/03/01/gthumb-hidden-comments-folder/" ><i class="fa fa-file-o"></i>画像ビューア「gThumb」が.commentsフォル...</a>
+      </li>
     
       <li>
         <a href="/2016/02/28/bloglines-gone/" ><i class="fa fa-file-o"></i>Bloglinesがひっそりと終了していた模様</a>
@@ -802,10 +813,6 @@
         <a href="/2016/02/27/000webhost-security/" ><i class="fa fa-file-o"></i>無料レンタルサーバー000webhostで情報漏洩</a>
       </li>
     
-      <li>
-        <a href="/2016/02/21/peeep-us-google-account/" ><i class="fa fa-file-o"></i>「Peeep.us」Google accountでのロ...</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -815,7 +822,7 @@
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
 		</ul>
 	</div>
 

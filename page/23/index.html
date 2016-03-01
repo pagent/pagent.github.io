@@ -110,6 +110,72 @@
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/05/03/crash-report/" >Xubuntu12.04起動時に毎回「クラッシュ報告」が通知される</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年5月3日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>数日前からXubuntu12.04起動時に毎回「クラッシュ報告が見つかりました」と通知が出るようになった。<br>ソフトウェアのアップデート後に起こるようになった気もするが、原因がよく分からない。</p>
+<p>報告のポップアップ画面には詳細を見るボタンが無いので<code>/var/log/syslog</code>を見ると、起動の度に</p>
+<blockquote>
+<p>kernel: [  328.863069] [drm:gen6_sanitize_pm] <em>ERROR</em> Power management discrepancy: GEN6_RP_INTERRUPT_LIMITS expected 16070000, was 16000000</p>
+</blockquote>
+<p>というようなエラーが表示されている。<br>検索するとどうやらカーネルのバグでバージョンアップにより直るようだったので、カーネルをバージョンアップしてみた。</p>
+<pre><code>$ uname -<span class="keyword">rv</span>
+</code></pre><p>と入れると現在のカーネルは「3.2.0-61-generic」とのこと。</p>
+<pre><code>$ sudo apt-<span class="built_in">get</span> <span class="keyword">update</span>
+$ sudo apt-<span class="built_in">get</span> install linux-hwe-generic
+$ sudo apt-<span class="built_in">get</span> autoremove   
+</code></pre><p>で「3.5.0-49-generic」をインストールし旧バージョンを削除したが、再起動してもやはり「クラッシュ報告」が通知される。</p>
+<p>クラッシュの内容はよく分からないままだったが、どうやらUbuntu12.04以降「Appot Error Reporting」というのが採用されていて大量のエラーを通知する可能性があるとのこと。<br><a href="http://blog.mamohacy.tribrid-jp.com/article/379688672.html" target="_blank" rel="external">Ubuntu12以降で頻発するapport関連エラーポップアップを止める方法: 電磁波に撃たれて眠りたい♪</a></p>
+<p>使用上特に問題も出ていないので、<code>/etc/default/apport</code>で<code>enabled=0</code>にすることで「Appot Error Reporting」を無効にした。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/05/03/crash-report/" data-text="Xubuntu12.04起動時に毎回「クラッシュ報告」が通知される | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/05/03/crash-report/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/05/03/crash-report/" class="hatena-bookmark-button" data-hatena-bookmark-title="Xubuntu12.04起動時に毎回「クラッシュ報告」が通知される" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/05/02/thunar-root/" >ファイルマネージャー「Thunar」で「rootで開く」</a>
 		</h3>
 	
@@ -636,65 +702,6 @@
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/04/24/quantity-or-qualit/" >「量」か「質」か　RSSリーダーから外すブログ、外さないブログ</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年4月24日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>ブログを運営するにあたっておそらく誰もが突き当たる課題。<br>「量」か、それとも「質」か。<br>「量」も「質」も、というのがもちろん最善の正解なのだが、両立するのはなかなか難しい。</p>
-<p>たいして経験豊富でもないし、それ程アクセスの多いサイトを運営している訳でもないが、自分の経験ではおそらく「ある程度記事が貯まるまでは毎日書くべし」というのは確かに当たっていると思う。<br>100記事とは言わないが、それに近いくらいまで記事が貯まったころから検索サービスにインデックスされる早さが格段に早くなった、というのを実際に自分でも経験している。<br>早い時は数分から10分程度でインデックスされている。<br>（ちなみにこのブログではない）</p>
-<p>これは現在も更新されている「生きたサイト」を重視するという上でもっともなことなのだろう。<br>だが、ある程度の記事数を持つサイトにおいては話が違ってくる。</p>
-<p>ブログの更新をチェックする際にRSSリーダーやその種のウェブサービスを利用している人は多いと思う。<br>わざわざサイトを訪れなくても更新があったら教えてくれるのだから便利なことこの上ないし、利用しない手はない。</p>
-<p>このRSSリーダーに登録していたが、「やっぱりリーダーから外す」というのは私の場合、決して「更新頻度の低い」ブログではなく、反対に更新は頻回にあるがあまり「面白くない」ブログなのだ。<br>もっと言えば、あまり面白いとも思えない記事の更新が頻回にあるブログはうっとおしいし、「既読」にするのもめんどくさいしで堪らずリーダーから外してしまう。<br>文章が長かったり画像の挿入が多数あって、下へのスクロールが大変だったりすればなおさらのこと。</p>
-<p>アフェリエイト云々を抜きにしても、ブログの運営においてはなにより「人」に見てもらわないと意味がない。<br>botに見てもらいインデックスされても「人」に見てもらわなければそのサイトは存在しないに等しい。<br>反対に、たとえ一日のアクセスが数件のようなサイトでも、ある特定の誰かに何かしらの想いを残せたら、そのサイトは確かに存在していると言える。<br>（アフェリエイト的にはあまり意味が無いのかもしれませんが）</p>
-<p>更新が無くともRSSリーダーから外す気にはなれないサイトというのがたくさんあったりするので、こんなことを考えます。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/04/24/quantity-or-qualit/" data-text="「量」か「質」か　RSSリーダーから外すブログ、外さないブログ | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/24/quantity-or-qualit/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/24/quantity-or-qualit/" class="hatena-bookmark-button" data-hatena-bookmark-title="「量」か「質」か　RSSリーダーから外すブログ、外さないブログ" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/blog/">blog</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -737,41 +744,41 @@
 		
 			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
 		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
-		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
-		
 			<li><a href="/tags/サーバー/">サーバー<span>9</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>14</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>37</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
-		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
-		
-			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
 		
 			<li><a href="/tags/SEO/">SEO<span>6</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+			<li><a href="/tags/blog/">blog<span>37</span></a></li>
 		
 			<li><a href="/tags/食/">食<span>4</span></a></li>
 		
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>15</span></a></li>
+		
+			<li><a href="/tags/Metalsmith/">Metalsmith<span>1</span></a></li>
+		
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
 		
 		
 		</ul>
@@ -784,6 +791,10 @@
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2016/03/01/gthumb-hidden-comments-folder/" ><i class="fa fa-file-o"></i>画像ビューア「gThumb」が.commentsフォル...</a>
+      </li>
     
       <li>
         <a href="/2016/02/28/bloglines-gone/" ><i class="fa fa-file-o"></i>Bloglinesがひっそりと終了していた模様</a>
@@ -801,10 +812,6 @@
         <a href="/2016/02/27/000webhost-security/" ><i class="fa fa-file-o"></i>無料レンタルサーバー000webhostで情報漏洩</a>
       </li>
     
-      <li>
-        <a href="/2016/02/21/peeep-us-google-account/" ><i class="fa fa-file-o"></i>「Peeep.us」Google accountでのロ...</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -814,7 +821,7 @@
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
 		</ul>
 	</div>
 
