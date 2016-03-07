@@ -50,6 +50,15 @@ ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'st
 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
 </script>
+<!-- outbound -->
+<script>
+var trackOutboundLink = function(url) {
+   ga('send', 'event', 'outbound', 'click', url, {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+   });
+}
+</script> 
 
 
 
@@ -463,8 +472,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <pre><code>$ <span class="keyword">grep</span> <span class="string">"レポジトリ"</span> *
 </code></pre><p><code>*</code>ですべてのファイルを検索対象に。<br>.mdファイルのみを対象にするなら<code>*.md</code>に。<br>またサブディレクトリ以下を再帰的に検索する場合は  </p>
 <pre><code>$ <span class="keyword">grep</span> -<span class="keyword">r</span> <span class="string">"検索ワード"</span> *
-</code></pre><p>（参考：<a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20060228/231140/" target="_blank" rel="external">Linuxコマンド逆引き大全 - 【 ファイルから文字列を検索する 】：ITpro</a>）  </p>
-<p>たくさんあって手作業で修正するのは大変そうなので、下記コマンドですべての.mdファイル内の「レポジトリ」を「リポジトリ」に一括変換。（元ファイルは拡張子.bakを付けてバックアップ）  </p>
+</code></pre><p>たくさんあって手作業で修正するのは大変そうなので、下記コマンドですべての.mdファイル内の「レポジトリ」を「リポジトリ」に一括変換。（元ファイルは拡張子.bakを付けてバックアップ）  </p>
 <pre><code>$ perl -p -i.bak <span class="operator">-e</span> <span class="string">'s/レポジトリ/リポジトリ/g'</span> *.md
 </code></pre><p>正常に変換されたことを確認後、.bakファイルを一括削除。  </p>
 <pre><code>$ <span class="keyword">find</span> ./ -<span class="built_in">type</span> <span class="keyword">f</span> -name <span class="string">"*.bak"</span> -<span class="built_in">delete</span>
@@ -473,7 +481,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </code></pre><p>ただし、mvコマンドは複数のファイル名の一括変換は出来ないようなので、すべてのファイルを元に戻す場合は、一旦すべての.mdファイルを削除してから、すべての.md.bakファイルの拡張子を.mdに変換。<br>（renameコマンドは上書きは出来ないようなので）  </p>
 <pre><code>$ <span class="keyword">find</span> ./ -<span class="built_in">type</span> <span class="keyword">f</span> -name <span class="string">"*.md"</span> -<span class="built_in">delete</span>
 $ <span class="built_in">rename</span> <span class="string">'s/.md.bak/.md/'</span> *.bak
-</code></pre>
+</code></pre><p>（参照記事）<br><a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20060228/231140/" target="_blank" rel="external">Linuxコマンド逆引き大全 - 【 ファイルから文字列を検索する 】：ITpro</a><br><a href="http://kazmax.zpp.jp/linux/lin_replace.html" title="複数ファイル内の文字列を置換して上書き保存する" target="_blank" rel="external">複数ファイル内の文字列を置換して上書き保存する</a></p>
+
 	
 	</div>
 	
@@ -783,41 +792,41 @@ $ <span class="built_in">rename</span> <span class="string">'s/.md.bak/.md/'</sp
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/サーバー/">サーバー<span>9</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>15</span></a></li>
-		
-			<li><a href="/tags/SEO/">SEO<span>6</span></a></li>
-		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
 			<li><a href="/tags/食/">食<span>4</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>13</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>38</span></a></li>
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+		
+			<li><a href="/tags/サーバー/">サーバー<span>9</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>15</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
+		
+			<li><a href="/tags/SEO/">SEO<span>6</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
+			<li><a href="/tags/blog/">blog<span>38</span></a></li>
 		
 		
 		</ul>
