@@ -52,7 +52,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </script>
 
 
-
 </head>
 
 <body>
@@ -624,22 +623,24 @@ tar: エラーを回復できません: 直ちに終了します
 	
 	  <p>Dolphinが自動生成した.directoryファイルを削除しようと、ファイルマネージャーで”.directory”を検索したが、ファイルが見つからない。<br>“directory”でも該当無し。<br>確かにあるのだが、ファイルマネージャーの機能では隠しファイルを検索出来ないらしい。</p>
 <p>端末でfindコマンドを使ったらヒットした。  </p>
-<pre><code><span class="keyword">find</span> ~/ -name .directory
-// ~/ディレクトリ以下で名前に<span class="string">".directory"</span>を含むファイル・ディレクトリを再帰的に検索
+<pre><code><span class="keyword">find</span> ~/ -name <span class="string">".directory"</span>
+// ~/ディレクトリ以下で名前が<span class="string">".directory"</span>のファイル・ディレクトリを再帰的に検索
 </code></pre><p>ーー<br>以下、findコマンドについて  </p>
 <p><strong>Linuxではディレクトリを省略すると、カレントディレクトリ以下で検索</strong><br>（他のUNIXでは<code>.</code>が必要。）</p>
-<pre><code><span class="keyword">find</span> -name .directory
-（<span class="keyword">find</span> . -name .directory）
+<pre><code><span class="keyword">find</span> -name <span class="string">"ファルorディレクトリ名"</span>
+（<span class="keyword">find</span> . -name <span class="string">"ファルorディレクトリ名"</span>）
 </code></pre><p><strong>-typeオプションで検索対象の種類を指定（ファイル、ディレクトリ、リンク）</strong>  </p>
 <pre><code><span class="keyword">find</span> -<span class="built_in">type</span> <span class="keyword">f</span>
 <span class="keyword">find</span> -<span class="built_in">type</span> <span class="keyword">d</span>
 <span class="keyword">find</span> -<span class="built_in">type</span> <span class="keyword">l</span>
 </code></pre><p><strong>名前の前後にワイルドカード<code>*</code>を付けての検索が可能</strong>  </p>
 <pre><code><span class="keyword">find</span> -<span class="built_in">type</span> <span class="keyword">f</span> -name <span class="string">"*.pdf"</span>
+
+<span class="keyword">find</span> -<span class="built_in">type</span> <span class="keyword">f</span> -name <span class="string">"2015*"</span>
 </code></pre><p>（名前にワイルドカードを付ける場合は、半角ダブルクォーテーション<code>&quot;</code>で囲った方が良いらしい。 付けないと「find: パス名は評価式の前に置かなければいけません」とエラーになることがある。） </p>
 <p><strong>-sizeオプションでサイズを指定</strong>  </p>
 <pre><code><span class="keyword">find</span> -<span class="built_in">type</span> <span class="keyword">f</span> -name <span class="string">"*.JPG"</span> -size +<span class="number">1000</span><span class="keyword">k</span>
-</code></pre><p>（1000KB以上の.JPGファイルを検索。JPGとjpgは区別される。）</p>
+</code></pre><p>（1000KB以上の.JPGファイルを検索。JPGとjpgなど大文字小文字は区別される。）</p>
 <p><strong>-deleteオプションで該当ファイルを削除</strong>  </p>
 <pre><code><span class="keyword">find</span> -<span class="built_in">type</span> <span class="keyword">f</span> -name <span class="string">"*.hogehoge"</span> -<span class="built_in">delete</span>
 </code></pre><p>など。  </p>
@@ -843,41 +844,41 @@ tar: エラーを回復できません: 直ちに終了します
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
+			<li><a href="/tags/blog/">blog<span>38</span></a></li>
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
+			<li><a href="/tags/サーバー/">サーバー<span>9</span></a></li>
 		
 			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>15</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
 		
 			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>15</span></a></li>
 		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
 		
 			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>38</span></a></li>
-		
 			<li><a href="/tags/食/">食<span>4</span></a></li>
 		
-			<li><a href="/tags/SEO/">SEO<span>6</span></a></li>
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
 		
 			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
 		
-			<li><a href="/tags/サーバー/">サーバー<span>9</span></a></li>
+			<li><a href="/tags/SEO/">SEO<span>6</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
 		
 		
 		</ul>
