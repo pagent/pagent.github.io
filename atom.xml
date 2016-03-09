@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-03-09T21:08:29.260Z</updated>
+  <updated>2016-03-09T21:10:07.455Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2016/03/10/000webhost-robot-txt-error/"/>
     <id>http://pagent.github.io/2016/03/10/000webhost-robot-txt-error/</id>
     <published>2016-03-09T20:33:58.000Z</published>
-    <updated>2016-03-09T21:07:09.728Z</updated>
+    <updated>2016-03-09T21:09:55.315Z</updated>
     <content type="html"><![CDATA[<p>無料レンタルサーバー000webhostにrobots.txtを置いたが不具合が発生。  </p>
 <p>ブラウザでrobots.txtにアクセスすると改行無しに一列に表示されている。<br>ウェブマスターツール（現Search Console）のrobots.txt テスターで確認すると  </p>
 <pre><code><span class="comment">&lt;!-- Hosting24 Analytics Code --&gt;</span>
@@ -30,7 +30,7 @@
 <p>検索すると000webhostのフォーラムに同じ不具合の報告があった。<br><a href="http://www.000webhost.com/forum/web-design-html/13331-robots-txt-analytics-code.html" title="Robots.txt and Analytics Code - Free Web Hosting Forum" target="_blank" rel="external">Robots.txt and Analytics Code - Free Web Hosting Forum</a>  </p>
 <p>ここの回答を参考に.htaccessに下記を追記  </p>
 <pre><code>AddType <span class="keyword">text</span>/plain .txt
-</code></pre><p>ブラウザでの表示が正常になった。<br>ウェブマスターツールの方もrobots.txt テスターで再度「送信」すると改善していた。</p>
+</code></pre><p>ブラウザでの表示が正常になった。<br>ウェブマスターツールの方もrobots.txt テスターで再度「送信」→「更新をリクエスト」すると改善していた。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>無料レンタルサーバー000webhostにrobots.txtを置いたが不具合が発生。  </p>
