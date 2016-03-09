@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-03-08T00:07:53.202Z</updated>
+  <updated>2016-03-09T21:08:29.260Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,35 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[000webhostでrobots.txtを置いたらエラー]]></title>
+    <link href="http://pagent.github.io/2016/03/10/000webhost-robot-txt-error/"/>
+    <id>http://pagent.github.io/2016/03/10/000webhost-robot-txt-error/</id>
+    <published>2016-03-09T20:33:58.000Z</published>
+    <updated>2016-03-09T21:07:09.728Z</updated>
+    <content type="html"><![CDATA[<p>無料レンタルサーバー000webhostにrobots.txtを置いたが不具合が発生。  </p>
+<p>ブラウザでrobots.txtにアクセスすると改行無しに一列に表示されている。<br>ウェブマスターツール（現Search Console）のrobots.txt テスターで確認すると  </p>
+<pre><code><span class="comment">&lt;!-- Hosting24 Analytics Code --&gt;</span>
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"http://stats.hosting24.com/count.php"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="comment">&lt;!-- End Of Analytics Code --&gt;</span>
+</code></pre><p>という3行が追加されており、「構文が認識できませんでした」となっている。<br>000webhostが自動的に追加する解析コードで、以前停止したはずなんだが。  </p>
+<p>もう一度<code>http://members.000webhost.com/analytics.php</code>から”Disable Code”してみたが変化無し。<br>robots.txtを編集し直したり、再度アップロードしても改善しない。  </p>
+<p>検索すると000webhostのフォーラムに同じ不具合の報告があった。<br><a href="http://www.000webhost.com/forum/web-design-html/13331-robots-txt-analytics-code.html" title="Robots.txt and Analytics Code - Free Web Hosting Forum" target="_blank" rel="external">Robots.txt and Analytics Code - Free Web Hosting Forum</a>  </p>
+<p>ここの回答を参考に.htaccessに下記を追記  </p>
+<pre><code>AddType <span class="keyword">text</span>/plain .txt
+</code></pre><p>ブラウザでの表示が正常になった。<br>ウェブマスターツールの方もrobots.txt テスターで再度「送信」すると改善していた。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>無料レンタルサーバー000webhostにrobots.txtを置いたが不具合が発生。  </p>
+<p>ブラウザでrobots.txtにアクセスすると改行無しに一列に表示されている。<br>ウェブマスターツール（現Search Console）のrobots.txt テス]]>
+    </summary>
+    
+      <category term="SEO" scheme="http://pagent.github.io/tags/SEO/"/>
+    
+      <category term="サーバー" scheme="http://pagent.github.io/tags/%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[画像ビューア「gThumb」が.commentsフォルダを作成するのを停止する]]></title>
@@ -290,7 +319,7 @@
     <link href="http://pagent.github.io/2015/09/03/socket-connection-failure/"/>
     <id>http://pagent.github.io/2015/09/03/socket-connection-failure/</id>
     <published>2015-09-03T06:23:19.000Z</published>
-    <updated>2016-02-24T14:12:29.000Z</updated>
+    <updated>2016-03-09T19:44:50.282Z</updated>
     <content type="html"><![CDATA[<p>Arch Linux+Xfceで起動時に  </p>
 <blockquote>
 <p>設定サーバーに接続できませんでした<br>Failed to connect to socket /tmp/dbus-…</p>
@@ -484,24 +513,6 @@
     </summary>
     
       <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[架空のメールアドレスを使う]]></title>
-    <link href="http://pagent.github.io/2015/07/09/fictional-email-addresses/"/>
-    <id>http://pagent.github.io/2015/07/09/fictional-email-addresses/</id>
-    <published>2015-07-09T07:03:50.000Z</published>
-    <updated>2016-02-24T14:12:29.000Z</updated>
-    <content type="html"><![CDATA[<p>ネットを利用していて、例えばメール欄が必須になっているブログにコメントしたい時など、これまでは正直に実際のメールアドレスを記載していた。（メインのではなく、サブのアドレスを使うことが多かったが）<br>だが、よく考えてみると、返信が必要のない場合は実際のものではなく、架空のメールアドレスを使っても問題なさそうだ。  </p>
-<p>存在するかもしれないメールアドレスを適当に使ってしまうと迷惑を掛けてしまうかもしれないが、３つのサンプル用ドメイン（example.com、example.org、 example.net）なら、大丈夫なはず。  </p>
-<p>そう考えて、適当な架空のメールアドレスとして<code>mail@example.net</code>を使うようにした。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>ネットを利用していて、例えばメール欄が必須になっているブログにコメントしたい時など、これまでは正直に実際のメールアドレスを記載していた。（メインのではなく、サブのアドレスを使うことが多かったが）<br>だが、よく考えてみると、返信が必要のない場合は実際のものではなく、架空の]]>
-    </summary>
-    
-      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
     
   </entry>
   
