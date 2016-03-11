@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-03-11T06:19:29.330Z</updated>
+  <updated>2016-03-11T07:55:15.744Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[000webhostでrobots.txtを置いたらエラー]]></title>
+    <title><![CDATA[000webhostでrobots.txtを置いたらエラーに]]></title>
     <link href="http://pagent.github.io/2016/03/10/000webhost-robot-txt-error/"/>
     <id>http://pagent.github.io/2016/03/10/000webhost-robot-txt-error/</id>
     <published>2016-03-09T20:33:58.000Z</published>
-    <updated>2016-03-09T21:09:55.315Z</updated>
+    <updated>2016-03-11T06:24:12.575Z</updated>
     <content type="html"><![CDATA[<p>無料レンタルサーバー000webhostにrobots.txtを置いたが不具合が発生。  </p>
 <p>ブラウザでrobots.txtにアクセスすると改行無しに一列に表示されている。<br>ウェブマスターツール（現Search Console）のrobots.txt テスターで確認すると  </p>
 <pre><code><span class="comment">&lt;!-- Hosting24 Analytics Code --&gt;</span>
@@ -344,10 +344,15 @@
     <link href="http://pagent.github.io/2015/09/01/open-unclickable-url/"/>
     <id>http://pagent.github.io/2015/09/01/open-unclickable-url/</id>
     <published>2015-09-01T01:26:18.000Z</published>
-    <updated>2016-02-24T14:12:29.000Z</updated>
-    <content type="html"><![CDATA[<p>ハイパーリンクになっておらず、クリック出来ないURLを開く時には、URLをアドレス欄にコピペすれば良いが、少し面倒。Firefoxのアドオンに<a href="https://addons.mozilla.org/ja/firefox/addon/text-link/" target="_blank" rel="external">テキストリンク (Text Link)</a>というのがあると知り、インストールしてみた。<br>現在のバージョンのFirefoxには対応していないようだが、開発版を入れると機能した。<br>だが「テキストリンク」の説明にURI文字列を開く通常の方法として、”選択された文字列をFirefoxのタブバーにドラッグ＆ドロップする”というのが書いてあったのでやってみた。  </p>
-<p>確かにURI文字列を選択してタブバーに持って行くと<code>タブの中央にドロップするとそのタブを置き換え、タブの両サイドにドロップするとその位置に新しいタブとして読み込まれます</code>というツールチップが表示され、そのままドロップするとURLを開いてくれる。こんな方法があるとは全然知らなかった。<br>URLの選択は大抵の場合トリプルクリックで簡単に出来るので、この方法でも良さそう。  </p>
+    <updated>2016-03-11T07:49:37.355Z</updated>
+    <content type="html"><![CDATA[<p>ハイパーリンクになっておらず、クリック出来ないURLを開く時には、URLをアドレス欄にコピペすれば良いが、少し面倒。Firefoxのアドオンに<a href="https://addons.mozilla.org/ja/firefox/addon/text-link/" target="_blank" rel="external">テキストリンク (Text Link)</a>というのがあると知り、インストールしてみた。<br>現在のバージョンのFirefoxには対応していないようだが、開発版を入れると機能した。  </p>
+<p>だが、「テキストリンク」の説明にURI文字列を開く通常の方法として、 <q>選択された文字列をFirefoxのタブバーにドラッグ＆ドロップする</q>というのが書いてあったので、これをやってみた。  </p>
+<p><code>http://example.com/</code></p>
+<p>確かにURL文字列を選択してタブバーに持って行くと<code>タブの中央にドロップするとそのタブを置き換え、タブの両サイドにドロップするとその位置に新しいタブとして読み込まれます</code>というツールチップが表示され、そのままドロップするとURLを開いてくれる。<br>こんな方法があるとは全然知らなかった。<br>URLの選択は大抵の場合トリプルクリックで簡単に出来るので、この方法でも良さそう。  </p>
 <p>右クリックメニューがあまり増えるのも嫌なので、結局「テキストリンク」はアンインストールした。</p>
+<p>ーー<br>（追記）<br>文字列を選択してタブバーに持って行きURLを開くこの機能、Chromium（Google Chrome）にもあるようだ。  </p>
+<p>ドメイン<code>example.com</code>だけでも開けたり、Firefoxの場合はhを抜いた<code>ttp://example.com/</code>でも開けたり（Chromiumではh抜きだと検索になる）<br>ブラウザにより違いがあって面白い。  </p>
+<p>あと、今更ながら気付いたが、文字列選択状態で右クリック→「リンクを新しいタブで開く」でもURLを開ける。（Chromiumの場合は「〜に移動」）</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>ハイパーリンクになっておらず、クリック出来ないURLを開く時には、URLをアドレス欄にコピペすれば良いが、少し面倒。Firefoxのアドオンに<a href="https://addons.mozilla.org/ja/firefox/addon/text-link/" t]]>
