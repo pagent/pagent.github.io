@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-03-11T08:08:07.360Z</updated>
+  <updated>2016-03-11T08:26:19.006Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -344,11 +344,14 @@
     <link href="http://pagent.github.io/2015/09/01/open-unclickable-url/"/>
     <id>http://pagent.github.io/2015/09/01/open-unclickable-url/</id>
     <published>2015-09-01T01:26:18.000Z</published>
-    <updated>2016-03-11T08:07:15.541Z</updated>
+    <updated>2016-03-11T08:12:08.768Z</updated>
     <content type="html"><![CDATA[<p>ハイパーリンクになっておらず、クリック出来ないURLを開く時には、URLをアドレス欄にコピペすれば良いが、少し面倒。Firefoxのアドオンに<a href="https://addons.mozilla.org/ja/firefox/addon/text-link/" target="_blank" rel="external">テキストリンク (Text Link)</a>というのがあると知り、インストールしてみた。<br>現在のバージョンのFirefoxには対応していないようだが、開発版を入れると機能した。  </p>
 <p>だが、「テキストリンク」の説明にURI文字列を開く通常の方法として、<q>選択された文字列をFirefoxのタブバーにドラッグ＆ドロップする</q>という方法が書いてあったので、これをやってみた。  </p>
 <p><code>http://example.com/</code>  </p>
-<p>確かにURL文字列を選択してタブバーに持って行くと<code>タブの中央にドロップするとそのタブを置き換え、タブの両サイドにドロップするとその位置に新しいタブとして読み込まれます</code>というツールチップが表示され、そのままドロップするとURLを開いてくれる。<br>こんな方法があるとは全然知らなかった。<br>URL文字列の選択は大抵の場合トリプルクリック（一行全文字を選択）で簡単に出来るので、この方法でも良さそう。  </p>
+<p>確かにURL文字列を選択してタブバーに持って行くと、</p>
+<div class="box">タブの中央にドロップするとそのタブを置き換え、タブの両サイドにドロップするとその位置に新しいタブとして読み込まれます</div>
+
+<p>というツールチップが表示され、そのままドロップするとURLを開いてくれる。<br>こんな方法があるとは全然知らなかった。<br>URL文字列の選択は大抵の場合トリプルクリック（一行全文字を選択）で簡単に出来るので、この方法でも良さそう。  </p>
 <p>右クリックメニューがあまり増えるのも嫌なので、結局「テキストリンク」はアンインストールした。</p>
 <p>ーー<br>（追記）<br>文字列を選択してタブバーに持って行きURLを開くこの機能、Chromium（Google Chrome）にもあるようだ。  </p>
 <p>ドメイン<code>example.com</code>だけでも開けたり、Firefoxの場合はhを抜いた<code>ttp://example.com/</code>でも開けたり（Chromiumではh抜きだと検索になる）<br>ブラウザにより違いがあって面白い。  </p>
