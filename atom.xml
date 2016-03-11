@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-03-11T11:15:24.808Z</updated>
+  <updated>2016-03-11T12:01:18.625Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[無駄のように思ったJumbotronだが、背景画像を入れてみた]]></title>
+    <title><![CDATA[いまいち用途の分からないJumbotronに背景画像を入れてみた]]></title>
     <link href="http://pagent.github.io/2016/03/11/jumbotron/"/>
     <id>http://pagent.github.io/2016/03/11/jumbotron/</id>
     <published>2016-03-11T09:10:56.000Z</published>
-    <updated>2016-03-11T11:15:11.305Z</updated>
+    <updated>2016-03-11T12:01:10.036Z</updated>
     <content type="html"><![CDATA[<p>現在Hexoで使っているテーマFreewillはBootstrap準拠なので、ヘッダー領域にJumbotronというのが付いている。<br>ブログの説明がある場合はここに説明文（subtitle）、無い場合はブログタイトル（title）が挿入される。<br>やたらと場所を取るし何に使ったら良いのか分からないので活用して来なかったが、背景画像を入れてみた。  </p>
 <p>画像を入れることにしているhexo/source/imagesに背景にしたいファイルを追加。<br>hexo/themes/freewill-rev/source/css/style.cssにbackground-imageを追記した。  </p>
 <pre><code><span class="class">.jumbotron</span> <span class="rules">{
