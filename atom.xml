@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[Pagent]]></title>
-  
+  <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-03-11T08:26:19.006Z</updated>
+  <updated>2016-03-11T11:05:22.595Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,40 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[無駄のように思ったJumbotronだが、背景画像を入れてみた]]></title>
+    <link href="http://pagent.github.io/2016/03/11/jumbotron/"/>
+    <id>http://pagent.github.io/2016/03/11/jumbotron/</id>
+    <published>2016-03-11T09:10:56.000Z</published>
+    <updated>2016-03-11T11:04:08.650Z</updated>
+    <content type="html"><![CDATA[<p>現在Hexoで使っているテーマFreewillはBootstrap準拠なので、ヘッダー領域にJumbotronというのが付いている。<br>ブログの説明がある場合はここに説明文（subtitle）、無い場合はブログタイトル（title）が挿入される。<br>やたらと場所を取るし何に使ったら良いのか分からないので活用して来なかったが、背景画像を入れてみた。  </p>
+<p>画像を入れることにしているhexo/source/imagesに背景にしたいファイルを追加。<br>hexo/themes/freewill-rev/source/css/style.cssにbackground-imageを追記した。  </p>
+<pre><code><span class="class">.jumbotron</span> <span class="rules">{
+    <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(<span class="string">"/images/ファイル名"</span>)</span></span>;
+    <span class="rule"><span class="attribute">padding-top</span>:<span class="value"> <span class="number">84px</span></span></span>;
+    <span class="rule"><span class="attribute">padding-bottom</span>:<span class="value"> <span class="number">12px</span></span></span>;
+<span class="rule">}</span></span>
+</code></pre><p>（参照記事:<a href="http://cccabinet.jpn.org/bootstrap3/jumbotron3.html" title="ジャンボトロンに背景画像～Bootstrap3移行ガイド" target="_blank" rel="external">ジャンボトロンに背景画像～Bootstrap3移行ガイド</a>）  </p>
+<p>デフォルトでは<code>.jumbotron {padding-top: 48px; padding-bottom: 48px;}</code>だが変更している。<br>画像ファイルは大きい時には自動的に切り抜かれ、小さい場合はタイル化されるようだ。  </p>
+<p>Jumbotronのhtmlはhexo/themes/freewill/layout/index.ejsに記述されていたが、title、subtitleの両方を入れることとし、<code>&lt;h1&gt;</code>タグになっていたのをそれぞれ<code>&lt;h2&gt;</code>、<code>&lt;h3&gt;</code>に変更した。  </p>
+<pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"jumbotron page-header bg-primary"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">h1</span>&gt;</span><span class="vbscript">&lt;% <span class="keyword">if</span> (config.subtitle){ %&gt;</span><span class="vbscript">&lt;%= config.subtitle %&gt;</span><span class="vbscript">&lt;% } <span class="keyword">else</span> { %&gt;</span><span class="vbscript">&lt;%= config.title %&gt;</span><span class="vbscript">&lt;% } %&gt;</span><span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</code></pre><p>↓下記に変更  </p>
+<pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"jumbotron page-header bg-primary"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">h3</span> <span class="attribute">style</span>=<span class="value">"color: #eeeeee;"</span>&gt;</span><span class="vbscript">&lt;%= config.subtitle %&gt;</span><span class="tag">&lt;/<span class="title">h3</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">h2</span> <span class="attribute">style</span>=<span class="value">"color: #eeeeee;"</span>&gt;</span><span class="vbscript">&lt;%= config.title %&gt;</span><span class="tag">&lt;/<span class="title">h2</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+</code></pre><p>殺風景だったブログが少し華やいだ。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>現在Hexoで使っているテーマFreewillはBootstrap準拠なので、ヘッダー領域にJumbotronというのが付いている。<br>ブログの説明がある場合はここに説明文（subtitle）、無い場合はブログタイトル（title）が挿入される。<br>やたらと場所を取]]>
+    </summary>
+    
+      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[000webhostでrobots.txtを置いたらエラーに]]></title>
@@ -500,25 +534,6 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Firefoxの検索エンジンに「Googleニュース検索」を追加した。<br>アドオンの検索では日本語用のものが見つからなかったので、いったん<a href="https://addons.mozilla.org/ja/firefox/addon/googlenews-it]]>
-    </summary>
-    
-      <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[右クリックからの検索を拡張するFirefoxアドオン「Context Search」が便利]]></title>
-    <link href="http://pagent.github.io/2015/08/15/context-search/"/>
-    <id>http://pagent.github.io/2015/08/15/context-search/</id>
-    <published>2015-08-14T23:20:14.000Z</published>
-    <updated>2016-02-24T14:12:29.000Z</updated>
-    <content type="html"><![CDATA[<p>Firefoxで右クリックからの検索は便利だが、検索エンジンがデフォルトのものに固定されてしまっている。<br>普段はGoogleを使っているが、安全のためStartPageやDuckDuckGoを使いたい時、またツイッター検索をしたい時などがある。そんな時、キーワードをいちいち検索欄にコピペするのはちょっと面倒。  </p>
-<p>そんな人にお勧めしたいアドオンが<a href="https://addons.mozilla.org/ja/firefox/addon/context-search/?src=search" target="_blank" rel="external">Context Search</a></p>
-<p>インストールすると、右クリックの「”〜” をGoogleで検索(s)」などが「”〜” を検索(s)」になり、種々の検索エンジンがリスト表示される。<br>特に設定の必要も無し。  </p>
-<p>ちょっとしたことだが、とても便利。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Firefoxで右クリックからの検索は便利だが、検索エンジンがデフォルトのものに固定されてしまっている。<br>普段はGoogleを使っているが、安全のためStartPageやDuckDuckGoを使いたい時、またツイッター検索をしたい時などがある。そんな時、キーワードをい]]>
     </summary>
     
       <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>

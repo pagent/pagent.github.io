@@ -97,7 +97,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   	<div class="content">
     	 <!-- index -->
 <div class="jumbotron page-header bg-primary">
-  <h2 style="color: #eeeeee">Pagent</h2>
+  <h3 style="color: #eeeeee;">静的サイトジェネレーターとGitリポジトリでブログ</h3>
+  <h2 style="color: #eeeeee;">Pagent</h2>
 </div>
 
 <!-- _partial/index -->
@@ -117,6 +118,125 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 			<!-- title and entry -->
 			<div class="panel panel-default">
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2014/11/26/hexo-bitbucket/" >HexoのソースをBitbucketに置く</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月26日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Hexoの作業フォルダはWindows領域のDropboxフォルダに置き、他のPCとも同期をとっている。<br>これでソースを消失してしまう危険はかなり低いと思うが、Dropboxと同期する際、結構時間がかかってしまう。<br>普段はDropboxを起動しておらず時々立ち上げる、という形をとっているせいもあるかもしれない。  </p>
+<p>Bitbucketにソースを置いたらpushするのはそれほど時間は掛からないだろうし、過去の履歴も残ってくれてやはり便利だろうと思い、HexoのソースをBitbucketに置くことにした。  </p>
+<p>OctopressのソースをBitbucketに置いた時と同様、Bitbucketにhexoという名前のリポジトリを作り、  </p>
+<pre><code>$ git remote <span class="built_in">add</span> bitbucket git@bitbucket.<span class="built_in">or</span><span class="variable">g:</span>ユーザー名/hexo.git
+$ git push -<span class="keyword">u</span> bitbucket <span class="keyword">source</span>
+</code></pre><p>とやったが、エラーになる。  </p>
+<p>新規リポジトリを作成後に表示されたRepository setupの指示に倣い、  </p>
+<pre><code><span class="variable">$ </span>git init
+<span class="variable">$ </span>git remote add bitbucket git<span class="variable">@bitbucket</span>.<span class="symbol">org:</span>ユーザー名/hexo.git
+<span class="variable">$ </span>echo <span class="string">"ユーザー名"</span> &gt;&gt; contributors.txt
+<span class="variable">$ </span>git add contributors.txt
+<span class="variable">$ </span>git commit -m <span class="string">'Initial commit with contributors'</span>
+<span class="variable">$ </span>git push -u bitbucket source
+</code></pre><p>としても、やはり  </p>
+<pre><code><span class="keyword">error</span>: src refspec source <span class="keyword">does</span> <span class="keyword">not</span> match any.
+<span class="keyword">error</span>: failed <span class="keyword">to</span> push <span class="keyword">some</span> refs <span class="keyword">to</span> 'git@bitbucket.org:ユーザー名/hexo.git'
+</code></pre><p>とエラーになる。  </p>
+<p>pushするbranchをsourceではなく、masterにしてみた。  </p>
+<pre><code>$ git push -<span class="keyword">u</span> bitbucket master
+Counting object<span class="variable">s:</span> <span class="number">3</span>, done.
+Writing object<span class="variable">s:</span> <span class="number">100</span>% (<span class="number">3</span>/<span class="number">3</span>), <span class="number">239</span> bytes | <span class="number">0</span> bytes/<span class="keyword">s</span>, done.
+Total <span class="number">3</span> (delta <span class="number">0</span>), reused <span class="number">0</span> (delta <span class="number">0</span>)
+To git@bitbucket.<span class="built_in">or</span><span class="variable">g:</span>ユーザー名/hexo.git
+ * [<span class="keyword">new</span> branch]      master -&gt; master
+Branch master <span class="keyword">set</span> <span class="keyword">up</span> <span class="keyword">to</span> track remote branch master from bitbucket.
+</code></pre><p>上手く行ったようだ。  </p>
+<p>だが、その後も  </p>
+<pre><code>$ git add .
+warning: You ran 'git add' with neither '-A (<span class="comment">--all)' or '--ignore-removal',</span>
+whose behaviour will <span class="operator"><span class="keyword">change</span> <span class="keyword">in</span> Git <span class="number">2.0</span> <span class="keyword">with</span> respect <span class="keyword">to</span> paths you removed.
+Paths <span class="keyword">like</span> <span class="string">'contributors.txt'</span> that <span class="keyword">are</span>
+removed <span class="keyword">from</span> your working tree <span class="keyword">are</span> ignored <span class="keyword">with</span> this <span class="keyword">version</span> <span class="keyword">of</span> Git.
+
+* <span class="string">'git add --ignore-removal &lt;pathspec&gt;'</span>, which <span class="keyword">is</span> the <span class="keyword">current</span> <span class="keyword">default</span>,
+  ignores paths you removed <span class="keyword">from</span> your working tree.
+
+* <span class="string">'git add --all &lt;pathspec&gt;'</span> will let you also record the removals.
+
+Run <span class="string">'git status'</span> <span class="keyword">to</span> <span class="keyword">check</span> the paths you removed <span class="keyword">from</span> your working tree.</span>
+</code></pre><p>と言われたり、  </p>
+<pre><code>$ git push
+warning: push.<span class="keyword">default</span> <span class="keyword">is</span> unset; its implicit value <span class="keyword">is</span> changing <span class="keyword">in</span>
+Git <span class="number">2.0</span> from <span class="attribute">'matching</span>' <span class="keyword">to</span> <span class="attribute">'simple</span>'. <span class="keyword">To</span> squelch this message
+<span class="keyword">and</span> maintain the current behavior <span class="keyword">after</span> the <span class="keyword">default</span> changes, <span class="keyword">use</span>:
+
+  git config <span class="comment">--global push.default matching</span>
+
+<span class="keyword">To</span> squelch this message <span class="keyword">and</span> adopt the <span class="keyword">new</span> behavior now, <span class="keyword">use</span>:
+
+  git config <span class="comment">--global push.default simple</span>
+
+<span class="keyword">When</span> push.<span class="keyword">default</span> <span class="keyword">is</span> set <span class="keyword">to</span> <span class="attribute">'matching</span>', git will push local branches
+<span class="keyword">to</span> the remote branches that already exist <span class="keyword">with</span> the same name.
+
+<span class="keyword">In</span> Git <span class="number">2.0</span>, Git will <span class="keyword">default</span> <span class="keyword">to</span> the more conservative <span class="attribute">'simple</span>'
+behavior, which only pushes the current branch <span class="keyword">to</span> the corresponding
+remote branch that <span class="attribute">'git</span> pull' uses <span class="keyword">to</span> update the current branch.
+
+See <span class="attribute">'git</span> help config' <span class="keyword">and</span> search <span class="keyword">for</span> <span class="attribute">'push</span>.<span class="keyword">default</span>' <span class="keyword">for</span> further information.
+(the <span class="attribute">'simple</span>' mode was introduced <span class="keyword">in</span> Git <span class="number">1.7</span><span class="number">.11</span>. <span class="keyword">Use</span> the similar mode
+<span class="attribute">'current</span>' instead <span class="keyword">of</span> <span class="attribute">'simple</span>' <span class="keyword">if</span> you sometimes <span class="keyword">use</span> older versions <span class="keyword">of</span> Git)
+</code></pre><p>と言われたり。  </p>
+<p><code>git add .</code>は使われなくなったので<code>git add -A</code>にしないといけないということか？<br><code>git add .</code>でもすんなり通る時もあるのは、状況の違いからだろうか。<br>（追記：そう言えば、Initial commitの時に作成されたcontributors.txtという中身が自分のユーザー名だけのファイルを、リポジトリとHexoの作業フォルダ両方から手動で削除したんだった。<br>これのせいだったのかもしれない。）</p>
+<p>push.defaultもmatchingにした。  </p>
+<pre><code>  $ git config --<span class="keyword">global</span> push.<span class="keyword">default</span> <span class="keyword">matching</span>
+</code></pre><p>これでようやくpush出来るようになった。  </p>
+<p>gitの仕組みがいまいちよく分からない。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/26/hexo-bitbucket/" data-text="HexoのソースをBitbucketに置く | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/11/26/hexo-bitbucket/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/11/26/hexo-bitbucket/" class="hatena-bookmark-button" data-hatena-bookmark-title="HexoのソースをBitbucketに置く" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Hexo/">Hexo</a></li> <li><a href="/tags/Git/">Git</a></li></ul>
+	</div>
+
+</div>
+
 				
 					<!-- _partial/post/title -->
 <div class="panel-heading">
@@ -808,70 +928,6 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/20/octopress-deploy-rejected/" >2台目のPCのOctopressでdeploy出来ない</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月20日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>DropboxでOctopressのフォルダを同期し、2台目のPCでもrake new_postやrake generateは出来るようになったが、rake deployが出来ない。<br>gitが入ってなかったので<code>sudo apt-get install git</code>し、<code>rake setup_github_pages</code>でセットアップしたが、  </p>
-<pre><code><span class="input"><span class="prompt">! [rejected]        master -&gt;</span> master (non-fast-forward)</span>
-</code></pre><p>とエラーになる。<br>SSHの公開鍵も設定したのだが。  </p>
-<p>検索したところ、Octopressで突然deploy出来なくなった時には、Rakefileを編集するという対処法があるらしい。<br><a href="http://qiita.com/takuma7/items/2d6f6e786eb6c0afbefb" target="_blank" rel="external">Octopressでrake deployした際にrejectedされた場合の対処 - Qiita</a>  </p>
-<p>どうやら強制的にdeployするものらしい。  </p>
-<p>上記記事の通り、Rakefileの268行目の<code>#</code>の前に<code>+</code>を付けて  </p>
-<pre><code><span class="constant">Bundler</span>.with_clean_env { system <span class="string">"git push origin +<span class="subst">#{deploy_branch}</span>"</span> }
-</code></pre><p>にすると、deploy出来た。  </p>
-<p>元記事によると、deploy出来るようになった後は、Rakefileの編集を元に戻しておいた方がいいらしい。<br><a href="http://stackoverflow.com/questions/17609453/rake-gen-deploy-rejected-in-octopress" target="_blank" rel="external">rake gen_deploy rejected in Octopress - Stack Overflow</a>  </p>
-<p>いったんdeploy出来るようになったら、その後はRakefileを元に戻してもdeploy出来る。  </p>
-<p>記事ではoctopress/_deployディレクトリで<code>git pull origin master</code>というコマンドを使う回答もあった。<br>機会があれば今度試してみようと思う。  </p>
-<p>gitがなんなのかよく分からないが、FTPでアップロードしていた時に較べるとブログの更新も楽だし、スマートな感じがする。<br>でもほんと、gitってよく分からない。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/20/octopress-deploy-rejected/" data-text="2台目のPCのOctopressでdeploy出来ない | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/11/20/octopress-deploy-rejected/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/11/20/octopress-deploy-rejected/" class="hatena-bookmark-button" data-hatena-bookmark-title="2台目のPCのOctopressでdeploy出来ない" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Octopress/">Octopress</a></li> <li><a href="/tags/Git/">Git</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -914,39 +970,39 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
 		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
-			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
-		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>36</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>16</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>28</span></a></li>
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
 		
 			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>38</span></a></li>
-		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/サーバー/">サーバー<span>11</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>29</span></a></li>
+		
+			<li><a href="/tags/サーバー/">サーバー<span>11</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>16</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
 		
 			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
+			<li><a href="/tags/ネット/">ネット<span>36</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
+		
+			<li><a href="/tags/食/">食<span>4</span></a></li>
 		
 			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
+			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>38</span></a></li>
 		
 		
 		</ul>
@@ -959,6 +1015,10 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2016/03/11/jumbotron/" ><i class="fa fa-file-o"></i>無駄のように思ったJumbotronだが、背景画像を入...</a>
+      </li>
     
       <li>
         <a href="/2016/03/10/000webhost-robot-txt-error/" ><i class="fa fa-file-o"></i>000webhostでrobots.txtを置いたらエラーに</a>
@@ -976,10 +1036,6 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
         <a href="/2016/02/28/modify-twitter-cards/" ><i class="fa fa-file-o"></i>Twitterカードを後から修正</a>
       </li>
     
-      <li>
-        <a href="/2016/02/27/000webhost-dadabase-error1045/" ><i class="fa fa-file-o"></i>000webhostでphpMyadminにログイン出...</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -989,7 +1045,7 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
 		</ul>
 	</div>
 

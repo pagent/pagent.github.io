@@ -34,10 +34,11 @@ body {
 .page-header {
     margin: 20px 0px 20px;
 }
+
 .jumbotron {
     background-image: url("/images/cornflower-816963_640.jpg");
-    padding-top: 64px;
-    padding-bottom: 32px;
+    padding-top: 84px;
+    padding-bottom: 12px;
 }
 
 /* =============================================================================
