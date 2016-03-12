@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-03-12T16:48:37.887Z</updated>
+  <updated>2016-03-12T17:11:01.479Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,23 +19,23 @@
     <link href="http://pagent.github.io/2016/03/13/header-jquery-slideshow/"/>
     <id>http://pagent.github.io/2016/03/13/header-jquery-slideshow/</id>
     <published>2016-03-12T15:44:02.000Z</published>
-    <updated>2016-03-12T16:47:32.258Z</updated>
+    <updated>2016-03-12T17:10:06.094Z</updated>
     <content type="html"><![CDATA[<p>jQueryでスライドショーが出来るようなので、ヘッダーのJumbotron背景画像をスライドショー化してみた。  </p>
 <p>（参照記事）<br><a href="http://pctricks.blog.fc2.com/blog-entry-5.html" title="背景画像をスライドショーのように切り替えるjQueryプラグイン『BgSwitcher』 | PCとサイト制作の小技備忘録" target="_blank" rel="external">背景画像をスライドショーのように切り替えるjQueryプラグイン『BgSwitcher』 | PCとサイト制作の小技備忘録</a>  </p>
 <p>Bootstrap準拠のテーマを使っているためjQuery自体は既にバージョン2.0.3が入っていた。  </p>
 <p>下記のプラグイン制作元から背景画像をスライドショー化するjQueryプラグインjquery.bgswitcher.jsをダウンロード。<br><a href="http://rewish.jp/blog/releases/jquery_bg_switcher" title="指定した背景画像をx秒毎に切り替えるjQueryプラグイン - Rewish" target="_blank" rel="external">指定した背景画像をx秒毎に切り替えるjQueryプラグイン - Rewish</a>  </p>
 <p>hexo/source/jsフォルダを作成し、その中にjquery.bgswitcher.jsを配置。  </p>
 <p>hexo/themes/freewill/layout/_partial/head.ejsファイルの<code>&lt;script src=&quot;&lt;%- config.root %&gt;js/jquery-2.0.3.min.js&quot;&gt;&lt;/script&gt;</code>のすぐ下に下記を追加。  </p>
-<figure class="highlight js"><figcaption><span>head.ejs</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"/js/jquery.bgswitcher.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">jQuery(<span class="function"><span class="keyword">function</span><span class="params">($)</span> </span>{</div><div class="line">    $(<span class="string">'.bgsw'</span>).bgSwitcher({</div><div class="line">        images: [<span class="string">'/images/a0960_005150_r.jpg'</span>, <span class="string">'/images/cornflower-816963_640.jpg'</span>, <span class="string">'/images/cornflower-816963_1920r.jpg'</span>],</div><div class="line">        interval: <span class="number">9000</span>,</div><div class="line">        effect: <span class="string">"clip"</span></div><div class="line">    });</div><div class="line">});</div><div class="line"><span class="tag">&lt;/<span class="title">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><figcaption><span>head.ejs</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"/js/jquery.bgswitcher.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">jQuery(<span class="function"><span class="keyword">function</span><span class="params">($)</span> </span>{</div><div class="line">    $(<span class="string">'.bgsw'</span>).bgSwitcher({</div><div class="line">        images: [<span class="string">'/images/a0960_005150_r.jpg'</span>, <span class="string">'/images/cornflower-816963_640.jpg'</span>, <span class="string">'/images/cornflower-816963_1920r.jpg'</span>],</div><div class="line">        interval: <span class="number">7777</span>,</div><div class="line">        effect: <span class="string">"fade"</span>,</div><div class="line">        duration: <span class="number">1500</span></div><div class="line">    });</div><div class="line">});</div><div class="line"><span class="tag">&lt;/<span class="title">script</span>&gt;</span></div></pre></td></tr></table></figure>
 
-<p>intervalは9000（ミリ秒？）にした。  </p>
+<p>intervalは7777（ミリ秒？）にした。  </p>
 <p>hexo/themes/freewill/layout/index.ejsファイル、jumbotronを指定しているclassにbgswも加える。  </p>
 <figure class="highlight html"><figcaption><span>index.ejs</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"jumbotron page-header bg-primary bgsw"</span>&gt;</span></div></pre></td></tr></table></figure>
 
 <p><code>hexo server</code>してプレビューしてみると、スライドショーになってる！  </p>
-<div class="bgsw" style="margin: 20px; padding: 50px; text-align: center;"><p>スライド</p></div>
+<div class="bgsw" style="margin: 20px; padding: 50px;"><p>スライド</p></div>
 
-<p>すごい。  </p>
+<p>すごい。<br>effectもfade、blind、clipなど色々あって面白い。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>jQueryでスライドショーが出来るようなので、ヘッダーのJumbotron背景画像をスライドショー化してみた。  </p>
