@@ -18,8 +18,10 @@ Xamppの使用開始
 
 
 
-インストールAURにあるのでYaourtでインストールしようとしたが、
-123456789101112131415Error:">
+インストール
+
+AURにあるのでYaourtでインストールしようとしたが、
+123456789101112131415Erro">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -145,7 +147,9 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </li>
 </ul>
 <p><br></p>
-<p><h4 id="install">インストール</h4><br>AURにあるのでYaourtでインストールしようとしたが、</p>
+<h4 id="install">インストール</h4>
+
+<p>AURにあるのでYaourtでインストールしようとしたが、</p>
 <figure class="highlight shell-session"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">Error: Error running useradd -r mysql : useradd: PAM: 認証サービスが認証情報を検索できません</div><div class="line">Press [Enter] to continue:</div><div class="line">Error: mysql: Error while executing group action</div><div class="line">Press [Enter] to continue:############Warning: Problem running post-install step. Installation may not complete </div><div class="line">correctly</div><div class="line"><span class="code"> Error running chown -R root:mysql /opt/lampp/var/mysql: chown: グループ指定が不正: </span></div><div class="line"><span class="smartquote">`root:mysql'</span></div><div class="line">Press [Enter] to continue:#</div><div class="line"><span class="header">  </span></div><div class="line">----------------------------------------------------------------------------</div><div class="line">Setup has finished installing XAMPP on your computer.</div><div class="line"><span class="code">  </span></div><div class="line">==&gt; エラー: package() で問題が発生しました。</div><div class="line"><span class="code">    中止...</span></div><div class="line">==&gt; エラー: Makepkg was unable tobuild .</div></pre></td></tr></table></figure>
 
 <p>とエラーになる。  </p>
@@ -154,9 +158,13 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> chmod +x xampp-linux-x64-<span class="number">5.6</span>.<span class="number">15</span>-<span class="number">2</span>-installer.run</div><div class="line">$ <span class="built_in">sudo</span> ./xampp-linux-x64-<span class="number">5.6</span>.<span class="number">15</span>-<span class="number">2</span>-installer.run</div></pre></td></tr></table></figure>
 
 <p><br></p>
-<p><h4 id="usage">Xamppの使用開始</h4><br>インストール後Xamppをスタート。<code>http://localhost/</code>にアクセスしたが、見慣れたオレンジ色の操作パネルが表示されず、Xamppのサイトのような画面に。<br>どうやらオレンジ色のダッシュボードは廃止されてしまったようだ。<br><a href="http://hapisupu.com/2015/08/xampp-5-6-11-update-fix/" title="2015年7月からXAMPPの導入手順が分かりにくくなりました！対応の方法 | はぴすぷ" target="_blank" rel="external">2015年7月からXamppの導入手順が分かりにくくなりました！対応の方法 | はぴすぷ</a>  </p>
+<h4 id="usage">Xamppの使用開始</h4>
+
+<p>インストール後Xamppをスタート。<code>http://localhost/</code>にアクセスしたが、見慣れたオレンジ色の操作パネルが表示されず、Xamppのサイトのような画面に。<br>どうやらオレンジ色のダッシュボードは廃止されてしまったようだ。<br><a href="http://hapisupu.com/2015/08/xampp-5-6-11-update-fix/" title="2015年7月からXAMPPの導入手順が分かりにくくなりました！対応の方法 | はぴすぷ" target="_blank" rel="external">2015年7月からXamppの導入手順が分かりにくくなりました！対応の方法 | はぴすぷ</a>  </p>
 <p>前の方が分かりやすくて良かったのに。<br>まあ、設定が済んでしまえば不要なんだが。<br><br></p>
-<p><h4 id="settings">セキュリティ設定</h4><br>セキュリティの設定をやっておかないと心配なので、</p>
+<h4 id="settings">セキュリティ設定</h4>
+
+<p>セキュリティの設定をやっておかないと心配なので、</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> /opt/lampp/lampp security</div></pre></td></tr></table></figure>
 
 <p>だが下記のようにエラーになってしまう。  </p>
