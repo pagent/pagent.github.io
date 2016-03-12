@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2016/03/13/header-jquery-slideshow/</loc>
+    <lastmod>2016-03-12T16:47:32.258Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2015/05/30/twitter-appearances-dm/</loc>
     <lastmod>2016-03-12T11:48:32.250Z</lastmod>
   </url>
@@ -277,12 +282,7 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/11/26/hexo-bitbucket/</loc>
-    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2014/05/01/browser_war_3/</loc>
+    <loc>http://pagent.github.io/2014/11/27/hexo-china/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -717,12 +717,12 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/01/18/xubuntu/</loc>
+    <loc>http://pagent.github.io/2014/11/26/hexo-bitbucket/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/11/27/hexo-china/</loc>
+    <loc>http://pagent.github.io/2014/01/18/xubuntu/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -1423,6 +1423,11 @@
   
   <url>
     <loc>http://pagent.github.io/2014/04/30/search-engine-privacy/</loc>
+    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2014/05/01/browser_war_3/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
