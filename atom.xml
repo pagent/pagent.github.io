@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-03-12T18:05:15.947Z</updated>
+  <updated>2016-03-12T18:37:40.139Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2016/03/13/header-jquery-slideshow/"/>
     <id>http://pagent.github.io/2016/03/13/header-jquery-slideshow/</id>
     <published>2016-03-12T15:44:02.000Z</published>
-    <updated>2016-03-12T17:42:37.054Z</updated>
+    <updated>2016-03-12T18:37:15.747Z</updated>
     <content type="html"><![CDATA[<p>jQueryでスライドショーが出来るようなので、ヘッダーのJumbotron背景画像をスライドショー化してみた。  </p>
 <p>（参照記事）<br><a href="http://pctricks.blog.fc2.com/blog-entry-5.html" title="背景画像をスライドショーのように切り替えるjQueryプラグイン『BgSwitcher』 | PCとサイト制作の小技備忘録" target="_blank" rel="external">背景画像をスライドショーのように切り替えるjQueryプラグイン『BgSwitcher』 | PCとサイト制作の小技備忘録</a>  </p>
 <p>Bootstrap準拠のテーマを使っているためjQuery自体は既にバージョン2.0.3が入っていた。  </p>
@@ -32,7 +32,7 @@
 <p>hexo/themes/freewill/layout/index.ejsファイル、jumbotronを指定しているclassにbgswも加える。  </p>
 <figure class="highlight html"><figcaption><span>index.ejs</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"jumbotron page-header bg-primary bgsw"</span>&gt;</span></div></pre></td></tr></table></figure>
 
-<p><code>hexo server</code>してプレビューしてみると、スライドショーになってる！  </p>
+<p><code>hexo server</code>してプレビューしてみると、スライドショーになってる。  </p>
 <div class="bgsw" style="margin: 20px; padding: 50px;"><p>スライド</p></div>
 
 <p>すごい。<br>effectもfade、blind、clipなど色々あって面白い。</p>
