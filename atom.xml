@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-03-11T12:24:42.377Z</updated>
+  <updated>2016-03-12T10:47:45.844Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,68 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Arch LinuxにXamppをインストール]]></title>
+    <link href="http://pagent.github.io/2016/03/12/arch-linux-xampp/"/>
+    <id>http://pagent.github.io/2016/03/12/arch-linux-xampp/</id>
+    <published>2016-03-12T08:55:54.000Z</published>
+    <updated>2016-03-12T10:46:10.138Z</updated>
+    <content type="html"><![CDATA[<p>以前XubuntuでXamppを使用していたが、Arch Linuxにもインストールした。  </p>
+<ul>
+<li><p><a href="#install">インストール</a>  </p>
+</li>
+<li><p><a href="#usage">Xamppの使用開始</a>  </p>
+</li>
+<li><p><a href="#settings">セキュリティ設定</a>  </p>
+</li>
+</ul>
+<p><br></p>
+<p><h4 id="install">インストール</h4><br>AURにあるのでYaourtでインストールしようとしたが、</p>
+<figure class="highlight shell-session"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">Error: Error running useradd -r mysql : useradd: PAM: 認証サービスが認証情報を検索できません</div><div class="line">Press [Enter] to continue:</div><div class="line">Error: mysql: Error while executing group action</div><div class="line">Press [Enter] to continue:############Warning: Problem running post-install step. Installation may not complete </div><div class="line">correctly</div><div class="line"><span class="code"> Error running chown -R root:mysql /opt/lampp/var/mysql: chown: グループ指定が不正: </span></div><div class="line"><span class="smartquote">`root:mysql'</span></div><div class="line">Press [Enter] to continue:#</div><div class="line"><span class="header">  </span></div><div class="line">----------------------------------------------------------------------------</div><div class="line">Setup has finished installing XAMPP on your computer.</div><div class="line"><span class="code">  </span></div><div class="line">==&gt; エラー: package() で問題が発生しました。</div><div class="line"><span class="code">    中止...</span></div><div class="line">==&gt; エラー: Makepkg was unable tobuild .</div></pre></td></tr></table></figure>
+
+<p>とエラーになる。  </p>
+<p>仕方ないのでXamppのサイトからLinux用のインストーラーをダウンロード。<br><a href="https://www.apachefriends.org/index.html" title="XAMPP Installers and Downloads for Apache Friends" target="_blank" rel="external">XAMPP Installers and Downloads for Apache Friends</a>  </p>
+<p>下記コマンドでインストールした。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> chmod +x xampp-linux-x64-<span class="number">5.6</span>.<span class="number">15</span>-<span class="number">2</span>-installer.run</div><div class="line">$ <span class="built_in">sudo</span> ./xampp-linux-x64-<span class="number">5.6</span>.<span class="number">15</span>-<span class="number">2</span>-installer.run</div></pre></td></tr></table></figure>
+
+<p><br></p>
+<p><h4 id="usage">Xamppの使用開始</h4><br>インストール後Xamppをスタート。<code>http://localhost/</code>にアクセスしたが、見慣れたオレンジ色の操作パネルが表示されず、Xamppのサイトのような画面に。<br>どうやらオレンジ色のダッシュボードは廃止されてしまったようだ。<br><a href="http://hapisupu.com/2015/08/xampp-5-6-11-update-fix/" title="2015年7月からXAMPPの導入手順が分かりにくくなりました！対応の方法 | はぴすぷ" target="_blank" rel="external">2015年7月からXamppの導入手順が分かりにくくなりました！対応の方法 | はぴすぷ</a>  </p>
+<p>前の方が分かりやすくて良かったのに。<br>まあ、設定が済んでしまえば不要なんだが。<br><br></p>
+<p><h4 id="settings">セキュリティ設定</h4><br>セキュリティの設定をやっておかないと心配なので、</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> /opt/lampp/lampp security</div></pre></td></tr></table></figure>
+
+<p>だが下記のようにエラーになってしまう。  </p>
+<figure class="highlight shell-session"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="regexp">/opt/</span>lampp<span class="regexp">/share/</span>xampp<span class="regexp">/checkapache: 行 41: /</span>opt<span class="regexp">/lampp/</span>htdocs<span class="regexp">/xampp/</span>.htaccess: そのようなファイルやディレクトリはありません</div><div class="line">cp: <span class="string">'/opt/lampp/htdocs/xampp/.htaccess'</span> を stat できません: そのようなファイルやディレクトリはありません</div><div class="line">cp: <span class="string">'/opt/lampp/htdocs/xampp/.htaccess'</span> を stat できません: そのようなファイルやディレクトリはありません</div><div class="line">chmod: <span class="string">'/opt/lampp/htdocs/xampp/.htaccess'</span> にアクセスできません: そのようなファイルやディレクトリはありません</div><div class="line">chmod: <span class="string">'/opt/lampp/htdocs/webalizer/.htaccess'</span> にアクセスできません: そのようなファイルやディレクトリはありません</div><div class="line">chmod: <span class="string">'/opt/lampp/phpmyadmin/.htaccess'</span> にアクセスできません: そのようなファイルやディレクトリはありません</div></pre></td></tr></table></figure>
+
+<p>確かに/opt/lampp/htdocs/xampp/.htaccess、/opt/lampp/htdocs/webalizer/.htaccess、/opt/lampp/phpmyadmin/.htaccessが存在していない。<br>手動で.htaccessファイルを新規作成したらXamppのパスワードを設定出来た。<br>MySQL（phpMyAdmin）のユーザーpmaやrootのパスワード、FTPユーザーdaemonのパスワードも設定。  </p>
+<p>これだけだと外からアクセスされる危険があるので、127.0.0.1（ローカル・ループバック・アドレス）からしかアクセス出来ないよう、下記3つのファイルを編集。  </p>
+<p>/opt/lampp/etc/httpd.confの52行目あたり  </p>
+<pre><code><span class="keyword">Listen</span> <span class="number">80</span>（編集前）
+↓
+<span class="keyword">Listen</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">80</span>
+</code></pre><p>/opt/lampp/etc/extra/httpd-ssl.confの39行目あたり  </p>
+<pre><code><span class="keyword">Listen</span> <span class="number">443</span>（編集前）
+↓
+<span class="keyword">Listen</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">443</span>
+</code></pre><p>/opt/lampp/etc/my.cnfの[mysqld]のセクションに以下の行を追加  </p>
+<pre><code><span class="built_in">bind</span>-address=localhost
+</code></pre><p>なお、httpd.conf、httpd-ssl.conf、my.cnfの場所はArchWikiの記載が古いのか、実際の場所と違っていた。<br>ディストリビューションによっても違うかもしれない。  </p>
+<p>（参照記事）<br><a href="https://wiki.archlinuxjp.org/index.php/Xampp" title="Xampp - ArchWiki" target="_blank" rel="external">Xampp - ArchWiki</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>以前XubuntuでXamppを使用していたが、Arch Linuxにもインストールした。  </p>
+<ul>
+<li><p><a href="#install">インストール</a>  </p>
+</li>
+<li><p><a href="#usage">Xamppの使]]>
+    </summary>
+    
+      <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
+    
+      <category term="サーバー" scheme="http://pagent.github.io/tags/%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[いまいち用途の分からないJumbotronに背景画像を入れてみた]]></title>
@@ -515,25 +577,6 @@
     <summary type="html">
     <![CDATA[<p>Arch LinuxでサブのブラウザとしてMidoriを使っているが、お気に入りが消えてしまったりと調子が悪かったので、rekonqを入れてみた。  </p>
 <p>サイドバーは有る方が好みなので、レンチアイコンの設定からPanels→Bookmarks Panelをチェッ]]>
-    </summary>
-    
-      <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Firefoxに「Googleニュース検索」を追加]]></title>
-    <link href="http://pagent.github.io/2015/08/20/google-news-search/"/>
-    <id>http://pagent.github.io/2015/08/20/google-news-search/</id>
-    <published>2015-08-19T23:57:14.000Z</published>
-    <updated>2016-02-24T14:12:29.000Z</updated>
-    <content type="html"><![CDATA[<p>Firefoxの検索エンジンに「Googleニュース検索」を追加した。<br>アドオンの検索では日本語用のものが見つからなかったので、いったん<a href="https://addons.mozilla.org/ja/firefox/addon/googlenews-ita/?src=search" target="_blank" rel="external">Google News (Italia)</a>をインストール。<br>~/.mozilla/firefox/(プロファイル名)/searchplugins内のgooglenews-ita.xmlをgooglenews-ja.xmlにリネーム。<br>ファイルの内容を下記に変更した。  </p>
-<figure class="highlight xml"><figcaption><span>googlenews-ja.xml</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">SearchPlugin</span> <span class="attribute">xmlns</span>=<span class="value">"http://www.mozilla.org/2006/browser/search/"</span> <span class="attribute">xmlns:os</span>=<span class="value">"http://a9.com/-/spec/opensearch/1.1/"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:ShortName</span>&gt;</span>Google ニュース<span class="tag">&lt;/<span class="title">os:ShortName</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Description</span>&gt;</span>Google ニュース検索<span class="tag">&lt;/<span class="title">os:Description</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:InputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">os:InputEncoding</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Image</span> <span class="attribute">width</span>=<span class="value">"16"</span> <span class="attribute">height</span>=<span class="value">"16"</span>&gt;</span>data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAPAKAADwCgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAArKSaGLywqTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA1MzB3SkdF/1RST/5FQj/sR0VCdzIvLAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA3NjRXR0VC/ZGQj/++vr3/oaCf/2xqaP9QTkviSEZDeDIvLA4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlIyE/QD489mRiYf/ExMP/ymVO/8mXi//Hx8f/rq6t/25sav9UUlDgQ0A9YTIvLAkAAAAAAAAAAAAAAAA7OTdPQkE/9FdUUv+jo6L/0Ly3/8s0Ev/QxsP/qaqp/7Ozs//Pz87/rKyr/2BdW/pPTUrOMi8sJQAAAAA0MjBiNzU0+IWEgf9mZGL/1NTU/85VOv/RgW//09PS/4SFhP+EhYT/mZmY/8zMzP/W1tb/kI+N/0lHRPQlIyFiS0lH+4qKiP9DQD3/v769/9V6Zf/MNRP/39XT/6jX4f+rsrL/iYqJ/4SFhP+Jion/wsLC/97e3f+Afn3/JSMhDjc1M4hHRUP2iYiG/+rq6f/YfWn/1nFa/3nd8/8K0v7/F9P9/3rR5f+kqan/hIWE/4SFhP/Jycj/amhm9AAAAAAyLyw4ZmRi8aGh2/9BQdP/k5Ph/+PZ4P994ff/GNT9/wrS/v8K0v7/Jtb8/6LZ5f+xsbH/vby6/1RRT9kAAAAAOjc1852bmv+9ve3/Tk7W/zY20f9BQtb/f4Dl/9Pf9v+B5fv/J9b9/wrS/v8K0v7/q+n5/2lmZPtOTElTAAAAADIvLD1eXFnSdHJw+s/Ozf+zs+7/T0/b/zc42/83Od//goPt/83O+f+j7v//cuP9/5+dnP9VU1C6Mi8sBQAAAAAAAAAAMi8sDEdEQmJaWFXWfXt5+cTDw/+vr+3/aWvo/zg75f84POn/j5H1/7y7uv9FQkDuMi8sEAAAAAAAAAAAAAAAAAAAAAAAAAAAMi8sCDIvLE1QTUvNdHJw9Le2tf/JyfT/g4Xy/8PDzf9qaGbqMi8sLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIvLDxHRELCQT479XJwbv9QTkvzU1BOSwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADIvLA8yLyxjMi8sHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/P8AAPgf8L/wBwAA4AEAAMAAAACAAAAAAAAAAAAAAACAAAAAgAAAAIAAAADAAQAA8AP///4H////jwAA//8AAA%3D%3D<span class="tag">&lt;/<span class="title">os:Image</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">os:Url</span> <span class="attribute">type</span>=<span class="value">"text/html"</span> <span class="attribute">method</span>=<span class="value">"GET"</span> <span class="attribute">template</span>=<span class="value">"https://news.google.co.jp/news/search?q={searchTerms}"</span> <span class="attribute">resultDomain</span>=<span class="value">"news.google.co.jp"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">os:Url</span>&gt;</span><span class="tag">&lt;<span class="title">os:Url</span> <span class="attribute">type</span>=<span class="value">"application/x-suggestions+json"</span> <span class="attribute">method</span>=<span class="value">"GET"</span> <span class="attribute">template</span>=<span class="value">"http://suggestqueries.google.com/complete/search?output=firefox&amp;client=firefox&amp;hl=ja&amp;q={searchTerms}"</span> <span class="attribute">resultDomain</span>=<span class="value">"suggestqueries.google.com"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">os:Url</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">SearchPlugin</span>&gt;</span></div></pre></td></tr></table></figure>
-
-<p>~/.mozilla/firefox/(プロファイル名)/searchplugins内に上記ファイルを新規作成しても良いと思う。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Firefoxの検索エンジンに「Googleニュース検索」を追加した。<br>アドオンの検索では日本語用のものが見つからなかったので、いったん<a href="https://addons.mozilla.org/ja/firefox/addon/googlenews-it]]>
     </summary>
     
       <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
