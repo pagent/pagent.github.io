@@ -38,7 +38,7 @@
   <script type="text/javascript">
   jQuery(function($) {
       $('.bgsw').bgSwitcher({
-          images: ['/images/pier-440339_1280r.jpg', '/images/a0960_005150_r.jpg', '/images/cornflower-816963_640.jpg', '/images/field-of-rapeseeds-474516_1280.jpg'],
+          images: ['/images/pier-440339_1280r.jpg', '/images/a0960_005150_r.jpg', '/images/cornflower-816963_640.jpg', '/images/lavender-836563_640.jpg'],
           interval: 6000,
           shuffle: "true",
           effect: "fade",
@@ -159,7 +159,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <p>jQuery自体は、今使っているBootstrap準拠のテーマに既にバージョン2.0.3が入っていたので省略。  </p>
 <p>プラグイン制作元から背景画像をスライドショー化するjquery.bgswitcher.jsをダウンロードし、これをhexo/themes/freewill/source/jsの中に配置。  </p>
 <p>hexo/themes/freewill/layout/_partial/head.ejsファイルの<code>&lt;script src=&quot;&lt;%- config.root %&gt;js/jquery-2.0.3.min.js&quot;&gt;&lt;/script&gt;</code>のすぐ下に下記を追加。  </p>
-<figure class="highlight js"><figcaption><span>head.ejs</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"/js/jquery.bgswitcher.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">jQuery(<span class="function"><span class="keyword">function</span><span class="params">($)</span> </span>{</div><div class="line">    $(<span class="string">'.bgsw'</span>).bgSwitcher({</div><div class="line">        images: [<span class="string">'/images/pier-440339_1280r.jpg'</span>, <span class="string">'/images/a0960_005150_r.jpg'</span>, <span class="string">'/images/cornflower-816963_640.jpg'</span>, <span class="string">'/images/field-of-rapeseeds-474516_1280.jpg'</span>],</div><div class="line">        interval: <span class="number">6000</span>,</div><div class="line">        shuffle: <span class="string">"true"</span>,</div><div class="line">        effect: <span class="string">"fade"</span>,</div><div class="line">        duration: <span class="number">1500</span></div><div class="line">    });</div><div class="line">});</div><div class="line"><span class="tag">&lt;/<span class="title">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight js"><figcaption><span>head.ejs</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"/js/jquery.bgswitcher.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">jQuery(<span class="function"><span class="keyword">function</span><span class="params">($)</span> </span>{</div><div class="line">    $(<span class="string">'.bgsw'</span>).bgSwitcher({</div><div class="line">        images: [<span class="string">'/images/pier-440339_1280r.jpg'</span>, <span class="string">'/images/a0960_005150_r.jpg'</span>, <span class="string">'/images/cornflower-816963_640.jpg'</span>, <span class="string">'/images/lavender-836563_640.jpg'</span>],</div><div class="line">        interval: <span class="number">6000</span>,</div><div class="line">        shuffle: <span class="string">"true"</span>,</div><div class="line">        effect: <span class="string">"fade"</span>,</div><div class="line">        duration: <span class="number">1500</span></div><div class="line">    });</div><div class="line">});</div><div class="line"><span class="tag">&lt;/<span class="title">script</span>&gt;</span></div></pre></td></tr></table></figure>
 
 <p>intervalは6000（ミリ秒？）にした。  </p>
 <p>hexo/themes/freewill/layout/index.ejsファイルでjumbotronを指定しているclassにbgswも加える。  </p>
@@ -830,41 +830,41 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
-		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
-		
-			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>36</span></a></li>
-		
 			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>39</span></a></li>
 		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>17</span></a></li>
+			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
 		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>17</span></a></li>
+		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+		
+			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>36</span></a></li>
+		
+			<li><a href="/tags/食/">食<span>4</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 		
 		</ul>
