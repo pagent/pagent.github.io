@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-03-13T03:59:56.744Z</updated>
+  <updated>2016-03-13T04:01:05.277Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <link href="http://pagent.github.io/2016/03/13/header-jquery-slideshow/"/>
     <id>http://pagent.github.io/2016/03/13/header-jquery-slideshow/</id>
     <published>2016-03-12T15:44:02.000Z</published>
-    <updated>2016-03-13T03:59:46.138Z</updated>
-    <content type="html"><![CDATA[<p>jQueryを使うと画像をスライドショーに出来るようなので、ヘッダーのJumbotron背景画像をスライドショー化してみた。<br>プラグインは下記の制作元サイトでダウンロード可能。<br><a href="http://rewish.jp/blog/releases/jquery_bg_switcher" title="指定した背景画像をx秒毎に切り替えるjQueryプラグイン - Rewish" target="_blank" rel="external">指定した背景画像をx秒毎に切り替えるjQueryプラグイン - Rewish</a>  </p>
+    <updated>2016-03-13T04:00:55.011Z</updated>
+    <content type="html"><![CDATA[<p>jQueryを使ってスライドショーが出来るようなので、ヘッダーのJumbotron背景画像をスライドショー化してみた。<br>プラグインは下記の制作元サイトでダウンロード可能。<br><a href="http://rewish.jp/blog/releases/jquery_bg_switcher" title="指定した背景画像をx秒毎に切り替えるjQueryプラグイン - Rewish" target="_blank" rel="external">指定した背景画像をx秒毎に切り替えるjQueryプラグイン - Rewish</a>  </p>
 <p>プラグインをどう使えばいいのか分からなかったが、下記記事を参考にさせて頂いた。<br><a href="http://pctricks.blog.fc2.com/blog-entry-5.html" title="背景画像をスライドショーのように切り替えるjQueryプラグイン『BgSwitcher』 | PCとサイト制作の小技備忘録" target="_blank" rel="external">背景画像をスライドショーのように切り替えるjQueryプラグイン『BgSwitcher』 | PCとサイト制作の小技備忘録</a>  </p>
 <p>jQuery自体は既に、今使っているBootstrap準拠のテーマにバージョン2.0.3が入っていたので省略。  </p>
 <p>プラグイン制作元から背景画像をスライドショー化するjQueryプラグインjquery.bgswitcher.jsをダウンロードし、これをhexo/themes/freewill/source/jsの中に配置。  </p>
@@ -38,7 +38,7 @@
 <p>様々なオプションについてはプラグイン制作元サイトで解説されている。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>jQueryを使うと画像をスライドショーに出来るようなので、ヘッダーのJumbotron背景画像をスライドショー化してみた。<br>プラグインは下記の制作元サイトでダウンロード可能。<br><a href="http://rewish.jp/blog/releases/jq]]>
+    <![CDATA[<p>jQueryを使ってスライドショーが出来るようなので、ヘッダーのJumbotron背景画像をスライドショー化してみた。<br>プラグインは下記の制作元サイトでダウンロード可能。<br><a href="http://rewish.jp/blog/releases/jquer]]>
     </summary>
     
       <category term="blog" scheme="http://pagent.github.io/tags/blog/"/>
