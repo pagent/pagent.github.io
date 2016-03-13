@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-03-13T05:33:33.680Z</updated>
+  <updated>2016-03-13T08:48:38.338Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2016/03/13/header-jquery-slideshow/"/>
     <id>http://pagent.github.io/2016/03/13/header-jquery-slideshow/</id>
     <published>2016-03-12T15:44:02.000Z</published>
-    <updated>2016-03-13T05:32:55.662Z</updated>
+    <updated>2016-03-13T08:47:01.724Z</updated>
     <content type="html"><![CDATA[<p>jQueryを使ってスライドショーが出来るようなので、ヘッダーのJumbotron背景画像をスライドショー化してみた。<br>プラグインは下記の制作元サイトでダウンロード可能。<br><a href="http://rewish.jp/blog/releases/jquery_bg_switcher" title="指定した背景画像をx秒毎に切り替えるjQueryプラグイン - Rewish" target="_blank" rel="external">指定した背景画像をx秒毎に切り替えるjQueryプラグイン - Rewish</a>  </p>
 <p>プラグインをどう使えばいいのか分からなかったが、下記記事を参考にさせて頂いた。<br><a href="http://pctricks.blog.fc2.com/blog-entry-5.html" title="背景画像をスライドショーのように切り替えるjQueryプラグイン『BgSwitcher』 | PCとサイト制作の小技備忘録" target="_blank" rel="external">背景画像をスライドショーのように切り替えるjQueryプラグイン『BgSwitcher』 | PCとサイト制作の小技備忘録</a>  </p>
 <p>jQuery自体は、今使っているBootstrap準拠のテーマに既にバージョン2.0.3が入っていたので省略。  </p>
@@ -32,7 +32,7 @@
 <figure class="highlight html"><figcaption><span>index.ejs</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"jumbotron page-header bg-primary bgsw"</span>&gt;</span></div></pre></td></tr></table></figure>
 
 <p><code>hexo server</code>してプレビューしてみると、スライドショーになってる。  </p>
-<div class="bgsw" style="margin: 20px 0px 20px; padding: 50px; color: #fff;"><p>スライド</p></div>
+<div class="bgsw" style="margin: 20px 0px 20px; padding: 50px; color: #fff; text-shadow: 1px 1px 1px #000;"><p>スライド</p></div>
 
 <p>すごい。<br>effectもfade、blind、clipなど色々あって面白い。  </p>
 <p>様々なオプションについてはプラグイン制作元サイトで解説されている。</p>
