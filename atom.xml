@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-03-14T14:35:39.410Z</updated>
+  <updated>2016-03-14T14:57:07.418Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -77,7 +77,7 @@
     <link href="http://pagent.github.io/2016/03/12/arch-linux-xampp/"/>
     <id>http://pagent.github.io/2016/03/12/arch-linux-xampp/</id>
     <published>2016-03-12T08:55:54.000Z</published>
-    <updated>2016-03-13T01:55:39.000Z</updated>
+    <updated>2016-03-14T14:56:51.041Z</updated>
     <content type="html"><![CDATA[<p>以前XubuntuでXamppを使用していたが、Arch Linuxにもインストールした。  </p>
 <ul>
 <li><p><a href="#install">インストール</a></p>
