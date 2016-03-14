@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-03-14T10:38:55.198Z</updated>
+  <updated>2016-03-14T10:50:19.843Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,11 +19,11 @@
     <link href="http://pagent.github.io/2016/03/14/ameba-spammail/"/>
     <id>http://pagent.github.io/2016/03/14/ameba-spammail/</id>
     <published>2016-03-14T09:45:06.000Z</published>
-    <updated>2016-03-14T10:38:09.657Z</updated>
+    <updated>2016-03-14T10:48:56.206Z</updated>
     <content type="html"><![CDATA[<p>Amebaのブログにコメントするためアカウントを作ったら、頻回にメールが来るようになってしまった。  </p>
 <p>アメブロの基本設定、配信メールの設定で「その他の通知」を「受け付けない」にしたが、それでもアメーバピグのお知らせが送られてくる。  </p>
 <p>メールには<q>配信停止の設定をされてから反映されるまで２～３日お時間を頂く場合がございます</q>との断りも記載されているが、設定してから10日以上経っても止まない。  </p>
-<p>メール差出人は<code>アメーバピグ &lt;info@ameba.jp&gt;</code>となっているが、ヘッダー情報をみると</p>
+<p>メール差出人（From:）は<code>アメーバピグ &lt;info@ameba.jp&gt;</code>となっているが、ヘッダー情報をみると</p>
 <div class="box">Received-SPF: pass (…: domain of ××××××@bma.mpse.jp designates … as permitted sender) client-ip=…;</div>
 
 <p>となっていて、実際にはbma.mpse.jpから送信されている。Whois情報によると「エクスペリアンジャパン株式会社」という会社。<br>Amebaがエクスペリアンジャパンにメール配信を委託しているようだ。  </p>
