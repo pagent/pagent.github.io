@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-03-14T10:50:19.843Z</updated>
+  <updated>2016-03-14T14:35:39.410Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,11 +19,11 @@
     <link href="http://pagent.github.io/2016/03/14/ameba-spammail/"/>
     <id>http://pagent.github.io/2016/03/14/ameba-spammail/</id>
     <published>2016-03-14T09:45:06.000Z</published>
-    <updated>2016-03-14T10:48:56.206Z</updated>
+    <updated>2016-03-14T10:51:06.000Z</updated>
     <content type="html"><![CDATA[<p>Amebaのブログにコメントするためアカウントを作ったら、頻回にメールが来るようになってしまった。  </p>
 <p>アメブロの基本設定、配信メールの設定で「その他の通知」を「受け付けない」にしたが、それでもアメーバピグのお知らせが送られてくる。  </p>
 <p>メールには<q>配信停止の設定をされてから反映されるまで２～３日お時間を頂く場合がございます</q>との断りも記載されているが、設定してから10日以上経っても止まない。  </p>
-<p>メール差出人（From:）は<code>アメーバピグ &lt;info@ameba.jp&gt;</code>となっているが、ヘッダー情報をみると</p>
+<p>メール差出人（From:）は<code>アメーバピグ &lt;info@ameba.jp&gt;</code>となっているが、ヘッダー情報を見ると</p>
 <div class="box">Received-SPF: pass (…: domain of ××××××@bma.mpse.jp designates … as permitted sender) client-ip=…;</div>
 
 <p>となっていて、実際にはbma.mpse.jpから送信されている。Whois情報によると「エクスペリアンジャパン株式会社」という会社。<br>Amebaがエクスペリアンジャパンにメール配信を委託しているようだ。  </p>
@@ -44,7 +44,7 @@
     <link href="http://pagent.github.io/2016/03/13/header-jquery-slideshow/"/>
     <id>http://pagent.github.io/2016/03/13/header-jquery-slideshow/</id>
     <published>2016-03-12T15:44:02.000Z</published>
-    <updated>2016-03-13T12:36:39.918Z</updated>
+    <updated>2016-03-13T12:36:39.000Z</updated>
     <content type="html"><![CDATA[<p>jQueryを使ってスライドショーが出来るようなので、ヘッダーのJumbotron背景画像をスライドショー化してみた。<br>プラグインは下記の制作元サイトでダウンロード可能。<br><a href="http://rewish.jp/blog/releases/jquery_bg_switcher" title="指定した背景画像をx秒毎に切り替えるjQueryプラグイン - Rewish" target="_blank" rel="external">指定した背景画像をx秒毎に切り替えるjQueryプラグイン - Rewish</a>  </p>
 <p>プラグインをどう使えばいいのか分からなかったが、下記記事を参考にさせて頂いた。<br><a href="http://pctricks.blog.fc2.com/blog-entry-5.html" title="背景画像をスライドショーのように切り替えるjQueryプラグイン『BgSwitcher』 | PCとサイト制作の小技備忘録" target="_blank" rel="external">背景画像をスライドショーのように切り替えるjQueryプラグイン『BgSwitcher』 | PCとサイト制作の小技備忘録</a>  </p>
 <p>jQuery自体は、今使っているBootstrap準拠のテーマに既にバージョン2.0.3が入っていたので省略。  </p>
@@ -77,7 +77,7 @@
     <link href="http://pagent.github.io/2016/03/12/arch-linux-xampp/"/>
     <id>http://pagent.github.io/2016/03/12/arch-linux-xampp/</id>
     <published>2016-03-12T08:55:54.000Z</published>
-    <updated>2016-03-13T01:55:39.847Z</updated>
+    <updated>2016-03-13T01:55:39.000Z</updated>
     <content type="html"><![CDATA[<p>以前XubuntuでXamppを使用していたが、Arch Linuxにもインストールした。  </p>
 <ul>
 <li><p><a href="#install">インストール</a></p>
@@ -156,7 +156,7 @@
     <link href="http://pagent.github.io/2016/03/11/jumbotron/"/>
     <id>http://pagent.github.io/2016/03/11/jumbotron/</id>
     <published>2016-03-11T09:10:56.000Z</published>
-    <updated>2016-03-12T18:04:57.562Z</updated>
+    <updated>2016-03-12T18:04:57.000Z</updated>
     <content type="html"><![CDATA[<p>現在Hexoで使っているテーマFreewillはBootstrap準拠なので、ヘッダー領域にJumbotronというのが付いている。<br>ブログの説明がある場合はここに説明文（subtitle）、無い場合はブログタイトル（title）が挿入される。<br>やたらと場所を取るし何に使ったら良いのか分からないので活用して来なかったが、背景画像を入れてみた。  </p>
 <p>画像を入れることにしているhexo/source/imagesに背景にしたいファイルを追加。<br>hexo/themes/freewill-rev/source/css/style.cssにbackground-imageを追記した。  </p>
 <pre><code><span class="class">.jumbotron</span> <span class="rules">{
@@ -191,7 +191,7 @@
     <link href="http://pagent.github.io/2016/03/10/000webhost-robot-txt-error/"/>
     <id>http://pagent.github.io/2016/03/10/000webhost-robot-txt-error/</id>
     <published>2016-03-09T20:33:58.000Z</published>
-    <updated>2016-03-11T06:24:12.575Z</updated>
+    <updated>2016-03-11T06:24:12.000Z</updated>
     <content type="html"><![CDATA[<p>無料レンタルサーバー000webhostにrobots.txtを置いたが不具合が発生。  </p>
 <p>ブラウザでrobots.txtにアクセスすると改行無しに一列に表示されている。<br>ウェブマスターツール（現Search Console）のrobots.txt テスターで確認すると  </p>
 <pre><code><span class="comment">&lt;!-- Hosting24 Analytics Code --&gt;</span>
@@ -220,7 +220,7 @@
     <link href="http://pagent.github.io/2016/03/01/gthumb-hidden-comments-folder/"/>
     <id>http://pagent.github.io/2016/03/01/gthumb-hidden-comments-folder/</id>
     <published>2016-03-01T11:12:03.000Z</published>
-    <updated>2016-03-07T15:55:34.009Z</updated>
+    <updated>2016-03-07T15:55:34.000Z</updated>
     <content type="html"><![CDATA[<p>ここ最近、画像を開いたディレクトリに.commentsという隠しフォルダが作成されるようになってしまっていた。<br>フォルダ内には(画像ファイル名).xmlというファイルが複数入っている。  </p>
 <p>簡単な画像編集も出来て便利なのでgThumbという画像ビューアを使っているが、このgThumbが自動的に作成しているらしい。  </p>
 <p>煩わしいのでこれを止めたい。  </p>
@@ -246,7 +246,7 @@
     <link href="http://pagent.github.io/2016/02/28/bloglines-gone/"/>
     <id>http://pagent.github.io/2016/02/28/bloglines-gone/</id>
     <published>2016-02-28T12:03:41.000Z</published>
-    <updated>2016-02-28T12:36:13.864Z</updated>
+    <updated>2016-02-28T12:36:13.000Z</updated>
     <content type="html"><![CDATA[<p>Bloglinesがいつの間にか終了していたようだ。  </p>
 <p>ダッシュボードにアクセスすると”410 Gone”と表示されている。<br><a href="http://dashboard.bloglines.com/" target="_blank" rel="external">http://dashboard.bloglines.com/</a>  </p>
 <p>404 Not foundと違い、明示的に削除されたということらしい。<br>なんのアナウンスも無く話題になることも無く、ひっそりと。  </p>
@@ -267,7 +267,7 @@
     <link href="http://pagent.github.io/2016/02/28/modify-twitter-cards/"/>
     <id>http://pagent.github.io/2016/02/28/modify-twitter-cards/</id>
     <published>2016-02-28T05:17:17.000Z</published>
-    <updated>2016-02-28T05:37:22.175Z</updated>
+    <updated>2016-02-28T05:37:22.000Z</updated>
     <content type="html"><![CDATA[<p>Twitterカードを設定していると、ページの概要を画像付きで表示してくれて、有難い。だが後から記事タイトルを変更したり、画像の無かった記事に画像を追加したりすることがよくある。<br>ツイードをいったん削除しツイートし直しても修正されていない。  </p>
 <p>これまで諦めていたが、ごく簡単に修正出来た。<br>「Card Validator」で問題のページのURLを入力し「Preview card」をクリックするだけ。  </p>
 <p><a href="https://cards-dev.twitter.com/validator" title="Card Validator | Twitter Developers" target="_blank" rel="external">Card Validator | Twitter Developers</a></p>
@@ -290,7 +290,7 @@
     <link href="http://pagent.github.io/2016/02/27/000webhost-dadabase-error1045/"/>
     <id>http://pagent.github.io/2016/02/27/000webhost-dadabase-error1045/</id>
     <published>2016-02-27T09:26:26.000Z</published>
-    <updated>2016-02-27T10:19:43.481Z</updated>
+    <updated>2016-02-27T10:19:43.000Z</updated>
     <content type="html"><![CDATA[<p>海外の無料ホスティングサービス000webhostでMySQLデータベースを作成したが、<br><q>Error #1045 - Access denied for user ‘＊＊＊＊＊’@’localhost’ (using password: YES)</q><br>というエラー表示になり、何度やってもphpMyadminにログイン出来ない。パスワードは正しいはずなのだが。  </p>
 <p><img src="/images/error1045.png" alt="Error #1045" width="320" height="240" border="2px"></p>
 <p>以前作成したデータベースの方はログイン出来る。  </p>
@@ -309,7 +309,7 @@
     <link href="http://pagent.github.io/2016/02/27/000webhost-security/"/>
     <id>http://pagent.github.io/2016/02/27/000webhost-security/</id>
     <published>2016-02-27T09:14:34.000Z</published>
-    <updated>2016-02-27T09:22:58.336Z</updated>
+    <updated>2016-02-27T09:22:58.000Z</updated>
     <content type="html"><![CDATA[<p>久しぶりに海外無料レンタルサーバーの000webhostにアクセスしたみたが、付属のFilemanagerが開けない。<br>よく見ると上部にパスワードを再設定しろということが書いてあった。<br>言われた通り再設定したところFilemanagerが使用可能になった。  </p>
 <p>おそらく以前に000webhostで情報漏洩事件があったことと関係しているようだ。<br><a href="http://japan.cnet.com/news/business/35072756/" title="000webhost" target="_blank" rel="external">無料ホスティングサービス000webhostで情報漏えい–セキュリティ体制に問題か - CNET Japan</a>  </p>
 <p>しばしばサーバーダウンもあるし、あまり当てにしない方が良いようだ。</p>
@@ -327,7 +327,7 @@
     <link href="http://pagent.github.io/2016/02/21/peeep-us-google-account/"/>
     <id>http://pagent.github.io/2016/02/21/peeep-us-google-account/</id>
     <published>2016-02-20T16:50:59.000Z</published>
-    <updated>2016-03-01T06:08:46.038Z</updated>
+    <updated>2016-03-01T06:08:46.000Z</updated>
     <content type="html"><![CDATA[<p>海外のアーカイブサービスの一つ「Peeep.us」。<br>元URLからの検索機能が無いのが難点だったが、元ページに近い魚拓が得られ、それなりに便利だった。  </p>
 <p>昨年サイトが閉鎖されたかと思われたそのPeeep.usが、いつの間にか復活していた。  </p>
 <p>ところが、魚拓を取ろうと「submit」をクリックすると、Google Accountのログイン画面が表示される。以前はログイン不要だったはずなんだが。<br>Googleからの支援を受けての復活だったのだろうか？  </p>
@@ -491,7 +491,7 @@
     <link href="http://pagent.github.io/2015/09/03/socket-connection-failure/"/>
     <id>http://pagent.github.io/2015/09/03/socket-connection-failure/</id>
     <published>2015-09-03T06:23:19.000Z</published>
-    <updated>2016-03-09T19:44:50.282Z</updated>
+    <updated>2016-03-09T19:44:50.000Z</updated>
     <content type="html"><![CDATA[<p>Arch Linux+Xfceで起動時に  </p>
 <blockquote>
 <p>設定サーバーに接続できませんでした<br>Failed to connect to socket /tmp/dbus-…</p>
@@ -516,7 +516,7 @@
     <link href="http://pagent.github.io/2015/09/01/open-unclickable-url/"/>
     <id>http://pagent.github.io/2015/09/01/open-unclickable-url/</id>
     <published>2015-09-01T01:26:18.000Z</published>
-    <updated>2016-03-11T08:12:08.768Z</updated>
+    <updated>2016-03-11T08:12:08.000Z</updated>
     <content type="html"><![CDATA[<p>ハイパーリンクになっておらず、クリック出来ないURLを開く時には、URLをアドレス欄にコピペすれば良いが、少し面倒。Firefoxのアドオンに<a href="https://addons.mozilla.org/ja/firefox/addon/text-link/" target="_blank" rel="external">テキストリンク (Text Link)</a>というのがあると知り、インストールしてみた。<br>現在のバージョンのFirefoxには対応していないようだが、開発版を入れると機能した。  </p>
 <p>だが、「テキストリンク」の説明にURI文字列を開く通常の方法として、<q>選択された文字列をFirefoxのタブバーにドラッグ＆ドロップする</q>という方法が書いてあったので、これをやってみた。  </p>
 <p><code>http://example.com/</code>  </p>
