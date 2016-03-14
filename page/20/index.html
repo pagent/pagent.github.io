@@ -137,6 +137,73 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/09/26/diodon/" >Xubuntu14.04にクリップボードマネージャー「Diodon」を入れてみた</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年9月26日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Windowsではクリップボードマネージャー「CLCL」というフリーソフトを使っていた。コピーの履歴からペースト出来て便利だった。<br>Linuxに移ってからは、複数のコピペが必要な時は、ブラウザの検索窓に一時的に置いておいたりしてしのいでいたが、検索していくつか試してみた。環境はXubuntu14.04.1。</p>
+<p><strong>Klipper</strong><br>Ubuntuソフトウェアセンターからインストールは出来たが、起動出来ず。</p>
+<p><strong>Glipper</strong><br>Ubuntuソフトウェアセンターからインストール。端末で<code>glipper</code>と入力すると起動出来たが、端末を閉じたらアプリケーションも終了してしまった。</p>
+<p><strong>Glippy</strong><br>PPAリポジトリを追加したつもりだが、<code>sudo apt-get update</code>でパッケージの取得に失敗。インストール出来ず。</p>
+<p><strong>Diodon</strong><br>Ubuntuソフトウェアセンターからインストール。<br>Windowsの「CLCL」と較べると機能は多くなくシンプルだが、画像やテキストなどのファイルのコピー履歴にも対応しており、十分役立ってくれそう。</p>
+<p><strong>ClipIt</strong><br>Ubuntuソフトウェアセンターからインストール。<br>「Diodon」と違って画像ファイルには対応していないよう。</p>
+<p><strong>Parcellite</strong><br>Ubuntuソフトウェアセンターからインストール。<br>画像はおろかテキストファイルにも対応していない。</p>
+<p>「Diodon」「ClipIt」「Parcellite」の３つが候補として残ったが、３つともパスワード管理ソフト「KeePass2」でアカウント名、パスワードをコピーした際のクリップボード自動消去が効かず、履歴が残ってしまう。しかもマスクされていないのでパスワードが丸見えの状態。<br>アプリケーションを終了しても履歴は消えない。<br>KeePass2の自動入力だとクリップボードを介さないようで履歴は残らないが、コピーを使用した際にはその都度履歴を消去するよう気をつけた方が良さそうだ。</p>
+<p>「Diodon」はアイコンクリック「Clear」で履歴全消去。「Parcellite」はアイコンクリック「History」「Clear」で履歴全消去。「ClipIt」はアイコンクリックの後「検索」から全消去、個別消去を選べる。</p>
+<p>履歴を消す時は全消去で構わないし、画像ファイルにも対応しているので、「Diodon」を使うことになりそうだ。</p>
+<p>アプリケーションを終了したときに履歴が全消去されるソフトがあれば安心なんだが。</p>
+<p>ーー<br>（追記）<br>「アプリケーションメニュー」「アクセサリ」「プログラムの実行」で<code>glipper</code>と入力すると、Glipperを問題なく起動できた。<br>設定の「セッションと起動」で自動開始アプリケーションに登録すれば普通に使える。</p>
+<p>Glipperの設定に「Remember clipboard history on restart」というのがあり、このチェックボックスを外したらPC終了時にクリップボード履歴を消してくれそうで期待したのだが、なぜか履歴が消えてくれない。</p>
+<p>ーー<br>（追記）<br>Glipperで履歴が消えてくれないと思っていましたが、勘違いだったようです。<br>ちゃんと使えば、PC終了時にクリップボード履歴を消してくれました。</p>
+<p><a href="http://pagent.github.io/2014/10/09/glipper/" target="_blank" rel="external">履歴を消してくれるクリップボードマネージャー「Glipper」</a></p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/09/26/diodon/" data-text="Xubuntu14.04にクリップボードマネージャー「Diodon」を入れてみた | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/09/26/diodon/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/09/26/diodon/" class="hatena-bookmark-button" data-hatena-bookmark-title="Xubuntu14.04にクリップボードマネージャー「Diodon」を入れてみた" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/09/25/disabling-irq-number-9/" >「disabling IRQ ＃9」のまま止まって起動出来ない</a>
 		</h3>
 	
@@ -656,62 +723,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/09/05/wayback-machine/" >非営利団体によるウェブアーカイブサービス「Wayback Machine」</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年9月5日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>使い勝手はそれ程でもないが、ユーザー情報を記録しないのが魅力的な検索エンジンの一つに「DuckDuckGo」がある。<br>このDuckDuckGoで自分のブログの記事がインデックスされているか検索したところ、最上部に「WayBack Machine Internet Archive」というのが表示されていた。<br>サイトを訪れてみると、ウェブアーカイブサービス、いわゆる魚拓サービスらしい。</p>
-<p>魚拓サービスには日本では「ウェブ魚拓」、海外では「Archive.is」や「Peeep.us」などがあり、それぞれ便利に利用させてもらっているが、この<a href="http://archive.org/web/" target="_blank" rel="external">「Wayback Machine」</a>は非営利団体の「Internet Archive」により運営されているそうだ。<br>これまで全然知らなかったが、検索したところそれなりに有名なサービスのようで、日本の国立国会図書館のサイトでも紹介されていた。<br><a href="http://warp.da.ndl.go.jp/contents/reccommend/world_wa/world_wa02.html" target="_blank" rel="external">Internet Archive“Wayback Machine” | 世界のウェブアーカイブ｜国立国会図書館インターネット資料収集保存事業</a></p>
-<p>「Wayback Machine」は以前は、クローラが勝手に収集したページを保存するのみで、保存されたページの公開も数カ月待たないといけなかったらしいが、現在ではトップページ右下の「Save Page Now」から任意のページのアーカイブをリクエスト出来るようになっている。<br>試しに使ってみたところ、公開もすぐにされるようだった。<br><a href="http://code.kzakza.com/2013/10/wayback-machinefixing-broken-links/" target="_blank" rel="external">Internet ArchiveのWayback Machineが大幅にサービスをリニューアル | すちゃらかコーダー</a></p>
-<p>「ウェブ魚拓」や「Archive.is」などと較べて長所があるのかないのか、まだなんとも分からないが、上部の検索バーでSearchも出来るので、他の魚拓サービスで探しているページのアーカイブが見つからなかった時などに利用するのには役立ちそうだ。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/09/05/wayback-machine/" data-text="非営利団体によるウェブアーカイブサービス「Wayback Machine」 | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/09/05/wayback-machine/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/09/05/wayback-machine/" class="hatena-bookmark-button" data-hatena-bookmark-title="非営利団体によるウェブアーカイブサービス「Wayback Machine」" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/ネット/">ネット</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -752,41 +763,41 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
+			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
 		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>39</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>17</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
 		
+			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
+		
 			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>39</span></a></li>
+		
+			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
+		
+			<li><a href="/tags/食/">食<span>4</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>13</span></a></li>
 		
-			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>17</span></a></li>
 		
 			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>36</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
 		
 		
 		</ul>
@@ -799,6 +810,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2016/03/14/ameba-spammail/" ><i class="fa fa-file-o"></i>（迷惑メール）Amebaからのメールを配信停止に出来ない</a>
+      </li>
     
       <li>
         <a href="/2016/03/13/header-jquery-slideshow/" ><i class="fa fa-file-o"></i>jQueryでヘッダー背景画像をスライドショー化</a>
@@ -816,10 +831,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
         <a href="/2016/03/10/000webhost-robot-txt-error/" ><i class="fa fa-file-o"></i>000webhostでrobots.txtを置いたらエラーに</a>
       </li>
     
-      <li>
-        <a href="/2016/03/01/gthumb-hidden-comments-folder/" ><i class="fa fa-file-o"></i>画像ビューア「gThumb」が.commentsフォル...</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -829,7 +840,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
 		</ul>
 	</div>
 
