@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-03-23T06:03:24.985Z</updated>
+  <updated>2016-03-24T10:53:22.852Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,34 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[v097にアップデート後higanでゲームが出来ない]]></title>
+    <link href="http://pagent.github.io/2016/03/24/higan-missing-required-file/"/>
+    <id>http://pagent.github.io/2016/03/24/higan-missing-required-file/</id>
+    <published>2016-03-24T10:10:43.000Z</published>
+    <updated>2016-03-24T10:52:18.745Z</updated>
+    <content type="html"><![CDATA[<p>ファミコン、スーファミ等のエミュレーターとして再現性が高く重宝していたhiganだが、いつの間にかArch Linuxにインストールしたhiganでゲームが出来なくなっていた。  </p>
+<p>起動後Libraryからゲームファイルを開くと  </p>
+<div class="box">Missing required file: manifest.bml<br><br>From location:<br>/home/（ユーザー名）/.local/higan/Super Famicom.sys/</div>
+
+<div class="box">Missing required file: ipl.rom<br><br>From location:<br>/home/（ユーザー名）/.local/higan/Super Famicom.sys/</div>
+
+<p>と表示され、ゲームが始まらない。  </p>
+<p>アップデートによりエラーが出るようになったようで、Xububtuのhigan094-2では問題は無い。（Arch Linuxの方のバージョンはv097）<br>どうやらアップデートに伴い、Linux版の設定ファイルが~/.config/higanから~/.local/higanに変更された為らしい。<br><a href="http://byuu.org/" target="_blank" rel="external">byuu’s homepage</a>  </p>
+<p>~/.config/higan内のFamicom.sys、Super Famicom.sys等のフォルダを~/.local/higanにコピー。（〜.sysフォルダが~/.config/higan内に無い場合は~/Emulationにあるかもしれない）<br>設定のAdvancedタブでIgnore Manifestsにチェックを入れたら動作するようになった。  </p>
+<p>なお~/.config/higan内の〜.bmlファイルとVideo Shadersフォルダはコピペしなくても良いよう。<br>（input.bmlはsettings.bmlに統合されており、ゲームパッド入力ボタンは再設定が必要）  </p>
+<p>ーー<br>（関連記事）<br><a href="/2015/05/02/higan/">higanでファミコン、スーパーファミコン</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>ファミコン、スーファミ等のエミュレーターとして再現性が高く重宝していたhiganだが、いつの間にかArch Linuxにインストールしたhiganでゲームが出来なくなっていた。  </p>
+<p>起動後Libraryからゲームファイルを開くと  </p>
+<div clas]]>
+    </summary>
+    
+      <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[（迷惑メール）Amebaからのメールを配信停止に出来ない]]></title>
@@ -566,33 +594,6 @@
     </summary>
     
       <category term="Windows" scheme="http://pagent.github.io/tags/Windows/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Github Pages+Hexoのブログに動画ファイルの埋め込み]]></title>
-    <link href="http://pagent.github.io/2015/08/28/hexo-video/"/>
-    <id>http://pagent.github.io/2015/08/28/hexo-video/</id>
-    <published>2015-08-28T10:17:42.000Z</published>
-    <updated>2016-02-24T14:12:29.000Z</updated>
-    <content type="html"><![CDATA[<p>hexo/source直下にvideosディレクトリを作成し、そこへ動画ファイルを配置。<br>以下のHTMLタグで埋め込み。 </p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">video</span> <span class="attribute">src</span>=<span class="value">"/videos/dango.webm"</span> <span class="attribute">width</span>=<span class="value">"480"</span> <span class="attribute">height</span>=<span class="value">"360"</span> <span class="attribute">controls</span>&gt;</span><span class="tag">&lt;/<span class="title">video</span>&gt;</span></div></pre></td></tr></table></figure>
-
-<video src="/videos/dango.webm" width="480" height="360" controls></video>
-
-<p>多くのブラウザに対応するため数種類の形式を用意する場合は下記。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">video</span> <span class="attribute">poster</span>=<span class="value">"/images/dango.png"</span> <span class="attribute">preload</span>=<span class="value">"metadata"</span> <span class="attribute">width</span>=<span class="value">"480"</span> <span class="attribute">height</span>=<span class="value">"360"</span> <span class="attribute">controls</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"/videos/dango.webm"</span> <span class="attribute">type</span>=<span class="value">"video/webm"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"/videos/dango.ogv"</span> <span class="attribute">type</span>=<span class="value">"video/ogg"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">source</span> <span class="attribute">src</span>=<span class="value">"/videos/dango.mp4"</span> <span class="attribute">type</span>=<span class="value">"video/mp4"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">video</span>&gt;</span></div></pre></td></tr></table></figure>
-
-<video poster="/images/dango.png" preload="metadata" width="480" height="360" controls><br><source src="/videos/dango.webm" type="video/webm"><br><source src="/videos/dango.ogv" type="video/ogg"><br><source src="/videos/dango.mp4" type="video/mp4"><br></video>
-
-<p>（参照サイト）<br><a href="http://www.tagindex.com/html5/embed/video.html" target="_blank" rel="external">HTML5/埋め込み/video要素 プラグインを使わずに動画を再生する - TAG index Webサイト</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>hexo/source直下にvideosディレクトリを作成し、そこへ動画ファイルを配置。<br>以下のHTMLタグで埋め込み。 </p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><d]]>
-    </summary>
-    
-      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
   </entry>
   

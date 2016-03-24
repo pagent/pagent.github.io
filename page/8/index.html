@@ -137,6 +137,71 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/02/20/usb-multiboot-2nd-partition/" >USBメモリの第2パーティションからisoファイルをマルチブート</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年2月20日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>USBメモリからPuppy LinuxとClonezillaの両方を起動出来たら、便利そうだ。<br>GpartedとClonezillaの両方を同梱したLive CDがあればいいが、そういうのが見つからない。<br>かつてはGParted-Clonezilla LiveCDというのがあったようだが、既に開発終了してしまっているようだ。  </p>
+<p>複数のisoファイルをUSBメモリ起動させるツールはいくつかあるようだったが、Windows用の「XBOOT」というのがサイズがコンパクトで手軽。使い勝手も良かった。  </p>
+<p>XBOOTで唯一の不満は、isoファイルをUSBメモリの2番目以降のパーティションにインストール出来ないこと。<br>やはりパーティションは分けた方がデータを整理しやすい。<br>Windowsでは1番目のパーティションしか見えないので、データの保存は第1パーティション、isoファイルの起動は第2パーティションにしたいところ。  </p>
+<p>XBOOTでいったん先頭のパーティション（sdb1）にPuppyとClonezillaのisoファイルをインストール。<br>その後そのデータを第2パーティション（sdb2）にコピー。<br>だが、これではUSBが起動しなくなってしまうので、syslinuxとMBRを再度インストールする必要があった。  </p>
+<p>下記サイトからsyslinuxの圧縮ファイルをダウンロード。<br>（syslinux-4.04を用いたが、現時点での最新版はsyslinux-6.03のよう）<br><a href="https://www.kernel.org/pub/linux/utils/boot/syslinux/" target="_blank" rel="external">Index of /pub/linux/utils/boot/syslinux</a>  </p>
+<p>syslinux-4.04.tar.bz2を解凍。syslinux-4.04/linuxフォルダ内で端末を開き、下記コマンドでsdb2（環境によってはsdc2など）にsyslinuxをインストール。  </p>
+<pre><code>syslinux <span class="regexp">/dev/</span>sdb2
+</code></pre><p>さらにsdbにMBRを再インストール。  </p>
+<pre><code>dd <span class="variable">bs=</span><span class="number">440</span> <span class="variable">count=</span><span class="number">1</span> <span class="variable">conv=</span>notrunc <span class="variable">if=</span>~/Desktop/syslinux-<span class="number">4.04</span>/mbr/mbr.bin <span class="variable">of=</span>/dev/sdb
+</code></pre><p>（デスクトップ上で解凍したので上記のパスになっているが、if=やof=以下のパスは状況に応じて。）  </p>
+<p>USBメモリの2番目のパーティションsdb2から起動出来るようになった。  </p>
+<p>ーー<br>（参照記事）<br><a href="http://www.server-world.info/query?os=Other&amp;p=knoppix&amp;f=2" target="_blank" rel="external">KNOPPIX - 複数パーティション構成のUSBメモリから起動する ： Server World</a><br><a href="https://wiki.archlinux.org/index.php/Syslinux_%28%E6%97%A5%E6%9C%AC%E8%AA%9E%29#.E6.89.8B.E5.8B.95.E3.82.A4.E3.83.B3.E3.82.B9.E3.83.88.E3.83.BC.E3.83.AB" target="_blank" rel="external">Syslinux (日本語) - ArchWiki</a>  </p>
+<p>（追記）<br>「XBOOT」はブートするisoファイルを変更・追加するためにはインストールし直さないといけないが、「Easy2Boot」は配置するだけで様々なisoファイルをブート出来る。<br><a href="http://pagent.github.io/2015/03/02/easy2boot/" title="isoファイルを置くだけでUSBマルチブート「Easy2Boot」 | Pagent" target="_blank" rel="external">isoファイルを置くだけでUSBマルチブート「Easy2Boot」 | Pagent</a></p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/20/usb-multiboot-2nd-partition/" data-text="USBメモリの第2パーティションからisoファイルをマルチブート | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/02/20/usb-multiboot-2nd-partition/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/20/usb-multiboot-2nd-partition/" class="hatena-bookmark-button" data-hatena-bookmark-title="USBメモリの第2パーティションからisoファイルをマルチブート" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ユーティリティ/">ユーティリティ</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/02/17/github-pages-redirect/" >GitHub Pagesのブログでリダイレクト「hexo-generator-alias」</a>
 		</h3>
 	
@@ -707,96 +772,6 @@ tar: エラーを回復できません: 直ちに終了します
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/02/04/puppy-grub4dos-error/" >Puppy LinuxのGrub４Dosインストール時に「要素が欠けています。」のエラー</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年2月4日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>ネットブックLaVie Light BL300/TにPrecise Puppy 5.7.1日本語版をFrugalインストールした。  </p>
-<p>既存のOS領域にもインストール出来るらしいが、Gpartedで新たにパーティションを用意。<br>ファイルのコピーは順調に進んだが、Grub４Dosのインストールでつまづいてしまった。  </p>
-<p>「Grub４Dosブートローダーの設定」で「PBSも表示」をクリックし、Grub４Dosをインストールする場所をPuppy用のパーティションに指定。  </p>
-<p>追加オプションの「ブートレコードを書き換えない」をマウスオーバーすると、  </p>
-<blockquote>
-<p>すでにあるMBRを変更したくないときにのみチェックしてください。<br>現在grldrが起動できるようになっていることが前提です。　フロッピーでは無効</p>
-</blockquote>
-<p>というツールチップが表示された。  </p>
-<p>MBRにはすでにMBM（Multiple Boot Manager）が入っているので、「ブートレコードを書き換えない」にチェック。<br>個人保存ファイルの設定を終え再起動したが、”Invalid boot record”とエラーになり、起動出来ない。  </p>
-<p>怪訝に思いながらも「ブートレコードを書き換えない」をチェックせずに、再度Grub４Dosをインストールし直した。  </p>
-<p>すると今度は</p>
-<blockquote>
-<p>この機能を実行するにはいくつかの要素が欠けています。　:/usr/lib/grub4dos/chain.c32, extlinux/syslinux(version &gt; =  4.0)</p>
-</blockquote>
-<p>と警告。  </p>
-<p>構わずOKをクリックして進めると、</p>
-<blockquote>
-<p>不明のエラーが生じました。<br>See /tmp/grub4dosconfig/grub4dosconfig.log</p>
-</blockquote>
-<p>とエラー。  </p>
-<p>grub4dosconfig.logは下記だった。 </p>
-<blockquote>
-<p>/usr/sbin/grub4dosconfig PBS<br>version 1.9.1<br>2015年  2月  4日 水曜日 04:09:01 JST<br>Writing… /initrd/mnt/dev_save/menu.lst<br>Installing grldr …<br><code>/usr/lib/grub4dos/grldr&#39; -&gt;</code>/initrd/mnt/dev_save/grldr’</p>
-</blockquote>
-<p>“Error”とは特に書いていないので再起動してみたが、やはり起動出来ない。  </p>
-<p>Grub４Dosのエラーについて検索すると、下記のディスカッションが見つかった。<br><a href="http://www.murga-linux.com/puppy/viewtopic.php?t=91838" target="_blank" rel="external">Puppy Linux Discussion Forum :: View topic - slacko 5.6, Grub4Dos doesn’t install</a>  </p>
-<p>どうやらext4でフォーマットされたパーティションにGrub４Dosをインストールするには、chain.c32およびバージョン4.0以上のextlinuxが必要らしい。<br>Puppy Linux用のパーティションをext4でフォーマットしていたのが原因だったようだ。  </p>
-<p>パーティションをext3でフォーマットし直し、再度Puppyをインストール。  </p>
-<p>Grub４Dosの設定では「ブートレコードを書き換えない」のチェックを入れて試みたが駄目で、チェックを外してGrub４Dosを入れ直して、ようやくハードディスクからPuppy Linuxを起動出来た。   </p>
-<p>MBM→各PBSのブートレコード→各OSの起動、という形でマルチブートしているので、「ブートレコードを書き換えない」のツールチップの説明が少し分かりにくかった。  </p>
-<p>インストールに成功した際のgrub4dosconfig.logは下記。  </p>
-<blockquote>
-<p>/usr/sbin/grub4dosconfig PBS<br>version 1.8.9<br>2015年  2月  4日 水曜日 05:03:13 JST<br>Writing… /mnt/sda9/menu.lst<br>Installing grldr …<br><code>/usr/lib/grub4dos/grldr&#39; -&gt;</code>/mnt/sda9/grldr’<br>Installing bootloader on /dev/sda9(PBS)…</p>
-<p>Filesystem type is EXT2.</p>
-<p>Success.</p>
-</blockquote>
-<p>（Grub4DosをPuppy Linux 5.5のUSBメモリーからインストールし直したので、versionは1.8.9。）</p>
-<p>“Filesystem type is EXT2.”となっているが、MBMでもext3やext4をext2と認識しているようだし、問題無いのだろう。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/02/04/puppy-grub4dos-error/" data-text="Puppy LinuxのGrub４Dosインストール時に「要素が欠けています。」のエラー | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/02/04/puppy-grub4dos-error/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/02/04/puppy-grub4dos-error/" class="hatena-bookmark-button" data-hatena-bookmark-title="Puppy LinuxのGrub４Dosインストール時に「要素が欠けています。」のエラー" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Linux/">Linux</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -837,41 +812,41 @@ tar: エラーを回復できません: 直ちに終了します
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/blog/">blog<span>39</span></a></li>
+			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
+		
+			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
 		
 			<li><a href="/tags/食/">食<span>4</span></a></li>
 		
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+		
 			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>18</span></a></li>
 		
 			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
-		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
-			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>86</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>39</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
 		
-			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
-		
-			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>17</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
+			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
 		
 		
 		</ul>
@@ -884,6 +859,10 @@ tar: エラーを回復できません: 直ちに終了します
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2016/03/24/higan-missing-required-file/" ><i class="fa fa-file-o"></i>v097にアップデート後higanでゲームが出来ない</a>
+      </li>
     
       <li>
         <a href="/2016/03/14/ameba-spammail/" ><i class="fa fa-file-o"></i>（迷惑メール）Amebaからのメールを配信停止に出来ない</a>
@@ -901,10 +880,6 @@ tar: エラーを回復できません: 直ちに終了します
         <a href="/2016/03/11/jumbotron/" ><i class="fa fa-file-o"></i>いまいち用途の分からないJumbotronに背景画像を...</a>
       </li>
     
-      <li>
-        <a href="/2016/03/10/000webhost-robot-txt-error/" ><i class="fa fa-file-o"></i>000webhostでrobots.txtを置いたらエラーに</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -914,7 +889,7 @@ tar: エラーを回復できません: 直ちに終了します
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
 		</ul>
 	</div>
 
