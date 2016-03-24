@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-03-24T10:53:22.852Z</updated>
+  <updated>2016-03-24T15:12:41.114Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2016/03/24/higan-missing-required-file/"/>
     <id>http://pagent.github.io/2016/03/24/higan-missing-required-file/</id>
     <published>2016-03-24T10:10:43.000Z</published>
-    <updated>2016-03-24T10:52:18.745Z</updated>
+    <updated>2016-03-24T15:12:15.000Z</updated>
     <content type="html"><![CDATA[<p>ファミコン、スーファミ等のエミュレーターとして再現性が高く重宝していたhiganだが、いつの間にかArch Linuxにインストールしたhiganでゲームが出来なくなっていた。  </p>
 <p>起動後Libraryからゲームファイルを開くと  </p>
 <div class="box">Missing required file: manifest.bml<br><br>From location:<br>/home/（ユーザー名）/.local/higan/Super Famicom.sys/</div>
@@ -28,7 +28,7 @@
 
 <p>と表示され、ゲームが始まらない。  </p>
 <p>アップデートによりエラーが出るようになったようで、Xububtuのhigan094-2では問題は無い。（Arch Linuxの方のバージョンはv097）<br>どうやらアップデートに伴い、Linux版の設定ファイルが~/.config/higanから~/.local/higanに変更された為らしい。<br><a href="http://byuu.org/" target="_blank" rel="external">byuu’s homepage</a>  </p>
-<p>~/.config/higan内のFamicom.sys、Super Famicom.sys等のフォルダを~/.local/higanにコピー。（〜.sysフォルダが~/.config/higan内に無い場合は~/Emulationにあるかもしれない）<br>設定のAdvancedタブでIgnore Manifestsにチェックを入れたら動作するようになった。  </p>
+<p>~/.config/higan内のFamicom.sys、Super Famicom.sys等のフォルダ（中にmanifest.bml等が入っている）を~/.local/higanにコピー。（〜.sysフォルダが~/.config/higan内に無い場合は~/Emulationにあるかもしれない）<br>設定のAdvancedタブでIgnore Manifestsにチェックを入れたら動作するようになった。  </p>
 <p>なお~/.config/higan内の〜.bmlファイルとVideo Shadersフォルダはコピペしなくても良いよう。<br>（input.bmlはsettings.bmlに統合されており、ゲームパッド入力ボタンは再設定が必要）  </p>
 <p>ーー<br>（関連記事）<br><a href="/2015/05/02/higan/">higanでファミコン、スーパーファミコン</a></p>
 ]]></content>
@@ -105,7 +105,7 @@
     <link href="http://pagent.github.io/2016/03/12/arch-linux-xampp/"/>
     <id>http://pagent.github.io/2016/03/12/arch-linux-xampp/</id>
     <published>2016-03-12T08:55:54.000Z</published>
-    <updated>2016-03-14T14:56:51.041Z</updated>
+    <updated>2016-03-14T14:56:51.000Z</updated>
     <content type="html"><![CDATA[<p>以前XubuntuでXamppを使用していたが、Arch Linuxにもインストールした。  </p>
 <ul>
 <li><p><a href="#install">インストール</a></p>
