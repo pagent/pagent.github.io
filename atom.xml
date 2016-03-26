@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-03-26T06:48:12.962Z</updated>
+  <updated>2016-03-26T12:26:10.241Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,27 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Xfceでマウスホイールによるウィンドウ巻き上げを止める]]></title>
+    <link href="http://pagent.github.io/2016/03/26/xfce4-stop-mousewheel-rollup/"/>
+    <id>http://pagent.github.io/2016/03/26/xfce4-stop-mousewheel-rollup/</id>
+    <published>2016-03-26T12:00:31.000Z</published>
+    <updated>2016-03-26T12:24:56.358Z</updated>
+    <content type="html"><![CDATA[<p>デスクトップ環境にXfce4を使っているが、ポインターがウィンドウ上部のタイトルバーにある状態でマウスホイールを上に動かすと、ウィンドウの巻き上げが起こってしまう。<br>特に使っていない機能なので、間違ってウィンドウが巻き上がり、戸惑ってしまうデメリットの方が大きい。  </p>
+<p>「ウィンドウマネージャー」、「ウィンドウマネージャー（詳細）」の設定ではそれらしい項目が見当たらなかったが、「設定エディター」でこれを止めることが出来た。  </p>
+<p>設定マネージャーから、もしくは端末で<code>xfce4-settings-editor</code>を打ち込み「設定エディター」を起動。  </p>
+<p>チャンネル「xfwm4」を選択し「general」を展開。  </p>
+<p>「mousewheel_rollup」の箇所で「値」のチェックを外す。<br>もしくは「mousewheel_rollup」を選択状態で鉛筆アイコンの「編集」から、値が「TRUE（有効）」となっているのを「FALSE（無効）」にして保存。  </p>
+<p>マウスホイールによるウィンドウの巻き上げが停止した。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>デスクトップ環境にXfce4を使っているが、ポインターがウィンドウ上部のタイトルバーにある状態でマウスホイールを上に動かすと、ウィンドウの巻き上げが起こってしまう。<br>特に使っていない機能なので、間違ってウィンドウが巻き上がり、戸惑ってしまうデメリットの方が大きい。  ]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[v097にアップデート後higanでゲームが出来ない]]></title>
@@ -563,37 +584,6 @@
     </summary>
     
       <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[危険なスパイウェアWindows 10はプライバシー情報を収集する]]></title>
-    <link href="http://pagent.github.io/2015/08/29/windows10-privacy/"/>
-    <id>http://pagent.github.io/2015/08/29/windows10-privacy/</id>
-    <published>2015-08-29T09:24:31.000Z</published>
-    <updated>2016-02-24T14:12:29.000Z</updated>
-    <content type="html"><![CDATA[<p>Windows 10にアップグレードするのは危険だという情報を目にする。<br>設定でプライバシーに関する情報の収集・送信を無効にしても、完全には止められないそうだ。<br><a href="http://it.srad.jp/story/15/08/15/2122239/" target="_blank" rel="external">Windows 10のプライバシー設定をすべてオフにしても、Microsoftとの通信は止められない？ | スラド IT</a>  </p>
-<p>Microsoftの「プライバシーに関する声明」には、個人情報の収集と利用について書かれている。<br>収集された個人情報は行政機関に提供される可能性もあるようだ。  </p>
-<blockquote>
-<p><strong>収集されるデータ</strong></p>
-<p>収集されるデータには、お客様の名前とメール アドレス、お客様の優先事項と興味に関する情報、位置、閲覧、検索、ファイルの履歴、電話による通話、SMS データ、デバイスの構成とセンサー データ、音声入力、テキスト入力、手書き入力、アプリケーションの使用状況などがあります。</p>
-<p><strong>データの収集方法</strong></p>
-<p>プログラムのソフトウェアやサービスに組み込まれていて、Microsoft に情報を送信する、インターネットに接続可能な機能。</p>
-<p><strong>データ転送の制御</strong></p>
-<p>Microsoft にデータを送信する多くの機能は、自動的に有効になります。プログラムのソフトウェアやサービスの特定の機能については、データ転送を無効にするオプションがない場合があります。 </p>
-<p><strong>データの開示</strong></p>
-<p>以下の目的で、お客様に関する情報のアクセス、開示、保持が必要であると合理的に判断できる場合、Microsoft はそれらの情報のアクセス、開示、保持を行う場合があります。</p>
-<p>1.適用される法令に準拠する場合、または所轄官庁 (法執行機関や他の政府機関など) の正当な法的手続きに対する責任を果たす場合。</p>
-</blockquote>
-<p><a href="http://windows.microsoft.com/ja-jp/windows/preview-privacy-statement" target="_blank" rel="external">Windows 10 Technical Preview のプライバシーに関する声明 - Microsoft Windows</a>  </p>
-<p>Windows 7、Windows 8からは無料でアップグレード可能ということで、喜んでアップグレードしてしまいそうだが、よくよく考えた方が良さそうだ。  </p>
-<p>ーー<br>（追記）<br>上記はテクニカルプレビュー版（テスト版）の声明だが、通常版のプライバシー声明でも「法律により要求される、または法的手続きに対応する際に、…個人情報を共有します。」と記載されている。<br><a href="http://www.microsoft.com/ja-jp/privacystatement/default.aspx" target="_blank" rel="external">Microsoftのプライバシーに関する声明</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Windows 10にアップグレードするのは危険だという情報を目にする。<br>設定でプライバシーに関する情報の収集・送信を無効にしても、完全には止められないそうだ。<br><a href="http://it.srad.jp/story/15/08/15/2122239/]]>
-    </summary>
-    
-      <category term="Windows" scheme="http://pagent.github.io/tags/Windows/"/>
     
   </entry>
   
