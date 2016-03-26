@@ -148,7 +148,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <p>アップデートによりエラーが出るようになったようで、Xububtuのhigan094-2では問題は無い。（Arch Linuxの方のバージョンはv097）<br>どうやらアップデートに伴い、Linux版の設定ファイルが~/.config/higanから~/.local/higanに変更された為らしい。<br><a href="http://byuu.org/" target="_blank" rel="external">byuu’s homepage</a>  </p>
 <p>~/.config/higan内のFamicom.sys、Super Famicom.sys等のフォルダ（中にmanifest.bml等が入っている）を~/.local/higanにコピー。（〜.sysフォルダが~/.config/higan内に無い場合は~/Emulationにあるかもしれない）<br>設定のAdvancedタブでIgnore Manifestsにチェックを入れたら動作するようになった。  </p>
 <p>なお~/.config/higan内の〜.bmlファイルとVideo Shadersフォルダはコピペしなくても良いよう。<br>（input.bmlはsettings.bmlに統合されており、ゲームパッド入力ボタンは再設定が必要）  </p>
-<p>higanをv094にダウングレードしようかとも考えたが、v094ではゲームボーイアドバンスのファイルを開こうとすると”Error: required Game Boy Advance firmware bios.rom” となって読み込めなかった。<br>だがv097（v095、v096もか）ではGame Boy Advance、Game Boy Color、Game BoyのROMでもゲーム可能になっている。  </p>
+<p>higanをv094にダウングレードしようかとも考えたが、v094ではゲームボーイアドバンスのファイルをインポートしようとすると”Error: required Game Boy Advance firmware bios.rom” とエラーになる。<br>だがv097（v095、v096もか）ではGame Boy Advance、Game Boy Color、Game BoyのROMでもゲーム可能になっている。  </p>
 <p>ーー<br>（関連記事）<br><a href="/2015/05/02/higan/">higanでファミコン、スーパーファミコンなどのレトロゲーム</a></p>
 
 	</div>
