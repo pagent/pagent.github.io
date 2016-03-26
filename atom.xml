@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-03-26T12:26:10.241Z</updated>
+  <updated>2016-03-26T12:27:56.044Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,12 +19,12 @@
     <link href="http://pagent.github.io/2016/03/26/xfce4-stop-mousewheel-rollup/"/>
     <id>http://pagent.github.io/2016/03/26/xfce4-stop-mousewheel-rollup/</id>
     <published>2016-03-26T12:00:31.000Z</published>
-    <updated>2016-03-26T12:24:56.358Z</updated>
+    <updated>2016-03-26T12:27:37.104Z</updated>
     <content type="html"><![CDATA[<p>デスクトップ環境にXfce4を使っているが、ポインターがウィンドウ上部のタイトルバーにある状態でマウスホイールを上に動かすと、ウィンドウの巻き上げが起こってしまう。<br>特に使っていない機能なので、間違ってウィンドウが巻き上がり、戸惑ってしまうデメリットの方が大きい。  </p>
 <p>「ウィンドウマネージャー」、「ウィンドウマネージャー（詳細）」の設定ではそれらしい項目が見当たらなかったが、「設定エディター」でこれを止めることが出来た。  </p>
 <p>設定マネージャーから、もしくは端末で<code>xfce4-settings-editor</code>を打ち込み「設定エディター」を起動。  </p>
 <p>チャンネル「xfwm4」を選択し「general」を展開。  </p>
-<p>「mousewheel_rollup」の箇所で「値」のチェックを外す。<br>もしくは「mousewheel_rollup」を選択状態で鉛筆アイコンの「編集」から、値が「TRUE（有効）」となっているのを「FALSE（無効）」にして保存。  </p>
+<p>「mousewheel_rollup」の項目で「値」の箇所のチェックを外す。<br>もしくは「mousewheel_rollup」を選択状態で鉛筆アイコンの「編集」から、値が「TRUE（有効）」となっているのを「FALSE（無効）」にして保存。  </p>
 <p>マウスホイールによるウィンドウの巻き上げが停止した。</p>
 ]]></content>
     <summary type="html">
