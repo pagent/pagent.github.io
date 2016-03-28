@@ -5,16 +5,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>PC-BL300TにXubunt16.04beta2をインストール | Pagent</title>
+  <title>BL300/TにXubunt16.04beta2をインストール | Pagent</title>
   <meta name="author" content="Pagent">
   
-  <meta name="description" content="ネットブックLaVie Light BL300/T（PC-BL300T）にXubuntuの最新ベータ版16.04 LTS Beta 2をインストールした。今年4月に正式版がリリース予定のようだが。Linux Kernel 4.4が採用されている。  
-インストールDVDを起動すると例のごとくDisa">
+  <meta name="description" content="ネットブックLaVie Light BL300/T（PC-BL300TA6B）にXubuntuの最新ベータ版16.04 LTS Beta 2をインストールした。今年4月に正式版がリリース予定のようだが。Linux Kernel 4.4が採用されている。  
+インストールDVDを起動すると例のごとくD">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="PC-BL300TにXubunt16.04beta2をインストール"/>
+  <meta property="og:title" content="BL300/TにXubunt16.04beta2をインストール"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -121,7 +121,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> PC-BL300TにXubunt16.04beta2をインストール</h1>
+			<h1> BL300/TにXubunt16.04beta2をインストール</h1>
 		</div>
 	
 
@@ -137,7 +137,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>ネットブックLaVie Light BL300/T（PC-BL300T）にXubuntuの最新ベータ版16.04 LTS Beta 2をインストールした。今年4月に正式版がリリース予定のようだが。<br>Linux Kernel 4.4が採用されている。  </p>
+	    <p>ネットブックLaVie Light BL300/T（PC-BL300TA6B）にXubuntuの最新ベータ版16.04 LTS Beta 2をインストールした。今年4月に正式版がリリース予定のようだが。<br>Linux Kernel 4.4が採用されている。  </p>
 <p>インストールDVDを起動すると例のごとく<q>Disabling IRQ #9</q>のところでフリーズする。<br>起動後すぐに矢印キーなどを押してメニュー選択画面を表示させ、F6（その他のオプション）で<code>acpi=off</code>のオプションを付けたらちゃんと起動した。<br>そのままインストールすると/etc/default/grubにもGRUB_CMDLINE_LINUX=”acpi=off”が記載されていた。  </p>
 <p>再起動した後も調子良く使えるようだったが、シャットダウンの際<q>system halted</q>の表示のまま止まってしまい、最後に電源ボタンで終了する必要があった。<br>再起動では止まったりしないのだが。<br><code>acpi=off</code>のオプションを付けて起動しているのが原因のよう。  </p>
 <p>apmdをインストールし<code>acpi=off apm=on apm:power-off</code>を試してみたが、上手く行かない。apmdのインストールの際には「すでに使われていない」というような警告が出ていたし駄目のようだ。  </p>
@@ -147,8 +147,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </code></pre><p>を</p>
 <pre><code><span class="constant">GRUB_CMDLINE_LINUX</span>=<span class="string">"acpi_backlight=vendor"</span>
 </code></pre><p>に修正し<code>update-grub</code>することで、起動もシャットダウンも正常に行えるようになった。  </p>
-<p>Xubunt 16.04 LTSでは最初からfcitx-mozcが採用されていて、日本語入力の際に助かる。  </p>
-<p>またUbuntuソフトウェアセンターが廃止され、代わりに「ソフトウェア」（gnome-software）が入っているが、これは動作がUbuntuソフトウェアセンターよりもさらに重くなった印象。<br>非力なPCならSynapticを入れた方が良い。  </p>
+<p>Xubunt 16.04 LTSは14.04よりもさらに精錬された印象。古いパソコンもまだまだ快適に使える。  </p>
+<p>最初からfcitx-mozcが採用されていて、日本語入力の際に助かる。<br>またUbuntuソフトウェアセンターが廃止され、代わりに「ソフトウェア」（gnome-software）が入っているが、これは動作がUbuntuソフトウェアセンターよりもさらに重いようだ。<br>非力なPCならSynapticを入れた方が良い。  </p>
 <p>（参照記事）<br><a href="http://d.hatena.ne.jp/aoshimak/20140725#p4" target="_blank" rel="external">XP代替としてのLinux選択 - あおしまの日記</a></p>
 
 	</div>
@@ -161,7 +161,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2016/03/28/xubunt-16-04-acpi/" class="hatena-bookmark-button" data-hatena-bookmark-title="PC-BL300TにXubunt16.04beta2をインストール" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2016/03/28/xubunt-16-04-acpi/" class="hatena-bookmark-button" data-hatena-bookmark-title="BL300/TにXubunt16.04beta2をインストール" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 
 <div class="clear"></div>

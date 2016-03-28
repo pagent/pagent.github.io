@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-03-28T11:00:28.438Z</updated>
+  <updated>2016-03-28T11:09:35.602Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,12 +15,12 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[PC-BL300TにXubunt16.04beta2をインストール]]></title>
+    <title><![CDATA[BL300/TにXubunt16.04beta2をインストール]]></title>
     <link href="http://pagent.github.io/2016/03/28/xubunt-16-04-acpi/"/>
     <id>http://pagent.github.io/2016/03/28/xubunt-16-04-acpi/</id>
     <published>2016-03-28T09:56:02.000Z</published>
-    <updated>2016-03-28T10:59:48.919Z</updated>
-    <content type="html"><![CDATA[<p>ネットブックLaVie Light BL300/T（PC-BL300T）にXubuntuの最新ベータ版16.04 LTS Beta 2をインストールした。今年4月に正式版がリリース予定のようだが。<br>Linux Kernel 4.4が採用されている。  </p>
+    <updated>2016-03-28T11:09:20.845Z</updated>
+    <content type="html"><![CDATA[<p>ネットブックLaVie Light BL300/T（PC-BL300TA6B）にXubuntuの最新ベータ版16.04 LTS Beta 2をインストールした。今年4月に正式版がリリース予定のようだが。<br>Linux Kernel 4.4が採用されている。  </p>
 <p>インストールDVDを起動すると例のごとく<q>Disabling IRQ #9</q>のところでフリーズする。<br>起動後すぐに矢印キーなどを押してメニュー選択画面を表示させ、F6（その他のオプション）で<code>acpi=off</code>のオプションを付けたらちゃんと起動した。<br>そのままインストールすると/etc/default/grubにもGRUB_CMDLINE_LINUX=”acpi=off”が記載されていた。  </p>
 <p>再起動した後も調子良く使えるようだったが、シャットダウンの際<q>system halted</q>の表示のまま止まってしまい、最後に電源ボタンで終了する必要があった。<br>再起動では止まったりしないのだが。<br><code>acpi=off</code>のオプションを付けて起動しているのが原因のよう。  </p>
 <p>apmdをインストールし<code>acpi=off apm=on apm:power-off</code>を試してみたが、上手く行かない。apmdのインストールの際には「すでに使われていない」というような警告が出ていたし駄目のようだ。  </p>
@@ -30,13 +30,13 @@
 </code></pre><p>を</p>
 <pre><code><span class="constant">GRUB_CMDLINE_LINUX</span>=<span class="string">"acpi_backlight=vendor"</span>
 </code></pre><p>に修正し<code>update-grub</code>することで、起動もシャットダウンも正常に行えるようになった。  </p>
-<p>Xubunt 16.04 LTSでは最初からfcitx-mozcが採用されていて、日本語入力の際に助かる。  </p>
-<p>またUbuntuソフトウェアセンターが廃止され、代わりに「ソフトウェア」（gnome-software）が入っているが、これは動作がUbuntuソフトウェアセンターよりもさらに重くなった印象。<br>非力なPCならSynapticを入れた方が良い。  </p>
+<p>Xubunt 16.04 LTSは14.04よりもさらに精錬された印象。古いパソコンもまだまだ快適に使える。  </p>
+<p>最初からfcitx-mozcが採用されていて、日本語入力の際に助かる。<br>またUbuntuソフトウェアセンターが廃止され、代わりに「ソフトウェア」（gnome-software）が入っているが、これは動作がUbuntuソフトウェアセンターよりもさらに重いようだ。<br>非力なPCならSynapticを入れた方が良い。  </p>
 <p>（参照記事）<br><a href="http://d.hatena.ne.jp/aoshimak/20140725#p4" target="_blank" rel="external">XP代替としてのLinux選択 - あおしまの日記</a></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>ネットブックLaVie Light BL300/T（PC-BL300T）にXubuntuの最新ベータ版16.04 LTS Beta 2をインストールした。今年4月に正式版がリリース予定のようだが。<br>Linux Kernel 4.4が採用されている。  </p>
-<p>]]>
+    <![CDATA[<p>ネットブックLaVie Light BL300/T（PC-BL300TA6B）にXubuntuの最新ベータ版16.04 LTS Beta 2をインストールした。今年4月に正式版がリリース予定のようだが。<br>Linux Kernel 4.4が採用されている。  </p>
+]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
