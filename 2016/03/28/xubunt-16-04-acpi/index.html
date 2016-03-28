@@ -5,16 +5,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Xfceでマウスホイールによるウィンドウ巻き上げを止める | Pagent</title>
+  <title>PC-BL300TにXubunt16.04beta2をインストール | Pagent</title>
   <meta name="author" content="Pagent">
   
-  <meta name="description" content="デスクトップ環境にXfce4を使っているが、ポインターがウィンドウ上部のタイトルバーにある状態でマウスホイールを上に動かすと、ウィンドウの巻き上げが起こってしまう。特に使っていない機能なので、間違ってウィンドウが巻き上がり、戸惑ってしまうデメリットの方が大きい。  
-「ウィンドウマネージャー」、「ウ">
+  <meta name="description" content="ネットブックLaVie Light BL300/T（PC-BL300T）にXubuntuの最新ベータ版16.04 LTS Beta 2をインストールした。今年4月に正式版がリリース予定のようだが。Linux Kernel 4.4が採用されている。  
+インストールDVDを起動すると例のごとくDisa">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Xfceでマウスホイールによるウィンドウ巻き上げを止める"/>
+  <meta property="og:title" content="PC-BL300TにXubunt16.04beta2をインストール"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -121,7 +121,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> Xfceでマウスホイールによるウィンドウ巻き上げを止める</h1>
+			<h1> PC-BL300TにXubunt16.04beta2をインストール</h1>
 		</div>
 	
 
@@ -137,12 +137,19 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>デスクトップ環境にXfce4を使っているが、ポインターがウィンドウ上部のタイトルバーにある状態でマウスホイールを上に動かすと、ウィンドウの巻き上げが起こってしまう。<br>特に使っていない機能なので、間違ってウィンドウが巻き上がり、戸惑ってしまうデメリットの方が大きい。  </p>
-<p>「ウィンドウマネージャー」、「ウィンドウマネージャー（詳細）」の設定ではそれらしい項目が見当たらなかったが、「設定エディター」でこれを止めることが出来た。  </p>
-<p>設定マネージャーから、もしくは端末で<code>xfce4-settings-editor</code>を打ち込み「設定エディター」を起動。  </p>
-<p>チャンネル「xfwm4」を選択し「general」を展開。  </p>
-<p>「mousewheel_rollup」の項目で「値」の箇所のチェックを外す。<br>もしくは「mousewheel_rollup」を選択状態で鉛筆アイコンの「編集」から、値が「TRUE（有効）」となっているのを「FALSE（無効）」にして保存。  </p>
-<p>マウスホイールによるウィンドウの巻き上げが停止した。</p>
+	    <p>ネットブックLaVie Light BL300/T（PC-BL300T）にXubuntuの最新ベータ版16.04 LTS Beta 2をインストールした。今年4月に正式版がリリース予定のようだが。<br>Linux Kernel 4.4が採用されている。  </p>
+<p>インストールDVDを起動すると例のごとく<q>Disabling IRQ #9</q>のところでフリーズする。<br>起動後すぐに矢印キーなどを押してメニュー選択画面を表示させ、F6（その他のオプション）で<code>acpi=off</code>のオプションを付けたらちゃんと起動した。<br>そのままインストールすると/etc/default/grubにもGRUB_CMDLINE_LINUX=”acpi=off”が記載されていた。  </p>
+<p>再起動した後も調子良く使えるようだったが、シャットダウンの際<q>system halted</q>の表示のまま止まってしまい、最後に電源ボタンで終了する必要があった。<br>再起動では止まったりしないのだが。<br><code>acpi=off</code>のオプションを付けて起動しているのが原因のよう。  </p>
+<p>apmdをインストールし<code>acpi=off apm=on apm:power-off</code>を試してみたが、上手く行かない。apmdのインストールの際には「すでに使われていない」というような警告が出ていたし駄目のようだ。  </p>
+<p>Xubuntuインストール後は<code>acpi=off</code>のオプションを外しても<q>Disabling IRQ #9</q>でフリーズはせず、その後も起動ログが表示される。<br>だが、今度は<q>[Firmware Bug] ACPI No _BQC method, cannot determine initial brightness</q>でフリーズ。  </p>
+<p>結局、/etc/default/grubの  </p>
+<pre><code><span class="constant">GRUB_CMDLINE_LINUX</span>=<span class="string">"acpi=off"</span>
+</code></pre><p>を</p>
+<pre><code><span class="constant">GRUB_CMDLINE_LINUX</span>=<span class="string">"acpi_backlight=vendor"</span>
+</code></pre><p>に修正し<code>update-grub</code>することで、起動もシャットダウンも正常に行えるようになった。  </p>
+<p>Xubunt 16.04 LTSでは最初からfcitx-mozcが採用されていて、日本語入力の際に助かる。  </p>
+<p>またUbuntuソフトウェアセンターが廃止され、代わりに「ソフトウェア」（gnome-software）が入っているが、これは動作がUbuntuソフトウェアセンターよりもさらに重くなった印象。<br>非力なPCならSynapticを入れた方が良い。  </p>
+<p>（参照記事）<br><a href="http://d.hatena.ne.jp/aoshimak/20140725#p4" target="_blank" rel="external">XP代替としてのLinux選択 - あおしまの日記</a></p>
 
 	</div>
 
@@ -150,11 +157,11 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2016/03/26/xfce4-stop-mousewheel-rollup/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2016/03/28/xubunt-16-04-acpi/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2016/03/26/xfce4-stop-mousewheel-rollup/" class="hatena-bookmark-button" data-hatena-bookmark-title="Xfceでマウスホイールによるウィンドウ巻き上げを止める" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2016/03/28/xubunt-16-04-acpi/" class="hatena-bookmark-button" data-hatena-bookmark-title="PC-BL300TにXubunt16.04beta2をインストール" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 
 <div class="clear"></div>
@@ -166,13 +173,13 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2016/03/28/xubunt-16-04-acpi/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2016/03/24/higan-missing-required-file/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2016/03/26/xfce4-stop-mousewheel-rollup/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -206,7 +213,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2016年3月26日
+	2016年3月28日
 	</div>
 	
 

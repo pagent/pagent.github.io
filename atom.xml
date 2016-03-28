@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-03-26T12:27:56.044Z</updated>
+  <updated>2016-03-28T11:00:28.438Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,11 +15,40 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[PC-BL300TにXubunt16.04beta2をインストール]]></title>
+    <link href="http://pagent.github.io/2016/03/28/xubunt-16-04-acpi/"/>
+    <id>http://pagent.github.io/2016/03/28/xubunt-16-04-acpi/</id>
+    <published>2016-03-28T09:56:02.000Z</published>
+    <updated>2016-03-28T10:59:48.919Z</updated>
+    <content type="html"><![CDATA[<p>ネットブックLaVie Light BL300/T（PC-BL300T）にXubuntuの最新ベータ版16.04 LTS Beta 2をインストールした。今年4月に正式版がリリース予定のようだが。<br>Linux Kernel 4.4が採用されている。  </p>
+<p>インストールDVDを起動すると例のごとく<q>Disabling IRQ #9</q>のところでフリーズする。<br>起動後すぐに矢印キーなどを押してメニュー選択画面を表示させ、F6（その他のオプション）で<code>acpi=off</code>のオプションを付けたらちゃんと起動した。<br>そのままインストールすると/etc/default/grubにもGRUB_CMDLINE_LINUX=”acpi=off”が記載されていた。  </p>
+<p>再起動した後も調子良く使えるようだったが、シャットダウンの際<q>system halted</q>の表示のまま止まってしまい、最後に電源ボタンで終了する必要があった。<br>再起動では止まったりしないのだが。<br><code>acpi=off</code>のオプションを付けて起動しているのが原因のよう。  </p>
+<p>apmdをインストールし<code>acpi=off apm=on apm:power-off</code>を試してみたが、上手く行かない。apmdのインストールの際には「すでに使われていない」というような警告が出ていたし駄目のようだ。  </p>
+<p>Xubuntuインストール後は<code>acpi=off</code>のオプションを外しても<q>Disabling IRQ #9</q>でフリーズはせず、その後も起動ログが表示される。<br>だが、今度は<q>[Firmware Bug] ACPI No _BQC method, cannot determine initial brightness</q>でフリーズ。  </p>
+<p>結局、/etc/default/grubの  </p>
+<pre><code><span class="constant">GRUB_CMDLINE_LINUX</span>=<span class="string">"acpi=off"</span>
+</code></pre><p>を</p>
+<pre><code><span class="constant">GRUB_CMDLINE_LINUX</span>=<span class="string">"acpi_backlight=vendor"</span>
+</code></pre><p>に修正し<code>update-grub</code>することで、起動もシャットダウンも正常に行えるようになった。  </p>
+<p>Xubunt 16.04 LTSでは最初からfcitx-mozcが採用されていて、日本語入力の際に助かる。  </p>
+<p>またUbuntuソフトウェアセンターが廃止され、代わりに「ソフトウェア」（gnome-software）が入っているが、これは動作がUbuntuソフトウェアセンターよりもさらに重くなった印象。<br>非力なPCならSynapticを入れた方が良い。  </p>
+<p>（参照記事）<br><a href="http://d.hatena.ne.jp/aoshimak/20140725#p4" target="_blank" rel="external">XP代替としてのLinux選択 - あおしまの日記</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>ネットブックLaVie Light BL300/T（PC-BL300T）にXubuntuの最新ベータ版16.04 LTS Beta 2をインストールした。今年4月に正式版がリリース予定のようだが。<br>Linux Kernel 4.4が採用されている。  </p>
+<p>]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Xfceでマウスホイールによるウィンドウ巻き上げを止める]]></title>
     <link href="http://pagent.github.io/2016/03/26/xfce4-stop-mousewheel-rollup/"/>
     <id>http://pagent.github.io/2016/03/26/xfce4-stop-mousewheel-rollup/</id>
     <published>2016-03-26T12:00:31.000Z</published>
-    <updated>2016-03-26T12:27:37.104Z</updated>
+    <updated>2016-03-26T12:29:16.216Z</updated>
     <content type="html"><![CDATA[<p>デスクトップ環境にXfce4を使っているが、ポインターがウィンドウ上部のタイトルバーにある状態でマウスホイールを上に動かすと、ウィンドウの巻き上げが起こってしまう。<br>特に使っていない機能なので、間違ってウィンドウが巻き上がり、戸惑ってしまうデメリットの方が大きい。  </p>
 <p>「ウィンドウマネージャー」、「ウィンドウマネージャー（詳細）」の設定ではそれらしい項目が見当たらなかったが、「設定エディター」でこれを止めることが出来た。  </p>
 <p>設定マネージャーから、もしくは端末で<code>xfce4-settings-editor</code>を打ち込み「設定エディター」を起動。  </p>
@@ -557,33 +586,6 @@
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[ハイパーリンクになっていないURLを開く]]></title>
-    <link href="http://pagent.github.io/2015/09/01/open-unclickable-url/"/>
-    <id>http://pagent.github.io/2015/09/01/open-unclickable-url/</id>
-    <published>2015-09-01T01:26:18.000Z</published>
-    <updated>2016-03-11T08:12:08.000Z</updated>
-    <content type="html"><![CDATA[<p>ハイパーリンクになっておらず、クリック出来ないURLを開く時には、URLをアドレス欄にコピペすれば良いが、少し面倒。Firefoxのアドオンに<a href="https://addons.mozilla.org/ja/firefox/addon/text-link/" target="_blank" rel="external">テキストリンク (Text Link)</a>というのがあると知り、インストールしてみた。<br>現在のバージョンのFirefoxには対応していないようだが、開発版を入れると機能した。  </p>
-<p>だが、「テキストリンク」の説明にURI文字列を開く通常の方法として、<q>選択された文字列をFirefoxのタブバーにドラッグ＆ドロップする</q>という方法が書いてあったので、これをやってみた。  </p>
-<p><code>http://example.com/</code>  </p>
-<p>確かにURL文字列を選択してタブバーに持って行くと、</p>
-<div class="box">タブの中央にドロップするとそのタブを置き換え、タブの両サイドにドロップするとその位置に新しいタブとして読み込まれます</div>
-
-<p>というツールチップが表示され、そのままドロップするとURLを開いてくれる。<br>こんな方法があるとは全然知らなかった。<br>URL文字列の選択は大抵の場合トリプルクリック（一行全文字を選択）で簡単に出来るので、この方法でも良さそう。  </p>
-<p>右クリックメニューがあまり増えるのも嫌なので、結局「テキストリンク」はアンインストールした。</p>
-<p>ーー<br>（追記）<br>文字列を選択してタブバーに持って行きURLを開くこの機能、Chromium（Google Chrome）にもあるようだ。  </p>
-<p>ドメイン<code>example.com</code>だけでも開けたり、Firefoxの場合はhを抜いた<code>ttp://example.com/</code>でも開けたり（Chromiumではh抜きだと検索になる）<br>ブラウザにより違いがあって面白い。  </p>
-<p>あと、今更ながら気付いたが、文字列選択状態で右クリック→「リンクを新しいタブで開く」でもURLを開ける。（Chromiumの場合は「〜に移動」）</p>
-<p>ブラウザの知らない機能、まだまだたくさんあるのだろう。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>ハイパーリンクになっておらず、クリック出来ないURLを開く時には、URLをアドレス欄にコピペすれば良いが、少し面倒。Firefoxのアドオンに<a href="https://addons.mozilla.org/ja/firefox/addon/text-link/" t]]>
-    </summary>
-    
-      <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
     
   </entry>
   
