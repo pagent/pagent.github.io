@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-03-29T12:30:26.815Z</updated>
+  <updated>2016-03-29T12:31:29.188Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[Nanocをインストール]]></title>
+    <title><![CDATA[Nanocのインストール]]></title>
     <link href="http://pagent.github.io/2016/03/29/nanoc-install/"/>
     <id>http://pagent.github.io/2016/03/29/nanoc-install/</id>
     <published>2016-03-29T10:46:33.000Z</published>
-    <updated>2016-03-29T12:30:14.637Z</updated>
+    <updated>2016-03-29T12:31:16.598Z</updated>
     <content type="html"><![CDATA[<p>ブログを開始するには骨が折れるが、ウェブサイト構築では汎用性に優れるNanoc。<br>Arch Linuxにインストールしたがバージョンは4になっていた。<br>Rubyは導入済  </p>
 <p>Nanocのインストール<br>（なるべくsudoを付けない方が良いらしい）</p>
 <pre><code>$ gem install nanoc
