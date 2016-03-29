@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-03-29T12:39:03.598Z</updated>
+  <updated>2016-03-29T14:15:20.449Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2016/03/29/nanoc-install/"/>
     <id>http://pagent.github.io/2016/03/29/nanoc-install/</id>
     <published>2016-03-29T10:46:33.000Z</published>
-    <updated>2016-03-29T12:36:49.785Z</updated>
+    <updated>2016-03-29T14:15:01.536Z</updated>
     <content type="html"><![CDATA[<p>ブログを開始するには骨が折れるが、ウェブサイト構築では汎用性に優れるNanoc。<br>Arch Linuxにインストールしたがバージョンは4になっていた。<br>Rubyは導入済  </p>
 <p>Nanocのインストール<br>（なるべくsudoを付けない方が良いらしい）</p>
 <pre><code>$ gem install nanoc
@@ -69,7 +69,7 @@ Loading site… done
   <span class="built_in">filter</span> :kramdown
   layout <span class="string">'/default.*'</span>
 <span class="function"><span class="keyword">end</span></span>
-</code></pre><p>なお、新規ページを作る<code>nanoc create_item</code>コマンド、またwatch、autocompileコマンドなどはNanoc 4から削除されたよう。<br><a href="http://nanoc.ws/doc/nanoc-4-upgrade-guide/#removed-features" target="_blank" rel="external">Nanoc 4 upgrade guide » Removed features</a>  </p>
+</code></pre><p>なお、新規ページを追加する<code>nanoc create_item</code>コマンド、またwatch、autocompileコマンドなどはNanoc 4から削除されたよう。<br><a href="http://nanoc.ws/doc/nanoc-4-upgrade-guide/#removed-features" target="_blank" rel="external">Nanoc 4 upgrade guide » Removed features</a>  </p>
 <p>（参照記事）<br>インストール、使い方など<br><a href="http://nanoc.ws/doc/installation/" target="_blank" rel="external">Nanoc » Installation</a><br><a href="http://nanoc.ws/doc/tutorial/" target="_blank" rel="external">Nanoc » Tutorial</a>  </p>
 <p>パスの通し方<br><a href="http://qiita.com/hyshhryk/items/7e728ad57d963454b142" target="_blank" rel="external">bundleコマンドにパスが通っていなかったときの対処法 - Qiita</a>  </p>
 ]]></content>
