@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-03-29T02:53:54.101Z</updated>
+  <updated>2016-03-29T12:28:23.088Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,77 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Nanocのインストール]]></title>
+    <link href="http://pagent.github.io/2016/03/29/nanoc-install/"/>
+    <id>http://pagent.github.io/2016/03/29/nanoc-install/</id>
+    <published>2016-03-29T10:46:33.000Z</published>
+    <updated>2016-03-29T12:25:13.281Z</updated>
+    <content type="html"><![CDATA[<p>ブログを開始するには骨が折れるが、ウェブサイト構築では汎用性に優れるNanoc。  </p>
+<p>Arch Linuxにインストールした。<br>Rubyは導入済  </p>
+<p>Nanocのインストール<br>（なるべくsudoを付けない方が良いらしい）</p>
+<pre><code>$ gem install nanoc
+<span class="label">WARNING:  </span>You don't have /home/yss/.gem/ruby/2.3.0/bin in your PATH,
+<span class="code">      gem executables will not run.</span>
+Successfully installed nanoc-4.1.5
+Parsing documentation for nanoc-4.1.5
+Done installing documentation for nanoc after 2 seconds
+1 gem installed
+</code></pre><p>プレビューとMarkdownを使用するため、adsfとkramdownもインストール</p>
+<pre><code><span class="variable">$ </span>gem install adsf
+<span class="variable">$ </span>gem install kramdown
+</code></pre><p>Nanocを使ってみる<br>test-siteを作成</p>
+<pre><code><span class="variable">$ </span>nanoc create-site test-site
+<span class="symbol">bash:</span> <span class="symbol">nanoc:</span> コマンドが見つかりません
+</code></pre><p>パスを通す必要があるらしい。<br>Nanocがインストールされた場所の確認</p>
+<pre><code>$ gem contents nanoc | <span class="keyword">grep</span> bin
+<span class="regexp">/home/</span>ユーザー名<span class="regexp">/.gem/</span>ruby<span class="regexp">/2.3.0/g</span>ems<span class="regexp">/nanoc-4.1.5/</span>bin<span class="regexp">/nanoc</span>
+</code></pre><p>パスを通す（~/.bashrcに<code>export PATH=&quot;$HOME/.gem/ruby/2.3.0/bin:$PATH&quot;</code>を追記）</p>
+<pre><code>$ echo 'export PATH=<span class="string">"<span class="variable">$HOME</span>/.gem/ruby/2.3.0/bin:<span class="variable">$PATH</span>"</span>' &gt;&gt; ~/.bashrc
+</code></pre><p>再度test-siteを作成</p>
+<pre><code>$ nanoc <span class="operator"><span class="keyword">create</span>-site test-site
+      <span class="keyword">create</span>  nanoc.yaml
+      <span class="keyword">create</span>  Rules
+      <span class="keyword">create</span>  content/<span class="keyword">index</span>.html
+      <span class="keyword">create</span>  content/stylesheet.css
+      <span class="keyword">create</span>  layouts/<span class="keyword">default</span>.html
+Created a blank nanoc site <span class="keyword">at</span> <span class="string">'test-site'</span>. Enjoy!</span>
+</code></pre><p>作成されたtest-siteディレクトリに移動しコンパイル（generate）する<br>コンパイルは<code>nanoc</code>だけでも良い  </p>
+<pre><code>$ cd test-site
+$ nanoc compile
+Loading site… done
+Compiling site…
+      <span class="operator"><span class="keyword">create</span>  [<span class="number">0.00</span>s]  <span class="keyword">output</span>/stylesheet.css
+      <span class="keyword">create</span>  [<span class="number">0.06</span>s]  <span class="keyword">output</span>/<span class="keyword">index</span>.html
+
+Site compiled <span class="keyword">in</span> <span class="number">0.19</span>s.</span>
+</code></pre><p>プレビューし、ブラウザで<code>http://localhost:3000/</code>にアクセス</p>
+<pre><code>$ nanoc view
+Loading site… done
+<span class="attr_selector">[2016-03-29 20:10:10]</span> INFO  WEBrick 1<span class="class">.3</span><span class="class">.1</span>
+<span class="attr_selector">[2016-03-29 20:10:10]</span> INFO  <span class="tag">ruby</span> 2<span class="class">.3</span><span class="class">.0</span> (2015-12-25) <span class="attr_selector">[x86_64-linux]</span>
+<span class="attr_selector">[2016-03-29 20:10:10]</span> INFO  WEBrick<span class="value">::HTTPServer#start: pid=<span class="number">5898</span> port=<span class="number">3000</span></span>
+</code></pre><p><img src="/images/nanoc-install.png" alt="nanoc-install.png" height="240"></p>
+<p>Markdown記法を使いたいのでkramdownをインストールしたが、Rulesファイル（test-siteフォルダ内）の修正も必要。<br>kramdownに関する記載部分のアンコメント<code>#</code>を外す</p>
+<pre><code>compile <span class="string">'/**/*.md'</span> <span class="built_in">do</span>
+  <span class="built_in">filter</span> :kramdown
+  layout <span class="string">'/default.*'</span>
+<span class="function"><span class="keyword">end</span></span>
+</code></pre><p>なお、新規ページを作る<code>nanoc create_item</code>コマンド、またwatch、autocompileコマンドなどはNanoc 4から削除されたよう。<br><a href="http://nanoc.ws/doc/nanoc-4-upgrade-guide/#removed-features" target="_blank" rel="external">Nanoc 4</a>  </p>
+<p>（参照記事）<br>インストール、使い方など<br><a href="http://nanoc.ws/doc/installation/" target="_blank" rel="external">Nanoc » Installation</a><br><a href="http://nanoc.ws/doc/tutorial/" target="_blank" rel="external">Nanoc » Tutorial</a>  </p>
+<p>パスの通し方<br><a href="http://qiita.com/hyshhryk/items/7e728ad57d963454b142" target="_blank" rel="external">bundleコマンドにパスが通っていなかったときの対処法 - Qiita</a>  </p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>ブログを開始するには骨が折れるが、ウェブサイト構築では汎用性に優れるNanoc。  </p>
+<p>Arch Linuxにインストールした。<br>Rubyは導入済  </p>
+<p>Nanocのインストール<br>（なるべくsudoを付けない方が良いらしい）</p>
+<p]]>
+    </summary>
+    
+      <category term="nanoc" scheme="http://pagent.github.io/tags/nanoc/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[BL300/TにXubunt16.04beta2をインストール]]></title>
@@ -298,7 +369,7 @@
     <link href="http://pagent.github.io/2016/03/01/gthumb-hidden-comments-folder/"/>
     <id>http://pagent.github.io/2016/03/01/gthumb-hidden-comments-folder/</id>
     <published>2016-03-01T11:12:03.000Z</published>
-    <updated>2016-03-07T15:55:34.000Z</updated>
+    <updated>2016-03-29T12:22:11.528Z</updated>
     <content type="html"><![CDATA[<p>ここ最近、画像を開いたディレクトリに.commentsという隠しフォルダが作成されるようになってしまっていた。<br>フォルダ内には(画像ファイル名).xmlというファイルが複数入っている。  </p>
 <p>簡単な画像編集も出来て便利なのでgThumbという画像ビューアを使っているが、このgThumbが自動的に作成しているらしい。  </p>
 <p>煩わしいのでこれを止めたい。  </p>
@@ -561,31 +632,6 @@
     </summary>
     
       <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Xfce起動時に「設定サーバーに接続できませんでした」と表示される]]></title>
-    <link href="http://pagent.github.io/2015/09/03/socket-connection-failure/"/>
-    <id>http://pagent.github.io/2015/09/03/socket-connection-failure/</id>
-    <published>2015-09-03T06:23:19.000Z</published>
-    <updated>2016-03-09T19:44:50.000Z</updated>
-    <content type="html"><![CDATA[<p>Arch Linux+Xfceで起動時に  </p>
-<blockquote>
-<p>設定サーバーに接続できませんでした<br>Failed to connect to socket /tmp/dbus-…</p>
-<p>フェイルセーフセッションを読み込めませんでした</p>
-</blockquote>
-<p>等と表示されるようになってしまった。<br>LightDMのログイン画面になり一応ログインは可能だが、パネル等が表示されず使用出来ない状態。<br>何度か再起動をやり直すと正常に起動出来ることもあるが、まちまちで不便。  </p>
-<p>原因はよく分からなかったが、LightDMで設定していた自動ログインを無効にしたら不具合は無くなった。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Arch Linux+Xfceで起動時に  </p>
-<blockquote>
-<p>設定サーバーに接続できませんでした<br>Failed to connect to socket /tmp/dbus-…</p>
-<p>フェイルセーフセッションを読み込めませんでした</p]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
     
   </entry>
   

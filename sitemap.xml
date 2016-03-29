@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2016/03/29/nanoc-install/</loc>
+    <lastmod>2016-03-29T12:25:13.281Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2016/03/01/gthumb-hidden-comments-folder/</loc>
+    <lastmod>2016-03-29T12:22:11.528Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2016/03/28/xubunt-16-04-acpi/</loc>
     <lastmod>2016-03-28T11:09:20.845Z</lastmod>
   </url>
@@ -109,11 +119,6 @@
   <url>
     <loc>http://pagent.github.io/2015/02/03/find-hidden-files/</loc>
     <lastmod>2016-03-08T00:07:08.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2016/03/01/gthumb-hidden-comments-folder/</loc>
-    <lastmod>2016-03-07T15:55:34.000Z</lastmod>
   </url>
   
   <url>
@@ -304,11 +309,6 @@
   <url>
     <loc>http://pagent.github.io/2014/04/19/curry_soba/</loc>
     <lastmod>2016-02-26T23:21:34.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2014/05/02/xubuntu-upgrade/</loc>
-    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
   <url>
@@ -1448,6 +1448,11 @@
   
   <url>
     <loc>http://pagent.github.io/2014/05/03/crash-report/</loc>
+    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2014/05/02/xubuntu-upgrade/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
