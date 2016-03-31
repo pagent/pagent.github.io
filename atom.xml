@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-03-30T00:46:16.403Z</updated>
+  <updated>2016-03-31T00:10:12.672Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,8 +19,8 @@
     <link href="http://pagent.github.io/2016/03/29/nanoc-install/"/>
     <id>http://pagent.github.io/2016/03/29/nanoc-install/</id>
     <published>2016-03-29T10:46:33.000Z</published>
-    <updated>2016-03-29T14:15:01.536Z</updated>
-    <content type="html"><![CDATA[<p>ブログを開始するには骨が折れるが、ウェブサイト構築では汎用性に優れるNanoc。<br>Arch Linuxにインストールしたがバージョンは4になっていた。<br>Rubyは導入済  </p>
+    <updated>2016-03-31T00:07:12.049Z</updated>
+    <content type="html"><![CDATA[<p>ブログを開始するには骨が折れるが、ウェブサイト構築では柔軟性、汎用性に優れるNanoc。<br>Arch Linuxにインストールしたがバージョンは4になっていた。<br>Rubyは導入済  </p>
 <p>Nanocのインストール<br>（なるべくsudoを付けない方が良いらしい）</p>
 <pre><code>$ gem install nanoc
 <span class="label">WARNING:  </span>You don't have /home/yss/.gem/ruby/2.3.0/bin in your PATH,
@@ -48,7 +48,7 @@ Done installing documentation for nanoc after 2 seconds
       <span class="keyword">create</span>  content/stylesheet.css
       <span class="keyword">create</span>  layouts/<span class="keyword">default</span>.html
 Created a blank nanoc site <span class="keyword">at</span> <span class="string">'test-site'</span>. Enjoy!</span>
-</code></pre><p>作成されたtest-siteディレクトリに移動しコンパイル（generate）する<br>コンパイルは<code>nanoc</code>だけでも良い  </p>
+</code></pre><p>作成されたtest-siteディレクトリに移動しコンパイル（generate）する<br>コンパイルのコマンドは<code>nanoc</code>だけでも良い  </p>
 <pre><code>$ cd test-site
 $ nanoc compile
 Loading site… done
@@ -74,8 +74,8 @@ Loading site… done
 <p>パスの通し方<br><a href="http://qiita.com/hyshhryk/items/7e728ad57d963454b142" target="_blank" rel="external">bundleコマンドにパスが通っていなかったときの対処法 - Qiita</a>  </p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>ブログを開始するには骨が折れるが、ウェブサイト構築では汎用性に優れるNanoc。<br>Arch Linuxにインストールしたがバージョンは4になっていた。<br>Rubyは導入済  </p>
-<p>Nanocのインストール<br>（なるべくsudoを付けない方が良いらしい]]>
+    <![CDATA[<p>ブログを開始するには骨が折れるが、ウェブサイト構築では柔軟性、汎用性に優れるNanoc。<br>Arch Linuxにインストールしたがバージョンは4になっていた。<br>Rubyは導入済  </p>
+<p>Nanocのインストール<br>（なるべくsudoを付けない方が良]]>
     </summary>
     
       <category term="nanoc" scheme="http://pagent.github.io/tags/nanoc/"/>
