@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-03-31T00:10:12.672Z</updated>
+  <updated>2016-03-31T00:13:10.441Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,11 +19,11 @@
     <link href="http://pagent.github.io/2016/03/29/nanoc-install/"/>
     <id>http://pagent.github.io/2016/03/29/nanoc-install/</id>
     <published>2016-03-29T10:46:33.000Z</published>
-    <updated>2016-03-31T00:07:12.049Z</updated>
+    <updated>2016-03-31T00:12:57.117Z</updated>
     <content type="html"><![CDATA[<p>ブログを開始するには骨が折れるが、ウェブサイト構築では柔軟性、汎用性に優れるNanoc。<br>Arch Linuxにインストールしたがバージョンは4になっていた。<br>Rubyは導入済  </p>
 <p>Nanocのインストール<br>（なるべくsudoを付けない方が良いらしい）</p>
 <pre><code>$ gem install nanoc
-<span class="label">WARNING:  </span>You don't have /home/yss/.gem/ruby/2.3.0/bin in your PATH,
+<span class="label">WARNING:  </span>You don't have /home/ユーザー名/.gem/ruby/2.3.0/bin in your PATH,
 <span class="code">      gem executables will not run.</span>
 Successfully installed nanoc-4.1.5
 Parsing documentation for nanoc-4.1.5
