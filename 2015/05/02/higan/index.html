@@ -169,7 +169,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <pre><code><span class="comment">$</span> <span class="comment">xinput</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">disable</span> <span class="comment">11</span>
 </code></pre><p>起動の度に無効化するのは面倒だったので、自動開始アプリケーションにコマンドを登録した。  </p>
 <p>（追記）<br>接続するUSBポートを変えたり、新しく別の機器を繋いだりするとidが変わり、キーボードが効かなくなったりする。<br>idではなくdevice nameを使うことで解決出来た。  </p>
-<pre><code><span class="title">xinput</span> --disable <span class="string">"USB,2-axis 8-button gamepad  "</span>
+<pre><code><span class="variable">$ </span>xinput --disable <span class="string">"USB,2-axis 8-button gamepad  "</span>
 </code></pre><p>（何故か〜gamepadの後に半角スペース2個が必要だった）</p>
 <p>（注）<br>higanは優れたエミュレーターだが、低スペックのパソコンでは動作がカクカクになり、まともにゲームが出来ない。<br>対応はスーファミだけになるが、ZSNESなら古いパソコンでも快適にプレイ出来る。  </p>
 <p>（参照記事）<br><a href="http://nomad-blacky.hatenablog.com/entry/2013/03/21/025253" target="_blank" rel="external">ゲームパッドの操作でマウスポインタが動いてしまう＠Ubuntu - ぶらっ記ぃ</a><br><a href="https://archlinuxjp.kusakata.com/wiki/Xorg?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DXorg_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno#.E5.BF.85.E8.A6.81.E3.81.AB.E5.BF.9C.E3.81.98.E3.81.A6.E5.85.A5.E5.8A.9B.E3.82.BD.E3.83.BC.E3.82.B9.E3.82.92.E6.9C.89.E5.8A.B9.E5.8C.96.E3.83.BB.E7.84.A1.E5.8A.B9.E5.8C.96" target="_blank" rel="external">必要に応じて入力ソースを有効化・無効化 - Xorg - ArchWiki</a></p>
