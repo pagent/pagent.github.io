@@ -680,14 +680,14 @@ sleep <span class="number">3</span>
 <p>defragfs.pl（_ISO/docs/linux_utils内）やWINCONTIG（_ISO/docs/内）の他、特にLinuxユーザーの為に_ISO内にCONTIG.ISOというファイルが同梱されている。  </p>
 <p>CONTIG.ISOは、isoファイルに断片化があった際に自動的にデフラグ操作を行うためのものらしい。<br>サイズが500MBに設定されていて、Easy2Bootインストール直後の状態でのほとんど全ての容量にあたる。<br>clonezillaが上手く起動出来なかったのもフリーズしていた訳ではなく、CONTIG.ISOがデフラグ操作を行っていたのかもしれない。<br>ただかなり時間が掛かるようだし、サイズが500MB以上のisoファイルをデフラグするためには、CONTIG.ISOもそれ以上のサイズにリサイズしておく必要があるようだ。<br>CONTIG.ISOを使わないのであれば、削除してしまっても良いとのこと。  </p>
 <p>defragfs.plはなぜか機能しなかったが、Windows用のWinContigでデフラグしたらclonezillaも起動出来るようになった。<br>WinContigはWindows 7を起動して使用したが、Windows PE（Windows プレインストール環境）やHiren’s BootCDの「Mini Windows Xp」など、Windows環境を提供するisoファイルをEasy2Bootに入れておけば、Easy2BootによるブートでWinContigを利用出来そうだ。  </p>
-<p>###フォーマットをNTSFにする（不要かも）</p>
+<h3 id="フォーマットをNTSFにする（不要かも）">フォーマットをNTSFにする（不要かも）</h3>
 <p>4GBを超えるファイルを利用するためには、Easy2Boot領域をFat32ではなく、NTSFもしくはext3、ext4にしておく必要があるが、なるべくなら4GB以上のisoファイルも扱いたい。  </p>
 <p>Easy2Bootインストール時に領域がFat32にフォーマットされてしまうが、_ISO/docs/linux_utils内のfmt.shファイルの131行目の  </p>
 <pre><code>/sbin/mkfs.vfat -F32 -n <span class="string">"<span class="variable">$label</span>"</span> <span class="variable">$device</span>
 </code></pre><p>を</p>
 <pre><code>/sbin/mkfs.ntfs -n <span class="string">"<span class="variable">$label</span>"</span> <span class="variable">$device</span>
 </code></pre><p>に変更することでNTSFにすることが出来た。<br>後からファイルを保持したままFat32をNTSFに変換することも可能のよう。  </p>
-<p>（その後は結局Fat32でフォーマットしたものを使っている。Fat32のままで良さそう。）  </p>
+<p>（その後は結局Fat32でフォーマットしたものを使っている。Fat32のままでも良いかも。）  </p>
 <h3 id="よく分からないトラブル">よく分からないトラブル</h3>
 <p>外付けHDDではこれで上手く行ったが、USBメモリではEasy2Bootを起動しようとしたら、「パーティションのlast sectorをチェックしている」という内容の表示のまま止まってしまった。  </p>
 <p>そのまま電源を落とさずUSBメモリを一旦抜き、再度挿入して”continue”。<br>ブートメニュー画面で”Install Grub4dos…”を選択したら、その後は起動出来るようになった。  </p>
@@ -842,43 +842,43 @@ sleep <span class="number">3</span>
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
 		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>18</span></a></li>
+		
+			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
 		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
+			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
 		
-			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
-		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
 		
 			<li><a href="/tags/食/">食<span>4</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
 			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
 		
-			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
+			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
+		
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>39</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>89</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>18</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
 		
 		
 		</ul>
