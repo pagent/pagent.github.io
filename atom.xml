@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-04-07T01:22:01.896Z</updated>
+  <updated>2016-04-07T02:14:20.924Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,36 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Yaourtでパッケージのキャッシュを保存]]></title>
+    <link href="http://pagent.github.io/2016/04/07/yaourt-cache/"/>
+    <id>http://pagent.github.io/2016/04/07/yaourt-cache/</id>
+    <published>2016-04-07T01:35:50.000Z</published>
+    <updated>2016-04-07T02:13:44.681Z</updated>
+    <content type="html"><![CDATA[<p>Yaourtのデフォルト状態ではビルドしたパッケージが消えてしまうが、このキャッシュをPacman同様保存するようにした。  </p>
+<p>/etc/yaourtrcのBuildの項目、EXPORTの箇所のアンコメントを無くし、値を2にすれば/var/cache/pacman/pkgに保存される。<br>だがこれだと、どれがAURのパッケージか分からなくなってしまうので、/var/cache/pacman/pkg-localに保存するようにした。  </p>
+<figure class="highlight plain"><figcaption><span>yaourtrc</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># Build</div><div class="line">EXPORT=1</div><div class="line">EXPORTDIR="/var/cache/pacman/pkg-local"</div></pre></td></tr></table></figure>
+
+<p></p><p></p><br>この状態でYaourtを使うと、  <p></p>
+<div class="box">==&gt; エラー: /var/cache/pacman/pkg-local に書き込む権限がありません</div>
+
+<p>sudoを付けると  </p>
+<div class="box">==&gt; エラー: makepkg を root で実行することはできません。<br>システムに致命的なダメージを与える可能性があります。<br>PKGBUILD を読み込めません</div>
+
+<p>とエラーになり、Yaourtが使えない。<br>/var/cache/pacman/pkg-localのパーミッションと所有権を変更したら使えるようになった。  </p>
+<pre><code>$ sudo chmod 775 /var/<span class="operator"><span class="keyword">cache</span>/pacman/pkg-<span class="keyword">local</span>/
+$ sudo chown root:ユーザー名 /<span class="keyword">var</span>/<span class="keyword">cache</span>/pacman/pkg-<span class="keyword">local</span>/</span>
+</code></pre><p></p><p></p><br>（参照記事）<br><a href="https://wiki.archlinuxjp.org/index.php/Yaourt#.E3.82.AD.E3.83.A3.E3.83.83.E3.82.B7.E3.83.A5" target="_blank" rel="external">Yaourt - ArchWiki</a><br><a href="http://www.taylorbyte.com/docs/wiki/archlinux/yaourt" target="_blank" rel="external">Taylorbyte.com</a><p></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Yaourtのデフォルト状態ではビルドしたパッケージが消えてしまうが、このキャッシュをPacman同様保存するようにした。  </p>
+<p>/etc/yaourtrcのBuildの項目、EXPORTの箇所のアンコメントを無くし、値を2にすれば/var/cache/pacm]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Nanocのインストール]]></title>
@@ -610,25 +640,6 @@ Loading site… done
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[元CIA職員スノーデン氏がTwitterを開始]]></title>
-    <link href="http://pagent.github.io/2015/09/30/snowden-twitter/"/>
-    <id>http://pagent.github.io/2015/09/30/snowden-twitter/</id>
-    <published>2015-09-30T09:28:10.000Z</published>
-    <updated>2016-02-24T14:12:29.000Z</updated>
-    <content type="html"><![CDATA[<p>ロシアに亡命中の元CIA職員スノーデン氏が9月29日にTwitterを始めたそうだ。<br><a href="http://www.itmedia.co.jp/news/articles/1509/30/news144.html" target="_blank" rel="external">スノーデン氏、Twitterを始める - ITmedia ニュース</a>  </p>
-<p>彼がフォローしているのは米国家安全保障局（NSA）のみだそうで、実際に彼のアカウント<a href="https://twitter.com/Snowden" target="_blank" rel="external">@Snowden</a>を見てみると確かにそうなっている。<br>現在のフォロワー数は９０万人程。始めて間もないせいもあるかも知れないが、意外と少ない気がする。  </p>
-<p>スノーデン氏と言えばアメリカ政府による数々の諜報活動を暴露した人物。<br>そのスノーデン氏が何ゆえ今頃Twitterを始める気になったのだろうか？<br>FacebookよりTwitterの方が安全なのかもしれないが、でもなぜ今？  </p>
-<p>英語が苦手なのでフォローする気は無いが、ちょっと気になる。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>ロシアに亡命中の元CIA職員スノーデン氏が9月29日にTwitterを始めたそうだ。<br><a href="http://www.itmedia.co.jp/news/articles/1509/30/news144.html" target="_blank" rel="]]>
-    </summary>
-    
-      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
     
   </entry>
   
