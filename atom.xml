@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-04-16T10:47:56.078Z</updated>
+  <updated>2016-04-16T21:09:55.379Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,29 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[XamppでFTPが使用できない]]></title>
+    <link href="http://pagent.github.io/2016/04/17/xampp-ftp/"/>
+    <id>http://pagent.github.io/2016/04/17/xampp-ftp/</id>
+    <published>2016-04-16T20:41:09.000Z</published>
+    <updated>2016-04-16T21:07:02.964Z</updated>
+    <content type="html"><![CDATA[<p>Arch Linux上のXamppにWordPressをインストールした。  </p>
+<p>ユーザーdaemon、設定したパスワードでFilezillaを使って/opt/lampp/htdocsに接続。<br>接続は出来たがアップロード出来ない。  </p>
+<p>/opt/lampp/htdocsの所有者・グループがrootになっていたので、daemonに変更。  </p>
+<pre><code><span class="built_in">sudo</span> chown -R daemon:daemon /opt/lampp/htdocs
+</code></pre><p>WordPressをアップロード、インストールした。  </p>
+<p>ーー<br>（関連記事）<br><a href="/2016/03/12/arch-linux-xampp/">Arch LinuxにXamppをインストール</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Arch Linux上のXamppにWordPressをインストールした。  </p>
+<p>ユーザーdaemon、設定したパスワードでFilezillaを使って/opt/lampp/htdocsに接続。<br>接続は出来たがアップロード出来ない。  </p>
+<p>/op]]>
+    </summary>
+    
+      <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[シャットダウン時"A stop job is running for Session ..."が表示される]]></title>
@@ -277,7 +300,7 @@ Loading site… done
     <link href="http://pagent.github.io/2016/03/12/arch-linux-xampp/"/>
     <id>http://pagent.github.io/2016/03/12/arch-linux-xampp/</id>
     <published>2016-03-12T08:55:54.000Z</published>
-    <updated>2016-03-14T14:56:51.041Z</updated>
+    <updated>2016-04-16T21:09:26.671Z</updated>
     <content type="html"><![CDATA[<p>以前XubuntuでXamppを使用していたが、Arch Linuxにもインストールした。  </p>
 <ul>
 <li><p><a href="#install">インストール</a></p>
@@ -327,6 +350,7 @@ Loading site… done
 <pre><code><span class="built_in">bind</span>-address=localhost
 </code></pre><p>なお、httpd.conf、httpd-ssl.conf、my.cnfの場所はArchWikiの記載が古いのか、実際の場所と違っていた。<br>ディストリビューションによっても違うかもしれない。  </p>
 <p>（参照記事）<br><a href="https://wiki.archlinuxjp.org/index.php/Xampp" title="Xampp - ArchWiki" target="_blank" rel="external">Xampp - ArchWiki</a>  </p>
+<p>（関連記事）<br><a href="/2016/04/17/xampp-ftp/">XamppでFTPが使用できない</a>  </p>
 <p></p><p></p><br>（追加）<p></p>
 <h4 id="commands">よく使うコマンド</h4>
 
@@ -597,41 +621,6 @@ Loading site… done
     </summary>
     
       <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[ツイート数表示のAPIが廃止されたので、代わりにURLのツイッター検索画面に飛ぶリンク「List」を設置]]></title>
-    <link href="http://pagent.github.io/2015/12/01/twitter-search-list/"/>
-    <id>http://pagent.github.io/2015/12/01/twitter-search-list/</id>
-    <published>2015-12-01T09:03:34.000Z</published>
-    <updated>2016-02-24T14:12:29.000Z</updated>
-    <content type="html"><![CDATA[<p>Twitterのツイート数を表示するAPIが11月21日に廃止されたそうで、ツイートボタン横のカウント表示が無くなってしまった。  </p>
-<p>「count.jsoon」または「widgetoon.js」を導入すればこれまで通りツイート数を表示出来るようなのだが。<br><a href="http://getnews.jp/archives/1264136" target="_blank" rel="external">【衝撃】突然Twitterのツイート数が表示されなくなって大混乱！ 表示されるようにする方法 / count.jsoon ｜ ガジェット通信</a>  </p>
-<p>登録が必要のようで面倒。  </p>
-<p>サイトによってはツイート数の代わりに記事URLのツイッター検索画面に飛ぶ「List」というリンクが設置されていたりする。<br>せめて、シェアしてくれた人のツイートが検索画面に表示されているか、他にどんな人がツイートしているかを確認出来るよう、また自身がツイートするのではなくリツイートしたい時などのために、この「List」というリンクを設置することにした。  </p>
-<p><strong>Hexoの場合</strong></p>
-<p>記事一覧（layout/_partial/post/entry.ejs）、個別記事（layout/_partial/article.ejs）のレイアウトのツイートボタンscriptの後に  </p>
-<p><code>&lt;a href=&quot;https://twitter.com/search?q=&lt;%- item.permalink %&gt;&quot;&gt;List&lt;/a&gt;</code>  </p>
-<p>を追記。<br>「List」というリンクが追加された。  </p>
-<p><strong>Seesaaブログの場合</strong></p>
-<p>別で書いてるSeesaaブログにもこの「List」を追加した。（Seesaaブログではスマホ用ページのHTMLはいじれないので、PC用ページのみ。）  </p>
-<p>ソーシャルボタンのHTMLは直接編集出来ないので、公式のツイートボタンを導入した。（Seesaaのツイートボタンは設定→ソーシャルボタン→PCの「Twitter」のチェックを外して削除。）<br>公式ツイートボタンのコードを取得。（<a href="https://about.twitter.com/ja/resources/buttons#tweet" target="_blank" rel="external">Twitterボタン | About</a>）<br>「URLを共有」、「ツイート本文」にそれぞれSeesaaブログの環境変数<code>&lt;% article.page_url %&gt;</code>、<code>&lt;% article.subject %&gt;</code>を入れる。  </p>
-<p>作成されたコードを、Seesaaの設定→デザイン→PC→コンテンツ→記事のHTML編集でソーシャルボタンの箇所（<code>&lt;% if:blog.bookmark_service %&gt;...</code>）の前後いずれかに追記。<br>コードの後ろに記事URL検索画面に飛ぶためのリンク<br><code>&lt;a href=&quot;https://twitter.com/search?q=&lt;% article.page_url %&gt;&quot;&gt;List&lt;/a&gt;</code><br>を追加。（CSSで位置を調節出来るよう全体を<code>&lt;div class=twitter&gt;</code>〜<code>&lt;/div&gt;</code>で囲った。）  </p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">--- ここから ---</div><div class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">twitter</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"https://twitter.com/share"</span> <span class="attribute">class</span>=<span class="value">"twitter-share-button"</span><span class="value">{count}</span> <span class="attribute">data-url</span>=<span class="value">"&lt;% article.page_url %&gt;"</span> <span class="attribute">data-text</span>=<span class="value">"&lt;% article.subject %&gt;"</span>&gt;</span>Tweet<span class="tag">&lt;/<span class="title">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">!<span class="function"><span class="keyword">function</span><span class="params">(d,s,id)</span></span>{<span class="keyword">var</span> js,fjs=d.getElementsByTagName(s)[<span class="number">0</span>],p=<span class="regexp">/^http:/</span>.test(d.location)?<span class="string">'http'</span>:<span class="string">'https'</span>;<span class="keyword">if</span>(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+<span class="string">'://platform.twitter.com/widgets.js'</span>;fjs.parentNode.insertBefore(js,fjs);}}(<span class="built_in">document</span>, <span class="string">'script'</span>, <span class="string">'twitter-wjs'</span>);</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"https://twitter.com/search?q=&lt;% article.page_url %&gt;"</span>&gt;</span>List<span class="tag">&lt;/<span class="title">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line">--- ここまで ---</div><div class="line"><span class="vbscript">&lt;% <span class="keyword">if</span>:blog.bookmark_service %&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"bookmark"</span> <span class="attribute">data-url</span>=<span class="value">"&lt;% article.page_url %&gt;"</span> <span class="attribute">data-subject</span>=<span class="value">"&lt;% article.subject | remove_emoji | nl2br | tag_strip | html %&gt;"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span></div><div class="line"><span class="vbscript">&lt;% /<span class="keyword">if</span> %&gt;</span></div></pre></td></tr></table></figure>
-
-<p>その後デザイン設定でCSSに</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="class">.twitter</span> <span class="rules">{ </span></div><div class="line">	<span class="rule"><span class="attribute">margin-left</span>:<span class="value"><span class="number">5px</span></span></span>;</div><div class="line">	<span class="rule"><span class="attribute">margin-top</span>:<span class="value"><span class="number">5px</span></span></span>;</div><div class="line"><span class="rule">}</span></div></pre></td></tr></table></figure>
-
-<p>を追記した。  </p>
-<p>それにしても、ツイート数の表示廃止でTwitterの魅力がかなり損なわれた。<br>いったい何をしたいのだろう？<br>終わりたいのか？Twitter</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Twitterのツイート数を表示するAPIが11月21日に廃止されたそうで、ツイートボタン横のカウント表示が無くなってしまった。  </p>
-<p>「count.jsoon」または「widgetoon.js」を導入すればこれまで通りツイート数を表示出来るようなのだが。<br]]>
-    </summary>
-    
-      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
     
   </entry>
   
