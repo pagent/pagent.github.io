@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-04-16T08:17:34.330Z</updated>
+  <updated>2016-04-16T10:47:56.078Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2016/04/16/stop-job-running/"/>
     <id>http://pagent.github.io/2016/04/16/stop-job-running/</id>
     <published>2016-04-16T08:03:43.000Z</published>
-    <updated>2016-04-16T08:16:26.343Z</updated>
+    <updated>2016-04-16T10:47:31.301Z</updated>
     <content type="html"><![CDATA[<p>Arch LinuxでPCのシャットダウンや再起動時に、しばしば  </p>
 <p><div class="box">A stop job is running for Session c3 of user …</div>と表示されて、1分30秒待たさせる。<br>どうやらsystemdに関連したバグのよう。  </p>
 <p>根本的に解決する方法は分からなかったが、/etc/systemd/system.confを編集して、待たされる時間を90秒から10秒に変更した。  </p>
