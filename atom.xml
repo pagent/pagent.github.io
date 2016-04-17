@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-04-16T21:09:55.379Z</updated>
+  <updated>2016-04-17T05:04:50.139Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,25 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[出会い系サイトからの迷惑メール]]></title>
+    <link href="http://pagent.github.io/2016/04/17/spam-mail/"/>
+    <id>http://pagent.github.io/2016/04/17/spam-mail/</id>
+    <published>2016-04-17T04:42:43.000Z</published>
+    <updated>2016-04-17T05:04:17.377Z</updated>
+    <content type="html"><![CDATA[<p>久しぶりに普段使っていないプロバイダーのメールを見てみると、まったく身に覚えのない出会い系サイトから多量の迷惑メールが来ていた。<br>件名は愛人がどうとか、大人の付き合いがどうとか。  </p>
+<p>From:欄のアドレスはいろいろ変えてあるが、ヘッダーを見ると3つあるReceived:の一番下のものはどれも<code>from m1cr0wave.net (〜x〜x〜x〜.adv-server.net [〜.〜.〜.〜])</code>で始まることで共通している。<br>（X-spam-judge: okとなっていて、プロバイダーの迷惑メール判定は通過しているよう）  </p>
+<p>メーラーの振り分け設定（フィルター）で、ヘッダーに<code>adv-server.net</code>を含むものは受信せずサーバーから削除するようにした。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>久しぶりに普段使っていないプロバイダーのメールを見てみると、まったく身に覚えのない出会い系サイトから多量の迷惑メールが来ていた。<br>件名は愛人がどうとか、大人の付き合いがどうとか。  </p>
+<p>From:欄のアドレスはいろいろ変えてあるが、ヘッダーを見ると3つある]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[XamppでFTPが使用できない]]></title>
@@ -597,30 +616,6 @@ Loading site… done
     </summary>
     
       <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Firefox、Chromiumをプライベート（シークレット）ウィンドウで起動する]]></title>
-    <link href="http://pagent.github.io/2015/12/06/firefox-private-chromium-secret/"/>
-    <id>http://pagent.github.io/2015/12/06/firefox-private-chromium-secret/</id>
-    <published>2015-12-05T23:07:47.000Z</published>
-    <updated>2016-02-24T14:12:29.000Z</updated>
-    <content type="html"><![CDATA[<p>Firefox、Chromium（Google Chrome）とも、プライベートウィンドウ（シークレットウィンドウ）を開くには、一度通常モードで起動して設定画面から行う必要があるが、最初からプライベートウィンドウを開けたら便利。  </p>
-<p>コマンド<code>firefox -private-window</code>と<code>chromium --incognito</code>をアプリケーションメニューに追加した。  </p>
-<p>（参照記事）</p>
-<ul>
-<li><a href="http://winaero.com/blog/how-to-run-firefox-in-private-browsing-mode-from-the-command-line-or-a-shortcut/" title="How to run Firefox in private browsing mode from the command line or a shortcut" target="_blank" rel="external">How to run Firefox in private browsing mode from the command line or a shortcut</a>  </li>
-<li><a href="http://www.openspc2.org/reibun/GoogleChrome/2.0/setting/secret/0001/" title="シークレットモードで起動するようにする" target="_blank" rel="external">シークレットモードで起動するようにする</a>  </li>
-</ul>
-<p>（余談）<br>“incognito”は「匿名」という意味らしい。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Firefox、Chromium（Google Chrome）とも、プライベートウィンドウ（シークレットウィンドウ）を開くには、一度通常モードで起動して設定画面から行う必要があるが、最初からプライベートウィンドウを開けたら便利。  </p>
-<p>コマンド<code>fir]]>
-    </summary>
-    
-      <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
     
   </entry>
   

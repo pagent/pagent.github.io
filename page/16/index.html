@@ -159,6 +159,70 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/11/26/filename-case/" >Hexo新規記事作成時のタイトル大文字アルファベットを小文字のファイル名に</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月26日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Hexoのデフォルト設定で新規記事を作成する際、記事タイトルに大文字アルファベットを使うと、そのままファイル名としてソースが作成される。</p>
+<pre><code>$ hexo new New-Post
+[info] File created at /<span class="keyword">...</span>/<span class="keyword">source</span>/_posts/<span class="number">2014</span>-<span class="number">11</span>-<span class="number">26</span>-New-Post.md
+</code></pre><p>URLに大文字アルファベットが入ってしまう。  </p>
+<p>URLに大文字は使いたくないので、Octopressのように大文字→小文字でファイル出力して欲しい。  </p>
+<p>_config.ymlのWritingの項目<code>filename_case:</code>の値をデフォルトの「0」から「1」に変更することで設定出来た。  </p>
+<pre><code>$ hexo new New-Post
+[info] File created at /<span class="keyword">...</span>/<span class="keyword">source</span>/_posts/<span class="number">2014</span>-<span class="number">11</span>-<span class="number">26</span>-new-post.md
+</code></pre><p>filename_case: 0（そのまま出力。New-Post→New-Post）  </p>
+<p>filename_case: 1（大文字を小文字に変換。New-Post→new-post.md）  </p>
+<p>filename_case: 2（すべて大文字に変換。New-Post→NEW-POST.md）  </p>
+<p>ーー<br>（追記）<br>出来たと思ったら、generateした際にtagsまでがすべて小文字になってしまった。<br>これでは困るので、<code>filename_case: 0</code>に戻した。<br>当面、大文字のファイル名は手作業で小文字にするしかなさそうだ。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/26/filename-case/" data-text="Hexo新規記事作成時のタイトル大文字アルファベットを小文字のファイル名に | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/11/26/filename-case/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/11/26/filename-case/" class="hatena-bookmark-button" data-hatena-bookmark-title="Hexo新規記事作成時のタイトル大文字アルファベットを小文字のファイル名に" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Hexo/">Hexo</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/11/26/hexo-bitbucket/" >HexoのソースをBitbucketに置く</a>
 		</h3>
 	
@@ -893,75 +957,6 @@ tag: <span class="number">1</span>
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/21/hexo-xubuntu/" >Xubuntuに静的サイトジェネレーターHexoを入れてみた</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月21日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Octopressでブログを書いていて、さして不満はないのだが、別の静的サイトジェネレーターに「Hexo」というのがあるのを知った。<br>Octopressに較べ、テーマも豊富に用意あり、日本語のURLやカテゴリー名にも対応しているようだったので、入れてみた。<br>rubyではなく、Node.jsというのを使うらしい。  </p>
-<p>導入には下記サイトなどを参考にさせて頂いた。<br><a href="http://tech.admax.ninja/2014/09/11/environment-of-hexo/" target="_blank" rel="external">【Node.js】Hexoでブログを書くための環境構築 | AdMax Tech Blog</a>  </p>
-<p>概ね上記サイトの通りに進めたらいいようだったが、Xubuntu14.04の環境では若干うまく行かないところがあった。  </p>
-<p>nodeにパスを通す際、~/.bash_profileというファイルが見つからなかったので、~/.profileに  </p>
-<pre><code><span class="keyword">if</span> <span class="string">[[ -s ~/.nvm/nvm.sh ]]</span>;
-<span class="keyword">then</span> source ~/.nvm/nvm.sh
-fi
-</code></pre><p>を追記したが、これでは駄目なようで、ターミナルを起動する度にnvmというコマンドが見つからないと言われる。  </p>
-<p>どうやら~/.bashrcに追記しないと駄目なようだった。<br><a href="http://d.hatena.ne.jp/white_chi/20111101/1320097898" target="_blank" rel="external">Ubuntu11.10で、nvmからnode.jsをインストールする - ホワイトぼーど</a>  </p>
-<p>Hexoをインストールするところで  </p>
-<pre><code>npm WARN <span class="keyword">optional</span> dep failed, continuing fsevents@<span class="number">0.2</span>.<span class="number">0</span>
-</code></pre><p>と言われたが、問題なく使えるようだ。<br>途中うまく行かないので、下記サイトを参考に  </p>
-<pre><code>curl -sL http<span class="variable">s:</span>//<span class="keyword">deb</span>.nodesource.<span class="keyword">com</span>/setup | sudo bash -
-
-sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</span> nodejs
-</code></pre><p>とやったりしたが、果たしてこれが必要な操作だったのかどうかは不明。<br><a href="https://github.com/joyent/node/wiki/installing-node.js-via-package-manager" target="_blank" rel="external">Installing Node.js via package manager · joyent/node Wiki</a>  </p>
-<p>しばらく試用してみて良ささそうだったら、Octopressから乗り換えるかもしれない。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/21/hexo-xubuntu/" data-text="Xubuntuに静的サイトジェネレーターHexoを入れてみた | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/11/21/hexo-xubuntu/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/11/21/hexo-xubuntu/" class="hatena-bookmark-button" data-hatena-bookmark-title="Xubuntuに静的サイトジェネレーターHexoを入れてみた" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Hexo/">Hexo</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -1002,43 +997,43 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>19</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
-		
-			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
-		
 			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
 		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
-			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
-		
-			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
-		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>90</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>39</span></a></li>
 		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
 		
 			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
 		
+			<li><a href="/tags/Linux/">Linux<span>91</span></a></li>
+		
+			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
+			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>37</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
+		
 			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/食/">食<span>4</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>19</span></a></li>
+		
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
 		
 		
 		</ul>
@@ -1051,6 +1046,10 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2016/04/17/spam-mail/" ><i class="fa fa-file-o"></i>出会い系サイトからの迷惑メール</a>
+      </li>
     
       <li>
         <a href="/2016/04/17/xampp-ftp/" ><i class="fa fa-file-o"></i>XamppでFTPが使用できない</a>
@@ -1068,10 +1067,6 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
         <a href="/2016/03/29/nanoc-install/" ><i class="fa fa-file-o"></i>Nanocのインストール</a>
       </li>
     
-      <li>
-        <a href="/2016/03/28/xubunt-16-04-acpi/" ><i class="fa fa-file-o"></i>BL300/TにXubunt16.04beta2をイン...</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -1081,7 +1076,7 @@ sudo apt-<span class="built_in">get</span> install -<span class="keyword">y</spa
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
 		</ul>
 	</div>
 
