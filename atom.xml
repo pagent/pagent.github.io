@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-04-17T05:04:50.139Z</updated>
+  <updated>2016-04-17T05:06:30.335Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2016/04/17/spam-mail/"/>
     <id>http://pagent.github.io/2016/04/17/spam-mail/</id>
     <published>2016-04-17T04:42:43.000Z</published>
-    <updated>2016-04-17T05:04:17.377Z</updated>
+    <updated>2016-04-17T05:06:13.451Z</updated>
     <content type="html"><![CDATA[<p>久しぶりに普段使っていないプロバイダーのメールを見てみると、まったく身に覚えのない出会い系サイトから多量の迷惑メールが来ていた。<br>件名は愛人がどうとか、大人の付き合いがどうとか。  </p>
 <p>From:欄のアドレスはいろいろ変えてあるが、ヘッダーを見ると3つあるReceived:の一番下のものはどれも<code>from m1cr0wave.net (〜x〜x〜x〜.adv-server.net [〜.〜.〜.〜])</code>で始まることで共通している。<br>（X-spam-judge: okとなっていて、プロバイダーの迷惑メール判定は通過しているよう）  </p>
 <p>メーラーの振り分け設定（フィルター）で、ヘッダーに<code>adv-server.net</code>を含むものは受信せずサーバーから削除するようにした。</p>
@@ -29,7 +29,7 @@
 <p>From:欄のアドレスはいろいろ変えてあるが、ヘッダーを見ると3つある]]>
     </summary>
     
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
     
   </entry>
   
