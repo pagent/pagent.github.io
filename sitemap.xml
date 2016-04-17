@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2016/04/17/28-page-report/</loc>
+    <lastmod>2016-04-17T07:24:49.306Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2016/04/17/spam-mail/</loc>
     <lastmod>2016-04-17T05:06:13.451Z</lastmod>
   </url>
@@ -337,12 +342,7 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/11/29/excerpt-separator/</loc>
-    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2014/06/29/facebook-manipulation/</loc>
+    <loc>http://pagent.github.io/2014/11/26/hexo-bitbucket/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -742,12 +742,12 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/01/08/brief-css/</loc>
+    <loc>http://pagent.github.io/2014/11/29/excerpt-separator/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/11/26/hexo-bitbucket/</loc>
+    <loc>http://pagent.github.io/2014/01/08/brief-css/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -1473,6 +1473,11 @@
   
   <url>
     <loc>http://pagent.github.io/2014/03/15/noscript/</loc>
+    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2014/06/29/facebook-manipulation/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
