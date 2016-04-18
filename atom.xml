@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-04-18T10:33:53.397Z</updated>
+  <updated>2016-04-18T14:20:17.533Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[Xubuntuでソフトウェアの更新に失敗する]]></title>
+    <title><![CDATA[Xubuntuでアップデートに失敗する]]></title>
     <link href="http://pagent.github.io/2016/04/18/xubuntu-hash-sum-mismatch/"/>
     <id>http://pagent.github.io/2016/04/18/xubuntu-hash-sum-mismatch/</id>
     <published>2016-04-18T10:09:51.000Z</published>
-    <updated>2016-04-18T10:33:15.910Z</updated>
+    <updated>2016-04-18T14:19:50.791Z</updated>
     <content type="html"><![CDATA[<p>Xubuntu14.04で「ソフトウェアの更新」をすると  </p>
 <p><div class="box">リポジトリ情報のダウンロードに失敗しました。<br>インターネット接続を確認してください。</div>とエラー表示が出るようになってしまった。<br>エラーの通知画面で「詳細」をクリックすると  </p>
 <pre><code><span class="constant">W</span><span class="symbol">:Failed</span> to fetch <span class="symbol">http:</span>/<span class="regexp">/jp.archive.ubuntu.com/ubuntu</span><span class="regexp">/dists/trusty</span>-updates/main/binary-amd64/<span class="constant">Packages</span>  <span class="constant">Hash</span> <span class="constant">Sum</span> mismatch
