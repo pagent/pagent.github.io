@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-04-18T07:53:54.092Z</updated>
+  <updated>2016-04-18T10:33:53.397Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,37 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Xubuntuでソフトウェアの更新に失敗する]]></title>
+    <link href="http://pagent.github.io/2016/04/18/xubuntu-hash-sum-mismatch/"/>
+    <id>http://pagent.github.io/2016/04/18/xubuntu-hash-sum-mismatch/</id>
+    <published>2016-04-18T10:09:51.000Z</published>
+    <updated>2016-04-18T10:33:15.910Z</updated>
+    <content type="html"><![CDATA[<p>Xubuntu14.04で「ソフトウェアの更新」をすると  </p>
+<p><div class="box">リポジトリ情報のダウンロードに失敗しました。<br>インターネット接続を確認してください。</div>とエラー表示が出るようになってしまった。<br>エラーの通知画面で「詳細」をクリックすると  </p>
+<pre><code><span class="constant">W</span><span class="symbol">:Failed</span> to fetch <span class="symbol">http:</span>/<span class="regexp">/jp.archive.ubuntu.com/ubuntu</span><span class="regexp">/dists/trusty</span>-updates/main/binary-amd64/<span class="constant">Packages</span>  <span class="constant">Hash</span> <span class="constant">Sum</span> mismatch
+, <span class="constant">W</span><span class="symbol">:Failed</span> to fetch <span class="symbol">http:</span>/<span class="regexp">/jp.archive.ubuntu.com/ubuntu</span><span class="regexp">/dists/trusty</span>-updates/main/binary-i386/<span class="constant">Packages</span>  <span class="constant">Hash</span> <span class="constant">Sum</span> mismatch
+, <span class="constant">E</span><span class="symbol">:Some</span> index files failed to download. <span class="constant">They</span> have been ignored, <span class="keyword">or</span> old ones used instead.
+</code></pre><p>と表示されている。  </p>
+<p>端末から<code>apt-get update</code>しようとしても  </p>
+<pre><code><span class="variable">$ </span>sudo apt-get update
+
+<span class="constant">W</span><span class="symbol">:</span> <span class="symbol">http:</span>/<span class="regexp">/jp.archive.ubuntu.com/ubuntu</span><span class="regexp">/dists/trusty</span>-updates/main/binary-amd64/<span class="constant">Packages</span> の取得に失敗しました  ハッシュサムが適合しません
+
+<span class="constant">W</span><span class="symbol">:</span> <span class="symbol">http:</span>/<span class="regexp">/jp.archive.ubuntu.com/ubuntu</span><span class="regexp">/dists/trusty</span>-updates/main/binary-i386/<span class="constant">Packages</span> の取得に失敗しました  ハッシュサムが適合しません
+
+<span class="constant">E</span><span class="symbol">:</span> いくつかのインデックスファイルのダウンロードに失敗しました。これらは無視されるか、古いものが代わりに使われます。
+</code></pre><p>と失敗する。<br>ちょっと焦ったが、「ソフトウェアとアップデート」でダウンロード元を、「日本のサーバー」から「メインサーバー」や「riken」に変更したら、正常にキャッシュが更新された。<br>jp.archive.ubuntu.comが一時的に繋がらなくなっていただけかもしれない。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Xubuntu14.04で「ソフトウェアの更新」をすると  </p>
+<p><div class="box">リポジトリ情報のダウンロードに失敗しました。<br>インターネット接続を確認してください。</div>とエラー表示が出るようになってしまった。<br>エラーの通知画]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[28ページ文書〜9.11同時多発テロ〜サウジアラビア]]></title>
@@ -590,30 +621,6 @@ Loading site… done
     </summary>
     
       <category term="サーバー" scheme="http://pagent.github.io/tags/%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[「Peeep.us」Google accountでのログインが必要に]]></title>
-    <link href="http://pagent.github.io/2016/02/21/peeep-us-google-account/"/>
-    <id>http://pagent.github.io/2016/02/21/peeep-us-google-account/</id>
-    <published>2016-02-20T16:50:59.000Z</published>
-    <updated>2016-03-01T06:08:46.000Z</updated>
-    <content type="html"><![CDATA[<p>海外のアーカイブサービスの一つ「Peeep.us」。<br>元URLからの検索機能が無いのが難点だったが、元ページに近い魚拓が得られ、それなりに便利だった。  </p>
-<p>昨年サイトが閉鎖されたかと思われたそのPeeep.usが、いつの間にか復活していた。  </p>
-<p>ところが、魚拓を取ろうと「submit」をクリックすると、Google Accountのログイン画面が表示される。以前はログイン不要だったはずなんだが。<br>Googleからの支援を受けての復活だったのだろうか？  </p>
-<p>要ログインだと使いづらいので、今後お世話になることは無いと思う。<br>日本の「ウェブ魚拓」も魚拓の削除、IPアドレスの開示など、あまり使う気にはなれないが、他にも色々あるし。  </p>
-<p><a href="http://archive.org/web/" title="Internet Archive: Wayback Machine" target="_blank" rel="external">Wayback Machine</a>  </p>
-<p><a href="http://archive.is/" title="archive" target="_blank" rel="external">archive.is</a>  </p>
-<p>あと、あまり有名ではないが、<a href="http://www.webcitation.org/archive" title="WebCite archive page" target="_blank" rel="external">WebCite</a>もけっこう便利なので、たまに利用している。<br>アーカイブ取得時にメールアドレスを入力する必要があるが、mail@example.netなど適当なものでもOK。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>海外のアーカイブサービスの一つ「Peeep.us」。<br>元URLからの検索機能が無いのが難点だったが、元ページに近い魚拓が得られ、それなりに便利だった。  </p>
-<p>昨年サイトが閉鎖されたかと思われたそのPeeep.usが、いつの間にか復活していた。  </p>
-]]>
-    </summary>
-    
-      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
     
   </entry>
   
