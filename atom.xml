@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-04-20T22:59:58.236Z</updated>
+  <updated>2016-04-22T09:31:09.924Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,11 +15,30 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Xubuntu 16.04 LTSがリリース]]></title>
+    <link href="http://pagent.github.io/2016/04/22/xubuntu-16-04-released/"/>
+    <id>http://pagent.github.io/2016/04/22/xubuntu-16-04-released/</id>
+    <published>2016-04-22T08:56:47.000Z</published>
+    <updated>2016-04-22T09:29:53.000Z</updated>
+    <content type="html"><![CDATA[<p>4月21日、Xubuntuの最新版Xubuntu 16.04 LTSが正式にリリースされた。<br>前に開発版をインストールして使い勝手が良さそうだったので、メインPCにインストールしているXubuntu 14.04も16.04にアップグレードしたいところ。<br>「ソフトウェアの更新」や「ソフトウェアとアップデート」に新バージョンの通知が出ないので、コマンドで行おうと<code>apt-get install update-manager-core</code>、<code>do-release-upgrade</code>とやってみたが「すでに最新版です。」、「新しくリリースされたものはありません」と言われる。　　</p>
+<p>調べてみると、Ubuntuの14.04 LTSからのアップグレードは、約3ヶ月後にリリース予定の16.04.1 LTSが出てかららしいので、Xubuntuの場合もおそらくそうなのだろう。<br><a href="https://wiki.ubuntu.com/XenialXerus/ReleaseNotes" target="_blank" rel="external">XenialXerus/ReleaseNotes - Ubuntu Wiki</a>  </p>
+<p>気長に待つしか無さそうだ。  </p>
+<p>ところで余談だが、Xubuntuを長いこと「クスブンツ」と呼んでいた。だが正しい発音は「ズブントゥ」らしい。あまりきれいな音には聞こえない。<br>メディアプレイヤーのxineも正式には「クシーン」のようだし、Xubuntuも「クスブンツ」でいて欲しかった。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>4月21日、Xubuntuの最新版Xubuntu 16.04 LTSが正式にリリースされた。<br>前に開発版をインストールして使い勝手が良さそうだったので、メインPCにインストールしているXubuntu 14.04も16.04にアップグレードしたいところ。<br>「ソフト]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Xubuntuでアップデートに失敗する]]></title>
     <link href="http://pagent.github.io/2016/04/18/xubuntu-hash-sum-mismatch/"/>
     <id>http://pagent.github.io/2016/04/18/xubuntu-hash-sum-mismatch/</id>
     <published>2016-04-18T10:09:51.000Z</published>
-    <updated>2016-04-18T14:19:50.791Z</updated>
+    <updated>2016-04-18T14:19:50.000Z</updated>
     <content type="html"><![CDATA[<p>Xubuntu14.04で「ソフトウェアの更新」をすると  </p>
 <p><div class="box">リポジトリ情報のダウンロードに失敗しました。<br>インターネット接続を確認してください。</div>とエラー表示が出るようになってしまった。<br>エラーの通知画面で「詳細」をクリックすると  </p>
 <pre><code><span class="constant">W</span><span class="symbol">:Failed</span> to fetch <span class="symbol">http:</span>/<span class="regexp">/jp.archive.ubuntu.com/ubuntu</span><span class="regexp">/dists/trusty</span>-updates/main/binary-amd64/<span class="constant">Packages</span>  <span class="constant">Hash</span> <span class="constant">Sum</span> mismatch
@@ -50,7 +69,7 @@
     <link href="http://pagent.github.io/2016/04/17/28-page-report/"/>
     <id>http://pagent.github.io/2016/04/17/28-page-report/</id>
     <published>2016-04-17T07:10:28.000Z</published>
-    <updated>2016-04-20T22:59:11.885Z</updated>
+    <updated>2016-04-20T22:59:11.000Z</updated>
     <content type="html"><![CDATA[<p>あるブログのコメント欄で「28ページ文書」なるものを見掛けた。<br>2001年のアメリカ同時多発テロへのサウジアラビアの関与を報告するもので、サウジアラビアとの関係悪化を避けるため当時のブッシュ政権が機密扱いとしたらしい。<br>この機密文書が公開される可能性があるという。  </p>
 <p>以下、イランのメディアPARS TODAYから引用。  </p>
 <blockquote>
@@ -78,7 +97,7 @@
     <link href="http://pagent.github.io/2016/04/17/spam-mail/"/>
     <id>http://pagent.github.io/2016/04/17/spam-mail/</id>
     <published>2016-04-17T04:42:43.000Z</published>
-    <updated>2016-04-17T05:06:13.451Z</updated>
+    <updated>2016-04-17T05:06:13.000Z</updated>
     <content type="html"><![CDATA[<p>久しぶりに普段使っていないプロバイダーのメールを見てみると、まったく身に覚えのない出会い系サイトから多量の迷惑メールが来ていた。<br>件名は愛人がどうとか、大人の付き合いがどうとか。  </p>
 <p>From:欄のアドレスはいろいろ変えてあるが、ヘッダーを見ると3つあるReceived:の一番下のものはどれも<code>from m1cr0wave.net (〜x〜x〜x〜.adv-server.net [〜.〜.〜.〜])</code>で始まることで共通している。<br>（X-spam-judge: okとなっていて、プロバイダーの迷惑メール判定は通過しているよう）  </p>
 <p>メーラーの振り分け設定（フィルター）で、ヘッダーに<code>adv-server.net</code>を含むものは受信せずサーバーから削除するようにした。</p>
@@ -97,7 +116,7 @@
     <link href="http://pagent.github.io/2016/04/17/xampp-ftp/"/>
     <id>http://pagent.github.io/2016/04/17/xampp-ftp/</id>
     <published>2016-04-16T20:41:09.000Z</published>
-    <updated>2016-04-16T21:07:02.964Z</updated>
+    <updated>2016-04-16T21:07:02.000Z</updated>
     <content type="html"><![CDATA[<p>Arch Linux上のXamppにWordPressをインストールした。  </p>
 <p>ユーザーdaemon、設定したパスワードでFilezillaを使って/opt/lampp/htdocsに接続。<br>接続は出来たがアップロード出来ない。  </p>
 <p>/opt/lampp/htdocsの所有者・グループがrootになっていたので、daemonに変更。  </p>
@@ -120,7 +139,7 @@
     <link href="http://pagent.github.io/2016/04/16/stop-job-running/"/>
     <id>http://pagent.github.io/2016/04/16/stop-job-running/</id>
     <published>2016-04-16T08:03:43.000Z</published>
-    <updated>2016-04-16T10:47:31.301Z</updated>
+    <updated>2016-04-16T10:47:31.000Z</updated>
     <content type="html"><![CDATA[<p>Arch LinuxでPCのシャットダウンや再起動時に、しばしば  </p>
 <p><div class="box">A stop job is running for Session c3 of user …</div>と表示されて、1分30秒待たさせる。<br>どうやらsystemdに関連したバグのよう。  </p>
 <p>根本的に解決する方法は分からなかったが、/etc/systemd/system.confを編集して、待たされる時間を90秒から10秒に変更した。  </p>
@@ -143,7 +162,7 @@
     <link href="http://pagent.github.io/2016/04/07/yaourt-cache/"/>
     <id>http://pagent.github.io/2016/04/07/yaourt-cache/</id>
     <published>2016-04-07T01:35:50.000Z</published>
-    <updated>2016-04-07T02:13:44.681Z</updated>
+    <updated>2016-04-07T02:13:44.000Z</updated>
     <content type="html"><![CDATA[<p>Yaourtのデフォルト状態ではビルドしたパッケージが消えてしまうが、このキャッシュをPacman同様保存するようにした。  </p>
 <p>/etc/yaourtrcのBuildの項目、EXPORTの箇所のアンコメントを無くし、値を2にすれば/var/cache/pacman/pkgに保存される。<br>だがこれだと、どれがAURのパッケージか分からなくなってしまうので、/var/cache/pacman/pkg-localに保存するようにした。  </p>
 <figure class="highlight plain"><figcaption><span>yaourtrc</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># Build</div><div class="line">EXPORT=1</div><div class="line">EXPORTDIR="/var/cache/pacman/pkg-local"</div></pre></td></tr></table></figure>
@@ -173,7 +192,7 @@ $ sudo chown root:ユーザー名 /<span class="keyword">var</span>/<span class=
     <link href="http://pagent.github.io/2016/03/29/nanoc-install/"/>
     <id>http://pagent.github.io/2016/03/29/nanoc-install/</id>
     <published>2016-03-29T10:46:33.000Z</published>
-    <updated>2016-03-31T00:40:17.859Z</updated>
+    <updated>2016-03-31T00:40:17.000Z</updated>
     <content type="html"><![CDATA[<p>ブログを開始するには骨が折れるが、ウェブサイト構築では柔軟性、汎用性に優れるNanoc。<br>Arch Linuxにインストールしたがバージョンは4になっていた。<br>Rubyは導入済  </p>
 <p>Nanocのインストール<br>（なるべくsudoを付けない方が良いらしい）</p>
 <pre><code>$ gem install nanoc
@@ -241,7 +260,7 @@ Loading site… done
     <link href="http://pagent.github.io/2016/03/28/xubunt-16-04-acpi/"/>
     <id>http://pagent.github.io/2016/03/28/xubunt-16-04-acpi/</id>
     <published>2016-03-28T09:56:02.000Z</published>
-    <updated>2016-03-28T11:09:20.845Z</updated>
+    <updated>2016-03-28T11:09:20.000Z</updated>
     <content type="html"><![CDATA[<p>ネットブックLaVie Light BL300/T（PC-BL300TA6B）にXubuntuの最新ベータ版16.04 LTS Beta 2をインストールした。今年4月に正式版がリリース予定のようだが。<br>Linux Kernel 4.4が採用されている。  </p>
 <p>インストールDVDを起動すると例のごとく<q>Disabling IRQ #9</q>のところでフリーズする。<br>起動後すぐに矢印キーなどを押してメニュー選択画面を表示させ、F6（その他のオプション）で<code>acpi=off</code>のオプションを付けたらちゃんと起動した。<br>そのままインストールすると/etc/default/grubにもGRUB_CMDLINE_LINUX=”acpi=off”が記載されていた。  </p>
 <p>再起動した後も調子良く使えるようだったが、シャットダウンの際<q>system halted</q>の表示のまま止まってしまい、最後に電源ボタンで終了する必要があった。<br>再起動では止まったりしないのだが。<br><code>acpi=off</code>のオプションを付けて起動しているのが原因のよう。  </p>
@@ -270,7 +289,7 @@ Loading site… done
     <link href="http://pagent.github.io/2016/03/26/xfce4-stop-mousewheel-rollup/"/>
     <id>http://pagent.github.io/2016/03/26/xfce4-stop-mousewheel-rollup/</id>
     <published>2016-03-26T12:00:31.000Z</published>
-    <updated>2016-04-14T15:19:48.428Z</updated>
+    <updated>2016-04-14T15:19:48.000Z</updated>
     <content type="html"><![CDATA[<p>デスクトップ環境にXfce4を使っているが、ポインターがウィンドウ上部のタイトルバーにある状態でマウスホイールを上に動かすと、ウィンドウの巻き上げが起こってしまう。<br>特に使っていない機能なので、間違ってウィンドウが巻き上がり、戸惑ってしまうデメリットの方が大きい。  </p>
 <p>「ウィンドウマネージャー」、<del>「ウィンドウマネージャー（詳細）」の設定ではそれらしい項目が見当たらなかったが</del>、「設定エディター」でこれを止めることが出来た。  </p>
 <p>設定マネージャーから、もしくは端末で<code>xfce4-settings-editor</code>を打ち込み「設定エディター」を起動。  </p>
@@ -292,7 +311,7 @@ Loading site… done
     <link href="http://pagent.github.io/2016/03/24/higan-missing-required-file/"/>
     <id>http://pagent.github.io/2016/03/24/higan-missing-required-file/</id>
     <published>2016-03-24T10:10:43.000Z</published>
-    <updated>2016-03-26T06:47:52.177Z</updated>
+    <updated>2016-03-26T06:47:52.000Z</updated>
     <content type="html"><![CDATA[<p>ファミコン、スーファミ等のエミュレーターとして再現性が高く、レトロゲームを楽しむのに重宝していたhiganだが、いつの間にかArch Linuxにインストールしたhiganでゲームが出来なくなっていた。  </p>
 <p>起動後Libraryからゲームファイルを開くと  </p>
 <div class="box">Missing required file: manifest.bml<br><br>From location:<br>/home/（ユーザー名）/.local/higan/Super Famicom.sys/</div>
@@ -378,7 +397,7 @@ Loading site… done
     <link href="http://pagent.github.io/2016/03/12/arch-linux-xampp/"/>
     <id>http://pagent.github.io/2016/03/12/arch-linux-xampp/</id>
     <published>2016-03-12T08:55:54.000Z</published>
-    <updated>2016-04-16T21:09:26.671Z</updated>
+    <updated>2016-04-16T21:09:26.000Z</updated>
     <content type="html"><![CDATA[<p>以前XubuntuでXamppを使用していたが、Arch Linuxにもインストールした。  </p>
 <ul>
 <li><p><a href="#install">インストール</a></p>
@@ -522,7 +541,7 @@ Loading site… done
     <link href="http://pagent.github.io/2016/03/01/gthumb-hidden-comments-folder/"/>
     <id>http://pagent.github.io/2016/03/01/gthumb-hidden-comments-folder/</id>
     <published>2016-03-01T11:12:03.000Z</published>
-    <updated>2016-03-29T12:22:11.528Z</updated>
+    <updated>2016-03-29T12:22:11.000Z</updated>
     <content type="html"><![CDATA[<p>ここ最近、画像を開いたディレクトリに.commentsという隠しフォルダが作成されるようになってしまっていた。<br>フォルダ内には(画像ファイル名).xmlというファイルが複数入っている。  </p>
 <p>簡単な画像編集も出来て便利なのでgThumbという画像ビューアを使っているが、このgThumbが自動的に作成しているらしい。  </p>
 <p>煩わしいのでこれを止めたい。  </p>
@@ -600,24 +619,6 @@ Loading site… done
 ]]></content>
     <summary type="html">
     <![CDATA[<p>海外の無料ホスティングサービス000webhostでMySQLデータベースを作成したが、<br><q>Error #1045 - Access denied for user ‘＊＊＊＊＊’@’localhost’ (using password: YES)</q><br>]]>
-    </summary>
-    
-      <category term="サーバー" scheme="http://pagent.github.io/tags/%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[無料レンタルサーバー000webhostで情報漏洩]]></title>
-    <link href="http://pagent.github.io/2016/02/27/000webhost-security/"/>
-    <id>http://pagent.github.io/2016/02/27/000webhost-security/</id>
-    <published>2016-02-27T09:14:34.000Z</published>
-    <updated>2016-02-27T09:22:58.000Z</updated>
-    <content type="html"><![CDATA[<p>久しぶりに海外無料レンタルサーバーの000webhostにアクセスしたみたが、付属のFilemanagerが開けない。<br>よく見ると上部にパスワードを再設定しろということが書いてあった。<br>言われた通り再設定したところFilemanagerが使用可能になった。  </p>
-<p>おそらく以前に000webhostで情報漏洩事件があったことと関係しているようだ。<br><a href="http://japan.cnet.com/news/business/35072756/" title="000webhost" target="_blank" rel="external">無料ホスティングサービス000webhostで情報漏えい–セキュリティ体制に問題か - CNET Japan</a>  </p>
-<p>しばしばサーバーダウンもあるし、あまり当てにしない方が良いようだ。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>久しぶりに海外無料レンタルサーバーの000webhostにアクセスしたみたが、付属のFilemanagerが開けない。<br>よく見ると上部にパスワードを再設定しろということが書いてあった。<br>言われた通り再設定したところFilemanagerが使用可能になった。  <]]>
     </summary>
     
       <category term="サーバー" scheme="http://pagent.github.io/tags/%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC/"/>

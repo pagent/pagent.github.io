@@ -159,6 +159,75 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/09/27/nepomuk/" >Xubuntuのアプリケーションメニューから「Nepomuk File Indexing Controller」を消す</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年9月27日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>いつからかXubuntuのアプリケーションメニューのシステムのところに「Nepomuk File Indexing Controller」という項目があって、既にアンインストールしたアプリらしく、クリックしても「コマンド “nepomukcontroller” の実行に失敗しました。nepomukcontroller を子プロセスとして起動できませんでした: そのようなファイルやディレクトリはありません」といってエラーになる。<br>必要ないしメニューリストから消したいのだが、設定マネージャーの「メイン・メニュー」にも「メニューエディター」（MenuLibre）にも「Nepomuk File Indexing Controller」という項目自体が無く、削除はおろか非表示にも出来ない。<br>設定の「メイン・メニュー」で「System Restore Configuration」もしてみたが、自作したランチャーや他のカスタマイズが消失してしまっただけで、Nepomukはしぶとく残っていた。</p>
+<p>もう一度インストールし、非表示にしてからアンインストールすれば良いかと考えたが、「Nepomuk クリーナー」「Nepomuk バックアップ」というのはあったが、「Nepomuk File Indexing Controller」「nepomukcontroller」といったものは見当たらない。</p>
+<p>メニューの設定リストを直接編集出来ないか調べたら、Ubuntuでのユーザー固有のメニューファイルは<code>~/.config/menus</code>（<code>/home/ユーザー名/.config/menus</code>）、全ユーザー共通のメニューファイルは<code>/etc/xdg/menus</code>（Xubuntuの場合は<code>/etc/xdg/xdg-xubuntu/menus</code>）に配置されているらしい。</p>
+<p><a href="http://kledgeb.blogspot.jp/2013/05/ubuntu-1_2298.html" target="_blank" rel="external">Ubuntu デスクトップメニュー その1 – デスクトップメニューとメニューファイルについて – Ubuntu kledgeb</a></p>
+<p>ユーザー固有のメニューファイルフォルダ内のxfce-applications.menu.undo-13、xfce-applications.menu.undo-14などのファイルに</p>
+<pre><code><span class="tag">&lt;<span class="title">Filename</span>&gt;</span>kde4-nepomukcontroller.desktop<span class="tag">&lt;/<span class="title">Filename</span>&gt;</span> 
+</code></pre><p>という項目があったので消してみたがバックアップファイルのようで変化はない。<br>同じフォルダ内のxfce-applications.menuというのを開いてみたら、こちらにはNepomukは見当たらなかったが、</p>
+<pre><code>&lt;AppDir&gt;<span class="regexp">/home/</span>ユーザー名<span class="regexp">/.local/</span>share<span class="regexp">/applications&lt;/</span>AppDir&gt; 
+</code></pre><p>という記述を見つけた。</p>
+<p><code>/home/ユーザー名/.local/share/applications</code>（<code>~/.local/share/applications</code>）を開いてみると、kde4-nepomukbackup.desktop、kde4-nepomukcleaner.desktop、kde4-nepomukcontroller.desktopというファイルがあったので削除、再起動してみたが駄目。</p>
+<p>煮えつまったが、<code>~/.local/share/applications</code>と同じ階層に<code>~/.local/share/desktop-directories</code>というフォルダがあり、開いてみるとalacarte-made.directoryというファイルが一つだけ入っていて、中身は</p>
+<pre><code>[Desktop Entry] <span class="variable">Comment=</span>nepomukcontroller <span class="variable">Type=</span>Directory <span class="variable">Name=</span>Nepomuk File Indexing Controller <span class="variable">Icon=</span>folder 
+</code></pre><p>と記載されていた。</p>
+<p>これをフォルダごと削除、再起動したら、無事アプリケーションメニューから「Nepomuk File Indexing Controller」が消えてくれた。</p>
+<p>ーー<br>（追記）<br>再起動したら<code>~/.local/shareにdesktop-directories</code>という空のフォルダがまた自動生成されていた。<br>削除はフォルダごとではなく、alacarte-made.directoryファイルだけで良かったらしい。</p>
+<p>（余談）<br><code>~/.local/share/applications</code>にはalacarte-made-1.desktop、alacarte-made-2.desktopというような連番のファイルがいくつもあった。<br>メニュー設定エディタで項目を自作したりすると追加されていくらしい。</p>
+<p>ーー<br>（再追記）<br>根本的には、/usr/share/applications/kde4内のNepomuk〜というデスクトップ設定ファイルを削除するのが良いようだ。<br><a href="http://pagent.github.io/2015/01/24/xubuntu-menu-nepomuk/" target="_blank" rel="external">XubuntuのメニューからNepomuk Cleanerを消す | Pagent</a></p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/09/27/nepomuk/" data-text="Xubuntuのアプリケーションメニューから「Nepomuk File Indexing Controller」を消す | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/09/27/nepomuk/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/09/27/nepomuk/" class="hatena-bookmark-button" data-hatena-bookmark-title="Xubuntuのアプリケーションメニューから「Nepomuk File Indexing Controller」を消す" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/09/26/diodon/" >Xubuntu14.04にクリップボードマネージャー「Diodon」を入れてみた</a>
 		</h3>
 	
@@ -688,63 +757,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/09/08/october/" >１０月なのに「October」なのは</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年9月8日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>なにげなくカレンダーを見ていて、１０月が「October」なのにひっかかった。<br>Octopus（タコ）は足が８本で、万国共通のはず。</p>
-<p>高校のとき化学の時間に習ったテトラ（テトラポッドのテトラで４）、ペンタ（ペンタゴンのペンタで５）などの倍数接頭辞でも、オクタ（８）、ノナ（９）、デカ（１０）だったはず。</p>
-<p>不思議に思い検索してみたら、ローマ暦では１年が３月から始まるので、３月から数えて８番目ということで「October」なのだとか。<br><a href="http://ja.wikipedia.org/wiki/10%E6%9C%88" target="_blank" rel="external">10月 - Wikipedia</a></p>
-<p>１１月、１２月も同様に、３月から９番目で「November」、１０番目で「December」。</p>
-<p>疑問が解けてすっきりした。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/09/08/october/" data-text="１０月なのに「October」なのは | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/09/08/october/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/09/08/october/" class="hatena-bookmark-button" data-hatena-bookmark-title="１０月なのに「October」なのは" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/ことば/">ことば</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -785,45 +797,45 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>39</span></a></li>
-		
-			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>19</span></a></li>
-		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
-		
-			<li><a href="/tags/時事/">時事<span>1</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
 		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>19</span></a></li>
 		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
 		
-			<li><a href="/tags/ネット/">ネット<span>38</span></a></li>
+			<li><a href="/tags/時事/">時事<span>1</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
 		
 			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
 		
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>92</span></a></li>
+		
 			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
 		
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>38</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
+			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>39</span></a></li>
+		
 			<li><a href="/tags/食/">食<span>4</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>91</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
 		
 		
 		</ul>
@@ -836,6 +848,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2016/04/22/xubuntu-16-04-released/" ><i class="fa fa-file-o"></i>Xubuntu 16.04 LTSがリリース</a>
+      </li>
     
       <li>
         <a href="/2016/04/18/xubuntu-hash-sum-mismatch/" ><i class="fa fa-file-o"></i>Xubuntuでアップデートに失敗する</a>
@@ -853,10 +869,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
         <a href="/2016/04/17/xampp-ftp/" ><i class="fa fa-file-o"></i>XamppでFTPが使用できない</a>
       </li>
     
-      <li>
-        <a href="/2016/04/16/stop-job-running/" ><i class="fa fa-file-o"></i>シャットダウン時&quot;A stop job is runn...</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -866,7 +878,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
 		</ul>
 	</div>
 

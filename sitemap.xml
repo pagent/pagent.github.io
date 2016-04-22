@@ -2,83 +2,88 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2016/04/22/xubuntu-16-04-released/</loc>
+    <lastmod>2016-04-22T09:29:53.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2016/04/17/28-page-report/</loc>
-    <lastmod>2016-04-20T22:59:11.885Z</lastmod>
+    <lastmod>2016-04-20T22:59:11.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://pagent.github.io/2016/04/18/xubuntu-hash-sum-mismatch/</loc>
-    <lastmod>2016-04-18T14:19:50.791Z</lastmod>
+    <lastmod>2016-04-18T14:19:50.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://pagent.github.io/2016/04/17/spam-mail/</loc>
-    <lastmod>2016-04-17T05:06:13.451Z</lastmod>
+    <lastmod>2016-04-17T05:06:13.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://pagent.github.io/2016/03/12/arch-linux-xampp/</loc>
-    <lastmod>2016-04-16T21:09:26.671Z</lastmod>
+    <lastmod>2016-04-16T21:09:26.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://pagent.github.io/2016/04/17/xampp-ftp/</loc>
-    <lastmod>2016-04-16T21:07:02.964Z</lastmod>
+    <lastmod>2016-04-16T21:07:02.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://pagent.github.io/2016/04/16/stop-job-running/</loc>
-    <lastmod>2016-04-16T10:47:31.301Z</lastmod>
+    <lastmod>2016-04-16T10:47:31.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://pagent.github.io/2016/03/26/xfce4-stop-mousewheel-rollup/</loc>
-    <lastmod>2016-04-14T15:19:48.428Z</lastmod>
+    <lastmod>2016-04-14T15:19:48.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://pagent.github.io/2015/05/02/higan/</loc>
-    <lastmod>2016-04-07T11:26:48.916Z</lastmod>
+    <lastmod>2016-04-07T11:26:48.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://pagent.github.io/2015/03/02/easy2boot/</loc>
-    <lastmod>2016-04-07T02:22:59.616Z</lastmod>
+    <lastmod>2016-04-07T02:22:59.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://pagent.github.io/2016/04/07/yaourt-cache/</loc>
-    <lastmod>2016-04-07T02:13:44.681Z</lastmod>
+    <lastmod>2016-04-07T02:13:44.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://pagent.github.io/2016/03/29/nanoc-install/</loc>
-    <lastmod>2016-03-31T00:40:17.859Z</lastmod>
+    <lastmod>2016-03-31T00:40:17.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://pagent.github.io/2015/04/19/paccache-pkgcacheclean/</loc>
-    <lastmod>2016-03-30T10:33:10.061Z</lastmod>
+    <lastmod>2016-03-30T10:33:10.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://pagent.github.io/2015/05/14/hosting24-analytics-code/</loc>
-    <lastmod>2016-03-29T23:01:58.229Z</lastmod>
+    <lastmod>2016-03-29T23:01:58.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://pagent.github.io/2016/03/01/gthumb-hidden-comments-folder/</loc>
-    <lastmod>2016-03-29T12:22:11.528Z</lastmod>
+    <lastmod>2016-03-29T12:22:11.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://pagent.github.io/2016/03/28/xubunt-16-04-acpi/</loc>
-    <lastmod>2016-03-28T11:09:20.845Z</lastmod>
+    <lastmod>2016-03-28T11:09:20.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://pagent.github.io/2016/03/24/higan-missing-required-file/</loc>
-    <lastmod>2016-03-26T06:47:52.177Z</lastmod>
+    <lastmod>2016-03-26T06:47:52.000Z</lastmod>
   </url>
   
   <url>
@@ -347,12 +352,7 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/11/29/page-no-date/</loc>
-    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2014/07/30/libreoffice-japanese/</loc>
+    <loc>http://pagent.github.io/2014/11/30/sidebar-git/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -747,12 +747,12 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/01/08/brief-css/</loc>
+    <loc>http://pagent.github.io/2014/11/29/page-no-date/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/11/30/sidebar-git/</loc>
+    <loc>http://pagent.github.io/2014/01/08/brief-css/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -1483,6 +1483,11 @@
   
   <url>
     <loc>http://pagent.github.io/2014/07/29/slideshare/</loc>
+    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2014/07/30/libreoffice-japanese/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
