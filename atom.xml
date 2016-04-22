@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-04-22T16:58:08.101Z</updated>
+  <updated>2016-04-22T16:59:45.931Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,9 +19,9 @@
     <link href="http://pagent.github.io/2016/04/23/linux-malware-billgates/"/>
     <id>http://pagent.github.io/2016/04/23/linux-malware-billgates/</id>
     <published>2016-04-22T15:58:34.000Z</published>
-    <updated>2016-04-22T16:56:50.559Z</updated>
+    <updated>2016-04-22T16:59:39.025Z</updated>
     <content type="html"><![CDATA[<p>Windowsに較べて安全と言われるLinux。だが現在、Linuxを標的とするマルウェアが猛威を振るっているそうだ。<br><a href="http://www.itmedia.co.jp/news/articles/1604/22/news105.html" target="_blank" rel="external">「ビルゲイツ」がLinuxを標的に？ - ITmedia ニュース</a>  </p>
-<p>「ビルゲイツ」というネーミングが笑いを誘うが、リモートからSSH経由でrootのパスワードに対して総当たり攻撃（ブルートフォースアタック）を仕掛け、管理者権限を乗っ取るというから恐ろしい。  </p>
+<p>「ビルゲイツ」というネーミングが笑いを誘うが、リモートからSSH経由でrootのパスワードに対して総当たり攻撃（ブルートフォースアタック）を仕掛け、管理者権限を乗っ取るのだそうだ。  </p>
 <p>対策としては、SSH経由でのrootでのログインを禁止し、またパスワードでの認証を禁止（公開鍵認証を使う）にすれば良いようだ。<br><a href="https://wiki.archlinuxjp.org/index.php/Secure_Shell#SSH_.E3.81.AE.E4.BF.9D.E8.AD.B7" target="_blank" rel="external">Secure Shell - ArchWiki</a>  </p>
 <p>もっとも、Ubuntuの場合はデフォルトでrootのパスワードが存在せず、rootでのログインは不可能になっているので、気にする必要はないだろう。</p>
 ]]></content>
