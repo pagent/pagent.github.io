@@ -159,6 +159,66 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/04/23/blankscreen-off/" >簡単だったXubuntuでの画面暗転停止</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年4月23日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Xubuntu 12.04のスクリーンセーバーの設定で「セーバーを無効にする」に設定しても10分経つと画面が暗転しブランクスクリーンになってしまい困っていた。</p>
+<p>検索して、<code>$ xset s off</code>とコマンドを入れてみたがやはり10分後に暗転してしまう。<br><code>$ xset s 5</code>とすると５秒で暗転するので機能していないわけではない様子。</p>
+<p><code>xset s 0 0</code>や<code>xset s noblank</code>の値で起動時の「自動開始アプリケーション」に追加してみたが改善せず。</p>
+<p>さらに検索するとどうやら<code>/etc/X11/xorg.conf</code>にブランクにならない設定を追加すればいいようなのだが、<code>/etc/X11</code>に肝心のxorg.confが無い。<br>勝手にxorg.confを作って設定を書いてみたが10分で暗転。</p>
+<p>勝手に作ったのではいけないのかと、下記フォーラム記事を参考に、一旦「X Window System」から出て<code>$ sudo Xorg -configure</code> でxorg.confを生成し編集の後<code>/etc/X11</code>に移動させリネーム。<br><a href="https://forums.ubuntulinux.jp/viewtopic.php?id=5581" target="_blank" rel="external">Ubuntu日本語フォーラム / xorg.confが空</a></p>
+<p>今度こそと思ったが、やっぱり10分で画面暗転。<br>絶望的な気分になったがさらに対処法を調べていて、<a href="https://forums.ubuntulinux.jp/viewtopic.php?id=1732" target="_blank" rel="external">「Ubuntu日本語フォーラム / xubuntuでブランクスクリーンにさせない方法は」</a>の中のコメント「省電力機能が有効になっていたりはしないでしょうか。」の言葉でハッと気づき、メニューの「電源管理」設定を見てみたらなんと、「AC 電源」の「モニタ」タブにあるじゃないですか。<br><code>コンピュータを操作していない状態でディスプレイをスリープするまでの期間:</code></p>
+<p>バーのつまみを一番左の「しない」にしたら、いとも簡単にブランクスクリーンを停止出来ました。</p>
+<p>「メガネがない！」とあちこち探して見つからなかったが、実は頭の上に載せていたというマヌケなお話。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/04/23/blankscreen-off/" data-text="簡単だったXubuntuでの画面暗転停止 | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/23/blankscreen-off/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/23/blankscreen-off/" class="hatena-bookmark-button" data-hatena-bookmark-title="簡単だったXubuntuでの画面暗転停止" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/04/22/mtos-update/" >MTOSを5.2.10にアップデート</a>
 		</h3>
 	
@@ -721,73 +781,6 @@ UploadPerms <span class="number">0604</span>
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/04/18/seesaa-fc2/" >無料ブログサービス 「Seesaa」対「FC2」</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年4月18日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>これまでYahoo!ブログ、Amebaブログ、ライブドアブログなどの無料ブログをいくつか利用してきた。<br>その中で近年まで更新を続けて来たのはSeesaa（シーサー）ブログとFC2ブログだった。</p>
-<p>巷でも言われているように、SeesaaブログとFC2ブログは無料でも広告表示が比較的少なく、カスタマイズの自由度にも優れ、またURLがSEOに強いと言われるサブドメイン形式だったことによる。</p>
-<p>Yahoo!ブログ、Amebaブログは同じブログサービスを利用する人達からのアクセスは大いに期待出来る反面、Yahoo!やAmebaのアカウントを持っていない人には閉鎖的な印象を受ける。その点、Seesaaブログ、FC2ブログは横のつながりは薄い反面、開かれても居る。<br>双方とも無料プランでもエクスポートによる記事のバックアップが可能だったことも大きい。</p>
-<p>Seesaaブログ、FC2ブログともに、無料で利用出来るブログサービスとしては十分に高機能で有難いものなのだが、現在も頻回に更新を続けているのはSeesaaブログだけだったりする。</p>
-<p>これはSeesaaブログで書いているテーマについては、興味が持続していて記事のネタが豊富だったことによるが、そのテーマについてSeesaaで書くようになったのも全くのたまたまという訳ではなく、Seesaaが複数ブログに対応していたからだった。<br>アカウントを一つ持っていれば５つまでブログを開設出来るので、新たにアカウントを取る必要が無かった。（かつては100個までブログを開設出来たそうだが、５つでもきちんと管理するには持て余すレベルだし、かなりのアドバンテージだと思う）</p>
-<p>Seesaaブログの有利な点としてもう一つ見逃せないのは、放置していても広告を非表示に出来ることだ。</p>
-<p>FC2の場合一ヶ月以上更新が無いと、</p>
-<blockquote>
-<p>上記の広告は１ヶ月以上更新のないブログに表示されています。<br>新しい記事を書く事で広告が消せます。</p>
-</blockquote>
-<p>という文言とともに、広告が入ってしまう。<br>ページ上部とともに下部に半透明の帯のような膜のようなFlash広告が現れる。<br>点滅がチカチカとうっとおしくてゲンナリしてしまう。<br>どちらのFlash広告もFirefoxなどのブラウザであればアドオンの「Adblock」で消せるので気が付かない人もいるかもしれないが、半透明の帯だけは消えない様子。ちゃんと読むためにはバツ印をクリックして帯を消さなければならない。</p>
-<p>Seesaaブログの場合、初期状態では60日以上更新が無いと広告が入るようになっているが、管理画面の「広告設定」から「広告を表示しない」を選択することで非表示に出来る。</p>
-<p>更新しなくなってもそれなりに愛着があり残しておきたいブログがあったりするものだと思うので、このSeesaaの配慮は非常にありがたい。</p>
-<p>そういう訳で、管理画面での操作が時々やたらと重かったり、投稿してもpingの送信が非常に遅く数時間かかったり、というような弱点もあったりはしますが、現時点での私のイチオシ無料ブログサービスはSeesaaブログです。</p>
-<p>（はてなダイアリー、Blogger等の有名処でも利用したことが無いサービスも多いので、上記はあくまで自分の経験の範囲での感想です。）</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/04/18/seesaa-fc2/" data-text="無料ブログサービス 「Seesaa」対「FC2」 | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/18/seesaa-fc2/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/18/seesaa-fc2/" class="hatena-bookmark-button" data-hatena-bookmark-title="無料ブログサービス 「Seesaa」対「FC2」" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/blog/">blog</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -828,46 +821,48 @@ UploadPerms <span class="number">0604</span>
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
-		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
-		
 			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
-		
-			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
-		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>92</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>39</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>38</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>19</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
-		
-			<li><a href="/tags/時事/">時事<span>1</span></a></li>
 		
 			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
 		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
+			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>93</span></a></li>
+		
+			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
+		
+			<li><a href="/tags/セキュリティ/">セキュリティ<span>1</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
+		
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>38</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>39</span></a></li>
+		
+			<li><a href="/tags/食/">食<span>4</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>19</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+		
+			<li><a href="/tags/時事/">時事<span>1</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+		
+		   <li><a href="/tags">...<span>21</span></a></li>
 		
 		</ul>
 	</div>
@@ -879,6 +874,10 @@ UploadPerms <span class="number">0604</span>
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2016/04/23/linux-malware-billgates/" ><i class="fa fa-file-o"></i>Linuxを標的とするマルウェア「ビルゲイツ」</a>
+      </li>
     
       <li>
         <a href="/2016/04/22/xubuntu-16-04-released/" ><i class="fa fa-file-o"></i>Xubuntu 16.04 LTSが正式にリリース</a>
@@ -896,10 +895,6 @@ UploadPerms <span class="number">0604</span>
         <a href="/2016/04/17/spam-mail/" ><i class="fa fa-file-o"></i>出会い系サイトからの迷惑メール</a>
       </li>
     
-      <li>
-        <a href="/2016/04/17/xampp-ftp/" ><i class="fa fa-file-o"></i>XamppでFTPが使用できない</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -909,7 +904,7 @@ UploadPerms <span class="number">0604</span>
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
 		</ul>
 	</div>
 
