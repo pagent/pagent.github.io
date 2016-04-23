@@ -183,7 +183,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <p><code>xinput</code>コマンドで確認すると、USB Optical Mouseはid=12だったので、</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ xinput <span class="keyword">set</span>-prop <span class="string">'12'</span> <span class="string">'Evdev Wheel Emulation Inertia'</span> <span class="number">200</span></div></pre></td></tr></table></figure>
 
-<p>とした。<br>ところがスクロール量に変化がない。<br><code>xinput list-props 12</code>で確認すると、確かにEvdev Wheel Emulation Inertiaの値は200になっているのだが。<br>USBマウスを抜き差ししても変化なし。<br>移動の上下の「向き」などは反映されるのだが、スクロール量はxinputでは設定出来ないようだ。  </p>
+<p>とした。<br>ところがスクロール量に変化がない。<br><code>xinput list-props 12</code>で確認すると、確かにEvdev Wheel Emulation Inertiaの値は200になっているのだが。<br>USBマウスを抜き差ししても変化なし。<br>移動の上下の「向き」などは反映されるのだが、スクロール量はxinputでは設定出来ないようだ。<br>（環境によってはXorgでも設定可能かもしれない。）  </p>
 <h3 id="Firefoxのみ設定">Firefoxのみ設定</h3>
 <p>Firefoxだけで良いなら、about:configでmousewheel.default.delta_multiplier_yの値を変更すれば良いようだ。<br><a href="http://blog.ueshu.net/it/2013/06/19/1769.html" target="_blank" rel="external">ubuntuのFirefoxのマウスホイールのスクロール速度を変更する</a></p>
 
