@@ -166,7 +166,9 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <p>マウスの挙動を調整するツール「imwheel」を導入した。<br>Arch Linuxの場合はAURにあるので、Yaourtでインストール。  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ yaourt -S imwheel</div></pre></td></tr></table></figure>
 
-<p>UbuntuならUbuntuソフトウェアセンターまたはSynapticから。  </p>
+<p>UbuntuならUbuntuソフトウェアセンターやSynaptic、または下記コマンドで。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> apt-get install imwheel</div></pre></td></tr></table></figure>
+
 <p>インストール後、~/.imwheelrcファイルを作成（/home/ユーザー名/下に.imwheelrcファイル）。下記内容で保存。</p>
 <figure class="highlight plain"><figcaption><span>.imwheelrc</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">".*"</div><div class="line">None,      Up,   Button4, 3</div><div class="line">None,      Down, Button5, 2</div></pre></td></tr></table></figure>
 
