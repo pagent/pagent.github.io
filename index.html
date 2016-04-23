@@ -177,10 +177,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	  
 	
 	  <p>Windowsに較べて安全と言われるLinux。だが現在、Linuxを標的とするマルウェアが猛威を振るっているそうだ。<br><a href="http://www.itmedia.co.jp/news/articles/1604/22/news105.html" target="_blank" rel="external">「ビルゲイツ」がLinuxを標的に？ - ITmedia ニュース</a>  </p>
-<p>「ビルゲイツ」というネーミングが笑いを誘うが、リモートからSSH経由でrootのパスワードに対して総当たり攻撃（ブルートフォースアタック）を仕掛け、管理者権限を乗っ取るのだそうだ。  </p>
+<p>「ビルゲイツ」というネーミングが笑いを誘うが、リモートからSSH経由でrootのパスワードに対して総当たり攻撃（ブルートフォースアタック）を仕掛け、管理者権限を乗っ取るのだそうだ。<br>Linuxをサーバー用途では使っていない人も、Xamppを使用している場合には危険があるはず。十分対策を取った方が良いだろう。</p>
 <p>対策としては、SSH経由でのrootのログインを禁止し、またパスワードでの認証を禁止（公開鍵認証を使う）にすれば良いようだ。<br><a href="https://wiki.archlinuxjp.org/index.php/Secure_Shell#SSH_.E3.81.AE.E4.BF.9D.E8.AD.B7" target="_blank" rel="external">Secure Shell - ArchWiki</a>  </p>
 <p>OpenSSH 7.0/7.0p以降では<code>PermitRootLogin</code>のデフォルトは<code>prohibit-password</code>になっており、パスワードでのログインは禁止されている。<br><a href="https://osdn.jp/magazine/15/08/14/072400" target="_blank" rel="external">「OpenSSH 7.0」がリリース、PermitRootLogin設定の変更などセキュリティ強化が行われる | OSDN Magazine</a>  </p>
-<p>Ubuntuの場合はデフォルトでrootのパスワードが存在せず、rootでのログインは不可能になっているので、気にする必要はないだろう。</p>
+<p>Ubuntuの場合はデフォルトでrootのパスワードが存在せず、rootでのログインは不可能になっているので、rootパスワードを設定していない場合は安全と思われる。</p>
 
 	
 	</div>
@@ -845,45 +845,45 @@ Loading site… done
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
+			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
 		
-			<li><a href="/tags/時事/">時事<span>1</span></a></li>
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+		
+			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
 		
 			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
 		
+			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
+		
 			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/食/">食<span>4</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>38</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/セキュリティ/">セキュリティ<span>6</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>93</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>39</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>38</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>19</span></a></li>
+			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
 		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
 		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
-		
-			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
-		
-			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+			<li><a href="/tags/時事/">時事<span>1</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>21</span></a></li>
