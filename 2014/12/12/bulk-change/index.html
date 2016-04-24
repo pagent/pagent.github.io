@@ -174,7 +174,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <pre><code><span class="variable">$ </span>mv example.md.bak example.md
 </code></pre><p>ただし、mvコマンドは複数のファイル名の一括変換は出来ないようなので、すべてのファイルを元に戻す場合は、一旦すべての.mdファイルを削除してから、すべての.md.bakファイルの拡張子を.mdに変換。<br>（renameコマンドは上書きは出来ないようなので）  </p>
 <pre><code>$ <span class="keyword">find</span> ./ -<span class="built_in">type</span> <span class="keyword">f</span> -name <span class="string">"*.md"</span> -<span class="built_in">delete</span>
-$ <span class="built_in">rename</span> <span class="string">'s/.md.bak/.md/'</span> *.bak
+$ <span class="built_in">rename</span> .md.bak .md *.bak
 </code></pre><p>（参照記事）<br><a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20060228/231140/" target="_blank" rel="external">Linuxコマンド逆引き大全 - 【 ファイルから文字列を検索する 】：ITpro</a><br><a href="http://kazmax.zpp.jp/linux/lin_replace.html" title="複数ファイル内の文字列を置換して上書き保存する" target="_blank" rel="external">複数ファイル内の文字列を置換して上書き保存する</a>  </p>
 <p>ーー<br>（追記）<br>perlで語句を一括変換する際、複数のファイルを対象にしたい時は、間に半角スペースを入れて列記。<br>（複数ファイルの時も正規表現が可能）</p>
 <pre><code>$ perl -i -p <span class="operator">-e</span> <span class="string">'s/置換前の語句/置換後の語句/g'</span> A.html B.xml
