@@ -5,16 +5,15 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Linuxを標的とするマルウェア「ビルゲイツ」 | Pagent</title>
+  <title>dynabook T552のキーボードが一部反応しなくなったので交換 | Pagent</title>
   <meta name="author" content="Pagent">
   
-  <meta name="description" content="Windowsに較べて安全と言われるLinux。だが現在、Linuxを標的とするマルウェアが猛威を振るっているそうだ。「ビルゲイツ」がLinuxを標的に？ - ITmedia ニュース  
-「ビルゲイツ」というネーミングが笑いを誘うが、リモートからSSH経由でrootのパスワードに対して総当たり攻撃">
+  <meta name="description" content="dynabook T552のキーボードのいくつかのキーが反応しなくなっていた。LinuxでもマルチブードにしているWindows 7でも、同じキーが効かないので、どうやらハード的な問題のよう。保証期間は過ぎており修理にはちょっと値が張りそうだったので、使えるキーでなんとか凌いでいた。「DEL」キーも">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Linuxを標的とするマルウェア「ビルゲイツ」"/>
+  <meta property="og:title" content="dynabook T552のキーボードが一部反応しなくなったので交換"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -143,7 +142,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> Linuxを標的とするマルウェア「ビルゲイツ」</h1>
+			<h1> dynabook T552のキーボードが一部反応しなくなったので交換</h1>
 		</div>
 	
 
@@ -159,10 +158,20 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>Windowsに較べて安全と言われるLinux。だが現在、Linuxを標的とするマルウェアが猛威を振るっているそうだ。<br><a href="http://www.itmedia.co.jp/news/articles/1604/22/news105.html" target="_blank" rel="external">「ビルゲイツ」がLinuxを標的に？ - ITmedia ニュース</a>  </p>
-<p>「ビルゲイツ」というネーミングが笑いを誘うが、リモートからSSH経由でrootのパスワードに対して総当たり攻撃（ブルートフォースアタック）を仕掛け、管理者権限を乗っ取るのだそうだ。  </p>
-<p>対策としては、SSH経由でのrootのログインを禁止し、またパスワードでの認証を禁止（公開鍵認証を使う）にすれば良いようだ。<br><a href="https://wiki.archlinuxjp.org/index.php/Secure_Shell#SSH_.E3.81.AE.E4.BF.9D.E8.AD.B7" target="_blank" rel="external">Secure Shell - ArchWiki</a>  </p>
-<p>OpenSSH 7.0/7.0p以降では<code>PermitRootLogin</code>のデフォルトは<code>prohibit-password</code>になっており、パスワードでのログインは禁止されている。<br><a href="https://osdn.jp/magazine/15/08/14/072400" target="_blank" rel="external">「OpenSSH 7.0」がリリース、PermitRootLogin設定の変更などセキュリティ強化が行われる | OSDN Magazine</a></p>
+	    <p>dynabook T552のキーボードのいくつかのキーが反応しなくなっていた。<br>LinuxでもマルチブードにしているWindows 7でも、同じキーが効かないので、どうやらハード的な問題のよう。<br>保証期間は過ぎており修理にはちょっと値が張りそうだったので、使えるキーでなんとか凌いでいた。<br>「DEL」キーも反応しなかったので、入力の訂正には「BACK SPACE」キーを使っていたが、「DEL」が使えないと困ることもある。<br>キーボードだけならネットで安く購入出来るようだったので、自分で交換してみることにした。  </p>
+<p>キーボードの外し方は下記記事を参考にさせて頂いた。<br><a href="http://dynabook.biz/keyboard/4293/" target="_blank" rel="external">東芝 Toshiba dynabook T552 Satellite B252 キーボード交換 Satellite L850シリーズ共通 | ダイナブックをもっと楽しもう！｜大名武久</a>  </p>
+<p>PCを分解して外す方法とキーボードだけを外す方法があるらしい。分解は面倒なので出来ればキーボードだけを外したい。<br>本当は専用の工具を使った方が良いらしいのだが、持っていないので物差しで代用。  </p>
+<ul>
+<li>ACアダプターを抜きバッテリーも外す。</li>
+<li>キーボード右側の溝に爪を入れて上に持ち上げ、キーボードの右側を浮かせる。<br>浮かせた隙間から物差しを挿入。  </li>
+<li>物差しの先端をキーボードの手前右端に向け、グッと押して手前右端の噛み合いを外す。無理な力を加えて破損しないよう注意。物差しは適度に水平に近い角度に保って作業。<br>（作業前に写真を撮っていなかったので、新しいキーボードで様子を再現。）<br><img src="/images/keyboad-separation.JPG" alt="キーボード分離" width="320" height="240">  </li>
+<li>物差し先端を少し左にずらして手前側に押し、順次左端まで手前の噛み合いを外していく。<br>手前側が完全に外れたらキーボードを少し手前に引くだけで奥の噛み合いも簡単に外れる。</li>
+<li>キーボードとPC本体を繋いでいるケーブルの根元、白く細長い台座部分の両脇にある黒いポッチをマイナスドライバーなどで奥に押してロックを外す。<br>（左の黒いポッチはロックを外した状態。右はロックされた状態。）<br><img src="/images/keyboad-cable-lock.JPG" alt="キーボードケーブルのロック" width="320" height="240"></li>
+<li>ケーブルを抜いて新しいキーボードと交換。ロックを掛ける。</li>
+<li>奥の噛み合いを合わせ、キーボードの両端、手前を押してはめ込む。</li>
+</ul>
+<p>ケーブルを外す際、白い台座を起こしてロックを外すものと勘違いして、少し引っ掻いてしまったが、他は問題なく作業が終了。  </p>
+<p>PCを起動すると、反応しなかった「DEL」キーや一部のテンキーも正常に反応した。<br>安く修理出来て良かった。</p>
 
 	</div>
 
@@ -170,11 +179,11 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2016/04/23/linux-malware-billgates/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2016/04/24/dynabook-T552-keyboad-unresponsive/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2016/04/23/linux-malware-billgates/" class="hatena-bookmark-button" data-hatena-bookmark-title="Linuxを標的とするマルウェア「ビルゲイツ」" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2016/04/24/dynabook-T552-keyboad-unresponsive/" class="hatena-bookmark-button" data-hatena-bookmark-title="dynabook T552のキーボードが一部反応しなくなったので交換" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 
 <div class="clear"></div>
@@ -186,13 +195,13 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2016/04/24/dynabook-T552-keyboad-unresponsive/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2016/04/22/xubuntu-16-04-released/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2016/04/23/linux-malware-billgates/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -226,7 +235,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2016年4月23日
+	2016年4月24日
 	</div>
 	
 
@@ -240,7 +249,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="tags" class="tag_box list-unstyled collapse in">
 	    <!-- _partial/post/tag -->
   
-  <li><a href="/tags/Linux/">Linux</a></li> <li><a href="/tags/セキュリティ/">セキュリティ</a></li>
+  <li><a href="/tags/ハードウェア/">ハードウェア</a></li>
 
     </ul>
 	</div>
