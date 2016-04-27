@@ -159,6 +159,75 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/11/24/hexo-windows-deploy/" >WindowsでHexoを使う（deploy）</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年11月24日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Windows 7にインストールしたHexoだが、作業フォルダはLinuxと共用なので、そのままdeploy出来ると思っていた。<br>だがdeployしようとすると、  </p>
+<pre><code>Run
+
+  git config --global <span class="literal">user</span>.email <span class="string">"you@example.com"</span>
+  git config --global <span class="literal">user</span>.name <span class="string">"Your Name"</span>
+</code></pre><p>と言われてしまった。  </p>
+<p>メールアドレスとGithubユーザー名を設定して、再度deployしようとしたが、  </p>
+<pre><code>Permission denied (publickey).
+fatal: Could <span class="operator">not</span> <span class="built_in">read</span> <span class="built_in">from</span> remote repository.
+
+Please make sure you have <span class="operator">the</span> correct access rights
+<span class="operator">and</span> <span class="operator">the</span> repository exists.
+</code></pre><p>とrejectされる。<br>よく考えたら当たり前だが、WindowsでもSSHキーの設定が必要らしい。  </p>
+<p>Linuxで設定したSSH秘密鍵と公開鍵の両方を<code>C:\Users\（ユーザー名）\.ssh</code>内にコピペしたら、ようやくdeploy出来た。  </p>
+<p>これで無事WindowsでもHexoを使えるようになった。  </p>
+<p>Hexoにはローカルホストで使う管理画面プラグインもあるようなので、もう少し導入が簡単になればWindowsユーザーにも静的サイトジェネレーターが広まる可能性があるんじゃないだろうか。  </p>
+<p>ーー<br>（関連記事）<br><a href="http://pagent.github.io/2014/11/24/hexo-windows/" target="_blank" rel="external">WindowsでHexoを使う（インストール） | Pagent</a></p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/24/hexo-windows-deploy/" data-text="WindowsでHexoを使う（deploy） | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/11/24/hexo-windows-deploy/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/11/24/hexo-windows-deploy/" class="hatena-bookmark-button" data-hatena-bookmark-title="WindowsでHexoを使う（deploy）" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Hexo/">Hexo</a></li> <li><a href="/tags/Windows/">Windows</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/11/24/hexo-windows-install/" >WindowsでHexoを使う（インストール）</a>
 		</h3>
 	
@@ -806,67 +875,6 @@ sudo apt-<span class="built_in">get</span> install nemo
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/13/xubuntu-ar9285/" >Xubuntu 14.04.1で無線LAN(Atheros AR9285)が安定しない</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月13日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Xubuntu 14.04.1をインストールしたネットブックLaVie Light BL300/T。<br>有線でのネット接続は問題無いが、無線LANがとても不安定。<br>頻回に接続が切れて認証を要求されるし、接続も異様に遅い。<br>Xubuntu 12.04では問題なく使えていたのだが。  </p>
-<p>どうも無線LANアダプターAtheros製AR9285とドライバーath9kの相性の問題もあるらしい。<br><a href="http://blog.livedoor.jp/furikku9310/archives/52298627.html" target="_blank" rel="external">ノートPCの無線LANデバイスにて : フレイドフォートonBlog</a>  </p>
-<p>/etc/modprobe.d内にath9k.confというファイルを作りそこに<code>options ath9k nohwcrypt=1</code>と記載したり、ath9kをロードし直したりしてみたが改善しない。<br>NdisWrapperでWindows Xp用のドライバーを使えば良いかと思いやってみたが、これも満足に動作しない。  </p>
-<p>Xubuntu 14.04.1にLinux 3.2や3.8カーネルをコンパイルしてインストールすれば良いのかもしれないが、自分の力量を超えているので断念。<br>（カーネルのコンパイルをしなくても、Ubuntu 12.04 Preciseのリポジトリを追加してLinux 3.2カーネルをインストールすれば良かったのかもしれない。<a href="/2014/11/18/debian-wheezy-nemo/">Debian WheezyにNemoをインストール</a>）  </p>
-<p>結局Xubuntu 12.04をインストールしそれを14.04.1にアップグレード、起動カーネルをLinux 3.2にすることで無線LANも安定した。  </p>
-<pre><code><span class="constant">GRUB_DEFAULT</span>=<span class="string">"Advanced options for Ubuntu&gt;Ubuntu, with Linux 3.2.0-58-generic"</span>
-</code></pre><p>古いPCでもLinuxは利用出来ると言われるが、Linuxも新しい機器への対応を進める一方、古いPCは切り捨てられていくのだろうか。<br>使い勝手はUbuntu派生ディストリに劣るかもしれないが、今度Debian+Xfceも試してみようと思う。  </p>
-<p>ーー<br>（追記）<br>lshwコマンドで見たところ、Xubuntu 12.04（Linux 3.2カーネル）でもAR9285に使われているドライバーはath9kだった。<br>なぜXubuntu 14.04.1の場合は無線が安定しないのだろう？<br>「disabling IRQ #9」回避のため、起動オプションに「pci=noacpi」を付けていたからだろうか。  </p>
-<p>ーー<br>（再追記）<br>Xubuntuのアップデートで、カーネルが更新される度にgrubが書き換えられてはかなわないので、/etc/default/grubのパーミッションで、所有者rootのアクセス権が「読み書き」だったのを「読み込み専用」にした。<br>変更が必要な時はまたアクセス権を変更しないといけないが、これで意図に反してgrubが書き換えらるのを防ぐことが出来る。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/13/xubuntu-ar9285/" data-text="Xubuntu 14.04.1で無線LAN(Atheros AR9285)が安定しない | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/11/13/xubuntu-ar9285/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/11/13/xubuntu-ar9285/" class="hatena-bookmark-button" data-hatena-bookmark-title="Xubuntu 14.04.1で無線LAN(Atheros AR9285)が安定しない" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Linux/">Linux</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -907,45 +915,45 @@ sudo apt-<span class="built_in">get</span> install nemo
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>29</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
-		
-			<li><a href="/tags/時事/">時事<span>1</span></a></li>
-		
-			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
-		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>38</span></a></li>
-		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>93</span></a></li>
-		
-			<li><a href="/tags/セキュリティ/">セキュリティ<span>6</span></a></li>
+			<li><a href="/tags/ハードウェア/">ハードウェア<span>1</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>39</span></a></li>
 		
+			<li><a href="/tags/Linux/">Linux<span>93</span></a></li>
+		
 			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
 		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
+			<li><a href="/tags/セキュリティ/">セキュリティ<span>6</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
+		
+			<li><a href="/tags/食/">食<span>4</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
 		
 			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>19</span></a></li>
 		
-			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>30</span></a></li>
+		
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+		
+			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/時事/">時事<span>1</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>22</span></a></li>
@@ -960,6 +968,10 @@ sudo apt-<span class="built_in">get</span> install nemo
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2016/04/27/add-to-search-bar/" ><i class="fa fa-file-o"></i>任意の検索エンジンを追加出来る「Add to Sear...</a>
+      </li>
     
       <li>
         <a href="/2016/04/24/dynabook-T552-keyboad-unresponsive/" ><i class="fa fa-file-o"></i>dynabook T552のキーボードが一部反応しなく...</a>
@@ -977,10 +989,6 @@ sudo apt-<span class="built_in">get</span> install nemo
         <a href="/2016/04/18/xubuntu-hash-sum-mismatch/" ><i class="fa fa-file-o"></i>Xubuntuでアップデートに失敗する</a>
       </li>
     
-      <li>
-        <a href="/2016/04/17/28-page-report/" ><i class="fa fa-file-o"></i>28ページ文書〜9.11同時多発テロ〜サウジアラビア</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -990,7 +998,7 @@ sudo apt-<span class="built_in">get</span> install nemo
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
 		</ul>
 	</div>
 

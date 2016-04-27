@@ -159,6 +159,110 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2016/03/29/nanoc-install/" >Nanocのインストール</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2016年3月29日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>ブログを開始するには骨が折れるが、ウェブサイト構築では柔軟性、汎用性に優れるNanoc。<br>Arch Linuxにインストールしたがバージョンは4になっていた。<br>Rubyは導入済  </p>
+<p>Nanocのインストール<br>（なるべくsudoを付けない方が良いらしい）</p>
+<pre><code>$ gem install nanoc
+<span class="label">WARNING:  </span>You don't have /home/ユーザー名/.gem/ruby/2.3.0/bin in your PATH,
+<span class="code">      gem executables will not run.</span>
+Successfully installed nanoc-4.1.5
+Parsing documentation for nanoc-4.1.5
+Done installing documentation for nanoc after 2 seconds
+1 gem installed
+</code></pre><p>プレビューとMarkdownを使用するため、adsfとkramdownもインストール</p>
+<pre><code><span class="variable">$ </span>gem install adsf
+<span class="variable">$ </span>gem install kramdown
+</code></pre><p>Nanocを使ってみる<br>test-siteを作成</p>
+<pre><code><span class="variable">$ </span>nanoc create-site test-site
+<span class="symbol">bash:</span> <span class="symbol">nanoc:</span> コマンドが見つかりません
+</code></pre><p>パスを通す必要があるらしい。<br>Nanocがインストールされた場所の確認<br>（Nanocインストール時にもWARNINGが出ていた）  </p>
+<pre><code>$ gem contents nanoc | <span class="keyword">grep</span> bin
+<span class="regexp">/home/</span>ユーザー名<span class="regexp">/.gem/</span>ruby<span class="regexp">/2.3.0/g</span>ems<span class="regexp">/nanoc-4.1.5/</span>bin<span class="regexp">/nanoc</span>
+</code></pre><p>パスを通す（~/.bashrcに<code>export PATH=&quot;$HOME/.gem/ruby/2.3.0/bin:$PATH&quot;</code>を追記）</p>
+<pre><code>$ echo 'export PATH=<span class="string">"<span class="variable">$HOME</span>/.gem/ruby/2.3.0/bin:<span class="variable">$PATH</span>"</span>' &gt;&gt; ~/.bashrc
+</code></pre><p>再度test-siteを作成</p>
+<pre><code>$ nanoc <span class="operator"><span class="keyword">create</span>-site test-site
+      <span class="keyword">create</span>  nanoc.yaml
+      <span class="keyword">create</span>  Rules
+      <span class="keyword">create</span>  content/<span class="keyword">index</span>.html
+      <span class="keyword">create</span>  content/stylesheet.css
+      <span class="keyword">create</span>  layouts/<span class="keyword">default</span>.html
+Created a blank nanoc site <span class="keyword">at</span> <span class="string">'test-site'</span>. Enjoy!</span>
+</code></pre><p>作成されたtest-siteディレクトリに移動しコンパイル（generate）する<br>コンパイルのコマンドは<code>nanoc</code>だけでも良い  </p>
+<pre><code>$ cd test-site
+$ nanoc compile
+Loading site… done
+Compiling site…
+      <span class="operator"><span class="keyword">create</span>  [<span class="number">0.00</span>s]  <span class="keyword">output</span>/stylesheet.css
+      <span class="keyword">create</span>  [<span class="number">0.06</span>s]  <span class="keyword">output</span>/<span class="keyword">index</span>.html
+
+Site compiled <span class="keyword">in</span> <span class="number">0.19</span>s.</span>
+</code></pre><p>プレビューし、ブラウザで<code>http://localhost:3000/</code>にアクセス</p>
+<pre><code>$ nanoc view
+Loading site… done
+<span class="attr_selector">[2016-03-29 20:10:10]</span> INFO  WEBrick 1<span class="class">.3</span><span class="class">.1</span>
+<span class="attr_selector">[2016-03-29 20:10:10]</span> INFO  <span class="tag">ruby</span> 2<span class="class">.3</span><span class="class">.0</span> (2015-12-25) <span class="attr_selector">[x86_64-linux]</span>
+<span class="attr_selector">[2016-03-29 20:10:10]</span> INFO  WEBrick<span class="value">::HTTPServer#start: pid=<span class="number">5898</span> port=<span class="number">3000</span></span>
+</code></pre><p><img src="/images/nanoc-install.png" alt="nanoc-install.png" height="240"></p>
+<p>Markdown記法を使いたいのでkramdownをインストールしたが、Rulesファイル（test-siteフォルダ内）の修正も必要。<br>kramdownに関する記載部分のアンコメント<code>#</code>を外す</p>
+<pre><code>compile <span class="string">'/**/*.md'</span> <span class="built_in">do</span>
+  <span class="built_in">filter</span> :kramdown
+  layout <span class="string">'/default.*'</span>
+<span class="function"><span class="keyword">end</span></span>
+</code></pre><p>なお、新規ページを追加する<code>nanoc create_item</code>コマンド、またwatch、autocompileコマンドなどはNanoc 4から削除されたよう。<br><a href="http://nanoc.ws/doc/nanoc-4-upgrade-guide/#removed-features" target="_blank" rel="external">Nanoc 4 upgrade guide » Removed features</a>  </p>
+<p>（参照記事）<br>インストール、使い方など<br><a href="http://nanoc.ws/doc/installation/" target="_blank" rel="external">Nanoc » Installation</a><br><a href="http://nanoc.ws/doc/tutorial/" target="_blank" rel="external">Nanoc » Tutorial</a>  </p>
+<p>パスの通し方<br><a href="http://qiita.com/hyshhryk/items/7e728ad57d963454b142" target="_blank" rel="external">bundleコマンドにパスが通っていなかったときの対処法 - Qiita</a>  </p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2016/03/29/nanoc-install/" data-text="Nanocのインストール | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2016/03/29/nanoc-install/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2016/03/29/nanoc-install/" class="hatena-bookmark-button" data-hatena-bookmark-title="Nanocのインストール" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/nanoc/">nanoc</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2016/03/28/xubunt-16-04-acpi/" >BL300/TにXubunt16.04beta2をインストール</a>
 		</h3>
 	
@@ -777,63 +881,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2016/02/28/bloglines-gone/" >Bloglinesがひっそりと終了していた模様</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2016年2月28日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Bloglinesがいつの間にか終了していたようだ。  </p>
-<p>ダッシュボードにアクセスすると”410 Gone”と表示されている。<br><a href="http://dashboard.bloglines.com/" target="_blank" rel="external">http://dashboard.bloglines.com/</a>  </p>
-<p>404 Not foundと違い、明示的に削除されたということらしい。<br>なんのアナウンスも無く話題になることも無く、ひっそりと。  </p>
-<p>WHOIS情報を調べるとbloglines.comのドメイン自体はまだ存在しているよう。  </p>
-<p>随分前から突然繋がらなくなったりして不安定だったので、<a href="http://www.netvibes.com/" title="Netvibes" target="_blank" rel="external">Netvibes</a>に移行していた。<br>特に困ることもないが、淋しい気がする。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2016/02/28/bloglines-gone/" data-text="Bloglinesがひっそりと終了していた模様 | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2016/02/28/bloglines-gone/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2016/02/28/bloglines-gone/" class="hatena-bookmark-button" data-hatena-bookmark-title="Bloglinesがひっそりと終了していた模様" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/ネット/">ネット</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -874,45 +921,45 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>93</span></a></li>
-		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>38</span></a></li>
-		
-			<li><a href="/tags/セキュリティ/">セキュリティ<span>6</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
-		
-			<li><a href="/tags/時事/">時事<span>1</span></a></li>
-		
 			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>19</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
 		
 			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
 		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
 		
-			<li><a href="/tags/ハードウェア/">ハードウェア<span>1</span></a></li>
-		
-			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
 		
 			<li><a href="/tags/食/">食<span>4</span></a></li>
 		
+			<li><a href="/tags/セキュリティ/">セキュリティ<span>6</span></a></li>
+		
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+		
+			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>93</span></a></li>
+		
+			<li><a href="/tags/時事/">時事<span>1</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>38</span></a></li>
+		
 			<li><a href="/tags/blog/">blog<span>39</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>30</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
+			<li><a href="/tags/ハードウェア/">ハードウェア<span>1</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>22</span></a></li>
@@ -927,6 +974,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2016/04/27/add-to-search-bar/" ><i class="fa fa-file-o"></i>任意の検索エンジンを追加出来る「Add to Sear...</a>
+      </li>
     
       <li>
         <a href="/2016/04/24/dynabook-T552-keyboad-unresponsive/" ><i class="fa fa-file-o"></i>dynabook T552のキーボードが一部反応しなく...</a>
@@ -944,10 +995,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
         <a href="/2016/04/18/xubuntu-hash-sum-mismatch/" ><i class="fa fa-file-o"></i>Xubuntuでアップデートに失敗する</a>
       </li>
     
-      <li>
-        <a href="/2016/04/17/28-page-report/" ><i class="fa fa-file-o"></i>28ページ文書〜9.11同時多発テロ〜サウジアラビア</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -957,7 +1004,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">9</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
 		</ul>
 	</div>
 

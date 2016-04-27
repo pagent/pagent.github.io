@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-04-27T01:10:58.036Z</updated>
+  <updated>2016-04-27T05:44:00.779Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,20 +15,45 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[任意の検索エンジンを追加出来る「Add to Search Bar」が便利]]></title>
+    <link href="http://pagent.github.io/2016/04/27/add-to-search-bar/"/>
+    <id>http://pagent.github.io/2016/04/27/add-to-search-bar/</id>
+    <published>2016-04-27T04:56:42.000Z</published>
+    <updated>2016-04-27T05:43:49.798Z</updated>
+    <content type="html"><![CDATA[<p>Firefoxのアドオンを整理しようと思い、長い間無効化しているものなどを削除していた。<br>そんな中に<a href="https://addons.mozilla.org/ja/firefox/addon/add-to-search-bar/" target="_blank" rel="external">「Add to Search Bar」</a>もあった。<br>はて？どんなアドオンだったか。英語の説明を読んでもよく分からない。  </p>
+<p>使い方を検索してみたら、任意のサイト（検索窓のあるサイト）での検索を自由にFirefoxの検索エンジンに追加出来るアドオンのよう。<br><a href="http://allabout.co.jp/gm/gc/414549/" target="_blank" rel="external">検索窓を追加「Add to Search Bar」 [Firefoxの使い方] All About</a>  </p>
+<p>試しに「Yahoo!知恵袋」を検索エンジンに追加してみた。  </p>
+<ul>
+<li>Yahoo!知恵袋サイトの検索窓内で右クリック。</li>
+<li>「サーチバーを追加」をクリック。</li>
+</ul>
+<p><img src="/images/add-to-search-bar.png" alt="Add to Search Bar" height="240">  </p>
+<p>たったこれだけで検索エンジン「Yahoo!知恵袋 - みんなの知恵共有サービス」が追加された。<br>なかなか便利だね、このアドオン。<br>嬉しくなって「楽天市場」や「価格.com」などの検索エンジンも追加した。  </p>
+<p>これと<a href="https://addons.mozilla.org/ja/firefox/addon/context-search/?src=search" target="_blank" rel="external">「Context Search」</a>（用語を選択し右クリックから種々の検索エンジンで検索可能）があれば、検索の効率アップ間違い無し。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Firefoxのアドオンを整理しようと思い、長い間無効化しているものなどを削除していた。<br>そんな中に<a href="https://addons.mozilla.org/ja/firefox/addon/add-to-search-bar/" target="_bl]]>
+    </summary>
+    
+      <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[dynabook T552のキーボードが一部反応しなくなったので交換]]></title>
     <link href="http://pagent.github.io/2016/04/24/dynabook-T552-keyboad-unresponsive/"/>
     <id>http://pagent.github.io/2016/04/24/dynabook-T552-keyboad-unresponsive/</id>
     <published>2016-04-24T05:02:31.000Z</published>
-    <updated>2016-04-24T06:51:12.951Z</updated>
+    <updated>2016-04-27T05:38:46.642Z</updated>
     <content type="html"><![CDATA[<p>メインで使っているdynabook T552のキーボードが不調だった。いくつかのキーが全く反応しなくなっていた。<br>マルチブードにしているLinuxでもWindows 7でも、同じキーが効かないので、どうやらハード的な問題のよう。<br>保証期間は過ぎており修理にはちょっと値が張りそうだったので、使えるキーでなんとか凌いでいた。  </p>
 <p>「DEL」キーも反応しなかったが「BACK SPACE」キーは大丈夫だったので、入力文字の訂正は出来た。だが「DEL」が使えないと困ることもある。<br>キーボードだけならネットで安く販売していたので、自分で交換してみることにした。<br>キーボードの外し方は下記記事を参考にさせて頂いた。<br><a href="http://dynabook.biz/keyboard/4293/" target="_blank" rel="external">東芝 Toshiba dynabook T552 Satellite B252 キーボード交換 Satellite L850シリーズ共通 | ダイナブックをもっと楽しもう！｜大名武久</a>  </p>
 <p>PCを分解して外す方法とキーボードだけを外す方法があるらしい。分解は面倒なので出来ればキーボードだけを外したい。<br>本当は専用の工具を使った方が良いらしいのだが、持っていないので物差しで代用。  </p>
 <ul>
 <li>ACアダプターを抜きバッテリーも外す。</li>
 <li>キーボード右側の溝に爪を入れて上に持ち上げ、キーボードの右側を浮かせる。<br>浮かせた隙間から物差しを挿入。  </li>
-<li>物差しの先端をキーボードの手前右端に向け、グッと押して手前右端の噛み合いを外す。無理な力を加えて破損しないよう注意。物差しは適度に水平に近い角度に保って作業。<br>（作業前に写真を撮っていなかったので、新しいキーボードで様子を再現。）<br><img src="/images/keyboad-separation.jpg" alt="キーボード分離" width="320" height="240">  </li>
+<li>物差しの先端をキーボードの手前右端に向け、グッと押して手前右端の噛み合いを外す。無理な力を加えて破損しないよう注意。物差しは適度に水平に近い角度に保って作業。<br>（作業前に写真を撮っていなかったので、新しいキーボードで様子を再現。）<br><img src="/images/keyboad-separation.jpg" alt="キーボード分離" height="240">  </li>
 <li>物差し先端を少し左にずらして手前側に押し、順次左端まで手前の噛み合いを外していく。<br>手前側が完全に外れたらキーボードを少し手前に引くだけで奥の噛み合いも簡単に外れる。</li>
-<li>キーボードとPC本体を繋いでいるケーブルの根元、白く細長い台座部分の両脇にある黒いポッチをマイナスドライバーなどで奥に押してロックを外す。<br>（左の黒いポッチはロックを外した状態。右はロックされた状態。）<br><img src="/images/keyboad-cable-lock.jpg" alt="キーボードケーブルのロック" width="320" height="240"></li>
+<li>キーボードとPC本体を繋いでいるケーブルの根元、白く細長い台座部分の両脇にある黒いポッチをマイナスドライバーなどで奥に押してロックを外す。<br>（左の黒いポッチはロックを外した状態。右はロックされた状態。）<br><img src="/images/keyboad-cable-lock.jpg" alt="キーボードケーブルのロック" height="240"></li>
 <li>ケーブルを抜いて新しいキーボードと交換。ロックを掛ける。</li>
 <li>奥の噛み合いを合わせ、キーボードの両端、手前を押してはめ込む。</li>
 </ul>
@@ -609,27 +634,6 @@ Loading site… done
     </summary>
     
       <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Bloglinesがひっそりと終了していた模様]]></title>
-    <link href="http://pagent.github.io/2016/02/28/bloglines-gone/"/>
-    <id>http://pagent.github.io/2016/02/28/bloglines-gone/</id>
-    <published>2016-02-28T12:03:41.000Z</published>
-    <updated>2016-02-28T12:36:13.000Z</updated>
-    <content type="html"><![CDATA[<p>Bloglinesがいつの間にか終了していたようだ。  </p>
-<p>ダッシュボードにアクセスすると”410 Gone”と表示されている。<br><a href="http://dashboard.bloglines.com/" target="_blank" rel="external">http://dashboard.bloglines.com/</a>  </p>
-<p>404 Not foundと違い、明示的に削除されたということらしい。<br>なんのアナウンスも無く話題になることも無く、ひっそりと。  </p>
-<p>WHOIS情報を調べるとbloglines.comのドメイン自体はまだ存在しているよう。  </p>
-<p>随分前から突然繋がらなくなったりして不安定だったので、<a href="http://www.netvibes.com/" title="Netvibes" target="_blank" rel="external">Netvibes</a>に移行していた。<br>特に困ることもないが、淋しい気がする。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Bloglinesがいつの間にか終了していたようだ。  </p>
-<p>ダッシュボードにアクセスすると”410 Gone”と表示されている。<br><a href="http://dashboard.bloglines.com/" target="_blank" rel="]]>
-    </summary>
-    
-      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
     
   </entry>
   

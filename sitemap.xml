@@ -2,6 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2016/04/27/add-to-search-bar/</loc>
+    <lastmod>2016-04-27T05:43:49.798Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2015/05/09/firefox-yahoo-search/</loc>
+    <lastmod>2016-04-27T05:42:52.262Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2016/04/24/dynabook-T552-keyboad-unresponsive/</loc>
+    <lastmod>2016-04-27T05:38:46.642Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2016/04/22/xubuntu-16-04-released/</loc>
     <lastmod>2016-04-27T01:10:39.291Z</lastmod>
   </url>
@@ -14,11 +29,6 @@
   <url>
     <loc>http://pagent.github.io/2014/12/12/bulk-change/</loc>
     <lastmod>2016-04-24T09:03:22.927Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2016/04/24/dynabook-T552-keyboad-unresponsive/</loc>
-    <lastmod>2016-04-24T06:51:12.951Z</lastmod>
   </url>
   
   <url>
@@ -227,11 +237,6 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2015/05/09/firefox-yahoo-search/</loc>
-    <lastmod>2016-02-29T15:27:40.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://pagent.github.io/2015/06/30/twitter-search-result-probrem/</loc>
     <lastmod>2016-02-29T15:10:17.000Z</lastmod>
   </url>
@@ -388,11 +393,6 @@
   
   <url>
     <loc>http://pagent.github.io/2014/12/01/git-add-directory/</loc>
-    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2014/08/25/midori/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -1498,6 +1498,11 @@
   
   <url>
     <loc>http://pagent.github.io/2014/02/18/comment-count/</loc>
+    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2014/08/25/midori/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
