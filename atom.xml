@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-04-29T03:40:19.712Z</updated>
+  <updated>2016-04-29T14:04:42.705Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,26 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[ブロックされていないのにリツイート出来ない]]></title>
+    <link href="http://pagent.github.io/2016/04/29/unable-to-retweet/"/>
+    <id>http://pagent.github.io/2016/04/29/unable-to-retweet/</id>
+    <published>2016-04-29T13:33:01.000Z</published>
+    <updated>2016-04-29T14:04:25.397Z</updated>
+    <content type="html"><![CDATA[<p>ツイッターで、あるツイートをリツイートしようとしたところ、上部に  </p>
+<p><div class="box">Your account may not be allowed to perform this action. Please refresh the page and try again.</div>と表示されリツイートが出来ない。同様に「いいね」も出来ない。<br>その人のプロフィールページに行くとツイートが表示されており、ブロックされている訳でも無さそう。  </p>
+<p>ブロックされていないのにリツイート出来ないとはどういうことかと、怪訝に思ったが、少し前に、リファラを制御するFirfoxのアドオンRefControlで、規定値を変更したことを思い出した。<br>それまで<code>&lt;阻止&gt;(第三者)</code>（別ドメインへ飛ぶ時のみリファラを阻止）にしていたのを<code>&lt;阻止&gt;</code>（基本的に全てのリファラを阻止）に変更していた。<br>規定値を<code>&lt;阻止&gt;(第三者)</code>に戻したところ、ちゃんとリツイート出来た。  </p>
+<p>RefControlの設定はやはり推奨通り<code>&lt;阻止&gt;(第三者)</code>にした方が良いようだ。<br>ブロックされていないのにリツイート出来ない場合は、リファラを送るようになっているかどうか、確認することをお勧めする。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>ツイッターで、あるツイートをリツイートしようとしたところ、上部に  </p>
+<p><div class="box">Your account may not be allowed to perform this action. Please refresh the pag]]>
+    </summary>
+    
+      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[任意の検索エンジンを追加出来る「Add to Search Bar」が便利]]></title>
@@ -609,32 +629,6 @@ Loading site… done
       <category term="SEO" scheme="http://pagent.github.io/tags/SEO/"/>
     
       <category term="サーバー" scheme="http://pagent.github.io/tags/%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[画像ビューア「gThumb」が.commentsフォルダを作成するのを停止する]]></title>
-    <link href="http://pagent.github.io/2016/03/01/gthumb-hidden-comments-folder/"/>
-    <id>http://pagent.github.io/2016/03/01/gthumb-hidden-comments-folder/</id>
-    <published>2016-03-01T11:12:03.000Z</published>
-    <updated>2016-03-29T12:22:11.528Z</updated>
-    <content type="html"><![CDATA[<p>ここ最近、画像を開いたディレクトリに.commentsという隠しフォルダが作成されるようになってしまっていた。<br>フォルダ内には(画像ファイル名).xmlというファイルが複数入っている。  </p>
-<p>簡単な画像編集も出来て便利なのでgThumbという画像ビューアを使っているが、このgThumbが自動的に作成しているらしい。  </p>
-<p>煩わしいのでこれを止めたい。  </p>
-<ol>
-<li>gThumbを起動し左上のアイコンから「Preferences」へ。  </li>
-<li>「拡張機能」中ほど「コメントとタグ」の項目を「オフ」に。  </li>
-</ol>
-<p><img src="/images/gthumb-preferences.png" alt="gthumb preferences.png" height="240" align="left" style="margin-right:20px;"><img src="/images/gthumb-extensions.png" alt="gthumb extensions.png" height="200" align="left"><br clear="left"></p>
-<p>.commentsフォルダの作成を回避出来た。  </p>
-<p>（参照記事）<br><a href="http://lukas-prokop.at/blog/2013/09/gthumb-and-the-annoying-comments-folder/" title="gThumb and the annoying .comments folder – Lukas&#39; Weblog" target="_blank" rel="external">gThumb and the annoying .comments folder – Lukas’ Weblog</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>ここ最近、画像を開いたディレクトリに.commentsという隠しフォルダが作成されるようになってしまっていた。<br>フォルダ内には(画像ファイル名).xmlというファイルが複数入っている。  </p>
-<p>簡単な画像編集も出来て便利なのでgThumbという画像ビューアを]]>
-    </summary>
-    
-      <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
     
   </entry>
   

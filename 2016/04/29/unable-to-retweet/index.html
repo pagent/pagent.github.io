@@ -5,18 +5,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Arch LinuxのフォントレンダリングをInfinalityにした | Pagent</title>
+  <title>ブロックされていないのにリツイート出来ない | Pagent</title>
   <meta name="author" content="Pagent">
   
-  <meta name="description" content="Arch Linuxでのフォントが汚く見づらかったので、フォントレンダリング「Infinality」（Infinality - ArchWiki）をインストールした。  
-途中、
-Unable to update the static FcBlanks: 0x0600
-Unable to updat">
+  <meta name="description" content="ツイッターで、あるツイートをリツイートしようとしたところ、上部に  
+Your account may not be allowed to perform this action. Please refresh the page and try again.と表示されリツイートが出来ない。同様に「い">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Arch LinuxのフォントレンダリングをInfinalityにした"/>
+  <meta property="og:title" content="ブロックされていないのにリツイート出来ない"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -145,7 +143,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> Arch LinuxのフォントレンダリングをInfinalityにした</h1>
+			<h1> ブロックされていないのにリツイート出来ない</h1>
 		</div>
 	
 
@@ -161,16 +159,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>Arch Linuxでのフォントが汚く見づらかったので、フォントレンダリング「Infinality」（<a href="https://archlinuxjp.kusakata.com/wiki/Infinality" target="_blank" rel="external">Infinality - ArchWiki</a>）をインストールした。  </p>
-<p>途中、</p>
-<pre><code>Unable <span class="keyword">to</span> <span class="keyword">update</span> the static FcBlank<span class="variable">s:</span> <span class="number">0</span>x0600
-Unable <span class="keyword">to</span> <span class="keyword">update</span> the static FcBlank<span class="variable">s:</span> <span class="number">0</span>x0601
-Unable <span class="keyword">to</span> <span class="keyword">update</span> the static FcBlank<span class="variable">s:</span> <span class="number">0</span>x0602
-…
-</code></pre><p>というエラーが出たが、下記トピックを参考に、<code>sudo pacman -S fontconfig-infinality-ultimate</code>の際、fontconfig-iu-compを削除した。<br><a href="https://bbs.archlinux.org/viewtopic.php?id=195198" target="_blank" rel="external">[SOLVED] Font cache: Unable to update the static FcBlanks / Newbie Corner / Arch Linux Forums</a>  </p>
-<p>首尾よくフォントが綺麗になったのだが、その後一部の漢字フォントが縦に細く潰れたようになってしまった。<br>（もしかすると、気づいたのが最近だっただけで、以前から潰れたフォントがあったのかもしれない。）</p>
-<p>フォントレンダリングをUbuntuのものに変えようかとも思ったが、ArchWikiに記載のあったibfonts-meta-extendedをインストールしたら治った。<br>IPA Pゴシックなどでは、依然、一部漢字フォントが潰れているが。  </p>
-<p>どうしても具合が悪いようだったら、Ubuntuのフォントレンダリングに変更してみようと思う。</p>
+	    <p>ツイッターで、あるツイートをリツイートしようとしたところ、上部に  </p>
+<p><div class="box">Your account may not be allowed to perform this action. Please refresh the page and try again.</div>と表示されリツイートが出来ない。同様に「いいね」も出来ない。<br>その人のプロフィールページに行くとツイートが表示されており、ブロックされている訳でも無さそう。  </p>
+<p>ブロックされていないのにリツイート出来ないとはどういうことかと、怪訝に思ったが、少し前に、リファラを制御するFirfoxのアドオンRefControlで、規定値を変更したことを思い出した。<br>それまで<code>&lt;阻止&gt;(第三者)</code>（別ドメインへ飛ぶ時のみリファラを阻止）にしていたのを<code>&lt;阻止&gt;</code>（基本的に全てのリファラを阻止）に変更していた。<br>規定値を<code>&lt;阻止&gt;(第三者)</code>に戻したところ、ちゃんとリツイート出来た。  </p>
+<p>RefControlの設定はやはり推奨通り<code>&lt;阻止&gt;(第三者)</code>にした方が良いようだ。<br>ブロックされていないのにリツイート出来ない場合は、リファラを送るようになっているかどうか、確認することをお勧めする。</p>
 
 	</div>
 
@@ -178,11 +170,11 @@ Unable <span class="keyword">to</span> <span class="keyword">update</span> the s
 	<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/01/infinality/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2016/04/29/unable-to-retweet/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/01/infinality/" class="hatena-bookmark-button" data-hatena-bookmark-title="Arch LinuxのフォントレンダリングをInfinalityにした" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2016/04/29/unable-to-retweet/" class="hatena-bookmark-button" data-hatena-bookmark-title="ブロックされていないのにリツイート出来ない" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 
 <div class="clear"></div>
@@ -194,13 +186,13 @@ Unable <span class="keyword">to</span> <span class="keyword">update</span> the s
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2015/04/01/xfce4-appearance-settings-crash/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2015/04/01/nemo-fileroller/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2016/04/27/add-to-search-bar/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -234,7 +226,7 @@ Unable <span class="keyword">to</span> <span class="keyword">update</span> the s
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2015年4月1日
+	2016年4月29日
 	</div>
 	
 
@@ -248,7 +240,7 @@ Unable <span class="keyword">to</span> <span class="keyword">update</span> the s
     <ul id="tags" class="tag_box list-unstyled collapse in">
 	    <!-- _partial/post/tag -->
   
-  <li><a href="/tags/Linux/">Linux</a></li>
+  <li><a href="/tags/ネット/">ネット</a></li>
 
     </ul>
 	</div>
