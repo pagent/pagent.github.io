@@ -8,8 +8,8 @@
   <title>静的サイトでping送信 | Pagent</title>
   <meta name="author" content="Pagent">
   
-  <meta name="description" content="ブログを更新した時には更新を通知するために種々のサーバーにpingを送信します。
-各種ブログサービスやWordPress、MovableTypeなどのブログツールでも、たいてい記事投稿時にpingを送信するオプションがありますが、Octopressなどの静的サイトジェネレーターではpingを送信する">
+  <meta name="description" content="ブログを更新した時には、更新を通知するために種々のサーバーにpingを送信したりします。
+各種ブログサービスやWordPress、MovableTypeなどのブログツールでも、たいてい記事投稿時にpingを送信するオプションがありますが、Octopressなどの静的サイトジェネレーターではpingを">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -159,10 +159,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>ブログを更新した時には更新を通知するために種々のサーバーにpingを送信します。</p>
+	    <p>ブログを更新した時には、更新を通知するために種々のサーバーにpingを送信したりします。</p>
 <p>各種ブログサービスやWordPress、MovableTypeなどのブログツールでも、たいてい記事投稿時にpingを送信するオプションがありますが、Octopressなどの静的サイトジェネレーターではpingを送信するような機能は通常備わっていないようです。<br>Windowsだと「ぶろっぐぴんぴん」のようなフリーソフトもありますが、Linuxではそういうソフトを知りません。</p>
 <p>ですが、有難いことにpingを送信するためのRubyスクリプトを公開してくださっているサイトがあります。<br><a href="http://www.mk-mode.com/octopress/2012/12/24/ruby-xml-rpc-send-update-ping/" target="_blank" rel="external">Ruby – XML-RPC でサイト更新 Ping 送信！ – mk-mode BLOG</a></p>
-<p>任意の場所にサイトの記述通り<code>send_update_ping.rb</code>を作り、そこで</p>
+<p>任意の場所にサイトの記述通り<code>send_update_ping.rb</code>を作り、そこで端末を開き</p>
 <pre><code>$ <span class="keyword">ruby</span> send_update_ping.rb
 </code></pre><p>とコマンドを打つと、しっかりpingを送れます。</p>
 <p>同サイトの「問題点」でも言及されていますが、XML-RPCを使ってcontent-typeがtext/xml以外の場合エラーになることがあるようです。<br>ランキングサイトのブログ村へのpingもいつも</p>
