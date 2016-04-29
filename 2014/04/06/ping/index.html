@@ -165,11 +165,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <p>任意の場所にサイトの記述通り<code>send_update_ping.rb</code>を作り、そこで端末を開き</p>
 <pre><code>$ <span class="keyword">ruby</span> send_update_ping.rb
 </code></pre><p>とコマンドを打つと、しっかりpingを送れます。</p>
-<p>同サイトの「問題点」でも言及されていますが、XML-RPCを使ってcontent-typeがtext/xml以外の場合エラーになることがあるようです。<br>ランキングサイトのブログ村へのpingもいつも</p>
+<p>同サイトの「問題点」でも言及されていますが、XML-RPCを使ってcontent-typeがtext/xml以外の場合エラーになることがあるようです。<br>ランキングサイトのブログ村（<code>http://ping.blogmura.com/xmlrpc/...</code>）へのpingもいつも</p>
 <pre><code>RuntimeError - Wrong content-<span class="class"><span class="keyword">type</span> </span>(received <span class="string">'text/html'</span> but expected <span class="string">'text/xml'</span>): 
-</code></pre><p>とエラーが出てしまいます。<br>（ブログ村へのping送信はエラーになるのに<code>http://blog.goo.ne.jp/XMLRPC</code>への送信でエラーが出ないのは<code>XMLRPC</code>が大文字だから？）</p>
-<p>ですがブログ村のマイページを確認するとスクリプト実行直後に反映されているので、pingはちゃんと送れているようです。</p>
-<p>とても有難く使わせて頂いています。</p>
+</code></pre><p>とエラーの表示が出てしまいます。<br>ですがブログ村のマイページで確認すると、スクリプト実行直後に更新が反映されているので、pingはちゃんと送れているようです。  </p>
+<p>とても有難く使わせて頂いています。  </p>
 <p>ーー<br>（関連記事）<br><a href="/2014/04/17/ping/">ping送信をメニューリストに追加</a></p>
 
 	</div>
