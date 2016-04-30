@@ -162,7 +162,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	    <p>ツイッターで、あるツイートをリツイートしようとしたところ、上部に  </p>
 <p><div class="box">Your account may not be allowed to perform this action. Please refresh the page and try again.</div>と表示されリツイートが出来ない。同様に「いいね」も出来ない。<br>その人のプロフィールページに行くとツイートが表示されており、ブロックされている訳でも無さそう。  </p>
 <p>ブロックされていないのにリツイート出来ないとはどういうことかと、怪訝に思ったが、少し前に、リファラを制御するFirfoxのアドオンRefControlで、規定値を変更したことを思い出した。<br>それまで<code>&lt;阻止&gt;(第三者)</code>（別ドメインへ飛ぶ時のみリファラを阻止）にしていたのを<code>&lt;阻止&gt;</code>（基本的に全てのリファラを阻止）に変更していた。<br>規定値を<code>&lt;阻止&gt;(第三者)</code>に戻したところ、ちゃんとリツイート出来た。  </p>
-<p>RefControlの設定はやはり推奨通り<code>&lt;阻止&gt;(第三者)</code>にした方が良いようだ。<br>ブロックされていないのにリツイート出来ない場合は、リファラを送るようになっているかどうか、確認することをお勧めする。</p>
+<p>RefControlの設定はやはり推奨通り<code>&lt;阻止&gt;(第三者)</code>にした方が良いようだ。<br>ブロックされていないのにリツイート出来ない場合は、リファラに関するアドオンを導入していないか、設定がどうかも確認することをお勧めする。</p>
 
 	</div>
 
