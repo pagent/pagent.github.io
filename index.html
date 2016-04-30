@@ -159,6 +159,65 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2016/04/30/infinality-bundle-fonts-conflicts/" >infinality-bundle-fontsが衝突してアップデート出来ない</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2016年4月30日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Arch Linuxでのフォントレンダリングにinfinalityを使っている。<br>フォントが見やすくなり助かっているが、昨年からpacmanでアップデートする際、infinality-bundle-fontsの依存関係のエラーでアップデート出来なくなっていた。  </p>
+<figure class="highlight shell-session"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">$ sudo pacman -Syu</div><div class="line">:: パッケージデータベースの同期中<span class="keyword">...</span></div><div class="line"> core は最新です</div><div class="line"> extra                   <span class="number">1793.6</span> KiB   629K/s <span class="number">00</span>:<span class="number">03</span> [<span class="comment">######################] 100%</span></div><div class="line"> community                  <span class="number">3.4</span> MiB   631K/s <span class="number">00</span>:<span class="number">06</span> [<span class="comment">######################] 100%</span></div><div class="line"> multilib                 <span class="number">161.3</span> KiB   628K/s <span class="number">00</span>:<span class="number">00</span> [<span class="comment">######################] 100%</span></div><div class="line"> archlinuxfr は最新です</div><div class="line"> infinality-bundle は最新です</div><div class="line"> infinality-bundle-multilib は最新です</div><div class="line"> infinality-bundle-fonts は最新です</div><div class="line">:: システム全体の更新を開始<span class="keyword">...</span></div><div class="line">:: ttf-noto-sans-ib を infinality-bundle-fonts/ttf-noto-fonts-ib に置き換えますか？ [Y/n] </div><div class="line">:: ttf-noto-sans-multilang-ib を infinality-bundle-fonts/ttf-noto-fonts-nonlatin-ib に置き換えますか？ [Y/n] </div><div class="line">:: ttf-noto-serif-ib を infinality-bundle-fonts/ttf-noto-fonts-ib に置き換えますか？ [Y/n] </div><div class="line">依存関係を解決しています<span class="keyword">...</span></div><div class="line">衝突するパッケージがないか確認しています<span class="keyword">...</span></div><div class="line">エラー: 処理の準備に失敗しました (依存関係を解決できませんでした)</div><div class="line">:: ttf-noto-serif-multilang-ib: ttf-noto-serif-ib を削除すると <span class="string">'ttf-noto-serif-ib'</span> の依存関係が壊れます</div></pre></td></tr></table></figure>
+
+<p>仕方なく/etc/pacman.confでinfinality-bundle-fontsのリポジトリをコメントアウトしていたが、ibfonts-meta-extendedとttf-noto-serif-multilang-ibをいったん削除し、ibfonts-meta-extendedを再度インストールすることで解決した。  </p>
+<pre><code>$ <span class="built_in">sudo</span> pacman -R ibfonts-meta-extended ttf-noto-serif-multilang-ib
+$ <span class="built_in">sudo</span> pacman -Syu ibfonts-meta-extended
+</code></pre><p>（参照記事）<br><a href="https://bbs.archlinux.org/viewtopic.php?id=204450" target="_blank" rel="external">[SOLVED] Upgrade fails becuase if the Infinality ibfonts / Newbie Corner / Arch Linux Forums</a></p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2016/04/30/infinality-bundle-fonts-conflicts/" data-text="infinality-bundle-fontsが衝突してアップデート出来ない | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2016/04/30/infinality-bundle-fonts-conflicts/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2016/04/30/infinality-bundle-fonts-conflicts/" class="hatena-bookmark-button" data-hatena-bookmark-title="infinality-bundle-fontsが衝突してアップデート出来ない" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2016/04/29/unable-to-retweet/" >ブロックされていないのにリツイート出来ない</a>
 		</h3>
 	
@@ -695,65 +754,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2016/04/16/stop-job-running/" >シャットダウン時&quot;A stop job is running for Session ...&quot;が表示される</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2016年4月16日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Arch LinuxでPCのシャットダウンや再起動時に、しばしば  </p>
-<p><div class="box">A stop job is running for Session c3 of user …</div>と表示されて、1分30秒待たさせる。<br>どうやらsystemdに関連したバグのよう。  </p>
-<p>根本的に解決する方法は分からなかったが、/etc/systemd/system.confを編集して、待たされる時間を90秒から10秒に変更した。  </p>
-<pre><code><span class="comment">#DefaultTimeoutStopSec=90s</span>
-↓変更
-<span class="variable">DefaultTimeoutStopSec=</span><span class="number">10</span>s
-</code></pre><p>ーー<br>（参照記事）<br><a href="https://bugs.launchpad.net/ubuntu/+source/systemd/+bug/1457400" target="_blank" rel="external">Bug #1457400 “reduce 90s session kill timeout if the session doe…” : Bugs : systemd package : Ubuntu</a></p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2016/04/16/stop-job-running/" data-text="シャットダウン時&quot;A stop job is running for Session ...&quot;が表示される | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2016/04/16/stop-job-running/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2016/04/16/stop-job-running/" class="hatena-bookmark-button" data-hatena-bookmark-title="シャットダウン時&quot;A stop job is running for Session ...&quot;が表示される" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Linux/">Linux</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -794,45 +794,45 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>94</span></a></li>
+		
+			<li><a href="/tags/セキュリティ/">セキュリティ<span>6</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
+		
+			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>19</span></a></li>
+		
+			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
+		
+			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>39</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+		
 			<li><a href="/tags/時事/">時事<span>1</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
-		
 			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
-		
-			<li><a href="/tags/セキュリティ/">セキュリティ<span>6</span></a></li>
-		
-			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
-		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>39</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>39</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
-		
-			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>19</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>31</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>93</span></a></li>
-		
-			<li><a href="/tags/ハードウェア/">ハードウェア<span>1</span></a></li>
+			<li><a href="/tags/食/">食<span>4</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>22</span></a></li>
@@ -847,6 +847,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2016/04/30/infinality-bundle-fonts-conflicts/" ><i class="fa fa-file-o"></i>infinality-bundle-fontsが衝突し...</a>
+      </li>
     
       <li>
         <a href="/2016/04/29/unable-to-retweet/" ><i class="fa fa-file-o"></i>ブロックされていないのにリツイート出来ない</a>
@@ -864,10 +868,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
         <a href="/2016/04/23/linux-malware-billgates/" ><i class="fa fa-file-o"></i>Linuxを標的とするマルウェア「ビルゲイツ」</a>
       </li>
     
-      <li>
-        <a href="/2016/04/22/xubuntu-16-04-released/" ><i class="fa fa-file-o"></i>Xubuntu 16.04 LTSが正式にリリース</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -877,7 +877,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
 		</ul>
 	</div>
 

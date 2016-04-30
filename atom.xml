@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-04-30T05:43:40.678Z</updated>
+  <updated>2016-04-30T07:58:28.076Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,28 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[infinality-bundle-fontsが衝突してアップデート出来ない]]></title>
+    <link href="http://pagent.github.io/2016/04/30/infinality-bundle-fonts-conflicts/"/>
+    <id>http://pagent.github.io/2016/04/30/infinality-bundle-fonts-conflicts/</id>
+    <published>2016-04-30T07:27:32.000Z</published>
+    <updated>2016-04-30T07:54:50.125Z</updated>
+    <content type="html"><![CDATA[<p>Arch Linuxでのフォントレンダリングにinfinalityを使っている。<br>フォントが見やすくなり助かっているが、昨年からpacmanでアップデートする際、infinality-bundle-fontsの依存関係のエラーでアップデート出来なくなっていた。  </p>
+<figure class="highlight shell-session"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">$ sudo pacman -Syu</div><div class="line">:: パッケージデータベースの同期中<span class="keyword">...</span></div><div class="line"> core は最新です</div><div class="line"> extra                   <span class="number">1793.6</span> KiB   629K/s <span class="number">00</span>:<span class="number">03</span> [<span class="comment">######################] 100%</span></div><div class="line"> community                  <span class="number">3.4</span> MiB   631K/s <span class="number">00</span>:<span class="number">06</span> [<span class="comment">######################] 100%</span></div><div class="line"> multilib                 <span class="number">161.3</span> KiB   628K/s <span class="number">00</span>:<span class="number">00</span> [<span class="comment">######################] 100%</span></div><div class="line"> archlinuxfr は最新です</div><div class="line"> infinality-bundle は最新です</div><div class="line"> infinality-bundle-multilib は最新です</div><div class="line"> infinality-bundle-fonts は最新です</div><div class="line">:: システム全体の更新を開始<span class="keyword">...</span></div><div class="line">:: ttf-noto-sans-ib を infinality-bundle-fonts/ttf-noto-fonts-ib に置き換えますか？ [Y/n] </div><div class="line">:: ttf-noto-sans-multilang-ib を infinality-bundle-fonts/ttf-noto-fonts-nonlatin-ib に置き換えますか？ [Y/n] </div><div class="line">:: ttf-noto-serif-ib を infinality-bundle-fonts/ttf-noto-fonts-ib に置き換えますか？ [Y/n] </div><div class="line">依存関係を解決しています<span class="keyword">...</span></div><div class="line">衝突するパッケージがないか確認しています<span class="keyword">...</span></div><div class="line">エラー: 処理の準備に失敗しました (依存関係を解決できませんでした)</div><div class="line">:: ttf-noto-serif-multilang-ib: ttf-noto-serif-ib を削除すると <span class="string">'ttf-noto-serif-ib'</span> の依存関係が壊れます</div></pre></td></tr></table></figure>
+
+<p>仕方なく/etc/pacman.confでinfinality-bundle-fontsのリポジトリをコメントアウトしていたが、ibfonts-meta-extendedとttf-noto-serif-multilang-ibをいったん削除し、ibfonts-meta-extendedを再度インストールすることで解決した。  </p>
+<pre><code>$ <span class="built_in">sudo</span> pacman -R ibfonts-meta-extended ttf-noto-serif-multilang-ib
+$ <span class="built_in">sudo</span> pacman -Syu ibfonts-meta-extended
+</code></pre><p>（参照記事）<br><a href="https://bbs.archlinux.org/viewtopic.php?id=204450" target="_blank" rel="external">[SOLVED] Upgrade fails becuase if the Infinality ibfonts / Newbie Corner / Arch Linux Forums</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Arch Linuxでのフォントレンダリングにinfinalityを使っている。<br>フォントが見やすくなり助かっているが、昨年からpacmanでアップデートする際、infinality-bundle-fontsの依存関係のエラーでアップデート出来なくなっていた。  </]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[ブロックされていないのにリツイート出来ない]]></title>
@@ -602,35 +624,6 @@ Loading site… done
     </summary>
     
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[000webhostでrobots.txtを置いたらエラーに]]></title>
-    <link href="http://pagent.github.io/2016/03/10/000webhost-robot-txt-error/"/>
-    <id>http://pagent.github.io/2016/03/10/000webhost-robot-txt-error/</id>
-    <published>2016-03-09T20:33:58.000Z</published>
-    <updated>2016-03-11T06:24:12.000Z</updated>
-    <content type="html"><![CDATA[<p>無料レンタルサーバー000webhostにrobots.txtを置いたが不具合が発生。  </p>
-<p>ブラウザでrobots.txtにアクセスすると改行無しに一列に表示されている。<br>ウェブマスターツール（現Search Console）のrobots.txt テスターで確認すると  </p>
-<pre><code><span class="comment">&lt;!-- Hosting24 Analytics Code --&gt;</span>
-<span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"http://stats.hosting24.com/count.php"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-<span class="comment">&lt;!-- End Of Analytics Code --&gt;</span>
-</code></pre><p>という3行が追加されており、「構文が認識できませんでした」となっている。<br>000webhostが自動的に追加する解析コードで、以前停止したはずなんだが。  </p>
-<p>もう一度<code>http://members.000webhost.com/analytics.php</code>から”Disable Code”してみたが変化無し。<br>robots.txtを編集し直したり、再度アップロードしても改善しない。  </p>
-<p>検索すると000webhostのフォーラムに同じ不具合の報告があった。<br><a href="http://www.000webhost.com/forum/web-design-html/13331-robots-txt-analytics-code.html" title="Robots.txt and Analytics Code - Free Web Hosting Forum" target="_blank" rel="external">Robots.txt and Analytics Code - Free Web Hosting Forum</a>  </p>
-<p>ここの回答を参考に.htaccessに下記を追記  </p>
-<pre><code>AddType <span class="keyword">text</span>/plain .txt
-</code></pre><p>ブラウザでの表示が正常になった。<br>ウェブマスターツールの方もrobots.txt テスターで再度「送信」→「更新をリクエスト」すると改善していた。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>無料レンタルサーバー000webhostにrobots.txtを置いたが不具合が発生。  </p>
-<p>ブラウザでrobots.txtにアクセスすると改行無しに一列に表示されている。<br>ウェブマスターツール（現Search Console）のrobots.txt テス]]>
-    </summary>
-    
-      <category term="SEO" scheme="http://pagent.github.io/tags/SEO/"/>
-    
-      <category term="サーバー" scheme="http://pagent.github.io/tags/%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC/"/>
     
   </entry>
   
