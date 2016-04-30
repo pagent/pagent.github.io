@@ -159,6 +159,80 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/12/02/hexo-tweetbutton/" >Hexoの記事一覧ページにツイートボタン設置</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年12月2日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>HexoのテーマをFreewill変えて、Disqusウィジェット内の「Share」にはTwitterのツイートボタンはあるが、それだと<code>http://disq.us/…</code>というDisqus経由の短縮URLになる様子。<br>普通のツイートボタンを設置したかったので、<a href="https://about.twitter.com/ja/resources/buttons" target="_blank" rel="external">Twitter公式のツイートボタン</a>を入れることにした。  </p>
+<p>個別の記事への設置は、Twitterサイトで「ページのURLを使う」の設定で作成したコードを/layout/_partial/article.ejsの<code>&lt;%- item.content %&gt;</code>の下あたりに追記したら問題なく表示された。 　</p>
+<p>だがページネーションの方はlayout/_partial/post/entry.ejsにコードを挿入しても、タイトル名と一覧ページのURLしか取得出来ない。  </p>
+<p>URLとツイート本文を自分でカスタマイズする設定でコードを作成し、excerptリンクに倣って、それぞれ<code>&lt;%- config.root %&gt;&lt;%= item.path %&gt;</code>、<code>&lt;%= item.title %&gt;</code>で挿入したが、これだと記事タイトルのみでURLが表示されない。<br><code>&lt;%- config.root %&gt;</code>でブログトップのURLを取得出来ないようだ。<br>「Read More」（続きを読む）の部分では、ちゃんと変換されているんだが。  </p>
+<p><del>ブログトップのURLをパスではなく直接記載したら上手くいった。</del>  </p>
+<p>ーーーー<br>（<strong>追記</strong>）<br>個別記事URLへのパスは<code>&lt;%- item.permalink %&gt;</code>一つで良いようだ。<br>ーーーー  </p>
+<p>記事を概要表示にしている時は「Read More」。全文表示にしている時はツイートボタンを表示することにして、read_moreの箇所を下記に変更した。  </p>
+<pre><code><span class="vbscript">&lt;% <span class="keyword">if</span> (item.excerpt &amp;&amp; index) { %&gt;</span>
+  <span class="tag">&lt;<span class="title">a</span> <span class="attribute">type</span>=<span class="value">"button"</span> <span class="attribute">href</span>=<span class="value">"&lt;%- config.root %&gt;&lt;%- item.path %&gt;#more"</span> <span class="attribute">class</span>=<span class="value">"btn btn-default more"</span>&gt;</span><span class="vbscript">&lt;%= __(<span class="comment">'read_more') %&gt;</span></span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+<span class="vbscript">&lt;% } <span class="keyword">else</span> { %&gt;</span>
+<span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"tweet-button"</span>&gt;</span>
+  <span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"https://twitter.com/share"</span> <span class="attribute">class</span>=<span class="value">"twitter-share-button"</span> <span class="attribute">data-url</span>=<span class="value">"&lt;%- item.permalink %&gt;"</span> <span class="attribute">data-text</span>=<span class="value">"&lt;%= item.title %&gt; | &lt;%= config.title %&gt;"</span> <span class="attribute">data-lang</span>=<span class="value">"ja"</span>&gt;</span>ツイート<span class="tag">&lt;/<span class="title">a</span>&gt;</span>
+<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript">!<span class="function"><span class="keyword">function</span><span class="params">(d,s,id)</span></span>{<span class="keyword">var</span> js,fjs=d.getElementsByTagName(s)[<span class="number">0</span>],p=<span class="regexp">/^http:/</span>.test(d.location)?<span class="string">'http'</span>:<span class="string">'https'</span>;<span class="keyword">if</span>(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+<span class="string">'://platform.twitter.com/widgets.js'</span>;fjs.parentNode.insertBefore(js,fjs);}}(<span class="built_in">document</span>, <span class="string">'script'</span>, <span class="string">'twitter-wjs'</span>);</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="vbscript">&lt;% } %&gt;</span>
+</code></pre><p>ツイートボタンに対しては、source/css/style.cssに下記を追記、  </p>
+<pre><code><span class="class">.tweet-button</span> <span class="rules">{
+  <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">8px</span> <span class="number">0</span></span></span>;
+<span class="rule">}</span></span>
+</code></pre><p>位置を調整した。  </p>
+<p>（参照記事）<br><a href="http://imaizu.me/program/twbtn-on-jekyll-post.html" target="_blank" rel="external">jekyllのブログで投稿一覧ページにtwitterのボタンを置く - Taught by Myself</a>  </p>
+<p>ーー<br>（関連記事）<br><a href="http://pagent.github.io/2015/05/19/hexo-hatena-button/" target="_blank" rel="external">Hexoブログに「はてなブックマーク」ボタンを設置</a></p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/02/hexo-tweetbutton/" data-text="Hexoの記事一覧ページにツイートボタン設置 | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/12/02/hexo-tweetbutton/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/12/02/hexo-tweetbutton/" class="hatena-bookmark-button" data-hatena-bookmark-title="Hexoの記事一覧ページにツイートボタン設置" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Hexo/">Hexo</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/12/01/git-add-directory/" >Gitリポジトリにディレクトリを追加</a>
 		</h3>
 	
@@ -808,125 +882,6 @@ metalsmith(__dirname)
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/26/hexo-bitbucket/" >HexoのソースをBitbucketに置く</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月26日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Hexoの作業フォルダはWindows領域のDropboxフォルダに置き、他のPCとも同期をとっている。<br>これでソースを消失してしまう危険はかなり低いと思うが、Dropboxと同期する際、結構時間がかかってしまう。<br>普段はDropboxを起動しておらず時々立ち上げる、という形をとっているせいもあるかもしれない。  </p>
-<p>Bitbucketにソースを置いたらpushするのはそれほど時間は掛からないだろうし、過去の履歴も残ってくれてやはり便利だろうと思い、HexoのソースをBitbucketに置くことにした。  </p>
-<p>OctopressのソースをBitbucketに置いた時と同様、Bitbucketにhexoという名前のリポジトリを作り、  </p>
-<pre><code>$ git remote <span class="built_in">add</span> bitbucket git@bitbucket.<span class="built_in">or</span><span class="variable">g:</span>ユーザー名/hexo.git
-$ git push -<span class="keyword">u</span> bitbucket <span class="keyword">source</span>
-</code></pre><p>とやったが、エラーになる。  </p>
-<p>新規リポジトリを作成後に表示されたRepository setupの指示に倣い、  </p>
-<pre><code><span class="variable">$ </span>git init
-<span class="variable">$ </span>git remote add bitbucket git<span class="variable">@bitbucket</span>.<span class="symbol">org:</span>ユーザー名/hexo.git
-<span class="variable">$ </span>echo <span class="string">"ユーザー名"</span> &gt;&gt; contributors.txt
-<span class="variable">$ </span>git add contributors.txt
-<span class="variable">$ </span>git commit -m <span class="string">'Initial commit with contributors'</span>
-<span class="variable">$ </span>git push -u bitbucket source
-</code></pre><p>としても、やはり  </p>
-<pre><code><span class="keyword">error</span>: src refspec source <span class="keyword">does</span> <span class="keyword">not</span> match any.
-<span class="keyword">error</span>: failed <span class="keyword">to</span> push <span class="keyword">some</span> refs <span class="keyword">to</span> 'git@bitbucket.org:ユーザー名/hexo.git'
-</code></pre><p>とエラーになる。  </p>
-<p>pushするbranchをsourceではなく、masterにしてみた。  </p>
-<pre><code>$ git push -<span class="keyword">u</span> bitbucket master
-Counting object<span class="variable">s:</span> <span class="number">3</span>, done.
-Writing object<span class="variable">s:</span> <span class="number">100</span>% (<span class="number">3</span>/<span class="number">3</span>), <span class="number">239</span> bytes | <span class="number">0</span> bytes/<span class="keyword">s</span>, done.
-Total <span class="number">3</span> (delta <span class="number">0</span>), reused <span class="number">0</span> (delta <span class="number">0</span>)
-To git@bitbucket.<span class="built_in">or</span><span class="variable">g:</span>ユーザー名/hexo.git
- * [<span class="keyword">new</span> branch]      master -&gt; master
-Branch master <span class="keyword">set</span> <span class="keyword">up</span> <span class="keyword">to</span> track remote branch master from bitbucket.
-</code></pre><p>上手く行ったようだ。  </p>
-<p>だが、その後も  </p>
-<pre><code>$ git add .
-warning: You ran 'git add' with neither '-A (<span class="comment">--all)' or '--ignore-removal',</span>
-whose behaviour will <span class="operator"><span class="keyword">change</span> <span class="keyword">in</span> Git <span class="number">2.0</span> <span class="keyword">with</span> respect <span class="keyword">to</span> paths you removed.
-Paths <span class="keyword">like</span> <span class="string">'contributors.txt'</span> that <span class="keyword">are</span>
-removed <span class="keyword">from</span> your working tree <span class="keyword">are</span> ignored <span class="keyword">with</span> this <span class="keyword">version</span> <span class="keyword">of</span> Git.
-
-* <span class="string">'git add --ignore-removal &lt;pathspec&gt;'</span>, which <span class="keyword">is</span> the <span class="keyword">current</span> <span class="keyword">default</span>,
-  ignores paths you removed <span class="keyword">from</span> your working tree.
-
-* <span class="string">'git add --all &lt;pathspec&gt;'</span> will let you also record the removals.
-
-Run <span class="string">'git status'</span> <span class="keyword">to</span> <span class="keyword">check</span> the paths you removed <span class="keyword">from</span> your working tree.</span>
-</code></pre><p>と言われたり、  </p>
-<pre><code>$ git push
-warning: push.<span class="keyword">default</span> <span class="keyword">is</span> unset; its implicit value <span class="keyword">is</span> changing <span class="keyword">in</span>
-Git <span class="number">2.0</span> from <span class="attribute">'matching</span>' <span class="keyword">to</span> <span class="attribute">'simple</span>'. <span class="keyword">To</span> squelch this message
-<span class="keyword">and</span> maintain the current behavior <span class="keyword">after</span> the <span class="keyword">default</span> changes, <span class="keyword">use</span>:
-
-  git config <span class="comment">--global push.default matching</span>
-
-<span class="keyword">To</span> squelch this message <span class="keyword">and</span> adopt the <span class="keyword">new</span> behavior now, <span class="keyword">use</span>:
-
-  git config <span class="comment">--global push.default simple</span>
-
-<span class="keyword">When</span> push.<span class="keyword">default</span> <span class="keyword">is</span> set <span class="keyword">to</span> <span class="attribute">'matching</span>', git will push local branches
-<span class="keyword">to</span> the remote branches that already exist <span class="keyword">with</span> the same name.
-
-<span class="keyword">In</span> Git <span class="number">2.0</span>, Git will <span class="keyword">default</span> <span class="keyword">to</span> the more conservative <span class="attribute">'simple</span>'
-behavior, which only pushes the current branch <span class="keyword">to</span> the corresponding
-remote branch that <span class="attribute">'git</span> pull' uses <span class="keyword">to</span> update the current branch.
-
-See <span class="attribute">'git</span> help config' <span class="keyword">and</span> search <span class="keyword">for</span> <span class="attribute">'push</span>.<span class="keyword">default</span>' <span class="keyword">for</span> further information.
-(the <span class="attribute">'simple</span>' mode was introduced <span class="keyword">in</span> Git <span class="number">1.7</span><span class="number">.11</span>. <span class="keyword">Use</span> the similar mode
-<span class="attribute">'current</span>' instead <span class="keyword">of</span> <span class="attribute">'simple</span>' <span class="keyword">if</span> you sometimes <span class="keyword">use</span> older versions <span class="keyword">of</span> Git)
-</code></pre><p>と言われたり。  </p>
-<p><code>git add .</code>は使われなくなったので<code>git add -A</code>にしないといけないということか？<br><code>git add .</code>でもすんなり通る時もあるのは、状況の違いからだろうか。<br>（追記：そう言えば、Initial commitの時に作成されたcontributors.txtという中身が自分のユーザー名だけのファイルを、リポジトリとHexoの作業フォルダ両方から手動で削除したんだった。<br>これのせいだったのかもしれない。）</p>
-<p>push.defaultもmatchingにした。  </p>
-<pre><code>  $ git config --<span class="keyword">global</span> push.<span class="keyword">default</span> <span class="keyword">matching</span>
-</code></pre><p>これでようやくpush出来るようになった。  </p>
-<p>gitの仕組みがいまいちよく分からない。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/26/hexo-bitbucket/" data-text="HexoのソースをBitbucketに置く | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/11/26/hexo-bitbucket/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/11/26/hexo-bitbucket/" class="hatena-bookmark-button" data-hatena-bookmark-title="HexoのソースをBitbucketに置く" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Hexo/">Hexo</a></li> <li><a href="/tags/Git/">Git</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -967,48 +922,48 @@ See <span class="attribute">'git</span> help config' <span class="keyword">and</
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
+			<li><a href="/tags/Linux/">Linux<span>94</span></a></li>
+		
 			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>19</span></a></li>
+			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
 		
-			<li><a href="/tags/時事/">時事<span>1</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 			<li><a href="/tags/blog/">blog<span>39</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
-		
 			<li><a href="/tags/食/">食<span>4</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>94</span></a></li>
+			<li><a href="/tags/セキュリティ/">セキュリティ<span>2</span></a></li>
 		
-			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>39</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/ハードウェア/">ハードウェア<span>1</span></a></li>
 		
-			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/プライバシー/">プライバシー<span>5</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
+			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>19</span></a></li>
 		
 			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
 		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
-		
 			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
 		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>32</span></a></li>
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>31</span></a></li>
+			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
 		
 		
-		   <li><a href="/tags">...<span>22</span></a></li>
+		   <li><a href="/tags">...<span>23</span></a></li>
 		
 		</ul>
 	</div>
@@ -1020,6 +975,10 @@ See <span class="attribute">'git</span> help config' <span class="keyword">and</
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2016/04/30/disconnect-search/" ><i class="fa fa-file-o"></i>FirefoxでDisconnect Searchをデ...</a>
+      </li>
     
       <li>
         <a href="/2016/04/30/infinality-bundle-fonts-conflicts/" ><i class="fa fa-file-o"></i>infinality-bundle-fontsが衝突し...</a>
@@ -1037,10 +996,6 @@ See <span class="attribute">'git</span> help config' <span class="keyword">and</
         <a href="/2016/04/24/dynabook-T552-keyboad-unresponsive/" ><i class="fa fa-file-o"></i>dynabook T552のキーボードが一部反応しなく...</a>
       </li>
     
-      <li>
-        <a href="/2016/04/23/linux-malware-billgates/" ><i class="fa fa-file-o"></i>Linuxを標的とするマルウェア「ビルゲイツ」</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -1050,7 +1005,7 @@ See <span class="attribute">'git</span> help config' <span class="keyword">and</
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
 		</ul>
 	</div>
 

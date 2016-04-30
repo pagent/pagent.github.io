@@ -159,6 +159,65 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/01/26/numlockx/" >Xubuntu14.04で常にNumlockオンで起動する</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年1月26日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>PC起動時にNumlockが有効になっていると、すぐにテンキーで数字を入力出来るので少しだけ助かる。<br>オフになっていてもNumlockキーを押せばいいだけではあるが。  </p>
+<p>Xubuntu14.04の設定マネージャーを見ていると「設定エディター」というのがあった。<br>マウスを合わせるとツールチップで「Xfconf のグラフィカル設定エディターです」と説明が出ているもの。<br>何の気無しにクリックしてみると、keyboadsのところが開いていてNumlockについての設定のようだった。<br>「値」の処にチェックは入っていない。  </p>
+<p>試しにチェックを入れてみたら良かったのだが、説明らしい説明が無かったので躊躇してしまい、「Numlock」+「Ubuntu」で検索してnumlockxをインストールした。<br>だがこれだけだと、Numlockがオフの状態でPCを終了して再起動すると、Numlockオフで起動してしまう。<br>Ubuntuソフトウェアセンターの説明には「本パッケージは、セッション開始時に numlock を有効化するセッションスクリプト を自動的にインストールします。」とあるのだが。  </p>
+<p>/etc/lightdm/lightdm.confに「greeter-setup-script=/usr/bin/numlockx on」を追記するよう解説しているサイトがあったのでやってみたが、これもうまく行かない。<br>さっきの「設定エディター」でチェックを入れても、オフ状態でPCを終了するとNumlockオフで起動する。  </p>
+<p>結局、「セッションと起動」の自動開始アプリケーションにコマンド<code>numlockx</code>の項目を追加することで、「常にNumlockオンで起動」させることが出来た。  </p>
+<p>ーー<br>（追記）<br>自動開始アプリケーションに追加するコマンドは<code>numlockx</code>だけでも大丈夫だったが、<code>/usr/bin/numlockx on</code>もしくは<code>/usr/bin/numlockx</code>とするのがLinuxの正統な作法のようだ。<br>（自動開始アプリケーションに追加されていた他の項目を見ると、どれも/usr/bin/…という記法になっている。）  </p>
+<p>「<code>numlockx</code>だけで実行出来る」＝「パスが通っている」ということらしいので、どちらでも良いのだろう。<br><a href="http://www.obenri.com/_operation/path_through.html" target="_blank" rel="external">◇”パスが通っている”とは？◇初心者のためのLinuxサーバー構築講座(CentOS 自宅サーバー対応)☆お便利サーバー.com☆</a></p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/26/numlockx/" data-text="Xubuntu14.04で常にNumlockオンで起動する | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/01/26/numlockx/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/01/26/numlockx/" class="hatena-bookmark-button" data-hatena-bookmark-title="Xubuntu14.04で常にNumlockオンで起動する" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/01/26/deploy-conflicted-copy-dropbox/" >Dropbpx上のHexoでdeploy時「競合コピ ー」のためエラーになる</a>
 		</h3>
 	
@@ -686,62 +745,6 @@ key<span class="variable">s:</span>■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ 
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/01/14/lubuntu-nm-applet/" >アップグレードしたLubuntuでネットワークインジケーターが表示されない</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年1月14日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>13.04から13.10→14.04.1にアップグレードしたLubuntuで、通知領域にネットワークインジケーターが表示されない。network-manager-gnomeはインストールされているようなのだが。  </p>
-<p>hidden SSID（ESS-IDステルス機能）で無線LANを接続する際、メインメニューの設定の項目にあるネットワーク接続（nm-connection-editor）からでは設定し辛く、ネットワークインジケーターの「非表示Wi-Fiネットワークに接続」の方が簡単ということもあり、インジケーターを表示させたい。  </p>
-<p>ネットワークインジケーターはアップグレードした際に消えてしまうことがあるようだ。<br><a href="http://qiita.com/cm3/items/72c51ff3b416f5981986" target="_blank" rel="external">Lubuntu で無線LANのインディケータをパネルに表示する方法 - Qiita</a>  </p>
-<p>参照記事の通り「LXSessionのデフォルトのアプリケーション」→「Aurostart」でManual autostarted applicationsにnm-appletを追加し再起動したら、ネットワークインジケーターが追加された。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/01/14/lubuntu-nm-applet/" data-text="アップグレードしたLubuntuでネットワークインジケーターが表示されない | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/01/14/lubuntu-nm-applet/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/01/14/lubuntu-nm-applet/" class="hatena-bookmark-button" data-hatena-bookmark-title="アップグレードしたLubuntuでネットワークインジケーターが表示されない" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Linux/">Linux</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -782,48 +785,48 @@ key<span class="variable">s:</span>■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ 
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
+			<li><a href="/tags/ハードウェア/">ハードウェア<span>1</span></a></li>
+		
 			<li><a href="/tags/Linux/">Linux<span>94</span></a></li>
 		
+			<li><a href="/tags/セキュリティ/">セキュリティ<span>2</span></a></li>
+		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/時事/">時事<span>1</span></a></li>
-		
-			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>31</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
-		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>39</span></a></li>
-		
-			<li><a href="/tags/セキュリティ/">セキュリティ<span>6</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
 		
 			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>19</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>13</span></a></li>
 		
-			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
+			<li><a href="/tags/時事/">時事<span>1</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
 		
 			<li><a href="/tags/ネット/">ネット<span>39</span></a></li>
 		
-			<li><a href="/tags/ハードウェア/">ハードウェア<span>1</span></a></li>
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/食/">食<span>4</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>39</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>32</span></a></li>
+		
+			<li><a href="/tags/プライバシー/">プライバシー<span>5</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
+			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
 		
 			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
 		
+			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
 		
-		   <li><a href="/tags">...<span>22</span></a></li>
+		
+		   <li><a href="/tags">...<span>23</span></a></li>
 		
 		</ul>
 	</div>
@@ -835,6 +838,10 @@ key<span class="variable">s:</span>■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ 
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2016/04/30/disconnect-search/" ><i class="fa fa-file-o"></i>FirefoxでDisconnect Searchをデ...</a>
+      </li>
     
       <li>
         <a href="/2016/04/30/infinality-bundle-fonts-conflicts/" ><i class="fa fa-file-o"></i>infinality-bundle-fontsが衝突し...</a>
@@ -852,10 +859,6 @@ key<span class="variable">s:</span>■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ 
         <a href="/2016/04/24/dynabook-T552-keyboad-unresponsive/" ><i class="fa fa-file-o"></i>dynabook T552のキーボードが一部反応しなく...</a>
       </li>
     
-      <li>
-        <a href="/2016/04/23/linux-malware-billgates/" ><i class="fa fa-file-o"></i>Linuxを標的とするマルウェア「ビルゲイツ」</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -865,7 +868,7 @@ key<span class="variable">s:</span>■ ■ ■ ■ ■ ■ ■ S■ ■ ■ ■ 
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
 		</ul>
 	</div>
 

@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-04-30T07:58:28.076Z</updated>
+  <updated>2016-04-30T11:06:12.021Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,33 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[FirefoxでDisconnect Searchをデフォルトの検索エンジンにする]]></title>
+    <link href="http://pagent.github.io/2016/04/30/disconnect-search/"/>
+    <id>http://pagent.github.io/2016/04/30/disconnect-search/</id>
+    <published>2016-04-30T09:35:06.000Z</published>
+    <updated>2016-04-30T10:59:41.326Z</updated>
+    <content type="html"><![CDATA[<p>Googleなどでの検索を代行してくれて、プライバシー情報を保存しない検索エンジン「Disconnect Search」。<br>以前にFirefox向けのアドオンを入れたことがあったが、Googleとの使い分けで使い勝手があまり良くなかった。<br>今回、任意のサイトでの検索エンジンをFirefoxに追加するアドオン「Add to Search Bar」を使ってDisconnect Searchの検索エンジンを追加してみた。  </p>
+<p>まずDisconnect Searchの検索ページ <a href="https://search.disconnect.me/" target="_blank" rel="external">https://search.disconnect.me/</a> に行き、右上の地域選択でJapanを選択。（United Statesのまま作業すると英語がデフォルトになってしまう。）  </p>
+<p><img src="/images/disconnect-search-site.png" alt="Disconnect Searchサイト" height="240"></p>
+<p>cookieに関する注意書きが表示される。  </p>
+<p><div class="box">Cookies: We use non-identifying first-party cookies to remember your search preferences (language, country &amp; provider).</div>個人を特定しないファーストパーティクッキー（他のサーバーに向けられたcookieではなく、disconnect.meのサーバー向けということ）とのことであり、プライバシー上も問題無いと思われるので、[Okay, I agree]をクリック。<br>（[More info &amp; settings]を見ると、このクッキーにより追跡することはせず、検索時の言語、国、設定を記憶するためにのみ使用されると書かれている。）  </p>
+<p>Disconnect Searchサイトの検索窓内で右クリックし、「サーチバーを追加」。Firefoxの検索エンジンに追加される。<br>（「Context Search」も入れてあるので、右クリックによる検索でも利用可能。）<br>Firefoxのアドレス欄横の検索窓、虫眼鏡アイコン→「検索設定を変更」→「既定の検索エンジン」を「Disconnect Search」にした。  </p>
+<p>実際にDisconnect Searchで検索すると、文字がやや小さく、また場合によっては結果画面の右側に写真入りの広告が表示されることがある。  </p>
+<p><img src="/images/disconnect-search-result.png" alt="Disconnect Search検索結果" height="240"></p>
+<p>強制的にスタイルを適応させるアドオン「Stylish」でテーマ<a href="https://userstyles.org/styles/114219/disconnect-search-google-look" target="_blank" rel="external">Disconnect Search - Google Look - Themes and Skins for Disconnect - userstyles.org</a>をインストールすると、広告が無くなり、文字も調度良い大きさになった。  </p>
+<p>キャッシュが見られなかったり、ブックマークしても検索結果が消えてしまったりと、Googleほど便利では無いが、その分プライバシーの面では安心出来る。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Googleなどでの検索を代行してくれて、プライバシー情報を保存しない検索エンジン「Disconnect Search」。<br>以前にFirefox向けのアドオンを入れたことがあったが、Googleとの使い分けで使い勝手があまり良くなかった。<br>今回、任意のサイトでの]]>
+    </summary>
+    
+      <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
+    
+      <category term="プライバシー" scheme="http://pagent.github.io/tags/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[infinality-bundle-fontsが衝突してアップデート出来ない]]></title>
@@ -41,10 +68,10 @@ $ <span class="built_in">sudo</span> pacman -Syu ibfonts-meta-extended
     <link href="http://pagent.github.io/2016/04/29/unable-to-retweet/"/>
     <id>http://pagent.github.io/2016/04/29/unable-to-retweet/</id>
     <published>2016-04-29T13:33:01.000Z</published>
-    <updated>2016-04-30T04:51:09.159Z</updated>
+    <updated>2016-04-30T10:14:43.603Z</updated>
     <content type="html"><![CDATA[<p>ツイッターで、あるツイートをリツイートしようとしたところ、上部に  </p>
 <p><div class="box">Your account may not be allowed to perform this action. Please refresh the page and try again.</div>と表示されリツイートが出来ない。同様に「いいね」も出来ない。<br>その人のプロフィールページに行くとツイートが表示されており、ブロックされている訳でも無さそう。  </p>
-<p>ブロックされていないのにリツイート出来ないとはどういうことかと、怪訝に思ったが、少し前に、リファラを制御するFirfoxのアドオンRefControlで、規定値を変更したことを思い出した。<br>それまで<code>&lt;阻止&gt;(第三者)</code>（別ドメインへ飛ぶ時のみリファラを阻止）にしていたのを<code>&lt;阻止&gt;</code>（基本的に全てのリファラを阻止）に変更していた。<br>規定値を<code>&lt;阻止&gt;(第三者)</code>に戻したところ、ちゃんとリツイート出来た。  </p>
+<p>ブロックされていないのにリツイート出来ないとはどういうことかと、怪訝に思ったが、少し前に、リファラを制御するFirfoxのアドオンRefControlで、既定値を変更したことを思い出した。<br>それまで<code>&lt;阻止&gt;(第三者)</code>（別ドメインへ飛ぶ時のみリファラを阻止）にしていたのを<code>&lt;阻止&gt;</code>（基本的に全てのリファラを阻止）に変更していた。  既定値を<code>&lt;阻止&gt;(第三者)</code>に戻したところ、ちゃんとリツイート出来た。  </p>
 <p>RefControlの設定はやはり推奨通り<code>&lt;阻止&gt;(第三者)</code>にした方が良いようだ。<br>ブロックされていないのにリツイート出来ない場合は、リファラに関するアドオンを導入していないか、設定がどうかも確認することをお勧めする。</p>
 ]]></content>
     <summary type="html">
@@ -589,41 +616,6 @@ Loading site… done
       <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
     
       <category term="サーバー" scheme="http://pagent.github.io/tags/%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[いまいち用途の分からないJumbotronに背景画像を入れてみた]]></title>
-    <link href="http://pagent.github.io/2016/03/11/jumbotron/"/>
-    <id>http://pagent.github.io/2016/03/11/jumbotron/</id>
-    <published>2016-03-11T09:10:56.000Z</published>
-    <updated>2016-03-12T18:04:57.000Z</updated>
-    <content type="html"><![CDATA[<p>現在Hexoで使っているテーマFreewillはBootstrap準拠なので、ヘッダー領域にJumbotronというのが付いている。<br>ブログの説明がある場合はここに説明文（subtitle）、無い場合はブログタイトル（title）が挿入される。<br>やたらと場所を取るし何に使ったら良いのか分からないので活用して来なかったが、背景画像を入れてみた。  </p>
-<p>画像を入れることにしているhexo/source/imagesに背景にしたいファイルを追加。<br>hexo/themes/freewill-rev/source/css/style.cssにbackground-imageを追記した。  </p>
-<pre><code><span class="class">.jumbotron</span> <span class="rules">{
-    <span class="rule"><span class="attribute">background-image</span>:<span class="value"> <span class="function">url</span>(<span class="string">"/images/ファイル名"</span>)</span></span>;
-    <span class="rule"><span class="attribute">padding-top</span>:<span class="value"> <span class="number">60px</span></span></span>;
-    <span class="rule"><span class="attribute">padding-bottom</span>:<span class="value"> <span class="number">12px</span></span></span>;
-<span class="rule">}</span></span>
-</code></pre><p>（参照記事:<a href="http://cccabinet.jpn.org/bootstrap3/jumbotron3.html" title="ジャンボトロンに背景画像～Bootstrap3移行ガイド" target="_blank" rel="external">ジャンボトロンに背景画像～Bootstrap3移行ガイド</a>）  </p>
-<p>デフォルトでは<code>.jumbotron {padding-top: 48px; padding-bottom: 48px;}</code>だったが変更している。<br>画像ファイルは大きい時には自動的に切り抜かれ、小さい場合はタイル化されるようだ。  </p>
-<p>Jumbotronのhtmlはhexo/themes/freewill/layout/index.ejsに記述されていたが、title、subtitleの両方を入れることとし、<code>&lt;h1&gt;</code>タグになっていたのをそれぞれ<code>&lt;h2&gt;</code>、<code>&lt;h3&gt;</code>に変更した。  </p>
-<pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"jumbotron page-header bg-primary"</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">h1</span>&gt;</span><span class="vbscript">&lt;% <span class="keyword">if</span> (config.subtitle){ %&gt;</span><span class="vbscript">&lt;%= config.subtitle %&gt;</span><span class="vbscript">&lt;% } <span class="keyword">else</span> { %&gt;</span><span class="vbscript">&lt;%= config.title %&gt;</span><span class="vbscript">&lt;% } %&gt;</span><span class="tag">&lt;/<span class="title">h1</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-</code></pre><p>↓下記に変更  </p>
-<pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"jumbotron page-header bg-primary"</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">h3</span> <span class="attribute">style</span>=<span class="value">"color: #eeeeee;"</span>&gt;</span><span class="vbscript">&lt;%= config.subtitle %&gt;</span><span class="tag">&lt;/<span class="title">h3</span>&gt;</span>
-  <span class="tag">&lt;<span class="title">h2</span> <span class="attribute">style</span>=<span class="value">"color: #eeeeee;"</span>&gt;</span><span class="vbscript">&lt;%= config.title %&gt;</span><span class="tag">&lt;/<span class="title">h2</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-</code></pre><p>殺風景だったブログが少し華やいだ。  </p>
-<p>ーー<br>（追記）<br>その後Jumbotronにスライドショーを表示することにしたので、background-imageは無しにした。<br><a href="http://pagent.github.io/2016/03/13/header-jquery-slideshow/" target="_blank" rel="external">jQueryでヘッダー背景をスライドショー化</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>現在Hexoで使っているテーマFreewillはBootstrap準拠なので、ヘッダー領域にJumbotronというのが付いている。<br>ブログの説明がある場合はここに説明文（subtitle）、無い場合はブログタイトル（title）が挿入される。<br>やたらと場所を取]]>
-    </summary>
-    
-      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
   </entry>
   

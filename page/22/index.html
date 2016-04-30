@@ -159,6 +159,62 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/09/12/mt-feed-descend/" >Movable Type「Rainier」のフィードを降順に</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年9月12日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>別でMovable Typeを使って書いているブログで、最近の記事のAtomフィードが古い記事が上で昇順にソートされていた。<br>「Rainier 1.04」のテーマを使っている方だけで、「クラシックブログ 1.12」の方はちゃんと降順に表示されている。<br>元々だったのか、なにかのカスタマイズでこうなってしまったのか、覚えていない。<br>新しい記事が増えても古い記事から消えていって大丈夫かもしれないが、ちょっと気持ち悪い。</p>
+<p>検索したら、「sort_order=“descend”」を指定してやればいいようだった。<br><a href="http://oshiete.goo.ne.jp/qa/2333603.html" target="_blank" rel="external">Movable Type アーカイブの記事を昇順から降順へ変えたい – ブログ – 教えて！goo</a></p>
+<p>アーカイブではなくフィードだが、同様の対処で大丈夫だった。</p>
+<p>「デザイン」→「テンプレート」→「インデックステンプレート」の「最新記事のフィード」を編集し、16行目あたりの<code>&lt;mt:Entries lastn=&quot;15&quot;&gt;</code>を<code>&lt;mt:Entries sort_order=&quot;descend&quot; lastn=&quot;15&quot;&gt;</code>にして再構築したら、ちゃんと降順に表示された。<br>追加していた「RSS2.0」の方も同様に編集した。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/09/12/mt-feed-descend/" data-text="Movable Type「Rainier」のフィードを降順に | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/09/12/mt-feed-descend/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/09/12/mt-feed-descend/" class="hatena-bookmark-button" data-hatena-bookmark-title="Movable Type「Rainier」のフィードを降順に" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/blog/">blog</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/09/12/心融神洽/" >「心融神洽」がわからない</a>
 		</h3>
 	
@@ -695,65 +751,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/09/04/access-ranking/" >FC2人気ページランキングを導入する</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年9月4日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>ブログサービスによっては、そのブログ内でアクセスの多い記事を集計する機能があったりするようだ。<br>サイトを訪れた人にどのページがよく読まれているかを客観的に示すことが出来て良さそうなのだが、そういう機能の無いブログサービスも多い。</p>
-<p>外部サービスではACR WEBというところの「アクセスランキング」が有名みたいだが、FC2でも同様のサービスが提供されている。<br>FC2ならすでに持っているアカウントで利用出来るので、Seesaaで書いているブログではこれを利用している。</p>
-<p>サイドバーにブログパーツを設置することも出来るのだが、あまりサイドバーにごちゃごちゃ配置したくないし、携帯からだと表示出来ないようなので、別途独立した記事を用意してそこへ上位5位までを書き写すことにした。  </p>
-<p>書き写しは手動でやらないといけないが、それほど頻回に順位が入れ替わるわけではないし、これなら携帯からでも見てもらえる。</p>
-<p>FC2の集計結果ページは公開・非公開を選択出来る。<br>初期状態ではページのランキングがURLで表示されるが、「URL置換設定」で「タイトル置き換えを行う」を選択すると記事タイトルを自動的に取得してくれる。</p>
-<p>困ったのは同じタイトルの記事が複数表示されてしまったこと。<br>これはスマートフォン用のページが別ページとして存在していることや、記事のコメントの部位を指定するURLが別ページと認識されてしまっていることが原因らしい。<br>上手く統合出来たら良いのだが難しいようなので、スマートフォン用ページとコメント部位指定のURLは「URL除外設定」で除外している。</p>
-<p>「FC2アクセスランキング」では他にも「リンク元ランキング」や「移動先ランキング」が利用できて、自分でも見ていてなかなか楽しい。<br>「リンク元ランキング」ではGoogle検索によるアクセスが、<code>http://</code>で始まるものと<code>https://</code>で始まるものがそれぞれ２つずつ表示されてしまったので、Googleは除外した。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/09/04/access-ranking/" data-text="FC2人気ページランキングを導入する | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/09/04/access-ranking/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/09/04/access-ranking/" class="hatena-bookmark-button" data-hatena-bookmark-title="FC2人気ページランキングを導入する" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/blog/">blog</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -794,48 +791,48 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
+			<li><a href="/tags/blog/">blog<span>39</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>32</span></a></li>
+		
 			<li><a href="/tags/ハードウェア/">ハードウェア<span>1</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
 		
 			<li><a href="/tags/Linux/">Linux<span>94</span></a></li>
 		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
 		
-			<li><a href="/tags/ネット/">ネット<span>39</span></a></li>
+			<li><a href="/tags/プライバシー/">プライバシー<span>5</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>19</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
-		
-			<li><a href="/tags/時事/">時事<span>1</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>39</span></a></li>
-		
-			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>31</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
-		
-			<li><a href="/tags/セキュリティ/">セキュリティ<span>6</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
-		
-			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
-		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
 		
-			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
+			<li><a href="/tags/セキュリティ/">セキュリティ<span>2</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>19</span></a></li>
 		
 			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
 		
+			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
 		
-		   <li><a href="/tags">...<span>22</span></a></li>
+			<li><a href="/tags/食/">食<span>4</span></a></li>
+		
+			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
+		
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
+		
+		
+		   <li><a href="/tags">...<span>23</span></a></li>
 		
 		</ul>
 	</div>
@@ -847,6 +844,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2016/04/30/disconnect-search/" ><i class="fa fa-file-o"></i>FirefoxでDisconnect Searchをデ...</a>
+      </li>
     
       <li>
         <a href="/2016/04/30/infinality-bundle-fonts-conflicts/" ><i class="fa fa-file-o"></i>infinality-bundle-fontsが衝突し...</a>
@@ -864,10 +865,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
         <a href="/2016/04/24/dynabook-T552-keyboad-unresponsive/" ><i class="fa fa-file-o"></i>dynabook T552のキーボードが一部反応しなく...</a>
       </li>
     
-      <li>
-        <a href="/2016/04/23/linux-malware-billgates/" ><i class="fa fa-file-o"></i>Linuxを標的とするマルウェア「ビルゲイツ」</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -877,7 +874,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
 		</ul>
 	</div>
 
