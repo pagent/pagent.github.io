@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-05-01T07:06:48.508Z</updated>
+  <updated>2016-05-01T22:58:29.719Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -70,11 +70,11 @@ $ <span class="built_in">sudo</span> pacman -Syu ibfonts-meta-extended
     <link href="http://pagent.github.io/2016/04/29/unable-to-retweet/"/>
     <id>http://pagent.github.io/2016/04/29/unable-to-retweet/</id>
     <published>2016-04-29T13:33:01.000Z</published>
-    <updated>2016-04-30T10:14:43.603Z</updated>
+    <updated>2016-05-01T22:58:06.928Z</updated>
     <content type="html"><![CDATA[<p>ツイッターで、あるツイートをリツイートしようとしたところ、上部に  </p>
-<p><div class="box">Your account may not be allowed to perform this action. Please refresh the page and try again.</div>と表示されリツイートが出来ない。同様に「いいね」も出来ない。<br>その人のプロフィールページに行くとツイートが表示されており、ブロックされている訳でも無さそう。  </p>
+<p><div class="box">Your account may not be allowed to perform this action. Please refresh the page and try again.</div>と表示されリツイートが出来ない。同様に「いいね」も出来ない。<br>その人のプロフィールページに行くとツイートが表示されており、ブロックされている訳では無さそう。鍵付き（非公開）アカウントでもない。  </p>
 <p>ブロックされていないのにリツイート出来ないとはどういうことかと、怪訝に思ったが、少し前に、リファラを制御するFirfoxのアドオンRefControlで、既定値を変更したことを思い出した。<br>それまで<code>&lt;阻止&gt;(第三者)</code>（別ドメインへ飛ぶ時のみリファラを阻止）にしていたのを<code>&lt;阻止&gt;</code>（基本的に全てのリファラを阻止）に変更していた。  既定値を<code>&lt;阻止&gt;(第三者)</code>に戻したところ、ちゃんとリツイート出来た。  </p>
-<p>RefControlの設定はやはり推奨通り<code>&lt;阻止&gt;(第三者)</code>にした方が良いようだ。<br>ブロックされていないのにリツイート出来ない場合は、リファラに関するアドオンを導入していないか、設定がどうかも確認することをお勧めする。</p>
+<p>RefControlの設定はやはり推奨通り<code>&lt;阻止&gt;(第三者)</code>にした方が良いようだ。<br>ブロックされていないのにリツイート出来ない場合は、リファラに関するアドオンを導入していないか、設定がどうなっているかも確認することをお勧めする。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>ツイッターで、あるツイートをリツイートしようとしたところ、上部に  </p>
