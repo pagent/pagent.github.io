@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-05-01T01:49:29.412Z</updated>
+  <updated>2016-05-01T01:52:08.631Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -117,8 +117,8 @@ $ <span class="built_in">sudo</span> pacman -Syu ibfonts-meta-extended
     <link href="http://pagent.github.io/2016/04/24/dynabook-T552-keyboad-unresponsive/"/>
     <id>http://pagent.github.io/2016/04/24/dynabook-T552-keyboad-unresponsive/</id>
     <published>2016-04-24T05:02:31.000Z</published>
-    <updated>2016-05-01T01:49:02.190Z</updated>
-    <content type="html"><![CDATA[<p>メインで使っているdynabook T552のキーボードが不調だった。いくつかのキーが全く反応しない。マルチブードにしているLinuxでもWindows 7でも、同じキーが効かないので、どうやらハード的な問題のよう。<br>保証期間は過ぎており修理にはちょっと値が張りそうだったので、使えるキーでなんとか凌いでいた。「DEL」キーも反応しなかったが「BACK SPACE」キーは大丈夫だったので、入力文字の訂正はなんとか出来ていた。  </p>
+    <updated>2016-05-01T01:51:59.664Z</updated>
+    <content type="html"><![CDATA[<p>メインで使っているdynabook T552のキーボードが不調だった。いくつかのキーが全く反応しない。マルチブードにしているLinuxでもWindows 7でも、特定の同じキーが効かないので、どうやらハード的な問題のよう。<br>保証期間は過ぎており修理にはちょっと値が張りそうだったので、使えるキーでなんとか凌いでいた。「DEL」キーも反応しなかったが「BACK SPACE」キーは大丈夫だったので、入力文字の訂正はなんとか出来ていた。  </p>
 <p>先日ネットで探してみたところ、キーボードだけなら安く購入出来るようだったので、自分で交換してみることにした。<br>キーボードの外し方は下記記事を参考にさせて頂いた。<br><a href="http://dynabook.biz/keyboard/4293/" target="_blank" rel="external">東芝 Toshiba dynabook T552 Satellite B252 キーボード交換 Satellite L850シリーズ共通 | ダイナブックをもっと楽しもう！｜大名武久</a>  </p>
 <p>PCを分解して外す方法とキーボードだけを外す方法があるらしい。分解は面倒なので出来ればキーボードだけを外したい。<br>本当は専用の工具を使った方が良いらしいのだが、持っていないので物差しで代用。  </p>
 <ul>
@@ -134,7 +134,7 @@ $ <span class="built_in">sudo</span> pacman -Syu ibfonts-meta-extended
 <p>PCを起動すると、反応しなかった「DEL」キーや一部のテンキーも正常に反応した。<br>安く修理出来て良かった。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>メインで使っているdynabook T552のキーボードが不調だった。いくつかのキーが全く反応しない。マルチブードにしているLinuxでもWindows 7でも、同じキーが効かないので、どうやらハード的な問題のよう。<br>保証期間は過ぎており修理にはちょっと値が張りそうだ]]>
+    <![CDATA[<p>メインで使っているdynabook T552のキーボードが不調だった。いくつかのキーが全く反応しない。マルチブードにしているLinuxでもWindows 7でも、特定の同じキーが効かないので、どうやらハード的な問題のよう。<br>保証期間は過ぎており修理にはちょっと値が張り]]>
     </summary>
     
       <category term="ハードウェア" scheme="http://pagent.github.io/tags/%E3%83%8F%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A7%E3%82%A2/"/>
