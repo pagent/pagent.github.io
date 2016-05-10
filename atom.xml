@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-05-05T23:04:43.366Z</updated>
+  <updated>2016-05-10T11:08:59.725Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,33 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Facebookが世論操作]]></title>
+    <link href="http://pagent.github.io/2016/05/10/facebook-manipulation/"/>
+    <id>http://pagent.github.io/2016/05/10/facebook-manipulation/</id>
+    <published>2016-05-10T10:51:11.000Z</published>
+    <updated>2016-05-10T11:08:42.578Z</updated>
+    <content type="html"><![CDATA[<p>以前、利用者に無断で情動操作実験を行ったFacebookが、今度は世論操作を行ったらしい。  </p>
+<blockquote>
+<p>　Facebook社内で「ニュースキュレーター」と呼ばれるチームは、政治的に保守的なニュース媒体の記事を排除するよう指示を受けていた、とGizmodoは報じている。これはすなわち、「Breitbart News」「The Washington Examiner」などのニュース媒体の記事はトレンドトピックから外すか表示順位を下げ、「The New York Times」「The Wall Street Journal」などのより伝統的な媒体を優先させることを意味する。また、米大統領選で共和党の元候補者だったMitt Romney氏など、保守派の大物コメンテーターや政治家に関する記事もリストから排除されていたことを、Gizmodoは匿名の元ニュースキュレーターの談話として報じている。</p>
+<p>　Facebookはこのような疑惑を「非常に深刻に」受け止めており、「レビューチームの一貫性と中立性を保つために厳密なガイドライン」を設けていると述べている。しかし、Gizmodoの記事に関してはただちにコメントを出しておらず、またこうした問題を避けるためにガイドライン以外の方策をとっているかどうかについても回答していない。</p>
+</blockquote>
+<p><a href="http://japan.cnet.com/news/service/35082295/" target="_blank" rel="external">Facebookのトレンドトピック表示、中立性に疑問の声–保守的な媒体を排除していた疑い - CNET Japan</a>  </p>
+<p>確信犯だな。大衆を操るための道具として政府に協力しているのだろう。<br>マスコミからしてそうなのだから、驚きもしない。  </p>
+<p>ーー<br>（関連記事）<br><a href="http://pagent.github.io/2014/06/29/facebook-manipulation/" target="_blank" rel="external">Facebookが70万人を対象に「情動感染」実験</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>以前、利用者に無断で情動操作実験を行ったFacebookが、今度は世論操作を行ったらしい。  </p>
+<blockquote>
+<p>　Facebook社内で「ニュースキュレーター」と呼ばれるチームは、政治的に保守的なニュース媒体の記事を排除するよう指示を受けていた、とG]]>
+    </summary>
+    
+      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
+    
+      <category term="プライバシー" scheme="http://pagent.github.io/tags/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[FirefoxでDisconnect Searchをデフォルトの検索エンジンにする]]></title>
@@ -539,86 +566,6 @@ Loading site… done
       <category term="blog" scheme="http://pagent.github.io/tags/blog/"/>
     
       <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Arch LinuxにXamppをインストール]]></title>
-    <link href="http://pagent.github.io/2016/03/12/arch-linux-xampp/"/>
-    <id>http://pagent.github.io/2016/03/12/arch-linux-xampp/</id>
-    <published>2016-03-12T08:55:54.000Z</published>
-    <updated>2016-04-16T21:09:26.671Z</updated>
-    <content type="html"><![CDATA[<p>以前XubuntuでXamppを使用していたが、Arch Linuxにもインストールした。  </p>
-<ul>
-<li><p><a href="#install">インストール</a></p>
-</li>
-<li><p><a href="#start">使用開始</a></p>
-</li>
-<li><p><a href="#settings">セキュリティ設定</a></p>
-</li>
-<li><p><a href="#commands">よく使うコマンド</a></p>
-</li>
-</ul>
-<p><br></p>
-<h4 id="install">インストール</h4>
-
-<p>AURにあるのでYaourtでインストールしようとしたが、</p>
-<figure class="highlight shell-session"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">Error: Error running useradd -r mysql : useradd: PAM: 認証サービスが認証情報を検索できません</div><div class="line">Press [Enter] to continue:</div><div class="line">Error: mysql: Error while executing group action</div><div class="line">Press [Enter] to continue:############Warning: Problem running post-install step. Installation may not complete </div><div class="line">correctly</div><div class="line"><span class="code"> Error running chown -R root:mysql /opt/lampp/var/mysql: chown: グループ指定が不正: </span></div><div class="line"><span class="smartquote">`root:mysql'</span></div><div class="line">Press [Enter] to continue:#</div><div class="line"><span class="header">  </span></div><div class="line">----------------------------------------------------------------------------</div><div class="line">Setup has finished installing XAMPP on your computer.</div><div class="line"><span class="code">  </span></div><div class="line">==&gt; エラー: package() で問題が発生しました。</div><div class="line"><span class="code">    中止...</span></div><div class="line">==&gt; エラー: Makepkg was unable tobuild .</div></pre></td></tr></table></figure>
-
-<p>とエラーになる。  </p>
-<p>仕方ないのでXamppのサイトからLinux用のインストーラーをダウンロード。<br><a href="https://www.apachefriends.org/index.html" title="XAMPP Installers and Downloads for Apache Friends" target="_blank" rel="external">XAMPP Installers and Downloads for Apache Friends</a>  </p>
-<p>下記コマンドでインストールした。  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> chmod +x xampp-linux-x64-<span class="number">5.6</span>.<span class="number">15</span>-<span class="number">2</span>-installer.run</div><div class="line">$ <span class="built_in">sudo</span> ./xampp-linux-x64-<span class="number">5.6</span>.<span class="number">15</span>-<span class="number">2</span>-installer.run</div></pre></td></tr></table></figure>
-
-<p><br></p>
-<h4 id="start">使用開始</h4>
-
-<p>インストール後Xamppをスタート。<code>http://localhost/</code>にアクセスしたが、見慣れたオレンジ色の操作パネルが表示されず、Xamppのサイトのような画面に。<br>どうやらオレンジ色のダッシュボードは廃止されてしまったようだ。<br><a href="http://hapisupu.com/2015/08/xampp-5-6-11-update-fix/" title="2015年7月からXAMPPの導入手順が分かりにくくなりました！対応の方法 | はぴすぷ" target="_blank" rel="external">2015年7月からXamppの導入手順が分かりにくくなりました！対応の方法 | はぴすぷ</a>  </p>
-<p>前の方が分かりやすくて良かったのに。<br>まあ、設定が済んでしまえば不要なんだが。<br><br></p>
-<h4 id="settings">セキュリティ設定</h4>
-
-<p>セキュリティの設定をやっておかないと心配なので、</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> /opt/lampp/lampp security</div></pre></td></tr></table></figure>
-
-<p>だが下記のようにエラーになってしまう。  </p>
-<figure class="highlight shell-session"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="regexp">/opt/</span>lampp<span class="regexp">/share/</span>xampp<span class="regexp">/checkapache: 行 41: /</span>opt<span class="regexp">/lampp/</span>htdocs<span class="regexp">/xampp/</span>.htaccess: そのようなファイルやディレクトリはありません</div><div class="line">cp: <span class="string">'/opt/lampp/htdocs/xampp/.htaccess'</span> を stat できません: そのようなファイルやディレクトリはありません</div><div class="line">cp: <span class="string">'/opt/lampp/htdocs/xampp/.htaccess'</span> を stat できません: そのようなファイルやディレクトリはありません</div><div class="line">chmod: <span class="string">'/opt/lampp/htdocs/xampp/.htaccess'</span> にアクセスできません: そのようなファイルやディレクトリはありません</div><div class="line">chmod: <span class="string">'/opt/lampp/htdocs/webalizer/.htaccess'</span> にアクセスできません: そのようなファイルやディレクトリはありません</div><div class="line">chmod: <span class="string">'/opt/lampp/phpmyadmin/.htaccess'</span> にアクセスできません: そのようなファイルやディレクトリはありません</div></pre></td></tr></table></figure>
-
-<p>確かに/opt/lampp/htdocs/xampp/.htaccess、/opt/lampp/htdocs/webalizer/.htaccess、/opt/lampp/phpmyadmin/.htaccessが存在していない。<br>手動で.htaccessファイルを新規作成したらXamppのパスワードを設定出来た。<br>MySQL（phpMyAdmin）のユーザーpmaやrootのパスワード、FTPユーザーdaemonのパスワードも設定。  </p>
-<p>これだけだと外からアクセスされる危険があるので、127.0.0.1（ローカル・ループバック・アドレス）からしかアクセス出来ないよう、下記3つのファイルを編集。  </p>
-<p>/opt/lampp/etc/httpd.confの52行目あたり  </p>
-<pre><code><span class="keyword">Listen</span> <span class="number">80</span>（編集前）
-↓
-<span class="keyword">Listen</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">80</span>
-</code></pre><p>/opt/lampp/etc/extra/httpd-ssl.confの39行目あたり  </p>
-<pre><code><span class="keyword">Listen</span> <span class="number">443</span>（編集前）
-↓
-<span class="keyword">Listen</span> <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">443</span>
-</code></pre><p>/opt/lampp/etc/my.cnfの[mysqld]のセクションに以下の行を追加  </p>
-<pre><code><span class="built_in">bind</span>-address=localhost
-</code></pre><p>なお、httpd.conf、httpd-ssl.conf、my.cnfの場所はArchWikiの記載が古いのか、実際の場所と違っていた。<br>ディストリビューションによっても違うかもしれない。  </p>
-<p>（参照記事）<br><a href="https://wiki.archlinuxjp.org/index.php/Xampp" title="Xampp - ArchWiki" target="_blank" rel="external">Xampp - ArchWiki</a>  </p>
-<p>（関連記事）<br><a href="/2016/04/17/xampp-ftp/">XamppでFTPが使用できない</a>  </p>
-<p></p><p></p><br>（追加）<p></p>
-<h4 id="commands">よく使うコマンド</h4>
-
-
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> /opt/lampp/lampp start</div><div class="line">$ <span class="built_in">sudo</span> /opt/lampp/lampp stop</div><div class="line">$ <span class="built_in">sudo</span> /opt/lampp/xampp restart</div></pre></td></tr></table></figure>
-
-<p><code>panel</code>コマンド(各種サービスをオン・オフするパネルを起動)は効かず、用法一覧が表示されてしまう。  </p>
-<figure class="highlight shell-session"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">Usage: xampp &lt;action&gt;</div><div class="line">    </div><div class="line">	start         Start XAMPP (Apache, MySQL and eventually others)</div><div class="line">	startapache   Start only Apache</div><div class="line">	startmysql    Start only MySQL</div><div class="line">	startftp      Start only ProFTPD</div><div class="line">    </div><div class="line">	stop          Stop XAMPP (Apache, MySQL and eventually others)</div><div class="line">	stopapache    Stop only Apache</div><div class="line">	stopmysql     Stop only MySQL</div><div class="line">	stopftp       Stop only ProFTPD</div><div class="line">    </div><div class="line">	reload        Reload XAMPP (Apache, MySQL and eventually others)</div><div class="line">	reloadapache  Reload only Apache</div><div class="line">	reloadmysql   Reload only MySQL</div><div class="line">	reloadftp     Reload only ProFTPD</div><div class="line">    </div><div class="line">	restart       Stop and start XAMPP</div><div class="line">	security      Check XAMPP's security</div><div class="line">    </div><div class="line">	enablessl     Enable SSL support for Apache</div><div class="line">	disablessl    Disable SSL support for Apache</div><div class="line">    </div><div class="line">	backup        Make backup file of your XAMPP config, log and data files</div><div class="line">    </div><div class="line">	oci8          Enable the oci8 extenssion</div><div class="line">    </div><div class="line">	panel         Starts graphical XAMPP control panel</div></pre></td></tr></table></figure>
-
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>以前XubuntuでXamppを使用していたが、Arch Linuxにもインストールした。  </p>
-<ul>
-<li><p><a href="#install">インストール</a></p>
-</li>
-<li><p><a href="#start">使用開始</a><]]>
-    </summary>
-    
-      <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
-    
-      <category term="サーバー" scheme="http://pagent.github.io/tags/%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC/"/>
     
   </entry>
   

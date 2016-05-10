@@ -159,6 +159,71 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/04/29/luakit/" >キーボード操作の軽快ブラウザ「Luakit」</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年4月29日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>普段使っているブラウザはFirefoxでたまにChromium（Google Chrome）を使う程度なのだが、他によいブラウザは無いかと「Ubuntuソフトウェアセンター」から色々入れてみた。Epiphany、Midori、rekonq、Aroraなど。</p>
+<p>そんな中おもしろそうだったのが「Luakit」というブラウザ。<br>ツールバーもメニューも無く、のぺっとした紙のようで、最初どう操作するのかと戸惑ったが、どうやらキーボードを使ってコマンド操作するらしい。</p>
+<p>日本語の解説は見かけなかったが、<a href="https://github.com/mason-larobina/luakit/wiki/Beginner-Guide" target="_blank" rel="external">「Beginner Guide · mason-larobina/luakit Wiki · GitHub」</a>や<a href="https://wiki.archlinux.org/index.php/Luakit" target="_blank" rel="external">「Luakit – ArchWiki」</a>に基本的な操作法が書いてあった。<br>たとえば、ショートカット<code>o</code>でステータスバーの下に入力欄が現れるのでそこへ行きたいページのURLを貼りつけたらいいらしい。<br>（URLではなく語句を入力するとデフォルト検索エンジンによる検索。日本語の検索も可。）</p>
+<p>他にも<code>t</code>（新しいタブで開く）、<code>d</code>（タブを閉じる）、<code>b</code>（戻る）、<code>r</code>（リロード）、<code>:</code>（コマンドプロンプトへ移動）など。</p>
+<p>ブックマークするには<code>B</code>（「shift」+「b」）で下部に</p>
+<pre><code><span class="attribute">:bookmark http://〜（現在開いているページ）</span>  
+</code></pre><p>と出るので、そのままENTERキーで登録される。<br>このとき後ろに文言を追加することでタグを使った分類も可能。<br><code>gb</code>で登録してあるブックマークの表示。</p>
+<p>ブックマークの解除などブックマーク編集のやり方が分からず困ったが、bookmarksファイル（自分の環境では<code>/home/（ユーザー名）/.local/share/luakit/bookmarks</code>）を直接編集したらLuakit再起動後には反映されていた。</p>
+<p>動作はかなり軽快で今のところ動画の再生でも問題は無い。<br>Firefoxからのブックマークのインポートも可能で、「Adblock」やよく知らなが「Quickmarks」の導入なども出来る様子。</p>
+<p>軽快だしツールバーが無い分視野を広くとれるし、CUIに慣れた人にはかなり使い勝手のよいブラウザだと思われるが、GUI環境に慣れきっている自分にはまだ使いこなすのは少々難しい。<br><code>/etc/xdg/luakit/globals.lua</code>で</p>
+<pre><code><span class="variable">homepage            =</span> <span class="string">"luakit://bookmarks/"</span> 
+</code></pre><p>にしたら少し使いやすくなった。<br>メインでは今後もFirefoxを利用すると思うが、Luakitにも少しづつ慣れていこうと思う。</p>
+<p>ーー<br>（2014年9月7日追記）<br>Xubuntuを12.04から14.04.1にアップグレードしたらLuakitもアップデートされた模様。<br>ブックマークの管理画面が用意されていて、ブックマーク登録も簡単になったのは良いのだが、<code>/home/（ユーザー名）/.local/share/luakit/bookmarks</code>は使われなくなってしまったようで、<code>/home/（ユーザー名）/.local/share/luakit/bookmarks.db</code>で管理されるようになったらしい。<br>ブックマークは登録順にソートされ、自由に並べかえることが出来なくなってしまった。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/04/29/luakit/" data-text="キーボード操作の軽快ブラウザ「Luakit」 | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/29/luakit/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/29/luakit/" class="hatena-bookmark-button" data-hatena-bookmark-title="キーボード操作の軽快ブラウザ「Luakit」" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/ブラウザ/">ブラウザ</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/04/28/twitter-profile/" >Twitterの新プロフィールページ</a>
 		</h3>
 	
@@ -703,72 +768,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/04/21/mt-permission/" >MovableTypeが生成するフォルダ・ファイルのパーミッション変更</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年4月21日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>共用サーバーを利用している場合、サーバー内のフォルダやファイルはなるべくグループからは書き込みも閲覧も出来ない方がよいらしい。<br>はじめは「他人」がよくて「グループ」がダメというのを奇異に感じたが、共用サーバーの場合は同一サーバー内の他の利用者とは同じ「グループ」になっていて不正に操作される可能性があるとのこと。<br>他の利用者のサイトが乗っ取られたりした場合、そこ経由で自分も巻き添えをくらうこともあると知りなるほどと納得した。<br><a href="http://wordpress-custom.jp/security/security-permission-2.html" target="_blank" rel="external">Wordpessセキュリティ対策 パーミッションを変更する　アメブロからWordpressに移転・アクセスアップ入門</a></p>
-<p>いま借りているレンタルサーバーも共用サーバーなので、WordPressではなくMovableTypeだが、MovableTypeが自動生成するフォルダ・ファイルのパーミッションを変更した。<br><code>mt-config.cgi</code>に以下の通り追記。</p>
-<pre><code><span class="title">DirUmask</span> <span class="number">0072</span>
-HTMLPerms <span class="number">0604</span>
-UploadPerms <span class="number">0604</span>
-</code></pre><ul>
-<li>DirUmask 0072→生成されるフォルダのパーミッション「705」</li>
-<li><p>HTMLPerms 0604→生成されるファイルのパーミッション「604」  </p>
-<p>  （htmlファイルだけでなくphpファイルもちゃんと604で生成された）</p>
-</li>
-<li><p>UploadPerms 0604→パーミッション「604」でファイルがアップロードされる</p>
-</li>
-</ul>
-<p>参照記事<br><a href="http://heteml.jp/support/manual/movabletype5-mysql/" target="_blank" rel="external">Movable Type 5 のインストール｜ヘテムルレンタルサーバー</a></p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/04/21/mt-permission/" data-text="MovableTypeが生成するフォルダ・ファイルのパーミッション変更 | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/04/21/mt-permission/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/04/21/mt-permission/" class="hatena-bookmark-button" data-hatena-bookmark-title="MovableTypeが生成するフォルダ・ファイルのパーミッション変更" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/blog/">blog</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -809,45 +808,45 @@ UploadPerms <span class="number">0604</span>
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>32</span></a></li>
-		
-			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
-		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/プライバシー/">プライバシー<span>6</span></a></li>
 		
 			<li><a href="/tags/ハードウェア/">ハードウェア<span>1</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>94</span></a></li>
-		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/プライバシー/">プライバシー<span>5</span></a></li>
-		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>39</span></a></li>
-		
-			<li><a href="/tags/セキュリティ/">セキュリティ<span>2</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
 		
 			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>19</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+			<li><a href="/tags/未分類/">未分類<span>3</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+			<li><a href="/tags/時事/">時事<span>1</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>39</span></a></li>
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
 		
-			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+			<li><a href="/tags/セキュリティ/">セキュリティ<span>2</span></a></li>
+		
+			<li><a href="/tags/食/">食<span>4</span></a></li>
 		
 			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>9</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>32</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>40</span></a></li>
+		
+			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
+		
+			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>39</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>23</span></a></li>
@@ -862,6 +861,10 @@ UploadPerms <span class="number">0604</span>
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2016/05/10/facebook-manipulation/" ><i class="fa fa-file-o"></i>Facebookが世論操作</a>
+      </li>
     
       <li>
         <a href="/2016/04/30/disconnect-search/" ><i class="fa fa-file-o"></i>FirefoxでDisconnect Searchをデ...</a>
@@ -879,10 +882,6 @@ UploadPerms <span class="number">0604</span>
         <a href="/2016/04/27/add-to-search-bar/" ><i class="fa fa-file-o"></i>任意の検索エンジンを追加出来る「Add to Sear...</a>
       </li>
     
-      <li>
-        <a href="/2016/04/24/dynabook-T552-keyboad-unresponsive/" ><i class="fa fa-file-o"></i>dynabook T552のキーボードが一部反応しなく...</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -892,7 +891,7 @@ UploadPerms <span class="number">0604</span>
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">2016年05月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
 		</ul>
 	</div>
 
