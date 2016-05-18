@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-05-11T10:08:49.982Z</updated>
+  <updated>2016-05-18T23:30:25.280Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,24 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[keepass2のエントリー編集画面が大きい]]></title>
+    <link href="http://pagent.github.io/2016/05/19/keepass2-interface/"/>
+    <id>http://pagent.github.io/2016/05/19/keepass2-interface/</id>
+    <published>2016-05-18T23:15:58.000Z</published>
+    <updated>2016-05-18T23:29:42.048Z</updated>
+    <content type="html"><![CDATA[<p>Linuxをメインで使うようになってから、パスワードの管理にクロスプラットフォームのkeepass2（KeePass Password Safe）を使っている。<br>Windows向けのフリーソフトID Manager同様、便利で快適なのだが、いつのまにかエントリー編集画面がやたらと大きく表示され、下の方にある「OK」ボタンが押せなくなっていた。  </p>
+<p>「ツール」→「オプション」→「インターフェース」タブの一番下にある「強制的にシステムフォントを使用(Unixのみ)」のチェックを外したら、適当な大きさになった。<br>チェックを外しても日本語表示には問題無いよう。  </p>
+<p>ーー<br>（関連記事）<br><a href="http://pagent.github.io/2015/03/14/keepass2-font/" target="_blank" rel="external">Keepass2のフォントを日本語化</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Linuxをメインで使うようになってから、パスワードの管理にクロスプラットフォームのkeepass2（KeePass Password Safe）を使っている。<br>Windows向けのフリーソフトID Manager同様、便利で快適なのだが、いつのまにかエントリー編集画]]>
+    </summary>
+    
+      <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Facebookがニュースを検閲・世論操作か]]></title>
@@ -535,39 +553,6 @@ Loading site… done
     </summary>
     
       <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[jQueryでヘッダー背景画像をスライドショー化]]></title>
-    <link href="http://pagent.github.io/2016/03/13/header-jquery-slideshow/"/>
-    <id>http://pagent.github.io/2016/03/13/header-jquery-slideshow/</id>
-    <published>2016-03-12T15:44:02.000Z</published>
-    <updated>2016-03-13T12:36:39.000Z</updated>
-    <content type="html"><![CDATA[<p>jQueryを使ってスライドショーが出来るようなので、ヘッダーのJumbotron背景画像をスライドショー化してみた。<br>プラグインは下記の制作元サイトでダウンロード可能。<br><a href="http://rewish.jp/blog/releases/jquery_bg_switcher" title="指定した背景画像をx秒毎に切り替えるjQueryプラグイン - Rewish" target="_blank" rel="external">指定した背景画像をx秒毎に切り替えるjQueryプラグイン - Rewish</a>  </p>
-<p>プラグインをどう使えばいいのか分からなかったが、下記記事を参考にさせて頂いた。<br><a href="http://pctricks.blog.fc2.com/blog-entry-5.html" title="背景画像をスライドショーのように切り替えるjQueryプラグイン『BgSwitcher』 | PCとサイト制作の小技備忘録" target="_blank" rel="external">背景画像をスライドショーのように切り替えるjQueryプラグイン『BgSwitcher』 | PCとサイト制作の小技備忘録</a>  </p>
-<p>jQuery自体は、今使っているBootstrap準拠のテーマに既にバージョン2.0.3が入っていたので省略。  </p>
-<p>プラグイン制作元から背景画像をスライドショー化するjquery.bgswitcher.jsをダウンロードし、これをhexo/themes/freewill/source/jsの中に配置。  </p>
-<p>hexo/themes/freewill/layout/_partial/head.ejsファイルの<code>&lt;script src=&quot;&lt;%- config.root %&gt;js/jquery-2.0.3.min.js&quot;&gt;&lt;/script&gt;</code>のすぐ下に下記を追加。  </p>
-<figure class="highlight js"><figcaption><span>head.ejs</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"/js/jquery.bgswitcher.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span></div><div class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span></div><div class="line">jQuery(<span class="function"><span class="keyword">function</span><span class="params">($)</span> </span>{</div><div class="line">    $(<span class="string">'.bgsw'</span>).bgSwitcher({</div><div class="line">        images: [<span class="string">'/images/pier-440339_1280r.jpg'</span>, <span class="string">'/images/a0960_005150_r.jpg'</span>, <span class="string">'/images/cornflower-816963_640.jpg'</span>, <span class="string">'/images/lavender-836563_640.jpg'</span>],</div><div class="line">        interval: <span class="number">6000</span>,</div><div class="line">        shuffle: <span class="string">"true"</span>,</div><div class="line">        effect: <span class="string">"fade"</span>,</div><div class="line">        duration: <span class="number">1500</span></div><div class="line">    });</div><div class="line">});</div><div class="line"><span class="tag">&lt;/<span class="title">script</span>&gt;</span></div></pre></td></tr></table></figure>
-
-<p>intervalは6000（ミリ秒？）にした。  </p>
-<p>hexo/themes/freewill/layout/index.ejsファイルでjumbotronを指定しているclassにbgswも加える。  </p>
-<figure class="highlight html"><figcaption><span>index.ejs</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"jumbotron page-header bg-primary bgsw"</span>&gt;</span></div></pre></td></tr></table></figure>
-
-<p><code>hexo server</code>してプレビューしてみると、スライドショーになってる。  </p>
-<div class="bgsw" style="margin: 20px 0px 20px; padding: 50px; color: #fff; text-shadow: 1px 1px 1px #000;"><p>スライド</p></div>
-
-<p>すごい。<br>effectもfade、blind、clipなど色々あって面白い。  </p>
-<p>様々なオプションについてはプラグイン制作元サイトで解説されている。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>jQueryを使ってスライドショーが出来るようなので、ヘッダーのJumbotron背景画像をスライドショー化してみた。<br>プラグインは下記の制作元サイトでダウンロード可能。<br><a href="http://rewish.jp/blog/releases/jquer]]>
-    </summary>
-    
-      <category term="blog" scheme="http://pagent.github.io/tags/blog/"/>
-    
-      <category term="Hexo" scheme="http://pagent.github.io/tags/Hexo/"/>
     
   </entry>
   
