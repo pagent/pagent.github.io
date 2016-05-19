@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-05-18T23:34:07.654Z</updated>
+  <updated>2016-05-19T04:51:08.356Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,17 +15,17 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[keepass2のエントリー編集画面が大きい]]></title>
+    <title><![CDATA[Keepass2のエントリー編集画面が大きい]]></title>
     <link href="http://pagent.github.io/2016/05/19/keepass2-interface/"/>
     <id>http://pagent.github.io/2016/05/19/keepass2-interface/</id>
     <published>2016-05-18T23:15:58.000Z</published>
-    <updated>2016-05-18T23:29:42.048Z</updated>
-    <content type="html"><![CDATA[<p>Linuxをメインで使うようになってから、パスワードの管理にクロスプラットフォームのkeepass2（KeePass Password Safe）を使っている。<br>Windows向けのフリーソフトID Manager同様、便利で快適なのだが、いつのまにかエントリー編集画面がやたらと大きく表示され、下の方にある「OK」ボタンが押せなくなっていた。  </p>
+    <updated>2016-05-19T04:49:45.809Z</updated>
+    <content type="html"><![CDATA[<p>Linuxをメインで使うようになってから、パスワードの管理にクロスプラットフォームのKeepass2（KeePass Password Safe）を使っている。<br>Windows向けのフリーソフトID Manager同様、便利で快適なのだが、いつのまにかエントリー編集画面がやたらと大きく表示され、下の方にある「OK」ボタンが押せなくなっていた。  </p>
 <p>「ツール」→「オプション」→「インターフェース」タブの一番下にある「強制的にシステムフォントを使用(Unixのみ)」のチェックを外したら、適当な大きさになった。<br>チェックを外しても日本語表示には問題無いよう。  </p>
 <p>ーー<br>（関連記事）<br><a href="http://pagent.github.io/2015/03/14/keepass2-font/" target="_blank" rel="external">Keepass2のフォントを日本語化</a></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Linuxをメインで使うようになってから、パスワードの管理にクロスプラットフォームのkeepass2（KeePass Password Safe）を使っている。<br>Windows向けのフリーソフトID Manager同様、便利で快適なのだが、いつのまにかエントリー編集画]]>
+    <![CDATA[<p>Linuxをメインで使うようになってから、パスワードの管理にクロスプラットフォームのKeepass2（KeePass Password Safe）を使っている。<br>Windows向けのフリーソフトID Manager同様、便利で快適なのだが、いつのまにかエントリー編集画]]>
     </summary>
     
       <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
