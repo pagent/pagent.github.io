@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2016/05/20/pass-away/</loc>
+    <lastmod>2016-05-20T10:47:56.650Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2014/11/01/irq-problem/</loc>
     <lastmod>2016-05-20T00:06:27.419Z</lastmod>
   </url>
@@ -448,11 +453,6 @@
   
   <url>
     <loc>http://pagent.github.io/2014/12/03/hexo-freewill-monthly-archives/</loc>
-    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2014/04/03/octopress-new-page/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -1528,6 +1528,11 @@
   
   <url>
     <loc>http://pagent.github.io/2014/09/10/update-notifier-comon/</loc>
+    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2014/04/03/octopress-new-page/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
