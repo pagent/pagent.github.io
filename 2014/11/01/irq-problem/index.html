@@ -188,7 +188,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <p>pci=noacpiを起動オプションに加えることにしたので、/etc/default/grubで</p>
 <pre><code><span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"quiet nosplash pci=noacpi"</span>
 </code></pre><p>とし、<code>sudo update-grub</code>した。  </p>
-<p>ーー<br>（追記）<br>最初から「pci=noacpi」のオプションを付けてXubuntu14.04.1をインストールすることも可能だった。<br><a href="http://pagent.github.io/blog/2014/11/11/xubuntu-install-option/" target="_blank" rel="external">起動オプションを付けてXubuntu14.04.1をインストール - Pagent</a>  </p>
+<p>ーー<br>（追記）<br>最初から「pci=noacpi」のオプションを付けてXubuntu14.04.1をインストールすることも可能だった。<br><a href="http://pagent.github.io/2014/11/11/xubuntu-install-option/" target="_blank" rel="external">起動オプションを付けてXubuntu14.04.1をインストール - Pagent</a>  </p>
 <p>この場合インストール後のgrubの記述は</p>
 <pre><code><span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"quiet splash"</span>
 <span class="constant">GRUB_CMDLINE_LINUX_DEFAULT</span>=<span class="string">"pci=noacpi"</span>
