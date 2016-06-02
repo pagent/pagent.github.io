@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-06-02T19:51:17.165Z</updated>
+  <updated>2016-06-02T20:57:04.754Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -59,9 +59,9 @@
     <link href="http://pagent.github.io/2016/05/19/keepass2-interface/"/>
     <id>http://pagent.github.io/2016/05/19/keepass2-interface/</id>
     <published>2016-05-18T23:15:58.000Z</published>
-    <updated>2016-05-19T04:49:45.809Z</updated>
+    <updated>2016-06-02T20:56:25.959Z</updated>
     <content type="html"><![CDATA[<p>Linuxをメインで使うようになってから、パスワードの管理にクロスプラットフォームのKeepass2（KeePass Password Safe）を使っている。<br>Windows向けのフリーソフトID Manager同様、便利で快適なのだが、いつのまにかエントリー編集画面がやたらと大きく表示され、下の方にある「OK」ボタンが押せなくなっていた。  </p>
-<p>「ツール」→「オプション」→「インターフェース」タブの一番下にある「強制的にシステムフォントを使用(Unixのみ)」のチェックを外したら、適当な大きさになった。<br>チェックを外しても日本語表示には問題無いよう。  </p>
+<p>「ツール」→「オプション」→「インターフェース」タブの一番下にある「強制的にシステムフォントを使用(Unixのみ)」のチェックを外したら、適当な大きさになった。<br><del>チェックを外しても日本語表示には問題無いよう。</del><br>「強制的にシステムフォントを使用(Unixのみ)」のチェックを外したら、メニューのタイトルが表示されずアクセスキー（メニュー横の括弧で囲まれたアルファベット）だけになってしまった。<br>仕方が無いので元に戻した。  </p>
 <p>ーー<br>（関連記事）<br><a href="http://pagent.github.io/2015/03/14/keepass2-font/" target="_blank" rel="external">Keepass2のフォントを日本語化</a></p>
 ]]></content>
     <summary type="html">
