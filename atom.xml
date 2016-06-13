@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-06-02T20:57:04.754Z</updated>
+  <updated>2016-06-13T22:59:58.206Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,31 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[LibreOffice起動時に「Document Recovery」が表示される。]]></title>
+    <link href="http://pagent.github.io/2016/06/14/libreoffice-document-recovery/"/>
+    <id>http://pagent.github.io/2016/06/14/libreoffice-document-recovery/</id>
+    <published>2016-06-13T22:46:36.000Z</published>
+    <updated>2016-06-13T22:59:10.018Z</updated>
+    <content type="html"><![CDATA[<p>LibreOffice Calcで.xlsxファイルを開いて起動する際、常に「LibreOffice Document Recovery」というウィンドウが表示されるようになっていた。  </p>
+<blockquote>
+<p>Press ‘Start Recovery’ to start the process of the documents listed below.</p>
+<p>Press ‘Discard Recovery Data’ to abandon attempting recovery of these documents.</p>
+<p>The ‘Status’ column shows whether the document can be recovered.</p>
+</blockquote>
+<p>以前Calcを閉じる時に、変更を保存せずに閉じたのだろうか？  </p>
+<p>ファイルのStatus欄が”Not recoverd yet”となっているので「Start Recovery」をクリックしてみるが、”Recovery failed”となり、次回起動時にまた「Document Recovery」が表示される。<br>「Discard Recovery Data」をクリックしてRecovery Dataを削除したら、それ以降「Document Recovery」のウィンドウが出なくなった。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>LibreOffice Calcで.xlsxファイルを開いて起動する際、常に「LibreOffice Document Recovery」というウィンドウが表示されるようになっていた。  </p>
+<blockquote>
+<p>Press ‘Start Recovery’]]>
+    </summary>
+    
+      <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[ADSLはいつまで？]]></title>
@@ -515,28 +540,6 @@ Loading site… done
     <summary type="html">
     <![CDATA[<p>ネットブックLaVie Light BL300/T（PC-BL300TA6B）にXubuntuの最新ベータ版16.04 LTS Beta 2をインストールした。今年4月に正式版がリリース予定のようだが。<br>Linux Kernel 4.4が採用されている。  </p>
 ]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Xfceでマウスホイールによるウィンドウ巻き上げを止める]]></title>
-    <link href="http://pagent.github.io/2016/03/26/xfce4-stop-mousewheel-rollup/"/>
-    <id>http://pagent.github.io/2016/03/26/xfce4-stop-mousewheel-rollup/</id>
-    <published>2016-03-26T12:00:31.000Z</published>
-    <updated>2016-04-14T15:19:48.428Z</updated>
-    <content type="html"><![CDATA[<p>デスクトップ環境にXfce4を使っているが、ポインターがウィンドウ上部のタイトルバーにある状態でマウスホイールを上に動かすと、ウィンドウの巻き上げが起こってしまう。<br>特に使っていない機能なので、間違ってウィンドウが巻き上がり、戸惑ってしまうデメリットの方が大きい。  </p>
-<p>「ウィンドウマネージャー」、<del>「ウィンドウマネージャー（詳細）」の設定ではそれらしい項目が見当たらなかったが</del>、「設定エディター」でこれを止めることが出来た。  </p>
-<p>設定マネージャーから、もしくは端末で<code>xfce4-settings-editor</code>を打ち込み「設定エディター」を起動。  </p>
-<p>チャンネル「xfwm4」を選択し「general」を展開。  </p>
-<p>「mousewheel_rollup」の項目で「値」の箇所のチェックを外す。<br>もしくは「mousewheel_rollup」を選択状態で鉛筆アイコンの「編集」から、値が「TRUE（有効）」となっているのを「FALSE（無効）」にして保存。  </p>
-<p>マウスホイールによるウィンドウの巻き上げが停止した。  </p>
-<p>ーー<br>（追記）<br>「ウィンドウマネージャー（詳細）」の「アクセシビリティ」に「ウィンドウの巻き上げにマウスホイールを使用する」（Use mouse wheel on title bar to roll up the window）という項目があった。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>デスクトップ環境にXfce4を使っているが、ポインターがウィンドウ上部のタイトルバーにある状態でマウスホイールを上に動かすと、ウィンドウの巻き上げが起こってしまう。<br>特に使っていない機能なので、間違ってウィンドウが巻き上がり、戸惑ってしまうデメリットの方が大きい。  ]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
