@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-06-13T22:59:58.206Z</updated>
+  <updated>2016-06-18T08:40:35.030Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,28 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[排水口のぬめり予防にはローズマリーの葉がおすすめ]]></title>
+    <link href="http://pagent.github.io/2016/06/18/rosemary-utility/"/>
+    <id>http://pagent.github.io/2016/06/18/rosemary-utility/</id>
+    <published>2016-06-18T08:11:35.000Z</published>
+    <updated>2016-06-18T08:40:08.058Z</updated>
+    <content type="html"><![CDATA[<p>代表的なハーブのローズマリー。  </p>
+<p>西洋風なアレンジの時、魚や鶏肉を炒める前に油に投入しておくと、スパイシーな香りで料理を引き立ててくれる。<br>他にも虫除け効果があったりと、幅広い効用のあるローズマリー。  </p>
+<p>ローズマリーのちょっと変わった使い方として、我が家ではキッチン流しのぬめり取りとして重宝している。<br>排水口上のクズ取り網や三角コーナー。100均の排水口ネットを被せて頻回に交換しても、少し調理クズが溜まるとすぐにぬめって、黄色いねばねばが増殖して来る。<br>以前は薬剤カートリッジ付きのぬめらない排水口ブタを使ったりもしていたが、最近はもっぱらローズマリーの葉っぱにお世話になっている。  </p>
+<p>ネットの上や周辺部分に庭で摘んで来たローズマリーの葉っぱを適当に10枚ほど散らしておく。<br>すると何故かぬめらない。ぬめるにしても時期を大幅に遅らせてくれる。  </p>
+<p>排水口にローズマリーの葉っぱ。<br>お試しあれ。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>代表的なハーブのローズマリー。  </p>
+<p>西洋風なアレンジの時、魚や鶏肉を炒める前に油に投入しておくと、スパイシーな香りで料理を引き立ててくれる。<br>他にも虫除け効果があったりと、幅広い効用のあるローズマリー。  </p>
+<p>ローズマリーのちょっと変わった使]]>
+    </summary>
+    
+      <category term="未分類" scheme="http://pagent.github.io/tags/%E6%9C%AA%E5%88%86%E9%A1%9E/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[LibreOffice起動時に「Document Recovery」が表示される。]]></title>
@@ -514,35 +536,6 @@ Loading site… done
     </summary>
     
       <category term="nanoc" scheme="http://pagent.github.io/tags/nanoc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[BL300/TにXubunt16.04beta2をインストール]]></title>
-    <link href="http://pagent.github.io/2016/03/28/xubunt-16-04-acpi/"/>
-    <id>http://pagent.github.io/2016/03/28/xubunt-16-04-acpi/</id>
-    <published>2016-03-28T09:56:02.000Z</published>
-    <updated>2016-03-28T11:09:20.845Z</updated>
-    <content type="html"><![CDATA[<p>ネットブックLaVie Light BL300/T（PC-BL300TA6B）にXubuntuの最新ベータ版16.04 LTS Beta 2をインストールした。今年4月に正式版がリリース予定のようだが。<br>Linux Kernel 4.4が採用されている。  </p>
-<p>インストールDVDを起動すると例のごとく<q>Disabling IRQ #9</q>のところでフリーズする。<br>起動後すぐに矢印キーなどを押してメニュー選択画面を表示させ、F6（その他のオプション）で<code>acpi=off</code>のオプションを付けたらちゃんと起動した。<br>そのままインストールすると/etc/default/grubにもGRUB_CMDLINE_LINUX=”acpi=off”が記載されていた。  </p>
-<p>再起動した後も調子良く使えるようだったが、シャットダウンの際<q>system halted</q>の表示のまま止まってしまい、最後に電源ボタンで終了する必要があった。<br>再起動では止まったりしないのだが。<br><code>acpi=off</code>のオプションを付けて起動しているのが原因のよう。  </p>
-<p>apmdをインストールし<code>acpi=off apm=on apm:power-off</code>を試してみたが、上手く行かない。apmdのインストールの際には「すでに使われていない」というような警告が出ていたし駄目のようだ。  </p>
-<p>Xubuntuインストール後は<code>acpi=off</code>のオプションを外しても<q>Disabling IRQ #9</q>でフリーズはせず、その後も起動ログが表示される。<br>だが、今度は<q>[Firmware Bug] ACPI No _BQC method, cannot determine initial brightness</q>でフリーズ。  </p>
-<p>結局、/etc/default/grubの  </p>
-<pre><code><span class="constant">GRUB_CMDLINE_LINUX</span>=<span class="string">"acpi=off"</span>
-</code></pre><p>を</p>
-<pre><code><span class="constant">GRUB_CMDLINE_LINUX</span>=<span class="string">"acpi_backlight=vendor"</span>
-</code></pre><p>に修正し<code>update-grub</code>することで、起動もシャットダウンも正常に行えるようになった。  </p>
-<p>Xubunt 16.04 LTSは14.04よりもさらに精錬された印象。古いパソコンもまだまだ快適に使える。  </p>
-<p>最初からfcitx-mozcが採用されていて、日本語入力の際に助かる。<br>またUbuntuソフトウェアセンターが廃止され、代わりに「ソフトウェア」（gnome-software）が入っているが、これは動作がUbuntuソフトウェアセンターよりもさらに重いようだ。<br>非力なPCならSynapticを入れた方が良い。  </p>
-<p>（参照記事）<br><a href="http://d.hatena.ne.jp/aoshimak/20140725#p4" target="_blank" rel="external">XP代替としてのLinux選択 - あおしまの日記</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>ネットブックLaVie Light BL300/T（PC-BL300TA6B）にXubuntuの最新ベータ版16.04 LTS Beta 2をインストールした。今年4月に正式版がリリース予定のようだが。<br>Linux Kernel 4.4が採用されている。  </p>
-]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
     
   </entry>
   
