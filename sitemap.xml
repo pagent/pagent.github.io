@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2016/06/19/spam-mail-hdfclife/</loc>
+    <lastmod>2016-06-18T21:12:46.233Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2016/06/18/rosemary-utility/</loc>
     <lastmod>2016-06-18T08:44:46.238Z</lastmod>
   </url>
@@ -468,11 +473,6 @@
   
   <url>
     <loc>http://pagent.github.io/2014/12/04/bootstrap-in-page-anchor-link/</loc>
-    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2014/09/25/debian-wheezy-xfce/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -1548,6 +1548,11 @@
   
   <url>
     <loc>http://pagent.github.io/2014/04/04/octopress-sidebar/</loc>
+    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2014/09/25/debian-wheezy-xfce/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   

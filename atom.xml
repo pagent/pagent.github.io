@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-06-18T08:44:57.297Z</updated>
+  <updated>2016-06-18T21:13:03.435Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,34 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[身に覚えのないHDFC Lifeからのメール]]></title>
+    <link href="http://pagent.github.io/2016/06/19/spam-mail-hdfclife/"/>
+    <id>http://pagent.github.io/2016/06/19/spam-mail-hdfclife/</id>
+    <published>2016-06-18T20:49:56.000Z</published>
+    <updated>2016-06-18T21:12:46.233Z</updated>
+    <content type="html"><![CDATA[<p>最近HDFC Lifeを名乗る英文メールが頻回に来るようになった。  </p>
+<blockquote>
+<p>Dear Mr. …..,</p>
+<p>Welcome to HDFC Life!</p>
+<p>Thank you for choosing us as your preferred insurer.<br>…</p>
+</blockquote>
+<p>Mr.の部分は知らない名前。<br>Fromは<code>noreply@hdfclifemailsupport.com</code>等となっている。  </p>
+<p>誰かが勝手に自分のアドレスを使って登録したということだろうか？<br>それにしても普通は登録の際、本登録のための確認メールを送るのが通例だと思うが。  </p>
+<p>訂正を申し入れるのも面倒だし、スパムメールかもしれないし、フィルタで除外することにした。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>最近HDFC Lifeを名乗る英文メールが頻回に来るようになった。  </p>
+<blockquote>
+<p>Dear Mr. …..,</p>
+<p>Welcome to HDFC Life!</p>
+<p>Thank you for choosing us as yo]]>
+    </summary>
+    
+      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[排水口のぬめり防止にローズマリーの葉っぱを活用]]></title>
@@ -468,74 +496,6 @@ $ sudo chown root:ユーザー名 /<span class="keyword">var</span>/<span class=
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Nanocのインストール]]></title>
-    <link href="http://pagent.github.io/2016/03/29/nanoc-install/"/>
-    <id>http://pagent.github.io/2016/03/29/nanoc-install/</id>
-    <published>2016-03-29T10:46:33.000Z</published>
-    <updated>2016-03-31T00:40:17.859Z</updated>
-    <content type="html"><![CDATA[<p>ブログを開始するには骨が折れるが、ウェブサイト構築では柔軟性、汎用性に優れるNanoc。<br>Arch Linuxにインストールしたがバージョンは4になっていた。<br>Rubyは導入済  </p>
-<p>Nanocのインストール<br>（なるべくsudoを付けない方が良いらしい）</p>
-<pre><code>$ gem install nanoc
-<span class="label">WARNING:  </span>You don't have /home/ユーザー名/.gem/ruby/2.3.0/bin in your PATH,
-<span class="code">      gem executables will not run.</span>
-Successfully installed nanoc-4.1.5
-Parsing documentation for nanoc-4.1.5
-Done installing documentation for nanoc after 2 seconds
-1 gem installed
-</code></pre><p>プレビューとMarkdownを使用するため、adsfとkramdownもインストール</p>
-<pre><code><span class="variable">$ </span>gem install adsf
-<span class="variable">$ </span>gem install kramdown
-</code></pre><p>Nanocを使ってみる<br>test-siteを作成</p>
-<pre><code><span class="variable">$ </span>nanoc create-site test-site
-<span class="symbol">bash:</span> <span class="symbol">nanoc:</span> コマンドが見つかりません
-</code></pre><p>パスを通す必要があるらしい。<br>Nanocがインストールされた場所の確認<br>（Nanocインストール時にもWARNINGが出ていた）  </p>
-<pre><code>$ gem contents nanoc | <span class="keyword">grep</span> bin
-<span class="regexp">/home/</span>ユーザー名<span class="regexp">/.gem/</span>ruby<span class="regexp">/2.3.0/g</span>ems<span class="regexp">/nanoc-4.1.5/</span>bin<span class="regexp">/nanoc</span>
-</code></pre><p>パスを通す（~/.bashrcに<code>export PATH=&quot;$HOME/.gem/ruby/2.3.0/bin:$PATH&quot;</code>を追記）</p>
-<pre><code>$ echo 'export PATH=<span class="string">"<span class="variable">$HOME</span>/.gem/ruby/2.3.0/bin:<span class="variable">$PATH</span>"</span>' &gt;&gt; ~/.bashrc
-</code></pre><p>再度test-siteを作成</p>
-<pre><code>$ nanoc <span class="operator"><span class="keyword">create</span>-site test-site
-      <span class="keyword">create</span>  nanoc.yaml
-      <span class="keyword">create</span>  Rules
-      <span class="keyword">create</span>  content/<span class="keyword">index</span>.html
-      <span class="keyword">create</span>  content/stylesheet.css
-      <span class="keyword">create</span>  layouts/<span class="keyword">default</span>.html
-Created a blank nanoc site <span class="keyword">at</span> <span class="string">'test-site'</span>. Enjoy!</span>
-</code></pre><p>作成されたtest-siteディレクトリに移動しコンパイル（generate）する<br>コンパイルのコマンドは<code>nanoc</code>だけでも良い  </p>
-<pre><code>$ cd test-site
-$ nanoc compile
-Loading site… done
-Compiling site…
-      <span class="operator"><span class="keyword">create</span>  [<span class="number">0.00</span>s]  <span class="keyword">output</span>/stylesheet.css
-      <span class="keyword">create</span>  [<span class="number">0.06</span>s]  <span class="keyword">output</span>/<span class="keyword">index</span>.html
-
-Site compiled <span class="keyword">in</span> <span class="number">0.19</span>s.</span>
-</code></pre><p>プレビューし、ブラウザで<code>http://localhost:3000/</code>にアクセス</p>
-<pre><code>$ nanoc view
-Loading site… done
-<span class="attr_selector">[2016-03-29 20:10:10]</span> INFO  WEBrick 1<span class="class">.3</span><span class="class">.1</span>
-<span class="attr_selector">[2016-03-29 20:10:10]</span> INFO  <span class="tag">ruby</span> 2<span class="class">.3</span><span class="class">.0</span> (2015-12-25) <span class="attr_selector">[x86_64-linux]</span>
-<span class="attr_selector">[2016-03-29 20:10:10]</span> INFO  WEBrick<span class="value">::HTTPServer#start: pid=<span class="number">5898</span> port=<span class="number">3000</span></span>
-</code></pre><p><img src="/images/nanoc-install.png" alt="nanoc-install.png" height="240"></p>
-<p>Markdown記法を使いたいのでkramdownをインストールしたが、Rulesファイル（test-siteフォルダ内）の修正も必要。<br>kramdownに関する記載部分のアンコメント<code>#</code>を外す</p>
-<pre><code>compile <span class="string">'/**/*.md'</span> <span class="built_in">do</span>
-  <span class="built_in">filter</span> :kramdown
-  layout <span class="string">'/default.*'</span>
-<span class="function"><span class="keyword">end</span></span>
-</code></pre><p>なお、新規ページを追加する<code>nanoc create_item</code>コマンド、またwatch、autocompileコマンドなどはNanoc 4から削除されたよう。<br><a href="http://nanoc.ws/doc/nanoc-4-upgrade-guide/#removed-features" target="_blank" rel="external">Nanoc 4 upgrade guide » Removed features</a>  </p>
-<p>（参照記事）<br>インストール、使い方など<br><a href="http://nanoc.ws/doc/installation/" target="_blank" rel="external">Nanoc » Installation</a><br><a href="http://nanoc.ws/doc/tutorial/" target="_blank" rel="external">Nanoc » Tutorial</a>  </p>
-<p>パスの通し方<br><a href="http://qiita.com/hyshhryk/items/7e728ad57d963454b142" target="_blank" rel="external">bundleコマンドにパスが通っていなかったときの対処法 - Qiita</a>  </p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>ブログを開始するには骨が折れるが、ウェブサイト構築では柔軟性、汎用性に優れるNanoc。<br>Arch Linuxにインストールしたがバージョンは4になっていた。<br>Rubyは導入済  </p>
-<p>Nanocのインストール<br>（なるべくsudoを付けない方が良]]>
-    </summary>
-    
-      <category term="nanoc" scheme="http://pagent.github.io/tags/nanoc/"/>
     
   </entry>
   
