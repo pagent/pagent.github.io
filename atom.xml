@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-06-18T21:13:03.435Z</updated>
+  <updated>2016-06-24T06:18:52.511Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -474,7 +474,7 @@ $ <span class="built_in">sudo</span> pacman -Syu ibfonts-meta-extended
     <link href="http://pagent.github.io/2016/04/07/yaourt-cache/"/>
     <id>http://pagent.github.io/2016/04/07/yaourt-cache/</id>
     <published>2016-04-07T01:35:50.000Z</published>
-    <updated>2016-04-07T02:13:44.681Z</updated>
+    <updated>2016-06-24T06:17:52.426Z</updated>
     <content type="html"><![CDATA[<p>Yaourtのデフォルト状態ではビルドしたパッケージが消えてしまうが、このキャッシュをPacman同様保存するようにした。  </p>
 <p>/etc/yaourtrcのBuildの項目、EXPORTの箇所のアンコメントを無くし、値を2にすれば/var/cache/pacman/pkgに保存される。<br>だがこれだと、どれがAURのパッケージか分からなくなってしまうので、/var/cache/pacman/pkg-localに保存するようにした。  </p>
 <figure class="highlight plain"><figcaption><span>yaourtrc</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"># Build</div><div class="line">EXPORT=1</div><div class="line">EXPORTDIR="/var/cache/pacman/pkg-local"</div></pre></td></tr></table></figure>
@@ -488,7 +488,8 @@ $ <span class="built_in">sudo</span> pacman -Syu ibfonts-meta-extended
 <p>とエラーになり、Yaourtが使えない。<br>/var/cache/pacman/pkg-localのパーミッションと所有権を変更したら使えるようになった。  </p>
 <pre><code>$ sudo chmod 775 /var/<span class="operator"><span class="keyword">cache</span>/pacman/pkg-<span class="keyword">local</span>/
 $ sudo chown root:ユーザー名 /<span class="keyword">var</span>/<span class="keyword">cache</span>/pacman/pkg-<span class="keyword">local</span>/</span>
-</code></pre><p></p><p></p><br>（参照記事）<br><a href="https://wiki.archlinuxjp.org/index.php/Yaourt#.E3.82.AD.E3.83.A3.E3.83.83.E3.82.B7.E3.83.A5" target="_blank" rel="external">Yaourt - ArchWiki</a><br><a href="http://www.taylorbyte.com/docs/wiki/archlinux/yaourt" target="_blank" rel="external">Taylorbyte.com</a><p></p>
+</code></pre><p></p><p></p><br>（参照記事）<br><a href="https://wiki.archlinuxjp.org/index.php/Yaourt#.E3.82.AD.E3.83.A3.E3.83.83.E3.82.B7.E3.83.A5" target="_blank" rel="external">Yaourt - ArchWiki</a><br><a href="http://www.taylorbyte.com/docs/wiki/archlinux/yaourt" target="_blank" rel="external">Taylorbyte.com</a>  <p></p>
+<p>ーー<br>（関連記事）<br><a href="http://pagent.github.io/2015/04/19/paccache-pkgcacheclean/" target="_blank" rel="external">不要なパッケージキャッシュの削除。paccacheとpkgcacheclean</a></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Yaourtのデフォルト状態ではビルドしたパッケージが消えてしまうが、このキャッシュをPacman同様保存するようにした。  </p>
