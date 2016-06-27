@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-06-25T06:29:28.095Z</updated>
+  <updated>2016-06-27T09:07:50.309Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,25 +19,20 @@
     <link href="http://pagent.github.io/2016/06/24/markdown-cheatsheet/"/>
     <id>http://pagent.github.io/2016/06/24/markdown-cheatsheet/</id>
     <published>2016-06-24T07:48:45.000Z</published>
-    <updated>2016-06-25T06:28:46.751Z</updated>
-    <content type="html"><![CDATA[<p>何度見てもすぐ忘れるMarkdown記法。（備忘用）  </p>
-<p></p>
-
+    <updated>2016-06-25T08:15:30.228Z</updated>
+    <content type="html"><![CDATA[<p>何度見てもすぐ忘れるMarkdown記法。（備忘用）<br><br></p>
 <h4 id="Markdownのエスケープ(無効化)">Markdownのエスケープ(無効化)</h4>
-<p>Markdownの前にバックスラッシュ<code>\</code>を挿入<br><code>\</code>### 〇〇  </p>
+<p>Markdownの前にバックスラッシュ<code>\</code>を挿入<br><code>\</code>### 〇〇<br><br></p>
 <h4 id="打ち消し線">打ち消し線</h4>
-<p><code>~~</code>〇〇<code>~~</code><br>↓<br><del>〇〇</del>  </p>
+<p><code>~~</code>〇〇<code>~~</code><br>↓<br><del>〇〇</del><br><br></p>
 <h4 id="太字">太字</h4>
-<p><code>**</code>〇〇<code>**</code><br>↓<br><strong>〇〇</strong></p>
-<p></p><p></p><br>（参照記事）<br><a href="http://abcdef.hatenablog.com/entry/2013/09/27/013415" target="_blank" rel="external">Markdownでも打ち消し線が使える - ミグストラノート</a><br><a href="http://qiita.com/Qiita/items/c686397e4a0f4f11683d" target="_blank" rel="external">Markdown記法 チートシート</a>  <p></p>
-<p>（関連）<br>HTMLをMarkdownに変換してくれる便利なサイト<br><a href="http://pronama.jp/md/" target="_blank" rel="external">HTML - Markdown 変換</a></p>
+<p><code>**</code>〇〇<code>**</code><br>↓<br><strong>〇〇</strong><br><br></p>
+<p>（参照記事）<br><a href="http://abcdef.hatenablog.com/entry/2013/09/27/013415" target="_blank" rel="external">Markdownでも打ち消し線が使える - ミグストラノート</a><br><a href="http://qiita.com/Qiita/items/c686397e4a0f4f11683d" target="_blank" rel="external">Markdown記法 チートシート</a><br><br><br>（関連）<br>HTMLをMarkdownに変換してくれる便利なサイト<br><a href="http://pronama.jp/md/" target="_blank" rel="external">HTML - Markdown 変換</a></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>何度見てもすぐ忘れるMarkdown記法。（備忘用）  </p>
-<p></p>
-
+    <![CDATA[<p>何度見てもすぐ忘れるMarkdown記法。（備忘用）<br><br></p>
 <h4 id="Markdownのエスケープ(無効化)">Markdownのエスケープ(無効化)</h4>
-<p>Markdownの前にバックスラッシュ<code>\</code>を挿入<b]]>
+<p>Markdownの前にバックスラッシュ<code>\</code>を挿入<br><]]>
     </summary>
     
       <category term="ブログ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%AD%E3%82%B0/"/>
