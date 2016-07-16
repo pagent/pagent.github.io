@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2016/07/17/networkmanager/</loc>
+    <lastmod>2016-07-16T22:46:15.952Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2016/06/24/markdown-cheatsheet/</loc>
     <lastmod>2016-06-25T08:15:30.228Z</lastmod>
   </url>
@@ -474,11 +479,6 @@
   <url>
     <loc>http://pagent.github.io/2014/04/19/curry_soba/</loc>
     <lastmod>2016-02-26T23:21:34.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2014/09/26/diodon/</loc>
-    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
   <url>
@@ -1558,6 +1558,11 @@
   
   <url>
     <loc>http://pagent.github.io/2014/04/03/octopress-new-page/</loc>
+    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2014/09/26/diodon/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
