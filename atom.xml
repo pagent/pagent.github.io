@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-07-16T22:48:53.290Z</updated>
+  <updated>2016-07-16T23:41:06.940Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,31 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[スピンネットES6510のバッテリー交換]]></title>
+    <link href="http://pagent.github.io/2016/07/17/shaver-es6510-battery-exchange/"/>
+    <id>http://pagent.github.io/2016/07/17/shaver-es6510-battery-exchange/</id>
+    <published>2016-07-16T23:01:03.000Z</published>
+    <updated>2016-07-16T23:40:47.401Z</updated>
+    <content type="html"><![CDATA[<p>Nationalの電気シェーバー「スピンネットES6510」を愛用している。<br>ラベルに「08年製」と書いてあるので、使い始めて8年にもなるよう。現在は生産終了しているらしい。  </p>
+<p>横長の往復式だと肌が負けて血まみれになってしまうので、回転刃は絶対条件。<br>ヘッドが3つくらいに分かれてる複数刃も必要ない。<br>一枚刃はシンプルで掃除し易いし、なにより安い。  </p>
+<p>これまで替刃は2度ほど交換したが、最近フル充電しても2日もすると回転に勢いが無くなり、満足に剃れなくなってしまっていた。<br>バッテリーがヘタって来たようだ。  </p>
+<p>バッテリーを交換出来ないか分解してみると、単3の乾電池らしきものが入っている。<br>「タブ付き電池」というもので、ハンダ付け出来るよう電極にタブ（金属の板）が付いているらしい。  </p>
+<p>先日ダイソーに行ったら、タブ付きではないが、単3のニッケル水素充電池「ReVOLTES」（1.2V、1300mAh）があったので、これと交換してみた。  </p>
+<p>シェーバー本体の後ろ1ヶ所、剃ったヒゲが貯まる所の奥の2ヶ所のネジを外して分解。<br>元々のタブ付き電池のタブと電池部分を強引に分離。<br>タブにReVOLTESをハンダ付け。<br>本体を合わせネジを締めて終了。  </p>
+<p>10時間ほど充電してスイッチを入れると、ちゃんと回ってくれた。<br>現在2日経つが、快適に剃れている。  </p>
+<p>元々の充電池は1.2V、650mAhのようなので、フル充電するには8時間の倍の16時間ほど掛かるのかもしれないが、すぐバッテリー切れになるよりは容量が多い方が良いし。なにより安く修理できたので満足。<br>（ハンダごてを持っていなかったので、ハンダごてセット700円が別途掛かった。）  </p>
+<p>ーー<br>（参照記事）<br><a href="http://350ml.net/make/shaver.html" target="_blank" rel="external">スピンネットES-6510P 分解レポート　―350ml.net―</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Nationalの電気シェーバー「スピンネットES6510」を愛用している。<br>ラベルに「08年製」と書いてあるので、使い始めて8年にもなるよう。現在は生産終了しているらしい。  </p>
+<p>横長の往復式だと肌が負けて血まみれになってしまうので、回転刃は絶対条件。<]]>
+    </summary>
+    
+      <category term="未分類" scheme="http://pagent.github.io/tags/%E6%9C%AA%E5%88%86%E9%A1%9E/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Arch Linuxのネットワーク接続マネージャーをnetctlからNetworkManagerに変更]]></title>
@@ -481,29 +506,6 @@ $ <span class="built_in">sudo</span> pacman -Syu ibfonts-meta-extended
     </summary>
     
       <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[XamppでFTPが使用できない]]></title>
-    <link href="http://pagent.github.io/2016/04/17/xampp-ftp/"/>
-    <id>http://pagent.github.io/2016/04/17/xampp-ftp/</id>
-    <published>2016-04-16T20:41:09.000Z</published>
-    <updated>2016-04-16T21:07:02.964Z</updated>
-    <content type="html"><![CDATA[<p>Arch Linux上のXamppにWordPressをインストールした。  </p>
-<p>ユーザーdaemon、設定したパスワードでFilezillaを使って/opt/lampp/htdocsに接続。<br>接続は出来たがアップロード出来ない。  </p>
-<p>/opt/lampp/htdocsの所有者・グループがrootになっていたので、daemonに変更。  </p>
-<pre><code><span class="built_in">sudo</span> chown -R daemon:daemon /opt/lampp/htdocs
-</code></pre><p>WordPressをアップロード、インストールした。  </p>
-<p>ーー<br>（関連記事）<br><a href="/2016/03/12/arch-linux-xampp/">Arch LinuxにXamppをインストール</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Arch Linux上のXamppにWordPressをインストールした。  </p>
-<p>ユーザーdaemon、設定したパスワードでFilezillaを使って/opt/lampp/htdocsに接続。<br>接続は出来たがアップロード出来ない。  </p>
-<p>/op]]>
-    </summary>
-    
-      <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
     
   </entry>
   

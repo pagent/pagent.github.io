@@ -5,18 +5,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Arch Linuxのネットワーク接続マネージャーをnetctlからNetworkManagerに変更 | Pagent</title>
+  <title>スピンネットES6510のバッテリー交換 | Pagent</title>
   <meta name="author" content="Pagent">
   
-  <meta name="description" content="Arch Linux（Xfce）で、ネットワーク接続マネージャーとしてnetctlを使っていたが、Xubuntuなどでも馴染み深いNetworkManagerに変更した。  
-sudo pacman -S networkmanager
-
-sudo pacman -S network-manager-">
+  <meta name="description" content="Nationalの電気シェーバー「スピンネットES6510」を愛用している。ラベルに「08年製」と書いてあるので、使い始めて8年にもなるよう。現在は生産終了しているらしい。  
+横長の往復式だと肌が負けて血まみれになってしまうので、回転刃は絶対条件。ヘッドが3つくらいに分かれてる複数刃も必要ない。一">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="Arch Linuxのネットワーク接続マネージャーをnetctlからNetworkManagerに変更"/>
+  <meta property="og:title" content="スピンネットES6510のバッテリー交換"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -145,7 +143,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> Arch Linuxのネットワーク接続マネージャーをnetctlからNetworkManagerに変更</h1>
+			<h1> スピンネットES6510のバッテリー交換</h1>
 		</div>
 	
 
@@ -161,22 +159,15 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>Arch Linux（Xfce）で、ネットワーク接続マネージャーとしてnetctlを使っていたが、Xubuntuなどでも馴染み深いNetworkManagerに変更した。  </p>
-<pre><code><span class="built_in">sudo</span> pacman -S networkmanager
-
-<span class="built_in">sudo</span> pacman -S network-manager-applet
-</code></pre><p>デスクトップ環境にXfceを使っているのでxfce4-notifydも必要のようだが、これは既にインストールされていた。  </p>
-<p>netctlと競合してしまうようなので、netctlを無効化した後、NetworkManagerを有効化。  </p>
-<pre><code><span class="built_in">sudo</span> netctl disable wlp2s0-wireless
-
-<span class="built_in">sudo</span> netctl stop wlp2s0-wireless
-
-systemctl enable NetworkManager
-
-systemctl start NetworkManager
-</code></pre><p>無線LANを使用していたのでwlp2s0-wirelessを無効化したが、有線で使用している場合はenp1s0-ethernet等のプロファイルも無効化。  </p>
-<p>通知領域に表示されたアイコンをクリックし、Wi-Fiネットワークを設定。<br>馴染みのGUIツールなので簡単に設定完了。  </p>
-<p>ーー<br>（参照記事）<br><a href="https://wiki.archlinuxjp.org/index.php/NetworkManager" target="_blank" rel="external">NetworkManager - ArchWiki</a><br><a href="https://www.youtube.com/watch?v=4f70c9r6WfY" target="_blank" rel="external">Switch to Network Manager on Arch Linux - YouTube</a></p>
+	    <p>Nationalの電気シェーバー「スピンネットES6510」を愛用している。<br>ラベルに「08年製」と書いてあるので、使い始めて8年にもなるよう。現在は生産終了しているらしい。  </p>
+<p>横長の往復式だと肌が負けて血まみれになってしまうので、回転刃は絶対条件。<br>ヘッドが3つくらいに分かれてる複数刃も必要ない。<br>一枚刃はシンプルで掃除し易いし、なにより安い。  </p>
+<p>これまで替刃は2度ほど交換したが、最近フル充電しても2日もすると回転に勢いが無くなり、満足に剃れなくなってしまっていた。<br>バッテリーがヘタって来たようだ。  </p>
+<p>バッテリーを交換出来ないか分解してみると、単3の乾電池らしきものが入っている。<br>「タブ付き電池」というもので、ハンダ付け出来るよう電極にタブ（金属の板）が付いているらしい。  </p>
+<p>先日ダイソーに行ったら、タブ付きではないが、単3のニッケル水素充電池「ReVOLTES」（1.2V、1300mAh）があったので、これと交換してみた。  </p>
+<p>シェーバー本体の後ろ1ヶ所、剃ったヒゲが貯まる所の奥の2ヶ所のネジを外して分解。<br>元々のタブ付き電池のタブと電池部分を強引に分離。<br>タブにReVOLTESをハンダ付け。<br>本体を合わせネジを締めて終了。  </p>
+<p>10時間ほど充電してスイッチを入れると、ちゃんと回ってくれた。<br>現在2日経つが、快適に剃れている。  </p>
+<p>元々の充電池は1.2V、650mAhのようなので、フル充電するには8時間の倍の16時間ほど掛かるのかもしれないが、すぐバッテリー切れになるよりは容量が多い方が良いし。なにより安く修理できたので満足。<br>（ハンダごてを持っていなかったので、ハンダごてセット700円が別途掛かった。）  </p>
+<p>ーー<br>（参照記事）<br><a href="http://350ml.net/make/shaver.html" target="_blank" rel="external">スピンネットES-6510P 分解レポート　―350ml.net―</a></p>
 
 	</div>
 
@@ -184,11 +175,11 @@ systemctl start NetworkManager
 	<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2016/07/17/networkmanager/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2016/07/17/shaver-es6510-battery-exchange/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2016/07/17/networkmanager/" class="hatena-bookmark-button" data-hatena-bookmark-title="Arch Linuxのネットワーク接続マネージャーをnetctlからNetworkManagerに変更" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2016/07/17/shaver-es6510-battery-exchange/" class="hatena-bookmark-button" data-hatena-bookmark-title="スピンネットES6510のバッテリー交換" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 
 <div class="clear"></div>
@@ -200,13 +191,13 @@ systemctl start NetworkManager
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2016/07/17/shaver-es6510-battery-exchange/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2016/06/24/markdown-cheatsheet/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2016/07/17/networkmanager/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -254,7 +245,7 @@ systemctl start NetworkManager
     <ul id="tags" class="tag_box list-unstyled collapse in">
 	    <!-- _partial/post/tag -->
   
-  <li><a href="/tags/ユーティリティ/">ユーティリティ</a></li> <li><a href="/tags/Linux/">Linux</a></li>
+  <li><a href="/tags/未分類/">未分類</a></li>
 
     </ul>
 	</div>
