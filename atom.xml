@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-07-25T12:37:06.964Z</updated>
+  <updated>2016-08-05T12:08:16.093Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,34 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[アップグレード後にError15で起動出来なくなったLubuntu16.04.1を修復]]></title>
+    <link href="http://pagent.github.io/2016/08/05/repair-lubuntu/"/>
+    <id>http://pagent.github.io/2016/08/05/repair-lubuntu/</id>
+    <published>2016-08-05T11:30:23.000Z</published>
+    <updated>2016-08-05T12:05:34.936Z</updated>
+    <content type="html"><![CDATA[<p>メインPCのXubuntu14.04とサブPCのLubuntu14.04を、双方ともネットワークで16.04.1にアップグレードした。  </p>
+<p>Xubuntuの方は無事に終了したが、Lubuntuがアップグレード後に起動出来なくなってしまった。<br>“Error15 File not found”の表示から動かない。<br>Grubが正常にインストール出来なかったのが原因らしい。  </p>
+<p>クリーンインストールすることも考えたが、また一からアプリケーションを入れ、あれこれ設定するのは骨が折れる。<br>インストールDVDがあれば修復出来る可能性があるようだったので、やってみた。<br><a href="https://forums.ubuntulinux.jp/viewtopic.php?id=7146" target="_blank" rel="external">Ubuntu日本語フォーラム / デュアルブートで「Error 15: File not found」。</a><br><a href="https://wiki.ubuntulinux.jp/UbuntuTips/Others/RepairMbrWithGrub" target="_blank" rel="external">UbuntuTips/Others/RepairMbrWithGrub - Ubuntu Japanese Wiki</a>  </p>
+<p>Lubuntuの公式サイトからlubuntu-16.04.1-desktop-i386.isoをダウンロード。<br>DVDから起動し、「F6」キーを押して起動オプションを表示させ、<code>boot=casper</code>の箇所を<code>root=/dev/sda5</code>に変更。（マルチブートでsda5にインストールしていたので）<br>「Enter」キーで起動。  </p>
+<p>背景は16.04.1のものに変わっているが、見事に以前のデスクトップが現れた。<br>だが、Grubのインストールでつまづいてしまった。  </p>
+<figure class="highlight shell-session"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ sudo /usr/sbin/grub-install /dev/sda5</div><div class="line">[sudo] ***のパスワード: </div><div class="line">Installing <span class="keyword">for</span> i386-pc <span class="keyword">platform</span>.</div><div class="line">/usr/sbin/grub-install: warning: File system `ext2<span class="string">' doesn'</span>t support embedding.</div><div class="line">/usr/sbin/grub-install: warning: Embedding <span class="keyword">is</span> <span class="keyword">not</span> possible.  GRUB can only be installed <span class="keyword">in</span> this setup <span class="keyword">by</span> <span class="keyword">using</span> blocklists.  However, blocklists are UNRELIABLE <span class="keyword">and</span> their use <span class="keyword">is</span> discouraged..</div><div class="line">/usr/sbin/grub-install: エラー: will <span class="keyword">not</span> proceed <span class="keyword">with</span> blocklists.</div></pre></td></tr></table></figure>
+
+<p>どうやら<code>--force</code>オプションを付けて、強制的にブロックリストを使わせないといけないらしい。<br><a href="https://wiki.archlinuxjp.org/index.php/GRUB#.E3.83.91.E3.83.BC.E3.83.86.E3.82.A3.E3.82.B7.E3.83.A7.E3.83.B3.E3.82.84.E3.83.91.E3.83.BC.E3.83.86.E3.82.A3.E3.82.B7.E3.83.A7.E3.83.B3.E3.83.AC.E3.82.B9.E3.83.87.E3.82.A3.E3.82.B9.E3.82.AF.E3.81.AB.E3.82.A4.E3.83.B3.E3.82.B9.E3.83.88.E3.83.BC.E3.83.AB.E3.81.99.E3.82.8B" target="_blank" rel="external">GRUB - ArchWiki</a>  </p>
+<figure class="highlight shell-session"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ sudo /usr/sbin/grub-<span class="operator"><span class="keyword">install</span> /dev/sda5 <span class="comment">--force</span></span></div><div class="line">…</div><div class="line">Installation finished. <span class="keyword">No</span> error reported.</div></pre></td></tr></table></figure>
+
+<p>今度はちゃんとインストール出来た。<br>再起動も正常。  </p>
+<p>修復出来て良かった。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>メインPCのXubuntu14.04とサブPCのLubuntu14.04を、双方ともネットワークで16.04.1にアップグレードした。  </p>
+<p>Xubuntuの方は無事に終了したが、Lubuntuがアップグレード後に起動出来なくなってしまった。<br>“Error]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[スピンネットES6510のバッテリー交換]]></title>
@@ -486,25 +514,6 @@ $ <span class="built_in">sudo</span> pacman -Syu ibfonts-meta-extended
     </summary>
     
       <category term="時事" scheme="http://pagent.github.io/tags/%E6%99%82%E4%BA%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[出会い系サイトからの迷惑メール]]></title>
-    <link href="http://pagent.github.io/2016/04/17/spam-mail/"/>
-    <id>http://pagent.github.io/2016/04/17/spam-mail/</id>
-    <published>2016-04-17T04:42:43.000Z</published>
-    <updated>2016-04-17T05:06:13.451Z</updated>
-    <content type="html"><![CDATA[<p>久しぶりに普段使っていないプロバイダーのメールを見てみると、まったく身に覚えのない出会い系サイトから多量の迷惑メールが来ていた。<br>件名は愛人がどうとか、大人の付き合いがどうとか。  </p>
-<p>From:欄のアドレスはいろいろ変えてあるが、ヘッダーを見ると3つあるReceived:の一番下のものはどれも<code>from m1cr0wave.net (〜x〜x〜x〜.adv-server.net [〜.〜.〜.〜])</code>で始まることで共通している。<br>（X-spam-judge: okとなっていて、プロバイダーの迷惑メール判定は通過しているよう）  </p>
-<p>メーラーの振り分け設定（フィルター）で、ヘッダーに<code>adv-server.net</code>を含むものは受信せずサーバーから削除するようにした。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>久しぶりに普段使っていないプロバイダーのメールを見てみると、まったく身に覚えのない出会い系サイトから多量の迷惑メールが来ていた。<br>件名は愛人がどうとか、大人の付き合いがどうとか。  </p>
-<p>From:欄のアドレスはいろいろ変えてあるが、ヘッダーを見ると3つある]]>
-    </summary>
-    
-      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
     
   </entry>
   

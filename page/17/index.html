@@ -159,6 +159,95 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/12/03/hexo-freewill-monthly-archives/" >HexoのテーマFreewillに月別アーカイブ</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年12月3日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>サイドバーの種類にもよるが、Gitリポジトリを使ったブログにサイドバーを付けると、新規記事をdeployする際に更新するファイルが増えてしまって良くないように思う。  </p>
+<p>先日入れたテーマFreewillはその辺を考慮してか、ページネーションのページ等どうしても更新せざるを得ないページにはサイドバーを置き、個別記事のページではサイドバー領域に投稿日やタグなどを表示するよう工夫されている。<br>実際、新規記事をdeployしても、過去の記事はcommitされていないようだ。  </p>
+<p>ところで、Freewillには月別アーカイブが無かったので、入れることにした。  </p>
+<p>デフォルトテーマのLandscapeのarchive.ejsをそのままfreewill/layout/_widget内にコピペすると、西暦の後ろに投稿数が隙間無しにくっついていて、見栄えが良くない。  </p>
+<p>archive.ejsを修正、  </p>
+<pre><code><span class="vbscript">&lt;% <span class="keyword">if</span> (site.posts.length){ %&gt;</span>
+    <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"widget"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">h4</span>&gt;</span><span class="vbscript">&lt;%= __(<span class="comment">'Monthly Archives') %&gt;</span></span><span class="tag">&lt;/<span class="title">h4</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">ul</span> <span class="attribute">class</span>=<span class="value">"archive-list inline list-unstyled"</span>&gt;</span>
+        <span class="vbscript">&lt;%- list_archives() %&gt;</span>
+        <span class="tag">&lt;/<span class="title">ul</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+<span class="vbscript">&lt;% } %&gt;</span>
+</code></pre><p>freewill/source/css/style.cssにもスタイルを加えた。  </p>
+<pre><code><span class="comment">/* Monthly Archives
+---------------------------- */</span>
+
+<span class="class">.archive-list</span> <span class="tag">ul</span> <span class="rules">{
+  <span class="rule"><span class="attribute">padding</span>:<span class="value"><span class="number">0</span> <span class="number">3px</span></span></span>;
+  <span class="rule"><span class="attribute">list-style-type</span>:<span class="value"> none</span></span>;
+  <span class="rule"><span class="attribute">line-height</span>:<span class="value"> <span class="number">20px</span></span></span>;
+<span class="rule">}</span></span>
+<span class="class">.archive-list-count</span> <span class="rules">{
+    <span class="rule"><span class="attribute">color</span>:<span class="value"> <span class="hexcolor">#888</span></span></span>;
+<span class="rule">}</span></span>
+<span class="class">.archive-list-count</span><span class="pseudo">:before</span> <span class="rules">{
+    <span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="string">" ("</span></span></span>;
+<span class="rule">}</span></span>
+<span class="class">.archive-list-count</span><span class="pseudo">:after</span> <span class="rules">{
+    <span class="rule"><span class="attribute">content</span>:<span class="value"> <span class="string">")"</span></span></span>;
+<span class="rule">}</span></span>
+</code></pre><p>ちゃんとした知識が無く、見よう見まねなので、あまり良い記述ではないと思うが、自分としては十分満足。  </p>
+<p>ーー<br>（追記）<br>Githubのコミット歴をよく見てみたら、同じタグを使っている過去記事も更新されるようだ。<br>個別記事ページのタグの箇所にそのタグを使っている記事数が表示されているせいだろう。  </p>
+<p>タグクラウドやタグ一覧ページは良いとして、個別記事ページのタグには記事数は無い方が良さそうだ。  </p>
+<p>freewill/layout/_partial/post/tag.ejsの5行目から<code>&lt;span&gt;&#39; + tag.length  + &#39;&lt;/span&gt;</code>を削除して、タグ名だけにした。  </p>
+<pre><code><span class="keyword">tags</span>.push(<span class="string">'&lt;li&gt;&lt;a href="'</span> + config.root + <span class="keyword">tag</span>.path + <span class="string">'"&gt;'</span> + <span class="keyword">tag</span>.name + <span class="string">'&lt;/a&gt;&lt;/li&gt;'</span>);
+</code></pre><p>これで様子を見てみようと思う。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/12/03/hexo-freewill-monthly-archives/" data-text="HexoのテーマFreewillに月別アーカイブ | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/12/03/hexo-freewill-monthly-archives/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/12/03/hexo-freewill-monthly-archives/" class="hatena-bookmark-button" data-hatena-bookmark-title="HexoのテーマFreewillに月別アーカイブ" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Hexo/">Hexo</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/12/02/hexo-tweetbutton/" >Hexoの記事一覧ページにツイートボタン設置</a>
 		</h3>
 	
@@ -818,70 +907,6 @@ metalsmith(__dirname)
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/11/26/filename-case/" >Hexo新規記事作成時のタイトル大文字アルファベットを小文字のファイル名に</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年11月26日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Hexoのデフォルト設定で新規記事を作成する際、記事タイトルに大文字アルファベットを使うと、そのままファイル名としてソースが作成される。</p>
-<pre><code>$ hexo new New-Post
-[info] File created at /<span class="keyword">...</span>/<span class="keyword">source</span>/_posts/<span class="number">2014</span>-<span class="number">11</span>-<span class="number">26</span>-New-Post.md
-</code></pre><p>URLに大文字アルファベットが入ってしまう。  </p>
-<p>URLに大文字は使いたくないので、Octopressのように大文字→小文字でファイル出力して欲しい。  </p>
-<p>_config.ymlのWritingの項目<code>filename_case:</code>の値をデフォルトの「0」から「1」に変更することで設定出来た。  </p>
-<pre><code>$ hexo new New-Post
-[info] File created at /<span class="keyword">...</span>/<span class="keyword">source</span>/_posts/<span class="number">2014</span>-<span class="number">11</span>-<span class="number">26</span>-new-post.md
-</code></pre><p>filename_case: 0（そのまま出力。New-Post→New-Post）  </p>
-<p>filename_case: 1（大文字を小文字に変換。New-Post→new-post.md）  </p>
-<p>filename_case: 2（すべて大文字に変換。New-Post→NEW-POST.md）  </p>
-<p>ーー<br>（追記）<br>出来たと思ったら、generateした際にtagsまでがすべて小文字になってしまった。<br>これでは困るので、<code>filename_case: 0</code>に戻した。<br>当面、大文字のファイル名は手作業で小文字にするしかなさそうだ。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/11/26/filename-case/" data-text="Hexo新規記事作成時のタイトル大文字アルファベットを小文字のファイル名に | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/11/26/filename-case/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/11/26/filename-case/" class="hatena-bookmark-button" data-hatena-bookmark-title="Hexo新規記事作成時のタイトル大文字アルファベットを小文字のファイル名に" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Hexo/">Hexo</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -922,45 +947,45 @@ metalsmith(__dirname)
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
+			<li><a href="/tags/ことば/">ことば<span>10</span></a></li>
+		
 			<li><a href="/tags/ブラウザ/">ブラウザ<span>32</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>13</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+			<li><a href="/tags/blog/">blog<span>39</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>22</span></a></li>
-		
-			<li><a href="/tags/セキュリティ/">セキュリティ<span>2</span></a></li>
-		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
-		
-			<li><a href="/tags/コード/">コード<span>1</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>42</span></a></li>
-		
-			<li><a href="/tags/ブログ/">ブログ<span>1</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>95</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>10</span></a></li>
+			<li><a href="/tags/プライバシー/">プライバシー<span>6</span></a></li>
 		
 			<li><a href="/tags/時事/">時事<span>1</span></a></li>
 		
+			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>96</span></a></li>
+		
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/コード/">コード<span>1</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>5</span></a></li>
+		
 			<li><a href="/tags/食/">食<span>4</span></a></li>
 		
-			<li><a href="/tags/プライバシー/">プライバシー<span>6</span></a></li>
+			<li><a href="/tags/ネット/">ネット<span>42</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>22</span></a></li>
+		
+			<li><a href="/tags/ブログ/">ブログ<span>1</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>25</span></a></li>
@@ -975,6 +1000,10 @@ metalsmith(__dirname)
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2016/08/05/repair-lubuntu/" ><i class="fa fa-file-o"></i>アップグレード後にError15で起動出来なくなったL...</a>
+      </li>
     
       <li>
         <a href="/2016/07/17/shaver-es6510-battery-exchange/" ><i class="fa fa-file-o"></i>スピンネットES6510のバッテリー交換</a>
@@ -992,10 +1021,6 @@ metalsmith(__dirname)
         <a href="/2016/06/19/spam-mail-hdfclife/" ><i class="fa fa-file-o"></i>身に覚えのないHDFC Lifeからのメール</a>
       </li>
     
-      <li>
-        <a href="/2016/06/18/rosemary-utility/" ><i class="fa fa-file-o"></i>排水口のぬめり防止にローズマリーの葉っぱを活用</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -1005,7 +1030,7 @@ metalsmith(__dirname)
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">2016年07月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">2016年05月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">2016年08月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">2016年07月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">2016年05月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
 		</ul>
 	</div>
 

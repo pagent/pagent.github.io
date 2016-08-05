@@ -159,6 +159,62 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/09/25/debian-wheezy-xfce/" >Debian（wheezy）Xfceをインストール</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年9月25日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Xubuntu12.04からXubuntu14.04にアップグレードしていた旧Xp機のサブマシーンをアップデートしたら、「disabling IRQ #9」と表示されたまま起動しなくなってしまった。<br>DVDメディアからXubuntu14.04.1をクリーンインストールしようとしても「disabling IRQ #9」の表示で止まってしまう。<br>他にもUbuntu14.04.1やLinuxMint17などUbuntu14.04派生のディストリビューションでは同様に「disabling IRQ #9」で止まってしまうので、Linux Kernel 3.13とハードとの相性の問題なのだろうか。</p>
+<p>Xubuntuに近いものということで、Debian 7.0 wheezyをインストールすることにしたが、デスクトップ環境がgnome3.4になってしまった。UbuntuのUnityみたいで使いづらい。</p>
+<p>検索すると「netinst」CDからだとXfceでインストール出来るようだったので、Debianのサイトから「debian-7.6.0-i386-netinst.iso」をダウンロード。<br>インストールのオプションで”Advanced options” 、”Alternate desktop environments”と進み、Xfceを選択したらXfceデスクトップでインストール出来た。</p>
+<p>Xfceのバージョンが4.8でパネルの縦置きには適さないが、Xfce4.10を導入する方法が分からないので、当面はこれで我慢しようと思う。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/09/25/debian-wheezy-xfce/" data-text="Debian（wheezy）Xfceをインストール | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/09/25/debian-wheezy-xfce/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/09/25/debian-wheezy-xfce/" class="hatena-bookmark-button" data-hatena-bookmark-title="Debian（wheezy）Xfceをインストール" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/09/12/mt-feed-descend/" >Movable Type「Rainier」のフィードを降順に</a>
 		</h3>
 	
@@ -693,64 +749,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/09/04/date-format/" >Octopress投稿日の日付け表記を日本語に</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年9月4日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Octopressの記事投稿日が「Sep 4th, 2014」のような英語式の日付け表記になっていたので、日本語式に変更した。</p>
-<p>「Octopress」フォルダ内の<code>_config.yml</code>で<code>date_format: &quot;ordinal&quot;</code>となっているところを<code>date_format: &quot;%Y年%-m月%-d日&quot;</code>に変更したら、「２０１４年９月４日」という表記になった。<br><code>%-m</code>、<code>%-d</code>と<code>-</code>を付けることで、ひと桁の月日の先頭に入っている「０」を抜くことが出来る。</p>
-<p>アーカイブページでの表記は相変わらず英語式のままだが、カスタマイズのやり方が分からないので、これは我慢することに。</p>
-<p>（参考記事）<br><a href="http://quickhack.net/nom/blog/2013-05-01-org-octopress.html" target="_blank" rel="external">Octopress の記事を org-mode で – Quickhack Diary</a></p>
-<p><a href="http://blog.mktime.com/archive/42.html" target="_blank" rel="external">php： Smartyのdate_formatで前のゼロを表示しない方法 « 仙人の心得</a></p>
-<p>（追記）<br>Bootstrapのテーマを入れていると上記のやり方で日付け表記を変更できたが、Octopressのデフォルトのテーマでは変更が反映されないようだ。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/09/04/date-format/" data-text="Octopress投稿日の日付け表記を日本語に | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/09/04/date-format/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/09/04/date-format/" class="hatena-bookmark-button" data-hatena-bookmark-title="Octopress投稿日の日付け表記を日本語に" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Octopress/">Octopress</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -791,45 +789,45 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
-		
 			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>42</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>32</span></a></li>
-		
-			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>39</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>5</span></a></li>
 		
-			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>96</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>32</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>39</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>42</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/セキュリティ/">セキュリティ<span>2</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>10</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+			<li><a href="/tags/ハードウェア/">ハードウェア<span>1</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>22</span></a></li>
+			<li><a href="/tags/コード/">コード<span>1</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>95</span></a></li>
+			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
-		
-			<li><a href="/tags/時事/">時事<span>1</span></a></li>
-		
-			<li><a href="/tags/ブログ/">ブログ<span>1</span></a></li>
+			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
 		
 			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
 		
+			<li><a href="/tags/時事/">時事<span>1</span></a></li>
+		
 			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
 		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>22</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>25</span></a></li>
@@ -844,6 +842,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2016/08/05/repair-lubuntu/" ><i class="fa fa-file-o"></i>アップグレード後にError15で起動出来なくなったL...</a>
+      </li>
     
       <li>
         <a href="/2016/07/17/shaver-es6510-battery-exchange/" ><i class="fa fa-file-o"></i>スピンネットES6510のバッテリー交換</a>
@@ -861,10 +863,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
         <a href="/2016/06/19/spam-mail-hdfclife/" ><i class="fa fa-file-o"></i>身に覚えのないHDFC Lifeからのメール</a>
       </li>
     
-      <li>
-        <a href="/2016/06/18/rosemary-utility/" ><i class="fa fa-file-o"></i>排水口のぬめり防止にローズマリーの葉っぱを活用</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -874,7 +872,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">2016年07月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">2016年05月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">2016年08月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">2016年07月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">2016年05月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
 		</ul>
 	</div>
 

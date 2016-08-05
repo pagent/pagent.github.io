@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2016/08/05/repair-lubuntu/</loc>
+    <lastmod>2016-08-05T12:05:34.936Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2016/07/17/shaver-es6510-battery-exchange/</loc>
     <lastmod>2016-07-25T12:36:55.390Z</lastmod>
   </url>
@@ -484,11 +489,6 @@
   <url>
     <loc>http://pagent.github.io/2014/04/19/curry_soba/</loc>
     <lastmod>2016-02-26T23:21:34.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2014/04/04/octopress-sidebar/</loc>
-    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
   <url>
@@ -1568,6 +1568,11 @@
   
   <url>
     <loc>http://pagent.github.io/2014/09/27/nepomuk/</loc>
+    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2014/04/04/octopress-sidebar/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
