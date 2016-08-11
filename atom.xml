@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-08-11T09:50:34.720Z</updated>
+  <updated>2016-08-11T09:53:30.295Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2016/08/11/xubuntu-openvpn/"/>
     <id>http://pagent.github.io/2016/08/11/xubuntu-openvpn/</id>
     <published>2016-08-11T03:33:43.000Z</published>
-    <updated>2016-08-11T09:49:40.550Z</updated>
+    <updated>2016-08-11T09:53:20.666Z</updated>
     <content type="html"><![CDATA[<p>最近、無料の公衆無線LANスポットを利用する機会が増えて来た。<br>とても有難いのだが、対策無しだと通信が丸見えだそうで、安全のためにはVPN（バーチャル プライベート ネットワーク）というのを使った方が良いとのこと。自分専用のトンネルみたいなものらしい。<br>そこで、ネットブックのXubuntuでVNP接続が出来るようにした。  </p>
 <pre><code><span class="built_in">sudo</span> apt-get install network-manager-openvpn-gnome
 </code></pre><p>依存関係からopenvpn、network-manager-openvpn等もインストールされる。<br>（Xubuntu16.04からaptが新しくなったのか、<code>apt-get install</code>ではなく<code>apt install</code>でも良いよう。）  </p>
@@ -42,7 +42,7 @@
 <h3 id="TunnelBear、CyberGhost">TunnelBear、CyberGhost</h3>
 <p>有名で評判も良さそうなTunnelBearとCyberGhostは、残念ながら現在、有料プランでないとLinuxからの接続は出来ない模様。  </p>
 <h2 id="結論">結論</h2>
-<p>結局どれが良いのか良く分からず。無料プランでは速度も似たりよったり。<br>その時々で繋がるものを使うことになりそう。  </p>
+<p>結局どれが良いのか良く分からず。無料プランでは速度も似たりよったり。<br>その時々で快適に繋がるものを使うことになりそう。  </p>
 <p>あとVPNプロバイダーが保存するlogについて、TorVPNの「よくある質問」のページに、おもしろい記述があった。  </p>
 <blockquote>
 <p>Q: No logging?</p>
