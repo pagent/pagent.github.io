@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-08-11T10:02:39.588Z</updated>
+  <updated>2016-08-11T11:35:41.241Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,29 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[クリーンインストールしたXubuntu16.04でTrueCryptのボリュームをマウント出来ない]]></title>
+    <link href="http://pagent.github.io/2016/08/11/truecrypt-dmsetup/"/>
+    <id>http://pagent.github.io/2016/08/11/truecrypt-dmsetup/</id>
+    <published>2016-08-11T11:13:10.000Z</published>
+    <updated>2016-08-11T11:35:19.813Z</updated>
+    <content type="html"><![CDATA[<p>クリーンインストールしたXubuntu16.04で、TrueCryptのボリュームをマウントしようとしても、何故かマウント出来ない。<br>パスワードは正しく入力しているはずだが、何度やっても</p>
+<div style="border-style: solid ; border-width: 1px; margin: 10px 0px 10px 0px; padding: 10px 10px 10px 10px; border-color: grey;">そのようなファイルやディレクトリはありません<br>dmsetup</div>
+
+<p>とエラーになる。<br>検索してみると、どうやらdmsetup（device-mapper）というものが足りてないようだ。<br><a href="https://ubuntuforums.org/showthread.php?t=2321663" target="_blank" rel="external">[ubuntu] After clean install of Ubuntu 16.04, VeraCrypt and TrueCrypt are acting weird</a>  </p>
+<p>参照記事の通り、dmsetupを入れたらマウント出来るようになった。  </p>
+<p>ところで、一部に脆弱性があると言われ、すでに開発は終了しているが、使い勝手が良いので頑なに使い続けているTrueCrypt。<br>そのTrueCryptの後継とも言われている「VeraCrypt」というのがあるそうな。<br>TrueCryptの暗号化ボリュームをマウントすることも出来るようだが。  </p>
+<p>名前は「TrueCrypt」の方がカッコ良いんだけどな。<br>また今度、暇な時に試してみるかもしれない。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>クリーンインストールしたXubuntu16.04で、TrueCryptのボリュームをマウントしようとしても、何故かマウント出来ない。<br>パスワードは正しく入力しているはずだが、何度やっても</p>
+<div style="border-style: solid ; bo]]>
+    </summary>
+    
+      <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Xubuntuで無料Wi-Fi利用時にVPN接続する]]></title>
@@ -501,37 +524,6 @@ $ <span class="built_in">sudo</span> pacman -Syu ibfonts-meta-extended
 ]]></content>
     <summary type="html">
     <![CDATA[<p>4月21日、Xubuntuの最新版Xubuntu 16.04 LTSが正式にリリースされた。<br>前に開発版をインストールして使い勝手が良さそうだったので、メインPCのXubuntu 14.04も16.04にアップグレードしたいところ。<br>「ソフトウェアの更新」や「ソ]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Xubuntuでアップデートに失敗する]]></title>
-    <link href="http://pagent.github.io/2016/04/18/xubuntu-hash-sum-mismatch/"/>
-    <id>http://pagent.github.io/2016/04/18/xubuntu-hash-sum-mismatch/</id>
-    <published>2016-04-18T10:09:51.000Z</published>
-    <updated>2016-04-18T14:19:50.791Z</updated>
-    <content type="html"><![CDATA[<p>Xubuntu14.04で「ソフトウェアの更新」をすると  </p>
-<p><div class="box">リポジトリ情報のダウンロードに失敗しました。<br>インターネット接続を確認してください。</div>とエラー表示が出るようになってしまった。<br>エラーの通知画面で「詳細」をクリックすると  </p>
-<pre><code><span class="constant">W</span><span class="symbol">:Failed</span> to fetch <span class="symbol">http:</span>/<span class="regexp">/jp.archive.ubuntu.com/ubuntu</span><span class="regexp">/dists/trusty</span>-updates/main/binary-amd64/<span class="constant">Packages</span>  <span class="constant">Hash</span> <span class="constant">Sum</span> mismatch
-, <span class="constant">W</span><span class="symbol">:Failed</span> to fetch <span class="symbol">http:</span>/<span class="regexp">/jp.archive.ubuntu.com/ubuntu</span><span class="regexp">/dists/trusty</span>-updates/main/binary-i386/<span class="constant">Packages</span>  <span class="constant">Hash</span> <span class="constant">Sum</span> mismatch
-, <span class="constant">E</span><span class="symbol">:Some</span> index files failed to download. <span class="constant">They</span> have been ignored, <span class="keyword">or</span> old ones used instead.
-</code></pre><p>と表示されている。  </p>
-<p>端末から<code>apt-get update</code>しようとしても  </p>
-<pre><code><span class="variable">$ </span>sudo apt-get update
-
-<span class="constant">W</span><span class="symbol">:</span> <span class="symbol">http:</span>/<span class="regexp">/jp.archive.ubuntu.com/ubuntu</span><span class="regexp">/dists/trusty</span>-updates/main/binary-amd64/<span class="constant">Packages</span> の取得に失敗しました  ハッシュサムが適合しません
-
-<span class="constant">W</span><span class="symbol">:</span> <span class="symbol">http:</span>/<span class="regexp">/jp.archive.ubuntu.com/ubuntu</span><span class="regexp">/dists/trusty</span>-updates/main/binary-i386/<span class="constant">Packages</span> の取得に失敗しました  ハッシュサムが適合しません
-
-<span class="constant">E</span><span class="symbol">:</span> いくつかのインデックスファイルのダウンロードに失敗しました。これらは無視されるか、古いものが代わりに使われます。
-</code></pre><p>と失敗する。<br>ちょっと焦ったが、「ソフトウェアとアップデート」でダウンロード元を、「日本のサーバー」から「メインサーバー」や「riken」に変更したら、正常にキャッシュが更新された。<br>jp.archive.ubuntu.comが一時的に繋がらなくなっていただけかもしれない。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Xubuntu14.04で「ソフトウェアの更新」をすると  </p>
-<p><div class="box">リポジトリ情報のダウンロードに失敗しました。<br>インターネット接続を確認してください。</div>とエラー表示が出るようになってしまった。<br>エラーの通知画]]>
     </summary>
     
       <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
