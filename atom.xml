@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-08-11T15:02:07.455Z</updated>
+  <updated>2016-08-11T15:05:03.867Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -42,7 +42,7 @@
     <link href="http://pagent.github.io/2016/08/11/xubuntu-openvpn/"/>
     <id>http://pagent.github.io/2016/08/11/xubuntu-openvpn/</id>
     <published>2016-08-11T03:33:43.000Z</published>
-    <updated>2016-08-11T15:01:50.930Z</updated>
+    <updated>2016-08-11T15:03:53.124Z</updated>
     <content type="html"><![CDATA[<p>最近、無料の公衆無線LANスポットを利用する機会が増えて来た。<br>とても有難いのだが、対策無しだと通信が丸見えだそうで、安全のためにはVPN（バーチャル プライベート ネットワーク）というのを使った方が良いとのこと。自分専用のトンネルみたいなものらしい。<br>そこで、ネットブックのXubuntuでVNP接続が出来るようにした。  </p>
 <pre><code><span class="built_in">sudo</span> apt-get install network-manager-openvpn-gnome
 </code></pre><p>依存関係からopenvpn、network-manager-openvpn等もインストールされる。<br>（Xubuntu16.04からaptが新しくなったのか、<code>apt-get install</code>ではなく<code>apt install</code>でも良いよう。）  </p>
@@ -55,7 +55,7 @@
 <h3 id="FreeVPN-me">FreeVPN.me</h3>
 <p><a href="https://freevpn.me/accounts/" target="_blank" rel="external">Free VPN Accounts | FreeVPN.me - Free OpenVPN and PPTP Accounts</a><br>メーラー（Sylpheed）でGmailにアクセス出来ないが（ブラウザでのGmailへのアクセスは可能）、ブラウジングは普通に使える。サーバーはPPTP、OpenVPNそれぞれ一つだけ。<br>“no logging”をうたっているが実際ところは不明。  </p>
 <h3 id="VPNMe-me">VPNMe.me</h3>
-<p><a href="https://www.vpnme.me/freevpn.html" target="_blank" rel="external">Free VPN servers list - VPNMe.me Free VPN</a><br>上のFreeVPN.meと名前が紛らわしいが別もの。<br>freeのサーバーはPPTP、OpenVPNそれぞれ一つ。<br>詐欺や悪用を避けるため頻回にパスワードを変更すると宣言しており、実際たびたび変わる。  </p>
+<p><a href="https://www.vpnme.me/freevpn.html" target="_blank" rel="external">Free VPN servers list - VPNMe.me Free VPN</a><br>上のFreeVPN.meと名前が紛らわしいが、別もの。<br>freeのサーバーはPPTP、OpenVPNそれぞれ一つ。<br>詐欺や悪用を避けるため頻回にパスワードを変更すると宣言しており、実際たびたび変わる。  </p>
 <h3 id="VPNBook">VPNBook</h3>
 <p><a href="http://www.vpnbook.com/freevpn" target="_blank" rel="external">Free VPN Accounts • 100% Free PPTP and OpenVPN Service</a><br>普通に使える。接続ログ（IPアドレスと時刻）は1週間で削除とのこと。  </p>
 <h2 id="登録が必要のもの">登録が必要のもの</h2>
