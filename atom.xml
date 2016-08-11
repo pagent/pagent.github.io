@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-08-11T09:31:55.286Z</updated>
+  <updated>2016-08-11T09:36:33.059Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,10 +19,10 @@
     <link href="http://pagent.github.io/2016/08/11/xubuntu-openvpn/"/>
     <id>http://pagent.github.io/2016/08/11/xubuntu-openvpn/</id>
     <published>2016-08-11T03:33:43.000Z</published>
-    <updated>2016-08-11T09:31:34.392Z</updated>
-    <content type="html"><![CDATA[<p>最近、公衆無線LANを使う機会が増えて来たが、安全のためにはVPN（バーチャル プライベート ネットワーク）を使った方が良いらしいので、ネットブックのXubuntuでVNP接続が出来るようにした。  </p>
+    <updated>2016-08-11T09:36:20.926Z</updated>
+    <content type="html"><![CDATA[<p>最近、無料の公衆無線LANスポットを使う機会が増えて来た。<br>とても有難いのだが、対策無しだと通信が丸見えだそうで、安全のためにはVPN（バーチャル プライベート ネットワーク）というのを使った方が良いらしい。<br>そこで、ネットブックのXubuntuでVNP接続が出来るようにした。  </p>
 <pre><code><span class="built_in">sudo</span> apt-get install network-manager-openvpn-gnome
-</code></pre><p>依存関係からopenvpn、network-manager-openvpn等もインストールされる。<br>（Xubuntu16.04からaptが新しくなったのか、<code>apt-get</code>ではなく<code>apt</code>だけでも良いよう。）  </p>
+</code></pre><p>依存関係からopenvpn、network-manager-openvpn等もインストールされる。<br>（Xubuntu16.04からaptが新しくなったのか、<code>apt-get install</code>ではなく<code>apt install</code>でも良いよう。）  </p>
 <p>無料で利用出来るという条件で、色々なVPNプロバイダーを試してみた。  </p>
 <h2 id="登録不要のもの">登録不要のもの</h2>
 <h3 id="VPN_Gate">VPN Gate</h3>
@@ -54,8 +54,7 @@
 <p>ログの保持については、あまり神経質にならなくても良いのかも知れない。<br>まあ無料ということもあるし。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>最近、公衆無線LANを使う機会が増えて来たが、安全のためにはVPN（バーチャル プライベート ネットワーク）を使った方が良いらしいので、ネットブックのXubuntuでVNP接続が出来るようにした。  </p>
-<pre><code><span class="built_in]]>
+    <![CDATA[<p>最近、無料の公衆無線LANスポットを使う機会が増えて来た。<br>とても有難いのだが、対策無しだと通信が丸見えだそうで、安全のためにはVPN（バーチャル プライベート ネットワーク）というのを使った方が良いらしい。<br>そこで、ネットブックのXubuntuでVNP接続が出]]>
     </summary>
     
       <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
