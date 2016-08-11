@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-08-11T10:00:43.762Z</updated>
+  <updated>2016-08-11T10:02:39.588Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2016/08/11/xubuntu-openvpn/"/>
     <id>http://pagent.github.io/2016/08/11/xubuntu-openvpn/</id>
     <published>2016-08-11T03:33:43.000Z</published>
-    <updated>2016-08-11T10:00:18.806Z</updated>
+    <updated>2016-08-11T10:02:30.488Z</updated>
     <content type="html"><![CDATA[<p>最近、無料の公衆無線LANスポットを利用する機会が増えて来た。<br>とても有難いのだが、対策無しだと通信が丸見えだそうで、安全のためにはVPN（バーチャル プライベート ネットワーク）というのを使った方が良いとのこと。自分専用のトンネルみたいなものらしい。<br>そこで、ネットブックのXubuntuでVNP接続が出来るようにした。  </p>
 <pre><code><span class="built_in">sudo</span> apt-get install network-manager-openvpn-gnome
 </code></pre><p>依存関係からopenvpn、network-manager-openvpn等もインストールされる。<br>（Xubuntu16.04からaptが新しくなったのか、<code>apt-get install</code>ではなく<code>apt install</code>でも良いよう。）  </p>
@@ -51,7 +51,7 @@
 <p>ーー<br>Q: No loggingですか？</p>
 <p>A: 多くのVPNプロバイダーが’no logging’を宣伝していますが、実際には適当なログを取っています。’no logging’のポリシーを宣伝するのは商売上の策略です。たとえVPNプロバイダーがログを取っていなかったとしても、彼等が使用するISPはネットワークフローの通信ログを保持するよう求められており、犯罪的な行為に関わる件では警察の捜査を助けます。仮に全くログ無しでVPNを使った場合には、虐待者とインターネットアドレスを共有することになってしまいます。あなたのインターネットホストへの接続はブロックされるか、ハイリスクに分類されるかもしれません。そうなるとウェブサイトを訪問したり、Eメールを送ったり、ネットで支払いをしたりすることが出来なくなる可能性があります。私達のポリシーは、あなたがインターネットのリモートホストと送受信する「情報」に関して、決してログを取らず、壊さず、干渉しないことです。私達は断固として短い期間、接続ログを保持しますが、これは大量スキャンやDoS攻撃、またシスタムへの他の抑圧を止めさせるためです。私達が発言禁止令の元、あなたのプライバシーを侵害することを何らかの政府機関に強いられたかどうかは、<a href="https://my.torvpn.com/en/warrant-canary" target="_blank" rel="external">Warrant canary</a>で知ることが出来ます。<br>ーー  </p>
 <p>“Warrant canary”(令状のカナリア)については、下記サイトの解説が分かりやすい。<br><a href="http://www.gizmodo.jp/2014/09/2_109.html" target="_blank" rel="external">アップルの透明性レポートから消えた2行の意味｜ギズモード・ジャパン</a>  </p>
-<p>ログの保持については、あまり神経質にならなくても良いのかも知れない。<br>たとえVPNを使っていても、公衆無線LANスポットでのネットバンキングやクレジットカード情報の入力などは避けた方が良いだろうし、漏れても被害の少ない使い方に留めるつもり。</p>
+<p>ログの保持については、あまり神経質にならなくても良いのかも知れない。<br>たとえVPNを使っていても、公衆無線LANスポットでのネットバンキングやクレジットカード情報の入力などは避けた方が良いだろうし、仮に漏れても被害の少ない使い方に留めるつもり。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>最近、無料の公衆無線LANスポットを利用する機会が増えて来た。<br>とても有難いのだが、対策無しだと通信が丸見えだそうで、安全のためにはVPN（バーチャル プライベート ネットワーク）というのを使った方が良いとのこと。自分専用のトンネルみたいなものらしい。<br>そこで、]]>
