@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-08-11T09:43:12.767Z</updated>
+  <updated>2016-08-11T09:50:34.720Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,12 +15,12 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[Xubuntuで無料Wi-Fi利用時にVPNを使う]]></title>
+    <title><![CDATA[Xubuntuで無料Wi-Fi利用時にVPN接続する]]></title>
     <link href="http://pagent.github.io/2016/08/11/xubuntu-openvpn/"/>
     <id>http://pagent.github.io/2016/08/11/xubuntu-openvpn/</id>
     <published>2016-08-11T03:33:43.000Z</published>
-    <updated>2016-08-11T09:42:57.690Z</updated>
-    <content type="html"><![CDATA[<p>最近、無料の公衆無線LANスポットを使う機会が増えて来た。<br>とても有難いのだが、対策無しだと通信が丸見えだそうで、安全のためにはVPN（バーチャル プライベート ネットワーク）というのを使った方が良いとのこと。自分専用のトンネルみたいなものらしい。<br>そこで、ネットブックのXubuntuでVNP接続が出来るようにした。  </p>
+    <updated>2016-08-11T09:49:40.550Z</updated>
+    <content type="html"><![CDATA[<p>最近、無料の公衆無線LANスポットを利用する機会が増えて来た。<br>とても有難いのだが、対策無しだと通信が丸見えだそうで、安全のためにはVPN（バーチャル プライベート ネットワーク）というのを使った方が良いとのこと。自分専用のトンネルみたいなものらしい。<br>そこで、ネットブックのXubuntuでVNP接続が出来るようにした。  </p>
 <pre><code><span class="built_in">sudo</span> apt-get install network-manager-openvpn-gnome
 </code></pre><p>依存関係からopenvpn、network-manager-openvpn等もインストールされる。<br>（Xubuntu16.04からaptが新しくなったのか、<code>apt-get install</code>ではなく<code>apt install</code>でも良いよう。）  </p>
 <p>無料で利用出来るという条件で、色々なVPNプロバイダーを試してみた。  </p>
@@ -30,12 +30,12 @@
 <p>Xubuntu14.04では.ovpnファイルをインポートしても反映されず、.ovpnファイルからCA証明書を自作し、ユーザー、パスワードにvpnを入力する必要があったが、バグが修正されたのかXubuntu16.04からはインポートするだけで使えた。  </p>
 <p>サーバーはボランティアによる運営のようで、前日は繋がっていたサーバーが使えなくなっていたりと、やや安定性に欠ける印象。長く連続稼働しているサーバーもあるようだが。  </p>
 <h3 id="FreeVPN-me">FreeVPN.me</h3>
-<p><a href="https://freevpn.me/accounts/" target="_blank" rel="external">Free VPN Accounts | FreeVPN.me - Free OpenVPN and PPTP Accounts</a><br>メーラー（Sylpheed）でGmailにアクセス出来ないが（ブラウザでのGmailへのアクセスは可）、ブラウジングは普通に使える。サーバーはPPTP、OpenVPNそれぞれ一つだけ。<br>“no logging”をうたっているが実際ところは不明。  </p>
+<p><a href="https://freevpn.me/accounts/" target="_blank" rel="external">Free VPN Accounts | FreeVPN.me - Free OpenVPN and PPTP Accounts</a><br>メーラー（Sylpheed）でGmailにアクセス出来ないが（ブラウザでのGmailへのアクセスは可能）、ブラウジングは普通に使える。サーバーはPPTP、OpenVPNそれぞれ一つだけ。<br>“no logging”をうたっているが実際ところは不明。  </p>
 <h3 id="VPNBook">VPNBook</h3>
 <p><a href="http://www.vpnbook.com/freevpn" target="_blank" rel="external">Free VPN Accounts • 100% Free PPTP and OpenVPN Service</a><br>普通に使える。接続ログ（IPアドレスと時刻）は1週間で削除とのこと。  </p>
 <h2 id="登録が必要のもの">登録が必要のもの</h2>
 <h3 id="SecurityKISS">SecurityKISS</h3>
-<p><a href="https://www.securitykiss.com/" target="_blank" rel="external">SecurityKISS - Free VPN Service</a><br>わりと使い勝手が良く、サーバーも豊富。<br>SylpheedでのGmail受信も可。（ただし、<a href="http://www.google.com/accounts/DisplayUnlockCaptcha" target="_blank" rel="external">http://www.google.com/accounts/DisplayUnlockCaptcha</a> から新しいアプリケーションでのログインを許可する必要があった。）<br>（参照）<br><a href="https://support.google.com/mail/answer/14257?hl=ja" target="_blank" rel="external">メールアプリにログインできない - Gmail ヘルプ</a>  </p>
+<p><a href="https://www.securitykiss.com/" target="_blank" rel="external">SecurityKISS - Free VPN Service</a><br>わりと使い勝手が良く、サーバーも豊富。<br>SylpheedでのGmail送受信も可能。（ただし、<a href="http://www.google.com/accounts/DisplayUnlockCaptcha" target="_blank" rel="external">http://www.google.com/accounts/DisplayUnlockCaptcha</a> から新しいアプリケーションでのログインを許可する必要があった。）<br>（参照）<br><a href="https://support.google.com/mail/answer/14257?hl=ja" target="_blank" rel="external">メールアプリにログインできない - Gmail ヘルプ</a>  </p>
 <p>ログは10日間で削除とのこと。</p>
 <h3 id="TorVPN">TorVPN</h3>
 <p><a href="https://www.torvpn.com/en/vpn" target="_blank" rel="external">Fast VPN provider - USA/UK/EU VPN nodes on PPTP, OpenVPN and SSH proxy</a><br>アカウントを作ったが1週間待たないとfreeアカウントでの使用は出来ないらしい。<br>まだ試せていない。  </p>
@@ -43,18 +43,18 @@
 <p>有名で評判も良さそうなTunnelBearとCyberGhostは、残念ながら現在、有料プランでないとLinuxからの接続は出来ない模様。  </p>
 <h2 id="結論">結論</h2>
 <p>結局どれが良いのか良く分からず。無料プランでは速度も似たりよったり。<br>その時々で繋がるものを使うことになりそう。  </p>
-<p>あとVPNプロバイダーが保存するlogについて、TorVPNの「よくある質問」のページにおもしろい記述があった。  </p>
+<p>あとVPNプロバイダーが保存するlogについて、TorVPNの「よくある質問」のページに、おもしろい記述があった。  </p>
 <blockquote>
 <p>Q: No logging?</p>
 <p>A:    Many VPN providers advertise ‘no logging’ but still have logging in place. Advertising this policy is a marketing ploy. Even if a VPN provider does not have logging, the ISP they use is required to keep Netflow logs that could help in a police investigation in case of criminal activities. If you use a VPN with no logging at all, you are more likely to end up sharing an internet address with abusers. Your connections to internet hosts may be blocked or categorised as high risk. This could prevent you from visiting websites, sending emails, making payments online. Our policy is to never log, dismantle or interfere with data you send to or receive from remote hosts on the internet. We do keep connection logs for a brief time in order to be able to put a stop to mass scans, denial of service attacks and other abuse of the system. With the warrant canary, you have a way to know even if we receive a gag order and are forced by any government entities to breach your privacy. </p>
 </blockquote>
 <p>ーー<br>Q: No loggingですか？</p>
-<p>A: 多くのVPNプロバイダーが’no logging’を宣伝していますが、実際には適当なログを取っています。’no logging’のポリシーを宣伝するのは商売上の策略です。たとえVPNプロバイダーがログを取っていなかったとしても、彼等が使用するISPはネットワークフローの通信ログを保持するよう求められており、犯罪的な行為に関わる件では警察の捜査を助けます。仮に全くログ無しでVPNを使った場合には、虐待者とインターネットアドレスを共有することになってしまいます。あなたのインターネットホストへの接続はブロックされるか、ハイリスクに分類されるかもしれません。そうなるとウェブサイトを訪問したり、Eメールをを送ったり、ネットで支払いをしたりすることが出来なくなる可能性があります。私達のポリシーは、あなたがインターネットのリモートホストと送受信する情報に関して、決してログを取らず、壊さず、干渉しないことです。私達は断固として短い期間、接続ログを保持しますが、これは大量スキャンやDoS攻撃、またシスタムへの他の抑圧を止めさせるためです。私達が発言禁止令の元、あなたのプライバシーを侵害することを何らかの政府機関に強いられたかどうかは、<a href="https://my.torvpn.com/en/warrant-canary" target="_blank" rel="external">Warrant canary</a>で知ることが出来ます。<br>ーー  </p>
+<p>A: 多くのVPNプロバイダーが’no logging’を宣伝していますが、実際には適当なログを取っています。’no logging’のポリシーを宣伝するのは商売上の策略です。たとえVPNプロバイダーがログを取っていなかったとしても、彼等が使用するISPはネットワークフローの通信ログを保持するよう求められており、犯罪的な行為に関わる件では警察の捜査を助けます。仮に全くログ無しでVPNを使った場合には、虐待者とインターネットアドレスを共有することになってしまいます。あなたのインターネットホストへの接続はブロックされるか、ハイリスクに分類されるかもしれません。そうなるとウェブサイトを訪問したり、Eメールを送ったり、ネットで支払いをしたりすることが出来なくなる可能性があります。私達のポリシーは、あなたがインターネットのリモートホストと送受信する「情報」に関して、決してログを取らず、壊さず、干渉しないことです。私達は断固として短い期間、接続ログを保持しますが、これは大量スキャンやDoS攻撃、またシスタムへの他の抑圧を止めさせるためです。私達が発言禁止令の元、あなたのプライバシーを侵害することを何らかの政府機関に強いられたかどうかは、<a href="https://my.torvpn.com/en/warrant-canary" target="_blank" rel="external">Warrant canary</a>で知ることが出来ます。<br>ーー  </p>
 <p>“Warrant canary”(令状のカナリア)については、下記サイトの解説が分かりやすい。<br><a href="http://www.gizmodo.jp/2014/09/2_109.html" target="_blank" rel="external">アップルの透明性レポートから消えた2行の意味｜ギズモード・ジャパン</a>  </p>
 <p>ログの保持については、あまり神経質にならなくても良いのかも知れない。<br>まあ無料ということもあるし。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>最近、無料の公衆無線LANスポットを使う機会が増えて来た。<br>とても有難いのだが、対策無しだと通信が丸見えだそうで、安全のためにはVPN（バーチャル プライベート ネットワーク）というのを使った方が良いとのこと。自分専用のトンネルみたいなものらしい。<br>そこで、ネッ]]>
+    <![CDATA[<p>最近、無料の公衆無線LANスポットを利用する機会が増えて来た。<br>とても有難いのだが、対策無しだと通信が丸見えだそうで、安全のためにはVPN（バーチャル プライベート ネットワーク）というのを使った方が良いとのこと。自分専用のトンネルみたいなものらしい。<br>そこで、]]>
     </summary>
     
       <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
