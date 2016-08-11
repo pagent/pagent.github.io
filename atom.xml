@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-08-11T11:35:41.241Z</updated>
+  <updated>2016-08-11T15:02:07.455Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -42,7 +42,7 @@
     <link href="http://pagent.github.io/2016/08/11/xubuntu-openvpn/"/>
     <id>http://pagent.github.io/2016/08/11/xubuntu-openvpn/</id>
     <published>2016-08-11T03:33:43.000Z</published>
-    <updated>2016-08-11T10:02:30.488Z</updated>
+    <updated>2016-08-11T15:01:50.930Z</updated>
     <content type="html"><![CDATA[<p>最近、無料の公衆無線LANスポットを利用する機会が増えて来た。<br>とても有難いのだが、対策無しだと通信が丸見えだそうで、安全のためにはVPN（バーチャル プライベート ネットワーク）というのを使った方が良いとのこと。自分専用のトンネルみたいなものらしい。<br>そこで、ネットブックのXubuntuでVNP接続が出来るようにした。  </p>
 <pre><code><span class="built_in">sudo</span> apt-get install network-manager-openvpn-gnome
 </code></pre><p>依存関係からopenvpn、network-manager-openvpn等もインストールされる。<br>（Xubuntu16.04からaptが新しくなったのか、<code>apt-get install</code>ではなく<code>apt install</code>でも良いよう。）  </p>
@@ -54,18 +54,30 @@
 <p>サーバーはボランティアによる運営のようで、前日は繋がっていたサーバーが使えなくなっていたりと、やや安定性に欠ける印象。長く連続稼働しているサーバーもあるようだが。  </p>
 <h3 id="FreeVPN-me">FreeVPN.me</h3>
 <p><a href="https://freevpn.me/accounts/" target="_blank" rel="external">Free VPN Accounts | FreeVPN.me - Free OpenVPN and PPTP Accounts</a><br>メーラー（Sylpheed）でGmailにアクセス出来ないが（ブラウザでのGmailへのアクセスは可能）、ブラウジングは普通に使える。サーバーはPPTP、OpenVPNそれぞれ一つだけ。<br>“no logging”をうたっているが実際ところは不明。  </p>
+<h3 id="VPNMe-me">VPNMe.me</h3>
+<p><a href="https://www.vpnme.me/freevpn.html" target="_blank" rel="external">Free VPN servers list - VPNMe.me Free VPN</a><br>上のFreeVPN.meと名前が紛らわしいが別もの。<br>freeのサーバーはPPTP、OpenVPNそれぞれ一つ。<br>詐欺や悪用を避けるため頻回にパスワードを変更すると宣言しており、実際たびたび変わる。  </p>
 <h3 id="VPNBook">VPNBook</h3>
 <p><a href="http://www.vpnbook.com/freevpn" target="_blank" rel="external">Free VPN Accounts • 100% Free PPTP and OpenVPN Service</a><br>普通に使える。接続ログ（IPアドレスと時刻）は1週間で削除とのこと。  </p>
 <h2 id="登録が必要のもの">登録が必要のもの</h2>
 <h3 id="SecurityKISS">SecurityKISS</h3>
-<p><a href="https://www.securitykiss.com/" target="_blank" rel="external">SecurityKISS - Free VPN Service</a><br>わりと使い勝手が良く、サーバーも豊富。<br>SylpheedでのGmail送受信も可能。（ただし、<a href="http://www.google.com/accounts/DisplayUnlockCaptcha" target="_blank" rel="external">http://www.google.com/accounts/DisplayUnlockCaptcha</a> から新しいアプリケーションでのログインを許可する必要があった。）<br>（参照）<br><a href="https://support.google.com/mail/answer/14257?hl=ja" target="_blank" rel="external">メールアプリにログインできない - Gmail ヘルプ</a>  </p>
+<p><a href="https://www.securitykiss.com/" target="_blank" rel="external">SecurityKISS - Free VPN Service</a><br>サーバーは豊富。<br>Fruhoというオープンソースのプログラムを使うと、設定やサーバーの選択が簡単だったが、初回起動時に異常終了してからは起動しなくなってしまった。<br>Network Managerを使う場合、.ovpnファイルからのインポートは出来ず、README.txtからサーバーを選択し、ゲートウェイ、client.crt、ca.crt、client.key等を手動で設定する必要がある。<br><a href="https://www.securitykiss.com/resources/tutorials/conf_linux_nm/ubuntu/" target="_blank" rel="external">https://www.securitykiss.com/resources/tutorials/conf_linux_nm/ubuntu/</a>  </p>
+<p>SylpheedでのGmail送受信も可能。（ただし、<a href="http://www.google.com/accounts/DisplayUnlockCaptcha" target="_blank" rel="external">http://www.google.com/accounts/DisplayUnlockCaptcha</a> から新しいアプリケーションでのログインを許可する必要があった。）<br>（参照）<br><a href="https://support.google.com/mail/answer/14257?hl=ja" target="_blank" rel="external">メールアプリにログインできない - Gmail ヘルプ</a>  </p>
 <p>ログは10日間で削除とのこと。</p>
 <h3 id="TorVPN">TorVPN</h3>
 <p><a href="https://www.torvpn.com/en/vpn" target="_blank" rel="external">Fast VPN provider - USA/UK/EU VPN nodes on PPTP, OpenVPN and SSH proxy</a><br>アカウントを作ったが1週間待たないとfreeアカウントでの使用は出来ないらしい。<br>まだ試せていない。  </p>
+<h3 id="PrivateTunnel">PrivateTunnel</h3>
+<p><a href="https://www.privatetunnel.com/home/" target="_blank" rel="external">Private Tunnel | Protect your Internet Traffic with Secure OpenVPN.</a><br>アカウントを作成しプロファイル（.ovpnファイル）をダウンロードしてみたものの、NetworkManagerからインポート出来ない。  </p>
+<ul>
+<li><p>端末から設定<br><a href="https://support.privatetunnel.com/index.php?/Knowledgebase/Article/View/24/0/how-do-i-connect-to-privatetunnel-using-the-linux-operating-system" target="_blank" rel="external">How do I connect to PrivateTunnel using the Linux operating system? - Powered by Kayako Help Desk Software</a>  </p>
+</li>
+<li><p>ダウンロードした.ovpnファイルを元に、手動でCA.pem, UC.pem, PK.pem等を作成し、NetworkManagerで設定<br><a href="https://ubuntuforums.org/showthread.php?t=1881124" target="_blank" rel="external">How to Connect to PrivateTunnel.com Service Under Ubuntu 11.10</a>  </p>
+</li>
+</ul>
+<p>上記２つの方法のどちらかで利用可能のようだが、煩雑なので試していない。</p>
 <h3 id="TunnelBear、CyberGhost">TunnelBear、CyberGhost</h3>
 <p>有名で評判も良さそうなTunnelBearとCyberGhostは、残念ながら現在、有料プランでないとLinuxからの接続は出来ない模様。  </p>
 <h2 id="結論">結論</h2>
-<p>結局どれが良いのか良く分からず。無料プランでは速度も似たりよったり。<br>その時々で快適に繋がるものを使うことになりそう。  </p>
+<p>結局どれが良いのか良く分からず。無料プランでは速度も似たりよったりの印象。<br>その時々で快適に繋がるものを使うことになりそう。  </p>
 <p>あとVPNプロバイダーが保存するlogについて、TorVPNの「よくある質問」のページに、おもしろい記述があった。  </p>
 <blockquote>
 <p>Q: No logging?</p>
