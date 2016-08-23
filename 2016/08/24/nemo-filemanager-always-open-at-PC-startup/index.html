@@ -5,18 +5,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>クリーンインストールしたXubuntu16.04でTrueCryptのボリュームをマウント出来ない | Pagent</title>
+  <title>PC起動時にファイルマネージャーnemoが自動起動するのを止める | Pagent</title>
   <meta name="author" content="Pagent">
   
-  <meta name="description" content="クリーンインストールしたXubuntu16.04で、TrueCryptのボリュームをマウントしようとしても、何故かマウント出来ない。パスワードは正しく入力しているはずだが、何度やっても
-そのようなファイルやディレクトリはありませんdmsetup
-
-とエラーになる。検索してみると、どうやらdmsetu">
+  <meta name="description" content="Arch Linuxでデフォルトのファイルマネージャーとして使用しているnemoが、PCを起動する度に開いてしまうようになった。ウィンドウマネージャーはXfce4だが、設定→セッションと起動→自動開始アプリケーションにnemoは見当たらない。nemoの設定にも自動開始の項目は無い。  
+困ってしまっ">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="クリーンインストールしたXubuntu16.04でTrueCryptのボリュームをマウント出来ない"/>
+  <meta property="og:title" content="PC起動時にファイルマネージャーnemoが自動起動するのを止める"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -145,7 +143,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> クリーンインストールしたXubuntu16.04でTrueCryptのボリュームをマウント出来ない</h1>
+			<h1> PC起動時にファイルマネージャーnemoが自動起動するのを止める</h1>
 		</div>
 	
 
@@ -161,13 +159,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>クリーンインストールしたXubuntu16.04で、TrueCryptのボリュームをマウントしようとしても、何故かマウント出来ない。<br>パスワードは正しく入力しているはずだが、何度やっても</p>
-<div style="border-style: solid ; border-width: 1px; margin: 10px 0px 10px 0px; padding: 10px 10px 10px 10px; border-color: grey;">そのようなファイルやディレクトリはありません<br>dmsetup</div>
-
-<p>とエラーになる。<br>検索してみると、どうやらdmsetup（device-mapper）というものが足りてないようだ。<br><a href="https://ubuntuforums.org/showthread.php?t=2321663" target="_blank" rel="external">[ubuntu] After clean install of Ubuntu 16.04, VeraCrypt and TrueCrypt are acting weird</a>  </p>
-<p>参照記事の通り、dmsetupを入れたらマウント出来るようになった。  </p>
-<p>ところで、一部に脆弱性があると言われ、すでに開発は終了しているが、使い勝手が良いので頑なに使い続けているTrueCrypt。<br>そのTrueCryptの後継とも言われている「VeraCrypt」というのがあるそうな。<br>TrueCryptの暗号化ボリュームをマウントすることも出来るようだが。  </p>
-<p>名前は「TrueCrypt」の方がカッコ良いんだけどな。<br>また今度、暇な時に試してみるかもしれない。</p>
+	    <p>Arch Linuxでデフォルトのファイルマネージャーとして使用しているnemoが、PCを起動する度に開いてしまうようになった。<br>ウィンドウマネージャーはXfce4だが、設定→セッションと起動→自動開始アプリケーションにnemoは見当たらない。<br>nemoの設定にも自動開始の項目は無い。  </p>
+<p>困ってしまったが、下記フォーラム記事を参照して解決出来た。<br><a href="https://ubuntuforums.org/showthread.php?t=1883669&amp;p=11617721#post11617721" target="_blank" rel="external">[kubuntu] Disable Nautilus on Startup in KDE</a>  </p>
+<p>アプリケーションを何も開いていない状態でログアウト。この際「次回ログインのためセッションを保存する」のチェックボックスにチェックを入れる。<br>再度ログインし、今度は「次回ログインのためセッションを保存する」のチェックを外してログアウト。<br>これでnemoの自動起動が止まった。  </p>
+<p>覚えていないが、以前nemoを開いた状態でセッションを保存してしまっていたのが原因のよう。</p>
 
 	</div>
 
@@ -175,11 +170,11 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2016/08/11/truecrypt-dmsetup/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2016/08/24/nemo-filemanager-always-open-at-PC-startup/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2016/08/11/truecrypt-dmsetup/" class="hatena-bookmark-button" data-hatena-bookmark-title="クリーンインストールしたXubuntu16.04でTrueCryptのボリュームをマウント出来ない" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2016/08/24/nemo-filemanager-always-open-at-PC-startup/" class="hatena-bookmark-button" data-hatena-bookmark-title="PC起動時にファイルマネージャーnemoが自動起動するのを止める" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 
 <div class="clear"></div>
@@ -191,13 +186,13 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2016/08/24/nemo-filemanager-always-open-at-PC-startup/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2016/08/11/xubuntu-openvpn/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2016/08/11/truecrypt-dmsetup/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -231,7 +226,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2016年8月11日
+	2016年8月24日
 	</div>
 	
 
@@ -245,7 +240,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="tags" class="tag_box list-unstyled collapse in">
 	    <!-- _partial/post/tag -->
   
-  <li><a href="/tags/ユーティリティ/">ユーティリティ</a></li>
+  <li><a href="/tags/Linux/">Linux</a></li>
 
     </ul>
 	</div>

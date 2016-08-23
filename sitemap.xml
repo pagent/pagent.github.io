@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2016/08/24/nemo-filemanager-always-open-at-PC-startup/</loc>
+    <lastmod>2016-08-23T20:40:05.634Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2016/08/11/xubuntu-openvpn/</loc>
     <lastmod>2016-08-23T10:28:18.156Z</lastmod>
   </url>
@@ -502,12 +507,7 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/12/09/casio/</loc>
-    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2014/03/08/permalink/</loc>
+    <loc>http://pagent.github.io/2014/12/09/life/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -797,12 +797,12 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/04/06/monthly_archives/</loc>
+    <loc>http://pagent.github.io/2014/12/09/casio/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/12/09/life/</loc>
+    <loc>http://pagent.github.io/2014/04/06/monthly_archives/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -1583,6 +1583,11 @@
   
   <url>
     <loc>http://pagent.github.io/2014/10/01/windows10/</loc>
+    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2014/03/08/permalink/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
