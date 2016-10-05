@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2016/10/05/greybird/</loc>
+    <lastmod>2016-10-05T09:07:27.277Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2016/08/11/xubuntu-openvpn/</loc>
     <lastmod>2016-09-21T13:55:38.493Z</lastmod>
   </url>
@@ -508,11 +513,6 @@
   
   <url>
     <loc>http://pagent.github.io/2014/12/09/life/</loc>
-    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2014/04/08/wordpress-username/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -1588,6 +1588,11 @@
   
   <url>
     <loc>http://pagent.github.io/2014/03/08/permalink/</loc>
+    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2014/04/08/wordpress-username/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   

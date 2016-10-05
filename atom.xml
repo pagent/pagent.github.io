@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-09-21T13:56:02.312Z</updated>
+  <updated>2016-10-05T09:08:21.104Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,24 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Dark-Elementary-xfce+Greybirdがお気に入り]]></title>
+    <link href="http://pagent.github.io/2016/10/05/greybird/"/>
+    <id>http://pagent.github.io/2016/10/05/greybird/</id>
+    <published>2016-10-05T08:56:23.000Z</published>
+    <updated>2016-10-05T09:07:27.277Z</updated>
+    <content type="html"><![CDATA[<p>Arch LinuxのXfceで、ずっとウィンドウマネージャーのテーマをDark-Elementary-xfce、外観のスタイルをGreybirdで使っていた。<br>シックでカッコ良く、目にも優しいので気に入っていたのだが、ずいぶん前から、Greybirdでは表示がおかしくなっていた。<br>見づらくて仕方なかったので、外観のスタイルをXfce-flatにしていた。  </p>
+<p>久しぶりにYaourtでAURパッケージの更新をしたら、Greybirdも更新されていたので、外観をGreybirdに戻してみた。<br>バグが修正されたようで、正常に表示されるようになっていた。 </p>
+<p>AURのパッケージも、たまには更新した方が良いようだ。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Arch LinuxのXfceで、ずっとウィンドウマネージャーのテーマをDark-Elementary-xfce、外観のスタイルをGreybirdで使っていた。<br>シックでカッコ良く、目にも優しいので気に入っていたのだが、ずいぶん前から、Greybirdでは表示がおかし]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[PC起動時にファイルマネージャーnemoが自動起動するのを止める]]></title>
@@ -519,27 +537,6 @@ $ <span class="built_in">sudo</span> pacman -Syu ibfonts-meta-extended
     </summary>
     
       <category term="ハードウェア" scheme="http://pagent.github.io/tags/%E3%83%8F%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A7%E3%82%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Linuxを標的とするマルウェア「ビルゲイツ」]]></title>
-    <link href="http://pagent.github.io/2016/04/23/linux-malware-billgates/"/>
-    <id>http://pagent.github.io/2016/04/23/linux-malware-billgates/</id>
-    <published>2016-04-22T15:58:34.000Z</published>
-    <updated>2016-04-23T04:49:44.591Z</updated>
-    <content type="html"><![CDATA[<p>Windowsに較べて安全と言われるLinux。だが現在、Linuxを標的とするマルウェアが猛威を振るっているそうだ。<br><a href="http://www.itmedia.co.jp/news/articles/1604/22/news105.html" target="_blank" rel="external">「ビルゲイツ」がLinuxを標的に？ - ITmedia ニュース</a>  </p>
-<p>「ビルゲイツ」というネーミングが笑いを誘うが、リモートからSSH経由でrootのパスワードに対して総当たり攻撃（ブルートフォースアタック）を仕掛け、管理者権限を乗っ取るのだそうだ。  </p>
-<p>対策としては、SSH経由でのrootのログインを禁止し、またパスワードでの認証を禁止（公開鍵認証を使う）にすれば良いようだ。<br><a href="https://wiki.archlinuxjp.org/index.php/Secure_Shell#SSH_.E3.81.AE.E4.BF.9D.E8.AD.B7" target="_blank" rel="external">Secure Shell - ArchWiki</a>  </p>
-<p>OpenSSH 7.0/7.0p以降では<code>PermitRootLogin</code>のデフォルトは<code>prohibit-password</code>になっており、パスワードでのログインは禁止されている。<br><a href="https://osdn.jp/magazine/15/08/14/072400" target="_blank" rel="external">「OpenSSH 7.0」がリリース、PermitRootLogin設定の変更などセキュリティ強化が行われる | OSDN Magazine</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Windowsに較べて安全と言われるLinux。だが現在、Linuxを標的とするマルウェアが猛威を振るっているそうだ。<br><a href="http://www.itmedia.co.jp/news/articles/1604/22/news105.html" targ]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
-    
-      <category term="セキュリティ" scheme="http://pagent.github.io/tags/%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3/"/>
     
   </entry>
   
