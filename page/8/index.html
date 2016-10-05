@@ -159,6 +159,78 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/04/20/jd-problem-after-archlinux-upgrade/" >Arch Linuxアップグレード後JDが起動出来ない</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年4月20日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Arch Linuxをアップグレードしたら、2ちゃんねる専用ブラウザJDが起動しなくなった。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ jd</div><div class="line">jd: error <span class="keyword">while</span> loading shared libraries: libgnutls.so.<span class="number">28</span>: cannot open shared object file: No such file or directory</div></pre></td></tr></table></figure>
+
+<p>libgnutls.so.28が見つからないようだ。  </p>
+<p>libgnutls.so.28はgnutlsに含まれているようなので、<a href="https://archlinuxjp.kusakata.com/wiki/%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%81%AE%E3%83%80%E3%82%A6%E3%83%B3%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89" target="_blank" rel="external">パッケージのダウングレード - ArchWiki</a>を参考にgnutlsをダウングレードしてみた。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> pacman -U /var/cache/pacman/pkg/gnutls-<span class="number">3.3</span>.<span class="number">14</span>-<span class="number">2</span>-x86_64.pkg.tar.xz</div></pre></td></tr></table></figure>
+
+<p>だが今度はlibnettle.so.4が無いと言われる。  </p>
+<p>JDではないが、今回のアップグレードでLibreofficeやopenconnectを使用する際にも同様の問題があるようだった。  </p>
+<ul>
+<li><a href="https://bugs.archlinux.org/task/44645" target="_blank" rel="external">FS#44645 : libreoffice-fresh [error while loading shared libraries: libgnutls.so.28]</a>  </li>
+<li><a href="https://bbs.archlinux.org/viewtopic.php?id=196314" target="_blank" rel="external">[solved] openconnect broken after upgrading gnutls and nettle / Pacman &amp; Package Upgrade Issues / Arch Linux Forums</a>  </li>
+</ul>
+<p>libnettle.so.4はnettleをダウングレードしたら良いようだったが、/var/cache/pacman/pkg内にnettleの旧パッケージが見つからない。<br>lib32-nettleをインストールしてみたが、依然libnettle.so.4が見つからないとかでJDを起動出来ない。  </p>
+<p>上記openconnectについてのフォーラムコメントにもあったが、Arch Linuxではパッケージのダウングレード（部分的なアップグレード）は推奨されないようだ。<br><a href="https://archlinuxjp.kusakata.com/wiki/Pacman?rdfrom=https%3A%2F%2Fwiki.archlinux.org%2Findex.php%3Ftitle%3DPacman_%28%25E6%2597%25A5%25E6%259C%25AC%25E8%25AA%259E%29%26redirect%3Dno#.E9.83.A8.E5.88.86.E7.9A.84.E3.81.AA.E3.82.A2.E3.83.83.E3.83.97.E3.82.B0.E3.83.AC.E3.83.BC.E3.83.89.E3.81.AF.E3.82.B5.E3.83.9D.E3.83.BC.E3.83.88.E3.81.95.E3.82.8C.E3.81.A6.E3.81.84.E3.81.BE.E3.81.9B.E3.82.93" target="_blank" rel="external">pacman - ArchWiki</a>  </p>
+<p>バグなのかJD側の問題なのかよく分からないが、幸い先日ClonezillaでArch Linuxのバックアップをとっていたので、これをリストアすることにした。  </p>
+<p>当面システムのアップグレードはせず、このまま使用しようと思う。  </p>
+<p>ーー<br>（追記）<br>JDを一旦削除、その後再インストールしても駄目だったが、JDをちゃんとアンインストール出来なかったのが原因のようだ。<br>(<code>yaourt -R jd</code>でアンインストールしてもメニューに表示されており、コマンド<code>jd</code>でlibgnutls.so.28が無いと表示されていた。）  </p>
+<p><code>yaourt -Rd --nodeps jd</code>でもアンインストール出来なかったので、/userディレクトリで”jd”を検索。<br>/usr/local/bin/jdと/usr/local/share/applications/jd.desktopを手動で削除した。  </p>
+<p>その後再インストールしたら、エラーになることもなく起動出来た。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/20/jd-problem-after-archlinux-upgrade/" data-text="Arch Linuxアップグレード後JDが起動出来ない | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/20/jd-problem-after-archlinux-upgrade/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/20/jd-problem-after-archlinux-upgrade/" class="hatena-bookmark-button" data-hatena-bookmark-title="Arch Linuxアップグレード後JDが起動出来ない" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/04/19/paccache-pkgcacheclean/" >不要なパッケージキャッシュの削除。paccacheとpkgcacheclean</a>
 		</h3>
 	
@@ -742,68 +814,6 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/04/01/xfce4-appearance-settings-crash/" >Xfce4設定の外観~フォントをFixedにしたらクラッシュした</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年4月1日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Xfce4の設定で「外観」（appearance）→「フォント」のデフォルトフォントをFixedにしたら、クラッシュして、パネルが消えてしまった。<br>デスクトップ上右クリック→アプリケーションから再び「外観」を呼び出そうとしても、一瞬現れて瞬時に消えてしまう。設定マネージャーも起動せず。<br>「設定」→「パネル」でパネルは「キオスクモード」とかでなんとか立ち上げることが出来たが、これもファイルマネージャーを開くと消えてしまう。  </p>
-<p>Firefoxで「システムフォント」等を検索したが、/etc/fonts/conf.d内のファイルにはそれらしい記述は見当たらず。<br>「外観」のデフォルトフォントはシステムフォントとは別物らしい。  </p>
-<p><a href="https://archlinuxjp.kusakata.com/wiki/GTK%2B" target="_blank" rel="external">GTK+ - ArchWiki</a>を見て、~/.gtkrc-2.0を探したが、そんなファイルは無い。<br>自作してみたが効果なし。  </p>
-<p>ホームディレクトリ内を探しまわって、ようやく~/.config/xfce4/xfconf/xfce-perchannel-xml/xsettings.xmlに記述を見つけた。  </p>
-<pre><code>  &lt;property name=<span class="string">"Gtk"</span> type=<span class="string">"empty"</span>&gt;
-    <span class="keyword">...</span>
-    &lt;property name=<span class="string">"FontName"</span> type=<span class="string">"string"</span> value=<span class="string">"Fixed Medium 10"</span>/&gt;
-    <span class="keyword">...</span>
-</code></pre><p>「Fixed」を「Droid Sans」に変更。<br>再起動すると無事復旧した。  </p>
-<p>デスクトップ上右クリックからアプリケーションを起動出来るXfce4で助かった。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/01/xfce4-appearance-settings-crash/" data-text="Xfce4設定の外観~フォントをFixedにしたらクラッシュした | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/01/xfce4-appearance-settings-crash/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/01/xfce4-appearance-settings-crash/" class="hatena-bookmark-button" data-hatena-bookmark-title="Xfce4設定の外観~フォントをFixedにしたらクラッシュした" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Linux/">Linux</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -844,45 +854,45 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>32</span></a></li>
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+		
+			<li><a href="/tags/ハードウェア/">ハードウェア<span>1</span></a></li>
+		
+			<li><a href="/tags/セキュリティ/">セキュリティ<span>3</span></a></li>
+		
+			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>39</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>10</span></a></li>
+		
+			<li><a href="/tags/時事/">時事<span>1</span></a></li>
+		
+			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/ブログ/">ブログ<span>1</span></a></li>
 		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>43</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>5</span></a></li>
 		
 			<li><a href="/tags/プライバシー/">プライバシー<span>6</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>98</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
-		
 			<li><a href="/tags/食/">食<span>4</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>39</span></a></li>
-		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
 		
 			<li><a href="/tags/コード/">コード<span>1</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>23</span></a></li>
-		
-			<li><a href="/tags/ハードウェア/">ハードウェア<span>1</span></a></li>
-		
-			<li><a href="/tags/時事/">時事<span>1</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
-		
-			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
-		
-			<li><a href="/tags/セキュリティ/">セキュリティ<span>3</span></a></li>
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>25</span></a></li>
@@ -897,6 +907,10 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2016/10/06/disable-recently-used-files/" ><i class="fa fa-file-o"></i>「最近開いたファイル」を表示させない</a>
+      </li>
     
       <li>
         <a href="/2016/10/05/greybird/" ><i class="fa fa-file-o"></i>Dark-Elementary-xfce+Greybi...</a>
@@ -914,10 +928,6 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
         <a href="/2016/08/11/xubuntu-openvpn/" ><i class="fa fa-file-o"></i>Xubuntuで無料Wi-Fi利用時にVPN接続する</a>
       </li>
     
-      <li>
-        <a href="/2016/08/05/repair-lubuntu/" ><i class="fa fa-file-o"></i>アップグレード後にError15で起動出来なくなったL...</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -927,7 +937,7 @@ ImportError: could not <span class="keyword">import</span> g<span class="class">
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">2016年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">2016年08月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">2016年07月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">2016年05月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">2016年10月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">2016年08月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">2016年07月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">2016年05月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
 		</ul>
 	</div>
 

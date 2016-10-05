@@ -159,6 +159,64 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2016/10/06/disable-recently-used-files/" >「最近開いたファイル」を表示させない</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2016年10月6日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>ファイルマネージャーにnemoを使っているが、サイドバーに「最近開いたファイル」という項目があり、これまで使ったファイルの履歴が表示されている。<br>ファイルを右クリックし「最近使用したファイル一覧から削除」しても、再度そのファイルを開くと履歴に追加される。  </p>
+<p>Zeitgeistによって記録されるログをコントロールするらしいactivity-log-managerというのをインストールし、利用状況の記録をオフにしてみたが、それでも履歴が残ってしまう。<br>Zeitgeist自体をアンインストールしてみたが、それでも「最近開いたファイル」が無効化されない。<br>Zeitgeistとは関係無いのだろうか？  </p>
+<p>どうやら履歴は~/.local/share/recently-used.xbelに記録されていているよう。<br><a href="https://ubuntu-mate.community/t/is-the-activity-log-manager-working-on-ubuntu-mate/8945" target="_blank" rel="external">Is the Activity Log Manager working on Ubuntu-MATE? - Support &amp; Help Requests - Ubuntu MATE Community</a>  </p>
+<p>これを削除すると確かに「最近開いたファイル」の項目が消去されている。<br>ならばとrecently-used.xbelを書き込み禁止にしてみたが、すぐに元に戻ってしまう。  </p>
+<p>結局、recently-used.xbelファイルを「recently-used.xbel」という名前のフォルダーで置き換えることで解決した。  </p>
+<p>（参照記事）<br><a href="http://www.nowhere.co.jp/blog/archives/20090630-230129.html" target="_blank" rel="external">ちょっとしたhack - Eyes, JAPAN Blog</a></p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2016/10/06/disable-recently-used-files/" data-text="「最近開いたファイル」を表示させない | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2016/10/06/disable-recently-used-files/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2016/10/06/disable-recently-used-files/" class="hatena-bookmark-button" data-hatena-bookmark-title="「最近開いたファイル」を表示させない" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2016/10/05/greybird/" >Dark-Elementary-xfce+Greybirdがお気に入り</a>
 		</h3>
 	
@@ -734,63 +792,6 @@ systemctl start NetworkManager
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2016/06/18/rosemary-utility/" >排水口のぬめり防止にローズマリーの葉っぱを活用</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2016年6月18日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>代表的なハーブのローズマリー。  </p>
-<p>西洋風なアレンジの時、魚や鶏肉を炒める前に油に投入しておくと、スパイシーな香りで料理を引き立ててくれる。<br>他にも虫除け効果があったりと、幅広い効用のあるローズマリー。  </p>
-<p>ローズマリーのちょっと変わった使い方として、我が家ではキッチン流しのぬめり取りとして重宝している。<br>排水口上のクズ取り網や三角コーナー。100均の排水口ネットを被せて頻回に交換しても、少し調理クズが溜まるとすぐにぬめって、黄色いねばねばが増殖して来る。<br>以前は薬剤カートリッジ付きのぬめらない排水口ブタを使ったりもしていたが、最近はもっぱらローズマリーの葉っぱにお世話になっている。  </p>
-<p>ネットの上や周辺部分に庭で摘んで来たローズマリーの葉っぱを適当に10枚ほど散らしておく。<br>すると何故か不思議とぬめらない。ぬめるにしても時期を大幅に遅らせてくれる。<br>おそらくローズマリーには殺菌作用があるのだろう。  </p>
-<p>排水口にローズマリーの葉っぱ。<br>お試しあれ。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2016/06/18/rosemary-utility/" data-text="排水口のぬめり防止にローズマリーの葉っぱを活用 | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2016/06/18/rosemary-utility/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2016/06/18/rosemary-utility/" class="hatena-bookmark-button" data-hatena-bookmark-title="排水口のぬめり防止にローズマリーの葉っぱを活用" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/未分類/">未分類</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -831,45 +832,45 @@ systemctl start NetworkManager
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
-		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
-		
-			<li><a href="/tags/時事/">時事<span>1</span></a></li>
-		
-			<li><a href="/tags/プライバシー/">プライバシー<span>6</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>43</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>39</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>10</span></a></li>
-		
-			<li><a href="/tags/セキュリティ/">セキュリティ<span>3</span></a></li>
-		
-			<li><a href="/tags/ブログ/">ブログ<span>1</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>5</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>32</span></a></li>
+			<li><a href="/tags/時事/">時事<span>1</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>98</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
 		
 			<li><a href="/tags/コード/">コード<span>1</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>39</span></a></li>
+		
+			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>23</span></a></li>
+		
+			<li><a href="/tags/食/">食<span>4</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>32</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>99</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>5</span></a></li>
+		
+			<li><a href="/tags/ブログ/">ブログ<span>1</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/プライバシー/">プライバシー<span>6</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>10</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>25</span></a></li>
@@ -884,6 +885,10 @@ systemctl start NetworkManager
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2016/10/06/disable-recently-used-files/" ><i class="fa fa-file-o"></i>「最近開いたファイル」を表示させない</a>
+      </li>
     
       <li>
         <a href="/2016/10/05/greybird/" ><i class="fa fa-file-o"></i>Dark-Elementary-xfce+Greybi...</a>
@@ -901,10 +906,6 @@ systemctl start NetworkManager
         <a href="/2016/08/11/xubuntu-openvpn/" ><i class="fa fa-file-o"></i>Xubuntuで無料Wi-Fi利用時にVPN接続する</a>
       </li>
     
-      <li>
-        <a href="/2016/08/05/repair-lubuntu/" ><i class="fa fa-file-o"></i>アップグレード後にError15で起動出来なくなったL...</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -914,7 +915,7 @@ systemctl start NetworkManager
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">2016年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">2016年08月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">2016年07月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">2016年05月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">2016年10月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">2016年08月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">2016年07月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">2016年05月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
 		</ul>
 	</div>
 

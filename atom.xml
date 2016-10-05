@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-10-05T09:08:21.104Z</updated>
+  <updated>2016-10-05T22:45:30.683Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,28 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[「最近開いたファイル」を表示させない]]></title>
+    <link href="http://pagent.github.io/2016/10/06/disable-recently-used-files/"/>
+    <id>http://pagent.github.io/2016/10/06/disable-recently-used-files/</id>
+    <published>2016-10-05T22:21:48.000Z</published>
+    <updated>2016-10-05T22:44:47.456Z</updated>
+    <content type="html"><![CDATA[<p>ファイルマネージャーにnemoを使っているが、サイドバーに「最近開いたファイル」という項目があり、これまで使ったファイルの履歴が表示されている。<br>ファイルを右クリックし「最近使用したファイル一覧から削除」しても、再度そのファイルを開くと履歴に追加される。  </p>
+<p>Zeitgeistによって記録されるログをコントロールするらしいactivity-log-managerというのをインストールし、利用状況の記録をオフにしてみたが、それでも履歴が残ってしまう。<br>Zeitgeist自体をアンインストールしてみたが、それでも「最近開いたファイル」が無効化されない。<br>Zeitgeistとは関係無いのだろうか？  </p>
+<p>どうやら履歴は~/.local/share/recently-used.xbelに記録されていているよう。<br><a href="https://ubuntu-mate.community/t/is-the-activity-log-manager-working-on-ubuntu-mate/8945" target="_blank" rel="external">Is the Activity Log Manager working on Ubuntu-MATE? - Support &amp; Help Requests - Ubuntu MATE Community</a>  </p>
+<p>これを削除すると確かに「最近開いたファイル」の項目が消去されている。<br>ならばとrecently-used.xbelを書き込み禁止にしてみたが、すぐに元に戻ってしまう。  </p>
+<p>結局、recently-used.xbelファイルを「recently-used.xbel」という名前のフォルダーで置き換えることで解決した。  </p>
+<p>（参照記事）<br><a href="http://www.nowhere.co.jp/blog/archives/20090630-230129.html" target="_blank" rel="external">ちょっとしたhack - Eyes, JAPAN Blog</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>ファイルマネージャーにnemoを使っているが、サイドバーに「最近開いたファイル」という項目があり、これまで使ったファイルの履歴が表示されている。<br>ファイルを右クリックし「最近使用したファイル一覧から削除」しても、再度そのファイルを開くと履歴に追加される。  </p>
+]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Dark-Elementary-xfce+Greybirdがお気に入り]]></title>
@@ -508,35 +530,6 @@ $ <span class="built_in">sudo</span> pacman -Syu ibfonts-meta-extended
     </summary>
     
       <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[dynabook T552のキーボードが一部反応しなくなったので交換]]></title>
-    <link href="http://pagent.github.io/2016/04/24/dynabook-T552-keyboad-unresponsive/"/>
-    <id>http://pagent.github.io/2016/04/24/dynabook-T552-keyboad-unresponsive/</id>
-    <published>2016-04-24T05:02:31.000Z</published>
-    <updated>2016-05-01T02:01:39.773Z</updated>
-    <content type="html"><![CDATA[<p>メインで使っているdynabook T552のキーボードが不調だった。いくつかのキーが全く反応しない。マルチブードにしているLinuxでもWindows 7でも、特定の同じキーが効かないので、どうやらハード的な問題のよう。掃除機でゴミを吸ってみたりしたが効果無し。<br>保証期間は過ぎており修理にはちょっと値が張りそうだったので、使えるキーでなんとか凌いでいた。「DEL」キーも反応しなかったが「BACK SPACE」キーは大丈夫だったので、入力文字の訂正はなんとか出来ていた。  </p>
-<p>先日ネットで探してみたところ、キーボードだけなら安く購入出来るようだったので、自分で交換してみることにした。<br>キーボードの外し方は下記記事を参考にさせて頂いた。<br><a href="http://dynabook.biz/keyboard/4293/" target="_blank" rel="external">東芝 Toshiba dynabook T552 Satellite B252 キーボード交換 Satellite L850シリーズ共通 | ダイナブックをもっと楽しもう！｜大名武久</a>  </p>
-<p>PCを分解して外す方法とキーボードだけを外す方法があるらしい。分解は面倒なので出来ればキーボードだけを外したい。<br>本当は専用の工具を使った方が良いらしいのだが、持っていないので物差しで代用。  </p>
-<ul>
-<li>ACアダプターを抜きバッテリーも外す。</li>
-<li>キーボード右側の溝に爪を入れて上に持ち上げ、キーボードの右側を浮かせる。<br>浮かせた隙間から物差しを挿入。  </li>
-<li>物差しの先端をキーボードの手前右端に向け、グッと押して噛み合い部分を外す。<br>無理な力を加えて破損しないよう注意。物差しは適度に水平に近い角度に保つ。<br>（作業前に写真を撮っていなかったので、新しいキーボードで様子を再現。）<br><img src="/images/keyboad-separation.jpg" alt="キーボード分離" height="240">  </li>
-<li>物差し先端を少し左にずらして手前側に押し、順次左端まで噛み合いを外していく。<br>手前側が完全に外れたら、キーボードを少し手前に引くだけで奥の噛み合い部分も簡単に外れる。</li>
-<li>キーボードとPC本体を繋いでいるケーブルの根元、白く細長い台座部分の両脇にある黒いポッチをマイナスドライバーなどで奥に押してロックを外す。<br>（左の黒いポッチはロックを外した状態。右はロックされた状態。）<br><img src="/images/keyboad-cable-lock.jpg" alt="キーボードケーブルのロック" height="240"></li>
-<li>ケーブルを抜いて新しいキーボードと交換。ロックを掛ける。</li>
-<li>奥側からキーボードの噛み合い部分を合わせ、左右、手前部分を押してはめ込む。</li>
-</ul>
-<p>ケーブルを外す際、白い台座を起こしてロックを外すものと勘違いして、少し引っ掻いてしまったが、他は問題なく作業が終了。  </p>
-<p>PCを起動すると、反応しなかった「DEL」キーや一部のテンキーも正常に反応した。<br>安く修理出来て良かった。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>メインで使っているdynabook T552のキーボードが不調だった。いくつかのキーが全く反応しない。マルチブードにしているLinuxでもWindows 7でも、特定の同じキーが効かないので、どうやらハード的な問題のよう。掃除機でゴミを吸ってみたりしたが効果無し。<br>保]]>
-    </summary>
-    
-      <category term="ハードウェア" scheme="http://pagent.github.io/tags/%E3%83%8F%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A7%E3%82%A2/"/>
     
   </entry>
   
