@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-11-16T01:10:37.088Z</updated>
+  <updated>2016-11-16T01:50:02.567Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,25 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[スマホと個人情報]]></title>
+    <link href="http://pagent.github.io/2016/11/16/android-backdoor/"/>
+    <id>http://pagent.github.io/2016/11/16/android-backdoor/</id>
+    <published>2016-11-16T01:37:30.000Z</published>
+    <updated>2016-11-16T01:49:43.834Z</updated>
+    <content type="html"><![CDATA[<p>米国内で販売されているAndroid端末にバックドアが仕込まれていて、通話履歴や位置情報などの個人情報が中国に送信されていたとか。  </p>
+<p><a href="http://www.itmedia.co.jp/news/articles/1611/16/news059.html" target="_blank" rel="external">Android端末のファームウェアに隠し機能、ユーザー情報を中国に送信 - ITmedia ニュース</a>  </p>
+<p>問題の中国企業Shanghai Adups Technologyは中国政府の関与を否定しているとのことだが、中国政府が主導していても何の不思議もない。<br>日本のスマートフォンでも怪しげなアプリはインストールしない方が良いのだろう。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>米国内で販売されているAndroid端末にバックドアが仕込まれていて、通話履歴や位置情報などの個人情報が中国に送信されていたとか。  </p>
+<p><a href="http://www.itmedia.co.jp/news/articles/1611/16/news05]]>
+    </summary>
+    
+      <category term="プライバシー" scheme="http://pagent.github.io/tags/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[「最近開いたファイル」を表示させない]]></title>
@@ -502,32 +521,6 @@ $ <span class="built_in">sudo</span> pacman -Syu ibfonts-meta-extended
     </summary>
     
       <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
-    
-      <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[任意の検索エンジンを追加出来る「Add to Search Bar」が便利]]></title>
-    <link href="http://pagent.github.io/2016/04/27/add-to-search-bar/"/>
-    <id>http://pagent.github.io/2016/04/27/add-to-search-bar/</id>
-    <published>2016-04-27T04:56:42.000Z</published>
-    <updated>2016-04-27T06:00:48.503Z</updated>
-    <content type="html"><![CDATA[<p>Firefoxのアドオンを整理しようと思い、長い間無効化しているものなどを削除していた。<br>そんな中に<a href="https://addons.mozilla.org/ja/firefox/addon/add-to-search-bar/" target="_blank" rel="external">「Add to Search Bar」</a>もあった。<br>はて？どんなアドオンだったか。英語の説明を読んでもよく分からない。  </p>
-<p>使い方を検索してみたら、任意のサイト（検索窓のあるサイト）での検索を自由にFirefoxの検索エンジンに追加出来るアドオンのよう。<br><a href="http://allabout.co.jp/gm/gc/414549/" target="_blank" rel="external">検索窓を追加「Add to Search Bar」 [Firefoxの使い方] All About</a>  </p>
-<p>試しに「Yahoo!知恵袋」を検索エンジンに追加してみた。  </p>
-<ul>
-<li>Yahoo!知恵袋サイトの検索窓内で右クリック。</li>
-<li>「サーチバーを追加」をクリック。</li>
-</ul>
-<p><img src="/images/add-to-search-bar.png" alt="Add to Search Bar" height="240">  </p>
-<p>たったこれだけで検索エンジン「Yahoo!知恵袋 - みんなの知恵共有サービス」が追加された。<br>なかなか便利だね、このアドオン。<br>嬉しくなって「楽天市場」や「価格.com」などの検索エンジンも追加した。  </p>
-<p>これと<a href="https://addons.mozilla.org/ja/firefox/addon/context-search/?src=search" target="_blank" rel="external">「Context Search」</a>（右クリックから種々の検索エンジンでの検索が可能）があれば、検索の効率アップ間違い無し。  </p>
-<p>ーー<br>（関連記事）<br><a href="http://pagent.github.io/2015/08/15/context-search/" target="_blank" rel="external">右クリックからの検索を拡張するFirefoxアドオン「Context Search」が便利</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Firefoxのアドオンを整理しようと思い、長い間無効化しているものなどを削除していた。<br>そんな中に<a href="https://addons.mozilla.org/ja/firefox/addon/add-to-search-bar/" target="_bl]]>
-    </summary>
     
       <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
     
