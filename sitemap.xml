@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2015/05/02/higan/</loc>
+    <lastmod>2016-11-16T01:04:08.872Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2016/10/06/disable-recently-used-files/</loc>
-    <lastmod>2016-10-05T22:44:47.456Z</lastmod>
+    <lastmod>2016-11-14T09:56:20.685Z</lastmod>
   </url>
   
   <url>
@@ -239,11 +244,6 @@
   <url>
     <loc>http://pagent.github.io/2016/03/26/xfce4-stop-mousewheel-rollup/</loc>
     <lastmod>2016-04-14T15:19:48.428Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2015/05/02/higan/</loc>
-    <lastmod>2016-04-07T11:26:48.916Z</lastmod>
   </url>
   
   <url>

@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-10-05T22:45:30.683Z</updated>
+  <updated>2016-11-16T01:04:36.586Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,13 +19,13 @@
     <link href="http://pagent.github.io/2016/10/06/disable-recently-used-files/"/>
     <id>http://pagent.github.io/2016/10/06/disable-recently-used-files/</id>
     <published>2016-10-05T22:21:48.000Z</published>
-    <updated>2016-10-05T22:44:47.456Z</updated>
+    <updated>2016-11-14T09:56:20.685Z</updated>
     <content type="html"><![CDATA[<p>ファイルマネージャーにnemoを使っているが、サイドバーに「最近開いたファイル」という項目があり、これまで使ったファイルの履歴が表示されている。<br>ファイルを右クリックし「最近使用したファイル一覧から削除」しても、再度そのファイルを開くと履歴に追加される。  </p>
 <p>Zeitgeistによって記録されるログをコントロールするらしいactivity-log-managerというのをインストールし、利用状況の記録をオフにしてみたが、それでも履歴が残ってしまう。<br>Zeitgeist自体をアンインストールしてみたが、それでも「最近開いたファイル」が無効化されない。<br>Zeitgeistとは関係無いのだろうか？  </p>
 <p>どうやら履歴は~/.local/share/recently-used.xbelに記録されていているよう。<br><a href="https://ubuntu-mate.community/t/is-the-activity-log-manager-working-on-ubuntu-mate/8945" target="_blank" rel="external">Is the Activity Log Manager working on Ubuntu-MATE? - Support &amp; Help Requests - Ubuntu MATE Community</a>  </p>
 <p>これを削除すると確かに「最近開いたファイル」の項目が消去されている。<br>ならばとrecently-used.xbelを書き込み禁止にしてみたが、すぐに元に戻ってしまう。  </p>
 <p>結局、recently-used.xbelファイルを「recently-used.xbel」という名前のフォルダーで置き換えることで解決した。  </p>
-<p>（参照記事）<br><a href="http://www.nowhere.co.jp/blog/archives/20090630-230129.html" target="_blank" rel="external">ちょっとしたhack - Eyes, JAPAN Blog</a></p>
+<p>（参照記事）<br><a href="http://www.nowhere.co.jp/blog/archives/20090630-230129.html" target="_blank" rel="external">ちょっとしたhack - Eyes, JAPAN Blog</a>  </p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>ファイルマネージャーにnemoを使っているが、サイドバーに「最近開いたファイル」という項目があり、これまで使ったファイルの履歴が表示されている。<br>ファイルを右クリックし「最近使用したファイル一覧から削除」しても、再度そのファイルを開くと履歴に追加される。  </p>
