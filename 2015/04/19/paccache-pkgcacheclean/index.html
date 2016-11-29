@@ -175,17 +175,26 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <p>pkgcachecleanのページのコメントを見ると、paccacheが.partや.delta filesを扱わない一方、pkgcachecleanではこれらも対象になるようだ。<br><a href="https://aur.archlinux.org/packages/pkgcacheclean/" target="_blank" rel="external">AUR (en) - pkgcacheclean</a>  </p>
 <p>何のことかよく分からないが、コマンドが一つで済むことだし、<del>pkgcachecleanの方が良さそうだ。簡単で有難い。</del>  </p>
 <p>ーー<br>（追記）<br>paccacheが最新のもの含めて3つ温存するのに対し、pkgcachecleanはデフォルトで2つ（1つ古いバージョンのみ）しかキープしてくれないよう。<br>念のためpaccacheを使うことにした。  </p>
-<pre><code><span class="preprocessor"># pacmanでの古いパッケージキャッシュを削除</span>
-$ paccache -r
-
-<span class="preprocessor"># pacmanでの古いパッケージキャッシュを、削除せずに開放容量のみ計算</span>
+<pre><code><span class="preprocessor"># pacmanでの古いパッケージキャッシュを、削除せずに開放容量のみ計算</span>
 $ paccache -d
 
-<span class="preprocessor"># Yaourtでのパッケージキャッシュを/var/cache/pacman/pkg-localに保存している場合、これの古いキャッシュを削除</span>
-$ paccache -r -c /<span class="keyword">var</span>/cache/pacman/pkg-local
+<span class="preprocessor"># pacmanでの古いパッケージキャッシュを削除</span>
+$ paccache -r
+
+<span class="preprocessor"># 既にアンインストールしたパッケージを削除</span>
+$ paccache -ruk0
+
+
+（Yaourtでのパッケージキャッシュを/<span class="keyword">var</span>/cache/pacman/pkg-localに保存している場合）
 
 <span class="preprocessor"># Yaourtでの古いパッケージキャッシュを、削除せずに開放容量のみ計算</span>
 $ paccache -d -c /<span class="keyword">var</span>/cache/pacman/pkg-local
+
+<span class="preprocessor"># Yaourtでの古いパッケージキャッシュを削除</span>
+$ paccache -r -c /<span class="keyword">var</span>/cache/pacman/pkg-local
+
+<span class="preprocessor"># 既にアンインストールしたYaourtでのパッケージキャッシュを削除</span>
+$ paccache -ruk0 -c /<span class="keyword">var</span>/cache/pacman/pkg-local
 </code></pre><p>ーー<br>（関連記事）<br><a href="http://pagent.github.io/2016/04/07/yaourt-cache/" target="_blank" rel="external">Yaourtでパッケージのキャッシュを保存</a></p>
 
 	</div>
