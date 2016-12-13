@@ -185,13 +185,13 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <p></p>
 
 <h3 id="共有ディレクトリのマウント">共有ディレクトリのマウント</h3>
-<p>クライアントPCで共有ディレクトリをマウント。</p>
+<p>クライアントPCから共有ディレクトリをマウント。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> mount -t nfs <span class="number">192.168</span>.<span class="number">11.3</span>:/mnt/vol/Share /mnt/dyna</div><div class="line">mount.nfs: Connection timed out</div></pre></td></tr></table></figure>
 
 <p>タイムアウトとなり、マウント出来ない。  </p>
 <p>サーバー側のファイアウォールをoffにするとマウント出来るので、ファイアウォールで弾かれているよう。  </p>
 <p>tcp、udpとも、ポート20048,2049,111でNFSを許可するよう、Gufwで設定。<br>マウント出来るようになった。<br>（マウントする際のファイルタイプの指定<code>-t nfs</code>は省略しても大丈夫のよう。）  </p>
-<p>普段はあまり使わないので、クライアント側ではその都度マウントすることとし、fstabによる自動マウントは行わないことにした。<br>（サーバーが起動していない状態でクライアントPCを起動した際、タイムアウトするまでしばらくマウント作業を待つことになりそうなのが嫌なので。）  </p>
+<p>普段はあまり使わないので、クライアント側からはその都度マウントすることとし、fstabによる自動マウントは行わないことにした。<br>（サーバーが起動していない状態でクライアントPCを起動した際、タイムアウトするまでしばらくマウント作業を待つことになりそうなのが嫌なので。）  </p>
 <p>（注）「リムーバルメディアやネットワーク共有などが接続されたりアクセスされたときに自動でマウント」してくれる<a href="https://wiki.archlinuxjp.org/index.php/Autofs" target="_blank" rel="external">Autofs</a>というのもあるようなので、また今度チャレンジしてみようと思う。  </p>
 <p></p>
 
