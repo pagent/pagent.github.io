@@ -242,14 +242,20 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <p>/mnt/vol/ShareをLAN内で共有するよう、/etc/exportsを編集。  </p>
 <figure class="highlight plain"><figcaption><span>/etc/exports</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/mnt/vol/Share 192.168.11.0/24(rw,fsid=root,no_subtree_check)</div></pre></td></tr></table></figure>
 
-<p>（PCのIPアドレスはそれぞれ固定してある。） </p>
+<p>ちなみに、PCのIPアドレスはそれぞれ固定してある。  </p>
+<p>それから、たとえばサーバー側の/mnt/musicを共有したい場合、サーバー側で/mnt/musicをいったん/srv/nfs4/music等にマウントし、これをクライアント側からマウントするというのが正しい作法のよう。だが面倒なので。  </p>
 <p>nfs-server.serviceを有効化し起動。  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> systemctl enable nfs-server</div><div class="line">$ <span class="built_in">sudo</span> systemctl restart nfs-server</div></pre></td></tr></table></figure>
+
+<p></p>
 
 <h3 id="クライアント側（Xubuntu_16-04-1）">クライアント側（Xubuntu 16.04.1）</h3>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> apt install nfs-common</div><div class="line">  </div><div class="line">$ <span class="built_in">sudo</span> systemctl enable rpcbind.service</div><div class="line">$ <span class="built_in">sudo</span> systemctl enable nfs-client.target</div><div class="line">$ <span class="built_in">sudo</span> systemctl enable remote-fs.target</div><div class="line">  </div><div class="line">$ <span class="built_in">sudo</span> systemctl start rpcbind.service</div><div class="line">$ <span class="built_in">sudo</span> systemctl start nfs-client.target</div><div class="line">$ <span class="built_in">sudo</span> systemctl start remote-fs.target</div></pre></td></tr></table></figure>
 
-<p>共有ディレクトリをマウント。  </p>
+<p></p>
+
+<h3 id="共有ディレクトリのマウント">共有ディレクトリのマウント</h3>
+<p>クライアントPCで共有ディレクトリをマウント。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> mount -t nfs <span class="number">192.168</span>.<span class="number">11.3</span>:/mnt/vol/Share /mnt/dyna</div><div class="line">mount.nfs: Connection timed out</div></pre></td></tr></table></figure>
 
 <p>タイムアウトとなり、マウント出来ない。  </p>
@@ -257,7 +263,9 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <p>tcp、udpとも、ポート20048,2049,111でNFSを許可するよう、Gufwで設定。<br>マウント出来るようになった。<br>（マウントする際のファイルタイプの指定<code>-t nfs</code>は省略しても大丈夫のよう。）  </p>
 <p>普段はあまり使わないので、クライアント側ではその都度マウントすることとし、fstabによる自動マウントは行わないことにした。<br>（サーバーが起動していない状態でクライアントPCを起動した際、タイムアウトするまでしばらくマウント作業を待つことになりそうなのが嫌なので。）  </p>
 <p>（注）「リムーバルメディアやネットワーク共有などが接続されたりアクセスされたときに自動でマウント」してくれる<a href="https://wiki.archlinuxjp.org/index.php/Autofs" target="_blank" rel="external">Autofs</a>というのもあるようなので、また今度チャレンジしてみようと思う。  </p>
-<p>この後、Xubuntu 16.04.1にもnfs-kernel-serverをインストールし、上記と同様にサーバーの設定をしたが、ファイアウォールで弾かれる。<br><code>rpcinfo -p</code>で確認すると、mountdのポートがランダムになっているのが原因のよう。  </p>
+<p></p>
+
+<p>ーー<br>（追記）<br>この後、Xubuntu 16.04.1にもnfs-kernel-serverをインストールし、上記と同様にサーバーの設定をしたが、ファイアウォールで弾かれる。<br><code>rpcinfo -p</code>で確認すると、mountdのポートがランダムになっているのが原因のよう。  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">$ rpcinfo -p</div><div class="line">   program vers proto   port  service</div><div class="line">    <span class="number">100000</span>    <span class="number">4</span>   tcp    <span class="number">111</span>  portmapper</div><div class="line">    <span class="number">100000</span>    <span class="number">3</span>   tcp    <span class="number">111</span>  portmapper</div><div class="line">    <span class="number">100000</span>    <span class="number">2</span>   tcp    <span class="number">111</span>  portmapper</div><div class="line">    <span class="number">100000</span>    <span class="number">4</span>   udp    <span class="number">111</span>  portmapper</div><div class="line">    <span class="number">100000</span>    <span class="number">3</span>   udp    <span class="number">111</span>  portmapper</div><div class="line">    <span class="number">100000</span>    <span class="number">2</span>   udp    <span class="number">111</span>  portmapper</div><div class="line">    <span class="number">100005</span>    <span class="number">1</span>   udp  <span class="number">46339</span>  mountd</div><div class="line">    <span class="number">100005</span>    <span class="number">1</span>   tcp  <span class="number">44608</span>  mountd</div><div class="line">    <span class="number">100005</span>    <span class="number">2</span>   udp  <span class="number">40944</span>  mountd</div><div class="line">    <span class="number">100005</span>    <span class="number">2</span>   tcp  <span class="number">35868</span>  mountd</div><div class="line">    <span class="number">100005</span>    <span class="number">3</span>   udp  <span class="number">52578</span>  mountd</div><div class="line">    <span class="number">100005</span>    <span class="number">3</span>   tcp  <span class="number">41244</span>  mountd</div><div class="line">    <span class="number">100003</span>    <span class="number">2</span>   tcp   <span class="number">2049</span>  nfs</div><div class="line">    <span class="number">100003</span>    <span class="number">3</span>   tcp   <span class="number">2049</span>  nfs</div><div class="line">    <span class="number">100003</span>    <span class="number">4</span>   tcp   <span class="number">2049</span>  nfs</div><div class="line">    <span class="number">100227</span>    <span class="number">2</span>   tcp   <span class="number">2049</span></div><div class="line">    <span class="number">100227</span>    <span class="number">3</span>   tcp   <span class="number">2049</span></div><div class="line">    <span class="number">100003</span>    <span class="number">2</span>   udp   <span class="number">2049</span>  nfs</div><div class="line">    <span class="number">100003</span>    <span class="number">3</span>   udp   <span class="number">2049</span>  nfs</div><div class="line">    <span class="number">100003</span>    <span class="number">4</span>   udp   <span class="number">2049</span>  nfs</div><div class="line">    <span class="number">100227</span>    <span class="number">2</span>   udp   <span class="number">2049</span></div><div class="line">    <span class="number">100227</span>    <span class="number">3</span>   udp   <span class="number">2049</span></div><div class="line">    <span class="number">100021</span>    <span class="number">1</span>   udp  <span class="number">44301</span>  nlockmgr</div><div class="line">    <span class="number">100021</span>    <span class="number">3</span>   udp  <span class="number">44301</span>  nlockmgr</div><div class="line">    <span class="number">100021</span>    <span class="number">4</span>   udp  <span class="number">44301</span>  nlockmgr</div><div class="line">    <span class="number">100021</span>    <span class="number">1</span>   tcp  <span class="number">37763</span>  nlockmgr</div><div class="line">    <span class="number">100021</span>    <span class="number">3</span>   tcp  <span class="number">37763</span>  nlockmgr</div><div class="line">    <span class="number">100021</span>    <span class="number">4</span>   tcp  <span class="number">37763</span>  nlockmgr</div></pre></td></tr></table></figure>
 
 <p>/etc/default/nfs-kernel-serverの12行目<code>RPCMOUNTDOPTS=&quot;--manage-gids&quot;</code>を<code>RPCMOUNTDOPTS=&quot;-p 20048&quot;</code>とし固定したところ、マウント出来るようになった。  </p>
@@ -837,45 +845,45 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
+			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
+		
 			<li><a href="/tags/セキュリティ/">セキュリティ<span>4</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>39</span></a></li>
-		
-			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
-		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
-		
-			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
 			<li><a href="/tags/Git/">Git<span>13</span></a></li>
 		
-			<li><a href="/tags/コード/">コード<span>1</span></a></li>
+			<li><a href="/tags/ハードウェア/">ハードウェア<span>1</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>100</span></a></li>
+			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
 		
-			<li><a href="/tags/ブログ/">ブログ<span>1</span></a></li>
+			<li><a href="/tags/食/">食<span>4</span></a></li>
 		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
-		
-			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>23</span></a></li>
 		
 			<li><a href="/tags/プライバシー/">プライバシー<span>8</span></a></li>
 		
-			<li><a href="/tags/ことば/">ことば<span>10</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
-		
 			<li><a href="/tags/時事/">時事<span>1</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>5</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>23</span></a></li>
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>39</span></a></li>
+		
+			<li><a href="/tags/ブログ/">ブログ<span>1</span></a></li>
+		
+			<li><a href="/tags/コード/">コード<span>1</span></a></li>
+		
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>43</span></a></li>
+		
+			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>32</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>25</span></a></li>
