@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-12-13T07:37:32.641Z</updated>
+  <updated>2016-12-13T08:10:45.162Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,13 +19,13 @@
     <link href="http://pagent.github.io/2016/12/13/synflood-from-google/"/>
     <id>http://pagent.github.io/2016/12/13/synflood-from-google/</id>
     <published>2016-12-13T07:14:45.000Z</published>
-    <updated>2016-12-13T07:37:19.047Z</updated>
+    <updated>2016-12-13T08:10:26.570Z</updated>
     <content type="html"><![CDATA[<p>無線LANルーターにBUFFALOのAirStation「WHR-G54S」を使っている。<br>かなり以前に購入したものだが、特に不満もない。  </p>
 <p>今日、久しぶりにAirStationにログインして、ログ情報を見てみたら、  </p>
 <p><code>種類/ATTACK     ログ内容/ALERT [ SYN_FLOOD : ]: 1 attempts from ***.***.**.***.Total=1.</code>  </p>
 <p>というアタックログがいくつかあった。<br>ドメイン検索してみると、<code>nrt*****-in-**.1e100.net</code>となっていて、Googleが管理するのものらしい。  </p>
 <p>SYN flood攻撃というDoS攻撃の一種らしいが（<a href="https://ja.wikipedia.org/wiki/SYN_flood" target="_blank" rel="external">SYN flood - Wikipedia</a>）、サーバーを公開したりはしていないし、いったい何故だろう？<br>そういえば今日Google検索した際に、検索結果が表示されず、Googleアカウントへのログインを求めるページが表示されたが、これが何か関係があるのだろうか？</p>
-<p>よく分からないが気持ちが悪いので、デフォルトの検索エンジンをDuckDuckGoに変更した。</p>
+<p>よく分からないが気持ちが悪いので、デフォルトの検索エンジンをDuckDuckGoに変更した。<br>いつまでGoogleを使わずに我慢できるか、心許ないが。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>無線LANルーターにBUFFALOのAirStation「WHR-G54S」を使っている。<br>かなり以前に購入したものだが、特に不満もない。  </p>
