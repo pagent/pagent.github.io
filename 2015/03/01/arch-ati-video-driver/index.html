@@ -9,7 +9,7 @@
   <meta name="author" content="Pagent">
   
   <meta name="description" content="Dellの古いノートパソコンVOSTRO1000にArch Linuxを入れてみた。（NECのLavie Liteは、kernelが3.10台を超えると不具合が出る問題がArch Linuxでは解決出来ず、諦めた。）
-インストールには、グラフィカルインストールが可能なArchbootを使った。（ar">
+インストールにはArchbootを使った。（archlinux-2015.01-1">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -160,7 +160,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<!-- content -->
 	<div class="mypage">
 	    <p>Dellの古いノートパソコンVOSTRO1000にArch Linuxを入れてみた。<br>（NECのLavie Liteは、kernelが3.10台を超えると不具合が出る問題がArch Linuxでは解決出来ず、諦めた。）</p>
-<p>インストールには、グラフィカルインストールが可能なArchbootを使った。（archlinux-2015.01-1-archboot.iso）<br>Ubuntu等のインストーラーほど懇切丁寧ではないが、コマンドラインでのインストールよりは楽だった。  </p>
+<p>インストールには<a href="https://wiki.archlinuxjp.org/index.php/Archboot" target="_blank" rel="external">Archboot</a>を使った。（archlinux-2015.01-1-archboot.iso）<br>近年のグラフィカルインストーラーほど懇切丁寧ではないが、対話式にインストール出来るので、コマンドラインのみでのインストールよりは楽だった。  </p>
 <p>ネット上の紹介記事を参考に進めたら、それ程迷うこともなかったが、最後ブートローダーのインストールで、GRUB2を選択すると、インストール先をMBRにしか出来なかったので、SysLinuxをインストールした。<br>無線LANの設定も後から苦労するよりはと、ぽちぽちパスワードを入力した。  </p>
 <p>一応インストールは完了したが、デスクトップ環境の導入で躓いてしまった。  </p>
 <p>最初LXDEを入れてみたが、画面がザラザラで何も見えない。<br>PC起動時にLXDEを自動開始するよう設定してしまったようで、コマンドラインにも戻れない。<br>修正の仕方も分からず困ったが、幸いインストール後の状態をClonezillaでバックアップしていたので、これをリストアした。  </p>
