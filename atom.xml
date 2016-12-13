@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-12-13T08:10:45.162Z</updated>
+  <updated>2016-12-13T08:12:43.750Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2016/12/13/synflood-from-google/"/>
     <id>http://pagent.github.io/2016/12/13/synflood-from-google/</id>
     <published>2016-12-13T07:14:45.000Z</published>
-    <updated>2016-12-13T08:10:26.570Z</updated>
+    <updated>2016-12-13T08:12:23.251Z</updated>
     <content type="html"><![CDATA[<p>無線LANルーターにBUFFALOのAirStation「WHR-G54S」を使っている。<br>かなり以前に購入したものだが、特に不満もない。  </p>
 <p>今日、久しぶりにAirStationにログインして、ログ情報を見てみたら、  </p>
 <p><code>種類/ATTACK     ログ内容/ALERT [ SYN_FLOOD : ]: 1 attempts from ***.***.**.***.Total=1.</code>  </p>
@@ -34,6 +34,8 @@
     </summary>
     
       <category term="セキュリティ" scheme="http://pagent.github.io/tags/%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3/"/>
+    
+      <category term="プライバシー" scheme="http://pagent.github.io/tags/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC/"/>
     
   </entry>
   
