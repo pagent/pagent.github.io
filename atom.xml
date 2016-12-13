@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-12-13T04:04:14.097Z</updated>
+  <updated>2016-12-13T04:15:27.162Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://pagent.github.io/2016/12/13/nfs-firewall/"/>
     <id>http://pagent.github.io/2016/12/13/nfs-firewall/</id>
     <published>2016-12-13T02:31:42.000Z</published>
-    <updated>2016-12-13T04:03:50.263Z</updated>
+    <updated>2016-12-13T04:14:16.494Z</updated>
     <content type="html"><![CDATA[<p>Linuxマシン間でファイルを共有するため、NFSサーバーの設定をした。  </p>
 <h3 id="サーバー側（Arch_Linux）">サーバー側（Arch Linux）</h3>
 <p>パッケージをインストール。  </p>
@@ -28,6 +28,7 @@
 <p>/mnt/vol/ShareをLAN内で共有するよう、/etc/exportsを編集。  </p>
 <figure class="highlight plain"><figcaption><span>/etc/exports</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/mnt/vol/Share 192.168.11.0/24(rw,fsid=root,no_subtree_check)</div></pre></td></tr></table></figure>
 
+<p>（PCのIPアドレスはそれぞれ固定してある。） </p>
 <p>nfs-server.serviceを有効化し起動。  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> systemctl enable nfs-server</div><div class="line">$ <span class="built_in">sudo</span> systemctl restart nfs-server</div></pre></td></tr></table></figure>
 

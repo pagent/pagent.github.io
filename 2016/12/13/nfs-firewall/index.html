@@ -172,6 +172,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <p>/mnt/vol/ShareをLAN内で共有するよう、/etc/exportsを編集。  </p>
 <figure class="highlight plain"><figcaption><span>/etc/exports</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/mnt/vol/Share 192.168.11.0/24(rw,fsid=root,no_subtree_check)</div></pre></td></tr></table></figure>
 
+<p>（PCのIPアドレスはそれぞれ固定してある。） </p>
 <p>nfs-server.serviceを有効化し起動。  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> systemctl enable nfs-server</div><div class="line">$ <span class="built_in">sudo</span> systemctl restart nfs-server</div></pre></td></tr></table></figure>
 
