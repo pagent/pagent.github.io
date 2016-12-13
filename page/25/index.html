@@ -159,6 +159,67 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2014/08/28/seesaa-coments-url-unclickable/" >コメント内URLの非ハイパーリンク化（Seesaaブログ）</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2014年8月28日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>閲覧者には少々不便なのかもしれないが、コメント内のURLがハイパーリンクになるのは好みではないので、Seesaaブログの方ではコメント内のURLがハイパーリンクにならないように（クリック出来ないように）していた。<br>かつては２ちゃんねるでも、URLを貼る時には先頭の「h」を抜いて記載することも普通に行われていたし。</p>
+<p>昨日、コメントの表示を降順にカスタマイズしたら（<a href="http://s.pagent.org/static/2014/08/27/seesaa-coments-sort/" target="_blank" rel="external">「Seesaaブログのコメント表示を降順に」</a>）、コメント内のURLがまたハイパーリンクになっていた。<br>カスタマイズで挿入したスクリプトで、コメント内URLが「clickable」に指定されているためらしい。</p>
+<p>以前に非ハイパーリンク化した時と同様、昨日記載のコード［２］の</p>
+<pre><code>&lt;% comment.body | html | tag_strip | nl2br | clickable('<span class="variable">target=</span><span class="string">"_blank"</span> <span class="variable">rel=</span><span class="string">"nofollow"</span>') %&gt;
+</code></pre><p>の「html」と「clickable」の部分を削除して</p>
+<pre><code>&lt;<span class="comment">% comment.body | tag_strip | nl2br %&gt;</span>
+</code></pre><p>にしたらハイパーリンクではなくなった。</p>
+<p>念のため元のコードを残しておきたい時は下記のようにしてもよい。</p>
+<pre><code><span class="comment">&lt;!--&lt;% comment.body | html | tag_strip | nl2br | clickable('target="_blank" rel="nofollow"') %&gt;--&gt;</span><span class="vbscript">&lt;% comment.body | tag_strip | nl2br %&gt;</span>
+</code></pre>
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/08/28/seesaa-coments-url-unclickable/" data-text="コメント内URLの非ハイパーリンク化（Seesaaブログ） | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/08/28/seesaa-coments-url-unclickable/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/08/28/seesaa-coments-url-unclickable/" class="hatena-bookmark-button" data-hatena-bookmark-title="コメント内URLの非ハイパーリンク化（Seesaaブログ）" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/blog/">blog</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2014/08/27/seesaa-coments-sort/" >Seesaaブログのコメント表示を降順に</a>
 		</h3>
 	
@@ -910,87 +971,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2014/08/03/slideshare-speakerdeck/" >スライド共有サービス対決。SlideShare vs.SpeakerDeck</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2014年8月3日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>スライド共有サイトとして最初に「SlideShare」を知って、そちらで始めたのだが、もう一つ有力なスライド共有サイトとして「SpeakerDeck」というのもあった。<br>登録してみたらこちらも良さそうだった。</p>
-<p>大きな違いとして、「SlideShare」はFlashを使っていて、もう一方の「SpeakerDeck」の方はJavascriptを使っているらしい。</p>
-<iframe src="//www.slideshare.net/slideshow/embed_code/37458126?rel=0" width="342" height="291" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-
-
-
-
-<div style="width: 50%"><script async class="speakerdeck-embed" data-id="591d6dc0fcd80131c46d52d757e5bc8b" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script></div>
-
-<p>特に埋め込みサイズが大きい場合に顕著だが、「SpeakerDeck」の方がスライド間の移動がスムーズ。<br>「SlideShare」は読み込み・移動の際、画面が一瞬チラつくことがある。</p>
-<p>「SlideShare」の利点としては</p>
-<p>1.Twitterのツイート内でスライドの閲覧が可能。<br>（「SpeakerDeck」でのshareはリンクのURLが表示されるだけ。）</p>
-<p>2.スライド内の文章が抽出されてページの下部に表示される。</p>
-<p>3.Twitterのように他のユーザーを「Follow」する機能がある。</p>
-<p>4.他の人が作ったスライドにコメントしたり、「Like」（お気に入り）に入れる機能がある。</p>
-<p>などがありSNSとしての広がりに優れる。<br>またSNS的な要素は不要という場合でも、「1」と「2」の利点は大きい。<br>ツイート内でスライドの閲覧が可能だとスライドを見てもらいやすいだろうし、文章がスライドのページに表示されるのも検索エンジンに登録されやすく、SEO的に有利なはず。</p>
-<p>ただ「SpeakerDeck」の表示のスムーズさも捨てがたい。</p>
-<p>当面は両方を併用しようと思う。</p>
-<p>ーー<br>（追記）<br>「SlideShare」も「SpeakerDeck」も、アップロードする際のファイル名が英語なら公開URLにそれらのアルファベットが用いられる。</p>
-<p>日本語名のファイルをアップロードすると「SlideShare」では<br><code>http://www.slideshare.net/Pagent/ss-37458126</code>のように「ss-」＋８ケタの数字になる。</p>
-<p>一方、「SpeakerDeck」に日本語名のファイルをアップロードすると<br><code>https://speakerdeck.com/pagent/dangokao-dangohahe-gu-oisii</code>のように、ひらがなのローマ字表記＋漢字の中国語読みで長いものになってしまう。</p>
-<p>さらに英語のファイル名でアップロードしても、その後タイトルを変更するとそれに応じて変更の度に公開URLが変わってしまう。リンク切れにならないよう、投稿時にはタイトルを十分考えておく必要がある。（埋め込みタグはURLではなく「data-id」が用いられているので、タイトルを変更しても不変。）</p>
-<p>日本語で長いタイトルを付けたいがURLが長くなるのは嫌という人には「SpeakerDeck」は向いていないかもしれない。</p>
-<p>（追記）<br>ブログなどへの埋め込みの際、「SpeakerDeck」には埋め込みサイズのカスタマイズが用意されていないが、</p>
-<pre><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">style</span>=<span class="value">"width: 560px"</span>&gt;</span>
-<span class="tag">&lt;<span class="title">script</span> <span class="attribute">async</span> <span class="attribute">class</span>=<span class="value">"speakerdeck-embed"</span><span class="value">〜</span>&gt;</span><span class="javascript">〜</span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
-</code></pre><p>のようにdiv要素で指定してやればいいようだ。</p>
-<p>参照記事：<a href="http://qiita.com/udzura/items/095e322a26e85a4af4b9" target="_blank" rel="external">CSS – SpeakerDeck のスライドはりつけが巨大で困る – Qiita</a></p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2014/08/03/slideshare-speakerdeck/" data-text="スライド共有サービス対決。SlideShare vs.SpeakerDeck | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2014/08/03/slideshare-speakerdeck/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2014/08/03/slideshare-speakerdeck/" class="hatena-bookmark-button" data-hatena-bookmark-title="スライド共有サービス対決。SlideShare vs.SpeakerDeck" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/ネット/">ネット</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -1031,45 +1011,45 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/blog/">blog<span>39</span></a></li>
-		
-			<li><a href="/tags/プライバシー/">プライバシー<span>7</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
-		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
-		
-			<li><a href="/tags/セキュリティ/">セキュリティ<span>3</span></a></li>
-		
-			<li><a href="/tags/時事/">時事<span>1</span></a></li>
-		
-			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>43</span></a></li>
-		
-			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>99</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>23</span></a></li>
 		
 			<li><a href="/tags/ことば/">ことば<span>10</span></a></li>
 		
-			<li><a href="/tags/ブログ/">ブログ<span>1</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>100</span></a></li>
 		
-			<li><a href="/tags/未分類/">未分類<span>5</span></a></li>
+			<li><a href="/tags/セキュリティ/">セキュリティ<span>3</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>39</span></a></li>
+		
+			<li><a href="/tags/ネット/">ネット<span>43</span></a></li>
+		
+			<li><a href="/tags/コード/">コード<span>1</span></a></li>
+		
+			<li><a href="/tags/ハードウェア/">ハードウェア<span>1</span></a></li>
+		
+			<li><a href="/tags/プライバシー/">プライバシー<span>7</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>32</span></a></li>
 		
 			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
 		
 			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
 		
-			<li><a href="/tags/ハードウェア/">ハードウェア<span>1</span></a></li>
+			<li><a href="/tags/ブログ/">ブログ<span>1</span></a></li>
+		
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+		
+			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
+			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+		
+			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
+			<li><a href="/tags/未分類/">未分類<span>5</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>25</span></a></li>
@@ -1084,6 +1064,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2016/12/13/nfs-firewall/" ><i class="fa fa-file-o"></i>NFSとファイアウォール</a>
+      </li>
     
       <li>
         <a href="/2016/11/16/android-backdoor/" ><i class="fa fa-file-o"></i>スマホと個人情報</a>
@@ -1101,10 +1085,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
         <a href="/2016/08/24/nemo-filemanager-always-open-at-PC-startup/" ><i class="fa fa-file-o"></i>PC起動時にファイルマネージャーnemoが自動起動する...</a>
       </li>
     
-      <li>
-        <a href="/2016/08/11/truecrypt-dmsetup/" ><i class="fa fa-file-o"></i>クリーンインストールしたXubuntu16.04でTr...</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -1114,7 +1094,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">2016年11月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">2016年10月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">2016年08月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">2016年07月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">2016年05月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">2016年12月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">2016年11月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">2016年10月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">2016年08月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">2016年07月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">2016年05月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
 		</ul>
 	</div>
 
