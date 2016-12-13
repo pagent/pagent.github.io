@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-12-13T04:15:27.162Z</updated>
+  <updated>2016-12-13T07:37:32.641Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,29 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[GoogleからのSYN flood攻撃？]]></title>
+    <link href="http://pagent.github.io/2016/12/13/synflood-from-google/"/>
+    <id>http://pagent.github.io/2016/12/13/synflood-from-google/</id>
+    <published>2016-12-13T07:14:45.000Z</published>
+    <updated>2016-12-13T07:37:19.047Z</updated>
+    <content type="html"><![CDATA[<p>無線LANルーターにBUFFALOのAirStation「WHR-G54S」を使っている。<br>かなり以前に購入したものだが、特に不満もない。  </p>
+<p>今日、久しぶりにAirStationにログインして、ログ情報を見てみたら、  </p>
+<p><code>種類/ATTACK     ログ内容/ALERT [ SYN_FLOOD : ]: 1 attempts from ***.***.**.***.Total=1.</code>  </p>
+<p>というアタックログがいくつかあった。<br>ドメイン検索してみると、<code>nrt*****-in-**.1e100.net</code>となっていて、Googleが管理するのものらしい。  </p>
+<p>SYN flood攻撃というDoS攻撃の一種らしいが（<a href="https://ja.wikipedia.org/wiki/SYN_flood" target="_blank" rel="external">SYN flood - Wikipedia</a>）、サーバーを公開したりはしていないし、いったい何故だろう？<br>そういえば今日Google検索した際に、検索結果が表示されず、Googleアカウントへのログインを求めるページが表示されたが、これが何か関係があるのだろうか？</p>
+<p>よく分からないが気持ちが悪いので、デフォルトの検索エンジンをDuckDuckGoに変更した。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>無線LANルーターにBUFFALOのAirStation「WHR-G54S」を使っている。<br>かなり以前に購入したものだが、特に不満もない。  </p>
+<p>今日、久しぶりにAirStationにログインして、ログ情報を見てみたら、  </p>
+<p><code>種類]]>
+    </summary>
+    
+      <category term="セキュリティ" scheme="http://pagent.github.io/tags/%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[NFSとファイアウォール]]></title>
@@ -526,28 +549,6 @@ systemctl start NetworkManager
       <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
     
       <category term="プライバシー" scheme="http://pagent.github.io/tags/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[infinality-bundle-fontsが衝突してアップデート出来ない]]></title>
-    <link href="http://pagent.github.io/2016/04/30/infinality-bundle-fonts-conflicts/"/>
-    <id>http://pagent.github.io/2016/04/30/infinality-bundle-fonts-conflicts/</id>
-    <published>2016-04-30T07:27:32.000Z</published>
-    <updated>2016-04-30T07:54:50.125Z</updated>
-    <content type="html"><![CDATA[<p>Arch Linuxでのフォントレンダリングにinfinalityを使っている。<br>フォントが見やすくなり助かっているが、昨年からpacmanでアップデートする際、infinality-bundle-fontsの依存関係のエラーでアップデート出来なくなっていた。  </p>
-<figure class="highlight shell-session"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">$ sudo pacman -Syu</div><div class="line">:: パッケージデータベースの同期中<span class="keyword">...</span></div><div class="line"> core は最新です</div><div class="line"> extra                   <span class="number">1793.6</span> KiB   629K/s <span class="number">00</span>:<span class="number">03</span> [<span class="comment">######################] 100%</span></div><div class="line"> community                  <span class="number">3.4</span> MiB   631K/s <span class="number">00</span>:<span class="number">06</span> [<span class="comment">######################] 100%</span></div><div class="line"> multilib                 <span class="number">161.3</span> KiB   628K/s <span class="number">00</span>:<span class="number">00</span> [<span class="comment">######################] 100%</span></div><div class="line"> archlinuxfr は最新です</div><div class="line"> infinality-bundle は最新です</div><div class="line"> infinality-bundle-multilib は最新です</div><div class="line"> infinality-bundle-fonts は最新です</div><div class="line">:: システム全体の更新を開始<span class="keyword">...</span></div><div class="line">:: ttf-noto-sans-ib を infinality-bundle-fonts/ttf-noto-fonts-ib に置き換えますか？ [Y/n] </div><div class="line">:: ttf-noto-sans-multilang-ib を infinality-bundle-fonts/ttf-noto-fonts-nonlatin-ib に置き換えますか？ [Y/n] </div><div class="line">:: ttf-noto-serif-ib を infinality-bundle-fonts/ttf-noto-fonts-ib に置き換えますか？ [Y/n] </div><div class="line">依存関係を解決しています<span class="keyword">...</span></div><div class="line">衝突するパッケージがないか確認しています<span class="keyword">...</span></div><div class="line">エラー: 処理の準備に失敗しました (依存関係を解決できませんでした)</div><div class="line">:: ttf-noto-serif-multilang-ib: ttf-noto-serif-ib を削除すると <span class="string">'ttf-noto-serif-ib'</span> の依存関係が壊れます</div></pre></td></tr></table></figure>
-
-<p>仕方なく/etc/pacman.confでinfinality-bundle-fontsのリポジトリをコメントアウトしていたが、ibfonts-meta-extendedとttf-noto-serif-multilang-ibをいったん削除し、ibfonts-meta-extendedを再度インストールすることで解決した。  </p>
-<pre><code>$ <span class="built_in">sudo</span> pacman -R ibfonts-meta-extended ttf-noto-serif-multilang-ib
-$ <span class="built_in">sudo</span> pacman -Syu ibfonts-meta-extended
-</code></pre><p>（参照記事）<br><a href="https://bbs.archlinux.org/viewtopic.php?id=204450" target="_blank" rel="external">[SOLVED] Upgrade fails becuase if the Infinality ibfonts / Newbie Corner / Arch Linux Forums</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Arch Linuxでのフォントレンダリングにinfinalityを使っている。<br>フォントが見やすくなり助かっているが、昨年からpacmanでアップデートする際、infinality-bundle-fontsの依存関係のエラーでアップデート出来なくなっていた。  </]]>
-    </summary>
-    
-      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
     
   </entry>
   
