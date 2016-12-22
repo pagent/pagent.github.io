@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-12-22T21:23:50.146Z</updated>
+  <updated>2016-12-22T21:28:46.154Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[Xubuntu起動時に"Running /scripts/local-premount ... "で止まる]]></title>
-    <link href="http://pagent.github.io/2016/12/23/local-premount/"/>
-    <id>http://pagent.github.io/2016/12/23/local-premount/</id>
+    <link href="http://pagent.github.io/2016/12/23/boot-failure-at-local-premount/"/>
+    <id>http://pagent.github.io/2016/12/23/boot-failure-at-local-premount/</id>
     <published>2016-12-22T20:22:36.000Z</published>
     <updated>2016-12-22T21:17:23.379Z</updated>
     <content type="html"><![CDATA[<p>ネットブックにArch Linuxをインストールしようとして上手く行かず、途中でやめたところ、マルチブートしているXubuntu 16.04.1がブート中に下記の表示のところで止まるようになってしまった。  </p>
