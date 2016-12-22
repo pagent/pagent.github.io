@@ -587,7 +587,6 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	  <p>先日からArch LinuxでTrueCryptのボリュームを開けなくなってしまった。正しいパスワードを入力しても”Invalid characters encountered”や”fuse: bad mount point…No such file or directory”と表示される。Xubuntuだと通常通りマウント出来るのだが。  </p>
 <p>2015年12月10日にC++ ABIが変更されて以降、truecrypt-1:7.1a-3はボリュームをマウント出来なくなっており、旧バージョンのtruecrypt-1:7.1a-2だと正常に動作するようだ。<br><a href="https://wiki.archlinux.org/index.php/TrueCrypt" title="TrueCrypt - ArchWiki" target="_blank" rel="external">TrueCrypt - ArchWiki</a>  </p>
-<p>（追記）<br>その後truecrypt-1:7.1a-4でバグが修正され、マウント可能になっていた。  </p>
 <p>pacmanのキャッシュフォルダ/var/cache/pacman/pkg内にtruecrypt-1:7.1a-2があったので、ダウングレードした。  </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> pacman -U /var/cache/pacman/pkg/truecrypt-<span class="number">1</span>:<span class="number">7.1</span>a-<span class="number">2</span>-x86_64.pkg.tar.xz</div></pre></td></tr></table></figure>
 
@@ -596,6 +595,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <p>このままだと<code>pacman -Syu</code>の時にまたtruecrypt-1:7.1a-3に更新されてしまうので、/etc/pacman.confのIgnorePkgにtruecryptを追加した。  </p>
 <figure class="highlight plain"><figcaption><span>pacman.conf</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">IgnorePkg   = nodejs truecrypt</div></pre></td></tr></table></figure>
 
+<p>（追記）<br>その後、truecrypt-1:7.1a-4でバグが修正され、最新版でもマウント可能になっていた。  </p>
 <p>（参照記事）  </p>
 <ul>
 <li><a href="https://bugs.archlinux.org/task/47325" title="FS#47325 : [truecrypt] 1:7.1a-3: Mount: Invalid characters encountered" target="_blank" rel="external">FS#47325 : [truecrypt] 1:7.1a-3: Mount: Invalid characters encountered</a>  </li>
@@ -801,45 +801,45 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ことば/">ことば<span>10</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>23</span></a></li>
 		
 			<li><a href="/tags/未分類/">未分類<span>5</span></a></li>
 		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+			<li><a href="/tags/プライバシー/">プライバシー<span>8</span></a></li>
 		
-			<li><a href="/tags/ネット/">ネット<span>43</span></a></li>
+			<li><a href="/tags/セキュリティ/">セキュリティ<span>4</span></a></li>
 		
-			<li><a href="/tags/Linux/">Linux<span>100</span></a></li>
-		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>32</span></a></li>
-		
-			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
-		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
-		
-			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
+			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
 		
 			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
 		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>23</span></a></li>
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>32</span></a></li>
 		
-			<li><a href="/tags/blog/">blog<span>39</span></a></li>
+			<li><a href="/tags/ブログ/">ブログ<span>1</span></a></li>
 		
-			<li><a href="/tags/コード/">コード<span>1</span></a></li>
-		
-			<li><a href="/tags/時事/">時事<span>1</span></a></li>
+			<li><a href="/tags/ハードウェア/">ハードウェア<span>1</span></a></li>
 		
 			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
-		
-			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
-		
-			<li><a href="/tags/プライバシー/">プライバシー<span>8</span></a></li>
-		
 			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+		
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+		
+			<li><a href="/tags/コード/">コード<span>1</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>39</span></a></li>
+		
+			<li><a href="/tags/時事/">時事<span>1</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>100</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>10</span></a></li>
+		
+			<li><a href="/tags/食/">食<span>4</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>25</span></a></li>
