@@ -5,17 +5,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>GoogleからのSYN flood攻撃？ | Pagent</title>
+  <title>Xubuntu起動時に&quot;Running /scripts/local-premount ... &quot;で止まる | Pagent</title>
   <meta name="author" content="Pagent">
   
-  <meta name="description" content="無線LANルーターにBUFFALOのAirStation「WHR-G54S」を使っている。かなり以前に購入したものだが、特に不満もない。  
-今日、久しぶりにAirStationにログインして、ログ情報を見てみたら、  
-種類/ATTACK     ログ内容/ALERT [ SYN_FLOOD : ">
+  <meta name="description" content="ネットブックにArch Linuxをインストールしようとして上手く行かず、途中でやめたところ、マルチブートしているXubuntu 16.04.1がブート中に下記の表示のところで止まるようになってしまった。  
+1234Begin: Loading essential drivers ... done">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="GoogleからのSYN flood攻撃？"/>
+  <meta property="og:title" content="Xubuntu起動時に&quot;Running /scripts/local-premount ... &quot;で止まる"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -144,7 +143,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> GoogleからのSYN flood攻撃？</h1>
+			<h1> Xubuntu起動時に&quot;Running /scripts/local-premount ... &quot;で止まる</h1>
 		</div>
 	
 
@@ -160,12 +159,24 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>無線LANルーターにBUFFALOのAirStation「WHR-G54S」を使っている。<br>かなり以前に購入したものだが、特に不満もない。  </p>
-<p>今日、久しぶりにAirStationにログインして、ログ情報を見てみたら、  </p>
-<p><code>種類/ATTACK     ログ内容/ALERT [ SYN_FLOOD : ]: 1 attempts from ***.***.**.***.Total=1.</code>  </p>
-<p>というアタックログがいくつかあった。<br>ドメイン検索してみると、<code>nrt*****-in-**.1e100.net</code>となっていて、Googleが管理するのものらしい。  </p>
-<p>SYN flood攻撃というDoS攻撃の一種らしいが（<a href="https://ja.wikipedia.org/wiki/SYN_flood" target="_blank" rel="external">SYN flood - Wikipedia</a>）、サーバーを公開したりはしていないし、いったい何故だろう？<br>そういえば今日Google検索した際に、検索結果が表示されず、Googleアカウントへのログインを求めるページが表示されたが、これが何か関係があるのだろうか？</p>
-<p>よく分からないが気持ちが悪いので、デフォルトの検索エンジンをDuckDuckGoに変更した。<br>いつまでGoogleを使わずに我慢できるか、心許ないが。</p>
+	    <p>ネットブックにArch Linuxをインストールしようとして上手く行かず、途中でやめたところ、マルチブートしているXubuntu 16.04.1がブート中に下記の表示のところで止まるようになってしまった。  </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Begin: Loading essential drivers ... done.</div><div class="line">Begin: Running /scripts/init-premount ... <span class="keyword">done</span></div><div class="line">Begin: Mounting root file system ... Begin: Running /scripts/local-top ... done.</div><div class="line">Begin: Running /scripts/local-premount ...</div></pre></td></tr></table></figure>
+
+<p>正確には止まってはおらず、5分ほど放置すると、さらに下記の文面が表示される。  </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">resume: Could not stat the resume device file `/dev/disk/by-uuid/a98684ac-ab7f-<span class="number">4</span>bf1-b2e7-faf0643bb72c`</div><div class="line">	Please <span class="built_in">type</span> <span class="keyword">in</span> the full path name to try again</div><div class="line">	or press ENTER to boot the system:</div></pre></td></tr></table></figure>
+
+<p>Arch Linuxインストール時にswapパーティションのUUIDが変更されてしまっていて、<code>a98684ac-ab7f-4bf1-b2e7-faf0643bb72c</code>というのはこのパーティションの以前のUUIDのよう。<br>ENTERキーを押すか、<code>/dev/disk/by-uuid/(新しいUUID)</code>を入力すると、ブートプロセスが進み起動出来る。<br>時々OSのインストールをするのでUUIDが変わっても大丈夫なように、fstabの記載はUUIDではなく/dev/sda1等のデバイス名にしてあるが、そこへ行く前の段階で躓いているらしい。  </p>
+<p>“local-premount”とは何なのか？<br>/ディレクトリ下で“local-premount”を検索したら、２つのディレクトリが見つかった。  </p>
+<ul>
+<li>/etc/initramfs-tools/scripts/local-premount（こちらの中身は空っぽ）  </li>
+<li>/usr/share/initramfs-tools/scripts/local-premount  </li>
+</ul>
+<p>近くにあるファイルをあちこち見ていたら/etc/initramfs-tools/conf.d/resumeというファイルがあり、その中身を見ると、<br>“RESUME=UUID=a98684ac-ab7f-4bf1-b2e7-faf0643bb72c”と以前のUUIDが書かれてあった。<br>「これを新しいUUIDに編集したら治るのではないか」と思いやってみたが、ブート時に止まる症状は一向に改善されず。  </p>
+<p>結局、  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> update-initramfs -u</div></pre></td></tr></table></figure>
+
+<p>のコマンドでinitramfsを再構成することで解決出来た。  </p>
+<p>（参照記事）<br><a href="http://www.linuxquestions.org/questions/debian-26/resume-could-not-stat-the-resume-device-file-573538/#post3974219" target="_blank" rel="external">resume: could not stat the resume device file</a></p>
 
 	</div>
 
@@ -173,11 +184,11 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2016/12/13/synflood-from-google/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2016/12/23/local-premount/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2016/12/13/synflood-from-google/" class="hatena-bookmark-button" data-hatena-bookmark-title="GoogleからのSYN flood攻撃？" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2016/12/23/local-premount/" class="hatena-bookmark-button" data-hatena-bookmark-title="Xubuntu起動時に&quot;Running /scripts/local-premount ... &quot;で止まる" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 
 <div class="clear"></div>
@@ -189,13 +200,13 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2016/12/23/local-premount/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2016/12/13/nfs-firewall/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2016/12/13/synflood-from-google/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -229,7 +240,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2016年12月13日
+	2016年12月23日
 	</div>
 	
 
@@ -243,7 +254,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     <ul id="tags" class="tag_box list-unstyled collapse in">
 	    <!-- _partial/post/tag -->
   
-  <li><a href="/tags/セキュリティ/">セキュリティ</a></li> <li><a href="/tags/プライバシー/">プライバシー</a></li>
+  <li><a href="/tags/Linux/">Linux</a></li>
 
     </ul>
 	</div>

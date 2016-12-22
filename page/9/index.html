@@ -159,6 +159,77 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/04/03/nemo-compare-action/" >nemoの右クリックメニューに「比較」を追加</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年4月3日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>nemoの拡張機能nemo-compareのインストールが上手く行かなかったので、手動で導入した。  </p>
+<p>（参照記事）<br><a href="https://archlinuxjp.kusakata.com/wiki/Nemo" target="_blank" rel="external">Nemo - ArchWiki</a>  </p>
+<p>まず、meld、python2-dbus、dbus-glib（これは導入済みだった）をインストール。  </p>
+<pre><code>$ <span class="built_in">sudo</span> pacman -S meld python2-dbus
+</code></pre><p>~/.local/share/nemo/actions下にcompare-save-for-later.nemo_action、compare-with-saved.nemo_action、compare.shの３つのファイルを作成。  </p>
+<figure class="highlight plain"><figcaption><span>compare-save-for-later.nemo_action</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[Nemo Action]</div><div class="line">Active=true</div><div class="line">Name=Compare later</div><div class="line">Name[ja]=あとで比較する</div><div class="line">Comment=Save file for comparison later.</div><div class="line">Exec=<compare.sh save="" %f=""></compare.sh></div><div class="line">Icon-Name=meld</div><div class="line">Selection=S</div><div class="line">Extensions=any</div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight plain"><figcaption><span>compare-with-saved.nemo_action</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[Nemo Action]</div><div class="line">Active=true</div><div class="line">Name=Compare with saved element</div><div class="line">Name[ja]=比較する</div><div class="line">Comment=Compare %F saved file or directory.</div><div class="line">Exec=<compare.sh compare="" %f=""></compare.sh></div><div class="line">Icon-Name=meld</div><div class="line">Selection=S</div><div class="line">Extensions=any</div></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight shellscript"><figcaption><span>compare.sh</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="shebang">#!/bin/bash</span></div><div class="line">savedfile=/var/tmp/compare-save-for-later.<span class="variable">$USER</span></div><div class="line">comparator=meld</div><div class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$1</span>"</span> == <span class="string">"save"</span> ]; <span class="keyword">then</span></div><div class="line">    <span class="built_in">echo</span> <span class="string">"<span class="variable">$2</span>"</span> &gt; <span class="string">"<span class="variable">$savedfile</span>"</span></div><div class="line"><span class="keyword">else</span></div><div class="line">    <span class="string">"<span class="variable">$comparator</span>"</span> $(cat <span class="string">"<span class="variable">$savedfile</span>"</span>) <span class="string">"<span class="variable">$2</span>"</span></div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure>
+
+<p>compare.shはファイルマネージャーもしくはコマンドで実行可能にしておく。  </p>
+<pre><code>$ chmod +<span class="keyword">x</span> compare.<span class="keyword">sh</span>
+</code></pre><p>nemoの右クリックメニューに「比較する」「あとで比較する」が追加された。  </p>
+<p>ファイル内容だけではなくフォルダの内容も比較出来る。<br>なにかと重宝しそうだ。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/03/nemo-compare-action/" data-text="nemoの右クリックメニューに「比較」を追加 | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/03/nemo-compare-action/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/03/nemo-compare-action/" class="hatena-bookmark-button" data-hatena-bookmark-title="nemoの右クリックメニューに「比較」を追加" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/04/03/nemo-compare-failed/" >nemo-compareが動かない</a>
 		</h3>
 	
@@ -697,74 +768,6 @@ x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firef
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/03/19/gyao-chromium-ppapi/" >Chromium+Pepper Plugin API（PPAPI）でGyaoを視聴</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年3月19日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>GyaoはWindows、Mac以外のOSでの視聴を制限している。  </p>
-<p>これまでFirefoxのアドオンUser Agent Switcherで、OSをWindowsもしくはMac OS Xと宣言することで、LinuxでもGyaoの視聴が出来ていた。<br>一部の動画はFlashのバージョンが足りてないらしく見られなかったが、ほとんどの動画は視聴可能だった。  </p>
-<p>だが今週初めから、上記の方法ではGyaoの全ての動画が視聴出来なくなった。<br>Gyaoの動作環境が全動画で「Adobe Flash Player 15 以上」に引き上げられたためらしい。<br>（Linux用Adobe Flash Playerは11.2までで終了）  </p>
-<p>Linuxでバージョン15以上のFlash Playerを使用する方法はいくつかあるようだったが、ChromiumでPPAPI（Pepper Plugin API）を利用するのが最も簡便だった。<br><a href="http://gihyo.jp/admin/serial/01/ubuntu-recipe/0340" target="_blank" rel="external">第340回　Firefoxで最新バージョンのFlashを使用するには：Ubuntu Weekly Recipe｜gihyo.jp … 技術評論社</a>  </p>
-<p>Ubuntu等のDebian系ディストリビューションならSynapticから”pepperflashplugin-nonfree”をインストール可能。<br>“nonfree” とあるが、Adobeに所有権があるというだけで、無料で使用出来る。<br><a href="https://wiki.ubuntulinux.jp/UbuntuTips/Application/Chromium/Getting-Flash" target="_blank" rel="external">UbuntuTips/Application/Chromium/Getting-Flash - Ubuntu Japanese Wiki</a>  </p>
-<p>“pepperflashplugin-nonfree”をインストールし、Chromiumのアドレス欄に<code>chrome://plugins</code>と入れて確認すると、2015年3月19日現在では、”Adobe Flash Player - バージョン: 17.0.0.134 Shockwave Flash 17.0 r0”と表示されている。  </p>
-<p>User-Agent Switcherも入れて、OSをWindowsもしくはMacと宣言することで、Gyaoの視聴が可能になった。  </p>
-<p>User-Agent Switcherに元から入っている「Chome on Mac」での指定はChomeのバージョンが古いようで（Chrome 27.0）、Googleの検索結果も古い形式で表示される。<br>「Chrome 41.0 on Windows」「Chrome 41.0 on Mac」および「Safari 8」を追加した。  </p>
-<ul>
-<li><p>Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36  </p>
-</li>
-<li><p>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10) AppleWebKit/538.44 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36  </p>
-</li>
-<li><p>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10) AppleWebKit/538.44 (KHTML, like Gecko) Version/8.0 Safari/538.44</p>
-</li>
-</ul>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/19/gyao-chromium-ppapi/" data-text="Chromium+Pepper Plugin API（PPAPI）でGyaoを視聴 | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/03/19/gyao-chromium-ppapi/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/03/19/gyao-chromium-ppapi/" class="hatena-bookmark-button" data-hatena-bookmark-title="Chromium+Pepper Plugin API（PPAPI）でGyaoを視聴" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Linux/">Linux</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -805,43 +808,43 @@ x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firef
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/ブラウザ/">ブラウザ<span>32</span></a></li>
+			<li><a href="/tags/ハードウェア/">ハードウェア<span>1</span></a></li>
 		
-			<li><a href="/tags/セキュリティ/">セキュリティ<span>4</span></a></li>
+			<li><a href="/tags/未分類/">未分類<span>5</span></a></li>
 		
-			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
-		
-			<li><a href="/tags/食/">食<span>4</span></a></li>
-		
-			<li><a href="/tags/ブログ/">ブログ<span>1</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>10</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>39</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
 		
 			<li><a href="/tags/小ネタ/">小ネタ<span>1</span></a></li>
 		
 			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
 		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
 		
 			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
 		
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+		
+			<li><a href="/tags/プライバシー/">プライバシー<span>8</span></a></li>
+		
+			<li><a href="/tags/コマンド/">コマンド<span>2</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>10</span></a></li>
+		
+			<li><a href="/tags/セキュリティ/">セキュリティ<span>4</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>39</span></a></li>
+		
+			<li><a href="/tags/ブラウザ/">ブラウザ<span>32</span></a></li>
+		
+			<li><a href="/tags/食/">食<span>4</span></a></li>
+		
 			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
 		
-			<li><a href="/tags/時事/">時事<span>1</span></a></li>
+			<li><a href="/tags/Linux/">Linux<span>101</span></a></li>
 		
-			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
-		
-			<li><a href="/tags/ハードウェア/">ハードウェア<span>1</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>100</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>5</span></a></li>
+			<li><a href="/tags/ブログ/">ブログ<span>1</span></a></li>
 		
 			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>23</span></a></li>
 		
@@ -860,6 +863,10 @@ x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firef
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2016/12/23/local-premount/" ><i class="fa fa-file-o"></i>Xubuntu起動時に&quot;Running /script...</a>
+      </li>
+    
+      <li>
         <a href="/2016/12/13/synflood-from-google/" ><i class="fa fa-file-o"></i>GoogleからのSYN flood攻撃？</a>
       </li>
     
@@ -875,10 +882,6 @@ x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firef
         <a href="/2016/10/06/disable-recently-used-files/" ><i class="fa fa-file-o"></i>「最近開いたファイル」を表示させない</a>
       </li>
     
-      <li>
-        <a href="/2016/10/05/greybird/" ><i class="fa fa-file-o"></i>Dark-Elementary-xfce+Greybi...</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -888,7 +891,7 @@ x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firef
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">2016年12月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">2016年11月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">2016年10月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">2016年08月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">2016年07月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">2016年05月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">2016年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">2016年11月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">2016年10月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">2016年08月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">2016年07月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">2016年05月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
 		</ul>
 	</div>
 

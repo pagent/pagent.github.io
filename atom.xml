@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-12-22T19:35:21.472Z</updated>
+  <updated>2016-12-22T21:23:50.146Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,40 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Xubuntu起動時に"Running /scripts/local-premount ... "で止まる]]></title>
+    <link href="http://pagent.github.io/2016/12/23/local-premount/"/>
+    <id>http://pagent.github.io/2016/12/23/local-premount/</id>
+    <published>2016-12-22T20:22:36.000Z</published>
+    <updated>2016-12-22T21:17:23.379Z</updated>
+    <content type="html"><![CDATA[<p>ネットブックにArch Linuxをインストールしようとして上手く行かず、途中でやめたところ、マルチブートしているXubuntu 16.04.1がブート中に下記の表示のところで止まるようになってしまった。  </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Begin: Loading essential drivers ... done.</div><div class="line">Begin: Running /scripts/init-premount ... <span class="keyword">done</span></div><div class="line">Begin: Mounting root file system ... Begin: Running /scripts/local-top ... done.</div><div class="line">Begin: Running /scripts/local-premount ...</div></pre></td></tr></table></figure>
+
+<p>正確には止まってはおらず、5分ほど放置すると、さらに下記の文面が表示される。  </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">resume: Could not stat the resume device file `/dev/disk/by-uuid/a98684ac-ab7f-<span class="number">4</span>bf1-b2e7-faf0643bb72c`</div><div class="line">	Please <span class="built_in">type</span> <span class="keyword">in</span> the full path name to try again</div><div class="line">	or press ENTER to boot the system:</div></pre></td></tr></table></figure>
+
+<p>Arch Linuxインストール時にswapパーティションのUUIDが変更されてしまっていて、<code>a98684ac-ab7f-4bf1-b2e7-faf0643bb72c</code>というのはこのパーティションの以前のUUIDのよう。<br>ENTERキーを押すか、<code>/dev/disk/by-uuid/(新しいUUID)</code>を入力すると、ブートプロセスが進み起動出来る。<br>時々OSのインストールをするのでUUIDが変わっても大丈夫なように、fstabの記載はUUIDではなく/dev/sda1等のデバイス名にしてあるが、そこへ行く前の段階で躓いているらしい。  </p>
+<p>“local-premount”とは何なのか？<br>/ディレクトリ下で“local-premount”を検索したら、２つのディレクトリが見つかった。  </p>
+<ul>
+<li>/etc/initramfs-tools/scripts/local-premount（こちらの中身は空っぽ）  </li>
+<li>/usr/share/initramfs-tools/scripts/local-premount  </li>
+</ul>
+<p>近くにあるファイルをあちこち見ていたら/etc/initramfs-tools/conf.d/resumeというファイルがあり、その中身を見ると、<br>“RESUME=UUID=a98684ac-ab7f-4bf1-b2e7-faf0643bb72c”と以前のUUIDが書かれてあった。<br>「これを新しいUUIDに編集したら治るのではないか」と思いやってみたが、ブート時に止まる症状は一向に改善されず。  </p>
+<p>結局、  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> update-initramfs -u</div></pre></td></tr></table></figure>
+
+<p>のコマンドでinitramfsを再構成することで解決出来た。  </p>
+<p>（参照記事）<br><a href="http://www.linuxquestions.org/questions/debian-26/resume-could-not-stat-the-resume-device-file-573538/#post3974219" target="_blank" rel="external">resume: could not stat the resume device file</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>ネットブックにArch Linuxをインストールしようとして上手く行かず、途中でやめたところ、マルチブートしているXubuntu 16.04.1がブート中に下記の表示のところで止まるようになってしまった。  </p>
+<figure class="highlight sh"]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[GoogleからのSYN flood攻撃？]]></title>
@@ -527,36 +561,6 @@ systemctl enable NetworkManager</span>
     </summary>
     
       <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
-    
-      <category term="プライバシー" scheme="http://pagent.github.io/tags/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[FirefoxでDisconnect Searchをデフォルトの検索エンジンにする]]></title>
-    <link href="http://pagent.github.io/2016/04/30/disconnect-search/"/>
-    <id>http://pagent.github.io/2016/04/30/disconnect-search/</id>
-    <published>2016-04-30T09:35:06.000Z</published>
-    <updated>2016-05-05T23:04:18.091Z</updated>
-    <content type="html"><![CDATA[<p>Googleなどでの検索を代行してくれて、プライバシー情報を保存しない検索エンジン「Disconnect Search」。<br>以前にFirefox向けのアドオンを入れたことがあったが、Googleとの使い分けで使い勝手があまり良くなかった。<br>今回、任意のサイトでの検索エンジンをFirefoxに追加するアドオン「Add to Search Bar」を使ってDisconnect Searchの検索エンジンを追加してみた。  </p>
-<p>まずDisconnect Searchの検索ページ <a href="https://search.disconnect.me/" target="_blank" rel="external">https://search.disconnect.me/</a> に行き、右上の地域選択でJapanを選択。（United Statesのまま作業すると英語がデフォルトになってしまう。）  </p>
-<p><img src="/images/disconnect-search-site.png" alt="Disconnect Searchサイト" height="240"></p>
-<p>cookieに関する注意書きが表示される。  </p>
-<p><div class="box">Cookies: We use non-identifying first-party cookies to remember your search preferences (language, country &amp; provider).</div>個人を特定しないファーストパーティクッキー（他のサーバーに向けられたcookieではなく、disconnect.meのサーバー向けということ）とのことであり、プライバシー上も問題無いと思われるので、[Okay, I agree]をクリック。<br>（[More info &amp; settings]を見ると、このクッキーにより追跡することはせず、検索時の言語、国、設定を記憶するためにのみ使用されると書かれている。）  </p>
-<p>Disconnect Searchサイトの検索窓内で右クリックし、「サーチバーを追加」。Firefoxの検索エンジンに追加される。<br>（「Context Search」も入れてあるので、右クリックによる検索でも利用可能。）<br>Firefoxのアドレス欄横の検索窓、虫眼鏡アイコン→「検索設定を変更」→「既定の検索エンジン」を「Disconnect Search」にした。  </p>
-<p>実際にDisconnect Searchで検索すると、結果の表示には若干時間が掛かる。<br>また文字がやや小さく、また結果画面の右側にDisconnect Premiumの広告が表示される。  </p>
-<p><img src="/images/disconnect-search-result.png" alt="Disconnect Search検索結果" height="240"></p>
-<p>強制的にスタイルを適応させるアドオン「Stylish」でテーマ<a href="https://userstyles.org/styles/114219/disconnect-search-google-look" target="_blank" rel="external">Disconnect Search - Google Look - Themes and Skins for Disconnect - userstyles.org</a>をインストールすると、広告が無くなり、文字も調度良い大きさになった。<br>文字の大きさがそのままで良い場合は、Adblockで対処可能だろう。  </p>
-<p>画像、動画、ニュース（こちらは現在のところ機能していないよう）などの検索、さらに言語、期間指定などの検索ツールにもGoogle同様に対応。（Protected Tools）<br>また以前は無かった地図、ショッピングなどの項目はUnprotected Toolsとして設けられている。（Googleのページへ移動。More「もっと見る」はクリックしても反応せず。）</p>
-<p>キャッシュが見られなかったり、検索結果をブックマークしても検索ワードが保存出来なかったりと、少し不便さはあるが、その分プライバシーの面では安心出来る。  </p>
-<p>ーー<br>（追記）<br>Disconnect Search＋Googleで検索するよう設定しているつもりが時々Disconnect Search＋bingやDisconnect Search＋Yahoo!での検索になる。<br>上部に<q>Google is currently unavailable in Disconnect Search.</q>と表示されているが、Googleに嫌がらせでもされているのだろうか。  </p>
-<p>ーー<br>（関連記事）<br><a href="http://pagent.github.io/2014/10/02/disconnect-search/" target="_blank" rel="external">Googleへの情報を遮断する検索用アドオン「Disconnect Search」</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Googleなどでの検索を代行してくれて、プライバシー情報を保存しない検索エンジン「Disconnect Search」。<br>以前にFirefox向けのアドオンを入れたことがあったが、Googleとの使い分けで使い勝手があまり良くなかった。<br>今回、任意のサイトでの]]>
-    </summary>
-    
-      <category term="ブラウザ" scheme="http://pagent.github.io/tags/%E3%83%96%E3%83%A9%E3%82%A6%E3%82%B6/"/>
     
       <category term="プライバシー" scheme="http://pagent.github.io/tags/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC/"/>
     
