@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-12-13T19:41:55.873Z</updated>
+  <updated>2016-12-22T19:31:11.246Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -314,20 +314,20 @@
     <link href="http://pagent.github.io/2016/07/17/networkmanager/"/>
     <id>http://pagent.github.io/2016/07/17/networkmanager/</id>
     <published>2016-07-16T22:19:34.000Z</published>
-    <updated>2016-07-16T22:46:15.952Z</updated>
+    <updated>2016-12-22T09:59:44.454Z</updated>
     <content type="html"><![CDATA[<p>Arch Linux（Xfce）で、ネットワーク接続マネージャーとしてnetctlを使っていたが、Xubuntuなどでも馴染み深いNetworkManagerに変更した。  </p>
 <pre><code><span class="built_in">sudo</span> pacman -S networkmanager
 
 <span class="built_in">sudo</span> pacman -S network-manager-applet
 </code></pre><p>デスクトップ環境にXfceを使っているのでxfce4-notifydも必要のようだが、これは既にインストールされていた。  </p>
 <p>netctlと競合してしまうようなので、netctlを無効化した後、NetworkManagerを有効化。  </p>
-<pre><code><span class="built_in">sudo</span> netctl disable wlp2s0-wireless
+<pre><code>systemctl <span class="operator"><span class="keyword">stop</span> netctl
 
-<span class="built_in">sudo</span> netctl stop wlp2s0-wireless
+systemctl disable netctl
 
-systemctl enable NetworkManager
+systemctl <span class="keyword">start</span> NetworkManager
 
-systemctl start NetworkManager
+systemctl enable NetworkManager</span>
 </code></pre><p>無線LANを使用していたのでwlp2s0-wirelessを無効化したが、有線で使用している場合はenp1s0-ethernet等のプロファイルも無効化。  </p>
 <p>通知領域に表示されたアイコンをクリックし、Wi-Fiネットワークを設定。<br>馴染みのGUIツールなので簡単に設定完了。  </p>
 <p>ーー<br>（参照記事）<br><a href="https://wiki.archlinuxjp.org/index.php/NetworkManager" target="_blank" rel="external">NetworkManager - ArchWiki</a><br><a href="https://www.youtube.com/watch?v=4f70c9r6WfY" target="_blank" rel="external">Switch to Network Manager on Arch Linux - YouTube</a></p>

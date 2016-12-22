@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2015/12/21/truecrypt-downgrade/</loc>
+    <lastmod>2016-12-22T15:37:02.749Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2016/07/17/networkmanager/</loc>
+    <lastmod>2016-12-22T09:59:44.454Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2015/03/01/arch-ati-video-driver/</loc>
     <lastmod>2016-12-13T19:41:28.334Z</lastmod>
   </url>
@@ -69,11 +79,6 @@
   <url>
     <loc>http://pagent.github.io/2016/07/17/shaver-es6510-battery-exchange/</loc>
     <lastmod>2016-07-25T12:36:55.390Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2016/07/17/networkmanager/</loc>
-    <lastmod>2016-07-16T22:46:15.952Z</lastmod>
   </url>
   
   <url>
@@ -543,11 +548,6 @@
   
   <url>
     <loc>http://pagent.github.io/2014/12/10/weather-news/</loc>
-    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2014/10/21/test/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -1377,11 +1377,6 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2015/12/21/truecrypt-downgrade/</loc>
-    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://pagent.github.io/2014/05/03/xfce-panel/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
@@ -1613,6 +1608,11 @@
   
   <url>
     <loc>http://pagent.github.io/2014/10/09/glipper/</loc>
+    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2014/10/21/test/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
