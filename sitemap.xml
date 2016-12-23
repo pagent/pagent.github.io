@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2016/07/17/networkmanager/</loc>
+    <lastmod>2016-12-23T21:18:51.323Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2016/12/23/auto-passwordless-login/</loc>
     <lastmod>2016-12-23T10:24:02.918Z</lastmod>
   </url>
@@ -19,11 +24,6 @@
   <url>
     <loc>http://pagent.github.io/2015/12/21/truecrypt-downgrade/</loc>
     <lastmod>2016-12-22T19:35:04.388Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2016/07/17/networkmanager/</loc>
-    <lastmod>2016-12-22T09:59:44.454Z</lastmod>
   </url>
   
   <url>

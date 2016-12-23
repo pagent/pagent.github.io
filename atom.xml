@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-12-23T10:24:53.069Z</updated>
+  <updated>2016-12-23T21:19:13.295Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -396,7 +396,7 @@
     <link href="http://pagent.github.io/2016/07/17/networkmanager/"/>
     <id>http://pagent.github.io/2016/07/17/networkmanager/</id>
     <published>2016-07-16T22:19:34.000Z</published>
-    <updated>2016-12-22T09:59:44.454Z</updated>
+    <updated>2016-12-23T21:18:51.323Z</updated>
     <content type="html"><![CDATA[<p>Arch Linux（Xfce）で、ネットワーク接続マネージャーとしてnetctlを使っていたが、Xubuntuなどでも馴染み深いNetworkManagerに変更した。  </p>
 <pre><code><span class="built_in">sudo</span> pacman -S networkmanager
 
@@ -410,8 +410,7 @@ systemctl disable netctl
 systemctl <span class="keyword">start</span> NetworkManager
 
 systemctl enable NetworkManager</span>
-</code></pre><p>無線LANを使用していたのでwlp2s0-wirelessを無効化したが、有線で使用している場合はenp1s0-ethernet等のプロファイルも無効化。  </p>
-<p>通知領域に表示されたアイコンをクリックし、Wi-Fiネットワークを設定。<br>馴染みのGUIツールなので簡単に設定完了。  </p>
+</code></pre><p>通知領域に表示されたアイコンをクリックし、Wi-Fiネットワークを設定。<br>馴染みのGUIツールなので簡単に設定完了。  </p>
 <p>ーー<br>（参照記事）<br><a href="https://wiki.archlinuxjp.org/index.php/NetworkManager" target="_blank" rel="external">NetworkManager - ArchWiki</a><br><a href="https://www.youtube.com/watch?v=4f70c9r6WfY" target="_blank" rel="external">Switch to Network Manager on Arch Linux - YouTube</a></p>
 ]]></content>
     <summary type="html">
