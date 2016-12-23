@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2016-12-22T21:28:46.154Z</updated>
+  <updated>2016-12-23T10:24:53.069Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,54 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Arch Linuxで自動・パスワード入力無しのログイン]]></title>
+    <link href="http://pagent.github.io/2016/12/23/auto-passwordless-login/"/>
+    <id>http://pagent.github.io/2016/12/23/auto-passwordless-login/</id>
+    <published>2016-12-23T10:06:47.000Z</published>
+    <updated>2016-12-23T10:24:02.918Z</updated>
+    <content type="html"><![CDATA[<p>Arch Linuxのディスプレイマネージャに、Xubuntuでも馴染みのLightDMを使っている。  </p>
+<p>/etc/lightdm/lightdm.confで、<code>autologin-user=ユーザー名</code>のコメントアウトを外しても自動ログインが有効にならない。<br>どうやらユーザーがautologinグループに入っていないといけないらしい。<br><a href="https://wiki.archlinuxjp.org/index.php/LightDM#.E8.87.AA.E5.8B.95.E3.83.AD.E3.82.B0.E3.82.A4.E3.83.B3.E3.82.92.E6.9C.89.E5.8A.B9.E3.81.AB.E3.81.99.E3.82.8B" target="_blank" rel="external">LightDM - ArchWiki（日本語）</a>  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># groupadd -r autologin</span></div><div class="line"><span class="comment"># gpasswd -a USERNAME autologin</span></div></pre></td></tr></table></figure>
+
+<p>PAMに関する部分はコメントアウトしたままでも自動ログインが有効になった。  </p>
+<p>いったんログアウトした後パスワード入力無しでログイン出来るよう、nopasswdloginグループにも入れた。  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># groupadd -r nopasswdlogin</span></div><div class="line"><span class="comment"># gpasswd -a username nopasswdlogin</span></div></pre></td></tr></table></figure>
+
+<p><a href="https://wiki.archlinux.org/index.php/LightDM#Enabling_interactive_passwordless_login" target="_blank" rel="external">LightDM - ArchWiki（英語）</a>  </p>
+<p>こちらもPAMに関する設定は必要なかった。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Arch Linuxのディスプレイマネージャに、Xubuntuでも馴染みのLightDMを使っている。  </p>
+<p>/etc/lightdm/lightdm.confで、<code>autologin-user=ユーザー名</code>のコメントアウトを外しても自動ロ]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[「ローカルのほうが core よりも最新です」の警告]]></title>
+    <link href="http://pagent.github.io/2016/12/23/local-is-newer-than-core-warning/"/>
+    <id>http://pagent.github.io/2016/12/23/local-is-newer-than-core-warning/</id>
+    <published>2016-12-23T09:36:07.000Z</published>
+    <updated>2016-12-23T09:49:56.796Z</updated>
+    <content type="html"><![CDATA[<p>Arch Linuxでシステムの更新をする際、毎回のように  </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">警告: dhcpcd: ローカル (<span class="number">6.11</span>.<span class="number">5</span>-<span class="number">1</span>) のほうが core よりも最新です (<span class="number">6.11</span>.<span class="number">3</span>-<span class="number">1</span>)</div><div class="line">警告: linux-firmware: ローカル (<span class="number">20161205.91</span>ddce4-<span class="number">1</span>) のほうが core よりも最新です (<span class="number">20161005.9</span>c71af9-<span class="number">1</span>)</div><div class="line">警告: perl: ローカル (<span class="number">5.24</span>.<span class="number">0</span>-<span class="number">3</span>) のほうが core よりも最新です (<span class="number">5.24</span>.<span class="number">0</span>-<span class="number">2</span>)</div></pre></td></tr></table></figure>
+
+<p>と警告が表示されるようになった。<br>[testing]リポジトリを有効にしたことはないし、原因はよく分からない。  </p>
+<p>だがフォーラムの回答の通りに<code>pacman -Syuu</code>すると、問題のパッケージがダウングレードされ、警告が出なくなった。  </p>
+<p><a href="https://bbs.archlinux.org/viewtopic.php?pid=1005274#p1005274" target="_blank" rel="external">[SOLVED]warning: local is newer than core / Pacman &amp; Package Upgrade Issues / Arch Linux Forums</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Arch Linuxでシステムの更新をする際、毎回のように  </p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="]]>
+    </summary>
+    
+      <category term="Linux" scheme="http://pagent.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Xubuntu起動時に"Running /scripts/local-premount ... "で止まる]]></title>
@@ -516,53 +564,6 @@ systemctl enable NetworkManager</span>
     </summary>
     
       <category term="ことば" scheme="http://pagent.github.io/tags/%E3%81%93%E3%81%A8%E3%81%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Keepass2のエントリー編集画面が大きい]]></title>
-    <link href="http://pagent.github.io/2016/05/19/keepass2-interface/"/>
-    <id>http://pagent.github.io/2016/05/19/keepass2-interface/</id>
-    <published>2016-05-18T23:15:58.000Z</published>
-    <updated>2016-06-02T20:56:25.959Z</updated>
-    <content type="html"><![CDATA[<p>Linuxをメインで使うようになってから、パスワードの管理にクロスプラットフォームのKeepass2（KeePass Password Safe）を使っている。<br>Windows向けのフリーソフトID Manager同様、便利で快適なのだが、いつのまにかエントリー編集画面がやたらと大きく表示され、下の方にある「OK」ボタンが押せなくなっていた。  </p>
-<p>「ツール」→「オプション」→「インターフェース」タブの一番下にある「強制的にシステムフォントを使用(Unixのみ)」のチェックを外したら、適当な大きさになった。<br><del>チェックを外しても日本語表示には問題無いよう。</del><br>「強制的にシステムフォントを使用(Unixのみ)」のチェックを外したら、メニューのタイトルが表示されずアクセスキー（メニュー横の括弧で囲まれたアルファベット）だけになってしまった。<br>仕方が無いので元に戻した。  </p>
-<p>ーー<br>（関連記事）<br><a href="http://pagent.github.io/2015/03/14/keepass2-font/" target="_blank" rel="external">Keepass2のフォントを日本語化</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Linuxをメインで使うようになってから、パスワードの管理にクロスプラットフォームのKeepass2（KeePass Password Safe）を使っている。<br>Windows向けのフリーソフトID Manager同様、便利で快適なのだが、いつのまにかエントリー編集画]]>
-    </summary>
-    
-      <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Facebookがニュースを検閲・世論操作か]]></title>
-    <link href="http://pagent.github.io/2016/05/10/facebook-censorship-manipulation/"/>
-    <id>http://pagent.github.io/2016/05/10/facebook-censorship-manipulation/</id>
-    <published>2016-05-10T10:51:11.000Z</published>
-    <updated>2016-05-11T10:08:38.520Z</updated>
-    <content type="html"><![CDATA[<p>以前、利用者に無断で情動操作実験を行い顰蹙を買ったFacebookだが、今度はニュースを検閲・世論操作を行ったようだ。  </p>
-<blockquote>
-<p>　Facebook社内で「ニュースキュレーター」と呼ばれるチームは、政治的に保守的なニュース媒体の記事を排除するよう指示を受けていた、とGizmodoは報じている。これはすなわち、「Breitbart News」「The Washington Examiner」などのニュース媒体の記事はトレンドトピックから外すか表示順位を下げ、「The New York Times」「The Wall Street Journal」などのより伝統的な媒体を優先させることを意味する。また、米大統領選で共和党の元候補者だったMitt Romney氏など、保守派の大物コメンテーターや政治家に関する記事もリストから排除されていたことを、Gizmodoは匿名の元ニュースキュレーターの談話として報じている。</p>
-<p>　Facebookはこのような疑惑を「非常に深刻に」受け止めており、「レビューチームの一貫性と中立性を保つために厳密なガイドライン」を設けていると述べている。しかし、Gizmodoの記事に関してはただちにコメントを出しておらず、またこうした問題を避けるためにガイドライン以外の方策をとっているかどうかについても回答していない。</p>
-</blockquote>
-<p><a href="http://japan.cnet.com/news/service/35082295/" target="_blank" rel="external">Facebookのトレンドトピック表示、中立性に疑問の声–保守的な媒体を排除していた疑い - CNET Japan</a>  </p>
-<p>確信犯だな。大衆を操るための道具として政府に協力しているのだろう。<br>マスコミからしてそうなのだから、驚きもしない。  </p>
-<p>ーー<br>（追記）<br>この件に関し、Facebook社の検索部門副部長ストッキー氏が「匿名の告発が事実という証拠はない」とFacebook上でコメントしたよう。<br><a href="http://www.itmedia.co.jp/news/articles/1605/11/news098.html" target="_blank" rel="external">Facebook、政治的“偏向”の報道を否定　「事実という証拠はない」 - ITmedia ニュース</a>  </p>
-<p>常識的には「事実関係の究明に努めたい」とコメントするところだと思うが、早々に「証拠はない」と居直る様に、ますます疑念を深めざるを得ない。</p>
-<p>ーー<br>（関連記事）<br><a href="http://pagent.github.io/2014/06/29/facebook-manipulation/" target="_blank" rel="external">Facebookが70万人を対象に「情動感染」実験</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>以前、利用者に無断で情動操作実験を行い顰蹙を買ったFacebookだが、今度はニュースを検閲・世論操作を行ったようだ。  </p>
-<blockquote>
-<p>　Facebook社内で「ニュースキュレーター」と呼ばれるチームは、政治的に保守的なニュース媒体の記事を排除す]]>
-    </summary>
-    
-      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
-    
-      <category term="プライバシー" scheme="http://pagent.github.io/tags/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%90%E3%82%B7%E3%83%BC/"/>
     
   </entry>
   

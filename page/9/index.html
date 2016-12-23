@@ -159,6 +159,143 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
 	<!-- display as entry -->
 		<h3 class="xtitle">
+			<a href="/2015/04/16/nemo-action-shred/" >nemoの右クリックメニューに「完全消去」を追加</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年4月16日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>rmコマンドでファイルを消去してもデータの内容自体はディスク上に残っており、復旧できる可能性があるようだ。<br>完全に消去するにはshredコマンドを使えばいいらしい。<br><a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20140310/542304/" target="_blank" rel="external">Linuxコマンド集 - 【shred】ファイルを上書きし、完全に消去する：ITpro</a>  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ shred -u sample</div></pre></td></tr></table></figure>
+
+<p>コマンドを入力するのは面倒なので、nemoの右クリックメニューに「完全消去」を追加した。  </p>
+<p>~/.local/share/nemo/actions/内にshred.nemo_actionファイルを作成。  </p>
+<figure class="highlight plain"><figcaption><span>shred.nemo_action</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[Nemo Action]</div><div class="line">Name=Shred files</div><div class="line">Name[ja]=完全消去</div><div class="line">Comment=Shred the selected files</div><div class="line">Exec=shred -u -n 1 %F</div><div class="line">Icon-Name=gtk-execute</div><div class="line">Selection=notnone</div><div class="line">Extensions=nodirs;</div><div class="line">Quote=double</div><div class="line">Dependencies=shred</div></pre></td></tr></table></figure>
+
+<p>（参照記事）<br><a href="https://github.com/linuxmint/nemo/issues/210#issuecomment-29847315" target="_blank" rel="external">[Feature Request] wipe files · Issue #210 · linuxmint/nemo · GitHub</a>  </p>
+<p>対象はファイルのみでフォルダは「完全消去」出来ないが、少し便利になった。  </p>
+<p>ーー<br>（追記）<br>他の右クリックアクションを選択したい時、間違って「完全消去」してしまわないか気になって来た。<br>Zenityを使えば「本当に削除しますか？」のような確認ダイアログを表示出来るようだが、Zenityの使用法がまだ分からない。  </p>
+<p>「完全消去」の右クリックメニューは一旦保留とし、<code>shred -u</code>を辞書登録するにとどめた。</p>
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/16/nemo-action-shred/" data-text="nemoの右クリックメニューに「完全消去」を追加 | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/16/nemo-action-shred/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/16/nemo-action-shred/" class="hatena-bookmark-button" data-hatena-bookmark-title="nemoの右クリックメニューに「完全消去」を追加" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
+			<a href="/2015/04/05/puppy-automount-fstab/" >Puppy Linux起動時にfstabで自動マウント</a>
+		</h3>
+	
+
+</div>
+					<!-- _partial/post/entry -->
+<div class="asset-meta text-muted pull-right">
+	2015年4月5日
+</div>
+
+<div class="panel-body">
+
+  <div class="row">
+  
+	<div class="col-md-12">
+	  
+	
+	  <p>Puppy Linux起動時にパーティションを自動マウントしたかったのだが、少々苦戦した。</p>
+<h3 id="LxPup_15-02">LxPup 15.02</h3>
+<p>LxPupでは、あらかじめマウントポイントとなるデレクトリを作成さえしておけば、fstabでの指定通りに自動マウント可能だった。<br>Xubuntu等では確か、デレクトリが無ければ自動生成してくれていたと思うので、うっかりしていた。</p>
+<figure class="highlight plain"><figcaption><span>fstab</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/dev/sda1 /mnt/win  ntfs  defaults 0 0</div><div class="line">/dev/sda5 /mnt/sda5  ext4  defaults 0 0</div></pre></td></tr></table></figure>
+
+<p>ntfsに−3gをつけなくても大丈夫だった。</p>
+<h3 id="Puppy_Linux_Precise_571_JP">Puppy Linux Precise 571 JP</h3>
+<p>Precise571JPは、デフォルト状態ではfstabが機能していなかった。<br>/etc/rc.d/rc.localファイルで<code>mount -a</code>コマンドを実行することで、fstabをロードしてくれた。<br><a href="http://blog.livedoor.jp/yagiyagi_shun/archives/51926344.html" target="_blank" rel="external">やぎやぎブログ:[Fedora 16]rc.localの罠 - livedoor Blog（ブログ）</a>  </p>
+<figure class="highlight shellscript"><figcaption><span>rc.local</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="shebang">#!/bin/sh</span></div><div class="line">    </div><div class="line">mount <span class="operator">-a</span></div></pre></td></tr></table></figure>
+
+<p>rc.localは実行可能にしておく必要がある。  </p>
+<pre><code><span class="comment"># chmod a+x /etc/rc.d/rc.local</span>
+</code></pre><p>/etc内にリンクを作成する必要は無かった。</p>
+<p>LxPupでは<code>mount -a</code>は/etc/rc.d/rc.sysinitに記載されているようで、こちらに記載しても自動マウント可能。</p>
+<p>rc.sysinitの316行目「VERSION UPDATE」のすぐ上に記載。</p>
+<figure class="highlight plain"><figcaption><span>rc.sysinit</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line">status_func $STATUS</div><div class="line">    </div><div class="line">#Load fstab entries</div><div class="line">mount -a</div><div class="line">    </div><div class="line">#######################VERSION UPDATE##########################</div><div class="line">...</div></pre></td></tr></table></figure>
+
+<p>マウントポイントとなるデレクトリをあらかじめ作成しておかないといけないのは同様。  </p>
+<h3 id="fstabを用いずに自動マウント">fstabを用いずに自動マウント</h3>
+<p>なお、fstabを用いず、/etc/rc.d/rc.localで個別にマウント指定しても自動マウント可能だった。<br><a href="http://www.murga-linux.com/puppy/viewtopic.php?p=822315&amp;sid=0256b63fbae1b190f96d18652edba1b1" target="_blank" rel="external">Puppy Linux Discussion Forum :: View topic - How to auto-mount drives at startup?</a>  </p>
+<figure class="highlight plain"><figcaption><span>rc.local</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#!/bin/sh</div><div class="line">    </div><div class="line">mount -t ntfs -o defaults /dev/sda2 /mnt/vol</div><div class="line">mount -o defaults /dev/sda5 /mnt/sda5</div></pre></td></tr></table></figure>
+
+
+	
+	</div>
+	
+  </div>
+
+	
+
+	<div class="tweet-button">
+	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/04/05/puppy-automount-fstab/" data-text="Puppy Linux起動時にfstabで自動マウント | Pagent" data-lang="ja">ツイート</a>
+	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/04/05/puppy-automount-fstab/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	
+	&nbsp;
+
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/04/05/puppy-automount-fstab/" class="hatena-bookmark-button" data-hatena-bookmark-title="Puppy Linux起動時にfstabで自動マウント" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	</div>
+	
+
+	<div class="meta-widget pull-right">
+<span style="color:#555;"><i class="fa fa-tags"></i></span>
+<ul id="tags" class="tag_box list-unstyled collapse in">
+  <li><a href="/tags/Linux/">Linux</a></li></ul>
+	</div>
+
+</div>
+
+				
+					<!-- _partial/post/title -->
+<div class="panel-heading">
+
+	
+	<!-- display as entry -->
+		<h3 class="xtitle">
 			<a href="/2015/04/03/nemo-compare-action/" >nemoの右クリックメニューに「比較」を追加</a>
 		</h3>
 	
@@ -649,125 +786,6 @@ x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firef
 </div>
 
 				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/03/31/lubuntu-update-stuck/" >Lubuntuのアップデート中にフリーズ</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年3月31日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>Lubuntu14.04をアップデート中に  </p>
-<pre><code>run-parts: executing <span class="regexp">/etc/</span>kernel<span class="regexp">/postinst.d/</span>zz-update-grub <span class="number">3.16</span>.<span class="number">0</span>-<span class="number">33</span>-generic <span class="regexp">/boot/</span>vmlinuz-<span class="number">3.16</span>.<span class="number">0</span>-<span class="number">33</span>-generic
-</code></pre><p>の表示のところでフリーズしてしまった。<br>カーネルのアップデート中だったので嫌な予感がしたが、やむなく強制終了した。<br>起動しようとすると、案の定  </p>
-<pre><code><span class="title">buffer</span> i/o <span class="built_in">error</span> <span class="built_in">on</span> device sda4
-</code></pre><p>と延々エラーを吐いて起動してくれない。  </p>
-<p>sda4はswapに当てていたので、隣のArch Linuxを起動して、sda4を再度swapでフォーマットし直したら起動できるようになった。<br>（fstabの記載はUUIDではなくデバイス名にしていた）  </p>
-<p>起動は出来たが、今度はSynapticを使おうとすると、  </p>
-<pre><code><span class="attribute">E</span>: <span class="string">dpkg は中断されました。問題を修正するには 'dpkg --configure -a' を手動で実行する必要があります。</span>
-<span class="attribute">E</span>: <span class="string">_cache-&gt;open() failed, please report.</span>
-</code></pre><p>という表示が出る。<br>言われたとおり<code>dpkg --configure -a</code>を実行すると、中断した箇所からアップデートが再開された。  </p>
-<p>今度はアップデートも無事終了。  </p>
-<p>意味はよく分かってはいないが、ネットの情報の助けがあれば、エラー表示はとても助かる。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/31/lubuntu-update-stuck/" data-text="Lubuntuのアップデート中にフリーズ | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/03/31/lubuntu-update-stuck/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/03/31/lubuntu-update-stuck/" class="hatena-bookmark-button" data-hatena-bookmark-title="Lubuntuのアップデート中にフリーズ" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/Linux/">Linux</a></li></ul>
-	</div>
-
-</div>
-
-				
-					<!-- _partial/post/title -->
-<div class="panel-heading">
-
-	
-	<!-- display as entry -->
-		<h3 class="xtitle">
-			<a href="/2015/03/31/gyao-cm-skip/" >AdBlockでGyaoのCMをスキップ</a>
-		</h3>
-	
-
-</div>
-					<!-- _partial/post/entry -->
-<div class="asset-meta text-muted pull-right">
-	2015年3月31日
-</div>
-
-<div class="panel-body">
-
-  <div class="row">
-  
-	<div class="col-md-12">
-	  
-	
-	  <p>LinuxではFirefoxでGyaoを見られなくなったので、ChromiumでGyaoを見ている。<br>（FirefoxにPepper Flashのwrapperを入れたら、Firefoxでも見られるようだが）<br>Firefoxの時は、動画を一時停止してその後再開すると、読み込み中のマークが回り続けて消えなかったが、Chromium+PPAPIだとFlashのバージョンが17.0のためか、そういう不具合も無く快適。  </p>
-<p>もう一つ気付いたのが、拡張機能<a href="https://chrome.google.com/webstore/detail/adblock/gighmmpiobklfepjocnamgkkbiglidom?hl=ja" target="_blank" rel="external">AdBlock</a>を入れると、GyaoのCMをスキップ出来るようだ。<br>Adblock Plusだとスキップ出来ない。  </p>
-<p>Adblock Plusでも、AdBlockでブロックしているフィルタを追加したらCMをスキップ出来るのだと思うが、どのフィルタなのかは確認していない。</p>
-
-	
-	</div>
-	
-  </div>
-
-	
-
-	<div class="tweet-button">
-	  <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://pagent.github.io/2015/03/31/gyao-cm-skip/" data-text="AdBlockでGyaoのCMをスキップ | Pagent" data-lang="ja">ツイート</a>
-	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2015/03/31/gyao-cm-skip/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
-	
-	&nbsp;
-
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2015/03/31/gyao-cm-skip/" class="hatena-bookmark-button" data-hatena-bookmark-title="AdBlockでGyaoのCMをスキップ" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-	</div>
-	
-
-	<div class="meta-widget pull-right">
-<span style="color:#555;"><i class="fa fa-tags"></i></span>
-<ul id="tags" class="tag_box list-unstyled collapse in">
-  <li><a href="/tags/ブラウザ/">ブラウザ</a></li></ul>
-	</div>
-
-</div>
-
-				
 
 			</div>
 
@@ -808,45 +826,45 @@ x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firef
 		<h4>Tag Cloud</h4>
 		<ul class="tag_box inline list-unstyled">
 		
-			<li><a href="/tags/コード/">コード<span>1</span></a></li>
-		
-			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
-		
-			<li><a href="/tags/ネット/">ネット<span>43</span></a></li>
-		
-			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
-		
-			<li><a href="/tags/セキュリティ/">セキュリティ<span>4</span></a></li>
-		
-			<li><a href="/tags/Git/">Git<span>13</span></a></li>
-		
-			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
-		
-			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
-		
-			<li><a href="/tags/blog/">blog<span>39</span></a></li>
-		
-			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
-		
 			<li><a href="/tags/プライバシー/">プライバシー<span>8</span></a></li>
-		
-			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>23</span></a></li>
-		
-			<li><a href="/tags/ことば/">ことば<span>10</span></a></li>
-		
-			<li><a href="/tags/ブログ/">ブログ<span>1</span></a></li>
-		
-			<li><a href="/tags/ハードウェア/">ハードウェア<span>1</span></a></li>
-		
-			<li><a href="/tags/未分類/">未分類<span>5</span></a></li>
-		
-			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
-		
-			<li><a href="/tags/Linux/">Linux<span>101</span></a></li>
 		
 			<li><a href="/tags/時事/">時事<span>1</span></a></li>
 		
+			<li><a href="/tags/ネット/">ネット<span>43</span></a></li>
+		
+			<li><a href="/tags/ブログ/">ブログ<span>1</span></a></li>
+		
+			<li><a href="/tags/blog/">blog<span>39</span></a></li>
+		
+			<li><a href="/tags/セキュリティ/">セキュリティ<span>4</span></a></li>
+		
+			<li><a href="/tags/Windows/">Windows<span>8</span></a></li>
+		
+			<li><a href="/tags/Git/">Git<span>13</span></a></li>
+		
+			<li><a href="/tags/SEO/">SEO<span>7</span></a></li>
+		
+			<li><a href="/tags/ハードウェア/">ハードウェア<span>1</span></a></li>
+		
 			<li><a href="/tags/食/">食<span>4</span></a></li>
+		
+			<li><a href="/tags/Hexo/">Hexo<span>30</span></a></li>
+		
+			<li><a href="/tags/ユーティリティ/">ユーティリティ<span>23</span></a></li>
+		
+			<li><a href="/tags/Bootstrap/">Bootstrap<span>2</span></a></li>
+		
+			<li><a href="/tags/nanoc/">nanoc<span>1</span></a></li>
+		
+			<li><a href="/tags/Octopress/">Octopress<span>23</span></a></li>
+		
+			<li><a href="/tags/Linux/">Linux<span>103</span></a></li>
+		
+			<li><a href="/tags/短歌/">短歌<span>3</span></a></li>
+		
+			<li><a href="/tags/サーバー/">サーバー<span>12</span></a></li>
+		
+			<li><a href="/tags/ことば/">ことば<span>10</span></a></li>
 		
 		
 		   <li><a href="/tags">...<span>25</span></a></li>
@@ -863,6 +881,14 @@ x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firef
   <ul class="entry list-unstyled">
     
       <li>
+        <a href="/2016/12/23/auto-passwordless-login/" ><i class="fa fa-file-o"></i>Arch Linuxで自動・パスワード入力無しのログイン</a>
+      </li>
+    
+      <li>
+        <a href="/2016/12/23/local-is-newer-than-core-warning/" ><i class="fa fa-file-o"></i>「ローカルのほうが core よりも最新です」の警告</a>
+      </li>
+    
+      <li>
         <a href="/2016/12/23/boot-failure-at-local-premount/" ><i class="fa fa-file-o"></i>Xubuntu起動時に&quot;Running /script...</a>
       </li>
     
@@ -874,14 +900,6 @@ x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firef
         <a href="/2016/12/13/nfs-firewall/" ><i class="fa fa-file-o"></i>NFSとファイアウォール</a>
       </li>
     
-      <li>
-        <a href="/2016/11/16/android-backdoor/" ><i class="fa fa-file-o"></i>スマホと個人情報</a>
-      </li>
-    
-      <li>
-        <a href="/2016/10/06/disable-recently-used-files/" ><i class="fa fa-file-o"></i>「最近開いたファイル」を表示させない</a>
-      </li>
-    
   </ul>
 </div>
 
@@ -891,7 +909,7 @@ x-scheme-<span class="operator"><span class="keyword">handler</span>/https=firef
 	<div class="widget">
 		<h4>Monthly Archives</h4>
 		<ul class="archive-list inline list-unstyled">
-		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">2016年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">2016年11月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">2016年10月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">2016年08月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">2016年07月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">2016年05月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
+		<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">2016年12月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">2016年11月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">2016年10月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">2016年08月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">2016年07月</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">2016年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">2016年05月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">2016年04月</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">2016年03月</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">2016年02月</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">2015年12月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">2015年10月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/09/">2015年09月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/08/">2015年08月</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/07/">2015年07月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">2015年06月</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">2015年05月</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">2015年04月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">2015年03月</a><span class="archive-list-count">15</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">2015年02月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">2015年01月</a><span class="archive-list-count">21</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">2014年12月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">2014年11月</a><span class="archive-list-count">28</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">2014年10月</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/09/">2014年09月</a><span class="archive-list-count">18</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08/">2014年08月</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07/">2014年07月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06/">2014年06月</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/05/">2014年05月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04/">2014年04月</a><span class="archive-list-count">41</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03/">2014年03月</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02/">2014年02月</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/01/">2014年01月</a><span class="archive-list-count">7</span></li></ul>
 		</ul>
 	</div>
 

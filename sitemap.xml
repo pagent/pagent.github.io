@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://pagent.github.io/2016/12/23/auto-passwordless-login/</loc>
+    <lastmod>2016-12-23T10:24:02.918Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2016/12/23/local-is-newer-than-core-warning/</loc>
+    <lastmod>2016-12-23T09:49:56.796Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2016/12/23/boot-failure-at-local-premount/</loc>
     <lastmod>2016-12-22T21:17:23.379Z</lastmod>
   </url>
@@ -552,16 +562,6 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/12/11/github-pages-server-down/</loc>
-    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://pagent.github.io/2014/10/23/octopress-customize/</loc>
-    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://pagent.github.io/2014/10/23/site-renewal/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
@@ -817,12 +817,12 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/04/06/monthly_archives/</loc>
+    <loc>http://pagent.github.io/2014/12/11/github-pages-server-down/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/04/17/subdomain-subdirecrory/</loc>
+    <loc>http://pagent.github.io/2014/04/06/monthly_archives/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -842,7 +842,7 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/04/18/nemo/</loc>
+    <loc>http://pagent.github.io/2014/04/17/subdomain-subdirecrory/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -872,12 +872,12 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/04/18/seesaa-fc2/</loc>
+    <loc>http://pagent.github.io/2014/04/18/nemo/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/03/08/error-page/</loc>
+    <loc>http://pagent.github.io/2014/04/18/seesaa-fc2/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -997,7 +997,7 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/04/19/free-server/</loc>
+    <loc>http://pagent.github.io/2014/03/08/error-page/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -1012,7 +1012,7 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/04/19/grub2-skip/</loc>
+    <loc>http://pagent.github.io/2014/04/19/free-server/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -1042,7 +1042,7 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/04/19/permalink/</loc>
+    <loc>http://pagent.github.io/2014/04/19/grub2-skip/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -1077,7 +1077,7 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/04/20/mozc/</loc>
+    <loc>http://pagent.github.io/2014/04/19/permalink/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -1102,7 +1102,7 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/04/21/keepass_password_safe/</loc>
+    <loc>http://pagent.github.io/2014/04/20/mozc/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -1112,7 +1112,7 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/04/21/mt-permission/</loc>
+    <loc>http://pagent.github.io/2014/04/21/keepass_password_safe/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -1152,7 +1152,7 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/04/22/dvd-linux/</loc>
+    <loc>http://pagent.github.io/2014/04/21/mt-permission/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -1177,7 +1177,7 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/04/22/mtos-update/</loc>
+    <loc>http://pagent.github.io/2014/04/22/dvd-linux/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -1222,12 +1222,12 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/01/06/puryu/</loc>
+    <loc>http://pagent.github.io/2014/04/22/mtos-update/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/04/24/facebook-origin/</loc>
+    <loc>http://pagent.github.io/2014/01/06/puryu/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -1252,6 +1252,11 @@
   </url>
   
   <url>
+    <loc>http://pagent.github.io/2014/04/24/facebook-origin/</loc>
+    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://pagent.github.io/2014/04/23/blankscreen-off/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
@@ -1267,17 +1272,12 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/03/15/noscript/</loc>
-    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://pagent.github.io/2015/05/14/truecrypt-failed/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/04/29/luakit/</loc>
+    <loc>http://pagent.github.io/2014/03/15/noscript/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -1292,12 +1292,12 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/04/30/ie_security_chrome/</loc>
+    <loc>http://pagent.github.io/2014/04/29/luakit/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/04/30/search-engine-privacy/</loc>
+    <loc>http://pagent.github.io/2014/04/30/ie_security_chrome/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -1307,7 +1307,7 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/05/01/browser_war_3/</loc>
+    <loc>http://pagent.github.io/2014/04/30/search-engine-privacy/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -1317,12 +1317,12 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/05/02/linux/</loc>
+    <loc>http://pagent.github.io/2014/05/01/browser_war_3/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/05/02/thunar-root/</loc>
+    <loc>http://pagent.github.io/2014/05/02/linux/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -1347,12 +1347,12 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/05/02/xubuntu-upgrade/</loc>
+    <loc>http://pagent.github.io/2014/05/02/thunar-root/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/05/03/crash-report/</loc>
+    <loc>http://pagent.github.io/2014/05/02/xubuntu-upgrade/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -1367,12 +1367,17 @@
   </url>
   
   <url>
-    <loc>http://pagent.github.io/2014/05/03/facebook-bot/</loc>
+    <loc>http://pagent.github.io/2014/05/03/crash-report/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://pagent.github.io/2015/12/06/firefox-private-chromium-secret/</loc>
+    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2014/05/03/facebook-bot/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
@@ -1618,6 +1623,11 @@
   
   <url>
     <loc>http://pagent.github.io/2014/10/23/io/</loc>
+    <lastmod>2016-02-24T14:12:29.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://pagent.github.io/2014/10/23/octopress-customize/</loc>
     <lastmod>2016-02-24T14:12:29.000Z</lastmod>
   </url>
   
