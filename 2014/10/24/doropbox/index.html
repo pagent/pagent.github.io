@@ -163,7 +163,11 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <p>いちおう動作はしてdeployも出来るが、どこから出てきたか下層にあるはずのフォルダやファイルが勝手に作られていたりする。<br>通信状況が良くないのか、使い勝手がいまいち。<br>Dropboxはあくまでバックアップ用にすることにした。  </p>
 <p>Octopressの作業フォルダは、Xubuntuで共有しているWindowsのDドライブに置き、homeディレクトリにはそこへのリンクを置いているので前よりは安全だろう。  </p>
 <p>DドライブはXubuntu起動時に自分が所有者としてマウントされるよう、optionsを下記で/etc/fstabに記載している。  </p>
-<p><code>defaults,umask=002,uid=1000,gid=1000</code></p>
+<p><del><code>defaults,umask=002,uid=1000,gid=1000</code></del>  </p>
+<p>（Linuxからntfsパーティションを常用する場合は、Linux標準に合わせて<code>dmask=022,fmask=133,</code>でマウントした方が良いようだ。<code>umask=002</code>だとtextファイルを開く際、毎回”〜を実行しますか?それとも内容を表示しますか?”と聞かれる。）  </p>
+<figure class="highlight plain"><figcaption><span>fstab</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">UUID=01CD2ABB65E17DE0 /run/media/user1/Windows ntfs-3g uid=user1,gid=users,dmask=022,fmask=133 0 0</div></pre></td></tr></table></figure>
+
+<p><a href="https://wiki.archlinuxjp.org/index.php/NTFS-3G#Linux_.E4.BA.92.E6.8F.9B.E3.81.AE.E3.83.91.E3.83.BC.E3.83.9F.E3.83.83.E3.82.B7.E3.83.A7.E3.83.B3" target="_blank" rel="external">NTFS-3G - ArchWiki</a>  </p>
 <p>これでXubuntuでおかしなことをしてしまっても、Dドライブをいじらない限りは大丈夫なはず。  </p>
 <p>ーー<br>（追記）<br>使い方がよく分かってなかっただけで、やっぱりDropboxは便利かもしれない。<br>他のPCと作業を同期出来るし。<br>間違ってフィルを削除してしまっても、Dropboxのキャッシュから復元出来るし。</p>
 
@@ -268,7 +272,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
   <div class="container-narrow">
     <footer> <!-- _partial/footer -->
 <p>
-  &copy; 2016 Pagent
+  &copy; 2017 Pagent
   &ensp;
   <span class="text-muted">Powered by:
     <a class="text-muted" href="http://zespia.tw/hexo/" target="_blank">Hexo</a>,
