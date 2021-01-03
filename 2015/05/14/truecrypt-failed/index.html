@@ -162,6 +162,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	    <p>Truecryptのボリュームをマウントしようとしたら、「Failed to set up a loop device:」と表示されるのみで、マウント出来なくなってしまった。<br>パスワードは正確に入力しているはずだが、何度やっても同じエラー。  </p>
 <p>大事なファイルもあるので一瞬焦ったが、検索したらなんのことはない、Arch Linuxのカーネルをlinux-4.0.2-1に更新してから再起動していないのが原因だった。<br><a href="https://wiki.archlinux.org/index.php/TrueCrypt#Failed_to_set_up_a_loop_device" target="_blank" rel="external">TrueCrypt - ArchWiki</a>  </p>
 <p>再起動したら無事マウント出来るようになった。</p>
+<p>（追記）<br>その後再起動だけでは問題が解決しなくなった。<br>新しいkernelでは起動時にループデバイスが作成されなくなったのが原因のよう。<br><a href="/2021/01/03/truecrypt-loop-device-error/"> Truecryptで”Failed to set up a loop devic”エラー</a></p>
 
 	</div>
 

@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2021-01-03T00:04:31.240Z</updated>
+  <updated>2021-01-03T00:54:13.543Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -15,19 +15,38 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Truecryptで"Failed to set up a loop devic"エラー]]></title>
+    <link href="http://pagent.github.io/2021/01/03/truecrypt-loop-device-error/"/>
+    <id>http://pagent.github.io/2021/01/03/truecrypt-loop-device-error/</id>
+    <published>2021-01-03T00:15:19.000Z</published>
+    <updated>2021-01-03T00:50:46.632Z</updated>
+    <content type="html"><![CDATA[<p>Truecryptで暗号化ボリュームをマウントしようとしたが、長時間待機状態になり、”Failed to set up a loop devic”とエラーになる。<br>エラーの後再度マウントを試みると問題なくマウントできる。</p>
+<p>どうやらPCの起動時にループデバイスモジュールが自動ロードされず、また起動時にループデバイスが作成されなくなったのが原因のよう。<br><a href="https://wiki.archlinux.jp/index.php/TrueCrypt#Failed_to_set_up_a_loop_device" target="_blank" rel="external">TrueCrypt - ArchWiki</a>  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> su</div><div class="line"></div><div class="line"><span class="comment"># tee /etc/modules-load.d/truecrypt.conf &lt;&lt;&lt; "loop"</span></div><div class="line"><span class="comment"># echo "options loop max_loop=8" &gt; /etc/modprobe.d/eightloop.conf</span></div></pre></td></tr></table></figure>
+
+<p>これで起動時に/devディレクトリにループデバイスが8個作成され、ループデバイスモジュールもロードされた。<br>Truecryptの暗号化ボリュームも無事マウントできるようになった。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Truecryptで暗号化ボリュームをマウントしようとしたが、長時間待機状態になり、”Failed to set up a loop devic”とエラーになる。<br>エラーの後再度マウントを試みると問題なくマウントできる。</p>
+<p>どうやらPCの起動時にループデバ]]>
+    </summary>
+    
+      <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[hellow]]></title>
     <link href="http://pagent.github.io/2021/01/03/hellow/"/>
     <id>http://pagent.github.io/2021/01/03/hellow/</id>
     <published>2021-01-02T21:49:55.000Z</published>
-    <updated>2021-01-03T00:04:18.160Z</updated>
+    <updated>2021-01-03T00:35:09.886Z</updated>
     <content type="html"><![CDATA[<p>hellow world</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>hellow world</p>
 ]]>
     </summary>
-    
-      <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
     
   </entry>
   
@@ -541,26 +560,6 @@ systemctl enable NetworkManager
     </summary>
     
       <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[ADSLはいつまで？]]></title>
-    <link href="http://pagent.github.io/2016/05/31/adsl/"/>
-    <id>http://pagent.github.io/2016/05/31/adsl/</id>
-    <published>2016-05-30T23:33:24.000Z</published>
-    <updated>2016-06-02T19:50:40.590Z</updated>
-    <content type="html"><![CDATA[<p>自宅のインターネット回線はADSL（12M）を利用している。<br>交換局から3km以上離れているが、下り5Mくらいはあるので、これで十分。<br>動画も見られるし遅いと感じたことはない。  </p>
-<p>ADSLはいつまで利用できるのか気になって調べたところ、2025年くらいまでは大丈夫のようだ。<br><a href="http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1379974618" target="_blank" rel="external">ADSLは終わるのですか？ - 今NTTから電話がありました。１週間前に「○○日まで… - Yahoo!知恵袋</a>  </p>
-<p>ずっとADSLでも良いのだが、いずれは光回線に強制移行させられるのかも知れない。<br>それまではADSLを使い続けるつもり。  </p>
-<p>ーー<br>（追記）<br>ＮＴＴ西日本は「フレッツ・ADSL」の新規申し込み受付けを2016年6月30日で終了するようだ。<br><a href="https://www.ntt-west.co.jp/news/1507/150731a.html" target="_blank" rel="external">「フレッツ・ADSL」の新規申込受付終了について｜ニュースリリース｜NTT西日本</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>自宅のインターネット回線はADSL（12M）を利用している。<br>交換局から3km以上離れているが、下り5Mくらいはあるので、これで十分。<br>動画も見られるし遅いと感じたことはない。  </p>
-<p>ADSLはいつまで利用できるのか気になって調べたところ、2025年]]>
-    </summary>
-    
-      <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
     
   </entry>
   

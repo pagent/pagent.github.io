@@ -5,15 +5,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>hellow | Pagent</title>
+  <title>Truecryptで&quot;Failed to set up a loop devic&quot;エラー | Pagent</title>
   <meta name="author" content="Pagent">
   
-  <meta name="description" content="hellow world">
+  <meta name="description" content="Truecryptで暗号化ボリュームをマウントしようとしたが、長時間待機状態になり、”Failed to set up a loop devic”とエラーになる。エラーの後再度マウントを試みると問題なくマウントできる。
+どうやらPCの起動時にループデバイスモジュールが自動ロードされず、また起動時にル">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="hellow"/>
+  <meta property="og:title" content="Truecryptで&quot;Failed to set up a loop devic&quot;エラー"/>
   <meta property="og:site_name" content="Pagent"/>
 
   
@@ -142,7 +143,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	
   <!-- display as page -->
 		<div class="page-header">
-			<h1> hellow</h1>
+			<h1> Truecryptで&quot;Failed to set up a loop devic&quot;エラー</h1>
 		</div>
 	
 
@@ -158,7 +159,11 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 
 	<!-- content -->
 	<div class="mypage">
-	    <p>hellow world</p>
+	    <p>Truecryptで暗号化ボリュームをマウントしようとしたが、長時間待機状態になり、”Failed to set up a loop devic”とエラーになる。<br>エラーの後再度マウントを試みると問題なくマウントできる。</p>
+<p>どうやらPCの起動時にループデバイスモジュールが自動ロードされず、また起動時にループデバイスが作成されなくなったのが原因のよう。<br><a href="https://wiki.archlinux.jp/index.php/TrueCrypt#Failed_to_set_up_a_loop_device" target="_blank" rel="external">TrueCrypt - ArchWiki</a>  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">sudo</span> su</div><div class="line"></div><div class="line"><span class="comment"># tee /etc/modules-load.d/truecrypt.conf &lt;&lt;&lt; "loop"</span></div><div class="line"><span class="comment"># echo "options loop max_loop=8" &gt; /etc/modprobe.d/eightloop.conf</span></div></pre></td></tr></table></figure>
+
+<p>これで起動時に/devディレクトリにループデバイスが8個作成され、ループデバイスモジュールもロードされた。<br>Truecryptの暗号化ボリュームも無事マウントできるようになった。</p>
 
 	</div>
 
@@ -166,11 +171,11 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 	<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a>
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	
-	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2021/01/03/hellow/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
+	<span class="arrow_box"><a href="https://twitter.com/search?q=http://pagent.github.io/2021/01/03/truecrypt-loop-device-error/" style="color:#5f5f5f; text-decoration:none;">表示</a></span>
 	
 	&nbsp;
 
-	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2021/01/03/hellow/" class="hatena-bookmark-button" data-hatena-bookmark-title="hellow" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+	<a href="http://b.hatena.ne.jp/entry/http://pagent.github.io/2021/01/03/truecrypt-loop-device-error/" class="hatena-bookmark-button" data-hatena-bookmark-title="Truecryptで&quot;Failed to set up a loop devic&quot;エラー" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
 	</div>
 
 <div class="clear"></div>
@@ -182,13 +187,13 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 <ul class="pagination">
 	 
 		
-    	<li class="prev"><a href="/2021/01/03/truecrypt-loop-device-error/" class="alignleft prev"><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
-  		
+          <li class="prev disabled"><a><i class="fa fa-arrow-circle-o-left"></i>Prev</a></li>
+        
 
         <li><a href="/archives"><i class="fa fa-archive"></i>Archive</a></li>
 
 		
-		   <li class="next"><a href="/2016/12/23/auto-passwordless-login/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
+		   <li class="next"><a href="/2021/01/03/hellow/" class="alignright next">Next<i class="fa fa-arrow-circle-o-right"></i></a></li>
         
 	
 </ul>
@@ -230,6 +235,16 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
     
 
 	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>
+    <ul id="tags" class="tag_box list-unstyled collapse in">
+	    <!-- _partial/post/tag -->
+  
+  <li><a href="/tags/ユーティリティ/">ユーティリティ</a></li>
+
+    </ul>
+	</div>
 	
 
 	<!-- toc -->
