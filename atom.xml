@@ -4,7 +4,7 @@
   <subtitle><![CDATA[静的サイトジェネレーターとGitリポジトリでブログ]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://pagent.github.io/"/>
-  <updated>2017-03-25T21:22:56.506Z</updated>
+  <updated>2021-01-03T00:04:31.240Z</updated>
   <id>http://pagent.github.io/</id>
   
   <author>
@@ -13,6 +13,23 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[hellow]]></title>
+    <link href="http://pagent.github.io/2021/01/03/hellow/"/>
+    <id>http://pagent.github.io/2021/01/03/hellow/</id>
+    <published>2021-01-02T21:49:55.000Z</published>
+    <updated>2021-01-03T00:04:18.160Z</updated>
+    <content type="html"><![CDATA[<p>hellow world</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>hellow world</p>
+]]>
+    </summary>
+    
+      <category term="ユーティリティ" scheme="http://pagent.github.io/tags/%E3%83%A6%E3%83%BC%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Arch Linuxで自動・パスワード入力無しのログイン]]></title>
@@ -544,26 +561,6 @@ systemctl enable NetworkManager
     </summary>
     
       <category term="ネット" scheme="http://pagent.github.io/tags/%E3%83%8D%E3%83%83%E3%83%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[「亡くなる」を身内に使うことへの違和感]]></title>
-    <link href="http://pagent.github.io/2016/05/20/pass-away/"/>
-    <id>http://pagent.github.io/2016/05/20/pass-away/</id>
-    <published>2016-05-20T10:46:26.000Z</published>
-    <updated>2016-05-20T10:47:56.650Z</updated>
-    <content type="html"><![CDATA[<p>時々気になる表現に「亡くなる」がある。  </p>
-<p>身内ではない他人に対して「誰それさんが亡くなった」と表現するのはごく普通だと思うが、身内に対して「亡くなる」という言葉を用いるのには違和感を覚える。<br>「父が亡くなった」「夫が亡くなった」等々、テレビなどでもよく耳にする。<br>だが「亡くなる」は尊敬語なのだから、身内に使うのはやはりおかしい。  </p>
-<p>「死んだ」では直接的過ぎると感じる場合は、「他界した」あたりが適当なのではないだろうか？<br>身内に対しては「亡くなる」より「死んだ」の方がまだ自然に聞こえる。<br>（私自身に関して言えば、「亡くなる」がかえって慇懃無礼に当たると感じる場合には、他人に対しても「死ぬ」を使うこともある。）  </p>
-<p>英語では”die”（死ぬ）のより丁寧な表現として”pass away”があるが、身内に対して”pass away”を使うのかどうか、よく知らないが少し興味がある。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>時々気になる表現に「亡くなる」がある。  </p>
-<p>身内ではない他人に対して「誰それさんが亡くなった」と表現するのはごく普通だと思うが、身内に対して「亡くなる」という言葉を用いるのには違和感を覚える。<br>「父が亡くなった」「夫が亡くなった」等々、テレビなどでもよく]]>
-    </summary>
-    
-      <category term="ことば" scheme="http://pagent.github.io/tags/%E3%81%93%E3%81%A8%E3%81%B0/"/>
     
   </entry>
   
